@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "EDS 240"
+  navbar:
+    right:
+      - href: index.qmd
+        text: home
+      - href: https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit?usp=sharing
+        text: syllabus
+      - assignments.qmd
+      - href: https://docs.google.com/forms/d/e/1FAIpQLSdOP32K7_A3zzENvYQvIBCnLveaLE-exnFlqDV1xBWz66rWoA/viewform
+        text: redeem tokens
+      - resources.qmd
+      - icon: github
+        menu:
+          - text: Source Code
+            url:  https://github.com/samanthacsik/EDS-240-data-viz
+          - text: Report a Bug
+            url:  https://github.com/samanthacsik/EDS-240-data-viz/issues
+  page-footer:
+    background: dark
+    right: This website is built with {{< fa heart title="a heart" >}} and [Quarto](https://quarto.org/)
+    left: |
+      <img src="images/bren-logo.png" alt="The Bren School of Environmental Science & Management logo" width="250"/>
+
+format:
+  html:
+    theme: meds-styles.scss
+    toc: true
+
+
+

@@ -1,0 +1,35 @@
+/*-- scss:defaults --*/
+
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Nunito:wght@300;800&family=Roboto+Mono:wght@300;400&family=Sanchez&display=swap');
+
+// fonts
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-family-serif: 'Sanchez', serif;
+$font-family-monospace: 'Roboto Mono', monospace;
+
+// colors
+$baby-blue: #d2e3f3;
+$teal: #047C90;
+$dark-blue: #003660;
+$white: #FFFFFF;
+$green: #78A540;
+$magenta: #900C3F;
+$white: #FFFFFF;
+$off-white: #F7F7F7;
+$gray: #ADADAD;
+$dark-gray: #373A3E;
+
+// quarto sass variables
+$navbar-bg: $off-white;
+$navbar-fg: $dark-blue;
+$navbar-hl: $teal;
+$body-bg: $white;
+$body-color: $dark-gray;
+$footer-bg: $dark-blue;
+
+/*-- scss:rules --*/
+
+h1, h2, h3 {
+  font-family: $font-family-serif;
+}
