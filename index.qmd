@@ -3,3 +3,7 @@ title: "Data Visualization & Communication"
 subtitle: "Master of Environmental Data Science (MEDS)"
 ---
 
+## Welcome to EDS 240
+
+## Teaching Team
+
