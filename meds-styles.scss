@@ -27,9 +27,39 @@ $navbar-hl: $teal;
 $body-bg: $white;
 $body-color: $dark-gray;
 $footer-bg: $dark-blue;
+$link-color: $green;
 
 /*-- scss:rules --*/
 
 h1, h2, h3 {
   font-family: $font-family-serif;
+  color: $dark-blue;
 }
+
+h2 {
+  border-bottom: 3px solid $dark-blue;
+  padding-bottom: 0.5rem;
+}
+
+// horizontal line (default dark blue)
+/*hr {
+  border: 3px solid $dark-blue;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}*/
+
+// gray text
+.gray-text {
+  color: $gray;
+}
+
+// teal text
+.teal-text {
+  color: $teal;
+}
+
+// center text (horizontally)
+.center-text{
+  text-align: center;
+}
+

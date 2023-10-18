@@ -3,7 +3,78 @@ title: "Data Visualization & Communication"
 subtitle: "Master of Environmental Data Science (MEDS)"
 ---
 
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "85%" 
+#| fig-alt: "An extended version of the classic R4DS schematic from Grolemund & Wickham, with environmental data science, communities, and communication added."
+knitr::include_graphics("images/horst-eco-r4ds.png")
+```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
 ## Welcome to EDS 240
+
+Effectively communicating your work in a responsible, accessible and visually-pleasing way is often (if not, always) a central part of data science. This course will focus on the basic principles for effective communication through data visualization and using technical tools and workflows for creating and sharing data visualizations with diverse audiences. 
+
+By the end of this course, learners should be able to: 
+
+- Identify which types of visualizations are most appropriate for your data and your audience
+- Prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations
+- Build effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages
+- Write code from scratch and read and adapt code written by others
+- Apply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations 
+- Assess, critique, and provide constructive feedback on data visualizations
 
 ## Teaching Team
 
+<br>
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-6}
+
+::: {.center-text}
+**Instructor**
+:::
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "45%" 
+knitr::include_graphics("images/sam.png")
+```
+
+::: {.center-text}
+[**Sam Csik**]{.teal-text}  
+**Email:** [scsik@ucsb.edu](mailto::scsik@ucsb.edu)  
+**Learn more:** [samanthacsik.github.io](https://samanthacsik.github.io/)  
+:::
+
+:::
+
+::: {.g-col-12 .g-col-md-6}
+
+::: {.center-text}
+**TA**
+:::
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "45%" 
+knitr::include_graphics("images/tbd.png")
+```
+
+::: {.center-text}
+[**tbd**]{.teal-text}  
+**Email:** [tbd](mailto::tbd)  
+**Learn more:** [tbd](tbd)
+:::
+
+:::
+:::

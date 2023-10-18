@@ -1,9 +1,16 @@
 [
   {
+    "objectID": "index.html#welcome-to-eds-240",
+    "href": "index.html#welcome-to-eds-240",
+    "title": "Data Visualization & Communication",
+    "section": "Welcome to EDS 240",
+    "text": "Welcome to EDS 240\nEffectively communicating your work in a responsible, accessible and visually-pleasing way is often (if not, always) a central part of data science. This course will focus on the basic principles for effective communication through data visualization and using technical tools and workflows for creating and sharing data visualizations with diverse audiences.\nBy the end of this course, learners should be able to:\n\nIdentify which types of visualizations are most appropriate for your data and your audience\nPrepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\nBuild effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages\nWrite code from scratch and read and adapt code written by others\nApply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations\nAssess, critique, and provide constructive feedback on data visualizations"
+  },
+  {
     "objectID": "index.html#teaching-team",
     "href": "index.html#teaching-team",
     "title": "Data Visualization & Communication",
     "section": "Teaching Team",
-    "text": "Teaching Team"
+    "text": "Teaching Team\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\ntbd\nEmail: tbd\nLearn more: tbd"
   }
 ]

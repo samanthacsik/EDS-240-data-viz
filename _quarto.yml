@@ -10,10 +10,17 @@ website:
         text: home
       - href: https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit?usp=sharing
         text: syllabus
+      - href: lectures.qmd
+        text: lecture materials
       - assignments.qmd
       - href: https://docs.google.com/forms/d/e/1FAIpQLSdOP32K7_A3zzENvYQvIBCnLveaLE-exnFlqDV1xBWz66rWoA/viewform
         text: redeem tokens
-      - resources.qmd
+      - text: resources
+        menu:
+          - text: MEDS installation guide
+            href: https://ucsb-meds.github.io/meds-install-guide.html
+          - text: recommended reading & materials
+            href: resources.qmd
       - icon: github
         menu:
           - text: Source Code
@@ -29,7 +36,8 @@ website:
 format:
   html:
     theme: meds-styles.scss
-    toc: true
+    toc: false
+    page-layout: full
 
 
 
