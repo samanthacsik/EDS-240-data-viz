@@ -1,0 +1,9 @@
+---
+title: "Course logistics, Intro, Grammar of Graphics review"
+subtitle: "Lecture 1 (week 1)"
+description: "Monday January 8th, 2024"
+title-block-banner: true
+toc: true
+---
+
+Coming soon!

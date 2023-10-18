@@ -1,0 +1,9 @@
+---
+title: "Data Communication"
+subtitle: "Lecture 2 (week 3)"
+description: "Monday January 22nd, 2024"
+title-block-banner: true
+toc: true
+---
+
+Coming soon!

@@ -1,0 +1,9 @@
+---
+title: "Visualizing Distributions"
+subtitle: "Lecture 6 (week 8)"
+description: "Monday February 26th, 2024"
+title-block-banner: true
+toc: true
+---
+
+Coming soon!

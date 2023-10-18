@@ -6,19 +6,38 @@ website:
   title: "EDS 240"
   navbar:
     right:
-      - href: index.qmd
-        text: home
-      - href: https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit?usp=sharing
-        text: syllabus
-      - href: lectures.qmd
-        text: lecture materials
+      - text: home
+        href: index.qmd
+      - text: syllabus
+        href: https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit?usp=sharing
+        target: _blank
+      - text: lecture materials
+        menu:
+          - text: lecture 1 (week 1)
+            href: lecture1.qmd
+          - text: lecture 2 (week 3)
+            href: lecture2.qmd
+          - text: lecture 3 (week 4)
+            href: lecture3.qmd
+          - text: lecture 4 (week 5)
+            href: lecture4.qmd
+          - text: lecture 5 (week 6)
+            href: lecture5.qmd
+          - text: lecture 6 (week 8)
+            href: lecture6.qmd
+          - text: lecture 7 (week 9)
+            href: lecture7.qmd
+          - text: lecture 8 (week 10)
+            href: lecture8.qmd
       - assignments.qmd
-      - href: https://docs.google.com/forms/d/e/1FAIpQLSdOP32K7_A3zzENvYQvIBCnLveaLE-exnFlqDV1xBWz66rWoA/viewform
-        text: redeem tokens
+      - text: redeem tokens
+        href: https://docs.google.com/forms/d/e/1FAIpQLSdOP32K7_A3zzENvYQvIBCnLveaLE-exnFlqDV1xBWz66rWoA/viewform
+        target: _blank
       - text: resources
         menu:
           - text: MEDS installation guide
             href: https://ucsb-meds.github.io/meds-install-guide.html
+            target: _blank
           - text: recommended reading & materials
             href: resources.qmd
       - icon: github

@@ -1,0 +1,11 @@
+---
+title: "Assignment #1 (HW #1)"
+subtitle: "Assigned Mon 01/08/2024 | Due Sat 01/20/2024"
+title-block-banner: true
+---
+
+## Description 
+
+## Rubric (specifications)
+
+You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1:

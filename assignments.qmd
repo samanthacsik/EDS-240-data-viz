@@ -1,3 +1,50 @@
 ---
-title: "assignments"
+title: "Assignments"
+subtitle: "tbd"
+title-block-banner: true
 ---
+
+## Assignments
+
+Earning "Satisfactory" marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.
+
+| Assignment Type | Assignment Title                                      | Date Assigned  | Date Due       |
+|:---------------:|-------------------------------------------------------|----------------|----------------|
+| SR              | [Pre-course reflection (SR #1)](SR1-precourse.qmd)    | Mon 01/08/2024 | Sat 01/13/2024 |
+| HW              | [Homework Assignment #1](HW1.qmd)                     | Mon 01/08/2024 | Sat 01/20/2024 | 
+| HW              | [Homework Assignment #2](HW2.qmd)                     | Mon 01/22/2024 | Sat 02/03/2024 |
+| SR              | [Mid-course reflection (SR #2)](SR2-midcourse.qmd)    | Mon 02/05/2024 | Sat 02/10/2024 |
+| HW              | [Homework Assignment #3](HW3.qmd)                     | Mon 02/12/2024 | Sat 02/24/2024 |
+| HW              | [Homework Assignment #4](HW4.qmd)                     | Mon 02/26/2024 | Sat 03/09/2024 |
+| SR              | [End-of-course reflection (SR #3)](SR3-endcourse.qmd) | Mon 03/11/2024 | Sat 03/16/2024 |
+
+## End-of-class surveys
+
+End-of-class surveys (EOCs) will become available at the end of each class (Mondays at 3:50pm PT) and are due by end-of-day (11:59pm PT). Completing EOCs by the due dates will, in-part (along with class attendance), determine whether you earn a +/- on your course grade. 
+
+**Note:** The letter grade, A, is the highest grade you can earn (i.e. you cannot earn an A+). You must attend 8 classes and submit >=6 EOCs (see [Grade Tracker](assignments.qmd#grade-tracker), below) to earn an A.
+
+| EOC link                                             | Date Assigned  | Date Due                   |
+|------------------------------------------------------|----------------|----------------------------|
+| [EOC (week 1)](https://forms.gle/aPGfCircFN1AZfSe9)  | Mon 01/08/2024 | Mon 01/08/2024, 11:55pm PT |
+| [EOC (week 3)](https://forms.gle/2BockakcBR7rsm26A)  | Mon 01/22/2024 | Mon 01/22/2024, 11:55pm PT |
+| [EOC (week 4)](https://forms.gle/kwfaWciZNu4fCzKN7)  | Mon 01/29/2024 | Mon 01/29/2024, 11:55pm PT |
+| [EOC (week 5)](https://forms.gle/cLtHBybg6kgVDzQSA)  | Mon 02/05/2024 | Mon 02/05/2024, 11:55pm PT |
+| [EOC (week 6)](https://forms.gle/XbKrjoSpapzTAAPT7)  | Mon 02/12/2024 | Mon 02/12/2024, 11:55pm PT |
+| [EOC (week 8)](https://forms.gle/aqUwck6jABKRUfYMA)  | Mon 02/26/2024 | Mon 02/26/2024, 11:55pm PT |
+| [EOC (week 9)](https://forms.gle/2Sz98wAUbSFq7Tqt6)  | Mon 03/04/2024 | Mon 03/04/2024, 11:55pm PT |
+| [EOC (week 10)](https://forms.gle/dEmgAhCMDnnhbNqK7) | Mon 03/11/2024 | Mon 03/11/2024, 11:55pm PT |
+
+## Grade Tracker 
+
+Use the Grade Tracker, below, to determine your course grade:
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "55%" 
+#| fig-alt: "The Grade Tracker table, which can be used to determine an individual's course grade based on the number of 'Satisfactory' assignments completed, as well as descriptions on how to earn and use tokens"
+knitr::include_graphics("images/grade-tracker.png")
+```
+
