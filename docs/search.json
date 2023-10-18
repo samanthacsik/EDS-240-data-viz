@@ -1,10 +1,52 @@
 [
   {
-    "objectID": "index.html#welcome-to-eds-240",
-    "href": "index.html#welcome-to-eds-240",
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "resources",
+    "section": "",
+    "text": "Fundamentals of Data Visualization, by Claus O. Wilke – a primer on making informative and compelling figures\nR for Data Science, by Hadley Wickham & Garrett Grolemund – an excellent primer on all things R for data wrangling, modeling, and visualizing\n[R Graphics Cookbook]"
+  },
+  {
+    "objectID": "resources.html#books",
+    "href": "resources.html#books",
+    "title": "resources",
+    "section": "",
+    "text": "Fundamentals of Data Visualization, by Claus O. Wilke – a primer on making informative and compelling figures\nR for Data Science, by Hadley Wickham & Garrett Grolemund – an excellent primer on all things R for data wrangling, modeling, and visualizing\n[R Graphics Cookbook]"
+  },
+  {
+    "objectID": "resources.html#decision-trees",
+    "href": "resources.html#decision-trees",
+    "title": "resources",
+    "section": "Decision trees",
+    "text": "Decision trees\n\nFrom Data to Viz, by Yan Holtz & Conor Healy – a decision tree for deciding which chart type is most appropriate for your data"
+  },
+  {
+    "objectID": "resources.html#inspirational-ggplot2-creators",
+    "href": "resources.html#inspirational-ggplot2-creators",
+    "title": "resources",
+    "section": "Inspirational {ggplot2} creators",
+    "text": "Inspirational {ggplot2} creators\n(In my honest opinion) One of the best ways to learn how to build exciting ggplots is to look at code that others have written. Here are just a few folks doing really incredible work (along with their repos where they often showcase their creations):\n\n\n\nWho\n Data Viz Repository\n\n\n\n\nIjeamaka Anyene\ntidytuesday\n\n\nCédric Scherer\nTidyTuesday repo\n\n\nTanya Shapiro\ntanya-data-viz repo\n\n\nCara Thompson\ntidytuesdays"
+  },
+  {
+    "objectID": "resources.html#r-packages",
+    "href": "resources.html#r-packages",
+    "title": "resources",
+    "section": "R packages",
+    "text": "R packages\nA list of the R packages that we’ve covered in this class so far:\n\n{ggplot2}: a system for declaratively creating graphics, based on The Grammar of Graphics"
+  },
+  {
+    "objectID": "resources.html#collections-of-resources",
+    "href": "resources.html#collections-of-resources",
+    "title": "resources",
+    "section": "Collections of resources",
+    "text": "Collections of resources\n\nawesome-ggplot2, by Erik Gahner Larsen – a curated list of awesome ggplot2 tutorials, packages etc.\n\n\n\n\n\n\n\n\n\n\n\nArtwork by Allison Horst"
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
     "title": "Data Visualization & Communication",
-    "section": "Welcome to EDS 240",
-    "text": "Welcome to EDS 240\nEffectively communicating your work in a responsible, accessible and visually-pleasing way is often (if not, always) a central part of data science. This course will focus on the basic principles for effective communication through data visualization and using technical tools and workflows for creating and sharing data visualizations with diverse audiences.\nBy the end of this course, learners should be able to:\n\nIdentify which types of visualizations are most appropriate for your data and your audience\nPrepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\nBuild effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages\nWrite code from scratch and read and adapt code written by others\nApply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations\nAssess, critique, and provide constructive feedback on data visualizations"
+    "section": "Course Description",
+    "text": "Course Description\nEffectively communicating your work in a responsible, accessible and visually-pleasing way is often (if not, always) a central part of data science. This course will focus on the basic principles for effective communication through data visualization and using technical tools and workflows for creating and sharing data visualizations with diverse audiences.\nBy the end of this course, learners should be able to:\n\nIdentify which types of visualizations are most appropriate for your data and your audience\nPrepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\nBuild effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages\nWrite code from scratch and read and adapt code written by others\nApply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations\nAssess, critique, and provide constructive feedback on data visualizations"
   },
   {
     "objectID": "index.html#teaching-team",

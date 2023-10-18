@@ -31,22 +31,24 @@ $link-color: $green;
 
 /*-- scss:rules --*/
 
+// header font & color
 h1, h2, h3 {
   font-family: $font-family-serif;
   color: $dark-blue;
 }
 
+// line beneath h2
 h2 {
   border-bottom: 3px solid $dark-blue;
   padding-bottom: 0.5rem;
 }
 
-// horizontal line (default dark blue)
-/*hr {
-  border: 3px solid $dark-blue;
-  border-radius: 5px;
-  margin-bottom: 30px;
-}*/
+// L body text
+.body-text-l {
+  font-size: 25px;
+	line-height: 1.7em;
+	margin-bottom: 1em;
+}
 
 // gray text
 .gray-text {

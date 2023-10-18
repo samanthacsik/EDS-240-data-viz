@@ -1,3 +1,51 @@
 ---
 title: "resources"
+subtitle: "there are endless incredible (and free) resources to help you along your data visualization journeys -- here are just a few!"
+title-block-banner: true
+toc: true
 ---
+
+## Books
+
+- **[Fundamentals of Data Visualization](https://clauswilke.com/dataviz/), by Claus O. Wilke** -- a primer on making informative and compelling figures
+- **[R for Data Science](https://r4ds.had.co.nz/), by Hadley Wickham & Garrett Grolemund** -- an excellent primer on all things R for data wrangling, modeling, and visualizing
+- **[R Graphics Cookbook]**
+
+## Decision trees
+
+- **[From Data to Viz](https://www.data-to-viz.com/), by Yan Holtz & Conor Healy** -- a decision tree for deciding which chart type is most appropriate for your data
+
+## Inspirational `{ggplot2}` creators
+
+(In my honest opinion) One of the best ways to learn how to build exciting ggplots is to look at code that others have written. Here are just a few folks doing really incredible work (along with their repos where they often showcase their creations): 
+
+| Who      | {{< fa brands github >}} Data Viz Repository |
+| ----------- | ----------- |
+| [Ijeamaka Anyene](https://ijeamaka-anyene.netlify.app/) | [tidytuesday](https://github.com/Ijeamakaanyene/tidytuesday) |
+| [Cédric Scherer](https://www.cedricscherer.com/) | [TidyTuesday repo](https://github.com/z3tt/TidyTuesday) |
+| [Tanya Shapiro](https://tanyaviz.com/) | [tanya-data-viz repo](https://github.com/tashapiro/tanya-data-viz) |
+| [Cara Thompson](https://www.cararthompson.com/index.html) | [tidytuesdays](https://github.com/cararthompson/tidytuesdays) |
+
+## R packages
+
+A list of the R packages that we've covered in this class so far:
+
+- [`{ggplot2}`](https://ggplot2.tidyverse.org/): a system for declaratively creating graphics, based on The Grammar of Graphics
+
+## Collections of resources
+
+- **[awesome-ggplot2](https://github.com/erikgahner/awesome-ggplot2), by 
+Erik Gahner Larsen** -- a curated list of awesome ggplot2 tutorials, packages etc.
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "50%" 
+#| fig-alt: "A person in a cape that reads 'code hero' who looks like they are flying through the air while typing on a computer while saying 'I’m doing a think all on my own!' The coder’s arms and legs have ropes attached to two hot air balloons lifting them up, with labels on the balloons including 'teachers', 'bloggers', 'friends', 'developers'. Below the code hero, several people carry a trampoline with labels 'support' and “community” that will catch them if they fall."
+knitr::include_graphics("images/horst-support-community.png")
+```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
