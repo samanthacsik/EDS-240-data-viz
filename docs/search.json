@@ -147,11 +147,74 @@
     "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this Pre-course reflection:\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the title of the SR1-precourse-reflection.qmd YAML\naddress all points in parts 1, 2, and 3 above in at least 2 sentences each\npush SR1-precourse-reflection.qmd to GitHub using GitHub Classrooms by 11:59pm PT on Sat 01/13/2024"
   },
   {
+    "objectID": "HW1.html",
+    "href": "HW1.html",
+    "title": "Assignment #1 (HW #1)",
+    "section": "",
+    "text": "You must earn a “Satisfactory” mark for all individual Parts (I, II and III) of this homework assignment to earn a “Satisfactory” mark for Assignment #1."
+  },
+  {
+    "objectID": "HW1.html#learning-outcomes",
+    "href": "HW1.html#learning-outcomes",
+    "title": "Assignment #1 (HW #1)",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n(see the course syllabus for a full list of course learning outcomes)\n\nread code written by others\nassess, critique, and provide constructive feedback on data visualizations"
+  },
+  {
+    "objectID": "HW1.html#description",
+    "href": "HW1.html#description",
+    "title": "Assignment #1 (HW #1)",
+    "section": "Description",
+    "text": "Description\nMuch of your time as a data scientist will be spent looking at code written by others – maybe you’re trying to learn from and adapt someone else’s code for your own work, or perhaps you’ve been asked to conduct a code review for a colleague. Being able to look at and make sense of code that you did not write yourself is an invaluable skill and an important one to practice throughout your learning journey. Here, you’ll be asked to interpret and annotate ggplot2 code written by someone else. This will likely require running code (both as a whole and line-by-line), as well as Googling and/or reading documentation.\nAnnotate the following code, adapted from Christophe Nicault’s visualization titled, Evolution of deaths from indoor air pollution. You can find metadata and additional information on the rfordatascience/tidytuesday (2022-04-12) readme.md.\n\n\n\n\n\n\nInstall the following packages (if you don’t already have them) using install.packages(\"package_name\"):\n\n\n\n\n{tidytuesdayR}\n{tidyverse}\n{patchwork}\n{showtext}\n{sysfonts}\n{countrycode}\n{glue}\n{scales}\n\n\n\n\n\n\n\n\n\nClick here to expand the code\n\n\n\n\n\nTips:\n\nI love using the {ARTofR} package to create titles, dividers, and block comments in my scripts and Qmd/Rmd files\nIf you don’t immediately understand the purpose of a line/chunk of code, skip over it (temporarily) and continue working your way through the following code – it will likely become more evident given additional context\n\n\n# code here\n\n\n\n\nOnce complete, answer the following questions:\n\nDescribe two elements of this plot that you find visually-pleasing/easy to understand/intuitive. Why?\nDescribe two elements of this plot that you feel could be better presented in a different way. Why?\nDescribe two new things that you learned by interpreting/annotating this code. These could be packages, functions, or even code organizational approaches that you hadn’t previously known about or considered."
+  },
+  {
     "objectID": "HW1.html#rubric-specifications",
     "href": "HW1.html#rubric-specifications",
     "title": "Assignment #1 (HW #1)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1:"
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part I:"
+  },
+  {
+    "objectID": "HW1.html#learning-outcomes-1",
+    "href": "HW1.html#learning-outcomes-1",
+    "title": "Assignment #1 (HW #1)",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n(see the course syllabus for a full list of course learning outcomes)\n\nidentify which types of visualizations are most appropriate for your data and your audience\nprepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations"
+  },
+  {
+    "objectID": "HW1.html#description-1",
+    "href": "HW1.html#description-1",
+    "title": "Assignment #1 (HW #1)",
+    "section": "Description",
+    "text": "Description\nRecall the five-step workflow for building data visualizations (discussed in class on Monday 01/08):\n\nDetermine data type(s)\nDetermine appropriate visualization type(s)\nCreate a basic plot\nImprove clarity & take home message\nFinal touches / polishing\n\nGiven this data set (TBD) and this question (TBD), apply the above workflow. You must complete steps 1 - 3 (you may need to do some Googling to determine what geom_* or {ggplot2} extension package to use when creating your basic plot).\n\n(step 1) write out, in words, the data types of the variables from the above data set (you only need to do this for the variables used in creating your plot)\n(step 2) write out, in words, the appropriate visualization types you considered given these data types (hint: revisit from Data to Viz for a helpful decision tree)\n(step 3) write ggplot code to create a basic plot to visualize these data\n\nPhysically coding steps 4 & 5 is optional – instead, you may explain, in writing or by sketching out on paper/in PowerPoint, the following:\n\n(representing step 4) how you would improve plot clarity/the take home message(s)\n(representing step 5) some design choices you might make as you polich off your data visualization"
+  },
+  {
+    "objectID": "HW1.html#rubric-specifications-1",
+    "href": "HW1.html#rubric-specifications-1",
+    "title": "Assignment #1 (HW #1)",
+    "section": "Rubric (specifications)",
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part II:"
+  },
+  {
+    "objectID": "HW1.html#learning-outcomes-2",
+    "href": "HW1.html#learning-outcomes-2",
+    "title": "Assignment #1 (HW #1)",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n(see the course syllabus for a full list of course learning outcomes)\n\n…"
+  },
+  {
+    "objectID": "HW1.html#description-2",
+    "href": "HW1.html#description-2",
+    "title": "Assignment #1 (HW #1)",
+    "section": "Description",
+    "text": "Description"
+  },
+  {
+    "objectID": "HW1.html#rubric-specifications-2",
+    "href": "HW1.html#rubric-specifications-2",
+    "title": "Assignment #1 (HW #1)",
+    "section": "Rubric (specifications)",
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part II:"
   },
   {
     "objectID": "HW2.html#rubric-specifications",

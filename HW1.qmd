@@ -2,10 +2,118 @@
 title: "Assignment #1 (HW #1)"
 subtitle: "Assigned Mon 01/08/2024 | Due Sat 01/20/2024"
 title-block-banner: true
+toc: true
 ---
+
+::: {.center-text}
+***You must earn a "Satisfactory" mark for all individual Parts (I, II and III) of this homework assignment to earn a "Satisfactory" mark for Assignment #1.***
+:::
+
+# [Part I: Annotating `{ggplot2}` code]{.pink-text}
+
+## Learning Outcomes 
+
+(see the course [syllabus](https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit) for a full list of course learning outcomes)
+
+- read code written by others 
+- assess, critique, and provide constructive feedback on data visualizations
+
+## Description 
+
+Much of your time as a data scientist will be spent looking at code written by others -- maybe you're trying to learn from and adapt someone else's code for your own work, or perhaps you've been asked to conduct a code review for a colleague. Being able to look at and make sense of code that you did not write yourself is an invaluable skill and an important one to practice throughout your learning journey. Here, you'll be asked to interpret and annotate `ggplot2` code written by someone else. This will likely require running code (both as a whole *and* line-by-line), as well as Googling and/or reading documentation.
+
+[**Annotate the following code**]{.teal-text}, adapted from [Christophe Nicault's](https://github.com/cnicault) visualization titled, ***Evolution of deaths from indoor air pollution***. You can find metadata and additional information on the [rfordatascience/tidytuesday (2022-04-12) `readme.md`](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-04-12/readme.md#data-dictionary).
+
+::: {.callout-note}
+## Install the following packages (if you don't already have them) using `install.packages("package_name")`:
+
+- [`{tidytuesdayR}`](https://cran.r-project.org/web/packages/tidytuesdayR/index.html)
+- [`{tidyverse}`](https://cran.r-project.org/web/packages/tidyverse/index.html)
+- [`{patchwork}`](https://cran.r-project.org/web/packages/patchwork/index.html)
+- [`{showtext}`](https://cran.r-project.org/web/packages/showtext/index.html)
+- [`{sysfonts}`](https://cran.r-project.org/web/packages/sysfonts/index.html)
+- [`{countrycode}`](https://cran.r-project.org/web/packages/countrycode/index.html)
+- [`{glue}`](https://cran.r-project.org/web/packages/glue/index.html)
+- [`{scales}`](https://cran.r-project.org/web/packages/scales/index.html)
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Click here to expand the code
+
+**Tips:**
+
+- I love using the [`{ARTofR}` package](https://github.com/Hzhang-ouce/ARTofR) to create titles, dividers, and block comments in my scripts and Qmd/Rmd files 
+- If you don't immediately understand the purpose of a line/chunk of code, skip over it (temporarily) and continue working your way through the following code -- it will likely become more evident given additional context
+
+```{r}
+#| eval: false
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+
+# code here
+```
+:::
+
+[**Once complete, answer the following questions:**]{.teal-text}
+
+- [ ] Describe two elements of this plot that you find visually-pleasing/easy to understand/intuitive. Why?
+- [ ] Describe two elements of this plot that you feel could be better presented in a different way. Why? 
+- [ ] Describe two new things that you learned by interpreting/annotating this code. These could be  packages, functions, or even code organizational approaches that you hadn't previously known about or considered.
+
+## Rubric (specifications)
+
+You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part I:
+
+---
+
+# [Part II: Building a basic ggplot]{.pink-text}
+
+## Learning Outcomes 
+
+(see the course [syllabus](https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit) for a full list of course learning outcomes)
+
+- identify which types of visualizations are most appropriate for your data and your audience
+- prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations
+
+## Description 
+
+Recall the [five-step workflow for building data visualizations](https://ucsb-meds.github.io/ggplot2-workflow/) (discussed in class on Monday 01/08):
+
+1. Determine data type(s)
+2. Determine appropriate visualization type(s)
+3. Create a basic plot
+4. Improve clarity & take home message
+5. Final touches / polishing
+
+Given [this data set]() (TBD) and [this question]() (TBD), apply the above workflow. [**You must complete steps 1 - 3**]{.teal-text} (you may need to do some Googling to determine what `geom_*` or `{ggplot2}` extension package to use when creating your basic plot). 
+
+- [ ] **(step 1)** write out, in words, the data types of the variables from the above data set (you only need to do this for the variables used in creating your plot) 
+- [ ] **(step 2)** write out, in words, the appropriate visualization types you considered given these data types *(hint: revisit [from Data to Viz](https://www.data-to-viz.com/) for a helpful decision tree)*
+- [ ] **(step 3)** write ggplot code to create a basic plot to visualize these data 
+
+[**Physically coding steps 4 & 5 is optional -- instead, you may explain, in writing or by sketching out on paper/in PowerPoint, the following:**]{.teal-text} 
+
+- [ ] **(representing step 4)** how you would improve plot clarity/the take home message(s) 
+- [ ] **(representing step 5)** some design choices you might make as you polich off your data visualization 
+
+
+## Rubric (specifications)
+
+You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part II:
+
+---
+
+# [Part III: Find a data set(s) that interests you]{.pink-text}
+
+## Learning Outcomes 
+
+(see the course [syllabus](https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit) for a full list of course learning outcomes)
+
+- ...
 
 ## Description 
 
 ## Rubric (specifications)
 
-You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1:
+You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part II:

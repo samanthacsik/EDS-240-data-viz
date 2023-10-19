@@ -50,6 +50,16 @@ h2 {
 	margin-bottom: 1em;
 }
 
+// teal highlight
+.teal-highlight {
+  background-color: rgba(4, 124, 144, 0.5);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 8px;
+  border-radius: 25px;
+}
+
 // gray text
 .gray-text {
   color: $gray;
@@ -58,6 +68,11 @@ h2 {
 // teal text
 .teal-text {
   color: $teal;
+}
+
+// pink text
+.pink-text {
+  color: $magenta;
 }
 
 // center text (horizontally)

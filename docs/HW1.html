@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -179,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">Assignment #1 (HW #1)</h1>
             <p class="subtitle lead">Assigned Mon 01/08/2024 | Due Sat 01/20/2024</p>
                       </div>
@@ -197,21 +231,169 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#part-i-annotating-ggplot2-code" id="toc-part-i-annotating-ggplot2-code" class="nav-link active" data-scroll-target="#part-i-annotating-ggplot2-code"><span class="pink-text">Part I: Annotating <code>{ggplot2}</code> code</span></a>
+  <ul class="collapse">
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
+  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description">Description</a></li>
+  <li><a href="#rubric-specifications" id="toc-rubric-specifications" class="nav-link" data-scroll-target="#rubric-specifications">Rubric (specifications)</a></li>
+  </ul></li>
+  <li><a href="#part-ii-building-a-basic-ggplot" id="toc-part-ii-building-a-basic-ggplot" class="nav-link" data-scroll-target="#part-ii-building-a-basic-ggplot"><span class="pink-text">Part II: Building a basic ggplot</span></a>
+  <ul class="collapse">
+  <li><a href="#learning-outcomes-1" id="toc-learning-outcomes-1" class="nav-link" data-scroll-target="#learning-outcomes-1">Learning Outcomes</a></li>
+  <li><a href="#description-1" id="toc-description-1" class="nav-link" data-scroll-target="#description-1">Description</a></li>
+  <li><a href="#rubric-specifications-1" id="toc-rubric-specifications-1" class="nav-link" data-scroll-target="#rubric-specifications-1">Rubric (specifications)</a></li>
+  </ul></li>
+  <li><a href="#part-iii-find-a-data-sets-that-interests-you" id="toc-part-iii-find-a-data-sets-that-interests-you" class="nav-link" data-scroll-target="#part-iii-find-a-data-sets-that-interests-you"><span class="pink-text">Part III: Find a data set(s) that interests you</span></a>
+  <ul class="collapse">
+  <li><a href="#learning-outcomes-2" id="toc-learning-outcomes-2" class="nav-link" data-scroll-target="#learning-outcomes-2">Learning Outcomes</a></li>
+  <li><a href="#description-2" id="toc-description-2" class="nav-link" data-scroll-target="#description-2">Description</a></li>
+  <li><a href="#rubric-specifications-2" id="toc-rubric-specifications-2" class="nav-link" data-scroll-target="#rubric-specifications-2">Rubric (specifications)</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
+<div class="center-text">
+<p><strong><em>You must earn a “Satisfactory” mark for all individual Parts (I, II and III) of this homework assignment to earn a “Satisfactory” mark for Assignment #1.</em></strong></p>
+</div>
+<section id="part-i-annotating-ggplot2-code" class="level1">
+<h1><span class="pink-text">Part I: Annotating <code>{ggplot2}</code> code</span></h1>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
+<p>(see the course <a href="https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit">syllabus</a> for a full list of course learning outcomes)</p>
+<ul>
+<li>read code written by others</li>
+<li>assess, critique, and provide constructive feedback on data visualizations</li>
+</ul>
+</section>
 <section id="description" class="level2">
 <h2 class="anchored" data-anchor-id="description">Description</h2>
+<p>Much of your time as a data scientist will be spent looking at code written by others – maybe you’re trying to learn from and adapt someone else’s code for your own work, or perhaps you’ve been asked to conduct a code review for a colleague. Being able to look at and make sense of code that you did not write yourself is an invaluable skill and an important one to practice throughout your learning journey. Here, you’ll be asked to interpret and annotate <code>ggplot2</code> code written by someone else. This will likely require running code (both as a whole <em>and</em> line-by-line), as well as Googling and/or reading documentation.</p>
+<p><span class="teal-text"><strong>Annotate the following code</strong></span>, adapted from <a href="https://github.com/cnicault">Christophe Nicault’s</a> visualization titled, <strong><em>Evolution of deaths from indoor air pollution</em></strong>. You can find metadata and additional information on the <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-04-12/readme.md#data-dictionary">rfordatascience/tidytuesday (2022-04-12) <code>readme.md</code></a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Install the following packages (if you don’t already have them) using <code>install.packages("package_name")</code>:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/tidytuesdayR/index.html"><code>{tidytuesdayR}</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/tidyverse/index.html"><code>{tidyverse}</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/patchwork/index.html"><code>{patchwork}</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/showtext/index.html"><code>{showtext}</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/sysfonts/index.html"><code>{sysfonts}</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/countrycode/index.html"><code>{countrycode}</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/glue/index.html"><code>{glue}</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/scales/index.html"><code>{scales}</code></a></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Click here to expand the code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Tips:</strong></p>
+<ul>
+<li>I love using the <a href="https://github.com/Hzhang-ouce/ARTofR"><code>{ARTofR}</code> package</a> to create titles, dividers, and block comments in my scripts and Qmd/Rmd files</li>
+<li>If you don’t immediately understand the purpose of a line/chunk of code, skip over it (temporarily) and continue working your way through the following code – it will likely become more evident given additional context</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p><span class="teal-text"><strong>Once complete, answer the following questions:</strong></span></p>
+<ul class="task-list">
+<li><input type="checkbox">Describe two elements of this plot that you find visually-pleasing/easy to understand/intuitive. Why?</li>
+<li><input type="checkbox">Describe two elements of this plot that you feel could be better presented in a different way. Why?</li>
+<li><input type="checkbox">Describe two new things that you learned by interpreting/annotating this code. These could be packages, functions, or even code organizational approaches that you hadn’t previously known about or considered.</li>
+</ul>
 </section>
 <section id="rubric-specifications" class="level2">
 <h2 class="anchored" data-anchor-id="rubric-specifications">Rubric (specifications)</h2>
-<p>You must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1:</p>
+<p>You must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part I:</p>
+<hr>
+</section>
+</section>
+<section id="part-ii-building-a-basic-ggplot" class="level1">
+<h1><span class="pink-text">Part II: Building a basic ggplot</span></h1>
+<section id="learning-outcomes-1" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes-1">Learning Outcomes</h2>
+<p>(see the course <a href="https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit">syllabus</a> for a full list of course learning outcomes)</p>
+<ul>
+<li>identify which types of visualizations are most appropriate for your data and your audience</li>
+<li>prepare (e.g.&nbsp;clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations</li>
+</ul>
+</section>
+<section id="description-1" class="level2">
+<h2 class="anchored" data-anchor-id="description-1">Description</h2>
+<p>Recall the <a href="https://ucsb-meds.github.io/ggplot2-workflow/">five-step workflow for building data visualizations</a> (discussed in class on Monday 01/08):</p>
+<ol type="1">
+<li>Determine data type(s)</li>
+<li>Determine appropriate visualization type(s)</li>
+<li>Create a basic plot</li>
+<li>Improve clarity &amp; take home message</li>
+<li>Final touches / polishing</li>
+</ol>
+<p>Given <a href="">this data set</a> (TBD) and <a href="">this question</a> (TBD), apply the above workflow. <span class="teal-text"><strong>You must complete steps 1 - 3</strong></span> (you may need to do some Googling to determine what <code>geom_*</code> or <code>{ggplot2}</code> extension package to use when creating your basic plot).</p>
+<ul class="task-list">
+<li><input type="checkbox"><strong>(step 1)</strong> write out, in words, the data types of the variables from the above data set (you only need to do this for the variables used in creating your plot)</li>
+<li><input type="checkbox"><strong>(step 2)</strong> write out, in words, the appropriate visualization types you considered given these data types <em>(hint: revisit <a href="https://www.data-to-viz.com/">from Data to Viz</a> for a helpful decision tree)</em></li>
+<li><input type="checkbox"><strong>(step 3)</strong> write ggplot code to create a basic plot to visualize these data</li>
+</ul>
+<p><span class="teal-text"><strong>Physically coding steps 4 &amp; 5 is optional – instead, you may explain, in writing or by sketching out on paper/in PowerPoint, the following:</strong></span></p>
+<ul class="task-list">
+<li><input type="checkbox"><strong>(representing step 4)</strong> how you would improve plot clarity/the take home message(s)</li>
+<li><input type="checkbox"><strong>(representing step 5)</strong> some design choices you might make as you polich off your data visualization</li>
+</ul>
+</section>
+<section id="rubric-specifications-1" class="level2">
+<h2 class="anchored" data-anchor-id="rubric-specifications-1">Rubric (specifications)</h2>
+<p>You must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part II:</p>
+<hr>
+</section>
+</section>
+<section id="part-iii-find-a-data-sets-that-interests-you" class="level1">
+<h1><span class="pink-text">Part III: Find a data set(s) that interests you</span></h1>
+<section id="learning-outcomes-2" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes-2">Learning Outcomes</h2>
+<p>(see the course <a href="https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit">syllabus</a> for a full list of course learning outcomes)</p>
+<ul>
+<li>…</li>
+</ul>
+</section>
+<section id="description-2" class="level2">
+<h2 class="anchored" data-anchor-id="description-2">Description</h2>
+</section>
+<section id="rubric-specifications-2" class="level2">
+<h2 class="anchored" data-anchor-id="rubric-specifications-2">Rubric (specifications)</h2>
+<p>You must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part II:</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
