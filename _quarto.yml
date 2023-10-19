@@ -29,7 +29,8 @@ website:
             href: lecture7.qmd
           - text: lecture 8 (week 10)
             href: lecture8.qmd
-      - assignments.qmd
+      - text: assignments
+        href: assignments.qmd
       - text: redeem tokens
         href: https://docs.google.com/forms/d/e/1FAIpQLSdOP32K7_A3zzENvYQvIBCnLveaLE-exnFlqDV1xBWz66rWoA/viewform
         target: _blank

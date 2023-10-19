@@ -1,6 +1,6 @@
 ---
 title: "Assignments"
-subtitle: "tbd"
+subtitle: "assignment links will become available in the tables below on the dates that they are assigned"
 title-block-banner: true
 ---
 
@@ -20,7 +20,7 @@ Earning "Satisfactory" marks on Self-reflections (SRs) and Homework Assignments 
 
 ## End-of-class surveys
 
-End-of-class surveys (EOCs) will become available at the end of each class (Mondays at 3:50pm PT) and are due by end-of-day (11:59pm PT). Completing EOCs by the due dates will, in-part (along with class attendance), determine whether you earn a +/- on your course grade. 
+End-of-class surveys (EOCs) will become available at the end of each class (Mondays) and are due by end-of-day (11:55pm PT). Completing EOCs by the due dates/times will, in-part (along with class attendance), determine whether you earn a +/- on your course grade. 
 
 **Note:** The letter grade, A, is the highest grade you can earn (i.e. you cannot earn an A+). You must attend 8 classes and submit >=6 EOCs (see [Grade Tracker](assignments.qmd#grade-tracker), below) to earn an A.
 
@@ -48,3 +48,4 @@ Use the Grade Tracker, below, to determine your course grade:
 knitr::include_graphics("images/grade-tracker.png")
 ```
 
+[Redeem tokens](https://docs.google.com/forms/d/e/1FAIpQLSdOP32K7_A3zzENvYQvIBCnLveaLE-exnFlqDV1xBWz66rWoA/viewform) in exchange for assignment extensions, missing class, or to revise/resubmit an assignment that received a "Not Yet" mark.
