@@ -41,6 +41,8 @@ website:
             target: _blank
           - text: recommended reading & materials
             href: resources.qmd
+          - text: getting unstuck
+            href: getting-unstuck.qmd
       - icon: github
         menu:
           - text: Source Code

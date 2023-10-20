@@ -50,14 +50,12 @@ h2 {
 	margin-bottom: 1em;
 }
 
-// teal highlight
-.teal-highlight {
-  background-color: rgba(4, 124, 144, 0.5);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 5px;
-  padding-left: 8px;
-  border-radius: 25px;
+// pink-box
+.pink-box {
+  width: 800px;
+  padding: 10px;
+  border: 5px solid rgba(217, 178, 189, 0.5);
+  margin: 0 auto;
 }
 
 // gray text
