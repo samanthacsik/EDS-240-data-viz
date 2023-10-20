@@ -13,8 +13,6 @@ toc: true
 
 ## Learning Outcomes 
 
-(see the course [syllabus](https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit) for a full list of course learning outcomes)
-
 - read code written by others 
 - assess, critique, and provide constructive feedback on data visualizations
 
@@ -362,9 +360,9 @@ dev.off()
 
 [**Once complete, answer the following questions:**]{.teal-text}
 
-- [ ] Describe two elements of this plot that you find visually-pleasing/easy to understand/intuitive. Why?
-- [ ] Describe two elements of this plot that you feel could be better presented in a different way. Why? 
-- [ ] Describe two new things that you learned by interpreting/annotating this code. These could be  packages, functions, or even code organizational approaches that you hadn't previously known about or considered.
+- [ ] Describe two elements of this plot that you find visually-pleasing/easy to understand/intuitive. Why? [**(4-10 sentences)**]{.peach-text}
+- [ ] Describe two elements of this plot that you feel could be better presented in a different way. Why? [**(4-10 sentences)**]{.peach-text}
+- [ ] Describe two new things that you learned by interpreting/annotating this code. These could be  packages, functions, or even code organizational approaches that you hadn't previously known about or considered. [**(4-10 sentences)**]{.peach-text}
 
 ## Rubric (specifications)
 
@@ -378,8 +376,6 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 # [Part II: Building a basic ggplot]{.pink-text}
 
 ## Learning Outcomes 
-
-(see the course [syllabus](https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit) for a full list of course learning outcomes)
 
 - identify which types of visualizations are most appropriate for your data and your audience
 - prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations
@@ -396,14 +392,16 @@ Recall the [five-step workflow for building data visualizations](https://ucsb-me
 
 Given [this data set]() (TBD) and [this question]() (TBD), apply the above workflow. [**You must complete steps 1 - 3**]{.teal-text} (you may need to do some Googling to determine what `geom_*` or `{ggplot2}` extension package to use when creating your basic plot). 
 
-- [ ] **(step 1)** write out, in words, the data types of the variables from the above data set (you only need to do this for the variables used in creating your plot) 
-- [ ] **(step 2)** write out, in words, the appropriate visualization types you considered given these data types *(hint: revisit [from Data to Viz](https://www.data-to-viz.com/) for a helpful decision tree)*
+- [ ] **(step 1)** write out, in words, the data types of the variables from the above data set (you only need to do this for the variables used in creating your plot) [**(1-2 sentences)**]{.peach-text}
+- [ ] **(step 2)** write out, in words, the appropriate visualization types you considered given these data types *(hint: revisit [from Data to Viz](https://www.data-to-viz.com/) for a helpful decision tree)* [**(1-2 sentences)**]{.peach-text}
 - [ ] **(step 3)** write ggplot code to create a basic plot to visualize these data 
 
 [**Physically coding steps 4 & 5 is optional -- instead, you may explain, in writing and/or by sketching out on paper, the following:**]{.teal-text} 
 
-- [ ] **(representing step 4)** how you would improve plot clarity/the take home message(s) 
-- [ ] **(representing step 5)** some design choices you might make as you polish off your data visualization 
+- [ ] **(representing step 4)** how you would improve plot clarity/the take home message(s) [**(1-2 sentences)**]{.peach-text}
+- [ ] **(representing step 5)** some design choices you might make as you polish off your data visualization [**(1-2 sentences)**]{.peach-text}
+
+**Note:** Steps 4 and 5, above, are thought exercises -- it's okay if you don't yet know exactly how to approach answering these (we'll be spending time during these first few weeks of class talking about data communication and design theory).
 
 ## Rubric (specifications)
 
@@ -415,12 +413,37 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 
 ## Learning Outcomes 
 
-(see the course [syllabus](https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit) for a full list of course learning outcomes)
-
 - ...
 
 ## Description 
 
+*A small part of each homework assignment will be dedicated to working on a series of data visualizations which will be due as part of Assignment #4 at the end of the quarter.* Assignment #4 will ask you to build three related, but different data visualizations -- all which will use the same data set(s), but present those data differently for three different audiences / purposes:
+
+1. **a visualization for a general audience (i.e. without domain expertise)** -- this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), and/or may even blend both art and science
+2. **a visualization to be included in a paper, technical documentation, or report** -- this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.
+3. **a visualization that you could include in presentation** -- you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you're animating pieces of your visualization onto a slide) 
+
+[**This week, you’ll focus on finding data that interest you and begin brainstorming some questions that you might explore / answer using those data.**]{.teal-text} 
+
+Your data set(s) should -- to some degree -- have an environmental focus. It may be related to a past project, or even your current Capstone or GP. It may also be a completely new data set(s), unrelated to anything you're currently working on. Some places to check out if you're looking for data (you are not limited to just these data sources): 
+
+- **[Data is Plural](https://www.data-is-plural.com/archive/) **-- is a weekly newsletter (and seasonal podcast) of useful / curious data sets, published by [Jeremy Singer-Vine](https://www.jsvine.com/)
+- **[DataOne](https://www.dataone.org/)** -- a repository of data repositories! Search across all member repositories (including repositories like [EDI Data Portal](https://portal.edirepository.org/nis/advancedSearch.jsp), [Arctic Data Center](https://arcticdata.io/catalog), [KNB](https://knb.ecoinformatics.org/), etc.) for environmental data (along with curated metadata records)
+- **[Kaggle Datasets](https://www.kaggle.com/datasets)** - Kaggle is an online community for data scientists and machine learning practitioners to find and publish data, as well as enter competitions to solve data science challenges
+
+***Note:** While we will not be working with spatial data models or building maps in EDS 240, you are welcome to use spatial data for this assignment if you are comfortable and excited to do so. We will not be able to offer as much support on the technical implementation of building maps-based visualizations, though the fundamental concepts of data communication and design theory that we'll be learning throughout this course will still apply. Relying on resources and knowledge from [EDS 223: Geospatial Analysis and Remote Sensing](https://ryoliver.github.io/EDS_223_spatial_analysis/) will be critical for anyone pursuing this option.*
+
+[**Once you've found your data set(s), answer the following questions:**]{.teal-text}
+
+- [ ] What is your data set(s) of? Be sure to include how it is related to the environment, if it's not immediately clear from your explanation. [**(<=4 sentences)**]{.peach-text}
+- [ ] What steps are involved in downloading or accessing the data (e.g. "I can download using a button via this online portal," "There's an R package for scraping the data," "I need to use an API to scrape the data," etc.)? [**(1-2 sentences)**]{.peach-text}
+- [ ] What question(s) do you want to answer using these data? [**(<=4 sentences)**]{.peach-text}
+- [ ] Will you need to combine multiple data sets to successfully answer your question(s)? If so, have you found all the necessary data? Do you have a way to combine it? [**(<=4 sentences)**]{.peach-text}
+- [ ] **Optional:** Import your data into R! (this will be a part of the next homework assignment) **IMPORTANT:** If your data files are large (>2GB) DO NOT push your data to GitHub. We'll talk more about this during the next assignment.
+
 ## Rubric (specifications)
 
 You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part II:
+
+- [ ] link to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4
+- [ ] answer the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you *do not* need to complete the **optional** importing of data

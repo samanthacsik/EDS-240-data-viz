@@ -19,6 +19,7 @@ $white: #FFFFFF;
 $off-white: #F7F7F7;
 $gray: #ADADAD;
 $dark-gray: #373A3E;
+$peach: #DF8073;
 
 // quarto sass variables
 $navbar-bg: $off-white;
@@ -71,6 +72,11 @@ h2 {
 // pink text
 .pink-text {
   color: $magenta;
+}
+
+// peach text
+.peach-text {
+  color: $peach;
 }
 
 // center text (horizontally)
