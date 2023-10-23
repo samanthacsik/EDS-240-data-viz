@@ -9,6 +9,8 @@ toc: true
 <div class="pink-box">***You must earn a "Satisfactory" mark for each individual Part (I, II and III) to earn a "Satisfactory" mark for Assignment #1.***</div>
 :::
 
+<br>
+
 # [Part I: Annotating `{ggplot2}` code]{.pink-text}
 
 ## Learning Outcomes 
@@ -371,7 +373,14 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 - [ ] update each comment line in the code that reads, `ANNOTATE`, with a *brief* description, written in your own words
 - [ ] answer the three concluding questions; each response should be between 4-10 sentences long
 
----
+
+<br>
+
+::: {.center-text .large-fa-icon .teal-text}
+{{< fa code title="The symbol for code, </>" >}} End Part I {{< fa code title="The symbol for code, </>" >}}
+:::
+
+<br>
 
 # [Part II: Building a basic ggplot]{.pink-text}
 
@@ -407,13 +416,27 @@ Given [this data set]() (TBD) and [this question]() (TBD), apply the above workf
 
 You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part II:
 
----
+<br>
+
+::: {.center-text .large-fa-icon .teal-text}
+{{< fa chart-line title="A simple line chart" >}} End Part II {{< fa chart-line title="A simple line chart" >}}
+:::
+
+<br>
 
 # [Part III: Find a data set(s) that interests you]{.pink-text}
 
 ## Learning Outcomes 
 
-- ...
+**Note:** This part of HW #1 is the first step in working towards your final course assignment (we'll be breaking it down a bit, week-by-week). Your final assignment is meant to combine nearly all of the course learning outcomes(!):
+
+- identify which types of visualizations are most appropriate for your data and your audience
+- prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations
+- build effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages
+- write code from scratch and read and adapt code written by others
+- apply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations 
+
+This week, we'll mostly be focused on some prep work. Read the Description, below, for details.
 
 ## Description 
 
@@ -447,3 +470,11 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 
 - [ ] link to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4
 - [ ] answer the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you *do not* need to complete the **optional** importing of data
+
+<br>
+
+::: {.center-text .large-fa-icon .teal-text}
+{{< fa table title="A data table with two columns and two rows" >}} End Part III {{< fa table title="A data table with two columns and two rows" >}}
+:::
+
+<br>

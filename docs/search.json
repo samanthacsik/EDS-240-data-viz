@@ -179,7 +179,7 @@
     "href": "HW1.html#rubric-specifications",
     "title": "Assignment #1 (HW #1)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part I:\n\nupdate each comment line in the code that reads, ANNOTATE, with a brief description, written in your own words\nanswer the three concluding questions; each response should be between 4-10 sentences long"
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part I:\n\nupdate each comment line in the code that reads, ANNOTATE, with a brief description, written in your own words\nanswer the three concluding questions; each response should be between 4-10 sentences long\n\n\n\n End Part I"
   },
   {
     "objectID": "HW1.html#learning-outcomes-1",
@@ -200,14 +200,14 @@
     "href": "HW1.html#rubric-specifications-1",
     "title": "Assignment #1 (HW #1)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part II:"
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part II:\n\n\n End Part II"
   },
   {
     "objectID": "HW1.html#learning-outcomes-2",
     "href": "HW1.html#learning-outcomes-2",
     "title": "Assignment #1 (HW #1)",
     "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\n…"
+    "text": "Learning Outcomes\nNote: This part of HW #1 is the first step in working towards your final course assignment (we’ll be breaking it down a bit, week-by-week). Your final assignment is meant to combine nearly all of the course learning outcomes(!):\n\nidentify which types of visualizations are most appropriate for your data and your audience\nprepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\nbuild effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages\nwrite code from scratch and read and adapt code written by others\napply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations\n\nThis week, we’ll mostly be focused on some prep work. Read the Description, below, for details."
   },
   {
     "objectID": "HW1.html#description-2",
@@ -221,7 +221,7 @@
     "href": "HW1.html#rubric-specifications-2",
     "title": "Assignment #1 (HW #1)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part II:\n\nlink to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4\nanswer the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you do not need to complete the optional importing of data"
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part II:\n\nlink to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4\nanswer the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you do not need to complete the optional importing of data\n\n\n\n End Part III"
   },
   {
     "objectID": "HW2.html#rubric-specifications",
