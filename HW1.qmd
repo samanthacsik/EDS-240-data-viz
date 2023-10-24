@@ -22,7 +22,7 @@ toc: true
 
 Much of your time as a data scientist will be spent looking at code written by others -- maybe you're trying to learn from and adapt someone else's code for your own work, or perhaps you've been asked to conduct a code review for a colleague. Being able to look at and make sense of code that you did not write yourself is an invaluable skill and an important one to practice throughout your learning journey. Here, you'll be asked to interpret and annotate `ggplot2` code written by someone else. This will likely require running code (both as a whole *and* line-by-line), as well as Googling and/or reading documentation.
 
-[**Annotate the following code**]{.teal-text}, adapted from [Christophe Nicault's](https://github.com/cnicault) visualization titled, ***Evolution of deaths from indoor air pollution*** ([original code](https://github.com/cnicault/tidytuesday/blob/master/2022/2022-15-indoor_air_pollution/indoor_air_pollution.Rmd)). You can find metadata and additional information on the [rfordatascience/tidytuesday (2022-04-12) `readme.md`](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-04-12/readme.md#data-dictionary). 
+[**Annotate the following code**]{.teal-text}, adapted from [Christophe Nicault's](https://github.com/cnicault) visualization titled, ***Evolution of deaths from indoor air pollution*** ([original code](https://github.com/cnicault/tidytuesday/blob/master/2022/2022-15-indoor_air_pollution/indoor_air_pollution.Rmd)). You can find metadata and additional information on the [rfordatascience/tidytuesday (2022-04-12) `readme.md`](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-04-12/readme.md#data-dictionary). **Note:** A select few lines of code have already been annotated for you.
 
 ::: {.callout-note}
 ## Install the following packages (if you don't already have them) using `install.packages("package_name")`:
@@ -43,6 +43,7 @@ Much of your time as a data scientist will be spent looking at code written by o
 
 **Tips:**
 
+- See lines 114 and 120 for examples of code annotations -- aim to include this level of detail 
 - I love using the [`{ARTofR}` package](https://github.com/Hzhang-ouce/ARTofR) to create titles, dividers, and block comments in my scripts and Qmd/Rmd files 
 - If you don't immediately understand the purpose of a line/chunk of code, skip over it (temporarily) and continue working your way through the following code -- it oftentimes becomes more evident given additional context
 - Plots may look *super* squished in the Viewer -- use the **Zoom** button to pop them open in a separate window
@@ -92,7 +93,7 @@ indoor_pollution <- indoor_pollution %>%
   rename(perc_death = 4) %>% 
   
   # ANNOTATE (briefly explain this line of code) ----
-  mutate(continent = countrycode::countrycode(Code, "iso3c", "continent")) 
+  mutate(continent = countrycode::countrycode(sourcevar = Code, origin = "iso3c", destination = "continent")) 
 
 #......ANNOTATE (generally, what does this code block do?).......
 gap_indoor <- indoor_pollution %>%
@@ -113,7 +114,7 @@ gap_indoor <- indoor_pollution %>%
   mutate(gap = Y2019 - Y1990) %>% 
   
   # ANNOTATE (briefly explain this line of code) ----
-  mutate(continent = countrycode::countrycode(Code, "iso3c", "continent")) 
+  mutate(continent = countrycode::countrycode(sourcevar = Code, origin = "iso3c", destination = "continent")) 
 
 #......ANNOTATE (generally, what does this code block do?).......
 fuel_gdp_clean <- fuel_gdp %>%
@@ -125,7 +126,7 @@ fuel_gdp_clean <- fuel_gdp %>%
   select(-Continent) %>% 
   
   # ANNOTATE (briefly explain this line of code) ----
-  mutate(continent = countrycode::countrycode(Code, "iso3c", "continent")) %>% 
+  mutate(continent = countrycode::countrycode(sourcevar = Code, origin = "iso3c", destination = "continent")) %>% 
   
   # ANNOTATE (briefly explain this line of code) ----
   filter(!is.na(continent)) 
@@ -164,13 +165,13 @@ connected_scatterplot <- ggplot(data = connected_scatterplot_df, aes(x = clean_f
   # ANNOTATE (briefly explain this line of code) ----
   geom_line(aes(group = Code, color = continent), linewidth = 0.9) + 
   
-  # ANNOTATE (briefly explain this line of code) ----
+  # add scatterplot layer; points colored by 'continent' variable, outlined in white ----
   geom_point(aes(fill = continent), size = 1, shape = 21, color = "white") + 
   
   # ANNOTATE (briefly explain this line of code) ----
   annotate("text", x = 96, y = 21, label = graph_legend, family = "roboto", size = 4, hjust = 1, vjust = 1) + 
   
-  # ANNOTATE (briefly explain these lines of code) ----
+  # convert x-axis & y-axis values to %; add some padding between data and axes ----
   scale_x_continuous(labels = scales::label_percent(scale = 1), expand = c(0.01, 0.01)) + 
   scale_y_continuous(labels = scales::label_percent(scale = 1, accuracy = 1), expand = c(0.01, 0.01)) + 
   
@@ -370,7 +371,7 @@ dev.off()
 
 You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part I:
 
-- [ ] update each comment line in the code that reads, `ANNOTATE`, with a *brief* description, written in your own words
+- [ ] update each comment line in the code that reads, `ANNOTATE`, with a *brief* description, written in your own words (see lines 114 & 120 for example annotations; there are other lines that have been already annotated for you as well, i.e. lines 152 - 173, 295  - 305 -- you do not need to re-write these)
 - [ ] answer the three concluding questions; each response should be between 4-10 sentences long
 
 
@@ -391,7 +392,7 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 
 ## Description 
 
-Recall the [five-step workflow for building data visualizations](https://ucsb-meds.github.io/ggplot2-workflow/) (discussed in class on Monday 01/08):
+In class, we discussed a [five-step workflow](https://ucsb-meds.github.io/ggplot2-workflow/) for breaking down the process of transforming data into a visualization. The five steps are listed below:
 
 1. Determine data type(s)
 2. Determine appropriate visualization type(s)
@@ -399,7 +400,59 @@ Recall the [five-step workflow for building data visualizations](https://ucsb-me
 4. Improve clarity & take home message
 5. Final touches / polishing
 
-Given [this data set]() (TBD) and [this question]() (TBD), apply the above workflow. [**You must complete steps 1 - 3**]{.teal-text} (you may need to do some Googling to determine what `geom_*` or `{ggplot2}` extension package to use when creating your basic plot). 
+Here, you will apply this workflow to visualize lobster size data across multiple rocky reef sites along the Santa Barbara coastline.
+
+::: {.callout-note}
+## Understanding the data
+
+#### About SBC LTER
+The [Santa Barbara Coastal Long Term Ecological Research](https://sbclter.msi.ucsb.edu/) (SBC LTER) site was established in 2000 as part of the [LTER Network](https://lternet.edu/) to understand the ecology of coastal kelp forest ecosystems. Research and long-term ecological and environmental monitoring data is collected within a 10,000 square kilometer area of the northern portion of the Southern California Bight, which includes the Santa Barbara Channel, coastal watersheds, small estuaries, and sandy beaches that border the Channel. You can explore the full [data catalog](https://sbclter.msi.ucsb.edu/data/catalog/).
+
+#### About the data set
+
+There are five coastal rocky reef research sites at which the SBC LTER collects long-term monitoring data:
+
+- Naples Reef (NAPL)
+- Isla Vista Reef (IVEE)
+- Arroyo Quemado Reef (AQUE)
+- Mohawk Reef (MOHK)
+- Carpinteria Reef (CARP)
+
+In January 2012, [Naples Reef](https://wildlife.ca.gov/Conservation/Marine/MPAs/Naples) and [Isla Vista Reef](https://wildlife.ca.gov/Conservation/Marine/MPAs/Campus-Point) were [designated as Marine Protected Areas](https://www.parks.ca.gov/?page_id=27928) (MPAs), prohibiting any future take of lobsters (along with other living marine resources). Since then, the SBC LTER has conducted annual (late summer) benthic surveys at each of the above five sites, where SCUBA divers record lobster abundance and sizes. Explore the [metadata](https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.77) for more information.  
+
+#### Data citation
+
+Reed, D, R. Miller. 2023. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (*Panulirus interruptus*), ongoing since 2012 ver 9. Environmental Data Initiative. <https://doi.org/10.6073/pasta/3595322687af94cd532620ad9db94c77>. 
+
+#### Finding this data set
+
+*Knowing how to search for data can be tricky! Here's how I accessed this particular data set, should you want to search for LTER data yourself, in the future:*
+
+1. **Filter the [SBC LTER Data Catalog](https://sbclter.msi.ucsb.edu/data/catalog/)** for data sets related to **Reef/Kelp Forest** habitats (check the box next to the habitat type of interest, or filter by measurement type or LTER Core Research Area). This produces a table of data collections, descriptions, and links to individual data and metadata records.
+2. **Choose a data set of interest.** I was interested in the *SBC LTER: Spiny lobster in California* Collection, which includes three different data sets. I specifically chose, [Lobster abundace, size, and fishing pressure](https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.77) -- here, you'll find lots of metadata, including people and organizations involved in this data collection, temporal, geographic, and taxonomic coverage, methods and protocols, and links to data files. Additionally, you'll see a link to the [EDI Data Portal](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=77) (top right corner), which is the data repository and maintains all data and metadata produced by the LTER. EDI assigns a DOI (Digital Object Identifier) to each version of a data package (data package = data + metadata; SBC LTER updates this data set each year when new data is collected -- each update receives a new DOI).
+3. **Download or import the data.** You can download the data file from either the [SBC LTER Data Catalog](https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.77) *or* the [EDI Data Package](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=77). *However* I prefer reading in the data directly from online (that way, I don't need to worry about storing large data files). I recommend doing this from the [EDI Data Package](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=77) (rather than the SBC LTER Data Catalog), since the DOI ensures you can re-reference the exact same version, even after the data set is updated with new data (SBC LTER Data Catalog only has a download link for the most up-to-date version of the data). To do so, right click on the *Download Data* button, then select *Copy Link Address*.
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "50%"
+knitr::include_graphics("images/download-lob-data.png")
+```
+
+Use this url inside `read_csv()` to import the data into your script or Qmd/Rmd file:
+
+```{r}
+#| eval: false
+#| echo: true
+lobster_data <- read_csv("https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-sbc.77.9&entityid=f32823fba432f58f66c06b589b7efac6")
+```
+
+:::
+
+Given the above data set, apply the five-step workflow to create a data visualization that explores how lobster size differs across each of the five coastal rocky reef SBC LTER sites for the years 2012 (the IVEE and NAPL were established as MPAs) and 2022 (10 years later).
+
+[**You must complete steps 1 - 3**]{.teal-text} (you may need to do some Googling or reference documentation to determine what `geom_*` to use when creating your basic plot). 
 
 - [ ] **(step 1)** write out, in words, the data types of the variables from the above data set (you only need to do this for the variables used in creating your plot) [**(1-2 sentences)**]{.peach-text}
 - [ ] **(step 2)** write out, in words, the appropriate visualization types you considered given these data types *(hint: revisit [from Data to Viz](https://www.data-to-viz.com/) for a helpful decision tree)* [**(1-2 sentences)**]{.peach-text}
@@ -410,7 +463,7 @@ Given [this data set]() (TBD) and [this question]() (TBD), apply the above workf
 - [ ] **(representing step 4)** how you would improve plot clarity/the take home message(s) [**(1-2 sentences)**]{.peach-text}
 - [ ] **(representing step 5)** some design choices you might make as you polish off your data visualization [**(1-2 sentences)**]{.peach-text}
 
-**Note:** Steps 4 and 5, above, are thought exercises -- it's okay if you don't yet know exactly how to approach answering these (we'll be spending time during these first few weeks of class talking about data communication and design theory).
+**Note:** Steps 4 and 5, above, are thought exercises -- it's okay if you don't yet know exactly how to approach answering these (we'll be spending time during these first few weeks of class talking about data communication and design theory), but do your best to write down a few things that you think would help to improve both the clarity and overall design of your data visualization .
 
 ## Rubric (specifications)
 

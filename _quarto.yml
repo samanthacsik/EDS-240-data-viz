@@ -60,6 +60,7 @@ format:
     theme: meds-styles.scss
     toc: false
     page-layout: full
+    code-line-numbers: true
 
 
 

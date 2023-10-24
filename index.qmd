@@ -78,3 +78,7 @@ knitr::include_graphics("images/tbd.png")
 
 :::
 :::
+
+## Acknowledgements
+
+Building this course meant learning from the many incredible folks who think *a lot* about producing effective, beautiful, and responsible data visualizations. I relied heavily on the open source R / `{ggplot2}` / data viz teaching materials and tutorials that this wonderful data science community shares so willingly. Attribution will be included on any slides / materials where content is adapted from other educators. 
