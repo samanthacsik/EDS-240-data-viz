@@ -1,0 +1,39 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../meds-slides-styles.scss
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 1]{.custom-title}
+
+[*Course logistics, Intro, Grammar of Graphics review*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+:::: {.columns} 
+
+::: {.column width="50%"}
+[Sam Csik |]{.custom-subtitle2}<br>
+[Data Training Coordinator]{.custom-subtitle2}<br>
+[*National Center for Ecological Analysis & Synthesis*]{.custom-subtitle3}
+:::
+
+::: {.column width="50%"}
+[Master of Environmental Data Science |]{.custom-subtitle2}<br>
+[*Bren School of Environmental Science & Management*]{.custom-subtitle3}
+:::
+
+::::
+
+<br>
+
+::: {.title-footer}
+January 8th, 2024
+:::

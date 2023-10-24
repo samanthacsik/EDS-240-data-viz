@@ -44,7 +44,7 @@
   {
     "objectID": "lecture5.html",
     "href": "lecture5.html",
-    "title": "Visualizing Relationships",
+    "title": "Visualizing Relationships & Distributions",
     "section": "",
     "text": "Coming soon!"
   },
@@ -67,77 +67,28 @@
     "href": "lecture3.html",
     "title": "Graphic Design",
     "section": "",
-    "text": "Coming soon!"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "lecture1.html",
-    "href": "lecture1.html",
+    "objectID": "lecture1.html#materials",
+    "href": "lecture1.html#materials",
     "title": "Course logistics, Intro, Grammar of Graphics review",
+    "section": "Materials",
+    "text": "Materials\n\n lecture slides"
+  },
+  {
+    "objectID": "lecture1.html#assignment-reminders",
+    "href": "lecture1.html#assignment-reminders",
+    "title": "Course logistics, Intro, Grammar of Graphics review",
+    "section": "Assignment Reminders",
+    "text": "Assignment Reminders\n\n\n\nAssignment Type\nTitle\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024"
+  },
+  {
+    "objectID": "slides/lecture1-slides.html#title-slide",
+    "href": "slides/lecture1-slides.html#title-slide",
+    "title": "EDS 240",
     "section": "",
-    "text": "Coming soon!"
-  },
-  {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "Data Visualization & Communication",
-    "section": "Course Description",
-    "text": "Course Description\nEffectively communicating your work in a responsible, accessible and visually-pleasing way is often (if not, always) a central part of data science. This course will focus on the basic principles for effective communication through data visualization and using technical tools and workflows for creating and sharing data visualizations with diverse audiences.\nBy the end of this course, learners should be able to:\n\nIdentify which types of visualizations are most appropriate for your data and your audience\nPrepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\nBuild effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages\nWrite code from scratch and read and adapt code written by others\nApply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations\nAssess, critique, and provide constructive feedback on data visualizations"
-  },
-  {
-    "objectID": "index.html#teaching-team",
-    "href": "index.html#teaching-team",
-    "title": "Data Visualization & Communication",
-    "section": "Teaching Team",
-    "text": "Teaching Team\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\ntbd\nEmail: tbd\nLearn more: tbd"
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Data Visualization & Communication",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nBuilding this course meant learning from the many incredible folks who think a lot about producing effective, beautiful, and responsible data visualizations. I relied heavily on the open source R / {ggplot2} / data viz teaching materials and tutorials that this wonderful data science community shares so willingly. Attribution will be included on any slides / materials where content is adapted from other educators."
-  },
-  {
-    "objectID": "getting-unstuck.html",
-    "href": "getting-unstuck.html",
-    "title": "Getting unstuck",
-    "section": "",
-    "text": "A large part of being a data scientist is ~being okay~ with not immediately knowing the answers to your code challenges – troubleshooting errors, deciphering code, and trying new things (and likely failing at some…er many…of them) is all a part of the job. We all experience it, no matter how many years we’ve been at it.\n\n\n\n\n\n\n\n\n\n\nArtwork by Allison Horst\n\n\nWe often learn the most (and remember more of what we learned) when we take the time to troubleshoot on our own (or at least narrow down the potential problem(s)), so you should always plan to start there . The graphic below shows the order in which you should approach different resources for help:\n\n\n\n\n\n\n\n\n\n\n\nWhen you decide you’re going to ask a question to a peer / TA / instructor, be sure to (borrowed from Dr. Allison Horst’s Troubleshooting 101 lecture, EDS 221):\n\nProvide context. For example, “I’m trying to do this…” or “I’m working on the task where we do this…”\nShare the specific challenge. “I’m specifically trying to [insert function / package] to do this thing.”\nShare what happens and what you’ve learned. “I repeatedly get an error message that says [this]. I’ve tried [this] and [this]”\nShow your code ideally with a reprex that they can run / test.\nValue and expect the Socratic method, especially in classes and workshops – our goal is to provide critical thinking that is transferable, not just to provide a quick fix for a single error.\n\n\nAnd don’t forget to a look back some of our suggested troubleshooting and Googling tips in Teach Me How to Google, below:"
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Earning “Satisfactory” marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024"
-  },
-  {
-    "objectID": "assignments.html#assignments",
-    "href": "assignments.html#assignments",
-    "title": "Assignments",
-    "section": "",
-    "text": "Earning “Satisfactory” marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024"
-  },
-  {
-    "objectID": "assignments.html#end-of-class-surveys",
-    "href": "assignments.html#end-of-class-surveys",
-    "title": "Assignments",
-    "section": "End-of-class surveys",
-    "text": "End-of-class surveys\nEnd-of-class surveys (EOCs) will become available at the end of each class (Mondays) and are due by end-of-day (11:55pm PT). Completing EOCs by the due dates/times will, in-part (along with class attendance), determine whether you earn a +/- on your course grade.\nNote: The letter grade, A, is the highest grade you can earn (i.e. you cannot earn an A+). You must attend 8 classes and submit &gt;=6 EOCs (see Grade Tracker, below) to earn an A.\n\n\n\nEOC link\nDate Assigned\nDate Due\n\n\n\n\nEOC (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nEOC (week 6)\nMon 02/12/2024\nMon 02/12/2024, 11:55pm PT\n\n\nEOC (week 8)\nMon 02/26/2024\nMon 02/26/2024, 11:55pm PT\n\n\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT"
-  },
-  {
-    "objectID": "assignments.html#grade-tracker",
-    "href": "assignments.html#grade-tracker",
-    "title": "Assignments",
-    "section": "Grade Tracker",
-    "text": "Grade Tracker\nUse the Grade Tracker, below, to determine your course grade:\n\n\n\n\n\n\n\n\n\nRedeem tokens in exchange for assignment extensions, missing class, or to revise/resubmit an assignment that received a “Not Yet” mark."
-  },
-  {
-    "objectID": "lecture8.html",
-    "href": "lecture8.html",
-    "title": "Grab Bag & Catch up",
-    "section": "",
-    "text": "Coming soon!"
+    "text": "EDS 240: Lecture 1\nCourse logistics, Intro, Grammar of Graphics review\n\n\n\nSam Csik | Data Training Coordinator National Center for Ecological Analysis & Synthesis\n\nMaster of Environmental Data Science | Bren School of Environmental Science & Management\n\n\n\n\nJanuary 8th, 2024"
   },
   {
     "objectID": "SR1-precourse.html",
@@ -159,6 +110,69 @@
     "title": "Pre-course reflection (SR #1)",
     "section": "Rubric (specifications)",
     "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this Pre-course reflection:\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the title of the SR1-precourse-reflection.qmd YAML\naddress all points in parts 1, 2, and 3 above in at least 2 sentences each\npush SR1-precourse-reflection.qmd to GitHub using GitHub Classrooms by 11:59pm PT on Sat 01/13/2024"
+  },
+  {
+    "objectID": "lecture8.html",
+    "href": "lecture8.html",
+    "title": "Grab Bag & Catch up",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Earning “Satisfactory” marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
+  },
+  {
+    "objectID": "assignments.html#assignments",
+    "href": "assignments.html#assignments",
+    "title": "Assignments",
+    "section": "",
+    "text": "Earning “Satisfactory” marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
+  },
+  {
+    "objectID": "assignments.html#end-of-class-surveys",
+    "href": "assignments.html#end-of-class-surveys",
+    "title": "Assignments",
+    "section": "End-of-class surveys",
+    "text": "End-of-class surveys\nEnd-of-class surveys (EOCs) will become available at the end of each class (Mondays) and are due by end-of-day (11:55pm PT). Completing EOCs by the due dates/times will, in-part (along with class attendance), determine whether you earn a +/- on your course grade.\nNote: The letter grade, A, is the highest grade you can earn (i.e. you cannot earn an A+). You must attend 8 classes and submit &gt;=6 EOCs (see Grade Tracker, below) to earn an A.\n\n\n\nEOC link\nDate Assigned\nDate Due\n\n\n\n\nEOC (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nEOC (week 6)\nMon 02/12/2024\nMon 02/12/2024, 11:55pm PT\n\n\nEOC (week 8)\nMon 02/26/2024\nMon 02/26/2024, 11:55pm PT\n\n\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT"
+  },
+  {
+    "objectID": "assignments.html#grade-tracker",
+    "href": "assignments.html#grade-tracker",
+    "title": "Assignments",
+    "section": "Grade Tracker",
+    "text": "Grade Tracker\nUse the Grade Tracker, below, to determine your course grade:\n\n\n\n\n\n\n\n\n\nRedeem tokens in exchange for assignment extensions, missing class, or to revise/resubmit an assignment that received a “Not Yet” mark."
+  },
+  {
+    "objectID": "getting-unstuck.html",
+    "href": "getting-unstuck.html",
+    "title": "Getting unstuck",
+    "section": "",
+    "text": "A large part of being a data scientist is ~being okay~ with not immediately knowing the answers to your code challenges – troubleshooting errors, deciphering code, and trying new things (and likely failing at some…er many…of them) is all a part of the job. We all experience it, no matter how many years we’ve been at it.\n\n\n\n\n\n\n\n\n\n\nArtwork by Allison Horst\n\n\nWe often learn the most (and remember more of what we learned) when we take the time to troubleshoot on our own (or at least narrow down the potential problem(s)), so you should always plan to start there . The graphic below shows the order in which you should approach different resources for help:\n\n\n\n\n\n\n\n\n\n\n\nWhen you decide you’re going to ask a question to a peer / TA / instructor, be sure to (borrowed from Dr. Allison Horst’s Troubleshooting 101 lecture, EDS 221):\n\nProvide context. For example, “I’m trying to do this…” or “I’m working on the task where we do this…”\nShare the specific challenge. “I’m specifically trying to [insert function / package] to do this thing.”\nShare what happens and what you’ve learned. “I repeatedly get an error message that says [this]. I’ve tried [this] and [this]”\nShow your code ideally with a reprex that they can run / test.\nValue and expect the Socratic method, especially in classes and workshops – our goal is to provide critical thinking that is transferable, not just to provide a quick fix for a single error.\n\n\nAnd don’t forget to a look back some of our suggested troubleshooting and Googling tips in Teach Me How to Google, below:"
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Data Visualization & Communication",
+    "section": "Course Description",
+    "text": "Course Description\nEffectively communicating your work in a responsible, accessible and visually-pleasing way is often (if not, always) a central part of data science. This course will focus on the basic principles for effective communication through data visualization and using technical tools and workflows for creating and sharing data visualizations with diverse audiences.\nBy the end of this course, learners should be able to:\n\nIdentify which types of visualizations are most appropriate for your data and your audience\nPrepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\nBuild effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages\nWrite code from scratch and read and adapt code written by others\nApply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations\nAssess, critique, and provide constructive feedback on data visualizations"
+  },
+  {
+    "objectID": "index.html#teaching-team",
+    "href": "index.html#teaching-team",
+    "title": "Data Visualization & Communication",
+    "section": "Teaching Team",
+    "text": "Teaching Team\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\ntbd\nEmail: tbd\nLearn more: tbd"
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Data Visualization & Communication",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nBuilding this course meant learning from the many incredible folks who think a lot about producing effective, beautiful, and responsible data visualizations. I relied heavily on the open source R / {ggplot2} / data viz teaching materials and tutorials that this wonderful data science community shares so willingly. Attribution will be included on any slides / materials where content is adapted from other educators."
   },
   {
     "objectID": "HW1.html",
@@ -242,12 +256,12 @@
     "href": "lecture2.html",
     "title": "Data Communication",
     "section": "",
-    "text": "Coming soon!"
+    "text": "Artwork by Allison Horst"
   },
   {
     "objectID": "lecture6.html",
     "href": "lecture6.html",
-    "title": "Visualizing Distributions",
+    "title": "Communicating Uncertainty",
     "section": "",
     "text": "Coming soon!"
   },

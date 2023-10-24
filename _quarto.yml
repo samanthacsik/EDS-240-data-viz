@@ -57,7 +57,7 @@ website:
 
 format:
   html:
-    theme: meds-styles.scss
+    theme: meds-website-styles.scss
     toc: false
     page-layout: full
     code-line-numbers: true

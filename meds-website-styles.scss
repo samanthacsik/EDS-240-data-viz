@@ -95,3 +95,16 @@ h2 {
   text-align: center;
 }
 
+// btn styling
+.btn {
+  color: $teal;
+  background-color: $white;
+  border-color: $teal;
+}
+
+// button hover styling
+.btn:hover {
+  color: $green;
+  background-color: $white;
+  border-color: $green;
+}

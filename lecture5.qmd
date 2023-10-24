@@ -1,5 +1,5 @@
 ---
-title: "Visualizing Relationships"
+title: "Visualizing Relationships & Distributions"
 subtitle: "Lecture 5 (week 6)"
 description: "Monday February 12th, 2024"
 title-block-banner: true
