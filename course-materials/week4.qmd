@@ -1,0 +1,38 @@
+---
+title: "Graphic Design"
+subtitle: "Week 4"
+description: "Monday January 29th, 2024"
+title-block-banner: true
+toc: true
+---
+ 
+<!-- Coming soon! -->
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "65%" 
+#| fig-alt: "A fuzzy monster in a beret and scarf, critiquing their own column graph on a canvas in front of them while other assistant monsters (also in berets) carry over boxes full of elements that can be used to customize a graph (like themes and geometric shapes). In the background is a wall with framed data visualizations. Stylized text reads 'ggplot2: build a data masterpiece.'"
+knitr::include_graphics("../images/horst-ggplot-masterpiece.png")
+```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+## Lecture Materials 
+
+*Coming soon!*
+
+## Discussion Materials
+
+*Coming soon!*
+
+## Assignment Reminders
+
+| Assignment Type | Title                                                                  | Date Assigned  | Date Due                   |
+|:---------------:|------------------------------------------------------------------------|----------------|----------------------------|
+| EOC             | [EOC (week 4)](https://forms.gle/kwfaWciZNu4fCzKN7)                    | Mon 01/29/2024 | Mon 01/29/2024, 11:55pm PT |
+| HW              | [Homework Assignment #2](../assignments/HW2.qmd)                       | Mon 01/22/2024 | Sat 02/03/2024, 11:59pm PT |
+

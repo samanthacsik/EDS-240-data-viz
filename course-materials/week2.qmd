@@ -1,0 +1,21 @@
+---
+title: "[No Lecture]"
+subtitle: "Week 2"
+description: "Monday January 15th, 2024"
+title-block-banner: true
+toc: true
+---
+
+## Lecture Materials
+
+*There is no lecture this week!*
+
+## Discussion Materials
+
+*Coming soon!*
+
+## Assignment Reminders
+
+| Assignment Type | Title                                                                  | Date Assigned  | Date Due                   |
+|:---------------:|------------------------------------------------------------------------|----------------|----------------------------|
+| HW              | [Homework Assignment #1](../assignments/HW1.qmd)                       | Mon 01/08/2024 | Sat 01/20/2024, 11:59pm PT | 

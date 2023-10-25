@@ -71,9 +71,21 @@ knitr::include_graphics("images/lecture1/horst-eco-r4ds.png")
 
 <hr>
 
-- class & section meeting times
-- locations
-- student hours
+- **Class:** Mondays 1:00-4:00pm PT (attendance is mandatory)
+- **Discussion Sections:** Wednesdays 10:00-10:50am PT & 11:00-11:50am PT
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "45%" 
+#| fig-alt: "The NCEAS first floor classroom, looking from the back of the class towards the front. A woman stands at the podium, front and center, and gestures towards teh large TV display on the wall. Students sit at long tables and look towards the front of the room."
+knitr::include_graphics("images/lecture1/nceas-classroom.jpg")
+```
+
+::: {.center-text}
+*Class & Discussion Sections meet in the **NCEAS 1st floor classroom***
+:::
 
 ---
 
@@ -103,6 +115,7 @@ knitr::include_graphics("images/lecture1/sam.png")
 [**Sam Csik**]{.teal-text}  
 **Email:** [scsik@ucsb.edu](mailto::scsik@ucsb.edu)  
 **Learn more:** [samanthacsik.github.io](https://samanthacsik.github.io/)  
+**Student hours:** tbd @ NCEAS
 :::
 
 :::
@@ -117,31 +130,78 @@ knitr::include_graphics("images/lecture1/sam.png")
 #| eval: true 
 #| echo: false
 #| fig-align: "center"
-#| out-width: "55%" 
-knitr::include_graphics("images/lecture1/tbd.png")
+#| out-width: "51%" 
+knitr::include_graphics("images/lecture1/sevan.png")
 ```
 
 ::: {.center-text}
 [**Sevan Esaian**]{.teal-text}  
 **Email:** [sevan.esaian@lifesci.ucsb.edu](mailto::sevan.esaian@lifesci.ucsb.edu)  
-**Learn more:** [tbd](tbd)
+**Learn more:** [linkedin.com/in/sevan-esaian](https://www.linkedin.com/in/sevan-esaian-92b7794b/)
+**Student hours:** tbd @ tbd
 :::
 
 :::
 
 ::::
 
+---
 
+## {#student-resources data-menu-title="Student Resources"} 
+
+[Student Resources]{.slide-title}
+
+<hr>
+
+- **Basic Needs Resources & Food Security:** <https://basicneeds.ucsb.edu/> (schedule a [CalFresh Appoinment](https://www.google.com/url?q=https://shoreline.ucsb.edu/meetings/m2727/bookanadvocate&sa=D&source=docs&ust=1698264138992010&usg=AOvVaw2qVVM5nn4p5oruh-LxtWik) or [Basic Needs Advising Session](https://shoreline.ucsb.edu/otp_signup?module=meeting&redirect=%2fmeetings%2fm2820%2fbook))
+- **Counseling & Psychological Services (CAPS):** <http://caps.sa.ucsb.edu>
+- **Resource Center for Sexual and Gender Diversity (RCSGD):** <https://rcsgd.sa.ucsb.edu/>
+- **Undocumented Student Services (USS) Program:** <https://uss.sa.ucsb.edu/>
+- **Campus Learning Assistance Services (CLAS):** <http://clas.sa.ucsb.edu>
+- **Student Resource Building (SRB):** <http://www.sa.ucsb.edu/student-resource-building/home> 
+- **Multicultural Center (MCC):** <http://mcc.sa.ucsb.edu/>
+- **Campus Advocacy, Resources, & Education (CARE):** <http://wgse.sa.ucsb.edu/care/home> 
+- **Financial Crisis Response Team:** <financialcrisis@sa.ucsb.edu> (contact)
+- **Health and Wellness:** <https://wellbeing.ucsb.edu/>
+
+::: {.center-text}
+*I'm always happy to help you identify resources or help on campus -- DM or email me!*
+:::
+
+---
+
+## {#conduct data-menu-title="Conduct, Inclusion, Accommodations"} 
+
+[Conduct, Inclusion, Accommodations]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+**Course Conduct:** We are committed to actively creating, modeling, and maintaining an inclusive climate and supportive learning environment for all -- *harassment of any kind will not be tolerated*. Everyone is expected read and adhere to the [Bren School Code of Conduct](https://www.google.com/url?q=https://bren.ucsb.edu/media/4038/download&sa=D&source=docs&ust=1698267517247684&usg=AOvVaw2_0-cWvrj_Z5vPbg7muDIy) and the [UCSB Code of Conduct](https://www.sa.ucsb.edu/docs/default-source/default-document-library/conduct-code-fall-2020_final.pdf?sfvrsn=fada724f_0)
+
+<br>
+
+. . . 
+
+**Access & accommodations:** It's never too late to apply for [DSP accommodations](https://dsp.sa.ucsb.edu/accommodations/how-apply)
+
+<br>
+
+. . .
+
+**Names & pronouns:** Everyone has the right to be addressed and referred by to name and pronouns in accordance with their identity -- you can add your pronouns to your UCSB Registrar [profile](https://sso.my.ucsb.edu/adfs/ls/?wa=wsignin1.0&wtrealm=http%3a%2f%2fblue.sa.ucsb.edu%2fLanding%2f&wctx=rm%3d0%26id%3dpassive%26ru%3d%252fLanding%252fHomepage.aspx&wct=2023-08-09T18%3a30%3a46Z&rpsa-rn=5TFey%252fVSv9IF17J4Pn8osgH1LticIlQr%252blbEYGshM3OOsDWYP4J7emNKxAxFivBYQ9bjUpX68pv2TfPF1l10Gw%253d%253d&rpsa-an=AQYFW%252bAMuZU5NJ2X8VVjYJfEUAIzGOJ5TsVA9tf6taioBLLASrEwwwTwL3CfnBo0hlWxXzchkFxh%252frWqIlUAXA%253d%253d&rpsa-se=f5hRpBYXKP06s9Rp4Upm1RVnbN1guWDIEz%252bUg2%252fhCNeRJJGUTljXkJhT2q3Jc3CVoQo8gAKnlHeyxBa48wHcTA%253d%253d&rpsa-sedn=Ua%252fdFKWiVmSNkCOjsPoWPa%252bDhhvj5Uj6jpegUTzkSC8%253d) 
 
 ---
 
 ## {#course-website data-menu-title="Course website"} 
 
-[Everything you'll need lives on the course website]{.slide-title2}
+[Everything you'll need lives on the course website!]{.slide-title2}
 
 <hr>
 
-::: {.center-text .body-text-l}
+::: {.center-text .body-text-m}
 **<https://samanthacsik.github.io/EDS-240-data-viz>**
 :::
 
@@ -153,8 +213,85 @@ knitr::include_graphics("images/lecture1/tbd.png")
 knitr::include_graphics("images/lecture1/eds240-website.png")
 ```
 
-::: {.body-text-l .center-text}
-Link is also bookmarked at the top of the **#eds-240-data-viz** Slack channel and linked on the [Courses page](https://ucsb-meds.github.io/courses.html).
+::: {.body-text-m .center-text}
+Link is also bookmarked at the top of the **#eds-240-data-viz** Slack channel and linked on the [Courses page](https://ucsb-meds.github.io/courses.html) of the MEDS website.
+:::
+
+---
+
+## {#tentative-schedule data-menu-title="Tentative Schedule"} 
+
+[Tentative Schedule & Materials]{.slide-title}
+
+<hr>
+
+:::: columns
+
+::: {.column width="50%"}
+| Date    | Tentative Topic                                         |
+|---------|----------------------------------------------------------|
+| 1/8     | course logistics, intro to data viz, `{ggplot2}` review  |
+| 1/15    | *no class*                                               |
+| 1/22    | data communication                                       |
+| 1/29    | graphic design                                           |
+| 2/5     | visualizing amounts & proportions                        |
+| 2/12    | visualizing relationships & distributions                |
+| 2/19    | *no class*                                               |
+| 2/26    | visualizing uncertainty                                  |
+| 3/4     | OJS with Dr. Allison Horst                               |
+| 3/11    | grab bag & catch up                                      |
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/eds240-website.png")
+```
+:::
+
+::::
+
+---
+
+## {#grading data-menu-title="Alternative Grading"} 
+
+[How will I be evaluated?]{.slide-title}
+
+<hr>
+
+---
+
+## {#GenAI data-menu-title="GenAI"} 
+
+[Policy on Generative AI (GenAI)]{.slide-title}
+
+<hr>
+
+GenAI tools (such as ChatGPT) are strongly discouraged for the following reasons:
+
+::: incremental
+- core competencies are built through practice
+- building your own programming proficiency will help you engage with GenAI tools more productively
+- subscription versions of GenAI tools may induce an inequitable learning environment
+:::
+
+. . .
+
+Please adhere to these guidelines:
+
+::: incremental
+- you may use spell/grammar check and/or synonym identification tools
+- be prepared to explain each line of code in your assignments and exercises
+- if you use GenAI in assignments, you **must include** a statement of which GenAI platform used and why, along with a copy of your initial prompt(s) and ensuing "conversation(s)"
+:::
+
+. . .
+
+::: {.center-text .body-text-l}
+**Please read the full policy on the [course syllabus](https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit)**
 :::
 
 ---
@@ -168,22 +305,6 @@ Link is also bookmarked at the top of the **#eds-240-data-viz** Slack channel an
 Ruth's flow chart
 
 Slack channel first -- everyone benefits!
-
----
-
-## {#grading data-menu-title="Alternative Grading"} 
-
-[Alternative Grading]{.slide-title}
-
-<hr>
-
----
-
-## {#student-resources data-menu-title="Student Resources"} 
-
-[Student Resources]{.slide-title}
-
-<hr>
 
 ---
 

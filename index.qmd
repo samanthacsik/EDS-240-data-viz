@@ -67,13 +67,13 @@ knitr::include_graphics("images/sam.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "45%" 
-knitr::include_graphics("images/tbd.png")
+knitr::include_graphics("images/sevan.png")
 ```
 
 ::: {.center-text}
-[**tbd**]{.teal-text}  
-**Email:** [tbd](mailto::tbd)  
-**Learn more:** [tbd](tbd)
+[**Sevan Esaian**]{.teal-text}  
+**Email:** [sevan.esaian@lifesci.ucsb.edu](mailto::sevan.esaian@lifesci.ucsb.edu)  
+**Learn more:** [linkedin.com/in/sevan-esaian](https://www.linkedin.com/in/sevan-esaian-92b7794b/)
 :::
 
 :::

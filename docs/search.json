@@ -49,32 +49,130 @@
     "text": "R packages\nA list of the R packages that we’ve covered in this class so far:\n\n{ggplot2}: a system for declaratively creating graphics, based on The Grammar of Graphics\n\n\n\n\n\n\n\n\n\n\n\nArtwork by Allison Horst"
   },
   {
-    "objectID": "lectures/lecture5.html",
-    "href": "lectures/lecture5.html",
+    "objectID": "course-materials/week5.html",
+    "href": "course-materials/week5.html",
+    "title": "Visualizing Amounts & Proportions",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "course-materials/week5.html#lecture-materials",
+    "href": "course-materials/week5.html#lecture-materials",
+    "title": "Visualizing Amounts & Proportions",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "course-materials/week5.html#discussion-materials",
+    "href": "course-materials/week5.html#discussion-materials",
+    "title": "Visualizing Amounts & Proportions",
+    "section": "Discussion Materials",
+    "text": "Discussion Materials\nComing soon!"
+  },
+  {
+    "objectID": "course-materials/week5.html#assignment-reminders",
+    "href": "course-materials/week5.html#assignment-reminders",
+    "title": "Visualizing Amounts & Proportions",
+    "section": "Assignment Reminders",
+    "text": "Assignment Reminders\n\n\n\nAssignment Type\nTitle\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT"
+  },
+  {
+    "objectID": "course-materials/week6.html",
+    "href": "course-materials/week6.html",
     "title": "Visualizing Relationships & Distributions",
     "section": "",
     "text": "Coming soon!"
   },
   {
-    "objectID": "lectures/lecture6.html",
-    "href": "lectures/lecture6.html",
-    "title": "Communicating Uncertainty",
+    "objectID": "course-materials/week6.html#lecture-materials",
+    "href": "course-materials/week6.html#lecture-materials",
+    "title": "Visualizing Relationships & Distributions",
     "section": "",
     "text": "Coming soon!"
   },
   {
-    "objectID": "lectures/lecture3.html",
-    "href": "lectures/lecture3.html",
-    "title": "Graphic Design",
-    "section": "",
-    "text": "Artwork by Allison Horst"
+    "objectID": "course-materials/week6.html#discussion-materials",
+    "href": "course-materials/week6.html#discussion-materials",
+    "title": "Visualizing Relationships & Distributions",
+    "section": "Discussion Materials",
+    "text": "Discussion Materials\nComing soon!"
   },
   {
-    "objectID": "lectures/lecture8.html",
-    "href": "lectures/lecture8.html",
-    "title": "Grab Bag & Catch up",
+    "objectID": "course-materials/week6.html#assignment-reminders",
+    "href": "course-materials/week6.html#assignment-reminders",
+    "title": "Visualizing Relationships & Distributions",
+    "section": "Assignment Reminders",
+    "text": "Assignment Reminders\n\n\n\nAssignment Type\nTitle\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 6)\nMon 02/12/2024\nMon 02/12/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT"
+  },
+  {
+    "objectID": "course-materials/week3.html#lecture-materials",
+    "href": "course-materials/week3.html#lecture-materials",
+    "title": "Data Communication",
+    "section": "Lecture Materials",
+    "text": "Lecture Materials\nComing soon!"
+  },
+  {
+    "objectID": "course-materials/week3.html#discussion-materials",
+    "href": "course-materials/week3.html#discussion-materials",
+    "title": "Data Communication",
+    "section": "Discussion Materials",
+    "text": "Discussion Materials\nComing soon!"
+  },
+  {
+    "objectID": "course-materials/week3.html#assignment-reminders",
+    "href": "course-materials/week3.html#assignment-reminders",
+    "title": "Data Communication",
+    "section": "Assignment Reminders",
+    "text": "Assignment Reminders\n\n\n\nAssignment Type\nTitle\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT"
+  },
+  {
+    "objectID": "course-materials/week1.html#lecture-materials",
+    "href": "course-materials/week1.html#lecture-materials",
+    "title": "Course logistics, Intro, {ggplot2} review",
+    "section": "Lecture Materials",
+    "text": "Lecture Materials\nWeek 1 instruction is broken down into three sections:\n\n\n\nCourse logistics & syllabus\n lecture 1.1 slides\n\n\n\nIntro to data visualization\n lecture 1.2 slides\n\n\n\n{ggplot2} review\n lecture 1.3 slides"
+  },
+  {
+    "objectID": "course-materials/week1.html#discussion-materials",
+    "href": "course-materials/week1.html#discussion-materials",
+    "title": "Course logistics, Intro, {ggplot2} review",
+    "section": "Discussion Materials",
+    "text": "Discussion Materials\nComing soon!"
+  },
+  {
+    "objectID": "course-materials/week1.html#assignment-reminders",
+    "href": "course-materials/week1.html#assignment-reminders",
+    "title": "Course logistics, Intro, {ggplot2} review",
+    "section": "Assignment Reminders",
+    "text": "Assignment Reminders\n\n\n\nAssignment Type\nTitle\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEnd-of-class survey (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT"
+  },
+  {
+    "objectID": "course-materials/week8.html",
+    "href": "course-materials/week8.html",
+    "title": "Visualizing Uncertainty",
     "section": "",
     "text": "Coming soon!"
+  },
+  {
+    "objectID": "course-materials/week8.html#lecture-materials",
+    "href": "course-materials/week8.html#lecture-materials",
+    "title": "Visualizing Uncertainty",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "course-materials/week8.html#discussion-materials",
+    "href": "course-materials/week8.html#discussion-materials",
+    "title": "Visualizing Uncertainty",
+    "section": "Discussion Materials",
+    "text": "Discussion Materials\nComing soon!"
+  },
+  {
+    "objectID": "course-materials/week8.html#assignment-reminders",
+    "href": "course-materials/week8.html#assignment-reminders",
+    "title": "Visualizing Uncertainty",
+    "section": "Assignment Reminders",
+    "text": "Assignment Reminders\n\n\n\nAssignment Type\nTitle\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 8)\nMon 02/26/2024\nMon 02/26/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT"
   },
   {
     "objectID": "slides/lecture1.2-intro-slides.html#title-slide",
@@ -95,7 +193,7 @@
     "href": "index.html#teaching-team",
     "title": "Data Visualization & Communication",
     "section": "Teaching Team",
-    "text": "Teaching Team\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\ntbd\nEmail: tbd\nLearn more: tbd"
+    "text": "Teaching Team\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nSevan Esaian\nEmail: sevan.esaian@lifesci.ucsb.edu\nLearn more: linkedin.com/in/sevan-esaian"
   },
   {
     "objectID": "index.html#acknowledgements",
@@ -179,7 +277,7 @@
     "href": "assignments.html#end-of-class-surveys",
     "title": "Assignments",
     "section": "End-of-class surveys",
-    "text": "End-of-class surveys\nEnd-of-class surveys (EOCs) will become available at the end of each class (Mondays) and are due by end-of-day (11:55pm PT). Completing EOCs by the due dates/times will, in-part (along with class attendance), determine whether you earn a +/- on your course grade.\nNote: The letter grade, A, is the highest grade you can earn (i.e. you cannot earn an A+). You must attend 8 classes and submit &gt;=6 EOCs (see Grade Tracker, below) to earn an A.\n\n\n\nEOC link\nDate Assigned\nDate Due\n\n\n\n\nEOC (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nEOC (week 6)\nMon 02/12/2024\nMon 02/12/2024, 11:55pm PT\n\n\nEOC (week 8)\nMon 02/26/2024\nMon 02/26/2024, 11:55pm PT\n\n\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT"
+    "text": "End-of-class surveys\nEnd-of-class surveys (EOCs) will become available at the end of each class (Mondays) and are due by end-of-day (11:55pm PT). Completing EOCs by the due dates/times will, in-part (along with class attendance), determine whether you earn a +/- on your course grade.\nNote: The letter grade, A, is the highest grade you can earn (i.e. you cannot earn an A+). You must attend 8 classes and submit &gt;=6 EOCs (see Grade Tracker, below) to earn an A.\n\n\n\nEOC link\nDate Assigned\nDate Due\n\n\n\n\nEOC (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 2)\nNA\nNA\n\n\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nEOC (week 6)\nMon 02/12/2024\nMon 02/12/2024, 11:55pm PT\n\n\nNo lecture of EOC (week 7)\nNA\nNA\n\n\nEOC (week 8)\nMon 02/26/2024\nMon 02/26/2024, 11:55pm PT\n\n\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT"
   },
   {
     "objectID": "assignments.html#grade-tracker",
@@ -319,21 +417,56 @@
     "href": "slides/lecture1.1-logistics-slides.html#logistics",
     "title": "EDS 240",
     "section": "",
-    "text": "Meeting times & locations\n\n\nclass & section meeting times\nlocations\nstudent hours"
+    "text": "Meeting times & locations\n\n\n\nClass: Mondays 1:00-4:00pm PT (attendance is mandatory)\n\nDiscussion Sections: Wednesdays 10:00-10:50am PT & 11:00-11:50am PT\n\n\n\nClass & Discussion Sections meet in the NCEAS 1st floor classroom"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#instructor",
     "href": "slides/lecture1.1-logistics-slides.html#instructor",
     "title": "EDS 240",
     "section": "",
-    "text": "Teaching team\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\nSam CsikEmail: scsik@ucsb.eduLearn more: samanthacsik.github.io\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\nSevan EsaianEmail: sevan.esaian@lifesci.ucsb.eduLearn more: tbd"
+    "text": "Teaching team\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\nSam CsikEmail: scsik@ucsb.eduLearn more: samanthacsik.github.ioStudent hours: tbd @ NCEAS\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\nSevan EsaianEmail: sevan.esaian@lifesci.ucsb.eduLearn more: linkedin.com/in/sevan-esaian Student hours: tbd @ tbd"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#student-resources",
+    "href": "slides/lecture1.1-logistics-slides.html#student-resources",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Student Resources\n\n\n\nBasic Needs Resources & Food Security: https://basicneeds.ucsb.edu/ (schedule a CalFresh Appoinment or Basic Needs Advising Session)\n\nCounseling & Psychological Services (CAPS): http://caps.sa.ucsb.edu\n\n\nResource Center for Sexual and Gender Diversity (RCSGD): https://rcsgd.sa.ucsb.edu/\n\n\nUndocumented Student Services (USS) Program: https://uss.sa.ucsb.edu/\n\n\nCampus Learning Assistance Services (CLAS): http://clas.sa.ucsb.edu\n\n\nStudent Resource Building (SRB): http://www.sa.ucsb.edu/student-resource-building/home\n\n\nMulticultural Center (MCC): http://mcc.sa.ucsb.edu/\n\n\nCampus Advocacy, Resources, & Education (CARE): http://wgse.sa.ucsb.edu/care/home\n\n\nFinancial Crisis Response Team: financialcrisis@sa.ucsb.edu (contact)\n\nHealth and Wellness: https://wellbeing.ucsb.edu/\n\n\n\nI’m always happy to help you identify resources or help on campus – DM or email me!"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#conduct",
+    "href": "slides/lecture1.1-logistics-slides.html#conduct",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Conduct, Inclusion, Accommodations\n\n\nCourse Conduct: We are committed to actively creating, modeling, and maintaining an inclusive climate and supportive learning environment for all – harassment of any kind will not be tolerated. Everyone is expected read and adhere to the Bren School Code of Conduct and the UCSB Code of Conduct\n\n\nAccess & accommodations: It’s never too late to apply for DSP accommodations\n\n\n\nNames & pronouns: Everyone has the right to be addressed and referred by to name and pronouns in accordance with their identity – you can add your pronouns to your UCSB Registrar profile"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#course-website",
     "href": "slides/lecture1.1-logistics-slides.html#course-website",
     "title": "EDS 240",
     "section": "",
-    "text": "Everything you’ll need lives on the course website\n\n\nhttps://samanthacsik.github.io/EDS-240-data-viz\n\n\n\nLink is also bookmarked at the top of the #eds-240-data-viz Slack channel and linked on the Courses page."
+    "text": "Everything you’ll need lives on the course website!\n\n\nhttps://samanthacsik.github.io/EDS-240-data-viz\n\n\n\nLink is also bookmarked at the top of the #eds-240-data-viz Slack channel and linked on the Courses page of the MEDS website."
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#tentative-schedule",
+    "href": "slides/lecture1.1-logistics-slides.html#tentative-schedule",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tentative Schedule & Materials\n\n\n\n\n\nDate\nTentative Topic\n\n\n\n1/8\ncourse logistics, intro to data viz, ggplot2 review\n\n\n1/15\nno class\n\n\n1/22\ndata communication\n\n\n1/29\ngraphic design\n\n\n2/5\nvisualizing amounts & proportions\n\n\n2/12\nvisualizing relationships & distributions\n\n\n2/19\nno class\n\n\n2/26\nvisualizing uncertainty\n\n\n3/4\nOJS with Dr. Allison Horst\n\n\n3/11\ngrab bag & catch up"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#grading",
+    "href": "slides/lecture1.1-logistics-slides.html#grading",
+    "title": "EDS 240",
+    "section": "",
+    "text": "How will I be evaluated?"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#GenAI",
+    "href": "slides/lecture1.1-logistics-slides.html#GenAI",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Policy on Generative AI (GenAI)\n\nGenAI tools (such as ChatGPT) are strongly discouraged for the following reasons:\n\n\ncore competencies are built through practice\nbuilding your own programming proficiency will help you engage with GenAI tools more productively\nsubscription versions of GenAI tools may induce an inequitable learning environment\n\n\n\nPlease adhere to these guidelines:\n\n\nyou may use spell/grammar check and/or synonym identification tools\nbe prepared to explain each line of code in your assignments and exercises\nif you use GenAI in assignments, you must include a statement of which GenAI platform used and why, along with a copy of your initial prompt(s) and ensuing “conversation(s)”\n\n\n\n\n\nPlease read the full policy on the course syllabus"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#help",
@@ -343,20 +476,6 @@
     "text": "Asking for help\n\nRuth’s flow chart\nSlack channel first – everyone benefits!"
   },
   {
-    "objectID": "slides/lecture1.1-logistics-slides.html#grading",
-    "href": "slides/lecture1.1-logistics-slides.html#grading",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Alternative Grading"
-  },
-  {
-    "objectID": "slides/lecture1.1-logistics-slides.html#student-resources",
-    "href": "slides/lecture1.1-logistics-slides.html#student-resources",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Student Resources"
-  },
-  {
     "objectID": "slides/lecture1.1-logistics-slides.html#LOs",
     "href": "slides/lecture1.1-logistics-slides.html#LOs",
     "title": "EDS 240",
@@ -364,38 +483,136 @@
     "text": "Learning Objectives\n\n Identify which types of visualizations are most appropriate for your data and your audience\n\n\n Prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\n\n\n\n Build effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically ggplot2 + ggplot2 extension packages\n\n\n\n Write code from scratch and read and adapt code written by others\n\n\n\n Apply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations\n\n\n\n Assess, critique, and provide constructive feedback on data visualizations"
   },
   {
-    "objectID": "lectures/lecture1.html#materials",
-    "href": "lectures/lecture1.html#materials",
-    "title": "Course logistics, Intro, {ggplot2} review",
-    "section": "Materials",
-    "text": "Materials\nWeek 1 instruction is broken down into three sections:\n\n\n\nCourse logistics & syllabus\n lecture 1.1 slides\n\n\n\nIntro to data visualization\n lecture 1.2 slides\n\n\n\n{ggplot2} review\n lecture 1.3 slides"
-  },
-  {
-    "objectID": "lectures/lecture1.html#assignment-reminders",
-    "href": "lectures/lecture1.html#assignment-reminders",
-    "title": "Course logistics, Intro, {ggplot2} review",
-    "section": "Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\nAssignment Type\nTitle\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEnd-of-class survey (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024"
-  },
-  {
-    "objectID": "lectures/lecture2.html",
-    "href": "lectures/lecture2.html",
-    "title": "Data Communication",
-    "section": "",
-    "text": "Artwork by Allison Horst"
-  },
-  {
-    "objectID": "lectures/lecture7.html",
-    "href": "lectures/lecture7.html",
+    "objectID": "course-materials/week9.html",
+    "href": "course-materials/week9.html",
     "title": "Observable JS with Dr. Allison Horst",
     "section": "",
     "text": "Coming soon!"
   },
   {
-    "objectID": "lectures/lecture4.html",
-    "href": "lectures/lecture4.html",
-    "title": "Visualizing Amounts & Proportions",
+    "objectID": "course-materials/week9.html#lecture-materials",
+    "href": "course-materials/week9.html#lecture-materials",
+    "title": "Observable JS with Dr. Allison Horst",
     "section": "",
     "text": "Coming soon!"
+  },
+  {
+    "objectID": "course-materials/week9.html#discussion-materials",
+    "href": "course-materials/week9.html#discussion-materials",
+    "title": "Observable JS with Dr. Allison Horst",
+    "section": "Discussion Materials",
+    "text": "Discussion Materials\nComing soon!"
+  },
+  {
+    "objectID": "course-materials/week9.html#assignment-reminders",
+    "href": "course-materials/week9.html#assignment-reminders",
+    "title": "Observable JS with Dr. Allison Horst",
+    "section": "Assignment Reminders",
+    "text": "Assignment Reminders\n\n\n\nAssignment Type\nTitle\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT"
+  },
+  {
+    "objectID": "course-materials/week2.html",
+    "href": "course-materials/week2.html",
+    "title": "[No Lecture]",
+    "section": "",
+    "text": "There is no lecture this week!"
+  },
+  {
+    "objectID": "course-materials/week2.html#lecture-materials",
+    "href": "course-materials/week2.html#lecture-materials",
+    "title": "[No Lecture]",
+    "section": "",
+    "text": "There is no lecture this week!"
+  },
+  {
+    "objectID": "course-materials/week2.html#discussion-materials",
+    "href": "course-materials/week2.html#discussion-materials",
+    "title": "[No Lecture]",
+    "section": "Discussion Materials",
+    "text": "Discussion Materials\nComing soon!"
+  },
+  {
+    "objectID": "course-materials/week2.html#assignment-reminders",
+    "href": "course-materials/week2.html#assignment-reminders",
+    "title": "[No Lecture]",
+    "section": "Assignment Reminders",
+    "text": "Assignment Reminders\n\n\n\nAssignment Type\nTitle\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT"
+  },
+  {
+    "objectID": "course-materials/week7.html",
+    "href": "course-materials/week7.html",
+    "title": "[No Lecture]",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "course-materials/week7.html#lecture-materials",
+    "href": "course-materials/week7.html#lecture-materials",
+    "title": "[No Lecture]",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "course-materials/week7.html#discussion-materials",
+    "href": "course-materials/week7.html#discussion-materials",
+    "title": "[No Lecture]",
+    "section": "Discussion Materials",
+    "text": "Discussion Materials\nComing soon!"
+  },
+  {
+    "objectID": "course-materials/week7.html#assignment-reminders",
+    "href": "course-materials/week7.html#assignment-reminders",
+    "title": "[No Lecture]",
+    "section": "Assignment Reminders",
+    "text": "Assignment Reminders\n\n\n\nAssignment Type\nTitle\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT"
+  },
+  {
+    "objectID": "course-materials/week4.html#lecture-materials",
+    "href": "course-materials/week4.html#lecture-materials",
+    "title": "Graphic Design",
+    "section": "Lecture Materials",
+    "text": "Lecture Materials\nComing soon!"
+  },
+  {
+    "objectID": "course-materials/week4.html#discussion-materials",
+    "href": "course-materials/week4.html#discussion-materials",
+    "title": "Graphic Design",
+    "section": "Discussion Materials",
+    "text": "Discussion Materials\nComing soon!"
+  },
+  {
+    "objectID": "course-materials/week4.html#assignment-reminders",
+    "href": "course-materials/week4.html#assignment-reminders",
+    "title": "Graphic Design",
+    "section": "Assignment Reminders",
+    "text": "Assignment Reminders\n\n\n\nAssignment Type\nTitle\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT"
+  },
+  {
+    "objectID": "course-materials/week10.html",
+    "href": "course-materials/week10.html",
+    "title": "Grab Bag & Catch up",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "course-materials/week10.html#lecture-materials",
+    "href": "course-materials/week10.html#lecture-materials",
+    "title": "Grab Bag & Catch up",
+    "section": "",
+    "text": "Coming soon!"
+  },
+  {
+    "objectID": "course-materials/week10.html#discussion-materials",
+    "href": "course-materials/week10.html#discussion-materials",
+    "title": "Grab Bag & Catch up",
+    "section": "Discussion Materials",
+    "text": "Discussion Materials\nComing soon!"
+  },
+  {
+    "objectID": "course-materials/week10.html#assignment-reminders",
+    "href": "course-materials/week10.html#assignment-reminders",
+    "title": "Grab Bag & Catch up",
+    "section": "Assignment Reminders",
+    "text": "Assignment Reminders\n\n\n\nAssignment Type\nTitle\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
   }
 ]

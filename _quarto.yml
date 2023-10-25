@@ -11,24 +11,28 @@ website:
       - text: syllabus
         href: https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit?usp=sharing
         target: _blank
-      - text: lecture materials
+      - text: course materials
         menu:
-          - text: lecture 1 (week 1, 1/8)
-            href: lectures/lecture1.qmd
-          - text: lecture 2 (week 3, 1/22)
-            href: lectures/lecture2.qmd
-          - text: lecture 3 (week 4, 1/29)
-            href: lectures/lecture3.qmd
-          - text: lecture 4 (week 5, 2/5)
-            href: lectures/lecture4.qmd
-          - text: lecture 5 (week 6, 2/12)
-            href: lectures/lecture5.qmd
-          - text: lecture 6 (week 8, 2/26)
-            href: lectures/lecture6.qmd
-          - text: lecture 7 (week 9, 3/4)
-            href: lectures/lecture7.qmd
-          - text: lecture 8 (week 10, 3/11)
-            href: lectures/lecture8.qmd
+          - text: week 1 (1/8)
+            href: course-materials/week1.qmd
+          - text: week 2 (1/15)
+            href: course-materials/week2.qmd
+          - text: week 3 (1/22)
+            href: course-materials/week3.qmd
+          - text: week 4 (1/29)
+            href: course-materials/week4.qmd
+          - text: week 5 (2/5)
+            href: course-materials/week5.qmd
+          - text: week 6 (2/12)
+            href: course-materials/week6.qmd
+          - text: week 7 (2/19)
+            href: course-materials/week7.qmd
+          - text: week 8 (2/26)
+            href: course-materials/week8.qmd
+          - text: week 9 (3/4)
+            href: course-materials/week9.qmd
+          - text: week 10 (3/11)
+            href: course-materials/week10.qmd
       - text: assignments
         href: assignments.qmd
       - text: redeem tokens

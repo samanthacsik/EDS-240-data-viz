@@ -1,0 +1,21 @@
+---
+title: "[No Lecture]"
+subtitle: "Week 7"
+description: "Monday March 19th, 2024"
+title-block-banner: true
+toc: true
+---
+
+## Lecture Materials 
+
+*Coming soon!*
+
+## Discussion Materials
+
+*Coming soon!*
+
+## Assignment Reminders
+
+| Assignment Type | Title                                                 | Date Assigned  | Date Due                   |
+|:---------------:|-------------------------------------------------------|----------------|----------------------------|
+| HW              | [Homework Assignment #3](../assignments/HW3.qmd)      | Mon 02/12/2024 | Sat 02/24/2024, 11:59pm PT |
