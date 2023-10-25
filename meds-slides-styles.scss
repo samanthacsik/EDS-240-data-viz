@@ -29,8 +29,7 @@ $code-color: $magenta;
 $code-bg: $off-white;  // was $white
 $code-block-font-size: 0.4em;
 $code-block-bg: $off-white;
-
-/*-- scss:rules --*/
+$presentation-font-size-root: 25px;
 
 /*-- scss:rules --*/
 
@@ -66,7 +65,7 @@ hr {
 .custom-title {
   font-family: $font-family-serif;
   color: $baby-blue;
-  font-size: 1.7em;
+  font-size: 3em; //1.7em;
   //position: absolute;
   left: 20px;
 }
@@ -75,7 +74,7 @@ hr {
 .custom-subtitle {
   font-family: $font-family-sans-serif;
   color: $baby-blue;
-  font-size: 1.2em;
+  font-size: 2.4em;
   left: 20px;
 }
 
@@ -83,7 +82,7 @@ hr {
 .custom-subtitle2 {
   font-family: $font-family-sans-serif;
   color: $baby-blue;
-  font-size: 1em;
+  font-size: 1.8em;
   left: 20px;
 }
 
@@ -91,7 +90,7 @@ hr {
 .custom-subtitle3 {
   font-family: $font-family-sans-serif;
   color: $baby-blue;
-  font-size: 0.7em;
+  font-size: 1.2em;
   left: 20px;
 }
 
@@ -99,62 +98,62 @@ hr {
 .title-footer {
   text-align: center !important;
   color: $baby-blue;
-  font-size: 0.5em !important;
+  font-size: 0.9em !important;
 }
 
 // slide title (large)
 .slide-title {
   font-family: $font-family-serif;
   color: $teal;
-  font-size: 1.4em;
+  font-size: 2em;
   font-weight: 700;
 }
 
 // slide title (medium)
-.slide-title2 { // FORMALLY: .slide-title-smaller
+.slide-title2 {
   font-family: $font-family-serif;
   color: $teal;
-  font-size: 1.3em;
+  font-size: 1.7em;
   font-weight: 700;
 }
 
 // slide title (small)
-.slide-title3 { // FORMALLY: .slide-title-smallest
+.slide-title3 {
   font-family: $font-family-serif;
   color: $teal;
-  font-size: 1.1em;
+  font-size: 1.5em;
   font-weight: 700;
 }
 
 // XL body text
-.body-text-xl { // FORMALLY: .large-body-text
+.body-text-xl {
   font-family: $font-family-sans-serif;
-  font-size: 1em;
+  font-size: 2em;
 }
 
 // L body text
-.body-text-l { // FORMALLLY: .medium-body-text
+.body-text-l {
   font-size: 25px;
-	line-height: 1.7em;
+	line-height: 1.9em;
 	margin-bottom: 1em;
 }
 
 // normal body text
 .body-text {
 	font-size: 23px;
-	line-height: 1.7em;
+	line-height: 1em;
 	margin-bottom: 1em;
 }
 
 // S body text
-.body-text-s { // OLD NAME: .small-text (also includes .smaller-body-text @ 21px)
-  font-size: 20px; // 19px
-	line-height: 1.6em;
+.body-text-s {
+  font-size: 20px;
+	line-height: 0.8em;
 }
 
 // XS body text
-.body-text-xs { // OLD NAME: .smallest-text
-  font-size: 14px;
+.body-text-xs {
+  font-size: 0.5em;
 	line-height: 1.5em;
 }
 

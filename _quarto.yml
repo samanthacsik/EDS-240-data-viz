@@ -13,22 +13,22 @@ website:
         target: _blank
       - text: lecture materials
         menu:
-          - text: lecture 1 (week 1)
-            href: lecture1.qmd
-          - text: lecture 2 (week 3)
-            href: lecture2.qmd
-          - text: lecture 3 (week 4)
-            href: lecture3.qmd
-          - text: lecture 4 (week 5)
-            href: lecture4.qmd
-          - text: lecture 5 (week 6)
-            href: lecture5.qmd
-          - text: lecture 6 (week 8)
-            href: lecture6.qmd
-          - text: lecture 7 (week 9)
-            href: lecture7.qmd
-          - text: lecture 8 (week 10)
-            href: lecture8.qmd
+          - text: lecture 1 (week 1, 1/8)
+            href: lectures/lecture1.qmd
+          - text: lecture 2 (week 3, 1/22)
+            href: lectures/lecture2.qmd
+          - text: lecture 3 (week 4, 1/29)
+            href: lectures/lecture3.qmd
+          - text: lecture 4 (week 5, 2/5)
+            href: lectures/lecture4.qmd
+          - text: lecture 5 (week 6, 2/12)
+            href: lectures/lecture5.qmd
+          - text: lecture 6 (week 8, 2/26)
+            href: lectures/lecture6.qmd
+          - text: lecture 7 (week 9, 3/4)
+            href: lectures/lecture7.qmd
+          - text: lecture 8 (week 10, 3/11)
+            href: lectures/lecture8.qmd
       - text: assignments
         href: assignments.qmd
       - text: redeem tokens

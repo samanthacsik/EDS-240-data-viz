@@ -1,0 +1,22 @@
+---
+title: "Data Communication"
+subtitle: "Lecture 2 (week 3)"
+description: "Monday January 22nd, 2024"
+title-block-banner: true
+toc: true
+---
+
+<!-- Coming soon! -->
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "85%" 
+#| fig-alt: "An extended version of the classic R4DS schematic from Grolemund & Wickham, with environmental data science, communities, and communication added."
+knitr::include_graphics("../images/horst-eco-r4ds.png")
+```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::

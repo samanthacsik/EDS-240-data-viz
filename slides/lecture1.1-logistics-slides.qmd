@@ -1,0 +1,227 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../meds-slides-styles.scss
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 1.1]{.custom-title}
+
+[*Course logistics & syllabus*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+:::: {.columns} 
+
+::: {.column width="50%"}
+[Sam Csik |]{.custom-subtitle2}
+[Data Training Coordinator]{.custom-subtitle2}
+
+[*National Center for Ecological Analysis & Synthesis*]{.custom-subtitle3}
+:::
+
+::: {.column width="50%"}
+[Master of Environmental Data Science |]{.custom-subtitle2}
+
+[*Bren School of Environmental Science & Management*]{.custom-subtitle3}
+:::
+
+::::
+
+<br>
+
+::: {.title-footer}
+January 8th, 2024
+:::
+
+---
+
+## {#welcome data-menu-title="Welcome to EDS 240!"} 
+
+[Welcome to EDS 240!]{.slide-title}
+
+<hr>
+
+This course will focus on the basic principles for effective communication through data visualization and using technical tools and workflows for creating and sharing data visualizations with diverse audiences.
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "45%" 
+#| fig-alt: "An extended version of the classic R4DS schematic from Grolemund & Wickham, with environmental data science, communities, and communication added."
+knitr::include_graphics("images/lecture1/horst-eco-r4ds.png")
+```
+
+:::{.gray-text .body-text-s .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+---
+
+## {#logistics data-menu-title="Course logistics"} 
+
+[Meeting times & locations]{.slide-title}
+
+<hr>
+
+- class & section meeting times
+- locations
+- student hours
+
+---
+
+## {#instructor data-menu-title="Teaching team"} 
+
+[Teaching team]{.slide-title}
+
+<hr>
+
+:::: {columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-l}
+**Instructor**
+:::
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "55%" 
+knitr::include_graphics("images/lecture1/sam.png")
+```
+
+::: {.center-text}
+[**Sam Csik**]{.teal-text}  
+**Email:** [scsik@ucsb.edu](mailto::scsik@ucsb.edu)  
+**Learn more:** [samanthacsik.github.io](https://samanthacsik.github.io/)  
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-l}
+**TA**
+:::
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "55%" 
+knitr::include_graphics("images/lecture1/tbd.png")
+```
+
+::: {.center-text}
+[**Sevan Esaian**]{.teal-text}  
+**Email:** [sevan.esaian@lifesci.ucsb.edu](mailto::sevan.esaian@lifesci.ucsb.edu)  
+**Learn more:** [tbd](tbd)
+:::
+
+:::
+
+::::
+
+
+
+---
+
+## {#course-website data-menu-title="Course website"} 
+
+[Everything you'll need lives on the course website]{.slide-title2}
+
+<hr>
+
+::: {.center-text .body-text-l}
+**<https://samanthacsik.github.io/EDS-240-data-viz>**
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/eds240-website.png")
+```
+
+::: {.body-text-l .center-text}
+Link is also bookmarked at the top of the **#eds-240-data-viz** Slack channel and linked on the [Courses page](https://ucsb-meds.github.io/courses.html).
+:::
+
+---
+
+## {#help data-menu-title="Getting help"} 
+
+[Asking for help]{.slide-title}
+
+<hr>
+
+Ruth's flow chart
+
+Slack channel first -- everyone benefits!
+
+---
+
+## {#grading data-menu-title="Alternative Grading"} 
+
+[Alternative Grading]{.slide-title}
+
+<hr>
+
+---
+
+## {#student-resources data-menu-title="Student Resources"} 
+
+[Student Resources]{.slide-title}
+
+<hr>
+
+---
+
+## {#LOs data-menu-title="Learning Objectives"} 
+
+[Learning Objectives]{.slide-title}
+
+<hr>
+
+[{{< fa magnifying-glass >}}]{.teal-text} Identify which types of visualizations are most appropriate for your data and your audience
+
+<br>
+
+. . .
+
+[{{< fa broom >}}]{.teal-text} Prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations
+
+<br>
+
+. . .
+
+[{{< fa chart-column >}}]{.teal-text} Build effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically `ggplot2` + ggplot2 extension packages
+
+<br>
+
+. . .
+
+[{{< fa file-code >}}]{.teal-text} Write code from scratch and read and adapt code written by others
+
+<br>
+
+. . .
+
+[{{< fa users >}}]{.teal-text} Apply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations
+
+<br>
+
+. . .
+
+[{{< fa comments >}}]{.teal-text} Assess, critique, and provide constructive feedback on data visualizations
+

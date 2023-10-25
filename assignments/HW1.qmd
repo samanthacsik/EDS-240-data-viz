@@ -1,0 +1,573 @@
+---
+title: "Assignment #1 (HW #1)"
+subtitle: "Assigned Mon 01/08/2024 | Due Sat 01/20/2024"
+title-block-banner: true
+toc: true
+---
+
+::: {.center-text}
+<div class="pink-box">
+***You must earn a "Satisfactory" mark for each individual Part (I, II and III) to earn a "Satisfactory" mark for Assignment #1.***
+
+Read each part of the assignment carefully!
+</div>
+:::
+
+<br>
+
+# [Part I: Annotating `{ggplot2}` code]{.pink-text}
+
+## Learning Outcomes 
+
+- read code written by others 
+- assess, critique, and provide constructive feedback on data visualizations
+
+## Description 
+
+Much of your time as a data scientist will be spent looking at code written by others -- maybe you're trying to learn from and adapt someone else's code for your own work, or perhaps you've been asked to conduct a code review for a colleague. Being able to look at and make sense of code that you did not write yourself is an invaluable skill and an important one to practice throughout your learning journey. Here, you'll be asked to interpret and annotate `ggplot2` code written by someone else. This will likely require running code (both as a whole *and* line-by-line), as well as Googling and/or reading documentation.
+
+[**Annotate the following code**]{.teal-text}, adapted from [Christophe Nicault's](https://github.com/cnicault) visualization titled, ***Evolution of deaths from indoor air pollution*** ([original code](https://github.com/cnicault/tidytuesday/blob/master/2022/2022-15-indoor_air_pollution/indoor_air_pollution.Rmd)).:
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "50%"
+knitr::include_graphics("../images/indoor-poll-ggplot.png")
+```
+
+You can find metadata and additional information on the [rfordatascience/tidytuesday (2022-04-12) `readme.md`](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-04-12/readme.md#data-dictionary). **Note:** A select few lines of code have already been annotated for you.
+
+<!-- ::: {.callout-note} -->
+<!-- ## Install the following packages (if you don't already have them) using `install.packages("package_name")`: -->
+
+<!-- - [`{tidytuesdayR}`](https://cran.r-project.org/web/packages/tidytuesdayR/index.html) -->
+<!-- - [`{tidyverse}`](https://cran.r-project.org/web/packages/tidyverse/index.html) -->
+<!-- - [`{patchwork}`](https://cran.r-project.org/web/packages/patchwork/index.html) -->
+<!-- - [`{showtext}`](https://cran.r-project.org/web/packages/showtext/index.html) -->
+<!-- - [`{sysfonts}`](https://cran.r-project.org/web/packages/sysfonts/index.html) -->
+<!-- - [`{countrycode}`](https://cran.r-project.org/web/packages/countrycode/index.html) -->
+<!-- - [`{glue}`](https://cran.r-project.org/web/packages/glue/index.html) -->
+<!-- - [`{scales}`](https://cran.r-project.org/web/packages/scales/index.html) -->
+<!-- - [`{ragg}`](https://cran.r-project.org/web/packages/ragg/index.html) -->
+<!-- ::: -->
+
+::: {.callout-tip collapse="true" icon="false"}
+## Click here to expand the code
+
+Install the following packages (if you don't already have them) using `install.packages("package_name")` or `install.packages("package_name1", "package_name2", ...)`:
+
+- [`{tidytuesdayR}`](https://cran.r-project.org/web/packages/tidytuesdayR/index.html)
+- [`{tidyverse}`](https://cran.r-project.org/web/packages/tidyverse/index.html)
+- [`{patchwork}`](https://cran.r-project.org/web/packages/patchwork/index.html)
+- [`{showtext}`](https://cran.r-project.org/web/packages/showtext/index.html)
+- [`{sysfonts}`](https://cran.r-project.org/web/packages/sysfonts/index.html)
+- [`{countrycode}`](https://cran.r-project.org/web/packages/countrycode/index.html)
+- [`{glue}`](https://cran.r-project.org/web/packages/glue/index.html)
+- [`{scales}`](https://cran.r-project.org/web/packages/scales/index.html)
+- [`{ragg}`](https://cran.r-project.org/web/packages/ragg/index.html)
+
+**Tips:**
+
+- See lines 114 and 120 for examples of code annotations -- aim to include this level of detail 
+- I love using the [`{ARTofR}` package](https://github.com/Hzhang-ouce/ARTofR) to create titles, dividers, and block comments in my scripts and Qmd/Rmd files 
+- If you don't immediately understand the purpose of a line/chunk of code, skip over it (temporarily) and continue working your way through the following code -- it oftentimes becomes more evident given additional context
+- Plots may look *super* squished in the Viewer -- use the **Zoom** button to pop them open in a separate window
+- **Keep in mind:** While this is fairly complex ggplot code, remember that it's constructed in layers -- meaning you can run code line-by-line to see exactly how the plot is changing with each new layer. You may come across functions and arguments that you're already familiar with (yay!), and of course, others that are totally new.  
+
+```{r}
+#| eval: false
+#| echo: true
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                  1. setup                                ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#......ANNOTATE (generally, what does this code block do?).......
+library(tidyverse) # ANNOTATE (brief explanation of pkg) ----
+library(patchwork) # ANNOTATE (brief explanation of pkg) ----
+library(showtext) # ANNOTATE (brief explanation of pkg) ----
+
+#......ANNOTATE (generally, what does this code block do?).......
+# ANNOTATE (explain differences between args, `name` & `family`) ----
+font_add_google(name = "Roboto", family = "roboto")
+font_add_google(name = "Roboto Condensed", family = "roboto condensed")
+font_add_google(name = "Oswald", family = "oswald")
+font_add_google(name = "Khula", family = "khula")
+font_add_google(name = "Share Tech Mono", family = "techmono")
+
+#.....settings for using imported texts in future saved plot.....
+showtext_opts(dpi = 320) # tell {showtext} the resolution for the device ----
+showtext_auto(enable = TRUE) # automatically use {showtext} to render text for future devices ----
+
+#................load TidyTuesday data from GitHub...............
+tuesdata <- tidytuesdayR::tt_load(x = 2022, week = 15)
+
+#......ANNOTATE (generally, what does this code block do?).......
+indoor_pollution <- tuesdata$indoor_pollution 
+death_ts <- tuesdata$death_timeseries
+death_full <- tuesdata$death_fuel
+fuel_gdp <- tuesdata$fuel_gdp
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                              2. data wrangling                           ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#......ANNOTATE (generally, what does this code block do?).......
+indoor_pollution <- indoor_pollution %>%
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  rename(perc_death = 4) %>% 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  mutate(continent = countrycode::countrycode(sourcevar = Code, origin = "iso3c", destination = "continent")) 
+
+#......ANNOTATE (generally, what does this code block do?).......
+gap_indoor <- indoor_pollution %>%
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  filter(!is.na(Code), Code != "OWID_WRL") %>% 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  filter(Year %in% c(1990, 2019)) %>% 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  mutate(year = glue::glue("Y{Year}")) %>% 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  pivot_wider(id_cols = c("Entity", "Code"), names_from = year, values_from = perc_death) %>% 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  mutate(gap = Y2019 - Y1990) %>% 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  mutate(continent = countrycode::countrycode(sourcevar = Code, origin = "iso3c", destination = "continent")) 
+
+#......ANNOTATE (generally, what does this code block do?).......
+fuel_gdp_clean <- fuel_gdp %>%
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  rename(clean_fuel = 4, gdp = 5, population = 6) %>% 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  select(-Continent) %>% 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  mutate(continent = countrycode::countrycode(sourcevar = Code, origin = "iso3c", destination = "continent")) %>% 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  filter(!is.na(continent)) 
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                          3. prep ggplot elements                         ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#......ANNOTATE (generally, what does this code block do?).......
+pal <- c("#02403A", "#0A7373", "#757A62", "#EDAA25", "#C43302")
+
+#......ANNOTATE (generally, what does this code block do?).......
+graph_legend <- "The first graph shows the relation between the decrease of the percentage of deaths and the access to clean fuel.\nEach country is represented by a line connecting all the values from 2002 to 2019.\nIt shows that for many countries the access to clean fuel for cooking increased over\n the years resulting in a reduction of percentage of death due to indoor air pollution.\n\nThe graph below shows the evolution between 1990 and 2019\n in the distribution of the percentage of death among\n the countries of each continent."
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                       4. build connected scatterplot                     ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#......ANNOTATE (generally, what does this code block do?).......
+connected_scatterplot_df <- indoor_pollution %>%
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  select(-continent) %>% 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  left_join(fuel_gdp_clean, by = c("Entity" = "Entity", "Code" = "Code", "Year" = "Year")) %>% 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  filter(!is.na(clean_fuel), !is.na(gdp)) 
+
+#..................create connected scatterplot..................
+
+#......ANNOTATE (generally, what does this code block do?).......
+connected_scatterplot <- ggplot(data = connected_scatterplot_df, aes(x = clean_fuel, y = perc_death, alpha = Year)) + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  geom_line(aes(group = Code, color = continent), linewidth = 0.9) + 
+  
+  # add scatterplot layer; points colored by 'continent' variable, outlined in white ----
+  geom_point(aes(fill = continent), size = 1, shape = 21, color = "white") + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  annotate("text", x = 96, y = 21, label = graph_legend, family = "roboto", size = 4, hjust = 1, vjust = 1) + 
+  
+  # convert x-axis & y-axis values to %; add some padding between data and axes ----
+  scale_x_continuous(labels = scales::label_percent(scale = 1), expand = c(0.01, 0.01)) + 
+  scale_y_continuous(labels = scales::label_percent(scale = 1, accuracy = 1), expand = c(0.01, 0.01)) + 
+  
+  # ANNOTATE (briefly explain these lines of code) ----
+  scale_color_manual(values = rev(pal)) + 
+  scale_fill_manual(values = rev(pal)) + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  guides(alpha = "none", color = "none", fill = "none") + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  theme_light(base_family = "roboto condensed") + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  labs(x = "% of access to clean fuel", 
+       y = "% of deaths") + 
+  
+  # ANNOTATE (briefly explain these lines of code) ----
+  theme(axis.title.y = element_text(margin = margin(t = -20, r = -80, b = 0, l= 0), angle = 0, size = 12), 
+        axis.title.x = element_text(margin = margin(t = 10), size = 12), 
+        
+        # ANNOTATE (briefly explain this line of code) ----
+        axis.text = element_text(size = 11), 
+        
+        # ANNOTATE (briefly explain this line of code) ----
+        panel.border = element_blank())
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                            5. build histograms                           ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#.............df of % ranges used to build histogram.............
+histo_evolution_df <- gap_indoor %>%
+  
+  # assign % death to a range (e.g. AFG (Y1990): 19.623 -> range of 15-20), as factors ----
+  mutate(c1990 = cut(Y1990, breaks = c(0,1,2,5,10,15,20,25)), 
+         c2019 = cut(Y2019, breaks = c(0,1,2,5,10,15,20,25))) %>% 
+  
+  # use regular expressions (regex) to separate the lower and upper range values ----
+  mutate(sep1990 = str_match(c1990, "^\\(([0-9]+),([0-9]+)]$"), 
+         sep2019 = str_match(c2019, "^\\(([0-9]+),([0-9]+)]$")) %>%
+  
+  # use regex to create nicely-formatted percentage ranges ----
+  mutate(c1990 = glue::glue("{sep1990[,2]}% to {sep1990[,3]}%"), 
+         c2019 = glue::glue("{sep2019[,2]}% to {sep2019[,3]}%")) %>% 
+  
+  # reorder factors in the c1990 & c2019 cols by values in the `sep1990[,2]` & `sep2019[,2]` columns ----
+  mutate(c1990 = fct_reorder(c1990, parse_number(sep1990[,2])), 
+         c2019 = fct_reorder(c2019, parse_number(sep2019[,2]))) %>%
+  
+  # reverse the order of factors (low > high) in c1990 & c2019 cols ----
+  mutate(c2019 = fct_rev(c2019),
+         c1990 = fct_rev(c1990)) 
+
+#......ANNOTATE (generally, what does this code block do?).......
+# ANNOTATE (briefly explain this line of code) ----
+histo_evolution <- ggplot(data = histo_evolution_df) + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  geom_histogram(aes(x = c1990), stat = "count", alpha = 0) + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  annotate("rect", xmin = 4.5 ,xmax = 7.6, ymin = 0, ymax = 36, fill = "#e1e1e1", alpha = 0.5) +
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  annotate("text", x = 5, y = 25, label = "0% to 5%", color = "grey60", family = "Oswald", size = 5, fontface = "bold") +
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  geom_histogram(aes(x = c1990, fill = continent), stat = "count", alpha = 0.3) +
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  geom_histogram(aes(x = c2019, fill = continent), stat = "count", width = 0.5) +
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  scale_fill_manual(values = rev(pal)) + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  coord_flip() + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  facet_wrap(~continent, ncol = 5) + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  guides(fill = "none") + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  labs(caption = "Number of country for each range of percentage of death from indoor air pollution.\nThe light bars represent the distribution in 1990 and the dark and narrow bars represent the distribution in 2019.\nThe bin from 0% to 5% is splitted in 3 differents bins (0% to 1%, 1% to 2% and 2% to 3%) to give more detail for the countries\n which reached a low level of death, while the other bins represent 5% range.") + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  theme_void() + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  theme(axis.text.x = element_text(margin = margin(t = 5, r = 0, b = 0, l = 0), family = "roboto condensed", color = "grey30", size = 12), 
+        
+        # ANNOTATE (briefly explain this line of code) ----
+        axis.text.y = element_text(family = "roboto condensed", color = "grey30", size = 12),
+        
+        # ANNOTATE (briefly explain this line of code) ----
+        panel.grid.major.x = element_line(color = "grey60", linetype = "13"), 
+        
+        # ANNOTATE (briefly explain this line of code) ----
+        panel.spacing.x = unit(8, "mm"), 
+        
+        # ANNOTATE (briefly explain this line of code) ----
+        strip.text = element_blank(), 
+        
+        # ANNOTATE (briefly explain this line of code) ----
+        plot.caption = element_text(family = "roboto", size = 12, color = "black", hjust = 0, margin = margin(t = 25, l = 40), lineheight = 1.1)) 
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                              6. build legends                            ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#......ANNOTATE (generally, what does this code block do?).......
+legend_df <- tibble(pos = c(0, 2, 4, 6, 8),
+                    country = sort(unique(fuel_gdp_clean$continent)))
+
+#......ANNOTATE (generally, what does this code block do?).......
+# ANNOTATE (briefly explain this line of code) ----
+legend <- ggplot(data = legend_df) + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  geom_rect(aes(xmin = pos, xmax = pos + 1, 
+                ymin = 0.35, ymax = 0.75, fill = country), size = 6) + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  geom_text(aes(x = pos + 0.5, y = 0.45, label = country), 
+            family = "oswald", color = "white", size = 6, 
+            hjust = 0.5, vjust = 0, fontface = "bold") + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  scale_fill_manual(values = rev(pal)) +
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  scale_y_continuous(limits = c(0,1)) + 
+  scale_x_continuous(limits = c(0,9)) + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  guides(color = "none", fill = "none") + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  theme_void() 
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##              7. assemble all plot components using {patchwork}           ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## NOTE: this plot may not look correct when opened in the Viewer! You'll need to save a PNG (in part 8, below) to view it correctly ##
+
+# ANNOTATE (briefly explain this line of code) ----
+final_plot <- connected_scatterplot / legend / histo_evolution + 
+  
+  # ANNOTATE (briefly explain this line of code) ----
+  plot_layout(heights = c(3, 0.5, 1)) + 
+  
+  ## ANNOTATE (briefly explain these lines of code) ----
+  plot_annotation( 
+  caption = "Visualization: Christophe Nicault | Data: Our world in Data",
+  title = "Evolution of deaths from indoor air pollution",
+  subtitle = str_wrap("The percentage of death from indoor air pollution decreased in many countries in the last 30 years, due to a better access to clean fuel for cooking. However there are inequalities with many countries still lacking access, particularly in Africa, Oceania and Asia.", 100),
+  
+  # ANNOTATE (briefly explain these lines of code) ----
+  theme = theme( 
+    plot.margin = margin(10,10,5,10),
+    plot.title = element_text(family = "khula", size = 22, color = "#02403A", face = "bold", hjust = 0.5, margin = margin(5,0,10,0)),
+    plot.subtitle = element_text(family = "khula", size = 14, color = "black", hjust = 0.5, margin = margin(10,0,20,0)),
+    plot.caption = element_text(family = "techmono", size = 11, color = "#02403A", hjust = 0.95, margin = margin(20,0,5,0))   
+  )
+)
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                            8. save plot as a PNG                         ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#........open plotting device to draw plot to a PNG file.........
+# specify file path/name and png resolution & size
+ragg::agg_png(here::here("outputs", paste0("indoor_pollution_", format(Sys.time(), "%Y%m%d_%H%M%S"), ".png")), 
+              res = 320, width = 12, height = 13, units = "in")
+
+#................plot object that you want to draw...............
+final_plot
+
+#....................turn off plotting device....................
+# once off, you should see your .png file appear in outputs/ folder
+dev.off()
+
+```
+:::
+
+[**Once complete, answer the following questions:**]{.teal-text}
+
+- [ ] Describe two elements of this plot that you find visually-pleasing / easy to understand / intuitive. Why? [**(4-10 sentences)**]{.peach-text}
+- [ ] Describe two elements of this plot that you feel could be better presented in a different way. Why? [**(4-10 sentences)**]{.peach-text}
+- [ ] Describe two new things that you learned by interpreting / annotating this code. These could be  packages, functions, or even code organizational approaches that you hadn't previously known about or considered. [**(4-10 sentences)**]{.peach-text}
+
+## Rubric (specifications)
+
+You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part I:
+
+- [ ] update each comment line in the code that reads, `ANNOTATE`, with a *brief* description, written in your own words (see lines 114 & 120 for example annotations; there are other lines that have been already annotated for you as well, i.e. lines 152 - 173, 295  - 305 -- you do not need to re-write these)
+- [ ] answer the three concluding questions adhering to the length requirements specified at the end of each question prompt
+
+<br>
+
+::: {.center-text .large-fa-icon .teal-text}
+{{< fa code title="The symbol for code, </>" >}} End Part I {{< fa code title="The symbol for code, </>" >}}
+:::
+
+<br>
+
+# [Part II: Building a basic ggplot]{.pink-text}
+
+## Learning Outcomes 
+
+- identify which types of visualizations are most appropriate for your data and your audience
+- prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations
+
+## Description 
+
+In class, we discussed a [five-step workflow](https://ucsb-meds.github.io/ggplot2-workflow/) for breaking down the process of transforming data into a visualization. The five steps are listed below:
+
+1. Determine data type(s)
+2. Determine appropriate visualization type(s)
+3. Create a basic plot
+4. Improve clarity & take home message
+5. Final touches / polishing
+
+Here, you will apply this workflow to visualize lobster size data across multiple rocky reef sites along the Santa Barbara coastline.
+
+::: {.callout-note}
+## Understanding the data
+
+#### About SBC LTER
+The [Santa Barbara Coastal Long Term Ecological Research](https://sbclter.msi.ucsb.edu/) (SBC LTER) site was established in 2000 as part of the [LTER Network](https://lternet.edu/) to understand the ecology of coastal kelp forest ecosystems. Research and long-term ecological and environmental monitoring data is collected within a 10,000 square kilometer area of the northern portion of the Southern California Bight, which includes the Santa Barbara Channel, coastal watersheds, small estuaries, and sandy beaches that border the Channel. You can explore the full [data catalog](https://sbclter.msi.ucsb.edu/data/catalog/).
+
+#### About the data set
+
+There are five coastal rocky reef research sites at which the SBC LTER collects long-term monitoring data:
+
+- Naples Reef (NAPL)
+- Isla Vista Reef (IVEE)
+- Arroyo Quemado Reef (AQUE)
+- Mohawk Reef (MOHK)
+- Carpinteria Reef (CARP)
+
+In January 2012, [Naples Reef](https://wildlife.ca.gov/Conservation/Marine/MPAs/Naples) and [Isla Vista Reef](https://wildlife.ca.gov/Conservation/Marine/MPAs/Campus-Point) were [designated as Marine Protected Areas](https://www.parks.ca.gov/?page_id=27928) (MPAs), prohibiting any future take of lobsters (along with other living marine resources). Since then, the SBC LTER has conducted annual (late summer) benthic surveys at each of the above five sites, where SCUBA divers record lobster abundance and sizes. Explore the [metadata](https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.77) for more information.  
+
+#### Data citation
+
+Reed, D, R. Miller. 2023. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (*Panulirus interruptus*), ongoing since 2012 ver 9. Environmental Data Initiative. <https://doi.org/10.6073/pasta/3595322687af94cd532620ad9db94c77>. 
+
+#### Finding this data set
+
+*Knowing how to search for data can be tricky! Here's how I accessed this particular data set, should you want to search for LTER data yourself, in the future:*
+
+1. **Filter the [SBC LTER Data Catalog](https://sbclter.msi.ucsb.edu/data/catalog/)** for data sets related to **Reef/Kelp Forest** habitats (check the box next to the habitat type of interest, or filter by measurement type or LTER Core Research Area). This produces a table of data collections, descriptions, and links to individual data and metadata records.
+2. **Choose a data set of interest.** I was interested in the *SBC LTER: Spiny lobster in California* Collection, which includes three different data sets. I specifically chose, [Lobster abundace, size, and fishing pressure](https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.77) -- here, you'll find lots of metadata, including people and organizations involved in this data collection, temporal, geographic, and taxonomic coverage, methods and protocols, and links to data files. Additionally, you'll see a link to the [EDI Data Portal](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=77) (top right corner), which is the data repository that maintains all data and metadata produced by the LTER. EDI assigns a DOI (Digital Object Identifier) to each version of a data package (data package = data + metadata; SBC LTER updates this data set each year when new data is collected -- each update receives a new DOI).
+3. **Download or import the data.** You can download the data file from either the [SBC LTER Data Catalog](https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.77) *or* the [EDI Data Package](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=77). *However* I prefer reading in the data directly from online (that way, I don't need to worry about storing large data files). I recommend doing this from the [EDI Data Package](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=77) (rather than the SBC LTER Data Catalog), since the DOI ensures you can re-reference the exact same version, even after the data set is updated with new data (SBC LTER Data Catalog only has a download link for the most up-to-date version of the data). To do so, right click on the *Download Data* button, then select *Copy Link Address*.
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "50%"
+knitr::include_graphics("../images/download-lob-data.png")
+```
+
+Use this url inside `read_csv()` to import the data into your script or Qmd/Rmd file:
+
+```{r}
+#| eval: false
+#| echo: true
+lobster_data <- read_csv("https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-sbc.77.9&entityid=f32823fba432f58f66c06b589b7efac6")
+```
+
+:::
+
+Given the above data set, apply the five-step workflow to create a data visualization that explores how lobster size differs across each of the five coastal rocky reef SBC LTER sites for the years 2012 (the IVEE and NAPL were established as MPAs) and 2022 (10 years later).
+
+[**You must complete steps 1 - 3**]{.teal-text} (you may need to do some Googling or reference documentation to determine what `geom_*` to use when creating your basic plot). 
+
+- [ ] **(step 1)** write out, in words, the data types of the variables from the above data set (you only need to do this for the variables used in creating your plot) [**(1-2 sentences)**]{.peach-text}
+- [ ] **(step 2)** write out, in words, the appropriate visualization types you considered given these data types *(hint: revisit [from Data to Viz](https://www.data-to-viz.com/) for a helpful decision tree)* [**(1-2 sentences)**]{.peach-text}
+- [ ] **(step 3)** write ggplot code to create a basic plot to visualize these data (this will first require some data wrangling)
+
+[**Physically coding steps 4 & 5 is optional -- instead, you may explain, in writing and/or by sketching out on paper, the following:**]{.teal-text} 
+
+- [ ] **(representing step 4)** how you would improve plot clarity/the take home message(s) (consider the following prompts)? [**(2-3 sentences total)**]{.peach-text}
+    - [ ] Do you see any trends that you may want to explore further and/or highlight?
+    - [ ] How might you use colors and/or shapes to highlight important site groupings and/or years?
+- [ ] **(representing step 5)** some design choices you might make as you polish off your data visualization (consider the following prompts) [**(2-3 sentences total)**]{.peach-text}
+    - [ ] What plot elements should you update to really polish up this visualization?
+    - [ ] What text might you include?
+
+**Note:** Steps 4 and 5, above, are thought exercises -- it's okay if you don't yet know exactly how to approach answering these (we'll be spending time during these first few weeks of class talking about data communication and design theory), but do your best to write down a few things that you think would help to improve both the clarity and overall design of your data visualization .
+
+## Rubric (specifications)
+
+You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part II:
+
+- [ ] all responses and code are written in `filename.qmd`, arranged according to the template 
+- [ ] complete steps 1 & 2 (as detailed above in the Description), adhering to the length requirements specified at the end of each writing prompt
+- [ ] complete step 3 (as detailed above in the Description); use the checklist below to ensure you receive full marks:
+    - [ ] import the data
+    - [ ] wrangle the data so that it's in the correct format for plotting (I've provided )
+    - [ ] build a basic visualization, which should include the following two lines of code:
+        - [ ] a line of code to initialize your ggplot object
+        - [ ] a line of code to specify the appropriate `geom_*`
+    - [ ] code is annotated
+    - [ ] all code runs 
+
+<br>
+
+::: {.center-text .large-fa-icon .teal-text}
+{{< fa chart-line title="A simple line chart" >}} End Part II {{< fa chart-line title="A simple line chart" >}}
+:::
+
+<br>
+
+# [Part III: Find a data set(s) that interests you]{.pink-text}
+
+## Learning Outcomes 
+
+**Note:** This part of HW #1 is the first step in working towards your final course assignment (we'll be breaking it down a bit, week-by-week). Your final assignment is meant to combine nearly all of the course learning outcomes(!):
+
+- identify which types of visualizations are most appropriate for your data and your audience
+- prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations
+- build effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages
+- write code from scratch and read and adapt code written by others
+- apply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations 
+
+This week, we'll mostly be focused on some prep work. Read the Description, below, for details.
+
+## Description 
+
+*A small part of each homework assignment will be dedicated to working on a series of data visualizations which will be due as part of Assignment #4 at the end of the quarter.* Assignment #4 will ask you to build three related, but different data visualizations -- all which will use the same data set(s), but present those data differently for three different audiences / purposes:
+
+1. **a visualization for a general audience (i.e. without domain expertise)** -- this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), and/or may even blend both art and science
+2. **a visualization to be included in a paper, technical documentation, or report** -- this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.
+3. **a visualization that you could include in presentation** -- you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you're animating pieces of your visualization onto a slide) 
+
+[**This week, you’ll focus on finding data that interest you and begin brainstorming some questions that you might explore / answer using those data.**]{.teal-text} 
+
+Your data set(s) should -- to some degree -- have an environmental focus. It may be related to a past project, or even your current Capstone or GP. It may also be a completely new data set(s), unrelated to anything you're currently working on. Some places to check out if you're looking for data (you are not limited to just these data sources): 
+
+- **[Data is Plural](https://www.data-is-plural.com/archive/) **-- is a weekly newsletter (and seasonal podcast) of useful / curious data sets, published by [Jeremy Singer-Vine](https://www.jsvine.com/)
+- **[DataOne](https://www.dataone.org/)** -- a repository of data repositories! Search across all member repositories (including repositories like [EDI Data Portal](https://portal.edirepository.org/nis/advancedSearch.jsp), [Arctic Data Center](https://arcticdata.io/catalog), [KNB](https://knb.ecoinformatics.org/), etc.) for environmental data (along with curated metadata records)
+- **[Kaggle Datasets](https://www.kaggle.com/datasets)** - Kaggle is an online community for data scientists and machine learning practitioners to find and publish data, as well as enter competitions to solve data science challenges
+
+***Note:** While we will not be working with spatial data models or building maps in EDS 240, you are welcome to use spatial data for this assignment if you are comfortable and excited to do so. We will not be able to offer as much support on the technical implementation of building maps-based visualizations, though the fundamental concepts of data communication and design theory that we'll be learning throughout this course will still apply. Relying on resources and knowledge from [EDS 223: Geospatial Analysis and Remote Sensing](https://ryoliver.github.io/EDS_223_spatial_analysis/) will be critical for anyone pursuing this option.*
+
+[**Once you've found your data set(s), answer the following questions:**]{.teal-text}
+
+- [ ] What is your data set(s) of? Be sure to include how it is related to the environment, if it's not immediately clear from your explanation. [**(<=4 sentences)**]{.peach-text}
+- [ ] What steps are involved in downloading or accessing the data (e.g. "I can download using a button via this online portal," "There's an R package for scraping the data," "I need to use an API to scrape the data," etc.)? [**(1-2 sentences)**]{.peach-text}
+- [ ] What question(s) do you want to answer using these data? [**(<=4 sentences)**]{.peach-text}
+- [ ] Will you need to combine multiple data sets to successfully answer your question(s)? If so, have you found all the necessary data? Do you have a way to combine it? [**(<=4 sentences)**]{.peach-text}
+- [ ] **Optional:** Import your data into R! (this will be a part of the next homework assignment) **IMPORTANT:** If your data files are large (>2GB) DO NOT push your data to GitHub. We'll talk more about this during the next assignment.
+
+## Rubric (specifications)
+
+You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part II:
+
+- [ ] link to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4
+- [ ] answer the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you *do not* need to complete the **optional** importing of data
+
+<br>
+
+::: {.center-text .large-fa-icon .teal-text}
+{{< fa table title="A data table with two columns and two rows" >}} End Part III {{< fa table title="A data table with two columns and two rows" >}}
+:::
+
+<br>
