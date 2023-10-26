@@ -272,9 +272,9 @@ Your course grade will be based off the following:
 
 ::: incremental
 - **3 Self-reflections** - a place to reflect on your learning plan / goals, challenges, etc. (5 days to complete each)
-- **4 Homework Assignments** - longer assignments where you'll apply conceptual knowledge & technical skills to data viz tasks (10 days to complete each)
+- **4 Homework Assignments** - longer assignments where you'll apply conceptual knowledge & technical skills to data viz tasks (10+ days to complete each)
 - **8 End-of-class surveys** - short surveys to help me better understand your weekly class experience (due by EOD each day there is lecture)
-- **8 Lectures** - a mix of slide-based lectures, live-coding, and individual/group-based critical thinking and technical exercises (attendance mandatory, Mondays 1:00-4:00pm PT)
+- **8 Lectures** - a mix of slide-based lectures, live-coding, and individual / group-based critical thinking and technical exercises (attendance mandatory, Mondays 1:00-4:00pm PT)
 :::
 
 ---
@@ -313,13 +313,67 @@ Higher Education”, by David Clark & Robert Talbert*
 
 <hr>
 
+<br>
+
+["Traditional" grading can come with some challenges:]{.body-text-m}
+
+<br>
+
+::: incremental
+- lacks feedback loops
+- benefits those who learn fast or have prior experience
+- bias-prone (e.g. awarding points, granting extensions)
+- can discourage learning for its own sake
+- can promote unhealthy student-instructor relationships
+:::
+
 ---
 
 ## {#how-does-specs-look data-menu-title="What does specs grading look like?"} 
 
-[How does specs grading look in practice for *this* course?]{.slide-title}
+[How does specs grading look in practice for *this* course?]{.slide-title3}
 
 <hr>
+
+::: {.body-text-m .pink-highlight}
+**TL;DR:** assignments receive either "Satisfactory" or "Not Yet" marks; tokens can be used to revise/resubmit assignments, for assignment extensions, or to miss class; earn tokens by attending discussions
+:::
+
+::: incremental
+- assignments receive either a **"Satisfactory"** or **"Not Yet"** mark
+- each assignment will have a **clear rubric** (containing specifications) which outline what must be completed and how in order to receive a "Satisfactory" mark; *not* meeting all specifications results in a "Not Yet" mark
+- students can **trade "tokens"** for the opportunity to:         
+    - revise/resubmit assignments that receive a "Not Yet" mark
+    - assignment extensions
+    - to miss class
+- students **earn tokens** (primarily) by attending discussion section
+:::
+
+---
+
+## {#why-tokens data-menu-title="Why tokens?"} 
+
+[{{< fa coins >}} Why tokens?]{.slide-title}
+
+<hr>
+
+<br>
+
+Everyone has different responsibilities & demands -- ***tokens give you the power and freedom to ask for the accommodations you need.***
+
+<br>
+
+. . . 
+
+You *do not* need to provide a reason to request an extension, revision, or to miss class, but *you must* have enough tokens to do so.
+
+<br>
+
+. . . 
+
+::: {.pink-highlight .body-text-m .center-text}
+**Tokens are not limitless and they accrue weekly (i.e. you don’t receive them all at the start), so use them wisely!**
+:::
 
 ---
 
@@ -329,11 +383,30 @@ Higher Education”, by David Clark & Robert Talbert*
 
 <hr>
 
+<br>
+
+[**Earn tokens:**]{.body-text-l}
+
+::: incremental
+- everyone starts with **0 tokens**
+- earn your **first token** by attending discussion section on Wednesday 1/10
+- earn **2 more tokens** by submitting Self-reflection #1 
+- earn **1 token per week** by attending discussion section (*full 50min*)
+:::
+
+<br>
+
+. . . 
+
+[**Use tokens:**]{.body-text-l}
+
+Fill out this Google form: <https://forms.gle/6FdV9g5KA9GgrxXBA> and email Sam & Sevan to let them know
+
 ---
 
 ## {#grade-tracker data-menu-title="Grade Tracker"} 
 
-[Grade Tracker]{.slide-title}
+[Use the Grade Tracker to determine your course grade]{.slide-title3}
 
 <hr>
 
@@ -353,7 +426,7 @@ knitr::include_graphics("images/lecture1/grade-tracker.png")
 
 <hr>
 
-GenAI tools (such as ChatGPT) are strongly discouraged for the following reasons:
+[GenAI tools (such as ChatGPT) are strongly discouraged for the following reasons:]{.body-text-m}
 
 ::: incremental
 - core competencies are built through practice
@@ -363,7 +436,7 @@ GenAI tools (such as ChatGPT) are strongly discouraged for the following reasons
 
 . . .
 
-Please adhere to these guidelines:
+[Please adhere to these guidelines:]{.body-text-m}
 
 ::: incremental
 - you may use spell/grammar check and/or synonym identification tools
@@ -381,19 +454,64 @@ Please adhere to these guidelines:
 
 ## {#help data-menu-title="Getting help"} 
 
-[Asking for help]{.slide-title}
+[Getting unstuck]{.slide-title}
 
 <hr>
 
-Ruth's flow chart
+Troubleshooting, deciphering code, and trying (and failing at) new things is a **large** part of being a data scientist. Grad school is a safe space to get comfy with and practice these! Here's how you should approach getting unstuck:
 
-Slack channel first -- everyone benefits!
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/getting-help-steps.png")
+```
+
+Check out the [getting unstuck](http://localhost:5908/getting-unstuck.html) page (under "resources") on the course website for more tips -- particularly a reminder of **how to ask a question.**
+
+---
+
+## {#slack data-menu-title="Slack"} 
+
+[A note on using Slack]{.slide-title}
+
+<hr>
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+# knitr::include_graphics("images/lecture1/slack.png")
+```
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+**All course-related content questions should be asked in the `#eds-240-data-viz` channel** -- oftentimes there are others who have the same question and will benefit from seeing the discussion! 
+
+<br>
+
+Any questions sent as DMs will be copied into `#eds-240-data-viz` and answered there.
+
+<br>
+
+*Of course, please direct message or email with any personal questions or concerns.*
+:::
+
+::::
 
 ---
 
 ## {#LOs data-menu-title="Learning Objectives"} 
 
-[Learning Objectives]{.slide-title}
+[Course Learning Objectives]{.slide-title}
 
 <hr>
 

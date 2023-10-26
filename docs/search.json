@@ -389,7 +389,7 @@
     "href": "getting-unstuck.html",
     "title": "Getting unstuck",
     "section": "",
-    "text": "A large part of being a data scientist is ~being okay~ with not immediately knowing the answers to your code challenges – troubleshooting errors, deciphering code, and trying new things (and likely failing at some…er many…of them) is all a part of the job. We all experience it, no matter how many years we’ve been at it.\n\n\n\n\n\n\n\n\n\n\nArtwork by Allison Horst\n\n\nWe often learn the most (and remember more of what we learned) when we take the time to troubleshoot on our own (or at least narrow down the potential problem(s)), so you should always plan to start there . The graphic below shows the order in which you should approach different resources for help:\n\n\n\n\n\n\n\n\n\n\n\nWhen you decide you’re going to ask a question to a peer / TA / instructor, be sure to (borrowed from Dr. Allison Horst’s Troubleshooting 101 lecture, EDS 221):\n\nProvide context. For example, “I’m trying to do this…” or “I’m working on the task where we do this…”\nShare the specific challenge. “I’m specifically trying to [insert function / package] to do this thing.”\nShare what happens and what you’ve learned. “I repeatedly get an error message that says [this]. I’ve tried [this] and [this]”\nShow your code ideally with a reprex that they can run / test.\nValue and expect the Socratic method, especially in classes and workshops – our goal is to provide critical thinking that is transferable, not just to provide a quick fix for a single error.\n\n\nAnd don’t forget to a look back some of our suggested troubleshooting and Googling tips in Teach Me How to Google, below:"
+    "text": "A large part of being a data scientist is ~being okay~ with not immediately knowing the answers to your code challenges – troubleshooting errors, deciphering code, and trying new things (and likely failing at some…er many…of them) is all a part of the job. We all experience it, no matter how many years we’ve been at it.\n\n\n\n\n\n\n\n\n\n\nArtwork by Allison Horst\n\n\nWe often learn the most (and remember more of what we learned) when we take the time to troubleshoot on our own (or at least narrow down the potential problem(s)), so you should always plan to start there . The graphic below shows the order in which you should approach different resources for help:\n\n\n\n\n\n\n\n\n\n\n\nWhen you decide you’re going to ask a question to a peer / TA / instructor, be sure to (borrowed from Dr. Allison Horst’s Troubleshooting 101 lecture, EDS 221):\n\nProvide context. For example, “I’m trying to do this…” or “I’m working on the task where we do this…”\nShare the specific challenge. “I’m specifically trying to [insert function / package] to do this thing.”\nShare what happens and what you’ve learned. “I repeatedly get an error message that says [this]. I’ve tried [this] and [this]”\nShow your code ideally with a reprex that they can run / test.\nValue and expect the Socratic method, especially in classes and workshops – our goal is to provide critical thinking that is transferable, not just to provide a quick fix for a single error.\n\nAnd don’t forget to a look back some of our suggested troubleshooting and Googling tips in Teach Me How to Google:\n\n\n\n\n\n\n\n\n\nFinally, Julia Evans shares some funny (and highly relatable) words of wisdom:"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#title-slide",
@@ -473,14 +473,14 @@
     "href": "slides/lecture1.1-logistics-slides.html#help",
     "title": "EDS 240",
     "section": "",
-    "text": "Asking for help\n\nRuth’s flow chart\nSlack channel first – everyone benefits!"
+    "text": "Getting unstuck\n\nTroubleshooting, deciphering code, and trying (and failing at) new things is a large part of being a data scientist. Grad school is a safe space to get comfy with and practice these! Here’s how you should approach getting unstuck:\n\nCheck out the getting unstuck page (under “resources”) on the course website for more tips – particularly a reminder of how to ask a question."
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#LOs",
     "href": "slides/lecture1.1-logistics-slides.html#LOs",
     "title": "EDS 240",
     "section": "",
-    "text": "Learning Objectives\n\n Identify which types of visualizations are most appropriate for your data and your audience\n\n\n Prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\n\n\n\n Build effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically ggplot2 + ggplot2 extension packages\n\n\n\n Write code from scratch and read and adapt code written by others\n\n\n\n Apply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations\n\n\n\n Assess, critique, and provide constructive feedback on data visualizations"
+    "text": "Course Learning Objectives\n\n Identify which types of visualizations are most appropriate for your data and your audience\n\n\n Prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\n\n\n\n Build effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically ggplot2 + ggplot2 extension packages\n\n\n\n Write code from scratch and read and adapt code written by others\n\n\n\n Apply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations\n\n\n\n Assess, critique, and provide constructive feedback on data visualizations"
   },
   {
     "objectID": "course-materials/week9.html",
@@ -620,34 +620,48 @@
     "href": "slides/lecture1.1-logistics-slides.html#assignments",
     "title": "EDS 240",
     "section": "",
-    "text": "Assignments\n\n\n\nYour course grade will be based off the following:\n\n\n\n\n3 Self-reflections - a place to reflect on your learning plan / goals, challenges, etc. (5 days to complete each)\n\n4 Homework Assignments - longer assignments where you’ll apply conceptual knowledge & technical skills to data viz tasks (10 days to complete each)\n\n8 End-of-class surveys - short surveys to help me better understand your weekly class experience (due by EOD each day there is lecture)\n\n8 Lectures - a mix of slide-based lectures, live-coding, and individual/group-based critical thinking and technical exercises (attendance mandatory, Mondays 1:00-4:00pm PT)"
+    "text": "Assignments\n\n\n\nYour course grade will be based off the following:\n\n\n\n\n3 Self-reflections - a place to reflect on your learning plan / goals, challenges, etc. (5 days to complete each)\n\n4 Homework Assignments - longer assignments where you’ll apply conceptual knowledge & technical skills to data viz tasks (10+ days to complete each)\n\n8 End-of-class surveys - short surveys to help me better understand your weekly class experience (due by EOD each day there is lecture)\n\n8 Lectures - a mix of slide-based lectures, live-coding, and individual / group-based critical thinking and technical exercises (attendance mandatory, Mondays 1:00-4:00pm PT)"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#why-specs",
     "href": "slides/lecture1.1-logistics-slides.html#why-specs",
     "title": "EDS 240",
     "section": "",
-    "text": "Why Specs grading?"
+    "text": "Why Specs grading?\n\n\n“Traditional” grading can come with some challenges:\n\n\n\nlacks feedback loops\nbenefits those who learn fast or have prior experience\nbias-prone (e.g. awarding points, granting extensions)\ncan discourage learning for its own sake\ncan promote unhealthy student-instructor relationships"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#how-does-specs-look",
     "href": "slides/lecture1.1-logistics-slides.html#how-does-specs-look",
     "title": "EDS 240",
     "section": "",
-    "text": "How does specs grading look in practice for this course?"
+    "text": "How does specs grading look in practice for this course?\n\n\nTL;DR: assignments receive either “Satisfactory” or “Not Yet” marks; tokens can be used to revise/resubmit assignments, for assignment extensions, or to miss class; earn tokens by attending discussions\n\n\n\nassignments receive either a “Satisfactory” or “Not Yet” mark\neach assignment will have a clear rubric (containing specifications) which outline what must be completed and how in order to receive a “Satisfactory” mark; not meeting all specifications results in a “Not Yet” mark\nstudents can trade “tokens” for the opportunity to:\n\nrevise/resubmit assignments that receive a “Not Yet” mark\nassignment extensions\nto miss class\n\n\nstudents earn tokens (primarily) by attending discussion section"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#tokens",
     "href": "slides/lecture1.1-logistics-slides.html#tokens",
     "title": "EDS 240",
     "section": "",
-    "text": "Earning & using tokens"
+    "text": "Earning & using tokens\n\n\nEarn tokens:\n\n\neveryone starts with 0 tokens\n\nearn your first token by attending discussion section on Wednesday 1/10\nearn 2 more tokens by submitting Self-reflection #1\nearn 1 token per week by attending discussion section (full 50min)\n\n\n\n\nUse tokens:\nFill out this Google form: https://forms.gle/6FdV9g5KA9GgrxXBA and email Sam & Sevan to let them know"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#grade-tracker",
     "href": "slides/lecture1.1-logistics-slides.html#grade-tracker",
     "title": "EDS 240",
     "section": "",
-    "text": "Grade Tracker"
+    "text": "Use the Grade Tracker to determine your course grade"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#why-tokens",
+    "href": "slides/lecture1.1-logistics-slides.html#why-tokens",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Why tokens?\n\n\nEveryone has different responsibilities & demands – tokens give you the power and freedom to ask for the accommodations you need.\n\n\nYou do not need to provide a reason to request an extension, revision, or to miss class, but you must have enough tokens to do so.\n\n\n\n\nTokens are not limitless and they accrue weekly (i.e. you don’t receive them all at the start), so use them wisely!"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#slack",
+    "href": "slides/lecture1.1-logistics-slides.html#slack",
+    "title": "EDS 240",
+    "section": "",
+    "text": "A note on using Slack\n\n\n\n\n\n\nAll course-related content questions should be asked in the #eds-240-data-viz channel – oftentimes there are others who have the same question and will benefit from seeing the discussion!\n\nAny questions sent as DMs will be copied into #eds-240-data-viz and answered there.\n\nOf course, please direct message or email with any personal questions or concerns."
   }
 ]
