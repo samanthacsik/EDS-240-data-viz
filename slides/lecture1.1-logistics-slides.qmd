@@ -225,6 +225,8 @@ Link is also bookmarked at the top of the **#eds-240-data-viz** Slack channel an
 
 <hr>
 
+<br>
+
 :::: columns
 
 ::: {.column width="50%"}
@@ -248,11 +250,32 @@ Link is also bookmarked at the top of the **#eds-240-data-viz** Slack channel an
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/eds240-website.png")
+knitr::include_graphics("images/lecture1/eds240-website-course-materials.png")
 ```
 :::
 
 ::::
+
+---
+
+## {#assignments data-menu-title="Assignments"} 
+
+[Assignments]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l .center-text}
+Your course grade will be based off the following:
+:::
+
+::: incremental
+- **3 Self-reflections** - a place to reflect on your learning plan / goals, challenges, etc. (5 days to complete each)
+- **4 Homework Assignments** - longer assignments where you'll apply conceptual knowledge & technical skills to data viz tasks (10 days to complete each)
+- **8 End-of-class surveys** - short surveys to help me better understand your weekly class experience (due by EOD each day there is lecture)
+- **8 Lectures** - a mix of slide-based lectures, live-coding, and individual/group-based critical thinking and technical exercises (attendance mandatory, Mondays 1:00-4:00pm PT)
+:::
 
 ---
 
@@ -261,6 +284,66 @@ knitr::include_graphics("images/lecture1/eds240-website.png")
 [How will I be evaluated?]{.slide-title}
 
 <hr>
+
+::: {.body-text-l .center-text}
+This class will implement an alternative grading approach called **specifications (specs) grading**. 
+:::
+
+. . .
+
+:::{.body-text-m}
+>“an alternative grading method where instructors create a **list 
+of specifications that describe the qualities and characteristics of a successful 
+submission** for an assignment. Student work is **graded holistically** based on 
+those specifications, earning a single mark: **“Satisfactory” or “Not Yet”**. Students 
+have the **chance to use feedback** by revisiting and resubmitting for full credit.” 
+:::
+
+::: {.right-align-text} 
+-expert from *“Grading for Growth: A Guide to Alternative Grading 
+Practices That Promote Authentic Learning and Student Engagement in 
+Higher Education”, by David Clark & Robert Talbert*
+:::
+
+---
+
+## {#why-specs data-menu-title="Why Specs Grading?"} 
+
+[Why Specs grading?]{.slide-title}
+
+<hr>
+
+---
+
+## {#how-does-specs-look data-menu-title="What does specs grading look like?"} 
+
+[How does specs grading look in practice for *this* course?]{.slide-title}
+
+<hr>
+
+---
+
+## {#tokens data-menu-title="Tokens"} 
+
+[Earning & using tokens]{.slide-title}
+
+<hr>
+
+---
+
+## {#grade-tracker data-menu-title="Grade Tracker"} 
+
+[Grade Tracker]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/grade-tracker.png")
+```
 
 ---
 

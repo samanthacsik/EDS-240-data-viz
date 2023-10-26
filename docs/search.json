@@ -452,14 +452,14 @@
     "href": "slides/lecture1.1-logistics-slides.html#tentative-schedule",
     "title": "EDS 240",
     "section": "",
-    "text": "Tentative Schedule & Materials\n\n\n\n\n\nDate\nTentative Topic\n\n\n\n1/8\ncourse logistics, intro to data viz, ggplot2 review\n\n\n1/15\nno class\n\n\n1/22\ndata communication\n\n\n1/29\ngraphic design\n\n\n2/5\nvisualizing amounts & proportions\n\n\n2/12\nvisualizing relationships & distributions\n\n\n2/19\nno class\n\n\n2/26\nvisualizing uncertainty\n\n\n3/4\nOJS with Dr. Allison Horst\n\n\n3/11\ngrab bag & catch up"
+    "text": "Tentative Schedule & Materials\n\n\n\n\n\n\nDate\nTentative Topic\n\n\n\n1/8\ncourse logistics, intro to data viz, ggplot2 review\n\n\n1/15\nno class\n\n\n1/22\ndata communication\n\n\n1/29\ngraphic design\n\n\n2/5\nvisualizing amounts & proportions\n\n\n2/12\nvisualizing relationships & distributions\n\n\n2/19\nno class\n\n\n2/26\nvisualizing uncertainty\n\n\n3/4\nOJS with Dr. Allison Horst\n\n\n3/11\ngrab bag & catch up"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#grading",
     "href": "slides/lecture1.1-logistics-slides.html#grading",
     "title": "EDS 240",
     "section": "",
-    "text": "How will I be evaluated?"
+    "text": "How will I be evaluated?\n\n\nThis class will implement an alternative grading approach called specifications (specs) grading.\n\n\n\n\n“an alternative grading method where instructors create a list of specifications that describe the qualities and characteristics of a successful submission for an assignment. Student work is graded holistically based on those specifications, earning a single mark: “Satisfactory” or “Not Yet”. Students have the chance to use feedback by revisiting and resubmitting for full credit.”\n\n\n\n-expert from “Grading for Growth: A Guide to Alternative Grading Practices That Promote Authentic Learning and Student Engagement in Higher Education”, by David Clark & Robert Talbert"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#GenAI",
@@ -614,5 +614,40 @@
     "title": "Grab Bag & Catch up",
     "section": "Assignment Reminders",
     "text": "Assignment Reminders\n\n\n\nAssignment Type\nTitle\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#assignments",
+    "href": "slides/lecture1.1-logistics-slides.html#assignments",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Assignments\n\n\n\nYour course grade will be based off the following:\n\n\n\n\n3 Self-reflections - a place to reflect on your learning plan / goals, challenges, etc. (5 days to complete each)\n\n4 Homework Assignments - longer assignments where you’ll apply conceptual knowledge & technical skills to data viz tasks (10 days to complete each)\n\n8 End-of-class surveys - short surveys to help me better understand your weekly class experience (due by EOD each day there is lecture)\n\n8 Lectures - a mix of slide-based lectures, live-coding, and individual/group-based critical thinking and technical exercises (attendance mandatory, Mondays 1:00-4:00pm PT)"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#why-specs",
+    "href": "slides/lecture1.1-logistics-slides.html#why-specs",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Why Specs grading?"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#how-does-specs-look",
+    "href": "slides/lecture1.1-logistics-slides.html#how-does-specs-look",
+    "title": "EDS 240",
+    "section": "",
+    "text": "How does specs grading look in practice for this course?"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#tokens",
+    "href": "slides/lecture1.1-logistics-slides.html#tokens",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Earning & using tokens"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#grade-tracker",
+    "href": "slides/lecture1.1-logistics-slides.html#grade-tracker",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Grade Tracker"
   }
 ]
