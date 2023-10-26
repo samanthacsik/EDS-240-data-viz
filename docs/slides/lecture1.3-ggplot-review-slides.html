@@ -342,6 +342,40 @@
 <div class="title-footer">
 <p>January 8th, 2024</p>
 </div>
+</section>
+<section id="ggplot2-advantages" class="slide level2" data-menu-title="{ggplot2} advantages">
+<h2></h2>
+<p><span class="slide-title">Advantages of <code>{ggplot2}</code></span></p>
+<hr>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<div>
+<ul>
+<li class="fragment">consistent underlying “grammar of graphics” (<a href="https://link.springer.com/book/10.1007/0-387-28695-0">Wilkinson 2005</a>)</li>
+<li class="fragment">super flexible, layered plot specification (see <a href="http://vita.had.co.nz/papers/layered-grammar.pdf">Wickham 2008</a>)</li>
+<li class="fragment">theme system for polishing plot appearance</li>
+<li class="fragment">lots of additional functionality thanks to extensions</li>
+<li class="fragment">active and helpful community</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lecture1/ggplot2.png" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br> <br></p>
+<div class="body-text-s gray-text center-text">
+<p>adapted from <a href="https://www.cedricscherer.com/">Cédric Scherer’s</a> rstudio::conf(2022) workshop, <a href="https://rstudio-conf-2022.github.io/ggplot2-graphic-design/">Graphic Design with ggplot2</a></p>
+</div>
 
 <div class="footer footer-default">
 
@@ -560,6 +594,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

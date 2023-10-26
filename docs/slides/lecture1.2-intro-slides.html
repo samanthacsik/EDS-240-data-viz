@@ -7,7 +7,9 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
   <title>EDS 240 – lecture1.2-intro-slides</title>
@@ -28,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #a55a00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #a55a00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #00769e; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #00769e; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #a55a00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -320,6 +387,8 @@
       margin-right: 0; 
     }
   </style>
+  <link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+  <script src="../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -329,7 +398,7 @@
 <section id="title-slide" class="slide level2 center" data-menu-title="Title Slide" data-background="#053660">
 <h2></h2>
 <p><span class="custom-title">EDS 240: Lecture 1.2</span></p>
-<p><span class="custom-subtitle"><em>Data visualization intro</em></span></p>
+<p><span class="custom-subtitle"><em>The importance of visualizing our data</em></span></p>
 <hr class="hr-teal">
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -341,6 +410,233 @@
 <p><br></p>
 <div class="title-footer">
 <p>January 8th, 2024</p>
+</div>
+</section>
+<section id="what-is-visualization" class="slide level2" data-menu-title="title">
+<h2></h2>
+<p><span class="slide-title">What is data visualization?</span></p>
+<hr>
+</section>
+<section id="why-visualize" class="slide level2" data-menu-title="# Why visualize data? #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+<i class="fa-solid fa-comments" title="two talking bubbles" aria-label="comments"></i> Why do we visualize data?
+</p>
+<p class="caption-text">
+<em>Spend the next few minutes discussing with your Learning Partners, and if possible, pull up some example visualizations that demonstrate your thoughts / discussion points</em>
+</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_c2671a70" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="answer-qs" class="slide level2" data-menu-title="Data viz for answering Qs">
+<h2></h2>
+<p><span class="slide-title">. . . to answer specific questions</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lecture1/ripple-etal-2023-fig1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-m">
+<p><a href="https://doi.org/10.1093/biosci/biad080"><strong>Ripple et al.&nbsp;2023</strong></a></p>
+</div>
+<p><span class="body-text-s"><strong>Fig Caption:</strong> Unusual climate anomalies in 2023 (the red line, which appears bold in print). Sea ice extent (a, b), temperatures (c–e), and area burned in Canada (f) are presently far outside their historical ranges. These anomalies may be due to both climate change and other factors. Sources and additional details about each variable are provided in supplemental file S1. Each line corresponds to a different year, with darker gray representing later years.</span></p>
+<p><br></p>
+<div class="body-text-s gray-text center-text">
+<p><em>A nice <a href="https://twitter.com/DoctorVive/status/1717187963036049669">Twitter thread</a> on key takeaways from the above paper</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="exploration" class="slide level2" data-menu-title="Data viz for exploration">
+<h2></h2>
+<p><span class="slide-title">. . . to explore &amp; generate new questions</span></p>
+<hr>
+<blockquote>
+<p>“Exploratory data analysis (EDA) is not a formal process with a strict set of rules. More than anything, EDS is a state of mind…you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends. As your exploration continues, you will hone in on a few particularly productive insights that you’ll eventually write-up and communicate to others.”</p>
+</blockquote>
+<div class="right-align-text body-text-s">
+<p>-Hadley Wickham, author of <a href="https://r4ds.hadley.nz/eda">R for Data Science</a></p>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lecture1/diamond-hist.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat)) <span class="sc">+</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lecture1/cars-boxplot.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_reorder</span>(class, hwy, median), <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lecture1/diamonds-freqplot.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> price, <span class="at">y =</span> <span class="fu">after_stat</span>(density))) <span class="sc">+</span> </span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">geom_freqpoly</span>(<span class="fu">aes</span>(<span class="at">color =</span> cut), <span class="at">binwidth =</span> <span class="dv">500</span>, <span class="at">linewidth =</span> <span class="fl">0.75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="see-trends" class="slide level2" data-menu-title="Data viz to see trends">
+<h2></h2>
+<p><span class="slide-title2">. . . to identify trends</span></p>
+<hr>
+<div class="center-text body-text-l">
+<p><strong>Same summary statistics, different distributions!</strong></p>
+</div>
+<div class="columns">
+<div class="column" style="width:&quot;50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lecture1/anscombes-quartet.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:&quot;50%;">
+<p><br> <br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lecture1/datasaurus-dozen.gif" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text">
+<p>Anscombe’s Quartet<br>
+(<a href="https://doi.org/10.2307/2682899">Anscombe 1973</a>)</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text">
+<p>Datasaurus Dozen<br>
+(<a href="https://doi.org/10.1145/3025453.3025912">Matejka &amp; Fitzmaurice 2017</a>)</p>
+</div>
+</div>
+</div>
+</section>
+<section id="prompt-discussion" class="slide level2" data-menu-title="Data viz for discussion">
+<h2></h2>
+<p><span class="slide-title">. . . to prompt discussion</span></p>
+<hr>
+<p><br></p>
+
+<img data-src="images/lecture1/warming-stripes.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="center-text gray-text">
+<p><a href="https://showyourstripes.info/">Warming Strips</a>, by <a href="http://www.met.reading.ac.uk/~ed/home/index.php">Ed Hawkins</a></p>
+</div>
+</section>
+<section id="aRt-anyene" class="slide level2" data-menu-title="Data viz for aRt (I. Anyene">
+<h2></h2>
+<p><span class="slide-title">. . . to create aRt</span></p>
+<hr>
+<p><img data-src="images/lecture1/anyene-limes.png" class="absolute" style="top: 200px; left: 0px; width: 325px; "></p>
+<p><img data-src="images/lecture1/anyene-grid.png" class="absolute" style="top: 200px; left: 365px; width: 325px; "></p>
+<p><img data-src="images/lecture1/anyene-grid-lines.png" class="absolute" style="top: 200px; right: 0px; width: 325px; "></p>
+<div class="center-text gray-text absolute" style="left: 365px; bottom: 25px; width: 325px; ">
+<p><strong>aRtist: <a href="https://ijeamaka-anyene.netlify.app/">Ijeamaka Anyene</a></strong></p>
+</div>
+</section>
+<section id="aRt-navarro" class="slide level2" data-menu-title="Data viz for aRt (D. Navarro)">
+<h2></h2>
+<p><span class="slide-title">. . . to create aRt</span></p>
+<hr>
+<p><img data-src="images/lecture1/navarro-broken-lands.png" class="absolute" style="top: 200px; left: 0px; width: 325px; "></p>
+<p><img data-src="images/lecture1/navarro-native-flora.png" class="absolute" style="top: 200px; left: 365px; width: 325px; "></p>
+<p><img data-src="images/lecture1/navarro-voronoise.png" class="absolute" style="top: 200px; right: 0px; width: 325px; "></p>
+<div class="center-text gray-text absolute" style="left: 365px; bottom: 25px; width: 325px; ">
+<p><strong>aRtist: <a href="https://art.djnavarro.net/">Danielle Navarro</a></strong></p>
+</div>
+</section>
+<section id="aRt-karamanis" class="slide level2" data-menu-title="Data viz for aRt (G. Karamanis)">
+<h2></h2>
+<p><span class="slide-title">. . . to create aRt</span></p>
+<hr>
+<p><img data-src="images/lecture1/karamanis-color-blocks.png" class="absolute" style="top: 200px; left: 0px; width: 325px; "></p>
+<p><img data-src="images/lecture1/karamanis-purple.png" class="absolute" style="top: 200px; left: 365px; width: 325px; "></p>
+<p><img data-src="images/lecture1/karamanis-macaroni.png" class="absolute" style="top: 200px; right: 0px; width: 325px; "></p>
+<div class="center-text gray-text absolute" style="left: 365px; bottom: 25px; width: 325px; ">
+<p><strong>aRtist: <a href="http://karaman.is">Georgios Karamanis</a></strong></p>
+</div>
+</section>
+<section id="r-for-data-viz" class="slide level2" data-menu-title="R for data viz">
+<h2></h2>
+<p><span class="slide-title">Why R for data viz?</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br> <br> <br> <br></p>
+<div>
+<ul>
+<li class="fragment">I’m most comfortable in R <i class="fa-solid fa-face-smile" aria-label="face-smile"></i></li>
+<li class="fragment">great ecosystem of data wrangling &amp; visualization packages</li>
+<li class="fragment">amazing online learning communities</li>
+<li class="fragment">data viz fundamentals apply no matter the language / tool</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br> <br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lecture1/why-r.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="footer footer-default">
@@ -560,6 +856,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

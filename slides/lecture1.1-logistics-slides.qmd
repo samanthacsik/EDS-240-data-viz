@@ -2,7 +2,7 @@
 format: 
   revealjs:
     slide-number: true
-    code-link: true
+    # code-link: true
     highlight-style: a11y
     chalkboard: true
     theme: 
@@ -95,7 +95,7 @@ knitr::include_graphics("images/lecture1/nceas-classroom.jpg")
 
 <hr>
 
-:::: {columns}
+:::: columns
 
 ::: {.column width="50%"}
 
@@ -144,6 +144,35 @@ knitr::include_graphics("images/lecture1/sevan.png")
 :::
 
 ::::
+
+---
+
+##  {#meet-one-another data-menu-title="# Meet one another #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">{{< fa comments title="two talking bubbles" >}} Meet one another!</p>
+<p class="caption-text">*Spend the next few minutes getting to know your Learning Partners! Below are some conversation starters:*</p>
+<p class="dark-blue-text">**Where do you feel most at home?**</p>
+<p class="dark-blue-text">**What parts of Santa Barbara have you enjoyed exploring?**</p>
+<p class="dark-blue-text">**What's the most exciting thing you've learned this year, so far?**</p>
+<p class="dark-blue-text">**What's your favorite color or typeface?**</p>
+</div>
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
 
 ---
 
@@ -230,18 +259,18 @@ Link is also bookmarked at the top of the **#eds-240-data-viz** Slack channel an
 :::: columns
 
 ::: {.column width="50%"}
-| Date    | Tentative Topic                                         |
-|---------|----------------------------------------------------------|
-| 1/8     | course logistics, intro to data viz, `{ggplot2}` review  |
-| 1/15    | *no class*                                               |
-| 1/22    | data communication                                       |
-| 1/29    | graphic design                                           |
-| 2/5     | visualizing amounts & proportions                        |
-| 2/12    | visualizing relationships & distributions                |
-| 2/19    | *no class*                                               |
-| 2/26    | visualizing uncertainty                                  |
-| 3/4     | OJS with Dr. Allison Horst                               |
-| 3/11    | grab bag & catch up                                      |
+| Date    | Tentative Topic                              |
+|---------|----------------------------------------------|
+| 1/8     | course logistics, intro, `{ggplot2}` review  |
+| 1/15    | [*no class* ]{.teal-text}                    |
+| 1/22    | data communication                           |
+| 1/29    | graphic design                               |
+| 2/5     | visualizing amounts & proportions            |
+| 2/12    | visualizing relationships & distributions    |
+| 2/19    | [*no class* ]{.teal-text}                    |
+| 2/26    | visualizing uncertainty                      |
+| 3/4     | OJS with Dr. Allison Horst                   |
+| 3/11    | grab bag & catch up                          |
 :::
 
 ::: {.column width="50%"}
@@ -255,6 +284,10 @@ knitr::include_graphics("images/lecture1/eds240-website-course-materials.png")
 :::
 
 ::::
+
+::: {.center-text}
+*Discussion sections are held every week*
+:::
 
 ---
 
@@ -472,6 +505,51 @@ Check out the [getting unstuck](http://localhost:5908/getting-unstuck.html) page
 
 ---
 
+## {#sucking-less data-menu-title="Sucking less"} 
+
+[A note on pushing through the challenges]{.slide-title}
+
+<hr>
+
+:::: columns
+
+::: {.column width="50%"}
+
+<br>
+<br>
+
+::: {.body-text-m}
+>“There is no way of [going from] knowing nothing about a subject to knowing something about a subject without going through a period of much frustration and suckiness.”
+**"Push through. You'll suck less."**
+:::
+
+::: {.right-align-text} 
+-Hadley Wickham, author of `{ggplot2}`
+:::
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/adventure-time.gif")
+```
+:::
+
+::::
+
+::: {.body-text-s .gray-text .center-text}
+Slide adapted from [Andrew Heiss'](https://www.andrewheiss.com/) lesson, [Truth, beauty, and data](https://datavizs23.classes.andrewheiss.com/content/01-content.html) ([PMAP 8101: Data Visualization](https://datavizs23.classes.andrewheiss.com/))
+:::
+---
+
 ## {#slack data-menu-title="Slack"} 
 
 [A note on using Slack]{.slide-title}
@@ -533,7 +611,7 @@ Any questions sent as DMs will be copied into `#eds-240-data-viz` and answered t
 
 . . .
 
-[{{< fa file-code >}}]{.teal-text} Write code from scratch and read and adapt code written by others
+[{{< fa file-code >}}]{.teal-text} Write code from scratch *and* read and adapt code written by others
 
 <br>
 

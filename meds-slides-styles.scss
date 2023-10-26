@@ -36,7 +36,7 @@ $presentation-font-size-root: 25px;
 // bold styling
 strong, b {
   font-weight: 900;
-  color: $teal;
+  //color: $teal;
 }
 
 // table header font size
@@ -160,6 +160,11 @@ hr {
 // baby blue text
 .baby-blue-text {
   color: $baby-blue;
+}
+
+// dark blue text
+.dark-blue-text {
+  color: $dark-blue;
 }
 
 // teal text

@@ -2,7 +2,7 @@
 format: 
   revealjs:
     slide-number: true
-    code-link: true
+    # code-link: true
     highlight-style: a11y
     chalkboard: true
     theme: 
@@ -36,4 +36,49 @@ format:
 
 ::: {.title-footer}
 January 8th, 2024
+:::
+
+---
+
+## {#ggplot2-advantages data-menu-title="{ggplot2} advantages"} 
+
+[Advantages of `{ggplot2}`]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: columns
+
+::: {.column width="50%"}
+
+<br>
+
+::: incremental
+- consistent underlying "grammar of graphics" ([Wilkinson 2005](https://link.springer.com/book/10.1007/0-387-28695-0))
+- super flexible, layered plot specification (see [Wickham 2008](http://vita.had.co.nz/papers/layered-grammar.pdf))
+- theme system for polishing plot appearance
+- lots of additional functionality thanks to extensions
+- active and helpful community 
+:::
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "60%"
+knitr::include_graphics("images/lecture1/ggplot2.png")
+```
+:::
+
+::::
+
+<br>
+<br>
+
+::: {.body-text-s .gray-text .center-text}
+adapted from [Cédric Scherer's](https://www.cedricscherer.com/) rstudio::conf(2022) workshop, [Graphic Design with ggplot2](https://rstudio-conf-2022.github.io/ggplot2-graphic-design/) 
 :::

@@ -26,6 +26,7 @@ toc: true
 | Creator      | {{< fa brands github >}} Data Viz Repository |
 | ----------- | ----------- |
 | [Ijeamaka Anyene](https://ijeamaka-anyene.netlify.app/) | [tidytuesday](https://github.com/Ijeamakaanyene/tidytuesday) |
+| [Georgios Karamanis](https://karaman.is/) | [tidytuesday](https://github.com/gkaramanis/tidytuesday)
 | [Danielle Navarro](https://djnavarro.net/) | generative art outputs from multiple repos can be found on her website's [Gallery](https://art.djnavarro.net/gallery/) |
 | [Cristophe Nicault](https://www.christophenicault.com/) | [tidytuesday](https://github.com/cnicault/tidytuesday) |
 | [Cédric Scherer](https://www.cedricscherer.com/) | [TidyTuesday](https://github.com/z3tt/TidyTuesday) |

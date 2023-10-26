@@ -2,7 +2,7 @@
 format: 
   revealjs:
     slide-number: true
-    code-link: true
+    # code-link: true
     highlight-style: a11y
     chalkboard: true
     theme: 
@@ -13,7 +13,7 @@ format:
 
 [EDS 240: Lecture 1.2]{.custom-title}
 
-[*Data visualization intro*]{.custom-subtitle}
+[*The importance of visualizing our data*]{.custom-subtitle}
 
 <hr class="hr-teal">
 
@@ -37,3 +37,328 @@ format:
 ::: {.title-footer}
 January 8th, 2024
 :::
+
+---
+
+## {#what-is-visualization data-menu-title="title"}
+
+[What is data visualization?]{.slide-title}
+
+<hr>
+
+---
+
+##  {#why-visualize data-menu-title="# Why visualize data? #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">{{< fa comments title="two talking bubbles" >}} Why do we visualize data?</p>
+<p class="caption-text">*Spend the next few minutes discussing with your Learning Partners, and if possible, pull up some example visualizations that demonstrate your thoughts / discussion points*</p>
+</div>
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#answer-qs data-menu-title="Data viz for answering Qs"} 
+
+[. . . to answer specific questions]{.slide-title}
+
+<hr>
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/ripple-etal-2023-fig1.png")
+```
+:::
+
+::: {.column width="50%"}
+::: {.center-text .body-text-m}
+[**Ripple et al. 2023**](https://doi.org/10.1093/biosci/biad080)
+:::
+
+[**Fig Caption:** Unusual climate anomalies in 2023 (the red line, which appears bold in print). Sea ice extent (a, b), temperatures (c–e), and area burned in Canada (f) are presently far outside their historical ranges. These anomalies may be due to both climate change and other factors. Sources and additional details about each variable are provided in supplemental file S1. Each line corresponds to a different year, with darker gray representing later years.]{.body-text-s}
+
+<br>
+
+::: {.body-text-s .gray-text .center-text}
+*A nice [Twitter thread](https://twitter.com/DoctorVive/status/1717187963036049669) on key takeaways from the above paper*
+:::
+
+:::
+
+::::
+
+---
+
+## {#exploration data-menu-title="Data viz for exploration"} 
+
+[. . . to explore & generate new questions]{.slide-title}
+
+<hr>
+
+>"Exploratory data analysis (EDA) is not a formal process with a strict set of rules. More than anything, EDS is a state of mind...you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends. As your exploration continues, you will hone in on a few particularly productive insights that you'll eventually write-up and communicate to others."
+
+::: {.right-align-text .body-text-s} 
+-Hadley Wickham, author of [R for Data Science](https://r4ds.hadley.nz/eda)
+:::
+
+. . .
+
+:::: columns
+
+::: {.column width="33%"}
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/diamond-hist.png")
+```
+
+```{r}
+#| eval: false
+#| echo: true
+ggplot(diamonds, aes(x = carat)) +
+  geom_histogram(binwidth = 0.5)
+```
+:::
+
+::: {.column width="33%"}
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/cars-boxplot.png")
+```
+
+```{r}
+#| eval: false
+#| echo: true
+ggplot(mpg, aes(x = fct_reorder(class, hwy, median), y = hwy)) +
+  geom_boxplot()
+```
+:::
+
+::: {.column width="33%"}
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/diamonds-freqplot.png")
+```
+
+```{r}
+#| eval: false
+#| echo: true
+ggplot(diamonds, aes(x = price, y = after_stat(density))) + 
+  geom_freqpoly(aes(color = cut), binwidth = 500, linewidth = 0.75)
+```
+:::
+
+::::
+
+---
+
+## {#see-trends data-menu-title="Data viz to see trends"} 
+
+[. . . to identify trends]{.slide-title2}
+
+<hr>
+
+::: {.center-text .body-text-l}
+**Same summary statistics, different distributions!**
+:::
+
+:::: columns
+
+::: {.column width="50%}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/anscombes-quartet.png")
+```
+
+:::
+
+::: {.column width="50%}
+
+<br>
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/datasaurus-dozen.gif")
+```
+:::
+
+::::
+
+:::: columns
+
+::: {.column width="50%"}
+::: {.center-text}
+Anscombe's Quartet  
+([Anscombe 1973](https://doi.org/10.2307/2682899))
+:::
+:::
+
+::: {.column width="50%"}
+::: {.center-text}
+Datasaurus Dozen  
+([Matejka & Fitzmaurice 2017](https://doi.org/10.1145/3025453.3025912))
+:::
+:::
+
+::::
+
+---
+
+## {#prompt-discussion data-menu-title="Data viz for discussion"} 
+
+[. . . to prompt discussion]{.slide-title}
+
+<hr>
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/warming-stripes.png")
+```
+
+<br>
+
+::: {.center-text .gray-text}
+[Warming Strips](https://showyourstripes.info/), by [Ed Hawkins](http://www.met.reading.ac.uk/~ed/home/index.php)
+:::
+
+---
+
+## {#aRt-anyene data-menu-title="Data viz for aRt (I. Anyene"} 
+
+[. . . to create aRt]{.slide-title}
+
+<hr>
+
+![](images/lecture1/anyene-limes.png){.absolute top=200 left=0 width="325"}
+
+![](images/lecture1/anyene-grid.png){.absolute top=200 left=365 width="325"}
+
+![](images/lecture1/anyene-grid-lines.png){.absolute top=200 right=0 width="325"}
+
+::: {.center-text .gray-text .absolute bottom=25 left=365 width="325"}
+**aRtist: [Ijeamaka Anyene](https://ijeamaka-anyene.netlify.app/)**
+:::
+
+---
+
+## {#aRt-navarro data-menu-title="Data viz for aRt (D. Navarro)"} 
+
+[. . .  to create aRt]{.slide-title}
+
+<hr>
+
+![](images/lecture1/navarro-broken-lands.png){.absolute top=200 left=0 width="325"}
+
+![](images/lecture1/navarro-native-flora.png){.absolute top=200 left=365 width="325"}
+
+![](images/lecture1/navarro-voronoise.png){.absolute top=200 right=0 width="325"}
+
+::: {.center-text .gray-text .absolute bottom=25 left=365 width="325"}
+**aRtist: [Danielle Navarro](https://art.djnavarro.net/)**
+:::
+
+---
+
+## {#aRt-karamanis data-menu-title="Data viz for aRt (G. Karamanis)"} 
+
+[. . . to create aRt]{.slide-title}
+
+<hr>
+
+![](images/lecture1/karamanis-color-blocks.png){.absolute top=200 left=0 width="325"}
+
+![](images/lecture1/karamanis-purple.png){.absolute top=200 left=365 width="325"}
+
+![](images/lecture1/karamanis-macaroni.png){.absolute top=200 right=0 width="325"}
+
+::: {.center-text .gray-text .absolute bottom=25 left=365 width="325"}
+**aRtist: [Georgios Karamanis](http://karaman.is)**
+:::
+
+---
+
+## {#r-for-data-viz data-menu-title="R for data viz"} 
+
+[Why R for data viz?]{.slide-title}
+
+<hr>
+
+:::: columns
+
+::: {.column width="50%"}
+
+<br>
+<br>
+<br>
+<br>
+
+::: incremental 
+- I'm most comfortable in R {{< fa face-smile >}}
+- great ecosystem of data wrangling & visualization packages
+- amazing online learning communities
+- data viz fundamentals apply no matter the language / tool
+:::
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/why-r.png")
+```
+:::
+
+::::
+
+

@@ -32,7 +32,7 @@
     "href": "resources.html#inspirational-ggplot2-creators",
     "title": "Resources",
     "section": "Inspirational {ggplot2} creators",
-    "text": "Inspirational {ggplot2} creators\n(In my honest opinion) One of the best ways to learn how to build exciting ggplots is to look at code that others have written. Here are just a few folks doing really incredible work (along with their repos where they often showcase their creations):\n\n\n\nCreator\n Data Viz Repository\n\n\n\n\nIjeamaka Anyene\ntidytuesday\n\n\nDanielle Navarro\ngenerative art outputs from multiple repos can be found on her website’s Gallery\n\n\nCristophe Nicault\ntidytuesday\n\n\nCédric Scherer\nTidyTuesday\n\n\nTanya Shapiro\ntanya-data-viz\n\n\nCara Thompson\ntidytuesdays"
+    "text": "Inspirational {ggplot2} creators\n(In my honest opinion) One of the best ways to learn how to build exciting ggplots is to look at code that others have written. Here are just a few folks doing really incredible work (along with their repos where they often showcase their creations):\n\n\n\nCreator\n Data Viz Repository\n\n\n\n\nIjeamaka Anyene\ntidytuesday\n\n\nGeorgios Karamanis\ntidytuesday\n\n\nDanielle Navarro\ngenerative art outputs from multiple repos can be found on her website’s Gallery\n\n\nCristophe Nicault\ntidytuesday\n\n\nCédric Scherer\nTidyTuesday\n\n\nTanya Shapiro\ntanya-data-viz\n\n\nCara Thompson\ntidytuesdays"
   },
   {
     "objectID": "resources.html#misc.",
@@ -179,7 +179,77 @@
     "href": "slides/lecture1.2-intro-slides.html#title-slide",
     "title": "EDS 240",
     "section": "",
-    "text": "EDS 240: Lecture 1.2\nData visualization intro\n\n\n\nSam Csik | Data Training Coordinator National Center for Ecological Analysis & Synthesis\n\nMaster of Environmental Data Science | Bren School of Environmental Science & Management\n\n\n\n\nJanuary 8th, 2024"
+    "text": "EDS 240: Lecture 1.2\nThe importance of visualizing our data\n\n\n\nSam Csik | Data Training Coordinator National Center for Ecological Analysis & Synthesis\n\nMaster of Environmental Data Science | Bren School of Environmental Science & Management\n\n\n\n\nJanuary 8th, 2024"
+  },
+  {
+    "objectID": "slides/lecture1.2-intro-slides.html#what-is-visualization",
+    "href": "slides/lecture1.2-intro-slides.html#what-is-visualization",
+    "title": "EDS 240",
+    "section": "",
+    "text": "What is data visualization?"
+  },
+  {
+    "objectID": "slides/lecture1.2-intro-slides.html#why-visualize",
+    "href": "slides/lecture1.2-intro-slides.html#why-visualize",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Why do we visualize data?\n\n\nSpend the next few minutes discussing with your Learning Partners, and if possible, pull up some example visualizations that demonstrate your thoughts / discussion points\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/lecture1.2-intro-slides.html#answer-qs",
+    "href": "slides/lecture1.2-intro-slides.html#answer-qs",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . to answer specific questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRipple et al. 2023\n\nFig Caption: Unusual climate anomalies in 2023 (the red line, which appears bold in print). Sea ice extent (a, b), temperatures (c–e), and area burned in Canada (f) are presently far outside their historical ranges. These anomalies may be due to both climate change and other factors. Sources and additional details about each variable are provided in supplemental file S1. Each line corresponds to a different year, with darker gray representing later years.\n\n\nA nice Twitter thread on key takeaways from the above paper"
+  },
+  {
+    "objectID": "slides/lecture1.2-intro-slides.html#exploration",
+    "href": "slides/lecture1.2-intro-slides.html#exploration",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . to explore & generate new questions\n\n\n“Exploratory data analysis (EDA) is not a formal process with a strict set of rules. More than anything, EDS is a state of mind…you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends. As your exploration continues, you will hone in on a few particularly productive insights that you’ll eventually write-up and communicate to others.”\n\n\n-Hadley Wickham, author of R for Data Science\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(diamonds, aes(x = carat)) +\n  geom_histogram(binwidth = 0.5)\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(mpg, aes(x = fct_reorder(class, hwy, median), y = hwy)) +\n  geom_boxplot()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(diamonds, aes(x = price, y = after_stat(density))) + \n  geom_freqpoly(aes(color = cut), binwidth = 500, linewidth = 0.75)"
+  },
+  {
+    "objectID": "slides/lecture1.2-intro-slides.html#see-trends",
+    "href": "slides/lecture1.2-intro-slides.html#see-trends",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . to identify trends\n\n\nSame summary statistics, different distributions!\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnscombe’s Quartet\n(Anscombe 1973)\n\n\n\nDatasaurus Dozen\n(Matejka & Fitzmaurice 2017)"
+  },
+  {
+    "objectID": "slides/lecture1.2-intro-slides.html#prompt-discussion",
+    "href": "slides/lecture1.2-intro-slides.html#prompt-discussion",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . to prompt discussion\n\n\n\n\n\nWarming Strips, by Ed Hawkins"
+  },
+  {
+    "objectID": "slides/lecture1.2-intro-slides.html#aRt-anyene",
+    "href": "slides/lecture1.2-intro-slides.html#aRt-anyene",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . to create aRt\n\n\n\n\n\naRtist: Ijeamaka Anyene"
+  },
+  {
+    "objectID": "slides/lecture1.2-intro-slides.html#aRt-navarro",
+    "href": "slides/lecture1.2-intro-slides.html#aRt-navarro",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . to create aRt\n\n\n\n\n\naRtist: Danielle Navarro"
+  },
+  {
+    "objectID": "slides/lecture1.2-intro-slides.html#aRt-karamanis",
+    "href": "slides/lecture1.2-intro-slides.html#aRt-karamanis",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . to create aRt\n\n\n\n\n\naRtist: Georgios Karamanis"
+  },
+  {
+    "objectID": "slides/lecture1.2-intro-slides.html#r-for-data-viz",
+    "href": "slides/lecture1.2-intro-slides.html#r-for-data-viz",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Why R for data viz?\n\n\n\n   \n\n\nI’m most comfortable in R \ngreat ecosystem of data wrangling & visualization packages\namazing online learning communities\ndata viz fundamentals apply no matter the language / tool"
   },
   {
     "objectID": "index.html#course-description",
@@ -399,6 +469,13 @@
     "text": "EDS 240: Lecture 1.3\n{ggplot2} review\n\n\n\nSam Csik | Data Training Coordinator National Center for Ecological Analysis & Synthesis\n\nMaster of Environmental Data Science | Bren School of Environmental Science & Management\n\n\n\n\nJanuary 8th, 2024"
   },
   {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#ggplot2-advantages",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#ggplot2-advantages",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Advantages of {ggplot2}\n\n\n\n\n\n\n\nconsistent underlying “grammar of graphics” (Wilkinson 2005)\nsuper flexible, layered plot specification (see Wickham 2008)\ntheme system for polishing plot appearance\nlots of additional functionality thanks to extensions\nactive and helpful community\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\nadapted from Cédric Scherer’s rstudio::conf(2022) workshop, Graphic Design with ggplot2"
+  },
+  {
     "objectID": "slides/lecture1.1-logistics-slides.html#title-slide",
     "href": "slides/lecture1.1-logistics-slides.html#title-slide",
     "title": "EDS 240",
@@ -417,28 +494,35 @@
     "href": "slides/lecture1.1-logistics-slides.html#logistics",
     "title": "EDS 240",
     "section": "",
-    "text": "Meeting times & locations\n\n\n\nClass: Mondays 1:00-4:00pm PT (attendance is mandatory)\n\nDiscussion Sections: Wednesdays 10:00-10:50am PT & 11:00-11:50am PT\n\n\n\nClass & Discussion Sections meet in the NCEAS 1st floor classroom"
+    "text": "Meeting times & locations\n\n\nClass: Mondays 1:00-4:00pm PT (attendance is mandatory)\nDiscussion Sections: Wednesdays 10:00-10:50am PT & 11:00-11:50am PT\n\n\n\nClass & Discussion Sections meet in the NCEAS 1st floor classroom"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#instructor",
     "href": "slides/lecture1.1-logistics-slides.html#instructor",
     "title": "EDS 240",
     "section": "",
-    "text": "Teaching team\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\nSam CsikEmail: scsik@ucsb.eduLearn more: samanthacsik.github.ioStudent hours: tbd @ NCEAS\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\nSevan EsaianEmail: sevan.esaian@lifesci.ucsb.eduLearn more: linkedin.com/in/sevan-esaian Student hours: tbd @ tbd"
+    "text": "Teaching team\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\nStudent hours: tbd @ NCEAS\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nSevan Esaian\nEmail: sevan.esaian@lifesci.ucsb.edu\nLearn more: linkedin.com/in/sevan-esaian Student hours: tbd @ tbd"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#meet-one-another",
+    "href": "slides/lecture1.1-logistics-slides.html#meet-one-another",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Meet one another!\n\n\nSpend the next few minutes getting to know your Learning Partners! Below are some conversation starters:\n\n\nWhere do you feel most at home?\n\n\nWhat parts of Santa Barbara have you enjoyed exploring?\n\n\nWhat’s the most exciting thing you’ve learned this year, so far?\n\n\nWhat’s your favorite color or typeface?\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#student-resources",
     "href": "slides/lecture1.1-logistics-slides.html#student-resources",
     "title": "EDS 240",
     "section": "",
-    "text": "Student Resources\n\n\n\nBasic Needs Resources & Food Security: https://basicneeds.ucsb.edu/ (schedule a CalFresh Appoinment or Basic Needs Advising Session)\n\nCounseling & Psychological Services (CAPS): http://caps.sa.ucsb.edu\n\n\nResource Center for Sexual and Gender Diversity (RCSGD): https://rcsgd.sa.ucsb.edu/\n\n\nUndocumented Student Services (USS) Program: https://uss.sa.ucsb.edu/\n\n\nCampus Learning Assistance Services (CLAS): http://clas.sa.ucsb.edu\n\n\nStudent Resource Building (SRB): http://www.sa.ucsb.edu/student-resource-building/home\n\n\nMulticultural Center (MCC): http://mcc.sa.ucsb.edu/\n\n\nCampus Advocacy, Resources, & Education (CARE): http://wgse.sa.ucsb.edu/care/home\n\n\nFinancial Crisis Response Team: financialcrisis@sa.ucsb.edu (contact)\n\nHealth and Wellness: https://wellbeing.ucsb.edu/\n\n\n\nI’m always happy to help you identify resources or help on campus – DM or email me!"
+    "text": "Student Resources\n\n\nBasic Needs Resources & Food Security: https://basicneeds.ucsb.edu/ (schedule a CalFresh Appoinment or Basic Needs Advising Session)\nCounseling & Psychological Services (CAPS): http://caps.sa.ucsb.edu\nResource Center for Sexual and Gender Diversity (RCSGD): https://rcsgd.sa.ucsb.edu/\nUndocumented Student Services (USS) Program: https://uss.sa.ucsb.edu/\nCampus Learning Assistance Services (CLAS): http://clas.sa.ucsb.edu\nStudent Resource Building (SRB): http://www.sa.ucsb.edu/student-resource-building/home\nMulticultural Center (MCC): http://mcc.sa.ucsb.edu/\nCampus Advocacy, Resources, & Education (CARE): http://wgse.sa.ucsb.edu/care/home\nFinancial Crisis Response Team: financialcrisis@sa.ucsb.edu (contact)\nHealth and Wellness: https://wellbeing.ucsb.edu/\n\n\nI’m always happy to help you identify resources or help on campus – DM or email me!"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#conduct",
     "href": "slides/lecture1.1-logistics-slides.html#conduct",
     "title": "EDS 240",
     "section": "",
-    "text": "Conduct, Inclusion, Accommodations\n\n\nCourse Conduct: We are committed to actively creating, modeling, and maintaining an inclusive climate and supportive learning environment for all – harassment of any kind will not be tolerated. Everyone is expected read and adhere to the Bren School Code of Conduct and the UCSB Code of Conduct\n\n\nAccess & accommodations: It’s never too late to apply for DSP accommodations\n\n\n\nNames & pronouns: Everyone has the right to be addressed and referred by to name and pronouns in accordance with their identity – you can add your pronouns to your UCSB Registrar profile"
+    "text": "Conduct, Inclusion, Accommodations\n\n \nCourse Conduct: We are committed to actively creating, modeling, and maintaining an inclusive climate and supportive learning environment for all – harassment of any kind will not be tolerated. Everyone is expected read and adhere to the Bren School Code of Conduct and the UCSB Code of Conduct\n\n\nAccess & accommodations: It’s never too late to apply for DSP accommodations\n\n\n\nNames & pronouns: Everyone has the right to be addressed and referred by to name and pronouns in accordance with their identity – you can add your pronouns to your UCSB Registrar profile"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#course-website",
@@ -452,7 +536,14 @@
     "href": "slides/lecture1.1-logistics-slides.html#tentative-schedule",
     "title": "EDS 240",
     "section": "",
-    "text": "Tentative Schedule & Materials\n\n\n\n\n\n\nDate\nTentative Topic\n\n\n\n1/8\ncourse logistics, intro to data viz, ggplot2 review\n\n\n1/15\nno class\n\n\n1/22\ndata communication\n\n\n1/29\ngraphic design\n\n\n2/5\nvisualizing amounts & proportions\n\n\n2/12\nvisualizing relationships & distributions\n\n\n2/19\nno class\n\n\n2/26\nvisualizing uncertainty\n\n\n3/4\nOJS with Dr. Allison Horst\n\n\n3/11\ngrab bag & catch up"
+    "text": "Tentative Schedule & Materials\n\n\n\n\n\n\n\nDate\nTentative Topic\n\n\n\n\n1/8\ncourse logistics, intro, {ggplot2} review\n\n\n1/15\nno class\n\n\n1/22\ndata communication\n\n\n1/29\ngraphic design\n\n\n2/5\nvisualizing amounts & proportions\n\n\n2/12\nvisualizing relationships & distributions\n\n\n2/19\nno class\n\n\n2/26\nvisualizing uncertainty\n\n\n3/4\nOJS with Dr. Allison Horst\n\n\n3/11\ngrab bag & catch up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiscussion sections are held every week"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#assignments",
+    "href": "slides/lecture1.1-logistics-slides.html#assignments",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Assignments\n\n\n\nYour course grade will be based off the following:\n\n\n\n3 Self-reflections - a place to reflect on your learning plan / goals, challenges, etc. (5 days to complete each)\n4 Homework Assignments - longer assignments where you’ll apply conceptual knowledge & technical skills to data viz tasks (10+ days to complete each)\n8 End-of-class surveys - short surveys to help me better understand your weekly class experience (due by EOD each day there is lecture)\n8 Lectures - a mix of slide-based lectures, live-coding, and individual / group-based critical thinking and technical exercises (attendance mandatory, Mondays 1:00-4:00pm PT)"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#grading",
@@ -460,6 +551,41 @@
     "title": "EDS 240",
     "section": "",
     "text": "How will I be evaluated?\n\n\nThis class will implement an alternative grading approach called specifications (specs) grading.\n\n\n\n\n“an alternative grading method where instructors create a list of specifications that describe the qualities and characteristics of a successful submission for an assignment. Student work is graded holistically based on those specifications, earning a single mark: “Satisfactory” or “Not Yet”. Students have the chance to use feedback by revisiting and resubmitting for full credit.”\n\n\n\n-expert from “Grading for Growth: A Guide to Alternative Grading Practices That Promote Authentic Learning and Student Engagement in Higher Education”, by David Clark & Robert Talbert"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#why-specs",
+    "href": "slides/lecture1.1-logistics-slides.html#why-specs",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Why Specs grading?\n\n\n“Traditional” grading can come with some challenges:\n\n\n\nlacks feedback loops\nbenefits those who learn fast or have prior experience\nbias-prone (e.g. awarding points, granting extensions)\ncan discourage learning for its own sake\ncan promote unhealthy student-instructor relationships"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#how-does-specs-look",
+    "href": "slides/lecture1.1-logistics-slides.html#how-does-specs-look",
+    "title": "EDS 240",
+    "section": "",
+    "text": "How does specs grading look in practice for this course?\n\n\nTL;DR: assignments receive either “Satisfactory” or “Not Yet” marks; tokens can be used to revise/resubmit assignments, for assignment extensions, or to miss class; earn tokens by attending discussions\n\n\n\nassignments receive either a “Satisfactory” or “Not Yet” mark\neach assignment will have a clear rubric (containing specifications) which outline what must be completed and how in order to receive a “Satisfactory” mark; not meeting all specifications results in a “Not Yet” mark\nstudents can trade “tokens” for the opportunity to:\n\nrevise/resubmit assignments that receive a “Not Yet” mark\nassignment extensions\nto miss class\n\nstudents earn tokens (primarily) by attending discussion section"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#why-tokens",
+    "href": "slides/lecture1.1-logistics-slides.html#why-tokens",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Why tokens?\n\n\nEveryone has different responsibilities & demands – tokens give you the power and freedom to ask for the accommodations you need.\n\n\nYou do not need to provide a reason to request an extension, revision, or to miss class, but you must have enough tokens to do so.\n\n\n\n\nTokens are not limitless and they accrue weekly (i.e. you don’t receive them all at the start), so use them wisely!"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#tokens",
+    "href": "slides/lecture1.1-logistics-slides.html#tokens",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Earning & using tokens\n\n\nEarn tokens:\n\n\neveryone starts with 0 tokens\nearn your first token by attending discussion section on Wednesday 1/10\nearn 2 more tokens by submitting Self-reflection #1\nearn 1 token per week by attending discussion section (full 50min)\n\n\n\n\nUse tokens:\nFill out this Google form: https://forms.gle/6FdV9g5KA9GgrxXBA and email Sam & Sevan to let them know"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#grade-tracker",
+    "href": "slides/lecture1.1-logistics-slides.html#grade-tracker",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Use the Grade Tracker to determine your course grade"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#GenAI",
@@ -474,6 +600,20 @@
     "title": "EDS 240",
     "section": "",
     "text": "Getting unstuck\n\nTroubleshooting, deciphering code, and trying (and failing at) new things is a large part of being a data scientist. Grad school is a safe space to get comfy with and practice these! Here’s how you should approach getting unstuck:\n\nCheck out the getting unstuck page (under “resources”) on the course website for more tips – particularly a reminder of how to ask a question."
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#sucking-less",
+    "href": "slides/lecture1.1-logistics-slides.html#sucking-less",
+    "title": "EDS 240",
+    "section": "",
+    "text": "A note on pushing through the challenges\n\n\n\n \n\n\n“There is no way of [going from] knowing nothing about a subject to knowing something about a subject without going through a period of much frustration and suckiness.” “Push through. You’ll suck less.”\n\n\n\n-Hadley Wickham, author of {ggplot2}\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\nSlide adapted from Andrew Heiss’ lesson, Truth, beauty, and data (PMAP 8101: Data Visualization)"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#slack",
+    "href": "slides/lecture1.1-logistics-slides.html#slack",
+    "title": "EDS 240",
+    "section": "",
+    "text": "A note on using Slack\n\n\n\n\n\n\nAll course-related content questions should be asked in the #eds-240-data-viz channel – oftentimes there are others who have the same question and will benefit from seeing the discussion!\n\nAny questions sent as DMs will be copied into #eds-240-data-viz and answered there.\n\nOf course, please direct message or email with any personal questions or concerns."
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#LOs",
@@ -614,54 +754,5 @@
     "title": "Grab Bag & Catch up",
     "section": "Assignment Reminders",
     "text": "Assignment Reminders\n\n\n\nAssignment Type\nTitle\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
-  },
-  {
-    "objectID": "slides/lecture1.1-logistics-slides.html#assignments",
-    "href": "slides/lecture1.1-logistics-slides.html#assignments",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Assignments\n\n\n\nYour course grade will be based off the following:\n\n\n\n\n3 Self-reflections - a place to reflect on your learning plan / goals, challenges, etc. (5 days to complete each)\n\n4 Homework Assignments - longer assignments where you’ll apply conceptual knowledge & technical skills to data viz tasks (10+ days to complete each)\n\n8 End-of-class surveys - short surveys to help me better understand your weekly class experience (due by EOD each day there is lecture)\n\n8 Lectures - a mix of slide-based lectures, live-coding, and individual / group-based critical thinking and technical exercises (attendance mandatory, Mondays 1:00-4:00pm PT)"
-  },
-  {
-    "objectID": "slides/lecture1.1-logistics-slides.html#why-specs",
-    "href": "slides/lecture1.1-logistics-slides.html#why-specs",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Why Specs grading?\n\n\n“Traditional” grading can come with some challenges:\n\n\n\nlacks feedback loops\nbenefits those who learn fast or have prior experience\nbias-prone (e.g. awarding points, granting extensions)\ncan discourage learning for its own sake\ncan promote unhealthy student-instructor relationships"
-  },
-  {
-    "objectID": "slides/lecture1.1-logistics-slides.html#how-does-specs-look",
-    "href": "slides/lecture1.1-logistics-slides.html#how-does-specs-look",
-    "title": "EDS 240",
-    "section": "",
-    "text": "How does specs grading look in practice for this course?\n\n\nTL;DR: assignments receive either “Satisfactory” or “Not Yet” marks; tokens can be used to revise/resubmit assignments, for assignment extensions, or to miss class; earn tokens by attending discussions\n\n\n\nassignments receive either a “Satisfactory” or “Not Yet” mark\neach assignment will have a clear rubric (containing specifications) which outline what must be completed and how in order to receive a “Satisfactory” mark; not meeting all specifications results in a “Not Yet” mark\nstudents can trade “tokens” for the opportunity to:\n\nrevise/resubmit assignments that receive a “Not Yet” mark\nassignment extensions\nto miss class\n\n\nstudents earn tokens (primarily) by attending discussion section"
-  },
-  {
-    "objectID": "slides/lecture1.1-logistics-slides.html#tokens",
-    "href": "slides/lecture1.1-logistics-slides.html#tokens",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Earning & using tokens\n\n\nEarn tokens:\n\n\neveryone starts with 0 tokens\n\nearn your first token by attending discussion section on Wednesday 1/10\nearn 2 more tokens by submitting Self-reflection #1\nearn 1 token per week by attending discussion section (full 50min)\n\n\n\n\nUse tokens:\nFill out this Google form: https://forms.gle/6FdV9g5KA9GgrxXBA and email Sam & Sevan to let them know"
-  },
-  {
-    "objectID": "slides/lecture1.1-logistics-slides.html#grade-tracker",
-    "href": "slides/lecture1.1-logistics-slides.html#grade-tracker",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Use the Grade Tracker to determine your course grade"
-  },
-  {
-    "objectID": "slides/lecture1.1-logistics-slides.html#why-tokens",
-    "href": "slides/lecture1.1-logistics-slides.html#why-tokens",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Why tokens?\n\n\nEveryone has different responsibilities & demands – tokens give you the power and freedom to ask for the accommodations you need.\n\n\nYou do not need to provide a reason to request an extension, revision, or to miss class, but you must have enough tokens to do so.\n\n\n\n\nTokens are not limitless and they accrue weekly (i.e. you don’t receive them all at the start), so use them wisely!"
-  },
-  {
-    "objectID": "slides/lecture1.1-logistics-slides.html#slack",
-    "href": "slides/lecture1.1-logistics-slides.html#slack",
-    "title": "EDS 240",
-    "section": "",
-    "text": "A note on using Slack\n\n\n\n\n\n\nAll course-related content questions should be asked in the #eds-240-data-viz channel – oftentimes there are others who have the same question and will benefit from seeing the discussion!\n\nAny questions sent as DMs will be copied into #eds-240-data-viz and answered there.\n\nOf course, please direct message or email with any personal questions or concerns."
   }
 ]
