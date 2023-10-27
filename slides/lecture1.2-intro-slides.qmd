@@ -46,6 +46,74 @@ January 8th, 2024
 
 <hr>
 
+>"...the practice of designing and creating easy-to-communicate and easy-to-understand graphic or visual representations of a large amount of complex quantitative and qualitative data and information with the help of static, dynamic or interactive visual items."
+
+::: {.right-align-text .body-text-s}
+-from [Wikipedia](https://en.wikipedia.org/wiki/Data_and_information_visualization)
+:::
+
+<br>
+
+. . .
+
+:::: columns
+
+::: {.column width="33%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/ggplot-example.png")
+```
+:::
+
+::: {.column width="33%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/gganimate-example.gif")
+```
+:::
+
+::: {.column width="33%"}
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/shiny-example.gif")
+```
+:::
+
+::::
+
+:::: columns
+
+::: {.column width="33%"}
+::: {.center-text}
+Created using [`{ggplot2}`](https://ggplot2.tidyverse.org/)
+:::
+:::
+
+::: {.column width="33%"}
+::: {.center-text}
+Created using [`{gganimate}`](https://gganimate.com/)
+:::
+:::
+
+::: {.column width="33%"}
+::: {.center-text}
+Created using [`{shiny}`](https://shiny.posit.co/)
+:::
+:::
+
+::::
 ---
 
 ##  {#why-visualize data-menu-title="# Why visualize data? #" background="#047C90"}
@@ -75,7 +143,7 @@ countdown::countdown(
 
 ## {#answer-qs data-menu-title="Data viz for answering Qs"} 
 
-[. . . to answer specific questions]{.slide-title}
+[. . . to answer questions / derive insights]{.slide-title}
 
 <hr>
 
@@ -186,7 +254,7 @@ ggplot(diamonds, aes(x = price, y = after_stat(density))) +
 
 ## {#see-trends data-menu-title="Data viz to see trends"} 
 
-[. . . to identify trends]{.slide-title2}
+[. . . to identify trends]{.slide-title}
 
 <hr>
 

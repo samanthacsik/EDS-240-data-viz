@@ -193,7 +193,11 @@ countdown::countdown(
 - **Financial Crisis Response Team:** <financialcrisis@sa.ucsb.edu> (contact)
 - **Health and Wellness:** <https://wellbeing.ucsb.edu/>
 
+. . .
+
 ::: {.center-text}
+*Your mental and physical health is more important than your grade in any course.*
+
 *I'm always happy to help you identify resources or help on campus -- DM or email me!*
 :::
 
@@ -398,7 +402,7 @@ Everyone has different responsibilities & demands -- ***tokens give you the powe
 
 . . . 
 
-You *do not* need to provide a reason to request an extension, revision, or to miss class, but *you must* have enough tokens to do so.
+You *do not* need to provide a reason to request an extension, resubmission, or to miss class, but *you must* have enough tokens to do so.
 
 <br>
 

@@ -186,7 +186,7 @@
     "href": "slides/lecture1.2-intro-slides.html#what-is-visualization",
     "title": "EDS 240",
     "section": "",
-    "text": "What is data visualization?"
+    "text": "What is data visualization?\n\n\n“…the practice of designing and creating easy-to-communicate and easy-to-understand graphic or visual representations of a large amount of complex quantitative and qualitative data and information with the help of static, dynamic or interactive visual items.”\n\n\n-from Wikipedia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreated using {ggplot2}\n\n\n\nCreated using {gganimate}\n\n\n\nCreated using {shiny}"
   },
   {
     "objectID": "slides/lecture1.2-intro-slides.html#why-visualize",
@@ -200,7 +200,7 @@
     "href": "slides/lecture1.2-intro-slides.html#answer-qs",
     "title": "EDS 240",
     "section": "",
-    "text": ". . . to answer specific questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRipple et al. 2023\n\nFig Caption: Unusual climate anomalies in 2023 (the red line, which appears bold in print). Sea ice extent (a, b), temperatures (c–e), and area burned in Canada (f) are presently far outside their historical ranges. These anomalies may be due to both climate change and other factors. Sources and additional details about each variable are provided in supplemental file S1. Each line corresponds to a different year, with darker gray representing later years.\n\n\nA nice Twitter thread on key takeaways from the above paper"
+    "text": ". . . to answer questions / derive insights\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRipple et al. 2023\n\nFig Caption: Unusual climate anomalies in 2023 (the red line, which appears bold in print). Sea ice extent (a, b), temperatures (c–e), and area burned in Canada (f) are presently far outside their historical ranges. These anomalies may be due to both climate change and other factors. Sources and additional details about each variable are provided in supplemental file S1. Each line corresponds to a different year, with darker gray representing later years.\n\n\nA nice Twitter thread on key takeaways from the above paper"
   },
   {
     "objectID": "slides/lecture1.2-intro-slides.html#exploration",
@@ -515,7 +515,7 @@
     "href": "slides/lecture1.1-logistics-slides.html#student-resources",
     "title": "EDS 240",
     "section": "",
-    "text": "Student Resources\n\n\nBasic Needs Resources & Food Security: https://basicneeds.ucsb.edu/ (schedule a CalFresh Appoinment or Basic Needs Advising Session)\nCounseling & Psychological Services (CAPS): http://caps.sa.ucsb.edu\nResource Center for Sexual and Gender Diversity (RCSGD): https://rcsgd.sa.ucsb.edu/\nUndocumented Student Services (USS) Program: https://uss.sa.ucsb.edu/\nCampus Learning Assistance Services (CLAS): http://clas.sa.ucsb.edu\nStudent Resource Building (SRB): http://www.sa.ucsb.edu/student-resource-building/home\nMulticultural Center (MCC): http://mcc.sa.ucsb.edu/\nCampus Advocacy, Resources, & Education (CARE): http://wgse.sa.ucsb.edu/care/home\nFinancial Crisis Response Team: financialcrisis@sa.ucsb.edu (contact)\nHealth and Wellness: https://wellbeing.ucsb.edu/\n\n\nI’m always happy to help you identify resources or help on campus – DM or email me!"
+    "text": "Student Resources\n\n\nBasic Needs Resources & Food Security: https://basicneeds.ucsb.edu/ (schedule a CalFresh Appoinment or Basic Needs Advising Session)\nCounseling & Psychological Services (CAPS): http://caps.sa.ucsb.edu\nResource Center for Sexual and Gender Diversity (RCSGD): https://rcsgd.sa.ucsb.edu/\nUndocumented Student Services (USS) Program: https://uss.sa.ucsb.edu/\nCampus Learning Assistance Services (CLAS): http://clas.sa.ucsb.edu\nStudent Resource Building (SRB): http://www.sa.ucsb.edu/student-resource-building/home\nMulticultural Center (MCC): http://mcc.sa.ucsb.edu/\nCampus Advocacy, Resources, & Education (CARE): http://wgse.sa.ucsb.edu/care/home\nFinancial Crisis Response Team: financialcrisis@sa.ucsb.edu (contact)\nHealth and Wellness: https://wellbeing.ucsb.edu/\n\n\n\nYour mental and physical health is more important than your grade in any course.\nI’m always happy to help you identify resources or help on campus – DM or email me!"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#conduct",
@@ -571,7 +571,7 @@
     "href": "slides/lecture1.1-logistics-slides.html#why-tokens",
     "title": "EDS 240",
     "section": "",
-    "text": "Why tokens?\n\n\nEveryone has different responsibilities & demands – tokens give you the power and freedom to ask for the accommodations you need.\n\n\nYou do not need to provide a reason to request an extension, revision, or to miss class, but you must have enough tokens to do so.\n\n\n\n\nTokens are not limitless and they accrue weekly (i.e. you don’t receive them all at the start), so use them wisely!"
+    "text": "Why tokens?\n\n\nEveryone has different responsibilities & demands – tokens give you the power and freedom to ask for the accommodations you need.\n\n\nYou do not need to provide a reason to request an extension, resubmission, or to miss class, but you must have enough tokens to do so.\n\n\n\n\nTokens are not limitless and they accrue weekly (i.e. you don’t receive them all at the start), so use them wisely!"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#tokens",
