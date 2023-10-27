@@ -376,6 +376,60 @@
 <div class="body-text-s gray-text center-text">
 <p>adapted from <a href="https://www.cedricscherer.com/">Cédric Scherer’s</a> rstudio::conf(2022) workshop, <a href="https://rstudio-conf-2022.github.io/ggplot2-graphic-design/">Graphic Design with ggplot2</a></p>
 </div>
+<p>–</p>
+</section>
+<section id="grammar-of-graphics" class="slide level2" data-menu-title="Grammar of Graphics">
+<h2></h2>
+<p><span class="slide-title">Grammar of Graphics</span></p>
+<hr>
+</section>
+<section id="tidy-data" class="slide level2" data-menu-title="Tidy data">
+<h2></h2>
+<p><span class="slide-title">Tidy data</span></p>
+<hr>
+</section>
+<section id="mapping" class="slide level2" data-menu-title="Mapping data">
+<h2></h2>
+<p><span class="slide-title">Mapping data</span></p>
+<hr>
+<ol type="1">
+<li>layer (geom + stat)</li>
+<li>scale (shape, color, size + how you interpret the plot e.g.&nbsp;legends, scales)</li>
+<li>coord (e.g.&nbsp;polar, flip)</li>
+<li>facet (create small multiples; helpful for EDA)</li>
+<li>theme (adjust individual pieces of a plot)</li>
+</ol>
+<p>a graphic:</p>
+<p>maps the data + to the aesthetic attributes + of geometric points + with possible statistical transformations + different coordinate systems + and faceting</p>
+</section>
+<section id="explore-data" class="slide level2" data-menu-title="Explore data">
+<h2></h2>
+<p><span class="slide-title">Remember to always explore your data first!</span></p>
+<hr>
+<p><code>str()</code>, <code>glimpse()</code></p>
+</section>
+<section class="slide level2">
+
+<p>Initialize a plot object that you’ll add layers to. Creates empty graph that’s primed to display <code>penguins</code> data, but empty since we haven’t told ggplot how we want to map our data onto the graph yet.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture1.3-ggplot-review-slides_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+</div>
+</div>
+<p><code>mapping</code> defines how variables in your dataset are mapped to visual properties (aesthetics) of your plot. Here, we specify which variables map to x and y axes</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture1.3-ggplot-review-slides_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+</div>
+<div class="cell-output-display">
+<p><img data-src="lecture1.3-ggplot-review-slides_files/figure-revealjs/unnamed-chunk-4-2.png" width="960"></p>
+</div>
+</div>
+<p>Still no data because we haven’t specified how we want our observations (individual penguins) to to be represented on our graph.</p>
+<p>Do so by adding a geom aka the geometrical object that a plot uses to represent data. There are many geoms (<code>geom_*</code>) that are built into <code>{ggplot2}</code> already (and more when you use extension packages)!</p>
+</section>
+<section class="slide level2">
+
 
 <div class="footer footer-default">
 

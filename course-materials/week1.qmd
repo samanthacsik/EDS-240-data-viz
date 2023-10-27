@@ -45,7 +45,7 @@ Week 1 instruction is broken down into three sections:
 
 ::: {.column width="33%"}
 ::: {.center-text}
-[**`{ggplot2}` review**]{.teal-text .body-text-m}
+[**`{ggplot2}` review & workflow**]{.teal-text .body-text-m}
 
 [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 1.3 slides](../slides/lecture1.3-ggplot-review-slides.qmd){.btn role="button" target="_blank"} 
 :::

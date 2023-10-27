@@ -130,7 +130,7 @@
     "href": "course-materials/week1.html#lecture-materials",
     "title": "Course logistics, Intro, {ggplot2} review",
     "section": "Lecture Materials",
-    "text": "Lecture Materials\nWeek 1 instruction is broken down into three sections:\n\n\n\nCourse logistics & syllabus\n lecture 1.1 slides\n\n\n\nIntro to data visualization\n lecture 1.2 slides\n\n\n\n{ggplot2} review\n lecture 1.3 slides"
+    "text": "Lecture Materials\nWeek 1 instruction is broken down into three sections:\n\n\n\nCourse logistics & syllabus\n lecture 1.1 slides\n\n\n\nIntro to data visualization\n lecture 1.2 slides\n\n\n\n{ggplot2} review & workflow\n lecture 1.3 slides"
   },
   {
     "objectID": "course-materials/week1.html#discussion-materials",
@@ -179,7 +179,7 @@
     "href": "slides/lecture1.2-intro-slides.html#title-slide",
     "title": "EDS 240",
     "section": "",
-    "text": "EDS 240: Lecture 1.2\nThe importance of visualizing our data\n\n\n\nSam Csik | Data Training Coordinator National Center for Ecological Analysis & Synthesis\n\nMaster of Environmental Data Science | Bren School of Environmental Science & Management\n\n\n\n\nJanuary 8th, 2024"
+    "text": "EDS 240: Lecture 1.2\nData Visualization: an intro\n\n\n\nSam Csik | Data Training Coordinator National Center for Ecological Analysis & Synthesis\n\nMaster of Environmental Data Science | Bren School of Environmental Science & Management\n\n\n\n\nJanuary 8th, 2024"
   },
   {
     "objectID": "slides/lecture1.2-intro-slides.html#what-is-visualization",
@@ -487,7 +487,35 @@
     "href": "slides/lecture1.3-ggplot-review-slides.html#ggplot2-advantages",
     "title": "EDS 240",
     "section": "",
-    "text": "Advantages of {ggplot2}\n\n\n\n\n\n\n\nconsistent underlying “grammar of graphics” (Wilkinson 2005)\nsuper flexible, layered plot specification (see Wickham 2008)\ntheme system for polishing plot appearance\nlots of additional functionality thanks to extensions\nactive and helpful community\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\nadapted from Cédric Scherer’s rstudio::conf(2022) workshop, Graphic Design with ggplot2"
+    "text": "Advantages of {ggplot2}\n\n\n\n\n\n\n\nconsistent underlying “grammar of graphics” (Wilkinson 2005)\nsuper flexible, layered plot specification (see Wickham 2008)\ntheme system for polishing plot appearance\nlots of additional functionality thanks to extensions\nactive and helpful community\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\nadapted from Cédric Scherer’s rstudio::conf(2022) workshop, Graphic Design with ggplot2\n\n–"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#grammar-of-graphics",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#grammar-of-graphics",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Grammar of Graphics"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#tidy-data",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#tidy-data",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tidy data"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#mapping",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#mapping",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Mapping data\n\n\nlayer (geom + stat)\nscale (shape, color, size + how you interpret the plot e.g. legends, scales)\ncoord (e.g. polar, flip)\nfacet (create small multiples; helpful for EDA)\ntheme (adjust individual pieces of a plot)\n\na graphic:\nmaps the data + to the aesthetic attributes + of geometric points + with possible statistical transformations + different coordinate systems + and faceting"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#explore-data",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#explore-data",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Remember to always explore your data first!\n\nstr(), glimpse()"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#title-slide",
@@ -627,7 +655,14 @@
     "href": "slides/lecture1.1-logistics-slides.html#slack",
     "title": "EDS 240",
     "section": "",
-    "text": "A note on using Slack\n\n\n\n\n\n\nAll course-related content questions should be asked in the #eds-240-data-viz channel – oftentimes there are others who have the same question and will benefit from seeing the discussion!\n\nAny questions sent as DMs will be copied into #eds-240-data-viz and answered there.\n\nOf course, please direct message or email with any personal questions or concerns."
+    "text": "A note on using Slack\n\n\n\nTODO: add screenshot of #eds-240-data-viz\n\n\nAll course-related content questions should be asked in the #eds-240-data-viz channel – oftentimes there are others who have the same question and will benefit from seeing the discussion!\n\nAny questions sent as DMs will be copied into #eds-240-data-viz and answered there.\n\nOf course, please direct message or email with any personal questions or concerns."
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#expectations",
+    "href": "slides/lecture1.1-logistics-slides.html#expectations",
+    "title": "EDS 240",
+    "section": "",
+    "text": "A note on expectations\n\nReminders:\n\nWe are not mind-readers (as helpful as that would be!). Please help us help you by bringing any issues to our attention (EOC surveys are a great place to do this, or via DM / email) – the earlier the better!\n\n\nPromises:\n\n\nWe are working, and will continue to work, really hard to make this a great class!\nWe are super passionate about teaching, but doesn’t mean it’s easy or that we’re infallible. We will do our best to adapt to student / class needs as the quarter progresses. There may be times where we won’t or can’t make changes to the course plan – if so, we will be transparent in our reasoning why.\n\n\n\n\nBoundaries:\n\n\nThis course (unfortunately) isn’t our only professional responsibility this quarter – we will not be available at all times to respond to requests / questions. Here’s what you can expect:\n\nWe will try our best to respond to slack questions within 24hr (during the week)\nA response after-hours (5pm - 9am) is not guaranteed (we will try our best, as our personal lives allow for)\nWe will not be responding to questions over the weekend"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#LOs",

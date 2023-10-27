@@ -552,6 +552,7 @@ knitr::include_graphics("images/lecture1/adventure-time.gif")
 ::: {.body-text-s .gray-text .center-text}
 Slide adapted from [Andrew Heiss'](https://www.andrewheiss.com/) lesson, [Truth, beauty, and data](https://datavizs23.classes.andrewheiss.com/content/01-content.html) ([PMAP 8101: Data Visualization](https://datavizs23.classes.andrewheiss.com/))
 :::
+
 ---
 
 ## {#slack data-menu-title="Slack"} 
@@ -563,6 +564,9 @@ Slide adapted from [Andrew Heiss'](https://www.andrewheiss.com/) lesson, [Truth,
 :::: columns
 
 ::: {.column width="50%"}
+
+TODO: add screenshot of #eds-240-data-viz 
+
 ```{r}
 #| eval: true
 #| echo: false
@@ -588,6 +592,38 @@ Any questions sent as DMs will be copied into `#eds-240-data-viz` and answered t
 :::
 
 ::::
+
+---
+
+## {#expectations data-menu-title="Expectations"} 
+
+[A note on expectations]{.slide-title3}
+
+<hr>
+
+[**Reminders:**]{.teal-text} 
+
+- [We are not mind-readers (as helpful as that would be!). Please help us help you by bringing any issues to our attention (EOC surveys are a great place to do this, or via DM / email) -- the earlier the better!]{.body-text-s} 
+
+. . . 
+
+[**Promises:**]{.teal-text} 
+
+::: incremental
+- [We are working, and will continue to work, *really* hard to make this a great class!]{.body-text-s}
+- [We are super passionate about teaching, but doesn't mean it's easy or that we're infallible. We will do our best to adapt to student / class needs as the quarter progresses. There may be times where we won't or can't make changes to the course plan -- if so, we will be transparent in our reasoning why.]{.body-text-s} 
+:::
+
+. . .
+
+[**Boundaries:**]{.teal-text}
+
+::: .incremental 
+- [This course (unfortunately) isn't our only professional responsibility this quarter -- we will not be available at all times to respond to requests / questions. Here's what you can expect:]{.body-text-s} 
+   - [We will try our best to respond to slack questions within 24hr (during the week)]{.body-text-s} 
+   - [A response after-hours (5pm - 9am) is not guaranteed (we will try our best, as our personal lives allow for)]{.body-text-s} 
+   - [We will not be responding to questions over the weekend]{.body-text-s} 
+:::
 
 ---
 

@@ -13,7 +13,7 @@ format:
 
 [EDS 240: Lecture 1.2]{.custom-title}
 
-[*The importance of visualizing our data*]{.custom-subtitle}
+[*Data Visualization: an intro*]{.custom-subtitle}
 
 <hr class="hr-teal">
 

@@ -7,6 +7,8 @@ format:
     chalkboard: true
     theme: 
       - ../meds-slides-styles.scss
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## {#title-slide data-menu-title="Title Slide" background="#053660"} 
@@ -82,3 +84,93 @@ knitr::include_graphics("images/lecture1/ggplot2.png")
 ::: {.body-text-s .gray-text .center-text}
 adapted from [Cédric Scherer's](https://www.cedricscherer.com/) rstudio::conf(2022) workshop, [Graphic Design with ggplot2](https://rstudio-conf-2022.github.io/ggplot2-graphic-design/) 
 :::
+
+--
+
+## {#grammar-of-graphics data-menu-title="Grammar of Graphics"} 
+
+[Grammar of Graphics]{.slide-title}
+
+<hr>
+
+---
+
+## {#tidy-data data-menu-title="Tidy data"} 
+
+[Tidy data]{.slide-title}
+
+<hr>
+
+---
+
+## {#mapping data-menu-title="Mapping data"} 
+
+[Mapping data]{.slide-title}
+
+<hr>
+
+1. layer (geom + stat)
+2. scale (shape, color, size + how you interpret the plot e.g. legends, scales)
+3. coord (e.g. polar, flip)
+4. facet (create small multiples; helpful for EDA)
+5. theme (adjust individual pieces of a plot)
+
+a graphic: 
+
+maps the data +
+to the aesthetic attributes +
+of geometric points + 
+with possible statistical transformations + 
+different coordinate systems +
+and faceting
+
+---
+
+## {#explore-data data-menu-title="Explore data"} 
+
+[Remember to always explore your data first!]{.slide-title}
+
+<hr>
+
+```{r}
+library(palmerpenguins)
+library(tidyverse)
+```
+
+`str()`, `glimpse()`
+
+---
+
+Initialize a plot object that you'll add layers to. Creates empty graph that's primed to display `penguins` data, but empty since we haven't told ggplot how we want to map our data onto the graph yet.
+```{r}
+ggplot(data = penguins) 
+```
+
+`mapping` defines how variables in your dataset are mapped to visual properties (aesthetics) of your plot. Here, we specify which variables map to x and y axes
+```{r}
+ggplot(data = penguins,
+       mapping = aes(x = flipper_length_mm, y = body_mass_g))
+
+# oftentimes, you'll see these written wihtout the args explicitly stated
+ggplot(penguins, 
+       aes(x = flipper_length_mm, y = body_mass_g))
+```
+
+Still no data because we haven't specified how we want our observations (individual penguins) to to be represented on our graph.
+
+Do so by adding a geom aka the geometrical object that a plot uses to represent data. There are many geoms (`geom_*`) that are built into `{ggplot2}` already (and more when you use extension packages)!
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
