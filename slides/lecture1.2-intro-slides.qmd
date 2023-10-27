@@ -40,7 +40,7 @@ January 8th, 2024
 
 ---
 
-## {#what-is-visualization data-menu-title="title"}
+## {#what-is-visualization data-menu-title="What is data viz?"}
 
 [What is data visualization?]{.slide-title}
 
@@ -114,6 +114,43 @@ Created using [`{shiny}`](https://shiny.posit.co/)
 :::
 
 ::::
+
+---
+
+## {#history1 data-menu-title="History 1"}
+
+[History of data visualization]{.slide-title}
+
+<hr>
+
+*Note: this is by no means a comprehensive history of the visual representation of information!*
+
+::: {.r-stack}
+![](images/lecture1/history1.1.png){.fragment width="900"}
+
+![](images/lecture1/history1.2.png){.fragment width="900"}
+
+![](images/lecture1/history1.3.png){.fragment width="900"}
+
+![](images/lecture1/history2.1.png){.fragment width="900"}
+
+![](images/lecture1/history2.2.png){.fragment width="900"}
+
+![](images/lecture1/history2.3.png){.fragment width="900"}
+
+![](images/lecture1/history3.1.png){.fragment width="900"}
+
+![](images/lecture1/history3.2.png){.fragment width="900"}
+
+![](images/lecture1/history4.1.png){.fragment width="900"}
+
+![](images/lecture1/history4.2.png){.fragment width="900"}
+:::
+
+::: {.gray-text .body-text-s .center-text}
+Images from [BBC News](http://news.bbc.co.uk/2/hi/science/nature/871930.stm), Wikipedia ([a](https://en.wikipedia.org/wiki/Turin_Papyrus_Map), [b](https://en.wikipedia.org/wiki/Michael_van_Langren), [c](https://en.wikipedia.org/wiki/William_Playfair)), [Smithsonian](https://www.si.edu/newsdesk/snapshot/quipu), [The Marginalian](https://www.themarginalian.org/2019/07/09/emma-willard/), [Scientific American](https://www.scientificamerican.com/article/how-florence-nightingale-changed-data-visualization-forever/) & [Twitter](https://twitter.com/ijeamaka_a/status/1361715338027560962)
+:::
+
 ---
 
 ##  {#why-visualize data-menu-title="# Why visualize data? #" background="#047C90"}
@@ -311,7 +348,7 @@ Datasaurus Dozen
 
 ---
 
-## {#prompt-discussion data-menu-title="Data viz for discussion"} 
+## {#prompt-discussion data-menu-title="Data viz for discussion (a)"} 
 
 [. . . to prompt discussion]{.slide-title}
 
@@ -331,6 +368,30 @@ knitr::include_graphics("images/lecture1/warming-stripes.png")
 
 ::: {.center-text .gray-text}
 [Warming Strips](https://showyourstripes.info/), by [Ed Hawkins](http://www.met.reading.ac.uk/~ed/home/index.php)
+:::
+
+---
+
+## {#prompt-discussion2 data-menu-title="Data viz for discussion (b)"} 
+
+[. . . to prompt discussion]{.slide-title}
+
+<hr>
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/lecture1/lipponen.gif")
+```
+
+<br>
+
+::: {.center-text .gray-text .body-text-s}
+gif created from [Antti Lipponen](https://anttilip.net/)'s [Temperature Anomolies](https://www.flickr.com/photos/150411108@N06/35471910724/). See [original video](https://live.staticflickr.com/video/35471910724/9da01e3561/720p.mp4?s=eyJpIjozNTQ3MTkxMDcyNCwiZSI6MTY5ODQ0MDk0NywicyI6ImEzZjllNDJmNGNiYjg5YmQ5OTIzNmE3OTRmYzEzNmZlNGMzMzBjNDQiLCJ2IjoxfQ).
 :::
 
 ---

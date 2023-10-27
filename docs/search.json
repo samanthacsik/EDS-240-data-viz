@@ -189,6 +189,13 @@
     "text": "What is data visualization?\n\n\n“…the practice of designing and creating easy-to-communicate and easy-to-understand graphic or visual representations of a large amount of complex quantitative and qualitative data and information with the help of static, dynamic or interactive visual items.”\n\n\n-from Wikipedia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreated using {ggplot2}\n\n\n\nCreated using {gganimate}\n\n\n\nCreated using {shiny}"
   },
   {
+    "objectID": "slides/lecture1.2-intro-slides.html#history1",
+    "href": "slides/lecture1.2-intro-slides.html#history1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages from BBC News, Wikipedia (a, b, c), Smithsonian, The Marginalian, Scientific American & Twitter"
+  },
+  {
     "objectID": "slides/lecture1.2-intro-slides.html#why-visualize",
     "href": "slides/lecture1.2-intro-slides.html#why-visualize",
     "title": "EDS 240",
@@ -222,6 +229,13 @@
     "title": "EDS 240",
     "section": "",
     "text": ". . . to prompt discussion\n\n\n\n\n\nWarming Strips, by Ed Hawkins"
+  },
+  {
+    "objectID": "slides/lecture1.2-intro-slides.html#prompt-discussion2",
+    "href": "slides/lecture1.2-intro-slides.html#prompt-discussion2",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . to prompt discussion\n\n\n\n\n\ngif created from Antti Lipponen’s Temperature Anomolies. See original video."
   },
   {
     "objectID": "slides/lecture1.2-intro-slides.html#aRt-anyene",
