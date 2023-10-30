@@ -17,26 +17,28 @@ format:
 
 <hr class="hr-teal">
 
-:::: {.columns} 
+[Week 1 | January 8th, 2024]{.custom-subtitle3}
 
-::: {.column width="50%"}
-[Sam Csik |]{.custom-subtitle2}<br>
-[Data Training Coordinator]{.custom-subtitle2}<br>
-[*National Center for Ecological Analysis & Synthesis*]{.custom-subtitle3}
-:::
+<!-- :::: {.columns}  -->
 
-::: {.column width="50%"}
-[Master of Environmental Data Science |]{.custom-subtitle2}<br>
-[*Bren School of Environmental Science & Management*]{.custom-subtitle3}
-:::
+<!-- ::: {.column width="50%"} -->
+<!-- [Sam Csik |]{.custom-subtitle2}<br> -->
+<!-- [Data Training Coordinator]{.custom-subtitle2}<br> -->
+<!-- [*National Center for Ecological Analysis & Synthesis*]{.custom-subtitle3} -->
+<!-- ::: -->
 
-::::
+<!-- ::: {.column width="50%"} -->
+<!-- [Master of Environmental Data Science |]{.custom-subtitle2}<br> -->
+<!-- [*Bren School of Environmental Science & Management*]{.custom-subtitle3} -->
+<!-- ::: -->
 
-<br>
+<!-- :::: -->
 
-::: {.title-footer}
-January 8th, 2024
-:::
+<!-- <br> -->
+
+<!-- ::: {.title-footer} -->
+<!-- January 8th, 2024 -->
+<!-- ::: -->
 
 ---
 
@@ -221,7 +223,7 @@ knitr::include_graphics("images/lecture1/ripple-etal-2023-fig1.png")
 
 <hr>
 
->"Exploratory data analysis (EDA) is not a formal process with a strict set of rules. More than anything, EDS is a state of mind...you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends. As your exploration continues, you will hone in on a few particularly productive insights that you'll eventually write-up and communicate to others."
+>"**Exploratory data analysis (EDA)** is not a formal process with a strict set of rules. More than anything, EDS is a state of mind...you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends. As your exploration continues, you will hone in on a few particularly productive insights that you'll eventually write-up and communicate to others."
 
 ::: {.right-align-text .body-text-s} 
 -Hadley Wickham, author of [R for Data Science](https://r4ds.hadley.nz/eda)

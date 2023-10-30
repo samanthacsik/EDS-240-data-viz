@@ -17,28 +17,30 @@ format:
 
 <hr class="hr-teal">
 
-:::: {.columns} 
+[Week 1 | January 8th, 2024]{.custom-subtitle3}
 
-::: {.column width="50%"}
-[Sam Csik |]{.custom-subtitle2}
-[Data Training Coordinator]{.custom-subtitle2}
+<!-- :::: {.columns}  -->
 
-[*National Center for Ecological Analysis & Synthesis*]{.custom-subtitle3}
-:::
+<!-- ::: {.column width="50%"} -->
+<!-- [Sam Csik |]{.custom-subtitle2} -->
+<!-- [Data Training Coordinator]{.custom-subtitle2} -->
 
-::: {.column width="50%"}
-[Master of Environmental Data Science |]{.custom-subtitle2}
+<!-- [*National Center for Ecological Analysis & Synthesis*]{.custom-subtitle3} -->
+<!-- ::: -->
 
-[*Bren School of Environmental Science & Management*]{.custom-subtitle3}
-:::
+<!-- ::: {.column width="50%"} -->
+<!-- [Master of Environmental Data Science |]{.custom-subtitle2} -->
 
-::::
+<!-- [*Bren School of Environmental Science & Management*]{.custom-subtitle3} -->
+<!-- ::: -->
 
-<br>
+<!-- :::: -->
 
-::: {.title-footer}
-January 8th, 2024
-:::
+<!-- <br> -->
+
+<!-- ::: {.title-footer} -->
+<!-- January 8th, 2024 -->
+<!-- ::: -->
 
 ---
 
