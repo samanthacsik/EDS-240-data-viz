@@ -91,17 +91,267 @@ adapted from [Cédric Scherer's](https://www.cedricscherer.com/) rstudio::conf(2
 
 ## {#grammar-of-graphics data-menu-title="Grammar of Graphics"} 
 
-[Grammar of Graphics]{.slide-title}
+[`{ggplot2}` is based on the Grammar of Graphics]{.slide-title2}
 
 <hr>
+
+>“A grammar of graphics is a tool that enables us to concisely describe the components of a graphic. Such a grammar allows us to move beyond named graphics (e.g. the “scatterplot”) and gain insight into the deep structure that underlies statistical graphics.” 
+
+::: {.right-align-text .body-text-s}
+-from Hadley Wickham’s [A layered grammar of graphics](https://doi.org/10.1198/jcgs.2009.07098) in *Journal of Computational and Graphical Statistics*, vol. 19, no. 1 pp. 3-28, 2010.
+:::
+
+<br>
+
+. . .
+
+>"In the grammar of a language, words have different parts of speech, which perform different roles in the sentence. Analagously, the grammar of graphics separates a graphic into different layers"
+
+::: {.right-align-text .body-text-s}
+-from Liz Sander’s post [Telling stories with data using the grammar of graphics](https://codewords.recurse.com/issues/six/telling-stories-with-data-using-the-grammar-of-graphics)
+:::
 
 ---
 
-## {#tidy-data data-menu-title="Tidy data"} 
+## {#layers data-menu-title="ggplot2 layers"} 
 
-[Tidy data]{.slide-title}
+[Graphic layers]{.slide-title2}
 
 <hr>
+
+1. data (in [tidy](https://doi.org/10.18637/jss.v059.i10) format) + geometry (type of plot)
+2. scale (shape, color, size + how you interpret the plot e.g. legends, scales)
+3. coord (e.g. Cartesian, polar, flip)
+4. facet (create small multiples; helpful for EDA)
+5. theme (adjust individual pieces of a plot)
+
+---
+
+## {#tidy-data data-menu-title="What is tidy data?"} 
+
+[What is tidy data?]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "Stylized text providing an overview of Tidy Data. The top reads 'Tidy data is a standard way of mapping the meaning of a dataset to its structure. - Hadley Wickham.' On the left reads 'In tidy data: each variable forms a column; each observation forms a row; each cell is a single measurement.' There is an example table on the lower right with columns ‘id’, ‘name’ and ‘color’ with observations for different cats, illustrating tidy data structure."
+knitr::include_graphics("images/lecture1/horst-tidy-data-definition.png")
+```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+---
+
+## {#untidy-temps data-menu-title="Untidy temps"} 
+
+[An example: untidy temperatures]{.slide-title2}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+library(tidyverse)
+```
+
+Take this [tibble](https://tibble.tidyverse.org/) (a lazy/surly `data.frame`) of temperature recordings at three stations on three dates:
+
+```{r}
+#| eval: true
+#| echo: true
+temp_data_wide <- tribble(
+  ~date, ~station1, ~station2,  ~station3,
+  "2023-10-01", 30.1, 29.8,  31.2,
+  "2023-11-01", 28.6, 29.1,  33.4,
+  "2023-12-01", 29.9, 28.5,  32.3
+)
+
+print(temp_data_wide)
+```
+
+<br>
+
+::: {.center-text}
+This tibble is in **wide** or **untidy** format.
+:::
+
+---
+
+##  {#make-temps-tidy data-menu-title="# Make tidy temps #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">{{< fa table title="a data table with two columns and two rows" >}} Make tidy temperatures!</p>
+<p class="caption-text">*With your learning partners, discuss the following:*</p>
+<p class="dark-blue-text">**1.) What makes `temp_data_wide` untidy?**</p>
+<p class="dark-blue-text">**2.) Sketch out on paper or talk through what `temp_data_wide` would look like in long aka tidy format. Why?**</p>
+</div>
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#tidy-temps data-menu-title="Tidy temps"} 
+
+[An example: tidy temperatures]{.slide-title2}
+
+<hr>
+
+We can use `tidyr::pivot_longer()` to "lengthen" our data aka convert it from wide / untidy to **long / tidy:**
+
+```{r}
+#| eval: true
+#| echo: true
+temp_data_long <- temp_data_wide |> 
+  pivot_longer(cols = starts_with("station"),
+               names_to = "station_id",
+               values_to = "temp_c")
+
+print(temp_data_long)
+```
+
+---
+
+## {#untidy-data data-menu-title="Untidy data"} 
+
+[Untidy data can take *many* different formats]{.slide-title2}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "There are two sets of anthropomorphized data tables. The top group of three tables are all rectangular and smiling, with a shared speech bubble reading 'our columns are variables and our rows are observations!'. Text to the left of that group reads 'The standard structure of tidy data means that 'tidy datasets are all alike…' The lower group of four tables are all different shapes, look ragged and concerned, and have different speech bubbles reading (from left to right) “my column are values and my rows are variables”, 'I have variables in columns AND in rows', 'I have multiple variables in a single column', and 'I don’t even KNOW what my deal is.' Next to the frazzled data tables is text '...but every messy dataset is messy in its own way. -Hadley Wickham.'"
+knitr::include_graphics("images/lecture1/horst-untidy-data.png")
+```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+---
+
+## {#tidy-data-benefits data-menu-title="Tidy data benefits"} 
+
+[Benefits of tidy data]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "On the left is a happy cute fuzzy monster holding a rectangular data frame with a tool that fits the data frame shape. On the workbench behind the monster are other data frames of similar rectangular shape, and neatly arranged tools that also look like they would fit those data frames. The workbench looks uncluttered and tidy. The text above the tidy workbench reads 'When working with tidy data, we can use the same tools in similar ways for different datasets…' On the right is a cute monster looking very frustrated, using duct tape and other tools to haphazardly tie data tables together, each in a different way. The monster is in front of a messy, cluttered workbench. The text above the frustrated monster reads '...but working with untidy data often means reinventing the wheel with one-time approaches that are hard to iterate or reuse.'"
+knitr::include_graphics("images/lecture1/horst-workbench.png")
+```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+---
+
+## {#wrangling-fxns data-menu-title="Helpful wrangling functions"} 
+
+[Data viz almost *always* begins with data wrangling]{.slide-title3}
+
+<hr>
+
+The `{tidyverse}` is an "opinionated" set of packages -- meaning they share similar philosophies, grammar, and data structures -- that are **incredibly** useful for data wrangling, cleaning, and manipulation (and of course, visualization).
+
+:::: columns
+
+::: {.column width="50%"}
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%"
+knitr::include_graphics("images/lecture1/core-tidyverse.png")
+```
+
+::: {.center-text .gray-text}
+Check out the [tidyverse website](the packages that you’re likely to use in everyday data analyses) to learn more about each of these packages
+:::
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "55.5%"
+knitr::include_graphics("images/lecture1/r4ds-cover.png")
+```
+
+::: {.center-text .gray-text}
+The best resource for learning all things [R for Data Science](https://r4ds.hadley.nz/)!
+:::
+
+:::
+
+::::
+
+<!-- | package   | description                                  | -->
+<!-- |-----------|----------------------------------------------| -->
+<!-- | [`{dplyr}`](https://dplyr.tidyverse.org/) | dplyr provides a grammar of data manipulation, providing a consistent set of verbs that solve the most common data manipulation challenges | -->
+<!-- | [`{tidyr}`](https://tidyr.tidyverse.org/) | tidyr provides a set of functions that help you get to tidy data. Tidy data is data with a consistent form: in brief, every variable goes in a column, and every column is a variable | -->
+<!-- | [`{stringr}`](https://stringr.tidyverse.org/) | stringr provides a cohesive set of functions designed to make working with strings as easy as possible. It is built on top of stringi, which uses the ICU C library to provide fast, correct implementations of common string manipulation | -->
+<!-- | [`{forcats}`](https://forcats.tidyverse.org/) | forcats provides a suite of useful tools that solve common problems with factors. R uses factors to handle categorical variables, variables that have a fixed and known set of possible values | -->
+<!-- | [`{readr}`](https://readr.tidyverse.org/) | readr provides a fast and friendly way to read rectangular data (like csv, tsv, and fwf). It is designed to flexibly parse many types of data found in the wild, while still cleanly failing when data unexpectedly changes | -->
+<!-- | [`{purrr}`](https://purrr.tidyverse.org/) | purrr enhances R’s functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. Once you master the basic concepts, purrr allows you to replace many for loops with code that is easier to write and more expressive | -->
+<!-- | [`{tibble}`](https://tibble.tidyverse.org/) | tibble is a modern re-imagining of the data frame, keeping what time has proven to be effective, and throwing out what it has not. Tibbles are data.frames that are lazy and surly: they do less and complain more forcing you to confront problems earlier, typically leading to cleaner, more expressive code | -->
+<!-- | [`{ggplot2}`](https://ggplot2.tidyverse.org/) | ggplot2 is a system for declaratively creating graphics, based on The Grammar of Graphics. You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details | -->
+
+
+<!-- ::: {.panel-tabset} -->
+
+<!-- ## `{dplyr}` -->
+
+<!-- [ The [`{dplyr}` package](https://dplyr.tidyverse.org/) provides a consistent set of verbs that help you solve the most common data manipulation challenges. The following functions combine naturally with `group_by()` which allows you to perform any operation “by group”.]{.body-text-s} -->
+
+<!-- - [`mutate()`: creates new variables that are functions of existing variables]{.body-text-s} -->
+<!-- - [`select()`: pick variables (columns) based on their names]{.body-text-s} -->
+<!-- - [`filter()`: pick cases (observations / rows) based on their values]{.body-text-s} -->
+<!-- - [`summarize()`: reduces multiple values down to a single summary]{.body-text-s} -->
+<!-- - [`arrange()`: changes the ordering of the rows]{.body-text-s} -->
+
+<!-- ## `{stringr}` -->
+
+<!-- [The [`{stringr}` package](https://stringr.tidyverse.org/)]{.body-text-s} -->
+
+<!-- ## `{tidyr}` -->
+
+<!-- ## `{readr}` -->
+
+<!-- ## `{forcats}` -->
+
+<!-- ::: -->
 
 ---
 
@@ -165,6 +415,14 @@ Do so by adding a geom aka the geometrical object that a plot uses to represent 
 ---
 
 
+---
+
+##  {#end-break data-menu-title="# End #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">See you next week!</p>
+<p class="caption-text">*~ This is the end of Lesson 3 (of 3) ~*</p>
+</div>
 
 
 

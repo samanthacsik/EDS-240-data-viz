@@ -4,14 +4,14 @@
     "href": "resources.html",
     "title": "Resources",
     "section": "",
-    "text": "Fundamentals of Data Visualization, by Claus O. Wilke – a primer on making informative and compelling figures\nR for Data Science, by Hadley Wickham & Garrett Grolemund – an excellent primer on all things R for data wrangling, modeling, and visualizing"
+    "text": "Fundamentals of Data Visualization, by Claus O. Wilke – a primer on making informative and compelling figures\nR for Data Science, by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund – an excellent primer on all things R for programming, data wrangling, visualizing, and communicating"
   },
   {
     "objectID": "resources.html#books",
     "href": "resources.html#books",
     "title": "Resources",
     "section": "",
-    "text": "Fundamentals of Data Visualization, by Claus O. Wilke – a primer on making informative and compelling figures\nR for Data Science, by Hadley Wickham & Garrett Grolemund – an excellent primer on all things R for data wrangling, modeling, and visualizing"
+    "text": "Fundamentals of Data Visualization, by Claus O. Wilke – a primer on making informative and compelling figures\nR for Data Science, by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund – an excellent primer on all things R for programming, data wrangling, visualizing, and communicating"
   },
   {
     "objectID": "resources.html#data-viz-decision-trees",
@@ -266,6 +266,13 @@
     "text": "Why R for data viz?\n\n\n\n   \n\n\nI’m most comfortable in R \ngreat ecosystem of data wrangling & visualization packages\namazing online learning communities\ndata viz fundamentals apply no matter the language / tool"
   },
   {
+    "objectID": "slides/lecture1.2-intro-slides.html#end-break",
+    "href": "slides/lecture1.2-intro-slides.html#end-break",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Take a Break\n\n\n~ This is the end of Lesson 2 (of 3) ~\n\n\n\n\n\n−+\n05:00"
+  },
+  {
     "objectID": "index.html#course-description",
     "href": "index.html#course-description",
     "title": "Data Visualization & Communication",
@@ -494,14 +501,63 @@
     "href": "slides/lecture1.3-ggplot-review-slides.html#grammar-of-graphics",
     "title": "EDS 240",
     "section": "",
-    "text": "Grammar of Graphics"
+    "text": "{ggplot2} is based on the Grammar of Graphics\n\n\n“A grammar of graphics is a tool that enables us to concisely describe the components of a graphic. Such a grammar allows us to move beyond named graphics (e.g. the “scatterplot”) and gain insight into the deep structure that underlies statistical graphics.”\n\n\n-from Hadley Wickham’s A layered grammar of graphics in Journal of Computational and Graphical Statistics, vol. 19, no. 1 pp. 3-28, 2010.\n\n\n\n\n“In the grammar of a language, words have different parts of speech, which perform different roles in the sentence. Analagously, the grammar of graphics separates a graphic into different layers”\n\n\n-from Liz Sander’s post Telling stories with data using the grammar of graphics"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#layers",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#layers",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Graphic layers\n\n\ndata (in tidy format) + geometry (type of plot)\nscale (shape, color, size + how you interpret the plot e.g. legends, scales)\ncoord (e.g. Cartesian, polar, flip)\nfacet (create small multiples; helpful for EDA)\ntheme (adjust individual pieces of a plot)"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#tidy-data",
     "href": "slides/lecture1.3-ggplot-review-slides.html#tidy-data",
     "title": "EDS 240",
     "section": "",
-    "text": "Tidy data"
+    "text": "What is tidy data?\n\n\n\nArtwork by Allison Horst"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#untidy-temps",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#untidy-temps",
+    "title": "EDS 240",
+    "section": "",
+    "text": "An example: untidy temperatures\n\nTake this tibble (a lazy/surly data.frame) of temperature recordings at three stations on three dates:\n\ntemp_data_wide &lt;- tribble(\n  ~date, ~station1, ~station2,  ~station3,\n  \"2023-10-01\", 30.1, 29.8,  31.2,\n  \"2023-11-01\", 28.6, 29.1,  33.4,\n  \"2023-12-01\", 29.9, 28.5,  32.3\n)\n\nprint(temp_data_wide)\n\n# A tibble: 3 × 4\n  date       station1 station2 station3\n  &lt;chr&gt;         &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 2023-10-01     30.1     29.8     31.2\n2 2023-11-01     28.6     29.1     33.4\n3 2023-12-01     29.9     28.5     32.3\n\n\n\n\nThis tibble is in wide or untidy format."
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#make-temps-tidy",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#make-temps-tidy",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Make tidy temperatures!\n\n\nWith your learning partners, discuss the following:\n\n\n1.) What makes temp_data_wide untidy?\n\n\n2.) Sketch out on paper or talk through what temp_data_wide would look like in long aka tidy format. Why?\n\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#tidy-temps",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#tidy-temps",
+    "title": "EDS 240",
+    "section": "",
+    "text": "An example: tidy temperatures\n\nWe can use tidyr::pivot_longer() to “lengthen” our data aka convert it from wide / untidy to long / tidy:\n\ntemp_data_long &lt;- temp_data_wide |&gt; \n  pivot_longer(cols = starts_with(\"station\"),\n               names_to = \"station_id\",\n               values_to = \"temp_c\")\n\nprint(temp_data_long)\n\n# A tibble: 9 × 3\n  date       station_id temp_c\n  &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;\n1 2023-10-01 station1     30.1\n2 2023-10-01 station2     29.8\n3 2023-10-01 station3     31.2\n4 2023-11-01 station1     28.6\n5 2023-11-01 station2     29.1\n6 2023-11-01 station3     33.4\n7 2023-12-01 station1     29.9\n8 2023-12-01 station2     28.5\n9 2023-12-01 station3     32.3"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#untidy-data",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#untidy-data",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Untidy data can take many different formats\n\n\n\nArtwork by Allison Horst"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#tidy-data-benefits",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#tidy-data-benefits",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Benefits of tidy data\n\n\n\nArtwork by Allison Horst"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#wrangling-fxns",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#wrangling-fxns",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Data viz almost always begins with data wrangling\n\nThe {tidyverse} is an “opinionated” set of packages – meaning they share similar philosophies, grammar, and data structures – that are incredibly useful for data wrangling, cleaning, and manipulation (and of course, visualization).\n\n\n\n\n\n\n\n\n\n\n\n\nCheck out the tidyverse website to learn more about each of these packages\n\n\n\n\n\n\n\n\n\n\n\n\nThe best resource for learning all things R for Data Science!"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#mapping",
@@ -516,6 +572,13 @@
     "title": "EDS 240",
     "section": "",
     "text": "Remember to always explore your data first!\n\nstr(), glimpse()"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#end-break",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#end-break",
+    "title": "EDS 240",
+    "section": "",
+    "text": "See you next week!\n\n\n~ This is the end of Lesson 3 (of 3) ~"
   },
   {
     "objectID": "slides/lecture1.1-logistics-slides.html#title-slide",
@@ -670,6 +733,13 @@
     "title": "EDS 240",
     "section": "",
     "text": "Course Learning Objectives\n\n Identify which types of visualizations are most appropriate for your data and your audience\n\n\n Prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\n\n\n\n Build effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically ggplot2 + ggplot2 extension packages\n\n\n\n Write code from scratch and read and adapt code written by others\n\n\n\n Apply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations\n\n\n\n Assess, critique, and provide constructive feedback on data visualizations"
+  },
+  {
+    "objectID": "slides/lecture1.1-logistics-slides.html#end-break",
+    "href": "slides/lecture1.1-logistics-slides.html#end-break",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Take a Break\n\n\n~ This is the end of Lesson 1 (of 3) ~\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "course-materials/week9.html",

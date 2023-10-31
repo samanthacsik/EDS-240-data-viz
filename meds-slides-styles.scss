@@ -27,7 +27,7 @@ $body-bg: $white;
 $link-color: $green;
 $code-color: $magenta;
 $code-bg: $off-white;  // was $white
-$code-block-font-size: 0.4em;
+$code-block-font-size: 0.8em;
 $code-block-bg: $off-white;
 $presentation-font-size-root: 25px;
 
@@ -152,7 +152,7 @@ hr {
 // S body text
 .body-text-s {
   font-size: 20px;
-	line-height: 0.8em;
+	line-height: 0.7em;
 }
 
 // XS body text
@@ -238,7 +238,7 @@ hr {
   line-height: 6px;
 }
 
-// idk?
+// tab font sizes
 .panel-tabset {
   font-size: 30px;
 }

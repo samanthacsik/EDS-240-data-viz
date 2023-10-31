@@ -8,7 +8,7 @@ toc: true
 ## Books
 
 - **[Fundamentals of Data Visualization](https://clauswilke.com/dataviz/), by Claus O. Wilke** -- a primer on making informative and compelling figures
-- **[R for Data Science](https://r4ds.had.co.nz/), by Hadley Wickham & Garrett Grolemund** -- an excellent primer on all things R for data wrangling, modeling, and visualizing
+- **[R for Data Science](https://r4ds.hadley.nz/), by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund** -- an excellent primer on all things R for programming, data wrangling, visualizing, and communicating
 
 ## Data viz decision trees
 
