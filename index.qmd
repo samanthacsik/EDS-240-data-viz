@@ -1,6 +1,7 @@
 ---
 title: "Data Visualization & Communication"
 subtitle: "Master of Environmental Data Science (MEDS)"
+description: "Winter 2024"
 ---
 
 ```{r}

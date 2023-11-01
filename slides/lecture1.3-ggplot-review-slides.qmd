@@ -21,27 +21,6 @@ editor_options:
 
 [Week 1 | January 8th, 2024]{.custom-subtitle3}
 
-<!-- :::: {.columns}  -->
-
-<!-- ::: {.column width="50%"} -->
-<!-- [Sam Csik |]{.custom-subtitle2}<br> -->
-<!-- [Data Training Coordinator]{.custom-subtitle2}<br> -->
-<!-- [*National Center for Ecological Analysis & Synthesis*]{.custom-subtitle3} -->
-<!-- ::: -->
-
-<!-- ::: {.column width="50%"} -->
-<!-- [Master of Environmental Data Science |]{.custom-subtitle2}<br> -->
-<!-- [*Bren School of Environmental Science & Management*]{.custom-subtitle3} -->
-<!-- ::: -->
-
-<!-- :::: -->
-
-<!-- <br> -->
-
-<!-- ::: {.title-footer} -->
-<!-- January 8th, 2024 -->
-<!-- ::: -->
-
 ---
 
 ## {#ggplot2-advantages data-menu-title="{ggplot2} advantages"} 
@@ -115,15 +94,52 @@ adapted from [Cédric Scherer's](https://www.cedricscherer.com/) rstudio::conf(2
 
 ## {#layers data-menu-title="ggplot2 layers"} 
 
-[Graphic layers]{.slide-title2}
+[`{ggplot2}` graphic layers]{.slide-title}
 
 <hr>
 
-1. data (in [tidy](https://doi.org/10.18637/jss.v059.i10) format) + geometry (type of plot)
-2. scale (shape, color, size + how you interpret the plot e.g. legends, scales)
-3. coord (e.g. Cartesian, polar, flip)
-4. facet (create small multiples; helpful for EDA)
-5. theme (adjust individual pieces of a plot)
+<br>
+
+[**First these:**]{.teal-text .body-text-m}
+
+**1. data** -- in [tidy](https://doi.org/10.18637/jss.v059.i10) format **+** define aesthetics (how variables map onto a plot e.g. axes, shape, color, size)  
+**2. geometric objects (aka geoms)** -- define the type of plot(s)  
+
+<br>
+
+. . .
+
+[**Then these:**]{.teal-text .body-text-m}
+
+**3. statistical transformations** -- algorithm used to calculate new values for a graph  
+**4. position adjustments** -- control the fine details of position when geoms might otherwise overlap  
+**5. coordinate system** -- change with `x` and `y` axes mean (e.g. Cartesian (default), polar, flipped)    
+**6. facet** -- create subplots that each display one subset of the data   
+<!-- **7. theme** -- customize the non-data elements of your plot   -->
+
+::: footer
+**Note:** You many not apply or customize all of the above layers for every plot you build
+:::
+
+---
+
+## {#layers data-menu-title="ggplot2 layers"} 
+
+[Enhance communication using additional layers]{.slide-title}
+
+<hr>
+
+<br>
+
+**1. labels** -- add titles, axis / legend labels  
+**2. annotations** -- add textual labels (e.g. to highlight specific data points, trend lines, etc.)   
+**3. scales** -- update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)  
+**4. themes** -- customize the non-data elements of your plot  
+**5. layout** -- combine multiple plots into the same graphic  
+
+::: footer
+**Note:** You many not apply or customize all of the above layers for every plot you build
+:::
 
 ---
 
@@ -148,9 +164,30 @@ knitr::include_graphics("images/lecture1/horst-tidy-data-definition.png")
 
 ---
 
+## {#untidy-data data-menu-title="Untidy data"} 
+
+[Untidy data can take *many* different formats]{.slide-title2}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "There are two sets of anthropomorphized data tables. The top group of three tables are all rectangular and smiling, with a shared speech bubble reading 'our columns are variables and our rows are observations!'. Text to the left of that group reads 'The standard structure of tidy data means that 'tidy datasets are all alike…' The lower group of four tables are all different shapes, look ragged and concerned, and have different speech bubbles reading (from left to right) “my column are values and my rows are variables”, 'I have variables in columns AND in rows', 'I have multiple variables in a single column', and 'I don’t even KNOW what my deal is.' Next to the frazzled data tables is text '...but every messy dataset is messy in its own way. -Hadley Wickham.'"
+knitr::include_graphics("images/lecture1/horst-untidy-data.png")
+```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+---
+
 ## {#untidy-temps data-menu-title="Untidy temps"} 
 
-[An example: untidy temperatures]{.slide-title2}
+[An example: untidy temperatures]{.slide-title}
 
 <hr>
 
@@ -210,6 +247,34 @@ countdown::countdown(
 
 ---
 
+## {#why-untidy-temps data-menu-title="Why untidy temps?"} 
+
+[An example: untidy temperatures]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.center-text .body-text-m}
+**Multiple observations (temperature recordings) per row**
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "50%"
+knitr::include_graphics("images/lecture1/untidy-multi-obs-per-row.png")
+```
+
+<br>
+
+::: {.center-text .gray-text}
+Want more examples of untidy data? Check out these [teaching materials](https://learning.nceas.ucsb.edu/2023-09-ucsb-faculty/session_07.html#tidy-data) from the NCEAS Learning Hub showcasing real-world examples of *very* untidy data.
+:::
+
+---
+
 ## {#tidy-temps data-menu-title="Tidy temps"} 
 
 [An example: tidy temperatures]{.slide-title2}
@@ -228,27 +293,6 @@ temp_data_long <- temp_data_wide |>
 
 print(temp_data_long)
 ```
-
----
-
-## {#untidy-data data-menu-title="Untidy data"} 
-
-[Untidy data can take *many* different formats]{.slide-title2}
-
-<hr>
-
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "100%"
-#| fig-alt: "There are two sets of anthropomorphized data tables. The top group of three tables are all rectangular and smiling, with a shared speech bubble reading 'our columns are variables and our rows are observations!'. Text to the left of that group reads 'The standard structure of tidy data means that 'tidy datasets are all alike…' The lower group of four tables are all different shapes, look ragged and concerned, and have different speech bubbles reading (from left to right) “my column are values and my rows are variables”, 'I have variables in columns AND in rows', 'I have multiple variables in a single column', and 'I don’t even KNOW what my deal is.' Next to the frazzled data tables is text '...but every messy dataset is messy in its own way. -Hadley Wickham.'"
-knitr::include_graphics("images/lecture1/horst-untidy-data.png")
-```
-
-:::{.gray-text .center-text}
-*Artwork by [Allison Horst](https://allisonhorst.com/)*
-:::
 
 ---
 
@@ -317,70 +361,33 @@ The best resource for learning all things [R for Data Science](https://r4ds.hadl
 
 ::::
 
-<!-- | package   | description                                  | -->
-<!-- |-----------|----------------------------------------------| -->
-<!-- | [`{dplyr}`](https://dplyr.tidyverse.org/) | dplyr provides a grammar of data manipulation, providing a consistent set of verbs that solve the most common data manipulation challenges | -->
-<!-- | [`{tidyr}`](https://tidyr.tidyverse.org/) | tidyr provides a set of functions that help you get to tidy data. Tidy data is data with a consistent form: in brief, every variable goes in a column, and every column is a variable | -->
-<!-- | [`{stringr}`](https://stringr.tidyverse.org/) | stringr provides a cohesive set of functions designed to make working with strings as easy as possible. It is built on top of stringi, which uses the ICU C library to provide fast, correct implementations of common string manipulation | -->
-<!-- | [`{forcats}`](https://forcats.tidyverse.org/) | forcats provides a suite of useful tools that solve common problems with factors. R uses factors to handle categorical variables, variables that have a fixed and known set of possible values | -->
-<!-- | [`{readr}`](https://readr.tidyverse.org/) | readr provides a fast and friendly way to read rectangular data (like csv, tsv, and fwf). It is designed to flexibly parse many types of data found in the wild, while still cleanly failing when data unexpectedly changes | -->
-<!-- | [`{purrr}`](https://purrr.tidyverse.org/) | purrr enhances R’s functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. Once you master the basic concepts, purrr allows you to replace many for loops with code that is easier to write and more expressive | -->
-<!-- | [`{tibble}`](https://tibble.tidyverse.org/) | tibble is a modern re-imagining of the data frame, keeping what time has proven to be effective, and throwing out what it has not. Tibbles are data.frames that are lazy and surly: they do less and complain more forcing you to confront problems earlier, typically leading to cleaner, more expressive code | -->
-<!-- | [`{ggplot2}`](https://ggplot2.tidyverse.org/) | ggplot2 is a system for declaratively creating graphics, based on The Grammar of Graphics. You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details | -->
+---
+
+```{r}
+library(palmerpenguins)
+library(tidyverse)
 
 
-<!-- ::: {.panel-tabset} -->
+```
 
-<!-- ## `{dplyr}` -->
-
-<!-- [ The [`{dplyr}` package](https://dplyr.tidyverse.org/) provides a consistent set of verbs that help you solve the most common data manipulation challenges. The following functions combine naturally with `group_by()` which allows you to perform any operation “by group”.]{.body-text-s} -->
-
-<!-- - [`mutate()`: creates new variables that are functions of existing variables]{.body-text-s} -->
-<!-- - [`select()`: pick variables (columns) based on their names]{.body-text-s} -->
-<!-- - [`filter()`: pick cases (observations / rows) based on their values]{.body-text-s} -->
-<!-- - [`summarize()`: reduces multiple values down to a single summary]{.body-text-s} -->
-<!-- - [`arrange()`: changes the ordering of the rows]{.body-text-s} -->
-
-<!-- ## `{stringr}` -->
-
-<!-- [The [`{stringr}` package](https://stringr.tidyverse.org/)]{.body-text-s} -->
-
-<!-- ## `{tidyr}` -->
-
-<!-- ## `{readr}` -->
-
-<!-- ## `{forcats}` -->
-
-<!-- ::: -->
 
 ---
 
-## {#mapping data-menu-title="Mapping data"} 
+## {#build-plot-together data-menu-title="Build plot together"} 
 
-[Mapping data]{.slide-title}
+[tbd]{.slide-title}
 
 <hr>
 
-1. layer (geom + stat)
-2. scale (shape, color, size + how you interpret the plot e.g. legends, scales)
-3. coord (e.g. polar, flip)
-4. facet (create small multiples; helpful for EDA)
-5. theme (adjust individual pieces of a plot)
-
-a graphic: 
-
-maps the data +
-to the aesthetic attributes +
-of geometric points + 
-with possible statistical transformations + 
-different coordinate systems +
-and faceting
+::: footer
+[**1. data**]{.teal-text} | 2. geometric object | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet | 7. theme
+:::
 
 ---
 
 ## {#explore-data data-menu-title="Explore data"} 
 
-[Remember to always explore your data first!]{.slide-title}
+[Always explore your data first!]{.slide-title}
 
 <hr>
 

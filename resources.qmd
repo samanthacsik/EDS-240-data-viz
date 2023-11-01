@@ -1,5 +1,5 @@
 ---
-title: "Resources"
+title: "Recommended reading & materials"
 subtitle: "there are endless incredible (and free) resources to help you along your data visualization journeys -- here are just a few!"
 title-block-banner: true
 toc: true
@@ -8,16 +8,40 @@ toc: true
 ## Books
 
 - **[Fundamentals of Data Visualization](https://clauswilke.com/dataviz/), by Claus O. Wilke** -- a primer on making informative and compelling figures
-- **[R for Data Science](https://r4ds.hadley.nz/), by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund** -- an excellent primer on all things R for programming, data wrangling, visualizing, and communicating
+- **[R for Data Science (2e)](https://r4ds.hadley.nz/), by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund** -- an excellent primer on all things R for programming, data wrangling, visualizing, and communicating
+- **[ggplot2: Elegant Graphics for Data Analysis (3e)](https://ggplot2-book.org/), by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen** -- helpful for understanding the underlying theory of ggplot2 graphics (NOTE: this is currently (as of November 2023) a work-in-progress, and as the authors put it, "a dumping ground for ideas...we don't recommend reading it" -- it's still worth noting its existence so that you can return to it in the future!)
+- **[Data Visualization: A practical introduction](https://socviz.co/), by Kieran Healy** -- a hands-on intro to the principles and practice of looking at and presenting data using R and ggplot.
+- **[Hands-On Data Visualization](https://handsondataviz.org/index.html), by Jack Dougherty and Ilya Ilyankou** -- learn how to tell stories with your data using drag-and-drop tools (e.g. Google Sheets, Datawrapper, Tableau Public)
+- **[The Truthful Art: Data, Charts, and Maps for Communication](https://www.amazon.com/gp/product/0321934075/), by Albert Cairo** -- a guide to understanding information graphics and visualization (I have a hard copy in my office if you'd like to borrow it!)
 
-## Data viz decision trees
+## Readings & Journals
+- **[Nightingale: Journal of the Data Visualization Society](https://nightingaledvs.com/)** -- focuses on data visualization from personal stories to exploratory research to interviews with leaders in the community, data ethics, and best practices
+
+## Chart Types
 
 - **[From Data to Viz](https://www.data-to-viz.com/), by Yan Holtz & Conor Healy** -- a decision tree for deciding which chart type is most appropriate for your data
+- **[Data Viz Project](https://datavizproject.com/), by Ferdio (an infographic and data visualization agency in Copenhagen)** -- [100 different visualizations from one simple dataset](https://100.datavizproject.com/) 
+- **[Chart Suggestions -- A Thought-Starter](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf), by A. Abela** -- a single pdf decision tree
 
 ## Accessibility
 
+### Colors
+
+- **[Palette Generator](https://www.learnui.design/tools/data-color-picker.html#palette), by Learn UI Design** -- supply a starting color(s) and this tool will generate a palette, single hue, or divergent color scheme
+- **[Viz Palette](https://projects.susielu.com/viz-palette), by Elijah Meeks and Susie Lu** -- a tool that shows you how well your chosen colors work for tiny lines and big areas, warns if you have colors sharing the same name (which can make it more challenging to talk about your designs, say, in a presentation), and can simulate color vision deficiencies 
 - **[Colorblind Safe Color Schemes](https://www.nceas.ucsb.edu/sites/default/files/2022-06/Colorblind%20Safe%20Color%20Schemes.pdf), by the NCEAS Science Communication Resource Center** -- tips and examples of colorblind-friendly color palettes
+- **[Color review](https://color.review/), by Anton Robsarve** -- for understanding foreground and background contrasts
+- **[Your Friendly Guide to Colors in Data Visualization](https://blog.datawrapper.de/colorguide/#Make-sure-your-colors-work), by Lisa Charlotte Muth** -- a blog post on useful tools for deciding data viz color palettes
+- **[What to consider when choosing colors for data visualization](https://blog.datawrapper.de/colors/), by Lisa Charlotte Muth** -- a blog post with explanations and examples
+
+### Alternative (alt) text
 - **[How to write good alternative descriptions for your data visualization](https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization), by Amy Cesal** -- great instructions (and examples) on how to construct informative alt text for data visualizations 
+- **[Writing Alt Text for Data Visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81), also by Amy Cesal** -- more great example of alt text for data viz!
+- **[#TidyTuesday alt text instructions](https://github.com/rfordatascience/tidytuesday/blob/master/alt_text.md)** -- a simple formula for writing alt text for data visualizations, as recommended for #TidyTuesday participants
+
+## DEI in Data Visualization
+
+- **[Do No Harm Guide: Applying Equity Awareness in Data Visualization](https://www.urban.org/sites/default/files/publication/104296/do-no-harm-guide.pdf), by Jonathan Schwabish and Alice Feng** -- a guide for for approaching data work (and particularly visualizations) through a lens of diversity, equity, and inclusion 
 
 ## Inspirational `{ggplot2}` creators
 
@@ -35,8 +59,19 @@ toc: true
 
 ## Misc.
 
-- **[awesome-ggplot2](https://github.com/erikgahner/awesome-ggplot2), by 
-Erik Gahner Larsen** -- a curated list of awesome ggplot2 tutorials, packages etc.
+- **[awesome-ggplot2](https://github.com/erikgahner/awesome-ggplot2), by Erik Gahner Larsen** -- a curated list of awesome ggplot2 tutorials, packages etc.
+
+## Learning communities
+
+Online communities: 
+
+- **[TidyTuesday](https://github.com/rfordatascience/tidytuesday), by the R4DS Online Learning Community** -- a weekly data project in R, and an *excellent* (dare I say, *the best*) way to practice your data wrangling & visualization skills
+
+The following Santa Barbara-based groups hold regular meetups, workshops, networking events, and more:
+
+- **[EcoDataScience](https://ecodatascience.github.io/)** -- an environmental data science community based at the University of California Santa Barbara (UCSB), open to anyone who is interested in joining the journey of learning, advancing and applying data science skills in the environmental and ecological field
+- **[R-Ladies Santa Barbara](https://www.meetup.com/rladies-santa-barbara/)** -- a local chapter of R-Ladies Global, which exists to promote diversity in the R community
+- **[Santa Barbara Women in STEM](https://sbwomeninstem.org/)** -- a local network of professionals with a common goal to promote and encourage women in fields related to science, technology, engineering, and math
 
 ## R packages
 

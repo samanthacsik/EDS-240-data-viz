@@ -265,18 +265,18 @@ Link is also bookmarked at the top of the **#eds-240-data-viz** Slack channel an
 :::: columns
 
 ::: {.column width="50%"}
-| Date    | Tentative Topic                              |
-|---------|----------------------------------------------|
-| 1/8     | course logistics, intro, `{ggplot2}` review  |
-| 1/15    | [*no class* ]{.teal-text}                    |
-| 1/22    | data communication                           |
-| 1/29    | graphic design                               |
-| 2/5     | visualizing amounts & proportions            |
-| 2/12    | visualizing relationships & distributions    |
-| 2/19    | [*no class* ]{.teal-text}                    |
-| 2/26    | visualizing uncertainty                      |
-| 3/4     | OJS with Dr. Allison Horst                   |
-| 3/11    | grab bag & catch up                          |
+| Date    | Tentative Topic                                                     |
+|---------|---------------------------------------------------------------------|
+| 1/8     | course logistics, intro, `{ggplot2}` review                         |
+| 1/15    | [*no class* ]{.teal-text}                                           |
+| 1/22    | data & visualization types                                          |
+| 1/29    | design principles & best practices (part I)                         |
+| 2/5     | design principles & best practices (part II)                        |
+| 2/12    | visualizing uncertainty & avoiding the misrepresentation of data    |
+| 2/19    | [*no class* ]{.teal-text}                                           |
+| 2/26    | communicating for your audience                                     |
+| 3/4     | OJS with Dr. Allison Horst                                          |
+| 3/11    | grab bag & catch up                                                 |
 :::
 
 ::: {.column width="50%"}
@@ -622,10 +622,41 @@ Any questions sent as DMs will be copied into `#eds-240-data-viz` and answered t
 
 ::: .incremental 
 - [This course (unfortunately) isn't our only professional responsibility this quarter -- we will not be available at all times to respond to requests / questions. Here's what you can expect:]{.body-text-s} 
-   - [We will try our best to respond to slack questions within 24hr (during the week)]{.body-text-s} 
+   - [We will try our best to respond to Slack questions within 24hr (during the week)]{.body-text-s} 
    - [A response after-hours (5pm - 9am) is not guaranteed (we will try our best, as our personal lives allow for)]{.body-text-s} 
    - [We will not be responding to questions over the weekend]{.body-text-s} 
 :::
+
+---
+
+## {#this-course data-menu-title="What is EDS 240?"} 
+
+[What is EDS 240?]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.center-text}
+EDS 240: Data Visualization and Communication is about two related, but distinct things:
+:::
+
+<br>
+
+. . . 
+
+**1. The theory of effective communication and data design**
+
+[{{< fa eye title="an eye">}}]{.teal-text} How people perceive and interpret graphical information  
+[{{< fa circle-user title="a user inside a circle">}}]{.teal-text} Human-centered design as it relates to data visualizations
+
+<br>
+
+. . . 
+
+**2. The physical act of building effective data visualizations using software and data science tools** 
+
+[{{< fa code title="the symbol for code, </>">}}]{.teal-text} Using the Grammar of Graphics / `{ggplot2}` framework to create effective, truthful, and beautiful data visualizations [{{< fa chart-column title="a bar chart">}}]{.teal-text}
 
 ---
 

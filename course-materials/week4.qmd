@@ -1,5 +1,5 @@
 ---
-title: "Graphic Design"
+title: "Design Principles & Best Practices (Part I)"
 subtitle: "Week 4"
 description: "Monday January 29th, 2024"
 title-block-banner: true
@@ -24,6 +24,14 @@ knitr::include_graphics("../images/horst-ggplot-masterpiece.png")
 ## Lecture Materials 
 
 *Coming soon!*
+
+- visual perception
+- color theory
+- alt text
+- typography
+- data-ink-ratio
+- DEI (using icons & colors for equity awareness)
+- storytelling (?)
 
 ## Discussion Materials
 

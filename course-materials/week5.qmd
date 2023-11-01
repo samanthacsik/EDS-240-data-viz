@@ -1,14 +1,35 @@
 ---
-title: "Visualizing Amounts & Proportions"
+title: "Design Principles & Best Practices (Part II)"
 subtitle: "Week 5"
 description: "Monday February 5th, 2024"
 title-block-banner: true
 toc: true
 ---
 
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "65%" 
+#| fig-alt: "A fuzzy monster in a beret and scarf, critiquing their own column graph on a canvas in front of them while other assistant monsters (also in berets) carry over boxes full of elements that can be used to customize a graph (like themes and geometric shapes). In the background is a wall with framed data visualizations. Stylized text reads 'ggplot2: build a data masterpiece.'"
+knitr::include_graphics("../images/horst-ggplot-masterpiece.png")
+```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
 ## Lecture Materials 
 
 *Coming soon!*
+
+- visual perception
+- color theory
+- alt text
+- typography
+- data-ink-ratio
+- DEI (using icons & colors for equity awareness)
+- storytelling (?)
 
 ## Discussion Materials
 

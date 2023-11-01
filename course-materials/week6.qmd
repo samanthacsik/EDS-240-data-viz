@@ -1,5 +1,5 @@
 ---
-title: "Visualizing Relationships & Distributions"
+title: "Visualizing Uncertainty & Avoiding the Misrepresentation of Data"
 subtitle: "Week 6"
 description: "Monday February 12th, 2024"
 title-block-banner: true
@@ -9,6 +9,13 @@ toc: true
 ## Lecture Materials 
 
 *Coming soon!*
+
+- missing data
+- outlier detection
+- measures of uncertainty
+- normalizing data
+- avoiding biased comparisons
+- <https://eagereyes.org/blog/2017/communicating-uncertainty-when-lives-are-on-the-line>
 
 ## Discussion Materials
 

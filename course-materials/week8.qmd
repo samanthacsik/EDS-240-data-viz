@@ -1,14 +1,32 @@
 ---
-title: "Visualizing Uncertainty"
+title: "Communicating for Your Audience"
 subtitle: "Week 8"
 description: "Monday February 26th, 2024"
 title-block-banner: true
 toc: true
 ---
 
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "85%" 
+#| fig-alt: "An extended version of the classic R4DS schematic from Grolemund & Wickham, with environmental data science, communities, and communication added."
+knitr::include_graphics("../images/horst-eco-r4ds.png")
+```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
 ## Lecture Materials 
 
 *Coming soon!*
+
+- identifying your audience (personas?)
+- storytelling through structured visualizations
+- contextualize data (place data within a broader context, explaining why trends matter)
+- presenting data via different channels (slide presentation, academic paper, technical documentation, infographic)
 
 ## Discussion Materials
 
@@ -19,4 +37,4 @@ toc: true
 | Assignment Type | Title                                                 | Date Assigned  | Date Due                   |
 |:---------------:|-------------------------------------------------------|----------------|----------------------------|
 | EOC             | [EOC (week 8)](https://forms.gle/aqUwck6jABKRUfYMA)   | Mon 02/26/2024 | Mon 02/26/2024, 11:55pm PT |
-| HW              | [Homework Assignment #4](../assignments/HW4.qmd)      | Mon 02/26/2024 | Sat 03/09/2024, 11:59pm PT |
+| HW              | [Homework Assignment #4](../assignments/HW4.qmd)      | Mon 02/26/2024 | Sat 03/16/2024, 11:59pm PT |

@@ -6,24 +6,18 @@ title-block-banner: true
 toc: true
 ---
 
-<!-- Coming soon! -->
-
 ```{r}
 #| eval: true 
 #| echo: false
 #| fig-align: "center"
-#| out-width: "85%" 
-#| fig-alt: "A group of fuzzy round monsters with binoculars, backpacks and guide books looking up a graphs flying around with wings (like birders, but with exploratory data visualizations). Stylized text reads 'ggplot2: visual data exploration.' Learn more about ggplot2."
-knitr::include_graphics("../images/horst-ggplot-explore-dataviz.png")
+#| out-width: "30%" 
+#| fig-alt: "The {ggplot2} hex sticker which features a connected scatterplot with data points in varying shades of blue atop a gray gridded background. The word 'ggplot2' sits beneath the data."
+knitr::include_graphics("../images/ggplot2.png")
 ```
-
-:::{.gray-text .center-text}
-*Artwork by [Allison Horst](https://allisonhorst.com/)*
-:::
 
 ## Lecture Materials
 
-Week 1 instruction is broken down into three sections:
+Week 1 instruction is broken down into three lessons:
 
 :::: columns
 
@@ -45,7 +39,7 @@ Week 1 instruction is broken down into three sections:
 
 ::: {.column width="33%"}
 ::: {.center-text}
-[**`{ggplot2}` review & workflow**]{.teal-text .body-text-m}
+[**`{ggplot2}` review**]{.teal-text .body-text-m}
 
 [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 1.3 slides](../slides/lecture1.3-ggplot-review-slides.qmd){.btn role="button" target="_blank"} 
 :::

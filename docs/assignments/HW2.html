@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -191,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">Assignment #2 (HW #2)</h1>
             <p class="subtitle lead">Assigned Mon 01/22/2024 | Due Sat 02/03/2024</p>
                       </div>
@@ -209,21 +243,149 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#part-i-building-a-basic-ggplot" id="toc-part-i-building-a-basic-ggplot" class="nav-link active" data-scroll-target="#part-i-building-a-basic-ggplot"><span class="pink-text">Part I: Building a basic ggplot</span></a>
+  <ul class="collapse">
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
+  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description">Description</a></li>
+  <li><a href="#rubric-specifications" id="toc-rubric-specifications" class="nav-link" data-scroll-target="#rubric-specifications">Rubric (specifications)</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
+<section id="part-i-building-a-basic-ggplot" class="level1">
+<h1><span class="pink-text">Part I: Building a basic ggplot</span></h1>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
+<ul>
+<li>identify which types of visualizations are most appropriate for your data and your audience</li>
+<li>prepare (e.g.&nbsp;clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations</li>
+</ul>
+</section>
 <section id="description" class="level2">
 <h2 class="anchored" data-anchor-id="description">Description</h2>
+<p>In class, we discussed a <a href="https://ucsb-meds.github.io/ggplot2-workflow/">five-step workflow</a> for breaking down the process of transforming data into a visualization. The five steps are listed below:</p>
+<ol type="1">
+<li>Determine data type(s)</li>
+<li>Determine appropriate visualization type(s)</li>
+<li>Create a basic plot</li>
+<li>Improve clarity &amp; take home message</li>
+<li>Final touches / polishing</li>
+</ol>
+<p>Here, you will apply this workflow to visualize lobster size data across multiple rocky reef sites along the Santa Barbara coastline.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Understanding the data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<section id="about-sbc-lter" class="level4">
+<h4 class="anchored" data-anchor-id="about-sbc-lter">About SBC LTER</h4>
+<p>The <a href="https://sbclter.msi.ucsb.edu/">Santa Barbara Coastal Long Term Ecological Research</a> (SBC LTER) site was established in 2000 as part of the <a href="https://lternet.edu/">LTER Network</a> to understand the ecology of coastal kelp forest ecosystems. Research and long-term ecological and environmental monitoring data is collected within a 10,000 square kilometer area of the northern portion of the Southern California Bight, which includes the Santa Barbara Channel, coastal watersheds, small estuaries, and sandy beaches that border the Channel. You can explore the full <a href="https://sbclter.msi.ucsb.edu/data/catalog/">data catalog</a>.</p>
+</section>
+<section id="about-the-data-set" class="level4">
+<h4 class="anchored" data-anchor-id="about-the-data-set">About the data set</h4>
+<p>There are five coastal rocky reef research sites at which the SBC LTER collects long-term monitoring data:</p>
+<ul>
+<li>Naples Reef (NAPL)</li>
+<li>Isla Vista Reef (IVEE)</li>
+<li>Arroyo Quemado Reef (AQUE)</li>
+<li>Mohawk Reef (MOHK)</li>
+<li>Carpinteria Reef (CARP)</li>
+</ul>
+<p>In January 2012, <a href="https://wildlife.ca.gov/Conservation/Marine/MPAs/Naples">Naples Reef</a> and <a href="https://wildlife.ca.gov/Conservation/Marine/MPAs/Campus-Point">Isla Vista Reef</a> were <a href="https://www.parks.ca.gov/?page_id=27928">designated as Marine Protected Areas</a> (MPAs), prohibiting any future take of lobsters (along with other living marine resources). Since then, the SBC LTER has conducted annual (late summer) benthic surveys at each of the above five sites, where SCUBA divers record lobster abundance and sizes. Explore the <a href="https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.77">metadata</a> for more information.</p>
+</section>
+<section id="data-citation" class="level4">
+<h4 class="anchored" data-anchor-id="data-citation">Data citation</h4>
+<p>Reed, D, R. Miller. 2023. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (<em>Panulirus interruptus</em>), ongoing since 2012 ver 9. Environmental Data Initiative. <a href="https://doi.org/10.6073/pasta/3595322687af94cd532620ad9db94c77" class="uri">https://doi.org/10.6073/pasta/3595322687af94cd532620ad9db94c77</a>.</p>
+</section>
+<section id="finding-this-data-set" class="level4">
+<h4 class="anchored" data-anchor-id="finding-this-data-set">Finding this data set</h4>
+<p><em>Knowing how to search for data can be tricky! Here’s how I accessed this particular data set, should you want to search for LTER data yourself, in the future:</em></p>
+<ol type="1">
+<li><strong>Filter the <a href="https://sbclter.msi.ucsb.edu/data/catalog/">SBC LTER Data Catalog</a></strong> for data sets related to <strong>Reef/Kelp Forest</strong> habitats (check the box next to the habitat type of interest, or filter by measurement type or LTER Core Research Area). This produces a table of data collections, descriptions, and links to individual data and metadata records.</li>
+<li><strong>Choose a data set of interest.</strong> I was interested in the <em>SBC LTER: Spiny lobster in California</em> Collection, which includes three different data sets. I specifically chose, <a href="https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.77">Lobster abundace, size, and fishing pressure</a> – here, you’ll find lots of metadata, including people and organizations involved in this data collection, temporal, geographic, and taxonomic coverage, methods and protocols, and links to data files. Additionally, you’ll see a link to the <a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&amp;identifier=77">EDI Data Portal</a> (top right corner), which is the data repository that maintains all data and metadata produced by the LTER. EDI assigns a DOI (Digital Object Identifier) to each version of a data package (data package = data + metadata; SBC LTER updates this data set each year when new data is collected – each update receives a new DOI).</li>
+<li><strong>Download or import the data.</strong> You can download the data file from either the <a href="https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.77">SBC LTER Data Catalog</a> <em>or</em> the <a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&amp;identifier=77">EDI Data Package</a>. <em>However</em> I prefer reading in the data directly from online (that way, I don’t need to worry about storing large data files). I recommend doing this from the <a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&amp;identifier=77">EDI Data Package</a> (rather than the SBC LTER Data Catalog), since the DOI ensures you can re-reference the exact same version, even after the data set is updated with new data (SBC LTER Data Catalog only has a download link for the most up-to-date version of the data). To do so, right click on the <em>Download Data</em> button, then select <em>Copy Link Address</em>.</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/download-lob-data.png" class="img-fluid figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Use this url inside <code>read_csv()</code> to import the data into your script or Qmd/Rmd file:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>lobster_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-sbc.77.9&amp;entityid=f32823fba432f58f66c06b589b7efac6"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</div>
+</div>
+<p>Given the above data set, apply the five-step workflow to create a data visualization that explores how lobster size differs across each of the five coastal rocky reef SBC LTER sites for the years 2012 (the IVEE and NAPL were established as MPAs) and 2022 (10 years later).</p>
+<p><span class="teal-text"><strong>You must complete steps 1 - 3</strong></span> (you may need to do some Googling or reference documentation to determine what <code>geom_*</code> to use when creating your basic plot).</p>
+<ul class="task-list">
+<li><input type="checkbox"><strong>(step 1)</strong> write out, in words, the data types of the variables from the above data set (you only need to do this for the variables used in creating your plot) <span class="peach-text"><strong>(1-2 sentences)</strong></span></li>
+<li><input type="checkbox"><strong>(step 2)</strong> write out, in words, the appropriate visualization types you considered given these data types <em>(hint: revisit <a href="https://www.data-to-viz.com/">from Data to Viz</a> for a helpful decision tree)</em> <span class="peach-text"><strong>(1-2 sentences)</strong></span></li>
+<li><input type="checkbox"><strong>(step 3)</strong> write ggplot code to create a basic plot to visualize these data (this will first require some data wrangling)</li>
+</ul>
+<p><span class="teal-text"><strong>Physically coding steps 4 &amp; 5 is optional – instead, you may explain, in writing and/or by sketching out on paper, the following:</strong></span></p>
+<ul class="task-list">
+<li><input type="checkbox"><strong>(representing step 4)</strong> how you would improve plot clarity/the take home message(s) (consider the following prompts)? <span class="peach-text"><strong>(2-3 sentences total)</strong></span>
+<ul class="task-list">
+<li><input type="checkbox">Do you see any trends that you may want to explore further and/or highlight?</li>
+<li><input type="checkbox">How might you use colors and/or shapes to highlight important site groupings and/or years?</li>
+</ul></li>
+<li><input type="checkbox"><strong>(representing step 5)</strong> some design choices you might make as you polish off your data visualization (consider the following prompts) <span class="peach-text"><strong>(2-3 sentences total)</strong></span>
+<ul class="task-list">
+<li><input type="checkbox">What plot elements should you update to really polish up this visualization?</li>
+<li><input type="checkbox">What text might you include?</li>
+</ul></li>
+</ul>
+<p><strong>Note:</strong> Steps 4 and 5, above, are thought exercises – it’s okay if you don’t yet know exactly how to approach answering these (we’ll be spending time during these first few weeks of class talking about data communication and design theory), but do your best to write down a few things that you think would help to improve both the clarity and overall design of your data visualization .</p>
 </section>
 <section id="rubric-specifications" class="level2">
 <h2 class="anchored" data-anchor-id="rubric-specifications">Rubric (specifications)</h2>
-<p>You must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #2:</p>
+<p>You must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part II:</p>
+<ul class="task-list">
+<li><input type="checkbox">all responses and code are written in <code>filename.qmd</code>, arranged according to the template</li>
+<li><input type="checkbox">complete steps 1 &amp; 2 (as detailed above in the Description), adhering to the length requirements specified at the end of each writing prompt</li>
+<li><input type="checkbox">complete step 3 (as detailed above in the Description); use the checklist below to ensure you receive full marks:
+<ul class="task-list">
+<li><input type="checkbox">import the data</li>
+<li><input type="checkbox">wrangle the data so that it’s in the correct format for plotting</li>
+<li><input type="checkbox">build a basic visualization, which should include the following two lines of code:
+<ul class="task-list">
+<li><input type="checkbox">a line of code to initialize your ggplot object</li>
+<li><input type="checkbox">a line of code to specify the appropriate <code>geom_*</code></li>
+</ul></li>
+<li><input type="checkbox">code is annotated</li>
+<li><input type="checkbox">all code runs</li>
+</ul></li>
+</ul>
+<p><br></p>
+<div class="center-text large-fa-icon teal-text">
+<p><i class="fa-solid fa-chart-line" title="A simple line chart" aria-label="chart-line"></i> End Part II <i class="fa-solid fa-chart-line" title="A simple line chart" aria-label="chart-line"></i></p>
+</div>
+<p><br></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

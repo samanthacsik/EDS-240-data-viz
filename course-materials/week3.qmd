@@ -1,5 +1,5 @@
 ---
-title: "Data Communication"
+title: "Data & Visualization Types"
 subtitle: "Week 3"
 description: "Monday January 22nd, 2024"
 title-block-banner: true
@@ -11,8 +11,8 @@ toc: true
 #| echo: false
 #| fig-align: "center"
 #| out-width: "85%" 
-#| fig-alt: "An extended version of the classic R4DS schematic from Grolemund & Wickham, with environmental data science, communities, and communication added."
-knitr::include_graphics("../images/horst-eco-r4ds.png")
+#| fig-alt: "A group of fuzzy round monsters with binoculars, backpacks and guide books looking up a graphs flying around with wings (like birders, but with exploratory data visualizations). Stylized text reads 'ggplot2: visual data exploration.' Learn more about ggplot2."
+knitr::include_graphics("../images/horst-ggplot-explore-dataviz.png")
 ```
 
 :::{.gray-text .center-text}
@@ -22,6 +22,11 @@ knitr::include_graphics("../images/horst-eco-r4ds.png")
 ## Lecture Materials
 
 *Coming soon!*
+
+- EDA
+- visualizing quantitative, qualitative, temporal data (no spatial data, covered in EDS 223)
+- charts, graphs, plots, diagrams
+- other/advanced e.g. heat maps, treemaps
 
 ## Discussion Materials
 

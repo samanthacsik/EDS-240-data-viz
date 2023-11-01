@@ -7,7 +7,7 @@ toc: true
 
 ::: {.center-text}
 <div class="pink-box">
-***You must earn a "Satisfactory" mark for each individual Part (I, II and III) to earn a "Satisfactory" mark for Assignment #1.***
+***You must earn a "Satisfactory" mark for each individual Part (I and II) to earn a "Satisfactory" mark for Assignment #1.***
 
 Read each part of the assignment carefully!
 </div>
@@ -25,6 +25,8 @@ Read each part of the assignment carefully!
 ## Description 
 
 Much of your time as a data scientist will be spent looking at code written by others -- maybe you're trying to learn from and adapt someone else's code for your own work, or perhaps you've been asked to conduct a code review for a colleague. Being able to look at and make sense of code that you did not write yourself is an invaluable skill and an important one to practice throughout your learning journey. Here, you'll be asked to interpret and annotate `ggplot2` code written by someone else. This will likely require running code (both as a whole *and* line-by-line), as well as Googling and/or reading documentation.
+
+*I recognize that there is (likely) **a lot** of new code presented here, and that we haven't covered much at all yet in this course. This is intentionally an exercise is resourcefulness! By the end of this exercise, you should feel a bit more confident in your ability to interpret (and maybe even reuse!) code written by others.*
 
 [**Annotate the following code**]{.teal-text}, adapted from [Christophe Nicault's](https://github.com/cnicault) visualization titled, ***Evolution of deaths from indoor air pollution*** ([original code](https://github.com/cnicault/tidytuesday/blob/master/2022/2022-15-indoor_air_pollution/indoor_air_pollution.Rmd)).:
 
@@ -393,6 +395,9 @@ dev.off()
 - [ ] Describe two elements of this plot that you feel could be better presented in a different way. Why? [**(4-10 sentences)**]{.peach-text}
 - [ ] Describe two new things that you learned by interpreting / annotating this code. These could be  packages, functions, or even code organizational approaches that you hadn't previously known about or considered. [**(4-10 sentences)**]{.peach-text}
 
+
+TODO: ADD MORE QUESTIONS HERE
+
 ## Rubric (specifications)
 
 You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part I:
@@ -408,116 +413,8 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 
 <br>
 
-# [Part II: Building a basic ggplot]{.pink-text}
 
-## Learning Outcomes 
-
-- identify which types of visualizations are most appropriate for your data and your audience
-- prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations
-
-## Description 
-
-In class, we discussed a [five-step workflow](https://ucsb-meds.github.io/ggplot2-workflow/) for breaking down the process of transforming data into a visualization. The five steps are listed below:
-
-1. Determine data type(s)
-2. Determine appropriate visualization type(s)
-3. Create a basic plot
-4. Improve clarity & take home message
-5. Final touches / polishing
-
-Here, you will apply this workflow to visualize lobster size data across multiple rocky reef sites along the Santa Barbara coastline.
-
-::: {.callout-note}
-## Understanding the data
-
-#### About SBC LTER
-The [Santa Barbara Coastal Long Term Ecological Research](https://sbclter.msi.ucsb.edu/) (SBC LTER) site was established in 2000 as part of the [LTER Network](https://lternet.edu/) to understand the ecology of coastal kelp forest ecosystems. Research and long-term ecological and environmental monitoring data is collected within a 10,000 square kilometer area of the northern portion of the Southern California Bight, which includes the Santa Barbara Channel, coastal watersheds, small estuaries, and sandy beaches that border the Channel. You can explore the full [data catalog](https://sbclter.msi.ucsb.edu/data/catalog/).
-
-#### About the data set
-
-There are five coastal rocky reef research sites at which the SBC LTER collects long-term monitoring data:
-
-- Naples Reef (NAPL)
-- Isla Vista Reef (IVEE)
-- Arroyo Quemado Reef (AQUE)
-- Mohawk Reef (MOHK)
-- Carpinteria Reef (CARP)
-
-In January 2012, [Naples Reef](https://wildlife.ca.gov/Conservation/Marine/MPAs/Naples) and [Isla Vista Reef](https://wildlife.ca.gov/Conservation/Marine/MPAs/Campus-Point) were [designated as Marine Protected Areas](https://www.parks.ca.gov/?page_id=27928) (MPAs), prohibiting any future take of lobsters (along with other living marine resources). Since then, the SBC LTER has conducted annual (late summer) benthic surveys at each of the above five sites, where SCUBA divers record lobster abundance and sizes. Explore the [metadata](https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.77) for more information.  
-
-#### Data citation
-
-Reed, D, R. Miller. 2023. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (*Panulirus interruptus*), ongoing since 2012 ver 9. Environmental Data Initiative. <https://doi.org/10.6073/pasta/3595322687af94cd532620ad9db94c77>. 
-
-#### Finding this data set
-
-*Knowing how to search for data can be tricky! Here's how I accessed this particular data set, should you want to search for LTER data yourself, in the future:*
-
-1. **Filter the [SBC LTER Data Catalog](https://sbclter.msi.ucsb.edu/data/catalog/)** for data sets related to **Reef/Kelp Forest** habitats (check the box next to the habitat type of interest, or filter by measurement type or LTER Core Research Area). This produces a table of data collections, descriptions, and links to individual data and metadata records.
-2. **Choose a data set of interest.** I was interested in the *SBC LTER: Spiny lobster in California* Collection, which includes three different data sets. I specifically chose, [Lobster abundace, size, and fishing pressure](https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.77) -- here, you'll find lots of metadata, including people and organizations involved in this data collection, temporal, geographic, and taxonomic coverage, methods and protocols, and links to data files. Additionally, you'll see a link to the [EDI Data Portal](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=77) (top right corner), which is the data repository that maintains all data and metadata produced by the LTER. EDI assigns a DOI (Digital Object Identifier) to each version of a data package (data package = data + metadata; SBC LTER updates this data set each year when new data is collected -- each update receives a new DOI).
-3. **Download or import the data.** You can download the data file from either the [SBC LTER Data Catalog](https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.77) *or* the [EDI Data Package](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=77). *However* I prefer reading in the data directly from online (that way, I don't need to worry about storing large data files). I recommend doing this from the [EDI Data Package](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=77) (rather than the SBC LTER Data Catalog), since the DOI ensures you can re-reference the exact same version, even after the data set is updated with new data (SBC LTER Data Catalog only has a download link for the most up-to-date version of the data). To do so, right click on the *Download Data* button, then select *Copy Link Address*.
-
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "50%"
-knitr::include_graphics("../images/download-lob-data.png")
-```
-
-Use this url inside `read_csv()` to import the data into your script or Qmd/Rmd file:
-
-```{r}
-#| eval: false
-#| echo: true
-lobster_data <- read_csv("https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-sbc.77.9&entityid=f32823fba432f58f66c06b589b7efac6")
-```
-
-:::
-
-Given the above data set, apply the five-step workflow to create a data visualization that explores how lobster size differs across each of the five coastal rocky reef SBC LTER sites for the years 2012 (the IVEE and NAPL were established as MPAs) and 2022 (10 years later).
-
-[**You must complete steps 1 - 3**]{.teal-text} (you may need to do some Googling or reference documentation to determine what `geom_*` to use when creating your basic plot). 
-
-- [ ] **(step 1)** write out, in words, the data types of the variables from the above data set (you only need to do this for the variables used in creating your plot) [**(1-2 sentences)**]{.peach-text}
-- [ ] **(step 2)** write out, in words, the appropriate visualization types you considered given these data types *(hint: revisit [from Data to Viz](https://www.data-to-viz.com/) for a helpful decision tree)* [**(1-2 sentences)**]{.peach-text}
-- [ ] **(step 3)** write ggplot code to create a basic plot to visualize these data (this will first require some data wrangling)
-
-[**Physically coding steps 4 & 5 is optional -- instead, you may explain, in writing and/or by sketching out on paper, the following:**]{.teal-text} 
-
-- [ ] **(representing step 4)** how you would improve plot clarity/the take home message(s) (consider the following prompts)? [**(2-3 sentences total)**]{.peach-text}
-    - [ ] Do you see any trends that you may want to explore further and/or highlight?
-    - [ ] How might you use colors and/or shapes to highlight important site groupings and/or years?
-- [ ] **(representing step 5)** some design choices you might make as you polish off your data visualization (consider the following prompts) [**(2-3 sentences total)**]{.peach-text}
-    - [ ] What plot elements should you update to really polish up this visualization?
-    - [ ] What text might you include?
-
-**Note:** Steps 4 and 5, above, are thought exercises -- it's okay if you don't yet know exactly how to approach answering these (we'll be spending time during these first few weeks of class talking about data communication and design theory), but do your best to write down a few things that you think would help to improve both the clarity and overall design of your data visualization .
-
-## Rubric (specifications)
-
-You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part II:
-
-- [ ] all responses and code are written in `filename.qmd`, arranged according to the template 
-- [ ] complete steps 1 & 2 (as detailed above in the Description), adhering to the length requirements specified at the end of each writing prompt
-- [ ] complete step 3 (as detailed above in the Description); use the checklist below to ensure you receive full marks:
-    - [ ] import the data
-    - [ ] wrangle the data so that it's in the correct format for plotting (I've provided )
-    - [ ] build a basic visualization, which should include the following two lines of code:
-        - [ ] a line of code to initialize your ggplot object
-        - [ ] a line of code to specify the appropriate `geom_*`
-    - [ ] code is annotated
-    - [ ] all code runs 
-
-<br>
-
-::: {.center-text .large-fa-icon .teal-text}
-{{< fa chart-line title="A simple line chart" >}} End Part II {{< fa chart-line title="A simple line chart" >}}
-:::
-
-<br>
-
-# [Part III: Find a data set(s) that interests you]{.pink-text}
+# [Part II: Find a data set(s) that interests you]{.pink-text}
 
 ## Learning Outcomes 
 
@@ -557,6 +454,8 @@ Your data set(s) should -- to some degree -- have an environmental focus. It may
 - [ ] Will you need to combine multiple data sets to successfully answer your question(s)? If so, have you found all the necessary data? Do you have a way to combine it? [**(<=4 sentences)**]{.peach-text}
 - [ ] **Optional:** Import your data into R! (this will be a part of the next homework assignment) **IMPORTANT:** If your data files are large (>2GB) DO NOT push your data to GitHub. We'll talk more about this during the next assignment.
 
+TODO: ADD MORE QUESTIONS HERE
+
 ## Rubric (specifications)
 
 You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part II:
@@ -567,7 +466,7 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 <br>
 
 ::: {.center-text .large-fa-icon .teal-text}
-{{< fa table title="A data table with two columns and two rows" >}} End Part III {{< fa table title="A data table with two columns and two rows" >}}
+{{< fa table title="A data table with two columns and two rows" >}} End Part II {{< fa table title="A data table with two columns and two rows" >}}
 :::
 
 <br>
