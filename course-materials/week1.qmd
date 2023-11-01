@@ -81,7 +81,7 @@ Week 1 instruction is broken down into three lessons:
 
 ## Assignment Reminders
 
-| Assignment Type | Title                                                                  | Date Assigned  | Date Due                   |
+| Assignment Type | Assignment Title                                                                  | Date Assigned  | Date Due                   |
 |:---------------:|------------------------------------------------------------------------|----------------|----------------------------|
 | EOC             | [End-of-class survey (week 1)](https://forms.gle/aPGfCircFN1AZfSe9)    | Mon 01/08/2024 | Mon 01/08/2024, 11:55pm PT |
 | SR              | [Pre-course reflection (SR #1)](../assignments/SR1-precourse.qmd)      | Mon 01/08/2024 | Sat 01/13/2024, 11:59pm PT |

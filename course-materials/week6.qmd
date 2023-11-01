@@ -23,7 +23,7 @@ toc: true
 
 ## Assignment Reminders
 
-| Assignment Type | Title                                                 | Date Assigned  | Date Due                   |
+| Assignment Type | Assignment Title                                                 | Date Assigned  | Date Due                   |
 |:---------------:|-------------------------------------------------------|----------------|----------------------------|
 | EOC             | [EOC (week 6)](https://forms.gle/XbKrjoSpapzTAAPT7)   | Mon 02/12/2024 | Mon 02/12/2024, 11:55pm PT |
 | HW              | [Homework Assignment #3](../assignments/HW3.qmd)      | Mon 02/12/2024 | Sat 02/24/2024, 11:59pm PT |

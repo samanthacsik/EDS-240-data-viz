@@ -16,6 +16,6 @@ toc: true
 
 ## Assignment Reminders
 
-| Assignment Type | Title                                                                  | Date Assigned  | Date Due                   |
+| Assignment Type | Assignment Title                                                                  | Date Assigned  | Date Due                   |
 |:---------------:|------------------------------------------------------------------------|----------------|----------------------------|
 | HW              | [Homework Assignment #1](../assignments/HW1.qmd)                       | Mon 01/08/2024 | Sat 01/20/2024, 11:59pm PT | 
