@@ -113,7 +113,7 @@ adapted from [Cédric Scherer's](https://www.cedricscherer.com/) rstudio::conf(2
 
 **3. statistical transformations** -- algorithm used to calculate new values for a graph  
 **4. position adjustments** -- control the fine details of position when geoms might otherwise overlap  
-**5. coordinate system** -- change with `x` and `y` axes mean (e.g. Cartesian (default), polar, flipped)    
+**5. coordinate system** -- change what `x` and `y` axes mean (e.g. Cartesian (default), polar, flipped)    
 **6. facet** -- create subplots that each display one subset of the data   
 <!-- **7. theme** -- customize the non-data elements of your plot   -->
 
@@ -132,7 +132,7 @@ adapted from [Cédric Scherer's](https://www.cedricscherer.com/) rstudio::conf(2
 <br>
 
 **1. labels** -- add titles, axis / legend labels  
-**2. annotations** -- add textual labels (e.g. to highlight specific data points, trend lines, etc.)   
+**2. annotations** -- add textual labels (e.g. to highlight specific data points or trend lines, etc.)   
 **3. scales** -- update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)  
 **4. themes** -- customize the non-data elements of your plot  
 **5. layout** -- combine multiple plots into the same graphic  
@@ -140,6 +140,23 @@ adapted from [Cédric Scherer's](https://www.cedricscherer.com/) rstudio::conf(2
 ::: footer
 **Note:** You many not apply or customize all of the above layers for every plot you build
 :::
+
+---
+
+## {#aside-tidy-data data-menu-title="An aside: tidy data"} 
+
+[An aside . . .]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "Digital illustration of two cute fuzzy monsters sitting on a park bench with a smiling data table between them, all eating ice cream together. In text above the illustration are the hand drawn words 'make friends with tidy data.'"
+knitr::include_graphics("images/lecture1/horst-tidy-data-friends.png")
+```
 
 ---
 
@@ -363,64 +380,161 @@ The best resource for learning all things [R for Data Science](https://r4ds.hadl
 
 ---
 
+## {#moving-on data-menu-title="Moving on..."} 
+
+[Okay, moving on . . .]{.slide-title}
+
+<hr>
+
+::: {.center-text}
+**Let's make some ggplots!**
+:::
+
 ```{r}
-library(palmerpenguins)
-library(tidyverse)
-
-
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "60%"
+#| fig-alt: "Three pengins stand side-by-side: A chinstrap penguin stands on the left atop a purple painted background. It's right side faces us and the word 'Chinstrap!' is written above. A gentoo penguin stands in the middle facing us with it's wings outstretched atop a green painted background. The word 'Gentoo!' is written above. An adélie penguin stands on the right atop an orange painted background. It faces us, but it's head is turned to the left. The word 'Adélie!' is written above it."
+knitr::include_graphics("images/lecture1/palmer-penguins.png")
 ```
 
+::: {.center-text .gray-text}
+*Artwork by [Allison Horst](https://allisonhorst.github.io/palmerpenguins/articles/art.html)*
+:::
+
+. . .
+
+We'll start by exploring the relationship between penguin **flipper length** and **body mass**.
 
 ---
 
-## {#build-plot-together data-menu-title="Build plot together"} 
+## {#initialize data-menu-title="Initialize plot"} 
+
+[Initialize a plot object]{.slide-title}
+
+<hr>
+
+Initialize your plot object using `ggplot()` -- this creates a graph that's primed to display the `penguins` data set, but empty since we haven't told ggplot how to map our data onto the graph yet (in other words: we haven't told ggplot what *type* of plot to create):
+```{r}
+#| eval: true
+#| echo: true
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(data = penguins)
+```
+
+::: footer
+[**1. data**]{.teal-text} | 2. geometric object | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet 
+:::
+
+---
+
+## {#aesthetics data-menu-title="Initialize plot + map aesthetics"} 
+
+[Initialize a plot object + map aesthetics]{.slide-title}
+
+<hr>
+
+The `mapping` argument defines how variables in your data set are mapped to visual properties (aesthetics) of your plot. Here, we specify which variables map to our `x` and `y` axes:
+```{r}
+#| eval: true
+#| echo: true
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(data = penguins, 
+       mapping = aes(x = flipper_length_mm, y = body_mass_g))
+```
+
+::: footer
+[**1. data**]{.teal-text} | 2. geometric object | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet 
+:::
+
+::: notes
+We've specified which variables map onto the x & y axes but still have not yet articulated how to represent the observations
+:::
+
+---
+
+## {#omitting-arg-names data-menu-title="Omitting arg names"} 
+
+[NOTE: Omitting argument names]{.slide-title}
+
+<hr>
+
+The `data` and `mapping` arguments are often not explicitly written in `ggplot()`, as in the example below (makes for more concise code):
+```{r}
+#| eval: true
+#| echo: true
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g))
+```
+
+::: footer
+[**1. data**]{.teal-text} | 2. geometric object | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet 
+:::
+
+---
+
+## {#geom data-menu-title="Define a geom"} 
+
+[Define a geom to represent data]{.slide-title}
+
+<hr>
+
+Next, we'll layer on a geometric object (aka geom) that our plot will use to represent our penguin data. There are many geoms (`geom_*()`) that are built into `{ggplot2}` already (and more when you use extension packages). To create a scatterplot:
+```{r}
+#| eval: true
+#| echo: true
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point()
+```
+
+::: footer
+1. data | [**2. geometric object**]{.teal-text} | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet 
+:::
+
+---
+
+## {#dat-map-in-geom data-menu-title="Data & mapping in geom"} 
+
+[NOTE: Defining data & mappings in `geom_*()`]{.slide-title2}
+
+<hr>
+
+You can also define the data and mapping layers within a `geom_*()` (rather than `ggplot()`) -- this is helpful if you plan to have multiple geoms with different mappings:
+```{r}
+#| eval: true
+#| echo: true
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot() +
+  geom_point(penguins, mapping = aes(x = flipper_length_mm, y = body_mass_g))
+```
+
+::: footer
+1. data | [**2. geometric object**]{.teal-text} | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet 
+:::
+
+---
+
+## {#tbd data-menu-title="tbd"} 
 
 [tbd]{.slide-title}
 
 <hr>
 
 ::: footer
-[**1. data**]{.teal-text} | 2. geometric object | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet | 7. theme
+1. data | 2. geometric object | [**3. statistical transformation**]{.teal-text} | 4. position adjustment | 5. coordinate system | 6. facet 
 :::
-
----
-
-## {#explore-data data-menu-title="Explore data"} 
-
-[Always explore your data first!]{.slide-title}
-
-<hr>
-
-```{r}
-library(palmerpenguins)
-library(tidyverse)
-```
-
-`str()`, `glimpse()`
-
----
-
-Initialize a plot object that you'll add layers to. Creates empty graph that's primed to display `penguins` data, but empty since we haven't told ggplot how we want to map our data onto the graph yet.
-```{r}
-ggplot(data = penguins) 
-```
-
-`mapping` defines how variables in your dataset are mapped to visual properties (aesthetics) of your plot. Here, we specify which variables map to x and y axes
-```{r}
-ggplot(data = penguins,
-       mapping = aes(x = flipper_length_mm, y = body_mass_g))
-
-# oftentimes, you'll see these written wihtout the args explicitly stated
-ggplot(penguins, 
-       aes(x = flipper_length_mm, y = body_mass_g))
-```
-
-Still no data because we haven't specified how we want our observations (individual penguins) to to be represented on our graph.
-
-Do so by adding a geom aka the geometrical object that a plot uses to represent data. There are many geoms (`geom_*`) that are built into `{ggplot2}` already (and more when you use extension packages)!
-
----
-
 
 ---
 

@@ -46,7 +46,7 @@
     "href": "resources.html#inspirational-ggplot2-creators",
     "title": "Recommended reading & materials",
     "section": "Inspirational {ggplot2} creators",
-    "text": "Inspirational {ggplot2} creators\n(In my honest opinion) One of the best ways to learn how to build exciting ggplots is to look at code that others have written. Here are just a few folks doing really incredible work (along with their repos where they often showcase their creations):\n\n\n\nCreator\n Data Viz Repository\n\n\n\n\nIjeamaka Anyene\ntidytuesday\n\n\nGeorgios Karamanis\ntidytuesday\n\n\nDanielle Navarro\ngenerative art outputs from multiple repos can be found on her website’s Gallery\n\n\nCristophe Nicault\ntidytuesday\n\n\nCédric Scherer\nTidyTuesday\n\n\nTanya Shapiro\ntanya-data-viz\n\n\nCara Thompson\ntidytuesdays"
+    "text": "Inspirational {ggplot2} creators\n(In my honest opinion) One of the best ways to learn how to build exciting ggplots is to look at code that others have written. Here are just a few folks doing really incredible work (along with their repos where they often showcase their creations):\n\n\n\nCreator\n Data Viz Repository\n\n\n\n\nIjeamaka Anyene\ntidytuesday\n\n\nGeorgios Karamanis\ntidytuesday\n\n\nDanielle Navarro\ngenerative art outputs from multiple repos can be found on her website’s Gallery\n\n\nCristophe Nicault\ntidytuesday\n\n\nNicola Rennie\ntidytuesday\n\n\nCédric Scherer\nTidyTuesday\n\n\nTanya Shapiro\ntanya-data-viz\n\n\nCara Thompson\ntidytuesdays"
   },
   {
     "objectID": "resources.html#misc.",
@@ -375,7 +375,14 @@
     "href": "slides/lecture1.3-ggplot-review-slides.html#layers",
     "title": "EDS 240",
     "section": "",
-    "text": "Enhance communication using additional layers\n\n\n1. labels – add titles, axis / legend labels\n2. annotations – add textual labels (e.g. to highlight specific data points, trend lines, etc.)\n3. scales – update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)\n4. themes – customize the non-data elements of your plot\n5. layout – combine multiple plots into the same graphic\n\nNote: You many not apply or customize all of the above layers for every plot you build"
+    "text": "Enhance communication using additional layers\n\n\n1. labels – add titles, axis / legend labels\n2. annotations – add textual labels (e.g. to highlight specific data points or trend lines, etc.)\n3. scales – update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)\n4. themes – customize the non-data elements of your plot\n5. layout – combine multiple plots into the same graphic\n\nNote: You many not apply or customize all of the above layers for every plot you build"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#aside-tidy-data",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#aside-tidy-data",
+    "title": "EDS 240",
+    "section": "",
+    "text": "An aside . . ."
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#tidy-data",
@@ -434,18 +441,53 @@
     "text": "Data viz almost always begins with data wrangling\n\nThe {tidyverse} is an “opinionated” set of packages – meaning they share similar philosophies, grammar, and data structures – that are incredibly useful for data wrangling, cleaning, and manipulation (and of course, visualization).\n\n\n\n\n\n\n\n\n\n\n\n\nCheck out the tidyverse website to learn more about each of these packages\n\n\n\n\n\n\n\n\n\n\n\n\nThe best resource for learning all things R for Data Science!"
   },
   {
-    "objectID": "slides/lecture1.3-ggplot-review-slides.html#build-plot-together",
-    "href": "slides/lecture1.3-ggplot-review-slides.html#build-plot-together",
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#moving-on",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#moving-on",
     "title": "EDS 240",
     "section": "",
-    "text": "tbd\n\n\n1. data | 2. geometric object | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet | 7. theme"
+    "text": "Okay, moving on . . .\n\n\nLet’s make some ggplots!\n\n\n\nArtwork by Allison Horst\n\n\nWe’ll start by exploring the relationship between penguin flipper length and body mass."
   },
   {
-    "objectID": "slides/lecture1.3-ggplot-review-slides.html#explore-data",
-    "href": "slides/lecture1.3-ggplot-review-slides.html#explore-data",
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#initialize",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#initialize",
     "title": "EDS 240",
     "section": "",
-    "text": "Always explore your data first!\n\nstr(), glimpse()"
+    "text": "Initialize a plot object\n\nInitialize your plot object using ggplot() – this creates a graph that’s primed to display the penguins data set, but empty since we haven’t told ggplot how to map our data onto the graph yet (in other words: we haven’t told ggplot what type of plot to create):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(data = penguins)\n\n\n\n1. data | 2. geometric object | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#aesthetics",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#aesthetics",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Initialize a plot object + map aesthetics\n\nThe mapping argument defines how variables in your data set are mapped to visual properties (aesthetics) of your plot. Here, we specify which variables map to our x and y axes:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(data = penguins, \n       mapping = aes(x = flipper_length_mm, y = body_mass_g))\n\n\n\n1. data | 2. geometric object | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet\n\n\nWe’ve specified which variables map onto the x & y axes but still have not yet articulated how to represent the observations"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#omitting-arg-names",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#omitting-arg-names",
+    "title": "EDS 240",
+    "section": "",
+    "text": "NOTE: Omitting argument names\n\nThe data and mapping arguments are often not explicitly written in ggplot(), as in the example below (makes for more concise code):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g))\n\n\n\n1. data | 2. geometric object | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#geom",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#geom",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Define a geom to represent data\n\nNext, we’ll layer on a geometric object (aka geom) that our plot will use to represent our penguin data. There are many geoms (geom_*()) that are built into {ggplot2} already (and more when you use extension packages). To create a scatterplot:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point()\n\n\n\n\ndata | 2. geometric object | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#dat-map-in-geom",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#dat-map-in-geom",
+    "title": "EDS 240",
+    "section": "",
+    "text": "NOTE: Defining data & mappings in geom_*()\n\nYou can also define the data and mapping layers within a geom_*() (rather than ggplot()) – this is helpful if you plan to have multiple geoms with different mappings:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot() +\n  geom_point(penguins, mapping = aes(x = flipper_length_mm, y = body_mass_g))\n\n\n\n\ndata | 2. geometric object | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#tbd",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#tbd",
+    "title": "EDS 240",
+    "section": "",
+    "text": "tbd\n\n\n\ndata | 2. geometric object | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#end-break",
@@ -557,7 +599,7 @@
     "href": "assignments.html#end-of-class-surveys",
     "title": "Assignments",
     "section": "End-of-class surveys",
-    "text": "End-of-class surveys\nEnd-of-class surveys (EOCs) will become available at the end of each class (Mondays) and are due by end-of-day (11:55pm PT). Completing EOCs by the due dates/times will, in-part (along with class attendance), determine whether you earn a +/- on your course grade.\nNote: The letter grade, A, is the highest grade you can earn (i.e. you cannot earn an A+). You must attend 8 classes and submit &gt;=6 EOCs (see Grade Tracker, below) to earn an A.\n\n\n\nEOC link\nDate Assigned\nDate Due\n\n\n\n\nEOC (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 2)\nNA\nNA\n\n\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nEOC (week 6)\nMon 02/12/2024\nMon 02/12/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 7)\nNA\nNA\n\n\nEOC (week 8)\nMon 02/26/2024\nMon 02/26/2024, 11:55pm PT\n\n\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT"
+    "text": "End-of-class surveys\nEnd-of-class surveys (EOCs) will become available at the end of each class (Mondays) and are due by end-of-day (11:55pm PT). Completing EOCs by the due dates/times will, in-part (along with class attendance), determine whether you earn a +/- on your course grade.\n\n\n\nEOC link\nDate Assigned\nDate Due\n\n\n\n\nEOC (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 2)\nNA\nNA\n\n\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nEOC (week 6)\nMon 02/12/2024\nMon 02/12/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 7)\nNA\nNA\n\n\nEOC (week 8)\nMon 02/26/2024\nMon 02/26/2024, 11:55pm PT\n\n\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT"
   },
   {
     "objectID": "assignments.html#grade-tracker",

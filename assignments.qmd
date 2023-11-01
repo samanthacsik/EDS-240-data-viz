@@ -22,8 +22,6 @@ Earning "Satisfactory" marks on Self-reflections (SRs) and Homework Assignments 
 
 End-of-class surveys (EOCs) will become available at the end of each class (Mondays) and are due by end-of-day (11:55pm PT). Completing EOCs by the due dates/times will, in-part (along with class attendance), determine whether you earn a +/- on your course grade. 
 
-**Note:** The letter grade, A, is the highest grade you can earn (i.e. you cannot earn an A+). You must attend 8 classes and submit >=6 EOCs (see [Grade Tracker](assignments.qmd#grade-tracker), below) to earn an A.
-
 | EOC link                                             | Date Assigned  | Date Due                   |
 |------------------------------------------------------|----------------|----------------------------|
 | [EOC (week 1)](https://forms.gle/aPGfCircFN1AZfSe9)  | Mon 01/08/2024 | Mon 01/08/2024, 11:55pm PT |

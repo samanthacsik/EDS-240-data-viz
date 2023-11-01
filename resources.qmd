@@ -53,6 +53,7 @@ toc: true
 | [Georgios Karamanis](https://karaman.is/) | [tidytuesday](https://github.com/gkaramanis/tidytuesday)
 | [Danielle Navarro](https://djnavarro.net/) | generative art outputs from multiple repos can be found on her website's [Gallery](https://art.djnavarro.net/gallery/) |
 | [Cristophe Nicault](https://www.christophenicault.com/) | [tidytuesday](https://github.com/cnicault/tidytuesday) |
+| [Nicola Rennie](https://nrennie.rbind.io/) | [tidytuesday](https://github.com/nrennie/tidytuesday/tree/main)
 | [Cédric Scherer](https://www.cedricscherer.com/) | [TidyTuesday](https://github.com/z3tt/TidyTuesday) |
 | [Tanya Shapiro](https://tanyaviz.com/) | [tanya-data-viz](https://github.com/tashapiro/tanya-data-viz) |
 | [Cara Thompson](https://www.cararthompson.com/index.html) | [tidytuesdays](https://github.com/cararthompson/tidytuesdays) |

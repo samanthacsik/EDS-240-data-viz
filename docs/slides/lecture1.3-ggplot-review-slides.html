@@ -470,7 +470,7 @@
 <p><span class="teal-text body-text-m"><strong>Then these:</strong></span></p>
 <p><strong>3. statistical transformations</strong> – algorithm used to calculate new values for a graph<br>
 <strong>4. position adjustments</strong> – control the fine details of position when geoms might otherwise overlap<br>
-<strong>5. coordinate system</strong> – change with <code>x</code> and <code>y</code> axes mean (e.g.&nbsp;Cartesian (default), polar, flipped)<br>
+<strong>5. coordinate system</strong> – change what <code>x</code> and <code>y</code> axes mean (e.g.&nbsp;Cartesian (default), polar, flipped)<br>
 <strong>6. facet</strong> – create subplots that each display one subset of the data<br>
 <!-- **7. theme** -- customize the non-data elements of your plot   --></p>
 <div class="footer">
@@ -484,7 +484,7 @@
 <hr>
 <p><br></p>
 <p><strong>1. labels</strong> – add titles, axis / legend labels<br>
-<strong>2. annotations</strong> – add textual labels (e.g.&nbsp;to highlight specific data points, trend lines, etc.)<br>
+<strong>2. annotations</strong> – add textual labels (e.g.&nbsp;to highlight specific data points or trend lines, etc.)<br>
 <strong>3. scales</strong> – update how the aesthetic mappings manifest visually (e.g.&nbsp;colors scales, axis ticks, legends)<br>
 <strong>4. themes</strong> – customize the non-data elements of your plot<br>
 <strong>5. layout</strong> – combine multiple plots into the same graphic</p>
@@ -492,6 +492,12 @@
 <p><strong>Note:</strong> You many not apply or customize all of the above layers for every plot you build</p>
 </div>
 </section>
+<section id="aside-tidy-data" class="slide level2" data-menu-title="An aside: tidy data">
+<h2></h2>
+<p><span class="slide-title">An aside . . .</span></p>
+<hr>
+
+<img data-src="images/lecture1/horst-tidy-data-friends.png" style="width:100.0%" alt="Digital illustration of two cute fuzzy monsters sitting on a park bench with a smiling data table between them, all eating ice cream together. In text above the illustration are the hand drawn words 'make friends with tidy data.'" class="r-stretch quarto-figure-center"></section>
 <section id="tidy-data" class="slide level2" data-menu-title="What is tidy data?">
 <h2></h2>
 <p><span class="slide-title">What is tidy data?</span></p>
@@ -556,7 +562,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_33d99c07" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_9788cd76" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -649,45 +655,130 @@
 </div>
 </div>
 </section>
-<section class="slide level2">
+<section id="moving-on" class="slide level2" data-menu-title="Moving on...">
+<h2></h2>
+<p><span class="slide-title">Okay, moving on . . .</span></p>
+<hr>
+<div class="center-text">
+<p><strong>Let’s make some ggplots!</strong></p>
+</div>
 
+<img data-src="images/lecture1/palmer-penguins.png" style="width:60.0%" alt="Three pengins stand side-by-side: A chinstrap penguin stands on the left atop a purple painted background. It's right side faces us and the word 'Chinstrap!' is written above. A gentoo penguin stands in the middle facing us with it's wings outstretched atop a green painted background. The word 'Gentoo!' is written above. An adélie penguin stands on the right atop an orange painted background. It faces us, but it's head is turned to the left. The word 'Adélie!' is written above it." class="r-stretch quarto-figure-center"><div class="center-text gray-text">
+<p><em>Artwork by <a href="https://allisonhorst.github.io/palmerpenguins/articles/art.html">Allison Horst</a></em></p>
+</div>
+<div class="fragment">
+<p>We’ll start by exploring the relationship between penguin <strong>flipper length</strong> and <strong>body mass</strong>.</p>
+</div>
 </section>
-<section id="build-plot-together" class="slide level2" data-menu-title="Build plot together">
+<section id="initialize" class="slide level2" data-menu-title="Initialize plot">
+<h2></h2>
+<p><span class="slide-title">Initialize a plot object</span></p>
+<hr>
+<p>Initialize your plot object using <code>ggplot()</code> – this creates a graph that’s primed to display the <code>penguins</code> data set, but empty since we haven’t told ggplot how to map our data onto the graph yet (in other words: we haven’t told ggplot what <em>type</em> of plot to create):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture1.3-ggplot-review-slides_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"><div class="footer">
+<p><span class="teal-text"><strong>1. data</strong></span> | 2. geometric object | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet</p>
+</div>
+</section>
+<section id="aesthetics" class="slide level2" data-menu-title="Initialize plot + map aesthetics">
+<h2></h2>
+<p><span class="slide-title">Initialize a plot object + map aesthetics</span></p>
+<hr>
+<p>The <code>mapping</code> argument defines how variables in your data set are mapped to visual properties (aesthetics) of your plot. Here, we specify which variables map to our <code>x</code> and <code>y</code> axes:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, </span>
+<span id="cb6-5"><a href="#cb6-5"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture1.3-ggplot-review-slides_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"><div class="footer">
+<p><span class="teal-text"><strong>1. data</strong></span> | 2. geometric object | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet</p>
+</div>
+<aside class="notes">
+<p>We’ve specified which variables map onto the x &amp; y axes but still have not yet articulated how to represent the observations</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="omitting-arg-names" class="slide level2" data-menu-title="Omitting arg names">
+<h2></h2>
+<p><span class="slide-title">NOTE: Omitting argument names</span></p>
+<hr>
+<p>The <code>data</code> and <code>mapping</code> arguments are often not explicitly written in <code>ggplot()</code>, as in the example below (makes for more concise code):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture1.3-ggplot-review-slides_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"><div class="footer">
+<p><span class="teal-text"><strong>1. data</strong></span> | 2. geometric object | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet</p>
+</div>
+</section>
+<section id="geom" class="slide level2" data-menu-title="Define a geom">
+<h2></h2>
+<p><span class="slide-title">Define a geom to represent data</span></p>
+<hr>
+<p>Next, we’ll layer on a geometric object (aka geom) that our plot will use to represent our penguin data. There are many geoms (<code>geom_*()</code>) that are built into <code>{ggplot2}</code> already (and more when you use extension packages). To create a scatterplot:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture1.3-ggplot-review-slides_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"><div class="footer">
+<ol type="1">
+<li>data | <span class="teal-text"><strong>2. geometric object</strong></span> | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet</li>
+</ol>
+</div>
+</section>
+<section id="dat-map-in-geom" class="slide level2" data-menu-title="Data &amp; mapping in geom">
+<h2></h2>
+<p><span class="slide-title2">NOTE: Defining data &amp; mappings in <code>geom_*()</code></span></p>
+<hr>
+<p>You can also define the data and mapping layers within a <code>geom_*()</code> (rather than <code>ggplot()</code>) – this is helpful if you plan to have multiple geoms with different mappings:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">geom_point</span>(penguins, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture1.3-ggplot-review-slides_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"><div class="footer">
+<ol type="1">
+<li>data | <span class="teal-text"><strong>2. geometric object</strong></span> | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet</li>
+</ol>
+</div>
+</section>
+<section id="tbd" class="slide level2" data-menu-title="tbd">
 <h2></h2>
 <p><span class="slide-title">tbd</span></p>
 <hr>
 <div class="footer">
-<p><span class="teal-text"><strong>1. data</strong></span> | 2. geometric object | 3. statistical transformation | 4. position adjustment | 5. coordinate system | 6. facet | 7. theme</p>
+<ol type="1">
+<li>data | 2. geometric object | <span class="teal-text"><strong>3. statistical transformation</strong></span> | 4. position adjustment | 5. coordinate system | 6. facet</li>
+</ol>
 </div>
-</section>
-<section id="explore-data" class="slide level2" data-menu-title="Explore data">
-<h2></h2>
-<p><span class="slide-title">Always explore your data first!</span></p>
-<hr>
-<p><code>str()</code>, <code>glimpse()</code></p>
-</section>
-<section class="slide level2">
-
-<p>Initialize a plot object that you’ll add layers to. Creates empty graph that’s primed to display <code>penguins</code> data, but empty since we haven’t told ggplot how we want to map our data onto the graph yet.</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="lecture1.3-ggplot-review-slides_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
-</div>
-</div>
-<p><code>mapping</code> defines how variables in your dataset are mapped to visual properties (aesthetics) of your plot. Here, we specify which variables map to x and y axes</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="lecture1.3-ggplot-review-slides_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
-</div>
-<div class="cell-output-display">
-<p><img data-src="lecture1.3-ggplot-review-slides_files/figure-revealjs/unnamed-chunk-15-2.png" width="960"></p>
-</div>
-</div>
-<p>Still no data because we haven’t specified how we want our observations (individual penguins) to to be represented on our graph.</p>
-<p>Do so by adding a geom aka the geometrical object that a plot uses to represent data. There are many geoms (<code>geom_*</code>) that are built into <code>{ggplot2}</code> already (and more when you use extension packages)!</p>
-</section>
-<section class="slide level2">
-
 </section>
 <section id="end-break" class="slide level2" data-menu-title="# End #" data-background="#047C90">
 <h2></h2>
