@@ -382,7 +382,7 @@
     "href": "slides/lecture1.3-ggplot-review-slides.html#comm-layers",
     "title": "EDS 240",
     "section": "",
-    "text": "Enhance communication using additional layers\n\n\n1. labels – add titles, axis / legend labels\n2. annotations – add textual labels (e.g. to highlight specific data points or trend lines, etc.)\n3. scales – update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)\n4. themes – customize the non-data elements of your plot\n5. layout – combine multiple plots into the same graphic\n\nNote: You many not apply or customize all of the above layers (or in this exact order) for every plot you build"
+    "text": "Enhance communication using additional layers\n\n\n1. labels – add / update titles, axis / legend labels\n2. annotations – add textual labels (e.g. to highlight specific data points or trend lines, etc.)\n3. scales – update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)\n4. themes – customize the non-data elements of your plot\n5. layout – combine multiple plots into the same graphic\n\nNote: You many not apply or customize all of the above layers (or in this exact order) for every plot you build"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#aside-tidy-data",
@@ -452,14 +452,14 @@
     "href": "slides/lecture1.3-ggplot-review-slides.html#moving-on",
     "title": "EDS 240",
     "section": "",
-    "text": "Okay, moving on . . .\n\n\nLet’s make some ggplots!\n\n\n\nArtwork by Allison Horst\n\n\nThe examples on the following slides were adapted from R for Data Science, Chapters 2 and 10."
+    "text": "Okay, moving on . . .\n\n\nLet’s make some ggplots using data from {palmerpenguins} (which are already tidy)!\n\n\n\nArtwork by Allison Horst\n\n\nThe examples on the following slides were adapted from R for Data Science, Chapters 2 and 10."
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#plot1",
     "href": "slides/lecture1.3-ggplot-review-slides.html#plot1",
     "title": "EDS 240",
     "section": "",
-    "text": "Plot #1\n\n\nWe’ll start by exploring the relationship between penguin flipper length and body mass. For this example, we’ll focus on understanding the following layers of a ggplot (bolded):\n\n Graphic layers:\n1. data – in tidy format + define aesthetics (how variables map onto a plot e.g. axes, shape, color, size)\n2. geometric objects (aka geoms) – define the type of plot(s)\n3. statistical transformations – algorithm used to calculate new values for a graph\n4. position adjustments – control the fine details of position when geoms might otherwise overlap\n5. coordinate system – change what x and y axes mean (e.g. Cartesian (default), polar, flipped)\n6. facet – create subplots that each display one subset of the data\n “Enhancing communication” layers:\n1. labels – add titles, axis / legend labels\n2. annotations – add textual labels (e.g. to highlight specific data points or trend lines, etc.)\n3. scales – update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)\n4. themes– customize the non-data elements of your plot\n5. layout – combine multiple plots into the same graphic"
+    "text": "Plot #1\n\n\nWe’ll start by exploring the relationship between penguin flipper length and body mass. For this example, we’ll focus on understanding the following layers of a ggplot (bolded):\n\n Graphic layers:\n1. data – in tidy format + define aesthetics (how variables map onto a plot e.g. axes, shape, color, size)\n2. geometric objects (aka geoms) – define the type of plot(s)\n3. statistical transformations – algorithm used to calculate new values for a graph\n4. position adjustments – control the fine details of position when geoms might otherwise overlap\n5. coordinate system – change what x and y axes mean (e.g. Cartesian (default), polar, flipped)\n6. facet – create subplots that each display one subset of the data\n “Enhancing communication” layers:\n1. labels – add / update titles, axis / legend labels\n2. annotations – add textual labels (e.g. to highlight specific data points or trend lines, etc.)\n3. scales – update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)\n4. themes– customize the non-data elements of your plot\n5. layout – combine multiple plots into the same graphic"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#initialize",
@@ -536,7 +536,7 @@
     "href": "slides/lecture1.3-ggplot-review-slides.html#plot2",
     "title": "EDS 240",
     "section": "",
-    "text": "Plot #2\n\n\nIn this next example, we’ll explore penguin species counts. For this example, we’ll focus on understanding the following layers of a ggplot (bolded):\n\n Graphic layers:\n1. data – in tidy format + define aesthetics (how variables map onto a plot e.g. axes, shape, color, size)\n2. geometric objects (aka geoms) – define the type of plot(s)\n3. statistical transformations – algorithm used to calculate new values for a graph\n4. position adjustments – control the fine details of position when geoms might otherwise overlap\n5. coordinate system – change what x and y axes mean (e.g. Cartesian (default), polar, flipped)\n6. facet – create subplots that each display one subset of the data\n “Enhancing communication” layers:\n1. labels – add titles, axis / legend labels\n2. annotations – add textual labels (e.g. to highlight specific data points or trend lines, etc.)\n3. scales – update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)\n4. themes– customize the non-data elements of your plot\n5. layout – combine multiple plots into the same graphic"
+    "text": "Plot #2\n\n\nIn this next example, we’ll explore penguin species counts. For this example, we’ll focus on understanding the following layers of a ggplot (bolded):\n\n Graphic layers:\n1. data – in tidy format + define aesthetics (how variables map onto a plot e.g. axes, shape, color, size)\n2. geometric objects (aka geoms) – define the type of plot(s)\n3. statistical transformations – algorithm used to calculate new values for a graph\n4. position adjustments – control the fine details of position when geoms might otherwise overlap\n5. coordinate system – change what x and y axes mean (e.g. Cartesian (default), polar, flipped)\n6. facet – create subplots that each display one subset of the data\n “Enhancing communication” layers:\n1. labels – add / update titles, axis / legend labels\n2. annotations – add textual labels (e.g. to highlight specific data points or trend lines, etc.)\n3. scales – update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)\n4. themes– customize the non-data elements of your plot\n5. layout – combine multiple plots into the same graphic"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#basic-barplot",
@@ -588,8 +588,8 @@
     "text": "What is a position adjustment?\n\nPosition adjustments apply minor tweaks to the position of elements to resolve overlapping geoms. For example, let’s say we would like to visualize penguin counts by species (bar height) and by island (color) using our bar chart from earlier. We could add the fill aesthetic:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species, fill = island)) +\n  geom_bar()\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
   },
   {
-    "objectID": "slides/lecture1.3-ggplot-review-slides.html#pos-default",
-    "href": "slides/lecture1.3-ggplot-review-slides.html#pos-default",
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#pos-default-bar",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#pos-default-bar",
     "title": "EDS 240",
     "section": "",
     "text": "The default position for geom_bar() is “stack”\n\nEvery geom has a default position. The default position used in geom_bar() is stack, which stacks bars on top of one another, based on the fill value (here, that’s island):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species, fill = island)) +\n  geom_bar(position = \"stack\") # you don't need to explicitly include `position = \"stack\"` since it's the default\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
@@ -616,18 +616,60 @@
     "text": "Changing coordinate systems\n\nDepending on the type of data, axis label length, etc. it may make sense to change this coordinate system. Two options for our bar plot:\n\n\ncoord_flip() switches the x and y axes.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() + \n  coord_flip()\n\n\n\n\n\ncoord_polar() uses polar coordinates.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() + \n  coord_polar()\n\n\n\n\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
   },
   {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#prebuilt-themes",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#prebuilt-themes",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Use pre-made themes to update plot appearance\n\n{ggplot2} comes with a number of complete themes, which control all non-data display. See two examples below:\n\n\ndisplays x and y axis lines and no gridlines\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() +\n  theme_classic()\n\n\n\n\n\ndisplays light grey lines and axes\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() +\n  theme_light()\n\n\n\n\n\n\n\nlabels | annotations | scales | themes | layout"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#custom-themes",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#custom-themes",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Further customize plot appearance using theme()\n\nFurther modify nearly any non-data element of your plot using theme().\n\n\nStart with theme_light():\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() +\n  theme_light()\n\n\n\n\n\nFurther modify with theme():\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() +\n  theme_light() +\n  theme(\n    axis.title = element_text(size = 17, color = \"purple\")\n  )\n\n\n\n\n\n\n\nlabels | annotations | scales | themes | layout"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#plot3",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#plot3",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Plot #3\n\n\nIn this next example, we’ll explore penguin flipper lengths. For this example, we’ll focus on understanding the following layers of a ggplot (bolded):\n\n Graphic layers:\n1. data – in tidy format + define aesthetics (how variables map onto a plot e.g. axes, shape, color, size)\n2. geometric objects (aka geoms) – define the type of plot(s)\n3. statistical transformations – algorithm used to calculate new values for a graph\n4. position adjustments – control the fine details of position when geoms might otherwise overlap\n5. coordinate system – change what x and y axes mean (e.g. Cartesian (default), polar, flipped)\n6. facet – create subplots that each display one subset of the data\n “Enhancing communication” layers:\n1. labels – add / update titles, axis / legend labels\n2. annotations – add textual labels (e.g. to highlight specific data points or trend lines, etc.)\n3. scales – update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)\n4. themes– customize the non-data elements of your plot\n5. layout – combine multiple plots into the same graphic"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#basic-histogram",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#basic-histogram",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Initialize + map aesthetics + define geom\n\nWe’ll again start by initializing our plot object with data, mapping our aesthetics, and defining a geometric object. Note that the default statistical transformation for geom_histogram() is stat = \"bin\":\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm)) + \n  geom_histogram()\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#color-bins-by-spp",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#color-bins-by-spp",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Use color to differentiate species\n\nJust like in our scatterplot (Plot #1), we’ll modify our plot’s aesthetics (i.e. inside aes()) to color our histrogram bins according to the species variable. Unlike our scatterplot (which uses the color argument), we’ll use the fill argument to fill the bars with color (rather than outline them with color). We’ll also manually define our fill scale:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, fill = species)) + \n  geom_histogram() +\n  scale_fill_manual(values = c(\"#FF8302\", \"#C35CCA\", \"#067575\"))\n\n\n\nlabels | annotations | scales | themes | layout"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#pos-default-hist",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#pos-default-hist",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Update the default position to \"identity\"\n\nLet’s update the position of our binned bars from \"stack\" to \"identity\" and also increase the transparency (using alpha) so that we can see overlapping bars:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, fill = species)) + \n  geom_histogram(position = \"identity\", alpha = 0.5) +\n  scale_fill_manual(values = c(\"#FF8302\", \"#C35CCA\", \"#067575\"))\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+  },
+  {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#labels",
     "href": "slides/lecture1.3-ggplot-review-slides.html#labels",
     "title": "EDS 240",
     "section": "",
-    "text": "labels"
+    "text": "Update / add plot labels\n\nUpdate axis and legend titles and add a plot title using labs():\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, fill = species)) + \n  geom_histogram(position = \"identity\", alpha = 0.5) +\n  scale_fill_manual(values = c(\"#FF8302\", \"#C35CCA\", \"#067575\")) +\n  labs(x = \"Flipper length (mm)\", y = \"Frequency\", fill = \"Species\",\n       title = \"Penguin Flipper Lengths\")\n\n\n\nlabels | annotations | scales | themes | layout"
   },
   {
-    "objectID": "slides/lecture1.3-ggplot-review-slides.html#theme",
-    "href": "slides/lecture1.3-ggplot-review-slides.html#theme",
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#faceting",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#faceting",
     "title": "EDS 240",
     "section": "",
-    "text": "theme"
+    "text": "Create subplots using facets\n\nSometimes (particularly during the data exploration phase) it’s helpful to create subplots (i.e. separate panels) of your data. Here we use facet_wrap() to separate our data by the species variable. By default, it creates a 1 x 3 matrix of plots. We can manually specify how many rows or columns we’d like using nrow or ncol:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, fill = species)) + \n  geom_histogram(position = \"identity\", alpha = 0.5) +\n  scale_fill_manual(values = c(\"#FF8302\", \"#C35CCA\", \"#067575\")) +\n  labs(x = \"Flipper length (mm)\", y = \"Frequency\", fill = \"Species\",\n       title = \"Penguin Flipper Lengths\") + \n  facet_wrap(~species, ncol = 1)\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#end-break",
@@ -635,6 +677,13 @@
     "title": "EDS 240",
     "section": "",
     "text": "See you next week!\n\n\n~ This is the end of Lesson 3 (of 3) ~"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#assignments",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#assignments",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Assignments\n\n\nEnd-of-class Survey #1 (EOC #1) – Due Mon 01/08 at 11:55pm\n\n\n2 multiple choice\n2 short answer\n1 optional question\n\n\n\nPre-course Reflection (SR #1) – Due Sat 01/13 at 11:59pm\n\n\n3 sets of questions about:\n\nschool & life\nthe way you learn best\nsome fun stuff\n\n\n\n\n\nHomework Assignment #1 (HW #1) – Sat 01/20 at 11:59pm\n\n\n2 parts:\n\ninterpreting & annotating ggplot code\nfinding data that you’re interested in visualizing for your final assignment"
   },
   {
     "objectID": "getting-unstuck.html",

@@ -131,7 +131,7 @@ adapted from [Cédric Scherer's](https://www.cedricscherer.com/) rstudio::conf(2
 
 <br>
 
-**1. labels** -- add titles, axis / legend labels  
+**1. labels** -- add / update titles, axis / legend labels  
 **2. annotations** -- add textual labels (e.g. to highlight specific data points or trend lines, etc.)   
 **3. scales** -- update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)  
 **4. themes** -- customize the non-data elements of your plot  
@@ -387,7 +387,7 @@ The best resource for learning all things [R for Data Science](https://r4ds.hadl
 <hr>
 
 ::: {.center-text}
-**Let's make some ggplots!**
+**Let's make some ggplots using data from [`{palmerpenguins}`](https://allisonhorst.github.io/palmerpenguins/) (which are already tidy)!**
 :::
 
 ```{r}
@@ -431,7 +431,7 @@ We'll start by exploring the relationship between penguin **flipper length** and
 
 [**{{< fa palette title="a painter's palette" >}} "Enhancing communication" layers:**]{.teal-text}   
 
-[1. labels -- add titles, axis / legend labels]{.body-text-s}     
+[1. labels -- add / update titles, axis / legend labels]{.body-text-s}     
 [2. annotations -- add textual labels (e.g. to highlight specific data points or trend lines, etc.)]{.body-text-s}      
 [**3. scales** -- update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)]{.body-text-s}     
 [4. themes-- customize the non-data elements of your plot]{.body-text-s}      
@@ -716,7 +716,7 @@ In this next example, we'll explore **penguin species counts**. For this example
 
 [**{{< fa palette title="a painter's palette" >}} "Enhancing communication" layers:**]{.teal-text}   
 
-[**1. labels** -- add titles, axis / legend labels]{.body-text-s}     
+[1. labels -- add / update titles, axis / legend labels]{.body-text-s}     
 [2. annotations -- add textual labels (e.g. to highlight specific data points or trend lines, etc.)]{.body-text-s}      
 [3. scales -- update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)]{.body-text-s}     
 [**4. themes**-- customize the non-data elements of your plot]{.body-text-s}      
@@ -921,7 +921,7 @@ data | geometric object | statistical transformation | [**position adjustment**]
 
 ---
 
-## {#pos-default data-menu-title="Default position geom_bar()"} 
+## {#pos-default-bar data-menu-title="Default position geom_bar()"} 
 
 [{{< fa chart-line title="a line chart" >}} The default position for `geom_bar()` is "stack"]{.slide-title3}
 
@@ -1070,19 +1070,261 @@ data | geometric object | statistical transformation | position adjustment | [**
 
 ---
 
-## {#labels data-menu-title="Labels"} 
+## {#prebuilt-themes data-menu-title="Pre-built themes"} 
 
-[{{< fa palette title="a painter's palette" >}} labels]{.slide-title}
+[{{< fa palette title="a painter's palette" >}} Use pre-made themes to update plot appearance]{.slide-title2}
 
 <hr>
+
+`{ggplot2}` comes with a number of [complete themes](https://ggplot2.tidyverse.org/reference/ggtheme.html), which control all non-data display. See two examples below:
+
+:::: columns
+
+::: {.column width="50%"}
+[displays x and y axis lines and no gridlines]{.body-text-s}
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "6"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = species)) +
+  geom_bar() +
+  theme_classic()
+```
+:::
+
+::: {.column width="50%"}
+[displays light grey lines and axes]{.body-text-s}
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "6"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = species)) +
+  geom_bar() +
+  theme_light()
+```
+:::
+
+::::
+
+::: footer
+labels | annotations | scales | [**themes**]{.teal-text} | layout 
+:::
 
 ---
 
-## {#theme data-menu-title="Theme"} 
+## {#custom-themes data-menu-title="Custom themes"} 
 
-[{{< fa palette title="a painter's palette" >}} theme]{.slide-title}
+[{{< fa palette title="a painter's palette" >}} Further customize plot appearance using `theme()`]{.slide-title3}
 
 <hr>
+
+Further modify nearly any non-data element of your plot using [`theme()`](https://ggplot2.tidyverse.org/reference/theme.html).
+
+:::: columns
+
+::: {.column width="50%"}
+[Start with `theme_light()`:]{.body-text-s}
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "6"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = species)) +
+  geom_bar() +
+  theme_light()
+```
+:::
+
+::: {.column width="50%"}
+[Further modify with `theme()`:]{.body-text-s}
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "7-9"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = species)) +
+  geom_bar() +
+  theme_light() +
+  theme(
+    axis.title = element_text(size = 17, color = "purple")
+  )
+```
+:::
+
+::::
+
+::: footer
+labels | annotations | scales | [**themes**]{.teal-text} | layout 
+:::
+
+---
+
+## {#plot3 data-menu-title="Plot 3"} 
+
+[Plot #3]{.slide-title}
+
+<hr>
+
+::: {.center-text}
+In this next example, we'll explore **penguin flipper lengths**. For this example, we'll focus on understanding the following layers of a ggplot (**bolded**):
+:::
+
+
+[**{{< fa chart-line title="a line chart" >}} Graphic layers:**]{.teal-text}  
+
+[**1. data** -- in [tidy](https://doi.org/10.18637/jss.v059.i10) format + define aesthetics (how variables map onto a plot e.g. axes, shape, color, size)]{.body-text-s}  
+[**2. geometric objects (aka geoms)** -- define the type of plot(s)]{.body-text-s}     
+[3. statistical transformations -- algorithm used to calculate new values for a graph]{.body-text-s}     
+[**4. position adjustments** -- control the fine details of position when geoms might otherwise overlap]{.body-text-s}     
+[5. coordinate system -- change what `x` and `y` axes mean (e.g. Cartesian (default), polar, flipped)]{.body-text-s}       
+[**6. facet** -- create subplots that each display one subset of the data]{.body-text-s}       
+
+[**{{< fa palette title="a painter's palette" >}} "Enhancing communication" layers:**]{.teal-text}   
+
+[**1. labels** -- add / update titles, axis / legend labels]{.body-text-s}     
+[2. annotations -- add textual labels (e.g. to highlight specific data points or trend lines, etc.)]{.body-text-s}      
+[**3. scales** -- update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)]{.body-text-s}     
+[4. themes-- customize the non-data elements of your plot]{.body-text-s}      
+[5. layout -- combine multiple plots into the same graphic]{.body-text-s}      
+
+---
+
+## {#basic-histogram data-menu-title="Create a basic histogram"} 
+
+[{{< fa chart-line title="a line chart" >}} Initialize + map aesthetics + define geom]{.slide-title}
+
+<hr>
+
+We'll again start by initializing our plot object with data, mapping our aesthetics, and defining a geometric object. Note that the default statistical transformation for `geom_histogram()` is `stat = "bin"`:
+
+```{r}
+#| eval: true
+#| echo: true
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = flipper_length_mm)) + 
+  geom_histogram()
+```
+
+::: footer
+[**data**]{.teal-text} | [**geometric object**]{.teal-text} | statistical transformation | position adjustment | coordinate system | facet 
+:::
+
+---
+
+## {#color-bins-by-spp data-menu-title="Color bins by species"} 
+
+[{{< fa palette title="a painter's palette" >}} Use color to differentiate species]{.slide-title}
+
+<hr>
+
+[Just like in our scatterplot (Plot #1), we'll modify our plot's aesthetics (i.e. inside `aes()`) to color our histrogram bins according to the species variable. Unlike our scatterplot (which uses the `color` argument), we'll use the `fill` argument to *fill* the bars with color (rather than *outline* them with color). We'll also manually define our fill scale:]{.body-text-s}
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "4,6"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = flipper_length_mm, fill = species)) + 
+  geom_histogram() +
+  scale_fill_manual(values = c("#FF8302", "#C35CCA", "#067575"))
+```
+
+::: footer
+labels | annotations | [**scales**]{.teal-text} | themes | layout 
+:::
+
+---
+
+## {#pos-default-hist data-menu-title="Update position geom_histogram()"} 
+
+[{{< fa chart-line title="a line chart" >}} Update the default position to `"identity"`]{.slide-title2}
+
+<hr>
+
+Let's update the position of our binned bars from `"stack"` to `"identity"` and also increase the transparency (using `alpha`) so that we can see overlapping bars:
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "5"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = flipper_length_mm, fill = species)) + 
+  geom_histogram(position = "identity", alpha = 0.5) +
+  scale_fill_manual(values = c("#FF8302", "#C35CCA", "#067575"))
+```
+
+::: footer
+data | geometric object | statistical transformation | [**position adjustment**]{.teal-text} | coordinate system | facet
+:::
+
+---
+
+## {#labels data-menu-title="Labels"} 
+
+[{{< fa palette title="a painter's palette" >}} Update / add plot labels]{.slide-title}
+
+<hr>
+
+Update axis and legend titles and add a plot title using `labs()`:
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "7-8"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = flipper_length_mm, fill = species)) + 
+  geom_histogram(position = "identity", alpha = 0.5) +
+  scale_fill_manual(values = c("#FF8302", "#C35CCA", "#067575")) +
+  labs(x = "Flipper length (mm)", y = "Frequency", fill = "Species",
+       title = "Penguin Flipper Lengths")
+```
+
+::: footer
+[**labels**]{.teal-text} | annotations | scales | themes | layout 
+:::
+
+---
+
+## {#faceting data-menu-title="Faceting"} 
+
+[{{< fa chart-line title="a line chart" >}} Create subplots using facets]{.slide-title}
+
+<hr>
+
+[Sometimes (particularly during the data exploration phase) it's helpful to create subplots (i.e. separate panels) of your data. Here we use `facet_wrap()` to separate our data by the `species` variable. By default, it creates a 1 x 3 matrix of plots. We can manually specify how many rows or columns we'd like using `nrow` or `ncol`:]{.body-text-s}
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "9"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = flipper_length_mm, fill = species)) + 
+  geom_histogram(position = "identity", alpha = 0.5) +
+  scale_fill_manual(values = c("#FF8302", "#C35CCA", "#067575")) +
+  labs(x = "Flipper length (mm)", y = "Frequency", fill = "Species",
+       title = "Penguin Flipper Lengths") + 
+  facet_wrap(~species, ncol = 1)
+```
+
+::: footer
+data | geometric object | statistical transformation | position adjustment | coordinate system | [**facet**]{.teal-text}
+:::
 
 ---
 
@@ -1093,13 +1335,42 @@ data | geometric object | statistical transformation | position adjustment | [**
 <p class="caption-text">*~ This is the end of Lesson 3 (of 3) ~*</p>
 </div>
 
+---
 
+##  {#assignments data-menu-title="Assignments" background="#D8E7E7"}
 
+::: {.center-text}
+[Assignments]{.slide-title .dark-blue-text}
+:::
 
+<hr>
 
+**End-of-class Survey #1 (EOC #1)** -- *Due [Mon 01/08]{.magenta-text} at 11:55pm*
 
+::: {.body-text-s}
+- 2 multiple choice
+- 2 short answer
+- 1 optional question
+:::
 
+. . . 
 
+**Pre-course Reflection (SR #1)** -- *Due Sat [01/13]{.magenta-text} at 11:59pm*
 
+::: {.body-text-s}
+- 3 sets of questions about:
+    - school & life
+    - the way you learn best
+    - some fun stuff
+:::
 
+. . . 
+
+**Homework Assignment #1 (HW #1)** -- *Sat [01/20]{.magenta-text} at 11:59pm*
+
+::: {.body-text-s}
+- 2 parts:
+    - interpreting & annotating ggplot code
+    - finding data that you're interested in visualizing for your final assignment
+:::
 
