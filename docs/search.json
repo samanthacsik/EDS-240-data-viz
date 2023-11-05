@@ -371,8 +371,15 @@
     "text": "{ggplot2} is based on the Grammar of Graphics\n\n\n“A grammar of graphics is a tool that enables us to concisely describe the components of a graphic. Such a grammar allows us to move beyond named graphics (e.g. the “scatterplot”) and gain insight into the deep structure that underlies statistical graphics.”\n\n\n-from Hadley Wickham’s A layered grammar of graphics in Journal of Computational and Graphical Statistics, vol. 19, no. 1 pp. 3-28, 2010.\n\n\n\n\n“In the grammar of a language, words have different parts of speech, which perform different roles in the sentence. Analagously, the grammar of graphics separates a graphic into different layers”\n\n\n-from Liz Sander’s post Telling stories with data using the grammar of graphics"
   },
   {
-    "objectID": "slides/lecture1.3-ggplot-review-slides.html#layers",
-    "href": "slides/lecture1.3-ggplot-review-slides.html#layers",
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#graphic-layers",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#graphic-layers",
+    "title": "EDS 240",
+    "section": "",
+    "text": "{ggplot2} graphic layers\n\n\nFirst these:\n1. data – in tidy format + define aesthetics (how variables map onto a plot e.g. axes, shape, color, size)\n2. geometric objects (aka geoms) – define the type of plot(s)\n\n\nThen these:\n3. statistical transformations – algorithm used to calculate new values for a graph\n4. position adjustments – control the fine details of position when geoms might otherwise overlap\n5. coordinate system – change what x and y axes mean (e.g. Cartesian (default), polar, flipped)\n6. facet – create subplots that each display one subset of the data\n\n\nNote: You many not apply or customize all of the above layers (or in this exact order) for every plot you build"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#comm-layers",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#comm-layers",
     "title": "EDS 240",
     "section": "",
     "text": "Enhance communication using additional layers\n\n\n1. labels – add titles, axis / legend labels\n2. annotations – add textual labels (e.g. to highlight specific data points or trend lines, etc.)\n3. scales – update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)\n4. themes – customize the non-data elements of your plot\n5. layout – combine multiple plots into the same graphic\n\nNote: You many not apply or customize all of the above layers (or in this exact order) for every plot you build"
@@ -473,7 +480,7 @@
     "href": "slides/lecture1.3-ggplot-review-slides.html#omitting-arg-names",
     "title": "EDS 240",
     "section": "",
-    "text": "NOTE: Omitting argument names\n\nThe data and mapping arguments are often not explicitly written in ggplot(), as in the example below (makes for more concise code):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g))\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+    "text": "Omitting argument names\n\nThe data and mapping arguments are often not explicitly written in ggplot(), as in the example below (makes for more concise code):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g))\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#geom",
@@ -487,42 +494,42 @@
     "href": "slides/lecture1.3-ggplot-review-slides.html#dat-map-in-geom",
     "title": "EDS 240",
     "section": "",
-    "text": "NOTE: Defining data & mappings in geom_*()\n\nYou can also define the data and mapping layers within a geom_*() (rather than ggplot()) – this is helpful if you plan to have multiple geoms with different mappings:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot() +\n  geom_point(penguins, mapping = aes(x = flipper_length_mm, y = body_mass_g))\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+    "text": "Defining data & mappings in geom_*()\n\nYou can also define the data and mapping layers within a geom_*() (rather than ggplot()) – this is helpful if you plan to have multiple geoms with different mappings:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot() +\n  geom_point(penguins, mapping = aes(x = flipper_length_mm, y = body_mass_g))\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#color-points-by-spp",
     "href": "slides/lecture1.3-ggplot-review-slides.html#color-points-by-spp",
     "title": "EDS 240",
     "section": "",
-    "text": "Use color to differentiate species\n\nIf we’d like to represent species by another variable (e.g. color, shape, size), we need to modify our plot’s aesthetic (i.e. inside aes()) – any time we want to modify the appearance of our plotted data based on a variable in our dataset, we do so within aes(). This process is known as scaling. A legend will automatically be added to indicate which values (in this case, colors) correspond to which level of our variable (in this case, species):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +\n  geom_point()\n\n\n\nlabels | annotations | scales | themes | layout"
+    "text": "Use color to differentiate species\n\nIf we’d like to represent species using another aesthetic (e.g. color, shape, size), we need to modify our plot’s aesthetic (i.e. inside aes()) – any time we want to modify the appearance of our plotted data based on a variable in our dataset, we do so within aes(). This process is known as scaling. A legend will automatically be added to indicate which values (in this case, colors) correspond to which level of our variable (in this case, species):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +\n  geom_point()\n\n\n\nlabels | annotations | scales | themes | layout"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#color-points-by-spp-local",
     "href": "slides/lecture1.3-ggplot-review-slides.html#color-points-by-spp-local",
     "title": "EDS 240",
     "section": "",
-    "text": "NOTE: Mapping color at a local level\n\nAlternatively, map color at a local (i.e. within a specific geom) rather than global (i.e. within ggplot()) layer:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(mapping = aes(color = species))\n\n\n\nlabels | annotations | scales | themes | layout"
+    "text": "Mapping color at a local level\n\nAlternatively, map color at a local (i.e. within a specific geom) rather than global (i.e. within ggplot()) layer:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(mapping = aes(color = species))\n\n\n\nlabels | annotations | scales | themes | layout"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#why-local-mapping",
     "href": "slides/lecture1.3-ggplot-review-slides.html#why-local-mapping",
     "title": "EDS 240",
     "section": "",
-    "text": "NOTE: Why map locally?\n\nHere, we use geom_smooth() to add a best fit line (based on a linear model, using method = \"lm\") to our plot:\n\n\nGlobal mappings are passed down to each subsequent geom layer. Therefore, the color = species mapping is also passed to geom_smooth(), resulting in a best fit line for each species.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +\n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n\n\n\n\nLocal mappings (e.g. within geom_point()) only apply to that particular layer. Therefore, the color = species mapping is only applied to geom_point(), and geom_smooth() fits a best fit line to the entire data set.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(mapping = aes(color = species)) +\n  geom_smooth(method = \"lm\")"
+    "text": "Why map locally?\n\nHere, we use geom_smooth() to add a best fit line (based on a linear model, using method = \"lm\") to our plot:\n\n\nGlobal mappings are passed down to each subsequent geom layer. Therefore, the color = species mapping is also passed to geom_smooth(), resulting in a best fit line for each species.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +\n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n\n\n\n\nLocal mappings (e.g. within geom_point()) only apply to that particular layer. Therefore, the color = species mapping is only applied to geom_point(), and geom_smooth() fits a best fit line to the entire data set.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(mapping = aes(color = species)) +\n  geom_smooth(method = \"lm\")"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#one-color",
     "href": "slides/lecture1.3-ggplot-review-slides.html#one-color",
     "title": "EDS 240",
     "section": "",
-    "text": "NOTE: What if we just want to color all points the same?\n\nDo so within the corresponding geom_*() and outside of the aes() function! Color is no longer being mapped to a variable.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(color = \"blue\")"
+    "text": "What if we just want to color all points the same?\n\nDo so within the corresponding geom_*() and outside of the aes() function! Color is no longer being mapped to a variable.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(color = \"blue\")"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#scale-color-manual",
     "href": "slides/lecture1.3-ggplot-review-slides.html#scale-color-manual",
     "title": "EDS 240",
     "section": "",
-    "text": "NOTE: We can also map our own colors\n\nHere, we use scale_color_manual() to update the colors of our data points. Colors will be mapped from the levels in our data (i.e. Adelie, Chinstrap, Gentoo) to the order of the aethetic values supplied (\"#FF8302\", \"#C35CCA\", \"#067575\"):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +\n  geom_point() +\n  scale_color_manual(values = c(\"#FF8302\", \"#C35CCA\", \"#067575\"))\n\n\n\nlabels | annotations | scales | themes | layout"
+    "text": "We can also map our own colors\n\nHere, we use scale_color_manual() to update the colors of our data points. Colors will be mapped from the levels in our data (i.e. Adelie, Chinstrap, Gentoo) to the order of the aethetic values supplied (\"#FF8302\", \"#C35CCA\", \"#067575\"):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +\n  geom_point() +\n  scale_color_manual(values = c(\"#FF8302\", \"#C35CCA\", \"#067575\"))\n\n\n\nlabels | annotations | scales | themes | layout"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#plot2",
@@ -557,7 +564,7 @@
     "href": "slides/lecture1.3-ggplot-review-slides.html#override-default-stat",
     "title": "EDS 240",
     "section": "",
-    "text": "We can override the default stat\n\nLet’s say we have a data frame with calculated count values (e.g. penguins_summary) that we’d like to plot using geom_bar(). We can change stat = count (default) to stat = identity to generate bar heights based off the “identity” of values in the n column of penguin_summary.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\npenguin_summary &lt;- penguins |&gt; \n  count(species) # calculate number of observations (rows) for each species\n\nggplot(penguin_summary, aes(x = species, y = n)) + \n  geom_bar(stat = \"identity\")\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+    "text": "We can override the default stat\n\nLet’s say we have a data frame with calculated count values (e.g. penguins_summary) that we’d like to plot using geom_bar(). We can change stat = \"count\" (default) to stat = \"identity\" to generate bar heights based off the “identity” of values in the n column of penguin_summary.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\npenguin_summary &lt;- penguins |&gt; \n  count(species) # calculate number of observations (rows) for each species\n\nggplot(penguin_summary, aes(x = species, y = n)) + \n  geom_bar(stat = \"identity\")\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#stat-mapping",
@@ -585,21 +592,21 @@
     "href": "slides/lecture1.3-ggplot-review-slides.html#pos-default",
     "title": "EDS 240",
     "section": "",
-    "text": "The default position for geom_bar() is “stack”\n\nEvery geom has a default position.\nThe default position used in geom_bar() is stack, which stacks bars on top of one another, based on the fill value (here, that’s island):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species, fill = island)) +\n  geom_bar(position = \"stack\") # you don't need to explicitly include `position = \"stack\"` since it's the default\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+    "text": "The default position for geom_bar() is “stack”\n\nEvery geom has a default position. The default position used in geom_bar() is stack, which stacks bars on top of one another, based on the fill value (here, that’s island):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species, fill = island)) +\n  geom_bar(position = \"stack\") # you don't need to explicitly include `position = \"stack\"` since it's the default\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#pos-alts",
     "href": "slides/lecture1.3-ggplot-review-slides.html#pos-alts",
     "title": "EDS 240",
     "section": "",
-    "text": "Alternative position adjustments for geom_bar()\n\nBelow are a few position options available for use with geom_bar():\n\n\nposition = fill creates a set of stacked bars but makes each set the same height (easier to compare proportions across groups)\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species, fill = island)) +\n  geom_bar(position = \"fill\")\n\n\n\n\n\nposition = \"dodge\" places overlapping bars directly beside one another (easier to compare individual values)\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species, fill = island)) +\n  geom_bar(position = \"dodge\")\n\n\n\n\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+    "text": "Alternative position adjustments for geom_bar()\n\nBelow are a few position options available for use with geom_bar():\n\n\nposition = \"fill\" creates a set of stacked bars but makes each set the same height (easier to compare proportions across groups)\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species, fill = island)) +\n  geom_bar(position = \"fill\")\n\n\n\n\n\nposition = \"dodge\" places overlapping bars directly beside one another (easier to compare individual values)\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species, fill = island)) +\n  geom_bar(position = \"dodge\")\n\n\n\n\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#default-coord",
     "href": "slides/lecture1.3-ggplot-review-slides.html#default-coord",
     "title": "EDS 240",
     "section": "",
-    "text": "What is a coordinate system?\n\nBy default, ggplots are constructed in a Cartesian coordinate system, consisting of a horizontal x-axis and vertical y-axis.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() +\n  coord_cartesian() # you don't need to explicitly include `coord_cartesian()` since it's the default\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+    "text": "What is a coordinate system?\n\nA Coordinate System is a system that uses one or more numbers (coordinates), to uniquely determine the position of points or other geometric elements. By default, ggplots are constructed in a Cartesian coordinate system, consisting of a horizontal x-axis and vertical y-axis.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() +\n  coord_cartesian() # you don't need to explicitly include `coord_cartesian()` since it's the default\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#coord",
@@ -607,6 +614,20 @@
     "title": "EDS 240",
     "section": "",
     "text": "Changing coordinate systems\n\nDepending on the type of data, axis label length, etc. it may make sense to change this coordinate system. Two options for our bar plot:\n\n\ncoord_flip() switches the x and y axes.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() + \n  coord_flip()\n\n\n\n\n\ncoord_polar() uses polar coordinates.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() + \n  coord_polar()\n\n\n\n\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#labels",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#labels",
+    "title": "EDS 240",
+    "section": "",
+    "text": "labels"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#theme",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#theme",
+    "title": "EDS 240",
+    "section": "",
+    "text": "theme"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#end-break",

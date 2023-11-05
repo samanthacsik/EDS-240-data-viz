@@ -92,7 +92,7 @@ adapted from [Cédric Scherer's](https://www.cedricscherer.com/) rstudio::conf(2
 
 ---
 
-## {#layers data-menu-title="ggplot2 layers"} 
+## {#graphic-layers data-menu-title="Graphic layers"} 
 
 [{{< fa chart-line title="a line chart" >}} `{ggplot2}` graphic layers]{.slide-title}
 
@@ -123,7 +123,7 @@ adapted from [Cédric Scherer's](https://www.cedricscherer.com/) rstudio::conf(2
 
 ---
 
-## {#layers data-menu-title="ggplot2 layers"} 
+## {#comm-layers data-menu-title="Communication layers"} 
 
 [{{< fa palette title="a painter's palette" >}} Enhance communication using additional layers]{.slide-title}
 
@@ -491,7 +491,7 @@ We've specified which variables map onto the x & y axes but still have not yet a
 
 ## {#omitting-arg-names data-menu-title="Omitting arg names"} 
 
-[{{< fa chart-line title="a line chart" >}} *NOTE: Omitting argument names*]{.slide-title}
+[{{< fa chart-line title="a line chart" >}} Omitting argument names]{.slide-title}
 
 <hr>
 
@@ -537,7 +537,7 @@ data | [**geometric object**]{.teal-text} | statistical transformation | positio
 
 ## {#dat-map-in-geom data-menu-title="Data & mapping in geom"} 
 
-[{{< fa chart-line title="a line chart" >}} *NOTE: Defining data & mappings in `geom_*()`*]{.slide-title2}
+[{{< fa chart-line title="a line chart" >}} Defining data & mappings in `geom_*()`]{.slide-title2}
 
 <hr>
 
@@ -564,7 +564,7 @@ data | [**geometric object**]{.teal-text} | statistical transformation | positio
 
 <hr>
 
-[If we'd like to represent species by another variable (e.g. color, shape, size), we need to modify our plot's aesthetic (i.e. inside `aes()`) -- **any time we want to modify the appearance of our plotted data based on a variable in our dataset, we do so within `aes()`.** This process is known as **scaling**. A legend will automatically be added to indicate which values (in this case, colors) correspond to which level of our variable (in this case, species):]{.body-text-s}
+[If we'd like to represent species using another aesthetic (e.g. color, shape, size), we need to modify our plot's aesthetic (i.e. inside `aes()`) -- **any time we want to modify the appearance of our plotted data based on a variable in our dataset, we do so within `aes()`.** This process is known as **scaling**. A legend will automatically be added to indicate which values (in this case, colors) correspond to which level of our variable (in this case, species):]{.body-text-s}
 ```{r}
 #| eval: true
 #| echo: true
@@ -584,7 +584,7 @@ labels | annotations | [**scales**]{.teal-text} | themes | layout
 
 ## {#color-points-by-spp-local data-menu-title="Color points by species (local)"} 
 
-[{{< fa palette title="a painter's palette" >}} *NOTE: Mapping color at a local level*]{.slide-title}
+[{{< fa palette title="a painter's palette" >}} Mapping color at a local level]{.slide-title}
 
 <hr>
 
@@ -608,7 +608,7 @@ labels | annotations | [**scales**]{.teal-text} | themes | layout
 
 ## {#why-local-mapping data-menu-title="Why map locally?"} 
 
-[{{< fa palette title="a painter's palette" >}} *NOTE: Why map locally?*]{.slide-title}
+[{{< fa palette title="a painter's palette" >}} Why map locally?]{.slide-title}
 
 <hr>
 
@@ -652,7 +652,7 @@ ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 
 ## {#one-color data-menu-title="One color for all points"} 
 
-[{{< fa palette title="a painter's palette" >}} *NOTE:* What if we just want to color all points the same?]{.slide-title3}
+[{{< fa palette title="a painter's palette" >}} What if we just want to color all points the same?]{.slide-title3}
 
 <hr>
 
@@ -672,7 +672,7 @@ ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 
 ## {#scale-color-manual data-menu-title="Define custom colors"} 
 
-[{{< fa palette title="a painter's palette" >}} *NOTE:* We can also map our own colors]{.slide-title}
+[{{< fa palette title="a painter's palette" >}} We can also map our own colors]{.slide-title}
 
 <hr>
 
@@ -823,7 +823,7 @@ data | geometric object | [**statistical transformation**]{.teal-text} | positio
 
 <hr>
 
-Let's say we have a data frame with calculated count values (e.g. `penguins_summary`) that we'd like to plot using `geom_bar()`. We can change `stat = count` (default) to `stat = identity` to generate bar heights based off the "identity" of values in the `n` column of `penguin_summary`.
+Let's say we have a data frame with calculated count values (e.g. `penguins_summary`) that we'd like to plot using `geom_bar()`. We can change `stat = "count"` (default) to `stat = "identity"` to generate bar heights based off the "identity" of values in the `n` column of `penguin_summary`.
 ```{r}
 #| eval: true
 #| echo: true
@@ -927,9 +927,7 @@ data | geometric object | statistical transformation | [**position adjustment**]
 
 <hr>
 
-**Every geom has a default position.**
-
-The default position used in `geom_bar()` is **stack**, which stacks bars on top of one another, based on the `fill` value (here, that's `island`):
+**Every geom has a default position.** The default position used in `geom_bar()` is **stack**, which stacks bars on top of one another, based on the `fill` value (here, that's `island`):
 ```{r}
 #| eval: true
 #| echo: true
@@ -958,7 +956,7 @@ Below are a few position options available for use with `geom_bar()`:
 :::: columns
 
 ::: {.column width="50%"}
-[`position = fill` creates a set of stacked bars but makes each set the same height (easier to compare proportions across groups)]{.body-text-s}
+[`position = "fill"` creates a set of stacked bars but makes each set the same height (easier to compare proportions across groups)]{.body-text-s}
 ```{r}
 #| eval: true
 #| echo: true
@@ -1000,7 +998,7 @@ data | geometric object | statistical transformation | [**position adjustment**]
 
 <hr>
 
-**By default, ggplots are constructed in a Cartesian coordinate system**, consisting of a horizontal x-axis and vertical y-axis.
+A Coordinate System is a system that uses one or more numbers (coordinates), to uniquely determine the position of points or other geometric elements. **By default, ggplots are constructed in a Cartesian coordinate system**, consisting of a horizontal x-axis and vertical y-axis.
 
 ```{r}
 #| eval: true
@@ -1070,6 +1068,21 @@ ggplot(penguins, aes(x = species)) +
 data | geometric object | statistical transformation | position adjustment | [**coordinate system**]{.teal-text} | facet
 :::
 
+---
+
+## {#labels data-menu-title="Labels"} 
+
+[{{< fa palette title="a painter's palette" >}} labels]{.slide-title}
+
+<hr>
+
+---
+
+## {#theme data-menu-title="Theme"} 
+
+[{{< fa palette title="a painter's palette" >}} theme]{.slide-title}
+
+<hr>
 
 ---
 
