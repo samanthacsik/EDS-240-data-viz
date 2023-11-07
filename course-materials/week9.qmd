@@ -1,7 +1,7 @@
 ---
 title: "Building interactive data viz using Observable JS, with Dr. Allison Horst"
 subtitle: "Week 9"
-description: "Monday March 4th, 2024"
+description: "Monday March 4^th^, 2024"
 title-block-banner: true
 toc: true
 ---
@@ -25,8 +25,13 @@ knitr::include_graphics("../images/observable.png")
 
 ## Assignment Reminders
 
-| Assignment Type | Assignment Title                                                 | Date Assigned  | Date Due                   |
-|:---------------:|-------------------------------------------------------|----------------|----------------------------|
-| EOC             | [EOC (week 9)](https://forms.gle/2Sz98wAUbSFq7Tqt6)   | Mon 03/04/2024 | Mon 03/04/2024, 11:55pm PT |
-| HW              | [Homework Assignment #4](../assignments/HW4.qmd)      | Mon 02/26/2024 | Sat 03/16/2024, 11:59pm PT |
+| Assignment Type | Assignment Title       | Date Assigned  | Date Due                   |
+|:---------------:|------------------------|----------------|----------------------------|
+| EOC             | EOC (week 9)           | Mon 03/04/2024 | Mon 03/04/2024, 11:55pm PT |
+| HW              | Homework Assignment #4 | Mon 02/26/2024 | Sat 03/16/2024, 11:59pm PT |
+
+<!-- | Assignment Type | Assignment Title                                                 | Date Assigned  | Date Due        | -->
+<!-- |:---------------:|-------------------------------------------------------|----------------|----------------------------| -->
+<!-- | EOC             | [EOC (week 9)](https://forms.gle/2Sz98wAUbSFq7Tqt6)   | Mon 03/04/2024 | Mon 03/04/2024, 11:55pm PT | -->
+<!-- | HW              | [Homework Assignment #4](../assignments/HW4.qmd)      | Mon 02/26/2024 | Sat 03/16/2024, 11:59pm PT | -->
 

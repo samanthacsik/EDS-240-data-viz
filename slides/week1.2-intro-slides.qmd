@@ -17,7 +17,7 @@ format:
 
 <hr class="hr-teal">
 
-[Week 1 | January 8th, 2024]{.custom-subtitle3}
+[Week 1 | January 8^th^, 2024]{.custom-subtitle3}
 
 <!-- :::: {.columns}  -->
 
@@ -66,7 +66,7 @@ format:
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/ggplot-example.png")
+knitr::include_graphics("images/week1/ggplot-example.png")
 ```
 :::
 
@@ -76,7 +76,7 @@ knitr::include_graphics("images/lecture1/ggplot-example.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/gganimate-example.gif")
+knitr::include_graphics("images/week1/gganimate-example.gif")
 ```
 :::
 
@@ -89,7 +89,7 @@ knitr::include_graphics("images/lecture1/gganimate-example.gif")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/shiny-example.gif")
+knitr::include_graphics("images/week1/shiny-example.gif")
 ```
 :::
 
@@ -128,25 +128,25 @@ Created using [`{shiny}`](https://shiny.posit.co/)
 *Note: this is by no means a comprehensive history of the visual representation of information!*
 
 ::: {.r-stack}
-![](images/lecture1/history1.1.png){.fragment width="900"}
+![](images/week1/history1.1.png){.fragment width="900"}
 
-![](images/lecture1/history1.2.png){.fragment width="900"}
+![](images/week1/history1.2.png){.fragment width="900"}
 
-![](images/lecture1/history1.3.png){.fragment width="900"}
+![](images/week1/history1.3.png){.fragment width="900"}
 
-![](images/lecture1/history2.1.png){.fragment width="900"}
+![](images/week1/history2.1.png){.fragment width="900"}
 
-![](images/lecture1/history2.2.png){.fragment width="900"}
+![](images/week1/history2.2.png){.fragment width="900"}
 
-![](images/lecture1/history2.3.png){.fragment width="900"}
+![](images/week1/history2.3.png){.fragment width="900"}
 
-![](images/lecture1/history3.1.png){.fragment width="900"}
+![](images/week1/history3.1.png){.fragment width="900"}
 
-![](images/lecture1/history3.2.png){.fragment width="900"}
+![](images/week1/history3.2.png){.fragment width="900"}
 
-![](images/lecture1/history4.1.png){.fragment width="900"}
+![](images/week1/history4.1.png){.fragment width="900"}
 
-![](images/lecture1/history4.2.png){.fragment width="900"}
+![](images/week1/history4.2.png){.fragment width="900"}
 :::
 
 ::: {.gray-text .body-text-s .center-text}
@@ -194,7 +194,7 @@ countdown::countdown(
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/ripple-etal-2023-fig1.png")
+knitr::include_graphics("images/week1/ripple-etal-2023-fig1.png")
 ```
 :::
 
@@ -240,7 +240,7 @@ knitr::include_graphics("images/lecture1/ripple-etal-2023-fig1.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/diamond-hist.png")
+knitr::include_graphics("images/week1/diamond-hist.png")
 ```
 
 ```{r}
@@ -258,7 +258,7 @@ ggplot(diamonds, aes(x = carat)) +
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/cars-boxplot.png")
+knitr::include_graphics("images/week1/cars-boxplot.png")
 ```
 
 ```{r}
@@ -276,7 +276,7 @@ ggplot(mpg, aes(x = fct_reorder(class, hwy, median), y = hwy)) +
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/diamonds-freqplot.png")
+knitr::include_graphics("images/week1/diamonds-freqplot.png")
 ```
 
 ```{r}
@@ -309,7 +309,7 @@ ggplot(diamonds, aes(x = price, y = after_stat(density))) +
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/anscombes-quartet.png")
+knitr::include_graphics("images/week1/anscombes-quartet.png")
 ```
 
 :::
@@ -324,7 +324,7 @@ knitr::include_graphics("images/lecture1/anscombes-quartet.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/datasaurus-dozen.gif")
+knitr::include_graphics("images/week1/datasaurus-dozen.gif")
 ```
 :::
 
@@ -363,7 +363,7 @@ Datasaurus Dozen
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/warming-stripes.png")
+knitr::include_graphics("images/week1/warming-stripes.png")
 ```
 
 <br>
@@ -387,7 +387,7 @@ knitr::include_graphics("images/lecture1/warming-stripes.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/lipponen.gif")
+knitr::include_graphics("images/week1/lipponen.gif")
 ```
 
 <br>
@@ -404,11 +404,11 @@ gif created from [Antti Lipponen](https://anttilip.net/)'s [Temperature Anomolie
 
 <hr>
 
-![](images/lecture1/anyene-limes.png){.absolute top=200 left=0 width="325"}
+![](images/week1/anyene-limes.png){.absolute top=200 left=0 width="325"}
 
-![](images/lecture1/anyene-grid.png){.absolute top=200 left=365 width="325"}
+![](images/week1/anyene-grid.png){.absolute top=200 left=365 width="325"}
 
-![](images/lecture1/anyene-grid-lines.png){.absolute top=200 right=0 width="325"}
+![](images/week1/anyene-grid-lines.png){.absolute top=200 right=0 width="325"}
 
 ::: {.center-text .gray-text .absolute bottom=25 left=365 width="325"}
 **aRtist: [Ijeamaka Anyene](https://ijeamaka-anyene.netlify.app/)**
@@ -422,11 +422,11 @@ gif created from [Antti Lipponen](https://anttilip.net/)'s [Temperature Anomolie
 
 <hr>
 
-![](images/lecture1/navarro-broken-lands.png){.absolute top=200 left=0 width="325"}
+![](images/week1/navarro-broken-lands.png){.absolute top=200 left=0 width="325"}
 
-![](images/lecture1/navarro-native-flora.png){.absolute top=200 left=365 width="325"}
+![](images/week1/navarro-native-flora.png){.absolute top=200 left=365 width="325"}
 
-![](images/lecture1/navarro-voronoise.png){.absolute top=200 right=0 width="325"}
+![](images/week1/navarro-voronoise.png){.absolute top=200 right=0 width="325"}
 
 ::: {.center-text .gray-text .absolute bottom=25 left=365 width="325"}
 **aRtist: [Danielle Navarro](https://art.djnavarro.net/)**
@@ -440,11 +440,11 @@ gif created from [Antti Lipponen](https://anttilip.net/)'s [Temperature Anomolie
 
 <hr>
 
-![](images/lecture1/karamanis-color-blocks.png){.absolute top=200 left=0 width="325"}
+![](images/week1/karamanis-color-blocks.png){.absolute top=200 left=0 width="325"}
 
-![](images/lecture1/karamanis-purple.png){.absolute top=200 left=365 width="325"}
+![](images/week1/karamanis-purple.png){.absolute top=200 left=365 width="325"}
 
-![](images/lecture1/karamanis-macaroni.png){.absolute top=200 right=0 width="325"}
+![](images/week1/karamanis-macaroni.png){.absolute top=200 right=0 width="325"}
 
 ::: {.center-text .gray-text .absolute bottom=25 left=365 width="325"}
 **aRtist: [Georgios Karamanis](http://karaman.is)**
@@ -486,7 +486,7 @@ gif created from [Antti Lipponen](https://anttilip.net/)'s [Temperature Anomolie
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/why-r.png")
+knitr::include_graphics("images/week1/why-r.png")
 ```
 :::
 

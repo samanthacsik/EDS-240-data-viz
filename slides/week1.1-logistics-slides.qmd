@@ -17,7 +17,7 @@ format:
 
 <hr class="hr-teal">
 
-[Week 1 | January 8th, 2024]{.custom-subtitle3}
+[Week 1 | January 8^th^, 2024]{.custom-subtitle3}
 
 <!-- :::: {.columns}  -->
 
@@ -58,7 +58,7 @@ This course will focus on the basic principles for effective communication throu
 #| fig-align: "center"
 #| out-width: "45%" 
 #| fig-alt: "An extended version of the classic R4DS schematic from Grolemund & Wickham, with environmental data science, communities, and communication added."
-knitr::include_graphics("images/lecture1/horst-eco-r4ds.png")
+knitr::include_graphics("images/week1/horst-eco-r4ds.png")
 ```
 
 :::{.gray-text .body-text-s .center-text}
@@ -82,7 +82,7 @@ knitr::include_graphics("images/lecture1/horst-eco-r4ds.png")
 #| fig-align: "center"
 #| out-width: "45%" 
 #| fig-alt: "The NCEAS first floor classroom, looking from the back of the class towards the front. A woman stands at the podium, front and center, and gestures towards teh large TV display on the wall. Students sit at long tables and look towards the front of the room."
-knitr::include_graphics("images/lecture1/nceas-classroom.jpg")
+knitr::include_graphics("images/week1/nceas-classroom.jpg")
 ```
 
 ::: {.center-text}
@@ -110,7 +110,7 @@ knitr::include_graphics("images/lecture1/nceas-classroom.jpg")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "55%" 
-knitr::include_graphics("images/lecture1/sam.png")
+knitr::include_graphics("images/week1/sam.png")
 ```
 
 ::: {.center-text}
@@ -133,7 +133,7 @@ knitr::include_graphics("images/lecture1/sam.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "51%" 
-knitr::include_graphics("images/lecture1/sevan.png")
+knitr::include_graphics("images/week1/sevan.png")
 ```
 
 ::: {.center-text}
@@ -245,7 +245,7 @@ countdown::countdown(
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/eds240-website.png")
+knitr::include_graphics("images/week1/eds240-website.png")
 ```
 
 ::: {.body-text-m .center-text}
@@ -285,7 +285,7 @@ Link is also bookmarked at the top of the **#eds-240-data-viz** Slack channel an
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/eds240-website-course-materials.png")
+knitr::include_graphics("images/week1/eds240-website-course-materials.png")
 ```
 :::
 
@@ -454,7 +454,7 @@ Fill out this Google form: <https://forms.gle/6FdV9g5KA9GgrxXBA> and email Sam &
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/grade-tracker.png")
+knitr::include_graphics("images/week1/grade-tracker.png")
 ```
 
 ---
@@ -504,7 +504,7 @@ Troubleshooting, deciphering code, and trying (and failing at) new things is a *
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/getting-help-steps.png")
+knitr::include_graphics("images/week1/getting-help-steps.png")
 ```
 
 Check out the [getting unstuck](http://localhost:5908/getting-unstuck.html) page (under "resources") on the course website for more tips -- particularly a reminder of **how to ask a question.**
@@ -545,7 +545,7 @@ Check out the [getting unstuck](http://localhost:5908/getting-unstuck.html) page
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/lecture1/adventure-time.gif")
+knitr::include_graphics("images/week1/adventure-time.gif")
 ```
 :::
 
@@ -574,7 +574,7 @@ TODO: add screenshot of #eds-240-data-viz
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-# knitr::include_graphics("images/lecture1/slack.png")
+# knitr::include_graphics("images/week1/slack.png")
 ```
 :::
 

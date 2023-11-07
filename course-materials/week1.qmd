@@ -1,7 +1,7 @@
 ---
 title: "Course logistics, Intro, `{ggplot2}` review"
 subtitle: "Week 1"
-description: "Monday January 8th, 2024"
+description: "Monday January 8^th^, 2024"
 title-block-banner: true
 toc: true
 ---
@@ -25,7 +25,7 @@ Week 1 instruction is broken down into three lessons:
 ::: {.center-text}
 [**Course logistics & syllabus**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 1.1 slides](../slides/lecture1.1-logistics-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 1.1 slides](../slides/week1.1-logistics-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
@@ -33,7 +33,7 @@ Week 1 instruction is broken down into three lessons:
 ::: {.center-text}
 [**Intro to data visualization**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 1.2 slides](../slides/lecture1.2-intro-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 1.2 slides](../slides/week1.2-intro-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
@@ -41,7 +41,7 @@ Week 1 instruction is broken down into three lessons:
 ::: {.center-text}
 [**`{ggplot2}` review**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 1.3 slides](../slides/lecture1.3-ggplot-review-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 1.3 slides](../slides/week1.3-ggplot-review-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
@@ -54,8 +54,14 @@ Week 1 instruction is broken down into three lessons:
 
 ## Assignment Reminders
 
-| Assignment Type | Assignment Title                                                                  | Date Assigned  | Date Due                   |
-|:---------------:|------------------------------------------------------------------------|----------------|----------------------------|
-| EOC             | [End-of-class survey (week 1)](https://forms.gle/aPGfCircFN1AZfSe9)    | Mon 01/08/2024 | Mon 01/08/2024, 11:55pm PT |
-| SR              | [Pre-course reflection (SR #1)](../assignments/SR1-precourse.qmd)      | Mon 01/08/2024 | Sat 01/13/2024, 11:59pm PT |
-| HW              | [Homework Assignment #1](../assignments/HW1.qmd)                       | Mon 01/08/2024 | Sat 01/20/2024, 11:59pm PT | 
+| Assignment Type | Assignment Title                | Date Assigned  | Date Due                   |
+|:---------------:|---------------------------------|----------------|----------------------------|
+| EOC             | End-of-class survey (week 1)    | Mon 01/08/2024 | Mon 01/08/2024, 11:55pm PT |
+| SR              | Pre-course reflection (SR #1)   | Mon 01/08/2024 | Sat 01/13/2024, 11:59pm PT |
+| HW              | Homework Assignment #1          | Mon 01/08/2024 | Sat 01/20/2024, 11:59pm PT | 
+
+<!-- | Assignment Type | Assignment Title                                                                  | Date Assigned  | Date Due        | -->
+<!-- |:---------------:|------------------------------------------------------------------------|----------------|----------------------------| -->
+<!-- | EOC             | [End-of-class survey (week 1)](https://forms.gle/aPGfCircFN1AZfSe9)    | Mon 01/08/2024 | Mon 01/08/2024, 11:55pm PT | -->
+<!-- | SR              | [Pre-course reflection (SR #1)](../assignments/SR1-precourse.qmd)      | Mon 01/08/2024 | Sat 01/13/2024, 11:59pm PT | -->
+<!-- | HW              | [Homework Assignment #1](../assignments/HW1.qmd)                       | Mon 01/08/2024 | Sat 01/20/2024, 11:59pm PT |  -->

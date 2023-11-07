@@ -14,14 +14,15 @@ toc: true
 - **[Hands-On Data Visualization](https://handsondataviz.org/index.html), by Jack Dougherty and Ilya Ilyankou** -- learn how to tell stories with your data using drag-and-drop tools (e.g. Google Sheets, Datawrapper, Tableau Public)
 - **[The Truthful Art: Data, Charts, and Maps for Communication](https://www.amazon.com/gp/product/0321934075/), by Albert Cairo** -- a guide to understanding information graphics and visualization (I have a hard copy in my office if you'd like to borrow it!)
 
-## Readings & Journals
+## Readings, Journals & Reporting
 - **[Nightingale: Journal of the Data Visualization Society](https://nightingaledvs.com/)** -- focuses on data visualization from personal stories to exploratory research to interviews with leaders in the community, data ethics, and best practices
+- **[The Upshot](https://www.nytimes.com/section/upshot), by The New York Times** -- analysis that explains politics, policy and everyday life, with an emphasis on data and charts
 
 ## Chart Types
 
 - **[From Data to Viz](https://www.data-to-viz.com/), by Yan Holtz & Conor Healy** -- a decision tree for deciding which chart type is most appropriate for your data
+- **[Chart Suggestions -- A Thought-Starter](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf), by A. Abela** -- a single pdf decision tree, which uses the four main chart types to guide users towards selecting an appropriate visualization
 - **[Data Viz Project](https://datavizproject.com/), by Ferdio (an infographic and data visualization agency in Copenhagen)** -- [100 different visualizations from one simple dataset](https://100.datavizproject.com/) 
-- **[Chart Suggestions -- A Thought-Starter](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf), by A. Abela** -- a single pdf decision tree
 
 ## Accessibility
 
@@ -61,6 +62,7 @@ toc: true
 ## Misc.
 
 - **[awesome-ggplot2](https://github.com/erikgahner/awesome-ggplot2), by Erik Gahner Larsen** -- a curated list of awesome ggplot2 tutorials, packages etc.
+- **[Climate Viz](https://blog.datawrapper.de/category/climate-data-vis/), by Datawrapper** -- a collection of blog posts on data visualizations created with [Datawrapper](https://www.datawrapper.de/) that help us (and hopefully you) to understand global warming and what humanity can do agains it
 
 ## Learning communities
 

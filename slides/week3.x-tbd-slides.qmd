@@ -1,0 +1,69 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../meds-slides-styles.scss
+editor_options: 
+  chunk_output_type: console
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 3.1]{.custom-title}
+
+[*Choosing the right chart type*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[Week 3 | January 22^nd^, 2024]{.custom-subtitle3}
+
+---
+
+## {#choosing-right-chart data-menu-title="Choosing the right chart"} 
+
+[Choosing the right chart type depends on:]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+::: {.center-text}
+[**identifying the data types you want to visualize**]{.body-text-l .teal-text}  
+
+**(e.g. numeric, categoric, numeric & categoric, spatial, time series, network)**
+:::
+
+<br>
+
+. . . 
+
+::: {.center-text}
+[**what you would like to show**]{.body-text-l .teal-text} 
+
+**(e.g. comparisons, relationships, distributions, compositions)**
+:::
+
+---
+
+## {#from-data-to-viz data-menu-title="From Data to Viz" background-iframe="https://www.data-to-viz.com/"} 
+
+[Visit the website: [from Data to Viz](https://www.data-to-viz.com/)]{.slide-title}
+
+---
+
+## {#tbd data-menu-title="tbd"} 
+
+[tbd]{.slide-title}
+
+<hr>
+
+
+
+---
+
+

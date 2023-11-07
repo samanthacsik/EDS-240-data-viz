@@ -1,7 +1,7 @@
 ---
 title: "Data & Visualization Types"
 subtitle: "Week 3"
-description: "Monday January 22nd, 2024"
+description: "Monday January 22^nd^, 2024"
 title-block-banner: true
 toc: true
 ---
@@ -21,9 +21,35 @@ knitr::include_graphics("../images/horst-ggplot-explore-dataviz.png")
 
 ## Lecture Materials
 
-*Coming soon!*
+::: {.grid}
 
-<!-- - EDA -->
+::: {.g-col-12 .g-col-md-4}
+::: {.center-text}
+[**Choosing chart types**]{.teal-text .body-text-m}
+
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.1 slides](../slides/week3.x-tbd-slides.qmd){.btn role="button" target="_blank"} 
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.center-text}
+[**tbd**]{.teal-text .body-text-m}
+
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.2 slides](../slides/tbd.qmd){.btn role="button" target="_blank"} 
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.center-text}
+[**tbd**]{.teal-text .body-text-m}
+
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.3 slides](../slides/tbd.qmd){.btn role="button" target="_blank"} 
+:::
+:::
+
+:::
+
+<!-- - EDA (https://htmlpreview.github.io/?https://github.com/gexijin/gEDA/blob/main/example_report.html)-->
 <!-- - visualizing quantitative, qualitative, temporal data (no spatial data, covered in EDS 223) -->
 <!-- - charts, graphs, plots, diagrams -->
 <!-- - other/advanced e.g. heat maps, treemaps -->
@@ -34,7 +60,12 @@ knitr::include_graphics("../images/horst-ggplot-explore-dataviz.png")
 
 ## Assignment Reminders
 
-| Assignment Type | Assignment Title                                                | Date Assigned  | Date Due                   |
-|:---------------:|------------------------------------------------------|----------------|----------------------------|
-| EOC             | [EOC (week 3)](https://forms.gle/2BockakcBR7rsm26A)  | Mon 01/22/2024 | Mon 01/22/2024, 11:55pm PT |
-| HW              | [Homework Assignment #2](../assignments/HW2.qmd)     | Mon 01/22/2024 | Sat 02/03/2024, 11:59pm PT |
+| Assignment Type | Assignment Title         | Date Assigned  | Date Due                   |
+|:---------------:|--------------------------|----------------|----------------------------|
+| EOC             | EOC (week 3)             | Mon 01/22/2024 | Mon 01/22/2024, 11:55pm PT |
+| HW              | Homework Assignment #2)  | Mon 01/22/2024 | Sat 02/03/2024, 11:59pm PT |
+
+<!-- | Assignment Type | Assignment Title                                                | Date Assigned  | Date Due        | -->
+<!-- |:---------------:|------------------------------------------------------|----------------|----------------------------| -->
+<!-- | EOC             | [EOC (week 3)](https://forms.gle/2BockakcBR7rsm26A)  | Mon 01/22/2024 | Mon 01/22/2024, 11:55pm PT | -->
+<!-- | HW              | [Homework Assignment #2](../assignments/HW2.qmd)     | Mon 01/22/2024 | Sat 02/03/2024, 11:59pm PT | -->

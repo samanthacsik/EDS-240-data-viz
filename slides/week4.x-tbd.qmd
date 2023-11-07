@@ -13,13 +13,13 @@ editor_options:
 
 ## {#title-slide data-menu-title="Title Slide" background="#053660"} 
 
-[EDS 240: Lecture 2.x]{.custom-title}
+[EDS 240: Lecture 4.x]{.custom-title}
 
 [*tbd*]{.custom-subtitle}
 
 <hr class="hr-teal">
 
-[Week 3 | January 22nd, 2024]{.custom-subtitle3}
+[Week 4 | January 29^th^, 2024]{.custom-subtitle3}
 
 ---
 
@@ -36,7 +36,7 @@ editor_options:
 #| echo: false
 #| fig-align: "center"
 #| out-width: "60%"
-knitr::include_graphics("images/lecture2/scherer-evo-ggplot.gif")
+knitr::include_graphics("images/week4/scherer-evo-ggplot.gif")
 ```
 
 ::: {.center-text .gray-text .body-text-s}

@@ -1,7 +1,7 @@
 ---
 title: "Visualizing Uncertainty & Avoiding the Misrepresentation of Data"
 subtitle: "Week 6"
-description: "Monday February 12th, 2024"
+description: "Monday February 12^th^, 2024"
 title-block-banner: true
 toc: true
 ---
@@ -20,12 +20,18 @@ toc: true
 
 ## Discussion Materials
 
-*Coming soon!*
+- [3 ways to spot a bad statistic](https://www.ted.com/talks/mona_chalabi_3_ways_to_spot_a_bad_statistic), TED Talk by [Mona Chalabi](https://monachalabi.com/)
+- [WTF Visualizations](https://viz.wtf/), a collection of visualizations that make no sense
 
 ## Assignment Reminders
 
-| Assignment Type | Assignment Title                                                 | Date Assigned  | Date Due                   |
-|:---------------:|-------------------------------------------------------|----------------|----------------------------|
-| EOC             | [EOC (week 6)](https://forms.gle/XbKrjoSpapzTAAPT7)   | Mon 02/12/2024 | Mon 02/12/2024, 11:55pm PT |
-| HW              | [Homework Assignment #3](../assignments/HW3.qmd)      | Mon 02/12/2024 | Sat 02/24/2024, 11:59pm PT |
+| Assignment Type | Assignment Title        | Date Assigned  | Date Due                   |
+|:---------------:|-------------------------|----------------|----------------------------|
+| EOC             | EOC (week 6)            | Mon 02/12/2024 | Mon 02/12/2024, 11:55pm PT |
+| HW              | Homework Assignment #3  | Mon 02/12/2024 | Sat 02/24/2024, 11:59pm PT |
+
+<!-- | Assignment Type | Assignment Title                                                 | Date Assigned  | Date Due        | -->
+<!-- |:---------------:|-------------------------------------------------------|----------------|----------------------------| -->
+<!-- | EOC             | [EOC (week 6)](https://forms.gle/XbKrjoSpapzTAAPT7)   | Mon 02/12/2024 | Mon 02/12/2024, 11:55pm PT | -->
+<!-- | HW              | [Homework Assignment #3](../assignments/HW3.qmd)      | Mon 02/12/2024 | Sat 02/24/2024, 11:59pm PT | -->
 
