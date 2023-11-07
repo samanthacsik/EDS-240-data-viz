@@ -416,7 +416,7 @@ knitr::include_graphics("images/lecture1/palmer-penguins.png")
 <hr>
 
 ::: {.center-text}
-We'll start by exploring the relationship between penguin **flipper length** and **body mass**. For this example, we'll focus on understanding the following layers of a ggplot (**bolded**):
+We'll start by exploring the relationship between penguin **bill length** and **bill depth**. For this example, we'll focus on understanding the following layers of a ggplot (**bolded**):
 :::
 
 
@@ -476,7 +476,7 @@ library(palmerpenguins)
 library(tidyverse)
 
 ggplot(data = penguins, 
-       mapping = aes(x = flipper_length_mm, y = body_mass_g))
+       mapping = aes(x = bill_length_mm, y = bill_depth_mm))
 ```
 
 ::: footer
@@ -502,7 +502,7 @@ The `data` and `mapping` arguments are often not explicitly written in `ggplot()
 library(palmerpenguins)
 library(tidyverse)
 
-ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g))
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm))
 ```
 
 ::: footer
@@ -525,7 +525,7 @@ Next, we'll layer on a geometric object (aka geom) that our plot will use to rep
 library(palmerpenguins)
 library(tidyverse)
 
-ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point()
 ```
 
@@ -549,7 +549,7 @@ library(palmerpenguins)
 library(tidyverse)
 
 ggplot() +
-  geom_point(penguins, mapping = aes(x = flipper_length_mm, y = body_mass_g))
+  geom_point(data = penguins, mapping = aes(x = bill_length_mm, y = bill_depth_mm))
 ```
 
 ::: footer
@@ -572,7 +572,7 @@ data | [**geometric object**]{.teal-text} | statistical transformation | positio
 library(palmerpenguins)
 library(tidyverse)
 
-ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
   geom_point()
 ```
 
@@ -596,7 +596,7 @@ Alternatively, map color at a **local** (i.e. within a specific geom) rather tha
 library(palmerpenguins)
 library(tidyverse)
 
-ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point(mapping = aes(color = species))
 ```
 
@@ -625,7 +625,7 @@ labels | annotations | [**scales**]{.teal-text} | themes | layout
 library(palmerpenguins)
 library(tidyverse)
 
-ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
   geom_point() +
   geom_smooth(method = "lm")
 ```
@@ -640,7 +640,7 @@ ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
 library(palmerpenguins)
 library(tidyverse)
 
-ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point(mapping = aes(color = species)) +
   geom_smooth(method = "lm")
 ```
@@ -664,7 +664,7 @@ Do so within the corresponding `geom_*()` and outside of the `aes()` function! *
 library(palmerpenguins)
 library(tidyverse)
 
-ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point(color = "blue")
 ```
 
@@ -680,12 +680,38 @@ Here, we use `scale_color_manual()` to update the colors of our data points. Col
 ```{r}
 #| eval: true
 #| echo: true
+#| code-line-numbers: "6"
 library(palmerpenguins)
 library(tidyverse)
 
-ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
   geom_point() +
   scale_color_manual(values = c("#FF8302", "#C35CCA", "#067575"))
+```
+
+::: footer
+labels | annotations | [**scales**]{.teal-text} | themes | layout 
+:::
+
+---
+
+## {#color-points-by-mass data-menu-title="Color points by body mass"} 
+
+[{{< fa palette title="a painter's palette" >}} Use color to describe a continuous variable]{.slide-title2}
+
+<hr>
+
+In the previous example, we mapped color to a **categorical** variable (`species`). We can also map color to **continuous** variables (e.g. `body_mass_g`): 
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "4,6"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = body_mass_g)) +
+  geom_point() +
+  scale_color_gradient(low = "#132B43", high = "#F7DD4C")
 ```
 
 ::: footer

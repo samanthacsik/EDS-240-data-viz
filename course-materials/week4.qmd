@@ -25,13 +25,13 @@ knitr::include_graphics("../images/horst-ggplot-masterpiece.png")
 
 *Coming soon!*
 
-- visual perception
-- color theory
-- alt text
-- typography
-- data-ink-ratio
-- DEI (using icons & colors for equity awareness)
-- storytelling (?)
+<!-- - visual perception -->
+<!-- - color theory -->
+<!-- - alt text -->
+<!-- - typography -->
+<!-- - data-ink-ratio -->
+<!-- - DEI (using icons & colors for equity awareness) -->
+<!-- - storytelling (?) -->
 
 ## Discussion Materials
 

@@ -10,12 +10,13 @@ toc: true
 
 *Coming soon!*
 
-- missing data
-- outlier detection
-- measures of uncertainty
-- normalizing data
-- avoiding biased comparisons
-- <https://eagereyes.org/blog/2017/communicating-uncertainty-when-lives-are-on-the-line>
+<!-- - missing data -->
+<!-- - outlier detection -->
+<!-- - measures of uncertainty -->
+<!-- - normalizing data -->
+<!-- - avoiding biased comparisons -->
+<!-- - <https://eagereyes.org/blog/2017/communicating-uncertainty-when-lives-are-on-the-line> -->
+<!-- -[`{ggdist}`](https://mjskay.github.io/ggdist/) -->
 
 ## Discussion Materials
 

@@ -23,10 +23,10 @@ knitr::include_graphics("../images/horst-ggplot-explore-dataviz.png")
 
 *Coming soon!*
 
-- EDA
-- visualizing quantitative, qualitative, temporal data (no spatial data, covered in EDS 223)
-- charts, graphs, plots, diagrams
-- other/advanced e.g. heat maps, treemaps
+<!-- - EDA -->
+<!-- - visualizing quantitative, qualitative, temporal data (no spatial data, covered in EDS 223) -->
+<!-- - charts, graphs, plots, diagrams -->
+<!-- - other/advanced e.g. heat maps, treemaps -->
 
 ## Discussion Materials
 

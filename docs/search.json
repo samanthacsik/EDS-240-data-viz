@@ -74,7 +74,7 @@
     "href": "course-materials/week5.html#lecture-materials",
     "title": "Design Principles & Best Practices (Part II)",
     "section": "Lecture Materials",
-    "text": "Lecture Materials\nComing soon!\n\nvisual perception\ncolor theory\nalt text\ntypography\ndata-ink-ratio\nDEI (using icons & colors for equity awareness)\nstorytelling (?)"
+    "text": "Lecture Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week5.html#discussion-materials",
@@ -95,14 +95,14 @@
     "href": "course-materials/week6.html",
     "title": "Visualizing Uncertainty & Avoiding the Misrepresentation of Data",
     "section": "",
-    "text": "Coming soon!\n\nmissing data\noutlier detection\nmeasures of uncertainty\nnormalizing data\navoiding biased comparisons\nhttps://eagereyes.org/blog/2017/communicating-uncertainty-when-lives-are-on-the-line"
+    "text": "Coming soon!"
   },
   {
     "objectID": "course-materials/week6.html#lecture-materials",
     "href": "course-materials/week6.html#lecture-materials",
     "title": "Visualizing Uncertainty & Avoiding the Misrepresentation of Data",
     "section": "",
-    "text": "Coming soon!\n\nmissing data\noutlier detection\nmeasures of uncertainty\nnormalizing data\navoiding biased comparisons\nhttps://eagereyes.org/blog/2017/communicating-uncertainty-when-lives-are-on-the-line"
+    "text": "Coming soon!"
   },
   {
     "objectID": "course-materials/week6.html#discussion-materials",
@@ -123,7 +123,7 @@
     "href": "course-materials/week3.html#lecture-materials",
     "title": "Data & Visualization Types",
     "section": "Lecture Materials",
-    "text": "Lecture Materials\nComing soon!\n\nEDA\nvisualizing quantitative, qualitative, temporal data (no spatial data, covered in EDS 223)\ncharts, graphs, plots, diagrams\nother/advanced e.g. heat maps, treemaps"
+    "text": "Lecture Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week3.html#discussion-materials",
@@ -165,7 +165,7 @@
     "href": "course-materials/week8.html#lecture-materials",
     "title": "Communicating for Your Audience",
     "section": "Lecture Materials",
-    "text": "Lecture Materials\nComing soon!\n\nidentifying your audience (personas?)\nstorytelling through structured visualizations\ncontextualize data (place data within a broader context, explaining why trends matter)\npresenting data via different channels (slide presentation, academic paper, technical documentation, infographic)"
+    "text": "Lecture Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week8.html#discussion-materials",
@@ -459,7 +459,7 @@
     "href": "slides/lecture1.3-ggplot-review-slides.html#plot1",
     "title": "EDS 240",
     "section": "",
-    "text": "Plot #1\n\n\nWe’ll start by exploring the relationship between penguin flipper length and body mass. For this example, we’ll focus on understanding the following layers of a ggplot (bolded):\n\n Graphic layers:\n1. data – in tidy format + define aesthetics (how variables map onto a plot e.g. axes, shape, color, size)\n2. geometric objects (aka geoms) – define the type of plot(s)\n3. statistical transformations – algorithm used to calculate new values for a graph\n4. position adjustments – control the fine details of position when geoms might otherwise overlap\n5. coordinate system – change what x and y axes mean (e.g. Cartesian (default), polar, flipped)\n6. facet – create subplots that each display one subset of the data\n “Enhancing communication” layers:\n1. labels – add / update titles, axis / legend labels\n2. annotations – add textual labels (e.g. to highlight specific data points or trend lines, etc.)\n3. scales – update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)\n4. themes– customize the non-data elements of your plot\n5. layout – combine multiple plots into the same graphic"
+    "text": "Plot #1\n\n\nWe’ll start by exploring the relationship between penguin bill length and bill depth. For this example, we’ll focus on understanding the following layers of a ggplot (bolded):\n\n Graphic layers:\n1. data – in tidy format + define aesthetics (how variables map onto a plot e.g. axes, shape, color, size)\n2. geometric objects (aka geoms) – define the type of plot(s)\n3. statistical transformations – algorithm used to calculate new values for a graph\n4. position adjustments – control the fine details of position when geoms might otherwise overlap\n5. coordinate system – change what x and y axes mean (e.g. Cartesian (default), polar, flipped)\n6. facet – create subplots that each display one subset of the data\n “Enhancing communication” layers:\n1. labels – add / update titles, axis / legend labels\n2. annotations – add textual labels (e.g. to highlight specific data points or trend lines, etc.)\n3. scales – update how the aesthetic mappings manifest visually (e.g. colors scales, axis ticks, legends)\n4. themes– customize the non-data elements of your plot\n5. layout – combine multiple plots into the same graphic"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#initialize",
@@ -473,63 +473,70 @@
     "href": "slides/lecture1.3-ggplot-review-slides.html#aesthetics",
     "title": "EDS 240",
     "section": "",
-    "text": "Initialize a plot object + map aesthetics\n\nThe mapping argument defines how variables in your data set are mapped to visual properties (aesthetics) of your plot. Here, we specify which variables map to our x and y axes:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(data = penguins, \n       mapping = aes(x = flipper_length_mm, y = body_mass_g))\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet\n\n\nWe’ve specified which variables map onto the x & y axes but still have not yet articulated how to represent the observations"
+    "text": "Initialize a plot object + map aesthetics\n\nThe mapping argument defines how variables in your data set are mapped to visual properties (aesthetics) of your plot. Here, we specify which variables map to our x and y axes:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(data = penguins, \n       mapping = aes(x = bill_length_mm, y = bill_depth_mm))\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet\n\n\nWe’ve specified which variables map onto the x & y axes but still have not yet articulated how to represent the observations"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#omitting-arg-names",
     "href": "slides/lecture1.3-ggplot-review-slides.html#omitting-arg-names",
     "title": "EDS 240",
     "section": "",
-    "text": "Omitting argument names\n\nThe data and mapping arguments are often not explicitly written in ggplot(), as in the example below (makes for more concise code):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g))\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+    "text": "Omitting argument names\n\nThe data and mapping arguments are often not explicitly written in ggplot(), as in the example below (makes for more concise code):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm))\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#geom",
     "href": "slides/lecture1.3-ggplot-review-slides.html#geom",
     "title": "EDS 240",
     "section": "",
-    "text": "Define a geom to represent data\n\nNext, we’ll layer on a geometric object (aka geom) that our plot will use to represent our penguin data. There are many geoms (geom_*()) that are built into {ggplot2} already (and more when you use extension packages). To create a scatterplot:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point()\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+    "text": "Define a geom to represent data\n\nNext, we’ll layer on a geometric object (aka geom) that our plot will use to represent our penguin data. There are many geoms (geom_*()) that are built into {ggplot2} already (and more when you use extension packages). To create a scatterplot:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +\n  geom_point()\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#dat-map-in-geom",
     "href": "slides/lecture1.3-ggplot-review-slides.html#dat-map-in-geom",
     "title": "EDS 240",
     "section": "",
-    "text": "Defining data & mappings in geom_*()\n\nYou can also define the data and mapping layers within a geom_*() (rather than ggplot()) – this is helpful if you plan to have multiple geoms with different mappings:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot() +\n  geom_point(penguins, mapping = aes(x = flipper_length_mm, y = body_mass_g))\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+    "text": "Defining data & mappings in geom_*()\n\nYou can also define the data and mapping layers within a geom_*() (rather than ggplot()) – this is helpful if you plan to have multiple geoms with different mappings:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot() +\n  geom_point(data = penguins, mapping = aes(x = bill_length_mm, y = bill_depth_mm))\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#color-points-by-spp",
     "href": "slides/lecture1.3-ggplot-review-slides.html#color-points-by-spp",
     "title": "EDS 240",
     "section": "",
-    "text": "Use color to differentiate species\n\nIf we’d like to represent species using another aesthetic (e.g. color, shape, size), we need to modify our plot’s aesthetic (i.e. inside aes()) – any time we want to modify the appearance of our plotted data based on a variable in our dataset, we do so within aes(). This process is known as scaling. A legend will automatically be added to indicate which values (in this case, colors) correspond to which level of our variable (in this case, species):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +\n  geom_point()\n\n\n\nlabels | annotations | scales | themes | layout"
+    "text": "Use color to differentiate species\n\nIf we’d like to represent species using another aesthetic (e.g. color, shape, size), we need to modify our plot’s aesthetic (i.e. inside aes()) – any time we want to modify the appearance of our plotted data based on a variable in our dataset, we do so within aes(). This process is known as scaling. A legend will automatically be added to indicate which values (in this case, colors) correspond to which level of our variable (in this case, species):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  geom_point()\n\n\n\nlabels | annotations | scales | themes | layout"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#color-points-by-spp-local",
     "href": "slides/lecture1.3-ggplot-review-slides.html#color-points-by-spp-local",
     "title": "EDS 240",
     "section": "",
-    "text": "Mapping color at a local level\n\nAlternatively, map color at a local (i.e. within a specific geom) rather than global (i.e. within ggplot()) layer:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(mapping = aes(color = species))\n\n\n\nlabels | annotations | scales | themes | layout"
+    "text": "Mapping color at a local level\n\nAlternatively, map color at a local (i.e. within a specific geom) rather than global (i.e. within ggplot()) layer:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +\n  geom_point(mapping = aes(color = species))\n\n\n\nlabels | annotations | scales | themes | layout"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#why-local-mapping",
     "href": "slides/lecture1.3-ggplot-review-slides.html#why-local-mapping",
     "title": "EDS 240",
     "section": "",
-    "text": "Why map locally?\n\nHere, we use geom_smooth() to add a best fit line (based on a linear model, using method = \"lm\") to our plot:\n\n\nGlobal mappings are passed down to each subsequent geom layer. Therefore, the color = species mapping is also passed to geom_smooth(), resulting in a best fit line for each species.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +\n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n\n\n\n\nLocal mappings (e.g. within geom_point()) only apply to that particular layer. Therefore, the color = species mapping is only applied to geom_point(), and geom_smooth() fits a best fit line to the entire data set.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(mapping = aes(color = species)) +\n  geom_smooth(method = \"lm\")"
+    "text": "Why map locally?\n\nHere, we use geom_smooth() to add a best fit line (based on a linear model, using method = \"lm\") to our plot:\n\n\nGlobal mappings are passed down to each subsequent geom layer. Therefore, the color = species mapping is also passed to geom_smooth(), resulting in a best fit line for each species.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n\n\n\n\nLocal mappings (e.g. within geom_point()) only apply to that particular layer. Therefore, the color = species mapping is only applied to geom_point(), and geom_smooth() fits a best fit line to the entire data set.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +\n  geom_point(mapping = aes(color = species)) +\n  geom_smooth(method = \"lm\")"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#one-color",
     "href": "slides/lecture1.3-ggplot-review-slides.html#one-color",
     "title": "EDS 240",
     "section": "",
-    "text": "What if we just want to color all points the same?\n\nDo so within the corresponding geom_*() and outside of the aes() function! Color is no longer being mapped to a variable.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(color = \"blue\")"
+    "text": "What if we just want to color all points the same?\n\nDo so within the corresponding geom_*() and outside of the aes() function! Color is no longer being mapped to a variable.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +\n  geom_point(color = \"blue\")"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#scale-color-manual",
     "href": "slides/lecture1.3-ggplot-review-slides.html#scale-color-manual",
     "title": "EDS 240",
     "section": "",
-    "text": "We can also map our own colors\n\nHere, we use scale_color_manual() to update the colors of our data points. Colors will be mapped from the levels in our data (i.e. Adelie, Chinstrap, Gentoo) to the order of the aethetic values supplied (\"#FF8302\", \"#C35CCA\", \"#067575\"):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +\n  geom_point() +\n  scale_color_manual(values = c(\"#FF8302\", \"#C35CCA\", \"#067575\"))\n\n\n\nlabels | annotations | scales | themes | layout"
+    "text": "We can also map our own colors\n\nHere, we use scale_color_manual() to update the colors of our data points. Colors will be mapped from the levels in our data (i.e. Adelie, Chinstrap, Gentoo) to the order of the aethetic values supplied (\"#FF8302\", \"#C35CCA\", \"#067575\"):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  geom_point() +\n  scale_color_manual(values = c(\"#FF8302\", \"#C35CCA\", \"#067575\"))\n\n\n\nlabels | annotations | scales | themes | layout"
+  },
+  {
+    "objectID": "slides/lecture1.3-ggplot-review-slides.html#color-points-by-mass",
+    "href": "slides/lecture1.3-ggplot-review-slides.html#color-points-by-mass",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Use color to describe a continuous variable\n\nIn the previous example, we mapped color to a categorical variable (species). We can also map color to continuous variables (e.g. body_mass_g):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = body_mass_g)) +\n  geom_point() +\n  scale_color_gradient(low = \"#132B43\", high = \"#F7DD4C\")\n\n\n\nlabels | annotations | scales | themes | layout"
   },
   {
     "objectID": "slides/lecture1.3-ggplot-review-slides.html#plot2",
@@ -1089,7 +1096,7 @@
     "href": "course-materials/week4.html#lecture-materials",
     "title": "Design Principles & Best Practices (Part I)",
     "section": "Lecture Materials",
-    "text": "Lecture Materials\nComing soon!\n\nvisual perception\ncolor theory\nalt text\ntypography\ndata-ink-ratio\nDEI (using icons & colors for equity awareness)\nstorytelling (?)"
+    "text": "Lecture Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week4.html#discussion-materials",
