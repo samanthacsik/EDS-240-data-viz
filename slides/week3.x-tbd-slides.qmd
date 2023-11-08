@@ -23,6 +23,14 @@ editor_options:
 
 ---
 
+examples of "complex data viz" pointing to different components
+
+can feel overwhelming!
+
+you need to figure out where to start, then can iterate from there
+
+---
+
 ## {#choosing-right-chart data-menu-title="Choosing the right chart"} 
 
 [Choosing the right chart type depends on:]{.slide-title}
@@ -30,17 +38,18 @@ editor_options:
 <hr>
 
 <br>
-<br>
+
+. . . 
 
 ::: {.center-text}
-[**identifying the data types you want to visualize**]{.body-text-l .teal-text}  
+[**how many variables *and* how many data points you need to visualize**]{.body-text-l .teal-text}  
 
-**(e.g. numeric, categoric, numeric & categoric, spatial, time series, network)**
+**(e.g. several vs. many data points; number of categorical and/or numeric variables)**
 :::
 
 <br>
 
-. . . 
+. . .
 
 ::: {.center-text}
 [**what you would like to show**]{.body-text-l .teal-text} 
@@ -48,11 +57,67 @@ editor_options:
 **(e.g. comparisons, relationships, distributions, compositions)**
 :::
 
+<br>
+
+. . . 
+
+
+::: {.center-text}
+[**the data types you want to visualize**]{.body-text-l .teal-text}  
+
+**(e.g. numeric, categorical, spatial, time series, network; ordered / not ordered)**
+:::
+
+
 ---
 
-## {#from-data-to-viz data-menu-title="From Data to Viz" background-iframe="https://www.data-to-viz.com/"} 
+## {#from-data-to-viz2 data-menu-title="From Data to Viz" background-iframe="https://www.data-to-viz.com/" background-interactive=true}
 
-[Visit the website: [from Data to Viz](https://www.data-to-viz.com/)]{.slide-title}
+<!-- background-iframe="https://www.data-to-viz.com/" -->
+
+
+---
+
+## {#from-data-to-viz data-menu-title="From Data to Viz"}
+
+<!-- background-iframe="https://www.data-to-viz.com/" -->
+
+[[from Data to Viz](https://www.data-to-viz.com/) for choosing chart types]{.slide-title}
+
+<hr>
+
+:::: columns 
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("../slides/images/week3/from-data-to-viz.png")
+```
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+::: {.center-text}
+*a decision tree for deciding which chart type(s) is most appropriate given your data* 
+
+(plus lots of other great code examples, alternative data viz, etc.!)
+:::
+:::
+
+::::
+
+::: footer
+Much of the information in this week's lecture materials is adapted from content on [from Data to Viz](https://www.data-to-viz.com/), by [Yan Holtz](https://www.linkedin.com/in/yan-holtz-2477534a/) and [Conor Healy](https://www.linkedin.com/in/conor-healy-b0299810a/)
+:::
 
 ---
 
@@ -62,8 +127,125 @@ editor_options:
 
 <hr>
 
-
+This list is not exhaustive
 
 ---
 
+## {#distributions data-menu-title="Visualizing distributions" background="#047C90"} 
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Visualizing Distributions</p>
+<p class="caption-text">boxplots, violin plots, histograms, density charts, ridgeline plots</p>
+</div>
+
+---
+
+## {#histograms data-menu-title="Histograms"} 
+
+[Histograms: *distribution of a numeric variable(s)*]{.slide-title2}
+
+<hr>
+
+Histograms are used to represent the distribution of a **numeric** variable(s), which is **cut into several bins**. The number of observations per bin is represented by the height of the bar.
+
+```{r}
+#| eval: true
+#| echo: true
+library(lterdatasampler)
+library(tidyverse)
+
+ggplot(knz_bison, aes(x = animal_weight, fill = animal_sex)) +
+  geom_histogram(position = "identity", alpha = 0.7)
+```
+
+::: footer
+[**Distribution**]{.teal-text} | Correlation | Ranking | Composition | Evolution
+:::
+
+---
+
+## {#histogram-binwidth data-menu-title="Histogram binwidth"} 
+
+[Histogram considerations: *bin widths*]{.slide-title}
+
+<hr>
+
+**Try several bin widths, and make sure all bins are the same size.** By default, `geom_histogram()` uses 30 `bins`. Alternatively, adjust `binwidth`.
+
+:::: columns
+
+::: {.column width="50%"}
+[` binwidth = 50`:]{.body-text-s}
+```{r}
+#| eval: true
+#| echo: true
+library(lterdatasampler)
+library(tidyverse)
+
+ggplot(knz_bison, aes(x = animal_weight, fill = animal_sex)) +
+  geom_histogram(position = "identity", alpha = 0.7, binwidth = 50)
+```
+:::
+
+::: {.column width="50%"}
+[`binwidth = 500`:]{.body-text-s}
+```{r}
+#| eval: true
+#| echo: true
+library(lterdatasampler)
+library(tidyverse)
+
+ggplot(knz_bison, aes(x = animal_weight, fill = animal_sex)) +
+  geom_histogram(position = "identity", alpha = 0.7, binwidth = 500)
+```
+:::
+
+::::
+
+::: footer
+[**Distribution**]{.teal-text} | Correlation | Ranking | Composition | Evolution
+:::
+
+---
+
+## {#histogram-3vars data-menu-title="Histogram # of groups"} 
+
+[Histogram considerations: *number of groups*]{.slide-title2}
+
+<hr>
+
+**Comparing more than ~3 groups in the same histogram leads to cluttered / hard to read plots.** Instead, try a violin plot / box plot / ridgeline plot or faceting:
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+library(lterdatasampler)
+library(tidyverse)
+
+ggplot(pie_crab, aes(x = size, fill = site)) +
+  geom_histogram(position = "identity", alpha = 0.7)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+library(lterdatasampler)
+library(tidyverse)
+
+ggplot(pie_crab, aes(x = size, fill = site)) +
+  geom_histogram(position = "identity", alpha = 0.7) +
+  facet_wrap(~site)
+```
+:::
+
+::::
+
+::: footer
+[**Distribution**]{.teal-text} | Correlation | Ranking | Composition | Evolution
+:::
 

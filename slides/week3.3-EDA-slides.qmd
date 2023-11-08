@@ -1,0 +1,30 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../meds-slides-styles.scss
+editor_options: 
+  chunk_output_type: console
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 3.3]{.custom-title}
+
+[*Exploratory Data Visualization*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[Week 3 | January 22^nd^, 2024]{.custom-subtitle3}
+
+---
+
+Histograms:
+
+- check distribution can help you identify mistakes in your data
+
+---
