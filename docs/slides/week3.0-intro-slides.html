@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
-  <title>EDS 240 – week3.x-tbd-slides</title>
+  <title>EDS 240 – week3.0-intro-slides</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,71 +28,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #767676;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
-    div.sourceCode
-      { color: #545454; background-color: #fefefe; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #545454; } /* Normal */
-    code span.al { color: #7928a1; } /* Alert */
-    code span.an { color: #696969; } /* Annotation */
-    code span.at { color: #a55a00; } /* Attribute */
-    code span.bn { color: #7928a1; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #d91e18; } /* ControlFlow */
-    code span.ch { color: #008000; } /* Char */
-    code span.cn { color: #d91e18; } /* Constant */
-    code span.co { color: #696969; } /* Comment */
-    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
-    code span.do { color: #696969; font-style: italic; } /* Documentation */
-    code span.dt { color: #7928a1; } /* DataType */
-    code span.dv { color: #7928a1; } /* DecVal */
-    code span.er { color: #7928a1; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #a55a00; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #696969; } /* Information */
-    code span.kw { color: #d91e18; } /* Keyword */
-    code span.op { color: #00769e; } /* Operator */
-    code span.ot { color: #d91e18; } /* Other */
-    code span.pp { color: #7928a1; } /* Preprocessor */
-    code span.sc { color: #00769e; } /* SpecialChar */
-    code span.ss { color: #008000; } /* SpecialString */
-    code span.st { color: #008000; } /* String */
-    code span.va { color: #a55a00; } /* Variable */
-    code span.vs { color: #008000; } /* VerbatimString */
-    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -411,160 +346,39 @@
 <p><br></p>
 <div class="fragment">
 <div class="center-text">
-<p><span class="body-text-l teal-text"><strong>how many variables <em>and</em> how many data points you need to visualize</strong></span></p>
+<p><span class="body-text-m teal-text"><strong>how many variables <em>and</em> how many data points you need to visualize</strong></span></p>
 <p><strong>(e.g.&nbsp;several vs.&nbsp;many data points; number of categorical and/or numeric variables)</strong></p>
 </div>
 <p><br></p>
 </div>
 <div class="fragment">
 <div class="center-text">
-<p><span class="body-text-l teal-text"><strong>what you would like to show</strong></span></p>
+<p><span class="body-text-m teal-text"><strong>what you would like to show</strong></span></p>
 <p><strong>(e.g.&nbsp;comparisons, relationships, distributions, compositions)</strong></p>
 </div>
 <p><br></p>
 </div>
 <div class="fragment">
 <div class="center-text">
-<p><span class="body-text-l teal-text"><strong>the data types you want to visualize</strong></span></p>
+<p><span class="body-text-m teal-text"><strong>the data types you want to visualize</strong></span></p>
 <p><strong>(e.g.&nbsp;numeric, categorical, spatial, time series, network; ordered / not ordered)</strong></p>
 </div>
 </div>
 </section>
 <section id="from-data-to-viz2" class="slide level2" data-menu-title="From Data to Viz" data-background-iframe="https://www.data-to-viz.com/" data-background-interactive="true">
 <h2></h2>
-<!-- background-iframe="https://www.data-to-viz.com/" -->
-</section>
-<section id="from-data-to-viz" class="slide level2" data-menu-title="From Data to Viz">
-<h2></h2>
-<!-- background-iframe="https://www.data-to-viz.com/" -->
-<p><span class="slide-title"><a href="https://www.data-to-viz.com/">from Data to Viz</a> for choosing chart types</span></p>
-<hr>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../slides/images/week3/from-data-to-viz.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<p><br> <br> <br> <br> <br></p>
-<div class="center-text">
-<p><em>a decision tree for deciding which chart type(s) is most appropriate given your data</em></p>
-<p>(plus lots of other great code examples, alternative data viz, etc.!)</p>
-</div>
-</div>
-</div>
 <div class="footer">
-<p>Much of the information in this week’s lecture materials is adapted from content on <a href="https://www.data-to-viz.com/">from Data to Viz</a>, by <a href="https://www.linkedin.com/in/yan-holtz-2477534a/">Yan Holtz</a> and <a href="https://www.linkedin.com/in/conor-healy-b0299810a/">Conor Healy</a></p>
+<p><strong><a href="https://www.data-to-viz.com/" class="uri">https://www.data-to-viz.com/</a></strong></p>
 </div>
 </section>
 <section id="tbd" class="slide level2" data-menu-title="tbd">
 <h2></h2>
 <p><span class="slide-title">tbd</span></p>
 <hr>
+<p>We’ll review some fundamental chart types – many others are variants or extensions on these</p>
 <p>This list is not exhaustive</p>
-</section>
-<section id="distributions" class="slide level2" data-menu-title="Visualizing distributions" data-background="#047C90">
-<h2></h2>
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">
-Visualizing Distributions
-</p>
-<p class="caption-text">
-boxplots, violin plots, histograms, density charts, ridgeline plots
-</p>
-</div>
-</section>
-<section id="histograms" class="slide level2" data-menu-title="Histograms">
-<h2></h2>
-<p><span class="slide-title2">Histograms: <em>distribution of a numeric variable(s)</em></span></p>
-<hr>
-<p>Histograms are used to represent the distribution of a <strong>numeric</strong> variable(s), which is <strong>cut into several bins</strong>. The number of observations per bin is represented by the height of the bar.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(lterdatasampler)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">ggplot</span>(knz_bison, <span class="fu">aes</span>(<span class="at">x =</span> animal_weight, <span class="at">fill =</span> animal_sex)) <span class="sc">+</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">geom_histogram</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="week3.x-tbd-slides_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"><div class="footer">
-<p><span class="teal-text"><strong>Distribution</strong></span> | Correlation | Ranking | Composition | Evolution</p>
-</div>
-</section>
-<section id="histogram-binwidth" class="slide level2" data-menu-title="Histogram binwidth">
-<h2></h2>
-<p><span class="slide-title">Histogram considerations: <em>bin widths</em></span></p>
-<hr>
-<p><strong>Try several bin widths, and make sure all bins are the same size.</strong> By default, <code>geom_histogram()</code> uses 30 <code>bins</code>. Alternatively, adjust <code>binwidth</code>.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><span class="body-text-s"><code>binwidth = 50</code>:</span></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(lterdatasampler)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">ggplot</span>(knz_bison, <span class="fu">aes</span>(<span class="at">x =</span> animal_weight, <span class="at">fill =</span> animal_sex)) <span class="sc">+</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>  <span class="fu">geom_histogram</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">binwidth =</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="week3.x-tbd-slides_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<p><span class="body-text-s"><code>binwidth = 500</code>:</span></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(lterdatasampler)</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">ggplot</span>(knz_bison, <span class="fu">aes</span>(<span class="at">x =</span> animal_weight, <span class="at">fill =</span> animal_sex)) <span class="sc">+</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">geom_histogram</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">binwidth =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="week3.x-tbd-slides_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
-</div>
-</div>
-</div>
-</div>
 <div class="footer">
-<p><span class="teal-text"><strong>Distribution</strong></span> | Correlation | Ranking | Composition | Evolution</p>
-</div>
-</section>
-<section id="histogram-3vars" class="slide level2" data-menu-title="Histogram # of groups">
-<h2></h2>
-<p><span class="slide-title2">Histogram considerations: <em>number of groups</em></span></p>
-<hr>
-<p><strong>Comparing more than ~3 groups in the same histogram leads to cluttered / hard to read plots.</strong> Instead, try a violin plot / box plot / ridgeline plot or faceting:</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(lterdatasampler)</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">ggplot</span>(pie_crab, <span class="fu">aes</span>(<span class="at">x =</span> size, <span class="at">fill =</span> site)) <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">geom_histogram</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="week3.x-tbd-slides_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(lterdatasampler)</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">ggplot</span>(pie_crab, <span class="fu">aes</span>(<span class="at">x =</span> size, <span class="at">fill =</span> site)) <span class="sc">+</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">geom_histogram</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>site)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="week3.x-tbd-slides_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
-</div>
-</div>
-</div>
-</div>
-<div class="footer">
-<p><span class="teal-text"><strong>Distribution</strong></span> | Correlation | Ranking | Composition | Evolution</p>
+<p>Much of the information in this week’s lecture materials is adapted from content on <a href="https://www.data-to-viz.com/">from Data to Viz</a>, by <a href="https://www.linkedin.com/in/yan-holtz-2477534a/">Yan Holtz</a> and <a href="https://www.linkedin.com/in/conor-healy-b0299810a/">Conor Healy</a></p>
 </div>
 
 <div class="footer footer-default">
@@ -784,44 +598,6 @@ boxplots, violin plots, histograms, density charts, ridgeline plots
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

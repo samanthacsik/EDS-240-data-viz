@@ -1,0 +1,95 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../meds-slides-styles.scss
+editor_options: 
+  chunk_output_type: console
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 3.1]{.custom-title}
+
+[*Choosing the right chart type*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[Week 3 | January 22^nd^, 2024]{.custom-subtitle3}
+
+---
+
+examples of "complex data viz" pointing to different components
+
+can feel overwhelming!
+
+you need to figure out where to start, then can iterate from there
+
+---
+
+## {#choosing-right-chart data-menu-title="Choosing the right chart"} 
+
+[Choosing the right chart type depends on:]{.slide-title}
+
+<hr>
+
+<br>
+
+. . . 
+
+::: {.center-text}
+[**how many variables *and* how many data points you need to visualize**]{.body-text-m .teal-text}  
+
+**(e.g. several vs. many data points; number of categorical and/or numeric variables)**
+:::
+
+<br>
+
+. . .
+
+::: {.center-text}
+[**what you would like to show**]{.body-text-m .teal-text} 
+
+**(e.g. comparisons, relationships, distributions, compositions)**
+:::
+
+<br>
+
+. . . 
+
+
+::: {.center-text}
+[**the data types you want to visualize**]{.body-text-m .teal-text}  
+
+**(e.g. numeric, categorical, spatial, time series, network; ordered / not ordered)**
+:::
+
+
+---
+
+## {#from-data-to-viz2 data-menu-title="From Data to Viz" background-iframe="https://www.data-to-viz.com/" background-interactive=true}
+
+::: footer
+**<https://www.data-to-viz.com/>**
+:::
+
+---
+
+## {#tbd data-menu-title="tbd"} 
+
+[tbd]{.slide-title}
+
+<hr>
+
+We'll review some fundamental chart types -- many others are variants or extensions on these
+
+This list is not exhaustive
+
+::: footer
+Much of the information in this week's lecture materials is adapted from content on [from Data to Viz](https://www.data-to-viz.com/), by [Yan Holtz](https://www.linkedin.com/in/yan-holtz-2477534a/) and [Conor Healy](https://www.linkedin.com/in/conor-healy-b0299810a/)
+:::
+

@@ -1,5 +1,5 @@
 ---
-title: "Design Principles & Best Practices (Part II)"
+title: "Design Principles & Enhancing Visualizations"
 subtitle: "Week 5"
 description: "Monday February 5^th^, 2024"
 title-block-banner: true
