@@ -28,71 +28,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #767676;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
-    div.sourceCode
-      { color: #545454; background-color: #fefefe; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #545454; } /* Normal */
-    code span.al { color: #7928a1; } /* Alert */
-    code span.an { color: #696969; } /* Annotation */
-    code span.at { color: #a55a00; } /* Attribute */
-    code span.bn { color: #7928a1; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #d91e18; } /* ControlFlow */
-    code span.ch { color: #008000; } /* Char */
-    code span.cn { color: #d91e18; } /* Constant */
-    code span.co { color: #696969; } /* Comment */
-    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
-    code span.do { color: #696969; font-style: italic; } /* Documentation */
-    code span.dt { color: #7928a1; } /* DataType */
-    code span.dv { color: #7928a1; } /* DecVal */
-    code span.er { color: #7928a1; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #a55a00; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #696969; } /* Information */
-    code span.kw { color: #d91e18; } /* Keyword */
-    code span.op { color: #00769e; } /* Operator */
-    code span.ot { color: #d91e18; } /* Other */
-    code span.pp { color: #7928a1; } /* Preprocessor */
-    code span.sc { color: #00769e; } /* SpecialChar */
-    code span.ss { color: #008000; } /* SpecialString */
-    code span.st { color: #008000; } /* String */
-    code span.va { color: #a55a00; } /* Variable */
-    code span.vs { color: #008000; } /* VerbatimString */
-    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -406,163 +341,350 @@
 </section>
 <section id="viz-dist" class="slide level2" data-menu-title="Visualizing distributions">
 <h2></h2>
-<p><span class="slide-title">Visualizing distributions</span></p>
+<p><span class="slide-title">“Core” distribution charts</span></p>
 <hr>
-<p>histograms density plots<br>
-box plots<br>
-violin plots<br>
-ridgeline plots</p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="center-text">
+<p><strong>Histograms</strong></p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="center-text">
+<p><strong>Density plots</strong></p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="center-text">
+<p><strong>Ridgeline plots</strong></p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text">
+<p><strong>Box plots</strong></p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text">
+<p><strong>Violin plots</strong></p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footnote">
+<div class="center-text">
+<p><span class="body-text-s gray-text">Examples show the distribution of penguin body masses (g) for Adelie, Chinstrap &amp; Gentoo penguins.</span></p>
+</div>
+</div>
 </section>
 <section id="hist-overview" class="slide level2" data-menu-title="Histogram overview">
 <h2></h2>
 <p><span class="slide-title">Histograms</span></p>
 <hr>
-<p><strong>What are they?</strong></p>
+<p><span class="teal-text"><strong>What are they?</strong></span></p>
 <ul>
-<li>Histograms are used to represent the distribution of a <strong>numeric</strong> variable(s), which is <strong>cut into several bins</strong>. The number of observations per bin is represented by the height of the bar.</li>
+<li>Histograms are used to represent the <strong>distribution of a <em>numeric</em> variable(s)</strong>, which is <strong>cut into several bins</strong>. The number of observations per bin is represented by the height of the bar.</li>
 </ul>
-<p><strong>Need:</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="teal-text"><strong>Need:</strong></span></p>
 <ul>
-<li>a numeric variable(s) with lots of values</li>
+<li>a numeric variable with lots of values</li>
 <li>meaningful differences between values</li>
+<li><code>{ggplot2}</code> package</li>
 </ul>
-<p><strong>Important considerations:</strong></p>
+<p><span class="teal-text"><strong>Important considerations:</strong></span></p>
 <ul>
 <li>bin width</li>
-<li>number of groups that you’re comparing</li>
+<li>number of groups that you’re comparing (&lt;=3)</li>
 </ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="density-overview" class="slide level2" data-menu-title="Density plot overview">
 <h2></h2>
 <p><span class="slide-title">Density plots</span></p>
 <hr>
-<p><strong>What are they?</strong></p>
+<p><span class="teal-text"><strong>What are they?</strong></span></p>
 <ul>
-<li>A smoothed version of a histogram. Density plots are representations of the distribution of a <strong>numeric</strong> variable(s), which uses a <strong><a href="https://chemicalstatistician.wordpress.com/2013/06/09/exploratory-data-analysis-kernel-density-estimation-in-r-on-ozone-pollution-data-in-new-york-and-ozonopolis/">kernel density estimate</a></strong> to show the probability density function of the variable.</li>
+<li>A smoothed version of a histogram. Density plots are representations of the <strong>distribution of a <em>numeric</em> variable(s)</strong>, which uses a <strong><a href="https://chemicalstatistician.wordpress.com/2013/06/09/exploratory-data-analysis-kernel-density-estimation-in-r-on-ozone-pollution-data-in-new-york-and-ozonopolis/">kernel density estimate</a></strong> to show the probability density function of the variable.</li>
 </ul>
-<p><strong>Need:</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="teal-text"><strong>Need:</strong></span></p>
 <ul>
-<li>a numeric variable(s) with lots of values</li>
+<li>a numeric variable with lots of values</li>
+<li><code>{ggridges}</code> package</li>
 </ul>
-<p><strong>Important considerations:</strong></p>
+<p><span class="teal-text"><strong>Important considerations:</strong></span></p>
 <ul>
 <li>can be misleading with small data sets</li>
-<li>binsize(?)</li>
-<li>number of groups that you’re comparing</li>
+<li>bandwidth</li>
+<li>number of groups that you’re comparing (&lt;=3)</li>
 </ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="right">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ridgeline-overview" class="slide level2" data-menu-title="Ridgeline plot overview">
+<h2></h2>
+<p><span class="slide-title">Ridgeline plots</span></p>
+<hr>
+<p><span class="teal-text"><strong>What are they?</strong></span></p>
+<ul>
+<li>Ridgeline plots show the <strong>distribution of a numeric variable</strong> for <strong>multiple groups</strong>.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="teal-text"><strong>Need:</strong></span></p>
+<ul>
+<li>a numeric variable with lots of values</li>
+<li>medium to high group numbers</li>
+<li><code>{ggridges}</code> package</li>
+</ul>
+<p><span class="teal-text"><strong>Important considerations:</strong></span></p>
+<ul>
+<li>work best when you have &gt; 6 groups</li>
+<li>works well when there is a clear pattern in the result (e.g.&nbsp;if there is an obvious ranking in groups)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="boxplot-overview" class="slide level2" data-menu-title="Box plot overview">
+<h2></h2>
+<p><span class="slide-title">Box plots</span></p>
+<hr>
+<p><span class="teal-text"><strong>What are they?</strong></span></p>
+<ul>
+<li><span class="body-text-s">Box plots <strong>summarize the distribution of a numeric variable for one or serveral groups</strong>, providing the median (line that divides the box), the upper (Q3) and lower (Q1) <a href="https://en.wikipedia.org/wiki/Quartile">quartiles</a> (ends of the box), the highest and lowest values, excluding outliers (the whiskers), and potential outliers (dots extending beyond the end of the whiskers).</span></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="teal-text"><strong>Need:</strong></span></p>
+<ul>
+<li>a numeric variable, often with multiple groups</li>
+<li><code>{ggplot2}</code> package</li>
+</ul>
+<p><span class="teal-text"><strong>Important considerations:</strong></span></p>
+<ul>
+<li>box plots <em>summarize</em> data, meaning we can’t see the underlying distribution (no way to know sample size)</li>
+<li>add jittered points on top, or if large sample size, consider a violin plot</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="violin-plot-overview" class="slide level2" data-menu-title="Violin plot overview">
+<h2></h2>
+<p><span class="slide-title">Violin plots</span></p>
+<hr>
+<p><span class="teal-text"><strong>What are they?</strong></span></p>
+<ul>
+<li><span class="body-text-s">Violin plots visualize the <strong>distribution of a numeric variable for one or several groups</strong>, where the shape of the violin represents the density estimate of the variable (i.e.&nbsp;the more data points in a specific range, the larger the violin is for that range). They provide more information about the underlying distribution than a box plot.</span></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="teal-text"><strong>Need:</strong></span></p>
+<ul>
+<li>a numeric variable, often with multiple groups</li>
+<li><code>{ggplot2}</code> package</li>
+</ul>
+<p><span class="teal-text"><strong>Important considerations:</strong></span></p>
+<ul>
+<li>order groups by median value can make it easier to understand<br>
+</li>
+<li>show sample size when comparing groups with very different distributions (e.g.&nbsp;half violin plot)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
-</section>
-<section id="dist-numeric" class="slide level2" data-menu-title="Distribution of numeric vars">
-<h2></h2>
-<p><span class="slide-title2">Distribution of a numeric variable(s)</span></p>
-<hr>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Histogram</a></li><li><a href="#tabset-1-2">Density plot</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<p>Histograms are used to represent the distribution of a <strong>numeric</strong> variable(s), which is <strong>cut into several bins</strong>. The number of observations per bin is represented by the height of the bar.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(lterdatasampler)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">ggplot</span>(knz_bison, <span class="fu">aes</span>(<span class="at">x =</span> animal_weight, <span class="at">fill =</span> animal_sex)) <span class="sc">+</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">geom_histogram</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:50.0%"></p>
-</div>
-</div>
-</div>
-<div id="tabset-1-2">
-<p>Density plots are representations of the distribution of a <strong>numeric</strong> variable(s), which uses a <strong><a href="https://chemicalstatistician.wordpress.com/2013/06/09/exploratory-data-analysis-kernel-density-estimation-in-r-on-ozone-pollution-data-in-new-york-and-ozonopolis/">kernel density estimate</a></strong> to show the probability density function of the variable.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(lterdatasampler)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">ggplot</span>(knz_bison, <span class="fu">aes</span>(<span class="at">x =</span> animal_weight, <span class="at">fill =</span> animal_sex)) <span class="sc">+</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:50.0%"></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="dist-num-considerations" class="slide level2" data-menu-title="Considerations (hist &amp; dens)">
-<h2></h2>
-<p><span class="slide-title2">Considerations</span></p>
-<hr>
-<div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Bin width</a></li><li><a href="#tabset-2-2">Group number</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1">
-<p><strong>Try several bin widths, and make sure all bins are the same size.</strong> By default, <code>geom_histogram()</code> uses 30 <code>bins</code>. Alternatively, adjust <code>binwidth</code>.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><span class="body-text-s"><code>binwidth = 50</code>:</span></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(lterdatasampler)</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">ggplot</span>(knz_bison, <span class="fu">aes</span>(<span class="at">x =</span> animal_weight, <span class="at">fill =</span> animal_sex)) <span class="sc">+</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">geom_histogram</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">binwidth =</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:90.0%"></p>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<p><span class="body-text-s"><code>binwidth = 500</code>:</span></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(lterdatasampler)</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">ggplot</span>(knz_bison, <span class="fu">aes</span>(<span class="at">x =</span> animal_weight, <span class="at">fill =</span> animal_sex)) <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">geom_histogram</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">binwidth =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:90.0%"></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-2-2">
-<p><strong>Comparing more than ~3 groups in the same histogram leads to cluttered / hard to read plots.</strong> Instead, try a violin/box/ridgeline plot or faceting:</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><span class="body-text-s">Too many groups…</span></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(lterdatasampler)</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">ggplot</span>(pie_crab, <span class="fu">aes</span>(<span class="at">x =</span> size, <span class="at">fill =</span> site)) <span class="sc">+</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">geom_histogram</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:90.0%"></p>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<p><span class="body-text-s">Also beware of unnecessary colors!</span></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(lterdatasampler)</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">ggplot</span>(pie_crab, <span class="fu">aes</span>(<span class="at">x =</span> size)) <span class="sc">+</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">geom_histogram</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>site)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:90.0%"></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
+<!-- ## {#dist-numeric data-menu-title="Distribution of numeric vars"}  -->
+<!-- [Distribution of a numeric variable(s)]{.slide-title2} -->
+<!-- <hr> -->
+<!-- ::: panel-tabset -->
+<!-- ## Histogram -->
+<!-- Histograms are used to represent the distribution of a **numeric** variable(s), which is **cut into several bins**. The number of observations per bin is represented by the height of the bar. -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- #| out-width: "50%" -->
+<!-- library(lterdatasampler) -->
+<!-- library(tidyverse) -->
+<!-- ggplot(knz_bison, aes(x = animal_weight, fill = animal_sex)) + -->
+<!--   geom_histogram(position = "identity", alpha = 0.7) -->
+<!-- ``` -->
+<!-- ## Density plot -->
+<!-- Density plots are representations of the distribution of a **numeric** variable(s), which uses a **[kernel density estimate](https://chemicalstatistician.wordpress.com/2013/06/09/exploratory-data-analysis-kernel-density-estimation-in-r-on-ozone-pollution-data-in-new-york-and-ozonopolis/)** to show the probability density function of the variable. -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- #| out-width: "50%" -->
+<!-- library(lterdatasampler) -->
+<!-- library(tidyverse) -->
+<!-- ggplot(knz_bison, aes(x = animal_weight, fill = animal_sex)) + -->
+<!--   geom_density(alpha = 0.7) -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- --- -->
+<!-- ## {#dist-num-considerations data-menu-title="Considerations (hist & dens)"}  -->
+<!-- [Considerations]{.slide-title2} -->
+<!-- <hr> -->
+<!-- ::: panel-tabset -->
+<!-- ## Bin width -->
+<!-- **Try several bin widths, and make sure all bins are the same size.** By default, `geom_histogram()` uses 30 `bins`. Alternatively, adjust `binwidth`. -->
+<!-- :::: columns -->
+<!-- ::: {.column width="50%"} -->
+<!-- [` binwidth = 50`:]{.body-text-s} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- #| out-width: "90%" -->
+<!-- library(lterdatasampler) -->
+<!-- library(tidyverse) -->
+<!-- ggplot(knz_bison, aes(x = animal_weight, fill = animal_sex)) + -->
+<!--   geom_histogram(position = "identity", alpha = 0.7, binwidth = 50) -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+<!-- [`binwidth = 500`:]{.body-text-s} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- #| out-width: "90%" -->
+<!-- library(lterdatasampler) -->
+<!-- library(tidyverse) -->
+<!-- ggplot(knz_bison, aes(x = animal_weight, fill = animal_sex)) + -->
+<!--   geom_histogram(position = "identity", alpha = 0.7, binwidth = 500) -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- :::: -->
+<!-- ## Group number -->
+<!-- **Comparing more than ~3 groups in the same histogram leads to cluttered / hard to read plots.** Instead, try a violin/box/ridgeline plot or faceting: -->
+<!-- :::: columns -->
+<!-- ::: {.column width="50%"} -->
+<!-- [Too many groups...]{.body-text-s} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- #| out-width: "90%" -->
+<!-- library(lterdatasampler) -->
+<!-- library(tidyverse) -->
+<!-- ggplot(pie_crab, aes(x = size, fill = site)) + -->
+<!--   geom_histogram(position = "identity", alpha = 0.7) -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+<!-- [Also beware of unnecessary colors!]{.body-text-s} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- #| out-width: "90%" -->
+<!-- library(lterdatasampler) -->
+<!-- library(tidyverse) -->
+<!-- ggplot(pie_crab, aes(x = size)) + -->
+<!--   geom_histogram(position = "identity", alpha = 0.7) + -->
+<!--   facet_wrap(~site) -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- :::: -->
+<!-- ::: -->
+<!-- --- -->
 <!-- STACKED DENSITY CHARTS -->
 <!-- MIRRORED DENSITY / HISTOGRAM -->
 <!-- ## {#variants-num-alt data-menu-title="Variants (hist & dens)"}  -->

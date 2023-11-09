@@ -193,35 +193,42 @@
     "href": "slides/week3.1-distributions-slides.html#viz-dist",
     "title": "EDS 240",
     "section": "",
-    "text": "Visualizing distributions\n\nhistograms density plots\nbox plots\nviolin plots\nridgeline plots"
+    "text": "“Core” distribution charts\n\n\n\n\nHistograms\n\n\n\n\n\n\n\n\n\n\n\n\nDensity plots\n\n\n\n\n\n\n\n\n\n\n\n\nRidgeline plots\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBox plots\n\n\n\n\n\n\n\n\n\n\n\n\nViolin plots\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExamples show the distribution of penguin body masses (g) for Adelie, Chinstrap & Gentoo penguins."
   },
   {
     "objectID": "slides/week3.1-distributions-slides.html#hist-overview",
     "href": "slides/week3.1-distributions-slides.html#hist-overview",
     "title": "EDS 240",
     "section": "",
-    "text": "Histograms\n\nWhat are they?\n\nHistograms are used to represent the distribution of a numeric variable(s), which is cut into several bins. The number of observations per bin is represented by the height of the bar.\n\nNeed:\n\na numeric variable(s) with lots of values\nmeaningful differences between values\n\nImportant considerations:\n\nbin width\nnumber of groups that you’re comparing"
+    "text": "Histograms\n\nWhat are they?\n\nHistograms are used to represent the distribution of a numeric variable(s), which is cut into several bins. The number of observations per bin is represented by the height of the bar.\n\n\n\nNeed:\n\na numeric variable with lots of values\nmeaningful differences between values\n{ggplot2} package\n\nImportant considerations:\n\nbin width\nnumber of groups that you’re comparing (&lt;=3)"
   },
   {
     "objectID": "slides/week3.1-distributions-slides.html#density-overview",
     "href": "slides/week3.1-distributions-slides.html#density-overview",
     "title": "EDS 240",
     "section": "",
-    "text": "Density plots\n\nWhat are they?\n\nA smoothed version of a histogram. Density plots are representations of the distribution of a numeric variable(s), which uses a kernel density estimate to show the probability density function of the variable.\n\nNeed:\n\na numeric variable(s) with lots of values\n\nImportant considerations:\n\ncan be misleading with small data sets\nbinsize(?)\nnumber of groups that you’re comparing"
+    "text": "Density plots\n\nWhat are they?\n\nA smoothed version of a histogram. Density plots are representations of the distribution of a numeric variable(s), which uses a kernel density estimate to show the probability density function of the variable.\n\n\n\nNeed:\n\na numeric variable with lots of values\n{ggridges} package\n\nImportant considerations:\n\ncan be misleading with small data sets\nbandwidth\nnumber of groups that you’re comparing (&lt;=3)"
   },
   {
-    "objectID": "slides/week3.1-distributions-slides.html#dist-numeric",
-    "href": "slides/week3.1-distributions-slides.html#dist-numeric",
+    "objectID": "slides/week3.1-distributions-slides.html#ridgeline-overview",
+    "href": "slides/week3.1-distributions-slides.html#ridgeline-overview",
     "title": "EDS 240",
     "section": "",
-    "text": "Distribution of a numeric variable(s)\n\n\nHistogramDensity plot\n\n\nHistograms are used to represent the distribution of a numeric variable(s), which is cut into several bins. The number of observations per bin is represented by the height of the bar.\n\nlibrary(lterdatasampler)\nlibrary(tidyverse)\n\nggplot(knz_bison, aes(x = animal_weight, fill = animal_sex)) +\n  geom_histogram(position = \"identity\", alpha = 0.7)\n\n\n\n\n\n\nDensity plots are representations of the distribution of a numeric variable(s), which uses a kernel density estimate to show the probability density function of the variable.\n\nlibrary(lterdatasampler)\nlibrary(tidyverse)\n\nggplot(knz_bison, aes(x = animal_weight, fill = animal_sex)) +\n  geom_density(alpha = 0.7)"
+    "text": "Ridgeline plots\n\nWhat are they?\n\nRidgeline plots show the distribution of a numeric variable for multiple groups.\n\n\n\nNeed:\n\na numeric variable with lots of values\nmedium to high group numbers\n{ggridges} package\n\nImportant considerations:\n\nwork best when you have &gt; 6 groups\nworks well when there is a clear pattern in the result (e.g. if there is an obvious ranking in groups)"
   },
   {
-    "objectID": "slides/week3.1-distributions-slides.html#dist-num-considerations",
-    "href": "slides/week3.1-distributions-slides.html#dist-num-considerations",
+    "objectID": "slides/week3.1-distributions-slides.html#boxplot-overview",
+    "href": "slides/week3.1-distributions-slides.html#boxplot-overview",
     "title": "EDS 240",
     "section": "",
-    "text": "Considerations\n\n\nBin widthGroup number\n\n\nTry several bin widths, and make sure all bins are the same size. By default, geom_histogram() uses 30 bins. Alternatively, adjust binwidth.\n\n\nbinwidth = 50:\n\nlibrary(lterdatasampler)\nlibrary(tidyverse)\n\nggplot(knz_bison, aes(x = animal_weight, fill = animal_sex)) +\n  geom_histogram(position = \"identity\", alpha = 0.7, binwidth = 50)\n\n\n\n\n\nbinwidth = 500:\n\nlibrary(lterdatasampler)\nlibrary(tidyverse)\n\nggplot(knz_bison, aes(x = animal_weight, fill = animal_sex)) +\n  geom_histogram(position = \"identity\", alpha = 0.7, binwidth = 500)\n\n\n\n\n\n\n\n\nComparing more than ~3 groups in the same histogram leads to cluttered / hard to read plots. Instead, try a violin/box/ridgeline plot or faceting:\n\n\nToo many groups…\n\nlibrary(lterdatasampler)\nlibrary(tidyverse)\n\nggplot(pie_crab, aes(x = size, fill = site)) +\n  geom_histogram(position = \"identity\", alpha = 0.7)\n\n\n\n\n\nAlso beware of unnecessary colors!\n\nlibrary(lterdatasampler)\nlibrary(tidyverse)\n\nggplot(pie_crab, aes(x = size)) +\n  geom_histogram(position = \"identity\", alpha = 0.7) +\n  facet_wrap(~site)"
+    "text": "Box plots\n\nWhat are they?\n\nBox plots summarize the distribution of a numeric variable for one or serveral groups, providing the median (line that divides the box), the upper (Q3) and lower (Q1) quartiles (ends of the box), the highest and lowest values, excluding outliers (the whiskers), and potential outliers (dots extending beyond the end of the whiskers).\n\n\n\nNeed:\n\na numeric variable, often with multiple groups\n{ggplot2} package\n\nImportant considerations:\n\nbox plots summarize data, meaning we can’t see the underlying distribution (no way to know sample size)\nadd jittered points on top, or if large sample size, consider a violin plot"
+  },
+  {
+    "objectID": "slides/week3.1-distributions-slides.html#violin-plot-overview",
+    "href": "slides/week3.1-distributions-slides.html#violin-plot-overview",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Violin plots\n\nWhat are they?\n\nViolin plots visualize the distribution of a numeric variable for one or several groups, where the shape of the violin represents the density estimate of the variable (i.e. the more data points in a specific range, the larger the violin is for that range). They provide more information about the underlying distribution than a box plot.\n\n\n\nNeed:\n\na numeric variable, often with multiple groups\n{ggplot2} package\n\nImportant considerations:\n\norder groups by median value can make it easier to understand\n\nshow sample size when comparing groups with very different distributions (e.g. half violin plot)"
   },
   {
     "objectID": "slides/week1.2-intro-slides.html#title-slide",
@@ -620,7 +627,7 @@
     "href": "slides/week1.1-logistics-slides.html#tentative-schedule",
     "title": "EDS 240",
     "section": "",
-    "text": "Tentative Schedule & Materials\n\n\n\n\n\n\n\n\n\n\n\nDate\nTentative Topic\n\n\n\n\n1/8\ncourse logistics, intro, {ggplot2} review\n\n\n1/15\nno class\n\n\n1/22\ndata & visualization types\n\n\n1/29\ndesign principles & best practices (part I)\n\n\n2/5\ndesign principles & best practices (part II)\n\n\n2/12\nvisualizing uncertainty & avoiding the misrepresentation of data\n\n\n2/19\nno class\n\n\n2/26\ncommunicating for your audience\n\n\n3/4\nOJS with Dr. Allison Horst\n\n\n3/11\ngrab bag & catch up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiscussion sections are held every week"
+    "text": "Tentative Schedule & Materials\n\n\n\n\n\n\n\n\n\n\n\nDate\nTentative Topic\n\n\n\n\n1/8\ncourse logistics, intro, {ggplot2} review\n\n\n1/15\nno class\n\n\n1/22\nfundamental chart types (part I)\n\n\n1/29\nfundamental chart types (part II)\n\n\n2/5\ndesign principles & best practices (part II)\n\n\n2/12\nvisualizing uncertainty & avoiding the misrepresentation of data\n\n\n2/19\nno class\n\n\n2/26\ncommunicating for your audience\n\n\n3/4\nOJS with Dr. Allison Horst\n\n\n3/11\ngrab bag & catch up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiscussion sections are held every week"
   },
   {
     "objectID": "slides/week1.1-logistics-slides.html#assignments",
