@@ -37,7 +37,7 @@ Week 3 instruction is broken down into three lessons:
 ::: {.center-text}
 [**Distributions**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.2 slides](../sliweek3.1-distributions-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.2 slides](../slides/week3.1-distributions-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
