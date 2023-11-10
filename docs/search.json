@@ -1089,7 +1089,7 @@
     "href": "slides/week3.2-distributions-slides.html#what-is-dist",
     "title": "EDS 240",
     "section": "",
-    "text": "What do we mean by visualizing data “distributions”?\n\n\nFundamentally:\nPlotting all possible values or intervals of data on a frequency graph.\n\n\nBut also:\nPlotting summary statistics of all values indicating their spread."
+    "text": "What do we mean by visualizing data “distributions”?\n\n     \n\n\nVisualizing the spread of data"
   },
   {
     "objectID": "slides/week3.2-distributions-slides.html#viz-dist",
@@ -1138,7 +1138,7 @@
     "href": "slides/week3.2-distributions-slides.html#density-overview",
     "title": "EDS 240",
     "section": "",
-    "text": "Density plots - ggplot2::geom_density()\n\nWhat are they?\n\nA smoothed version of a histogram. Density plots are representations of the distribution of a numeric variable(s), which uses a kernel density estimate to show the probability density function of the variable. The area under each curve is equal to 1.\n\n\n\nNeed:\n\na numeric variable with lots of values\n\nImportant considerations:\n\ncan be misleading with small data sets\nband width\nnumber of groups that you’re comparing (generally &lt;=3 is best)"
+    "text": "Density plots - ggplot2::geom_density()\n\nWhat are they?\n\nA smoothed version of a histogram. Density plots are representations of the distribution of a numeric variable(s), which uses a kernel density estimate to show the probability density function of the variable. The area under each curve is equal to 1.\n\n\n\nNeed:\n\na numeric variable with lots of values\n\nImportant considerations:\n\ncan be misleading with small data sets\nband width, which affects level of smoothing\nnumber of groups that you’re comparing (generally &lt;=3 is best)"
   },
   {
     "objectID": "slides/week3.2-distributions-slides.html#density-group-num",
@@ -1152,14 +1152,14 @@
     "href": "slides/week3.2-distributions-slides.html#density-updates",
     "title": "EDS 240",
     "section": "",
-    "text": "Density plots - adjustments\n\n\nFewer groupsModify band widths\n\n\nLet’s instead compare three months: April (generally the coldest month), October (generally a hot month), June (somewhere in between):\n\nmko_clean |&gt; \n  filter(month_name %in% c(\"April\", \"June\", \"October\")) |&gt; \n  ggplot(aes(x = Temp_bot, fill = month_name)) +\n  geom_density(alpha = 0.5) + \n  scale_fill_manual(values = c(\"#2C5374\", \"#ADD8E6\", \"#8B3A3A\"))\n\n\n\n\n\n\nModify bandwidth by declaring a multiplier of the default bandwidth adjustment:\n\nmko_clean |&gt; \n  filter(month_name %in% c(\"April\", \"June\", \"October\")) |&gt; \n  ggplot(aes(x = Temp_bot, fill = month_name)) +\n  geom_density(alpha = 0.5, adjust = 1/2) + \n  scale_fill_manual(values = c(\"#2C5374\", \"#ADD8E6\", \"#8B3A3A\"))"
+    "text": "Density plots - adjustments\n\n\nFewer groupsModify band widths\n\n\nLet’s instead compare three months: April (generally the coldest month), October (generally a hot month), June (somewhere in between):\n\nmko_clean |&gt; \n  filter(month_name %in% c(\"April\", \"June\", \"October\")) |&gt; \n  ggplot(aes(x = Temp_bot, fill = month_name)) +\n  geom_density(alpha = 0.5) + \n  scale_fill_manual(values = c(\"#2C5374\", \"#ADD8E6\", \"#8B3A3A\"))\n\n\n\n\n\n\nModify bandwidth by declaring a multiplier of the default bandwidth adjustment. Reducing the adjust argument reduces the amount of smoothing (default adjust = 1):\n\nmko_clean |&gt; \n  filter(month_name %in% c(\"April\", \"June\", \"October\")) |&gt; \n  ggplot(aes(x = Temp_bot, fill = month_name)) +\n  geom_density(alpha = 0.5, adjust = 1/2) + \n  scale_fill_manual(values = c(\"#2C5374\", \"#ADD8E6\", \"#8B3A3A\"))"
   },
   {
     "objectID": "slides/week3.2-distributions-slides.html#density-hist-combo",
     "href": "slides/week3.2-distributions-slides.html#density-hist-combo",
     "title": "EDS 240",
     "section": "",
-    "text": "Combining geoms - histogram & density plot\n\nOverlaying a histogram and density plot requires scaling down the histogram to match the density curve scale. Do so adding the y = ..density.. within the aes() function:\n\nggplot(mko_clean, aes(x = Temp_bot, y = ..density..)) + # scale down hist to match density curve\n  geom_histogram(fill = \"gray\", color = \"black\", alpha = 0.75) +\n  geom_density(size = 1) # increase line thickness"
+    "text": "Combining geoms - histogram & density plot\n\nOverlaying a histogram and density plot requires scaling down the histogram to match the density curve scale. Adding y = ..density.. within the aes() function rescales the histogram counts so that bar areas integrate to 1:\n\nggplot(mko_clean, aes(x = Temp_bot, y = ..density..)) + # scale down hist to match density curve\n  geom_histogram(fill = \"gray\", color = \"black\", alpha = 0.75) +\n  geom_density(size = 1) # increase line thickness\n\n\n\nSee https://stackoverflow.com/questions/46734555/ggplot2-histogram-why-do-y-density-and-stat-density-differ"
   },
   {
     "objectID": "slides/week3.2-distributions-slides.html#ridgeline-overview",

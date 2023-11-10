@@ -30,18 +30,23 @@ editor_options:
 <hr>
 
 <br>
-
-[**Fundamentally:**]{.teal-text} 
-
-[Plotting all possible values or intervals of data on a frequency graph.]{.body-text-l}
-
+<br>
+<br>
+<br>
+<br>
 <br>
 
-. . . 
+<!-- [**Fundamentally:**]{.teal-text}  -->
 
-[**But also:**]{.teal-text}
+::: {.body-text-l .center-text}
+Visualizing the **spread** of data
+:::
 
-[Plotting summary statistics of all values indicating their spread.]{.body-text-l}
+<!-- . . .  -->
+
+<!-- [**How?**]{.teal-text} -->
+
+<!-- [...by plotting all possible values or intervals of data, or using summary statistics of all values to indicate their spread.]{.body-text-l} -->
 
 ---
 
@@ -380,7 +385,7 @@ mko_clean |>
 [**Important considerations:**]{.teal-text} 
 
 - can be misleading with small data sets
-- band width
+- band width, which affects level of smoothing
 - number of groups that you're comparing (generally <=3 is best)
 :::
 
@@ -445,7 +450,7 @@ mko_clean |>
 
 ## Modify band widths
 
-Modify bandwidth by declaring a multiplier of the default bandwidth adjustment:
+Modify bandwidth by declaring a multiplier of the default bandwidth adjustment. Reducing the `adjust` argument reduces the amount of smoothing (default `adjust = 1`):
 ```{r}
 #| eval: true
 #| echo: true
@@ -468,7 +473,7 @@ mko_clean |>
 
 <hr>
 
-Overlaying a histogram and density plot requires scaling down the histogram to match the density curve scale. Do so adding the `y = ..density..` within the `aes()` function:
+Overlaying a histogram and density plot requires scaling down the histogram to match the density curve scale. Adding `y = ..density..` within the `aes()` function rescales the histogram counts so that bar areas integrate to 1:
 ```{r}
 #| eval: true
 #| echo: true
@@ -476,6 +481,10 @@ ggplot(mko_clean, aes(x = Temp_bot, y = ..density..)) + # scale down hist to mat
   geom_histogram(fill = "gray", color = "black", alpha = 0.75) +
   geom_density(size = 1) # increase line thickness
 ```
+
+::: notes
+See <https://stackoverflow.com/questions/46734555/ggplot2-histogram-why-do-y-density-and-stat-density-differ>
+:::
 
 ---
 

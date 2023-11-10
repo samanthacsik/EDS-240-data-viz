@@ -406,14 +406,14 @@
 <h2></h2>
 <p><span class="slide-title3">What do we mean by visualizing data “distributions”?</span></p>
 <hr>
-<p><br></p>
-<p><span class="teal-text"><strong>Fundamentally:</strong></span></p>
-<p><span class="body-text-l">Plotting all possible values or intervals of data on a frequency graph.</span></p>
-<p><br></p>
-<div class="fragment">
-<p><span class="teal-text"><strong>But also:</strong></span></p>
-<p><span class="body-text-l">Plotting summary statistics of all values indicating their spread.</span></p>
+<p><br> <br> <br> <br> <br> <br></p>
+<!-- [**Fundamentally:**]{.teal-text}  -->
+<div class="body-text-l center-text">
+<p>Visualizing the <strong>spread</strong> of data</p>
 </div>
+<!-- . . .  -->
+<!-- [**How?**]{.teal-text} -->
+<!-- [...by plotting all possible values or intervals of data, or using summary statistics of all values to indicate their spread.]{.body-text-l} -->
 </section>
 <section id="viz-dist" class="slide level2" data-menu-title="Visualizing distributions">
 <h2></h2>
@@ -692,7 +692,7 @@
 <p><span class="teal-text"><strong>Important considerations:</strong></span></p>
 <ul>
 <li>can be misleading with small data sets</li>
-<li>band width</li>
+<li>band width, which affects level of smoothing</li>
 <li>number of groups that you’re comparing (generally &lt;=3 is best)</li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -741,7 +741,7 @@
 </div>
 </div>
 <div id="tabset-2-2">
-<p>Modify bandwidth by declaring a multiplier of the default bandwidth adjustment:</p>
+<p>Modify bandwidth by declaring a multiplier of the default bandwidth adjustment. Reducing the <code>adjust</code> argument reduces the amount of smoothing (default <code>adjust = 1</code>):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>mko_clean <span class="sc">|&gt;</span> </span>
 <span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">filter</span>(month_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"April"</span>, <span class="st">"June"</span>, <span class="st">"October"</span>)) <span class="sc">|&gt;</span> </span>
@@ -760,14 +760,27 @@
 <h2></h2>
 <p><span class="slide-title2">Combining geoms - histogram &amp; density plot</span></p>
 <hr>
-<p>Overlaying a histogram and density plot requires scaling down the histogram to match the density curve scale. Do so adding the <code>y = ..density..</code> within the <code>aes()</code> function:</p>
+<p>Overlaying a histogram and density plot requires scaling down the histogram to match the density curve scale. Adding <code>y = ..density..</code> within the <code>aes()</code> function rescales the histogram counts so that bar areas integrate to 1:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>(mko_clean, <span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">y =</span> ..density..)) <span class="sc">+</span> <span class="co"># scale down hist to match density curve</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"gray"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
 <span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">geom_density</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="co"># increase line thickness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"></section>
+<img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"><aside class="notes">
+<p>See <a href="https://stackoverflow.com/questions/46734555/ggplot2-histogram-why-do-y-density-and-stat-density-differ" class="uri">https://stackoverflow.com/questions/46734555/ggplot2-histogram-why-do-y-density-and-stat-density-differ</a></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="ridgeline-overview" class="slide level2" data-menu-title="Ridgeline plot overview">
 <h2></h2>
 <p><span class="slide-title">Ridgeline plots - <code>{ggridges}</code></span></p>
@@ -1103,7 +1116,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_9b19d79b" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_8938bae4" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
