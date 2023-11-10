@@ -29,7 +29,7 @@ Week 3 instruction is broken down into three lessons:
 ::: {.center-text}
 [**Intro**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.1 slides](../slides/week3.0-intro-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.1 slides](../slides/week3.1-intro-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
@@ -37,7 +37,7 @@ Week 3 instruction is broken down into three lessons:
 ::: {.center-text}
 [**Distributions**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.2 slides](../slides/week3.1-distributions-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.2 slides](../slides/week3.2-distributions-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
@@ -50,6 +50,10 @@ Week 3 instruction is broken down into three lessons:
 :::
 
 :::
+
+<br>
+
+[*Today's lectures draw largely on materials created by [Meghan Hall](https://meghan.rbind.io/) for her course, [CMU 36-315: Statistical Graphics & Visualization](https://cmu-36315.netlify.app/#lectures), as well as information curated by [Yan Holtz](https://github.com/holtzy) & [Conor Healy](https://www.linkedin.com/in/conor-healy-b0299810a/) as part of their [From Data to Viz](https://www.data-to-viz.com/) project.*]{.gray-text .body-text-s}
 
 <!-- - EDA (https://htmlpreview.github.io/?https://github.com/gexijin/gEDA/blob/main/example_report.html)-->
 <!-- - visualizing quantitative, qualitative, temporal data (no spatial data, covered in EDS 223) -->

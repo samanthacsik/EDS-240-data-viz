@@ -89,7 +89,4 @@ We'll review some fundamental chart types -- many others are variants or extensi
 
 This list is not exhaustive
 
-::: footer
-Much of the information in this week's lecture materials is adapted from content on [from Data to Viz](https://www.data-to-viz.com/), by [Yan Holtz](https://www.linkedin.com/in/yan-holtz-2477534a/) and [Conor Healy](https://www.linkedin.com/in/conor-healy-b0299810a/)
-:::
 

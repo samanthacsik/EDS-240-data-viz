@@ -440,7 +440,8 @@ This week, we'll mostly be focused on some prep work. Read the Description, belo
 
 Your data set(s) should -- to some degree -- have an environmental focus. It may be related to a past project, or even your current Capstone or GP. It may also be a completely new data set(s), unrelated to anything you're currently working on. Some places to check out if you're looking for data (you are not limited to just these data sources): 
 
-- **[Data is Plural](https://www.data-is-plural.com/archive/) **-- is a weekly newsletter (and seasonal podcast) of useful / curious data sets, published by [Jeremy Singer-Vine](https://www.jsvine.com/)
+- **[Data is Plural](https://www.data-is-plural.com/archive/)** -- is a weekly newsletter (and seasonal podcast) of useful / curious data sets, published by [Jeremy Singer-Vine](https://www.jsvine.com/)
+- **[awesome-public-datasets](https://github.com/awesomedata/awesome-public-datasets)** -- a repository containing a list of topic-centric public data sources in high quality. They are collected and tidied from blogs, answers, and user responses
 - **[DataOne](https://www.dataone.org/)** -- a repository of data repositories! Search across all member repositories (including repositories like [EDI Data Portal](https://portal.edirepository.org/nis/advancedSearch.jsp), [Arctic Data Center](https://arcticdata.io/catalog), [KNB](https://knb.ecoinformatics.org/), etc.) for environmental data (along with curated metadata records)
 - **[Kaggle Datasets](https://www.kaggle.com/datasets)** - Kaggle is an online community for data scientists and machine learning practitioners to find and publish data, as well as enter competitions to solve data science challenges
 

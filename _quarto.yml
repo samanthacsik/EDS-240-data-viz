@@ -40,13 +40,15 @@ website:
         target: _blank
       - text: resources
         menu:
+          - text: recommended reading & materials
+            href: resources.qmd
+          - text: guide for writing clean code
+            href: clean-code-guide.qmd
+          - text: getting unstuck
+            href: getting-unstuck.qmd
           - text: MEDS installation guide
             href: https://ucsb-meds.github.io/meds-install-guide.html
             target: _blank
-          - text: recommended reading & materials
-            href: resources.qmd
-          - text: getting unstuck
-            href: getting-unstuck.qmd
       - icon: github
         menu:
           - text: Source Code

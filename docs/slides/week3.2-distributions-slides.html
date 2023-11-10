@@ -7,10 +7,12 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
-  <title>EDS 240 – week3.1-distributions-slides</title>
+  <title>EDS 240 – week3.2-distributions-slides</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -385,6 +387,8 @@
       margin-right: 0; 
     }
   </style>
+  <link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+  <script src="../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -398,9 +402,22 @@
 <hr class="hr-teal">
 <p><span class="custom-subtitle3">Week 3 | January 22<sup>nd</sup>, 2024</span></p>
 </section>
+<section id="what-is-dist" class="slide level2" data-menu-title="Data distribution">
+<h2></h2>
+<p><span class="slide-title3">What do we mean by visualizing data “distributions”?</span></p>
+<hr>
+<p><br></p>
+<p><span class="teal-text"><strong>Fundamentally:</strong></span></p>
+<p><span class="body-text-l">Plotting all possible values or intervals of data on a frequency graph.</span></p>
+<p><br></p>
+<div class="fragment">
+<p><span class="teal-text"><strong>But also:</strong></span></p>
+<p><span class="body-text-l">Plotting summary statistics of all values indicating their spread.</span></p>
+</div>
+</section>
 <section id="viz-dist" class="slide level2" data-menu-title="Visualizing distributions">
 <h2></h2>
-<p><span class="slide-title">“Core” distribution charts</span></p>
+<p><span class="slide-title">“Core” distribution chart types</span></p>
 <hr>
 <div class="columns">
 <div class="column" style="width:33%;">
@@ -411,7 +428,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -424,7 +441,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -437,7 +454,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -453,7 +470,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:65.0%"></p>
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:65.0%"></p>
 </figure>
 </div>
 </div>
@@ -466,7 +483,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:65.0%"></p>
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:65.0%"></p>
 </figure>
 </div>
 </div>
@@ -507,7 +524,7 @@
 </div>
 </div>
 </div>
-<p>We’ll be exploring <strong>bottom temperatures recorded at Mohawk Reef (Santa Barbara, CA)</strong>, a near-shore rocky reef and one of the Santa Barbara Coastal (SBC) LTER research sites.</p>
+<p>We’ll be exploring <strong>bottom temperatures recorded at Mohawk Reef</strong>, a near-shore rocky reef and one of the Santa Barbara Coastal (SBC) LTER research sites.</p>
 </section>
 <section id="mko-temps-wrangling" class="slide level2" data-menu-title="Wrangle data">
 <h2></h2>
@@ -529,7 +546,7 @@
 <span id="cb1-12"><a href="#cb1-12"></a>  <span class="co"># keep only necessary columns ----</span></span>
 <span id="cb1-13"><a href="#cb1-13"></a>  <span class="fu">select</span>(year, month, day, decimal_time, Temp_bot, Temp_top, Temp_mid) <span class="sc">|&gt;</span></span>
 <span id="cb1-14"><a href="#cb1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15"></a>  <span class="co"># create date time column ----</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a>  <span class="co"># create datetime column ----</span></span>
 <span id="cb1-16"><a href="#cb1-16"></a>  <span class="fu">unite</span>(date, year, month, day, <span class="at">sep =</span> <span class="st">"-"</span>, <span class="at">remove =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb1-17"><a href="#cb1-17"></a>  <span class="fu">mutate</span>(<span class="at">time =</span> chron<span class="sc">::</span><span class="fu">times</span>(<span class="fu">as.numeric</span>(decimal_time))) <span class="sc">|&gt;</span></span>
 <span id="cb1-18"><a href="#cb1-18"></a>  <span class="fu">unite</span>(date_time, date, time, <span class="at">sep =</span> <span class="st">" "</span>) <span class="sc">|&gt;</span></span>
@@ -567,7 +584,7 @@
 </section>
 <section id="hist-overview" class="slide level2" data-menu-title="Histogram overview">
 <h2></h2>
-<p><span class="slide-title">Histograms</span></p>
+<p><span class="slide-title2">Histograms - <code>ggplot2::geom_histogram()</code></span></p>
 <hr>
 <p><span class="teal-text"><strong>What are they?</strong></span></p>
 <ul>
@@ -579,12 +596,11 @@
 <ul>
 <li>a numeric variable with lots of values</li>
 <li>meaningful differences between values</li>
-<li><code>{ggplot2}</code> package</li>
 </ul>
 <p><span class="teal-text"><strong>Important considerations:</strong></span></p>
 <ul>
-<li>bin width</li>
-<li>number of groups that you’re comparing (&lt;=3)</li>
+<li>bin width (30 <strong>bins</strong> by default)</li>
+<li>number of groups that you’re comparing (generally &lt;=3 is best)</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><br></p>
@@ -592,7 +608,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -602,45 +618,57 @@
 </section>
 <section id="hist-group-num" class="slide level2" data-menu-title="Histogram group number">
 <h2></h2>
-<p><span class="slide-title">Histograms - best with &lt;=3 groups</span></p>
+<p><span class="slide-title">Histograms - best with a few groups</span></p>
 <hr>
-<p>Twelve groups is too many groups!</p>
+<p>Twelve groups (<code>month_name</code>) is too many groups!</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">ggplot</span>(mko_clean, <span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">fill =</span> month_name)) <span class="sc">+</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
 <section id="hist-updates" class="slide level2" data-menu-title="Histogram updates">
 <h2></h2>
 <p><span class="slide-title">Histograms - adjustments</span></p>
 <hr>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Three months (groups)</a></li><li><a href="#tabset-1-2">Update bin widths</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Fewer groups</a></li><li><a href="#tabset-1-2">Adjust colors</a></li><li><a href="#tabset-1-3">Modify bin widths</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<p>Let’s instead compare three months: April (generally the coldest month), October (generally a hot month), June (somewhere in between):</p>
+<p>Let’s instead compare just three months: April (generally the coldest month), October (generally a hot month), June (somewhere in between):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3" data-code-line-numbers="1-2,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>mko_clean <span class="sc">|&gt;</span> </span>
 <span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">filter</span>(month_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"April"</span>, <span class="st">"June"</span>, <span class="st">"October"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">fill =</span> month_name)) <span class="sc">+</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">geom_histogram</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#2C5374"</span>, <span class="st">"#ADD8E6"</span>, <span class="st">"#8B3A3A"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">fill =</span> month_name)) <span class="sc">+</span> <span class="co"># piping data into ggplot, so don't need to define `data` arg</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">geom_histogram</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-12-1.png" style="width:50.0%"></p>
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-12-1.png" style="width:50.0%"></p>
 </div>
 </div>
 </div>
 <div id="tabset-1-2">
-<p>Modify <code>binwidth</code> – does a bin width of 1 (degree Celsius) make sense?</p>
+<p>Use <code>fill</code> to fill bars with a specified color(s) and <code>color</code> to outline bars with a specified color(s):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>mko_clean <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="3-5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>mko_clean <span class="sc">|&gt;</span> </span>
 <span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">filter</span>(month_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"April"</span>, <span class="st">"June"</span>, <span class="st">"October"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">fill =</span> month_name)) <span class="sc">+</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">geom_histogram</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">fill =</span> month_name)) <span class="sc">+</span> </span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">geom_histogram</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>,  <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
 <span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#2C5374"</span>, <span class="st">"#ADD8E6"</span>, <span class="st">"#8B3A3A"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:50.0%"></p>
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:50.0%"></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-3">
+<p>Modify <code>binwidth</code> (<strong>30 <code>bins</code></strong> by default) – does a bin width of 1 (degree Celsius) actually make sense? Consider scale of interest.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>mko_clean <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">filter</span>(month_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"April"</span>, <span class="st">"June"</span>, <span class="st">"October"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">fill =</span> month_name)) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">geom_histogram</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#2C5374"</span>, <span class="st">"#ADD8E6"</span>, <span class="st">"#8B3A3A"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-14-1.png" style="width:50.0%"></p>
 </div>
 </div>
 </div>
@@ -649,24 +677,23 @@
 </section>
 <section id="density-overview" class="slide level2" data-menu-title="Density plot overview">
 <h2></h2>
-<p><span class="slide-title">Density plots</span></p>
+<p><span class="slide-title2">Density plots - <code>ggplot2::geom_density()</code></span></p>
 <hr>
 <p><span class="teal-text"><strong>What are they?</strong></span></p>
 <ul>
-<li>A smoothed version of a histogram. Density plots are representations of the <strong>distribution of a <em>numeric</em> variable(s)</strong>, which uses a <strong><a href="https://chemicalstatistician.wordpress.com/2013/06/09/exploratory-data-analysis-kernel-density-estimation-in-r-on-ozone-pollution-data-in-new-york-and-ozonopolis/">kernel density estimate</a></strong> to show the probability density function of the variable.</li>
+<li>A smoothed version of a histogram. Density plots are representations of the <strong>distribution of a <em>numeric</em> variable(s)</strong>, which uses a <strong><a href="https://chemicalstatistician.wordpress.com/2013/06/09/exploratory-data-analysis-kernel-density-estimation-in-r-on-ozone-pollution-data-in-new-york-and-ozonopolis/">kernel density estimate</a></strong> to show the <a href="https://en.wikipedia.org/wiki/Probability_density_function">probability density function</a> of the variable. The area under each curve is equal to 1.</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><span class="teal-text"><strong>Need:</strong></span></p>
 <ul>
 <li>a numeric variable with lots of values</li>
-<li><code>{ggridges}</code> package</li>
 </ul>
 <p><span class="teal-text"><strong>Important considerations:</strong></span></p>
 <ul>
 <li>can be misleading with small data sets</li>
-<li>bandwidth</li>
-<li>number of groups that you’re comparing (&lt;=3)</li>
+<li>band width</li>
+<li>number of groups that you’re comparing (generally &lt;=3 is best)</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><br></p>
@@ -674,7 +701,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-right">
 <figure>
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -684,58 +711,70 @@
 </section>
 <section id="density-group-num" class="slide level2" data-menu-title="Density group number">
 <h2></h2>
-<p><span class="slide-title">Density plots - best with &lt;=3 groups</span></p>
+<p><span class="slide-title">Density plots - best with a few groups</span></p>
 <hr>
-<p>Similar to the historam, twelve groups is too many groups!</p>
+<p>Similar to the histogram, twelve groups (<code>month_name</code>) is too many groups!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">ggplot</span>(mko_clean, <span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">fill =</span> month_name)) <span class="sc">+</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(mko_clean, <span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">fill =</span> month_name)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
+<img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section>
 <section id="density-updates" class="slide level2" data-menu-title="Density plot updates">
 <h2></h2>
 <p><span class="slide-title">Density plots - adjustments</span></p>
 <hr>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Three months (groups)</a></li><li><a href="#tabset-2-2">Update band widths</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Fewer groups</a></li><li><a href="#tabset-2-2">Modify band widths</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <p>Let’s instead compare three months: April (generally the coldest month), October (generally a hot month), June (somewhere in between):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="1-2,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>mko_clean <span class="sc">|&gt;</span> </span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">filter</span>(month_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"April"</span>, <span class="st">"June"</span>, <span class="st">"October"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">fill =</span> month_name)) <span class="sc">+</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
-<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#2C5374"</span>, <span class="st">"#ADD8E6"</span>, <span class="st">"#8B3A3A"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="1-2,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>mko_clean <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">filter</span>(month_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"April"</span>, <span class="st">"June"</span>, <span class="st">"October"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">fill =</span> month_name)) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#2C5374"</span>, <span class="st">"#ADD8E6"</span>, <span class="st">"#8B3A3A"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-16-1.png" style="width:50.0%"></p>
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-17-1.png" style="width:50.0%"></p>
 </div>
 </div>
 </div>
 <div id="tabset-2-2">
-<p>Modify bandwidth – by declaring a multiplier of the default bandwidth adjustment</p>
+<p>Modify bandwidth by declaring a multiplier of the default bandwidth adjustment:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>mko_clean <span class="sc">|&gt;</span> </span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">filter</span>(month_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"April"</span>, <span class="st">"June"</span>, <span class="st">"October"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">fill =</span> month_name)) <span class="sc">+</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">geom_density</span>(<span class="at">adjust =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
-<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#2C5374"</span>, <span class="st">"#ADD8E6"</span>, <span class="st">"#8B3A3A"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>mko_clean <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">filter</span>(month_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"April"</span>, <span class="st">"June"</span>, <span class="st">"October"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">fill =</span> month_name)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">adjust =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#2C5374"</span>, <span class="st">"#ADD8E6"</span>, <span class="st">"#8B3A3A"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-17-1.png" style="width:50.0%"></p>
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-18-1.png" style="width:50.0%"></p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
+<section id="density-hist-combo" class="slide level2" data-menu-title="Density / Histogram combo">
+<h2></h2>
+<p><span class="slide-title2">Combining geoms - histogram &amp; density plot</span></p>
+<hr>
+<p>Overlaying a histogram and density plot requires scaling down the histogram to match the density curve scale. Do so adding the <code>y = ..density..</code> within the <code>aes()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>(mko_clean, <span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">y =</span> ..density..)) <span class="sc">+</span> <span class="co"># scale down hist to match density curve</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"gray"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">geom_density</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="co"># increase line thickness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"></section>
 <section id="ridgeline-overview" class="slide level2" data-menu-title="Ridgeline plot overview">
 <h2></h2>
-<p><span class="slide-title">Ridgeline plots</span></p>
+<p><span class="slide-title">Ridgeline plots - <code>{ggridges}</code></span></p>
 <hr>
 <p><span class="teal-text"><strong>What are they?</strong></span></p>
 <ul>
-<li>Ridgeline plots show the <strong>distribution of a numeric variable</strong> for <strong>multiple groups</strong>.</li>
+<li>Ridgeline plots show the <strong>distribution of a <em>numeric</em> variable</strong> for <strong>multiple groups</strong>.</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -743,12 +782,11 @@
 <ul>
 <li>a numeric variable with lots of values</li>
 <li>medium to high group numbers</li>
-<li><code>{ggridges}</code> package</li>
 </ul>
 <p><span class="teal-text"><strong>Important considerations:</strong></span></p>
 <ul>
 <li>work best when you have &gt; 6 groups</li>
-<li>works well when there is a clear pattern in the result (e.g.&nbsp;if there is an obvious ranking in groups)</li>
+<li>works well when there is a clear pattern in the result (e.g.&nbsp;if there is an obvious ranking in groups) and/or when visualizing changes in distributions over time or space</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><br></p>
@@ -756,8 +794,137 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
 </figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ridgeline-groups" class="slide level2" data-menu-title="Ridgeline plot group number">
+<h2></h2>
+<p><span class="slide-title">Ridgeline plots - good for multiple groups</span></p>
+<hr>
+<p>The <a href="https://wilkelab.org/ggridges/"><code>{ggridges}</code> package</a> has a number of different geoms for creating ridgeline plots that work well for datasets with larger group numbers (e.g.&nbsp;<code>month_name</code>). Two great geoms to explore (to start):</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="body-text-s"><code>geom_density_ridges()</code> to create a basic ridgeline plot:</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">ggplot</span>(mko_clean, <span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">y =</span> month_name)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  ggridges<span class="sc">::</span><span class="fu">geom_density_ridges</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><span class="body-text-s"><code>geom_density_ridges_gradient()</code> to fill with a color gradient:</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">ggplot</span>(mko_clean, <span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">y =</span> month_name, <span class="at">fill =</span> <span class="fu">after_stat</span>(x))) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>  ggridges<span class="sc">::</span><span class="fu">geom_density_ridges_gradient</span>() <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> <span class="fu">c</span>(<span class="st">"#2C5374"</span>,<span class="st">"#778798"</span>, <span class="st">"#ADD8E6"</span>, <span class="st">"#EF8080"</span>, <span class="st">"#8B3A3A"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ridgeline-adjustments" class="slide level2" data-menu-title="Ridgeline plot adjustments">
+<h2></h2>
+<p><span class="slide-title">Ridgeline plots - adjustments</span></p>
+<hr>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Group order</a></li><li><a href="#tabset-3-2">Overlap &amp; tails</a></li><li><a href="#tabset-3-3">Histogram variant</a></li><li><a href="#tabset-3-4">Quantiles</a></li><li><a href="#tabset-3-5">Jitter raw data</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="body-text-s">Order by month (ideal, since months have an inherent order):</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">ggplot</span>(mko_clean, <span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">y =</span> month_name, <span class="at">fill =</span> <span class="fu">after_stat</span>(x))) <span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>  ggridges<span class="sc">::</span><span class="fu">geom_density_ridges_gradient</span>() <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">scale_y_discrete</span>(<span class="at">limits =</span> <span class="fu">rev</span>(month.name)) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> <span class="fu">c</span>(<span class="st">"#2C5374"</span>,<span class="st">"#778798"</span>, <span class="st">"#ADD8E6"</span>, <span class="st">"#EF8080"</span>, <span class="st">"#8B3A3A"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-23-1.png" width="960"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><span class="body-text-s">Order by mean or median (makes more sense when you have unordered groups):</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13" data-code-line-numbers="1-2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>mko_clean <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">mutate</span>(<span class="at">month_name =</span> <span class="fu">fct_reorder</span>(month_name, Temp_bot, <span class="at">.fun =</span> mean)) <span class="sc">|&gt;</span> </span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">ggplot</span>(mko_clean, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">y =</span> month_name, <span class="at">fill =</span> <span class="fu">after_stat</span>(x))) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>  ggridges<span class="sc">::</span><span class="fu">geom_density_ridges_gradient</span>() <span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> <span class="fu">c</span>(<span class="st">"#2C5374"</span>,<span class="st">"#778798"</span>, <span class="st">"#ADD8E6"</span>, <span class="st">"#EF8080"</span>, <span class="st">"#8B3A3A"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-24-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-3-2">
+<p><code>rel_min_height</code> adjusts trailing tails and <code>scale</code> controls the extent to which the different densities overlap)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ggplot</span>(mko_clean, <span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">y =</span> month_name, <span class="at">fill =</span> <span class="fu">after_stat</span>(x))) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>  ggridges<span class="sc">::</span><span class="fu">geom_density_ridges_gradient</span>(<span class="at">rel_min_height =</span> <span class="fl">0.01</span>, <span class="at">scale =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">scale_y_discrete</span>(<span class="at">limits =</span> <span class="fu">rev</span>(month.name)) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> <span class="fu">c</span>(<span class="st">"#2C5374"</span>,<span class="st">"#778798"</span>, <span class="st">"#ADD8E6"</span>, <span class="st">"#EF8080"</span>, <span class="st">"#8B3A3A"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-25-1.png" style="width:50.0%"></p>
+</div>
+</div>
+</div>
+<div id="tabset-3-3">
+<p>Make ridgeline plots using histogram bars by updating the <code>stat</code> to <code>"binline"</code>(filling with a continous scale gradient not advised):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">ggplot</span>(mko_clean, <span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">y =</span> month_name)) <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>  ggridges<span class="sc">::</span><span class="fu">geom_density_ridges</span>(<span class="at">rel_min_height =</span> <span class="fl">0.01</span>, <span class="at">scale =</span> <span class="dv">3</span>,</span>
+<span id="cb15-3"><a href="#cb15-3"></a>                                <span class="at">stat =</span> <span class="st">"binline"</span>, <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">scale_y_discrete</span>(<span class="at">limits =</span> <span class="fu">rev</span>(month.name)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-26-1.png" style="width:50.0%"></p>
+</div>
+</div>
+</div>
+<div id="tabset-3-4">
+<p>Include a median line by using the <code>stat_density_ridges()</code> geom and setting the number of <code>quantiles</code> to <code>2</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">ggplot</span>(mko_clean, <span class="fu">aes</span>(<span class="at">x =</span> Temp_bot, <span class="at">y =</span> month_name)) <span class="sc">+</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>  ggridges<span class="sc">::</span><span class="fu">stat_density_ridges</span>(<span class="at">rel_min_height =</span> <span class="fl">0.01</span>, <span class="at">scale =</span> <span class="dv">3</span>,</span>
+<span id="cb16-3"><a href="#cb16-3"></a>                                <span class="at">quantile_lines =</span> <span class="cn">TRUE</span>, <span class="at">quantiles =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">scale_y_discrete</span>(<span class="at">limits =</span> <span class="fu">rev</span>(month.name))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-27-1.png" style="width:50.0%"></p>
+</div>
+</div>
+</div>
+<div id="tabset-3-5">
+<p>Visualize the raw data underlying the density ridges (since our temperature data is too large (&gt;473,000 rows), so we’ll use the <code>palmerpenguins::penguins</code> data set to demo):</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="body-text-s">Jittered points:</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="2-3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> species)) <span class="sc">+</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>  ggridges<span class="sc">::</span><span class="fu">geom_density_ridges</span>(<span class="at">jittered_points =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb17-3"><a href="#cb17-3"></a>                                <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">point_size =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-29-1.png" width="960"></p>
+</div>
+</div>
+</div><!-- ::: {.column width="33%"} --><!-- [Rug plot:]{.body-text-s} --><!-- ```{r} --><!-- #| eval: true --><!-- #| echo: true --><!-- #| #| code-line-numbers: "3" --><!-- ggplot(penguins, aes(x = body_mass_g, y = species)) + --><!--   ggridges::geom_density_ridges(jittered_points = TRUE,  --><!--                                 position = position_points_jitter(width = 0.05, height = 0), --><!--                                 point_shape = '|', point_size = 3, point_alpha = 1, --><!--                                 alpha = 0.7) --><!-- ``` --><!-- ::: --><div class="column" style="width:50%;">
+<p><span class="body-text-s">Raincloud plot:</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="2-4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> species)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>  ggridges<span class="sc">::</span><span class="fu">geom_density_ridges</span>(<span class="at">jittered_points =</span> <span class="cn">TRUE</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, </span>
+<span id="cb18-3"><a href="#cb18-3"></a>                                <span class="at">point_size =</span> <span class="fl">0.5</span>, <span class="at">scale =</span> <span class="fl">0.6</span>,</span>
+<span id="cb18-4"><a href="#cb18-4"></a>                                <span class="at">position =</span> <span class="st">"raincloud"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-30-1.png" width="960"></p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -766,7 +933,7 @@
 </section>
 <section id="boxplot-overview" class="slide level2" data-menu-title="Box plot overview">
 <h2></h2>
-<p><span class="slide-title">Box plots</span></p>
+<p><span class="slide-title">Box plots - <code>ggplot2::geom_boxplot()</code></span></p>
 <hr>
 <p><span class="teal-text"><strong>What are they?</strong></span></p>
 <ul>
@@ -777,7 +944,6 @@
 <p><span class="teal-text"><strong>Need:</strong></span></p>
 <ul>
 <li>a numeric variable, often with multiple groups</li>
-<li><code>{ggplot2}</code> package</li>
 </ul>
 <p><span class="teal-text"><strong>Important considerations:</strong></span></p>
 <ul>
@@ -790,8 +956,73 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-31-1.png" width="960"></p>
 </figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="boxplot-groups" class="slide level2" data-menu-title="Box plot group number">
+<h2></h2>
+<p><span class="slide-title">Box plots - good for multiple groups</span></p>
+<hr>
+<p>Box plots are great for a few to multiple groups (too many boxes just results in a lot of information to synthesize, as a viewer). If your x-axis text is long, consider flipping your axes to make them less crunched:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">ggplot</span>(mko_clean, <span class="fu">aes</span>(<span class="at">x =</span> month_name, <span class="at">y =</span> Temp_bot)) <span class="sc">+</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">rev</span>(month.name)) <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-32-1.png" style="width:50.0%" class="r-stretch"></section>
+<section id="boxplot-adjustments" class="slide level2" data-menu-title="Box plot adjustments">
+<h2></h2>
+<p><span class="slide-title">Box plots - adjustments</span></p>
+<hr>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Modify outliers aesthetics</a></li><li><a href="#tabset-4-2">Highlight a group(s)</a></li><li><a href="#tabset-4-3">Jitter raw data</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">ggplot</span>(mko_clean, <span class="fu">aes</span>(<span class="at">x =</span> month_name, <span class="at">y =</span> Temp_bot)) <span class="sc">+</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.colour =</span> <span class="st">"purple"</span>, <span class="at">outlier.shape =</span> <span class="st">"circle open"</span>, <span class="at">outlier.size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">rev</span>(month.name)) <span class="sc">+</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-33-1.png" style="width:70.0%"></p>
+</div>
+</div>
+</div>
+<div id="tabset-4-2">
+<p>Highlight a group of interest by first creating a column in the data frame indicating which groups to highlight</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21" data-code-line-numbers="1-5,8,10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>mko_clean <span class="sc">|&gt;</span> </span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">mutate</span>(<span class="at">highlight_october =</span> <span class="fu">ifelse</span>(month_name <span class="sc">==</span> <span class="st">"October"</span>,</span>
+<span id="cb21-3"><a href="#cb21-3"></a>                                    <span class="at">yes =</span> <span class="st">"highlight"</span>,</span>
+<span id="cb21-4"><a href="#cb21-4"></a>                                    <span class="at">no =</span> <span class="st">"normal"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb21-5"><a href="#cb21-5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month_name, <span class="at">y =</span> Temp_bot, <span class="at">fill =</span> highlight_october)) <span class="sc">+</span></span>
+<span id="cb21-6"><a href="#cb21-6"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb21-7"><a href="#cb21-7"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">rev</span>(month.name)) <span class="sc">+</span></span>
+<span id="cb21-8"><a href="#cb21-8"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#8B3A3A"</span>, <span class="st">"white"</span>)) <span class="sc">+</span></span>
+<span id="cb21-9"><a href="#cb21-9"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb21-10"><a href="#cb21-10"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-34-1.png" style="width:30.0%"></p>
+</div>
+</div>
+</div>
+<div id="tabset-4-3">
+<p>Since box plots hide sample size, consider overlaying raw data points using <code>geom_jitter()</code> (since our temperature data is too large (&gt;473,000 rows), we’ll use the <code>palmerpenguins::penguins</code> data set to demo):</p>
+<p><span class="body-text-s">NOTE: Be sure to remove outliers, since plotting raw data will result in those data points being a second time:</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22" data-code-line-numbers="2-3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(penguins), <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.shape =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">geom_jitter</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-35-1.png" style="width:40.0%"></p>
 </div>
 </div>
 </div>
@@ -800,7 +1031,7 @@
 </section>
 <section id="violin-plot-overview" class="slide level2" data-menu-title="Violin plot overview">
 <h2></h2>
-<p><span class="slide-title">Violin plots</span></p>
+<p><span class="slide-title">Violin plots - <code>ggplot2::geom_violin()</code></span></p>
 <hr>
 <p><span class="teal-text"><strong>What are they?</strong></span></p>
 <ul>
@@ -811,7 +1042,6 @@
 <p><span class="teal-text"><strong>Need:</strong></span></p>
 <ul>
 <li>a numeric variable, often with multiple groups</li>
-<li><code>{ggplot2}</code> package</li>
 </ul>
 <p><span class="teal-text"><strong>Important considerations:</strong></span></p>
 <ul>
@@ -825,7 +1055,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week3.1-distributions-slides_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
+<p><img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-36-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -833,133 +1063,52 @@
 </div>
 </div>
 </section>
-<section class="slide level2">
+<section id="violin-plot-groups" class="slide level2" data-menu-title="Violin plot group number">
+<h2></h2>
+<p><span class="slide-title3">Violin plots - good for multiple groups with lots of data</span></p>
+<hr>
+<p>Violin plots are great for a few to multiple groups, and are often a better choice than box plots when you have a very large data set (and overlaying jittered points looks busy or downright unreasonable). If your x-axis text is long, consider flipping your axes to make them less crunched:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">ggplot</span>(mko_clean, <span class="fu">aes</span>(<span class="at">x =</span> month_name, <span class="at">y =</span> Temp_bot)) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">rev</span>(month.name)) <span class="sc">+</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<!-- ## {#dist-numeric data-menu-title="Distribution of numeric vars"}  -->
-<!-- [Distribution of a numeric variable(s)]{.slide-title2} -->
-<!-- <hr> -->
-<!-- ::: panel-tabset -->
-<!-- ## Histogram -->
-<!-- Histograms are used to represent the distribution of a **numeric** variable(s), which is **cut into several bins**. The number of observations per bin is represented by the height of the bar. -->
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: true -->
-<!-- #| out-width: "50%" -->
-<!-- library(lterdatasampler) -->
-<!-- library(tidyverse) -->
-<!-- ggplot(knz_bison, aes(x = animal_weight, fill = animal_sex)) + -->
-<!--   geom_histogram(position = "identity", alpha = 0.7) -->
-<!-- ``` -->
-<!-- ## Density plot -->
-<!-- Density plots are representations of the distribution of a **numeric** variable(s), which uses a **[kernel density estimate](https://chemicalstatistician.wordpress.com/2013/06/09/exploratory-data-analysis-kernel-density-estimation-in-r-on-ozone-pollution-data-in-new-york-and-ozonopolis/)** to show the probability density function of the variable. -->
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: true -->
-<!-- #| out-width: "50%" -->
-<!-- library(lterdatasampler) -->
-<!-- library(tidyverse) -->
-<!-- ggplot(knz_bison, aes(x = animal_weight, fill = animal_sex)) + -->
-<!--   geom_density(alpha = 0.7) -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- --- -->
-<!-- ## {#dist-num-considerations data-menu-title="Considerations (hist & dens)"}  -->
-<!-- [Considerations]{.slide-title2} -->
-<!-- <hr> -->
-<!-- ::: panel-tabset -->
-<!-- ## Bin width -->
-<!-- **Try several bin widths, and make sure all bins are the same size.** By default, `geom_histogram()` uses 30 `bins`. Alternatively, adjust `binwidth`. -->
-<!-- :::: columns -->
-<!-- ::: {.column width="50%"} -->
-<!-- [` binwidth = 50`:]{.body-text-s} -->
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: true -->
-<!-- #| out-width: "90%" -->
-<!-- library(lterdatasampler) -->
-<!-- library(tidyverse) -->
-<!-- ggplot(knz_bison, aes(x = animal_weight, fill = animal_sex)) + -->
-<!--   geom_histogram(position = "identity", alpha = 0.7, binwidth = 50) -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- ::: {.column width="50%"} -->
-<!-- [`binwidth = 500`:]{.body-text-s} -->
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: true -->
-<!-- #| out-width: "90%" -->
-<!-- library(lterdatasampler) -->
-<!-- library(tidyverse) -->
-<!-- ggplot(knz_bison, aes(x = animal_weight, fill = animal_sex)) + -->
-<!--   geom_histogram(position = "identity", alpha = 0.7, binwidth = 500) -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- :::: -->
-<!-- ## Group number -->
-<!-- **Comparing more than ~3 groups in the same histogram leads to cluttered / hard to read plots.** Instead, try a violin/box/ridgeline plot or faceting: -->
-<!-- :::: columns -->
-<!-- ::: {.column width="50%"} -->
-<!-- [Too many groups...]{.body-text-s} -->
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: true -->
-<!-- #| out-width: "90%" -->
-<!-- library(lterdatasampler) -->
-<!-- library(tidyverse) -->
-<!-- ggplot(pie_crab, aes(x = size, fill = site)) + -->
-<!--   geom_histogram(position = "identity", alpha = 0.7) -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- ::: {.column width="50%"} -->
-<!-- [Also beware of unnecessary colors!]{.body-text-s} -->
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: true -->
-<!-- #| out-width: "90%" -->
-<!-- library(lterdatasampler) -->
-<!-- library(tidyverse) -->
-<!-- ggplot(pie_crab, aes(x = size)) + -->
-<!--   geom_histogram(position = "identity", alpha = 0.7) + -->
-<!--   facet_wrap(~site) -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- :::: -->
-<!-- ::: -->
-<!-- --- -->
-<!-- STACKED DENSITY CHARTS -->
-<!-- MIRRORED DENSITY / HISTOGRAM -->
-<!-- ## {#variants-num-alt data-menu-title="Variants (hist & dens)"}  -->
-<!-- [Variants]{.slide-title3} -->
-<!-- <hr> -->
-<!-- ::: panel-tabset -->
-<!-- ## Mirrorred -->
-<!-- ```{r} -->
-<!-- library(lterdatasampler) -->
-<!-- library(tidyverse) -->
-<!-- # ggplot(knz_bison, aes(x = animal_weight, fill = animal_sex)) + -->
-<!-- #   geom_histogram(position = "identity", alpha = 0.7, binwidth = 500) -->
-<!-- female_bison <- knz_bison |> filter(animal_sex == "F") -->
-<!-- male_bison <- knz_bison |> filter(animal_sex == "M") -->
-<!-- # bison_wrangled <- knz_bison |>  -->
-<!-- #   mutate(animal_weight = ifelse(test = grepl("F", animal_sex) == TRUE,  -->
-<!-- #                                 yes = animal_weight,  -->
-<!-- #                                 no = animal_weight * -1)) -->
-<!-- ggplot(aes(x = x)) +  -->
-<!--   geom_histogram(male_bison, aes(x = animal_weight, y = ..density.., fill = "#69b3a2")) -->
-<!-- ggplot(data, aes(x=x) ) + -->
-<!--   geom_histogram( aes(x = var1, y = ..density..), fill="#69b3a2" ) + -->
-<!--   geom_label( aes(x=4.5, y=0.25, label="variable1"), color="#69b3a2") + -->
-<!--   geom_histogram( aes(x = var2, y = -..density..), fill= "#404080") + -->
-<!--   geom_label( aes(x=4.5, y=-0.25, label="variable2"), color="#404080") + -->
-<!--   theme_ipsum() + -->
-<!--   xlab("value of x") -->
-<!-- # ggplot() + -->
-<!-- #   geom_histogram(male_bison, mapping = aes(x = animal_weight)) +  -->
-<!-- #   geom_histogram(female_bison, mapping = aes(x = -(animal_weight), fill = "blue")) -->
-<!-- ``` -->
-<!-- ## Marginal plots -->
-<!-- ::: -->
-<!-- --- -->
+</div>
+<img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-37-1.png" style="width:50.0%" class="r-stretch"></section>
+<section id="box-violin-combo" class="slide level2" data-menu-title="Violin &amp; box plot combo">
+<h2></h2>
+<p><span class="slide-title">Combining geoms - violin &amp; box plot</span></p>
+<hr>
+<p>Overlaying a box plot inside a violin plot can be helpful in providing your audience with summary stats in a compact form:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24" data-code-line-numbers="3-4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">ggplot</span>(mko_clean, <span class="fu">aes</span>(<span class="at">x =</span> month_name, <span class="at">y =</span> Temp_bot)) <span class="sc">+</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"gray"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, </span>
+<span id="cb24-4"><a href="#cb24-4"></a>               <span class="at">outlier.color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">rev</span>(month.name)) <span class="sc">+</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="week3.2-distributions-slides_files/figure-revealjs/unnamed-chunk-38-1.png" style="width:50.0%" class="r-stretch"></section>
+<section id="end-break" class="slide level2" data-menu-title="# End / Break #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+<i class="fa-solid fa-mug-hot" title="a mug with steam rising out the top" aria-label="mug-hot"></i> Take a Break
+</p>
+<p class="caption-text">
+<em>~ This is the end of Lesson 2 (of 3) ~</em>
+</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_9b19d79b" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
 
 <div class="footer footer-default">
 

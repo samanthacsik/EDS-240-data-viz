@@ -2,6 +2,7 @@
 title: "Getting unstuck"
 subtitle: "we all get stuck -- persistence and turning to the right resources is key!"
 title-block-banner: true
+toc: true
 ---
 
 A *large* part of being a data scientist is ~being okay~ with not immediately knowing the answers to your code challenges -- troubleshooting errors, deciphering code, and trying new things (and likely failing at some...er many...of them) is all a part of the job. **We all experience it, no matter how many years we've been at it.**
@@ -21,6 +22,8 @@ knitr::include_graphics("images/horst-debugging.png")
 
 <br>
 
+## Where to find help
+
 We often learn the most (and remember more of what we learned) when we take the time to troubleshoot on our own (or at least narrow down the potential problem(s)), so you should always plan to start there {{< fa face-grin title="A smiling face" >}}. The graphic below shows the order in which you should approach different resources for help:
 
 <br>
@@ -36,15 +39,14 @@ knitr::include_graphics("images/getting-help-steps.png")
 
 <br>
 
-When you decide you're going to ask a question to a peer / TA / instructor, be sure to (*borrowed from Dr. Allison Horst's [Troubleshooting 101](https://docs.google.com/presentation/d/e/2PACX-1vTBFWVMCbPQ3TSU7_K301-5oAmPr8mePtcBVyoqq5mnt1CA8AgSToqt03LykTd21w-4EenJFw4sRUHX/pub?start=false&loop=false&delayms=3000&slide=id.p) lecture, EDS 221*):
+## Roadblock checklist 
 
-- **Provide context.** For example, "I'm trying to do this..." or "I'm working on the task where we do this..."
-- **Share the specific challenge.** "I'm specifically trying to [insert function / package] to do this thing."
-- **Share what happens and what you've learned.** "I repeatedly get an error message that says [this]. I've tried [this] and [this]"
-- **Show your code** ideally with a [reprex](https://reprex.tidyverse.org/) that they can run / test.
-- **Value and expect the Socratic method,** especially in classes and workshops -- our goal is to provide critical thinking that is transferable, not just to provide a quick fix for a single error.
+If you hit a roadblock, run through this checklist to make sure you've done your due diligence before bringing your question(s) to a peer, TA, or instructor:
 
-And don't forget to a look back some of our suggested troubleshooting and Googling tips in [Teach Me How to Google](https://ucsb-meds.github.io/teach-me-how-to-google/#1):
+- [ ] **revisit the course materials** -- your question may already be answered in the slides
+- [ ] **read the documentation** -- you can do so directly from RStudio by typing `?function_name` in the console
+- [ ] **search for and read the package's,  [vignette](https://r-pkgs.org/vignettes.html#:~:text=A%20vignette%20is%20a%20long,package%20is%20designed%20to%20solve.) if available** -- these are often linked on CRAN under the *Documents* section  (e.g. see [`{dplyr}` on CRAN](https://cran.r-project.org/web/packages/dplyr/index.html)) or found by Googling `package_name vignette` (e.g. the result of Googling `dplyr vignette` leads to the [`dplyr` vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html))
+- [ ] **try Googling!** -- don't forget to a look back some of our suggested troubleshooting and Googling tips in [Teach Me How to Google](https://ucsb-meds.github.io/teach-me-how-to-google/#1):
 
 ```{r}
 #| echo: false
@@ -56,6 +58,20 @@ xaringanExtra::embed_xaringan(
 ```
 
 <br>
+
+## How to ask questions
+
+When you decide you're going to ask a question to a peer / TA / instructor, be sure to (*borrowed from Dr. Allison Horst's [Troubleshooting 101](https://docs.google.com/presentation/d/e/2PACX-1vTBFWVMCbPQ3TSU7_K301-5oAmPr8mePtcBVyoqq5mnt1CA8AgSToqt03LykTd21w-4EenJFw4sRUHX/pub?start=false&loop=false&delayms=3000&slide=id.p) lecture, EDS 221*):
+
+- **Provide context.** For example, "I'm trying to do this..." or "I'm working on the task where we do this..."
+- **Share the specific challenge.** "I'm specifically trying to [insert function / package] to do this thing."
+- **Share what happens and what you've learned.** "I repeatedly get an error message that says [this]. I've tried [this] and [this]"
+- **Show your code** ideally with a [reprex](https://reprex.tidyverse.org/) that they can run / test.
+- **Value and expect the Socratic method,** especially in classes and workshops -- our goal is to provide critical thinking that is transferable, not just to provide a quick fix for a single error.
+
+<br>
+
+## Some words of wisdom
 
 Finally, [Julia Evans](https://jvns.ca/) shares some funny (and highly relatable) words of wisdom: 
 
