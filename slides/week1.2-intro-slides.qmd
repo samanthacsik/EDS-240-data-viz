@@ -350,7 +350,7 @@ Datasaurus Dozen
 
 ---
 
-## {#prompt-discussion data-menu-title="Data viz for discussion (a)"} 
+## {#prompt-discussion1 data-menu-title="Data viz for discussion (a)"} 
 
 [. . . to prompt discussion]{.slide-title}
 
@@ -363,7 +363,7 @@ Datasaurus Dozen
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week1/warming-stripes.png")
+knitr::include_graphics("images/week1/hawkins-warming-stripes.png")
 ```
 
 <br>
@@ -392,9 +392,34 @@ knitr::include_graphics("images/week1/lipponen.gif")
 
 <br>
 
-::: {.center-text .gray-text .body-text-s}
-gif created from [Antti Lipponen](https://anttilip.net/)'s [Temperature Anomolies](https://www.flickr.com/photos/150411108@N06/35471910724/). See [original video](https://live.staticflickr.com/video/35471910724/9da01e3561/720p.mp4?s=eyJpIjozNTQ3MTkxMDcyNCwiZSI6MTY5ODQ0MDk0NywicyI6ImEzZjllNDJmNGNiYjg5YmQ5OTIzNmE3OTRmYzEzNmZlNGMzMzBjNDQiLCJ2IjoxfQ).
+::: {.center-text .gray-text}
+gif created from [Antti Lipponen](https://anttilip.net/)'s [Temperature Anomolies](https://www.flickr.com/photos/150411108@N06/35471910724/).
 :::
+
+---
+
+## {#prompt-discussion3 data-menu-title="Data viz for discussion (c)"} 
+
+[. . . to prompt discussion]{.slide-title}
+
+<hr>
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week1/sabbarao-climate-spiral.gif")
+```
+
+<br>
+
+::: {.center-text .gray-text}
+gif created from [Mark SubbaRao](https://www.linkedin.com/in/msubbarao/)'s [Climate Spiral](https://svs.gsfc.nasa.gov/5161).
+:::
+
 
 ---
 
