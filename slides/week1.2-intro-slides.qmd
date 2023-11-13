@@ -387,7 +387,7 @@ knitr::include_graphics("images/week1/hawkins-warming-stripes.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week1/lipponen.gif")
+knitr::include_graphics("images/week1/lipponen-anomalies.gif")
 ```
 
 <br>
