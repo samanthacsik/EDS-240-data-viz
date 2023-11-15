@@ -9,7 +9,7 @@ Writing clean, easily readable, and reproducible code is just as important as un
 
 ## General conventions
 
-Stick to these standards (as suggested by [The tidyverse style guide](https://style.tidyverse.org/index.html) whenever possible:
+Stick to these standards (as suggested by [The tidyverse style guide](https://style.tidyverse.org/index.html)) whenever possible:
 
 ### Naming conventions:
 

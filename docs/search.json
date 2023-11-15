@@ -67,7 +67,7 @@
     "href": "resources.html#r-packages",
     "title": "Recommended reading & materials",
     "section": "R packages",
-    "text": "R packages\nA list of the R packages that we’ve covered in this class so far:\n\n{ggplot2}: a system for declaratively creating graphics, based on The Grammar of Graphics\n\n\n\n\n\n\n\n\n\n\n\nArtwork by Allison Horst"
+    "text": "R packages\nA list of the R packages that we’ve covered in this class so far:\n\n{ggplot2}: a system for declaratively creating graphics, based on The Grammar of Graphics \n\n\n\n\n\n\n\n\n\n\n\nArtwork by Allison Horst"
   },
   {
     "objectID": "course-materials/week5.html#lecture-materials",
@@ -123,7 +123,7 @@
     "href": "course-materials/week3.html#lecture-materials",
     "title": "Fundamental Chart Types (Part I)",
     "section": "Lecture Materials",
-    "text": "Lecture Materials\nWeek 3 instruction is broken down into three lessons:\n\n\n\nIntro\n lecture 3.1 slides\n\n\n\n\nDistributions\n lecture 3.2 slides\n\n\n\n\nBar (& related) charts\n lecture 3.3 slides\n\n\n\n\nToday’s lectures draw largely on materials created by Meghan Hall for her course, CMU 36-315: Statistical Graphics & Visualization, as well as information curated by Yan Holtz & Conor Healy as part of their From Data to Viz project."
+    "text": "Lecture Materials\nWeek 3 instruction is broken down into three lessons:\n\n\n\nIntro\n lecture 3.1 slides\n\n\n\n\nDistributions\n lecture 3.2 slides\n\n\n\n\nEvolution\n lecture 3.3 slides\n\n\n\n\nToday’s lectures draw largely on materials created by Meghan Hall for her course, CMU 36-315: Statistical Graphics & Visualization, as well as information curated by Yan Holtz & Conor Healy as part of their From Data to Viz project."
   },
   {
     "objectID": "course-materials/week3.html#discussion-materials",
@@ -1050,11 +1050,18 @@
     "text": "Acknowledgements\nBuilding this course meant learning from the many incredible folks who think a lot about producing effective, beautiful, and responsible data visualizations. I relied heavily on the open source R / {ggplot2} / data viz teaching materials and tutorials that this wonderful data science community shares so willingly. Attribution will be included on any slides / materials where content is adapted from other educators."
   },
   {
-    "objectID": "slides/week3.3-EDA-slides.html#title-slide",
-    "href": "slides/week3.3-EDA-slides.html#title-slide",
+    "objectID": "slides/week3.3-evolution.html#title-slide",
+    "href": "slides/week3.3-evolution.html#title-slide",
     "title": "EDS 240",
     "section": "",
-    "text": "EDS 240: Lecture 3.3\nExploratory Data Visualization\n\nWeek 3 | January 22nd, 2024"
+    "text": "EDS 240: Lecture 3.3\nVisualizing Evolution\n\nWeek 3 | January 22nd, 2024"
+  },
+  {
+    "objectID": "slides/week3.3-evolution.html#viz-dist",
+    "href": "slides/week3.3-evolution.html#viz-dist",
+    "title": "EDS 240",
+    "section": "",
+    "text": "“Core” distribution chart types"
   },
   {
     "objectID": "slides/week3.1-intro-slides.html#title-slide",
@@ -1096,7 +1103,7 @@
     "href": "slides/week3.2-distributions-slides.html#what-is-dist",
     "title": "EDS 240",
     "section": "",
-    "text": "What do we mean by visualizing data distributions?\n\n     \n\n\nVisualizing the spread of data"
+    "text": "Visualizing data distribution?\n\n     \n\n\n\nVisualizing the spread of data"
   },
   {
     "objectID": "slides/week3.2-distributions-slides.html#viz-dist",
@@ -1250,7 +1257,7 @@
     "href": "clean-code-guide.html#general-conventions",
     "title": "Writing clean code",
     "section": "General conventions",
-    "text": "General conventions\nStick to these standards (as suggested by The tidyverse style guide whenever possible:\n\nNaming conventions:\n\nSnake case for variable names – for example, my_data\nKebab case for file names – for example, my-script.R\n\n\n\n\n\n\n\n\n\n\n\n\nWhitespace conventions:\n\nSpace around any infix operators (==, +, -, &lt;-, etc) – for example:\n\n\nmy_data_clean &lt;- my_data |&gt; \n  filter(x == 2023)\n\n\nNo space around operators with high precedence (::, :::, $, @, [, [[, ^, unary -, unary +, and :) – for example:\n\n\nsqrt(x^2 + y^2)\ndf$z\nx &lt;- 1:10\n\n\nSpace before a pipe, |&gt; or %&gt;%, and (most often) a new line after – for example:\n\n\nmy_data |&gt; \n  filter(...)\n\n\nSpace before a ggplot +, and a new line after – for example:\n\n\nggplot(data, aes(x = x, y = y)) +\n  geom_point()\n\n\nSpace between arguments, commas, and operators, but no space between a parentheses and the following or proceeding argument/value – for example:\n\n\nggplot(data, aes(x = x, y = y, color = z)) +\n  geom_point(alpha = 0.8)\n\n\nOnly one level of indentation when piping into a ggplot – for example:\n\n\ndata |&gt; \n  filter(...) |&gt; \n  ggplot(aes(x = x, y = y, fill = z)) +\n  geom_point()\n\n\nIf arguments to a ggplot layer don’t all fit on one line, put each argument on it’s own line and indent – for example:\n\n\nggplot(data, aes(x = x, y = y, color = z)) +\n  geom_point() + \n  labs(\n    x = \"My x-axis label\",\n    y = \"My y-axis label\",\n    title = \"My plot title\",\n    caption = \"My plot caption\"\n  )"
+    "text": "General conventions\nStick to these standards (as suggested by The tidyverse style guide) whenever possible:\n\nNaming conventions:\n\nSnake case for variable names – for example, my_data\nKebab case for file names – for example, my-script.R\n\n\n\n\n\n\n\n\n\n\n\n\nWhitespace conventions:\n\nSpace around any infix operators (==, +, -, &lt;-, etc) – for example:\n\n\nmy_data_clean &lt;- my_data |&gt; \n  filter(x == 2023)\n\n\nNo space around operators with high precedence (::, :::, $, @, [, [[, ^, unary -, unary +, and :) – for example:\n\n\nsqrt(x^2 + y^2)\ndf$z\nx &lt;- 1:10\n\n\nSpace before a pipe, |&gt; or %&gt;%, and (most often) a new line after – for example:\n\n\nmy_data |&gt; \n  filter(...)\n\n\nSpace before a ggplot +, and a new line after – for example:\n\n\nggplot(data, aes(x = x, y = y)) +\n  geom_point()\n\n\nSpace between arguments, commas, and operators, but no space between a parentheses and the following or proceeding argument/value – for example:\n\n\nggplot(data, aes(x = x, y = y, color = z)) +\n  geom_point(alpha = 0.8)\n\n\nOnly one level of indentation when piping into a ggplot – for example:\n\n\ndata |&gt; \n  filter(...) |&gt; \n  ggplot(aes(x = x, y = y, fill = z)) +\n  geom_point()\n\n\nIf arguments to a ggplot layer don’t all fit on one line, put each argument on it’s own line and indent – for example:\n\n\nggplot(data, aes(x = x, y = y, color = z)) +\n  geom_point() + \n  labs(\n    x = \"My x-axis label\",\n    y = \"My y-axis label\",\n    title = \"My plot title\",\n    caption = \"My plot caption\"\n  )"
   },
   {
     "objectID": "clean-code-guide.html#annotating-code",

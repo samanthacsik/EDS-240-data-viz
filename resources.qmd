@@ -82,6 +82,7 @@ The following Santa Barbara-based groups hold regular meetups, workshops, networ
 A list of the R packages that we've covered in this class so far:
 
 - **[`{ggplot2}`](https://ggplot2.tidyverse.org/):** a system for declaratively creating graphics, based on The Grammar of Graphics
+<!-- - **[`{ggridges}`](https://wilkelab.org/ggridges/):** a `{ggplot2}` extension package for creating ridgeline plots -->
 
 ```{r}
 #| eval: true 

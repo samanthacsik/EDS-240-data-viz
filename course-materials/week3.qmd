@@ -43,9 +43,9 @@ Week 3 instruction is broken down into three lessons:
 
 ::: {.g-col-12 .g-col-md-4}
 ::: {.center-text}
-[**Bar (& related) charts**]{.teal-text .body-text-m}
+[**Evolution**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.3 slides](../slides/tbd.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.3 slides](../slides/week3.3-evolution.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 

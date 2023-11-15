@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
-  <title>EDS 240 – week3.3-eda-slides</title>
+  <title>EDS 240 – week3.3-evolution</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -329,19 +329,25 @@
 <section id="title-slide" class="slide level2 center" data-menu-title="Title Slide" data-background="#053660">
 <h2></h2>
 <p><span class="custom-title">EDS 240: Lecture 3.3</span></p>
-<p><span class="custom-subtitle"><em>Exploratory Data Visualization</em></span></p>
+<p><span class="custom-subtitle"><em>Visualizing Evolution</em></span></p>
 <hr class="hr-teal">
 <p><span class="custom-subtitle3">Week 3 | January 22<sup>nd</sup>, 2024</span></p>
 </section>
 <section class="slide level2">
 
-<p>Histograms:</p>
-<ul>
-<li>check distribution can help you identify mistakes in your data</li>
-</ul>
+<p><span class="slide-title">Visualizing data <em>evolution</em>?</span></p>
+<hr>
+<p><br> <br> <br> <br> <br> <br></p>
+<div class="fragment">
+<div class="body-text-l center-text">
+<p>tbd</p>
+</div>
+</div>
 </section>
-<section class="slide level2">
-
+<section id="viz-dist" class="slide level2" data-menu-title="Visualizing distributions">
+<h2></h2>
+<p><span class="slide-title">“Core” distribution chart types</span></p>
+<hr>
 
 <div class="footer footer-default">
 
@@ -560,6 +566,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

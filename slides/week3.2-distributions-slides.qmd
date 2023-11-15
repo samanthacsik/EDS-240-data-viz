@@ -25,7 +25,7 @@ editor_options:
 
 ## {#what-is-dist data-menu-title="Data distribution"} 
 
-[What do we mean by visualizing data *distributions*?]{.slide-title3}
+[Visualizing data *distribution*?]{.slide-title}
 
 <hr>
 
@@ -35,6 +35,8 @@ editor_options:
 <br>
 <br>
 <br>
+
+. . .
 
 <!-- [**Fundamentally:**]{.teal-text}  -->
 

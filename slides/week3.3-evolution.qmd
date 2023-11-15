@@ -15,7 +15,7 @@ editor_options:
 
 [EDS 240: Lecture 3.3]{.custom-title}
 
-[*Exploratory Data Visualization*]{.custom-subtitle}
+[*Visualizing Evolution*]{.custom-subtitle}
 
 <hr class="hr-teal">
 
@@ -23,8 +23,38 @@ editor_options:
 
 ---
 
-Histograms:
+[Visualizing data *evolution*?]{.slide-title}
 
-- check distribution can help you identify mistakes in your data
+<hr>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+. . .
+
+
+::: {.body-text-l .center-text}
+tbd
+:::
 
 ---
+
+
+## {#viz-dist data-menu-title="Visualizing distributions"} 
+
+["Core" distribution chart types]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+library(palmerpenguins)
+library(tidyverse)
+```
+
+
