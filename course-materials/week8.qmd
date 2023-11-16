@@ -19,6 +19,10 @@ knitr::include_graphics("../images/horst-eco-r4ds.png")
 *Artwork by [Allison Horst](https://allisonhorst.com/)*
 :::
 
+## Pre-class Prep
+
+*Coming soon* 
+
 ## Lecture Materials 
 
 *Coming soon!*

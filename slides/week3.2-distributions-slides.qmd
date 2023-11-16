@@ -793,20 +793,17 @@ ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
 
 ## Highlight a group(s)
 
-Highlight a group of interest by first creating a column in the data frame indicating which groups to highlight
+Highlight a group of interest using the [`{gghighlight}` package](https://yutannihilation.github.io/gghighlight/index.html). Here, we specify a specific month (`"October"`) to highlight:
 ```{r}
 #| eval: true
 #| echo: true
 #| code-line-numbers: "1-5,8,10"
 #| out-width: "30%"
 mko_clean |> 
-  mutate(highlight_october = ifelse(month_name == "October",
-                                    yes = "highlight",
-                                    no = "normal")) |> 
-  ggplot(aes(x = month_name, y = Temp_bot, fill = highlight_october)) +
+  ggplot(aes(x = month_name, y = Temp_bot, fill = month_name)) +
   geom_boxplot() +
   scale_x_discrete(limits = rev(month.name)) +
-  scale_fill_manual(values = c("#8B3A3A", "white")) +
+  gghighlight::gghighlight(month_name == "October") +
   coord_flip() +
   theme(legend.position = "none")
 ```

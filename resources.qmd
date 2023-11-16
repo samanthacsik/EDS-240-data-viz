@@ -81,8 +81,12 @@ The following Santa Barbara-based groups hold regular meetups, workshops, networ
 
 A list of the R packages that we've covered in this class so far:
 
+<!-- Week 1 -->
+- **[`{tidyverse}`](https://www.tidyverse.org/):** a collection of R packages for data wrangling / manipulation and visualization (includes `{ggplot2}`)
 - **[`{ggplot2}`](https://ggplot2.tidyverse.org/):** a system for declaratively creating graphics, based on The Grammar of Graphics
+<!-- Week 2 -->
 <!-- - **[`{ggridges}`](https://wilkelab.org/ggridges/):** a `{ggplot2}` extension package for creating ridgeline plots -->
+<!-- - **[`{gghighlight}`](https://yutannihilation.github.io/gghighlight/index.html):** a `{ggplot2}` extension package for highlighting geoms  -->
 
 ```{r}
 #| eval: true 

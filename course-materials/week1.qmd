@@ -15,6 +15,17 @@ toc: true
 knitr::include_graphics("../images/ggplot2.png")
 ```
 
+## Pre-class Prep
+
+Please be sure to install the following packages before class:
+
+```{r}
+#| eval: false
+#| echo: true
+install.packages("palmerpenguins") # a package containing the `penguins` data set, which we'll use for plotting practice
+install.packages("tidyverse") # installs a number of packages used for data wrangling / manipulation and visualization (including {ggplot2})
+```
+
 ## Lecture Materials
 
 Week 1 instruction is broken down into three lessons:

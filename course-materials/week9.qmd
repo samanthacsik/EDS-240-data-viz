@@ -15,6 +15,10 @@ toc: true
 knitr::include_graphics("../images/observable.png")
 ```
 
+## Pre-class Prep
+
+*Coming soon* 
+
 ## Lecture Materials 
 
 *Coming soon!*

@@ -67,7 +67,14 @@
     "href": "resources.html#r-packages",
     "title": "Recommended reading & materials",
     "section": "R packages",
-    "text": "R packages\nA list of the R packages that we’ve covered in this class so far:\n\n{ggplot2}: a system for declaratively creating graphics, based on The Grammar of Graphics \n\n\n\n\n\n\n\n\n\n\n\nArtwork by Allison Horst"
+    "text": "R packages\nA list of the R packages that we’ve covered in this class so far:\n\n\n{tidyverse}: a collection of R packages for data wrangling / manipulation and visualization (includes {ggplot2})\n{ggplot2}: a system for declaratively creating graphics, based on The Grammar of Graphics   \n\n\n\n\n\n\n\n\n\n\n\nArtwork by Allison Horst"
+  },
+  {
+    "objectID": "course-materials/week5.html#pre-class-prep",
+    "href": "course-materials/week5.html#pre-class-prep",
+    "title": "Design Principles & Enhancing Visualizations",
+    "section": "Pre-class Prep",
+    "text": "Pre-class Prep\nComing soon"
   },
   {
     "objectID": "course-materials/week5.html#lecture-materials",
@@ -95,14 +102,21 @@
     "href": "course-materials/week6.html",
     "title": "Visualizing Uncertainty & Avoiding the Misrepresentation of Data",
     "section": "",
-    "text": "Coming soon!"
+    "text": "Coming soon"
+  },
+  {
+    "objectID": "course-materials/week6.html#pre-class-prep",
+    "href": "course-materials/week6.html#pre-class-prep",
+    "title": "Visualizing Uncertainty & Avoiding the Misrepresentation of Data",
+    "section": "",
+    "text": "Coming soon"
   },
   {
     "objectID": "course-materials/week6.html#lecture-materials",
     "href": "course-materials/week6.html#lecture-materials",
     "title": "Visualizing Uncertainty & Avoiding the Misrepresentation of Data",
-    "section": "",
-    "text": "Coming soon!"
+    "section": "Lecture Materials",
+    "text": "Lecture Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week6.html#discussion-materials",
@@ -119,25 +133,39 @@
     "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 6)\nMon 02/12/2024\nMon 02/12/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT"
   },
   {
+    "objectID": "course-materials/week3.html#pre-class-prep",
+    "href": "course-materials/week3.html#pre-class-prep",
+    "title": "Fundamental Chart Types (Part I) / Basic Principles / ???",
+    "section": "Pre-class Prep",
+    "text": "Pre-class Prep\nComing soon"
+  },
+  {
     "objectID": "course-materials/week3.html#lecture-materials",
     "href": "course-materials/week3.html#lecture-materials",
-    "title": "Fundamental Chart Types (Part I)",
+    "title": "Fundamental Chart Types (Part I) / Basic Principles / ???",
     "section": "Lecture Materials",
-    "text": "Lecture Materials\nWeek 3 instruction is broken down into three lessons:\n\n\n\nIntro\n lecture 3.1 slides\n\n\n\n\nDistributions\n lecture 3.2 slides\n\n\n\n\nEvolution\n lecture 3.3 slides\n\n\n\n\nToday’s lectures draw largely on materials created by Meghan Hall for her course, CMU 36-315: Statistical Graphics & Visualization, as well as information curated by Yan Holtz & Conor Healy as part of their From Data to Viz project."
+    "text": "Lecture Materials\nWeek 3 instruction is broken down into three lessons:\n\n\n\nChoosing graphic forms\n lecture 3.1 slides\n\n\n\n\ntbd\n lecture 3.2 slides\n\n\n\n\ntbd\n lecture 3.3 slides\n\n\n\n\nToday’s lectures draw largely on materials created by Meghan Hall for her course, CMU 36-315: Statistical Graphics & Visualization, as well as information curated by Yan Holtz & Conor Healy as part of their From Data to Viz project."
   },
   {
     "objectID": "course-materials/week3.html#discussion-materials",
     "href": "course-materials/week3.html#discussion-materials",
-    "title": "Fundamental Chart Types (Part I)",
+    "title": "Fundamental Chart Types (Part I) / Basic Principles / ???",
     "section": "Discussion Materials",
     "text": "Discussion Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week3.html#assignment-reminders",
     "href": "course-materials/week3.html#assignment-reminders",
-    "title": "Fundamental Chart Types (Part I)",
+    "title": "Fundamental Chart Types (Part I) / Basic Principles / ???",
     "section": "Assignment Reminders",
     "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #2)\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT"
+  },
+  {
+    "objectID": "course-materials/week1.html#pre-class-prep",
+    "href": "course-materials/week1.html#pre-class-prep",
+    "title": "Course logistics, Intro, {ggplot2} review",
+    "section": "Pre-class Prep",
+    "text": "Pre-class Prep\nPlease be sure to install the following packages before class:\n\ninstall.packages(\"palmerpenguins\") # a package containing the `penguins` data set, which we'll use for plotting practice\ninstall.packages(\"tidyverse\") # installs a number of packages used for data wrangling / manipulation and visualization (including {ggplot2})"
   },
   {
     "objectID": "course-materials/week1.html#lecture-materials",
@@ -159,6 +187,13 @@
     "title": "Course logistics, Intro, {ggplot2} review",
     "section": "Assignment Reminders",
     "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEnd-of-class survey (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT"
+  },
+  {
+    "objectID": "course-materials/week8.html#pre-class-prep",
+    "href": "course-materials/week8.html#pre-class-prep",
+    "title": "Communicating for Your Audience",
+    "section": "Pre-class Prep",
+    "text": "Pre-class Prep\nComing soon"
   },
   {
     "objectID": "course-materials/week8.html#lecture-materials",
@@ -1057,22 +1092,92 @@
     "text": "EDS 240: Lecture 3.3\nVisualizing Evolution\n\nWeek 3 | January 22nd, 2024"
   },
   {
+    "objectID": "slides/week3.3-evolution.html#viz-evolution",
+    "href": "slides/week3.3-evolution.html#viz-evolution",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Visualizing data evolution?\n\n     \n\n\nVisualizing the change in a numeric variable over some unit of time."
+  },
+  {
+    "objectID": "slides/week3.3-evolution.html#main-evo-charts",
+    "href": "slides/week3.3-evolution.html#main-evo-charts",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Roadmap\n\n\nline graphs\n\nwhen to use them\nconsiderations:\n\nto cut or not to cut your y-axis\navoiding “spaghetti” charts\naspect ratio (width:height)\nno dual axes"
+  },
+  {
+    "objectID": "slides/week3.3-evolution.html#line-graphs",
+    "href": "slides/week3.3-evolution.html#line-graphs",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Line graph axis doesn’t need to start at 0\n\nBar graphs must start at 0 – otherwise misleading when encoding data by bars / comparing lengths\nLine graphs encode data by position, not length; include 0 if it makes sense\n\ndont’ start at 0 if the range of the data is small but the distance from the bottom of the range to 0 is large"
+  },
+  {
     "objectID": "slides/week3.3-evolution.html#viz-dist",
     "href": "slides/week3.3-evolution.html#viz-dist",
     "title": "EDS 240",
     "section": "",
-    "text": "“Core” distribution chart types"
+    "text": "“Core” evolution chart types\n\n\nline\nconnected scatter\narea\nstacked area\nstream"
+  },
+  {
+    "objectID": "slides/week3.3-evolution.html#refugee-data",
+    "href": "slides/week3.3-evolution.html#refugee-data",
+    "title": "EDS 240",
+    "section": "",
+    "text": "The data: {refugees}\n\n{refugees} is an R package designed to facilitate access to the United Nations High Commissioner for Refugees (UNHCR) Refugee Data Finder. It provides an easy-to-use interface to the database, which covers forcibly displaced populations, including refugees, asylum-seekers, internally displaced people, stateless people, and others over a span of more than 70 years.\n\nWe’ll explore changes in refugee numbers through time from different countries of origin."
+  },
+  {
+    "objectID": "slides/week3.3-evolution.html#refugee-data-wrangling",
+    "href": "slides/week3.3-evolution.html#refugee-data-wrangling",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Data wrangling: {refugees}\n\nWe’ll be using the population data set from the {refugees} package. Learn more about the data in the package documentation.\n\n#..........................load packages.........................\nlibrary(refugees)\nlibrary(tidyverse)\n\n#..........................wrangle data..........................\npop_clean &lt;- population |&gt; \n  \n  # remove observations with \"Unknown\" country of origin ----\n  filter(coo_name != \"Unknown\") |&gt; \n  \n  # select relevant cols ----\n  select(year, origin = coo_name, refugees) |&gt; \n  \n  # convert year to date type ----\n  mutate(date = ymd(year, truncated = 2L)) |&gt;\n  \n  # calculate total refugees per country per year ----\n  group_by(date, origin) |&gt;  \n  summarize(total_refugees = sum(refugees)) |&gt; \n  \n  # keep only observations from 2013 onwards ----\n  filter(date &gt;= \"2013-01-01\")"
+  },
+  {
+    "objectID": "slides/week3.3-evolution.html#line-overview",
+    "href": "slides/week3.3-evolution.html#line-overview",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Line graph - ggplot2::geom_line()\n\nWhat are they?\n\nLine graphs display the evolution of one or several numeric variables. They are similar to scatter plots, but the measurement points are ordered (typically by their x-axis value) and joined with straight line segments. They are often used to visualize a trend in data over intervals of time.\n\n\n\nNeed:\n\nan ordered numeric variable(s)\n\nImportant considerations:\n\nto cut or not to cut the y-axis (i.e. starting the y-axis at 0)\navoid using a dual axis when comparing the evolution of 2 different variables\nbe mindful of creating a “spaghetti chart”\nconsider aspect ratio (width:height ratio of a graphic)"
+  },
+  {
+    "objectID": "slides/week3.3-evolution.html#conn-line-overview",
+    "href": "slides/week3.3-evolution.html#conn-line-overview",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Connected line graph - ggplot2::tbd\n\nWhat are they?\n\ntbd\n\n\n\nNeed:\n\ntbd\n\nImportant considerations:\n\ntbd"
+  },
+  {
+    "objectID": "slides/week3.3-evolution.html#drought-data",
+    "href": "slides/week3.3-evolution.html#drought-data",
+    "title": "EDS 240",
+    "section": "",
+    "text": "The data: California droughts\n\nThe U.S. Drought Monitor (USDM) is a collection of measures that allows experts to assess droughts in the United States. You can download and explore comprehensive statistics through their data portal.\n\n\nPercentage area of California in U.S. drought monitor categories. Source Wikipedia\n\n\nUsing these data, we’ll explore drought conditions in California through time."
+  },
+  {
+    "objectID": "slides/week3.3-evolution.html#drought-data-wrangling",
+    "href": "slides/week3.3-evolution.html#drought-data-wrangling",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Data wrangling: California droughts\n\nThe TidyTuesday community featured a data set from the USDM in 2021, which means we can use the {tidytuesdayR} package to import the data.\n\n\n\n    Downloading file 1 of 1: `drought.csv`"
+  },
+  {
+    "objectID": "slides/week3.3-evolution.html#area-plot-overview",
+    "href": "slides/week3.3-evolution.html#area-plot-overview",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Area plot - ggplot2::geom_area()\n\nWhat are they?\n\nArea charts represent the evolution of one or more numeric variables. They are similar to line charts in that the measured points are ordered (typically by their x-axis value) and joined with straight line segments. The area between the x-axis and the line is filled with color or shading.\n\n\n\nNeed:\n\nan ordered numeric variable(s)\n\nImportant considerations:\n\nonly use if you want to show the evolution of values (not if you want to show how values differ in different categories)\nwork best when:\n\nthe total (height of all stacked areas) is as important as its shares\nyou have large differences between your values\nfor showing multiple values over time\nyou have many (&gt;10) dates\n\nLOTS of great visual examples in this Datawrapper blog post, by Lisa Charlotte Muth\nbring the most important value to the bottom of the chart and/or use color to make it stand out\nconsider using annotations and/or highlighted ranges\ngroup many time values together into one larger value"
   },
   {
     "objectID": "slides/week3.1-intro-slides.html#title-slide",
     "href": "slides/week3.1-intro-slides.html#title-slide",
     "title": "EDS 240",
     "section": "",
-    "text": "EDS 240: Lecture 3.1\nChoosing the right chart type\n\nWeek 3 | January 22nd, 2024"
+    "text": "EDS 240: Lecture 3.1\nChoosing the right graphic form\n\nWeek 3 | January 22nd, 2024"
   },
   {
-    "objectID": "slides/week3.1-intro-slides.html#choosing-right-chart",
-    "href": "slides/week3.1-intro-slides.html#choosing-right-chart",
+    "objectID": "slides/week3.1-intro-slides.html#choosing-graphic-form",
+    "href": "slides/week3.1-intro-slides.html#choosing-graphic-form",
     "title": "EDS 240",
     "section": "",
     "text": "Choosing the right chart type depends on:\n\n\n\n\nhow many variables and how many data points you need to visualize\n(e.g. several vs. many data points; number of categorical and/or numeric variables)\n\n\n\n\n\nwhat you would like to show\n(e.g. comparisons, relationships, distributions, compositions)\n\n\n\n\n\nthe data types you want to visualize\n(e.g. numeric, categorical, spatial, time series, network; ordered / not ordered)"
@@ -1215,7 +1320,7 @@
     "href": "slides/week3.2-distributions-slides.html#boxplot-adjustments",
     "title": "EDS 240",
     "section": "",
-    "text": "Box plots - adjustments\n\n\nModify outliers aestheticsHighlight a group(s)Jitter raw data\n\n\n\nggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +\n  geom_boxplot(outlier.colour = \"purple\", outlier.shape = \"circle open\", outlier.size = 5) +\n  scale_x_discrete(limits = rev(month.name)) +\n  coord_flip()\n\n\n\n\n\n\nHighlight a group of interest by first creating a column in the data frame indicating which groups to highlight\n\nmko_clean |&gt; \n  mutate(highlight_october = ifelse(month_name == \"October\",\n                                    yes = \"highlight\",\n                                    no = \"normal\")) |&gt; \n  ggplot(aes(x = month_name, y = Temp_bot, fill = highlight_october)) +\n  geom_boxplot() +\n  scale_x_discrete(limits = rev(month.name)) +\n  scale_fill_manual(values = c(\"#8B3A3A\", \"white\")) +\n  coord_flip() +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\nSince box plots hide sample size, consider overlaying raw data points using geom_jitter() (since our temperature data is too large (&gt;473,000 rows), we’ll use the palmerpenguins::penguins data set to demo):\nNOTE: Be sure to remove outliers, since plotting raw data will result in those data points being a second time:\n\nggplot(na.omit(penguins), aes(x = species, y = body_mass_g)) +\n  geom_boxplot(outlier.shape = NA) +\n  geom_jitter(color = \"black\", alpha = 0.5) +\n  coord_flip()"
+    "text": "Box plots - adjustments\n\n\nModify outliers aestheticsHighlight a group(s)Jitter raw data\n\n\n\nggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +\n  geom_boxplot(outlier.colour = \"purple\", outlier.shape = \"circle open\", outlier.size = 5) +\n  scale_x_discrete(limits = rev(month.name)) +\n  coord_flip()\n\n\n\n\n\n\nHighlight a group of interest using the {gghighlight} package. Here, we specify a specific month (\"October\") to highlight:\n\nmko_clean |&gt; \n  ggplot(aes(x = month_name, y = Temp_bot, fill = month_name)) +\n  geom_boxplot() +\n  scale_x_discrete(limits = rev(month.name)) +\n  gghighlight::gghighlight(month_name == \"October\") +\n  coord_flip() +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\nSince box plots hide sample size, consider overlaying raw data points using geom_jitter() (since our temperature data is too large (&gt;473,000 rows), we’ll use the palmerpenguins::penguins data set to demo):\nNOTE: Be sure to remove outliers, since plotting raw data will result in those data points being a second time:\n\nggplot(na.omit(penguins), aes(x = species, y = body_mass_g)) +\n  geom_boxplot(outlier.shape = NA) +\n  geom_jitter(color = \"black\", alpha = 0.5) +\n  coord_flip()"
   },
   {
     "objectID": "slides/week3.2-distributions-slides.html#violin-plot-overview",
@@ -1274,6 +1379,13 @@
     "text": "Style guides\n\nTidyverse style guide, by Hadley Wickham – a book that describes the style used throughout the {tidyverse}\nTidy design principles, by Hadley Wickham – a book to help you write better R code (currently under development)"
   },
   {
+    "objectID": "course-materials/week9.html#pre-class-prep",
+    "href": "course-materials/week9.html#pre-class-prep",
+    "title": "Building interactive data viz using Observable JS, with Dr. Allison Horst",
+    "section": "Pre-class Prep",
+    "text": "Pre-class Prep\nComing soon"
+  },
+  {
     "objectID": "course-materials/week9.html#lecture-materials",
     "href": "course-materials/week9.html#lecture-materials",
     "title": "Building interactive data viz using Observable JS, with Dr. Allison Horst",
@@ -1299,14 +1411,21 @@
     "href": "course-materials/week2.html",
     "title": "[No Lecture]",
     "section": "",
-    "text": "There is no lecture this week!"
+    "text": "NA"
+  },
+  {
+    "objectID": "course-materials/week2.html#pre-class-prep",
+    "href": "course-materials/week2.html#pre-class-prep",
+    "title": "[No Lecture]",
+    "section": "",
+    "text": "NA"
   },
   {
     "objectID": "course-materials/week2.html#lecture-materials",
     "href": "course-materials/week2.html#lecture-materials",
     "title": "[No Lecture]",
-    "section": "",
-    "text": "There is no lecture this week!"
+    "section": "Lecture Materials",
+    "text": "Lecture Materials\nThere is no lecture this week!"
   },
   {
     "objectID": "course-materials/week2.html#discussion-materials",
@@ -1327,14 +1446,21 @@
     "href": "course-materials/week7.html",
     "title": "[No Lecture]",
     "section": "",
-    "text": "There is no lecture this week!"
+    "text": "Coming soon"
+  },
+  {
+    "objectID": "course-materials/week7.html#pre-class-prep",
+    "href": "course-materials/week7.html#pre-class-prep",
+    "title": "[No Lecture]",
+    "section": "",
+    "text": "Coming soon"
   },
   {
     "objectID": "course-materials/week7.html#lecture-materials",
     "href": "course-materials/week7.html#lecture-materials",
     "title": "[No Lecture]",
-    "section": "",
-    "text": "There is no lecture this week!"
+    "section": "Lecture Materials",
+    "text": "Lecture Materials\nThere is no lecture this week!"
   },
   {
     "objectID": "course-materials/week7.html#discussion-materials",
@@ -1351,23 +1477,30 @@
     "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT"
   },
   {
+    "objectID": "course-materials/week4.html#pre-class-prep",
+    "href": "course-materials/week4.html#pre-class-prep",
+    "title": "Fundamental Chart Types (Part II) / Basic Principles / ??",
+    "section": "Pre-class Prep",
+    "text": "Pre-class Prep\nComing soon"
+  },
+  {
     "objectID": "course-materials/week4.html#lecture-materials",
     "href": "course-materials/week4.html#lecture-materials",
-    "title": "Fundamental Chart Types (Part II)",
+    "title": "Fundamental Chart Types (Part II) / Basic Principles / ??",
     "section": "Lecture Materials",
     "text": "Lecture Materials\nComing soon!\nWeek 3 instruction is broken down into three lessons:\n\n\n\nLine graphs\n lecture 3.1 slides\n\n\n\n\nScatterplots\n lecture 3.2 slides\n\n\n\n\nBar (& related) charts\n lecture 3.3 slides"
   },
   {
     "objectID": "course-materials/week4.html#discussion-materials",
     "href": "course-materials/week4.html#discussion-materials",
-    "title": "Fundamental Chart Types (Part II)",
+    "title": "Fundamental Chart Types (Part II) / Basic Principles / ??",
     "section": "Discussion Materials",
     "text": "Discussion Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week4.html#assignment-reminders",
     "href": "course-materials/week4.html#assignment-reminders",
-    "title": "Fundamental Chart Types (Part II)",
+    "title": "Fundamental Chart Types (Part II) / Basic Principles / ??",
     "section": "Assignment Reminders",
     "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT"
   },
@@ -1376,14 +1509,21 @@
     "href": "course-materials/week10.html",
     "title": "Grab Bag & Catch up",
     "section": "",
-    "text": "Coming soon!"
+    "text": "Coming soon"
+  },
+  {
+    "objectID": "course-materials/week10.html#pre-class-prep",
+    "href": "course-materials/week10.html#pre-class-prep",
+    "title": "Grab Bag & Catch up",
+    "section": "",
+    "text": "Coming soon"
   },
   {
     "objectID": "course-materials/week10.html#lecture-materials",
     "href": "course-materials/week10.html#lecture-materials",
     "title": "Grab Bag & Catch up",
-    "section": "",
-    "text": "Coming soon!"
+    "section": "Lecture Materials",
+    "text": "Lecture Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week10.html#discussion-materials",

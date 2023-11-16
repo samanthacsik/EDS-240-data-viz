@@ -23,6 +23,8 @@ editor_options:
 
 ---
 
+## {#viz-evolution data-menu-title="Visualizing evolution"} 
+
 [Visualizing data *evolution*?]{.slide-title}
 
 <hr>
@@ -36,17 +38,142 @@ editor_options:
 
 . . .
 
-
 ::: {.body-text-l .center-text}
-tbd
+Visualizing the change in a numeric variable over some unit of time.
 :::
 
 ---
 
+## {#main-evo-charts data-menu-title="Chart types"} 
+
+[Roadmap]{.slide-title2}
+
+<hr>
+
+1. line graphs
+    - when to use them
+    - considerations:
+        - to cut or not to cut your y-axis
+        - avoiding "spaghetti" charts
+        - aspect ratio (width:height)
+        - no dual axes
+
+---
+
+## {#line-graphs data-menu-title="Line graphs"} 
+
+[Line graphs: visualize ordered numeric variables over time]{.slide-title3}
+
+<hr>
+
+Line graphs display the **evolution of one or several *numeric* variables**. Measurement points are **ordered** (typically by their x-axis value) and joined with straight line segments. 
+
+They are often used to visualize a trend in data over continuous intervals of time, but can also be used to visualize a trend in data over ordered categorical variables (e.g. month).
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "60%"
+library(tidyverse)
+
+data <- tribble(
+  ~time, ~value,
+  1, 111,
+  2, 110.5,
+  3, 109.8, 
+  4, 105,
+  5, 108.9,
+  6, 107.6,
+  7, 116.8,
+  8, 115.1,
+  9, 117.6,
+  10, 109.9,
+)
+
+ggplot(data, aes(x = time, y = value)) +
+  geom_line() +
+  labs(
+    x = "Time\n(when measurement was taken)",
+    y = "Values\n(an ordered numeric variable)"
+  ) +
+  scale_x_continuous(breaks = scales::pretty_breaks(n = 10)) +
+  theme(axis.title = element_text(size = 17)) 
+```
+
+---
+
+## {#line-graphs data-menu-title="Line graphs"} 
+
+[Line graph axis *doesn't* need to start at 0]{.slide-title2}
+
+<hr>
+
+Bar graphs must start at 0 -- otherwise misleading when encoding data by bars / comparing lengths
+
+Line graphs encode data by position, not length; include 0 if it makes sense
+
+- dont' start at 0 if the range of the data is small but the distance from the bottom of the range to 0 is large
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
 
 ## {#viz-dist data-menu-title="Visualizing distributions"} 
 
-["Core" distribution chart types]{.slide-title}
+["Core" evolution chart types]{.slide-title}
 
 <hr>
 
@@ -57,4 +184,254 @@ library(palmerpenguins)
 library(tidyverse)
 ```
 
+- line
+- connected scatter
+- area
+- stacked area
+- stream
 
+---
+
+## {#refugee-data data-menu-title="Refugee data"} 
+
+[The data: `{refugees}`]{.slide-title}
+
+<hr>
+
+`{refugees}` is an R package designed to facilitate access to the [United Nations High Commissioner for Refugees](https://www.unhcr.org/us/) (UNHCR) [Refugee Data Finder](https://www.unhcr.org/refugee-statistics/download/?url=sH5pnE). It provides an easy-to-use interface to the database, which covers forcibly displaced populations, including refugees, asylum-seekers, internally displaced people, stateless people, and others over a span of more than 70 years.
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "50%"
+#| fig-alt: "The United Nations High Commissioner for Refugees logo, which includes a horseshoe wreath. Inside the wreath, hands form a shelter with two walls and a roof. A person stands within the shelter."
+knitr::include_graphics("images/week3/unhcr.png")
+```
+
+We'll explore **changes in refugee numbers** through time from different countries of origin.
+
+---
+
+## {#refugee-data-wrangling data-menu-title="Refugee data wrangling"} 
+
+[Data wrangling: `{refugees}`]{.slide-title}
+
+<hr>
+
+We'll be using the `population` data set from the `{refugees}` package. Learn more about the data in the [package documentation](https://populationstatistics.github.io/refugees/).
+
+```{r}
+#| eval: true
+#| echo: true
+#..........................load packages.........................
+library(refugees)
+library(tidyverse)
+
+#..........................wrangle data..........................
+pop_clean <- population |> 
+  
+  # remove observations with "Unknown" country of origin ----
+  filter(coo_name != "Unknown") |> 
+  
+  # select relevant cols ----
+  select(year, origin = coo_name, refugees) |> 
+  
+  # convert year to date type ----
+  mutate(date = ymd(year, truncated = 2L)) |>
+  
+  # calculate total refugees per country per year ----
+  group_by(date, origin) |>  
+  summarize(total_refugees = sum(refugees)) |> 
+  
+  # keep only observations from 2013 onwards ----
+  filter(date >= "2013-01-01")
+```
+
+---
+
+## {#line-overview data-menu-title="Line graph overview"} 
+
+[Line graph - `ggplot2::geom_line()`]{.slide-title}
+
+<hr>
+
+[**What are they?**]{.teal-text} 
+
+- Line graphs display the **evolution of one or several *numeric* variables**. They are similar to scatter plots, but the measurement points are **ordered** (typically by their x-axis value) and joined with straight line segments. They are often used to visualize a trend in data over intervals of time.
+
+:::: columns 
+
+::: {.column width="50%"}
+[**Need:**]{.teal-text} 
+
+- an ordered numeric variable(s) 
+
+[**Important considerations:**]{.teal-text} 
+
+- to cut or not to cut the y-axis (i.e. starting the y-axis at 0)
+- avoid using a dual axis when comparing the evolution of 2 different variables
+- be mindful of creating a "spaghetti chart"
+- consider aspect ratio (width:height ratio of a graphic)
+:::
+
+::: {.column width="50%"}
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+
+```
+:::
+
+::::
+
+---
+
+## {#conn-line-overview data-menu-title="Connected line graph overview"} 
+
+[Connected line graph - `ggplot2::tbd`]{.slide-title}
+
+<hr>
+
+[**What are they?**]{.teal-text} 
+
+- tbd
+
+:::: columns 
+
+::: {.column width="50%"}
+[**Need:**]{.teal-text} 
+
+- tbd
+
+[**Important considerations:**]{.teal-text} 
+
+- tbd
+:::
+
+::: {.column width="50%"}
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+
+```
+:::
+
+::::
+
+---
+
+## {#drought-data data-menu-title="Drought data"} 
+
+[The data: California droughts]{.slide-title}
+
+<hr>
+
+The [U.S. Drought Monitor](https://droughtmonitor.unl.edu/) (USDM) is a collection of measures that allows experts to assess droughts in the United States. You can download and explore comprehensive statistics through their [data portal](https://droughtmonitor.unl.edu/DmData/DataDownload/ComprehensiveStatistics.aspx). 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "50%"
+#| fig-alt: "Percentage area of California in U.S. drought monitor categories"
+knitr::include_graphics("images/week3/usdm.png")
+```
+
+::: {.body-text-s .gray-text .center-text}
+*Percentage area of California in U.S. drought monitor categories. Source [Wikipedia](https://en.wikipedia.org/wiki/Droughts_in_California#:~:text=County%20municipal%20rates.-,Dry%20years,2017%2C%20and%202020%E2%80%932022.)*
+:::
+
+<br>
+
+Using these data, we'll explore **drought conditions in California** through time.
+
+---
+
+## {#drought-data-wrangling data-menu-title="Drought data wrangling"} 
+
+[Data wrangling: California droughts]{.slide-title}
+
+<hr>
+
+The [TidyTuesday](https://github.com/rfordatascience/tidytuesday/tree/master) community [featured a data set from the USDM](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-07-20) in 2021, which means we can use the `{tidytuesdayR}` package to import the data.
+
+```{r}
+#..........................load packages.........................
+library(tidyverse)
+
+#..........................import data...........................
+tuesdata <- tidytuesdayR::tt_load('2021-07-20')
+drought <- tuesdata$drought
+
+#..........................wrangle data..........................
+drought_clean <- drought |>
+
+  # select cols of interest ----
+  select(date = valid_start, state_abb, drought_lvl, area_pct) |> 
+
+  # add year col ----
+  mutate(year = year(date)) |>
+
+  # add drought level conditions names ----
+  mutate(drought_lvl_long = factor(drought_lvl,
+                            levels = c("D4", "D3", "D2", "D1","D0", "None"),
+                            labels = c("Exceptional Drought", "Extreme Drought",
+                                       "Severe Drought", "Moderate Drought", "Abnormally Dry", 
+                                       "No Drought"))) |>
+  
+  # reorder cols ----
+  select(date, year, state_abb, drought_lvl, drought_lvl_long, area_pct)
+```
+
+---
+
+## {#area-plot-overview data-menu-title="Area plot overview"} 
+
+[Area plot - `ggplot2::geom_area()`]{.slide-title}
+
+<hr>
+
+[**What are they?**]{.teal-text} 
+
+- Area charts represent the **evolution of one or more *numeric* variables.** They are similar to line charts in that the measured points are **ordered** (typically by their x-axis value) and joined with straight line segments. The area between the x-axis and the line is filled with color or shading.
+
+<!-- :::: columns  -->
+
+<!-- ::: {.column width="50%"} -->
+[**Need:**]{.teal-text} 
+
+- an ordered numeric variable(s)
+
+[**Important considerations:**]{.teal-text} 
+
+- only use if you want to show the evolution of values (not if you want to show how values differ in different categories)
+- work best when:
+    - the total (height of all stacked areas) is as important as its shares
+    - you have large differences between your values
+    - for showing multiple values over time 
+    - you have many (>10) dates
+- LOTS of great visual examples in this [Datawrapper blog post](https://blog.datawrapper.de/area-charts/), by Lisa Charlotte Muth
+- bring the most important value to the bottom of the chart and/or use color to make it stand out
+- consider using annotations and/or highlighted ranges
+- group many time values together into one larger value
+<!-- ::: -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- <br> -->
+
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| fig-align: "center" -->
+
+<!-- ``` -->
+<!-- ::: -->
+
+<!-- :::: -->
