@@ -1,0 +1,63 @@
+---
+format: revealjs
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| eval: true
+#| echo: false
+
+#.........................load packages.........................
+library(tidyverse)
+library(patchwork)
+
+#........................create dummy data.......................
+unemployment_dummy_data <- tribble(
+  ~country, ~percentage, ~x, ~y,
+  "A", 22, 0.23, 0.177,
+  "B", 25, 0.45, 0.174,
+  "C", 34, 0.35, 0.18,
+  "D", 29, 0.52, 0.183,
+  "E", 32, 0.14, 0.182
+) |>
+  mutate(country = as.factor(country))
+
+#..........................create plots..........................
+# horizontal bar plot ----
+hbar <- ggplot(unemployment_dummy_data, aes(x = fct_rev(country), y = percentage)) +
+  geom_bar(stat = "identity", fill = "#047C90")+
+  coord_flip() +
+  labs(title = "Length or height") +
+  theme_void() +
+  theme(
+    axis.text.y = element_text(size = 13),
+    plot.title = element_text(size = 30, face = "bold.italic", margin=margin(0,0,10,0))
+  )
+
+# vertical bar plot ----
+vbar <- ggplot(unemployment_dummy_data, aes(x = country, y = percentage)) +
+  geom_bar(stat = "identity", fill = "#047C90") +
+  theme_void() +
+  theme(
+    axis.text.x = element_text(size = 13)
+  )
+
+# horizontal lollipop chart ----
+lollipop <- ggplot(unemployment_dummy_data, aes(x = country, y = percentage)) +
+  geom_segment(aes(x = fct_rev(country), xend = country, y = percentage, yend = 0), color = "#047C90") +
+  geom_point(size = 2, color = "#047C90") +
+  scale_y_continuous(limits = c(0, 40), breaks = c(0, 10, 20, 30)) +
+  coord_flip() +
+  theme_void() +
+  theme(
+    axis.text.y = element_text(size = 13)
+  )
+
+#...................patchwork to arrange plots...................
+length_height <- (hbar / plot_spacer() / vbar / plot_spacer() / lollipop) +
+  plot_layout(heights = c(3, -1, 3 , -1, 3))
+
+length_height
+
+```

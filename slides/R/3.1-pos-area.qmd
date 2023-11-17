@@ -1,0 +1,63 @@
+---
+format: revealjs
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| eval: true
+#| echo: false
+
+#.........................load packages.........................
+library(tidyverse)
+library(patchwork)
+
+#........................create dummy data.......................
+unemployment_dummy_data <- tribble(
+  ~country, ~percentage, ~x, ~y,
+  "A", 22, 0.23, 0.177,
+  "B", 25, 0.45, 0.176,
+  "C", 34, 0.35, 0.18,
+  "D", 29, 0.52, 0.183,
+  "E", 32, 0.14, 0.182
+) |>
+  mutate(country = as.factor(country))
+
+# horizontal dot (position) ----
+position <- ggplot(unemployment_dummy_data, aes(x = fct_rev(country), y = percentage)) +
+  geom_point(size = 4, color = "#047C90") +
+  scale_y_continuous(limits = c(0, 40), breaks = c(0, 10, 20, 30)) +
+  coord_flip() +
+  labs(title = "Position") +
+  theme_void() +
+  theme(
+    axis.text.y = element_text(size = 13),
+    panel.grid.major.y = element_line(linetype = 3, size = 0.2),
+    plot.title = element_text(size = 30, face = "bold.italic", margin=margin(0,0,10,0))
+  )
+
+# bubbles ----
+bubbles <- ggplot(unemployment_dummy_data, aes(x = x, y = y)) +
+  geom_point(aes(size = percentage), color = "#047C90") +
+  scale_size(range = c(10, 30)) +
+  scale_y_continuous(limits = c(0.17, 0.191), breaks = c(0, 0.1, 0.191)) + # limits = c(0.17, 0.25),
+  scale_x_continuous(limits = c(0, 0.75)) + # , breaks = c(0, 0.2, 0.4, 0.6, 0.8)
+  geom_text(aes(label = country), color = "white") +
+  labs(title = "Area") +
+  theme_void() +
+  theme(
+    legend.position = "none",
+    plot.title = element_text(size = 30, face = "bold.italic", margin=margin(0,0,10,0))
+  )
+
+# treemap ----
+treemap <- ggplot(unemployment_dummy_data, aes(area = percentage, label = country)) +
+  treemapify::geom_treemap(fill = "#047C90") +
+  treemapify::geom_treemap_text(color = "white", place = "center")
+
+#...................patchwork to arrange plots...................
+pos_area <- (position / plot_spacer() / bubbles / plot_spacer() / treemap) +
+  plot_layout(heights = c(3, -1, 5 , -1, 3))
+
+pos_area 
+```

@@ -1,0 +1,66 @@
+---
+format: revealjs
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| eval: true
+#| echo: false
+
+#.........................load packages.........................
+library(tidyverse)
+library(patchwork)
+
+#........................create dummy data.......................
+unemployment_dummy_data <- tribble(
+  ~country, ~percentage, ~x, ~y,
+  "A", 22, 0.23, 0.177,
+  "B", 25, 0.45, 0.174,
+  "C", 34, 0.35, 0.18,
+  "D", 29, 0.52, 0.183,
+  "E", 32, 0.14, 0.182
+) |>
+  mutate(country = as.factor(country))
+
+#  hue / shade ----
+hue_shade_df <- tibble(pos = c(1, 2, 3, 4, 5),
+                       country = sort(unique(unemployment_dummy_data$country)))
+
+hue <- ggplot(data = hue_shade_df) +
+  geom_rect(aes(xmin = pos, xmax = pos + 1,
+                ymin = 0.35, ymax = 0.75, fill = country), linewidth = 6, color = "white") +
+  geom_text(aes(x = pos + 0.5, y = 0.55, label = country),
+            color = "white", size = 6,
+            hjust = 0.5, vjust = 0.5, fontface = "bold") +
+  scale_y_continuous(limits = c(0,1)) +
+  scale_x_continuous(limits = c(0,9)) +
+  theme_void() +
+  theme(
+    legend.position = "none"
+  )
+
+shade <- ggplot(data = hue_shade_df) +
+  geom_rect(aes(xmin = pos, xmax = pos + 1,
+                ymin = 0.35, ymax = 0.75, fill = country), linewidth = 6, color = "white") +
+  geom_text(aes(x = pos + 0.5, y = 0.55, label = country),
+            color = "white", size = 6,
+            hjust = 0.5, vjust = 0.5, fontface = "bold") +
+  scale_y_continuous(limits = c(0,1)) +
+  scale_x_continuous(limits = c(0,9)) +
+  scale_fill_manual(values = c("#047689", "#036373", "#012B32", "#024A56", "#023E48")) +
+  theme_void() +
+  theme(
+    legend.position = "none"
+  )
+
+#...................patchwork to arrange plots...................
+color <- (hue / plot_spacer() / shade) +
+  plot_layout(heights = c(4, -2, 4)) +
+  plot_annotation(
+    title = "Hue and shade",
+    theme = theme(plot.title = element_text(size = 30, face = "bold.italic"))
+  )
+
+color
+```

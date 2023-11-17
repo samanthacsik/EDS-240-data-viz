@@ -1,0 +1,77 @@
+---
+format: revealjs
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| eval: true
+#| echo: false
+
+#.........................load packages.........................
+library(tidyverse)
+library(patchwork)
+
+#........................create dummy data.......................
+unemployment_dummy_data <- tribble(
+  ~country, ~percentage, ~x, ~y,
+  "A", 22, 0.23, 0.177,
+  "B", 25, 0.45, 0.174,
+  "C", 34, 0.35, 0.18,
+  "D", 29, 0.52, 0.183,
+  "E", 32, 0.14, 0.182
+) |>
+  mutate(country = as.factor(country))
+
+# pie chart ----
+a <- tibble(country = c("A", "other"), percentage = c(22, 78)) |>
+  ggplot(aes(x = "", y = percentage, fill = country)) +
+  geom_bar(stat="identity", width = 1) +
+  coord_polar("y", start = 0) +
+  scale_fill_manual(values = c("#047C90", "darkgray")) +
+  labs(title = "A") +
+  theme_void() +
+  theme(legend.position = "none", plot.title = element_text(hjust = 0.5, size = 25))
+b <- tibble(country = c("B", "other"), percentage = c(25, 75)) |>
+  ggplot(aes(x = "", y = percentage, fill = country)) +
+  geom_bar(stat="identity", width = 1) +
+  coord_polar("y", start = 0) +
+  scale_fill_manual(values = c("#047C90", "darkgray")) +
+  labs(title = "B") +
+  theme_void() +
+  theme(legend.position = "none", plot.title = element_text(hjust = 0.5, size = 25))
+c <- tibble(country = c("C", "other"), percentage = c(34, 66)) |>
+  ggplot(aes(x = "", y = percentage, fill = country)) +
+  geom_bar(stat="identity", width = 1) +
+  coord_polar("y", start = 0) +
+  scale_fill_manual(values = c("#047C90", "darkgray")) +
+  labs(title = "C") +
+  theme_void() +
+  theme(legend.position = "none", plot.title = element_text(hjust = 0.5, size = 25))
+d <- tibble(country = c("D", "other"), percentage = c(29, 71)) |>
+  ggplot(aes(x = "", y = percentage, fill = country)) +
+  geom_bar(stat="identity", width = 1) +
+  coord_polar("y", start = 0) +
+  scale_fill_manual(values = c("#047C90", "darkgray")) +
+  labs(title = "D") +
+  theme_void() +
+  theme(legend.position = "none", plot.title = element_text(hjust = 0.5, size = 25))
+e <- tibble(country = c("E", "other"), percentage = c(32, 68)) |>
+  ggplot(aes(x = "", y = percentage, fill = country)) +
+  geom_bar(stat="identity", width = 1) +
+  coord_polar("y", start = 0) +
+  scale_fill_manual(values = c("#047C90", "darkgray")) +
+  labs(title = "E") +
+  theme_void() +
+  theme(legend.position = "none", plot.title = element_text(hjust = 0.5, size = 25))
+
+#...................patchwork to arrange plots...................
+angle <- (a + b + c + d + e) +
+  plot_layout(ncol = 5) +
+  plot_annotation(
+    title = "Angle / Area",
+    theme = theme(plot.title = element_text(size = 30, face = "bold.italic", margin=margin(0,0,20,0)))
+  )
+
+angle
+```

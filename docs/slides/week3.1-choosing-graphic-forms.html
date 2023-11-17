@@ -12,7 +12,7 @@
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
-  <title>EDS 240 – week1.2-intro-slides</title>
+  <title>EDS 240 – week3.1-choosing-graphic-forms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,71 +30,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #767676;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
-    div.sourceCode
-      { color: #545454; background-color: #fefefe; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #545454; } /* Normal */
-    code span.al { color: #7928a1; } /* Alert */
-    code span.an { color: #696969; } /* Annotation */
-    code span.at { color: #a55a00; } /* Attribute */
-    code span.bn { color: #7928a1; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #d91e18; } /* ControlFlow */
-    code span.ch { color: #008000; } /* Char */
-    code span.cn { color: #d91e18; } /* Constant */
-    code span.co { color: #696969; } /* Comment */
-    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
-    code span.do { color: #696969; font-style: italic; } /* Documentation */
-    code span.dt { color: #7928a1; } /* DataType */
-    code span.dv { color: #7928a1; } /* DecVal */
-    code span.er { color: #7928a1; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #a55a00; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #696969; } /* Information */
-    code span.kw { color: #d91e18; } /* Keyword */
-    code span.op { color: #00769e; } /* Operator */
-    code span.ot { color: #d91e18; } /* Other */
-    code span.pp { color: #7928a1; } /* Preprocessor */
-    code span.sc { color: #00769e; } /* SpecialChar */
-    code span.ss { color: #008000; } /* SpecialString */
-    code span.st { color: #008000; } /* String */
-    code span.va { color: #a55a00; } /* Variable */
-    code span.vs { color: #008000; } /* VerbatimString */
-    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -397,353 +332,308 @@
 
 <section id="title-slide" class="slide level2 center" data-menu-title="Title Slide" data-background="#053660">
 <h2></h2>
-<p><span class="custom-title">EDS 240: Lecture 1.2</span></p>
-<p><span class="custom-subtitle"><em>Data Visualization: an intro</em></span></p>
+<p><span class="custom-title">EDS 240: Lecture 3.1</span></p>
+<p><span class="custom-subtitle"><em>Choosing the right graphic form</em></span></p>
 <hr class="hr-teal">
-<p><span class="custom-subtitle3">Week 1 | January 8<sup>th</sup>, 2024</span></p>
-<!-- :::: {.columns}  -->
-<!-- ::: {.column width="50%"} -->
-<!-- [Sam Csik |]{.custom-subtitle2}<br> -->
-<!-- [Data Training Coordinator]{.custom-subtitle2}<br> -->
-<!-- [*National Center for Ecological Analysis & Synthesis*]{.custom-subtitle3} -->
-<!-- ::: -->
-<!-- ::: {.column width="50%"} -->
-<!-- [Master of Environmental Data Science |]{.custom-subtitle2}<br> -->
-<!-- [*Bren School of Environmental Science & Management*]{.custom-subtitle3} -->
-<!-- ::: -->
-<!-- :::: -->
-<!-- <br> -->
-<!-- ::: {.title-footer} -->
-<!-- January 8th, 2024 -->
-<!-- ::: -->
+<p><span class="custom-subtitle3">Week 3 | January 22<sup>nd</sup>, 2024</span></p>
 </section>
-<section id="what-is-visualization" class="slide level2" data-menu-title="What is data viz?">
+<section id="vision-sense" class="slide level2" data-menu-title="Vision = most important sense">
 <h2></h2>
-<p><span class="slide-title">What is data visualization?</span></p>
+<p><span class="slide-title3">We understand complex numbers better when they’re represented visually</span></p>
 <hr>
 <blockquote>
-<p>“…the practice of designing and creating easy-to-communicate and easy-to-understand graphic or visual representations of a large amount of complex quantitative and qualitative data and information with the help of static, dynamic or interactive visual items.”</p>
+<p>“Exams will have a total of 137 points rather than the usual 100. This scoring system has no efect on the grade you get in the course, but it seems to make you happier”</p>
 </blockquote>
-<div class="right-align-text body-text-s">
-<p>-from <a href="https://en.wikipedia.org/wiki/Data_and_information_visualization">Wikipedia</a></p>
+<div class="right-align-text">
+<p>-<a href="https://www.chicagobooth.edu/faculty/directory/t/richard-h-thaler">Richard H. Thaler</a>, economist &amp; professor</p>
 </div>
-<p><br></p>
-<div class="fragment">
-<div class="columns">
-<div class="column" style="width:33%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week1/ggplot-example.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:33%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week1/gganimate-example.gif" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:33%;">
-<p><br></p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week1/shiny-example.gif" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:33%;">
-<div class="center-text">
-<p>Created using <a href="https://ggplot2.tidyverse.org/"><code>{ggplot2}</code></a></p>
-</div>
-</div><div class="column" style="width:33%;">
-<div class="center-text">
-<p>Created using <a href="https://gganimate.com/"><code>{gganimate}</code></a></p>
-</div>
-</div><div class="column" style="width:33%;">
-<div class="center-text">
-<p>Created using <a href="https://shiny.posit.co/"><code>{shiny}</code></a></p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="history1" class="slide level2" data-menu-title="History 1">
-<h2></h2>
-<p><span class="slide-title">History of data visualization</span></p>
-<hr>
-<p><em>Note: this is by no means a comprehensive history of the visual representation of information!</em></p>
-<div class="r-stack">
-<p><img data-src="images/week1/history1.1.png" class="fragment" width="900"></p>
-<p><img data-src="images/week1/history1.2.png" class="fragment" width="900"></p>
-<p><img data-src="images/week1/history1.3.png" class="fragment" width="900"></p>
-<p><img data-src="images/week1/history2.1.png" class="fragment" width="900"></p>
-<p><img data-src="images/week1/history2.2.png" class="fragment" width="900"></p>
-<p><img data-src="images/week1/history2.3.png" class="fragment" width="900"></p>
-<p><img data-src="images/week1/history3.1.png" class="fragment" width="900"></p>
-<p><img data-src="images/week1/history3.2.png" class="fragment" width="900"></p>
-<p><img data-src="images/week1/history4.1.png" class="fragment" width="900"></p>
-<p><img data-src="images/week1/history4.2.png" class="fragment" width="900"></p>
-</div>
-<div class="gray-text body-text-s center-text">
-<p>Images from <a href="http://news.bbc.co.uk/2/hi/science/nature/871930.stm">BBC News</a>, Wikipedia (<a href="https://en.wikipedia.org/wiki/Turin_Papyrus_Map">a</a>, <a href="https://en.wikipedia.org/wiki/Michael_van_Langren">b</a>, <a href="https://en.wikipedia.org/wiki/William_Playfair">c</a>), <a href="https://www.si.edu/newsdesk/snapshot/quipu">Smithsonian</a>, <a href="https://www.themarginalian.org/2019/07/09/emma-willard/">The Marginalian</a>, <a href="https://www.scientificamerican.com/article/how-florence-nightingale-changed-data-visualization-forever/">Scientific American</a> &amp; <a href="https://twitter.com/ijeamaka_a/status/1361715338027560962">Twitter</a></p>
-</div>
-</section>
-<section id="why-visualize" class="slide level2" data-menu-title="# Why visualize data? #" data-background="#047C90">
-<h2></h2>
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">
-<i class="fa-solid fa-comments" title="two talking bubbles" aria-label="comments"></i> Why do we visualize data?
-</p>
-<p class="caption-text">
-<em>Spend the next few minutes discussing with your Learning Partners, and if possible, pull up some example visualizations that demonstrate your thoughts / discussion points</em>
-</p>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_422e7a55" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
-</section>
-<section id="answer-qs" class="slide level2" data-menu-title="Data viz for answering Qs">
-<h2></h2>
-<p><span class="slide-title">. . . to answer questions / derive insights</span></p>
-<hr>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week1/ripple-etal-2023-fig1.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="center-text body-text-m">
-<p><a href="https://doi.org/10.1093/biosci/biad080"><strong>Ripple et al.&nbsp;2023</strong></a></p>
-</div>
-<p><span class="body-text-s"><strong>Fig Caption:</strong> Unusual climate anomalies in 2023 (the red line, which appears bold in print). Sea ice extent (a, b), temperatures (c–e), and area burned in Canada (f) are presently far outside their historical ranges. These anomalies may be due to both climate change and other factors. Sources and additional details about each variable are provided in supplemental file S1. Each line corresponds to a different year, with darker gray representing later years.</span></p>
-<p><br></p>
-<div class="body-text-s gray-text center-text">
-<p><em>A nice <a href="https://twitter.com/DoctorVive/status/1717187963036049669">Twitter thread</a> on key takeaways from the above paper</em></p>
-</div>
-</div>
-</div>
-</section>
-<section id="exploration" class="slide level2" data-menu-title="Data viz for exploration">
-<h2></h2>
-<p><span class="slide-title">. . . to explore &amp; generate new questions</span></p>
-<hr>
-<blockquote>
-<p>“<strong>Exploratory data analysis (EDA)</strong> is not a formal process with a strict set of rules. More than anything, EDS is a state of mind…you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends. As your exploration continues, you will hone in on a few particularly productive insights that you’ll eventually write-up and communicate to others.”</p>
-</blockquote>
-<div class="right-align-text body-text-s">
-<p>-Hadley Wickham, author of <a href="https://r4ds.hadley.nz/eda">R for Data Science</a></p>
-</div>
-<div class="fragment">
-<div class="columns">
-<div class="column" style="width:33%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week1/diamond-hist.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat)) <span class="sc">+</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div><div class="column" style="width:33%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week1/cars-boxplot.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_reorder</span>(class, hwy, median), <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div><div class="column" style="width:33%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week1/diamonds-freqplot.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> price, <span class="at">y =</span> <span class="fu">after_stat</span>(density))) <span class="sc">+</span> </span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">geom_freqpoly</span>(<span class="fu">aes</span>(<span class="at">color =</span> cut), <span class="at">binwidth =</span> <span class="dv">500</span>, <span class="at">linewidth =</span> <span class="fl">0.75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="see-trends" class="slide level2" data-menu-title="Data viz to see trends">
-<h2></h2>
-<p><span class="slide-title">. . . to identify trends</span></p>
-<hr>
-<div class="center-text body-text-l">
-<p><strong>Same summary statistics, different distributions!</strong></p>
-</div>
-<div class="columns">
-<div class="column" style="width:&quot;50%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week1/anscombes-quartet.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:&quot;50%;">
-<p><br> <br></p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week1/datasaurus-dozen.gif" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="center-text">
-<p>Anscombe’s Quartet<br>
-(<a href="https://doi.org/10.2307/2682899">Anscombe 1973</a>)</p>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="center-text">
-<p>Datasaurus Dozen<br>
-(<a href="https://doi.org/10.1145/3025453.3025912">Matejka &amp; Fitzmaurice 2017</a>)</p>
-</div>
-</div>
-</div>
-</section>
-<section id="prompt-discussion1" class="slide level2" data-menu-title="Data viz for discussion (a)">
-<h2></h2>
-<p><span class="slide-title">. . . to prompt discussion</span></p>
-<hr>
-<p><br></p>
-
-<img data-src="images/week1/hawkins-warming-stripes.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
-<div class="center-text gray-text">
-<p><a href="https://showyourstripes.info/">Warming Strips</a>, by <a href="http://www.met.reading.ac.uk/~ed/home/index.php">Ed Hawkins</a></p>
-</div>
-</section>
-<section id="prompt-discussion2" class="slide level2" data-menu-title="Data viz for discussion (b)">
-<h2></h2>
-<p><span class="slide-title">. . . to prompt discussion</span></p>
-<hr>
-<p><br></p>
-
-<img data-src="images/week1/lipponen-anomalies.gif" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
-<div class="center-text gray-text">
-<p>gif created from <a href="https://anttilip.net/">Antti Lipponen</a>’s <a href="https://www.flickr.com/photos/150411108@N06/35471910724/">Temperature Anomolies</a>.</p>
-</div>
-</section>
-<section id="prompt-discussion3" class="slide level2" data-menu-title="Data viz for discussion (c)">
-<h2></h2>
-<p><span class="slide-title">. . . to prompt discussion</span></p>
-<hr>
-<p><br></p>
-
-<img data-src="images/week1/sabbarao-climate-spiral.gif" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
-<div class="center-text gray-text">
-<p>gif created from <a href="https://www.linkedin.com/in/msubbarao/">Mark SubbaRao</a>’s <a href="https://svs.gsfc.nasa.gov/5161">Climate Spiral</a>.</p>
-</div>
-</section>
-<section id="aRt-anyene" class="slide level2" data-menu-title="Data viz for aRt (I. Anyene">
-<h2></h2>
-<p><span class="slide-title">. . . to create aRt</span></p>
-<hr>
-<p><img data-src="images/week1/anyene-limes.png" class="absolute" style="top: 200px; left: 0px; width: 325px; "></p>
-<p><img data-src="images/week1/anyene-grid.png" class="absolute" style="top: 200px; left: 365px; width: 325px; "></p>
-<p><img data-src="images/week1/anyene-grid-lines.png" class="absolute" style="top: 200px; right: 0px; width: 325px; "></p>
-<div class="center-text gray-text absolute" style="left: 365px; bottom: 25px; width: 325px; ">
-<p><strong>aRtist: <a href="https://ijeamaka-anyene.netlify.app/">Ijeamaka Anyene</a></strong></p>
-</div>
-</section>
-<section id="aRt-navarro" class="slide level2" data-menu-title="Data viz for aRt (D. Navarro)">
-<h2></h2>
-<p><span class="slide-title">. . . to create aRt</span></p>
-<hr>
-<p><img data-src="images/week1/navarro-broken-lands.png" class="absolute" style="top: 200px; left: 0px; width: 325px; "></p>
-<p><img data-src="images/week1/navarro-native-flora.png" class="absolute" style="top: 200px; left: 365px; width: 325px; "></p>
-<p><img data-src="images/week1/navarro-voronoise.png" class="absolute" style="top: 200px; right: 0px; width: 325px; "></p>
-<div class="center-text gray-text absolute" style="left: 365px; bottom: 25px; width: 325px; ">
-<p><strong>aRtist: <a href="https://art.djnavarro.net/">Danielle Navarro</a></strong></p>
-</div>
-</section>
-<section id="aRt-karamanis" class="slide level2" data-menu-title="Data viz for aRt (G. Karamanis)">
-<h2></h2>
-<p><span class="slide-title">. . . to create aRt</span></p>
-<hr>
-<p><img data-src="images/week1/karamanis-color-blocks.png" class="absolute" style="top: 200px; left: 0px; width: 325px; "></p>
-<p><img data-src="images/week1/karamanis-purple.png" class="absolute" style="top: 200px; left: 365px; width: 325px; "></p>
-<p><img data-src="images/week1/karamanis-macaroni.png" class="absolute" style="top: 200px; right: 0px; width: 325px; "></p>
-<div class="center-text gray-text absolute" style="left: 365px; bottom: 25px; width: 325px; ">
-<p><strong>aRtist: <a href="http://karaman.is">Georgios Karamanis</a></strong></p>
-</div>
-</section>
-<section id="r-for-data-viz" class="slide level2" data-menu-title="R for data viz">
-<h2></h2>
-<p><span class="slide-title">Why R for data viz?</span></p>
-<hr>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><br> <br> <br> <br></p>
-<div>
 <ul>
-<li class="fragment">I’m most comfortable in R <i class="fa-solid fa-face-smile" aria-label="face-smile"></i></li>
-<li class="fragment">great ecosystem of data wrangling &amp; visualization packages</li>
-<li class="fragment">amazing online learning communities</li>
-<li class="fragment">data viz fundamentals apply no matter the language / tool</li>
+<li><span class="body-text-s"><strong>Early years:</strong> exam graded 0 - 100 with an average score of 72 points = lots of complaints</span></li>
+<li><span class="body-text-s"><strong>Later years:</strong> exam graded 0 - 137 with an average score of 96 points = no complaints</span></li>
 </ul>
-</div>
-</div><div class="column" style="width:50%;">
-<p><br> <br></p>
+<div class="fragment">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week1/why-r.png" style="width:100.0%"></p>
+<p><img data-src="images/week3/thaler-exams.png" style="width:35.0%"></p>
 </figure>
 </div>
 </div>
 </div>
+<div class="body-text-s gray-text center-text">
+<p>Albert Cairo’s visualization of the scores from Thaler’s exam case study</p>
 </div>
 </div>
+</section>
+<section id="vision-sense" class="slide level2" data-menu-title="Vision = most important sense">
+<h2></h2>
+<p><span class="slide-title">Vision is our most well-developed sense</span></p>
+<hr>
+<p><br> <br> <br></p>
+<div class="center-text">
+<p><span class="body-text-m teal-text"><strong><em>Mapping data into visual properties is powerful</em></strong></span></p>
+</div>
+<p><br></p>
+<div class="fragment">
+<div class="center-text">
+<p><span class="teal-text body-text-m"><strong>Mapping?</strong></span></p>
+<p><em>How values of a variable(s) of interest are represented by visuals (e.g height of bar, shaded region of area plot, color of data points)</em></p>
+</div>
+</div>
+</section>
+<section id="choose-graphic" class="slide level2" data-menu-title="How to choose the right graphic?">
+<h2></h2>
+<p><span class="slide-title2">How do you choose the right graphic form to represent your data?</span></p>
+<hr>
+<p><br> <br> <br></p>
+<div class="body-text-m">
+<blockquote>
+<p>“If I had the answer to that, I’d be rich by now…I have no idea, but I can give you some clues to make your own choices based on what we know about why and how visualization works”</p>
+</blockquote>
+</div>
+<div class="right-align-text">
+<p>-Albert Cairo<sup>1</sup>, in his book, <a href="https://www.amazon.com/Truthful-Art-Data-Charts-Communication/dp/0321934075"><em>The Truthful Art</em></a></p>
+</div>
+<div class="footer">
+<p><sup>1</sup>Someone who, in fact, knows <em>a lot</em> about effectively visualizing data</p>
+</div>
+</section>
+<section id="ex-choose-graph" class="slide level2" data-menu-title="Ex: choose graphic form">
+<h2></h2>
+<p><span class="slide-title">Exercise: Map data to visual properties</span></p>
+<hr>
+<p><br> <br> <br></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_83665026" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+<p><span class="body-text-m">Let’s say <strong>you want to compare unemployment rates of 5 countries</strong>: A, B, C, D, E (the actual values here are not important).</span></p>
+<p><br></p>
+<div class="fragment">
+<p><span class="body-text-m">How would you <strong>map the unemployment rates to visual properties</strong> in a way that enables your readers to accurately compare values without having to read all the numbers?</span></p>
+<div class="footer">
+<p>Example adapted from Albert Cairo’s, <em>The Truthful Art</em></p>
+</div>
+</div>
+</section>
+<section id="ex-possible-choices" class="slide level2" data-menu-title="Ex: possible choices">
+<h2></h2>
+<p><span class="slide-title2">Different methods of encoding the same data</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="week3.1-choosing-graphic-forms_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="week3.1-choosing-graphic-forms_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="week3.1-choosing-graphic-forms_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="week3.1-choosing-graphic-forms_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>Graphs recreated based on Albert Cairo’s example (Fig 5.2) in <em>The Truthful Art</em><br>
+<strong>For all graphics: A (22%), B (25%), C (24%), D (29%), E (32%)</strong></p>
+</div>
+<aside class="notes">
+<p>LENGHT, HEIGHT, POSITION probably the best (have students discuss)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="tips-choosing-graph" class="slide level2" data-menu-title="Tips for choosing a graph">
+<h2></h2>
+<p><span class="slide-title">Tips for choosing the right graphic form</span></p>
+<hr>
+<ol type="1">
+<li><span class="teal-text"><strong>Think about the task(s) you want to enable or message(s) you want to convey.</strong></span> For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.</li>
+</ol>
+<div class="fragment">
+<ol start="2" type="1">
+<li><span class="teal-text"><strong>Consider the number of variables and the number of data points, as well as the data types you’re working with.</strong></span> For example, do you have several vs.&nbsp;many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li><span class="teal-text"><strong>Try different graphic forms,</strong></span> especially if you have more than one task to enable or message to convey.</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="4" type="1">
+<li><span class="teal-text"><strong>Arrange the components of the graphic</strong></span> to make it as easy as possible to extract meaning from your graphic quickly.</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="5" type="1">
+<li><span class="teal-text"><strong>Test the outcomes of your graphic on others,</strong></span> particularly on those who are representative of the audience you are trying to reach.</li>
+</ol>
+<div class="footer">
+<p><span class="gray-text body-text-s"><em>Most of the above tips are adapted from <a href="https://www.albertocairo.com/">Albert Cairo’s</a> <a href="https://www.amazon.com/gp/product/0321934075/ref=as_li_qf_sp_asin_il_tl?camp=1789&amp;creative=9325&amp;creativeASIN=0321934075&amp;ie=UTF8&amp;linkCode=as2&amp;linkId=A7BVNPNHHPEPJU7K&amp;tag=thefunart03-20">The Truthful Art</a></em></span></p>
+</div>
+</div>
+</section>
+<section id="hierarchy" class="slide level2" data-menu-title="Hierarchy">
+<h2></h2>
+<p><span class="slide-title">“Hierarchy of elementary perceptual tasks”</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>William S. Cleveland &amp; Robert McGill (1984) <strong>Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods</strong>, <em>Journal of the American Statistical Association</em>, 79:387, 531-554, DOI: <a href="https://doi.org/10.1080/01621459.1984.10478080">10.1080/01621459.1984.10478080</a></p>
+</div>
+<p><br></p>
+<ul>
+<li><p>a viewer performs one or more of these mental-visual tasks (judging position, perceiving angles / areas, etc.) to extract the values of real variables represented on most graphs</p></li>
+<li><p>successful charts are constructed based on elementary tasks “as high in the hierarchy as possible”</p></li>
+</ul>
+<p><span class="body-text-s gray-text">Albert Cairo’s recreation of Cleveland &amp; McGill’s Hierarchy of Elementary Perceptual Tasks <i class="fa-solid fa-arrow-right" title="an arrow pointing to the right" aria-label="arrow-right"></i></span></p>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week3/cairo-elementary-visual-perception.png" style="width:75.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text">
+<p><span class="gray-text">A recreation of Cleveland &amp; McGill’s heirarchy of elementary perceptual tasks, by Albert Cairo</span></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<p>exercise:</p>
+<p>have students estiamate pie slices have students estimate bar lengths</p>
+</section>
+<section class="slide level2">
+
+<p>caveats to Cleveland &amp; McGill</p>
+<ol type="1">
+<li>they were writign about just statistical charts – what about data maps that rely on area / shading / hue? – these lower scale mehtods may be appropriate when the goal isnt’ to enable accurate judgements to reveal general patterns</li>
+</ol>
+<p>e.g.&nbsp;choropleth map; but what if we want to compare unemployment rates between counties? pick a graphcial form from the top of the scale then (e.g.&nbsp;bar chart)</p>
+<p>what if we want to show readers both big picture and details? use both! <strong>multiple graphic forms may enable multiple tasks</strong></p>
+<ol start="2" type="1">
+<li>you can’t apply anyone’s method (including Cleveland &amp; McGill) of choosing graphic forms uncritically</li>
+</ol>
+<p>e.g.&nbsp;Sankey diagram e.g.&nbsp;stacked area chart using Europe’s GDP (can use CA drought as example here next??) – goal is to compare Europe to rest of continents; if goal is to cmpare all continents in same manner, a time series / line chart would be better e.g.&nbsp;show parts of a whole and all lines as individual entities – use interactivity?</p>
+</section>
+<section id="tools-choosing-graph" class="slide level2" data-menu-title="Tools for choosing a graph">
+<h2></h2>
+<p><span class="slide-title">Tools for choosing the right graphic form</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week3/from-data-to-viz.png" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text">
+<p><a href="https://www.data-to-viz.com/">From Data to Viz</a><br>
+<span class="body-text-s">a decision tree organized by data type(s)</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week3/dvc.png" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="center-text">
+<p><a href="https://datavizcatalogue.com/">The Data Visualization Catalogue</a><br>
+<span class="body-text-s">search by graph type or by function</span></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><br></p>
+<div class="center-text teal-text body-text-m">
+<p>No one perfect or best tool!</p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<p>exercise:</p>
+<p>given data set determine apporpriate graphs how does this comare to Cleveland &amp; McGill</p>
+</section>
+<section class="slide level2">
+
+<p>plot data directly</p>
+<p>e.g.&nbsp;plot income and expenses as separate lines or just plot a singe net income line? (latter) <strong>plot your data directly, if difference matters more, plot the difference!</strong> (need environmental example here)</p>
+</section>
+<section class="slide level2">
+
+<p>SOME TIPS</p>
+<ul>
+<li>baselines</li>
+<li>breaking up plots when data vary so much that presenting them all on a single chart renders it useless (e.g.&nbsp;use fracking data?)</li>
+<li>ordering variables / categories – e.g.&nbsp;see trends across age groups by grouping bars by media (see pg 139) (NEED EDS EXAMPLE HERE)</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>use logical &amp; meaningful baselines</p>
+<ul>
+<li>bar, lollipops, histograms, etc should always have a 0 baseline – cannot truncate when main visual cue is height/length measured from a common baseline</li>
+<li>scatterplot, line graph, ec. – can be okay to truncate axes since main visual cue is position, not height/length</li>
+</ul>
+<!-- --- -->
+<!-- ## {#from-data-to-viz2 data-menu-title="From Data to Viz" background-iframe="https://www.data-to-viz.com/" background-interactive=true} -->
+<!-- ::: footer -->
+<!-- **<https://www.data-to-viz.com/>** -->
+<!-- ::: -->
+<!-- --- -->
+<!-- ## {#tbd data-menu-title="tbd"}  -->
+<!-- [tbd]{.slide-title} -->
+<!-- <hr> -->
+<!-- We'll review some fundamental chart types -- many others are variants or extensions on these -->
+<!-- This list is not exhaustive -->
 </section>
 <section id="end-break" class="slide level2" data-menu-title="# End / Break #" data-background="#047C90">
 <h2></h2>
@@ -752,12 +642,12 @@
 <i class="fa-solid fa-mug-hot" title="a mug with steam rising out the top" aria-label="mug-hot"></i> Take a Break
 </p>
 <p class="caption-text">
-<em>~ This is the end of Lesson 2 (of 3) ~</em>
+<em>~ This is the end of Lesson 1 (of 3) ~</em>
 </p>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_0cd956c2" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_11b6be4d" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>

@@ -31,6 +31,7 @@ toc: true
 
 - **[Palette Generator](https://www.learnui.design/tools/data-color-picker.html#palette), by Learn UI Design** -- supply a starting color(s) and this tool will generate a palette, single hue, or divergent color scheme
 - **[Viz Palette](https://projects.susielu.com/viz-palette), by Elijah Meeks and Susie Lu** -- a tool that shows you how well your chosen colors work for tiny lines and big areas, warns if you have colors sharing the same name (which can make it more challenging to talk about your designs, say, in a presentation), and can simulate color vision deficiencies 
+- **[Shade Generator](https://www.shadegenerator.com/047C90)** -- a tool for generating shade scales
 - **[Colorblind Safe Color Schemes](https://www.nceas.ucsb.edu/sites/default/files/2022-06/Colorblind%20Safe%20Color%20Schemes.pdf), by the NCEAS Science Communication Resource Center** -- tips and examples of colorblind-friendly color palettes
 - **[Color review](https://color.review/), by Anton Robsarve** -- for understanding foreground and background contrasts
 - **[Your Friendly Guide to Colors in Data Visualization](https://blog.datawrapper.de/colorguide/#Make-sure-your-colors-work), by Lisa Charlotte Muth** -- a blog post on useful tools for deciding data viz color palettes
