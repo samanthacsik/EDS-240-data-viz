@@ -39,7 +39,8 @@ position <- ggplot(unemployment_dummy_data, aes(x = fct_rev(country), y = percen
 # bubbles ----
 bubbles <- ggplot(unemployment_dummy_data, aes(x = x, y = y)) +
   geom_point(aes(size = percentage), color = "#047C90") +
-  scale_size(range = c(10, 30)) +
+  scale_size_area(max_size = 30) +
+  #scale_size(range = c(10, 30)) +
   scale_y_continuous(limits = c(0.17, 0.191), breaks = c(0, 0.1, 0.191)) + # limits = c(0.17, 0.25),
   scale_x_continuous(limits = c(0, 0.75)) + # , breaks = c(0, 0.2, 0.4, 0.6, 0.8)
   geom_text(aes(label = country), color = "white") +

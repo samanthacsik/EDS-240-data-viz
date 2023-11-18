@@ -1,0 +1,24 @@
+---
+title: "random things to find a place for"
+---
+
+
+plot data directly
+
+e.g. plot income and expenses as separate lines or just plot a singe net income line? (latter) **plot your data directly, if difference matters more, plot the difference!** (need environmental example here)
+
+
+-------
+
+SOME TIPS
+
+- baselines
+- breaking up plots when data vary so much that presenting them all on a single chart renders it useless (e.g. use fracking data?)
+- ordering variables / categories -- e.g. see trends across age groups by grouping bars by media (see pg 139) (NEED EDS EXAMPLE HERE)
+
+--------
+
+use logical & meaningful baselines
+
+- bar, lollipops, histograms, etc should always have a 0 baseline -- cannot truncate when main visual cue is height/length measured from a common baseline
+- scatterplot, line graph, ec. -- can be okay to truncate axes since main visual cue is position, not height/length

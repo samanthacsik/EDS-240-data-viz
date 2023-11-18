@@ -23,12 +23,11 @@ editor_options:
 
 ---
 
-## {#vision-sense data-menu-title="Vision = most important sense"} 
+## {#viz-complex-nums data-menu-title="Visualizing complex numbers"} 
 
 [We understand complex numbers better when they're represented visually]{.slide-title3}
 
 <hr>
-
 
 >"Exams will have a total of 137 points rather than the usual 100. This scoring system has no efect on the grade you get in the course, but it seems to make you happier"
 
@@ -182,11 +181,11 @@ Example adapted from Albert Cairo's, *The Truthful Art*
 :::: columns
 
 ::: {.column width="50%"}
-{{< include R/3.1-length-height.qmd >}}
+{{< include sections/3.1-length-height.qmd >}}
 :::
 
 ::: {.column width="50%"}
-{{< include R/3.1-pos-area.qmd >}}
+{{< include sections/3.1-pos-area.qmd >}}
 :::
 
 ::::
@@ -194,11 +193,11 @@ Example adapted from Albert Cairo's, *The Truthful Art*
 :::: columns
 
 ::: {.column width="50%"}
-{{< include R/3.1-angle.qmd >}}
+{{< include sections/3.1-angle.qmd >}}
 :::
 
 ::: {.column width="50%"}
-{{< include R/3.1-color.qmd >}}
+{{< include sections/3.1-color.qmd >}}
 :::
 
 ::::
@@ -210,36 +209,6 @@ Graphs recreated based on Albert Cairo's example (Fig 5.2) in *The Truthful Art*
 
 ::: notes
 LENGHT, HEIGHT, POSITION probably the best (have students discuss)
-:::
-
----
-
-## {#tips-choosing-graph data-menu-title="Tips for choosing a graph"} 
-
-[Tips for choosing the right graphic form]{.slide-title}
-
-<hr>
-
-1. [**Think about the task(s) you want to enable or message(s) you want to convey.**]{.teal-text} For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.
-
-. . . 
-
-2. [**Consider the number of variables and the number of data points, as well as the data types you're working with.**]{.teal-text} For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.
-
-. . .
-
-3. [**Try different graphic forms,**]{.teal-text} especially if you have more than one task to enable or message to convey.
-
-. . .
-
-4. [**Arrange the components of the graphic**]{.teal-text} to make it as easy as possible to extract meaning from your graphic quickly.
-
-. . .
-
-5. [**Test the outcomes of your graphic on others,**]{.teal-text} particularly on those who are representative of the audience you are trying to reach.
-
-::: footer
-[*Most of the above tips are adapted from [Albert Cairo's](https://www.albertocairo.com/) [The Truthful Art](https://www.amazon.com/gp/product/0321934075/ref=as_li_qf_sp_asin_il_tl?camp=1789&creative=9325&creativeASIN=0321934075&ie=UTF8&linkCode=as2&linkId=A7BVNPNHHPEPJU7K&tag=thefunart03-20)*]{.gray-text .body-text-s}
 :::
 
 ---
@@ -278,7 +247,7 @@ knitr::include_graphics("images/week3/cairo-elementary-visual-perception.png")
 ```
 
 ::: {.center-text}
-[A recreation of Cleveland & McGill's heirarchy of elementary perceptual tasks, by Albert Cairo]{.gray-text}
+[A recreation of Cleveland & McGill's hierarchy of elementary perceptual tasks, by Albert Cairo]{.gray-text}
 :::
 
 :::
@@ -287,52 +256,268 @@ knitr::include_graphics("images/week3/cairo-elementary-visual-perception.png")
 
 ---
 
-exercise:
+## {#compare-circles data-menu-title="Ex: compare circles"} 
 
-have students estiamate pie slices
-have students estimate bar lengths
+[Exercise: How many times bigger is the larger circle?]{.slide-title2}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+circles_bars <- tribble(
+  ~id, ~size, ~posx, ~posy,
+  "A", 7, 0.3, 0.15,
+  "B", 49, 0.7, 0.15
+) |>
+  mutate(id = as.factor(id))
+
+ggplot(circles_bars, aes(x = posx, y = posy)) +
+  geom_point(aes(size = size), color = "#047C90") +
+  scale_size_area(max_size = 90) +
+  scale_x_continuous(limits = c(0, 1)) + 
+  scale_y_continuous(limits = c(0.1, 0.19), breaks = c(0, 0.1, 0.191)) + 
+  theme_void() +
+  theme(legend.position = "none")
+```
+
+```{r}
+countdown::countdown(
+  minutes = 1,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
 
 ---
 
-caveats to Cleveland & McGill
+## {#compare-bars data-menu-title="Ex: compare bars"} 
 
-1. they were writign about just statistical charts -- what about data maps that rely on area / shading / hue? -- these lower scale mehtods may be appropriate when the goal isnt' to enable accurate judgements to reveal general patterns
+[Exercise: How many times bigger is the larger bar?]{.slide-title2}
 
-e.g. choropleth map; but what if we want to compare unemployment rates between counties? pick a graphcial form from the top of the scale then (e.g. bar chart)
+<hr>
 
-what if we want to show readers both big picture and details? use both! **multiple graphic forms may enable multiple tasks**
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+ggplot(circles_bars, aes(x = size, y = id)) +
+  geom_bar(stat = "identity", fill = "#047C90", width = 0.5) +
+  theme_void() 
+```
 
-2. you can't apply anyone's method (including Cleveland & McGill) of choosing graphic forms uncritically
+```{r}
+countdown::countdown(
+  minutes = 1,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
 
-e.g. Sankey diagram
+---
+
+## {#7x data-menu-title="Ex: 7x"} 
+
+[Both the circles & rectangles differ by a magnitude of 7]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| layout-ncol: 2
+ggplot(circles_bars, aes(x = posx, y = posy)) +
+  geom_point(aes(size = size), color = "#047C90") +
+  scale_size_area(max_size = 90) +
+  scale_x_continuous(limits = c(0, 1)) + 
+  scale_y_continuous(limits = c(0.1, 0.19), breaks = c(0, 0.1, 0.191)) + 
+  theme_void() +
+  theme(legend.position = "none")
+
+ggplot(circles_bars, aes(x = size, y = id)) +
+  geom_bar(stat = "identity", fill = "#047C90", width = 0.5) +
+  theme_void() 
+```
+
+---
+
+## {#caveats1 data-menu-title="Caveats 1"} 
+
+[Caveats to the hierarchy]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+[1. Cleveland & McGill only considered *statistical charts*. What about data maps, for example, that rely on area / shading / hue, which fall lower on the hierarchy?]{.body-text-m}
+
+---
+
+## {#caveats1.1 data-menu-title="Caveats 1.1"} 
+
+[Caveats to the hierarchy - an example]{.slide-title}
+
+<hr>
+
+**Lower scale methods can be appropriate when the goal is to reveal general patterns.** For example, a choropleth map displays divided geographical areas / regions, which are colored in relation to a numeric variable.
+
+- unemployment rates by state or county?
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+library(maps)
+library(sf)
+
+usa <- st_as_sf(maps::map("state", fill = TRUE, plot = FALSE))
+
+ggplot(usa) +
+  geom_sf(color = "#2b2b2b", fill = "white", size = 0.125) +
+  coord_sf(crs = st_crs("+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs"), datum = NA) +
+  ggthemes::theme_map()
+
+# ca_counties <- map_data("county", "california") %>% 
+#   select(lon = long, lat, group, id = subregion)
+# head(mi_counties)
+# 
+# ggplot(ca_counties, aes(lon, lat)) + 
+#   geom_point(size = .25, show.legend = FALSE) +
+#   coord_quickmap()
+# 
+# ggplot(ca_counties, aes(lon, lat, group = group)) +
+#   geom_polygon(fill = "white", colour = "grey50") + 
+#   coord_quickmap()
+```
+
+---
+
+## {#caveats2 data-menu-title="Caveats 2"} 
+
+[Caveats to the hierarchy]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+[1. Cleveland & McGill only considered *statistical charts*. What about data maps, for example, that reply on area / shading / hue, which fall lower on the hierarchy?]{.gray-text .body-text-m}
+
+<br>
+
+[2. No method of choosing a graphic form is perfect! It's important to think critically about your graphic's purpose and how best to represent your data to serve that purpose.]{.body-text-m}
+
+---
+
+## {#caveats2.1 data-menu-title="Caveats 2.1"} 
+
+[Caveats to the hierarchy - an example]{.slide-title}
+
+<hr>
+
+Consider how you might display the same data in the following Sankey diagram depicted the flow of refugees in 2022, using graph types from the top of Cleveland & McGill's hierarchy. **What is the purpose of this chart?**
+
+<!-- {{< include sections/3.1-sankey.qmd >}} -->
+
+[Graphic recreated following [Louise E. Sinks'](https://lsinks.github.io/) blog post, [TidyTuesday: Exploring Refugee Flow with A Sankey Diagram](https://lsinks.github.io/posts/2023-08-28-TidyTuesday-Refugees/TidyTuesday34-refugees.html)]{.gray-text .body-text-s}
+
+::: notes
+It would be hard to use a method of encoding from the top of the hierarchy! In this Sankey diagram, readers need to decode length and area, but that's not a huge issue since the purpose of the chart is to show high-level trends / flows of refugees
+:::
+
+----
+
 e.g. stacked area chart using Europe's GDP (can use CA drought as example here next??) -- goal is to compare Europe to rest of continents; if goal is to cmpare all continents in same manner, a time series / line chart would be better
 e.g. show parts of a whole and all lines as individual entities -- use interactivity?
 
 ---
 
-## {#tools-choosing-graph data-menu-title="Tools for choosing a graph"} 
+## {#tips0 data-menu-title="Tips for choosing a graph"} 
 
-[Tools for choosing the right graphic form]{.slide-title}
+[Tips for choosing the right graphic form]{.slide-title}
+
+<hr>
+
+. . . 
+
+1. [**Think about the task(s) you want to enable or message(s) you want to convey.**]{.teal-text} For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.
+
+. . . 
+
+2. [**Consider the number of variables and the number of data points, as well as the data types you're working with.**]{.teal-text} For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.
+
+. . .
+
+3. [**Try different graphic forms,**]{.teal-text} especially if you have more than one task to enable or message to convey.
+
+. . .
+
+4. [**Arrange the components of the graphic**]{.teal-text} to make it as easy as possible to extract meaning from your graphic quickly.
+
+. . .
+
+5. [**Test the outcomes of your graphic on others,**]{.teal-text} particularly on those who are representative of the audience you are trying to reach.
+
+::: footer
+[*Most of the above tips are adapted from [Albert Cairo's](https://www.albertocairo.com/) [The Truthful Art](https://www.amazon.com/gp/product/0321934075/ref=as_li_qf_sp_asin_il_tl?camp=1789&creative=9325&creativeASIN=0321934075&ie=UTF8&linkCode=as2&linkId=A7BVNPNHHPEPJU7K&tag=thefunart03-20)*]{.gray-text .body-text-s}
+:::
+
+---
+
+## {#tips1 data-menu-title="Tips for choosing a graph"} 
+
+[Tips for choosing the right graphic form]{.slide-title}
+
+<hr>
+
+1. [**Think about the task(s) you want to enable or message(s) you want to convey.**]{.teal-text} For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.
+
+2. [**Consider the number of variables and the number of data points, as well as the data types you're working with.** For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.]{.gray-text}
+
+3. [**Try different graphic forms,** especially if you have more than one task to enable or message to convey.]{.gray-text}
+
+4. [**Arrange the components of the graphic** to make it as easy as possible to extract meaning from your graphic quickly.]{.gray-text}
+
+5. [**Test the outcomes of your graphic on others,** particularly on those who are representative of the audience you are trying to reach.]{.gray-text}
+
+::: footer
+[*Most of the above tips are adapted from [Albert Cairo's](https://www.albertocairo.com/) [The Truthful Art](https://www.amazon.com/gp/product/0321934075/ref=as_li_qf_sp_asin_il_tl?camp=1789&creative=9325&creativeASIN=0321934075&ie=UTF8&linkCode=as2&linkId=A7BVNPNHHPEPJU7K&tag=thefunart03-20)*]{.gray-text .body-text-s}
+:::
+
+---
+
+## {#dvc data-menu-title="Data Visualization Catalogue"} 
+
+[1. Think about the task(s) you want to enable or message(s) you want to convey]{.slide-title3}
+<!-- Choose chart types based on function -->
 
 <hr>
 
 :::: columns
-
-::: {.column width="50%"}
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "70%"
-knitr::include_graphics("images/week3/from-data-to-viz.png")
-```
-
-::: {.center-text}
-[From Data to Viz](https://www.data-to-viz.com/)  
-[a decision tree organized by data type(s)]{.body-text-s}
-:::
-
-:::
 
 ::: {.column width="50%"}
 
@@ -350,68 +535,154 @@ knitr::include_graphics("images/week3/dvc.png")
 
 ::: {.center-text}
 [The Data Visualization Catalogue](https://datavizcatalogue.com/)  
-[search by graph type or by function]{.body-text-s}
+[search graphic forms by their function]{.body-text-s}
 :::
 
+:::
+
+::: {.column width="50%"}
+Exercise here?
 :::
 
 ::::
 
-. . . 
 
-<br>
+---
 
-::: {.center-text .teal-text .body-text-m}
-No one perfect or best tool!
+## {#tips2 data-menu-title="Tips for choosing a graph"} 
+
+[Tips for choosing the right graphic form]{.slide-title}
+
+<hr>
+
+1. [**Think about the task(s) you want to enable or message(s) you want to convey.** For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.]{.gray-text}
+
+2. [**Consider the number of variables and the number of data points, as well as the data types you're working with.**]{.teal-text} For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.
+
+3. [**Try different graphic forms,** especially if you have more than one task to enable or message to convey.]{.gray-text}
+
+4. [**Arrange the components of the graphic** to make it as easy as possible to extract meaning from your graphic quickly.]{.gray-text}
+
+5. [**Test the outcomes of your graphic on others,** particularly on those who are representative of the audience you are trying to reach.]{.gray-text}
+
+::: footer
+[*Most of the above tips are adapted from [Albert Cairo's](https://www.albertocairo.com/) [The Truthful Art](https://www.amazon.com/gp/product/0321934075/ref=as_li_qf_sp_asin_il_tl?camp=1789&creative=9325&creativeASIN=0321934075&ie=UTF8&linkCode=as2&linkId=A7BVNPNHHPEPJU7K&tag=thefunart03-20)*]{.gray-text .body-text-s}
 :::
 
 ---
 
-exercise:
+## {#fdtv data-menu-title="From Data To Viz"} 
 
-given data set determine apporpriate graphs
-how does this comare to Cleveland & McGill
+[2. Consider # of variables & data points, data types]{.slide-title}
+<!-- Choose chart types based on data -->
+
+<hr>
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%"
+knitr::include_graphics("images/week3/from-data-to-viz.png")
+```
+
+::: {.center-text}
+[From Data to Viz](https://www.data-to-viz.com/)  
+[a decision tree for choosing graphic forms based on data type(s)]{.body-text-s}
+:::
+
+:::
+
+::: {.column width="50%"}
+Exercise here
+:::
+
+::::
 
 ---
 
-plot data directly
+## {#tips3 data-menu-title="Tips for choosing a graph"} 
 
-e.g. plot income and expenses as separate lines or just plot a singe net income line? (latter) **plot your data directly, if difference matters more, plot the difference!** (need environmental example here)
+[Tips for choosing the right graphic form]{.slide-title}
+
+<hr>
+
+1. [**Think about the task(s) you want to enable or message(s) you want to convey.** For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.]{.gray-text}
+
+2. [**Consider the number of variables and the number of data points, as well as the data types you're working with.** For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.]{.gray-text}
+
+3. [**Try different graphic forms,**]{.teal-text} especially if you have more than one task to enable or message to convey.
+
+4. [**Arrange the components of the graphic** to make it as easy as possible to extract meaning from your graphic quickly.]{.gray-text}
+
+5. [**Test the outcomes of your graphic on others,** particularly on those who are representative of the audience you are trying to reach.]{.gray-text}
+
+::: footer
+[*Most of the above tips are adapted from [Albert Cairo's](https://www.albertocairo.com/) [The Truthful Art](https://www.amazon.com/gp/product/0321934075/ref=as_li_qf_sp_asin_il_tl?camp=1789&creative=9325&creativeASIN=0321934075&ie=UTF8&linkCode=as2&linkId=A7BVNPNHHPEPJU7K&tag=thefunart03-20)*]{.gray-text .body-text-s}
+:::
 
 ---
 
-SOME TIPS
+[Try different graphic forms]{.slide-title}
 
-- baselines
-- breaking up plots when data vary so much that presenting them all on a single chart renders it useless (e.g. use fracking data?)
-- ordering variables / categories -- e.g. see trends across age groups by grouping bars by media (see pg 139) (NEED EDS EXAMPLE HERE)
+Recall choropleth from earlier. What if we want to compare unemployment rates between counties? Choosing a graphical form from the top of the scale (e.g. bar chart) may be most effective.
 
---- 
+And if we want to show both big picture patterns and detailed comparisons, **consider including multiple graphic forms in the same visualization!**
 
-use logical & meaningful baselines
+---
 
-- bar, lollipops, histograms, etc should always have a 0 baseline -- cannot truncate when main visual cue is height/length measured from a common baseline
-- scatterplot, line graph, ec. -- can be okay to truncate axes since main visual cue is position, not height/length
+## {#tips4 data-menu-title="Tips for choosing a graph"} 
 
-<!-- --- -->
+[Tips for choosing the right graphic form]{.slide-title}
 
-<!-- ## {#from-data-to-viz2 data-menu-title="From Data to Viz" background-iframe="https://www.data-to-viz.com/" background-interactive=true} -->
+<hr>
 
-<!-- ::: footer -->
-<!-- **<https://www.data-to-viz.com/>** -->
-<!-- ::: -->
+1. [**Think about the task(s) you want to enable or message(s) you want to convey.** For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.]{.gray-text}
 
-<!-- --- -->
+2. [**Consider the number of variables and the number of data points, as well as the data types you're working with.** For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.]{.gray-text}
 
-<!-- ## {#tbd data-menu-title="tbd"}  -->
+3. [**Try different graphic forms,** especially if you have more than one task to enable or message to convey.]{.gray-text}
 
-<!-- [tbd]{.slide-title} -->
+4. [**Arrange the components of the graphic**]{.teal-text} to make it as easy as possible to extract meaning from your graphic quickly.
 
-<!-- <hr> -->
+5. [**Test the outcomes of your graphic on others,** particularly on those who are representative of the audience you are trying to reach.]{.gray-text}
 
-<!-- We'll review some fundamental chart types -- many others are variants or extensions on these -->
+::: footer
+[*Most of the above tips are adapted from [Albert Cairo's](https://www.albertocairo.com/) [The Truthful Art](https://www.amazon.com/gp/product/0321934075/ref=as_li_qf_sp_asin_il_tl?camp=1789&creative=9325&creativeASIN=0321934075&ie=UTF8&linkCode=as2&linkId=A7BVNPNHHPEPJU7K&tag=thefunart03-20)*]{.gray-text .body-text-s}
+:::
 
-<!-- This list is not exhaustive -->
+---
+
+advertising methods example from Cairo (or try to find EDS alternative)
+
+---
+
+## {#tips-choosing-graph5 data-menu-title="Tips for choosing a graph"} 
+
+[Tips for choosing the right graphic form]{.slide-title}
+
+<hr>
+
+1. [**Think about the task(s) you want to enable or message(s) you want to convey.** For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.]{.gray-text}
+
+2. [**Consider the number of variables and the number of data points, as well as the data types you're working with.** For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.]{.gray-text}
+
+3. [**Try different graphic forms,** especially if you have more than one task to enable or message to convey.]{.gray-text}
+
+4. [**Arrange the components of the graphic** to make it as easy as possible to extract meaning from your graphic quickly.]{.gray-text}
+
+5. [**Test the outcomes of your graphic on others,**]{.teal-text} particularly on those who are representative of the audience you are trying to reach.
+
+::: footer
+[*Most of the above tips are adapted from [Albert Cairo's](https://www.albertocairo.com/) [The Truthful Art](https://www.amazon.com/gp/product/0321934075/ref=as_li_qf_sp_asin_il_tl?camp=1789&creative=9325&creativeASIN=0321934075&ie=UTF8&linkCode=as2&linkId=A7BVNPNHHPEPJU7K&tag=thefunart03-20)*]{.gray-text .body-text-s}
+:::
+
+---
+
+tbd
 
 ---
 

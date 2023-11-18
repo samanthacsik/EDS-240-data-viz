@@ -417,9 +417,8 @@ knitr::include_graphics("images/week1/sabbarao-climate-spiral.gif")
 <br>
 
 ::: {.center-text .gray-text}
-gif created from [Mark SubbaRao](https://www.linkedin.com/in/msubbarao/)'s [Climate Spiral](https://svs.gsfc.nasa.gov/5161).
+gif created from [Mark SubbaRao](https://www.linkedin.com/in/msubbarao/)'s [Climate Spiral](https://svs.gsfc.nasa.gov/5161). For a similar visualization with accompanying `{ggplot2}` code, see [Nicola Rennie](https://nrennie.rbind.io/)'s [TidyTuesday contribution](https://github.com/nrennie/tidytuesday/tree/main/2023/2023-07-11)!
 :::
-
 
 ---
 
