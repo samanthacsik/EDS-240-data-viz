@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
-  <title>EDS 240 – week3.3-evolution</title>
+  <title>EDS 240 – county-precip</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -28,79 +28,12 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #767676;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
-    div.sourceCode
-      { color: #545454; background-color: #fefefe; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #545454; } /* Normal */
-    code span.al { color: #7928a1; } /* Alert */
-    code span.an { color: #696969; } /* Annotation */
-    code span.at { color: #a55a00; } /* Attribute */
-    code span.bn { color: #7928a1; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #d91e18; } /* ControlFlow */
-    code span.ch { color: #008000; } /* Char */
-    code span.cn { color: #d91e18; } /* Constant */
-    code span.co { color: #696969; } /* Comment */
-    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
-    code span.do { color: #696969; font-style: italic; } /* Documentation */
-    code span.dt { color: #7928a1; } /* DataType */
-    code span.dv { color: #7928a1; } /* DecVal */
-    code span.er { color: #7928a1; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #a55a00; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #696969; } /* Information */
-    code span.kw { color: #d91e18; } /* Keyword */
-    code span.op { color: #00769e; } /* Operator */
-    code span.ot { color: #d91e18; } /* Other */
-    code span.pp { color: #7928a1; } /* Preprocessor */
-    code span.sc { color: #00769e; } /* SpecialChar */
-    code span.ss { color: #008000; } /* SpecialString */
-    code span.st { color: #008000; } /* String */
-    code span.va { color: #a55a00; } /* Variable */
-    code span.vs { color: #008000; } /* VerbatimString */
-    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
-  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -391,218 +324,26 @@
     <div class="slides">
 
 
-<section id="title-slide" class="slide level2 center" data-menu-title="Title Slide" data-background="#053660">
-<h2></h2>
-<p><span class="custom-title">EDS 240: Lecture 3.3</span></p>
-<p><span class="custom-subtitle"><em>Visualizing Evolution</em></span></p>
-<hr class="hr-teal">
-<p><span class="custom-subtitle3">Week 3 | January 22<sup>nd</sup>, 2024</span></p>
-</section>
-<section id="viz-evolution" class="slide level2" data-menu-title="Visualizing evolution">
-<h2></h2>
-<p><span class="slide-title">Visualizing data <em>evolution</em>?</span></p>
-<hr>
-<p><br> <br> <br> <br> <br> <br></p>
-<div class="fragment">
-<div class="body-text-l center-text">
-<p>Visualizing the change in a numeric variable over some unit of time.</p>
+<section class="slide level2">
+
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="3.1-county-precip_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</section>
-<section id="main-evo-charts" class="slide level2" data-menu-title="Chart types">
-<h2></h2>
-<p><span class="slide-title2">Roadmap</span></p>
-<hr>
-<ol type="1">
-<li>line graphs
-<ul>
-<li>when to use them</li>
-<li>considerations:
-<ul>
-<li>to cut or not to cut your y-axis</li>
-<li>avoiding “spaghetti” charts</li>
-<li>aspect ratio (width:height)</li>
-<li>no dual axes</li>
-</ul></li>
-</ul></li>
-</ol>
-</section>
-<section id="line-graphs" class="slide level2" data-menu-title="Line graphs">
-<h2></h2>
-<p><span class="slide-title3">Line graphs: visualize ordered numeric variables over time</span></p>
-<hr>
-<p>Line graphs display the <strong>evolution of one or several <em>numeric</em> variables</strong>. Measurement points are <strong>ordered</strong> (typically by their x-axis value) and joined with straight line segments.</p>
-<p>They are often used to visualize a trend in data over continuous intervals of time, but can also be used to visualize a trend in data over ordered categorical variables (e.g.&nbsp;month).</p>
-</section>
-<section id="line-graphs" class="slide level2" data-menu-title="Line graphs">
-<h2></h2>
-<p><span class="slide-title2">Line graph axis <em>doesn’t</em> need to start at 0</span></p>
-<hr>
-<p>Bar graphs must start at 0 – otherwise misleading when encoding data by bars / comparing lengths</p>
-<p>Line graphs encode data by position, not length; include 0 if it makes sense</p>
-<ul>
-<li>dont’ start at 0 if the range of the data is small but the distance from the bottom of the range to 0 is large</li>
-</ul>
-</section>
-<section id="viz-dist" class="slide level2" data-menu-title="Visualizing distributions">
-<h2></h2>
-<p><span class="slide-title">“Core” evolution chart types</span></p>
-<hr>
-<ul>
-<li>line</li>
-<li>connected scatter</li>
-<li>area</li>
-<li>stacked area</li>
-<li>stream</li>
-</ul>
-</section>
-<section id="refugee-data" class="slide level2" data-menu-title="Refugee data">
-<h2></h2>
-<p><span class="slide-title">The data: <code>{refugees}</code></span></p>
-<hr>
-<p><code>{refugees}</code> is an R package designed to facilitate access to the <a href="https://www.unhcr.org/us/">United Nations High Commissioner for Refugees</a> (UNHCR) <a href="https://www.unhcr.org/refugee-statistics/download/?url=sH5pnE">Refugee Data Finder</a>. It provides an easy-to-use interface to the database, which covers forcibly displaced populations, including refugees, asylum-seekers, internally displaced people, stateless people, and others over a span of more than 70 years.</p>
-<p>We’ll explore <strong>changes in refugee numbers</strong> through time from different countries of origin.</p>
-</section>
-<section id="refugee-data-wrangling" class="slide level2" data-menu-title="Refugee data wrangling">
-<h2></h2>
-<p><span class="slide-title">Data wrangling: <code>{refugees}</code></span></p>
-<hr>
-<p>We’ll be using the <code>population</code> data set from the <code>{refugees}</code> package. Learn more about the data in the <a href="https://populationstatistics.github.io/refugees/">package documentation</a>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#..........................load packages.........................</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(refugees)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="co">#..........................wrangle data..........................</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a>pop_clean <span class="ot">&lt;-</span> population <span class="sc">|&gt;</span> </span>
-<span id="cb1-7"><a href="#cb1-7"></a>  </span>
-<span id="cb1-8"><a href="#cb1-8"></a>  <span class="co"># remove observations with "Unknown" country of origin ----</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a>  <span class="fu">filter</span>(coo_name <span class="sc">!=</span> <span class="st">"Unknown"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb1-10"><a href="#cb1-10"></a>  </span>
-<span id="cb1-11"><a href="#cb1-11"></a>  <span class="co"># select relevant cols ----</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a>  <span class="fu">select</span>(year, <span class="at">origin =</span> coo_name, refugees) <span class="sc">|&gt;</span> </span>
-<span id="cb1-13"><a href="#cb1-13"></a>  </span>
-<span id="cb1-14"><a href="#cb1-14"></a>  <span class="co"># convert year to date type ----</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">ymd</span>(year, <span class="at">truncated =</span> 2L)) <span class="sc">|&gt;</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a>  </span>
-<span id="cb1-17"><a href="#cb1-17"></a>  <span class="co"># calculate total refugees per country per year ----</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a>  <span class="fu">group_by</span>(date, origin) <span class="sc">|&gt;</span>  </span>
-<span id="cb1-19"><a href="#cb1-19"></a>  <span class="fu">summarize</span>(<span class="at">total_refugees =</span> <span class="fu">sum</span>(refugees)) <span class="sc">|&gt;</span> </span>
-<span id="cb1-20"><a href="#cb1-20"></a>  </span>
-<span id="cb1-21"><a href="#cb1-21"></a>  <span class="co"># keep only observations from 2013 onwards ----</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a>  <span class="fu">filter</span>(date <span class="sc">&gt;=</span> <span class="st">"2013-01-01"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="line-overview" class="slide level2" data-menu-title="Line graph overview">
-<h2></h2>
-<p><span class="slide-title">Line graph - <code>ggplot2::geom_line()</code></span></p>
-<hr>
-<p><span class="teal-text"><strong>What are they?</strong></span></p>
-<ul>
-<li>Line graphs display the <strong>evolution of one or several <em>numeric</em> variables</strong>. They are similar to scatter plots, but the measurement points are <strong>ordered</strong> (typically by their x-axis value) and joined with straight line segments. They are often used to visualize a trend in data over intervals of time.</li>
-</ul>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><span class="teal-text"><strong>Need:</strong></span></p>
-<ul>
-<li>an ordered numeric variable(s)</li>
-</ul>
-<p><span class="teal-text"><strong>Important considerations:</strong></span></p>
-<ul>
-<li>to cut or not to cut the y-axis (i.e.&nbsp;starting the y-axis at 0)</li>
-<li>avoid using a dual axis when comparing the evolution of 2 different variables</li>
-<li>be mindful of creating a “spaghetti chart”</li>
-<li>consider aspect ratio (width:height ratio of a graphic)</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><br></p>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="3.1-county-precip_files/figure-revealjs/unnamed-chunk-1-2.png" width="960"></p>
+</figure>
 </div>
 </div>
-</section>
-<section id="conn-line-overview" class="slide level2" data-menu-title="Connected line graph overview">
-<h2></h2>
-<p><span class="slide-title">Connected line graph - <code>ggplot2::tbd</code></span></p>
-<hr>
-<p><span class="teal-text"><strong>What are they?</strong></span></p>
-<ul>
-<li>tbd</li>
-</ul>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><span class="teal-text"><strong>Need:</strong></span></p>
-<ul>
-<li>tbd</li>
-</ul>
-<p><span class="teal-text"><strong>Important considerations:</strong></span></p>
-<ul>
-<li>tbd</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><br></p>
 </div>
 </div>
-</section>
-<section id="drought-data" class="slide level2" data-menu-title="Drought data">
-<h2></h2>
-<p><span class="slide-title">The data: California droughts</span></p>
-<hr>
-<p>The <a href="https://droughtmonitor.unl.edu/">U.S. Drought Monitor</a> (USDM) is a collection of measures that allows experts to assess droughts in the United States. You can download and explore comprehensive statistics through their <a href="https://droughtmonitor.unl.edu/DmData/DataDownload/ComprehensiveStatistics.aspx">data portal</a>.</p>
-<div class="body-text-s gray-text center-text">
-<p><em>Percentage area of California in U.S. drought monitor categories. Source <a href="https://en.wikipedia.org/wiki/Droughts_in_California#:~:text=County%20municipal%20rates.-,Dry%20years,2017%2C%20and%202020%E2%80%932022.">Wikipedia</a></em></p>
-</div>
-<p><br></p>
-<p>Using these data, we’ll explore <strong>drought conditions in California</strong> through time.</p>
-</section>
-<section id="drought-data-wrangling" class="slide level2" data-menu-title="Drought data wrangling">
-<h2></h2>
-<p><span class="slide-title">Data wrangling: California droughts</span></p>
-<hr>
-<p>The <a href="https://github.com/rfordatascience/tidytuesday/tree/master">TidyTuesday</a> community <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-07-20">featured a data set from the USDM</a> in 2021, which means we can use the <code>{tidytuesdayR}</code> package to import the data.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Downloading file 1 of 1: `drought.csv`</code></pre>
-</div>
-</div>
-</section>
-<section id="area-plot-overview" class="slide level2" data-menu-title="Area plot overview">
-<h2></h2>
-<p><span class="slide-title">Area plot - <code>ggplot2::geom_area()</code></span></p>
-<hr>
-<p><span class="teal-text"><strong>What are they?</strong></span></p>
-<ul>
-<li>Area charts represent the <strong>evolution of one or more <em>numeric</em> variables.</strong> They are similar to line charts in that the measured points are <strong>ordered</strong> (typically by their x-axis value) and joined with straight line segments. The area between the x-axis and the line is filled with color or shading.</li>
-</ul>
-<!-- :::: columns  -->
-<!-- ::: {.column width="50%"} -->
-<p><span class="teal-text"><strong>Need:</strong></span></p>
-<ul>
-<li>an ordered numeric variable(s)</li>
-</ul>
-<p><span class="teal-text"><strong>Important considerations:</strong></span></p>
-<ul>
-<li>only use if you want to show the evolution of values (not if you want to show how values differ in different categories)</li>
-<li>work best when:
-<ul>
-<li>the total (height of all stacked areas) is as important as its shares</li>
-<li>you have large differences between your values</li>
-<li>for showing multiple values over time</li>
-<li>you have many (&gt;10) dates</li>
-</ul></li>
-<li>LOTS of great visual examples in this <a href="https://blog.datawrapper.de/area-charts/">Datawrapper blog post</a>, by Lisa Charlotte Muth</li>
-<li>bring the most important value to the bottom of the chart and/or use color to make it stand out</li>
-<li>consider using annotations and/or highlighted ranges</li>
-<li>group many time values together into one larger value <!-- ::: --></li>
-</ul>
-<!-- ::: {.column width="50%"} -->
-<!-- <br> -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- #| echo: false -->
-<!-- #| fig-align: "center" -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- :::: -->
 
 <div class="footer footer-default">
 
@@ -612,20 +353,19 @@
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -640,8 +380,7 @@
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -662,7 +401,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: false,
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -812,7 +551,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
           RevealMath,
           RevealNotes,

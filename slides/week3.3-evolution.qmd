@@ -71,7 +71,7 @@ Line graphs display the **evolution of one or several *numeric* variables**. Mea
 They are often used to visualize a trend in data over continuous intervals of time, but can also be used to visualize a trend in data over ordered categorical variables (e.g. month).
 
 ```{r}
-#| eval: true
+#| eval: false
 #| echo: false
 #| fig-align: "center"
 #| out-width: "60%"
@@ -178,7 +178,7 @@ Line graphs encode data by position, not length; include 0 if it makes sense
 <hr>
 
 ```{r}
-#| eval: true
+#| eval: false
 #| echo: false
 library(palmerpenguins)
 library(tidyverse)
@@ -201,7 +201,7 @@ library(tidyverse)
 `{refugees}` is an R package designed to facilitate access to the [United Nations High Commissioner for Refugees](https://www.unhcr.org/us/) (UNHCR) [Refugee Data Finder](https://www.unhcr.org/refugee-statistics/download/?url=sH5pnE). It provides an easy-to-use interface to the database, which covers forcibly displaced populations, including refugees, asylum-seekers, internally displaced people, stateless people, and others over a span of more than 70 years.
 
 ```{r}
-#| eval: true
+#| eval: false
 #| echo: false
 #| fig-align: "center"
 #| out-width: "50%"
@@ -222,7 +222,7 @@ We'll explore **changes in refugee numbers** through time from different countri
 We'll be using the `population` data set from the `{refugees}` package. Learn more about the data in the [package documentation](https://populationstatistics.github.io/refugees/).
 
 ```{r}
-#| eval: true
+#| eval: false
 #| echo: true
 #..........................load packages.........................
 library(refugees)
@@ -279,7 +279,7 @@ pop_clean <- population |>
 <br>
 
 ```{r}
-#| eval: true
+#| eval: false
 #| echo: false
 #| fig-align: "center"
 
@@ -316,7 +316,7 @@ pop_clean <- population |>
 <br>
 
 ```{r}
-#| eval: true
+#| eval: false
 #| echo: false
 #| fig-align: "center"
 
@@ -336,7 +336,7 @@ pop_clean <- population |>
 The [U.S. Drought Monitor](https://droughtmonitor.unl.edu/) (USDM) is a collection of measures that allows experts to assess droughts in the United States. You can download and explore comprehensive statistics through their [data portal](https://droughtmonitor.unl.edu/DmData/DataDownload/ComprehensiveStatistics.aspx). 
 
 ```{r}
-#| eval: true
+#| eval: false
 #| echo: false
 #| fig-align: "center"
 #| out-width: "50%"
@@ -427,7 +427,7 @@ drought_clean <- drought |>
 <!-- <br> -->
 
 <!-- ```{r} -->
-<!-- #| eval: true -->
+<!-- #| eval: false -->
 <!-- #| echo: false -->
 <!-- #| fig-align: "center" -->
 

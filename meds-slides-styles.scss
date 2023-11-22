@@ -152,7 +152,7 @@ hr {
 // S body text
 .body-text-s {
   font-size: 20px;
-	line-height: 0.7em;
+	line-height: 0.5em;
 }
 
 // XS body text
@@ -169,6 +169,11 @@ hr {
 // dark blue text
 .dark-blue-text {
   color: $dark-blue;
+}
+
+// white text
+.white-text {
+  color: $white;
 }
 
 // teal text

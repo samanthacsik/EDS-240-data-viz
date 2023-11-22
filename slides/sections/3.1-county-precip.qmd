@@ -8,6 +8,7 @@ editor_options:
 #| eval: true
 #| echo: false
 #| fig-align: "center"
+#| layout-ncol: 2
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                              important links                             ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -54,7 +55,6 @@ precip_counties <- precip_counties |>
 #............................join dfs............................
 joined_precip_us_counties <- full_join(precip_counties, us_counties)
 
-
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                                 create map                               ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,9 +64,29 @@ ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) +
   geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + #, color = "gray"
   geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
   scale_fill_gradientn(colours = rev(c("#B10025", "#FF8A37", "#FBFE82", "#00712F", "#9CDC94", "#C2EDBA", "#FFFFFF")), 
-                         breaks = c(0, 2, 4, 6, 8, 10, 12)) +
+                       breaks = c(0, 2, 4, 6, 8, 10, 12)) +
   labs(title = "Total Precipitation, by County",
        subtitle = "October 2023",
        fill = "Precip\n(inches)") +
   theme_void()
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                              create bar chart                            ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#...............precipitation data for CA counties...............
+ca_precip <- precip_counties |> 
+  filter(state == "california") |> 
+  mutate(county = str_to_title(county))
+
+#.........................create barplot.........................
+ggplot(ca_precip, aes(x = reorder(county, precip), y = precip)) +
+  geom_bar(stat = "identity", width = 0.9, fill = "#635F5F") +
+  coord_flip() +
+  labs(x = "", y = "Total Precipitation (inches)") +
+  scale_fill_gradientn(colours = rev(c("#B10025", "#FF8A37", "#FBFE82", "#00712F", "#9CDC94", "#C2EDBA", "#FFFFFF"))) +
+  theme_classic()
 ```
+
+
+

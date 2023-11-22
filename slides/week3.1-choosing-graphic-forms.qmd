@@ -39,6 +39,7 @@ editor_options:
 - [**Later years:** exam graded 0 - 137 with an average score of 96 points = no complaints]{.body-text-s}
 
 . . . 
+
 ```{r}
 #| eval: true
 #| echo: false
@@ -378,7 +379,7 @@ ggplot(circles_bars, aes(x = size, y = id)) +
 
 ---
 
-## {#caveats1.1 data-menu-title="Caveats 1.1"} 
+## {#caveats1.1 data-menu-title="Caveats 1 (example)"} 
 
 [Caveats to the hierarchy - an example]{.slide-title}
 
@@ -386,33 +387,14 @@ ggplot(circles_bars, aes(x = size, y = id)) +
 
 **Lower scale methods can be appropriate when the goal is to reveal general patterns.** For example, a choropleth map displays divided geographical areas / regions, which are colored in relation to a numeric variable.
 
-- unemployment rates by state or county?
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-library(maps)
-library(sf)
+<!-- Followed instructions for creating choropleth map here: <https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html> -->
+<!-- Download precipitation data here: <https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value> -->
 
-usa <- st_as_sf(maps::map("state", fill = TRUE, plot = FALSE))
+{{< include sections/3.1-choropleth.qmd >}}
 
-ggplot(usa) +
-  geom_sf(color = "#2b2b2b", fill = "white", size = 0.125) +
-  coord_sf(crs = st_crs("+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs"), datum = NA) +
-  ggthemes::theme_map()
-
-# ca_counties <- map_data("county", "california") %>% 
-#   select(lon = long, lat, group, id = subregion)
-# head(mi_counties)
-# 
-# ggplot(ca_counties, aes(lon, lat)) + 
-#   geom_point(size = .25, show.legend = FALSE) +
-#   coord_quickmap()
-# 
-# ggplot(ca_counties, aes(lon, lat, group = group)) +
-#   geom_polygon(fill = "white", colour = "grey50") + 
-#   coord_quickmap()
-```
+::: {.center-text .gray-text .body-text-s}
+Precipitation data downloaded from NOAA's [National Centers for Environmental Information](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value). Map created using the [`{maps}` package](https://cran.r-project.org/web/packages/maps/index.html).
+:::
 
 ---
 
@@ -433,7 +415,7 @@ ggplot(usa) +
 
 ---
 
-## {#caveats2.1 data-menu-title="Caveats 2.1"} 
+## {#caveats2.1 data-menu-title="Caveats 2 (example)"} 
 
 [Caveats to the hierarchy - an example]{.slide-title}
 
@@ -442,17 +424,13 @@ ggplot(usa) +
 Consider how you might display the same data in the following Sankey diagram depicted the flow of refugees in 2022, using graph types from the top of Cleveland & McGill's hierarchy. **What is the purpose of this chart?**
 
 <!-- {{< include sections/3.1-sankey.qmd >}} -->
+NEED TO TROUBLESHOOT CODE (code runs but errors out when rendering on slide)
 
 [Graphic recreated following [Louise E. Sinks'](https://lsinks.github.io/) blog post, [TidyTuesday: Exploring Refugee Flow with A Sankey Diagram](https://lsinks.github.io/posts/2023-08-28-TidyTuesday-Refugees/TidyTuesday34-refugees.html)]{.gray-text .body-text-s}
 
 ::: notes
 It would be hard to use a method of encoding from the top of the hierarchy! In this Sankey diagram, readers need to decode length and area, but that's not a huge issue since the purpose of the chart is to show high-level trends / flows of refugees
 :::
-
-----
-
-e.g. stacked area chart using Europe's GDP (can use CA drought as example here next??) -- goal is to compare Europe to rest of continents; if goal is to cmpare all continents in same manner, a time series / line chart would be better
-e.g. show parts of a whole and all lines as individual entities -- use interactivity?
 
 ---
 
@@ -488,7 +466,7 @@ e.g. show parts of a whole and all lines as individual entities -- use interacti
 
 ---
 
-## {#tips1 data-menu-title="Tips for choosing a graph"} 
+## {#tips1 data-menu-title="Tips for choosing a graph 1"} 
 
 [Tips for choosing the right graphic form]{.slide-title}
 
@@ -512,8 +490,7 @@ e.g. show parts of a whole and all lines as individual entities -- use interacti
 
 ## {#dvc data-menu-title="Data Visualization Catalogue"} 
 
-[1. Think about the task(s) you want to enable or message(s) you want to convey]{.slide-title3}
-<!-- Choose chart types based on function -->
+[1: Think about the task(s) you want to enable or message(s) you want to convey]{.slide-title3}
 
 <hr>
 
@@ -541,7 +518,12 @@ knitr::include_graphics("images/week3/dvc.png")
 :::
 
 ::: {.column width="50%"}
-Exercise here?
+
+<br>
+<br>
+
+**Exercise:** tbd
+
 :::
 
 ::::
@@ -549,7 +531,7 @@ Exercise here?
 
 ---
 
-## {#tips2 data-menu-title="Tips for choosing a graph"} 
+## {#tips2 data-menu-title="Tips for choosing a graph 2"} 
 
 [Tips for choosing the right graphic form]{.slide-title}
 
@@ -574,7 +556,6 @@ Exercise here?
 ## {#fdtv data-menu-title="From Data To Viz"} 
 
 [2. Consider # of variables & data points, data types]{.slide-title}
-<!-- Choose chart types based on data -->
 
 <hr>
 
@@ -597,14 +578,19 @@ knitr::include_graphics("images/week3/from-data-to-viz.png")
 :::
 
 ::: {.column width="50%"}
-Exercise here
+
+<br>
+<br>
+
+**Exercise:** tbd
+
 :::
 
 ::::
 
 ---
 
-## {#tips3 data-menu-title="Tips for choosing a graph"} 
+## {#tips3 data-menu-title="Tips for choosing a graph 3"} 
 
 [Tips for choosing the right graphic form]{.slide-title}
 
@@ -614,7 +600,7 @@ Exercise here
 
 2. [**Consider the number of variables and the number of data points, as well as the data types you're working with.** For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.]{.gray-text}
 
-3. [**Try different graphic forms,**]{.teal-text} especially if you have more than one task to enable or message to convey.
+3. [**Try different graphic forms**]{.teal-text} especially if you have more than one task to enable or message to convey.
 
 4. [**Arrange the components of the graphic** to make it as easy as possible to extract meaning from your graphic quickly.]{.gray-text}
 
@@ -626,15 +612,23 @@ Exercise here
 
 ---
 
-[Try different graphic forms]{.slide-title}
+## {#choro-bar data-menu-title="Choropleth & Bar chart"} 
 
-Recall choropleth from earlier. What if we want to compare unemployment rates between counties? Choosing a graphical form from the top of the scale (e.g. bar chart) may be most effective.
+[3. Try different graphic forms]{.slide-title}
 
-And if we want to show both big picture patterns and detailed comparisons, **consider including multiple graphic forms in the same visualization!**
+<hr>
+
+Recall our choropleth map from earlier, which displays total precipitation by US county. What if we want to compare precipitation between CA counties? Choosing a graphical form from the top of the hierarchy (e.g. bar chart) may be more effective.
+
+<br>
+
+{{< include sections/3.1-county-precip.qmd >}}
+
+If we want to show both big picture patterns and detailed comparisons, we may **consider including multiple graphic forms in the same visualization.**
 
 ---
 
-## {#tips4 data-menu-title="Tips for choosing a graph"} 
+## {#tips4 data-menu-title="Tips for choosing a graph 4"} 
 
 [Tips for choosing the right graphic form]{.slide-title}
 
@@ -656,11 +650,146 @@ And if we want to show both big picture patterns and detailed comparisons, **con
 
 ---
 
-advertising methods example from Cairo (or try to find EDS alternative)
+## {#ad-methods1 data-menu-title="Advertising methods 1"} 
+
+[4. Arrange components of the graphic]{.slide-title}
+
+<hr>
+
+<br>
+How does the influence of **in-theater advertising** change across generations?
+<br>
+<br>
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week3/cairo-advertising-v1.png")
+```
+:::
+
+::: {.column width="50%"}
+:::
+
+::::
+
+::: footer
+::: {.center-text .gray-text}
+Images from [Albert Cairo's *The Truthful Art*](https://www.albertocairo.com/)
+:::
+:::
 
 ---
 
-## {#tips-choosing-graph5 data-menu-title="Tips for choosing a graph"} 
+## {#ad-methods2 data-menu-title="Advertising methods 2"} 
+
+[4. Arrange components of the graphic]{.slide-title}
+
+<hr>
+
+<br>
+How does the influence of **in-theater advertising** change across generations?
+<br>
+<br>
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week3/cairo-advertising-v1.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week3/cairo-advertising-v2.png")
+```
+:::
+
+::::
+
+::: footer
+::: {.center-text .gray-text}
+Images from [Albert Cairo's *The Truthful Art*](https://www.albertocairo.com/)
+:::
+:::
+
+---
+
+## {#fed-spending1 data-menu-title="Federal spending (a)"} 
+
+[4. Arrange components of the graphic]{.slide-title}
+
+<hr>
+
+**Let's say we're interested in:**
+
+a. changes in the amount spent on Social Security over time (2012-2015) relative to other major spending categories?
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week3/sonderegger-fed-spending1.png")
+```
+
+<br>
+
+::: footer
+::: {.center-text .gray-text}
+Example from Derek L. Sonderegger's online textbook, [STA 141 - Exploratory Data Analysis and Visualization](https://bookdown.org/dereksonderegger/141/)
+:::
+:::
+
+---
+
+## {#fed-spending2 data-menu-title="Federal spending (b)"} 
+
+[4. Arrange components of the graphic]{.slide-title}
+
+<hr>
+
+**Let's say we're interested in:**
+
+a. changes in the amount spent on Social Security over time (2012-2015) relative to other major spending categories?
+
+b. the amount of money spent on Social Security over time (2012-2015)?
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week3/sonderegger-fed-spending2.png")
+```
+
+<br>
+
+::: footer
+::: {.center-text .gray-text}
+Example from Derek L. Sonderegger's online textbook, [STA 141 - Exploratory Data Analysis and Visualization](https://bookdown.org/dereksonderegger/141/)
+:::
+:::
+
+
+---
+
+## {#tips5 data-menu-title="Tips for choosing a graph 5"} 
 
 [Tips for choosing the right graphic form]{.slide-title}
 
@@ -682,7 +811,225 @@ advertising methods example from Cairo (or try to find EDS alternative)
 
 ---
 
-tbd
+## {#iraq data-menu-title="Iraq deaths"} 
+
+[5. Test the outcomes of your graphic on others]{.slide-title2}
+
+<hr>
+
+:::: columns
+
+::: {.column width="50%"}
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "65%"
+knitr::include_graphics("images/week3/iraq-deaths.png")
+```
+
+::: {.center-text .gray-text .body-text-s}
+Source: [Iraq's bloody toll](https://www.scmp.com/infographics/article/1284683/iraqs-bloody-toll).
+:::
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+::: {.center-text}
+**To enlarge image (in Chrome), right click on image > Open image in New Tab**
+:::
+
+<br>
+
+- What is the take home message of this graphic?
+- What is effective? What is confusing?
+
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+::::
+
+---
+
+## {#guns1 data-menu-title="Gun deaths (original)"} 
+
+[5. Test the outcomes of your graphic on others]{.slide-title2}
+
+<hr>
+
+:::: columns
+
+::: {.column width="50%"}
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "75%"
+knitr::include_graphics("images/week3/gun-deaths-original.png")
+```
+
+::: {.center-text .gray-text .body-text-s}
+Source: [This Chart Shows An Alarming Rise In Florida Gun Deaths After 'Stand Your Ground' Was Enacted](https://www.businessinsider.com/gun-deaths-in-florida-increased-with-stand-your-ground-2014-2).
+:::
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+::: {.center-text}
+**To enlarge image (in Chrome), right click on image > Open image in New Tab**
+:::
+
+<br>
+
+- What is the take home message of this graphic?
+- What is effective? What is confusing?
+
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+::::
+
+---
+
+## {#iraq-guns data-menu-title="Iraq vs. Gun deaths critique"} 
+
+[5. Test the outcomes of your graphic on others]{.slide-title2}
+
+<hr>
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "47%"
+knitr::include_graphics("images/week3/iraq-deaths.png")
+```
+
+[Baseline at the *top* is clear, suggesting that bars are *falling* from it. Clear metaphor (dripping blood).]{.body-text-s}
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "55%"
+knitr::include_graphics("images/week3/gun-deaths-original.png")
+```
+
+[Eyes are drawn to baseline at the *bottom*, on top of which data are sitting. Headline indicates *rise* but visually represented by *falling*. Thick black line makes white area stand out over red (data).]{.body-text-s}
+
+
+:::
+
+::::
+
+::: footer
+::: {.gray-text .center-text}
+Critique by Albert Cairo in his post [In visualization, baselines and negative space matter](http://www.thefunctionalart.com/2014/04/in-visualization-baselines-and-negative.html)
+:::
+:::
+
+---
+
+## {#guns2 data-menu-title="Gun deaths (revised)"} 
+
+[5. Test the outcomes of your graphic on others]{.slide-title2}
+
+<hr>
+
+Business Insider [published](https://www.businessinsider.com/gun-deaths-in-florida-increased-with-stand-your-ground-2014-2) an updated graphic (originally designed by Reuters), which was submitted by a reader that, **"more clearly shows that gun deaths increased between 2005 and 2007 by flipping the y-axis"**:
+
+<br>
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "65%"
+knitr::include_graphics("images/week3/gun-deaths-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "65%"
+knitr::include_graphics("images/week3/gun-deaths-revised.png")
+```
+:::
+
+::::
+
+---
+
+## {#critique-considerations data-menu-title="Critique considerations"} 
+
+[5. Test the outcomes of your graphic on others]{.slide-title2}
+
+<hr>
+
+<br>
+
+[**Critiquing a data visualization:**]{.teal-text .body-text-l}
+
+1. Identify the primary and secondary insights that the graphic is trying to convey.
+2. Identify elementary perceptual tasks (e.g. comparing lengths, angles) and what is confusing or difficult to do.
+3. Identify how to use more effective elementary perceptual tasks for the primary and secondary insights.
+4. Identify points of confusion and decide how those could be addressed (e.g. a different graphic form, rearranging components, including an introduction graph, better annotation)
+
+::: footer
+::: {.center-text .gray-text}
+Adapted from Derek L. Sonderegger's online textbook, [STA 141 - Exploratory Data Analysis and Visualization](https://bookdown.org/dereksonderegger/141/12-critiques.html)
+:::
+:::
 
 ---
 
