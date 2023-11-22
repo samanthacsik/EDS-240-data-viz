@@ -1,5 +1,5 @@
 ---
-title: "Fundamental Chart Types (Part I) / Basic Principles / ???"
+title: "Choosing a graphic form, Fundamental chart types (Part I)"
 subtitle: "Week 3"
 description: "Monday January 22^nd^, 2024"
 title-block-banner: true
@@ -21,9 +21,7 @@ knitr::include_graphics("../images/horst-ggplot-explore-dataviz.png")
 
 ## Pre-class Prep
 
-*Coming soon* 
-
-<!-- Please be sure to install the following packages before class: -->
+Please be sure to install the following packages before class:
 
 ```{r}
 #| eval: false
@@ -44,23 +42,23 @@ Week 3 instruction is broken down into three lessons:
 ::: {.center-text}
 [**Choosing graphic forms**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.1 slides](../slides/week3.1-choosing-graphic-forms.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.1 slides](../slides/week3.1-choosing-graphic-forms-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
 ::: {.g-col-12 .g-col-md-4}
 ::: {.center-text}
-[**tbd**]{.teal-text .body-text-m}
+[**Visualizing distributions**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.2 slides](../slides/tbd.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.2 slides](../slides/week3.2-distributions-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
 ::: {.g-col-12 .g-col-md-4}
 ::: {.center-text}
-[**tbd**]{.teal-text .body-text-m}
+[**Visualizing evolution**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.3 slides](../slides/tbd.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.3 slides](../slides/week3.3-evolution-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 

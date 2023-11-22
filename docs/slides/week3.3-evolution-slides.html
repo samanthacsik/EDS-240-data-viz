@@ -7,10 +7,12 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
-  <title>EDS 240 – week3.3-evolution</title>
+  <title>EDS 240 – week3.3-evolution-slides</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -385,6 +387,8 @@
       margin-right: 0; 
     }
   </style>
+  <link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+  <script src="../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -394,7 +398,7 @@
 <section id="title-slide" class="slide level2 center" data-menu-title="Title Slide" data-background="#053660">
 <h2></h2>
 <p><span class="custom-title">EDS 240: Lecture 3.3</span></p>
-<p><span class="custom-subtitle"><em>Visualizing Evolution</em></span></p>
+<p><span class="custom-subtitle"><em>Visualizing evolution</em></span></p>
 <hr class="hr-teal">
 <p><span class="custom-subtitle3">Week 3 | January 22<sup>nd</sup>, 2024</span></p>
 </section>
@@ -433,7 +437,8 @@
 <hr>
 <p>Line graphs display the <strong>evolution of one or several <em>numeric</em> variables</strong>. Measurement points are <strong>ordered</strong> (typically by their x-axis value) and joined with straight line segments.</p>
 <p>They are often used to visualize a trend in data over continuous intervals of time, but can also be used to visualize a trend in data over ordered categorical variables (e.g.&nbsp;month).</p>
-</section>
+
+<img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:60.0%" class="r-stretch quarto-figure-center"></section>
 <section id="line-graphs" class="slide level2" data-menu-title="Line graphs">
 <h2></h2>
 <p><span class="slide-title2">Line graph axis <em>doesn’t</em> need to start at 0</span></p>
@@ -461,7 +466,8 @@
 <p><span class="slide-title">The data: <code>{refugees}</code></span></p>
 <hr>
 <p><code>{refugees}</code> is an R package designed to facilitate access to the <a href="https://www.unhcr.org/us/">United Nations High Commissioner for Refugees</a> (UNHCR) <a href="https://www.unhcr.org/refugee-statistics/download/?url=sH5pnE">Refugee Data Finder</a>. It provides an easy-to-use interface to the database, which covers forcibly displaced populations, including refugees, asylum-seekers, internally displaced people, stateless people, and others over a span of more than 70 years.</p>
-<p>We’ll explore <strong>changes in refugee numbers</strong> through time from different countries of origin.</p>
+
+<img data-src="images/week3/unhcr.png" style="width:50.0%" alt="The United Nations High Commissioner for Refugees logo, which includes a horseshoe wreath. Inside the wreath, hands form a shelter with two walls and a roof. A person stands within the shelter." class="r-stretch quarto-figure-center"><p>We’ll explore <strong>changes in refugee numbers</strong> through time from different countries of origin.</p>
 </section>
 <section id="refugee-data-wrangling" class="slide level2" data-menu-title="Refugee data wrangling">
 <h2></h2>
@@ -547,7 +553,8 @@
 <p><span class="slide-title">The data: California droughts</span></p>
 <hr>
 <p>The <a href="https://droughtmonitor.unl.edu/">U.S. Drought Monitor</a> (USDM) is a collection of measures that allows experts to assess droughts in the United States. You can download and explore comprehensive statistics through their <a href="https://droughtmonitor.unl.edu/DmData/DataDownload/ComprehensiveStatistics.aspx">data portal</a>.</p>
-<div class="body-text-s gray-text center-text">
+
+<img data-src="images/week3/usdm.png" style="width:50.0%" alt="Percentage area of California in U.S. drought monitor categories" class="r-stretch quarto-figure-center"><div class="body-text-s gray-text center-text">
 <p><em>Percentage area of California in U.S. drought monitor categories. Source <a href="https://en.wikipedia.org/wiki/Droughts_in_California#:~:text=County%20municipal%20rates.-,Dry%20years,2017%2C%20and%202020%E2%80%932022.">Wikipedia</a></em></p>
 </div>
 <p><br></p>
@@ -597,12 +604,31 @@
 <!-- ::: {.column width="50%"} -->
 <!-- <br> -->
 <!-- ```{r} -->
-<!-- #| eval: false -->
+<!-- #| eval: true -->
 <!-- #| echo: false -->
 <!-- #| fig-align: "center" -->
 <!-- ``` -->
 <!-- ::: -->
 <!-- :::: -->
+</section>
+<section id="end-break" class="slide level2" data-menu-title="# End / Break #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+<i class="fa-solid fa-mug-hot" title="a mug with steam rising out the top" aria-label="mug-hot"></i> Take a Break
+</p>
+<p class="caption-text">
+<em>~ This is the end of Lesson 3 (of 3) ~</em>
+</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_edd392be" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
 
 <div class="footer footer-default">
 

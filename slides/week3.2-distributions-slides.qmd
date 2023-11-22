@@ -15,7 +15,7 @@ editor_options:
 
 [EDS 240: Lecture 3.2]{.custom-title}
 
-[*Visualizing Distributions*]{.custom-subtitle}
+[*Visualizing distributions*]{.custom-subtitle}
 
 <hr class="hr-teal">
 

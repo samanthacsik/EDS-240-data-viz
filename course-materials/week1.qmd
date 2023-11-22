@@ -23,7 +23,7 @@ Please be sure to install the following packages before class:
 #| eval: false
 #| echo: true
 install.packages("palmerpenguins") # a package containing the `penguins` data set, which we'll use for plotting practice
-install.packages("tidyverse") # installs a number of packages used for data wrangling / manipulation and visualization (including {ggplot2})
+install.packages("tidyverse") # a collection of packages used for data wrangling / manipulation and visualization (including {ggplot2})
 ```
 
 ## Lecture Materials

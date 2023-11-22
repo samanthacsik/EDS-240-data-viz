@@ -135,28 +135,28 @@
   {
     "objectID": "course-materials/week3.html#pre-class-prep",
     "href": "course-materials/week3.html#pre-class-prep",
-    "title": "Fundamental Chart Types (Part I) / Basic Principles / ???",
+    "title": "Choosing a graphic form, Fundamental chart types (Part I)",
     "section": "Pre-class Prep",
-    "text": "Pre-class Prep\nComing soon"
+    "text": "Pre-class Prep\nPlease be sure to install the following packages before class:"
   },
   {
     "objectID": "course-materials/week3.html#lecture-materials",
     "href": "course-materials/week3.html#lecture-materials",
-    "title": "Fundamental Chart Types (Part I) / Basic Principles / ???",
+    "title": "Choosing a graphic form, Fundamental chart types (Part I)",
     "section": "Lecture Materials",
-    "text": "Lecture Materials\nWeek 3 instruction is broken down into three lessons:\n\n\n\nChoosing graphic forms\n lecture 3.1 slides\n\n\n\n\ntbd\n lecture 3.2 slides\n\n\n\n\ntbd\n lecture 3.3 slides"
+    "text": "Lecture Materials\nWeek 3 instruction is broken down into three lessons:\n\n\n\nChoosing graphic forms\n lecture 3.1 slides\n\n\n\n\nVisualizing distributions\n lecture 3.2 slides\n\n\n\n\nVisualizing evolution\n lecture 3.3 slides"
   },
   {
     "objectID": "course-materials/week3.html#discussion-materials",
     "href": "course-materials/week3.html#discussion-materials",
-    "title": "Fundamental Chart Types (Part I) / Basic Principles / ???",
+    "title": "Choosing a graphic form, Fundamental chart types (Part I)",
     "section": "Discussion Materials",
     "text": "Discussion Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week3.html#assignment-reminders",
     "href": "course-materials/week3.html#assignment-reminders",
-    "title": "Fundamental Chart Types (Part I) / Basic Principles / ???",
+    "title": "Choosing a graphic form, Fundamental chart types (Part I)",
     "section": "Assignment Reminders",
     "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #2)\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT"
   },
@@ -165,7 +165,7 @@
     "href": "course-materials/week1.html#pre-class-prep",
     "title": "Course logistics, Intro, {ggplot2} review",
     "section": "Pre-class Prep",
-    "text": "Pre-class Prep\nPlease be sure to install the following packages before class:\n\ninstall.packages(\"palmerpenguins\") # a package containing the `penguins` data set, which we'll use for plotting practice\ninstall.packages(\"tidyverse\") # installs a number of packages used for data wrangling / manipulation and visualization (including {ggplot2})"
+    "text": "Pre-class Prep\nPlease be sure to install the following packages before class:\n\ninstall.packages(\"palmerpenguins\") # a package containing the `penguins` data set, which we'll use for plotting practice\ninstall.packages(\"tidyverse\") # a collection of packages used for data wrangling / manipulation and visualization (including {ggplot2})"
   },
   {
     "objectID": "course-materials/week1.html#lecture-materials",
@@ -231,235 +231,95 @@
     "text": "The evolution of a ggplot\n\n\n\n\nVisualization by Cédric Scherer, from his blog post, The Evolution of a ggplot (Ep.1) – create your own ggplot evolution gif using the {camcorder} package"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#title-slide",
-    "href": "slides/week3.1-choosing-graphic-forms.html#title-slide",
+    "objectID": "slides/week3.3-evolution-slides.html#title-slide",
+    "href": "slides/week3.3-evolution-slides.html#title-slide",
     "title": "EDS 240",
     "section": "",
-    "text": "EDS 240: Lecture 3.1\nChoosing the right graphic form\n\nWeek 3 | January 22nd, 2024"
+    "text": "EDS 240: Lecture 3.3\nVisualizing evolution\n\nWeek 3 | January 22nd, 2024"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#viz-complex-nums",
-    "href": "slides/week3.1-choosing-graphic-forms.html#viz-complex-nums",
+    "objectID": "slides/week3.3-evolution-slides.html#viz-evolution",
+    "href": "slides/week3.3-evolution-slides.html#viz-evolution",
     "title": "EDS 240",
     "section": "",
-    "text": "We understand complex numbers better when they’re represented visually\n\n\n“Exams will have a total of 137 points rather than the usual 100. This scoring system has no efect on the grade you get in the course, but it seems to make you happier”\n\n\n-Richard H. Thaler, economist & professor\n\n\nEarly years: exam graded 0 - 100 with an average score of 72 points = lots of complaints\nLater years: exam graded 0 - 137 with an average score of 96 points = no complaints\n\n\n\n\n\n\n\n\n\n\n\n\nAlbert Cairo’s visualization of the scores from Thaler’s exam case study"
+    "text": "Visualizing data evolution?\n\n     \n\n\nVisualizing the change in a numeric variable over some unit of time."
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#vision-sense",
-    "href": "slides/week3.1-choosing-graphic-forms.html#vision-sense",
+    "objectID": "slides/week3.3-evolution-slides.html#main-evo-charts",
+    "href": "slides/week3.3-evolution-slides.html#main-evo-charts",
     "title": "EDS 240",
     "section": "",
-    "text": "Vision is our most well-developed sense\n\n  \n\nMapping data into visual properties is powerful\n\n\n\n\nMapping?\nHow values of a variable(s) of interest are represented by visuals (e.g height of bar, shaded region of area plot, color of data points)"
+    "text": "Roadmap\n\n\nline graphs\n\nwhen to use them\nconsiderations:\n\nto cut or not to cut your y-axis\navoiding “spaghetti” charts\naspect ratio (width:height)\nno dual axes"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#choose-graphic",
-    "href": "slides/week3.1-choosing-graphic-forms.html#choose-graphic",
+    "objectID": "slides/week3.3-evolution-slides.html#line-graphs",
+    "href": "slides/week3.3-evolution-slides.html#line-graphs",
     "title": "EDS 240",
     "section": "",
-    "text": "How do you choose the right graphic form to represent your data?\n\n  \n\n\n“If I had the answer to that, I’d be rich by now…I have no idea, but I can give you some clues to make your own choices based on what we know about why and how visualization works”\n\n\n\n-Albert Cairo1, in his book, The Truthful Art\n\n\n1Someone who, in fact, knows a lot about effectively visualizing data"
+    "text": "Line graph axis doesn’t need to start at 0\n\nBar graphs must start at 0 – otherwise misleading when encoding data by bars / comparing lengths\nLine graphs encode data by position, not length; include 0 if it makes sense\n\ndont’ start at 0 if the range of the data is small but the distance from the bottom of the range to 0 is large"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#ex-choose-graph",
-    "href": "slides/week3.1-choosing-graphic-forms.html#ex-choose-graph",
+    "objectID": "slides/week3.3-evolution-slides.html#viz-dist",
+    "href": "slides/week3.3-evolution-slides.html#viz-dist",
     "title": "EDS 240",
     "section": "",
-    "text": "Exercise: Map data to visual properties\n\n  \n\n\n\n−+\n03:00\n\n\n\nLet’s say you want to compare unemployment rates of 5 countries: A, B, C, D, E (the actual values here are not important).\n\n\nHow would you map the unemployment rates to visual properties in a way that enables your readers to accurately compare values without having to read all the numbers?\n\nExample adapted from Albert Cairo’s, The Truthful Art"
+    "text": "“Core” evolution chart types\n\n\nline\nconnected scatter\narea\nstacked area\nstream"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#ex-possible-choices",
-    "href": "slides/week3.1-choosing-graphic-forms.html#ex-possible-choices",
+    "objectID": "slides/week3.3-evolution-slides.html#refugee-data",
+    "href": "slides/week3.3-evolution-slides.html#refugee-data",
     "title": "EDS 240",
     "section": "",
-    "text": "Different methods of encoding the same data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGraphs recreated based on Albert Cairo’s example (Fig 5.2) in The Truthful Art\nFor all graphics: A (22%), B (25%), C (24%), D (29%), E (32%)\n\n\nLENGHT, HEIGHT, POSITION probably the best (have students discuss)"
+    "text": "The data: {refugees}\n\n{refugees} is an R package designed to facilitate access to the United Nations High Commissioner for Refugees (UNHCR) Refugee Data Finder. It provides an easy-to-use interface to the database, which covers forcibly displaced populations, including refugees, asylum-seekers, internally displaced people, stateless people, and others over a span of more than 70 years.\n\nWe’ll explore changes in refugee numbers through time from different countries of origin."
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#hierarchy",
-    "href": "slides/week3.1-choosing-graphic-forms.html#hierarchy",
+    "objectID": "slides/week3.3-evolution-slides.html#refugee-data-wrangling",
+    "href": "slides/week3.3-evolution-slides.html#refugee-data-wrangling",
     "title": "EDS 240",
     "section": "",
-    "text": "“Hierarchy of elementary perceptual tasks”\n\n\n\n\nWilliam S. Cleveland & Robert McGill (1984) Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods, Journal of the American Statistical Association, 79:387, 531-554, DOI: 10.1080/01621459.1984.10478080\n\n\n\na viewer performs one or more of these mental-visual tasks (judging position, perceiving angles / areas, etc.) to extract the values of real variables represented on most graphs\nsuccessful charts are constructed based on elementary tasks “as high in the hierarchy as possible”\n\nAlbert Cairo’s recreation of Cleveland & McGill’s Hierarchy of Elementary Perceptual Tasks \n\n\n\n\n\n\n\n\n\n\n\nA recreation of Cleveland & McGill’s hierarchy of elementary perceptual tasks, by Albert Cairo"
+    "text": "Data wrangling: {refugees}\n\nWe’ll be using the population data set from the {refugees} package. Learn more about the data in the package documentation.\n\n#..........................load packages.........................\nlibrary(refugees)\nlibrary(tidyverse)\n\n#..........................wrangle data..........................\npop_clean &lt;- population |&gt; \n  \n  # remove observations with \"Unknown\" country of origin ----\n  filter(coo_name != \"Unknown\") |&gt; \n  \n  # select relevant cols ----\n  select(year, origin = coo_name, refugees) |&gt; \n  \n  # convert year to date type ----\n  mutate(date = ymd(year, truncated = 2L)) |&gt;\n  \n  # calculate total refugees per country per year ----\n  group_by(date, origin) |&gt;  \n  summarize(total_refugees = sum(refugees)) |&gt; \n  \n  # keep only observations from 2013 onwards ----\n  filter(date &gt;= \"2013-01-01\")"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#compare-circles",
-    "href": "slides/week3.1-choosing-graphic-forms.html#compare-circles",
+    "objectID": "slides/week3.3-evolution-slides.html#line-overview",
+    "href": "slides/week3.3-evolution-slides.html#line-overview",
     "title": "EDS 240",
     "section": "",
-    "text": "Exercise: How many times bigger is the larger circle?\n\n\n\n\n\n−+\n01:00"
+    "text": "Line graph - ggplot2::geom_line()\n\nWhat are they?\n\nLine graphs display the evolution of one or several numeric variables. They are similar to scatter plots, but the measurement points are ordered (typically by their x-axis value) and joined with straight line segments. They are often used to visualize a trend in data over intervals of time.\n\n\n\nNeed:\n\nan ordered numeric variable(s)\n\nImportant considerations:\n\nto cut or not to cut the y-axis (i.e. starting the y-axis at 0)\navoid using a dual axis when comparing the evolution of 2 different variables\nbe mindful of creating a “spaghetti chart”\nconsider aspect ratio (width:height ratio of a graphic)"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#compare-bars",
-    "href": "slides/week3.1-choosing-graphic-forms.html#compare-bars",
+    "objectID": "slides/week3.3-evolution-slides.html#conn-line-overview",
+    "href": "slides/week3.3-evolution-slides.html#conn-line-overview",
     "title": "EDS 240",
     "section": "",
-    "text": "Exercise: How many times bigger is the larger bar?\n\n\n\n\n\n−+\n01:00"
+    "text": "Connected line graph - ggplot2::tbd\n\nWhat are they?\n\ntbd\n\n\n\nNeed:\n\ntbd\n\nImportant considerations:\n\ntbd"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#7x",
-    "href": "slides/week3.1-choosing-graphic-forms.html#7x",
+    "objectID": "slides/week3.3-evolution-slides.html#drought-data",
+    "href": "slides/week3.3-evolution-slides.html#drought-data",
     "title": "EDS 240",
     "section": "",
-    "text": "Both the circles & rectangles differ by a magnitude of 7"
+    "text": "The data: California droughts\n\nThe U.S. Drought Monitor (USDM) is a collection of measures that allows experts to assess droughts in the United States. You can download and explore comprehensive statistics through their data portal.\n\n\nPercentage area of California in U.S. drought monitor categories. Source Wikipedia\n\n\nUsing these data, we’ll explore drought conditions in California through time."
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#caveats1",
-    "href": "slides/week3.1-choosing-graphic-forms.html#caveats1",
+    "objectID": "slides/week3.3-evolution-slides.html#drought-data-wrangling",
+    "href": "slides/week3.3-evolution-slides.html#drought-data-wrangling",
     "title": "EDS 240",
     "section": "",
-    "text": "Caveats to the hierarchy\n\n \n1. Cleveland & McGill only considered statistical charts. What about data maps, for example, that rely on area / shading / hue, which fall lower on the hierarchy?"
+    "text": "Data wrangling: California droughts\n\nThe TidyTuesday community featured a data set from the USDM in 2021, which means we can use the {tidytuesdayR} package to import the data.\n\n\n\n    Downloading file 1 of 1: `drought.csv`"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#caveats1.1",
-    "href": "slides/week3.1-choosing-graphic-forms.html#caveats1.1",
+    "objectID": "slides/week3.3-evolution-slides.html#area-plot-overview",
+    "href": "slides/week3.3-evolution-slides.html#area-plot-overview",
     "title": "EDS 240",
     "section": "",
-    "text": "Caveats to the hierarchy - an example\n\nLower scale methods can be appropriate when the goal is to reveal general patterns. For example, a choropleth map displays divided geographical areas / regions, which are colored in relation to a numeric variable.\n\n\n\n\nPrecipitation data downloaded from NOAA’s National Centers for Environmental Information. Map created using the {maps} package."
+    "text": "Area plot - ggplot2::geom_area()\n\nWhat are they?\n\nArea charts represent the evolution of one or more numeric variables. They are similar to line charts in that the measured points are ordered (typically by their x-axis value) and joined with straight line segments. The area between the x-axis and the line is filled with color or shading.\n\n\n\nNeed:\n\nan ordered numeric variable(s)\n\nImportant considerations:\n\nonly use if you want to show the evolution of values (not if you want to show how values differ in different categories)\nwork best when:\n\nthe total (height of all stacked areas) is as important as its shares\nyou have large differences between your values\nfor showing multiple values over time\nyou have many (&gt;10) dates\n\nLOTS of great visual examples in this Datawrapper blog post, by Lisa Charlotte Muth\nbring the most important value to the bottom of the chart and/or use color to make it stand out\nconsider using annotations and/or highlighted ranges\ngroup many time values together into one larger value"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#caveats2",
-    "href": "slides/week3.1-choosing-graphic-forms.html#caveats2",
+    "objectID": "slides/week3.3-evolution-slides.html#end-break",
+    "href": "slides/week3.3-evolution-slides.html#end-break",
     "title": "EDS 240",
     "section": "",
-    "text": "Caveats to the hierarchy\n\n \n1. Cleveland & McGill only considered statistical charts. What about data maps, for example, that reply on area / shading / hue, which fall lower on the hierarchy?\n\n2. No method of choosing a graphic form is perfect! It’s important to think critically about your graphic’s purpose and how best to represent your data to serve that purpose."
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#caveats2.1",
-    "href": "slides/week3.1-choosing-graphic-forms.html#caveats2.1",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Caveats to the hierarchy - an example\n\nConsider how you might display the same data in the following Sankey diagram depicted the flow of refugees in 2022, using graph types from the top of Cleveland & McGill’s hierarchy. What is the purpose of this chart?\n\nNEED TO TROUBLESHOOT CODE (code runs but errors out when rendering on slide)\nGraphic recreated following Louise E. Sinks’ blog post, TidyTuesday: Exploring Refugee Flow with A Sankey Diagram\n\nIt would be hard to use a method of encoding from the top of the hierarchy! In this Sankey diagram, readers need to decode length and area, but that’s not a huge issue since the purpose of the chart is to show high-level trends / flows of refugees"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#tips0",
-    "href": "slides/week3.1-choosing-graphic-forms.html#tips0",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Tips for choosing the right graphic form\n\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\n\n\n\n\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\n\n\n\n\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\n\n\n\n\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\n\n\n\n\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#tips1",
-    "href": "slides/week3.1-choosing-graphic-forms.html#tips1",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#dvc",
-    "href": "slides/week3.1-choosing-graphic-forms.html#dvc",
-    "title": "EDS 240",
-    "section": "",
-    "text": "1: Think about the task(s) you want to enable or message(s) you want to convey\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Data Visualization Catalogue\nsearch graphic forms by their function\n\n\n \nExercise: tbd"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#tips2",
-    "href": "slides/week3.1-choosing-graphic-forms.html#tips2",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#fdtv",
-    "href": "slides/week3.1-choosing-graphic-forms.html#fdtv",
-    "title": "EDS 240",
-    "section": "",
-    "text": "2. Consider # of variables & data points, data types\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Data to Viz\na decision tree for choosing graphic forms based on data type(s)\n\n\n \nExercise: tbd"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#tips3",
-    "href": "slides/week3.1-choosing-graphic-forms.html#tips3",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#choro-bar",
-    "href": "slides/week3.1-choosing-graphic-forms.html#choro-bar",
-    "title": "EDS 240",
-    "section": "",
-    "text": "3. Try different graphic forms\n\nRecall our choropleth map from earlier, which displays total precipitation by US county. What if we want to compare precipitation between CA counties? Choosing a graphical form from the top of the hierarchy (e.g. bar chart) may be more effective.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIf we want to show both big picture patterns and detailed comparisons, we may consider including multiple graphic forms in the same visualization."
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#tips4",
-    "href": "slides/week3.1-choosing-graphic-forms.html#tips4",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#ad-methods1",
-    "href": "slides/week3.1-choosing-graphic-forms.html#ad-methods1",
-    "title": "EDS 240",
-    "section": "",
-    "text": "4. Arrange components of the graphic\n\n How does the influence of in-theater advertising change across generations?  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages from Albert Cairo’s The Truthful Art"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#ad-methods2",
-    "href": "slides/week3.1-choosing-graphic-forms.html#ad-methods2",
-    "title": "EDS 240",
-    "section": "",
-    "text": "4. Arrange components of the graphic\n\n How does the influence of in-theater advertising change across generations?  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages from Albert Cairo’s The Truthful Art"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#fed-spending1",
-    "href": "slides/week3.1-choosing-graphic-forms.html#fed-spending1",
-    "title": "EDS 240",
-    "section": "",
-    "text": "4. Arrange components of the graphic\n\nLet’s say we’re interested in:\n\nchanges in the amount spent on Social Security over time (2012-2015) relative to other major spending categories?\n\n\n\n\n\nExample from Derek L. Sonderegger’s online textbook, STA 141 - Exploratory Data Analysis and Visualization"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#fed-spending2",
-    "href": "slides/week3.1-choosing-graphic-forms.html#fed-spending2",
-    "title": "EDS 240",
-    "section": "",
-    "text": "4. Arrange components of the graphic\n\nLet’s say we’re interested in:\n\nchanges in the amount spent on Social Security over time (2012-2015) relative to other major spending categories?\nthe amount of money spent on Social Security over time (2012-2015)?\n\n\n\n\n\nExample from Derek L. Sonderegger’s online textbook, STA 141 - Exploratory Data Analysis and Visualization"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#tips5",
-    "href": "slides/week3.1-choosing-graphic-forms.html#tips5",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#iraq",
-    "href": "slides/week3.1-choosing-graphic-forms.html#iraq",
-    "title": "EDS 240",
-    "section": "",
-    "text": "5. Test the outcomes of your graphic on others\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Iraq’s bloody toll.\n\n\n\n\nTo enlarge image (in Chrome), right click on image &gt; Open image in New Tab\n\n\n\nWhat is the take home message of this graphic?\nWhat is effective? What is confusing?\n\n\n\n\n−+\n03:00"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#guns1",
-    "href": "slides/week3.1-choosing-graphic-forms.html#guns1",
-    "title": "EDS 240",
-    "section": "",
-    "text": "5. Test the outcomes of your graphic on others\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: This Chart Shows An Alarming Rise In Florida Gun Deaths After ‘Stand Your Ground’ Was Enacted.\n\n\n\n\nTo enlarge image (in Chrome), right click on image &gt; Open image in New Tab\n\n\n\nWhat is the take home message of this graphic?\nWhat is effective? What is confusing?\n\n\n\n\n−+\n03:00"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#iraq-guns",
-    "href": "slides/week3.1-choosing-graphic-forms.html#iraq-guns",
-    "title": "EDS 240",
-    "section": "",
-    "text": "5. Test the outcomes of your graphic on others\n\n\n\n\n\n\n\n\n\n\n\n\nBaseline at the top is clear, suggesting that bars are falling from it. Clear metaphor (dripping blood).\n\n\n\n\n\n\n\n\n\n\nEyes are drawn to baseline at the bottom, on top of which data are sitting. Headline indicates rise but visually represented by falling. Thick black line makes white area stand out over red (data).\n\n\n\n\nCritique by Albert Cairo in his post In visualization, baselines and negative space matter"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#guns2",
-    "href": "slides/week3.1-choosing-graphic-forms.html#guns2",
-    "title": "EDS 240",
-    "section": "",
-    "text": "5. Test the outcomes of your graphic on others\n\nBusiness Insider published an updated graphic (originally designed by Reuters), which was submitted by a reader that, “more clearly shows that gun deaths increased between 2005 and 2007 by flipping the y-axis”:"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#critique-considerations",
-    "href": "slides/week3.1-choosing-graphic-forms.html#critique-considerations",
-    "title": "EDS 240",
-    "section": "",
-    "text": "5. Test the outcomes of your graphic on others\n\n\nCritiquing a data visualization:\n\nIdentify the primary and secondary insights that the graphic is trying to convey.\nIdentify elementary perceptual tasks (e.g. comparing lengths, angles) and what is confusing or difficult to do.\nIdentify how to use more effective elementary perceptual tasks for the primary and secondary insights.\nIdentify points of confusion and decide how those could be addressed (e.g. a different graphic form, rearranging components, including an introduction graph, better annotation)\n\n\n\nAdapted from Derek L. Sonderegger’s online textbook, STA 141 - Exploratory Data Analysis and Visualization"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms.html#end-break",
-    "href": "slides/week3.1-choosing-graphic-forms.html#end-break",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Take a Break\n\n\n~ This is the end of Lesson 1 (of 3) ~\n\n\n\n\n\n−+\n05:00"
+    "text": "Take a Break\n\n\n~ This is the end of Lesson 3 (of 3) ~\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/week1.2-intro-slides.html#title-slide",
@@ -567,11 +427,235 @@
     "text": "Take a Break\n\n\n~ This is the end of Lesson 2 (of 3) ~\n\n\n\n\n\n−+\n05:00"
   },
   {
-    "objectID": "slides/random-notes.html",
-    "href": "slides/random-notes.html",
-    "title": "random things to find a place for",
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#title-slide",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#title-slide",
+    "title": "EDS 240",
     "section": "",
-    "text": "plot data directly\ne.g. plot income and expenses as separate lines or just plot a singe net income line? (latter) plot your data directly, if difference matters more, plot the difference! (need environmental example here)\n\nSOME TIPS\n\nbaselines\nbreaking up plots when data vary so much that presenting them all on a single chart renders it useless (e.g. use fracking data?)\nordering variables / categories – e.g. see trends across age groups by grouping bars by media (see pg 139) (NEED EDS EXAMPLE HERE)\n\n\nuse logical & meaningful baselines\n\nbar, lollipops, histograms, etc should always have a 0 baseline – cannot truncate when main visual cue is height/length measured from a common baseline\nscatterplot, line graph, ec. – can be okay to truncate axes since main visual cue is position, not height/length"
+    "text": "EDS 240: Lecture 3.1\nChoosing the right graphic form\n\nWeek 3 | January 22nd, 2024"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#viz-complex-nums",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#viz-complex-nums",
+    "title": "EDS 240",
+    "section": "",
+    "text": "We understand complex numbers better when they’re represented visually\n\n\n“Exams will have a total of 137 points rather than the usual 100. This scoring system has no efect on the grade you get in the course, but it seems to make you happier”\n\n\n-Richard H. Thaler, economist & professor\n\n\nEarly years: exam graded 0 - 100 with an average score of 72 points = lots of complaints\nLater years: exam graded 0 - 137 with an average score of 96 points = no complaints\n\n\n\n\n\n\n\n\n\n\n\n\nAlbert Cairo’s visualization of the scores from Thaler’s exam case study"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#vision-sense",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#vision-sense",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Vision is our most well-developed sense\n\n  \n\nMapping data into visual properties is powerful\n\n\n\n\nMapping?\nHow values of a variable(s) of interest are represented by visuals (e.g height of bar, shaded region of area plot, color of data points)"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#choose-graphic",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#choose-graphic",
+    "title": "EDS 240",
+    "section": "",
+    "text": "How do you choose the right graphic form to represent your data?\n\n  \n\n\n“If I had the answer to that, I’d be rich by now…I have no idea, but I can give you some clues to make your own choices based on what we know about why and how visualization works”\n\n\n\n-Albert Cairo1, in his book, The Truthful Art\n\n\n1Someone who, in fact, knows a lot about effectively visualizing data"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#ex-choose-graph",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#ex-choose-graph",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Exercise: Map data to visual properties\n\n  \n\n\n\n−+\n03:00\n\n\n\nLet’s say you want to compare unemployment rates of 5 countries: A, B, C, D, E (the actual values here are not important).\n\n\nHow would you map the unemployment rates to visual properties in a way that enables your readers to accurately compare values without having to read all the numbers?\n\nExample adapted from Albert Cairo’s, The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#ex-possible-choices",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#ex-possible-choices",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Different methods of encoding the same data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGraphs recreated based on Albert Cairo’s example (Fig 5.2) in The Truthful Art\nFor all graphics: A (22%), B (25%), C (24%), D (29%), E (32%)\n\n\nLENGHT, HEIGHT, POSITION probably the best (have students discuss)"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#hierarchy",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#hierarchy",
+    "title": "EDS 240",
+    "section": "",
+    "text": "“Hierarchy of elementary perceptual tasks”\n\n\n\n\nWilliam S. Cleveland & Robert McGill (1984) Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods, Journal of the American Statistical Association, 79:387, 531-554, DOI: 10.1080/01621459.1984.10478080\n\n\n\na viewer performs one or more of these mental-visual tasks (judging position, perceiving angles / areas, etc.) to extract the values of real variables represented on most graphs\nsuccessful charts are constructed based on elementary tasks “as high in the hierarchy as possible”\n\nAlbert Cairo’s recreation of Cleveland & McGill’s Hierarchy of Elementary Perceptual Tasks \n\n\n\n\n\n\n\n\n\n\n\nA recreation of Cleveland & McGill’s hierarchy of elementary perceptual tasks, by Albert Cairo"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#compare-circles",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#compare-circles",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Exercise: How many times bigger is the larger circle?\n\n\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#compare-bars",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#compare-bars",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Exercise: How many times bigger is the larger bar?\n\n\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#7x",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#7x",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Both the circles & rectangles differ by a magnitude of 7"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#caveats1",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#caveats1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Caveats to the hierarchy\n\n \n1. Cleveland & McGill only considered statistical charts. What about data maps, for example, that rely on area / shading / hue, which fall lower on the hierarchy?"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#caveats1.1",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#caveats1.1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Caveats to the hierarchy - an example\n\nLower scale methods can be appropriate when the goal is to reveal general patterns. For example, a choropleth map displays divided geographical areas / regions, which are colored in relation to a numeric variable.\n\n\n\n\nPrecipitation data downloaded from NOAA’s National Centers for Environmental Information. Map created using the {maps} package."
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#caveats2",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#caveats2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Caveats to the hierarchy\n\n \n1. Cleveland & McGill only considered statistical charts. What about data maps, for example, that reply on area / shading / hue, which fall lower on the hierarchy?\n\n2. No method of choosing a graphic form is perfect! It’s important to think critically about your graphic’s purpose and how best to represent your data to serve that purpose."
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#caveats2.1",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#caveats2.1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Caveats to the hierarchy - an example\n\nConsider how you might display the same data in the following Sankey diagram depicted the flow of refugees in 2022, using graph types from the top of Cleveland & McGill’s hierarchy. What is the purpose of this chart?\n\nNEED TO TROUBLESHOOT CODE (code runs but errors out when rendering on slide)\nGraphic recreated following Louise E. Sinks’ blog post, TidyTuesday: Exploring Refugee Flow with A Sankey Diagram\n\nIt would be hard to use a method of encoding from the top of the hierarchy! In this Sankey diagram, readers need to decode length and area, but that’s not a huge issue since the purpose of the chart is to show high-level trends / flows of refugees"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips0",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips0",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tips for choosing the right graphic form\n\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\n\n\n\n\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\n\n\n\n\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\n\n\n\n\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\n\n\n\n\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips1",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#dvc",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#dvc",
+    "title": "EDS 240",
+    "section": "",
+    "text": "1: Think about the task(s) you want to enable or message(s) you want to convey\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Data Visualization Catalogue\nsearch graphic forms by their function\n\n\n \nExercise: tbd"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips2",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#fdtv",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#fdtv",
+    "title": "EDS 240",
+    "section": "",
+    "text": "2. Consider # of variables & data points, data types\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Data to Viz\na decision tree for choosing graphic forms based on data type(s)\n\n\n \nExercise: tbd"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips3",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips3",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#choro-bar",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#choro-bar",
+    "title": "EDS 240",
+    "section": "",
+    "text": "3. Try different graphic forms\n\nRecall our choropleth map from earlier, which displays total precipitation by US county. What if we want to compare precipitation between CA counties? Choosing a graphical form from the top of the hierarchy (e.g. bar chart) may be more effective.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIf we want to show both big picture patterns and detailed comparisons, we may consider including multiple graphic forms in the same visualization."
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips4",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips4",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#ad-methods1",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#ad-methods1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "4. Arrange components of the graphic\n\n How does the influence of in-theater advertising change across generations?  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages from Albert Cairo’s The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#ad-methods2",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#ad-methods2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "4. Arrange components of the graphic\n\n How does the influence of in-theater advertising change across generations?  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages from Albert Cairo’s The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#fed-spending1",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#fed-spending1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "4. Arrange components of the graphic\n\nLet’s say we’re interested in:\n\nchanges in the amount spent on Social Security over time (2012-2015) relative to other major spending categories?\n\n\n\n\n\nExample from Derek L. Sonderegger’s online textbook, STA 141 - Exploratory Data Analysis and Visualization"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#fed-spending2",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#fed-spending2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "4. Arrange components of the graphic\n\nLet’s say we’re interested in:\n\nchanges in the amount spent on Social Security over time (2012-2015) relative to other major spending categories?\nthe amount of money spent on Social Security over time (2012-2015)?\n\n\n\n\n\nExample from Derek L. Sonderegger’s online textbook, STA 141 - Exploratory Data Analysis and Visualization"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips5",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips5",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#iraq",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#iraq",
+    "title": "EDS 240",
+    "section": "",
+    "text": "5. Test the outcomes of your graphic on others\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Iraq’s bloody toll.\n\n\n\n\nTo enlarge image (in Chrome), right click on image &gt; Open image in New Tab\n\n\n\nWhat is the take home message of this graphic?\nWhat is effective? What is confusing?\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#guns1",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#guns1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "5. Test the outcomes of your graphic on others\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: This Chart Shows An Alarming Rise In Florida Gun Deaths After ‘Stand Your Ground’ Was Enacted.\n\n\n\n\nTo enlarge image (in Chrome), right click on image &gt; Open image in New Tab\n\n\n\nWhat is the take home message of this graphic?\nWhat is effective? What is confusing?\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#iraq-guns",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#iraq-guns",
+    "title": "EDS 240",
+    "section": "",
+    "text": "5. Test the outcomes of your graphic on others\n\n\n\n\n\n\n\n\n\n\n\n\nBaseline at the top is clear, suggesting that bars are falling from it. Clear metaphor (dripping blood).\n\n\n\n\n\n\n\n\n\n\nEyes are drawn to baseline at the bottom, on top of which data are sitting. Headline indicates rise but visually represented by falling. Thick black line makes white area stand out over red (data).\n\n\n\n\nCritique by Albert Cairo in his post In visualization, baselines and negative space matter"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#guns2",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#guns2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "5. Test the outcomes of your graphic on others\n\nBusiness Insider published an updated graphic (originally designed by Reuters), which was submitted by a reader that, “more clearly shows that gun deaths increased between 2005 and 2007 by flipping the y-axis”:"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#critique-considerations",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#critique-considerations",
+    "title": "EDS 240",
+    "section": "",
+    "text": "5. Test the outcomes of your graphic on others\n\n\nCritiquing a data visualization:\n\nIdentify the primary and secondary insights that the graphic is trying to convey.\nIdentify elementary perceptual tasks (e.g. comparing lengths, angles) and what is confusing or difficult to do.\nIdentify how to use more effective elementary perceptual tasks for the primary and secondary insights.\nIdentify points of confusion and decide how those could be addressed (e.g. a different graphic form, rearranging components, including an introduction graph, better annotation)\n\n\n\nAdapted from Derek L. Sonderegger’s online textbook, STA 141 - Exploratory Data Analysis and Visualization"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#end-break",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#end-break",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Take a Break\n\n\n~ This is the end of Lesson 1 (of 3) ~\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "getting-unstuck.html",
@@ -980,88 +1064,11 @@
     "text": "Take a Break\n\n\n~ This is the end of Lesson 1 (of 3) ~\n\n\n\n\n\n−+\n05:00"
   },
   {
-    "objectID": "slides/week3.3-evolution.html#title-slide",
-    "href": "slides/week3.3-evolution.html#title-slide",
-    "title": "EDS 240",
+    "objectID": "slides/random-notes.html",
+    "href": "slides/random-notes.html",
+    "title": "random things to find a place for",
     "section": "",
-    "text": "EDS 240: Lecture 3.3\nVisualizing Evolution\n\nWeek 3 | January 22nd, 2024"
-  },
-  {
-    "objectID": "slides/week3.3-evolution.html#viz-evolution",
-    "href": "slides/week3.3-evolution.html#viz-evolution",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Visualizing data evolution?\n\n     \n\n\nVisualizing the change in a numeric variable over some unit of time."
-  },
-  {
-    "objectID": "slides/week3.3-evolution.html#main-evo-charts",
-    "href": "slides/week3.3-evolution.html#main-evo-charts",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Roadmap\n\n\nline graphs\n\nwhen to use them\nconsiderations:\n\nto cut or not to cut your y-axis\navoiding “spaghetti” charts\naspect ratio (width:height)\nno dual axes"
-  },
-  {
-    "objectID": "slides/week3.3-evolution.html#line-graphs",
-    "href": "slides/week3.3-evolution.html#line-graphs",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Line graph axis doesn’t need to start at 0\n\nBar graphs must start at 0 – otherwise misleading when encoding data by bars / comparing lengths\nLine graphs encode data by position, not length; include 0 if it makes sense\n\ndont’ start at 0 if the range of the data is small but the distance from the bottom of the range to 0 is large"
-  },
-  {
-    "objectID": "slides/week3.3-evolution.html#viz-dist",
-    "href": "slides/week3.3-evolution.html#viz-dist",
-    "title": "EDS 240",
-    "section": "",
-    "text": "“Core” evolution chart types\n\n\nline\nconnected scatter\narea\nstacked area\nstream"
-  },
-  {
-    "objectID": "slides/week3.3-evolution.html#refugee-data",
-    "href": "slides/week3.3-evolution.html#refugee-data",
-    "title": "EDS 240",
-    "section": "",
-    "text": "The data: {refugees}\n\n{refugees} is an R package designed to facilitate access to the United Nations High Commissioner for Refugees (UNHCR) Refugee Data Finder. It provides an easy-to-use interface to the database, which covers forcibly displaced populations, including refugees, asylum-seekers, internally displaced people, stateless people, and others over a span of more than 70 years.\nWe’ll explore changes in refugee numbers through time from different countries of origin."
-  },
-  {
-    "objectID": "slides/week3.3-evolution.html#refugee-data-wrangling",
-    "href": "slides/week3.3-evolution.html#refugee-data-wrangling",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Data wrangling: {refugees}\n\nWe’ll be using the population data set from the {refugees} package. Learn more about the data in the package documentation.\n\n#..........................load packages.........................\nlibrary(refugees)\nlibrary(tidyverse)\n\n#..........................wrangle data..........................\npop_clean &lt;- population |&gt; \n  \n  # remove observations with \"Unknown\" country of origin ----\n  filter(coo_name != \"Unknown\") |&gt; \n  \n  # select relevant cols ----\n  select(year, origin = coo_name, refugees) |&gt; \n  \n  # convert year to date type ----\n  mutate(date = ymd(year, truncated = 2L)) |&gt;\n  \n  # calculate total refugees per country per year ----\n  group_by(date, origin) |&gt;  \n  summarize(total_refugees = sum(refugees)) |&gt; \n  \n  # keep only observations from 2013 onwards ----\n  filter(date &gt;= \"2013-01-01\")"
-  },
-  {
-    "objectID": "slides/week3.3-evolution.html#line-overview",
-    "href": "slides/week3.3-evolution.html#line-overview",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Line graph - ggplot2::geom_line()\n\nWhat are they?\n\nLine graphs display the evolution of one or several numeric variables. They are similar to scatter plots, but the measurement points are ordered (typically by their x-axis value) and joined with straight line segments. They are often used to visualize a trend in data over intervals of time.\n\n\n\nNeed:\n\nan ordered numeric variable(s)\n\nImportant considerations:\n\nto cut or not to cut the y-axis (i.e. starting the y-axis at 0)\navoid using a dual axis when comparing the evolution of 2 different variables\nbe mindful of creating a “spaghetti chart”\nconsider aspect ratio (width:height ratio of a graphic)"
-  },
-  {
-    "objectID": "slides/week3.3-evolution.html#conn-line-overview",
-    "href": "slides/week3.3-evolution.html#conn-line-overview",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Connected line graph - ggplot2::tbd\n\nWhat are they?\n\ntbd\n\n\n\nNeed:\n\ntbd\n\nImportant considerations:\n\ntbd"
-  },
-  {
-    "objectID": "slides/week3.3-evolution.html#drought-data",
-    "href": "slides/week3.3-evolution.html#drought-data",
-    "title": "EDS 240",
-    "section": "",
-    "text": "The data: California droughts\n\nThe U.S. Drought Monitor (USDM) is a collection of measures that allows experts to assess droughts in the United States. You can download and explore comprehensive statistics through their data portal.\n\nPercentage area of California in U.S. drought monitor categories. Source Wikipedia\n\n\nUsing these data, we’ll explore drought conditions in California through time."
-  },
-  {
-    "objectID": "slides/week3.3-evolution.html#drought-data-wrangling",
-    "href": "slides/week3.3-evolution.html#drought-data-wrangling",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Data wrangling: California droughts\n\nThe TidyTuesday community featured a data set from the USDM in 2021, which means we can use the {tidytuesdayR} package to import the data.\n\n\n\n    Downloading file 1 of 1: `drought.csv`"
-  },
-  {
-    "objectID": "slides/week3.3-evolution.html#area-plot-overview",
-    "href": "slides/week3.3-evolution.html#area-plot-overview",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Area plot - ggplot2::geom_area()\n\nWhat are they?\n\nArea charts represent the evolution of one or more numeric variables. They are similar to line charts in that the measured points are ordered (typically by their x-axis value) and joined with straight line segments. The area between the x-axis and the line is filled with color or shading.\n\n\n\nNeed:\n\nan ordered numeric variable(s)\n\nImportant considerations:\n\nonly use if you want to show the evolution of values (not if you want to show how values differ in different categories)\nwork best when:\n\nthe total (height of all stacked areas) is as important as its shares\nyou have large differences between your values\nfor showing multiple values over time\nyou have many (&gt;10) dates\n\nLOTS of great visual examples in this Datawrapper blog post, by Lisa Charlotte Muth\nbring the most important value to the bottom of the chart and/or use color to make it stand out\nconsider using annotations and/or highlighted ranges\ngroup many time values together into one larger value"
+    "text": "plot data directly\ne.g. plot income and expenses as separate lines or just plot a singe net income line? (latter) plot your data directly, if difference matters more, plot the difference! (need environmental example here)\n\nSOME TIPS\n\nbaselines\nbreaking up plots when data vary so much that presenting them all on a single chart renders it useless (e.g. use fracking data?)\nordering variables / categories – e.g. see trends across age groups by grouping bars by media (see pg 139) (NEED EDS EXAMPLE HERE)\n\n\nuse logical & meaningful baselines\n\nbar, lollipops, histograms, etc should always have a 0 baseline – cannot truncate when main visual cue is height/length measured from a common baseline\nscatterplot, line graph, ec. – can be okay to truncate axes since main visual cue is position, not height/length"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#title-slide",
@@ -1411,7 +1418,7 @@
     "href": "slides/week3.2-distributions-slides.html#title-slide",
     "title": "EDS 240",
     "section": "",
-    "text": "EDS 240: Lecture 3.2\nVisualizing Distributions\n\nWeek 3 | January 22nd, 2024"
+    "text": "EDS 240: Lecture 3.2\nVisualizing distributions\n\nWeek 3 | January 22nd, 2024"
   },
   {
     "objectID": "slides/week3.2-distributions-slides.html#what-is-dist",
@@ -1698,7 +1705,7 @@
     "href": "course-materials/week4.html#lecture-materials",
     "title": "Fundamental Chart Types (Part II) / Basic Principles / ??",
     "section": "Lecture Materials",
-    "text": "Lecture Materials\nComing soon!\nWeek 3 instruction is broken down into three lessons:\n\n\n\nLine graphs\n lecture 3.1 slides\n\n\n\n\nScatterplots\n lecture 3.2 slides\n\n\n\n\nBar (& related) charts\n lecture 3.3 slides"
+    "text": "Lecture Materials\nWeek 3 instruction is broken down into three lessons:\n\n\n\nVisualizing relationships\n lecture 3.1 slides \n\n\n\n\ntbd\n lecture 3.2 slides\n\n\n\n\ntbd\n lecture 3.3 slides"
   },
   {
     "objectID": "course-materials/week4.html#discussion-materials",
