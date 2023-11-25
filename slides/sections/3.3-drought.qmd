@@ -1,0 +1,53 @@
+---
+format: revealjs
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| eval: false
+#| echo: false
+
+# recreaating US Drought Monitor plot, as seen on Wikipedia: <https://en.wikipedia.org/wiki/Droughts_in_California>
+
+#..........................load packages.........................
+library(tidyverse)
+#library(ggstream)
+
+#..........................import data...........................
+tuesdata <- tidytuesdayR::tt_load('2021-07-20')
+drought <- tuesdata$drought
+  
+#..........................wrangle data..........................
+drought_clean <- drought |>
+
+  # select cols of interest ----
+  select(date = valid_start, state_abb, drought_lvl, area_pct) |> 
+
+  # add year col ----
+  mutate(year = year(date),
+         month = month(date, label = TRUE, abbr = TRUE),
+         day = day(date)) |>
+  
+  # convert year to factor ----
+  mutate(year = as.factor(year)) |> 
+
+  # add drought level conditions names ----
+  mutate(drought_lvl_long = factor(drought_lvl,
+                            levels = c("D4", "D3", "D2", "D1","D0", "None"),
+                            labels = c("Exceptional Drought", "Extreme Drought",
+                                       "Severe Drought", "Moderate Drought", "Abnormally Dry", 
+                                       "No Drought"))) |>
+  
+  # reorder cols ----
+  select(date, year, month, day, state_abb, drought_lvl, drought_lvl_long, area_pct)
+
+#....................create stacked area plot....................
+drought_clean |> 
+  filter(drought_lvl != "None",
+         state_abb == "CA") |> 
+  ggplot(drought_states, mapping = aes(x = date, y = area_pct, fill = drought_lvl_long)) +
+  geom_area(position = position_stack(reverse = TRUE)) +
+  scale_fill_manual(values = c("#853904", "#FF0000", "#FFC100", "#FFD965", "#FFFF00"))
+```
+

@@ -242,14 +242,7 @@
     "href": "slides/week3.3-evolution-slides.html#viz-evolution",
     "title": "EDS 240",
     "section": "",
-    "text": "Visualizing data evolution?\n\n     \n\n\nVisualizing the change in a numeric variable over some unit of time."
-  },
-  {
-    "objectID": "slides/week3.3-evolution-slides.html#main-evo-charts",
-    "href": "slides/week3.3-evolution-slides.html#main-evo-charts",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Roadmap\n\n\nline graphs\n\nwhen to use them\nconsiderations:\n\nto cut or not to cut your y-axis\navoiding “spaghetti” charts\naspect ratio (width:height)\nno dual axes"
+    "text": "Visualizing data evolution?\n\n \n\n\nVisualizing the change in an ordered (typically by their x-axis value) numeric variable over some unit of time."
   },
   {
     "objectID": "slides/week3.3-evolution-slides.html#line-graphs",
@@ -522,7 +515,7 @@
     "href": "slides/week3.1-choosing-graphic-forms-slides.html#caveats2.1",
     "title": "EDS 240",
     "section": "",
-    "text": "Caveats to the hierarchy - an example\n\nConsider how you might display the same data in the following Sankey diagram depicted the flow of refugees in 2022, using graph types from the top of Cleveland & McGill’s hierarchy. What is the purpose of this chart?\n\nNEED TO TROUBLESHOOT CODE (code runs but errors out when rendering on slide)\nGraphic recreated following Louise E. Sinks’ blog post, TidyTuesday: Exploring Refugee Flow with A Sankey Diagram\n\nIt would be hard to use a method of encoding from the top of the hierarchy! In this Sankey diagram, readers need to decode length and area, but that’s not a huge issue since the purpose of the chart is to show high-level trends / flows of refugees"
+    "text": "Caveats to the hierarchy - an example\n\nConsider how you might display the same data in the following Sankey diagram depicted the flow of refugees in 2022, using graph types from the top of Cleveland & McGill’s hierarchy. What is the purpose of this chart?\n\n\n\n\n\n\nGraphic recreated following Louise E. Sinks’ blog post, TidyTuesday: Exploring Refugee Flow with A Sankey Diagram\n\nIt would be hard to use a method of encoding from the top of the hierarchy! In this Sankey diagram, readers need to decode length and area, but that’s not a huge issue since the purpose of the chart is to show high-level trends / flows of refugees"
   },
   {
     "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips0",
@@ -1411,7 +1404,7 @@
     "href": "slides/week1.3-ggplot-review-slides.html#assignments",
     "title": "EDS 240",
     "section": "",
-    "text": "Assignments\n\n\nEnd-of-class Survey #1 (EOC #1) – Due Mon 01/08 at 11:55pm\n\n\n2 multiple choice\n2 short answer\n1 optional question\n\n\n\nPre-course Reflection (SR #1) – Due Sat 01/13 at 11:59pm\n\n\n3 sets of questions about:\n\nschool & life\nthe way you learn best\nsome fun stuff\n\n\n\n\n\nHomework Assignment #1 (HW #1) – Sat 01/20 at 11:59pm\n\n\n2 parts:\n\ninterpreting & annotating ggplot code\nfinding data that you’re interested in visualizing for your final assignment"
+    "text": "Assignments\n\n\n\nEnd-of-class Survey #1 (EOC #1) – Due Mon 01/08 at 11:55pm\n\n2 multiple choice + 2 short answer + 1 optional question\n\n\nPre-course Reflection (SR #1) – Due Sat 01/13 at 11:59pm\n\n3 sets of questions about school & life, the way you learn best, learning goals, some fun stuff\n\n\n\nHomework Assignment #1 (HW #1) – Due Sat 01/20 at 11:59pm\n\n2 parts:\n\ninterpreting & annotating ggplot code\nfinding data that you’re interested in visualizing for your final assignment"
   },
   {
     "objectID": "slides/week3.2-distributions-slides.html#title-slide",

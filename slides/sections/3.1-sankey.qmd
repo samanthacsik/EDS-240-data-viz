@@ -5,7 +5,7 @@ editor_options:
 ---
 
 ```{r}
-#| eval: false
+#| eval: true
 #| echo: false
 #| fig-align: "center"
 
@@ -30,7 +30,7 @@ library(networkD3)
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #....................filter for just 2022 data...................
-pop2022 <- population |> 
+pop2022 <- refugees::population |> 
   filter(year == 2022) |> 
   select(year, coo_name, coa_name, refugees) #|> 
   # mutate(coo_name = as.factor(coo_name),

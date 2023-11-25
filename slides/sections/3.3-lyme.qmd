@@ -1,0 +1,97 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| eval: false
+#| echo: false
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    info                                  ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# data downloaded from: <https://www.cdc.gov/lyme/stats/survfaq.html> (found via <https://www.epa.gov/climate-indicators/health-society>; also see <https://wonder.cdc.gov/nndss/nndss_weekly_tables_menu.asp>)
+
+# request API key at: <http://api.census.gov/data/key_signup.html>
+# will receive an email with key (save this email) and a link to activate key
+# if you get an error when activating, close browser window and try clicking link again
+# store keys in a separate file and add to gitignore
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    setup                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#.........................load libraries.........................
+library(tidycensus)
+library(tidyverse)
+library(janitor)
+library(gghighlight)
+
+#......................get US Census API key.....................
+source(here::here("slides", "sections", "KEYS.R"))
+census_api_key(censusKEY)
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                wrangle data                              ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#........................read in lyme data.......................
+lyme <- read_csv(here::here("slides", "data", "LD-Case-Counts-by-County-01-20.csv"))
+
+#........................wrangle lyme data.......................
+# wrangle ----
+lyme_clean <- lyme |> 
+  janitor::clean_names() |> 
+  rename(city = ctyname, state = stname, status = ststatus) |> 
+  pivot_longer(cols = 6:25, names_to = "city_year", values_to = "reported_cases") |> 
+  mutate(year = str_remove(city_year, pattern = "cases")) |> 
+  select(year, city, state, status, reported_cases)
+
+# get total num cases by state ----
+lyme_states <- lyme_clean |> 
+  group_by(year, state) |> 
+  summarize(total_cases = sum(reported_cases)) 
+
+#....................wrangle population data.....................
+# get US pop estimates by state; See: https://walker-data.com/tidycensus/articles/other-datasets.html#:~:text=Population%20estimates%20are%20available%20in,%22%20%2C%20and%20%22characteristics%22%20.
+us_state_pop <- get_estimates(geography = "state", 
+                              product = "population",
+                              state = NULL, 
+                              year = 2019) |> 
+  filter(variable == "POP") |> 
+  select(state = NAME, population = value) |> 
+  mutate(pop100k = population/100000)
+
+#....................join lyme & pop datasets....................
+lyme_pop <- left_join(lyme_states, us_state_pop) |> 
+  mutate(cases_per100k = total_cases/pop100k)
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                  plot data                               ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+lyme_pop |> 
+  filter(year %in% (2010:2020)) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state)) + # color = state
+  geom_line() + 
+  geom_point() +
+  gghighlight::gghighlight(state == "New Jersey") #+
+  #gghighlight::gghighlight(max(cases_per100k) > 125)
+```
+
+
+```{r}
+#| eval: false
+#| echo: false
+nj <- lyme_pop |> 
+  filter(year %in% (2010:2020),
+         state == "New Jersey") |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state)) +
+  geom_line() +
+  geom_point()
+
+nj
+```
+

@@ -31,32 +31,82 @@ editor_options:
 
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
 
 . . .
 
 ::: {.body-text-l .center-text}
-Visualizing the change in a numeric variable over some unit of time.
+Visualizing the change in an **ordered** (typically by their x-axis value) **numeric variable** over some unit of time.
 :::
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "60%"
+library(tidyverse)
+
+data <- tribble(
+  ~time, ~value,
+  1, 111,
+  2, 110.5,
+  3, 109.8, 
+  4, 105,
+  5, 108.9,
+  6, 107.6,
+  7, 116.8,
+  8, 115.1,
+  9, 117.6,
+  10, 109.9,
+)
+
+ggplot(data, aes(x = time, y = value)) +
+  geom_line() +
+  labs(
+    x = "Time\n(when measurement was taken)",
+    y = "Values\n(an ordered numeric variable)"
+  ) +
+  scale_x_continuous(breaks = scales::pretty_breaks(n = 10)) +
+  theme(axis.title = element_text(size = 17)) 
+```
 
 ---
 
-## {#main-evo-charts data-menu-title="Chart types"} 
+interested in lyme disease over time
 
-[Roadmap]{.slide-title2}
+wrangle lyme & pop data 
 
-<hr>
+---
 
-1. line graphs
-    - when to use them
-    - considerations:
-        - to cut or not to cut your y-axis
-        - avoiding "spaghetti" charts
-        - aspect ratio (width:height)
-        - no dual axes
+Line graphs 
+
+just NJ
+
+add connections
+
+---
+
+cutting y-axs okay
+aspect ratio (width:height)
+no dual axes (e.g. avg temp each year on 2nd y-axis)
+
+---
+
+Avoiding spaghetti graphs
+
+gghighlight NJ
+
+---
+
+wrangle drought data
+
+---
+
+stacked area chart
+
+---
+
+stream graph
 
 ---
 

@@ -53,3 +53,6 @@ rsconnect/
 
 # data
 data/
+
+# API keys
+slides/sections/KEYS.R
