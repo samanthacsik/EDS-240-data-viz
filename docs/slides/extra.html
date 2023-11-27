@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Monday January 22nd, 2024">
 
-<title>EDS 240 - Choosing a graphic form, Fundamental chart types (Part I)</title>
+<title>EDS 240 – extra</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -228,200 +193,221 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Choosing a graphic form, Fundamental chart types (Part I)</h1>
-            <p class="subtitle lead">Week 3</p>
-                  <div>
-        <div class="description">
-          Monday January 22<sup>nd</sup>, 2024
-        </div>
-      </div>
-                </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#pre-class-prep" id="toc-pre-class-prep" class="nav-link active" data-scroll-target="#pre-class-prep">Pre-class Prep</a>
-  <ul class="collapse">
-  <li><a href="#install-required-packages" id="toc-install-required-packages" class="nav-link" data-scroll-target="#install-required-packages">Install required packages</a></li>
-  <li><a href="#download-data" id="toc-download-data" class="nav-link" data-scroll-target="#download-data">Download data</a></li>
-  <li><a href="#request-a-us-census-bureau-api-key" id="toc-request-a-us-census-bureau-api-key" class="nav-link" data-scroll-target="#request-a-us-census-bureau-api-key">Request a US Census Bureau API key</a></li>
-  </ul></li>
-  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials">Lecture Materials</a></li>
-  <li><a href="#discussion-materials" id="toc-discussion-materials" class="nav-link" data-scroll-target="#discussion-materials">Discussion Materials</a></li>
-  <li><a href="#assignment-reminders" id="toc-assignment-reminders" class="nav-link" data-scroll-target="#assignment-reminders">Assignment Reminders</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 
 
+<!-- ## {#line-graphs data-menu-title="Line graphs"}  -->
+<!-- [Line graphs: visualize ordered numeric variables over time]{.slide-title3} -->
+<!-- <hr> -->
+<!-- Line graphs display the **evolution of one or several *numeric* variables**. Measurement points are **ordered** (typically by their x-axis value) and joined with straight line segments.  -->
+<!-- They are often used to visualize a trend in data over continuous intervals of time, but can also be used to visualize a trend in data over ordered categorical variables (e.g. month). -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
+<!-- #| fig-align: "center" -->
+<!-- #| out-width: "60%" -->
+<!-- library(tidyverse) -->
+<!-- data <- tribble( -->
+<!--   ~time, ~value, -->
+<!--   1, 111, -->
+<!--   2, 110.5, -->
+<!--   3, 109.8,  -->
+<!--   4, 105, -->
+<!--   5, 108.9, -->
+<!--   6, 107.6, -->
+<!--   7, 116.8, -->
+<!--   8, 115.1, -->
+<!--   9, 117.6, -->
+<!--   10, 109.9, -->
+<!-- ) -->
+<!-- ggplot(data, aes(x = time, y = value)) + -->
+<!--   geom_line() + -->
+<!--   labs( -->
+<!--     x = "Time\n(when measurement was taken)", -->
+<!--     y = "Values\n(an ordered numeric variable)" -->
+<!--   ) + -->
+<!--   scale_x_continuous(breaks = scales::pretty_breaks(n = 10)) + -->
+<!--   theme(axis.title = element_text(size = 17))  -->
+<!-- ``` -->
+<!-- --- -->
+<!-- ## {#line-graphs data-menu-title="Line graphs"}  -->
+<!-- [Line graph axis *doesn't* need to start at 0]{.slide-title2} -->
+<!-- <hr> -->
+<!-- Bar graphs must start at 0 -- otherwise misleading when encoding data by bars / comparing lengths -->
+<!-- Line graphs encode data by position, not length; include 0 if it makes sense -->
+<!-- - dont' start at 0 if the range of the data is small but the distance from the bottom of the range to 0 is large -->
+<!-- --- -->
+<!-- --- -->
+<!-- ## {#viz-dist data-menu-title="Visualizing distributions"}  -->
+<!-- ["Core" evolution chart types]{.slide-title} -->
+<!-- <hr> -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
+<!-- library(palmerpenguins) -->
+<!-- library(tidyverse) -->
+<!-- ``` -->
+<!-- - line -->
+<!-- - connected scatter -->
+<!-- - area -->
+<!-- - stacked area -->
+<!-- - stream -->
+<!-- --- -->
+<!-- ## {#refugee-data data-menu-title="Refugee data"}  -->
+<!-- [The data: `{refugees}`]{.slide-title} -->
+<!-- <hr> -->
+<!-- `{refugees}` is an R package designed to facilitate access to the [United Nations High Commissioner for Refugees](https://www.unhcr.org/us/) (UNHCR) [Refugee Data Finder](https://www.unhcr.org/refugee-statistics/download/?url=sH5pnE). It provides an easy-to-use interface to the database, which covers forcibly displaced populations, including refugees, asylum-seekers, internally displaced people, stateless people, and others over a span of more than 70 years. -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
+<!-- #| fig-align: "center" -->
+<!-- #| out-width: "50%" -->
+<!-- #| fig-alt: "The United Nations High Commissioner for Refugees logo, which includes a horseshoe wreath. Inside the wreath, hands form a shelter with two walls and a roof. A person stands within the shelter." -->
+<!-- knitr::include_graphics("images/week3/unhcr.png") -->
+<!-- ``` -->
+<!-- We'll explore **changes in refugee numbers** through time from different countries of origin. -->
+<!-- --- -->
+<!-- ## {#refugee-data-wrangling data-menu-title="Refugee data wrangling"}  -->
+<!-- [Data wrangling: `{refugees}`]{.slide-title} -->
+<!-- <hr> -->
+<!-- We'll be using the `population` data set from the `{refugees}` package. Learn more about the data in the [package documentation](https://populationstatistics.github.io/refugees/). -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
+<!-- #..........................load packages......................... -->
+<!-- library(refugees) -->
+<!-- library(tidyverse) -->
+<!-- #..........................wrangle data.......................... -->
+<!-- pop_clean <- refugees::population |>  -->
+<!--   # remove observations with "Unknown" country of origin ---- -->
+<!--   filter(coo_name != "Unknown") |>  -->
+<!--   # select relevant cols ---- -->
+<!--   select(year, origin = coo_name, refugees) |>  -->
+<!--   # convert year to date type ---- -->
+<!--   mutate(date = ymd(year, truncated = 2L)) |> -->
+<!--   # calculate total refugees per country per year ---- -->
+<!--   group_by(date, origin) |>   -->
+<!--   summarize(total_refugees = sum(refugees)) |>  -->
+<!--   # keep only observations from 2013 onwards ---- -->
+<!--   filter(date >= "2013-01-01") -->
+<!-- ``` -->
+<!-- --- -->
+<!-- ## {#line-overview data-menu-title="Line graph overview"}  -->
+<!-- [Line graph - `ggplot2::geom_line()`]{.slide-title} -->
+<!-- <hr> -->
+<!-- [**What are they?**]{.teal-text}  -->
+<!-- - Line graphs display the **evolution of one or several *numeric* variables**. They are similar to scatter plots, but the measurement points are **ordered** (typically by their x-axis value) and joined with straight line segments. They are often used to visualize a trend in data over intervals of time. -->
+<!-- :::: columns  -->
+<!-- ::: {.column width="50%"} -->
+<!-- [**Need:**]{.teal-text}  -->
+<!-- - an ordered numeric variable(s)  -->
+<!-- [**Important considerations:**]{.teal-text}  -->
+<!-- - to cut or not to cut the y-axis (i.e. starting the y-axis at 0) -->
+<!-- - avoid using a dual axis when comparing the evolution of 2 different variables -->
+<!-- - be mindful of creating a "spaghetti chart" -->
+<!-- - consider aspect ratio (width:height ratio of a graphic) -->
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+<!-- <br> -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
+<!-- #| fig-align: "center" -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- :::: -->
+<!-- --- -->
+<!-- ## {#conn-line-overview data-menu-title="Connected line graph overview"}  -->
+<!-- [Connected line graph - `ggplot2::tbd`]{.slide-title} -->
+<!-- <hr> -->
+<!-- [**What are they?**]{.teal-text}  -->
+<!-- - tbd -->
+<!-- :::: columns  -->
+<!-- ::: {.column width="50%"} -->
+<!-- [**Need:**]{.teal-text}  -->
+<!-- - tbd -->
+<!-- [**Important considerations:**]{.teal-text}  -->
+<!-- - tbd -->
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+<!-- <br> -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
+<!-- #| fig-align: "center" -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- :::: -->
+<!-- --- -->
+<!-- --- -->
+<!-- ## {#drought-data-wrangling data-menu-title="Drought data wrangling"}  -->
+<!-- [Data wrangling: California droughts]{.slide-title} -->
+<!-- <hr> -->
+<!-- The [TidyTuesday](https://github.com/rfordatascience/tidytuesday/tree/master) community [featured a data set from the USDM](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-07-20) in 2021, which means we can use the `{tidytuesdayR}` package to import the data. -->
+<!-- ```{r} -->
+<!-- # eval: false -->
+<!-- # echo: false -->
+<!-- #..........................load packages......................... -->
+<!-- library(tidyverse) -->
+<!-- #..........................import data........................... -->
+<!-- tuesdata <- tidytuesdayR::tt_load('2021-07-20') -->
+<!-- drought <- tuesdata$drought -->
+<!-- #..........................wrangle data.......................... -->
+<!-- drought_clean <- drought |> -->
+<!--   # select cols of interest ---- -->
+<!--   select(date = valid_start, state_abb, drought_lvl, area_pct) |>  -->
+<!--   # add year col ---- -->
+<!--   mutate(year = year(date)) |> -->
+<!--   # add drought level conditions names ---- -->
+<!--   mutate(drought_lvl_long = factor(drought_lvl, -->
+<!--                             levels = c("D4", "D3", "D2", "D1","D0", "None"), -->
+<!--                             labels = c("Exceptional Drought", "Extreme Drought", -->
+<!--                                        "Severe Drought", "Moderate Drought", "Abnormally Dry",  -->
+<!--                                        "No Drought"))) |> -->
+<!--   # reorder cols ---- -->
+<!--   select(date, year, state_abb, drought_lvl, drought_lvl_long, area_pct) -->
+<!-- ``` -->
+<!-- --- -->
+<!-- ## {#area-plot-overview data-menu-title="Area plot overview"}  -->
+<!-- [Area plot - `ggplot2::geom_area()`]{.slide-title} -->
+<!-- <hr> -->
+<!-- [**What are they?**]{.teal-text}  -->
+<!-- - Area charts represent the **evolution of one or more *numeric* variables.** They are similar to line charts in that the measured points are **ordered** (typically by their x-axis value) and joined with straight line segments. The area between the x-axis and the line is filled with color or shading. -->
+<!-- <!-- :::: columns  -->
+<p>–&gt;</p>
+<!-- <!-- ::: {.column width="50%"} -->
+<p>–&gt; <!-- [**Need:**]{.teal-text}  --></p>
+<!-- - an ordered numeric variable(s) -->
+<!-- [**Important considerations:**]{.teal-text}  -->
+<!-- - only use if you want to show the evolution of values (not if you want to show how values differ in different categories) -->
+<!-- - work best when: -->
+<!--     - the total (height of all stacked areas) is as important as its shares -->
+<!--     - you have large differences between your values -->
+<!--     - for showing multiple values over time  -->
+<!--     - you have many (>10) dates -->
+<!-- - LOTS of great visual examples in this [Datawrapper blog post](https://blog.datawrapper.de/area-charts/), by Lisa Charlotte Muth -->
+<!-- - bring the most important value to the bottom of the chart and/or use color to make it stand out -->
+<!-- - consider using annotations and/or highlighted ranges -->
+<!-- - group many time values together into one larger value -->
+<!-- <!-- ::: -->
+<p>–&gt;</p>
+<!-- <!-- ::: {.column width="50%"} -->
+<p>–&gt; <!-- <!-- <br> --> –&gt;</p>
+<!-- <!-- ```{r} -->
+<p>–&gt; <!-- <!-- #| eval: true --> –&gt; <!-- <!-- #| echo: false --> –&gt; <!-- <!-- #| fig-align: "center" --> –&gt;</p>
+<!-- <!-- ``` -->
+<p>–&gt; <!-- <!-- ::: --> –&gt;</p>
+<!-- <!-- :::: -->
+<p>–&gt;</p>
+<!-- --- -->
 
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/horst-ggplot-explore-dataviz.png" class="img-fluid figure-img" style="width:85.0%" alt="A group of fuzzy round monsters with binoculars, backpacks and guide books looking up a graphs flying around with wings (like birders, but with exploratory data visualizations). Stylized text reads 'ggplot2: visual data exploration.' Learn more about ggplot2."></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="gray-text center-text">
-<p><em>Artwork by <a href="https://allisonhorst.com/">Allison Horst</a></em></p>
-</div>
-<section id="pre-class-prep" class="level2">
-<h2 class="anchored" data-anchor-id="pre-class-prep">Pre-class Prep</h2>
-<p>Please be sure to complete the following before class:</p>
-<section id="install-required-packages" class="level3">
-<h3 class="anchored" data-anchor-id="install-required-packages">Install required packages</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidytuesdayR"</span>) <span class="co"># used to access TidyTuesday data</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidycensus"</span>) <span class="co">#</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"janitor"</span>) <span class="co"># </span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggridges"</span>) <span class="co"># {ggplot2} extension for creating ridgeline plots</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"gghighlight"</span>) <span class="co"># {ggplot2} extension for highlighting geoms</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<!-- install.packages("refugees") # a package designed to facilitate access to the United Nations High Commissioner for Refugees (UNHCR) Refugee Data Finder; includes the `population` data set, which we'll use for plotting  -->
-</section>
-<section id="download-data" class="level3">
-<h3 class="anchored" data-anchor-id="download-data">Download data</h3>
-<ul>
-<li><a href="https://www.cdc.gov/lyme/resources/datasurveillance/LD-Case-Counts-by-County-01-20.csv">County-level Lyme disease data from 2001-2020</a>, made available by the CDC (read more on <a href="https://www.cdc.gov/lyme/stats/survfaq.html">this CDC web page</a>)
-<ul>
-<li>rename file as <code>lyme-cdc-2001-2020.csv</code> and save to your class repo at the file path: <code>EDS-240-class-examples/week3/data/lyme-cdc-2001-2020.csv</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="request-a-us-census-bureau-api-key" class="level3">
-<h3 class="anchored" data-anchor-id="request-a-us-census-bureau-api-key">Request a US Census Bureau API key</h3>
-<ol type="1">
-<li><p>To use the <a href=""><code>{tidycensus}</code> package</a> to access US Census Bureau data, you’ll first need to <strong>request and activate an API key</strong>. Do so by following these steps:</p>
-<ol type="a">
-<li>Request an API key at <a href="http://api.census.gov/data/key_signup.html" class="uri">http://api.census.gov/data/key_signup.html</a></li>
-<li>After a short period of time, you should receive an email with your key (it may be helpful to star/bookmark that email), and click the included link to activate your key (<strong>Note:</strong> if you get an error when activating your key, close your browser window and try clicking the activation link again)</li>
-</ol></li>
-<li><p><strong>For security purposes, you should never push any API keys to GitHub.</strong> To prevent us from accidentally pushing our key(s), we can save it to a separate file which we’ll add to our <code>.gitignore</code>. Do so by following these steps:</p></li>
-</ol>
-<ol type="a">
-<li>Create a file in your class repo’s root directory called <code>KEYS.R</code>, and save your API key to an object name like this:</li>
-</ol>
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>KEYS.R</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>censusKEY <span class="ot">&lt;-</span> <span class="st">"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<ol start="2" type="a">
-<li>Add <code>KEYS.R</code> to your <code>.gitignore</code></li>
-</ol>
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>.gitignore</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>KEYS.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<ol start="3" type="a">
-<li>Save <code>.gitignore</code> (once saved, you should see the newly added/modified <code>KEYS.R</code> file disappear from your <strong>Git</strong> pane in RStudio, and a modified <code>.gitignore</code> appear). Stage/add, commit, and push this <code>.gitignore</code> file to GitHub</li>
-</ol>
-<p>In class, we’ll source our key (by running <code>source(KEYS.R)</code>) into any scripts/Qmd files where required.</p>
-</section>
-</section>
-<section id="lecture-materials" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-materials">Lecture Materials</h2>
-<p>Week 3 instruction is broken down into three lessons:</p>
-<div class="grid">
-<div class="g-col-12 g-col-md-4">
-<div class="center-text">
-<p><span class="teal-text body-text-m"><strong>Choosing graphic forms</strong></span></p>
-<p><a href="../slides/week3.1-choosing-graphic-forms-slides.html" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 3.1 slides</a></p>
-</div>
-</div>
-<div class="g-col-12 g-col-md-4">
-<div class="center-text">
-<p><span class="teal-text body-text-m"><strong>Visualizing distributions</strong></span></p>
-<p><a href="../slides/week3.2-distributions-slides.html" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 3.2 slides</a></p>
-</div>
-</div>
-<div class="g-col-12 g-col-md-4">
-<div class="center-text">
-<p><span class="teal-text body-text-m"><strong>Visualizing evolution</strong></span></p>
-<p><a href="../slides/week3.3-evolution-slides.html" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 3.3 slides</a></p>
-</div>
-</div>
-</div>
-<p><br></p>
-<!-- [*Today's lectures draw largely on materials created by [Meghan Hall](https://meghan.rbind.io/) for her course, [CMU 36-315: Statistical Graphics & Visualization](https://cmu-36315.netlify.app/#lectures), as well as information curated by [Yan Holtz](https://github.com/holtzy) & [Conor Healy](https://www.linkedin.com/in/conor-healy-b0299810a/) as part of their [From Data to Viz](https://www.data-to-viz.com/) project.*]{.gray-text .body-text-s} -->
-<!-- - EDA (https://htmlpreview.github.io/?https://github.com/gexijin/gEDA/blob/main/example_report.html)-->
-<!-- - visualizing quantitative, qualitative, temporal data (no spatial data, covered in EDS 223) -->
-<!-- - charts, graphs, plots, diagrams -->
-<!-- - other/advanced e.g. heat maps, treemaps -->
-</section>
-<section id="discussion-materials" class="level2">
-<h2 class="anchored" data-anchor-id="discussion-materials">Discussion Materials</h2>
-<p><em>Coming soon!</em></p>
-</section>
-<section id="assignment-reminders" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-reminders">Assignment Reminders</h2>
-<table class="table">
-<colgroup>
-<col style="width: 19%">
-<col style="width: 29%">
-<col style="width: 18%">
-<col style="width: 32%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Assignment Type</th>
-<th>Assignment Title</th>
-<th>Date Assigned</th>
-<th>Date Due</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">EOC</td>
-<td>EOC (week 3)</td>
-<td>Mon 01/22/2024</td>
-<td>Mon 01/22/2024, 11:55pm PT</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">HW</td>
-<td>Homework Assignment #2)</td>
-<td>Mon 01/22/2024</td>
-<td>Sat 02/03/2024, 11:59pm PT</td>
-</tr>
-</tbody>
-</table>
-<!-- | Assignment Type | Assignment Title                                                | Date Assigned  | Date Due        | -->
-<!-- |:---------------:|------------------------------------------------------|----------------|----------------------------| -->
-<!-- | EOC             | [EOC (week 3)](https://forms.gle/2BockakcBR7rsm26A)  | Mon 01/22/2024 | Mon 01/22/2024, 11:55pm PT | -->
-<!-- | HW              | [Homework Assignment #2](../assignments/HW2.qmd)     | Mon 01/22/2024 | Sat 02/03/2024, 11:59pm PT | -->
 
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

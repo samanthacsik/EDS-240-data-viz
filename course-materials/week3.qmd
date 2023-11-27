@@ -21,17 +21,57 @@ knitr::include_graphics("../images/horst-ggplot-explore-dataviz.png")
 
 ## Pre-class Prep
 
-Please be sure to install the following packages before class:
+Please be sure to complete the following before class:
+
+### Install required packages
 
 ```{r}
 #| eval: false
-#| echo: false
-install.packages("refugees") # a package designed to facilitate access to the United Nations High Commissioner for Refugees (UNHCR) Refugee Data Finder; includes the `population` data set, which we'll use for plotting 
-install.packages("tidytuesdayR")
+#| echo: true
+#| code-line-numbers: false
+install.packages("tidytuesdayR") # used to access TidyTuesday data
+install.packages("tidycensus") #
+install.packages("janitor") # 
 install.packages("ggridges") # {ggplot2} extension for creating ridgeline plots
 install.packages("gghighlight") # {ggplot2} extension for highlighting geoms
 ```
 
+<!-- install.packages("refugees") # a package designed to facilitate access to the United Nations High Commissioner for Refugees (UNHCR) Refugee Data Finder; includes the `population` data set, which we'll use for plotting  -->
+
+### Download data
+
+- [County-level Lyme disease data from 2001-2020](https://www.cdc.gov/lyme/resources/datasurveillance/LD-Case-Counts-by-County-01-20.csv), made available by the CDC (read more on [this CDC web page](https://www.cdc.gov/lyme/stats/survfaq.html))
+  - rename file as `lyme-cdc-2001-2020.csv` and save to your class repo at the file path: `EDS-240-class-examples/week3/data/lyme-cdc-2001-2020.csv`
+
+### Request a US Census Bureau API key
+
+1. To use the [`{tidycensus}` package]() to access US Census Bureau data, you'll first need to **request and activate an API key**. Do so by following these steps:
+
+    a. Request an API key at <http://api.census.gov/data/key_signup.html>
+    b. After a short period of time, you should receive an email with your key (it may be helpful to star/bookmark that email), and click the included link to activate your key (**Note:** if you get an error when activating your key, close your browser window and try clicking the activation link again)
+
+2. **For security purposes, you should never push any API keys to GitHub.** To prevent us from accidentally pushing our key(s), we can save it to a separate file which we'll add to our `.gitignore`. Do so by following these steps:
+
+  a. Create a file in your class repo's root directory called `KEYS.R`, and save your API key to an object name like this:
+
+```{r filename="KEYS.R"}
+#| eval: false
+#| echo: true
+censusKEY <- "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+```
+
+  b. Add `KEYS.R` to your `.gitignore`
+
+```{r filename=".gitignore"}
+#| eval: false
+#| echo: true
+KEYS.R
+```
+
+  c. Save `.gitignore` (once saved, you should see the newly added/modified `KEYS.R` file disappear from your **Git** pane in RStudio, and a modified `.gitignore` appear). Stage/add, commit, and push this `.gitignore` file to GitHub
+  
+In class, we'll source our key (by running `source(KEYS.R)`) into any scripts/Qmd files where required.
+    
 ## Lecture Materials
 
 Week 3 instruction is broken down into three lessons:
@@ -58,7 +98,7 @@ Week 3 instruction is broken down into three lessons:
 ::: {.center-text}
 [**Visualizing evolution**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.3 slides](../slides/week3.3-evolution-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.3 slides](../slides/week3.3-evolution-slides.qmd){.btn role="button" target="_blank"}
 :::
 :::
 

@@ -5,7 +5,7 @@ editor_options:
 ---
 
 ```{r}
-#| eval: false
+#| eval: true
 #| echo: false
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,40 +33,47 @@ library(gghighlight)
 source(here::here("slides", "sections", "KEYS.R"))
 census_api_key(censusKEY)
 
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                                wrangle data                              ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#........................read in lyme data.......................
+#..........................import data...........................
 lyme <- read_csv(here::here("slides", "data", "LD-Case-Counts-by-County-01-20.csv"))
 
-#........................wrangle lyme data.......................
-# wrangle ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                          wrangle lyme disease data                       ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#............wide to long (plus some other wrangling)............
 lyme_clean <- lyme |> 
   janitor::clean_names() |> 
   rename(city = ctyname, state = stname, status = ststatus) |> 
   pivot_longer(cols = 6:25, names_to = "city_year", values_to = "reported_cases") |> 
-  mutate(year = str_remove(city_year, pattern = "cases")) |> 
+  mutate(year = str_remove(city_year, pattern = "cases"),
+         year = as.numeric(year)) |> 
   select(year, city, state, status, reported_cases)
 
-# get total num cases by state ----
+#................calculate total cases per state.................
 lyme_states <- lyme_clean |> 
   group_by(year, state) |> 
   summarize(total_cases = sum(reported_cases)) 
 
-#....................wrangle population data.....................
-# get US pop estimates by state; See: https://walker-data.com/tidycensus/articles/other-datasets.html#:~:text=Population%20estimates%20are%20available%20in,%22%20%2C%20and%20%22characteristics%22%20.
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                      request / wrangle population data                   ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#...................get pop estimates by state...................
+# See: https://walker-data.com/tidycensus/articles/other-datasets.html#:~:text=Population%20estimates%20are%20available%20in,%22%20%2C%20and%20%22characteristics%22%20.
 us_state_pop <- get_estimates(geography = "state", 
                               product = "population",
                               state = NULL, 
                               year = 2019) |> 
   filter(variable == "POP") |> 
-  select(state = NAME, population = value) |> 
-  mutate(pop100k = population/100000)
+  select(state = NAME, population = value) 
 
-#....................join lyme & pop datasets....................
-lyme_pop <- left_join(lyme_states, us_state_pop) |> 
-  mutate(cases_per100k = total_cases/pop100k)
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                            join lyme & pop dfs                           ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+lyme_pop <- left_join(lyme_states, us_state_pop) |>  
+  mutate(pop100k = population/100000) |> # add col with num of 100k people per state
+  mutate(cases_per100k = total_cases/pop100k) # calculate num bases per 100k people
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                                  plot data                               ----
@@ -79,19 +86,66 @@ lyme_pop |>
   geom_point() +
   gghighlight::gghighlight(state == "New Jersey") #+
   #gghighlight::gghighlight(max(cases_per100k) > 125)
-```
 
-
-```{r}
-#| eval: false
-#| echo: false
 nj <- lyme_pop |> 
   filter(year %in% (2010:2020),
          state == "New Jersey") |> 
   ggplot(aes(x = year, y = cases_per100k, group = state)) +
   geom_line() +
   geom_point()
-
-nj
 ```
+
+```{r}
+# line (cases per 100k)
+ggplot(lyme_states, aes(x = year, y = total_cases, group = state)) + 
+  geom_line()
+
+# connected line (cases per 100k)
+ggplot(lyme_states, aes(x = year, y = total_cases, group = state)) +
+  geom_line() +
+  geom_point()
+
+# highlighted (one state) (cases per 100k)
+ggplot(lyme_states, aes(x = year, y = total_cases, group = state)) +
+  geom_line() +
+  geom_point() +
+  gghighlight::gghighlight(state == "New Jersey") 
+
+# highlighted (based on condition) (cases per 100k)
+ggplot(lyme_states, aes(x = year, y = total_cases, group = state, color = state)) +
+  geom_line() +
+  geom_point() +
+  gghighlight::gghighlight(max(total_cases) > 5000) 
+
+# area 
+lyme_states |> 
+  filter(state %in% c("Pennsylvania")) |> 
+  ggplot(aes(x = year, y = total_cases, group = state, fill = state)) +
+  geom_area() # position = position_stack(reverse = TRUE) 
+
+# totals df
+totals <- lyme_states |>
+  #filter(state %in% c("California", "Nevada")) |> 
+  group_by(year) |>
+  summarize(total_annual_cases = sum(total_cases))
+
+# stacked area of 4 most prevalent states (all others grouped)
+lyme_states |> 
+  
+  # coerce state from chr to factor
+  mutate(state = as.factor(state)) |> 
+  
+  # manually replace levels of states with "Other" if they aren't PA, NY, NJ, MA
+  mutate(state = fct_other(f = state,
+                           keep = c("Pennsylvania", "New York", "New Jersey", "Massachusetts"),
+                           other_level = "Other")) |> 
+  
+  ggplot(aes(x = year, y = total_cases, group = state, fill = state)) +
+  geom_area() # +
+  # scale_x_continuous(limits = c(2001:2020), breaks = (2001, 2003, 2005, 2007, 2009, 2011, 2013, 2015, 2017, 2019))
+  # scale_y_continuous(limits = c(0:2500))
+  
+
+```
+
 

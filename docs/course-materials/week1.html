@@ -258,7 +258,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pre-class-prep" id="toc-pre-class-prep" class="nav-link active" data-scroll-target="#pre-class-prep">Pre-class Prep</a></li>
+  <li><a href="#pre-class-prep" id="toc-pre-class-prep" class="nav-link active" data-scroll-target="#pre-class-prep">Pre-class Prep</a>
+  <ul class="collapse">
+  <li><a href="#install-required-packages" id="toc-install-required-packages" class="nav-link" data-scroll-target="#install-required-packages">Install required packages</a></li>
+  <li><a href="#create-your-eds-240-class-examples-repository" id="toc-create-your-eds-240-class-examples-repository" class="nav-link" data-scroll-target="#create-your-eds-240-class-examples-repository">Create your <code>EDS-240-class-examples</code> repository</a></li>
+  </ul></li>
   <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials">Lecture Materials</a></li>
   <li><a href="#discussion-materials" id="toc-discussion-materials" class="nav-link" data-scroll-target="#discussion-materials">Discussion Materials</a></li>
   <li><a href="#assignment-reminders" id="toc-assignment-reminders" class="nav-link" data-scroll-target="#assignment-reminders">Assignment Reminders</a></li>
@@ -282,11 +286,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="pre-class-prep" class="level2">
 <h2 class="anchored" data-anchor-id="pre-class-prep">Pre-class Prep</h2>
-<p>Please be sure to install the following packages before class:</p>
+<p>Please be sure to complete the following before class:</p>
+<section id="install-required-packages" class="level3">
+<h3 class="anchored" data-anchor-id="install-required-packages">Install required packages</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="st">"palmerpenguins"</span>) <span class="co"># a package containing the `penguins` data set, which we'll use for plotting practice</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>) <span class="co"># a collection of packages used for data wrangling / manipulation and visualization (including {ggplot2})</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"palmerpenguins"</span>) <span class="co"># a package containing the `penguins` data set, which we'll use for plotting practice</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>) <span class="co"># a collection of packages used for data wrangling / manipulation and visualization (including {ggplot2})</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="create-your-eds-240-class-examples-repository" class="level3">
+<h3 class="anchored" data-anchor-id="create-your-eds-240-class-examples-repository">Create your <code>EDS-240-class-examples</code> repository</h3>
+<p>We’ll be coding together quite a bit throughout this course. To stay organized, we’ll complete all of our in-class examples in one repository (repo). <strong>Create and clone a GitHub repository named <code>EDS-240-class-examples</code></strong>. For step-by-step instructions, unfold the following note (collapsed to save space):</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step-by-step instructions for creating and cloning a GitHub repo:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Create a remote (GitHub) repo:</strong></p>
+<ol type="1">
+<li>Navigate to your GitHub profile and click on <strong>Repositories</strong> (top menu bar)</li>
+<li>Click on the green <strong>New</strong> button in the upper right-hand corner</li>
+<li>Give it the name <code>EDS-240-class-examples</code>, and optionally, a short description. Select the radio button for <strong>Public</strong> repository (it should be selected by default). <strong>Initialize this repository with</strong> a <strong>README</strong> by checking the box <em>and</em> <strong>Add a .gitignore</strong> (select <strong>R</strong> from the <strong>.gitignore template</strong> drop down menu) boxes. Click <strong>Create repository</strong>.</li>
+<li>From your repo’s main page, click the green <strong>Code</strong> button and copy the URL to your clipboard</li>
+</ol>
+<p><strong>Clone your repo:</strong></p>
+<ol start="5" type="1">
+<li>Open up RStudio</li>
+<li>Click on the drop down menu next to the R project icon (top right corner)</li>
+<li>Click <strong>New Project…</strong> &gt; <strong>Version Control</strong> &gt; <strong>Git</strong> &gt; paste your repo’s URL in the <strong>Repository URL:</strong> box and press <strong>Tab</strong> to auto fill the <strong>Project directory name</strong> field (it should automatically be named the same as your GitHub repo). <strong>Browse</strong> to select where on your computer you’d like your repo to be saved.</li>
+<li>Click <strong>Create Project</strong></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="lecture-materials" class="level2">
 <h2 class="anchored" data-anchor-id="lecture-materials">Lecture Materials</h2>
@@ -314,7 +354,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="discussion-materials" class="level2">
 <h2 class="anchored" data-anchor-id="discussion-materials">Discussion Materials</h2>
-<p><em>Coming soon!</em></p>
+
+<!-- **Tidy data** is a predictable way of organizing data where: -->
+<!-- 1. each variable is a column -->
+<!-- 2. each observation is a row -->
+<!-- 3. each cell contains a single value -->
+<!-- See [Chapter 5, R for Data Science (2e)](https://r4ds.hadley.nz/data-tidy.html), by Hadley Wickham, Mine Çetinkaya-Rundel & Garrett Grolemund -->
+<!-- Is is **not** language-specific or tool-specific, it is not an "R thing", and it is not the `{tidyverse}` *"It is a way or organizing data that will make life easier for people who work with data."* (quote from Allison Horst). Because it makes life so much easier, tidying data is a critical first step in building any data visualization using grammar of graphics. In discussion section, we'll practice tidying a very untidy data set on fracking.  -->
+<p>By now, you may have heard/read something like, “Data scientists spend 80% of their time preparing their data for analysis and/or visualization.” And while that may not be totally accurate for all data scientists or all projects, you <em>will</em> spend lots of time wrestling with data. You’ll spend this week’s discussion cleaning up a messy data set on hydraulic fracturing aka <a href="https://en.wikipedia.org/wiki/Fracking">fracking</a>.</p>
+<p>This week’s data comes courtesy of Jeremy Singer-Vine’s <a href="https://www.data-is-plural.com/">Data is Plural</a> weekly newsletter of useful/curious data sets (the <a href="https://www.data-is-plural.com/archive/2023-09-27-edition/">2023.09.27 edition</a>). Singer-Vine’s description:</p>
+<blockquote class="blockquote">
+<p>Since <a href="https://www.fracfocus.org/learn/about-fracfocus">launching in 2011</a>, <a href="https://fracfocus.org/">FracFocus</a> has become the largest registry of <a href="https://en.wikipedia.org/wiki/Fracking">hydraulic fracturing</a> chemical disclosures in the US. The database, available to explore online and <a href="https://fracfocus.org/data-download">download in bulk</a>, contains 210,000+ such disclosures from fracking operators; it details the location, timing, and water volume of each fracking job, plus the names and amounts of chemicals used. The project is <a href="https://fracfocus.org/about-us">managed</a> by the <a href="https://www.gwpc.org/overview/">Ground Water Protection Council</a>, “a nonprofit 501(c)6 organization whose members consist of state ground water regulatory agencies”. As seen in: The latest <a href="https://www.nytimes.com/interactive/2023/09/25/climate/fracking-oil-gas-wells-water.html">installment</a> of the New York Times’ <a href="https://www.nytimes.com/series/uncharted-waters">Uncharted Water series</a>.</p>
+</blockquote>
+<p><strong>Before coming to section, please be sure to:</strong></p>
+<ol type="1">
+<li>Install the following packages:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"janitor"</span>) <span class="co"># tools for cleaning dirty data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"usdata"</span>) <span class="co"># demographic data on the United States at the county and state levels spanning multiple years</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li><a href="https://fracfocus.org/data-download">Download the data</a> as a zip file (click the <strong>Download CSV Data</strong> button at the bottom of the page) and unzip. We’ll only be using the file named <code>registryupload_1.csv</code> – rename it as <code>fracking-20240110.csv</code></li>
+<li>Save <code>fracking-20240110.csv</code> to your class repo in the following location: <code>EDS-240-class-examples/week1/data/fracking-20240110.csv</code></li>
+<li>We don’t want to push any data in our repo to GitHub (GitHub enforces file size limits, and you’ll run into some serious headaches when you try to push a file that’s too big) – to avoid doing this, we can add our data files to our <code>.gitignore</code> file, which, as the name implies, is a collection of files that we want Git to ignore. <strong>Open up your <code>.gitignore</code> file and add the following line (anywhere is fine, but it makes sense to add it beneath the last line):</strong></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ignore any folder named `data/` within folders named `week__` (* acts as a wildcard)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/week*/data/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Notice that when you <strong>Save</strong> your modified <code>.gitignore</code> file, untracked data files at the specified file path disappear from your Git tab in RStudio, and a modified <code>.gitignore</code> file appears in it’s place (this is what we want!). Stage/add, commit, and push <code>.gitignore</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/gitignore.gif" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text gray-text">
+<p>An example repo with three folders: <code>week1/</code>, <code>week2/</code>, and <code>other-stuff/</code>. Each of those folders has a subfolder named <code>data/</code>, and each <code>data/</code> folder contains a <code>.csv</code> file. Adding the line, <code>/week*/data/</code> to the <code>.gitignore</code> tells Git to ignore folders (and their contents) named <code>data/</code> that are within a parent folder named <code>week__</code> (the <code>*</code> acts as a wildcard). If we wanted to ignore all three <code>data/</code> folders (including <code>other-stuff/data/</code>), we can instead include <code>/*/data/</code> to our <code>.gitignore</code>.</p>
+</div>
+<p><em>Complete code will be posted here after both discussion sections are finished.</em></p>
+<!-- ::: {.callout-note icon=false collapse=true} -->
+<!-- ## Code covered in week 1 discussion -->
+<!-- {{< include discussion/week1/tidy-fracking.qmd >}} -->
+<!-- ::: -->
 </section>
 <section id="assignment-reminders" class="level2">
 <h2 class="anchored" data-anchor-id="assignment-reminders">Assignment Reminders</h2>
@@ -354,7 +440,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<!-- | Assignment Type | Assignment Title                                                                  | Date Assigned  | Date Due        | -->
+<!-- | Assignment Type | Assignment Title                                                       |  Date Assigned | Date Due                   | -->
 <!-- |:---------------:|------------------------------------------------------------------------|----------------|----------------------------| -->
 <!-- | EOC             | [End-of-class survey (week 1)](https://forms.gle/aPGfCircFN1AZfSe9)    | Mon 01/08/2024 | Mon 01/08/2024, 11:55pm PT | -->
 <!-- | SR              | [Pre-course reflection (SR #1)](../assignments/SR1-precourse.qmd)      | Mon 01/08/2024 | Sat 01/13/2024, 11:59pm PT | -->

@@ -35,9 +35,8 @@ editor_options:
 . . .
 
 ::: {.body-text-l .center-text}
-Visualizing the change in an **ordered** (typically by their x-axis value) **numeric variable** over some unit of time.
+Visualizing the change in a **numeric variable** over some unit of time.
 :::
-
 
 ```{r}
 #| eval: true
@@ -72,11 +71,167 @@ ggplot(data, aes(x = time, y = value)) +
 
 ---
 
-interested in lyme disease over time
-
-wrangle lyme & pop data 
+Roadmap
 
 ---
+
+## {#lyme-data data-menu-title="Lyme disease by state"} 
+
+[The data: Lyme disease]{.slide-title}
+
+<hr>
+
+[Lyme disease has been a nationally notifiable condition in the United States since 1991. Reports of Lyme disease are collected and verified by local and state health departments, anonymized by the [National Notifiable Diseases Surveillance System](https://www.cdc.gov/nndss/index.html) (NNDSS), then shared with [Centers for Disease Control and Prevention](https://www.cdc.gov/) (CDC). The CDC has developed a public use data set for [download](https://www.cdc.gov/lyme/stats/survfaq.html) to facilitate the public health and research community’s access to NNDSS data on Lyme disease.]{.body-text-s}
+
+:::: columns
+
+::: {.column width="33%"}
+<br>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week3/cdc-logo.png")
+```
+:::
+
+::: {.column width="33%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week3/tick-cartoon.png")
+```
+:::
+
+::: {.column width="33%"}
+
+<br>
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week3/census-bureau-logo.png")
+```
+:::
+
+::::
+
+[Using the publicly-available CDC data on Lyme disease and population estimates from the [US Census Bureau](https://www.census.gov/) (via the [`{tidycensus}` package]()), we'll explore **changes in Lyme disease cases over time**, by state.]{.body-text-s}
+
+::: notes
+NNDSS is a nationwide collaboration that enables all levels of public health to share health information to monitor, control, and prevent the occurrence and spread of state-reportable and nationally notifiable infectious (and some noninfectious) diseases and conditions.
+:::
+
+---
+
+## {#tidycensus data-menu-title="{tidycensus} package"} 
+
+[`{tidycensus}` for ___ ]{.slide-title}
+
+<hr>
+
+:::: columns
+
+::: {.column width="50%"}
+
+<br>
+<br>
+
+The [`{tidycensus}` package]() is ____
+
+Using `{tidycensus}` requires that you first have an API key. Be sure to follow the [Pre-Course setup instructions]() for requesting and activating your key before proceeding.
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week3/tidycensus.png")
+```
+:::
+
+::::
+
+---
+
+## {#lyme-wrangling data-menu-title="Wrangle data"} 
+
+[Data wrangling]{.slide-title}
+
+<hr>
+
+<!-- {{< include slides/sections/3.3-lyme.qmd >}} -->
+
+See the [online documentation](https://walker-data.com/tidycensus/articles/other-datasets.html#:~:text=Population%20estimates%20are%20available%20in,%22%20%2C%20and%20%22characteristics%22%20.) for more information on downloading and parsing population data using the `{tidycensus}` package.
+```{r}
+#| eval: false
+#| echo: true
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    setup                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#.........................load libraries.........................
+library(tidycensus)
+library(tidyverse)
+library(janitor)
+library(gghighlight)
+
+#.........................source API key.........................
+source(here::here("KEYS.R"))
+census_api_key(censusKEY)
+
+#..........................import data...........................
+lyme <- read_csv(here::here("week3", "data", "LD-Case-Counts-by-County-01-20.csv"))
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                          wrangle lyme disease data                       ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#............wide to long (plus some other wrangling)............
+lyme_clean <- lyme |> 
+  janitor::clean_names() |> 
+  rename(city = ctyname, state = stname, status = ststatus) |> 
+  pivot_longer(cols = 6:25, names_to = "city_year", values_to = "reported_cases") |> 
+  mutate(year = str_remove(city_year, pattern = "cases"),
+         year = as.numeric(year)) |> 
+  select(year, city, state, status, reported_cases)
+
+#................calculate total cases per state.................
+lyme_states <- lyme_clean |> 
+  group_by(year, state) |> 
+  summarize(total_cases = sum(reported_cases)) 
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                      request / wrangle population data                   ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#...................get pop estimates by state...................
+us_state_pop <- get_estimates(geography = "state", 
+                              product = "population",
+                              state = NULL, 
+                              year = 2019) |> 
+  filter(variable == "POP") |> 
+  select(state = NAME, population = value) 
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                            join lyme & pop dfs                           ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+lyme_pop <- left_join(lyme_states, us_state_pop) |> 
+  mutate(pop100k = population/100000) |> # add col with num of 100k people per state
+  mutate(cases_per100k = total_cases/pop100k) # calculate num bases per 100k people
+```
+
+---
+
 
 Line graphs 
 
@@ -98,292 +253,13 @@ gghighlight NJ
 
 ---
 
-wrangle drought data
-
----
-
-stacked area chart
-
----
-
-stream graph
-
----
-
-## {#line-graphs data-menu-title="Line graphs"} 
-
-[Line graphs: visualize ordered numeric variables over time]{.slide-title3}
-
-<hr>
-
-Line graphs display the **evolution of one or several *numeric* variables**. Measurement points are **ordered** (typically by their x-axis value) and joined with straight line segments. 
-
-They are often used to visualize a trend in data over continuous intervals of time, but can also be used to visualize a trend in data over ordered categorical variables (e.g. month).
-
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "60%"
-library(tidyverse)
-
-data <- tribble(
-  ~time, ~value,
-  1, 111,
-  2, 110.5,
-  3, 109.8, 
-  4, 105,
-  5, 108.9,
-  6, 107.6,
-  7, 116.8,
-  8, 115.1,
-  9, 117.6,
-  10, 109.9,
-)
-
-ggplot(data, aes(x = time, y = value)) +
-  geom_line() +
-  labs(
-    x = "Time\n(when measurement was taken)",
-    y = "Values\n(an ordered numeric variable)"
-  ) +
-  scale_x_continuous(breaks = scales::pretty_breaks(n = 10)) +
-  theme(axis.title = element_text(size = 17)) 
-```
-
----
-
-## {#line-graphs data-menu-title="Line graphs"} 
-
-[Line graph axis *doesn't* need to start at 0]{.slide-title2}
-
-<hr>
-
-Bar graphs must start at 0 -- otherwise misleading when encoding data by bars / comparing lengths
-
-Line graphs encode data by position, not length; include 0 if it makes sense
-
-- dont' start at 0 if the range of the data is small but the distance from the bottom of the range to 0 is large
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-## {#viz-dist data-menu-title="Visualizing distributions"} 
-
-["Core" evolution chart types]{.slide-title}
-
-<hr>
-
-```{r}
-#| eval: true
-#| echo: false
-library(palmerpenguins)
-library(tidyverse)
-```
-
-- line
-- connected scatter
-- area
-- stacked area
-- stream
-
----
-
-## {#refugee-data data-menu-title="Refugee data"} 
-
-[The data: `{refugees}`]{.slide-title}
-
-<hr>
-
-`{refugees}` is an R package designed to facilitate access to the [United Nations High Commissioner for Refugees](https://www.unhcr.org/us/) (UNHCR) [Refugee Data Finder](https://www.unhcr.org/refugee-statistics/download/?url=sH5pnE). It provides an easy-to-use interface to the database, which covers forcibly displaced populations, including refugees, asylum-seekers, internally displaced people, stateless people, and others over a span of more than 70 years.
-
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "50%"
-#| fig-alt: "The United Nations High Commissioner for Refugees logo, which includes a horseshoe wreath. Inside the wreath, hands form a shelter with two walls and a roof. A person stands within the shelter."
-knitr::include_graphics("images/week3/unhcr.png")
-```
-
-We'll explore **changes in refugee numbers** through time from different countries of origin.
-
----
-
-## {#refugee-data-wrangling data-menu-title="Refugee data wrangling"} 
-
-[Data wrangling: `{refugees}`]{.slide-title}
-
-<hr>
-
-We'll be using the `population` data set from the `{refugees}` package. Learn more about the data in the [package documentation](https://populationstatistics.github.io/refugees/).
-
-```{r}
-#| eval: true
-#| echo: true
-#..........................load packages.........................
-library(refugees)
-library(tidyverse)
-
-#..........................wrangle data..........................
-pop_clean <- population |> 
-  
-  # remove observations with "Unknown" country of origin ----
-  filter(coo_name != "Unknown") |> 
-  
-  # select relevant cols ----
-  select(year, origin = coo_name, refugees) |> 
-  
-  # convert year to date type ----
-  mutate(date = ymd(year, truncated = 2L)) |>
-  
-  # calculate total refugees per country per year ----
-  group_by(date, origin) |>  
-  summarize(total_refugees = sum(refugees)) |> 
-  
-  # keep only observations from 2013 onwards ----
-  filter(date >= "2013-01-01")
-```
-
----
-
-## {#line-overview data-menu-title="Line graph overview"} 
-
-[Line graph - `ggplot2::geom_line()`]{.slide-title}
-
-<hr>
-
-[**What are they?**]{.teal-text} 
-
-- Line graphs display the **evolution of one or several *numeric* variables**. They are similar to scatter plots, but the measurement points are **ordered** (typically by their x-axis value) and joined with straight line segments. They are often used to visualize a trend in data over intervals of time.
-
-:::: columns 
-
-::: {.column width="50%"}
-[**Need:**]{.teal-text} 
-
-- an ordered numeric variable(s) 
-
-[**Important considerations:**]{.teal-text} 
-
-- to cut or not to cut the y-axis (i.e. starting the y-axis at 0)
-- avoid using a dual axis when comparing the evolution of 2 different variables
-- be mindful of creating a "spaghetti chart"
-- consider aspect ratio (width:height ratio of a graphic)
-:::
-
-::: {.column width="50%"}
-<br>
-
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-
-```
-:::
-
-::::
-
----
-
-## {#conn-line-overview data-menu-title="Connected line graph overview"} 
-
-[Connected line graph - `ggplot2::tbd`]{.slide-title}
-
-<hr>
-
-[**What are they?**]{.teal-text} 
-
-- tbd
-
-:::: columns 
-
-::: {.column width="50%"}
-[**Need:**]{.teal-text} 
-
-- tbd
-
-[**Important considerations:**]{.teal-text} 
-
-- tbd
-:::
-
-::: {.column width="50%"}
-<br>
-
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-
-```
-:::
-
-::::
-
----
-
-## {#drought-data data-menu-title="Drought data"} 
+## {#drought-data data-menu-title="Drought data"}
 
 [The data: California droughts]{.slide-title}
 
 <hr>
 
-The [U.S. Drought Monitor](https://droughtmonitor.unl.edu/) (USDM) is a collection of measures that allows experts to assess droughts in the United States. You can download and explore comprehensive statistics through their [data portal](https://droughtmonitor.unl.edu/DmData/DataDownload/ComprehensiveStatistics.aspx). 
+The [U.S. Drought Monitor](https://droughtmonitor.unl.edu/) (USDM) is a collection of measures that allows experts to assess droughts in the United States. You can download and explore comprehensive statistics through their [data portal](https://droughtmonitor.unl.edu/DmData/DataDownload/ComprehensiveStatistics.aspx).
 
 ```{r}
 #| eval: true
@@ -404,30 +280,45 @@ Using these data, we'll explore **drought conditions in California** through tim
 
 ---
 
-## {#drought-data-wrangling data-menu-title="Drought data wrangling"} 
+## {#lyme-wrangling data-menu-title="Wrangle data"} 
 
-[Data wrangling: California droughts]{.slide-title}
+[Data wrangling]{.slide-title}
 
 <hr>
 
-The [TidyTuesday](https://github.com/rfordatascience/tidytuesday/tree/master) community [featured a data set from the USDM](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-07-20) in 2021, which means we can use the `{tidytuesdayR}` package to import the data.
+<!-- {{< include ../slides/sections/3.3-drought.qmd >}} -->
 
 ```{r}
-#..........................load packages.........................
+#| eval: false
+#| echo: true
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    setup                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#.........................load libraries.........................
 library(tidyverse)
 
 #..........................import data...........................
 tuesdata <- tidytuesdayR::tt_load('2021-07-20')
 drought <- tuesdata$drought
+  
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                          wrangle lyme disease data                       ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#..........................wrangle data..........................
 drought_clean <- drought |>
 
   # select cols of interest ----
   select(date = valid_start, state_abb, drought_lvl, area_pct) |> 
 
   # add year col ----
-  mutate(year = year(date)) |>
+  mutate(year = year(date),
+         month = month(date, label = TRUE, abbr = TRUE),
+         day = day(date)) |>
+  
+  # convert year to factor ----
+  mutate(year = as.factor(year)) |> 
 
   # add drought level conditions names ----
   mutate(drought_lvl_long = factor(drought_lvl,
@@ -437,56 +328,23 @@ drought_clean <- drought |>
                                        "No Drought"))) |>
   
   # reorder cols ----
-  select(date, year, state_abb, drought_lvl, drought_lvl_long, area_pct)
+  select(date, year, month, day, state_abb, drought_lvl, drought_lvl_long, area_pct)
+
 ```
 
 ---
 
-## {#area-plot-overview data-menu-title="Area plot overview"} 
-
-[Area plot - `ggplot2::geom_area()`]{.slide-title}
-
-<hr>
-
-[**What are they?**]{.teal-text} 
-
-- Area charts represent the **evolution of one or more *numeric* variables.** They are similar to line charts in that the measured points are **ordered** (typically by their x-axis value) and joined with straight line segments. The area between the x-axis and the line is filled with color or shading.
-
-<!-- :::: columns  -->
-
-<!-- ::: {.column width="50%"} -->
-[**Need:**]{.teal-text} 
-
-- an ordered numeric variable(s)
-
-[**Important considerations:**]{.teal-text} 
-
-- only use if you want to show the evolution of values (not if you want to show how values differ in different categories)
-- work best when:
-    - the total (height of all stacked areas) is as important as its shares
-    - you have large differences between your values
-    - for showing multiple values over time 
-    - you have many (>10) dates
-- LOTS of great visual examples in this [Datawrapper blog post](https://blog.datawrapper.de/area-charts/), by Lisa Charlotte Muth
-- bring the most important value to the bottom of the chart and/or use color to make it stand out
-- consider using annotations and/or highlighted ranges
-- group many time values together into one larger value
-<!-- ::: -->
-
-<!-- ::: {.column width="50%"} -->
-<!-- <br> -->
-
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: false -->
-<!-- #| fig-align: "center" -->
-
-<!-- ``` -->
-<!-- ::: -->
-
-<!-- :::: -->
+stacked area chart
 
 ---
+
+stream graph
+
+---
+
+
+---
+
 
 ##  {#end-break data-menu-title="# End / Break #" background="#047C90"}
 
@@ -510,4 +368,8 @@ countdown::countdown(
   font_size = "2em",
   )
 ```
+
+
+
+
 
