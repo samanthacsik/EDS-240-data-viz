@@ -17,14 +17,38 @@ knitr::include_graphics("../images/ggplot2.png")
 
 ## Pre-class Prep
 
-Please be sure to install the following packages before class:
+Please be sure to complete the following before class:
+
+### Install required packages
 
 ```{r}
 #| eval: false
 #| echo: true
+#| code-line-numbers: false
 install.packages("palmerpenguins") # a package containing the `penguins` data set, which we'll use for plotting practice
-install.packages("tidyverse") # installs a number of packages used for data wrangling / manipulation and visualization (including {ggplot2})
+install.packages("tidyverse") # a collection of packages used for data wrangling / manipulation and visualization (including {ggplot2})
 ```
+
+### Create your `EDS-240-class-examples` repository
+
+We'll be coding together quite a bit throughout this course. To stay organized, we'll complete all of our in-class examples in one repository (repo). **Create and clone a GitHub repository named `EDS-240-class-examples`**. For step-by-step instructions, unfold the following note (collapsed to save space): 
+
+::: {.callout-note icon=false collapse=true}
+## Step-by-step instructions for creating and cloning a GitHub repo:
+**Create a remote (GitHub) repo:**
+
+1. Navigate to your GitHub profile and click on **Repositories** (top menu bar)
+2. Click on the green **New** button in the upper right-hand corner
+3. Give it the name `EDS-240-class-examples`, and optionally, a short description. Select the radio button for **Public** repository (it should be selected by default). **Initialize this repository with** a **README** by checking the box *and* **Add a .gitignore** (select **R** from the **.gitignore template** drop down menu) boxes. Click **Create repository**.
+4. From your repo's main page, click the green **Code** button and copy the URL to your clipboard
+
+**Clone your repo:**
+
+5. Open up RStudio
+6. Click on the drop down menu next to the R project icon (top right corner)
+7. Click **New Project...** > **Version Control** > **Git** > paste your repo's URL in the **Repository URL:** box and press **Tab** to auto fill the **Project directory name** field (it should automatically be named the same as your GitHub repo). **Browse** to select where on your computer you'd like your repo to be saved.
+8. Click **Create Project**
+:::
 
 ## Lecture Materials
 
@@ -58,10 +82,67 @@ Week 1 instruction is broken down into three lessons:
 
 :::
 
-
 ## Discussion Materials
 
-*Coming soon!*
+<!-- **Tidy data** is a predictable way of organizing data where: -->
+
+<!-- 1. each variable is a column -->
+<!-- 2. each observation is a row -->
+<!-- 3. each cell contains a single value -->
+
+<!-- See [Chapter 5, R for Data Science (2e)](https://r4ds.hadley.nz/data-tidy.html), by Hadley Wickham, Mine Çetinkaya-Rundel & Garrett Grolemund -->
+
+<!-- Is is **not** language-specific or tool-specific, it is not an "R thing", and it is not the `{tidyverse}` *"It is a way or organizing data that will make life easier for people who work with data."* (quote from Allison Horst). Because it makes life so much easier, tidying data is a critical first step in building any data visualization using grammar of graphics. In discussion section, we'll practice tidying a very untidy data set on fracking.  -->
+By now, you may have heard/read something like, "Data scientists spend 80% of their time preparing their data for analysis and/or visualization." And while that may not be totally accurate for all data scientists or all projects, you *will* spend lots of time wrestling with data. You'll spend this week's discussion cleaning up a messy data set on hydraulic fracturing aka [fracking](https://en.wikipedia.org/wiki/Fracking).
+
+This week's data comes courtesy of Jeremy Singer-Vine's [Data is Plural](https://www.data-is-plural.com/) weekly newsletter of useful/curious data sets (the [2023.09.27 edition](https://www.data-is-plural.com/archive/2023-09-27-edition/)). Singer-Vine's description:
+
+> Since [launching in 2011](https://www.fracfocus.org/learn/about-fracfocus), [FracFocus](https://fracfocus.org/) has become the largest registry of [hydraulic fracturing](https://en.wikipedia.org/wiki/Fracking) chemical disclosures in the US. The database, available to explore online and [download in bulk](https://fracfocus.org/data-download), contains 210,000+ such disclosures from fracking operators; it details the location, timing, and water volume of each fracking job, plus the names and amounts of chemicals used. The project is [managed](https://fracfocus.org/about-us) by the [Ground Water Protection Council](https://www.gwpc.org/overview/), “a nonprofit 501(c)6 organization whose members consist of state ground water regulatory agencies”. As seen in: The latest [installment](https://www.nytimes.com/interactive/2023/09/25/climate/fracking-oil-gas-wells-water.html) of the New York Times’ [Uncharted Water series](https://www.nytimes.com/series/uncharted-waters).
+
+**Before coming to section, please be sure to:** 
+
+1. Install the following packages:
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+install.packages("janitor") # tools for cleaning dirty data
+install.packages("usdata") # demographic data on the United States at the county and state levels spanning multiple years
+```
+
+2. [Download the data](https://fracfocus.org/data-download) as a zip file (click the **Download CSV Data** button at the bottom of the page) and unzip. We'll only be using the file named `registryupload_1.csv` -- rename it as `fracking-20240110.csv` 
+3. Save `fracking-20240110.csv` to your class repo in the following location: `EDS-240-class-examples/week1/data/fracking-20240110.csv`
+4. We don't want to push any data in our repo to GitHub (GitHub enforces file size limits, and you'll run into some serious headaches when you try to push a file that's too big) -- to avoid doing this, we can add our data files to our `.gitignore` file, which, as the name implies, is a collection of files that we want Git to ignore. **Open up your `.gitignore` file and add the following line (anywhere is fine, but it makes sense to add it beneath the last line):**
+
+```{bash filename=".gitignore"}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+# ignore any folder named `data/` within folders named `week__` (* acts as a wildcard)
+/week*/data/
+```
+
+Notice that when you **Save** your modified `.gitignore` file, untracked data files at the specified file path disappear from your Git tab in RStudio, and a modified `.gitignore` file appears in it's place (this is what we want!). Stage/add, commit, and push `.gitignore`.
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "60%"
+knitr::include_graphics("../images/gitignore.gif")
+```
+
+::: {.center-text .gray-text}
+An example repo with three folders: `week1/`, `week2/`, and `other-stuff/`. Each of those folders has a subfolder named `data/`, and each `data/` folder contains a `.csv` file. Adding the line, `/week*/data/` to the `.gitignore` tells Git to ignore folders (and their contents) named `data/` that are within a parent folder named `week__` (the `*` acts as a wildcard). If we wanted to ignore all three `data/` folders (including `other-stuff/data/`), we can instead include `/*/data/` to our `.gitignore`.
+:::
+
+*Complete code will be posted here after both discussion sections are finished.*
+
+<!-- ::: {.callout-note icon=false collapse=true} -->
+<!-- ## Code covered in week 1 discussion -->
+<!-- {{< include discussion/week1/tidy-fracking.qmd >}} -->
+<!-- ::: -->
 
 ## Assignment Reminders
 
@@ -71,7 +152,7 @@ Week 1 instruction is broken down into three lessons:
 | SR              | Pre-course reflection (SR #1)   | Mon 01/08/2024 | Sat 01/13/2024, 11:59pm PT |
 | HW              | Homework Assignment #1          | Mon 01/08/2024 | Sat 01/20/2024, 11:59pm PT | 
 
-<!-- | Assignment Type | Assignment Title                                                                  | Date Assigned  | Date Due        | -->
+<!-- | Assignment Type | Assignment Title                                                       |  Date Assigned | Date Due                   | -->
 <!-- |:---------------:|------------------------------------------------------------------------|----------------|----------------------------| -->
 <!-- | EOC             | [End-of-class survey (week 1)](https://forms.gle/aPGfCircFN1AZfSe9)    | Mon 01/08/2024 | Mon 01/08/2024, 11:55pm PT | -->
 <!-- | SR              | [Pre-course reflection (SR #1)](../assignments/SR1-precourse.qmd)      | Mon 01/08/2024 | Sat 01/13/2024, 11:59pm PT | -->

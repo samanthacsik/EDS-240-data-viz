@@ -1,0 +1,92 @@
+---
+format: revealjs
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| layout-ncol: 2
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                              important links                             ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# State-level precipitation by year/month: <https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/statewide/mapping>
+# County-level precipitation by year/month: <https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value>
+# Tutorial: <https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html>
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    setup                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..........................load packages.........................
+library(tidyverse)
+library(maps) 
+
+#.........................get shape data.........................
+usa <- map_data("usa")
+states <- map_data("state")
+counties <- map_data("county")
+
+#....................import precipitation data...................
+# NOTE: manually removed the first 5(?) rows of metadata from csv file before importing
+precip_counties <- read_csv(here::here("slides", "data", "county_precip_oct2023_2.csv")) |> 
+  janitor::clean_names()
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                               data wrangling                             ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..............update names of counties df variables.............
+us_counties <- counties |> 
+  select(state = region, county = subregion, long, lat, group, order)
+  
+#..........clean precip data & make sure var names match.........
+precip_counties <- precip_counties |> 
+  mutate(county = str_to_lower(name),
+         state = str_to_lower(state)) |> 
+  mutate(county = str_remove(county, pattern = " county")) |> 
+  mutate(county = str_remove(county, pattern = " parish")) |> # for louisiana
+  select(state, county, precip = value) |> 
+  mutate(precip = as.numeric(precip))
+
+#............................join dfs............................
+joined_precip_us_counties <- full_join(precip_counties, us_counties)
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                 create map                               ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + 
+  coord_fixed(1.3) + 
+  geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + #, color = "gray"
+  geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
+  scale_fill_gradientn(colours = rev(c("#B10025", "#FF8A37", "#FBFE82", "#00712F", "#9CDC94", "#C2EDBA", "#FFFFFF")), 
+                       breaks = c(0, 2, 4, 6, 8, 10, 12)) +
+  labs(title = "Total Precipitation, by County",
+       subtitle = "October 2023",
+       fill = "Precip\n(inches)") +
+  theme_void()
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                              create bar chart                            ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#...............precipitation data for CA counties...............
+ca_precip <- precip_counties |> 
+  filter(state == "california") |> 
+  mutate(county = str_to_title(county))
+
+#.........................create barplot.........................
+ggplot(ca_precip, aes(x = reorder(county, precip), y = precip)) +
+  geom_bar(stat = "identity", width = 0.9, fill = "#635F5F") +
+  coord_flip() +
+  labs(x = "", y = "Total Precipitation (inches)") +
+  scale_fill_gradientn(colours = rev(c("#B10025", "#FF8A37", "#FBFE82", "#00712F", "#9CDC94", "#C2EDBA", "#FFFFFF"))) +
+  theme_classic()
+```
+
+
+

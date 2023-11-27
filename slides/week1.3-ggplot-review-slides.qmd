@@ -1371,32 +1371,23 @@ data | geometric object | statistical transformation | position adjustment | coo
 
 <hr>
 
-**End-of-class Survey #1 (EOC #1)** -- *Due [Mon 01/08]{.magenta-text} at 11:55pm*
+<br>
 
-::: {.body-text-s}
-- 2 multiple choice
-- 2 short answer
-- 1 optional question
-:::
+[**End-of-class Survey #1 (EOC #1)** -- *Due [Mon 01/08]{.magenta-text} at 11:55pm*]{.body-text-m}
+
+- 2 multiple choice + 2 short answer + 1 optional question
 
 . . . 
 
-**Pre-course Reflection (SR #1)** -- *Due Sat [01/13]{.magenta-text} at 11:59pm*
+[**Pre-course Reflection (SR #1)** -- *Due [Sat 01/13]{.magenta-text} at 11:59pm*]{.body-text-m}
 
-::: {.body-text-s}
-- 3 sets of questions about:
-    - school & life
-    - the way you learn best
-    - some fun stuff
-:::
-
+- 3 sets of questions about school & life, the way you learn best, learning goals, some fun stuff
+    
 . . . 
 
-**Homework Assignment #1 (HW #1)** -- *Sat [01/20]{.magenta-text} at 11:59pm*
+[**Homework Assignment #1 (HW #1)** -- *Due [Sat 01/20]{.magenta-text} at 11:59pm*]{.body-text-m}
 
-::: {.body-text-s}
 - 2 parts:
     - interpreting & annotating ggplot code
     - finding data that you're interested in visualizing for your final assignment
-:::
 

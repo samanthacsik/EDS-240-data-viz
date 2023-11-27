@@ -15,7 +15,7 @@ editor_options:
 
 [EDS 240: Lecture 3.2]{.custom-title}
 
-[*Visualizing Distributions*]{.custom-subtitle}
+[*Visualizing distributions*]{.custom-subtitle}
 
 <hr class="hr-teal">
 
@@ -54,7 +54,7 @@ Visualizing the **spread** of data
 
 ## {#viz-dist data-menu-title="Visualizing distributions"} 
 
-["Core" distribution chart types]{.slide-title}
+["Core" distribution chart types -- ADD SCATTER]{.slide-title}
 
 <hr>
 

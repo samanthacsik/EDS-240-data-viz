@@ -274,6 +274,30 @@ knitr::include_graphics("images/week1/eds240-website-course-materials.png")
 
 ---
 
+## {#pre-class-prep data-menu-title="Pre-class Prep"} 
+
+[Complete all items under *Pre-class Prep* before lecture]{.slide-title3}
+
+<hr>
+
+Please be sure to carefully complete all required prep (e.g. installing packages, downloading data) under the **Pre-class Prep** section (organized by week) before lecture -- be mindful that some items may take time to download/install. 
+
+SCREENSHOT HERE
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+# knitr::include_graphics("../slides/images/week1/pre-class-prep.png")
+```
+
+
+::: {.center-text}
+***It is highly recommended that you do this well in advance of attending lecture.***
+:::
+
+---
+
 ## {#assignments data-menu-title="Assignments"} 
 
 [Assignments]{.slide-title}

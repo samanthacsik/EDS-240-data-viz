@@ -5,53 +5,69 @@ editor_options:
 ---
 
 ```{r}
-#| eval: false
+#| eval: true
 #| echo: false
 #| fig-align: "center"
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                              important links                             ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 # Following tutorial by Louise E. Sinks: <https://lsinks.github.io/posts/2023-08-28-TidyTuesday-Refugees/TidyTuesday34-refugees.html>
 
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    setup                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..........................load packages.........................
 library(refugees)
 library(tidyverse) 
-#library(ggsankey) # not available for my version of R, so downloaded using devtools (https://github.com/davidsjoberg/ggsankey)
 library(networkD3)
+#library(ggsankey) # not available for my version of R, so downloaded using devtools (https://github.com/davidsjoberg/ggsankey)
 
-# simple cleaning ----
-pop2022 <- population |> 
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                               data wrangling                             ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#....................filter for just 2022 data...................
+pop2022 <- refugees::population |> 
   filter(year == 2022) |> 
   select(year, coo_name, coa_name, refugees) #|> 
   # mutate(coo_name = as.factor(coo_name),
   #        coa_name = as.factor(coa_name))
 
-# top three countries of origin ----
+#....................top 3 countries of origin...................
 top_3_coo <- pop2022 |> 
   group_by(coo_name) |> 
   summarize(num_by_coo = sum(refugees)) |> 
   slice_max(order_by = num_by_coo, n = 3) 
 
-top_3_coo_names <- top_3_coo |> #top_3_coo$coo_name 
+#...............names of top 3 countries of origin...............
+top_3_coo_names <- top_3_coo |>
   pull(coo_name)
 
-# top three countries of asylum ----
+#....................top 3 countries of asylum...................
 top_3_coa <- pop2022 |> 
   group_by(coa_name) |> 
   summarize(num_by_coa = sum(refugees)) |> 
   slice_max(order_by = num_by_coa, n = 3)
 
-top_3_coa_names <-top_3_coa |>  #top_3_coa$coa_name
+#...............names of top 3 countries of asylum...............
+top_3_coa_names <- top_3_coa |>  
   pull(coa_name)
 
-# 'other' cat for country of origins not in top 3 ----
+#..............all other countries listed as 'other'.............
 pop2022 <- pop2022 |> 
   mutate(coo_name = as.factor(coo_name),
          coa_name = as.factor(coa_name)) |> 
   mutate(coo_name = fct_other(f = coo_name, keep = top_3_coo_names, other_level = "other"),
          coa_name = fct_other(f = coa_name, keep = top_3_coa_names, other_level = "other"))
 
-
+#..............separate df for just 'other' origins..............
 pop2022_no_other <- pop2022 |> 
   filter(coo_name != "other")
 
-# create nodes ----
+#........get unique names of top 3 coo and coa for nodes.........
 nodes <- data.frame(name = c(pop2022_no_other$coo_name, pop2022_no_other$coa_name) %>%
                       unique()
                     )
@@ -60,8 +76,13 @@ nodes <- data.frame(name = c(pop2022_no_other$coo_name, pop2022_no_other$coa_nam
 pop2022_no_other <- pop2022_no_other |> 
   mutate(IDsource = match(pop2022_no_other$coo_name, nodes$name) - 1,
          IDtarget = match(pop2022_no_other$coa_name,  nodes$name) - 1)
-# pop2022_no_other$IDsource = match(pop2022_no_other$coo_name, nodes$name) - 1
-# pop2022_no_other$IDtarget = match(pop2022_no_other$coa_name,  nodes$name) - 1
+
+# pop_test <- pop2022_no_other |> 
+#   select(coo_name, coa_name, refugees)
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                create sankey                             ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # color scale ----
 ColorScale = 'd3.scaleOrdinal([`#94438B`, `#B6366A`,`#E1AAC9`, `#909497`,`#6AA26F`, `#A3C7AC`, `#E3EEAE`])' # `#a36629`, `#92462f`
@@ -85,3 +106,26 @@ sankey <- sankeyNetwork(
 
 sankey
 ```
+
+
+```{r}
+#| eval: false
+#| echo: false
+# df <- pop_test |> 
+# df<-  make_long(coo_name, coa_name, refugees)
+# 
+# ggplot(df, aes(x = x,
+#                next_x = next_x,
+#                node = node,
+#                next_node = next_node,
+#                fill = factor(node))) +
+#   geom_sankey()
+# 
+# ggplot(pop2022_no_other, aes(x = refugees, next_x = coa_name,
+#                node = coo_name, next_node = coa_name, #fill = factor(refugees)
+#                )) +
+#   geom_sankey() +
+#   theme_sankey(base_size = 16) 
+  
+```
+

@@ -5,74 +5,68 @@ editor_options:
 ---
 
 ```{r}
-library(maps) # For map data
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                              important links                             ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# State-level precipitation by year/month: <https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/statewide/mapping>
+# County-level precipitation by year/month: <https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value>
+# Tutorial: <https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html>
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    setup                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..........................load packages.........................
 library(tidyverse)
-```
+library(maps) 
 
-Create simple US map with some points
-```{r}
-# data from {maps}
+#.........................get shape data.........................
 usa <- map_data("usa")
-
-# create usa map
-usa_map <- ggplot() + 
-  geom_polygon(data = usa, aes(x = long, y = lat), fill = "gray") + # , group = group
-  coord_fixed(1.3)
-
-# add points to map
-labs <- data.frame(
-  long = c(-122.064873, -122.306417),
-  lat = c(36.951968, 47.644855),
-  names = c("SWFSC-FED", "NWFSC"),
-  stringsAsFactors = FALSE
-  )  
-
-usa_map + 
-  geom_point(data = labs, aes(x = long, y = lat), color = "black", size = 5) +
-  geom_point(data = labs, aes(x = long, y = lat), color = "yellow", size = 4)
-
-
-```
-
-States
-```{r}
 states <- map_data("state")
-dim(states)
-
-# plot all states
-ggplot(data = states) + 
-  geom_polygon(aes(x = long, y = lat, fill = region, group = group), color = "white") + 
-  coord_fixed(1.3) +
-  guides(fill=FALSE)  # do this to leave off the color legend
-```
-
-Subset west coast
-```{r}
-west_coast <- states |> 
-  filter(region %in% c("california", "oregon", "washington"))
-
-
-ggplot(data = west_coast) + 
-  geom_polygon(aes(x = long, y = lat, group = group), fill = "palegreen", color = "black") + 
-  coord_fixed(1.3)
-```
-
-Just CA
-```{r}
-ca_df <- subset(states, region == "california")
 counties <- map_data("county")
-ca_county <- counties |> 
-  filter(region == "california")
+
+#....................import precipitation data...................
+# NOTE: manually removed the first 5(?) rows of metadata from csv file before importing
+precip_counties <- read_csv(here::here("slides", "data", "county_precip_oct2023_2.csv")) |> 
+  janitor::clean_names()
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                               data wrangling                             ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..............update names of counties df variables.............
+us_counties <- counties |> 
+  select(state = region, county = subregion, long, lat, group, order)
+  
+#..........clean precip data & make sure var names match.........
+precip_counties <- precip_counties |> 
+  mutate(county = str_to_lower(name),
+         state = str_to_lower(state)) |> 
+  mutate(county = str_remove(county, pattern = " county")) |> 
+  mutate(county = str_remove(county, pattern = " parish")) |> # for louisiana
+  select(state, county, precip = value) |> 
+  mutate(precip = as.numeric(precip))
+
+#............................join dfs............................
+joined_precip_us_counties <- full_join(precip_counties, us_counties)
 
 
-ca_base <- ggplot(data = ca_df, mapping = aes(x = long, y = lat, group = group)) + 
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                 create map                               ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + 
   coord_fixed(1.3) + 
-  geom_polygon(color = "black", fill = "gray") +
-  geom_polygon(data = ca_county, fill = NA, color = "white") +
-  geom_polygon(color = "black", fill = NA) + # get the state border back on top
+  geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + #, color = "gray"
+  geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
+  scale_fill_gradientn(colours = rev(c("#B10025", "#FF8A37", "#FBFE82", "#00712F", "#9CDC94", "#C2EDBA", "#FFFFFF")), 
+                         breaks = c(0, 2, 4, 6, 8, 10, 12)) +
+  labs(title = "Total Precipitation, by County",
+       subtitle = "October 2023",
+       fill = "Precip\n(inches)") +
   theme_void()
-
-
 ```
-
-
