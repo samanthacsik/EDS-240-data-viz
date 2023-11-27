@@ -29,9 +29,8 @@ Please be sure to complete the following before class:
 #| eval: false
 #| echo: true
 #| code-line-numbers: false
-install.packages("tidytuesdayR") # used to access TidyTuesday data
-install.packages("tidycensus") #
-install.packages("janitor") # 
+install.packages("tidytuesdayR") # used to download TidyTuesday data
+install.packages("tidycensus") # an R package that allows users to interface with a select number of the US Census Bureau’s data APIs and return tidyverse-ready data frames
 install.packages("ggridges") # {ggplot2} extension for creating ridgeline plots
 install.packages("gghighlight") # {ggplot2} extension for highlighting geoms
 ```
@@ -68,9 +67,9 @@ censusKEY <- "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 KEYS.R
 ```
 
-  c. Save `.gitignore` (once saved, you should see the newly added/modified `KEYS.R` file disappear from your **Git** pane in RStudio, and a modified `.gitignore` appear). Stage/add, commit, and push this `.gitignore` file to GitHub
+  c. Save `.gitignore` (once saved, you should see the newly added `KEYS.R` file disappear from your **Git** pane in RStudio, and a modified `.gitignore` appear). Stage/add, commit, and push this `.gitignore` file to GitHub
   
-In class, we'll source our key (by running `source(KEYS.R)`) into any scripts/Qmd files where required.
+In class, we'll source our key (by running `source(KEYS.R)`) into any scripts/Qmd files, where required.
     
 ## Lecture Materials
 
@@ -117,6 +116,8 @@ Week 3 instruction is broken down into three lessons:
 
 *Coming soon!*
 
+<!-- remake US drought monitor plot for CA? -->
+
 ## Assignment Reminders
 
 | Assignment Type | Assignment Title         | Date Assigned  | Date Due                   |
@@ -124,7 +125,7 @@ Week 3 instruction is broken down into three lessons:
 | EOC             | EOC (week 3)             | Mon 01/22/2024 | Mon 01/22/2024, 11:55pm PT |
 | HW              | Homework Assignment #2)  | Mon 01/22/2024 | Sat 02/03/2024, 11:59pm PT |
 
-<!-- | Assignment Type | Assignment Title                                                | Date Assigned  | Date Due        | -->
+<!-- | Assignment Type | Assignment Title                                     | Date Assigned  | Date Due                   | -->
 <!-- |:---------------:|------------------------------------------------------|----------------|----------------------------| -->
 <!-- | EOC             | [EOC (week 3)](https://forms.gle/2BockakcBR7rsm26A)  | Mon 01/22/2024 | Mon 01/22/2024, 11:55pm PT | -->
 <!-- | HW              | [Homework Assignment #2](../assignments/HW2.qmd)     | Mon 01/22/2024 | Sat 02/03/2024, 11:59pm PT | -->

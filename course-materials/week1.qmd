@@ -115,7 +115,7 @@ install.packages("usdata") # demographic data on the United States at the county
 3. Save `fracking-20240110.csv` to your class repo in the following location: `EDS-240-class-examples/week1/data/fracking-20240110.csv`
 4. We don't want to push any data in our repo to GitHub (GitHub enforces file size limits, and you'll run into some serious headaches when you try to push a file that's too big) -- to avoid doing this, we can add our data files to our `.gitignore` file, which, as the name implies, is a collection of files that we want Git to ignore. **Open up your `.gitignore` file and add the following line (anywhere is fine, but it makes sense to add it beneath the last line):**
 
-```{bash}
+```{bash filename=".gitignore"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: false

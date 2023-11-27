@@ -54,7 +54,7 @@ Visualizing the **spread** of data
 
 ## {#viz-dist data-menu-title="Visualizing distributions"} 
 
-["Core" distribution chart types]{.slide-title}
+["Core" distribution chart types -- ADD SCATTER]{.slide-title}
 
 <hr>
 

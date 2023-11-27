@@ -132,7 +132,7 @@ NNDSS is a nationwide collaboration that enables all levels of public health to 
 
 ## {#tidycensus data-menu-title="{tidycensus} package"} 
 
-[`{tidycensus}` for ___ ]{.slide-title}
+[`{tidycensus}` for accessing US population data]{.slide-title2}
 
 <hr>
 
@@ -142,10 +142,13 @@ NNDSS is a nationwide collaboration that enables all levels of public health to 
 
 <br>
 <br>
+<br>
 
-The [`{tidycensus}` package]() is ____
+The [`{tidycensus}` package](https://walker-data.com/tidycensus/) allows users to interface with a select number of the US Census Bureau’s data APIs and return tidyverse-ready data frames.
 
-Using `{tidycensus}` requires that you first have an API key. Be sure to follow the [Pre-Course setup instructions]() for requesting and activating your key before proceeding.
+<br>
+
+Using `{tidycensus}` requires that you first have an API key. **Be sure to follow the [Pre-Course setup instructions]() for requesting and activating your key before proceeding.**
 :::
 
 ::: {.column width="50%"}
@@ -153,7 +156,7 @@ Using `{tidycensus}` requires that you first have an API key. Be sure to follow 
 #| eval: true
 #| echo: false
 #| fig-align: "center"
-#| out-width: "100%"
+#| out-width: "90%"
 knitr::include_graphics("images/week3/tidycensus.png")
 ```
 :::
@@ -168,7 +171,7 @@ knitr::include_graphics("images/week3/tidycensus.png")
 
 <hr>
 
-<!-- {{< include slides/sections/3.3-lyme.qmd >}} -->
+{{< include sections/3.3-lyme.qmd >}}
 
 See the [online documentation](https://walker-data.com/tidycensus/articles/other-datasets.html#:~:text=Population%20estimates%20are%20available%20in,%22%20%2C%20and%20%22characteristics%22%20.) for more information on downloading and parsing population data using the `{tidycensus}` package.
 ```{r}
@@ -197,11 +200,21 @@ lyme <- read_csv(here::here("week3", "data", "LD-Case-Counts-by-County-01-20.csv
 
 #............wide to long (plus some other wrangling)............
 lyme_clean <- lyme |> 
+  
+  # make col names snake_case ----
   janitor::clean_names() |> 
+  
+  # rename columns ----
   rename(city = ctyname, state = stname, status = ststatus) |> 
+  
+  # wide to long (tidy) years
   pivot_longer(cols = 6:25, names_to = "city_year", values_to = "reported_cases") |> 
+  
+  # remove "cases" from the year & coerce year from chr to factor ----
   mutate(year = str_remove(city_year, pattern = "cases"),
-         year = as.numeric(year)) |> 
+         year = as.factor(year)) |> 
+  
+  # select necessary cols ----
   select(year, city, state, status, reported_cases)
 
 #................calculate total cases per state.................
@@ -226,20 +239,145 @@ us_state_pop <- get_estimates(geography = "state",
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 lyme_pop <- left_join(lyme_states, us_state_pop) |> 
-  mutate(pop100k = population/100000) |> # add col with num of 100k people per state
-  mutate(cases_per100k = total_cases/pop100k) # calculate num bases per 100k people
+  
+  # add col with num of 100k people per state ----
+  mutate(pop100k = population/100000) |> 
+  
+  # calculate num cases per 100k people (common way of reporting disease incidence) ----
+  mutate(cases_per100k = total_cases/pop100k) 
 ```
 
 ---
 
+## {#basic-line-plot1 data-menu-title="Line plot"} 
 
-Line graphs 
+[Line plots show the evolution of 1+ numeric variables]{.slide-title3}
 
-just NJ
+<hr>
 
-add connections
+[Line graphs display the **evolution of one or several *numeric* variables**. They are similar to scatter plots, but the measurement points are **ordered** (typically by their x-axis value) and joined with straight line segments. They are often used to visualize a trend in data over intervals of time. For example, changes in Lyme disease incidence (# cases / 100k people) from 2010 - 2020, by state:]{.body-text-s}
+
+:::: columns
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+A basic line graph using `geom_line()`
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state)) + 
+  geom_line()
+```
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
 
 ---
+
+## {#basic-line-plot2 data-menu-title="Connected line plot"} 
+
+[Line plots show the evolution of 1+ numeric variables]{.slide-title3}
+
+<hr>
+
+[Line graphs display the **evolution of one or several *numeric* variables**. They are similar to scatter plots, but the measurement points are **ordered** (typically by their x-axis value) and joined with straight line segments. They are often used to visualize a trend in data over intervals of time. For example, changes in Lyme disease incidence (cases per 100,000 people) from 2010 - 2020, by state:]{.body-text-s}
+
+:::: columns
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+A basic line graph using `geom_line()`
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state)) + 
+  geom_line()
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+A connected scatter plot by layering on `geom_point()`
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state)) + 
+  geom_line() +
+  geom_point()
+```
+:::
+
+::::
+
+---
+
+## {#spaghetti-plot data-menu-title="Avoid Spaghetti plots"} 
+
+["Spaghetti plots" are hard to read]{.slide-title}
+
+<hr>
+
+A line plot with many lines displayed together can be hard to read / overwhelming to interpret. Consider highlighting a group(s) of interest (the [`{gghighlight}` package](https://yutannihilation.github.io/gghighlight/) comes in handy):
+
+:::: columns
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+E.g. I'm interested in how Lyme disease in New Jersey compares to other states.
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state)) +
+  geom_line() +
+  gghighlight::gghighlight(state == "New Jersey") 
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+E.g. I'm interested in states where Lyme disease incidence is (or at one point was) > 100 cases / 100k people.
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state, color = state)) +
+  geom_line() +
+  gghighlight::gghighlight(max(cases_per100k) > 100) 
+```
+:::
+
+::::
+
+---
+
 
 cutting y-axs okay
 aspect ratio (width:height)
@@ -247,101 +385,117 @@ no dual axes (e.g. avg temp each year on 2nd y-axis)
 
 ---
 
-Avoiding spaghetti graphs
+## {#area-chart data-menu-title="Area chart"} 
 
-gghighlight NJ
-
----
-
-## {#drought-data data-menu-title="Drought data"}
-
-[The data: California droughts]{.slide-title}
+[Area chart is similar to a line graph, just filled in]{.slide-title2}
 
 <hr>
 
-The [U.S. Drought Monitor](https://droughtmonitor.unl.edu/) (USDM) is a collection of measures that allows experts to assess droughts in the United States. You can download and explore comprehensive statistics through their [data portal](https://droughtmonitor.unl.edu/DmData/DataDownload/ComprehensiveStatistics.aspx).
+[Instead of just a line or connected scatter plot to indicate the change in a numeric variable through time, the space between the line and the x-axis is colored or shaded in. Area plots are sometimes criticized for **violating the [data-ink ratio](https://infovis-wiki.net/wiki/Data-Ink_Ratio) rule**, which argues that any non-data-ink should be omitted wherever possible. If the number of observations is low (as in this example) a connected scatter plot may more clearly show when each observation was made.]{.body-text-s}
+
+:::: columns
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+A basic area plot (New Jersey)
+:::
 
 ```{r}
 #| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "50%"
-#| fig-alt: "Percentage area of California in U.S. drought monitor categories"
-knitr::include_graphics("images/week3/usdm.png")
+#| echo: true
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  filter(state == "New Jersey") |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state)) +
+  geom_area() 
 ```
-
-::: {.body-text-s .gray-text .center-text}
-*Percentage area of California in U.S. drought monitor categories. Source [Wikipedia](https://en.wikipedia.org/wiki/Droughts_in_California#:~:text=County%20municipal%20rates.-,Dry%20years,2017%2C%20and%202020%E2%80%932022.)*
 :::
 
-<br>
+::: {.column width="50%"}
 
-Using these data, we'll explore **drought conditions in California** through time.
+::: {.center-text .gray-text .body-text-s}
+Update the fill color
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "80%"
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  filter(state == "New Jersey") |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
+  geom_area() +
+  scale_fill_manual(values = c("#047C90")) +
+  theme(legend.position = "none")
+```
+:::
+
+::::
 
 ---
 
-## {#lyme-wrangling data-menu-title="Wrangle data"} 
+## {#stacked-area-chart data-menu-title="Stacked area chart"} 
 
-[Data wrangling]{.slide-title}
+[Stacked area charts show the evolution of a whole + relative contribution of each group]{.slide-title3}
 
 <hr>
 
-<!-- {{< include ../slides/sections/3.3-drought.qmd >}} -->
+[**Stacked area charts are useful for showing the evolution of a whole and the relative proportions of each group that make up the whole**. For example, the top of the colored area shows the total Lyme disease incidence (# cases / 100k people) across all groups (notice the difference in y-axis values), while the individual colors are the relative contributions of the top 4 states with the highest lyme disease incidence:]{.body-text-s}
 
 ```{r}
-#| eval: false
+#| eval: true
 #| echo: true
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                                    setup                                 ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#.........................load libraries.........................
-library(tidyverse)
-
-#..........................import data...........................
-tuesdata <- tidytuesdayR::tt_load('2021-07-20')
-drought <- tuesdata$drought
-  
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                          wrangle lyme disease data                       ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-drought_clean <- drought |>
-
-  # select cols of interest ----
-  select(date = valid_start, state_abb, drought_lvl, area_pct) |> 
-
-  # add year col ----
-  mutate(year = year(date),
-         month = month(date, label = TRUE, abbr = TRUE),
-         day = day(date)) |>
-  
-  # convert year to factor ----
-  mutate(year = as.factor(year)) |> 
-
-  # add drought level conditions names ----
-  mutate(drought_lvl_long = factor(drought_lvl,
-                            levels = c("D4", "D3", "D2", "D1","D0", "None"),
-                            labels = c("Exceptional Drought", "Extreme Drought",
-                                       "Severe Drought", "Moderate Drought", "Abnormally Dry", 
-                                       "No Drought"))) |>
-  
-  # reorder cols ----
-  select(date, year, month, day, state_abb, drought_lvl, drought_lvl_long, area_pct)
-
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
+  geom_area()
 ```
 
 ---
 
-stacked area chart
+## {#stacked-area-chart-challenge data-menu-title="Stacked area chart challenge"} 
+
+[Stacked area charts are not good studying the evolution of individual groups]{.slide-title3}
+
+<hr>
+
+It is super **challenging to subtract the height of groups from one another at any / each given point in time**. For example, both of the charts below show the same data (Lyme disease incidence (# cases / 100k people) for Maine, New Hampshire, Rhode Island, and Vermont): 
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
+  geom_area()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
+  geom_line() +
+  facet_wrap(~state)
+```
+:::
+
+::::
 
 ---
 
-stream graph
-
----
-
+<!-- stream graph -->
 
 ---
 

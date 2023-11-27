@@ -406,6 +406,62 @@ ul.task-list li input[type="checkbox"] {
 <!-- <!-- :::: -->
 <p>–&gt;</p>
 <!-- --- -->
+<!-- --- -->
+<!-- ## {#drought-data data-menu-title="Drought data"} -->
+<!-- [The data: California droughts]{.slide-title} -->
+<!-- <hr> -->
+<!-- The [U.S. Drought Monitor](https://droughtmonitor.unl.edu/) (USDM) is a collection of measures that allows experts to assess droughts in the United States. You can download and explore comprehensive statistics through their [data portal](https://droughtmonitor.unl.edu/DmData/DataDownload/ComprehensiveStatistics.aspx). -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| fig-align: "center" -->
+<!-- #| out-width: "50%" -->
+<!-- #| fig-alt: "Percentage area of California in U.S. drought monitor categories" -->
+<!-- knitr::include_graphics("images/week3/usdm.png") -->
+<!-- ``` -->
+<!-- ::: {.body-text-s .gray-text .center-text} -->
+<!-- *Percentage area of California in U.S. drought monitor categories. Source [Wikipedia](https://en.wikipedia.org/wiki/Droughts_in_California#:~:text=County%20municipal%20rates.-,Dry%20years,2017%2C%20and%202020%E2%80%932022.)* -->
+<!-- ::: -->
+<!-- <br> -->
+<!-- Using these data, we'll explore **drought conditions in California** through time. -->
+<!-- --- -->
+<!-- ## {#lyme-wrangling data-menu-title="Wrangle data"}  -->
+<!-- [Data wrangling]{.slide-title} -->
+<!-- <hr> -->
+<!-- <!-- {{< include ../slides/sections/3.3-drought.qmd >}} -->
+<p>–&gt;</p>
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##                                    setup                                 ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- #.........................load libraries......................... -->
+<!-- library(tidyverse) -->
+<!-- #..........................import data........................... -->
+<!-- tuesdata <- tidytuesdayR::tt_load('2021-07-20') -->
+<!-- drought <- tuesdata$drought -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##                          wrangle lyme disease data                       ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- drought_clean <- drought |> -->
+<!--   # select cols of interest ---- -->
+<!--   select(date = valid_start, state_abb, drought_lvl, area_pct) |>  -->
+<!--   # add year col ---- -->
+<!--   mutate(year = year(date), -->
+<!--          month = month(date, label = TRUE, abbr = TRUE), -->
+<!--          day = day(date)) |> -->
+<!--   # convert year to factor ---- -->
+<!--   mutate(year = as.factor(year)) |>  -->
+<!--   # add drought level conditions names ---- -->
+<!--   mutate(drought_lvl_long = factor(drought_lvl, -->
+<!--                             levels = c("D4", "D3", "D2", "D1","D0", "None"), -->
+<!--                             labels = c("Exceptional Drought", "Extreme Drought", -->
+<!--                                        "Severe Drought", "Moderate Drought", "Abnormally Dry",  -->
+<!--                                        "No Drought"))) |> -->
+<!--   # reorder cols ---- -->
+<!--   select(date, year, month, day, state_abb, drought_lvl, drought_lvl_long, area_pct) -->
+<!-- ``` -->
 
 
 
