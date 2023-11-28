@@ -53,7 +53,7 @@
     "href": "resources.html#misc.",
     "title": "Recommended reading & materials",
     "section": "Misc.",
-    "text": "Misc.\n\nawesome-ggplot2, by Erik Gahner Larsen – a curated list of awesome ggplot2 tutorials, packages etc.\nClimate Viz, by Datawrapper – a collection of blog posts on data visualizations created with Datawrapper that help us (and hopefully you) to understand global warming and what humanity can do agains it"
+    "text": "Misc.\n\nawesome-ggplot2, by Erik Gahner Larsen – a curated list of awesome ggplot2 tutorials, packages etc.\nClimate Viz, by Datawrapper – a collection of blog posts on data visualizations created with Datawrapper that help us (and hopefully you) to understand global warming and what humanity can do against it"
   },
   {
     "objectID": "resources.html#learning-communities",
@@ -67,7 +67,7 @@
     "href": "resources.html#r-packages",
     "title": "Recommended reading & materials",
     "section": "R packages",
-    "text": "R packages\nA list of the R packages that we’ve covered in this class so far:\n\n\n{tidyverse}: a collection of R packages for data wrangling / manipulation and visualization (includes {ggplot2})\n{ggplot2}: a system for declaratively creating graphics, based on The Grammar of Graphics   \n\n\n\n\n\n\n\n\n\n\n\nArtwork by Allison Horst"
+    "text": "R packages\nA list of the R packages that we’ve covered in this class so far:\n\n\n{palmerpenguins}: a dataset for data exploration & visualization, as an alternative to iris\n{tidyverse}: a collection of R packages for data wrangling / manipulation and visualization (includes {ggplot2})\n{ggplot2}: a system for declaratively creating graphics, based on The Grammar of Graphics\n{janitor}: simple functions for examining and cleaning dirty data\n{usdata}: demographic data on the United States at the county and state levels spanning multiple years     \n\n\n\n\n\n\n\n\n\n\n\nArtwork by Allison Horst"
   },
   {
     "objectID": "course-materials/discussion/week1/tidy-fracking.html",
@@ -802,7 +802,7 @@
     "href": "slides/week1.1-logistics-slides.html#pre-class-prep",
     "title": "EDS 240",
     "section": "",
-    "text": "Complete all items under Pre-class Prep before lecture\n\nPlease be sure to carefully complete all required prep (e.g. installing packages, downloading data) under the Pre-class Prep section (organized by week) before lecture – be mindful that some items may take time to download/install.\nSCREENSHOT HERE\n\nIt is highly recommended that you do this well in advance of attending lecture."
+    "text": "Complete all items under Pre-class Prep before lecture\n\nPlease be sure to carefully complete all required prep (e.g. installing packages, downloading data) under the Pre-class Prep section (organized by week) before lecture – be mindful that some items may take time to download/install.\n\n\nIt is highly recommended that you do this well in advance of attending lecture."
   },
   {
     "objectID": "slides/week1.1-logistics-slides.html#assignments",
@@ -879,7 +879,7 @@
     "href": "slides/week1.1-logistics-slides.html#slack",
     "title": "EDS 240",
     "section": "",
-    "text": "A note on using Slack\n\n\n\nTODO: add screenshot of #eds-240-data-viz\n\n\nAll course-related content questions should be asked in the #eds-240-data-viz channel – oftentimes there are others who have the same question and will benefit from seeing the discussion!\n\nAny questions sent as DMs will be copied into #eds-240-data-viz and answered there.\n\nOf course, please direct message or email with any personal questions or concerns."
+    "text": "A note on using Slack\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll course-related content questions should be asked in the #eds-240-data-viz channel – oftentimes there are others who have the same question and will benefit from seeing the discussion!\n\nAny questions sent as DMs will be copied into #eds-240-data-viz and answered there.\n\nOf course, please direct message or email with any personal questions or concerns."
   },
   {
     "objectID": "slides/week1.1-logistics-slides.html#expectations",
@@ -1544,7 +1544,7 @@
     "href": "slides/week3.3-evolution-slides.html#basic-line-plot2",
     "title": "EDS 240",
     "section": "",
-    "text": "Line plots show the evolution of 1+ numeric variables\n\nLine graphs display the evolution of one or several numeric variables. They are similar to scatter plots, but the measurement points are ordered (typically by their x-axis value) and joined with straight line segments. They are often used to visualize a trend in data over intervals of time. For example, changes in Lyme disease incidence (cases per 100,000 people) from 2010 - 2020, by state:\n\n\n\nA basic line graph using geom_line()\n\n\nlyme_pop |&gt; \n  filter(year %in% c(2010:2020)) |&gt; \n  ggplot(aes(x = year, y = cases_per100k, group = state)) + \n  geom_line()\n\n\n\n\n\n\nA connected scatter plot by layering on geom_point()\n\n\nlyme_pop |&gt; \n  filter(year %in% c(2010:2020)) |&gt; \n  ggplot(aes(x = year, y = cases_per100k, group = state)) + \n  geom_line() +\n  geom_point()"
+    "text": "Line plots show the evolution of 1+ numeric variables\n\nLine graphs display the evolution of one or several numeric variables. They are similar to scatter plots, but the measurement points are ordered (typically by their x-axis value) and joined with straight line segments. They are often used to visualize a trend in data over intervals of time. For example, changes in Lyme disease incidence (# cases / 100k people) from 2010 - 2020, by state:\n\n\n\nA basic line graph using geom_line()\n\n\nlyme_pop |&gt; \n  filter(year %in% c(2010:2020)) |&gt; \n  ggplot(aes(x = year, y = cases_per100k, group = state)) + \n  geom_line()\n\n\n\n\n\n\nA connected scatter plot by layering on geom_point()\n\n\nlyme_pop |&gt; \n  filter(year %in% c(2010:2020)) |&gt; \n  ggplot(aes(x = year, y = cases_per100k, group = state)) + \n  geom_line() +\n  geom_point()"
   },
   {
     "objectID": "slides/week3.3-evolution-slides.html#spaghetti-plot",
@@ -1552,6 +1552,55 @@
     "title": "EDS 240",
     "section": "",
     "text": "“Spaghetti plots” are hard to read\n\nA line plot with many lines displayed together can be hard to read / overwhelming to interpret. Consider highlighting a group(s) of interest (the {gghighlight} package comes in handy):\n\n\n\nE.g. I’m interested in how Lyme disease in New Jersey compares to other states.\n\n\nlyme_pop |&gt; \n  filter(year %in% c(2010:2020)) |&gt; \n  ggplot(aes(x = year, y = cases_per100k, group = state)) +\n  geom_line() +\n  gghighlight::gghighlight(state == \"New Jersey\") \n\n\n\n\n\n\nE.g. I’m interested in states where Lyme disease incidence is (or at one point was) &gt; 100 cases / 100k people.\n\n\nlyme_pop |&gt; \n  filter(year %in% c(2010:2020)) |&gt; \n  ggplot(aes(x = year, y = cases_per100k, group = state, color = state)) +\n  geom_line() +\n  gghighlight::gghighlight(max(cases_per100k) &gt; 100)"
+  },
+  {
+    "objectID": "slides/week3.3-evolution-slides.html#cut-y",
+    "href": "slides/week3.3-evolution-slides.html#cut-y",
+    "title": "EDS 240",
+    "section": "",
+    "text": "It’s okay to cut the y-axis of line graphs\n\nLine graphs encode data by position and not length (e.g. as in the height of a bar graph), therefore, you can choose to include the 0 origin only if it makes sense.\n\n\n\nLyme disease incidence from 2013 - 2019\n(cut y-axis = default)\n\n\nlyme_pop |&gt; \n  filter(year %in% c(2013:2019)) |&gt; \n  filter(state == \"Vermont\") |&gt; \n  ggplot(aes(x = year, y = cases_per100k, group = state)) +\n  geom_line()\n\n\n\n\n\n\nLyme disease incidence from 2013 - 2019\n(force y-axis origin at 0)\n\n\nlyme_pop |&gt; \n  filter(year %in% c(2013:2019)) |&gt; \n  filter(state == \"Vermont\") |&gt; \n  ggplot(aes(x = year, y = cases_per100k, group = state)) +\n  geom_line() +\n  scale_y_continuous(expand = c(0, 0), limits = c(0, NA))"
+  },
+  {
+    "objectID": "slides/week3.3-evolution-slides.html#cut-y-dow",
+    "href": "slides/week3.3-evolution-slides.html#cut-y-dow",
+    "title": "EDS 240",
+    "section": "",
+    "text": "It’s okay to cut the y-axis of line graphs\n\nDo not start the y-axis at 0 if the range of data is small but the distance from the bottom of the range to zero is large. For example:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample from Meagan Hall’s Statistical Graphics & Visualization course Lecture 5 slides."
+  },
+  {
+    "objectID": "slides/week3.3-evolution-slides.html#cut-y-temps",
+    "href": "slides/week3.3-evolution-slides.html#cut-y-temps",
+    "title": "EDS 240",
+    "section": "",
+    "text": "It’s okay to cut the y-axis of line graphs\n\nDo not start the y-axis at 0 if the relationship to zero is insignificant. For example:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample from Meagan Hall’s Statistical Graphics & Visualization course Lecture 5 slides."
+  },
+  {
+    "objectID": "slides/week3.3-evolution-slides.html#aspect-ratio",
+    "href": "slides/week3.3-evolution-slides.html#aspect-ratio",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Aspect ratio affects perception of slope\n\nThe aspect ratio is the height:width ratio of a graph. For line graphs in particular, aspect ratio affects the perceived steepness of a sloped line. The larger the aspect ratio, the steeper changes appear, which may cause readers to interpret changes as more important. The smaller the aspect ratio, the flatter the line which may cause readers to interpret changes as small / insignificant.\n\n\nImage source: Graph workflow"
+  },
+  {
+    "objectID": "slides/week3.3-evolution-slides.html#aspect-ratio-sunspots-default",
+    "href": "slides/week3.3-evolution-slides.html#aspect-ratio-sunspots-default",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Aspect ratio affects perception of slope\n\nConsider this line graph of sunspot activity from 1700 - 2015, with a default aspect ratio (1:1). Can you easily identify where in time sunspot activity rises more quickly / sharply than others?\n\n\nImage source: Graph workflow"
+  },
+  {
+    "objectID": "slides/week3.3-evolution-slides.html#aspect-ratio-sunspots-wide",
+    "href": "slides/week3.3-evolution-slides.html#aspect-ratio-sunspots-wide",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Aspect ratio affects perception of slope\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote: The bottom plot is the same as the top, but with the x-axis split into panels / rows, by decade.\nWith a wider aspect ratio, we can more clearly see the differences in rates of change (slopes) in sunspot activity through time.\n\n\n\nImage source: Graph workflow"
+  },
+  {
+    "objectID": "slides/week3.3-evolution-slides.html#aspect-ratio-ggplot",
+    "href": "slides/week3.3-evolution-slides.html#aspect-ratio-ggplot",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Adjust the aspect ratio using coord_fixed()\n\nThere’s no exact rule for what aspect ratio to use for a given graphic (but see Cleveland et al. 1988 to read about the “banking to 45 degrees” rule) – it depends on the nature of the variable and your goal with the visualization. But it’s important to keep mind that manipulating the aspect ratio can mislead readers, and so you should do so with carefully and intentionally."
   },
   {
     "objectID": "slides/week3.3-evolution-slides.html#area-chart",
@@ -1565,7 +1614,14 @@
     "href": "slides/week3.3-evolution-slides.html#stacked-area-chart",
     "title": "EDS 240",
     "section": "",
-    "text": "Stacked area charts show the evolution of a whole + relative contribution of each group\n\nStacked area charts are useful for showing the evolution of a whole and the relative proportions of each group that make up the whole. For example, the top of the colored area shows the total Lyme disease incidence (# cases / 100k people) across all groups (notice the difference in y-axis values), while the individual colors are the relative contributions of the top 4 states with the highest lyme disease incidence:\n\nlyme_pop |&gt; \n  filter(year %in% c(2010:2020)) |&gt; \n  filter(state %in% c(\"Maine\", \"Rhode Island\", \"New Hampshire\", \"Vermont\")) |&gt; \n  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +\n  geom_area()"
+    "text": "Stacked area charts show the evolution of a whole + the relative contribution of each group\n\nStacked area charts are useful for showing the evolution of a whole and the relative proportions of each group that make up the whole. For example, the top of the colored area shows the total Lyme disease incidence (# cases / 100k people) across all groups (notice the difference in y-axis values), while the individual colors are the relative contributions of the top 4 states with the highest lyme disease incidence:\n\nlyme_pop |&gt; \n  filter(year %in% c(2010:2020)) |&gt; \n  filter(state %in% c(\"Maine\", \"Rhode Island\", \"New Hampshire\", \"Vermont\")) |&gt; \n  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +\n  geom_area()"
+  },
+  {
+    "objectID": "slides/week3.3-evolution-slides.html#stacked-area-group-order",
+    "href": "slides/week3.3-evolution-slides.html#stacked-area-group-order",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Group order matters!\n\nGroup order (from bottom to top) can have an influence – oftentimes, you’ll want to put the most important group on the bottom (closest to the x-axis), since your audience will have an easier time reading values for that group. For example, US Drought Monitor likely wanted to draw attention to what percentage of land area in CA experienced the highest-severity drought level (D4, Exceptional). By plotting that group on the bottom of the graph below, we can more easily identify that ~60% of CA experienced the worst level of drought in 2014-2015.\n\n\n\n\n\n\n\n\n\n\n\n\n \n You’ll be recreating this graph (original source US Drought Monitor, via Wikipedia) in discussion section this week!\n\n\nThis article by Info River nicely outlines situations where using a stacked area chart is great, when not to use them, and important considerations."
   },
   {
     "objectID": "slides/week3.3-evolution-slides.html#stacked-area-chart-challenge",
@@ -1575,11 +1631,11 @@
     "text": "Stacked area charts are not good studying the evolution of individual groups\n\nIt is super challenging to subtract the height of groups from one another at any / each given point in time. For example, both of the charts below show the same data (Lyme disease incidence (# cases / 100k people) for Maine, New Hampshire, Rhode Island, and Vermont):\n\n\n\nlyme_pop |&gt; \n  filter(year %in% c(2010:2020)) |&gt; \n  filter(state %in% c(\"Maine\", \"Rhode Island\", \"New Hampshire\", \"Vermont\")) |&gt; \n  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +\n  geom_area()\n\n\n\n\n\n\nlyme_pop |&gt; \n  filter(year %in% c(2010:2020)) |&gt; \n  filter(state %in% c(\"Maine\", \"Rhode Island\", \"New Hampshire\", \"Vermont\")) |&gt; \n  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +\n  geom_line() +\n  facet_wrap(~state)"
   },
   {
-    "objectID": "slides/week3.3-evolution-slides.html#end-break",
-    "href": "slides/week3.3-evolution-slides.html#end-break",
+    "objectID": "slides/week3.3-evolution-slides.html#end",
+    "href": "slides/week3.3-evolution-slides.html#end",
     "title": "EDS 240",
     "section": "",
-    "text": "Take a Break\n\n\n~ This is the end of Lesson 3 (of 3) ~\n\n\n\n\n\n−+\n05:00"
+    "text": "See you next week!\n\n\n~ This is the end of Lesson 3 (of 3) ~"
   },
   {
     "objectID": "slides/week4.x-tbd.html#title-slide",

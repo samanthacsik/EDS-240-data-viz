@@ -15,6 +15,7 @@ toc: true
 *Coming soon!*
 
 <!-- - missing data -->
+<!-- no dual axes -->
 <!-- - outlier detection -->
 <!-- - measures of uncertainty -->
 <!-- - normalizing data -->

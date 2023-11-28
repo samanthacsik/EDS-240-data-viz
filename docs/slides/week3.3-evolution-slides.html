@@ -387,8 +387,6 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
-  <script src="../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -490,7 +488,7 @@
 <p><br> <br> <br></p>
 <p>The <a href="https://walker-data.com/tidycensus/"><code>{tidycensus}</code> package</a> allows users to interface with a select number of the US Census Bureau’s data APIs and return tidyverse-ready data frames.</p>
 <p><br></p>
-<p>Using <code>{tidycensus}</code> requires that you first have an API key. <strong>Be sure to follow the <a href="">Pre-Course setup instructions</a> for requesting and activating your key before proceeding.</strong></p>
+<p>Using <code>{tidycensus}</code> requires that you first have an API key. <strong>Be sure to follow the Pre-Course setup <a href="https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week3.html#request-a-us-census-bureau-api-key">instructions for requesting and activating your key</a> before proceeding.</strong></p>
 </div><div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -609,7 +607,7 @@
 <h2></h2>
 <p><span class="slide-title3">Line plots show the evolution of 1+ numeric variables</span></p>
 <hr>
-<p><span class="body-text-s">Line graphs display the <strong>evolution of one or several <em>numeric</em> variables</strong>. They are similar to scatter plots, but the measurement points are <strong>ordered</strong> (typically by their x-axis value) and joined with straight line segments. They are often used to visualize a trend in data over intervals of time. For example, changes in Lyme disease incidence (cases per 100,000 people) from 2010 - 2020, by state:</span></p>
+<p><span class="body-text-s">Line graphs display the <strong>evolution of one or several <em>numeric</em> variables</strong>. They are similar to scatter plots, but the measurement points are <strong>ordered</strong> (typically by their x-axis value) and joined with straight line segments. They are often used to visualize a trend in data over intervals of time. For example, changes in Lyme disease incidence (# cases / 100k people) from 2010 - 2020, by state:</span></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="center-text gray-text body-text-s">
@@ -678,9 +676,169 @@
 </div>
 </div>
 </section>
-<section class="slide level2">
+<section id="cut-y" class="slide level2" data-menu-title="Cutting y-axis">
+<h2></h2>
+<p><span class="slide-title">It’s okay to cut the y-axis of line graphs</span></p>
+<hr>
+<p>Line graphs encode data by <strong>position</strong> and not <strong>length</strong> (e.g.&nbsp;as in the height of a bar graph), therefore, you can choose to include the 0 origin only if it makes sense.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text gray-text body-text-s">
+<p>Lyme disease incidence from 2013 - 2019<br>
+(cut y-axis = default)</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2013</span><span class="sc">:</span><span class="dv">2019</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"Vermont"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state)) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text gray-text body-text-s">
+<p>Lyme disease incidence from 2013 - 2019<br>
+(force y-axis origin at 0)</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2013</span><span class="sc">:</span><span class="dv">2019</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"Vermont"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state)) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="cut-y-dow" class="slide level2" data-menu-title="Cutting y-axis (Dow)">
+<h2></h2>
+<p><span class="slide-title">It’s okay to cut the y-axis of line graphs</span></p>
+<hr>
+<p><em>Do not</em> start the y-axis at 0 if the <strong>range of data is small but the distance from the bottom of the range to zero is large</strong>. For example:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week3/dow-uncut-y.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week3/dow-cut-y.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>Example from <a href="https://meghan.rbind.io/">Meagan Hall</a>’s <a href="https://cmu-36315.netlify.app/">Statistical Graphics &amp; Visualization</a> course <a href="https://cmu-36315.netlify.app/slides/36-315_summer2021_lec5#1">Lecture 5 slides</a>.</p>
+</div>
+</section>
+<section id="cut-y-temps" class="slide level2" data-menu-title="Cutting y-axis (Temps)">
+<h2></h2>
+<p><span class="slide-title">It’s okay to cut the y-axis of line graphs</span></p>
+<hr>
+<p><em>Do not</em> start the y-axis at 0 if the <strong>relationship to zero is insignificant</strong>. For example:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week3/temps-uncut-y.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week3/temps-cut-y.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>Example from <a href="https://meghan.rbind.io/">Meagan Hall</a>’s <a href="https://cmu-36315.netlify.app/">Statistical Graphics &amp; Visualization</a> course <a href="https://cmu-36315.netlify.app/slides/36-315_summer2021_lec5#1">Lecture 5 slides</a>.</p>
+</div>
+</section>
+<section id="aspect-ratio" class="slide level2" data-menu-title="Aspect ratio">
+<h2></h2>
+<p><span class="slide-title">Aspect ratio affects perception of slope</span></p>
+<hr>
+<p>The aspect ratio is the <strong>height:width ratio of a graph</strong>. For line graphs in particular, aspect ratio affects the perceived steepness of a sloped line. The <strong>larger the aspect ratio, the steeper changes appear</strong>, which may cause readers to <strong>interpret changes as more important</strong>. The <strong>smaller the aspect ratio, the flatter the line</strong> which may cause readers to <strong>interpret changes as small / insignificant</strong>.</p>
 
-<p>cutting y-axs okay aspect ratio (width:height) no dual axes (e.g.&nbsp;avg temp each year on 2nd y-axis)</p>
+<img data-src="images/week3/aspect-ratio.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text">
+<p><span class="gray-text">Image source: <a href="https://graphworkflow.com/enhancement/aspect/#:~:text=The%20aspect%20ratio%20of%20a,%3A10%20or%2016%3A9.">Graph workflow</a></span></p>
+</div>
+</section>
+<section id="aspect-ratio-sunspots-default" class="slide level2" data-menu-title="Aspect ratio (sunspots 1)">
+<h2></h2>
+<p><span class="slide-title">Aspect ratio affects perception of slope</span></p>
+<hr>
+<p>Consider this line graph of sunspot activity from 1700 - 2015, with a default aspect ratio (1:1). Can you easily identify where in time sunspot activity rises more quickly / sharply than others?</p>
+
+<img data-src="images/week3/sunspot-default-ar.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text">
+<p><span class="gray-text">Image source: <a href="https://graphworkflow.com/enhancement/aspect/#:~:text=The%20aspect%20ratio%20of%20a,%3A10%20or%2016%3A9.">Graph workflow</a></span></p>
+</div>
+</section>
+<section id="aspect-ratio-sunspots-wide" class="slide level2" data-menu-title="Aspect ratio (sunspots 2)">
+<h2></h2>
+<p><span class="slide-title">Aspect ratio affects perception of slope</span></p>
+<hr>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week3/sunspot-wide-ar.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week3/sunspot-wide-ar-panels.png" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p><strong>Note:</strong> The bottom plot is the same as the top, but with the x-axis split into panels / rows, by decade.</p>
+<p>With a wider aspect ratio, we can more clearly see the differences in rates of change (slopes) in sunspot activity through time.</p>
+</div>
+</div>
+<div class="center-text">
+<p><span class="gray-text">Image source: <a href="https://graphworkflow.com/enhancement/aspect/#:~:text=The%20aspect%20ratio%20of%20a,%3A10%20or%2016%3A9.">Graph workflow</a></span></p>
+</div>
+</section>
+<section id="aspect-ratio-ggplot" class="slide level2" data-menu-title="Adjust aspect ratio">
+<h2></h2>
+<p><span class="slide-title2">Adjust the aspect ratio using <code>coord_fixed()</code></span></p>
+<hr>
+<p><span class="body-text-s">There’s <strong>no exact rule</strong> for what aspect ratio to use for a given graphic (but see <a href="https://www.jstor.org/stable/2288843">Cleveland et al.&nbsp;1988</a> to read about the “banking to 45 degrees” rule) – it depends on the nature of the variable and your goal with the visualization. <em>But</em> it’s important to keep mind that manipulating the aspect ratio can mislead readers, and so you should do so with carefully and intentionally.</span></p>
 </section>
 <section id="area-chart" class="slide level2" data-menu-title="Area chart">
 <h2></h2>
@@ -693,13 +851,13 @@
 <p>A basic area plot (New Jersey)</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"New Jersey"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state)) <span class="sc">+</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">geom_area</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"New Jersey"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state)) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">geom_area</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+<p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-26-1.png" width="960"></p>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -707,15 +865,15 @@
 <p>Update the fill color</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"New Jersey"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state, <span class="at">fill =</span> state)) <span class="sc">+</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">geom_area</span>() <span class="sc">+</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#047C90"</span>)) <span class="sc">+</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"New Jersey"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state, <span class="at">fill =</span> state)) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">geom_area</span>() <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#047C90"</span>)) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-16-1.png" style="width:80.0%"></p>
+<p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-27-1.png" style="width:80.0%"></p>
 </div>
 </div>
 </div>
@@ -723,18 +881,41 @@
 </section>
 <section id="stacked-area-chart" class="slide level2" data-menu-title="Stacked area chart">
 <h2></h2>
-<p><span class="slide-title3">Stacked area charts show the evolution of a whole + relative contribution of each group</span></p>
+<p><span class="slide-title3">Stacked area charts show the evolution of a whole + the relative contribution of each group</span></p>
 <hr>
 <p><span class="body-text-s"><strong>Stacked area charts are useful for showing the evolution of a whole and the relative proportions of each group that make up the whole</strong>. For example, the top of the colored area shows the total Lyme disease incidence (# cases / 100k people) across all groups (notice the difference in y-axis values), while the individual colors are the relative contributions of the top 4 states with the highest lyme disease incidence:</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
-<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">filter</span>(state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Maine"</span>, <span class="st">"Rhode Island"</span>, <span class="st">"New Hampshire"</span>, <span class="st">"Vermont"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state, <span class="at">fill =</span> state)) <span class="sc">+</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">geom_area</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">filter</span>(state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Maine"</span>, <span class="st">"Rhode Island"</span>, <span class="st">"New Hampshire"</span>, <span class="st">"Vermont"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state, <span class="at">fill =</span> state)) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">geom_area</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"></section>
+<img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-28-1.png" width="960" class="r-stretch"></section>
+<section id="stacked-area-group-order" class="slide level2" data-menu-title="Stacked area group order">
+<h2></h2>
+<p><span class="slide-title">Group order matters!</span></p>
+<hr>
+<p><span class="body-text-s">Group order (from bottom to top) can have an influence – oftentimes, you’ll want to <strong>put the most important group on the bottom (closest to the x-axis)</strong>, since your audience will have an easier time reading values for that group. For example, <a href="https://droughtmonitor.unl.edu/">US Drought Monitor</a> likely wanted to draw attention to what percentage of land area in CA experienced the highest-severity drought level (D4, Exceptional). By plotting that group on the bottom of the graph below, we can more easily identify that ~60% of CA experienced the worst level of drought in 2014-2015.</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week3/usdm.png" style="width:70.0%" alt="Percentage area of California in U.S. drought monitor categories"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br> <br></p>
+<p><i class="fa-solid fa-arrow-left" title="an arrow pointing to the left" aria-label="arrow-left"></i> You’ll be recreating this graph (original source US Drought Monitor, via <a href="https://en.wikipedia.org/wiki/Droughts_in_California#:~:text=County%20municipal%20rates.-,Dry%20years,2017%2C%20and%202020%E2%80%932022.">Wikipedia</a>) in discussion section this week!</p>
+</div>
+</div>
+<p><span class="body-text-s"><a href="https://inforiver.com/insights/stacked-area-charts-when-to-use-and-avoid/">This article</a> by Info River nicely outlines situations where using a stacked area chart is great, when not to use them, and important considerations.</span></p>
+</section>
 <section id="stacked-area-chart-challenge" class="slide level2" data-menu-title="Stacked area chart challenge">
 <h2></h2>
 <p><span class="slide-title3">Stacked area charts are not good studying the evolution of individual groups</span></p>
@@ -743,25 +924,25 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
-<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">filter</span>(state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Maine"</span>, <span class="st">"Rhode Island"</span>, <span class="st">"New Hampshire"</span>, <span class="st">"Vermont"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state, <span class="at">fill =</span> state)) <span class="sc">+</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">geom_area</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">filter</span>(state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Maine"</span>, <span class="st">"Rhode Island"</span>, <span class="st">"New Hampshire"</span>, <span class="st">"Vermont"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state, <span class="at">fill =</span> state)) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">geom_area</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+<p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-30-1.png" width="960"></p>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
-<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">filter</span>(state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Maine"</span>, <span class="st">"Rhode Island"</span>, <span class="st">"New Hampshire"</span>, <span class="st">"Vermont"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state, <span class="at">fill =</span> state)) <span class="sc">+</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb11-6"><a href="#cb11-6"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>state)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">filter</span>(state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Maine"</span>, <span class="st">"Rhode Island"</span>, <span class="st">"New Hampshire"</span>, <span class="st">"Vermont"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb13-4"><a href="#cb13-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state, <span class="at">fill =</span> state)) <span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>state)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+<p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-31-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -771,24 +952,20 @@
 
 <!-- stream graph -->
 </section>
-<section id="end-break" class="slide level2" data-menu-title="# End / Break #" data-background="#047C90">
+<section id="end" class="slide level2" data-menu-title="# End #" data-background="#047C90">
 <h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
-<i class="fa-solid fa-mug-hot" title="a mug with steam rising out the top" aria-label="mug-hot"></i> Take a Break
+See you next week!
 </p>
 <p class="caption-text">
 <em>~ This is the end of Lesson 3 (of 3) ~</em>
 </p>
 </div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_707a3aee" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
+</section>
+<section class="slide level2">
+
+<p>assignments</p>
 
 <div class="footer footer-default">
 
