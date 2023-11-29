@@ -9,6 +9,8 @@ toc: true
 <div class="pink-box">
 ***You must earn a "Satisfactory" mark for each individual Part (I and II) to earn a "Satisfactory" mark for Assignment #1.***
 
+**NOTE:** Assignments are to be submitted via GitHub Classrooms, unless otherwise noted. Each student receives one "free pass" for not submitting assignments via GitHub classrooms, after which you will receive a "Not Yet" mark.
+
 Read each part of the assignment carefully!
 </div>
 :::
@@ -57,10 +59,11 @@ Install the following packages (if you don't already have them) using `install.p
 
 **Tips:**
 
-- See lines 114 and 120 (among others) for examples of code annotations -- aim to include this level of detail 
-- Writing clean annotations makes it easier for you and others to read them -- I love using the [`{ARTofR}` package](https://github.com/Hzhang-ouce/ARTofR) to create titles, dividers, and block comments in my scripts and Qmd/Rmd files. Read more about how to create different dividers using the `{ARTofR}` package on [this resource page](http://localhost:7166/clean-code-guide.html#annotating-code) of the course website
-- If you don't immediately understand the purpose of a line/chunk of code, skip over it (temporarily) and continue working your way through the following code -- it oftentimes becomes more evident given additional context
-- Plots may look *super* squished in the RStudio Viewer pane -- use the **Zoom** button to pop them open in a separate window
+- See lines 114 and 120 (among others) for examples of code annotations -- aim to include this level of detail. 
+- Writing clean annotations makes it easier for you and others to read them -- I love using the [`{ARTofR}` package](https://github.com/Hzhang-ouce/ARTofR) to create titles, dividers, and block comments in my scripts and Qmd/Rmd files. Read more about how to create different dividers using the `{ARTofR}` package on [this resource page](http://localhost:7166/clean-code-guide.html#annotating-code) of the course website.
+- Pull up documentation for a function directly in RStudio's **Help** pane by running `?function_name` in the console. Vignettes and `pkgdown` sites are incredible resources as well (e.g. here is a [vignette](https://cloud.r-project.org/web/packages/patchwork/vignettes/patchwork.html) and the [pkgdown](https://patchwork.data-imaginist.com/) site for the `{patchwork}` package)
+- If you don't immediately understand the purpose of a line/chunk of code, skip over it (temporarily) and continue working your way through the following code -- it oftentimes becomes more evident given additional context.
+- Plots may look *super* squished in the RStudio Viewer pane -- use the **Zoom** button to pop them open in a separate window.
 - **Keep in mind:** While this is fairly complex ggplot code, remember that it's constructed in layers -- meaning you can run code line-by-line to see exactly how the plot is changing with each new layer. You may come across functions and arguments that you're already familiar with (yay!), and of course, others that are totally new.  
 
 ```{r}
@@ -387,6 +390,7 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 
 - [ ] update each comment line in the code that reads, `ANNOTATE`, with a *brief* description, written in your own words (see lines 114 & 120 for example annotations; there are other lines that have been already annotated for you as well, i.e. lines 152 - 173, 295  - 305 -- you do not need to re-write these)
 - [ ] answer the three concluding questions adhering to the length requirements specified at the end of each question prompt
+- [ ] HW #1 Part I must be submitted via GitHub classrooms.
 
 <br>
 
@@ -445,9 +449,14 @@ Your data set(s) should -- to some degree -- have an environmental focus. It may
 
 You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part II:
 
+**Complete the following step under your own GitHub profile, *not* in GitHub Classrooms:**
+
 - [ ] create a GitHub repository named `lastName-eds240-assignment4`, which is where you'll be doing any / all work related to Assignment #4. Be sure to make your repository public, initialize your repository with a README, and add a `.gitignore` file.
+
+**Complete the following steps in the GitHub Classrooms assignment:**
+
 - [ ] link to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4
-- [ ] answer the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you *do not* need to complete the **optional** importing of data
+- [ ] answer all parts of the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you *do not* need to complete the **optional** importing of data
 
 <br>
 
