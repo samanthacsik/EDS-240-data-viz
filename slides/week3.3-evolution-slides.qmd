@@ -71,8 +71,49 @@ ggplot(data, aes(x = time, y = value)) +
 
 ---
 
-Roadmap
+## {#roadmap1 data-menu-title="Roadmap"} 
 
+[Roadmap]{.slide-title}
+
+<hr>
+
+<br>
+
+In this lesson, we'll be exploring two primary chart types:
+
+<br>
+
+[1. line graphs]{.body-text-m}
+
+[2. area charts]{.body-text-m}
+
+---
+
+## {#roadmap2 data-menu-title="Roadmap"} 
+
+[Roadmap]{.slide-title}
+
+<hr>
+
+<br>
+
+[In this lesson, we'll be exploring two primary chart types:]{.gray-text}
+
+<br>
+
+[1. line graphs]{.gray-text .body-text-m}
+
+  - avoiding spaghetti plots
+  - cutting the y-axis
+  - aspect ratio
+  
+[2. area charts]{.gray-text .body-text-m}
+
+  - 1 vs. multiple groups
+  - how to interpret them
+  - stacked vs. proportional stacked area chart
+  - considerations
+  
 ---
 
 ## {#lyme-data data-menu-title="Lyme disease by state"} 
@@ -236,7 +277,7 @@ us_state_pop <- get_estimates(geography = "state",
 
 #........................write data to csv.......................
 # optional, but recommended in case you want to work offline, the API is down, etc. (you can then read in your saved data file rather than run the above code)
-write_csv(us_state_pop, file = here::here("week3", "data", "us_state_pop.csv"))
+# write_csv(us_state_pop, file = here::here("week3", "data", "us_state_pop.csv"))
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                            join lyme & pop dfs                           ----
@@ -353,6 +394,7 @@ E.g. I'm interested in how Lyme disease in New Jersey compares to other states.
 ```{r}
 #| eval: true
 #| echo: true
+#| code-line-numbers: "5"
 lyme_pop |> 
   filter(year %in% c(2010:2020)) |> 
   ggplot(aes(x = year, y = cases_per100k, group = state)) +
@@ -370,6 +412,7 @@ E.g. I'm interested in states where Lyme disease incidence is (or at one point w
 ```{r}
 #| eval: true
 #| echo: true
+#| code-line-numbers: "3,5"
 lyme_pop |> 
   filter(year %in% c(2010:2020)) |> 
   ggplot(aes(x = year, y = cases_per100k, group = state, color = state)) +
@@ -420,6 +463,7 @@ Lyme disease incidence from 2013 - 2019
 ```{r}
 #| eval: true
 #| echo: true
+#| code-line-numbers: "6"
 lyme_pop |> 
   filter(year %in% c(2013:2019)) |> 
   filter(state == "Vermont") |> 
@@ -601,11 +645,11 @@ With a wider aspect ratio, we can more clearly see the differences in rates of c
 
 ## {#ggplot-default-ar data-menu-title="ggplot's default aspect ratio"} 
 
-[ggplot without a fixed aspect ratio]{.slide-title}
+[ggplot with a default aspect ratio]{.slide-title}
 
 <hr>
 
-Let's first look at Lyme disease incidence for Vermont from 2010 - 2020 without adjusting the aspect ratio.:
+Let's first look at Lyme disease incidence for Vermont from 2010 - 2020 without adjusting the aspect ratio:
 
 ```{r}
 #| eval: true
@@ -622,21 +666,30 @@ lyme_pop |>
 
 ## {#ggplot-default-ar-ticks data-menu-title="ggplot's default aspect ratio"} 
 
-[ggplot without a fixed aspect ratio]{.slide-title}
+[ggplot with a default aspect ratio]{.slide-title}
 
 <hr>
 
-We have 10 units on our x-axis (`year` ranges from 2010 - 2020), and ~175 units (`case_per100k` ranges from 0 to ~175) on our y-axis. By default, ggplot adjusts the space between each x-axis unit so that they are wider apart than each y-axis unit, making the plot easier to read. Below, we've added in tick marks for each y-axis unit, to better highlight this (a single tick already existed for each of our 10 x-axis units):
+[We have 10 units on our x-axis (`year` ranges from 2010 - 2020), and ~175 units (`case_per100k` ranges from 0 to ~175) on our y-axis. By default, ggplot adjusts the space between each x-axis unit so that they are wider apart than each y-axis unit, making the plot easier to read. **Below, we've added in tick marks for each y-axis unit to better highlight this (a single tick already existed for each of our 10 x-axis units).**]{.body-text-s}
+
+<br>
+
+::: {.body-text-s .pink-highlight .center-text}
+**Note:** This plot doesn't render well in thse slides *or* in the RStudio plot pane. I recommend running the code in RStudio, then clicking the **Zoom button** in the **Plot pane** for best viewing.
+:::
+
+<br>
 
 ```{r}
-#| eval: true
+#| eval: false
 #| echo: true
+#| code-line-numbers: "6"
 lyme_pop |> 
   filter(year %in% c(2010:2020)) |> 
   filter(state == "Vermont") |> 
   ggplot(aes(x = year, y = cases_per100k, group = state)) +
   geom_line() +
-  scale_y_continuous(breaks = seq(0, 175, by = 1)) 
+  scale_y_continuous(breaks = seq(0, 190, by = 1)) 
 ```
 
 ---
@@ -647,30 +700,28 @@ lyme_pop |>
 
 <hr>
 
-:::: columns 
+[We can use `coord_fixed()` to fix the aspect ratio of our plot. The `ratio` argument controls the aspect ratio, which is expressed as `y / x` and by default is set to `1`. This means that the height of one y-unit is equal to the width of one x-unit (paying attention to the grid lines and tick marks here can be helpful). **Because we have 175 y-axis units and only 10 x-axis units, fixing our aspect ratio at 1:1 means our plot gets taller and squished.**]{.body-text-s} 
 
-::: {.column width="50%"}
-We can use `coord_fixed()` to fix the aspect ratio of our plot. The `ratio` argument controls the aspect ratio, which is expressed as `y / x` and by default is `ratio = 1`. This means that the height of one y-unit is equal to the width of one x-unit (paying attention to the grid lines and tick marks here can be helpful). 
+<br>
 
-Because we have 175 y-axis units and only 10 x-axis units, fixing our aspect ratio at 1:1 means our plot gets taller and squished.
+::: {.body-text-s .pink-highlight .center-text}
+**Note:** This plot doesn't render well in thse slides *or* in the RStudio plot pane. I recommend running the code in RStudio, then clicking the **Zoom button** in the **Plot pane** for best viewing.
 :::
 
-::: {.column width="50%"}
+<br>
+
 ```{r}
-#| eval: true
+#| eval: false
 #| echo: true
+#| code-line-numbers: "7"
 lyme_pop |> 
   filter(state == "Vermont") |> 
   filter(year %in% c(2010:2020)) |> 
   ggplot(aes(x = year, y = cases_per100k, group = state)) +
   geom_line() +
-  geom_point() +
-  scale_y_continuous(breaks = seq(0, 175, by = 1)) +
+  scale_y_continuous(breaks = seq(0, 190, by = 1)) +
   coord_fixed(ratio = 1)
 ```
-:::
-
-::::
 
 ---
 
@@ -680,23 +731,33 @@ lyme_pop |>
 
 <hr>
 
-Ratios > 1 will make units on the y-axis longer than units on the x-axis (resulting in steeper slopes). Ratios < 1 will make units on the x-axis longer than units on the y-axis (resulting in shallower slopes).
+[Ratios > 1 will make units on the y-axis longer than units on the x-axis (resulting in steeper slopes). Ratios < 1 will make units on the x-axis longer than units on the y-axis (resulting in shallower slopes). **If we want to make our graph wider, we'll need to update `ratio` so that it's < 1.** For example:]{.body-text-s} 
 
-If we want to make our graph wider, we'll need to update `ratio` so that it's < 1. For example:
+<br>
+
+::: {.body-text-s .pink-highlight .center-text}
+**Note:** This plot doesn't render well in thse slides *or* in the RStudio plot pane. I recommend running the code in RStudio, then clicking the **Zoom button** in the **Plot pane** for best viewing.
+:::
+
+<br>
 
 ```{r}
-#| eval: true
+#| eval: false
 #| echo: true
+#| code-line-numbers: "6"
 lyme_pop |> 
   filter(state == "Vermont") |> 
   filter(year %in% c(2010:2020)) |> 
   ggplot(aes(x = year, y = cases_per100k, group = state)) +
   geom_line() + 
-  scale_y_continuous(breaks = seq(0, 200, by = 1)) +
   coord_fixed(ratio = 1/50)
 ```
 
-Play around with `ratio` yourself and see how it changes.
+<br>
+
+::: {.center-text}
+Playing around with the `ratio` value yourself is the best way to get a sense for how the aspect ratio of a given ggplot will change.
+:::
 
 ---
 
@@ -737,6 +798,7 @@ Update the fill color
 #| eval: true
 #| echo: true
 #| out-width: "80%"
+#| code-line-numbers: "4,6-7"
 lyme_pop |> 
   filter(year %in% c(2010:2020)) |> 
   filter(state == "New Jersey") |> 
@@ -767,6 +829,28 @@ lyme_pop |>
   filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
   ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
   geom_area()
+```
+
+---
+
+## {#proportional-stacked-area data-menu-title="Proportional stacked area chart"} 
+
+[A variant: proportional stacked area charts]{.slide-title3}
+
+<hr>
+
+Proportional stacked area charts **plot percentage contribution instead of absolute numbers on the y-axis**. The focus of this version is the proportion of contribution made by each category rather than absolute numbers.
+
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "5-6"
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
+  geom_area(position = "fill") +
+  scale_y_continuous(labels = scales::percent_format(scale = 100))
 ```
 
 ---
@@ -808,7 +892,7 @@ knitr::include_graphics("images/week3/usdm.png")
 
 ## {#stacked-area-chart-challenge data-menu-title="Stacked area chart challenge"} 
 
-[Stacked area charts are not good for studying the evolution of individual groups]{.slide-title3}
+[Stacked area charts are *not good* for studying the evolution of individual groups]{.slide-title3}
 
 <hr>
 
@@ -844,7 +928,6 @@ lyme_pop |>
 ::::
 
 ---
-
 
 ##  {#end data-menu-title="# End #" background="#047C90"}
 
