@@ -234,6 +234,10 @@ us_state_pop <- get_estimates(geography = "state",
   filter(variable == "POP") |> 
   select(state = NAME, population = value) 
 
+#........................write data to csv.......................
+# optional, but recommended in case you want to work offline, the API is down, etc. (you can then read in your saved data file rather than run the above code)
+write_csv(us_state_pop, file = here::here("week3", "data", "us_state_pop.csv"))
+
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                            join lyme & pop dfs                           ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -512,7 +516,7 @@ Example from [Meagan Hall](https://meghan.rbind.io/)'s [Statistical Graphics & V
 
 <hr>
 
-The aspect ratio is the **height:width ratio of a graph**. For line graphs in particular, aspect ratio affects the perceived steepness of a sloped line. The **larger the aspect ratio, the steeper changes appear**, which may cause readers to **interpret changes as more important**. The **smaller the aspect ratio, the flatter the line** which may cause readers to **interpret changes as small / insignificant**.
+[The aspect ratio is the **height:width ratio of a graph**. The **larger the aspect ratio, the steeper changes appear**, which may cause readers to **interpret changes as more important**. The **smaller the aspect ratio, the flatter the line** which may cause readers to **interpret changes as small / insignificant**.]{.body-text-s}
 
 ```{r}
 #| eval: true
@@ -525,6 +529,8 @@ knitr::include_graphics("images/week3/aspect-ratio.png")
 ::: {.center-text}
 [Image source: [Graph workflow](https://graphworkflow.com/enhancement/aspect/#:~:text=The%20aspect%20ratio%20of%20a,%3A10%20or%2016%3A9.)]{.gray-text}
 :::
+
+[There's **no exact rule** for what aspect ratio to use for a given graphic (but see [Cleveland et al. 1988](https://www.jstor.org/stable/2288843) to read about the "banking to 45 degrees" rule) -- it depends on the nature of the variable and your goal with the visualization. *However* it's important to keep mind that manipulating the aspect ratio can mislead readers, and so you should do so carefully.]{.body-text-s}
 
 --- 
 
@@ -593,32 +599,104 @@ With a wider aspect ratio, we can more clearly see the differences in rates of c
 
 ---
 
-## {#aspect-ratio-ggplot data-menu-title="Adjust aspect ratio"} 
+## {#ggplot-default-ar data-menu-title="ggplot's default aspect ratio"} 
+
+[ggplot without a fixed aspect ratio]{.slide-title}
+
+<hr>
+
+Let's first look at Lyme disease incidence for Vermont from 2010 - 2020 without adjusting the aspect ratio.:
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  filter(state == "Vermont") |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state)) +
+  geom_line()
+```
+
+---
+
+## {#ggplot-default-ar-ticks data-menu-title="ggplot's default aspect ratio"} 
+
+[ggplot without a fixed aspect ratio]{.slide-title}
+
+<hr>
+
+We have 10 units on our x-axis (`year` ranges from 2010 - 2020), and ~175 units (`case_per100k` ranges from 0 to ~175) on our y-axis. By default, ggplot adjusts the space between each x-axis unit so that they are wider apart than each y-axis unit, making the plot easier to read. Below, we've added in tick marks for each y-axis unit, to better highlight this (a single tick already existed for each of our 10 x-axis units):
+
+```{r}
+#| eval: true
+#| echo: true
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  filter(state == "Vermont") |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state)) +
+  geom_line() +
+  scale_y_continuous(breaks = seq(0, 175, by = 1)) 
+```
+
+---
+
+## {#aspect-ratio-ggplot-equal data-menu-title="Adjust aspect ratio (ratio = 1)"} 
 
 [Adjust the aspect ratio using `coord_fixed()`]{.slide-title2}
 
 <hr>
 
-[There's **no exact rule** for what aspect ratio to use for a given graphic (but see [Cleveland et al. 1988](https://www.jstor.org/stable/2288843) to read about the "banking to 45 degrees" rule) -- it depends on the nature of the variable and your goal with the visualization. *But* it's important to keep mind that manipulating the aspect ratio can mislead readers, and so you should do so with carefully and intentionally.]{.body-text-s}
+:::: columns 
+
+::: {.column width="50%"}
+We can use `coord_fixed()` to fix the aspect ratio of our plot. The `ratio` argument controls the aspect ratio, which is expressed as `y / x` and by default is `ratio = 1`. This means that the height of one y-unit is equal to the width of one x-unit (paying attention to the grid lines and tick marks here can be helpful). 
+
+Because we have 175 y-axis units and only 10 x-axis units, fixing our aspect ratio at 1:1 means our plot gets taller and squished.
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+lyme_pop |> 
+  filter(state == "Vermont") |> 
+  filter(year %in% c(2010:2020)) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state)) +
+  geom_line() +
+  geom_point() +
+  scale_y_continuous(breaks = seq(0, 175, by = 1)) +
+  coord_fixed(ratio = 1)
+```
+:::
+
+::::
+
+---
+
+## {#aspect-ratio-ggplot-update data-menu-title="Adjust aspect ratio"} 
+
+[Adjust the aspect ratio using `coord_fixed()`]{.slide-title2}
+
+<hr>
+
+Ratios > 1 will make units on the y-axis longer than units on the x-axis (resulting in steeper slopes). Ratios < 1 will make units on the x-axis longer than units on the y-axis (resulting in shallower slopes).
+
+If we want to make our graph wider, we'll need to update `ratio` so that it's < 1. For example:
 
 ```{r}
-#| eval: false
-#| echo: false
-library(lterdatasampler)
-ntl_airtemp |> 
-  filter(year == 2019) |> 
-  #filter(year %in% c(2015:2019)) |> 
-  ggplot(aes(x = sampledate, y = ave_air_temp_adjusted)) +
+#| eval: true
+#| echo: true
+lyme_pop |> 
+  filter(state == "Vermont") |> 
+  filter(year %in% c(2010:2020)) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state)) +
   geom_line() + 
-  coord_fixed(ratio = 1)
-
-arc_weather |> 
-  filter(date > "2017-12-31") |> 
-  ggplot(aes(x = date, y = mean_airtemp)) +
-  geom_line() +
-  coord_fixed(ratio = 5)
+  scale_y_continuous(breaks = seq(0, 200, by = 1)) +
+  coord_fixed(ratio = 1/50)
 ```
 
+Play around with `ratio` yourself and see how it changes.
 
 ---
 
@@ -730,7 +808,7 @@ knitr::include_graphics("images/week3/usdm.png")
 
 ## {#stacked-area-chart-challenge data-menu-title="Stacked area chart challenge"} 
 
-[Stacked area charts are not good studying the evolution of individual groups]{.slide-title3}
+[Stacked area charts are not good for studying the evolution of individual groups]{.slide-title3}
 
 <hr>
 
@@ -767,10 +845,6 @@ lyme_pop |>
 
 ---
 
-<!-- stream graph -->
-
----
-
 
 ##  {#end data-menu-title="# End #" background="#047C90"}
 
@@ -781,4 +855,24 @@ lyme_pop |>
 
 ---
 
-assignments
+##  {#assignments data-menu-title="Assignments" background="#D8E7E7"}
+
+::: {.center-text}
+[Assignments]{.slide-title .dark-blue-text}
+:::
+
+<hr>
+
+<br>
+
+[**End-of-class Survey week 3 (EOC #2)** -- *Due [Mon 01/22]{.magenta-text} at 11:55pm*]{.body-text-m}
+
+- 2 multiple choice + 2 short answer + 1 optional question
+
+. . . 
+
+[**Homework Assignment #2 (HW #2)** -- *Due [Sat 02/03]{.magenta-text} at 11:59pm*]{.body-text-m}
+
+- tbd
+
+

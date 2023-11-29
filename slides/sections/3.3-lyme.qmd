@@ -77,6 +77,8 @@ us_state_pop <- get_estimates(geography = "state",
   filter(variable == "POP") |> 
   select(state = NAME, population = value) 
 
+# write_csv(us_state_pop, file = here::here("slides", "data", "us_state_pop.csv"))
+
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                            join lyme & pop dfs                           ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -162,8 +164,6 @@ lyme_pop <- left_join(lyme_states, us_state_pop) |>
 #   geom_area() # +
   # scale_x_continuous(limits = c(2001:2020), breaks = (2001, 2003, 2005, 2007, 2009, 2011, 2013, 2015, 2017, 2019))
   # scale_y_continuous(limits = c(0:2500))
-  
-
 ```
 
 
