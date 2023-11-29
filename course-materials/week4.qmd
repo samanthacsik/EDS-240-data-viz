@@ -1,5 +1,5 @@
 ---
-title: "Fundamental Chart Types (Part II) / Basic Principles / ??"
+title: "Fundamental Chart Types (Part II)"
 subtitle: "Week 4"
 description: "Monday January 29^th^, 2024"
 title-block-banner: true
@@ -27,7 +27,7 @@ knitr::include_graphics("../images/horst-ggplot-explore-dataviz.png")
 
 ## Lecture Materials 
 
-Week 3 instruction is broken down into three lessons:
+Week 4 instruction is broken down into three lessons:
 
 ::: {.grid}
 
@@ -44,7 +44,7 @@ Week 3 instruction is broken down into three lessons:
 ::: {.center-text}
 [**tbd**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.2 slides](../sliweek3.1-distributions-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.2 slides](../slides/tbd.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
@@ -59,14 +59,6 @@ Week 3 instruction is broken down into three lessons:
 :::
 
 
-<!-- - visual perception -->
-<!-- - color theory -->
-<!-- - alt text -->
-<!-- - typography -->
-<!-- - data-ink-ratio -->
-<!-- - DEI (using icons & colors for equity awareness) -->
-<!-- - storytelling (?) -->
-
 ## Discussion Materials
 
 *Coming soon!*
@@ -78,7 +70,7 @@ Week 3 instruction is broken down into three lessons:
 | EOC             | EOC (week 4)            | Mon 01/29/2024 | Mon 01/29/2024, 11:55pm PT |
 | HW              | Homework Assignment #2  | Mon 01/22/2024 | Sat 02/03/2024, 11:59pm PT |
 
-<!-- | Assignment Type | Assignment Title                                                                  | Date Assigned  | Date Due        | -->
+<!-- | Assignment Type | Assignment Title                                                       | Date Assigned  | Date Due                   | -->
 <!-- |:---------------:|------------------------------------------------------------------------|----------------|----------------------------| -->
 <!-- | EOC             | [EOC (week 4)](https://forms.gle/kwfaWciZNu4fCzKN7)                    | Mon 01/29/2024 | Mon 01/29/2024, 11:55pm PT | -->
 <!-- | HW              | [Homework Assignment #2](../assignments/HW2.qmd)                       | Mon 01/22/2024 | Sat 02/03/2024, 11:59pm PT | -->

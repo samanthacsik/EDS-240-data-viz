@@ -118,7 +118,7 @@ The [U.S. Drought Monitor](https://droughtmonitor.unl.edu/) (USDM) is a collecti
 
 The [TidyTuesday](https://github.com/rfordatascience/tidytuesday) community wrangled and visualized USDM data back in 2021 ([2021-07-20, week 30](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-07-20/readme.md)), so we'll use the `{tidytuesdayR}` package to import some minimally-tidied data (TidyTuesday always provides the [cleaning script](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-07-20/readme.md#cleaning-script) that the organizers used to pre-process any of the data provided -- these data comprise three separate data sets, which were converted from wide to long format, joined together, and had some columns renamed).
 
-[**For this week's discussion section, you'll be recreating the following data visualization produced by U.S. Drought Monitor, which you can find on the [Droughts in California Wikipedia page](https://en.wikipedia.org/wiki/Droughts_in_California).**]{.teal-text}
+[**For this week's discussion section, you'll be recreating the following data visualization produced by U.S. Drought Monitor, which you can find on the [*Droughts in California* Wikipedia page](https://en.wikipedia.org/wiki/Droughts_in_California).**]{.teal-text}
 
 ```{r}
 #| eval: true
