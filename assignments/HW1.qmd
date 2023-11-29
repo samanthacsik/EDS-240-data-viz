@@ -28,7 +28,7 @@ Much of your time as a data scientist will be spent looking at code written by o
 
 *I recognize that there is (likely) **a lot** of new code presented here, and that we haven't covered much at all yet in this course. This is intentionally an exercise is resourcefulness! By the end of this exercise, you should feel a bit more confident in your ability to interpret (and maybe even reuse!) code written by others.*
 
-[**Annotate the following code**]{.teal-text}, adapted from [Christophe Nicault's](https://github.com/cnicault) visualization titled, ***Evolution of deaths from indoor air pollution*** ([original code](https://github.com/cnicault/tidytuesday/blob/master/2022/2022-15-indoor_air_pollution/indoor_air_pollution.Rmd)).:
+[**Annotate the following code**]{.teal-text}, adapted from [Christophe Nicault's](https://github.com/cnicault) visualization titled, ***Evolution of deaths from indoor air pollution*** ([original code](https://github.com/cnicault/tidytuesday/blob/master/2022/2022-15-indoor_air_pollution/indoor_air_pollution.Rmd)) -- to enlarge image (in Chrome) **right-click on image** > **Open Image in New Tab**:
 
 ```{r}
 #| eval: true
@@ -38,21 +38,7 @@ Much of your time as a data scientist will be spent looking at code written by o
 knitr::include_graphics("../images/indoor-poll-ggplot.png")
 ```
 
-You can find metadata and additional information on the [rfordatascience/tidytuesday (2022-04-12) `readme.md`](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-04-12/readme.md#data-dictionary). **Note:** A select few lines of code have already been annotated for you.
-
-<!-- ::: {.callout-note} -->
-<!-- ## Install the following packages (if you don't already have them) using `install.packages("package_name")`: -->
-
-<!-- - [`{tidytuesdayR}`](https://cran.r-project.org/web/packages/tidytuesdayR/index.html) -->
-<!-- - [`{tidyverse}`](https://cran.r-project.org/web/packages/tidyverse/index.html) -->
-<!-- - [`{patchwork}`](https://cran.r-project.org/web/packages/patchwork/index.html) -->
-<!-- - [`{showtext}`](https://cran.r-project.org/web/packages/showtext/index.html) -->
-<!-- - [`{sysfonts}`](https://cran.r-project.org/web/packages/sysfonts/index.html) -->
-<!-- - [`{countrycode}`](https://cran.r-project.org/web/packages/countrycode/index.html) -->
-<!-- - [`{glue}`](https://cran.r-project.org/web/packages/glue/index.html) -->
-<!-- - [`{scales}`](https://cran.r-project.org/web/packages/scales/index.html) -->
-<!-- - [`{ragg}`](https://cran.r-project.org/web/packages/ragg/index.html) -->
-<!-- ::: -->
+You can find metadata and additional information about the data set on the [rfordatascience/tidytuesday (2022-04-12) `readme.md`](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-04-12/readme.md#data-dictionary). **Note:** A select few lines of code have already been annotated for you.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Click here to expand the code
@@ -71,10 +57,10 @@ Install the following packages (if you don't already have them) using `install.p
 
 **Tips:**
 
-- See lines 114 and 120 for examples of code annotations -- aim to include this level of detail 
-- I love using the [`{ARTofR}` package](https://github.com/Hzhang-ouce/ARTofR) to create titles, dividers, and block comments in my scripts and Qmd/Rmd files 
+- See lines 114 and 120 (among others) for examples of code annotations -- aim to include this level of detail 
+- Writing clean annotations makes it easier for you and others to read them -- I love using the [`{ARTofR}` package](https://github.com/Hzhang-ouce/ARTofR) to create titles, dividers, and block comments in my scripts and Qmd/Rmd files. Read more about how to create different dividers using the `{ARTofR}` package on [this resource page](http://localhost:7166/clean-code-guide.html#annotating-code) of the course website
 - If you don't immediately understand the purpose of a line/chunk of code, skip over it (temporarily) and continue working your way through the following code -- it oftentimes becomes more evident given additional context
-- Plots may look *super* squished in the Viewer -- use the **Zoom** button to pop them open in a separate window
+- Plots may look *super* squished in the RStudio Viewer pane -- use the **Zoom** button to pop them open in a separate window
 - **Keep in mind:** While this is fairly complex ggplot code, remember that it's constructed in layers -- meaning you can run code line-by-line to see exactly how the plot is changing with each new layer. You may come across functions and arguments that you're already familiar with (yay!), and of course, others that are totally new.  
 
 ```{r}
@@ -90,7 +76,7 @@ library(patchwork) # ANNOTATE (brief explanation of pkg) ----
 library(showtext) # ANNOTATE (brief explanation of pkg) ----
 
 #......ANNOTATE (generally, what does this code block do?).......
-# ANNOTATE (explain differences between args, `name` & `family`) ----
+# ANNOTATE (explain differences between arguments `name` & `family`) ----
 font_add_google(name = "Roboto", family = "roboto")
 font_add_google(name = "Roboto Condensed", family = "roboto condensed")
 font_add_google(name = "Oswald", family = "oswald")
@@ -391,12 +377,9 @@ dev.off()
 
 [**Once complete, answer the following questions:**]{.teal-text}
 
-- [ ] Describe two elements of this plot that you find visually-pleasing / easy to understand / intuitive. Why? [**(4-10 sentences)**]{.peach-text}
-- [ ] Describe two elements of this plot that you feel could be better presented in a different way. Why? [**(4-10 sentences)**]{.peach-text}
-- [ ] Describe two new things that you learned by interpreting / annotating this code. These could be  packages, functions, or even code organizational approaches that you hadn't previously known about or considered. [**(4-10 sentences)**]{.peach-text}
-
-
-TODO: ADD MORE QUESTIONS HERE
+- [ ] **1.** Describe two elements of this plot that you find visually-pleasing / easy to understand / intuitive. Why? [**(4-10 sentences)**]{.peach-text}
+- [ ] **2.** Describe two elements of this plot that you feel could be better presented in a different way. Why? [**(4-10 sentences)**]{.peach-text}
+- [ ] **3.** Describe two new things that you learned by interpreting / annotating this code. These could be  packages, functions, or even code organizational approaches that you hadn't previously known about or considered. [**(4-10 sentences)**]{.peach-text}
 
 ## Rubric (specifications)
 
@@ -434,7 +417,7 @@ This week, we'll mostly be focused on some prep work. Read the Description, belo
 
 1. **a visualization for a general audience (i.e. without domain expertise)** -- this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), and/or may even blend both art and science
 2. **a visualization to be included in a paper, technical documentation, or report** -- this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.
-3. **a visualization that you could include in presentation** -- you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you're animating pieces of your visualization onto a slide) 
+3. **a visualization that you could include in a presentation** -- you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you're animating pieces of your visualization onto a slide) 
 
 [**This week, you’ll focus on finding data that interest you and begin brainstorming some questions that you might explore / answer using those data.**]{.teal-text} 
 
@@ -445,22 +428,24 @@ Your data set(s) should -- to some degree -- have an environmental focus. It may
 - **[DataOne](https://www.dataone.org/)** -- a repository of data repositories! Search across all member repositories (including repositories like [EDI Data Portal](https://portal.edirepository.org/nis/advancedSearch.jsp), [Arctic Data Center](https://arcticdata.io/catalog), [KNB](https://knb.ecoinformatics.org/), etc.) for environmental data (along with curated metadata records)
 - **[Kaggle Datasets](https://www.kaggle.com/datasets)** - Kaggle is an online community for data scientists and machine learning practitioners to find and publish data, as well as enter competitions to solve data science challenges
 
-***Note:** While we will not be working with spatial data models or building maps in EDS 240, you are welcome to use spatial data for this assignment if you are comfortable and excited to do so. We will not be able to offer as much support on the technical implementation of building maps-based visualizations, though the fundamental concepts of data communication and design theory that we'll be learning throughout this course will still apply. Relying on resources and knowledge from [EDS 223: Geospatial Analysis and Remote Sensing](https://ryoliver.github.io/EDS_223_spatial_analysis/) will be critical for anyone pursuing this option.*
+<!-- ***Note:** While we will not be working with spatial data models or building maps in EDS 240, you are welcome to use spatial data for this assignment if you are comfortable and excited to do so. We will not be able to offer as much support on the technical implementation of building maps-based visualizations, though the fundamental concepts of data communication and design theory that we'll be learning throughout this course will still apply. Relying on resources and knowledge from [EDS 223: Geospatial Analysis and Remote Sensing](https://ryoliver.github.io/EDS_223_spatial_analysis/) will be critical for anyone pursuing this option.* -->
 
 [**Once you've found your data set(s), answer the following questions:**]{.teal-text}
 
-- [ ] What is your data set(s) of? Be sure to include how it is related to the environment, if it's not immediately clear from your explanation. [**(<=4 sentences)**]{.peach-text}
-- [ ] What steps are involved in downloading or accessing the data (e.g. "I can download using a button via this online portal," "There's an R package for scraping the data," "I need to use an API to scrape the data," etc.)? [**(1-2 sentences)**]{.peach-text}
-- [ ] What question(s) do you want to answer using these data? [**(<=4 sentences)**]{.peach-text}
-- [ ] Will you need to combine multiple data sets to successfully answer your question(s)? If so, have you found all the necessary data? Do you have a way to combine it? [**(<=4 sentences)**]{.peach-text}
-- [ ] **Optional:** Import your data into R! (this will be a part of the next homework assignment) **IMPORTANT:** If your data files are large (>2GB) DO NOT push your data to GitHub. We'll talk more about this during the next assignment.
-
-TODO: ADD MORE QUESTIONS HERE
+- [ ] **1.** Describe your data set(s). Be sure to address the following [**(<=4 sentences)**]{.peach-text}
+    - [ ] **1a.** Where did you find these data?
+    - [ ] **1b.** What variables does it contain? Is there sufficient metadata for understanding what those variables are?
+    - [ ] **1c.** Describe how these data related to the environment
+- [ ] **2.** What steps are involved in downloading or accessing the data (e.g. "I can download using a button via this online portal," "There's an R package for scraping the data," "I need to use an API to scrape the data," etc.)? [**(1-2 sentences)**]{.peach-text}
+- [ ] **3.** What question(s) do you want to answer using these data (it's okay if these questions evolve over time)? [**(<=4 sentences)**]{.peach-text}
+- [ ] **4.** Will you need to combine multiple data sets to successfully answer your question(s)? If so, have you found all the necessary data? Do you have a way to combine it? [**(<=4 sentences)**]{.peach-text}
+- [ ] **Optional:** Import your data into R! (this will be a part of the next homework assignment) **IMPORTANT:** If your data files are large (>2GB) DO NOT push your data to GitHub -- instead, add your data file(s) or entire data folder to your `.gitignore` (you'll practice this in Discussion section this week).
 
 ## Rubric (specifications)
 
 You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part II:
 
+- [ ] create a GitHub repository named `lastName-eds240-assignment4`, which is where you'll be doing any / all work related to Assignment #4. Be sure to make your repository public, initialize your repository with a README, and add a `.gitignore` file.
 - [ ] link to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4
 - [ ] answer the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you *do not* need to complete the **optional** importing of data
 

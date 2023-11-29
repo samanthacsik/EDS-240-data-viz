@@ -293,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="description">Description</h2>
 <p>Much of your time as a data scientist will be spent looking at code written by others – maybe you’re trying to learn from and adapt someone else’s code for your own work, or perhaps you’ve been asked to conduct a code review for a colleague. Being able to look at and make sense of code that you did not write yourself is an invaluable skill and an important one to practice throughout your learning journey. Here, you’ll be asked to interpret and annotate <code>ggplot2</code> code written by someone else. This will likely require running code (both as a whole <em>and</em> line-by-line), as well as Googling and/or reading documentation.</p>
 <p><em>I recognize that there is (likely) <strong>a lot</strong> of new code presented here, and that we haven’t covered much at all yet in this course. This is intentionally an exercise is resourcefulness! By the end of this exercise, you should feel a bit more confident in your ability to interpret (and maybe even reuse!) code written by others.</em></p>
-<p><span class="teal-text"><strong>Annotate the following code</strong></span>, adapted from <a href="https://github.com/cnicault">Christophe Nicault’s</a> visualization titled, <strong><em>Evolution of deaths from indoor air pollution</em></strong> (<a href="https://github.com/cnicault/tidytuesday/blob/master/2022/2022-15-indoor_air_pollution/indoor_air_pollution.Rmd">original code</a>).:</p>
+<p><span class="teal-text"><strong>Annotate the following code</strong></span>, adapted from <a href="https://github.com/cnicault">Christophe Nicault’s</a> visualization titled, <strong><em>Evolution of deaths from indoor air pollution</em></strong> (<a href="https://github.com/cnicault/tidytuesday/blob/master/2022/2022-15-indoor_air_pollution/indoor_air_pollution.Rmd">original code</a>) – to enlarge image (in Chrome) <strong>right-click on image</strong> &gt; <strong>Open Image in New Tab</strong>:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -303,19 +303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>You can find metadata and additional information on the <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-04-12/readme.md#data-dictionary">rfordatascience/tidytuesday (2022-04-12) <code>readme.md</code></a>. <strong>Note:</strong> A select few lines of code have already been annotated for you.</p>
-<!-- ::: {.callout-note} -->
-<!-- ## Install the following packages (if you don't already have them) using `install.packages("package_name")`: -->
-<!-- - [`{tidytuesdayR}`](https://cran.r-project.org/web/packages/tidytuesdayR/index.html) -->
-<!-- - [`{tidyverse}`](https://cran.r-project.org/web/packages/tidyverse/index.html) -->
-<!-- - [`{patchwork}`](https://cran.r-project.org/web/packages/patchwork/index.html) -->
-<!-- - [`{showtext}`](https://cran.r-project.org/web/packages/showtext/index.html) -->
-<!-- - [`{sysfonts}`](https://cran.r-project.org/web/packages/sysfonts/index.html) -->
-<!-- - [`{countrycode}`](https://cran.r-project.org/web/packages/countrycode/index.html) -->
-<!-- - [`{glue}`](https://cran.r-project.org/web/packages/glue/index.html) -->
-<!-- - [`{scales}`](https://cran.r-project.org/web/packages/scales/index.html) -->
-<!-- - [`{ragg}`](https://cran.r-project.org/web/packages/ragg/index.html) -->
-<!-- ::: -->
+<p>You can find metadata and additional information about the data set on the <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-04-12/readme.md#data-dictionary">rfordatascience/tidytuesday (2022-04-12) <code>readme.md</code></a>. <strong>Note:</strong> A select few lines of code have already been annotated for you.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -342,10 +330,10 @@ Click here to expand the code
 </ul>
 <p><strong>Tips:</strong></p>
 <ul>
-<li>See lines 114 and 120 for examples of code annotations – aim to include this level of detail</li>
-<li>I love using the <a href="https://github.com/Hzhang-ouce/ARTofR"><code>{ARTofR}</code> package</a> to create titles, dividers, and block comments in my scripts and Qmd/Rmd files</li>
+<li>See lines 114 and 120 (among others) for examples of code annotations – aim to include this level of detail</li>
+<li>Writing clean annotations makes it easier for you and others to read them – I love using the <a href="https://github.com/Hzhang-ouce/ARTofR"><code>{ARTofR}</code> package</a> to create titles, dividers, and block comments in my scripts and Qmd/Rmd files. Read more about how to create different dividers using the <code>{ARTofR}</code> package on <a href="http://localhost:7166/clean-code-guide.html#annotating-code">this resource page</a> of the course website</li>
 <li>If you don’t immediately understand the purpose of a line/chunk of code, skip over it (temporarily) and continue working your way through the following code – it oftentimes becomes more evident given additional context</li>
-<li>Plots may look <em>super</em> squished in the Viewer – use the <strong>Zoom</strong> button to pop them open in a separate window</li>
+<li>Plots may look <em>super</em> squished in the RStudio Viewer pane – use the <strong>Zoom</strong> button to pop them open in a separate window</li>
 <li><strong>Keep in mind:</strong> While this is fairly complex ggplot code, remember that it’s constructed in layers – meaning you can run code line-by-line to see exactly how the plot is changing with each new layer. You may come across functions and arguments that you’re already familiar with (yay!), and of course, others that are totally new.</li>
 </ul>
 <div class="cell">
@@ -359,7 +347,7 @@ Click here to expand the code
 <span id="cb1-8"><a href="#cb1-8"></a><span class="fu">library</span>(showtext) <span class="co"># ANNOTATE (brief explanation of pkg) ----</span></span>
 <span id="cb1-9"><a href="#cb1-9"></a></span>
 <span id="cb1-10"><a href="#cb1-10"></a><span class="co">#......ANNOTATE (generally, what does this code block do?).......</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># ANNOTATE (explain differences between args, `name` &amp; `family`) ----</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># ANNOTATE (explain differences between arguments `name` &amp; `family`) ----</span></span>
 <span id="cb1-12"><a href="#cb1-12"></a><span class="fu">font_add_google</span>(<span class="at">name =</span> <span class="st">"Roboto"</span>, <span class="at">family =</span> <span class="st">"roboto"</span>)</span>
 <span id="cb1-13"><a href="#cb1-13"></a><span class="fu">font_add_google</span>(<span class="at">name =</span> <span class="st">"Roboto Condensed"</span>, <span class="at">family =</span> <span class="st">"roboto condensed"</span>)</span>
 <span id="cb1-14"><a href="#cb1-14"></a><span class="fu">font_add_google</span>(<span class="at">name =</span> <span class="st">"Oswald"</span>, <span class="at">family =</span> <span class="st">"oswald"</span>)</span>
@@ -660,11 +648,10 @@ Click here to expand the code
 </div>
 <p><span class="teal-text"><strong>Once complete, answer the following questions:</strong></span></p>
 <ul class="task-list">
-<li><input type="checkbox">Describe two elements of this plot that you find visually-pleasing / easy to understand / intuitive. Why? <span class="peach-text"><strong>(4-10 sentences)</strong></span></li>
-<li><input type="checkbox">Describe two elements of this plot that you feel could be better presented in a different way. Why? <span class="peach-text"><strong>(4-10 sentences)</strong></span></li>
-<li><input type="checkbox">Describe two new things that you learned by interpreting / annotating this code. These could be packages, functions, or even code organizational approaches that you hadn’t previously known about or considered. <span class="peach-text"><strong>(4-10 sentences)</strong></span></li>
+<li><input type="checkbox"><strong>1.</strong> Describe two elements of this plot that you find visually-pleasing / easy to understand / intuitive. Why? <span class="peach-text"><strong>(4-10 sentences)</strong></span></li>
+<li><input type="checkbox"><strong>2.</strong> Describe two elements of this plot that you feel could be better presented in a different way. Why? <span class="peach-text"><strong>(4-10 sentences)</strong></span></li>
+<li><input type="checkbox"><strong>3.</strong> Describe two new things that you learned by interpreting / annotating this code. These could be packages, functions, or even code organizational approaches that you hadn’t previously known about or considered. <span class="peach-text"><strong>(4-10 sentences)</strong></span></li>
 </ul>
-<p>TODO: ADD MORE QUESTIONS HERE</p>
 </section>
 <section id="rubric-specifications" class="level2">
 <h2 class="anchored" data-anchor-id="rubric-specifications">Rubric (specifications)</h2>
@@ -700,7 +687,7 @@ Click here to expand the code
 <ol type="1">
 <li><strong>a visualization for a general audience (i.e.&nbsp;without domain expertise)</strong> – this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), and/or may even blend both art and science</li>
 <li><strong>a visualization to be included in a paper, technical documentation, or report</strong> – this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.</li>
-<li><strong>a visualization that you could include in presentation</strong> – you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you’re animating pieces of your visualization onto a slide)</li>
+<li><strong>a visualization that you could include in a presentation</strong> – you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you’re animating pieces of your visualization onto a slide)</li>
 </ol>
 <p><span class="teal-text"><strong>This week, you’ll focus on finding data that interest you and begin brainstorming some questions that you might explore / answer using those data.</strong></span></p>
 <p>Your data set(s) should – to some degree – have an environmental focus. It may be related to a past project, or even your current Capstone or GP. It may also be a completely new data set(s), unrelated to anything you’re currently working on. Some places to check out if you’re looking for data (you are not limited to just these data sources):</p>
@@ -710,21 +697,27 @@ Click here to expand the code
 <li><strong><a href="https://www.dataone.org/">DataOne</a></strong> – a repository of data repositories! Search across all member repositories (including repositories like <a href="https://portal.edirepository.org/nis/advancedSearch.jsp">EDI Data Portal</a>, <a href="https://arcticdata.io/catalog">Arctic Data Center</a>, <a href="https://knb.ecoinformatics.org/">KNB</a>, etc.) for environmental data (along with curated metadata records)</li>
 <li><strong><a href="https://www.kaggle.com/datasets">Kaggle Datasets</a></strong> - Kaggle is an online community for data scientists and machine learning practitioners to find and publish data, as well as enter competitions to solve data science challenges</li>
 </ul>
-<p><em><strong>Note:</strong> While we will not be working with spatial data models or building maps in EDS 240, you are welcome to use spatial data for this assignment if you are comfortable and excited to do so. We will not be able to offer as much support on the technical implementation of building maps-based visualizations, though the fundamental concepts of data communication and design theory that we’ll be learning throughout this course will still apply. Relying on resources and knowledge from <a href="https://ryoliver.github.io/EDS_223_spatial_analysis/">EDS 223: Geospatial Analysis and Remote Sensing</a> will be critical for anyone pursuing this option.</em></p>
+
+<!-- ***Note:** While we will not be working with spatial data models or building maps in EDS 240, you are welcome to use spatial data for this assignment if you are comfortable and excited to do so. We will not be able to offer as much support on the technical implementation of building maps-based visualizations, though the fundamental concepts of data communication and design theory that we'll be learning throughout this course will still apply. Relying on resources and knowledge from [EDS 223: Geospatial Analysis and Remote Sensing](https://ryoliver.github.io/EDS_223_spatial_analysis/) will be critical for anyone pursuing this option.* -->
 <p><span class="teal-text"><strong>Once you’ve found your data set(s), answer the following questions:</strong></span></p>
 <ul class="task-list">
-<li><input type="checkbox">What is your data set(s) of? Be sure to include how it is related to the environment, if it’s not immediately clear from your explanation. <span class="peach-text"><strong>(&lt;=4 sentences)</strong></span></li>
-<li><input type="checkbox">What steps are involved in downloading or accessing the data (e.g.&nbsp;“I can download using a button via this online portal,” “There’s an R package for scraping the data,” “I need to use an API to scrape the data,” etc.)? <span class="peach-text"><strong>(1-2 sentences)</strong></span></li>
-<li><input type="checkbox">What question(s) do you want to answer using these data? <span class="peach-text"><strong>(&lt;=4 sentences)</strong></span></li>
-<li><input type="checkbox">Will you need to combine multiple data sets to successfully answer your question(s)? If so, have you found all the necessary data? Do you have a way to combine it? <span class="peach-text"><strong>(&lt;=4 sentences)</strong></span></li>
-<li><input type="checkbox"><strong>Optional:</strong> Import your data into R! (this will be a part of the next homework assignment) <strong>IMPORTANT:</strong> If your data files are large (&gt;2GB) DO NOT push your data to GitHub. We’ll talk more about this during the next assignment.</li>
+<li><input type="checkbox"><strong>1.</strong> Describe your data set(s). Be sure to address the following <span class="peach-text"><strong>(&lt;=4 sentences)</strong></span>
+<ul class="task-list">
+<li><input type="checkbox"><strong>1a.</strong> Where did you find these data?</li>
+<li><input type="checkbox"><strong>1b.</strong> What variables does it contain? Is there sufficient metadata for understanding what those variables are?</li>
+<li><input type="checkbox"><strong>1c.</strong> Describe how these data related to the environment</li>
+</ul></li>
+<li><input type="checkbox"><strong>2.</strong> What steps are involved in downloading or accessing the data (e.g.&nbsp;“I can download using a button via this online portal,” “There’s an R package for scraping the data,” “I need to use an API to scrape the data,” etc.)? <span class="peach-text"><strong>(1-2 sentences)</strong></span></li>
+<li><input type="checkbox"><strong>3.</strong> What question(s) do you want to answer using these data (it’s okay if these questions evolve over time)? <span class="peach-text"><strong>(&lt;=4 sentences)</strong></span></li>
+<li><input type="checkbox"><strong>4.</strong> Will you need to combine multiple data sets to successfully answer your question(s)? If so, have you found all the necessary data? Do you have a way to combine it? <span class="peach-text"><strong>(&lt;=4 sentences)</strong></span></li>
+<li><input type="checkbox"><strong>Optional:</strong> Import your data into R! (this will be a part of the next homework assignment) <strong>IMPORTANT:</strong> If your data files are large (&gt;2GB) DO NOT push your data to GitHub – instead, add your data file(s) or entire data folder to your <code>.gitignore</code> (you’ll practice this in Discussion section this week).</li>
 </ul>
-<p>TODO: ADD MORE QUESTIONS HERE</p>
 </section>
 <section id="rubric-specifications-1" class="level2">
 <h2 class="anchored" data-anchor-id="rubric-specifications-1">Rubric (specifications)</h2>
 <p>You must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part II:</p>
 <ul class="task-list">
+<li><input type="checkbox">create a GitHub repository named <code>lastName-eds240-assignment4</code>, which is where you’ll be doing any / all work related to Assignment #4. Be sure to make your repository public, initialize your repository with a README, and add a <code>.gitignore</code> file.</li>
 <li><input type="checkbox">link to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4</li>
 <li><input type="checkbox">answer the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you <em>do not</em> need to complete the <strong>optional</strong> importing of data</li>
 </ul>

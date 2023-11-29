@@ -50,6 +50,8 @@ We'll be coding together quite a bit throughout this course. To stay organized, 
 8. Click **Create Project**
 :::
 
+<br>
+
 ## Lecture Materials
 
 Week 1 instruction is broken down into three lessons:
@@ -82,6 +84,8 @@ Week 1 instruction is broken down into three lessons:
 
 :::
 
+<br>
+
 ## Discussion Materials
 
 <!-- **Tidy data** is a predictable way of organizing data where: -->
@@ -93,7 +97,7 @@ Week 1 instruction is broken down into three lessons:
 <!-- See [Chapter 5, R for Data Science (2e)](https://r4ds.hadley.nz/data-tidy.html), by Hadley Wickham, Mine Çetinkaya-Rundel & Garrett Grolemund -->
 
 <!-- Is is **not** language-specific or tool-specific, it is not an "R thing", and it is not the `{tidyverse}` *"It is a way or organizing data that will make life easier for people who work with data."* (quote from Allison Horst). Because it makes life so much easier, tidying data is a critical first step in building any data visualization using grammar of graphics. In discussion section, we'll practice tidying a very untidy data set on fracking.  -->
-By now, you may have heard/read something like, "Data scientists spend 80% of their time preparing their data for analysis and/or visualization." And while that may not be totally accurate for all data scientists or all projects, you *will* spend lots of time wrestling with data. You'll spend this week's discussion cleaning up a messy data set on hydraulic fracturing aka [fracking](https://en.wikipedia.org/wiki/Fracking).
+By now, you may have heard/read something like, "Data scientists spend 80% of their time preparing their data for analysis and/or visualization." And while that may not be totally accurate for all data scientists or all projects, you *will* spend lots of time wrestling with data. [**You'll spend this week's discussion cleaning up a messy data set on hydraulic fracturing aka [fracking](https://en.wikipedia.org/wiki/Fracking).**]{.teal-text}
 
 This week's data comes courtesy of Jeremy Singer-Vine's [Data is Plural](https://www.data-is-plural.com/) weekly newsletter of useful/curious data sets (the [2023.09.27 edition](https://www.data-is-plural.com/archive/2023-09-27-edition/)). Singer-Vine's description:
 
@@ -137,12 +141,14 @@ knitr::include_graphics("../images/gitignore.gif")
 An example repo with three folders: `week1/`, `week2/`, and `other-stuff/`. Each of those folders has a subfolder named `data/`, and each `data/` folder contains a `.csv` file. Adding the line, `/week*/data/` to the `.gitignore` tells Git to ignore folders (and their contents) named `data/` that are within a parent folder named `week__` (the `*` acts as a wildcard). If we wanted to ignore all three `data/` folders (including `other-stuff/data/`), we can instead include `/*/data/` to our `.gitignore`.
 :::
 
-*Complete code will be posted here after both discussion sections are finished.*
+<!-- *Complete code will be posted here after both discussion sections are finished.* -->
 
-<!-- ::: {.callout-note icon=false collapse=true} -->
-<!-- ## Code covered in week 1 discussion -->
-<!-- {{< include discussion/week1/tidy-fracking.qmd >}} -->
-<!-- ::: -->
+::: {.callout-note icon=false collapse=true}
+## Complete code for week 1 discussion (fracking)
+{{< include discussion/week1/tidy-fracking.qmd >}}
+:::
+
+<br>
 
 ## Assignment Reminders
 

@@ -511,6 +511,28 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm))
 
 ---
 
+## {#piping-in data-menu-title="Piping into a ggplot"} 
+
+[{{< fa chart-line title="a line chart" >}} Piping into a ggplot]{.slide-title}
+
+<hr>
+
+You can also pipe (using `%>%` or `|>`) directly from a data set into a `ggplot()` call (we'll use more of this in future lessons). When doing so, omit the `data` argument from `ggplot()`:
+
+```{r}
+#| eval: true
+#| echo: true
+
+penguins |> 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm))
+```
+
+::: footer
+[**data**]{.teal-text} | geometric object | statistical transformation | position adjustment | coordinate system | facet 
+:::
+
+---
+
 ## {#geom data-menu-title="Define a geom"} 
 
 [{{< fa chart-line title="a line chart" >}} Define a geom to represent data]{.slide-title}
