@@ -11,8 +11,8 @@ In this assignment, you’ll reflect on your learning throughout this class. Rev
 
 - [ ] Since your mid-quarter self-evaluation, have you improved any of your existing skills? Have you learned new ones?
 - [ ] Have you accomplished your learning goals for this quarter (that you set at the beginning of the quarter)? If you did, how did you do it?
-- [ ] Now that you’ve finished up course material, what are you proudest of regarding what you’ve learned or accomplished in the course overall?
-- [ ] What are some “transferable skills” that you developed in this course? How might you apply them to other courses/deliverables within the MEDS program or jobs in the future?
+- [ ] What are you proudest of accomplishing in this course? 
+- [ ] What are some transferable skills that you developed in this course? How might you apply them to other courses / deliverables within the MEDS program or jobs in the future?
 - [ ] What is one thing that you really liked about this course, and why? What is one thing you think could be improved about this course, and how?
 - [ ] Is there anything else you’d like the instructors to know about your experience in the course?
 
@@ -20,6 +20,8 @@ In this assignment, you’ll reflect on your learning throughout this class. Rev
 ## Rubric (specifications)
 
 You must complete the following, as detailed below, to receive a "Satisfactory" mark for this End-of-course reflection:
+
+**Complete the following steps in your GitHub Classroom repo (eds240-SR3/SR3-endcourse-reflection.qmd):**
 
 - [ ] include your preferred name, and if you feel comfortable, your preferred pronouns in the `title` of the `SR3-endcourse-reflection.qmd` YAML 
 - [ ] be ~300-400 words

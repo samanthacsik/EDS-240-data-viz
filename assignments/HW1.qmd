@@ -391,6 +391,8 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 **Complete the following steps in your GitHub Classroom repo (`eds240-HW1/Part1.qmd`):**
 
 - [ ] update each comment line in the code that reads, `ANNOTATE`, with a *brief* description, written in your own words (see lines 114 & 120 for example annotations; there are other lines that have been already annotated for you as well, i.e. lines 152 - 173, 295  - 305 -- you do not need to re-write these)
+- [ ] leave the code chunk options set to `eval: false` and `echo: true` (since you won't be adding any new code, just annotations, we don't need to see that the code successfully runs)
+- [ ] we should be able to render `Part1.qmd` without errors 
 - [ ] answer the three concluding questions adhering to the length requirements specified at the end of each question prompt
 <!-- - [ ] HW #1 Part I must be submitted via GitHub classrooms. -->
 
@@ -459,6 +461,7 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 
 - [ ] link to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4
 - [ ] answer all parts of the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you *do not* need to complete the **optional** importing of data -- if you *do* want to import your data, be sure to do so in your `lastName-eds240-HW4` repository
+- [ ] we should be able to render `Part2.qmd` without errors 
 
 <br>
 

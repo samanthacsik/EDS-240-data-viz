@@ -13,16 +13,16 @@ Because everyone is participating under unique circumstances, I want to learn ab
 
 1. [**Some questions about school and life:**]{.teal-text}  
 
-    - [ ] Where are you coming from (e.g. “I just finished my undergraduate degree”, “I’ve been working in industry X for Y years”)
+    - [ ] Where are you coming from (e.g. “I recently finished my undergraduate degree”, “I’ve been working in industry X for Y years”)
     - [ ] What do you hope to get out of this class?
     - [ ] If you have a particular career goal in mind, how does this course apply to your future career, if at all? 
     - [ ] What do you wish your instructors knew about you, but don’t?
 
 2. [**Some questions about the way you like to learn:**]{.teal-text}   
 
-    - [ ] What kinds of assignments, skills, or behaviors have you felt most comfortable with/enjoy from past classes? Why do you enjoy them?
+    - [ ] What kinds of assignments, skills, or behaviors have you felt most comfortable with / enjoy from past classes? Why do you enjoy them?
     - [ ] How confident do you feel in your data visualization skills? Why?
-    - [ ] How confident do you feel in your coding skills (primarily R, but feel free to elaborate on any of the languages you’ve used throughout MEDS)? Why?
+    - [ ] How confident do you feel in your coding skills (primarily R, but feel free to elaborate on any of the languages you’ve used)? Why?
     - [ ] What have you struggled with in the past in other MEDS courses? Why?
     - [ ] Of the courses you’re taking this quarter, which do you expect to be the most challenging? Most demanding?
     - [ ] What responsibilities do you have outside of school, and how do you want to balance them?
@@ -38,7 +38,9 @@ Because everyone is participating under unique circumstances, I want to learn ab
 
 You must complete the following, as detailed below, to receive a "Satisfactory" mark for this Pre-course reflection:
 
-  - [ ] include your preferred name, and if you feel comfortable, your preferred pronouns in the `title` of the `SR1-precourse-reflection.qmd` YAML 
-  - [ ] address all points in parts 1, 2, and 3 above in at least 2 sentences each
+**Complete the following steps in your GitHub Classroom repo (eds240-SR1/SR1-precourse-reflection.qmd):**
+
+  - [ ] include your preferred name, and if you feel comfortable, your preferred pronouns in the `author` field of the `SR1-precourse-reflection.qmd` YAML 
+  - [ ] address all parts of each question above in [at least 2 sentences each]{.peach-text}
   - [ ] push `SR1-precourse-reflection.qmd` to GitHub using GitHub Classrooms by 11:59pm PT on Sat 01/13/2024
 
