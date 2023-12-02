@@ -1,0 +1,194 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../../../meds-slides-styles.scss
+editor_options: 
+  chunk_output_type: console
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#047C91"} 
+
+[EDS 240: Discussion 2]{.custom-title}
+
+[*Alt Text*]{.custom-subtitle}
+
+<hr class="hr-dark-blue">
+
+[Week 2 | January 17^th^, 2024]{.custom-subtitle3}
+
+---
+
+## {#what-is-alt-text data-menu-title="What is alt text?"}
+
+[What is alt text?]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+[[WebAIM](https://webaim.org/) defines alt text as:]{.body-text-m} 
+
+<br>
+
+> ...a textual substitute for non-text content in web pages.
+
+<br>
+
+. . .
+
+**In other words, alt text is a written description that conveys the meaning / messaging of visual elements (e.g. photos / images, data visualizations, media).**
+
+---
+
+## {#why-alt-text data-menu-title="Why alt text?"}
+
+[Alt text serves many different communities and functions]{.slide-title3}
+
+<hr>
+
+[**Just a few examples:**]{.body-text-m .teal-text}
+
+::: incremental
+1. Alt text is read aloud by assistive technologies, like screen readers, **helping users with visual or certain cognitive disabilities** to perceive the content and function of visual elements on web pages
+
+2. Alt text will appear in place of visual elements for those who are using a **slow internet connection**, or who have limited or expensive bandwidth
+
+3. Alt text may serve those with **"situational limitations,"** such as viewing a computer screen in bright sunlight
+
+4. Alt text provides more **accurate image descriptions / context to search engine crawlers**, which improves their assessment of a page's purpose and content
+:::
+
+. . .
+
+[**Because of this, it's important that we include good alt text with any data visualizations we publish online!**]{.teal-text}
+
+---
+
+## {#alt-vs-cap data-menu-title="Alt vs. caption"}
+
+[Alt text vs. figure caption]{.slide-title}
+
+<hr>
+
+- figure captions are rendered on the screen, while alt text is not
+
+---
+
+## {#writing-alt-text data-menu-title="Writing alt text"}
+
+[Writing alt text]{.slide-title}
+
+<hr>
+
+A good rule of thumb for writing alt text for data visualizations is **alt=“[Chart type]{style="background-color:#F9C9C8"} of [type of data]{style="background-color:#FDC790"} where [reason for including chart]{style="background-color:#D1EAEE"}** ([this post](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81#:~:text=Alt%20text%20) by [Amy Cesal](https://www.amycesal.com/) is a great primer).
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature"
+knitr::include_graphics("images/hawkings-labelled-stripes.png")
+```
+
+<br>
+
+Alt text for the image above may look something like this: **alt="[Colored stripes]{style="background-color:#F9C9C8"} of [chronologically ordered temperatures]{style="background-color:#FDC790"} where [they increase in red to show the warming global temperature]{style="background-color:#D1EAEE"}"**
+
+---
+
+## {#writing-alt-text2 data-menu-title="Writing alt text (another example)"}
+
+[Another example]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "A split bars chart of different types of milk’s (dairy and plant-based) environmental impact, where cow’s milk scores significantly worst in carbon emissions, land use, and water use than the other milk alternatives. Cow’s milk produces two times more carbon emissions, uses nine times more land, and twice the water that rice milk uses. Rice milk is the second most contaminating type of milk in terms of carbon emissions."
+knitr::include_graphics("images/haake-milk.png")
+```
+
+<br>
+
+[**alt="[A split bars chart]{style="background-color:#F9C9C8"} of [different types of milk's (dairy and plant-based) environmental impact]{style="background-color:#FDC790"}, where [cow's milk scores significantly worst in carbon emissions, land use, and water use than the other milk alternatives. Cow's milk produces two times more carbon emissions, uses nine times more land, and twice the water that rice milk uses. Rice milk is the second most contaminating type of milk in terms of carbon emissions.]{style="background-color:#D1EAEE"}"**]{.body-text-s}
+
+---
+
+## {#practice1 data-menu-title="Practice 1"}
+
+[Practice: ---]{.slide-title}
+
+<hr>
+
+https://visme.co/blog/climate-change-facts/
+
+---
+
+## {#practice2 data-menu-title="Practice 2"}
+
+[Practice: ---]{.slide-title}
+
+<hr>
+
+https://www.maplecroft.com/insights/analysis/84-of-worlds-fastest-growing-cities-face-extreme-climate-change-risks/
+
+
+---
+
+## {#adding-alt-text data-menu-title="Adding alt text"}
+
+[Adding alt text]{.slide-title}
+
+<hr>
+
+embedded ggplot code:
+
+```{html}
+#| eval: false
+#| echo: true
+#| fig-cap: "Figure caption goes here"
+#| fig-alt: "Alt text goes here"
+ggplot(...) +
+  geom_*()
+```
+
+using markdown syntax:
+
+```{html}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+![Figure caption goes here](file/path/to/image){fig-alt="Alt text goes here"}
+```
+
+HTML
+
+```{html}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+<img src="file/path/to/image" alt="Alt text goes here">
+```
+
+---
+## {#checking-alt-text data-menu-title="Checking your alt text"}
+
+[Check to make sure your alt text was applied]{.slide-title2}
+
+<hr>
+
+
+
+
