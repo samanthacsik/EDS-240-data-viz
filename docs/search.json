@@ -1873,14 +1873,14 @@
     "href": "course-materials/discussion/week2/week2-alt-text.html#what-is-alt-text",
     "title": "EDS 240",
     "section": "",
-    "text": "What is alt text?\n\n \nWebAIM defines alt text as:\n\n\n…a textual substitute for non-text content in web pages.\n\n\n\nIn other words, alt text is a written description that conveys the meaning / messaging of visual elements (e.g. photos / images, data visualizations, media)."
+    "text": "What is alt text?\n\n \nWebAIM defines alternative text, aka alt text, as:\n\n\n…a textual substitute for non-text content in web pages.\n\n\n\nIn other words, alt text is a written description that conveys the meaning / messaging of visual elements (e.g. photos / images, media, data visualizations)."
   },
   {
     "objectID": "course-materials/discussion/week2/week2-alt-text.html#why-alt-text",
     "href": "course-materials/discussion/week2/week2-alt-text.html#why-alt-text",
     "title": "EDS 240",
     "section": "",
-    "text": "Alt text serves many different communities and functions\n\nJust a few examples:\n\n\nAlt text is read aloud by assistive technologies, like screen readers, helping users with visual or certain cognitive disabilities to perceive the content and function of visual elements on web pages\nAlt text will appear in place of visual elements for those who are using a slow internet connection, or who have limited or expensive bandwidth\nAlt text may serve those with “situational limitations,” such as viewing a computer screen in bright sunlight\nAlt text provides more accurate image descriptions / context to search engine crawlers, which improves their assessment of a page’s purpose and content\n\n\n\nBecause of this, it’s important that we include good alt text with any data visualizations we publish online!"
+    "text": "Alt text serves many different communities and functions\n\n\nJust a few examples:\n\n\nAlt text is read aloud by assistive technologies, like screen readers, helping users with visual or certain cognitive disabilities to perceive the content and function of visual elements on web pages\nAlt text will appear in place of visual elements for those who are using a slow internet connection, or who have limited or expensive bandwidth\nAlt text may serve those with “situational limitations,” such as viewing a computer screen in bright sunlight\nAlt text provides more accurate image descriptions / context to search engine crawlers, which improves their assessment of a page’s purpose and content\n\n\n\nBecause of this, it’s important that we include good alt text with any data visualizations we publish online!"
   },
   {
     "objectID": "course-materials/discussion/week2/week2-alt-text.html#alt-vs-cap",
@@ -1894,35 +1894,42 @@
     "href": "course-materials/discussion/week2/week2-alt-text.html#writing-alt-text",
     "title": "EDS 240",
     "section": "",
-    "text": "Writing alt text\n\nA good rule of thumb for writing alt text for data visualizations is alt=“Chart type of type of data where reason for including chart (this post by Amy Cesal is a great primer).\n\n\n\nAlt text for the image above may look something like this: alt=“Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature”"
+    "text": "A formula for writing alt text\n\nData viz designer and instructor, Amy Cesal, suggests this rule of thumb for writing alt text for data visualizations: alt=“Chart type of type of data where reason for including chart.\n\n\n\n\n\n\n\n\n\n\n\nalt=“Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature”\n\nExample from Amy Cesal’s article, Writing Alt Text for Data Visualization"
   },
   {
     "objectID": "course-materials/discussion/week2/week2-alt-text.html#writing-alt-text2",
     "href": "course-materials/discussion/week2/week2-alt-text.html#writing-alt-text2",
     "title": "EDS 240",
     "section": "",
-    "text": "Another example\n\n\n\nalt=“A split bars chart of different types of milk’s (dairy and plant-based) environmental impact, where cow’s milk scores significantly worst in carbon emissions, land use, and water use than the other milk alternatives. Cow’s milk produces two times more carbon emissions, uses nine times more land, and twice the water that rice milk uses. Rice milk is the second most contaminating type of milk in terms of carbon emissions.”"
+    "text": "Another example\n\n\n\nalt=“A split bars chart of different types of milk’s (dairy and plant-based) environmental impact, where cow’s milk scores significantly worst in carbon emissions, land use, and water use than the other milk alternatives. Cow’s milk produces two times more carbon emissions, uses nine times more land, and twice the water that rice milk uses. Rice milk is the second most contaminating type of milk in terms of carbon emissions.”\n\nExample from Datawrapper"
+  },
+  {
+    "objectID": "course-materials/discussion/week2/week2-alt-text.html#tips",
+    "href": "course-materials/discussion/week2/week2-alt-text.html#tips",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Additional tips for writing alt text for data visualizations\n\n\nIn addition to the formula presented on the last couple slides, consider the following tips:\n\n\n\nwrite in sentence case, but keep it short (alt text is read linearly by screen readers, which means that people can’t go back a word if they missed something)\ncarefully consider the use of special characters (this article details “safe” vs. “unread” characters)\nlink to the data or source (not in your alt text, but somewhere in the surrounding text)"
   },
   {
     "objectID": "course-materials/discussion/week2/week2-alt-text.html#practice1",
     "href": "course-materials/discussion/week2/week2-alt-text.html#practice1",
     "title": "EDS 240",
     "section": "",
-    "text": "Practice: —\n\nhttps://visme.co/blog/climate-change-facts/"
+    "text": "Practice writing alt text:\n\n\n\nImage source: Verisk Maplecroft | To enlarge: right click on image &gt; Open Image in New Tab"
   },
   {
     "objectID": "course-materials/discussion/week2/week2-alt-text.html#practice2",
     "href": "course-materials/discussion/week2/week2-alt-text.html#practice2",
     "title": "EDS 240",
     "section": "",
-    "text": "Practice: —\n\nhttps://www.maplecroft.com/insights/analysis/84-of-worlds-fastest-growing-cities-face-extreme-climate-change-risks/"
+    "text": "Practice writing alt text:\n\n\n\nImage source: Milken Institute School of Public Health | To enlarge: right click on image &gt; Open Image in New Tab"
   },
   {
     "objectID": "course-materials/discussion/week2/week2-alt-text.html#adding-alt-text",
     "href": "course-materials/discussion/week2/week2-alt-text.html#adding-alt-text",
     "title": "EDS 240",
     "section": "",
-    "text": "Adding alt text\n\nembedded ggplot code:\n\nggplot(...) +\n  geom_*()\n\nusing markdown syntax:\n\n![Figure caption goes here](file/path/to/image){fig-alt=\"Alt text goes here\"}\n\nHTML\n\n&lt;img src=\"file/path/to/image\" alt=\"Alt text goes here\"&gt;"
+    "text": "Adding alt text\n\nInclude alt text with your data visualizations, no matter how you choose to embed them:\n\nAdd the fig-alt code chunk option when rendering ggplot (or other data visualization) code within a .qmd file:\n\n#| eval: true\n#| echo: false\n#| fig-cap: \"Figure caption text goes here\"\n#| fig-alt: \"Alt text goes here\"\nggplot(...) +\n  geom_*()\n\n\nIf you’ve save your data visualization as an image file, you can embed it in a .qmd file using either markdown or html syntax:\n\n\n\n\nMarkdown\n\n\n![Figure caption goes here](file/path/to/image){fig-alt=\"Alt text goes here\"}\n\n\n\nHTML\n\n\n&lt;img src=\"file/path/to/image\" alt=\"Alt text goes here\"&gt;"
   },
   {
     "objectID": "course-materials/discussion/week2/week2-alt-text.html#checking-alt-text",

@@ -32,7 +32,7 @@ editor_options:
 <br>
 <br>
 
-[[WebAIM](https://webaim.org/) defines alt text as:]{.body-text-m} 
+[[WebAIM](https://webaim.org/) defines alternative text, aka alt text, as:]{.body-text-m} 
 
 <br>
 
@@ -42,7 +42,7 @@ editor_options:
 
 . . .
 
-**In other words, alt text is a written description that conveys the meaning / messaging of visual elements (e.g. photos / images, data visualizations, media).**
+**In other words, alt text is a written description that conveys the meaning / messaging of visual elements (e.g. photos / images, media, *data visualizations*).**
 
 ---
 
@@ -51,6 +51,8 @@ editor_options:
 [Alt text serves many different communities and functions]{.slide-title3}
 
 <hr>
+
+<br>
 
 [**Just a few examples:**]{.body-text-m .teal-text}
 
@@ -82,26 +84,30 @@ editor_options:
 
 ## {#writing-alt-text data-menu-title="Writing alt text"}
 
-[Writing alt text]{.slide-title}
+[A formula for writing alt text]{.slide-title}
 
 <hr>
 
-A good rule of thumb for writing alt text for data visualizations is **alt=“[Chart type]{style="background-color:#F9C9C8"} of [type of data]{style="background-color:#FDC790"} where [reason for including chart]{style="background-color:#D1EAEE"}** ([this post](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81#:~:text=Alt%20text%20) by [Amy Cesal](https://www.amycesal.com/) is a great primer).
+Data viz designer and instructor, [Amy Cesal](https://www.amycesal.com/), suggests this rule of thumb for writing alt text for data visualizations: **alt=“[Chart type]{style="background-color:#F9C9C8"} of [type of data]{style="background-color:#FDC790"} where [reason for including chart]{style="background-color:#D1EAEE"}**.
 
 <br>
+
+. . .
 
 ```{r}
 #| eval: true
 #| echo: false
 #| fig-align: "center"
-#| out-width: "100%"
+#| out-width: "50%"
 #| fig-alt: "Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature"
 knitr::include_graphics("images/hawkings-labelled-stripes.png")
 ```
 
-<br>
+[**alt="[Colored stripes]{style="background-color:#F9C9C8"} of [chronologically ordered temperatures]{style="background-color:#FDC790"} where [they increase in red to show the warming global temperature]{style="background-color:#D1EAEE"}"**]{.body-text-s}
 
-Alt text for the image above may look something like this: **alt="[Colored stripes]{style="background-color:#F9C9C8"} of [chronologically ordered temperatures]{style="background-color:#FDC790"} where [they increase in red to show the warming global temperature]{style="background-color:#D1EAEE"}"**
+::: footer
+[Example from [Amy Cesal](https://www.amycesal.com/)'s article, [Writing Alt Text for Data Visualization](https://nightingaledvs.com/writing-alt-text-for-data-visualization/)]{.gray-text}
+:::
 
 ---
 
@@ -115,7 +121,7 @@ Alt text for the image above may look something like this: **alt="[Colored strip
 #| eval: true
 #| echo: false
 #| fig-align: "center"
-#| out-width: "100%"
+#| out-width: "10%"
 #| fig-alt: "A split bars chart of different types of milk’s (dairy and plant-based) environmental impact, where cow’s milk scores significantly worst in carbon emissions, land use, and water use than the other milk alternatives. Cow’s milk produces two times more carbon emissions, uses nine times more land, and twice the water that rice milk uses. Rice milk is the second most contaminating type of milk in terms of carbon emissions."
 knitr::include_graphics("images/haake-milk.png")
 ```
@@ -124,26 +130,69 @@ knitr::include_graphics("images/haake-milk.png")
 
 [**alt="[A split bars chart]{style="background-color:#F9C9C8"} of [different types of milk's (dairy and plant-based) environmental impact]{style="background-color:#FDC790"}, where [cow's milk scores significantly worst in carbon emissions, land use, and water use than the other milk alternatives. Cow's milk produces two times more carbon emissions, uses nine times more land, and twice the water that rice milk uses. Rice milk is the second most contaminating type of milk in terms of carbon emissions.]{style="background-color:#D1EAEE"}"**]{.body-text-s}
 
+::: footer
+[Example from [Datawrapper](https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization)]{.gray-text}
+:::
+
+---
+
+## {#tips data-menu-title="Tips"}
+
+[Additional tips for writing alt text for data visualizations]{.slide-title}
+
+<hr>
+
+<br>
+
+In addition to the formula presented on the last couple slides, consider the following tips: 
+
+<br>
+
+::: incremental
+- **write in sentence case, but keep it short** (alt text is read linearly by screen readers, which means that people can’t go back a word if they missed something)
+- **carefully consider the use of special characters** ([this article](https://www.elevenways.be/en/articles/screenreaders-special-characters) details "safe" vs. "unread" characters)
+- **link to the data or source** (not in your alt text, but somewhere in the surrounding text)
+:::
+
 ---
 
 ## {#practice1 data-menu-title="Practice 1"}
 
-[Practice: ---]{.slide-title}
+[Practice writing alt text:]{.slide-title}
 
 <hr>
 
-https://visme.co/blog/climate-change-facts/
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/verisk-maplecroft-climate-change.png")
+```
+
+::: footer
+Image source: [Verisk Maplecroft](https://www.maplecroft.com/insights/analysis/84-of-worlds-fastest-growing-cities-face-extreme-climate-change-risks/) | To enlarge: **right click on image** > **Open Image in New Tab**
+:::
 
 ---
 
 ## {#practice2 data-menu-title="Practice 2"}
 
-[Practice: ---]{.slide-title}
+[Practice writing alt text:]{.slide-title}
 
 <hr>
 
-https://www.maplecroft.com/insights/analysis/84-of-worlds-fastest-growing-cities-face-extreme-climate-change-risks/
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/co2-emissions.png")
+```
 
+::: footer
+Image source: [Milken Institute School of Public Health](https://onlinepublichealth.gwu.edu/resources/climate-change-emissions-data/) | To enlarge: **right click on image** > **Open Image in New Tab**
+:::
 
 ---
 
@@ -153,34 +202,50 @@ https://www.maplecroft.com/insights/analysis/84-of-worlds-fastest-growing-cities
 
 <hr>
 
-embedded ggplot code:
+Include alt text with your data visualizations, no matter how you choose to embed them:
 
-```{html}
-#| eval: false
-#| echo: true
-#| fig-cap: "Figure caption goes here"
+1. Add the `fig-alt` code chunk option when rendering ggplot (or other data visualization) code within a `.qmd` file:
+
+```{{r}}
+#| eval: true
+#| echo: false
+#| fig-cap: "Figure caption text goes here"
 #| fig-alt: "Alt text goes here"
 ggplot(...) +
   geom_*()
 ```
 
-using markdown syntax:
+<br>
 
+2. If you've save your data visualization as an image file, you can embed it in a `.qmd` file using either **markdown** or **html** syntax:
+
+:::: columns
+
+::: {.column width="50%"}
+::: {.center-text .gray-text}
+**Markdown**
+:::
 ```{html}
 #| eval: false
 #| echo: true
 #| code-line-numbers: false
 ![Figure caption goes here](file/path/to/image){fig-alt="Alt text goes here"}
 ```
+:::
 
-HTML
-
+::: {.column width="50%"}
+::: {.center-text .gray-text}
+**HTML**
+:::
 ```{html}
 #| eval: false
 #| echo: true
 #| code-line-numbers: false
 <img src="file/path/to/image" alt="Alt text goes here">
 ```
+:::
+
+::::
 
 ---
 ## {#checking-alt-text data-menu-title="Checking your alt text"}
