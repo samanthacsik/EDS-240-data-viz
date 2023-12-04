@@ -431,14 +431,6 @@
 <p><span class="teal-text"><strong>Because of this, it’s important that we include good alt text with any data visualizations we publish online!</strong></span></p>
 </div>
 </section>
-<section id="alt-vs-cap" class="slide level2" data-menu-title="Alt vs. caption">
-<h2></h2>
-<p><span class="slide-title">Alt text vs.&nbsp;figure caption</span></p>
-<hr>
-<ul>
-<li>figure captions are rendered on the screen, while alt text is not</li>
-</ul>
-</section>
 <section id="writing-alt-text" class="slide level2" data-menu-title="Writing alt text">
 <h2></h2>
 <p><span class="slide-title">A formula for writing alt text</span></p>
@@ -450,7 +442,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/hawkings-labelled-stripes.png" style="width:50.0%" alt="Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature"></p>
+<p><img data-src="images/hawkins-warming-stripes.png" style="width:50.0%" alt="Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature"></p>
 </figure>
 </div>
 </div>
@@ -472,6 +464,33 @@
 <p><span class="gray-text">Example from <a href="https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization">Datawrapper</a></span></p>
 </div>
 </section>
+<section id="alt-vs-cap" class="slide level2" data-menu-title="Alt vs. caption">
+<h2></h2>
+<p><span class="slide-title">Include <em>both</em> a figure caption &amp; alt text</span></p>
+<hr>
+<p><br></p>
+<p>A <span class="teal-text"><strong>figure caption</strong></span> is text that is displayed on the screen (typically beneath the data visualization it’s associated with) and is used to provide additional information and context.</p>
+<p><span class="teal-text"><strong>Alt text</strong></span> is <em>not</em> rendered on screen, but is identified and read aloud by screen readers. It’s used to describe the main takeaway(s) of a data visualization.</p>
+<div class="fragment">
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hawkins-warming-stripes.png" style="width:80.0%" alt="Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><span class="teal-text"><strong>Figure caption:</strong></span> “Warming Stripes”, by Ed Hawkins, depicts the average annual global temperature from 1850-2022. Data Source: <a href="https://www.metoffice.gov.uk/hadobs/hadcrut5/">HadCRUT5</a>. To learn more about this visualization, visit <a href="https://showyourstripes.info/">showyourstripes.info</a>.</p>
+<p><span class="teal-text"><strong>Alt text:</strong></span> Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature</p>
+</div>
+</div>
+</div>
+</section>
 <section id="tips" class="slide level2" data-menu-title="Tips">
 <h2></h2>
 <p><span class="slide-title">Additional tips for writing alt text for data visualizations</span></p>
@@ -483,7 +502,7 @@
 <ul>
 <li class="fragment"><strong>write in sentence case, but keep it short</strong> (alt text is read linearly by screen readers, which means that people can’t go back a word if they missed something)</li>
 <li class="fragment"><strong>carefully consider the use of special characters</strong> (<a href="https://www.elevenways.be/en/articles/screenreaders-special-characters">this article</a> details “safe” vs.&nbsp;“unread” characters)</li>
-<li class="fragment"><strong>link to the data or source</strong> (not in your alt text, but somewhere in the surrounding text)</li>
+<li class="fragment"><strong>link to the data or source</strong> (not in your alt text, but somewhere in the surrounding text or figure caption)</li>
 </ul>
 </div>
 </section>
@@ -545,6 +564,7 @@
 <h2></h2>
 <p><span class="slide-title2">Check to make sure your alt text was applied</span></p>
 <hr>
+<p>Right click on an image &gt; Inspect (pulls of developer pane) &gt; look to make sure the <code>alt</code> attribute is present with your text</p>
 
 <div class="footer footer-default">
 

@@ -1883,13 +1883,6 @@
     "text": "Alt text serves many different communities and functions\n\n\nJust a few examples:\n\n\nAlt text is read aloud by assistive technologies, like screen readers, helping users with visual or certain cognitive disabilities to perceive the content and function of visual elements on web pages\nAlt text will appear in place of visual elements for those who are using a slow internet connection, or who have limited or expensive bandwidth\nAlt text may serve those with “situational limitations,” such as viewing a computer screen in bright sunlight\nAlt text provides more accurate image descriptions / context to search engine crawlers, which improves their assessment of a page’s purpose and content\n\n\n\nBecause of this, it’s important that we include good alt text with any data visualizations we publish online!"
   },
   {
-    "objectID": "course-materials/discussion/week2/week2-alt-text.html#alt-vs-cap",
-    "href": "course-materials/discussion/week2/week2-alt-text.html#alt-vs-cap",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Alt text vs. figure caption\n\n\nfigure captions are rendered on the screen, while alt text is not"
-  },
-  {
     "objectID": "course-materials/discussion/week2/week2-alt-text.html#writing-alt-text",
     "href": "course-materials/discussion/week2/week2-alt-text.html#writing-alt-text",
     "title": "EDS 240",
@@ -1904,11 +1897,18 @@
     "text": "Another example\n\n\n\nalt=“A split bars chart of different types of milk’s (dairy and plant-based) environmental impact, where cow’s milk scores significantly worst in carbon emissions, land use, and water use than the other milk alternatives. Cow’s milk produces two times more carbon emissions, uses nine times more land, and twice the water that rice milk uses. Rice milk is the second most contaminating type of milk in terms of carbon emissions.”\n\nExample from Datawrapper"
   },
   {
+    "objectID": "course-materials/discussion/week2/week2-alt-text.html#alt-vs-cap",
+    "href": "course-materials/discussion/week2/week2-alt-text.html#alt-vs-cap",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Include both a figure caption & alt text\n\n\nA figure caption is text that is displayed on the screen (typically beneath the data visualization it’s associated with) and is used to provide additional information and context.\nAlt text is not rendered on screen, but is identified and read aloud by screen readers. It’s used to describe the main takeaway(s) of a data visualization.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure caption: “Warming Stripes”, by Ed Hawkins, depicts the average annual global temperature from 1850-2022. Data Source: HadCRUT5. To learn more about this visualization, visit showyourstripes.info.\nAlt text: Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature"
+  },
+  {
     "objectID": "course-materials/discussion/week2/week2-alt-text.html#tips",
     "href": "course-materials/discussion/week2/week2-alt-text.html#tips",
     "title": "EDS 240",
     "section": "",
-    "text": "Additional tips for writing alt text for data visualizations\n\n\nIn addition to the formula presented on the last couple slides, consider the following tips:\n\n\n\nwrite in sentence case, but keep it short (alt text is read linearly by screen readers, which means that people can’t go back a word if they missed something)\ncarefully consider the use of special characters (this article details “safe” vs. “unread” characters)\nlink to the data or source (not in your alt text, but somewhere in the surrounding text)"
+    "text": "Additional tips for writing alt text for data visualizations\n\n\nIn addition to the formula presented on the last couple slides, consider the following tips:\n\n\n\nwrite in sentence case, but keep it short (alt text is read linearly by screen readers, which means that people can’t go back a word if they missed something)\ncarefully consider the use of special characters (this article details “safe” vs. “unread” characters)\nlink to the data or source (not in your alt text, but somewhere in the surrounding text or figure caption)"
   },
   {
     "objectID": "course-materials/discussion/week2/week2-alt-text.html#practice1",
@@ -1936,7 +1936,7 @@
     "href": "course-materials/discussion/week2/week2-alt-text.html#checking-alt-text",
     "title": "EDS 240",
     "section": "",
-    "text": "Check to make sure your alt text was applied"
+    "text": "Check to make sure your alt text was applied\n\nRight click on an image &gt; Inspect (pulls of developer pane) &gt; look to make sure the alt attribute is present with your text"
   },
   {
     "objectID": "course-materials/week10.html",

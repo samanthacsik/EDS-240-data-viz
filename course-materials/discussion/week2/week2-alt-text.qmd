@@ -72,16 +72,6 @@ editor_options:
 
 ---
 
-## {#alt-vs-cap data-menu-title="Alt vs. caption"}
-
-[Alt text vs. figure caption]{.slide-title}
-
-<hr>
-
-- figure captions are rendered on the screen, while alt text is not
-
----
-
 ## {#writing-alt-text data-menu-title="Writing alt text"}
 
 [A formula for writing alt text]{.slide-title}
@@ -100,7 +90,7 @@ Data viz designer and instructor, [Amy Cesal](https://www.amycesal.com/), sugges
 #| fig-align: "center"
 #| out-width: "50%"
 #| fig-alt: "Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature"
-knitr::include_graphics("images/hawkings-labelled-stripes.png")
+knitr::include_graphics("images/hawkins-warming-stripes.png")
 ```
 
 [**alt="[Colored stripes]{style="background-color:#F9C9C8"} of [chronologically ordered temperatures]{style="background-color:#FDC790"} where [they increase in red to show the warming global temperature]{style="background-color:#D1EAEE"}"**]{.body-text-s}
@@ -136,6 +126,48 @@ knitr::include_graphics("images/haake-milk.png")
 
 ---
 
+## {#alt-vs-cap data-menu-title="Alt vs. caption"}
+
+[Include *both* a figure caption & alt text]{.slide-title}
+
+<hr>
+
+<br>
+
+A [**figure caption**]{.teal-text} is text that is displayed on the screen (typically beneath the data visualization it's associated with) and is used to provide additional information and context. 
+
+[**Alt text**]{.teal-text} is *not* rendered on screen, but is identified and read aloud by screen readers. It's used to describe the main takeaway(s) of a data visualization. 
+
+. . .
+
+<br>
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+#| fig-alt: "Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature"
+knitr::include_graphics("images/hawkins-warming-stripes.png")
+```
+:::
+
+::: {.column width="50%"}
+[**Figure caption:**]{.teal-text} "Warming Stripes", by Ed Hawkins, depicts the average annual global temperature from 1850-2022. Data Source: [HadCRUT5](https://www.metoffice.gov.uk/hadobs/hadcrut5/). To learn more about this visualization, visit [showyourstripes.info](https://showyourstripes.info/).
+
+[**Alt text:**]{.teal-text} Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature
+:::
+
+::::
+
+
+
+
+---
+
 ## {#tips data-menu-title="Tips"}
 
 [Additional tips for writing alt text for data visualizations]{.slide-title}
@@ -151,7 +183,7 @@ In addition to the formula presented on the last couple slides, consider the fol
 ::: incremental
 - **write in sentence case, but keep it short** (alt text is read linearly by screen readers, which means that people can’t go back a word if they missed something)
 - **carefully consider the use of special characters** ([this article](https://www.elevenways.be/en/articles/screenreaders-special-characters) details "safe" vs. "unread" characters)
-- **link to the data or source** (not in your alt text, but somewhere in the surrounding text)
+- **link to the data or source** (not in your alt text, but somewhere in the surrounding text or figure caption)
 :::
 
 ---
@@ -254,6 +286,6 @@ ggplot(...) +
 
 <hr>
 
-
+Right click on an image > Inspect (pulls of developer pane) > look to make sure the `alt` attribute is present with your text
 
 
