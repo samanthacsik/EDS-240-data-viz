@@ -19,27 +19,6 @@ format:
 
 [Week 1 | January 8^th^, 2024]{.custom-subtitle3}
 
-<!-- :::: {.columns}  -->
-
-<!-- ::: {.column width="50%"} -->
-<!-- [Sam Csik |]{.custom-subtitle2}<br> -->
-<!-- [Data Training Coordinator]{.custom-subtitle2}<br> -->
-<!-- [*National Center for Ecological Analysis & Synthesis*]{.custom-subtitle3} -->
-<!-- ::: -->
-
-<!-- ::: {.column width="50%"} -->
-<!-- [Master of Environmental Data Science |]{.custom-subtitle2}<br> -->
-<!-- [*Bren School of Environmental Science & Management*]{.custom-subtitle3} -->
-<!-- ::: -->
-
-<!-- :::: -->
-
-<!-- <br> -->
-
-<!-- ::: {.title-footer} -->
-<!-- January 8th, 2024 -->
-<!-- ::: -->
-
 ---
 
 ## {#what-is-visualization data-menu-title="What is data viz?"}

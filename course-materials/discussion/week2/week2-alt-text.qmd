@@ -198,13 +198,29 @@ In addition to the formula presented on the last couple slides, consider the fol
 #| eval: true
 #| echo: false
 #| fig-align: "center"
-#| out-width: "100%"
+#| out-width: "70%"
 knitr::include_graphics("images/verisk-maplecroft-climate-change.png")
 ```
 
 ::: footer
 Image source: [Verisk Maplecroft](https://www.maplecroft.com/insights/analysis/84-of-worlds-fastest-growing-cities-face-extreme-climate-change-risks/) | To enlarge: **right click on image** > **Open Image in New Tab**
 :::
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
 
 ---
 
@@ -218,13 +234,29 @@ Image source: [Verisk Maplecroft](https://www.maplecroft.com/insights/analysis/8
 #| eval: true
 #| echo: false
 #| fig-align: "center"
-#| out-width: "100%"
+#| out-width: "90%"
 knitr::include_graphics("images/co2-emissions.png")
 ```
 
 ::: footer
 Image source: [Milken Institute School of Public Health](https://onlinepublichealth.gwu.edu/resources/climate-change-emissions-data/) | To enlarge: **right click on image** > **Open Image in New Tab**
 :::
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
 
 ---
 
@@ -286,6 +318,15 @@ ggplot(...) +
 
 <hr>
 
-Right click on an image > Inspect (pulls of developer pane) > look to make sure the `alt` attribute is present with your text
+(In Chrome) **Right click** on an image > **Inspect** to look at the underlying HTML of a webpage. You should see `alt="Your alt text."`. For example, right clicking on the image on slide 4 should reveal something that looks like this: 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/check-alt-text.png")
+```
+
 
 

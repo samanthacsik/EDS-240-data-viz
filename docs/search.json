@@ -1915,14 +1915,14 @@
     "href": "course-materials/discussion/week2/week2-alt-text.html#practice1",
     "title": "EDS 240",
     "section": "",
-    "text": "Practice writing alt text:\n\n\n\nImage source: Verisk Maplecroft | To enlarge: right click on image &gt; Open Image in New Tab"
+    "text": "Practice writing alt text:\n\n\n\nImage source: Verisk Maplecroft | To enlarge: right click on image &gt; Open Image in New Tab\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "course-materials/discussion/week2/week2-alt-text.html#practice2",
     "href": "course-materials/discussion/week2/week2-alt-text.html#practice2",
     "title": "EDS 240",
     "section": "",
-    "text": "Practice writing alt text:\n\n\n\nImage source: Milken Institute School of Public Health | To enlarge: right click on image &gt; Open Image in New Tab"
+    "text": "Practice writing alt text:\n\n\n\nImage source: Milken Institute School of Public Health | To enlarge: right click on image &gt; Open Image in New Tab\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "course-materials/discussion/week2/week2-alt-text.html#adding-alt-text",
@@ -1936,7 +1936,7 @@
     "href": "course-materials/discussion/week2/week2-alt-text.html#checking-alt-text",
     "title": "EDS 240",
     "section": "",
-    "text": "Check to make sure your alt text was applied\n\nRight click on an image &gt; Inspect (pulls of developer pane) &gt; look to make sure the alt attribute is present with your text"
+    "text": "Check to make sure your alt text was applied\n\n(In Chrome) Right click on an image &gt; Inspect to look at the underlying HTML of a webpage. You should see alt=\"Your alt text.\". For example, right clicking on the image on slide 4 should reveal something that looks like this:"
   },
   {
     "objectID": "course-materials/week10.html",
