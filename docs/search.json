@@ -147,18 +147,11 @@
     "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT"
   },
   {
-    "objectID": "course-materials/week2.html",
-    "href": "course-materials/week2.html",
-    "title": "[No Lecture]",
-    "section": "",
-    "text": "NA"
-  },
-  {
     "objectID": "course-materials/week2.html#pre-class-prep",
     "href": "course-materials/week2.html#pre-class-prep",
     "title": "[No Lecture]",
-    "section": "",
-    "text": "NA"
+    "section": "Pre-class Prep",
+    "text": "Pre-class Prep\nNA"
   },
   {
     "objectID": "course-materials/week2.html#lecture-materials",
@@ -172,7 +165,7 @@
     "href": "course-materials/week2.html#discussion-materials",
     "title": "[No Lecture]",
     "section": "Discussion Materials",
-    "text": "Discussion Materials\nAlternative text, aka alt text, makes our data visualizations accessible to a broader community. Today’s section will focus crafting effective alt text and how to include them when rendering visualizations in reproducible reports, websites, etc. using publishing tools like Quarto.\n\n Week 2 discussion slides"
+    "text": "Discussion Materials\nAlternative text, aka alt text, makes our data visualizations accessible to a broader community. Today’s section will focus crafting effective alt text, as well as how to include it when rendering visualizations in reproducible reports, websites, etc. using publishing tools like Quarto.\n\n Week 2 discussion slides"
   },
   {
     "objectID": "course-materials/week2.html#assignment-reminders",
@@ -1929,7 +1922,7 @@
     "href": "course-materials/discussion/week2/week2-alt-text.html#adding-alt-text",
     "title": "EDS 240",
     "section": "",
-    "text": "Adding alt text\n\nInclude alt text with your data visualizations, no matter how you choose to embed them:\n\nAdd the fig-alt code chunk option when rendering ggplot (or other data visualization) code within a .qmd file:\n\n#| eval: true\n#| echo: false\n#| fig-cap: \"Figure caption text goes here\"\n#| fig-alt: \"Alt text goes here\"\nggplot(...) +\n  geom_*()\n\n\nIf you’ve save your data visualization as an image file, you can embed it in a .qmd file using either markdown or html syntax:\n\n\n\n\nMarkdown\n\n\n![Figure caption goes here](file/path/to/image){fig-alt=\"Alt text goes here\"}\n\n\n\nHTML\n\n\n&lt;img src=\"file/path/to/image\" alt=\"Alt text goes here\"&gt;"
+    "text": "Adding alt text\n\nInclude alt text with your data visualizations, no matter how you choose to embed them:\n\nIf you’re rendering ggplot (or other data visualization) code within a .qmd file, add the fig-alt code chunk option:\n\n#| eval: true\n#| echo: false\n#| fig-cap: \"Figure caption text goes here\"\n#| fig-alt: \"Alt text goes here\"\nggplot(...) +\n  geom_*()\n\n\nIf you’ve save your data visualization as an image file, you can embed it in a .qmd file using either markdown or html syntax:\n\n\n\n\nMarkdown\n\n\n![Figure caption goes here](file/path/to/image){fig-alt=\"Alt text goes here\"}\n\n\n\nHTML\n\n\n&lt;img src=\"file/path/to/image\" alt=\"Alt text goes here\"&gt;"
   },
   {
     "objectID": "course-materials/discussion/week2/week2-alt-text.html#checking-alt-text",

@@ -6,6 +6,19 @@ title-block-banner: true
 toc: true
 ---
 
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%" 
+#| fig-alt: "A formula for writing alternative text, which says you should always include (a) the chart type, (b) the type of data being presented, and (c) the reason for including the chart. You should also link to the data source somewhere in the text."
+knitr::include_graphics("../images/alt-text.png")
+```
+
+::: {.center-text .gray-text}
+Image from [Amy Cesal](https://www.amycesal.com/)'s article, [Writing Alt Text for Data Visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81), published in [Nightingale](https://medium.com/nightingale)
+:::
+
 ## Pre-class Prep
 
 *NA*
@@ -16,7 +29,7 @@ toc: true
 
 ## Discussion Materials
 
-**[Alternative text](https://webaim.org/techniques/alttext/),** aka **alt text**, makes our data visualizations accessible to a broader community. Today's section will focus crafting effective alt text and how to include them when rendering visualizations in reproducible reports, websites, etc. using publishing tools like Quarto.
+**[Alternative text](https://webaim.org/techniques/alttext/),** aka **alt text**, makes our data visualizations accessible to a broader community. Today's section will focus crafting effective alt text, as well as how to include it when rendering visualizations in reproducible reports, websites, etc. using publishing tools like Quarto.
 
 ::: {.center-text}
 [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Week 2 discussion slides](discussion/week2/week2-alt-text.qmd){.btn role="button" target="_blank"} 
