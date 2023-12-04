@@ -1,0 +1,49 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../meds-slides-styles.scss
+editor_options: 
+  chunk_output_type: console
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 4.1]{.custom-title}
+
+[*Visualizing correlations*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[Week 4 | January 29^th^, 2024]{.custom-subtitle3}
+
+---
+
+---
+
+##  {#end-break data-menu-title="# Break #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">{{< fa mug-hot title="a mug with steam rising out the top" >}} Take a Break</p>
+<p class="caption-text">*~ This is the end of Lesson 1 (of 3) ~*</p>
+</div>
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```

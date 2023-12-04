@@ -31,6 +31,7 @@ knitr::include_graphics("../images/horst-eco-r4ds.png")
 <!-- - storytelling through structured visualizations -->
 <!-- - contextualize data (place data within a broader context, explaining why trends matter) -->
 <!-- - presenting data via different channels (slide presentation, academic paper, technical documentation, infographic) -->
+<!-- https://github.com/nrokh/ScientificFigures/blob/main/FigureSpectrum/FigureSpectrum.png -->
 
 ## Discussion Materials
 

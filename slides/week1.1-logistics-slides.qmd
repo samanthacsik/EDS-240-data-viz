@@ -699,7 +699,7 @@ EDS 240: Data Visualization and Communication is about two related, but distinct
 
 ---
 
-##  {#end-break data-menu-title="# End / Break #" background="#047C90"}
+##  {#end-break data-menu-title="# Break #" background="#047C90"}
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">{{< fa mug-hot title="a mug with steam rising out the top" >}} Take a Break</p>

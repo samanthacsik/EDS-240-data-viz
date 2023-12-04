@@ -1376,6 +1376,28 @@ data | geometric object | statistical transformation | position adjustment | coo
 
 ---
 
+## {#evo-ggplot data-menu-title="Evolution of a ggplot"} 
+
+[Building a data viz is an iterative process!]{.slide-title}
+
+<hr>
+
+[We'll spend the next two weeks learning how to build some basic fundamental charts and talking about important considerations when choosing a graphic form for presenting your data. Then, we'll move into graphic design theory and the tools and packages in the `{ggplot2}` ecosystem that make it possible.]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "60%"
+knitr::include_graphics("images/week1/scherer-evo-ggplot.gif")
+```
+
+::: {.center-text .gray-text .body-text-s}
+*Visualization by [Cédric Scherer](https://www.cedricscherer.com/top/about/), from his blog post, [The Evolution of a ggplot (Ep.1)](https://www.cedricscherer.com/2019/05/17/the-evolution-of-a-ggplot-ep.-1/) -- create your own ggplot evolution gif using the [`{camcorder}` package](https://github.com/thebioengineer/camcorder)*
+:::
+
+---
+
 ##  {#end-break data-menu-title="# End #" background="#047C90"}
 
 <div class="page-center vertical-center">

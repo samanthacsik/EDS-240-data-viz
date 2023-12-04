@@ -16,7 +16,11 @@ toc: true
 
 ## Discussion Materials
 
-*Coming soon!*
+**[Alternative text](https://webaim.org/techniques/alttext/),** aka **alt text**, makes our data visualizations accessible to a broader community. Today's section will focus crafting effective alt text and how to include them when rendering visualizations in reproducible reports, websites, etc. using publishing tools like Quarto.
+
+::: {.center-text}
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Week 2 discussion slides](discussion/week2/week2-alt-text.qmd){.btn role="button" target="_blank"} 
+:::
 
 ## Assignment Reminders
 
