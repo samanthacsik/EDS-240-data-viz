@@ -103,8 +103,10 @@ This week's data comes courtesy of Jeremy Singer-Vine's [Data is Plural](https:/
 
 > Since [launching in 2011](https://www.fracfocus.org/learn/about-fracfocus), [FracFocus](https://fracfocus.org/) has become the largest registry of [hydraulic fracturing](https://en.wikipedia.org/wiki/Fracking) chemical disclosures in the US. The database, available to explore online and [download in bulk](https://fracfocus.org/data-download), contains 210,000+ such disclosures from fracking operators; it details the location, timing, and water volume of each fracking job, plus the names and amounts of chemicals used. The project is [managed](https://fracfocus.org/about-us) by the [Ground Water Protection Council](https://www.gwpc.org/overview/), “a nonprofit 501(c)6 organization whose members consist of state ground water regulatory agencies”. As seen in: The latest [installment](https://www.nytimes.com/interactive/2023/09/25/climate/fracking-oil-gas-wells-water.html) of the New York Times’ [Uncharted Water series](https://www.nytimes.com/series/uncharted-waters).
 
-**Before coming to section, please be sure to:** 
+**Before coming to section, you'll need to install some pacakges and download data. For step-by-step instructions, unfold the following note (collapsed to save space):**
 
+::: {.callout-note icon=false collapse=true}
+## Step-by-step pre-discussion prep instructions
 1. Install the following packages:
 
 ```{r}
@@ -141,12 +143,18 @@ knitr::include_graphics("../images/gitignore.gif")
 An example repo with three folders: `week1/`, `week2/`, and `other-stuff/`. Each of those folders has a subfolder named `data/`, and each `data/` folder contains a `.csv` file. Adding the line, `/week*/data/` to the `.gitignore` tells Git to ignore folders (and their contents) named `data/` that are within a parent folder named `week__` (the `*` acts as a wildcard). If we wanted to ignore all three `data/` folders (including `other-stuff/data/`), we can instead include `/*/data/` to our `.gitignore`.
 :::
 
-<!-- *Complete code will be posted here after both discussion sections are finished.* -->
-
-::: {.callout-note icon=false collapse=true}
-## Complete code for week 1 discussion (fracking)
-{{< include discussion/week1/tidy-fracking.qmd >}}
 :::
+
+<br>
+
+::: {.center-text}
+*Complete code will be posted here after both discussion sections are finished.*
+:::
+
+<!-- ::: {.callout-tip icon=false collapse=true} -->
+<!-- ## Complete code for week 1 discussion (fracking) -->
+<!-- {{< include discussion/week1/tidy-fracking.qmd >}} -->
+<!-- ::: -->
 
 <br>
 

@@ -539,7 +539,7 @@ penguins |>
 
 <hr>
 
-Next, we'll layer on a geometric object (aka geom) that our plot will use to represent our penguin data. There are many geoms (`geom_*()`) that are built into `{ggplot2}` already (and more when you use extension packages). To create a scatterplot:
+Next, we'll layer on a geometric object (aka geom) that our plot will use to represent our penguin data. There are many geoms (`geom_*()`) that are [built into `{ggplot2}` already](https://ggplot2.tidyverse.org/reference/#geoms) (and more when you use extension packages). To create a scatterplot:
 ```{r}
 #| eval: true
 #| echo: true

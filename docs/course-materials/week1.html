@@ -368,7 +368,19 @@ Step-by-step instructions for creating and cloning a GitHub repo:
 <blockquote class="blockquote">
 <p>Since <a href="https://www.fracfocus.org/learn/about-fracfocus">launching in 2011</a>, <a href="https://fracfocus.org/">FracFocus</a> has become the largest registry of <a href="https://en.wikipedia.org/wiki/Fracking">hydraulic fracturing</a> chemical disclosures in the US. The database, available to explore online and <a href="https://fracfocus.org/data-download">download in bulk</a>, contains 210,000+ such disclosures from fracking operators; it details the location, timing, and water volume of each fracking job, plus the names and amounts of chemicals used. The project is <a href="https://fracfocus.org/about-us">managed</a> by the <a href="https://www.gwpc.org/overview/">Ground Water Protection Council</a>, “a nonprofit 501(c)6 organization whose members consist of state ground water regulatory agencies”. As seen in: The latest <a href="https://www.nytimes.com/interactive/2023/09/25/climate/fracking-oil-gas-wells-water.html">installment</a> of the New York Times’ <a href="https://www.nytimes.com/series/uncharted-waters">Uncharted Water series</a>.</p>
 </blockquote>
-<p><strong>Before coming to section, please be sure to:</strong></p>
+<p><strong>Before coming to section, you’ll need to install some pacakges and download data. For step-by-step instructions, unfold the following note (collapsed to save space):</strong></p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step-by-step pre-discussion prep instructions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="1">
 <li>Install the following packages:</li>
 </ol>
@@ -403,132 +415,17 @@ Step-by-step instructions for creating and cloning a GitHub repo:
 <div class="center-text gray-text">
 <p>An example repo with three folders: <code>week1/</code>, <code>week2/</code>, and <code>other-stuff/</code>. Each of those folders has a subfolder named <code>data/</code>, and each <code>data/</code> folder contains a <code>.csv</code> file. Adding the line, <code>/week*/data/</code> to the <code>.gitignore</code> tells Git to ignore folders (and their contents) named <code>data/</code> that are within a parent folder named <code>week__</code> (the <code>*</code> acts as a wildcard). If we wanted to ignore all three <code>data/</code> folders (including <code>other-stuff/data/</code>), we can instead include <code>/*/data/</code> to our <code>.gitignore</code>.</p>
 </div>
-<!-- *Complete code will be posted here after both discussion sections are finished.* -->
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Complete code for week 1 discussion (fracking)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<!-- # Fracking -->
-<!-- - <https://www.usgs.gov/news/national-news-release/water-used-hydraulic-fracturing-varies-widely-across-united-states> -->
-<!-- - <https://www.abc27.com/pennsylvania/12-states-where-fracking-is-most-prevalent-where-does-pa-stand/#:~:text=1.,Texas&text=Texas%20is%20situated%20over%20parts,gas%20anywhere%20in%20the%20U.S.> -->
-<!-- - <https://www.data-is-plural.com/archive/2023-09-27-edition/> -->
-<!-- - <https://fracfocus.org/data-download> -->
-<!-- `TotalBaseWaterVolume`: The total volume of water used as a carrier fluid for the hydraulic fracturing job (in gallons). -->
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="do">##                                    setup                                 ----</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="co">#..........................load packages.........................</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="fu">library</span>(janitor)</span>
-<span id="cb4-8"><a href="#cb4-8"></a></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#......................import fracking data......................</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a>fracking <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week1"</span>, <span class="st">"data"</span>, <span class="st">"fracking-20240110.csv"</span>))</span>
-<span id="cb4-11"><a href="#cb4-11"></a></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="do">##                        clean/wrangle fracking data                       ----</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb4-15"><a href="#cb4-15"></a></span>
-<span id="cb4-16"><a href="#cb4-16"></a>fracking_clean <span class="ot">&lt;-</span> fracking <span class="sc">|&gt;</span> </span>
-<span id="cb4-17"><a href="#cb4-17"></a>  </span>
-<span id="cb4-18"><a href="#cb4-18"></a>  <span class="co"># clean column names ----</span></span>
-<span id="cb4-19"><a href="#cb4-19"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb4-20"><a href="#cb4-20"></a>  </span>
-<span id="cb4-21"><a href="#cb4-21"></a>  <span class="co"># clean up dates ----</span></span>
-<span id="cb4-22"><a href="#cb4-22"></a>  <span class="fu">mutate</span>(<span class="at">job_start_date =</span> <span class="fu">str_remove</span>(job_start_date, <span class="st">" AM"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-23"><a href="#cb4-23"></a>  <span class="fu">mutate</span>(<span class="at">datetime_start =</span> <span class="fu">mdy_hms</span>(job_start_date)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-24"><a href="#cb4-24"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(datetime_start)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-25"><a href="#cb4-25"></a></span>
-<span id="cb4-26"><a href="#cb4-26"></a>  <span class="co"># select relevant cols ----</span></span>
-<span id="cb4-27"><a href="#cb4-27"></a>  <span class="fu">select</span>(datetime_start, year, state_name, county_name, well_name, total_base_water_volume) <span class="sc">|&gt;</span> </span>
-<span id="cb4-28"><a href="#cb4-28"></a>  </span>
-<span id="cb4-29"><a href="#cb4-29"></a>  <span class="co"># convert state_name from string to factor ----</span></span>
-<span id="cb4-30"><a href="#cb4-30"></a>  <span class="fu">mutate</span>(<span class="at">state_name =</span> <span class="fu">as.factor</span>(state_name)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-31"><a href="#cb4-31"></a>  </span>
-<span id="cb4-32"><a href="#cb4-32"></a>  <span class="co"># filter out non-state names ----</span></span>
-<span id="cb4-33"><a href="#cb4-33"></a>  <span class="fu">filter</span>(<span class="sc">!</span>state_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Beaver"</span>, <span class="st">"Beckham"</span>, <span class="st">"Harper"</span>, <span class="st">"Hemphill"</span>, <span class="st">"Midland"</span>, <span class="st">"Red River"</span>, <span class="st">"Roosevelt"</span>, <span class="st">"Rusk"</span>, <span class="st">"State"</span>, <span class="st">"WARD"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-34"><a href="#cb4-34"></a>  </span>
-<span id="cb4-35"><a href="#cb4-35"></a>  <span class="co"># rename state_name to something shorter for typing out when using case_when (not necessary) ----</span></span>
-<span id="cb4-36"><a href="#cb4-36"></a>  <span class="fu">rename</span>(<span class="at">sn =</span> state_name) <span class="sc">|&gt;</span> </span>
-<span id="cb4-37"><a href="#cb4-37"></a>  </span>
-<span id="cb4-38"><a href="#cb4-38"></a>  <span class="co"># make all words title case ----</span></span>
-<span id="cb4-39"><a href="#cb4-39"></a>  <span class="fu">mutate</span>(<span class="at">sn =</span> <span class="fu">str_to_title</span>(sn)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-40"><a href="#cb4-40"></a>  </span>
-<span id="cb4-41"><a href="#cb4-41"></a>  <span class="co"># fix misspelled state names ----</span></span>
-<span id="cb4-42"><a href="#cb4-42"></a>  <span class="fu">mutate</span>(<span class="at">sn =</span> <span class="fu">case_when</span>(</span>
-<span id="cb4-43"><a href="#cb4-43"></a>    sn <span class="sc">==</span> <span class="st">"Colordao"</span> <span class="sc">~</span> <span class="st">"Colorado"</span>,</span>
-<span id="cb4-44"><a href="#cb4-44"></a>    sn <span class="sc">==</span> <span class="st">"Loiusiana"</span> <span class="sc">~</span> <span class="st">"Louisiana"</span>,</span>
-<span id="cb4-45"><a href="#cb4-45"></a>    sn <span class="sc">==</span> <span class="st">"Louisianna"</span> <span class="sc">~</span> <span class="st">"Louisiana"</span>,</span>
-<span id="cb4-46"><a href="#cb4-46"></a>    sn <span class="sc">==</span> <span class="st">"Lousiana"</span> <span class="sc">~</span> <span class="st">"Louisiana"</span>,</span>
-<span id="cb4-47"><a href="#cb4-47"></a>    sn <span class="sc">==</span> <span class="st">"New Mexcio"</span> <span class="sc">~</span> <span class="st">"New Mexico"</span>,</span>
-<span id="cb4-48"><a href="#cb4-48"></a>    sn <span class="sc">==</span> <span class="st">"Norh Dakota"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb4-49"><a href="#cb4-49"></a>    sn <span class="sc">==</span> <span class="st">"Norht Dakota"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb4-50"><a href="#cb4-50"></a>    sn <span class="sc">==</span> <span class="st">"North  Dakota"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb4-51"><a href="#cb4-51"></a>    sn <span class="sc">==</span> <span class="st">"North Dakata"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb4-52"><a href="#cb4-52"></a>    sn <span class="sc">==</span> <span class="st">"North Dakotta"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb4-53"><a href="#cb4-53"></a>    sn <span class="sc">==</span> <span class="st">"Noth Dakota"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb4-54"><a href="#cb4-54"></a>    sn <span class="sc">==</span> <span class="st">"Pennslvania"</span> <span class="sc">~</span> <span class="st">"Pennsylvania"</span>,</span>
-<span id="cb4-55"><a href="#cb4-55"></a>    sn <span class="sc">==</span> <span class="st">"Pennsylavania"</span> <span class="sc">~</span> <span class="st">"Pennsylvania"</span>,</span>
-<span id="cb4-56"><a href="#cb4-56"></a>    sn <span class="sc">==</span> <span class="st">"Pennsylvanya"</span> <span class="sc">~</span> <span class="st">"Pennsylvania"</span>,</span>
-<span id="cb4-57"><a href="#cb4-57"></a>    sn <span class="sc">==</span> <span class="st">"Penssylvania"</span> <span class="sc">~</span> <span class="st">"Pennsylvania"</span>,</span>
-<span id="cb4-58"><a href="#cb4-58"></a>    sn <span class="sc">==</span> <span class="st">"Texasa"</span> <span class="sc">~</span> <span class="st">"Texas"</span>,</span>
-<span id="cb4-59"><a href="#cb4-59"></a>    sn <span class="sc">==</span> <span class="st">"Texs"</span> <span class="sc">~</span> <span class="st">"Texas"</span>, </span>
-<span id="cb4-60"><a href="#cb4-60"></a>    sn <span class="sc">==</span> <span class="st">"West Viginia"</span> <span class="sc">~</span> <span class="st">"West Virginia"</span>,</span>
-<span id="cb4-61"><a href="#cb4-61"></a>    sn <span class="sc">==</span> <span class="st">"Wyominng"</span> <span class="sc">~</span> <span class="st">"Wyoming"</span>, </span>
-<span id="cb4-62"><a href="#cb4-62"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> sn <span class="co"># copy over rest of state names from as-is</span></span>
-<span id="cb4-63"><a href="#cb4-63"></a>  )) <span class="sc">|&gt;</span> </span>
-<span id="cb4-64"><a href="#cb4-64"></a>  </span>
-<span id="cb4-65"><a href="#cb4-65"></a>  <span class="co"># remove rows that have a ? mark ----</span></span>
-<span id="cb4-66"><a href="#cb4-66"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(sn, <span class="st">"</span><span class="sc">\\</span><span class="st">?"</span>)) <span class="sc">|&gt;</span> <span class="co"># `?` is a special chr; escape with `\\` prefix</span></span>
-<span id="cb4-67"><a href="#cb4-67"></a>  </span>
-<span id="cb4-68"><a href="#cb4-68"></a>  <span class="co"># make all works uppercase (so that we can covert abb to state names) ----</span></span>
-<span id="cb4-69"><a href="#cb4-69"></a>  <span class="fu">mutate</span>(<span class="at">sn =</span> <span class="fu">str_to_upper</span>(sn)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-70"><a href="#cb4-70"></a>  </span>
-<span id="cb4-71"><a href="#cb4-71"></a>  <span class="co"># mutate abbs to full state names ----</span></span>
-<span id="cb4-72"><a href="#cb4-72"></a>  <span class="fu">mutate</span>(<span class="at">sn =</span> <span class="fu">ifelse</span>(<span class="at">test =</span> <span class="fu">str_length</span>(sn) <span class="sc">==</span> <span class="dv">2</span>, </span>
-<span id="cb4-73"><a href="#cb4-73"></a>                     <span class="at">yes =</span> usdata<span class="sc">::</span><span class="fu">abbr2state</span>(sn),</span>
-<span id="cb4-74"><a href="#cb4-74"></a>                     <span class="at">no =</span> sn)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-75"><a href="#cb4-75"></a>  </span>
-<span id="cb4-76"><a href="#cb4-76"></a>  <span class="co"># make all words title case again ----</span></span>
-<span id="cb4-77"><a href="#cb4-77"></a>  <span class="fu">mutate</span>(<span class="at">sn =</span> <span class="fu">str_to_title</span>(sn)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-78"><a href="#cb4-78"></a>  </span>
-<span id="cb4-79"><a href="#cb4-79"></a>  <span class="co"># create a column of just state abbs ----</span></span>
-<span id="cb4-80"><a href="#cb4-80"></a>  <span class="fu">mutate</span>(<span class="at">state_abb =</span> usdata<span class="sc">::</span><span class="fu">state2abbr</span>(sn)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-81"><a href="#cb4-81"></a>  </span>
-<span id="cb4-82"><a href="#cb4-82"></a>  <span class="co"># rename sn to state_name again for clarity ----</span></span>
-<span id="cb4-83"><a href="#cb4-83"></a>  <span class="fu">rename</span>(<span class="at">state_name =</span> sn, <span class="at">total_base_water_volume_gal =</span> total_base_water_volume) <span class="sc">|&gt;</span> </span>
-<span id="cb4-84"><a href="#cb4-84"></a>  </span>
-<span id="cb4-85"><a href="#cb4-85"></a>  <span class="co"># move state_abb col after state_name col ----</span></span>
-<span id="cb4-86"><a href="#cb4-86"></a>  <span class="fu">relocate</span>(state_abb, <span class="at">.after =</span> state_name) <span class="sc">|&gt;</span> </span>
-<span id="cb4-87"><a href="#cb4-87"></a>  </span>
-<span id="cb4-88"><a href="#cb4-88"></a>  <span class="co"># remove obs that don't have a measurement for total_base_water_volume (NA) ----</span></span>
-<span id="cb4-89"><a href="#cb4-89"></a>  <span class="fu">drop_na</span>(total_base_water_volume_gal)</span>
-<span id="cb4-90"><a href="#cb4-90"></a></span>
-<span id="cb4-91"><a href="#cb4-91"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb4-92"><a href="#cb4-92"></a><span class="do">##      basic violin plot of total water used / job (top 3 states, 2015)    ----</span></span>
-<span id="cb4-93"><a href="#cb4-93"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb4-94"><a href="#cb4-94"></a></span>
-<span id="cb4-95"><a href="#cb4-95"></a>fracking_areas <span class="sc">|&gt;</span> </span>
-<span id="cb4-96"><a href="#cb4-96"></a>  <span class="fu">filter</span>(state_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Texas"</span>, <span class="st">"Colorado"</span>, <span class="st">"North Dakota"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-97"><a href="#cb4-97"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2015</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb4-98"><a href="#cb4-98"></a>  <span class="co"># filter(total_base_water_volume_gal &lt; 70000000) |&gt; # uncomment this line to plot with two extreme outliers excluded</span></span>
-<span id="cb4-99"><a href="#cb4-99"></a>  <span class="fu">group_by</span>(state_name) <span class="sc">|&gt;</span> </span>
-<span id="cb4-100"><a href="#cb4-100"></a>  <span class="fu">mutate</span>(<span class="at">state_name =</span> <span class="fu">fct_relevel</span>(state_name, <span class="fu">c</span>(<span class="st">"Texas"</span>, <span class="st">"Colorado"</span>, <span class="st">"North Dakota"</span>))) <span class="sc">|&gt;</span> <span class="co"># pipe directly into ggplot </span></span>
-<span id="cb4-101"><a href="#cb4-101"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> state_name, <span class="at">y =</span> total_base_water_volume_gal)) <span class="sc">+</span></span>
-<span id="cb4-102"><a href="#cb4-102"></a>  <span class="fu">geom_violin</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
+<p><br></p>
+<div class="center-text">
+<p><em>Complete code will be posted here after both discussion sections are finished.</em></p>
 </div>
+<!-- ::: {.callout-tip icon=false collapse=true} -->
+<!-- ## Complete code for week 1 discussion (fracking) -->
+<!-- {{< include discussion/week1/tidy-fracking.qmd >}} -->
+<!-- ::: -->
 <p><br></p>
 </section>
 <section id="assignment-reminders" class="level2">

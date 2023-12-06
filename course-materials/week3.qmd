@@ -1,5 +1,5 @@
 ---
-title: "Choosing a graphic form, Fundamental chart types (Part I)"
+title: "Choosing a graphic form, Fundamental chart types (part I)"
 subtitle: "Week 3"
 description: "Monday January 22^nd^, 2024"
 title-block-banner: true
@@ -21,7 +21,10 @@ knitr::include_graphics("../images/horst-ggplot-explore-dataviz.png")
 
 ## Pre-class Prep
 
-Please be sure to complete the following before class:
+Before coming to class, you'll need to install some packages, download data, and request a US Census Bureau API key. For step-by-step instructions, unfold the following note (collapsed to save space):
+
+::: {.callout-note collapse=true icon=false}
+## Step-by-step pre-class prep instructions
 
 ### Install required packages
 
@@ -33,6 +36,8 @@ install.packages("tidytuesdayR") # used to download TidyTuesday data
 install.packages("tidycensus") # an R package that allows users to interface with a select number of the US Census Bureau’s data APIs and return tidyverse-ready data frames
 install.packages("ggridges") # {ggplot2} extension for creating ridgeline plots
 install.packages("gghighlight") # {ggplot2} extension for highlighting geoms
+install.packages("ggbeeswarm") # {ggplot2} extension for creating categorical scatter (violin point) plots
+install.packages("scales") # provides the internal scaling infrastructure used by ggplot2, and gives you tools to override the default breaks, labels, transformations and palettes (installed automatically with {ggplot2} or {tidyverse})
 ```
 
 ### Download data
@@ -68,8 +73,8 @@ KEYS.R
   c. Save `.gitignore` (once saved, you should see the newly added `KEYS.R` file disappear from your **Git** pane in RStudio, and a modified `.gitignore` appear). Stage/add, commit, and push this `.gitignore` file to GitHub
   
 In class, we'll source our key (by running `source("KEYS.R")`) into any scripts/Qmd files, where required.
-    
-<br>
+:::
+
 
 ## Lecture Materials
 
@@ -105,7 +110,7 @@ Week 3 instruction is broken down into three lessons:
 
 <br>
 
-<!-- [*Today's lectures draw largely on materials created by [Meghan Hall](https://meghan.rbind.io/) for her course, [CMU 36-315: Statistical Graphics & Visualization](https://cmu-36315.netlify.app/#lectures), as well as information curated by [Yan Holtz](https://github.com/holtzy) & [Conor Healy](https://www.linkedin.com/in/conor-healy-b0299810a/) as part of their [From Data to Viz](https://www.data-to-viz.com/) project.*]{.gray-text .body-text-s} -->
+[*Today's lectures are inspired by and draw largely on materials created by a number of other educators, including [Albert Cairo](https://www.albertocairo.com/) and his book [The Truthful Art](https://www.amazon.com/gp/product/0321934075/ref=as_li_qf_sp_asin_il_tl?camp=1789&creative=9325&creativeASIN=0321934075&ie=UTF8&linkCode=as2&linkId=A7BVNPNHHPEPJU7K&tag=thefunart03-20), [Meghan Hall](https://meghan.rbind.io/) and her course, [CMU 36-315: Statistical Graphics & Visualization](https://cmu-36315.netlify.app/#lectures), as well as information curated by [Yan Holtz](https://github.com/holtzy) & [Conor Healy](https://www.linkedin.com/in/conor-healy-b0299810a/) as part of their [From Data to Viz](https://www.data-to-viz.com/) project.*]{.gray-text .body-text-s}
 
 <!-- - EDA (https://htmlpreview.github.io/?https://github.com/gexijin/gEDA/blob/main/example_report.html)-->
 <!-- - visualizing quantitative, qualitative, temporal data (no spatial data, covered in EDS 223) -->
@@ -131,24 +136,18 @@ knitr::include_graphics("images/usdm.png")
 
 **Before coming to section, please be sure to:**
 
-1. Install the following packages:
+1. **(Optional)** Install the [ColorPick Eyedropper](https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg) Google Chrome extension, which makes it easy to select color values from webpages.
 
-```{r}
-#| eval: false
-#| echo: true
-#| code-line-numbers: false
-# note: {scales} is installed automatically when you install {ggplot2} or {tidyverse}, but including here for reference
-install.packages("scales") # provides the internal scaling infrastructure used by ggplot2, and gives you tools to override the default breaks, labels, transformations and palettes
-```
+<br>
 
-2. **(Optional)** Install the [ColorPick Eyedropper](https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg) Google Chrome extension, which makes it easy to select color values from webpages.
-
-<!-- *Complete code will be posted here after both discussion sections are finished.* -->
-
-::: {.callout-note icon=false collapse=true}
-## Complete code for week 3 discussion (CA drought)
-{{< include discussion/week3/CA-drought.qmd >}}
+::: {.center-text}
+*Complete code will be posted here after both discussion sections are finished.*
 :::
+
+<!-- ::: {.callout-tip icon=false collapse=true} -->
+<!-- ## Complete code for week 3 discussion (CA drought) -->
+<!-- {{< include discussion/week3/CA-drought.qmd >}} -->
+<!-- ::: -->
 
 <br>
 
