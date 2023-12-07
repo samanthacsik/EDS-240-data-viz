@@ -37,6 +37,7 @@ knitr::include_graphics("../images/horst-ggplot-masterpiece.png")
 <!-- https://albert-rapp.de/posts/ggplot2-tips/07_four_ways_colors_more_efficiently/07_four_ways_colors_more_efficiently.html -->
 <!-- annotations -->
 <!-- legends -->
+<!-- Redundant coding: update ridgeline plot legend https://clauswilke.com/dataviz/redundant-coding.html -->
 
 ## Discussion Materials
 

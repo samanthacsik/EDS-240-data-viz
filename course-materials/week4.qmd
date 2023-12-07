@@ -68,6 +68,7 @@ Week 4 instruction is broken down into three lessons:
 
 <!-- Critiquing data viz? -->
 <!-- see: https://samanthacsik.github.io/EDS-240-data-viz/slides/week3.1-choosing-graphic-forms-slides.html#/critique-considerations -->
+<!-- hockey stick graph: https://www.ipcc.ch/site/assets/uploads/2018/05/SYR_TAR_full_report.pdf -->
 
 ## Assignment Reminders
 

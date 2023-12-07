@@ -785,6 +785,59 @@ Example from Derek L. Sonderegger's online textbook, [STA 141 - Exploratory Data
 :::
 :::
 
+---
+
+## {#internet1 data-menu-title="Internet (a)"} 
+
+[4. Arrange components of the graphic]{.slide-title}
+
+<hr>
+
+**Do we want to convey:**
+
+a. internet usage in 2016? or
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week3/wilkes-a.png")
+```
+
+::: footer
+::: {.center-text .gray-text}
+Example from Claus Wilke's, [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/visualizing-amounts.html)
+:::
+:::
+
+---
+
+## {#internet2 data-menu-title="Internet (b)"} 
+
+[4. Arrange components of the graphic]{.slide-title}
+
+<hr>
+
+**Do we want to convey:**
+
+a. internet usage in 2016? or
+
+b.  how early or late adoption of internet relates to current-day usage?
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week3/wilkes-b.png")
+```
+
+::: footer
+::: {.center-text .gray-text}
+Example from Claus Wilke's, [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/visualizing-amounts.html)
+:::
+:::
 
 ---
 
