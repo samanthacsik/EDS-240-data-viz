@@ -33,22 +33,26 @@ editor_options:
 <br>
 <br>
 <br>
-<br>
-<br>
 
 . . .
 
-<!-- [**Fundamentally:**]{.teal-text}  -->
-
 ::: {.body-text-l .center-text}
-Visualizing the **spread** of data
+Visualizing the **spread** of a numeric variable(s) 
 :::
 
-<!-- . . .  -->
-
-<!-- [**How?**]{.teal-text} -->
-
-<!-- [...by plotting all possible values or intervals of data, or using summary statistics of all values to indicate their spread.]{.body-text-l} -->
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "60%"
+library(palmerpenguins)
+library(tidyverse)
+ggplot(penguins, aes(x = flipper_length_mm)) +
+  geom_histogram() +
+  labs(x = "Numeric variable",
+       y = "Count") +
+  theme(axis.title = element_text(size = 17)) 
+```
 
 ---
 
@@ -64,6 +68,7 @@ Visualizing the **spread** of data
 library(palmerpenguins)
 library(tidyverse)
 library(ggridges)
+library(ggbeeswarm)
 ```
 
 :::: columns
@@ -281,8 +286,6 @@ missing_temps <- naniar::vis_miss(bottom)
 #| eval: true
 #| echo: false
 #| fig-align: "center"
-# ggplot(penguins, aes(x = body_mass_g, fill = species)) +
-#   geom_histogram(alpha = 0.5, position = "identity")
 mko_clean |> 
   filter(month_name %in% c("April", "June", "October")) |> 
   ggplot(aes(x = Temp_bot, fill = month_name)) +
@@ -664,7 +667,11 @@ library(palmerpenguins)
 :::: columns
 
 ::: {.column width="50%"}
-[Jittered points:]{.body-text-s}
+
+::: {.center-text .body-text-s .gray-text}
+Jittered points
+:::
+
 ```{r}
 #| eval: true
 #| echo: true
@@ -690,7 +697,11 @@ ggplot(penguins, aes(x = body_mass_g, y = species)) +
 <!-- ::: -->
 
 ::: {.column width="50%"}
-[Raincloud plot:]{.body-text-s}
+
+::: {.center-text .body-text-s .gray-text}
+Raincloud plot:
+:::
+
 ```{r}
 #| eval: true
 #| echo: true
@@ -821,6 +832,20 @@ Since box plots hide sample size, consider overlaying raw data points using `geo
 ggplot(na.omit(penguins), aes(x = species, y = body_mass_g)) +
   geom_boxplot(outlier.shape = NA) +
   geom_jitter(color = "black", alpha = 0.5) +
+  coord_flip()
+```
+
+## Overlay beeswarm
+
+[Similar to overlaying the raw jittered data points, we can combine our box plot with a **beeswarm plot** using `{ggbeeswarm}`. Beeswarm plots visualize the density of data at each point, as well as arrange points that would normally overlap so that they fall next to one another instead (we'll again use the `palmerpenguins::penguins` data set to demo):]{.body-text-s}
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "2-3"
+#| out-width: "40%"
+ggplot(na.omit(penguins), aes(x = species, y = body_mass_g)) +
+  geom_boxplot(outlier.shape = NA) +
+  ggbeeswarm::geom_beeswarm(size = 1) +
   coord_flip()
 ```
 

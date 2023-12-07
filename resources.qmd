@@ -78,16 +78,16 @@ The following Santa Barbara-based groups hold regular meetups, workshops, networ
 - **[R-Ladies Santa Barbara](https://www.meetup.com/rladies-santa-barbara/)** -- a local chapter of R-Ladies Global, which exists to promote diversity in the R community
 - **[Santa Barbara Women in STEM](https://sbwomeninstem.org/)** -- a local network of professionals with a common goal to promote and encourage women in fields related to science, technology, engineering, and math
 
-## R packages
+<!-- ## R packages -->
 
-A list of the R packages that we've covered in this class so far:
+<!-- A list of the R packages that we've covered in this class so far: -->
 
 <!-- Week 1 -->
-- **[`{palmerpenguins}`](https://allisonhorst.github.io/palmerpenguins/):** a dataset for data exploration & visualization, as an alternative to `iris`
-- **[`{tidyverse}`](https://www.tidyverse.org/):** a collection of R packages for data wrangling / manipulation and visualization (includes `{ggplot2}`)
-- **[`{ggplot2}`](https://ggplot2.tidyverse.org/):** a system for declaratively creating graphics, based on The Grammar of Graphics
-- **[`{janitor}`](https://sfirke.github.io/janitor/):** simple functions for examining and cleaning dirty data
-- **[`{usdata}`](https://openintrostat.github.io/usdata/):** demographic data on the United States at the county and state levels spanning multiple years
+<!-- - **[`{palmerpenguins}`](https://allisonhorst.github.io/palmerpenguins/):** a dataset for data exploration & visualization, as an alternative to `iris` -->
+<!-- - **[`{tidyverse}`](https://www.tidyverse.org/):** a collection of R packages for data wrangling / manipulation and visualization (includes `{ggplot2}`) -->
+<!-- - **[`{ggplot2}`](https://ggplot2.tidyverse.org/):** a system for declaratively creating graphics, based on The Grammar of Graphics -->
+<!-- - **[`{janitor}`](https://sfirke.github.io/janitor/):** simple functions for examining and cleaning dirty data -->
+<!-- - **[`{usdata}`](https://openintrostat.github.io/usdata/):** demographic data on the United States at the county and state levels spanning multiple years -->
 <!-- Week 2 -->
 <!-- - **[`{ggridges}`](https://wilkelab.org/ggridges/):** a `{ggplot2}` extension package for creating ridgeline plots -->
 <!-- - **[`{gghighlight}`](https://yutannihilation.github.io/gghighlight/index.html):** a `{ggplot2}` extension package for highlighting geoms  -->

@@ -1,5 +1,5 @@
 ---
-title: "Fundamental Chart Types (Part II)"
+title: "Fundamental chart types (part II), `{ggplot2}` theming"
 subtitle: "Week 4"
 description: "Monday January 29^th^, 2024"
 title-block-banner: true
@@ -21,7 +21,14 @@ knitr::include_graphics("../images/horst-ggplot-explore-dataviz.png")
 
 ## Pre-class Prep
 
-*Coming soon* 
+Please be sure to complete the following before class:
+
+### Install required packages
+```{r}
+#| eval: false
+#| echo: true
+install.packages("ggalt") # extra coordinate systems, geoms, statistical transformations, scales and fonts for 'ggplot2'
+```
 
 ## Lecture Materials 
 
@@ -31,24 +38,23 @@ Week 4 instruction is broken down into three lessons:
 
 ::: {.g-col-12 .g-col-md-4}
 ::: {.center-text}
-[**Visualizing correlations**]{.teal-text .body-text-m}
-
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 4.1 slides](../slides/week4.1-correlations-slides.qmd){.btn role="button" target="_blank"} 
-<!-- scatter, box -->
-:::
-:::
-
-::: {.g-col-12 .g-col-md-4}
-::: {.center-text}
 [**Visualizing rankings**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 4.2 slides](../slides/tbd.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 4.1 slides](../slides/week4.1-rankings-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
 ::: {.g-col-12 .g-col-md-4}
 ::: {.center-text}
-[**Miscellaneous chart types**]{.teal-text .body-text-m}
+[**Visualizing correlations**]{.teal-text .body-text-m}
+
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 4.2 slides](../slides/week4.2-correlations-slides.qmd){.btn role="button" target="_blank"} 
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.center-text}
+[**Theming**]{.teal-text .body-text-m}
 
 [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 4.3 slides](../slides/tbd.qmd){.btn role="button" target="_blank"} 
 :::
@@ -56,10 +62,13 @@ Week 4 instruction is broken down into three lessons:
 
 :::
 
-
 ## Discussion Materials
 
 *Coming soon!*
+
+<!-- Critiquing data viz? -->
+<!-- see: https://samanthacsik.github.io/EDS-240-data-viz/slides/week3.1-choosing-graphic-forms-slides.html#/critique-considerations -->
+<!-- hockey stick graph: https://www.ipcc.ch/site/assets/uploads/2018/05/SYR_TAR_full_report.pdf -->
 
 ## Assignment Reminders
 
