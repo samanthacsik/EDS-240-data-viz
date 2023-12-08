@@ -224,7 +224,7 @@ jobs_clean |>
 
 <hr>
 
-[Give those long x-axis labels some breathing room using `coord_flip()` (see bar plot, below), or alternatively, consider rotating the angle of x-axis labels using `theme(axis.text.x = element_text(angle = 45, hjust = 1))` (see lollipop plot, below; more on `theme()` in a bit).]{.body-text-s}
+[Give those long x-axis labels some breathing room using `coord_flip()`, which flips cartesian (x,y) coordinates so that the horizontal becomes the vertical and vice versa.]{.body-text-s}
 
 :::: columns
 
@@ -252,7 +252,7 @@ jobs_clean |>
   slice_max(order_by = total_earnings, n = 10) |> 
   ggplot(aes(x = occupation, y = total_earnings)) +
   ggalt::geom_lollipop() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  coord_flip()
 ```
 :::
 
@@ -344,6 +344,23 @@ jobs_clean |>
 :::
 
 ::::
+
+---
+
+consider polar axis option here?  
+see https://r-graph-gallery.com/296-add-labels-to-circular-barplot.html  
+and cedric's cool plot: https://github.com/z3tt/TidyTuesday/blob/main/R/2020_29_Astronauts.Rmd  
+```{r}
+# jobs_clean |> 
+#   filter(year == 2016) |> 
+#   slice_max(order_by = total_earnings, n = 25) |> 
+#   ggplot(aes(x = fct_reorder(occupation, total_earnings), y = total_earnings)) +
+#   ggalt::geom_lollipop(alpha = 0.5) +
+#   gghighlight::gghighlight(max(total_earnings)) +
+#   #geom_text(aes(label = scales::dollar(total_earnings)), hjust = -0.2) + 
+#   scale_y_continuous(limits = c(0, 250000)) + # expand axis to make room for values
+#   coord_polar(theta = "y", direction = -1, start = -70)
+```
 
 ---
 

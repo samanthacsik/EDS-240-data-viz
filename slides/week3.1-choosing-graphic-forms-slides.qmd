@@ -465,78 +465,13 @@ It would be hard to use a method of encoding from the top of the hierarchy! In t
 
 ---
 
-## {#tips1 data-menu-title="Tips for choosing a graph 1"} 
+## {#tips1-2 data-menu-title="Tips for choosing a graph 1 & 2"} 
 
 [Tips for choosing the right graphic form]{.slide-title}
 
 <hr>
 
 1. [**Think about the task(s) you want to enable or message(s) you want to convey.**]{.teal-text} For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.
-
-2. [**Consider the number of variables and the number of data points, as well as the data types you're working with.** For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.]{.gray-text}
-
-3. [**Try different graphic forms,** especially if you have more than one task to enable or message to convey.]{.gray-text}
-
-4. [**Arrange the components of the graphic** to make it as easy as possible to extract meaning from your graphic quickly.]{.gray-text}
-
-5. [**Test the outcomes of your graphic on others,** particularly on those who are representative of the audience you are trying to reach.]{.gray-text}
-
-::: footer
-[*Most of the above tips are adapted from [Albert Cairo's](https://www.albertocairo.com/) [The Truthful Art](https://www.amazon.com/gp/product/0321934075/ref=as_li_qf_sp_asin_il_tl?camp=1789&creative=9325&creativeASIN=0321934075&ie=UTF8&linkCode=as2&linkId=A7BVNPNHHPEPJU7K&tag=thefunart03-20)*]{.gray-text .body-text-s}
-:::
-
----
-
-## {#dvc data-menu-title="Data Visualization Catalogue"} 
-
-[1: Think about the task(s) you want to enable or message(s) you want to convey]{.slide-title3}
-
-<hr>
-
-:::: columns
-
-::: {.column width="50%"}
-
-<br>
-
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "50%"
-knitr::include_graphics("images/week3/dvc.png")
-```
-
-<br>
-
-::: {.center-text}
-[The Data Visualization Catalogue](https://datavizcatalogue.com/)  
-[search graphic forms by their function]{.body-text-s}
-:::
-
-:::
-
-::: {.column width="50%"}
-
-<br>
-<br>
-
-**Exercise:** tbd
-
-:::
-
-::::
-
-
----
-
-## {#tips2 data-menu-title="Tips for choosing a graph 2"} 
-
-[Tips for choosing the right graphic form]{.slide-title}
-
-<hr>
-
-1. [**Think about the task(s) you want to enable or message(s) you want to convey.** For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.]{.gray-text}
 
 2. [**Consider the number of variables and the number of data points, as well as the data types you're working with.**]{.teal-text} For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.
 
@@ -552,36 +487,69 @@ knitr::include_graphics("images/week3/dvc.png")
 
 ---
 
-## {#fdtv data-menu-title="From Data To Viz"} 
+## {#chart-selectors data-menu-title="Resources for selecting charts"} 
 
-[2. Consider # of variables & data points, data types]{.slide-title}
+[1: What task(s) to enable / message(s) to convey]{.slide-title3}  
+[2. # of variables & data points, data types]{.slide-title3}
 
 <hr>
 
 :::: columns
 
-::: {.column width="50%"}
+::: {.column width="33%"}
+
+<br>
+
 ```{r}
 #| eval: true
 #| echo: false
 #| fig-align: "center"
-#| out-width: "70%"
-knitr::include_graphics("images/week3/from-data-to-viz.png")
+#| out-width: "100%"
+knitr::include_graphics("images/week3/dvp.png")
+```
+
+::: {.center-text}
+[Data Viz Project](https://datavizproject.com/)  
+[displays one small data set 100 different ways]{.body-text-s}
+:::
+
+:::
+
+::: {.column width="33%"}
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week3/dtv.png")
 ```
 
 ::: {.center-text}
 [From Data to Viz](https://www.data-to-viz.com/)  
-[a decision tree for choosing graphic forms based on data type(s)]{.body-text-s}
+[search graphic types by data type or by function (+ R & Python Graph Gallery)]{.body-text-s}
 :::
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="33%"}
 
 <br>
-<br>
 
-**Exercise:** tbd
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week3/vu.png")
+```
+
+::: {.center-text}
+[The Visualization Universe](https://visualizationuniverse.com/)  
+[compares most popular graphic forms]{.body-text-s}
+:::
 
 :::
 

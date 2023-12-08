@@ -18,6 +18,8 @@ toc: true
 <!-- - radar plots  -->
 <!-- - choropleth maps -->
 <!-- - sankey diagrams -->
+<!-- treemap -->
+<!-- sunburst -->
 
 ## Discussion Materials
 
