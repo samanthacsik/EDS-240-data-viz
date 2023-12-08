@@ -15,13 +15,23 @@ editor_options:
 
 [EDS 240: Lecture 4.1]{.custom-title}
 
-[*Visualizing correlations*]{.custom-subtitle}
+[*Visualizing relationships*]{.custom-subtitle}
 
 <hr class="hr-teal">
 
 [Week 4 | January 29^th^, 2024]{.custom-subtitle3}
 
 ---
+
+scatter plot
+fitting linear models & smoothers (e.g. lowess)
+correlation matrix / heat map
+parallel coordinates plot
+data transformation (e.g log10)
+
+---
+
+https://www.tylervigen.com/spurious-correlations
 
 ---
 

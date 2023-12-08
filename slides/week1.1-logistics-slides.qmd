@@ -94,7 +94,7 @@ knitr::include_graphics("images/week1/sam.png")
 [**Sam Csik**]{.teal-text}  
 **Email:** [scsik@ucsb.edu](mailto::scsik@ucsb.edu)  
 **Learn more:** [samanthacsik.github.io](https://samanthacsik.github.io/)  
-**Student hours:** tbd @ NCEAS
+**Student hours:** M 4-5pm @ NCEAS
 :::
 
 :::
@@ -117,7 +117,7 @@ knitr::include_graphics("images/week1/sevan.png")
 [**Sevan Esaian**]{.teal-text}  
 **Email:** [sevan.esaian@lifesci.ucsb.edu](mailto::sevan.esaian@lifesci.ucsb.edu)  
 **Learn more:** [linkedin.com/in/sevan-esaian](https://www.linkedin.com/in/sevan-esaian-92b7794b/)
-**Student hours:** tbd @ tbd
+**Student hours:** W 9-10am @ NCEAS
 :::
 
 :::
@@ -628,7 +628,7 @@ Any questions sent as DMs will be copied into `#eds-240-data-viz` and answered t
 
 ---
 
-## {#this-course data-menu-title="What is EDS 240?"} 
+## {#this-course1 data-menu-title="What is EDS 240?"} 
 
 [What is EDS 240?]{.slide-title}
 
@@ -656,6 +656,50 @@ EDS 240: Data Visualization and Communication is about two related, but distinct
 **2. The physical act of building effective data visualizations using software and data science tools** 
 
 [{{< fa code title="the symbol for code, </>">}}]{.teal-text} Using the Grammar of Graphics / `{ggplot2}` framework to create effective, truthful, and beautiful data visualizations [{{< fa chart-column title="a bar chart">}}]{.teal-text}
+
+---
+
+## {#this-course2 data-menu-title="What is EDS 240?"} 
+
+[What is EDS 240?]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.center-text .body-text-m}
+**The topic of data visualization is pretty darn massive.**
+:::
+
+. . . 
+
+::: {.center-text}
+We cannot and will not cover every data visualization type, consideration, package, etc. 
+:::
+
+<br>
+
+. . . 
+
+::: {.center-text}
+We *will* work towards a conceptual and technical understanding of [**data viz fundamentals**]{.teal-text}. 
+:::
+
+<br>
+
+. . . 
+
+::: {.center-text}
+Data viz is a science and technical skill, but there's also a lot of [**space for creativity**]{.teal-text}.
+:::
+
+<br>
+
+. . . 
+
+::: {.center-text}
+What you create can be used in your [**professional portfolio**]{.teal-text}! The more you put in, the more you'll get out.
+:::
 
 ---
 

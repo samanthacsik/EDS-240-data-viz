@@ -1,0 +1,126 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../meds-slides-styles.scss
+editor_options: 
+  chunk_output_type: console
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 4.3]{.custom-title}
+
+[*What makes a good data viz?*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[Week 4 | January 29^th^, 2024]{.custom-subtitle3}
+
+---
+
+What makes a bad data visualization?
+- aesthetic problems (bad design)
+- substantive problems (bad data)
+- perceptual problems (bad perception)
+
+---
+
+What makes a good data visualization?
+
+- informative (integrity)
+- story (insterestingness)
+- goal (usefulness)
+- visual form (beauty)
+
+---
+
+not so black or white
+more gradient
+
+---
+
+INFORMATION
+
+understand your data and be accurate
+
+- we won't spend a lot of time here, bc it has less to do with the physical act of creating data viz, and more with your own critical examination of your data and domain expertise 
+- cedric suggests "Avoiding Data Pitfalls" by Ben Jones
+  - our data is never a perfect reflection of the real world -- we always have collected data, it is a sample
+    - e.g. "Where are New York's rats [reported]?" 
+  - the best use of data is to teach us what isn't true
+    - the idea is to challenge yourself to find out something with the data, not to show that your assumptions about what you will find are true
+
+---
+
+STORY
+
+be clear about the message of your visualization
+
+- who is my audience?
+- what am i trying to achieve with the visualization?
+
+"Warming stripes" = technically bad when it comes to data visualization (e.g. no axes) but that's not the point
+emotional reference (blue to red)
+
+Cedric compares his two viz: Traveling to outer space vs. Palmer penguins
+Cedric shows Frontex maps (red = panicked color, biased; blue = calm, objective/informative)
+
+---
+
+GOAL
+
+select charts that successfully transport your story
+
+- data viz maps values into quantifiable features (aesthetics) (Cleveland & McGill example again)
+- good but also a world of just bar charts would be boring!
+
+e.g. show tidytusyday 2020/02 (australian bush fire) which shows relation compared to europe (mroe familiar)
+
+combining different aesthetics (e.g. coffee bean example)
+
+---
+
+VISUAL FORM
+
+follow design rules and data viz principles
+
+- colors & common pitfalls
+  - what to consider when choosing colors for data visualization (datawrapper)
+  - gradients for cont data
+  - be consistent with colors
+  - color gradients (consider binned colors)
+  - misleading color palettes (rainbow color palette): https://eagereyes.org/blog/2013/rainbow-color-map
+  - think about color palettes before you create your viz! use color blindness tools
+  
+- typography
+  - fonts should fit the topic and audience - context matters
+  - avoid fancy fonts and squiggeled letters
+  - use ways to visualize hierarchy (xl, l, etc. OR font face, underlined, bold OR color red, black gray, gray, OR spacing OR typeface OR combining all these)
+  - avoid using ALL CAPS
+  - use a monospaced font with lining for numbers (each number takes up the same space)
+  - consistency is key
+  - 1Il typography test -- if you pick a font and type these out together, they should look different: https://www.nngroup.com/articles/pairing-typefaces/, https://fonts.google.com/knowledge/glossary/legibility
+  - align your text (left for most, title should be left-aligned, labels and subtitles can be center or right aligned)
+  - don't rotate your text 
+  - consider putting axis information in the title (non-scientific publications) and remove axis text
+  - add annotations / remove gridlines; highlight what you want to tell
+  
+  https://z3tt.github.io/bespokeDS
+  
+  covid 19 cases & deaths by US State https://www.cedricscherer.com/2020/03/31/corona-covid-19-death-tolls-worst-day-so-far/
+  Todd Quartiere; source Wikipedia
+  too many colors; need to normalize by population; early in the pandemic there was arguments for normalizing by population size, but Cedric didn't like this; normally likes to normalize, but have to make a decision
+      - talking about PEOPLE, so maybe we want to show exact numbers for an emotional perspective
+      - talk to experts
+  
+
+---
+
+Resources
+
+- [Effective Data Visualization with Cédric Scherer & Matthew Hirschey | Presented by Heureka Labs](https://www.youtube.com/watch?v=swzFdMc6WPk)

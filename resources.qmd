@@ -36,6 +36,7 @@ toc: true
 - **[Color review](https://color.review/), by Anton Robsarve** -- for understanding foreground and background contrasts
 - **[Your Friendly Guide to Colors in Data Visualization](https://blog.datawrapper.de/colorguide/#Make-sure-your-colors-work), by Lisa Charlotte Muth** -- a blog post on useful tools for deciding data viz color palettes
 - **[What to consider when choosing colors for data visualization](https://blog.datawrapper.de/colors/), by Lisa Charlotte Muth** -- a blog post with explanations and examples
+- **[Subtleties of Color](https://earthobservatory.nasa.gov/blogs/elegantfigures/2013/08/05/subtleties-of-color-part-1-of-6/), by Robert Simmon** -- a 6 part blog post series from NASA Earth Observatory about the use of color to map Earth observation data
 
 ### Alternative (alt) text
 - **[How to write good alternative descriptions for your data visualization](https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization), by Amy Cesal** -- great instructions (and examples) on how to construct informative alt text for data visualizations 
@@ -46,7 +47,9 @@ toc: true
 
 - **[Do No Harm Guide: Applying Equity Awareness in Data Visualization](https://www.urban.org/sites/default/files/publication/104296/do-no-harm-guide.pdf), by Jonathan Schwabish and Alice Feng** -- a guide for for approaching data work (and particularly visualizations) through a lens of diversity, equity, and inclusion 
 
-## Inspirational `{ggplot2}` creators
+## Inspirational data visualization creators
+
+### `{ggplot2}` creators
 
 (In my honest opinion) One of the best ways to learn how to build exciting ggplots is to look at code that others have written. Here are just a few folks doing really incredible work (along with their repos where they often showcase their creations): 
 
@@ -60,6 +63,14 @@ toc: true
 | [Cédric Scherer](https://www.cedricscherer.com/) | [TidyTuesday](https://github.com/z3tt/TidyTuesday) |
 | [Tanya Shapiro](https://tanyaviz.com/) | [tanya-data-viz](https://github.com/tashapiro/tanya-data-viz) |
 | [Cara Thompson](https://www.cararthompson.com/index.html) | [tidytuesdays](https://github.com/cararthompson/tidytuesdays) |
+
+### Other seriously amazing data visualizationists 
+
+Definitely don't limit yourself to just `{ggplot2}` creators! There are so many incredible data story-tellers and information designers to draw inspiration and learn from. Just a few:
+
+- [Nadieh Bremer](https://www.visualcinnamon.com/)
+- [Mona Chalabi](https://monachalabi.com/)
+- [Sonja Kuijpers](https://www.studioterp.nl)
 
 ## Misc.
 
