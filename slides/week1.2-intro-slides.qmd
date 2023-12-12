@@ -688,22 +688,27 @@ knitr::include_graphics("images/week1/bremer-patchwork-kingdoms3.png")
 
 ---
 
-## {#scherer-anyene-astronauts data-menu-title="Data viz for aRt (C. Scherer & I. Anyene"}
+## {#astronauts data-menu-title="Data viz for aRt (C. Scherer & I. Anyene"}
 
 [. . . to create art / tell a story]{.slide-title}
 
 <hr>
 
 <br>
+
+::: {.center-text}
+To enlarge, **Right click** > **Open Image in New Tab**
+:::
+
 <br>
 
 :::: columns
 
-::: {.column width="50%"}
+::: {.column width="33%"}
 ```{r}
 #| eval: true
 #| echo: false
-#| out-width: "80%"
+#| out-width: "100%"
 #| fig-align: "center"
 knitr::include_graphics("images/week1/scherer-space-travel.png")
 ```
@@ -713,7 +718,7 @@ knitr::include_graphics("images/week1/scherer-space-travel.png")
 :::
 :::
 
-::: {.column width="50%"}
+::: {.column width="33%"}
 
 <br>
 
@@ -729,6 +734,22 @@ knitr::include_graphics("images/week1/anyene-astronauts.png")
 [Galaxy of Astronauts](https://github.com/Ijeamakaanyene/tidytuesday/blob/master/scripts/2020_12_astronaut.Rmd), by [Ijeamaka Anyene](https://ijeamaka-anyene.netlify.app/)
 :::
 :::
+
+::: {.column width="33%"}
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week1/thompson-astronauts.png")
+```
+
+::: {.center-text .gray-text}
+[Ages Through Time and Space](https://github.com/cararthompson/tidytuesdays/blob/main/scripts/202007b_astronauts.R), by [Cara Thompson](https://www.cararthompson.com/)
+:::
+:::
+
 
 ::::
 

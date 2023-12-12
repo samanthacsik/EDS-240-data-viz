@@ -145,16 +145,19 @@ An example repo with three folders: `week1/`, `week2/`, and `other-stuff/`. Each
 
 :::
 
-<br>
+<!-- ::: {.center-text} -->
+<!-- *Complete code will be posted here after both discussion sections are finished.* -->
+<!-- ::: -->
 
 ::: {.center-text}
-*Complete code will be posted here after both discussion sections are finished.*
+[**Solution**]{.body-text-m .teal-text}  
+*(but try not to look during section!)*
 :::
 
-<!-- ::: {.callout-tip icon=false collapse=true} -->
-<!-- ## Complete code for week 1 discussion (fracking) -->
-<!-- {{< include discussion/week1/tidy-fracking.qmd >}} -->
-<!-- ::: -->
+::: {.callout-tip icon=false collapse=true}
+## Complete code for week 1 discussion (fracking)
+{{< include discussion/week1/tidy-fracking.qmd >}}
+:::
 
 <br>
 

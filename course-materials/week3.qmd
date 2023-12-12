@@ -138,16 +138,19 @@ knitr::include_graphics("images/usdm.png")
 
 1. **(Optional)** Install the [ColorPick Eyedropper](https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg) Google Chrome extension, which makes it easy to select color values from webpages.
 
-<br>
+<!-- ::: {.center-text} -->
+<!-- *Complete code will be posted here after both discussion sections are finished.* -->
+<!-- ::: -->
 
 ::: {.center-text}
-*Complete code will be posted here after both discussion sections are finished.*
+[**Solution**]{.body-text-m .teal-text}  
+*(but try not to look during section!)*
 :::
 
-<!-- ::: {.callout-tip icon=false collapse=true} -->
-<!-- ## Complete code for week 3 discussion (CA drought) -->
-<!-- {{< include discussion/week3/CA-drought.qmd >}} -->
-<!-- ::: -->
+::: {.callout-tip icon=false collapse=true}
+## Complete code for week 3 discussion (CA drought)
+{{< include discussion/week3/CA-drought.qmd >}}
+:::
 
 <br>
 

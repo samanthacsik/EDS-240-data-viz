@@ -20,6 +20,8 @@ toc: true
 <!-- - sankey diagrams -->
 <!-- treemap -->
 <!-- sunburst -->
+<!-- https://towardsdatascience.com/ggvanced-a-package-for-generating-advanced-data-visualizations-on-top-of-the-ggplot2-package-2a935763a4b -->
+<!-- https://towardsdatascience.com/using-slope-charts-to-simplify-your-data-visualization-be1f0eaf1f0f -->
 
 ## Discussion Materials
 

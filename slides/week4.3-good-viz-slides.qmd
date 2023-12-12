@@ -23,65 +23,757 @@ editor_options:
 
 ---
 
-What makes a bad data visualization?
-- aesthetic problems (bad design)
-- substantive problems (bad data)
-- perceptual problems (bad perception)
+## {#credit data-menu-title="Credit to Cédric Scherer"} 
+
+[Looking for inspiration?]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: columns
+
+::: {.column width="50%"}
+
+<br>
+
+Much of the following content was borrowed from [Cédric Scherer](https://www.cedricscherer.com/)'s talk, [Effective Data Visualization](https://www.youtube.com/watch?v=swzFdMc6WPk) and his [Graphic Design with ggplot2](https://rstudio-conf-2022.github.io/ggplot2-graphic-design/) workshop from rstudio::conf(2022). If you yet haven't checked out his work ...you should!!!!
+
+<br>
+
+He has a ton of awesome [blog posts](https://www.cedricscherer.com/), shares [code](https://github.com/z3tt/TidyTuesday/tree/main/R) from his extensive [portfolio](https://github.com/z3tt/TidyTuesday) of #TidyTuesday creations, and has given lots of [online (recorded) talks and workshops](https://www.youtube.com/results?search_query=cedric+scherer+data+viz) about his `{ggplot2}` and data visualization work.
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/scherer-website.png")
+```
+:::
+
+::::
 
 ---
 
-What makes a good data visualization?
+## {#bad-data-viz data-menu-title="Bad data viz?"} 
 
-- informative (integrity)
-- story (insterestingness)
-- goal (usefulness)
-- visual form (beauty)
+[What makes a bad data visualization?]{.slide-title}
 
----
+<hr>
 
-not so black or white
-more gradient
+<br>
+<br>
 
----
+. . . 
 
-INFORMATION
+[[{{< fa table title="tabular data" >}}]{.teal-text} substantive problems (bad data)]{.body-text-l}
 
-understand your data and be accurate
+. . . 
 
-- we won't spend a lot of time here, bc it has less to do with the physical act of creating data viz, and more with your own critical examination of your data and domain expertise 
-- cedric suggests "Avoiding Data Pitfalls" by Ben Jones
-  - our data is never a perfect reflection of the real world -- we always have collected data, it is a sample
-    - e.g. "Where are New York's rats [reported]?" 
-  - the best use of data is to teach us what isn't true
-    - the idea is to challenge yourself to find out something with the data, not to show that your assumptions about what you will find are true
+[[{{< fa eye title="an eye" >}}]{.teal-text} perceptual problems (bad perception)]{.body-text-l}
+
+. . . 
+
+[[{{< fa palette title="a paint palette" >}}]{.teal-text} aesthetic problems (bad design)]{.body-text-l}
 
 ---
 
-STORY
+## {#good-data-viz data-menu-title="Good data viz?"} 
 
-be clear about the message of your visualization
+[What makes a good data visualization?]{.slide-title}
 
-- who is my audience?
-- what am i trying to achieve with the visualization?
+<hr>
 
-"Warming stripes" = technically bad when it comes to data visualization (e.g. no axes) but that's not the point
-emotional reference (blue to red)
+<br>
+<br>
 
-Cedric compares his two viz: Traveling to outer space vs. Palmer penguins
-Cedric shows Frontex maps (red = panicked color, biased; blue = calm, objective/informative)
+. . . 
+
+[[{{< fa circle-info title="a symbol for information, a circle with a lowercase 'i' in the center" >}}]{.teal-text} informative (centers data integrity)]{.body-text-l}
+
+. . . 
+
+[[{{< fa book-open-reader title="a person reading a book" >}}]{.teal-text} story (is it interesting? how will your message be perceived?)]{.body-text-l}
+
+. . . 
+
+[[{{< fa palette title="a paint palette" >}}]{.teal-text} visual form (is it beautiful?)]{.body-text-l}
+
+. . . 
+
+<br>
+
+::: {.center-text .body-text-m}
+While it's impossible to prescribe a simple set of *rules* for creating a "good" data visualization, we'll introduce some important considerations to keep in mind.
+:::
 
 ---
 
-GOAL
+## {#data-samples1 data-menu-title="Our data are samples (a)"} 
 
-select charts that successfully transport your story
+[Understand your data & be accurate]{.slide-title}
 
-- data viz maps values into quantifiable features (aesthetics) (Cleveland & McGill example again)
-- good but also a world of just bar charts would be boring!
+<hr>
 
-e.g. show tidytusyday 2020/02 (australian bush fire) which shows relation compared to europe (mroe familiar)
+This has less to do with the physical act of creating data viz and everything to do with your own **critical examination of your data and domain expertise**. Two important reminders:
 
-combining different aesthetics (e.g. coffee bean example)
+. . . 
+
+<br>
+
+:::: columns 
+
+::: {.column width="50%"}
+1. [**Our data is never a perfect reflection of the real world**]{.teal-text} -- our data is always a *sample*
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/ny-rats.png")
+```
+:::
+
+::::
+
+::: footer
+[**Informative**]{.teal-text} | Story | Visual Form 
+:::
+
+---
+
+## {#data-samples2 data-menu-title="Our data are samples (b)" visibility="uncounted"} 
+
+[Understand your data & be accurate]{.slide-title}
+
+<hr>
+
+This has less to do with the physical act of creating data viz and everything to do with your own **critical examination of your data and domain expertise**. Two important reminders:
+
+
+<br>
+
+:::: columns 
+
+::: {.column width="50%"}
+1. [**Our data is never a perfect reflection of the real world**]{.teal-text} -- our data is always a *sample*
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/ny-rats-update.png")
+```
+:::
+
+::::
+
+::: footer
+[**Informative**]{.teal-text} | Story | Visual Form 
+:::
+
+---
+
+## {#what-isnt-true data-menu-title="Data show what isn't true" visibility="uncounted"} 
+
+[Understand your data & be accurate]{.slide-title}
+
+<hr>
+
+This has less to do with the physical act of creating data viz and everything to do with your own **critical examination of your data and domain expertise**. Two important reminders:
+
+<br>
+
+:::: columns 
+
+::: {.column width="50%"}
+1. [**Our data is never a perfect reflection of the real world**]{.teal-text} -- our data is always a *sample*
+
+<br>
+
+2. [**The best use of data is to teach us what isn't true**]{.teal-text} -- you should be challenging yourself to find out something with your data, not to show that your assumptions about what you'll find are true
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "50%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/jones-book.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+[Avoiding Data Pitfalls](https://www.amazon.com/Avoiding-Data-Pitfalls-presenting-visualizations/dp/1119278163), by [Ben Jones](https://www.linkedin.com/in/benrjones/)
+:::
+
+:::
+
+::::
+
+::: footer
+[**Informative**]{.teal-text} | Story | Visual Form 
+:::
+
+---
+
+## {#id-audience data-menu-title="Who is your audience?"} 
+
+[Identify your audience]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.center-text .body-text-l}
+To tell a clear story, you need to [**know your audience**]{.teal-text}
+:::
+
+. . . 
+
+::: {.incremental}
+- [Which story is **interesting** for them?]{.body-text-m}
+- [What are **relevant** details to include?]{.body-text-m}
+- [Which variables are **meaningful** to them?]{.body-text-m}
+- [How will they **encounter** the visualization?]{.body-text-m}
+- [**Do I need a visualization at all?**]{.body-text-m}
+:::
+
+. . .
+
+<br>
+
+::: {.center-text}
+*Data viz can look wildly different depending on how you answer the above questions!*
+:::
+
+<!-- - [What am I trying to achieve with this visualization?]{.body-text-l} -->
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
+
+---
+
+## {#warming-stripes data-menu-title="Consider audience (Ex. 1)"} 
+
+[Consider the audience (Ex. 1)]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/hawkins-warming-stripes.png")
+```
+
+. . .
+
+Ed Hawkins' [Warming Stripes](https://showyourstripes.info/) could technically be considered a "bad" data viz (e.g. no axes, legend, etc.), yet it's become one of the most recognizable climate visualizations created.
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
+
+::: notes
+Elicits emotion. Vertical stripes have become synonymous with temperature.
+:::
+
+---
+
+## {#plants data-menu-title="Consider audience (Ex. 2)"} 
+
+[Consider the audience (Ex. 2)]{.slide-title}
+
+<hr>
+
+::: {.center-text}
+[Plants in Danger](https://github.com/Z3tt/TidyTuesday/tree/main/plots/2020_34), by [Cédric Scherer](https://www.cedricscherer.com/) ([code](https://github.com/z3tt/TidyTuesday/blob/main/R/2020_34_ExtinctPlants.Rmd))
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<br>
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/scherer-plants-legend.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/scherer-plants.png")
+```
+:::
+
+::::
+
+::: {.center-text .body-text-l}
+Audience?
+:::
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#hockey-stick data-menu-title="Consider audience (Ex. 3)"} 
+
+[Consider the audience (Ex. 3)]{.slide-title}
+
+<hr>
+
+::: {.center-text}
+["Hockey Stick" graph](https://en.wikipedia.org/wiki/Hockey_stick_graph_(global_temperature)), by [Mann et al. (1999)](https://doi.org/10.1029/1999GL900070)
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/mann-etal-hockey-stick.png")
+```
+
+::: {.center-text .body-text-l}
+Audience?
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
+
+::: notes
+Data from thermometers (red) and from tree rings, corals, ice cores, and historical records (blue).
+:::
+
+---
+
+## {#kirk data-menu-title="Perceive / Interpret / Comprehend"} 
+
+[Our choices affect how viewers perceive and interpret information]{.slide-title2}
+
+<hr>
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/andy-kirk.png")
+```
+
+<br>
+
+::: {.center-text .gray-text .body-text-s}
+Scheme by Andy Kirk from his book [Data Visualisation: A Handbook for Data Driven Design](https://visualisingdata.com/book/), recreated by Cédric Scherer
+:::
+
+---
+
+## {#migration-original data-menu-title="Harmful maps"} 
+
+[Design choices influence viewers' perception]{.slide-title2}
+
+<hr>
+
+::: {.center-text .body-text-s}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+<br>
+<br>
+<br>
+
+- Arrows reminiscent of battle map
+- Red = color of danger
+- LARGE, direct arrows (larger than most countries)
+- Title language portrays criminal activity
+:::
+
+::::
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
+
+---
+
+## {#migration-blue data-menu-title="Harmful maps (blue)"} 
+
+[Design choices influence viewers' perception]{.slide-title2}
+
+<hr>
+
+::: {.center-text .body-text-s}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/map-blue.png")
+```
+:::
+
+::::
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
+
+---
+
+## {#migration-blue-sm-arrows data-menu-title="Harmful maps (blue small arrows)"} 
+
+[Design choices influence viewers' perception]{.slide-title2}
+
+<hr>
+
+::: {.center-text .body-text-s}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/map-blue-sm-arrows.png")
+```
+:::
+
+::::
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
+
+---
+
+## {#migration-blue-circles data-menu-title="Harmful maps (blue circles)"} 
+
+[Design choices influence viewers' perception]{.slide-title2}
+
+<hr>
+
+::: {.center-text .body-text-s}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/map-blue-circles.png")
+```
+:::
+
+::::
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
+
+---
+
+## {#migration-bar data-menu-title="Harmful maps (blue circles)"} 
+
+[Design choices influence viewers' perception]{.slide-title2}
+
+<hr>
+
+::: {.center-text .body-text-s}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/migration-bar.png")
+```
+:::
+
+::::
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
+
+---
+
+## {#goal1 data-menu-title="Transport your story"} 
+
+[Select graphic forms that help to tell your story]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "70%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/cairo-elementary-visual-perception.png")
+```
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+<br>
+<br>
+
+- Data visualizations map values onto quantifiable features (aesthetics)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+::: {.left-align-text .gray-text .body-text-s}
+{{< fa arrow-left title="an arrow pointing to the left" >}} Albert Cairo's recreation of Cleveland & McGill’s [Hierarchy of Elementary Perceptual Tasks](https://www.tandfonline.com/doi/abs/10.1080/01621459.1984.10478080)
+:::
+
+:::
+
+::::
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
+
+---
+
+## {#goal2 data-menu-title="Transport your story"} 
+
+[Select graphic forms that help to tell your story]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "70%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/cairo-elementary-visual-perception.png")
+```
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+<br>
+<br>
+
+- Data visualizations map values onto quantifiable features (aesthetics)
+- *But a world of just bar & line plots would be incredibly boring...*
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+::: {.left-align-text .gray-text .body-text-s}
+{{< fa arrow-left title="an arrow pointing to the left" >}} Albert Cairo's recreation of Cleveland & McGill’s [Hierarchy of Elementary Perceptual Tasks](https://www.tandfonline.com/doi/abs/10.1080/01621459.1984.10478080)
+:::
+
+:::
+
+::::
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
+
+---
+
+## {#goal2 data-menu-title="Transport your story" visibility="uncounted"} 
+
+[Select graphic forms that help to tell your story]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/scherer-australian-fires.png")
+```
+
+::: {.center-text .body-text-s}
+Australian Fires, by Cédric Scherer ([code](https://github.com/z3tt/TidyTuesday/blob/main/R/2020_02_AustralianFires.Rmd))
+
+*(puts scale of fires into something more familiar)*
+:::
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/scherer-coffee.png")
+```
+
+::: {.center-text .body-text-s}
+Not my cup of coffee, by Cédric Scherer ([code](https://github.com/z3tt/TidyTuesday/blob/main/R/2020_28_CoffeeRatings.Rmd))
+
+*(combines many different aesthetics)*
+:::
+
+:::
+
+::::
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
 
 ---
 
@@ -119,8 +811,3 @@ follow design rules and data viz principles
       - talk to experts
   
 
----
-
-Resources
-
-- [Effective Data Visualization with Cédric Scherer & Matthew Hirschey | Presented by Heureka Labs](https://www.youtube.com/watch?v=swzFdMc6WPk)
