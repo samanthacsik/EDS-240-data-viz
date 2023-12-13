@@ -186,7 +186,7 @@
     "href": "course-materials/week6.html#lecture-materials",
     "title": "Data communication",
     "section": "Lecture Materials",
-    "text": "Lecture Materials\n\n\n\n\n\n\n\n\nData communication\n lecture 6.1 slides\n\n\n\n\ntbd\n lecture 6.2 slides\n\n\n\n\ntbd\n lecture 6.3 slides"
+    "text": "Lecture Materials\n\n\n\n\n\n\n    \n\n\n\nData communication\n lecture 6.1 slides\n\n\n\n\ntbd\n lecture 6.2 slides\n\n\n\n\ntbd\n lecture 6.3 slides"
   },
   {
     "objectID": "course-materials/week6.html#discussion-materials",
@@ -508,7 +508,7 @@
     "href": "slides/week4.3-visual-form-slides.html#title-slide",
     "title": "EDS 240",
     "section": "",
-    "text": "EDS 240: Lecture 4.3\nVisual form\n\nWeek 4 | January 29th, 2024"
+    "text": "EDS 240: Lecture 4.3\nVisual form (an intro)\n\nWeek 4 | January 29th, 2024"
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#looking-forward",
@@ -522,7 +522,7 @@
     "href": "slides/week4.3-visual-form-slides.html#good-design",
     "title": "EDS 240",
     "section": "",
-    "text": "Good data visualization design considers:\n\n\n\n\ndata-ink ratio (less is more)\nhow to reduce eye movement and improve readability / interpretability (e.g. through alternative legend positions, direct annotations)\nusing hierarchy to guide the reader\nconsistent use of colors, spacing, typefaces, weights\ncolor choices (and making sure that they’re colorblindness-friendly)\nhow to draw the main attention to the most important info\nincluding alt text\n\n\n\n\n\nThe above should always be considered in your design process, but may not always be necessary"
+    "text": "Good data visualization design considers:\n\n\n\n\ndata-ink ratio (less is more)\nhow to reduce eye movement and improve readability / interpretability (e.g. through alternative legend positions, direct annotations)\nusing visual hierarchy to guide the reader\nconsistent use of colors, spacing, typefaces, weights\ncolor choices (and making sure that they’re colorblindness-friendly)\nhow to draw the main attention to the most important info\nincluding alt text\n\n\n\n\n\nThe above should always be considered in your design process, but may not always be necessary"
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#data-ink-ratio",
@@ -536,7 +536,7 @@
     "href": "slides/week4.3-visual-form-slides.html#data-ink-ratio-criticism",
     "title": "EDS 240",
     "section": "",
-    "text": "Maximizing the Data-Ink ratio isn’t always best\n\n\n\n\nEliminating lots of non-data ink may render visualizations difficult to read\n\nInbar et al. (2007) found that students preferred a more maxamilist visualization design over the minimalist version proposed by Tufte\n\n\n\n\n\nRisk of many boring graphics / less room for the creative display of data – how you choose to maximize your data-ink ratio will depend largely on who your visualization is for and the purpose it’s meant to serve.\n\n\n\n\n\nA general rule of thumb: aim to maximize the data-ink ratio while not sacrificing overall design and aesthetics."
+    "text": "Maximizing the Data-Ink ratio isn’t always best\n\n\n\n\nEliminating lots of non-data ink may render visualizations difficult to read\n\nInbar et al. (2007) found that students preferred a more maximilist visualization design over the minimalist version proposed by Tufte\n\n\n\n\n\nRisk of many boring graphics / less room for the creative display of data – how you choose to maximize your data-ink ratio will depend largely on who your visualization is for and the purpose it’s meant to serve.\n\n\n\n\n\nA general rule of thumb: aim to maximize the data-ink ratio while not sacrificing overall design and aesthetics."
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#remove-redundant-legend",
@@ -550,28 +550,35 @@
     "href": "slides/week4.3-visual-form-slides.html#move-legend-position",
     "title": "EDS 240",
     "section": "",
-    "text": "Move the legend\n\nReduce eye movement by updating the legend position (e.g. move it onto the plot panel):\n\nplot + \n  theme(\n    legend.position = c(0.85, 0.15) # you'll need to adjust these values for your plot!\n  )\n\n\n\n\nOriginal plot:\n\n\n\n\n\n\n\n\nUpdated legend position:\n\n\n\n\n\n\n\n\nAlso note the redundant species mapping (color and shape) – sometime redundancy is important for accessibility!"
+    "text": "Move the legend (positioning)\n\nReduce eye movement by updating the legend position (e.g. move it onto the plot panel):\n\nplot + \n  theme(\n    legend.position = c(0.85, 0.15) # you'll need to adjust these values for your plot!\n  )\n\n\n\n\nOriginal plot:\n\n\n\n\n\n\n\n\nUpdated legend position:\n\n\n\n\n\n\n\n\nAlso note the redundant species mapping (color and shape) – sometime redundancy is important for accessibility!"
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#legend-ggtext",
     "href": "slides/week4.3-visual-form-slides.html#legend-ggtext",
     "title": "EDS 240",
     "section": "",
-    "text": "Move the legend\n\nReduce eye movement and excess ink by including legend info in the plot (sub)title:\n\n\n\n\nOriginal plot:\n\n\n\n\n\n\n\n\nLegend as styled title text:\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe {ggtext} package allows us to apply CSS styling to different plot elements (among other things!)."
+    "text": "Move the legend (incorporate into title text)\n\nReduce eye movement and excess ink by including legend info in the plot (sub)title (here, using the {ggtext} package):\n\n\n\n\nOriginal plot:\n\n\n\n\n\n\n\n\n\n\n\n\nLegend as styled title text:"
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#add-direct-labels",
     "href": "slides/week4.3-visual-form-slides.html#add-direct-labels",
     "title": "EDS 240",
     "section": "",
-    "text": "Move the legend\n\nReduce eye movement and excess ink by including legend info as direct labels on the plot:\n\n\n\n\nOriginal plot:\n\n\n\n\n\n\n\n\n\n\n\n\nLegend as direct labels:"
+    "text": "Move the legend (use direct labels)\n\nReduce eye movement and excess ink by including legend info as direct labels on the plot:\n\n\n\n\nOriginal plot:\n\n\n\n\n\n\n\n\n\n\n\n\nLegend as direct labels:"
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#highlight-important-info",
+    "href": "slides/week4.3-visual-form-slides.html#highlight-important-info",
+    "title": "EDS 240",
+    "section": "",
+    "text": "tbd\n\ngghighlight using vertical lines (show thesis temp plot)"
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#use-annotations-neil",
     "href": "slides/week4.3-visual-form-slides.html#use-annotations-neil",
     "title": "EDS 240",
     "section": "",
-    "text": "Use annotations to improve readability / interpretability\n\n\nIs the y-axis necessary for this plot? What’s the author’s goal? How do annotations help achieve that goal?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIs white space always your friend, by Neil Richards"
+    "text": "Use annotations to improve readability / interpretability\n\nIs the y-axis necessary for this plot? What’s the author’s goal? How do annotations help achieve that goal?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIs white space always your friend, by Neil Richards"
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#use-annotations-covid",
@@ -581,46 +588,88 @@
     "text": "Use annotations to improve readability / interpretability\n\n\n“The key thing we do is to add a title to the chart, as an entry point and to explain what is going on. Text and other annotations add enourmous value for non-chart people.”\n\n\n-John Burn-Murdoch, Financial Times\n\n\n\n\n\nVaccines and Omicron mean Covid now less deadly than flu in England, by John Burn-Murdoch"
   },
   {
-    "objectID": "slides/week4.3-visual-form-slides.html#hierarchy",
-    "href": "slides/week4.3-visual-form-slides.html#hierarchy",
-    "title": "EDS 240",
-    "section": "",
-    "text": "tbd"
-  },
-  {
     "objectID": "slides/week4.3-visual-form-slides.html#typography",
     "href": "slides/week4.3-visual-form-slides.html#typography",
     "title": "EDS 240",
     "section": "",
-    "text": "Typography\n\n\ntypography\n\nfonts should fit the topic and audience - context matters\navoid fancy fonts and squiggeled letters\nuse ways to visualize hierarchy (xl, l, etc. OR font face, underlined, bold OR color red, black gray, gray, OR spacing OR typeface OR combining all these)\navoid using ALL CAPS\nuse a monospaced font with lining for numbers (each number takes up the same space)\nconsistency is key\n1Il typography test – if you pick a font and type these out together, they should look different: https://www.nngroup.com/articles/pairing-typefaces/, https://fonts.google.com/knowledge/glossary/legibility\nalign your text (left for most, title should be left-aligned, labels and subtitles can be center or right aligned)\ndon’t rotate your text"
+    "text": "Typography – what is it?\n\n\n“Typography is the art and technique of arranging type to make written language legible, readable and appealing when displayed.”\n\n\n-Wikipedia\n\nSome helpful definitions:\n\nTypeface (aka font family): underlying visual design that can exist in many different typesetting technologies (e.g. Times New Roman, Helvetica, Roboto)\nFont: an implementation of a typeface; they can come in different weights and styles (e.g. bold, italic)\n\n\n\n\nYou choose a typeface (e.g. Nunito).\nYou use a font (regular, italic, bold).\n\n\nWant to dive deeper into the world of typography? Start with this quick read, Why care about typography? and explore other great articles by Google Fonts."
   },
   {
-    "objectID": "slides/week4.3-visual-form-slides.html#consistency",
-    "href": "slides/week4.3-visual-form-slides.html#consistency",
+    "objectID": "slides/week4.3-visual-form-slides.html#font-choices",
+    "href": "slides/week4.3-visual-form-slides.html#font-choices",
     "title": "EDS 240",
     "section": "",
-    "text": "tbd"
+    "text": "How to choose the right typeface(s) & font(s)\n\n\n\n\ncontext matters – the type(s) should fit the topic and audience\nwhen in doubt, use a sans-serif style (and avoid fancy types (especially squiggley ones))\nstrategically use types & fonts to create hierarchy\navoid using too many typefaces (stick to just 1-3)\navoid (extensively) using ALL CAPS\nuse monospaced types for numbers\n\n\n\n\nThere are lots of excellent resources out there for choosing the right typeface / font – here are a few I recommend starting with:\n\nThis collection of short articles on choosing type, by Google Fonts\nChoosing Fonts for Your Data Visualization, by Tiffany France (Nightingale)\nWhich fonts to use for your charts and tables, by Lisa Charlotte Muth (Datawrapper)\n\n\nHorror films, by Cristophe Nicault https://github.com/cnicault/tidytuesday/tree/master/2022/2022-44-horror-movies"
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#typographic-hierarchy",
+    "href": "slides/week4.3-visual-form-slides.html#typographic-hierarchy",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Typographic hierarchy\n\nNo one wants to read a wall of text. You can use font size, style, color, spacing, and typeface to create a hierarchy to guide your readers.\n\n\n\n\nSource: The UX Designer’s Guide to Typography"
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#font-size",
+    "href": "slides/week4.3-visual-form-slides.html#font-size",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Font size creates hierarchy\n\n\n\nI am important!\n\n\n\nI am also pretty important!\n\n\n\nThanks for reading me\n\n\n\nI know, I’m kinda boring"
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#font-style",
+    "href": "slides/week4.3-visual-form-slides.html#font-style",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Font style creates hierarchy\n\n\n\nI am important!\n\n\n\nI am also pretty important!\n\n\n\nThanks for reading me\n\n\n\nI know, I’m kinda boring"
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#font-color",
+    "href": "slides/week4.3-visual-form-slides.html#font-color",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Font color creates hierarchy\n\n\n\nI am important!\n\n\n\nI am also pretty important!\n\n\n\nThanks for reading me\n\n\n\nI know, I’m kinda boring"
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#font-spacing",
+    "href": "slides/week4.3-visual-form-slides.html#font-spacing",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Font spacing creates hierarchy\n\n \n\nI am important!\n\n\nI am also pretty important!\n\n  \n\nThanks for reading me\n\n\nI know, I’m kinda boring"
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#font-typeface",
+    "href": "slides/week4.3-visual-form-slides.html#font-typeface",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Font typeface creates hierarchy\n\n \n\nI am important!\n\n\nI am also pretty important!\n\n \n\nThanks for reading me\n\n\nI know, I’m kinda boring"
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#font-cobo",
+    "href": "slides/week4.3-visual-form-slides.html#font-cobo",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Combining different approaches to create hierarchy\n\n\n\nI am important!\n\n\nI am also pretty important!\n\n \n\nThanks for reading me\n\n\nI know, I’m kinda boring"
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#colorblindness",
     "href": "slides/week4.3-visual-form-slides.html#colorblindness",
     "title": "EDS 240",
     "section": "",
-    "text": "tbd"
+    "text": "tbd\n\nWe’ll spend a lot more time talking about colors next week!"
   },
   {
-    "objectID": "slides/week4.3-visual-form-slides.html#highlight-important-info",
-    "href": "slides/week4.3-visual-form-slides.html#highlight-important-info",
+    "objectID": "slides/week4.3-visual-form-slides.html#combining-things-air",
+    "href": "slides/week4.3-visual-form-slides.html#combining-things-air",
     "title": "EDS 240",
     "section": "",
-    "text": "tbd"
+    "text": "Putting it all together\n\n\n\nSource: Why crowded meetings and conference rooms make you so, so tired, by Christopher Ingraham (The Washington Post)"
   },
   {
-    "objectID": "slides/week4.3-visual-form-slides.html#combining-things",
-    "href": "slides/week4.3-visual-form-slides.html#combining-things",
+    "objectID": "slides/week4.3-visual-form-slides.html#combining-things-penguins",
+    "href": "slides/week4.3-visual-form-slides.html#combining-things-penguins",
     "title": "EDS 240",
     "section": "",
-    "text": "Putting it all together\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPerfectly Proportional Penguins, by Cara Thompson (code)\n\n\n\nCara Thompson implements a number of the above considerations in her take on exploring the Palmer Penguins.\n\nTake some time to discuss the following:\n\nwhere are your eyes drawn first, second, etc.?\nwhat are the main messages / takeaways?\nwhat (if anything) is unclear?\n\n\n\n\n\n\n−+\n05:00"
+    "text": "Putting it all together\n\n\n\n\n\n\n\n\n\n\n\n\n\nPerfectly Proportional Penguins, by Cara Thompson (code)\n\n\n \nCara Thompson implements a number of the above considerations in her take on exploring the Palmer Penguins.\n\nTake some time to discuss the following:\n\nwhere are your eyes drawn first, second, etc.?\nwhat are the main messages / takeaways?\nwhat (if anything) is unclear?\n\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#alt-text",
@@ -628,6 +677,13 @@
     "title": "EDS 240",
     "section": "",
     "text": "Reminder: include alt text!\n\n\n\nAlternative (alt) text makes our data visualizations accessible to a broader community. Always include alt text when publishing a data visualization online.\n\n\n\n\n\nReview the guidelines and examples for writing effective alt text in the week 2 discussion slides."
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#end-break",
+    "href": "slides/week4.3-visual-form-slides.html#end-break",
+    "title": "EDS 240",
+    "section": "",
+    "text": "See you next week!\n\n\n~ This is the end of Lesson 3 (of 3) ~"
   },
   {
     "objectID": "slides/week6.1-good-viz-slides.html#title-slide",
@@ -788,7 +844,7 @@
     "href": "slides/week5.1-colors-slides.html#choosing-colors",
     "title": "EDS 240",
     "section": "",
-    "text": "tbd\n\n\npicking colors is hard! use them purposefully\n\nyour brand\npulling colors from a related image\ntake inspiration from other data viz/art\ngoogle “[whatever you like] palette”\n\n\n{monochromeR}\n\ncolors & common pitfalls\n\nwhat to consider when choosing colors for data visualization (datawrapper)\ngradients for cont data\nbe consistent with colors\ncolor gradients (consider binned colors)\nmisleading color palettes (rainbow color palette): https://eagereyes.org/blog/2013/rainbow-color-map\nthink about color palettes before you create your viz! use color blindness tools"
+    "text": "tbd\n\n\npicking colors is hard! use them purposefully\n\nyour brand\npulling colors from a related image\ntake inspiration from other data viz/art\ngoogle “[whatever you like] palette”\n\n\n{monochromeR}\n\ncolors & common pitfalls\n\nwhat to consider when choosing colors for data visualization (datawrapper)\ngradients for cont data\nbe consistent with colors\ncolor gradients (consider binned colors)\nmisleading color palettes (rainbow color palette): https://eagereyes.org/blog/2013/rainbow-color-map\nthink about color palettes before you create your viz! use color blindness tools\n\nhttps://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/ https://blog.datawrapper.de/colors/"
   },
   {
     "objectID": "index.html#course-description",

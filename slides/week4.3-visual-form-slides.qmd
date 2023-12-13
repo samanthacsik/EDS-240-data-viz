@@ -15,7 +15,7 @@ editor_options:
 
 [EDS 240: Lecture 4.3]{.custom-title}
 
-[*Visual form*]{.custom-subtitle}
+[*Visual form (an intro)*]{.custom-subtitle}
 
 <hr class="hr-teal">
 
@@ -86,7 +86,7 @@ Today, we'll familiarize ourselves with a general set of rules and best practice
 ::: {.incremental}
 - **data-ink ratio** (less is more)
 - how to **reduce eye movement** and **improve readability / interpretability** (e.g. through alternative legend positions, direct annotations)
-- using **hierarchy** to guide the reader
+- using **visual hierarchy** to guide the reader
 - **consistent** use of colors, spacing, typefaces, weights
 - **color choices** (and making sure that they're **colorblindness-friendly**)
 - how to **draw the main attention** to the most **important info**
@@ -188,7 +188,7 @@ ggplot(penguins, aes(x = body_mass_g, fill = species)) +
 
 - Eliminating lots of non-data ink **may render visualizations difficult to read**
 
-    - [Inbar et al. (2007)](https://doi.org/10.1145/1362550.1362587) found that students preferred a more maxamilist visualization design over the minimalist version proposed by Tufte
+    - [Inbar et al. (2007)](https://doi.org/10.1145/1362550.1362587) found that students preferred a more maximilist visualization design over the minimalist version proposed by Tufte
 
 . . . 
 
@@ -287,7 +287,7 @@ Increases the data-ink ratio and reduces overall eye movement.
 
 ## {#move-legend-position data-menu-title="Move the legend (position)"} 
 
-[Move the legend]{.slide-title}
+[Move the legend (positioning)]{.slide-title}
 
 <hr>
 
@@ -358,11 +358,11 @@ ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species
 
 ## {#legend-ggtext data-menu-title="Move the legend (ggtext)"} 
 
-[Move the legend]{.slide-title}
+[Move the legend (incorporate into title text)]{.slide-title2}
 
 <hr>
 
-Reduce eye movement and excess ink by including legend info in the plot (sub)title: 
+Reduce eye movement and excess ink by including legend info in the plot (sub)title (here, using the [`{ggtext}` package](https://wilkelab.org/ggtext/)): 
 
 <br>
 
@@ -375,6 +375,10 @@ Original plot:
 :::
 
 ```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
 ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species)) +
   geom_point(aes(color = species, shape = species),
              size = 3, alpha = 0.8) +
@@ -421,16 +425,12 @@ ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species
 :::
 
 ::::
-
-<br>
-
-The [`{ggtext}` package](https://wilkelab.org/ggtext/) allows us to apply CSS styling to different plot elements (among other things!).
   
 ---
 
 ## {#add-direct-labels data-menu-title="Move the legend (direct labels)"} 
 
-[Move the legend]{.slide-title}
+[Move the legend (use direct labels)]{.slide-title}
 
 <hr>
 
@@ -500,17 +500,24 @@ Legend as direct labels:
 
 ---
 
+## {#highlight-important-info data-menu-title="Highlight important info"} 
+
+[tbd]{.slide-title3}
+
+<hr>
+
+gghighlight
+using vertical lines (show thesis temp plot)
+
+---
+
 ## {#use-annotations-neil data-menu-title="Use annotations (Neil)"} 
 
 [Use annotations to improve readability / interpretability]{.slide-title3}
 
 <hr>
 
-<br>
-
 Is the y-axis necessary for this plot? What's the author's goal? How do annotations help achieve that goal?
-
-<br>
 
 :::: {.columns}
 
@@ -518,7 +525,7 @@ Is the y-axis necessary for this plot? What's the author's goal? How do annotati
 ```{r}
 #| eval: true
 #| echo: false
-#| out-width: "80%"
+#| out-width: "100%"
 #| fig-align: "center"
 knitr::include_graphics("images/week4/neil-without-annotations.png")
 ```
@@ -528,7 +535,7 @@ knitr::include_graphics("images/week4/neil-without-annotations.png")
 ```{r}
 #| eval: true
 #| echo: false
-#| out-width: "80%"
+#| out-width: "100%"
 #| fig-align: "center"
 knitr::include_graphics("images/week4/neil-with-annotations.png")
 ```
@@ -572,41 +579,282 @@ knitr::include_graphics("images/week4/burn-murdoch-covid.png")
 
 ---
 
-## {#hierarchy data-menu-title="Hierarchy to guide reader"} 
+## {#typography data-menu-title="What is typography?"} 
 
-[tbd]{.slide-title}
+[Typography -- what is it?]{.slide-title}
 
 <hr>
+
+> "Typography is the art and technique of arranging type to make written language legible, readable and appealing when displayed."
+
+::: {.right-align-text .body-text-s}
+-[Wikipedia](https://en.wikipedia.org/wiki/Typography)
+:::
+
+**Some helpful definitions:**
+
+- [**[Typeface](https://fonts.google.com/knowledge/glossary/typeface) (aka font family)**: underlying visual design that can exist in many different typesetting technologies (e.g. Times New Roman, Helvetica, Roboto)]{.body-text-s}
+- [**[Font](https://fonts.google.com/knowledge/glossary/font)**: an implementation of a typeface; they can come in different weights and styles (e.g. bold, italic)]{.body-text-s}
+
+<br>
+
+. . .
+
+::: {.center-text .body-text-m}
+**You choose a *typeface* (e.g. [Nunito](https://fonts.google.com/specimen/Nunito?query=nunito)).**
+
+**You use a *font* (regular, italic, bold).**
+:::
+
+::: {.footer}
+Want to dive deeper into the world of typography? Start with this quick read, [Why care about typography?](https://fonts.google.com/knowledge/introducing_type/why_care_about_typography) and explore other great articles by [Google Fonts](https://fonts.google.com/knowledge).
+:::
 
 ---
 
-## {#typography data-menu-title="Typography"} 
+## {#font-choices data-menu-title="Font choices"} 
 
-[Typography]{.slide-title}
+[How to choose the right typeface(s) & font(s)]{.slide-title2}
 
 <hr>
 
-- typography
-  - fonts should fit the topic and audience - context matters
-  - avoid fancy fonts and squiggeled letters
-  - use ways to visualize hierarchy (xl, l, etc. OR font face, underlined, bold OR color red, black gray, gray, OR spacing OR typeface OR combining all these)
-  - avoid using ALL CAPS
-  - use a monospaced font with lining for numbers (each number takes up the same space)
-  - consistency is key
-  - 1Il typography test -- if you pick a font and type these out together, they should look different: https://www.nngroup.com/articles/pairing-typefaces/, https://fonts.google.com/knowledge/glossary/legibility
-  - align your text (left for most, title should be left-aligned, labels and subtitles can be center or right aligned)
-  - don't rotate your text 
+<br>
+
+::: {.incremental}
+- **context matters** -- the type(s) should fit the topic and audience
+- when in doubt, **use a [sans-serif](https://en.wikipedia.org/wiki/Sans-serif) style** (and **avoid fancy** types (especially squiggley ones))
+- strategically use types & fonts to **create hierarchy** 
+- avoid using **too many typefaces** (stick to just 1-3)
+- avoid (extensively) using **ALL CAPS**
+- use **[monospaced](https://fonts.google.com/knowledge/glossary/monospaced)** types for numbers
+:::
+
+. . . 
+
+<br>
+
+There are *lots* of excellent resources out there for choosing the right typeface / font -- here are a few I recommend starting with:
+
+- [This collection](https://fonts.google.com/knowledge/choosing_type) of short articles on choosing type, by [Google Fonts](https://fonts.google.com/)
+- [Choosing Fonts for Your Data Visualization](https://nightingaledvs.com/choosing-fonts-for-your-data-visualization/), by Tiffany France (Nightingale)
+- [Which fonts to use for your charts and tables](https://blog.datawrapper.de/fonts-for-data-visualization/), by Lisa Charlotte Muth (Datawrapper)
 
 
+::: notes
+Horror films, by Cristophe Nicault <https://github.com/cnicault/tidytuesday/tree/master/2022/2022-44-horror-movies>
+:::
 
 ---
 
-## {#consistency data-menu-title="Consistency"} 
+## {#typographic-hierarchy data-menu-title="Typographic hierarchy"} 
 
-[tbd]{.slide-title}
+[Typographic hierarchy]{.slide-title}
 
 <hr>
 
+**No one wants to read a wall of text.** You can use font size, style, color, spacing, and typeface to create a hierarchy to guide your readers.
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/hierarchy.png")
+```
+
+<br>
+
+::: {.center-text .gray-text .body-text-s}
+Source: [The UX Designer’s Guide to Typography](https://www.interaction-design.org/literature/article/the-ux-designer-s-guide-to-typography)
+:::
+
+---
+
+## {#font-size data-menu-title="Hierarchy with fonts (size)"} 
+
+[Font *size* creates hierarchy]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.center-text}
+<span style="font-size:3em;">I am important!</span>
+:::
+
+<br>
+
+::: {.center-text}
+<span style="font-size:2em;">I am also pretty important!</span>
+:::
+
+<br>
+
+::: {.center-text}
+<span style="font-size:1em;">Thanks for reading me</span>
+:::
+
+<br>
+
+::: {.center-text}
+<span style="font-size:0.6em;">I know, I'm kinda boring</span>
+:::
+
+---
+
+## {#font-style data-menu-title="Hierarchy with fonts (style)"} 
+
+[Font *style* creates hierarchy]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.center-text}
+<span style="font-size:2em; text-decoration: underline;">**I am important!**</span>
+:::
+
+<br>
+
+::: {.center-text}
+<span style="font-size:2em;">**I am also pretty important!**</span>
+:::
+
+<br>
+
+::: {.center-text}
+<span style="font-size:2em;">*Thanks for reading me*</span>
+:::
+
+<br>
+
+::: {.center-text}
+<span style="font-size:2em;">I know, I'm kinda boring</span>
+:::
+
+---
+
+## {#font-color data-menu-title="Hierarchy with fonts (color)"} 
+
+[Font *color* creates hierarchy]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.center-text}
+<span style="font-size:2em; color: #047C90;">I am important!</span>
+:::
+
+<br>
+
+::: {.center-text}
+<span style="font-size:2em;">I am also pretty important!</span>
+:::
+
+<br>
+
+::: {.center-text}
+<span style="font-size:2em; color: #ABABAB;">Thanks for reading me</span>
+:::
+
+<br>
+
+::: {.center-text}
+<span style="font-size:2em; color: #D1D1D1;">I know, I'm kinda boring</span>
+:::
+
+---
+
+## {#font-spacing data-menu-title="Hierarchy with fonts (spacing)"} 
+
+[Font *spacing* creates hierarchy]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+::: {.center-text}
+<span style="font-size:1.5em;">I am important!</span>
+:::
+
+::: {.center-text}
+<span style="font-size:1.5em;">I am also pretty important!</span>
+:::
+
+<br>
+<br>
+<br>
+
+::: {.center-text}
+<span style="font-size:1.5em;">Thanks for reading me</span>
+:::
+
+::: {.center-text}
+<span style="font-size:1.5em;">I know, I'm kinda boring</span>
+:::
+
+---
+
+## {#font-typeface data-menu-title="Hierarchy with fonts (typeface)"} 
+
+[Font *typeface* creates hierarchy]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+::: {.center-text .sanchez-font}
+<span style="font-size:1.5em;">I am important!</span>
+:::
+
+::: {.center-text .sanchez-font}
+<span style="font-size:1.5em;">I am also pretty important!</span>
+:::
+
+<br>
+<br>
+
+::: {.center-text}
+<span style="font-size:1.5em;">Thanks for reading me</span>
+:::
+
+::: {.center-text}
+<span style="font-size:1.5em;">I know, I'm kinda boring</span>
+:::
+
+---
+
+## {#font-cobo data-menu-title="Hierarchy with fonts (combos)"} 
+
+[Combining different approaches to create hierarchy]{.slide-title2}
+
+<hr>
+
+<br>
+
+::: {.center-text}
+<span style="font-size:2.5em;">**I am important!**</span>
+:::
+
+::: {.center-text}
+<span style="font-size:1.5em; color: #047C90;">I am also pretty important!</span>
+:::
+
+<br>
+<br>
+
+::: {.center-text .nanum-font}
+<span style="font-size:1.2em;">Thanks for reading me</span>
+:::
+
+::: {.center-text .nanum-font}
+<span style="font-size:1.2em;">I know, I'm kinda boring</span>
+:::
 
 ---
 
@@ -616,23 +864,51 @@ knitr::include_graphics("images/week4/burn-murdoch-covid.png")
 
 <hr>
 
----
-
-## {#highlight-important-info data-menu-title="Highlight important info"} 
-
-[tbd]{.slide-title3}
-
-<hr>
+We'll spend a lot more time talking about colors next week!
 
 ---
 
-## {#combining-things data-menu-title="Combining it all"} 
+## {#combining-things-air data-menu-title="Combining it all (Ex 1)"} 
 
 [Putting it all together]{.slide-title}
 
 <hr>
 
-<br>
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/clearing-air.png")
+```
+
+
+::: {.footer .center-text .body-text-s}
+Source: [Why crowded meetings and conference rooms make you so, so tired](https://www.washingtonpost.com/business/2019/06/06/why-crowded-meetings-conference-rooms-make-you-so-so-tired/), by Christopher Ingraham (The Washington Post)
+:::
+
+
+---
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/clearing-air-annotated.png")
+```
+
+::: {.center-text .gray-text .body-text-s}
+Adapted from [@chezVoila](https://twitter.com/chezVoila/status/1136631524919513088)
+:::
+
+---
+
+## {#combining-things-penguins data-menu-title="Combining it all"} 
+
+[Putting it all together]{.slide-title}
+
+<hr>
 
 :::: {.columns}
 
@@ -640,7 +916,7 @@ knitr::include_graphics("images/week4/burn-murdoch-covid.png")
 ```{r}
 #| eval: true
 #| echo: false
-#| out-width: "80%"
+#| out-width: "100%"
 #| fig-align: "center"
 knitr::include_graphics("images/week4/thompson-penguins.png")
 ```
@@ -652,6 +928,7 @@ Perfectly Proportional Penguins, by [Cara Thompson](https://www.cararthompson.co
 
 ::: {.column width="50%"}
 
+<br>
 <br>
 
 Cara Thompson implements a number of the above considerations in her take on exploring the Palmer Penguins.
@@ -715,17 +992,15 @@ knitr::include_graphics("images/week4/alt-text.png")
 
 ---
 
-VISUAL FORM
 
+  - align your text (left for most, title should be left-aligned, labels and subtitles can be center or right aligned)
+  - don't rotate your text 
   
+---
 
-  
-  https://z3tt.github.io/bespokeDS
-  
-  covid 19 cases & deaths by US State https://www.cedricscherer.com/2020/03/31/corona-covid-19-death-tolls-worst-day-so-far/
-  Todd Quartiere; source Wikipedia
-  too many colors; need to normalize by population; early in the pandemic there was arguments for normalizing by population size, but Cedric didn't like this; normally likes to normalize, but have to make a decision
-      - talking about PEOPLE, so maybe we want to show exact numbers for an emotional perspective
-      - talk to experts
-  
+##  {#end-break data-menu-title="# End #" background="#047C90"}
 
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">See you next week!</p>
+<p class="caption-text">*~ This is the end of Lesson 3 (of 3) ~*</p>
+</div>
