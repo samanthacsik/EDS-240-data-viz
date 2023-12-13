@@ -1,0 +1,46 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../meds-slides-styles.scss
+editor_options: 
+  chunk_output_type: console
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 4.4]{.custom-title}
+
+[*Colors*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[Week 4 | January 29^th^, 2024]{.custom-subtitle3}
+
+---
+
+## {#choosing-colors data-menu-title="Choosing colors"} 
+
+[tbd]{.slide-title}
+
+<hr>
+
+- picking colors is hard! use them purposefully
+  - your brand
+  - pulling colors from a related image
+  - take inspiration from other data viz/art 
+  - google "[whatever you like] palette"
+
+{monochromeR}
+
+- colors & common pitfalls
+  - what to consider when choosing colors for data visualization (datawrapper)
+  - gradients for cont data
+  - be consistent with colors
+  - color gradients (consider binned colors)
+  - misleading color palettes (rainbow color palette): https://eagereyes.org/blog/2013/rainbow-color-map
+  - think about color palettes before you create your viz! use color blindness tools

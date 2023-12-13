@@ -249,9 +249,9 @@ Link is also bookmarked at the top of the **#eds-240-data-viz** Slack channel an
 | 1/22    | fundamental chart types (part I)                                    |
 | 1/29    | fundamental chart types (part II)                                   |
 | 2/5     | design principles & best practices (part II)                        |
-| 2/12    | visualizing uncertainty & avoiding the misrepresentation of data    |
+| 2/12    | data communication                                                  |
 | 2/19    | [*no class* ]{.teal-text}                                           |
-| 2/26    | communicating for your audience                                     |
+| 2/26    | visualizing uncertainty & avoiding the misrepresentation of data    |
 | 3/4     | OJS with Dr. Allison Horst                                          |
 | 3/11    | grab bag & catch up                                                 |
 :::

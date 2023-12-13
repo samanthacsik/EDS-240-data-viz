@@ -12,7 +12,7 @@
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
-  <title>EDS 240 – week1.1-logistics-slides</title>
+  <title>EDS 240 – week4.3-visual-form-slides</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #a55a00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #a55a00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #00769e; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #00769e; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #a55a00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -332,584 +397,415 @@
 
 <section id="title-slide" class="slide level2 center" data-menu-title="Title Slide" data-background="#053660">
 <h2></h2>
-<p><span class="custom-title">EDS 240: Lecture 1.1</span></p>
-<p><span class="custom-subtitle"><em>Course logistics &amp; syllabus</em></span></p>
+<p><span class="custom-title">EDS 240: Lecture 4.3</span></p>
+<p><span class="custom-subtitle"><em>Visual form</em></span></p>
 <hr class="hr-teal">
-<p><span class="custom-subtitle3">Week 1 | January 8<sup>th</sup>, 2024</span></p>
+<p><span class="custom-subtitle3">Week 4 | January 29<sup>th</sup>, 2024</span></p>
 </section>
-<section id="welcome" class="slide level2" data-menu-title="Welcome to EDS 240!">
+<section id="looking-forward" class="slide level2" data-menu-title="Looking forward">
 <h2></h2>
-<p><span class="slide-title">Welcome to EDS 240!</span></p>
+<p><span class="slide-title">Looking forward . . .</span></p>
 <hr>
-<p>This course will focus on the basic principles for effective communication through data visualization and using technical tools and workflows for creating and sharing data visualizations with diverse audiences.</p>
-
-<img data-src="images/week1/horst-eco-r4ds.png" style="width:45.0%" alt="An extended version of the classic R4DS schematic from Grolemund &amp; Wickham, with environmental data science, communities, and communication added." class="r-stretch quarto-figure-center"><div class="gray-text body-text-s center-text">
-<p><em>Artwork by <a href="https://allisonhorst.com/">Allison Horst</a></em></p>
+<p><br></p>
+<div class="center-text body-text-m">
+<p>Next week, we’ll start diving into improving the overall aesthetics of our data visualizations</p>
+</div>
+<div class="fragment">
+<div class="center-text">
+<p><i class="fa-solid fa-palette" title="a paint palette" aria-label="palette"></i> applying pre-made and custom color palettes</p>
+</div>
+</div>
+<div class="fragment">
+<div class="center-text">
+<p><i class="fa-solid fa-font" title="a stylized capital letter ‘A’" aria-label="font"></i> updating fonts</p>
+</div>
+</div>
+<div class="fragment">
+<div class="center-text">
+<p><i class="fa-solid fa-pencil" title="pencil" aria-label="pencil"></i> adding annotations</p>
+</div>
+</div>
+<div class="fragment">
+<div class="center-text">
+<p><i class="fa-solid fa-chart-line" title="a line chart with an upwards trending line" aria-label="chart-line"></i> fine-tuning themes</p>
+</div>
+</div>
+<div class="fragment">
+<div class="center-text">
+<p><i class="fa-solid fa-highlighter" title="highlighter" aria-label="highlighter"></i> centering our primary message</p>
+</div>
+</div>
+<div class="fragment">
+<p><br></p>
+<div class="center-text body-text-m">
+<p>Today, we’ll familiarize ourselves with a general set of rules and best practices.</p>
+</div>
 </div>
 </section>
-<section id="logistics" class="slide level2" data-menu-title="Course logistics">
+<section id="good-design" class="slide level2" data-menu-title="Good data viz considerations">
 <h2></h2>
-<p><span class="slide-title">Meeting times &amp; locations</span></p>
+<p><span class="slide-title">Good data visualization design considers:</span></p>
 <hr>
+<p><br></p>
+<div>
 <ul>
-<li><strong>Class:</strong> Mondays 1:00-4:00pm PT (attendance is mandatory)</li>
-<li><strong>Discussion Sections:</strong> Wednesdays 10:00-10:50am PT &amp; 11:00-11:50am PT</li>
+<li class="fragment"><strong>data-ink ratio</strong> (less is more)</li>
+<li class="fragment">how to <strong>reduce eye movement</strong> and <strong>improve readability / interpretability</strong> (e.g.&nbsp;through alternative legend positions, direct annotations)</li>
+<li class="fragment">using <strong>hierarchy</strong> to guide the reader</li>
+<li class="fragment"><strong>consistent</strong> use of colors, spacing, typefaces, weights</li>
+<li class="fragment"><strong>color choices</strong> (and making sure that they’re <strong>colorblindness-friendly</strong>)</li>
+<li class="fragment">how to <strong>draw the main attention</strong> to the most <strong>important info</strong></li>
+<li class="fragment">including <strong>alt text</strong></li>
 </ul>
-
-<img data-src="images/week1/nceas-classroom.jpg" style="width:45.0%" alt="The NCEAS first floor classroom, looking from the back of the class towards the front. A woman stands at the podium, front and center, and gestures towards teh large TV display on the wall. Students sit at long tables and look towards the front of the room." class="r-stretch quarto-figure-center"><div class="center-text">
-<p><em>Class &amp; Discussion Sections meet in the <strong>NCEAS 1st floor classroom</strong></em></p>
+</div>
+<div class="fragment">
+<p><br></p>
+<div class="center-text body-text-m">
+<p>The above should <em>always be considered</em> in your design process, but <em>may not always be necessary</em></p>
+</div>
 </div>
 </section>
-<section id="instructor" class="slide level2" data-menu-title="Teaching team">
+<section id="data-ink-ratio" class="slide level2" data-menu-title="Data-Ink ratio">
 <h2></h2>
-<p><span class="slide-title">Teaching team</span></p>
+<p><span class="slide-title">Data-Ink ratio: remove non-data ink</span></p>
 <hr>
+<p><span class="body-text-s">The <a href="https://infovis-wiki.net/wiki/Data-Ink_Ratio">Data-Ink ratio</a> was introduced by Edward Tufte (<a href="https://faculty.salisbury.edu/~jtanderson/teaching/cosc311/fa21/files/tufte.pdf">The Visual Display of Quantitative Information</a>, 1983) and argues that <strong>non-data-ink</strong> (i.e.&nbsp;ink used for for everything <em>except</em> the presentation of data itself) <strong>should be removed wherever possible</strong>.</span></p>
+<p><span class="math display">\[
+\text{Data-ink ratio} = \frac{\text{Data-ink}}{\text{Total ink used to print the graphic}}
+\]</span> <br></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="center-text body-text-l">
-<p><strong>Instructor</strong></p>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week1/sam.png" style="width:55.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="center-text">
-<p><span class="teal-text"><strong>Sam Csik</strong></span><br>
-<strong>Email:</strong> <a href="mailto::scsik@ucsb.edu">scsik@ucsb.edu</a><br>
-<strong>Learn more:</strong> <a href="https://samanthacsik.github.io/">samanthacsik.github.io</a><br>
-<strong>Student hours:</strong> M 4-5pm @ NCEAS</p>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="center-text body-text-l">
-<p><strong>TA</strong></p>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week1/sevan.png" style="width:51.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="center-text">
-<p><span class="teal-text"><strong>Sevan Esaian</strong></span><br>
-<strong>Email:</strong> <a href="mailto::sevan.esaian@lifesci.ucsb.edu">sevan.esaian@lifesci.ucsb.edu</a><br>
-<strong>Learn more:</strong> <a href="https://www.linkedin.com/in/sevan-esaian-92b7794b/">linkedin.com/in/sevan-esaian</a> <strong>Student hours:</strong> W 9-10am @ NCEAS</p>
-</div>
-</div>
-</div>
-</section>
-<section id="meet-one-another" class="slide level2" data-menu-title="# Meet one another #" data-background="#047C90">
-<h2></h2>
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">
-<i class="fa-solid fa-comments" title="two talking bubbles" aria-label="comments"></i> Meet one another!
-</p>
-<p class="caption-text">
-<em>Spend the next few minutes getting to know your Learning Partners! Below are some conversation starters:</em>
-</p>
-<p class="dark-blue-text">
-<strong>Where do you feel most at home?</strong>
-</p>
-<p class="dark-blue-text">
-<strong>What parts of Santa Barbara have you enjoyed exploring?</strong>
-</p>
-<p class="dark-blue-text">
-<strong>What’s the most exciting thing you’ve learned this year, so far?</strong>
-</p>
-<p class="dark-blue-text">
-<strong>What’s your favorite color or typeface?</strong>
-</p>
+<div class="center-text body-text-s gray-text">
+<p>Low Data-Ink ratio</p>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_fc4858bb" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<p><img data-src="week4.3-visual-form-slides_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s gray-text">
+<p>High Data-Ink ratio</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="week4.3-visual-form-slides_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-ink-ratio-criticism" class="slide level2" data-menu-title="Data-Ink ratio criticism">
+<h2></h2>
+<p><span class="slide-title2">Maximizing the Data-Ink ratio isn’t always <em>best</em></span></p>
+<hr>
+<p><br></p>
+<div class="fragment">
+<ul>
+<li><p>Eliminating lots of non-data ink <strong>may render visualizations difficult to read</strong></p>
+<ul>
+<li><a href="https://doi.org/10.1145/1362550.1362587">Inbar et al.&nbsp;(2007)</a> found that students preferred a more maxamilist visualization design over the minimalist version proposed by Tufte</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Risk of many boring graphics / less room for the creative display of data </strong>– how you choose to maximize your data-ink ratio will depend largely on <em>who</em> your visualization is for and the <em>purpose</em> it’s meant to serve.</li>
+</ul>
+</div>
+<div class="fragment">
+<p><br></p>
+<div class="center-text body-text-m">
+<p>A general rule of thumb: <strong>aim to maximize the data-ink ratio while not sacrificing overall design and aesthetics</strong>.</p>
+</div>
+</div>
+</section>
+<section id="remove-redundant-legend" class="slide level2" data-menu-title="Remove redundant legend">
+<h2></h2>
+<p><span class="slide-title">Remove redundant legend information</span></p>
+<hr>
+<p>Ask yourself, <em>“Does this legend provide additional information that I can’t get elsewhere?”</em>. If not, remove a legend using:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>plot <span class="sc">+</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week4.3-visual-form-slides_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week4.3-visual-form-slides_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="center-text">
+<p>Increases the data-ink ratio and reduces overall eye movement.</p>
+</div>
+</section>
+<section id="move-legend-position" class="slide level2" data-menu-title="Move the legend (position)">
+<h2></h2>
+<p><span class="slide-title">Move the legend</span></p>
+<hr>
+<p>Reduce eye movement by updating the legend position (e.g.&nbsp;move it onto the plot panel):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>plot <span class="sc">+</span> </span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.85</span>, <span class="fl">0.15</span>) <span class="co"># you'll need to adjust these values for your plot!</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text gray-text body-text-s">
+<p>Original plot:</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="week4.3-visual-form-slides_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text gray-text body-text-s">
+<p>Updated legend position:</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="week4.3-visual-form-slides_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+<p><span class="body-text-s">Also note the redundant <code>species</code> mapping (color and shape) – sometime redundancy is important for accessibility!</span></p>
+</section>
+<section id="legend-ggtext" class="slide level2" data-menu-title="Move the legend (ggtext)">
+<h2></h2>
+<p><span class="slide-title">Move the legend</span></p>
+<hr>
+<p>Reduce eye movement and excess ink by including legend info in the plot (sub)title:</p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text gray-text body-text-s">
+<p>Original plot:</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="week4.3-visual-form-slides_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text gray-text body-text-s">
+<p>Legend as styled title text:</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week4.3-visual-form-slides_files/figure-revealjs/unnamed-chunk-10-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>The <a href="https://wilkelab.org/ggtext/"><code>{ggtext}</code> package</a> allows us to apply CSS styling to different plot elements (among other things!).</p>
+</section>
+<section id="add-direct-labels" class="slide level2" data-menu-title="Move the legend (direct labels)">
+<h2></h2>
+<p><span class="slide-title">Move the legend</span></p>
+<hr>
+<p>Reduce eye movement and excess ink by including legend info as direct labels on the plot:</p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text gray-text body-text-s">
+<p>Original plot:</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week4.3-visual-form-slides_files/figure-revealjs/unnamed-chunk-11-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text gray-text body-text-s">
+<p>Legend as direct labels:</p>
+</div>
+</div>
+</div>
+<p><br></p>
+<!-- INCLUDE HELPFUL PACKAGES HERE -->
+</section>
+<section id="use-annotations-neil" class="slide level2" data-menu-title="Use annotations (Neil)">
+<h2></h2>
+<p><span class="slide-title3">Use annotations to improve readability / interpretability</span></p>
+<hr>
+<p><br></p>
+<p>Is the y-axis necessary for this plot? What’s the author’s goal? How do annotations help achieve that goal?</p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week4/neil-without-annotations.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week4/neil-with-annotations.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="center-text gray-text body-text-s">
+<p><a href="https://questionsindataviz.com/2018/01/06/is-white-space-always-your-friend/">Is white space always your friend</a>, by Neil Richards</p>
+</div>
+</section>
+<section id="use-annotations-covid" class="slide level2" data-menu-title="Use annotations (COVID)">
+<h2></h2>
+<p><span class="slide-title3">Use annotations to improve readability / interpretability</span></p>
+<hr>
+<blockquote>
+<p>“The key thing we do is to add a title to the chart, as an entry point and to explain what is going on. <strong>Text and other annotations add enourmous value for non-chart people.</strong>”</p>
+</blockquote>
+<div class="right-align-text body-text-s">
+<p>-<a href="https://www.ft.com/john-burn-murdoch">John Burn-Murdoch</a>, Financial Times</p>
+</div>
+<p><br></p>
+
+<img data-src="images/week4/burn-murdoch-covid.png" style="width:80.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="center-text body-text-s gray-text">
+<p><a href="https://www.ft.com/content/e26c93a0-90e7-4dec-a796-3e25e94bc59b">Vaccines and Omicron mean Covid now less deadly than flu in England</a>, by John Burn-Murdoch</p>
+</div>
+</section>
+<section id="hierarchy" class="slide level2" data-menu-title="Hierarchy to guide reader">
+<h2></h2>
+<p><span class="slide-title">tbd</span></p>
+<hr>
+</section>
+<section id="typography" class="slide level2" data-menu-title="Typography">
+<h2></h2>
+<p><span class="slide-title">Typography</span></p>
+<hr>
+<ul>
+<li>typography
+<ul>
+<li>fonts should fit the topic and audience - context matters</li>
+<li>avoid fancy fonts and squiggeled letters</li>
+<li>use ways to visualize hierarchy (xl, l, etc. OR font face, underlined, bold OR color red, black gray, gray, OR spacing OR typeface OR combining all these)</li>
+<li>avoid using ALL CAPS</li>
+<li>use a monospaced font with lining for numbers (each number takes up the same space)</li>
+<li>consistency is key</li>
+<li>1Il typography test – if you pick a font and type these out together, they should look different: https://www.nngroup.com/articles/pairing-typefaces/, https://fonts.google.com/knowledge/glossary/legibility</li>
+<li>align your text (left for most, title should be left-aligned, labels and subtitles can be center or right aligned)</li>
+<li>don’t rotate your text</li>
+</ul></li>
+</ul>
+</section>
+<section id="consistency" class="slide level2" data-menu-title="Consistency">
+<h2></h2>
+<p><span class="slide-title">tbd</span></p>
+<hr>
+</section>
+<section id="colorblindness" class="slide level2" data-menu-title="Colorblindness">
+<h2></h2>
+<p><span class="slide-title">tbd</span></p>
+<hr>
+</section>
+<section id="highlight-important-info" class="slide level2" data-menu-title="Highlight important info">
+<h2></h2>
+<p><span class="slide-title3">tbd</span></p>
+<hr>
+</section>
+<section id="combining-things" class="slide level2" data-menu-title="Combining it all">
+<h2></h2>
+<p><span class="slide-title">Putting it all together</span></p>
+<hr>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week4/thompson-penguins.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text gray-text body-text-s">
+<p>Perfectly Proportional Penguins, by <a href="https://www.cararthompson.com/">Cara Thompson</a> (<a href="https://github.com/cararthompson/tidytuesdays/blob/main/scripts/202007d_penguins.R">code</a>)</p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p>Cara Thompson implements a number of the above considerations in her take on exploring the Palmer Penguins.</p>
+<p><br></p>
+<p>Take some time to discuss the following:</p>
+<ul>
+<li>where are your eyes drawn first, second, etc.?</li>
+<li>what are the main messages / takeaways?</li>
+<li>what (if anything) is unclear?</li>
+</ul>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_0b0bf2ce" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 </section>
-<section id="student-resources" class="slide level2" data-menu-title="Student Resources">
+<section id="alt-text" class="slide level2" data-menu-title="Alt text">
 <h2></h2>
-<p><span class="slide-title">Student Resources</span></p>
+<p><span class="slide-title">Reminder: include alt text!</span></p>
 <hr>
-<ul>
-<li><strong>Basic Needs Resources &amp; Food Security:</strong> <a href="https://basicneeds.ucsb.edu/" class="uri">https://basicneeds.ucsb.edu/</a> (schedule a <a href="https://www.google.com/url?q=https://shoreline.ucsb.edu/meetings/m2727/bookanadvocate&amp;sa=D&amp;source=docs&amp;ust=1698264138992010&amp;usg=AOvVaw2qVVM5nn4p5oruh-LxtWik">CalFresh Appoinment</a> or <a href="https://shoreline.ucsb.edu/otp_signup?module=meeting&amp;redirect=%2fmeetings%2fm2820%2fbook">Basic Needs Advising Session</a>)</li>
-<li><strong>Counseling &amp; Psychological Services (CAPS):</strong> <a href="http://caps.sa.ucsb.edu" class="uri">http://caps.sa.ucsb.edu</a></li>
-<li><strong>Resource Center for Sexual and Gender Diversity (RCSGD):</strong> <a href="https://rcsgd.sa.ucsb.edu/" class="uri">https://rcsgd.sa.ucsb.edu/</a></li>
-<li><strong>Undocumented Student Services (USS) Program:</strong> <a href="https://uss.sa.ucsb.edu/" class="uri">https://uss.sa.ucsb.edu/</a></li>
-<li><strong>Campus Learning Assistance Services (CLAS):</strong> <a href="http://clas.sa.ucsb.edu" class="uri">http://clas.sa.ucsb.edu</a></li>
-<li><strong>Student Resource Building (SRB):</strong> <a href="http://www.sa.ucsb.edu/student-resource-building/home" class="uri">http://www.sa.ucsb.edu/student-resource-building/home</a></li>
-<li><strong>Multicultural Center (MCC):</strong> <a href="http://mcc.sa.ucsb.edu/" class="uri">http://mcc.sa.ucsb.edu/</a></li>
-<li><strong>Campus Advocacy, Resources, &amp; Education (CARE):</strong> <a href="http://wgse.sa.ucsb.edu/care/home" class="uri">http://wgse.sa.ucsb.edu/care/home</a></li>
-<li><strong>Financial Crisis Response Team:</strong> <a href="mailto:financialcrisis@sa.ucsb.edu" class="email">financialcrisis@sa.ucsb.edu</a> (contact)</li>
-<li><strong>Health and Wellness:</strong> <a href="https://wellbeing.ucsb.edu/" class="uri">https://wellbeing.ucsb.edu/</a></li>
-</ul>
-<div class="fragment">
+<p><br></p>
 <div class="center-text">
-<p><em>Your mental and physical health is more important than your grade in any course.</em></p>
-<p><em>I’m always happy to help you identify resources or help on campus – DM or email me!</em></p>
+<p>Alternative (alt) text makes our data visualizations accessible to a broader community. <strong>Always include alt text when publishing a data visualization online.</strong></p>
 </div>
-</div>
-</section>
-<section id="conduct" class="slide level2" data-menu-title="Conduct, Inclusion, Accommodations">
-<h2></h2>
-<p><span class="slide-title">Conduct, Inclusion, Accommodations</span></p>
-<hr>
-<p><br> <br></p>
-<p><strong>Course Conduct:</strong> We are committed to actively creating, modeling, and maintaining an inclusive climate and supportive learning environment for all – <em>harassment of any kind will not be tolerated</em>. Everyone is expected read and adhere to the <a href="https://www.google.com/url?q=https://bren.ucsb.edu/media/4038/download&amp;sa=D&amp;source=docs&amp;ust=1698267517247684&amp;usg=AOvVaw2_0-cWvrj_Z5vPbg7muDIy">Bren School Code of Conduct</a> and the <a href="https://www.sa.ucsb.edu/docs/default-source/default-document-library/conduct-code-fall-2020_final.pdf?sfvrsn=fada724f_0">UCSB Code of Conduct</a></p>
 <p><br></p>
-<div class="fragment">
-<p><strong>Access &amp; accommodations:</strong> It’s never too late to apply for <a href="https://dsp.sa.ucsb.edu/accommodations/how-apply">DSP accommodations</a></p>
-<p><br></p>
-</div>
-<div class="fragment">
-<p><strong>Names &amp; pronouns:</strong> Everyone has the right to be addressed and referred by to name and pronouns in accordance with their identity – you can add your pronouns to your UCSB Registrar <a href="https://sso.my.ucsb.edu/adfs/ls/?wa=wsignin1.0&amp;wtrealm=http%3a%2f%2fblue.sa.ucsb.edu%2fLanding%2f&amp;wctx=rm%3d0%26id%3dpassive%26ru%3d%252fLanding%252fHomepage.aspx&amp;wct=2023-08-09T18%3a30%3a46Z&amp;rpsa-rn=5TFey%252fVSv9IF17J4Pn8osgH1LticIlQr%252blbEYGshM3OOsDWYP4J7emNKxAxFivBYQ9bjUpX68pv2TfPF1l10Gw%253d%253d&amp;rpsa-an=AQYFW%252bAMuZU5NJ2X8VVjYJfEUAIzGOJ5TsVA9tf6taioBLLASrEwwwTwL3CfnBo0hlWxXzchkFxh%252frWqIlUAXA%253d%253d&amp;rpsa-se=f5hRpBYXKP06s9Rp4Upm1RVnbN1guWDIEz%252bUg2%252fhCNeRJJGUTljXkJhT2q3Jc3CVoQo8gAKnlHeyxBa48wHcTA%253d%253d&amp;rpsa-sedn=Ua%252fdFKWiVmSNkCOjsPoWPa%252bDhhvj5Uj6jpegUTzkSC8%253d">profile</a></p>
-</div>
-</section>
-<section id="course-website" class="slide level2" data-menu-title="Course website">
-<h2></h2>
-<p><span class="slide-title2">Everything you’ll need lives on the course website!</span></p>
-<hr>
-<div class="center-text body-text-m">
-<p><strong><a href="https://samanthacsik.github.io/EDS-240-data-viz" class="uri">https://samanthacsik.github.io/EDS-240-data-viz</a></strong></p>
-</div>
 
-<img data-src="images/week1/eds240-website.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="body-text-m center-text">
-<p>Link is also bookmarked at the top of the <strong>#eds-240-data-viz</strong> Slack channel and linked on the <a href="https://ucsb-meds.github.io/courses.html">Courses page</a> of the MEDS website.</p>
-</div>
-</section>
-<section id="tentative-schedule" class="slide level2" data-menu-title="Tentative Schedule">
-<h2></h2>
-<p><span class="slide-title">Tentative Schedule &amp; Materials</span></p>
-<hr>
-<p><br></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<table>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Date</th>
-<th>Tentative Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1/8</td>
-<td>course logistics, intro, <code>{ggplot2}</code> review</td>
-</tr>
-<tr class="even">
-<td>1/15</td>
-<td><span class="teal-text"><em>no class</em></span></td>
-</tr>
-<tr class="odd">
-<td>1/22</td>
-<td>fundamental chart types (part I)</td>
-</tr>
-<tr class="even">
-<td>1/29</td>
-<td>fundamental chart types (part II)</td>
-</tr>
-<tr class="odd">
-<td>2/5</td>
-<td>design principles &amp; best practices (part II)</td>
-</tr>
-<tr class="even">
-<td>2/12</td>
-<td>data communication</td>
-</tr>
-<tr class="odd">
-<td>2/19</td>
-<td><span class="teal-text"><em>no class</em></span></td>
-</tr>
-<tr class="even">
-<td>2/26</td>
-<td>visualizing uncertainty &amp; avoiding the misrepresentation of data</td>
-</tr>
-<tr class="odd">
-<td>3/4</td>
-<td>OJS with Dr.&nbsp;Allison Horst</td>
-</tr>
-<tr class="even">
-<td>3/11</td>
-<td>grab bag &amp; catch up</td>
-</tr>
-</tbody>
-</table>
-</div><div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week1/eds240-website-course-materials.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
+<img data-src="images/week4/alt-text.png" style="width:80.0%" class="r-stretch quarto-figure-center"><p><br></p>
 <div class="center-text">
-<p><em>Discussion sections are held every week</em></p>
+<p><strong>Review the guidelines and examples for writing effective alt text in the <a href="https://samanthacsik.github.io/EDS-240-data-viz/course-materials/discussion/week2/week2-alt-text.html#/title-slide">week 2 discussion slides</a>.</strong></p>
 </div>
 </section>
-<section id="pre-class-prep" class="slide level2" data-menu-title="Pre-class Prep">
-<h2></h2>
-<p><span class="slide-title3">Complete all items under <em>Pre-class Prep</em> before lecture</span></p>
-<hr>
-<p>Please be sure to carefully complete all required prep (e.g.&nbsp;installing packages, downloading data) under the <strong>Pre-class Prep</strong> section (organized by week) before lecture – be mindful that some items may take time to download/install.</p>
+<section class="slide level2">
 
-<img data-src="images/week1/pre-class-prep.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text">
-<p><strong><em>It is highly recommended that you do this well in advance of attending lecture.</em></strong></p>
-</div>
-</section>
-<section id="assignments" class="slide level2" data-menu-title="Assignments">
-<h2></h2>
-<p><span class="slide-title">Assignments</span></p>
-<hr>
-<p><br></p>
-<div class="body-text-l center-text">
-<p>Your course grade will be based off the following:</p>
-</div>
-<div>
-<ul>
-<li class="fragment"><strong>3 Self-reflections</strong> - a place to reflect on your learning plan / goals, challenges, etc. (5 days to complete each)</li>
-<li class="fragment"><strong>4 Homework Assignments</strong> - longer assignments where you’ll apply conceptual knowledge &amp; technical skills to data viz tasks (10+ days to complete each)</li>
-<li class="fragment"><strong>8 End-of-class surveys</strong> - short surveys to help me better understand your weekly class experience (due by EOD each day there is lecture)</li>
-<li class="fragment"><strong>8 Lectures</strong> - a mix of slide-based lectures, live-coding, and individual / group-based critical thinking and technical exercises (attendance mandatory, Mondays 1:00-4:00pm PT)</li>
-</ul>
-</div>
-</section>
-<section id="grading" class="slide level2" data-menu-title="Alternative Grading">
-<h2></h2>
-<p><span class="slide-title">How will I be evaluated?</span></p>
-<hr>
-<div class="body-text-l center-text">
-<p>This class will implement an alternative grading approach called <strong>specifications (specs) grading</strong>.</p>
-</div>
-<div class="fragment">
-<div class="body-text-m">
-<blockquote>
-<p>“an alternative grading method where instructors create a <strong>list of specifications that describe the qualities and characteristics of a successful submission</strong> for an assignment. Student work is <strong>graded holistically</strong> based on those specifications, earning a single mark: <strong>“Satisfactory” or “Not Yet”</strong>. Students have the <strong>chance to use feedback</strong> by revisiting and resubmitting for full credit.”</p>
-</blockquote>
-</div>
-<div class="right-align-text">
-<p>-expert from <em>“Grading for Growth: A Guide to Alternative Grading Practices That Promote Authentic Learning and Student Engagement in Higher Education”, by David Clark &amp; Robert Talbert</em></p>
-</div>
-</div>
-</section>
-<section id="why-specs" class="slide level2" data-menu-title="Why Specs Grading?">
-<h2></h2>
-<p><span class="slide-title">Why Specs grading?</span></p>
-<hr>
-<p><br></p>
-<p><span class="body-text-m">“Traditional” grading can come with some challenges:</span></p>
-<p><br></p>
-<div>
-<ul>
-<li class="fragment">lacks feedback loops</li>
-<li class="fragment">benefits those who learn fast or have prior experience</li>
-<li class="fragment">bias-prone (e.g.&nbsp;awarding points, granting extensions)</li>
-<li class="fragment">can discourage learning for its own sake</li>
-<li class="fragment">can promote unhealthy student-instructor relationships</li>
-</ul>
-</div>
-</section>
-<section id="how-does-specs-look" class="slide level2" data-menu-title="What does specs grading look like?">
-<h2></h2>
-<p><span class="slide-title3">How does specs grading look in practice for <em>this</em> course?</span></p>
-<hr>
-<div class="body-text-m pink-highlight">
-<p><strong>TL;DR:</strong> assignments receive either “Satisfactory” or “Not Yet” marks; tokens can be used to revise/resubmit assignments, for assignment extensions, or to miss class; earn tokens by attending discussions</p>
-</div>
-<div>
-<ul>
-<li class="fragment">assignments receive either a <strong>“Satisfactory”</strong> or <strong>“Not Yet”</strong> mark</li>
-<li class="fragment">each assignment will have a <strong>clear rubric</strong> (containing specifications) which outline what must be completed and how in order to receive a “Satisfactory” mark; <em>not</em> meeting all specifications results in a “Not Yet” mark</li>
-<li class="fragment">students can <strong>trade “tokens”</strong> for the opportunity to:
-<ul>
-<li class="fragment">revise/resubmit assignments that receive a “Not Yet” mark</li>
-<li class="fragment">assignment extensions</li>
-<li class="fragment">to miss class</li>
-</ul></li>
-<li class="fragment">students <strong>earn tokens</strong> (primarily) by attending discussion section</li>
-</ul>
-</div>
-</section>
-<section id="why-tokens" class="slide level2" data-menu-title="Why tokens?">
-<h2></h2>
-<p><span class="slide-title"><i class="fa-solid fa-coins" aria-label="coins"></i> Why tokens?</span></p>
-<hr>
-<p><br></p>
-<p>Everyone has different responsibilities &amp; demands – <strong><em>tokens give you the power and freedom to ask for the accommodations you need.</em></strong></p>
-<p><br></p>
-<div class="fragment">
-<p>You <em>do not</em> need to provide a reason to request an extension, resubmission, or to miss class, but <em>you must</em> have enough tokens to do so.</p>
-<p><br></p>
-</div>
-<div class="fragment">
-<div class="pink-highlight body-text-m center-text">
-<p><strong>Tokens are not limitless and they accrue weekly (i.e.&nbsp;you don’t receive them all at the start), so use them wisely!</strong></p>
-</div>
-</div>
-</section>
-<section id="tokens" class="slide level2" data-menu-title="Tokens">
-<h2></h2>
-<p><span class="slide-title">Earning &amp; using tokens</span></p>
-<hr>
-<p><br></p>
-<p><span class="body-text-l"><strong>Earn tokens:</strong></span></p>
-<div>
-<ul>
-<li class="fragment">everyone starts with <strong>0 tokens</strong></li>
-<li class="fragment">earn your <strong>first token</strong> by attending discussion section on Wednesday 1/10</li>
-<li class="fragment">earn <strong>2 more tokens</strong> by submitting Self-reflection #1</li>
-<li class="fragment">earn <strong>1 token per week</strong> by attending discussion section (<em>full 50min</em>)</li>
-</ul>
-</div>
-<p><br></p>
-<div class="fragment">
-<p><span class="body-text-l"><strong>Use tokens:</strong></span></p>
-<p>Fill out this Google form: <a href="https://forms.gle/6FdV9g5KA9GgrxXBA" class="uri">https://forms.gle/6FdV9g5KA9GgrxXBA</a> and email Sam &amp; Sevan to let them know</p>
-</div>
-</section>
-<section id="grade-tracker" class="slide level2" data-menu-title="Grade Tracker">
-<h2></h2>
-<p><span class="slide-title3">Use the Grade Tracker to determine your course grade</span></p>
-<hr>
-
-<img data-src="images/week1/grade-tracker.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
-<section id="GenAI" class="slide level2" data-menu-title="GenAI">
-<h2></h2>
-<p><span class="slide-title">Policy on Generative AI (GenAI)</span></p>
-<hr>
-<p><span class="body-text-m">GenAI tools (such as ChatGPT) are strongly discouraged for the following reasons:</span></p>
-<div>
-<ul>
-<li class="fragment">core competencies are built through practice</li>
-<li class="fragment">building your own programming proficiency will help you engage with GenAI tools more productively</li>
-<li class="fragment">subscription versions of GenAI tools may induce an inequitable learning environment</li>
-</ul>
-</div>
-<div class="fragment">
-<p><span class="body-text-m">Please adhere to these guidelines:</span></p>
-<div>
-<ul>
-<li class="fragment">you may use spell/grammar check and/or synonym identification tools</li>
-<li class="fragment">be prepared to explain each line of code in your assignments and exercises</li>
-<li class="fragment">if you use GenAI in assignments, you <strong>must include</strong> a statement of which GenAI platform used and why, along with a copy of your initial prompt(s) and ensuing “conversation(s)”</li>
-</ul>
-</div>
-</div>
-<div class="fragment">
-<div class="center-text body-text-l">
-<p><strong>Please read the full policy on the <a href="https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit">course syllabus</a></strong></p>
-</div>
-</div>
-</section>
-<section id="help" class="slide level2" data-menu-title="Getting help">
-<h2></h2>
-<p><span class="slide-title">Getting unstuck</span></p>
-<hr>
-<p>Troubleshooting, deciphering code, and trying (and failing at) new things is a <strong>large</strong> part of being a data scientist. Grad school is a safe space to get comfy with and practice these! Here’s how you should approach getting unstuck:</p>
-
-<img data-src="images/week1/getting-help-steps.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p>Check out the <a href="http://localhost:5908/getting-unstuck.html">getting unstuck</a> page (under “resources”) on the course website for more tips – particularly a reminder of <strong>how to ask a question.</strong></p>
-</section>
-<section id="sucking-less" class="slide level2" data-menu-title="Sucking less">
-<h2></h2>
-<p><span class="slide-title">A note on pushing through the challenges</span></p>
-<hr>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><br> <br></p>
-<div class="body-text-m">
-<blockquote>
-<p>“There is no way of [going from] knowing nothing about a subject to knowing something about a subject without going through a period of much frustration and suckiness.” <strong>“Push through. You’ll suck less.”</strong></p>
-</blockquote>
-</div>
-<div class="right-align-text">
-<p>-Hadley Wickham, author of <code>{ggplot2}</code></p>
-</div>
-</div><div class="column" style="width:50%;">
-<p><br> <br> <br></p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week1/adventure-time.gif" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="body-text-s gray-text center-text">
-<p>Slide adapted from <a href="https://www.andrewheiss.com/">Andrew Heiss’</a> lesson, <a href="https://datavizs23.classes.andrewheiss.com/content/01-content.html">Truth, beauty, and data</a> (<a href="https://datavizs23.classes.andrewheiss.com/">PMAP 8101: Data Visualization</a>)</p>
-</div>
-</section>
-<section id="slack" class="slide level2" data-menu-title="Slack">
-<h2></h2>
-<p><span class="slide-title">A note on using Slack</span></p>
-<hr>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><br></p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week1/slack.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<p><br></p>
-<p><strong>All course-related content questions should be asked in the <code>#eds-240-data-viz</code> channel</strong> – oftentimes there are others who have the same question and will benefit from seeing the discussion!</p>
-<p><br></p>
-<p>Any questions sent as DMs will be copied into <code>#eds-240-data-viz</code> and answered there.</p>
-<p><br></p>
-<p><em>Of course, please direct message or email with any personal questions or concerns.</em></p>
-</div>
-</div>
-</section>
-<section id="expectations" class="slide level2" data-menu-title="Expectations">
-<h2></h2>
-<p><span class="slide-title3">A note on expectations</span></p>
-<hr>
-<p><span class="teal-text"><strong>Reminders:</strong></span></p>
-<ul>
-<li><span class="body-text-s">We are not mind-readers (as helpful as that would be!). Please help us help you by bringing any issues to our attention (EOC surveys are a great place to do this, or via DM / email) – the earlier the better!</span></li>
-</ul>
-<div class="fragment">
-<p><span class="teal-text"><strong>Promises:</strong></span></p>
-<div>
-<ul>
-<li class="fragment"><span class="body-text-s">We are working, and will continue to work, <em>really</em> hard to make this a great class!</span></li>
-<li class="fragment"><span class="body-text-s">We are super passionate about teaching, but doesn’t mean it’s easy or that we’re infallible. We will do our best to adapt to student / class needs as the quarter progresses. There may be times where we won’t or can’t make changes to the course plan – if so, we will be transparent in our reasoning why.</span></li>
-</ul>
-</div>
-</div>
-<div class="fragment">
-<p><span class="teal-text"><strong>Boundaries:</strong></span></p>
-<div class=".incremental">
-<ul>
-<li><span class="body-text-s">This course (unfortunately) isn’t our only professional responsibility this quarter – we will not be available at all times to respond to requests / questions. Here’s what you can expect:</span>
-<ul>
-<li><span class="body-text-s">We will try our best to respond to Slack questions within 24hr (during the week)</span></li>
-<li><span class="body-text-s">A response after-hours (5pm - 9am) is not guaranteed (we will try our best, as our personal lives allow for)</span></li>
-<li><span class="body-text-s">We will not be responding to questions over the weekend</span></li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="this-course1" class="slide level2" data-menu-title="What is EDS 240?">
-<h2></h2>
-<p><span class="slide-title">What is EDS 240?</span></p>
-<hr>
-<p><br></p>
-<div class="center-text">
-<p>EDS 240: Data Visualization and Communication is about two related, but distinct things:</p>
-</div>
-<p><br></p>
-<div class="fragment">
-<p><strong>1. The theory of effective communication and data design</strong></p>
-<p><span class="teal-text"><i class="fa-solid fa-eye" title="an eye" aria-label="eye"></i></span> How people perceive and interpret graphical information<br>
-<span class="teal-text"><i class="fa-solid fa-circle-user" title="a user inside a circle" aria-label="circle-user"></i></span> Human-centered design as it relates to data visualizations</p>
-<p><br></p>
-</div>
-<div class="fragment">
-<p><strong>2. The physical act of building effective data visualizations using software and data science tools</strong></p>
-<p><span class="teal-text"><i class="fa-solid fa-code" title="the symbol for code, </>" aria-label="code"></i></span> Using the Grammar of Graphics / <code>{ggplot2}</code> framework to create effective, truthful, and beautiful data visualizations <span class="teal-text"><i class="fa-solid fa-chart-column" title="a bar chart" aria-label="chart-column"></i></span></p>
-</div>
-</section>
-<section id="this-course2" class="slide level2" data-menu-title="What is EDS 240?">
-<h2></h2>
-<p><span class="slide-title">What is EDS 240?</span></p>
-<hr>
-<p><br></p>
-<div class="center-text body-text-m">
-<p><strong>The topic of data visualization is pretty darn massive.</strong></p>
-</div>
-<div class="fragment">
-<div class="center-text">
-<p>We cannot and will not cover every data visualization type, consideration, package, etc.</p>
-</div>
-<p><br></p>
-</div>
-<div class="fragment">
-<div class="center-text">
-<p>We <em>will</em> work towards a conceptual and technical understanding of <span class="teal-text"><strong>data viz fundamentals</strong></span>.</p>
-</div>
-<p><br></p>
-</div>
-<div class="fragment">
-<div class="center-text">
-<p>Data viz is a science and technical skill, but there’s also a lot of <span class="teal-text"><strong>space for creativity</strong></span>.</p>
-</div>
-<p><br></p>
-</div>
-<div class="fragment">
-<div class="center-text">
-<p>What you create can be used in your <span class="teal-text"><strong>professional portfolio</strong></span>! The more you put in, the more you’ll get out.</p>
-</div>
-</div>
-</section>
-<section id="LOs" class="slide level2" data-menu-title="Learning Objectives">
-<h2></h2>
-<p><span class="slide-title">Course Learning Objectives</span></p>
-<hr>
-<p><span class="teal-text"><i class="fa-solid fa-magnifying-glass" aria-label="magnifying-glass"></i></span> Identify which types of visualizations are most appropriate for your data and your audience</p>
-<p><br></p>
-<div class="fragment">
-<p><span class="teal-text"><i class="fa-solid fa-broom" aria-label="broom"></i></span> Prepare (e.g.&nbsp;clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations</p>
-<p><br></p>
-</div>
-<div class="fragment">
-<p><span class="teal-text"><i class="fa-solid fa-chart-column" aria-label="chart-column"></i></span> Build effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically <code>ggplot2</code> + ggplot2 extension packages</p>
-<p><br></p>
-</div>
-<div class="fragment">
-<p><span class="teal-text"><i class="fa-solid fa-file-code" aria-label="file-code"></i></span> Write code from scratch <em>and</em> read and adapt code written by others</p>
-<p><br></p>
-</div>
-<div class="fragment">
-<p><span class="teal-text"><i class="fa-solid fa-users" aria-label="users"></i></span> Apply a DEI (Diversity, Equity &amp; Inclusion) lens to the process of designing data visualizations</p>
-<p><br></p>
-</div>
-<div class="fragment">
-<p><span class="teal-text"><i class="fa-solid fa-comments" aria-label="comments"></i></span> Assess, critique, and provide constructive feedback on data visualizations</p>
-</div>
-</section>
-<section id="end-break" class="slide level2" data-menu-title="# Break #" data-background="#047C90">
-<h2></h2>
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">
-<i class="fa-solid fa-mug-hot" title="a mug with steam rising out the top" aria-label="mug-hot"></i> Take a Break
-</p>
-<p class="caption-text">
-<em>~ This is the end of Lesson 1 (of 3) ~</em>
-</p>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_7aa01195" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
+<p>VISUAL FORM</p>
+<p>https://z3tt.github.io/bespokeDS</p>
+<p>covid 19 cases &amp; deaths by US State https://www.cedricscherer.com/2020/03/31/corona-covid-19-death-tolls-worst-day-so-far/ Todd Quartiere; source Wikipedia too many colors; need to normalize by population; early in the pandemic there was arguments for normalizing by population size, but Cedric didn’t like this; normally likes to normalize, but have to make a decision - talking about PEOPLE, so maybe we want to show exact numbers for an emotional perspective - talk to experts</p>
 
 <div class="footer footer-default">
 

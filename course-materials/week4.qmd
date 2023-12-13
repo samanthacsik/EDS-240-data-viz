@@ -1,5 +1,5 @@
 ---
-title: "Fundamental chart types (part II), What makes a good data viz?"
+title: "Fundamental chart types (part II), Visual form"
 subtitle: "Week 4"
 description: "Monday January 29^th^, 2024"
 title-block-banner: true
@@ -54,9 +54,9 @@ Week 4 instruction is broken down into three lessons:
 
 ::: {.g-col-12 .g-col-md-4}
 ::: {.center-text}
-[**What makes a good viz?**]{.teal-text .body-text-m}
+[**Visual form (intro)**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 4.3 slides](../slides/week4.3-good-viz-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 4.3 slides](../slides/week4.3-visual-form-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
@@ -64,16 +64,14 @@ Week 4 instruction is broken down into three lessons:
 
 ## Discussion Materials
 
-Themes
+**Themes** are used to modify the non-data components of plots (e.g. titles, labels, fonts, background, gridlines, legend). In addition to using pre-build themes (available via the [`{ggplot2}` package](https://ggplot2.tidyverse.org/reference/ggtheme.html) and also from extension packages), you can fine-tune the appearance of your plots theme by making adjustments using the [`theme()` function](https://ggplot2.tidyverse.org/reference/theme.html). This week's discussion section will introduce the use of themes so that you can start to really make your data visualizations stand out {{< fa palette title="a paint palette" >}}
 
 ::: {.center-text}
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Week 4 discussion slides](discussion/week2/week4-themes.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Week 4 discussion slides](discussion/week4/week4-themes.qmd){.btn role="button" target="_blank"} 
 :::
 
-<!-- Themes? -->
 <!-- Critiquing data viz? -->
 <!-- see: https://samanthacsik.github.io/EDS-240-data-viz/slides/week3.1-choosing-graphic-forms-slides.html#/critique-considerations -->
-<!-- hockey stick graph: https://www.ipcc.ch/site/assets/uploads/2018/05/SYR_TAR_full_report.pdf -->
 
 ## Assignment Reminders
 

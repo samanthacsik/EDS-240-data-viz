@@ -7,19 +7,17 @@ format:
     chalkboard: true
     theme: 
       - ../meds-slides-styles.scss
-editor_options: 
-  chunk_output_type: console
 ---
 
 ## {#title-slide data-menu-title="Title Slide" background="#053660"} 
 
-[EDS 240: Lecture 4.3]{.custom-title}
+[EDS 240: Lecture 6.1]{.custom-title}
 
 [*What makes a good data viz?*]{.custom-subtitle}
 
 <hr class="hr-teal">
 
-[Week 4 | January 29^th^, 2024]{.custom-subtitle3}
+[Week 6 | February 12^th^, 2024]{.custom-subtitle3}
 
 ---
 
@@ -50,7 +48,7 @@ He has a ton of awesome [blog posts](https://www.cedricscherer.com/), shares [co
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/scherer-website.png")
+knitr::include_graphics("images/week6/scherer-website.png")
 ```
 :::
 
@@ -136,7 +134,7 @@ This has less to do with the physical act of creating data viz and everything to
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/ny-rats.png")
+knitr::include_graphics("images/week6/ny-rats.png")
 ```
 :::
 
@@ -171,7 +169,7 @@ This has less to do with the physical act of creating data viz and everything to
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/ny-rats-update.png")
+knitr::include_graphics("images/week6/ny-rats-update.png")
 ```
 :::
 
@@ -209,7 +207,7 @@ This has less to do with the physical act of creating data viz and everything to
 #| echo: false
 #| out-width: "50%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/jones-book.png")
+knitr::include_graphics("images/week6/jones-book.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
@@ -275,7 +273,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/hawkins-warming-stripes.png")
+knitr::include_graphics("images/week6/hawkins-warming-stripes.png")
 ```
 
 . . .
@@ -311,7 +309,7 @@ Elicits emotion. Vertical stripes have become synonymous with temperature.
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/scherer-plants-legend.png")
+knitr::include_graphics("images/week6/scherer-plants-legend.png")
 ```
 :::
 
@@ -321,7 +319,7 @@ knitr::include_graphics("images/week4/scherer-plants-legend.png")
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/scherer-plants.png")
+knitr::include_graphics("images/week6/scherer-plants.png")
 ```
 :::
 
@@ -368,7 +366,7 @@ countdown::countdown(
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/mann-etal-hockey-stick.png")
+knitr::include_graphics("images/week6/mann-etal-hockey-stick.png")
 ```
 
 ::: {.center-text .body-text-l}
@@ -414,7 +412,7 @@ Data from thermometers (red) and from tree rings, corals, ice cores, and histori
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/andy-kirk.png")
+knitr::include_graphics("images/week6/andy-kirk.png")
 ```
 
 <br>
@@ -443,7 +441,7 @@ Scheme by Andy Kirk from his book [Data Visualisation: A Handbook for Data Drive
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/map-original.png")
+knitr::include_graphics("images/week6/map-original.png")
 ```
 :::
 
@@ -484,7 +482,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/map-original.png")
+knitr::include_graphics("images/week6/map-original.png")
 ```
 :::
 
@@ -494,7 +492,7 @@ knitr::include_graphics("images/week4/map-original.png")
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/map-blue.png")
+knitr::include_graphics("images/week6/map-blue.png")
 ```
 :::
 
@@ -524,7 +522,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/map-original.png")
+knitr::include_graphics("images/week6/map-original.png")
 ```
 :::
 
@@ -534,7 +532,7 @@ knitr::include_graphics("images/week4/map-original.png")
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/map-blue-sm-arrows.png")
+knitr::include_graphics("images/week6/map-blue-sm-arrows.png")
 ```
 :::
 
@@ -564,7 +562,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/map-original.png")
+knitr::include_graphics("images/week6/map-original.png")
 ```
 :::
 
@@ -574,7 +572,7 @@ knitr::include_graphics("images/week4/map-original.png")
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/map-blue-circles.png")
+knitr::include_graphics("images/week6/map-blue-circles.png")
 ```
 :::
 
@@ -604,7 +602,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/map-original.png")
+knitr::include_graphics("images/week6/map-original.png")
 ```
 :::
 
@@ -614,7 +612,7 @@ knitr::include_graphics("images/week4/map-original.png")
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/migration-bar.png")
+knitr::include_graphics("images/week6/migration-bar.png")
 ```
 :::
 
@@ -626,7 +624,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 
 ---
 
-## {#goal1 data-menu-title="Transport your story"} 
+## {#select-graphic-forms1 data-menu-title="Transport your story"} 
 
 [Select graphic forms that help to tell your story]{.slide-title2}
 
@@ -640,7 +638,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 #| echo: false
 #| out-width: "70%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/cairo-elementary-visual-perception.png")
+knitr::include_graphics("images/week6/cairo-elementary-visual-perception.png")
 ```
 :::
 
@@ -675,7 +673,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 
 ---
 
-## {#goal2 data-menu-title="Transport your story"} 
+## {#select-graphic-forms2 data-menu-title="Transport your story"} 
 
 [Select graphic forms that help to tell your story]{.slide-title2}
 
@@ -689,7 +687,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 #| echo: false
 #| out-width: "70%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/cairo-elementary-visual-perception.png")
+knitr::include_graphics("images/week6/cairo-elementary-visual-perception.png")
 ```
 :::
 
@@ -724,7 +722,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 
 ---
 
-## {#goal2 data-menu-title="Transport your story" visibility="uncounted"} 
+## {#select-graphic-forms-ex data-menu-title="Transport your story" visibility="uncounted"} 
 
 [Select graphic forms that help to tell your story]{.slide-title2}
 
@@ -738,7 +736,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/scherer-australian-fires.png")
+knitr::include_graphics("images/week6/scherer-australian-fires.png")
 ```
 
 ::: {.center-text .body-text-s}
@@ -758,7 +756,7 @@ Australian Fires, by Cédric Scherer ([code](https://github.com/z3tt/TidyTuesday
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/scherer-coffee.png")
+knitr::include_graphics("images/week6/scherer-coffee.png")
 ```
 
 ::: {.center-text .body-text-s}
@@ -774,40 +772,3 @@ Not my cup of coffee, by Cédric Scherer ([code](https://github.com/z3tt/TidyTue
 ::: footer
 Informative | [**Story**]{.teal-text} | Visual Form
 :::
-
----
-
-VISUAL FORM
-
-follow design rules and data viz principles
-
-- colors & common pitfalls
-  - what to consider when choosing colors for data visualization (datawrapper)
-  - gradients for cont data
-  - be consistent with colors
-  - color gradients (consider binned colors)
-  - misleading color palettes (rainbow color palette): https://eagereyes.org/blog/2013/rainbow-color-map
-  - think about color palettes before you create your viz! use color blindness tools
-  
-- typography
-  - fonts should fit the topic and audience - context matters
-  - avoid fancy fonts and squiggeled letters
-  - use ways to visualize hierarchy (xl, l, etc. OR font face, underlined, bold OR color red, black gray, gray, OR spacing OR typeface OR combining all these)
-  - avoid using ALL CAPS
-  - use a monospaced font with lining for numbers (each number takes up the same space)
-  - consistency is key
-  - 1Il typography test -- if you pick a font and type these out together, they should look different: https://www.nngroup.com/articles/pairing-typefaces/, https://fonts.google.com/knowledge/glossary/legibility
-  - align your text (left for most, title should be left-aligned, labels and subtitles can be center or right aligned)
-  - don't rotate your text 
-  - consider putting axis information in the title (non-scientific publications) and remove axis text
-  - add annotations / remove gridlines; highlight what you want to tell
-  
-  https://z3tt.github.io/bespokeDS
-  
-  covid 19 cases & deaths by US State https://www.cedricscherer.com/2020/03/31/corona-covid-19-death-tolls-worst-day-so-far/
-  Todd Quartiere; source Wikipedia
-  too many colors; need to normalize by population; early in the pandemic there was arguments for normalizing by population size, but Cedric didn't like this; normally likes to normalize, but have to make a decision
-      - talking about PEOPLE, so maybe we want to show exact numbers for an emotional perspective
-      - talk to experts
-  
-

@@ -1,0 +1,731 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../meds-slides-styles.scss
+editor_options: 
+  chunk_output_type: console
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 4.3]{.custom-title}
+
+[*Visual form*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[Week 4 | January 29^th^, 2024]{.custom-subtitle3}
+
+---
+
+## {#looking-forward data-menu-title="Looking forward"} 
+
+[Looking forward . . .]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.center-text .body-text-m}
+Next week, we'll start diving into improving the overall aesthetics of our data visualizations
+:::
+
+. . . 
+
+::: {.center-text}
+{{< fa palette title="a paint palette" >}} applying pre-made and custom color palettes
+:::
+
+. . . 
+
+::: {.center-text}
+{{< fa font title="a stylized capital letter 'A'" >}} updating fonts
+:::
+
+. . . 
+
+::: {.center-text}
+{{< fa pencil title="pencil" >}} adding annotations
+:::
+
+. . . 
+
+::: {.center-text}
+{{< fa chart-line title="a line chart with an upwards trending line" >}} fine-tuning themes
+:::
+
+. . . 
+
+::: {.center-text}
+{{< fa highlighter title="highlighter" >}} centering our primary message
+:::
+
+. . . 
+
+<br>
+
+::: {.center-text .body-text-m}
+Today, we'll familiarize ourselves with a general set of rules and best practices.
+:::
+
+---
+
+## {#good-design data-menu-title="Good data viz considerations"} 
+
+[Good data visualization design considers:]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.incremental}
+- **data-ink ratio** (less is more)
+- how to **reduce eye movement** and **improve readability / interpretability** (e.g. through alternative legend positions, direct annotations)
+- using **hierarchy** to guide the reader
+- **consistent** use of colors, spacing, typefaces, weights
+- **color choices** (and making sure that they're **colorblindness-friendly**)
+- how to **draw the main attention** to the most **important info**
+- including **alt text**
+::::
+
+. . . 
+
+<br>
+
+::: {.center-text .body-text-m}
+The above should *always be considered* in your design process, but *may not always be necessary*
+:::
+
+---
+
+## {#data-ink-ratio data-menu-title="Data-Ink ratio"} 
+
+[Data-Ink ratio: remove non-data ink]{.slide-title}
+
+<hr>
+
+[The [Data-Ink ratio](https://infovis-wiki.net/wiki/Data-Ink_Ratio) was introduced by Edward Tufte ([The Visual Display of Quantitative Information](https://faculty.salisbury.edu/~jtanderson/teaching/cosc311/fa21/files/tufte.pdf), 1983) and argues that **non-data-ink** (i.e. ink used for for everything *except* the presentation of data itself) **should be removed wherever possible**.]{.body-text-s} 
+
+$$
+\text{Data-ink ratio} = \frac{\text{Data-ink}}{\text{Total ink used to print the graphic}}
+$$
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s .gray-text}
+Low Data-Ink ratio
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+
+ggplot(penguins, aes(x = body_mass_g, fill = species)) +
+  geom_histogram(alpha = 0.5, position = "identity") +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species") +
+  theme(
+    axis.title = element_text(size = 17),
+    axis.text = element_text(size = 15),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 17),
+    legend.position = "bottom"
+    )
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s .gray-text}
+High Data-Ink ratio
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+
+ggplot(penguins, aes(x = body_mass_g, fill = species)) +
+  geom_histogram(alpha = 0.5, position = "identity") +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species") +
+  theme_classic() +
+  theme(
+    axis.line = element_blank(),
+    axis.title = element_text(size = 17),
+    axis.text = element_text(size = 15),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 17),
+    legend.position = "bottom"
+  )
+```
+:::
+
+::::
+
+---
+
+## {#data-ink-ratio-criticism data-menu-title="Data-Ink ratio criticism"} 
+
+[Maximizing the Data-Ink ratio isn't always *best*]{.slide-title2}
+
+<hr>
+
+<br>
+
+. . . 
+
+- Eliminating lots of non-data ink **may render visualizations difficult to read**
+
+    - [Inbar et al. (2007)](https://doi.org/10.1145/1362550.1362587) found that students preferred a more maxamilist visualization design over the minimalist version proposed by Tufte
+
+. . . 
+
+- **Risk of many boring graphics / less room for the creative display of data **-- how you choose to maximize your data-ink ratio will depend largely on *who* your visualization is for and the *purpose* it's meant to serve.
+
+. . . 
+
+<br>
+
+::: {.center-text .body-text-m}
+A general rule of thumb: **aim to maximize the data-ink ratio while not sacrificing overall design and aesthetics**.
+:::
+
+---
+
+## {#remove-redundant-legend data-menu-title="Remove redundant legend"} 
+
+[Remove redundant legend information]{.slide-title}
+
+<hr>
+
+Ask yourself, *"Does this legend provide additional information that I can't get elsewhere?"*. If not, remove a legend using:
+
+```{r}
+#| eval: false
+#| echo: true
+plot +
+  theme(
+    legend.position = "none"
+  )
+```
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+library(tidyverse)
+library(palmerpenguins)
+
+ggplot(penguins, aes(x = fct_infreq(species), fill = species)) +
+  geom_bar(alpha = 0.8) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species") +
+  theme_classic() +
+  theme(
+    axis.line = element_blank(),
+    axis.title = element_text(size = 17),
+    axis.text = element_text(size = 15),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 17),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0))
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+library(tidyverse)
+library(palmerpenguins)
+
+ggplot(penguins, aes(x = fct_infreq(species), fill = species)) +
+  geom_bar(alpha = 0.8) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species") +
+  theme_classic() +
+  theme(
+    axis.line = element_blank(),
+    axis.title = element_text(size = 17),
+    axis.text = element_text(size = 15),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0)),
+    legend.position = "none"
+  )
+```
+:::
+
+::::
+
+::: {.center-text}
+Increases the data-ink ratio and reduces overall eye movement.
+:::
+
+---
+
+## {#move-legend-position data-menu-title="Move the legend (position)"} 
+
+[Move the legend]{.slide-title}
+
+<hr>
+
+Reduce eye movement by updating the legend position (e.g.  move it onto the plot panel):
+
+```{r}
+#| eval: false
+#| echo: true
+plot + 
+  theme(
+    legend.position = c(0.85, 0.15) # you'll need to adjust these values for your plot!
+  )
+```
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Original plot:
+:::
+
+```{r}
+ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species)) +
+  geom_point(aes(color = species, shape = species),
+             size = 3, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE, aes(color = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin bill dimensions",
+       subtitle = "Bill length and depth for Adelie, Chinstrap and Gentoo Penguins at Palmer Station LTER",
+       x = "Bill length (mm)", y = "Bill depth (mm)",
+       color = "Penguin species", shape = "Penguin species") +
+  theme_minimal() +
+  theme(#legend.position = c(0.85, 0.15),
+        plot.title.position = "plot"
+       )
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Updated legend position:
+:::
+
+```{r}
+ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species)) +
+  geom_point(aes(color = species, shape = species),
+             size = 3, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE, aes(color = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin bill dimensions",
+       subtitle = "Bill length and depth for Adelie, Chinstrap and Gentoo Penguins at Palmer Station LTER",
+       x = "Bill length (mm)", y = "Bill depth (mm)",
+       color = "Penguin species", shape = "Penguin species") +
+  theme_minimal() +
+  theme(legend.position = c(0.85, 0.15),
+        plot.title.position = "plot"
+       )
+```
+:::
+
+::::
+
+[Also note the redundant `species` mapping (color and shape) -- sometime redundancy is important for accessibility!]{.body-text-s}
+
+---
+
+## {#legend-ggtext data-menu-title="Move the legend (ggtext)"} 
+
+[Move the legend]{.slide-title}
+
+<hr>
+
+Reduce eye movement and excess ink by including legend info in the plot (sub)title: 
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Original plot:
+:::
+
+```{r}
+ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species)) +
+  geom_point(aes(color = species, shape = species),
+             size = 3, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE, aes(color = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin bill dimensions",
+       subtitle = "Bill length and depth for Adelie, Chinstrap and Gentoo Penguins at Palmer Station LTER",
+       x = "Bill length (mm)", y = "Bill depth (mm)",
+       color = "Penguin species", shape = "Penguin species") +
+  theme_minimal() +
+  theme(plot.title.position = "plot"
+       )
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Legend as styled title text:
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+library(ggtext)
+
+ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species)) +
+  geom_point(aes(color = species, shape = species), size = 3, alpha = 0.8) +
+ geom_smooth(method = "lm", se = FALSE, aes(color = species)) +
+ scale_color_manual(values = c("darkorange","purple","cyan4")) +
+ labs(title = "Penguin bill dimensions",
+      subtitle = "Bill length and depth for <span style='color:darkorange;'>**Adelie**</span>, <span style='color:purple;'>**Chinstrap**</span> and <span style='color:cyan4;'>**Gentoo**</span> Penguins at Palmer Station LTER",
+       x = "Bill length (mm)",
+       y = "Bill depth (mm)",
+       color = "Penguin species",
+       shape = "Penguin species") +
+  theme_minimal() +
+  theme(legend.position = "none",
+        plot.title.position = "plot",
+        plot.subtitle = ggtext::element_markdown())
+```
+:::
+
+::::
+
+<br>
+
+The [`{ggtext}` package](https://wilkelab.org/ggtext/) allows us to apply CSS styling to different plot elements (among other things!).
+  
+---
+
+## {#add-direct-labels data-menu-title="Move the legend (direct labels)"} 
+
+[Move the legend]{.slide-title}
+
+<hr>
+
+Reduce eye movement and excess ink by including legend info as direct labels on the plot:
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Original plot:
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(data = penguins, aes(x = bill_length_mm,y = bill_depth_mm, group = species)) +
+  geom_point(aes(color = species, shape = species),
+             size = 3, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE, aes(color = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin bill dimensions",
+       subtitle = "Bill length and depth for Adelie, Chinstrap and Gentoo Penguins at Palmer Station LTER",
+       x = "Bill length (mm)", y = "Bill depth (mm)",
+       color = "Penguin species", shape = "Penguin species") +
+  theme_minimal() +
+  theme(plot.title.position = "plot"
+       )
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Legend as direct labels:
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+# ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species)) +
+#   geom_point(aes(color = species, shape = species),
+#              size = 3, alpha = 0.8) +
+#   geom_smooth(method = "lm", se = FALSE, aes(color = species)) +
+#   scale_color_manual(values = c("darkorange","purple","cyan4")) +
+#   labs(title = "Penguin bill dimensions",
+#        subtitle = "Bill length and depth for Adelie, Chinstrap and Gentoo Penguins at Palmer Station LTER",
+#        x = "Bill length (mm)", y = "Bill depth (mm)",
+#        color = "Penguin species", shape = "Penguin species") +
+#   theme_minimal() +
+#   theme(plot.title.position = "plot"
+#        )
+```
+:::
+
+::::
+
+<br>
+
+<!-- INCLUDE HELPFUL PACKAGES HERE -->
+
+---
+
+## {#use-annotations-neil data-menu-title="Use annotations (Neil)"} 
+
+[Use annotations to improve readability / interpretability]{.slide-title3}
+
+<hr>
+
+<br>
+
+Is the y-axis necessary for this plot? What's the author's goal? How do annotations help achieve that goal?
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/neil-without-annotations.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/neil-with-annotations.png")
+```
+:::
+
+::::
+
+::: {.center-text .gray-text .body-text-s}
+[Is white space always your friend](https://questionsindataviz.com/2018/01/06/is-white-space-always-your-friend/), by Neil Richards
+:::
+
+---
+
+## {#use-annotations-covid data-menu-title="Use annotations (COVID)"} 
+
+[Use annotations to improve readability / interpretability]{.slide-title3}
+
+<hr>
+
+> "The key thing we do is to add a title to the chart, as an entry point and to explain what is going on. **Text and other annotations add enourmous value for non-chart people.**"
+
+::: {.right-align-text .body-text-s}
+-[John Burn-Murdoch](https://www.ft.com/john-burn-murdoch), Financial Times
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/burn-murdoch-covid.png")
+```
+
+<br>
+
+::: {.center-text .body-text-s .gray-text}
+[Vaccines and Omicron mean Covid now less deadly than flu in England](https://www.ft.com/content/e26c93a0-90e7-4dec-a796-3e25e94bc59b), by John Burn-Murdoch
+:::
+
+---
+
+## {#hierarchy data-menu-title="Hierarchy to guide reader"} 
+
+[tbd]{.slide-title}
+
+<hr>
+
+---
+
+## {#typography data-menu-title="Typography"} 
+
+[Typography]{.slide-title}
+
+<hr>
+
+- typography
+  - fonts should fit the topic and audience - context matters
+  - avoid fancy fonts and squiggeled letters
+  - use ways to visualize hierarchy (xl, l, etc. OR font face, underlined, bold OR color red, black gray, gray, OR spacing OR typeface OR combining all these)
+  - avoid using ALL CAPS
+  - use a monospaced font with lining for numbers (each number takes up the same space)
+  - consistency is key
+  - 1Il typography test -- if you pick a font and type these out together, they should look different: https://www.nngroup.com/articles/pairing-typefaces/, https://fonts.google.com/knowledge/glossary/legibility
+  - align your text (left for most, title should be left-aligned, labels and subtitles can be center or right aligned)
+  - don't rotate your text 
+
+
+
+---
+
+## {#consistency data-menu-title="Consistency"} 
+
+[tbd]{.slide-title}
+
+<hr>
+
+
+---
+
+## {#colorblindness data-menu-title="Colorblindness"} 
+
+[tbd]{.slide-title}
+
+<hr>
+
+---
+
+## {#highlight-important-info data-menu-title="Highlight important info"} 
+
+[tbd]{.slide-title3}
+
+<hr>
+
+---
+
+## {#combining-things data-menu-title="Combining it all"} 
+
+[Putting it all together]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/thompson-penguins.png")
+```
+
+::: {.center-text .gray-text .body-text-s}
+Perfectly Proportional Penguins, by [Cara Thompson](https://www.cararthompson.com/) ([code](https://github.com/cararthompson/tidytuesdays/blob/main/scripts/202007d_penguins.R))
+:::
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+Cara Thompson implements a number of the above considerations in her take on exploring the Palmer Penguins.
+
+<br>
+
+Take some time to discuss the following:
+
+- where are your eyes drawn first, second, etc.?
+- what are the main messages / takeaways?
+- what (if anything) is unclear?
+:::
+
+::::
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#alt-text data-menu-title="Alt text"} 
+
+[Reminder: include alt text!]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.center-text}
+Alternative (alt) text makes our data visualizations accessible to a broader community. **Always include alt text when publishing a data visualization online.**
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/alt-text.png")
+```
+
+<br>
+
+::: {.center-text}
+**Review the guidelines and examples for writing effective alt text in the [week 2 discussion slides](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/discussion/week2/week2-alt-text.html#/title-slide).**
+:::
+
+---
+
+VISUAL FORM
+
+  
+
+  
+  https://z3tt.github.io/bespokeDS
+  
+  covid 19 cases & deaths by US State https://www.cedricscherer.com/2020/03/31/corona-covid-19-death-tolls-worst-day-so-far/
+  Todd Quartiere; source Wikipedia
+  too many colors; need to normalize by population; early in the pandemic there was arguments for normalizing by population size, but Cedric didn't like this; normally likes to normalize, but have to make a decision
+      - talking about PEOPLE, so maybe we want to show exact numbers for an emotional perspective
+      - talk to experts
+  
+

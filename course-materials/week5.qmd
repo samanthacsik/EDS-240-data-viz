@@ -1,5 +1,5 @@
 ---
-title: "Design Principles & Enhancing Visualizations"
+title: "Design principles & enhancing visualizations"
 subtitle: "Week 5"
 description: "Monday February 5^th^, 2024"
 title-block-banner: true
@@ -27,17 +27,40 @@ knitr::include_graphics("../images/horst-ggplot-masterpiece.png")
 
 *Coming soon!*
 
-<!-- "good data viz:" (1) clean layout "less is more", (2) use direct annotations to easy readability + interpretability, (3) make use of hierarchy to guide the reader, (4) consistent use of colors, spacing, typefaces, weights, (5) use colors wisely and make sure they work for colorblind persons, (5) more important information should receive the main attention -->
-<!-- https://rstudio-conf-2022.github.io/ggplot2-graphic-design/materials/04_data_communication.pdf -->
-<!-- - visual perception -->
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+::: {.center-text}
+[**Colors**]{.teal-text .body-text-m}
+
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 4.3 slides](../slides/week5.1-colors-slides.qmd){.btn role="button" target="_blank"} 
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.center-text}
+[**tbd**]{.teal-text .body-text-m}
+
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 4.3 slides](../slides/tbd.qmd){.btn role="button" target="_blank"} 
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.center-text}
+[**tbd**]{.teal-text .body-text-m}
+
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 4.3 slides](../slides/tbd.qmd){.btn role="button" target="_blank"} 
+:::
+:::
+
+:::
+
 <!-- - color theory -->
 <!-- - alt text -->
 <!-- - typography -->
-<!-- - data-ink-ratio -->
 <!-- - DEI (using icons & colors for equity awareness) -->
-<!-- - storytelling (?) -->
 <!-- https://albert-rapp.de/posts/ggplot2-tips/07_four_ways_colors_more_efficiently/07_four_ways_colors_more_efficiently.html -->
-<!-- annotations -->
+<!-- annotations -- {ggtext} {ggtextpath} see https://cararthompson.github.io/nhsr-2023-level-up-workshop/level-up-workshop.html#/title-slide-->
 <!-- legends -->
 <!-- Redundant coding: update ridgeline plot legend https://clauswilke.com/dataviz/redundant-coding.html; see `guide_colorbar()` https://rstudio-conf-2022.github.io/ggplot2-graphic-design/modules/d2-06_layout.html-->
 <!-- patchwork for composing plots -->

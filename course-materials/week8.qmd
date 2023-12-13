@@ -1,23 +1,11 @@
 ---
-title: "Communicating for Your Audience"
+title: "Visualizing Uncertainty & Avoiding the Misrepresentation of Data"
 subtitle: "Week 8"
 description: "Monday February 26^th^, 2024"
 title-block-banner: true
 toc: true
 ---
 
-```{r}
-#| eval: true 
-#| echo: false
-#| fig-align: "center"
-#| out-width: "85%" 
-#| fig-alt: "An extended version of the classic R4DS schematic from Grolemund & Wickham, with environmental data science, communities, and communication added."
-knitr::include_graphics("../images/horst-eco-r4ds.png")
-```
-
-:::{.gray-text .center-text}
-*Artwork by [Allison Horst](https://allisonhorst.com/)*
-:::
 
 ## Pre-class Prep
 
@@ -35,7 +23,11 @@ knitr::include_graphics("../images/horst-eco-r4ds.png")
 
 ## Discussion Materials
 
-- [The beauty of data visualization](https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization?referrer=playlist-making_sense_of_too_much_data), a TED Talk by [David McCandless](https://davidmccandless.com/) (founder of [information is beautiful](https://informationisbeautiful.net/))
+*Brainstorming ideas (not yet set in stone):* 
+
+- [3 ways to spot a bad statistic](https://www.ted.com/talks/mona_chalabi_3_ways_to_spot_a_bad_statistic), TED Talk by [Mona Chalabi](https://monachalabi.com/)
+- [WTF Visualizations](https://viz.wtf/), a collection of visualizations that make no sense
+
 
 ## Assignment Reminders
 

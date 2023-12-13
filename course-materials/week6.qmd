@@ -1,10 +1,23 @@
 ---
-title: "Visualizing Uncertainty & Avoiding the Misrepresentation of Data"
+title: "Data communication"
 subtitle: "Week 6"
 description: "Monday February 12^th^, 2024"
 title-block-banner: true
 toc: true
 ---
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "85%" 
+#| fig-alt: "An extended version of the classic R4DS schematic from Grolemund & Wickham, with environmental data science, communities, and communication added."
+knitr::include_graphics("../images/horst-eco-r4ds.png")
+```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
 
 ## Pre-class Prep
 
@@ -12,7 +25,39 @@ toc: true
 
 ## Lecture Materials 
 
-*Coming soon!*
+<!-- "good data viz:" (1) clean layout "less is more", (2) use direct annotations to easy readability + interpretability, (3) make use of hierarchy to guide the reader, (4) consistent use of colors, spacing, typefaces, weights, (5) use colors wisely and make sure they work for colorblind persons, (5) more important information should receive the main attention -->
+<!-- https://rstudio-conf-2022.github.io/ggplot2-graphic-design/materials/04_data_communication.pdf -->
+<!-- - visual perception -->
+<!-- - data-ink-ratio -->
+<!-- - storytelling (?) -->
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+::: {.center-text}
+[**Data communication**]{.teal-text .body-text-m}
+
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.1 slides](../slides/week6.1-good-viz-slides.qmd){.btn role="button" target="_blank"} 
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.center-text}
+[**tbd**]{.teal-text .body-text-m}
+
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.2 slides](../slides/week6.2-tbd.qmd){.btn role="button" target="_blank"} 
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.center-text}
+[**tbd**]{.teal-text .body-text-m}
+
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.3 slides](../slides/week6.3-tbd.qmd){.btn role="button" target="_blank"}
+:::
+:::
+
+:::
 
 <!-- - missing data -->
 <!-- no dual axes -->
@@ -28,8 +73,9 @@ toc: true
 
 ## Discussion Materials
 
-- [3 ways to spot a bad statistic](https://www.ted.com/talks/mona_chalabi_3_ways_to_spot_a_bad_statistic), TED Talk by [Mona Chalabi](https://monachalabi.com/)
-- [WTF Visualizations](https://viz.wtf/), a collection of visualizations that make no sense
+*Brainstorming ideas (not yet set in stone):*
+
+- [The beauty of data visualization](https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization?referrer=playlist-making_sense_of_too_much_data), a TED Talk by [David McCandless](https://davidmccandless.com/) (founder of [information is beautiful](https://informationisbeautiful.net/))
 
 ## Assignment Reminders
 

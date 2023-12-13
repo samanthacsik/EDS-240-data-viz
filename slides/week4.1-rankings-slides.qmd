@@ -266,7 +266,7 @@ jobs_clean |>
 
 <hr>
 
-[Here, we use `forcats::fct_reorder()` to reorder the levels of our x-axis variable, `occupation`, based on a numeric variable, `total_earnings` (**NOTE:** we do *not* have to reorder based on the same numeric variable that's plotted on the y-axis; here it makes sense to do so):]{.body-text-s}
+[Here, we use `forcats::fct_reorder()` to reorder the levels of our x-axis variable, `occupation`, based on a numeric variable, `total_earnings` (**NOTE:** we do *not* have to reorder based on the same numeric variable that's plotted on the y-axis; here it makes sense to do so; also see [this blog post](https://blog.albertkuo.me/post/2022-01-04-reordering-geom-col-and-geom-bar-by-count-or-value/)):]{.body-text-s}
 
 :::: columns
 
