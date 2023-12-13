@@ -345,6 +345,10 @@ jobs_clean |>
 
 ::::
 
+::: {.footer .center-text}
+[For some more advanced label manipulation, see [A Quick How-to on Labelling Bar Graphs in ggplot2](https://www.cedricscherer.com/2021/07/05/a-quick-how-to-on-labelling-bar-graphs-in-ggplot2/), by Cédric Scherer]{.body-text-s}
+:::
+
 ---
 
 consider polar axis option here?  

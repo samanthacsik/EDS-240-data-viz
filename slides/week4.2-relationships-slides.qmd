@@ -21,17 +21,18 @@ editor_options:
 
 [Week 4 | January 29^th^, 2024]{.custom-subtitle3}
 
----
+<!-- --- -->
 
-scatter plot
-fitting linear models & smoothers (e.g. lowess)
-correlation matrix / heat map
-parallel coordinates plot
-data transformation (e.g log10)
+<!-- scatter plot -->
+<!-- fitting linear models & smoothers (e.g. lowess) -->
+<!-- correlation matrix / heat map -->
+<!-- parallel coordinates plot -->
+<!-- data transformation (e.g log10) -->
+<!-- see culment depth & culment length scatter plot: https://www.kaggle.com/code/florianspire/palmer-penguins-data-preprocessing-and-analysis -->
 
----
+<!-- --- -->
 
-https://www.tylervigen.com/spurious-correlations
+<!-- https://www.tylervigen.com/spurious-correlations -->
 
 ---
 
@@ -39,7 +40,7 @@ https://www.tylervigen.com/spurious-correlations
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">{{< fa mug-hot title="a mug with steam rising out the top" >}} Take a Break</p>
-<p class="caption-text">*~ This is the end of Lesson 1 (of 3) ~*</p>
+<p class="caption-text">*~ This is the end of Lesson 2 (of 3) ~*</p>
 </div>
 
 ```{r}

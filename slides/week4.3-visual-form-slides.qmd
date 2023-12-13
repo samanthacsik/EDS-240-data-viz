@@ -285,6 +285,84 @@ Increases the data-ink ratio and reduces overall eye movement.
 
 ---
 
+## {#labels-rotated-text data-menu-title="Remove redundant legend"} 
+
+[Add direct labels & minimize rotated text]{.slide-title}
+
+<hr>
+
+We can use a combination of `coord_flip()`, `geom_text()`, `labs()`, and `theme()` to further eliminate non-data ink and reduce overall eye movement. 
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+library(tidyverse)
+library(palmerpenguins)
+
+ggplot(penguins, aes(x = fct_infreq(species), fill = species)) +
+  geom_bar(alpha = 0.8) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species") +
+  theme_classic() +
+  theme(
+    axis.line = element_blank(),
+    axis.title = element_text(size = 17),
+    axis.text = element_text(size = 15),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 17),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0))
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+library(tidyverse)
+library(palmerpenguins)
+
+ggplot(penguins, aes(x = fct_rev(fct_infreq(species)), fill = species)) +
+  geom_bar(alpha = 0.8) +
+  coord_flip() +
+  geom_text(aes(label = ..count..), stat = "count", hjust = 1.5, size = 6, colour = "white") +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species",
+       title = "Penguins counts at Palmer Station LTER", 
+       subtitle = "2007 - 2009") +
+  theme_classic() +
+  theme(
+    axis.line = element_blank(),
+    #axis.title = element_text(size = 17),
+    axis.text.y = element_text(size = 17),
+    axis.title = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    legend.position = "none",
+    plot.title.position = "plot",
+    plot.title = element_text(size = 25),
+    plot.subtitle = element_text(size = 20)
+  )
+```
+:::
+
+::::
+
+Of course, a visualization like this wouldn't be appropriate for all audiences / contexts (e.g. scientific journal), but it in many ways simplifies the presentation in a way where an audience could still walk away with the same type of information.
+
+---
+
 ## {#move-legend-position data-menu-title="Move the legend (position)"} 
 
 [Move the legend (positioning)]{.slide-title}
@@ -321,8 +399,16 @@ ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species
        x = "Bill length (mm)", y = "Bill depth (mm)",
        color = "Penguin species", shape = "Penguin species") +
   theme_minimal() +
-  theme(#legend.position = c(0.85, 0.15),
-        plot.title.position = "plot"
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(size = 22),
+    plot.subtitle = element_text(size = 17, margin = margin(t = 0, r = 0, b = 15, l = 0)),
+    axis.title = element_text(size = 15),
+    axis.text = element_text(size = 13),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0)),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 16)
        )
 ```
 :::
@@ -344,8 +430,17 @@ ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species
        x = "Bill length (mm)", y = "Bill depth (mm)",
        color = "Penguin species", shape = "Penguin species") +
   theme_minimal() +
-  theme(legend.position = c(0.85, 0.15),
-        plot.title.position = "plot"
+  theme(
+    legend.position = c(0.85, 0.15),
+    plot.title.position = "plot",
+    plot.title = element_text(size = 22),
+    plot.subtitle = element_text(size = 17, margin = margin(t = 0, r = 0, b = 15, l = 0)),
+    axis.title = element_text(size = 15),
+    axis.text = element_text(size = 13),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0)),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 16)
        )
 ```
 :::
@@ -389,7 +484,16 @@ ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species
        x = "Bill length (mm)", y = "Bill depth (mm)",
        color = "Penguin species", shape = "Penguin species") +
   theme_minimal() +
-  theme(plot.title.position = "plot"
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(size = 22),
+    plot.subtitle = element_text(size = 17, margin = margin(t = 0, r = 0, b = 15, l = 0)),
+    axis.title = element_text(size = 15),
+    axis.text = element_text(size = 13),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0)),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 16)
        )
 ```
 :::
@@ -409,18 +513,25 @@ library(ggtext)
 
 ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species)) +
   geom_point(aes(color = species, shape = species), size = 3, alpha = 0.8) +
- geom_smooth(method = "lm", se = FALSE, aes(color = species)) +
- scale_color_manual(values = c("darkorange","purple","cyan4")) +
- labs(title = "Penguin bill dimensions",
-      subtitle = "Bill length and depth for <span style='color:darkorange;'>**Adelie**</span>, <span style='color:purple;'>**Chinstrap**</span> and <span style='color:cyan4;'>**Gentoo**</span> Penguins at Palmer Station LTER",
+  geom_smooth(method = "lm", se = FALSE, aes(color = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin bill dimensions",
+       subtitle = "Bill length and depth for <span style='color:darkorange;'>**Adelie**</span>, <span style='color:purple;'>**Chinstrap**</span> and <span style='color:cyan4;'>**Gentoo**</span> Penguins at Palmer Station LTER",
        x = "Bill length (mm)",
        y = "Bill depth (mm)",
        color = "Penguin species",
        shape = "Penguin species") +
   theme_minimal() +
-  theme(legend.position = "none",
-        plot.title.position = "plot",
-        plot.subtitle = ggtext::element_markdown())
+  theme(
+    legend.position = "none",
+    plot.title.position = "plot",
+    plot.title = element_text(size = 22),
+    plot.subtitle = ggtext::element_markdown(size = 17, margin = margin(t = 0, r = 0, b = 15, l = 0)),
+    axis.title = element_text(size = 15),
+    axis.text = element_text(size = 13),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0))
+    )
 ```
 :::
 
@@ -500,14 +611,106 @@ Legend as direct labels:
 
 ---
 
-## {#highlight-important-info data-menu-title="Highlight important info"} 
+## {#geom_vline data-menu-title="Highlight important info (vert / horiz lines)"} 
 
-[tbd]{.slide-title3}
+[Draw attention to important information / values]{.slide-title3}
 
 <hr>
 
-gghighlight
-using vertical lines (show thesis temp plot)
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/mko_temps.png")
+```
+
+[**Fig cap:** Temporal Variation in Bottom Temperature. Monthly bottom (4.5 m depth) temperatures at Mohawk Reef (34.396290, -119.731297) in Santa Barbara, CA compiled from 2005-2017. Vertical dashed lines represent three of four treatment temperatures (11, 16, 21°C). Data Source: Santa Barbara Coastal Long-Term Ecological Research group (adapted from [Csik et al. 2023](https://doi.org/10.3389/fmars.2023.1072807))]{.body-text-s}
+
+---
+
+## {#highlight-groups data-menu-title="Highlight important info (highlight-groups)"} 
+
+[Draw attention to important information / values]{.slide-title3}
+
+<hr>
+
+Highlight data manually or by using helpful packages, like `{gghighlight}` (we saw an example of this in [lecture 3.3](https://samanthacsik.github.io/EDS-240-data-viz/slides/week3.3-evolution-slides.html#/spaghetti-plot)):
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+penguins_new <- penguins |> 
+  mutate(color = case_when(
+    species == "Adelie" ~ "darkorange",
+    TRUE ~ "gray70"
+  ))
+
+ggplot() +
+  geom_bar(penguins_new, 
+           mapping = aes(x = fct_rev(fct_infreq(species)), fill = color), alpha = 0.8) +
+  coord_flip() +
+  geom_text(penguins_new,
+            mapping = aes(x = fct_rev(fct_infreq(species)), label = ..count..), 
+            stat = "count", hjust = 1.5, size = 6, colour = "black") +
+  scale_fill_identity(guide = "none") +
+  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species",
+       title = "Penguins counts at Palmer Station LTER", 
+       subtitle = "2007 - 2009") +
+  theme_classic() +
+  theme(
+    axis.line = element_blank(),
+    axis.text.y = element_text(size = 17),
+    axis.title = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    legend.position = "none",
+    plot.title.position = "plot",
+    plot.title = element_text(size = 25),
+    plot.subtitle = element_text(size = 20)
+  )
+```
+
+---
+
+## {#ggforce data-menu-title="Highlight important info (ggforce)"} 
+
+[Draw attention to important information / values]{.slide-title3}
+
+<hr>
+
+Or add annotations to your plots to call attention to data of interest (here, shown using the `{ggforce}` package):
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+ggplot(penguins, aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
+  geom_point() +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  ggforce::geom_mark_ellipse(aes(filter = species == "Gentoo", label = "Gentoo penguins", 
+                        description = "This species tends to have larger body masses and flipper lengths than the other species")) +
+  coord_cartesian(clip = "off") +
+  labs(x = "Body mass (g)", y = "Flipper length (mm)", color = "Penguins species") +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(size = 22),
+    plot.subtitle = element_text(size = 17, margin = margin(t = 0, r = 0, b = 15, l = 0)),
+    axis.title = element_text(size = 15),
+    axis.text = element_text(size = 13),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0)),
+    legend.position = "none"
+       )
+```
 
 ---
 
@@ -801,7 +1004,7 @@ Source: [The UX Designer’s Guide to Typography](https://www.interaction-design
 
 ## {#font-typeface data-menu-title="Hierarchy with fonts (typeface)"} 
 
-[Font *typeface* creates hierarchy]{.slide-title}
+[*Typeface* creates hierarchy]{.slide-title}
 
 <hr>
 
@@ -990,12 +1193,6 @@ knitr::include_graphics("images/week4/alt-text.png")
 **Review the guidelines and examples for writing effective alt text in the [week 2 discussion slides](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/discussion/week2/week2-alt-text.html#/title-slide).**
 :::
 
----
-
-
-  - align your text (left for most, title should be left-aligned, labels and subtitles can be center or right aligned)
-  - don't rotate your text 
-  
 ---
 
 ##  {#end-break data-menu-title="# End #" background="#047C90"}

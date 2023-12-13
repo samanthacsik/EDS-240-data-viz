@@ -253,6 +253,34 @@ bottom <- mko_clean |> select(Temp_bot)
 missing_temps <- naniar::vis_miss(bottom)
 ```
 
+```{r}
+# # created / saved for lecture 4.3 ----
+# ggplot(mko_clean, aes(x = Temp_bot, y = month_name, fill = after_stat(x))) +
+#   ggridges::geom_density_ridges_gradient(rel_min_height = 0.01, scale = 3) +
+#   geom_vline(xintercept = 11, linetype = "dashed", color = "darkgray") +
+#   geom_vline(xintercept = 16, linetype = "dashed", color = "darkgray") +
+#   geom_vline(xintercept = 21, linetype = "dashed", color = "darkgray") +
+#   scale_y_discrete(limits = rev(month.name)) +
+#   scale_fill_gradientn(colors = c("#2C5374","#778798", "#ADD8E6", "#EF8080", "#8B3A3A")) +
+#   scale_x_continuous(breaks = seq(9, 26, by = 2)) +
+#   labs(x = "Bottom Temperature (°C)",
+#        title = "Bottom Temperatures at Mohawk Reef, Santa Barbara, CA",
+#        subtitle = "Temperatures (°C) aggregated by month from 2005 - 2022") +
+#   ggridges::theme_ridges(font_size = 13, grid = TRUE) +
+#   theme(
+#     plot.title.position = "plot",
+#     plot.title = element_text(size = 30),
+#     plot.subtitle = element_text(size = 25, margin = margin(t = 0, r = 0, b = 20, l = 0)),
+#     axis.title.x = element_text(size = 23, margin = margin(t = 15, r = 0, b = 0, l = 0)),
+#     axis.title.y = element_blank(),
+#     axis.text = element_text(size = 20),
+#     legend.position = "none",
+#     panel.grid.major.x = element_blank()
+#   )
+
+# ggsave(filename = "mko_temps.png", plot = last_plot(), path = here::here("slides", "images", "week4"))
+```
+
 ---
 
 ## {#hist-overview data-menu-title="Histogram overview"} 

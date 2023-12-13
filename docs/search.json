@@ -186,7 +186,7 @@
     "href": "course-materials/week6.html#lecture-materials",
     "title": "Data communication",
     "section": "Lecture Materials",
-    "text": "Lecture Materials\n\n\n\n\n\n\n    \n\n\n\nData communication\n lecture 6.1 slides\n\n\n\n\ntbd\n lecture 6.2 slides\n\n\n\n\ntbd\n lecture 6.3 slides"
+    "text": "Lecture Materials\n\n\n\n\n\n\n\n     \n\n\n\nData communication\n lecture 6.1 slides\n\n\n\n\ntbd\n lecture 6.2 slides\n\n\n\n\ntbd\n lecture 6.3 slides"
   },
   {
     "objectID": "course-materials/week6.html#discussion-materials",
@@ -501,7 +501,7 @@
     "href": "slides/week4.2-relationships-slides.html#end-break",
     "title": "EDS 240",
     "section": "",
-    "text": "Take a Break\n\n\n~ This is the end of Lesson 1 (of 3) ~\n\n\n\n\n\n−+\n05:00"
+    "text": "Take a Break\n\n\n~ This is the end of Lesson 2 (of 3) ~\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#title-slide",
@@ -546,6 +546,13 @@
     "text": "Remove redundant legend information\n\nAsk yourself, “Does this legend provide additional information that I can’t get elsewhere?”. If not, remove a legend using:\n\nplot +\n  theme(\n    legend.position = \"none\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIncreases the data-ink ratio and reduces overall eye movement."
   },
   {
+    "objectID": "slides/week4.3-visual-form-slides.html#labels-rotated-text",
+    "href": "slides/week4.3-visual-form-slides.html#labels-rotated-text",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Add direct labels & minimize rotated text\n\nWe can use a combination of coord_flip(), geom_text(), labs(), and theme() to further eliminate non-data ink and reduce overall eye movement.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOf course, a visualization like this wouldn’t be appropriate for all audiences / contexts (e.g. scientific journal), but it in many ways simplifies the presentation in a way where an audience could still walk away with the same type of information."
+  },
+  {
     "objectID": "slides/week4.3-visual-form-slides.html#move-legend-position",
     "href": "slides/week4.3-visual-form-slides.html#move-legend-position",
     "title": "EDS 240",
@@ -567,11 +574,25 @@
     "text": "Move the legend (use direct labels)\n\nReduce eye movement and excess ink by including legend info as direct labels on the plot:\n\n\n\n\nOriginal plot:\n\n\n\n\n\n\n\n\n\n\n\n\nLegend as direct labels:"
   },
   {
-    "objectID": "slides/week4.3-visual-form-slides.html#highlight-important-info",
-    "href": "slides/week4.3-visual-form-slides.html#highlight-important-info",
+    "objectID": "slides/week4.3-visual-form-slides.html#geom_vline",
+    "href": "slides/week4.3-visual-form-slides.html#geom_vline",
     "title": "EDS 240",
     "section": "",
-    "text": "tbd\n\ngghighlight using vertical lines (show thesis temp plot)"
+    "text": "Draw attention to important information / values\n\n\nFig cap: Temporal Variation in Bottom Temperature. Monthly bottom (4.5 m depth) temperatures at Mohawk Reef (34.396290, -119.731297) in Santa Barbara, CA compiled from 2005-2017. Vertical dashed lines represent three of four treatment temperatures (11, 16, 21°C). Data Source: Santa Barbara Coastal Long-Term Ecological Research group (adapted from Csik et al. 2023)"
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#highlight-groups",
+    "href": "slides/week4.3-visual-form-slides.html#highlight-groups",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Draw attention to important information / values\n\nHighlight data manually or by using helpful packages, like {gghighlight} (we saw an example of this in lecture 3.3):"
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#ggforce",
+    "href": "slides/week4.3-visual-form-slides.html#ggforce",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Draw attention to important information / values\n\nOr add annotations to your plots to call attention to data of interest (here, shown using the {ggforce} package):"
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#use-annotations-neil",
@@ -641,7 +662,7 @@
     "href": "slides/week4.3-visual-form-slides.html#font-typeface",
     "title": "EDS 240",
     "section": "",
-    "text": "Font typeface creates hierarchy\n\n \n\nI am important!\n\n\nI am also pretty important!\n\n \n\nThanks for reading me\n\n\nI know, I’m kinda boring"
+    "text": "Typeface creates hierarchy\n\n \n\nI am important!\n\n\nI am also pretty important!\n\n \n\nThanks for reading me\n\n\nI know, I’m kinda boring"
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#font-cobo",
@@ -2111,7 +2132,7 @@
     "href": "slides/week4.1-rankings-slides.html#add-labels",
     "title": "EDS 240",
     "section": "",
-    "text": "Consider adding labels if the exact values are important\n\ngeom_text() is useful for labeling plots. Here, we pair it with the {scales} package to format dollar values:\n\n\n\njobs_clean |&gt; \n  filter(year == 2016) |&gt; \n  slice_max(order_by = total_earnings, n = 10) |&gt; \n  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = total_earnings)) +\n  geom_col() +\n  geom_text(aes(label = scales::dollar(total_earnings)), hjust = 1.2, color = \"white\") + \n  coord_flip()\n\n\n\n\n\n\njobs_clean |&gt; \n  filter(year == 2016) |&gt; \n  slice_max(order_by = total_earnings, n = 10) |&gt; \n  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = total_earnings)) +\n  ggalt::geom_lollipop() +\n  geom_text(aes(label = scales::dollar(total_earnings)), hjust = -0.2) + \n  scale_y_continuous(limits = c(0, 250000)) + # expand axis to make room for values\n  coord_flip()"
+    "text": "Consider adding labels if the exact values are important\n\ngeom_text() is useful for labeling plots. Here, we pair it with the {scales} package to format dollar values:\n\n\n\njobs_clean |&gt; \n  filter(year == 2016) |&gt; \n  slice_max(order_by = total_earnings, n = 10) |&gt; \n  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = total_earnings)) +\n  geom_col() +\n  geom_text(aes(label = scales::dollar(total_earnings)), hjust = 1.2, color = \"white\") + \n  coord_flip()\n\n\n\n\n\n\njobs_clean |&gt; \n  filter(year == 2016) |&gt; \n  slice_max(order_by = total_earnings, n = 10) |&gt; \n  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = total_earnings)) +\n  ggalt::geom_lollipop() +\n  geom_text(aes(label = scales::dollar(total_earnings)), hjust = -0.2) + \n  scale_y_continuous(limits = c(0, 250000)) + # expand axis to make room for values\n  coord_flip()\n\n\n\n\n\n\n\nFor some more advanced label manipulation, see A Quick How-to on Labelling Bar Graphs in ggplot2, by Cédric Scherer"
   },
   {
     "objectID": "slides/week4.1-rankings-slides.html#col-vs-bar",
