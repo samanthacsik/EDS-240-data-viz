@@ -442,7 +442,7 @@
 </div>
 </div>
 </section>
-<section id="good-design" class="slide level2" data-menu-title="Good data viz considerations">
+<section id="good-design1" class="slide level2" data-menu-title="Good data viz considerations">
 <h2></h2>
 <p><span class="slide-title">Good data visualization design considers:</span></p>
 <hr>
@@ -452,8 +452,9 @@
 <li class="fragment"><strong>data-ink ratio</strong> (less is more)</li>
 <li class="fragment">how to <strong>reduce eye movement</strong> and <strong>improve readability / interpretability</strong> (e.g.&nbsp;through alternative legend positions, direct annotations)</li>
 <li class="fragment">using <strong>visual hierarchy</strong> to guide the reader</li>
-<li class="fragment"><strong>consistent</strong> use of colors, spacing, typefaces, weights</li>
+<li class="fragment"><strong>type choices</strong> and how they affect audience emotions and perceptions</li>
 <li class="fragment"><strong>color choices</strong> (and making sure that they’re <strong>colorblindness-friendly</strong>)</li>
+<li class="fragment"><strong>consistent</strong> use of colors, spacing, typefaces, weights</li>
 <li class="fragment">how to <strong>draw the main attention</strong> to the most <strong>important info</strong></li>
 <li class="fragment">including <strong>alt text</strong></li>
 </ul>
@@ -465,14 +466,46 @@
 </div>
 </div>
 </section>
+<section id="good-design2" class="slide level2" data-menu-title="Good data viz considerations">
+<h2></h2>
+<p><span class="slide-title">Good data visualization design considers:</span></p>
+<hr>
+<p><br></p>
+<ul>
+<li><strong>data-ink ratio</strong> (less is more)</li>
+<li>how to <strong>reduce eye movement</strong> and <strong>improve readability / interpretability</strong> (e.g.&nbsp;through alternative legend positions, direct annotations)</li>
+<li>using <strong>visual hierarchy</strong> to guide the reader</li>
+<li><strong>type choices</strong> and how they affect audience emotions and perceptions</li>
+<li><span class="gray-text"><strong>color choices</strong> (and making sure that they’re <strong>colorblindness-friendly</strong>)</span></li>
+<li><span class="gray-text"><strong>consistent</strong> use of colors, spacing, typefaces, weights</span></li>
+<li>how to <strong>draw the main attention</strong> to the most <strong>important info</strong></li>
+<li><span class="gray-text">including <strong>alt text</strong></span></li>
+</ul>
+<p><br></p>
+<div class="center-text body-text-m">
+<p>The above should <em>always be considered</em> in your design process, but <em>may not always be necessary</em></p>
+</div>
+</section>
+<section id="data-ink-eyes" class="slide level2" data-menu-title="# Less is more #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+Simplify plots to reduce eye movement
+</p>
+</div>
+</section>
 <section id="data-ink-ratio" class="slide level2" data-menu-title="Data-Ink ratio">
 <h2></h2>
 <p><span class="slide-title">Data-Ink ratio: remove non-data ink</span></p>
 <hr>
-<p><span class="body-text-s">The <a href="https://infovis-wiki.net/wiki/Data-Ink_Ratio">Data-Ink ratio</a> was introduced by Edward Tufte (<a href="https://faculty.salisbury.edu/~jtanderson/teaching/cosc311/fa21/files/tufte.pdf">The Visual Display of Quantitative Information</a>, 1983) and argues that <strong>non-data-ink</strong> (i.e.&nbsp;ink used for for everything <em>except</em> the presentation of data itself) <strong>should be removed wherever possible</strong>.</span></p>
+<p><span class="body-text-s">The <a href="https://infovis-wiki.net/wiki/Data-Ink_Ratio">Data-Ink ratio</a> was introduced by Edward Tufte (<a href="https://faculty.salisbury.edu/~jtanderson/teaching/cosc311/fa21/files/tufte.pdf">1983</a>) and argues that <strong>non-data-ink</strong> (i.e.&nbsp;ink used for for everything <em>except</em> the presentation of data itself) <strong>should be removed wherever possible</strong>.</span></p>
 <p><span class="math display">\[
 \text{Data-ink ratio} = \frac{\text{Data-ink}}{\text{Total ink used to print the graphic}}
-\]</span> <br></p>
+\]</span></p>
+<div class="fragment">
+<div class="body-text-s">
+<p>Do so by starting with a complete theme (e.g.&nbsp;<code>theme_classic()</code>, <code>theme_void()</code>) and add / remove elements using <code>theme()</code>.</p>
+</div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="center-text body-text-s gray-text">
@@ -494,6 +527,7 @@
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="data-ink-ratio-criticism" class="slide level2" data-menu-title="Data-Ink ratio criticism">
 <h2></h2>
@@ -504,13 +538,13 @@
 <ul>
 <li><p>Eliminating lots of non-data ink <strong>may render visualizations difficult to read</strong></p>
 <ul>
-<li><a href="https://doi.org/10.1145/1362550.1362587">Inbar et al.&nbsp;(2007)</a> found that students preferred a more maximilist visualization design over the minimalist version proposed by Tufte</li>
+<li><a href="https://doi.org/10.1145/1362550.1362587">Inbar et al.&nbsp;(2007)</a> found that students preferred a more maximalist visualization design over the minimalist version proposed by Tufte</li>
 </ul></li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><strong>Risk of many boring graphics / less room for the creative display of data </strong>– how you choose to maximize your data-ink ratio will depend largely on <em>who</em> your visualization is for and the <em>purpose</em> it’s meant to serve.</li>
+<li><strong>Design choices depend on audience and purpose</strong>– how you choose to maximize your data-ink ratio will depend largely on <em>who</em> your visualization is for and the <em>purpose</em> it’s meant to serve (e.g.&nbsp;a scientific publication may have specific requirements for the design / aesthetics of a visualization, while an infographic-style visualization may leave space for more creative liberties)</li>
 </ul>
 </div>
 <div class="fragment">
@@ -556,7 +590,7 @@
 </div>
 </div>
 <div class="center-text">
-<p>Increases the data-ink ratio and reduces overall eye movement.</p>
+<p>Doing so increases the data-ink ratio and reduces overall eye movement.</p>
 </div>
 </section>
 <section id="labels-rotated-text" class="slide level2" data-menu-title="Remove redundant legend">
@@ -689,10 +723,20 @@
 <p><br></p>
 <!-- INCLUDE HELPFUL PACKAGES HERE -->
 </section>
+<section id="draw-attention" class="slide level2" data-menu-title="# Draw attention #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+Draw attention to important information / values
+</p>
+</div>
+</section>
 <section id="geom_vline" class="slide level2" data-menu-title="Highlight important info (vert / horiz lines)">
 <h2></h2>
 <p><span class="slide-title3">Draw attention to important information / values</span></p>
 <hr>
+<p>Add vertical (<code>geom_vline()</code>) or horizontal (<code>geom_hline()</code>) lines at important values:</p>
+<p><br></p>
 
 <img data-src="images/week4/mko_temps.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><span class="body-text-s"><strong>Fig cap:</strong> Temporal Variation in Bottom Temperature. Monthly bottom (4.5 m depth) temperatures at Mohawk Reef (34.396290, -119.731297) in Santa Barbara, CA compiled from 2005-2017. Vertical dashed lines represent three of four treatment temperatures (11, 16, 21°C). Data Source: Santa Barbara Coastal Long-Term Ecological Research group (adapted from <a href="https://doi.org/10.3389/fmars.2023.1072807">Csik et al.&nbsp;2023</a>)</span></p>
 </section>
@@ -761,29 +805,83 @@
 <p><a href="https://www.ft.com/content/e26c93a0-90e7-4dec-a796-3e25e94bc59b">Vaccines and Omicron mean Covid now less deadly than flu in England</a>, by John Burn-Murdoch</p>
 </div>
 </section>
-<section id="typography" class="slide level2" data-menu-title="What is typography?">
+<section id="typeography" class="slide level2" data-menu-title="# Typography #" data-background="#047C90">
 <h2></h2>
-<p><span class="slide-title">Typography – what is it?</span></p>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+Type and font choice influences audience perception
+</p>
+</div>
+</section>
+<section id="typography-importance" class="slide level2" data-menu-title="Typography is important!">
+<h2></h2>
+<p><span class="slide-title2">Typeface choices affect emotions and perceptions</span></p>
 <hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week4/psychology-fonts.png" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br> <br></p>
 <blockquote>
-<p>“Typography is the art and technique of arranging type to make written language legible, readable and appealing when displayed.”</p>
+<p><em>“Typography is the art and technique of arranging type to make written language legible, readable and appealing when displayed.”</em></p>
 </blockquote>
 <div class="right-align-text body-text-s">
 <p>-<a href="https://en.wikipedia.org/wiki/Typography">Wikipedia</a></p>
 </div>
-<p><strong>Some helpful definitions:</strong></p>
-<ul>
-<li><span class="body-text-s"><strong><a href="https://fonts.google.com/knowledge/glossary/typeface">Typeface</a> (aka font family)</strong>: underlying visual design that can exist in many different typesetting technologies (e.g.&nbsp;Times New Roman, Helvetica, Roboto)</span></li>
-<li><span class="body-text-s"><strong><a href="https://fonts.google.com/knowledge/glossary/font">Font</a></strong>: an implementation of a typeface; they can come in different weights and styles (e.g.&nbsp;bold, italic)</span></li>
-</ul>
 <p><br></p>
-<div class="fragment">
-<div class="center-text body-text-m">
-<p><strong>You choose a <em>typeface</em> (e.g.&nbsp;<a href="https://fonts.google.com/specimen/Nunito?query=nunito">Nunito</a>).</strong></p>
-<p><strong>You use a <em>font</em> (regular, italic, bold).</strong></p>
+<p>Like colors, typefaces / fonts influence the how viewers perceive information (check out this short <a href="https://www.youtube.com/watch?v=OXc-VZ4Vwbo">TEDx talk</a>).</p>
+<p><br></p>
+<p><span class="body-text-s gray-text"><i class="fa-solid fa-arrow-left" title="an arrow pointing to the left" aria-label="arrow-left"></i> Source: <a href="https://www.crazyegg.com/blog/psychology-of-fonts-infographic/">The Daily Egg</a></span></p>
+</div>
 </div>
 <div class="footer">
 <p>Want to dive deeper into the world of typography? Start with this quick read, <a href="https://fonts.google.com/knowledge/introducing_type/why_care_about_typography">Why care about typography?</a> and explore other great articles by <a href="https://fonts.google.com/knowledge">Google Fonts</a>.</p>
+</div>
+</section>
+<section id="typography-defs" class="slide level2" data-menu-title="Typeography definitions">
+<h2></h2>
+<p><span class="slide-title">Some helpful definitions:</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong><a href="https://fonts.google.com/knowledge/glossary/typeface">Typeface</a> (aka font family)</strong>: underlying visual design (e.g.&nbsp;Times New Roman, Helvetica, Roboto)</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week4/nunito-type.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong><a href="https://fonts.google.com/knowledge/glossary/font">Font</a></strong>: an implementation of a typeface; they can come in different weights and styles (e.g.&nbsp;bold, italic)</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week4/nunito-fonts.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column center-text" style="width:50%;">
+<p><strong>You choose a <em>typeface</em> (e.g.&nbsp;<a href="https://fonts.google.com/specimen/Nunito?query=nunito">Nunito</a>)</strong></p>
+</div><div class="column center-text" style="width:50%;">
+<p><strong>You use a <em>font</em> (e.g.&nbsp;regular, italic, bold)</strong></p>
+</div>
 </div>
 </div>
 </section>
@@ -824,6 +922,19 @@
           display:block!important;
       }</style></aside>
 </div>
+</section>
+<section id="font-psychology" class="slide level2" data-menu-title="Psychology of typefaces">
+<h2></h2>
+<p><span class="slide-title3">Type &amp; font choice affect how readers perceive info</span></p>
+<hr>
+<p>Typefaces and fonts communicate beyond more than just the written text – they can <strong>evoke emotions</strong> and can be used to <strong>better connect your audience with your work</strong>.</p>
+<p><br></p>
+
+<img data-src="images/week4/find-you.png" style="width:80.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s gray-text">
+<p>Source: <a href="https://www.suvoray.com/notes/typography-for-a-better-user-experience">Typography for a better user experience</a>, by <a href="https://www.suvoray.com/">Suvo Ray</a></p>
+</div>
+<p><br></p>
+<p>Interested in font pyschology? Check out this <a href="https://www.youtube.com/watch?v=6Jlo9iOZvXY&amp;t=65s">short video</a> and <a href="https://designmodo.com/font-psychology/#:~:text=Serif%20fonts%20can%20evoke%20feelings,modernity%2C%20simplicity%2C%20and%20clarity.">this article</a> to learn a bit more.</p>
 </section>
 <section id="typographic-hierarchy" class="slide level2" data-menu-title="Typographic hierarchy">
 <h2></h2>
@@ -938,7 +1049,7 @@
 <p><span style="font-size:1.5em;">I know, I’m kinda boring</span></p>
 </div>
 </section>
-<section id="font-cobo" class="slide level2" data-menu-title="Hierarchy with fonts (combos)">
+<section id="font-combo" class="slide level2" data-menu-title="Hierarchy with fonts (combos)">
 <h2></h2>
 <p><span class="slide-title2">Combining different approaches to create hierarchy</span></p>
 <hr>
@@ -957,31 +1068,62 @@
 <p><span style="font-size:1.2em;">I know, I’m kinda boring</span></p>
 </div>
 </section>
-<section id="colorblindness" class="slide level2" data-menu-title="Colorblindness">
+<section id="examples" class="slide level2" data-menu-title="# Data Viz Examples #" data-background="#047C90">
 <h2></h2>
-<p><span class="slide-title">tbd</span></p>
-<hr>
-<p>We’ll spend a lot more time talking about colors next week!</p>
-</section>
-<section id="combining-things-air" class="slide level2" data-menu-title="Combining it all (Ex 1)">
-<h2></h2>
-<p><span class="slide-title">Putting it all together</span></p>
-<hr>
-
-<img data-src="images/week4/clearing-air.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer center-text body-text-s">
-<p>Source: <a href="https://www.washingtonpost.com/business/2019/06/06/why-crowded-meetings-conference-rooms-make-you-so-so-tired/">Why crowded meetings and conference rooms make you so, so tired</a>, by Christopher Ingraham (The Washington Post)</p>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+Let’s look at some examples together
+</p>
 </div>
 </section>
-<section class="slide level2">
-
+<section id="co2-1" class="slide level2" data-menu-title="CO2 in conf rooms">
+<h2></h2>
+<p><span class="slide-title">CO<sub>2</sub> in conference rooms</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week4/clearing-air.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text gray-text body-text-s">
+<p>Clearing the Air, by <a href="https://www.washingtonpost.com/people/christopher-ingraham/">Christopher Ingraham</a>, writing for <a href="https://www.washingtonpost.com/business/2019/06/06/why-crowded-meetings-conference-rooms-make-you-so-so-tired/">The Washington Post</a></p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br> <br></p>
+<p><strong>Take some time to discuss the following:</strong></p>
+<ul>
+<li>where are your eyes drawn first, second, etc.?</li>
+<li>what are the main messages / takeaways?</li>
+<li>where has the author chosen to simplify this visualization (i.e.&nbsp;reduce extraneous elements)? does it make it easier / more challenging to interpret?</li>
+<li>what would you change about this visualization?</li>
+</ul>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_747beb15" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="co2-2" class="slide level2" data-menu-title="CO2 in conf rooms">
+<h2></h2>
 
 <img data-src="images/week4/clearing-air-annotated.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text gray-text body-text-s">
-<p>Adapted from <a href="https://twitter.com/chezVoila/status/1136631524919513088"><span class="citation" data-cites="chezVoila">@chezVoila</span></a></p>
+<p>Annotations adapted from <a href="https://twitter.com/chezVoila/status/1136631524919513088"><span class="citation" data-cites="chezVoila">@chezVoila</span></a></p>
 </div>
 </section>
-<section id="combining-things-penguins" class="slide level2" data-menu-title="Combining it all">
+<section id="penguins" class="slide level2" data-menu-title="Palmer penguin classification">
 <h2></h2>
-<p><span class="slide-title">Putting it all together</span></p>
+<p><span class="slide-title">Palmer penguin classification</span></p>
 <hr>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -995,42 +1137,103 @@
 </div>
 </div>
 <div class="center-text gray-text body-text-s">
-<p>Perfectly Proportional Penguins, by <a href="https://www.cararthompson.com/">Cara Thompson</a> (<a href="https://github.com/cararthompson/tidytuesdays/blob/main/scripts/202007d_penguins.R">code</a>)</p>
+<p>Perfectly Proportional Penguins, by <a href="https://www.cararthompson.com/">Cara Thompson</a> as part of <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday</a> (<a href="https://github.com/cararthompson/tidytuesdays/blob/main/scripts/202007d_penguins.R">code</a>)</p>
 </div>
 </div><div class="column" style="width:50%;">
 <p><br> <br></p>
-<p>Cara Thompson implements a number of the above considerations in her take on exploring the Palmer Penguins.</p>
-<p><br></p>
-<p>Take some time to discuss the following:</p>
+<p><strong>Take some time to discuss the following:</strong></p>
 <ul>
 <li>where are your eyes drawn first, second, etc.?</li>
 <li>what are the main messages / takeaways?</li>
-<li>what (if anything) is unclear?</li>
+<li>where has the author chosen to simplify this visualization (i.e.&nbsp;reduce extraneous elements)? does it make it easier / more challenging to interpret?</li>
+<li>what would you change about this visualization?</li>
 </ul>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_fe3f87bb" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_e0c49397" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 </section>
-<section id="alt-text" class="slide level2" data-menu-title="Alt text">
+<section id="glimmers" class="slide level2" data-menu-title="Large carnivore recovery">
 <h2></h2>
-<p><span class="slide-title">Reminder: include alt text!</span></p>
+<p><span class="slide-title2">Glimmers of hope in large carnivore recovery</span></p>
 <hr>
-<p><br></p>
-<div class="center-text">
-<p>Alternative (alt) text makes our data visualizations accessible to a broader community. <strong>Always include alt text when publishing a data visualization online.</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week4/ingeman-etal-fig3.png" style="width:100.0%"></p>
+</figure>
 </div>
-<p><br></p>
-
-<img data-src="images/week4/alt-text.png" style="width:80.0%" class="r-stretch quarto-figure-center"><p><br></p>
-<div class="center-text">
-<p><strong>Review the guidelines and examples for writing effective alt text in the <a href="https://samanthacsik.github.io/EDS-240-data-viz/course-materials/discussion/week2/week2-alt-text.html#/title-slide">week 2 discussion slides</a>.</strong></p>
+</div>
+</div>
+<div class="body-text-xs gray-text">
+<p><a href="https://www.nature.com/articles/s41598-022-13671-7/figures/3">Fig. 3</a>, by <a href="https://www.nature.com/articles/s41598-022-13671-7">Ingeman et al.&nbsp;2022</a>: <strong>Glimmers of hope and critical cases.</strong> Distribution of large carnivore species across categories of current IUCN status (x-axis) and population trend (y-axis). Improvements in status are indicated by gold and declines by blue, with bubble size indicating the number of status category changes. The majority of species have not undergone any changes in status (shown in light gray). Note: No change in status may indicate lack of recent assessment, insufficient data, or, in the case of species designated Least Concern, effective conservation efforts.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br> <br></p>
+<p><strong>Take some time to discuss the following:</strong></p>
+<ul>
+<li>where are your eyes drawn first, second, etc.?</li>
+<li>what are the main messages / takeaways?</li>
+<li>where has the author chosen to simplify this visualization (i.e.&nbsp;reduce extraneous elements)? does it make it easier / more challenging to interpret?</li>
+<li>what would you change about this visualization?</li>
+</ul>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_1980f99c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="aquaculture" class="slide level2" data-menu-title="Aquaculture sentiment">
+<h2></h2>
+<p><span class="slide-title2">Public perceptions of aquaculture</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br> <br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week4/froehlich-etal-2017-fig3.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="body-text-xs gray-text">
+<p><a href="https://journals.plos.org/plosone/article/figure?id=10.1371/journal.pone.0169281.g003">Fig. 3</a>, by <a href="https://doi.org/10.1371/journal.pone.0169281">Froehlich et al.&nbsp;2017</a>: <strong>Newspaper ‘offshore aquaculture’ media sentiment.</strong> Sentiment over time based on the frequency of newspaper headlines with negative (red), positive (blue), and neutral (gray) titles for (A) developed (n = 102) and (B) developing (n = 8) nations. Also depicted are the (C) proportional contributions of sentiment headlines relative to each developed and developing country, with the number of headlines from each country shown in parentheses. All countries used in the analysis are depicted. Headlines were compiled using the LexisNexis® platform.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br> <br></p>
+<p><strong>Take some time to discuss the following:</strong></p>
+<ul>
+<li>where are your eyes drawn first, second, etc.?</li>
+<li>what are the main messages / takeaways?</li>
+<li>where has the author chosen to simplify this visualization (i.e.&nbsp;reduce extraneous elements)? does it make it easier / more challenging to interpret?</li>
+<li>what would you change about this visualization?</li>
+</ul>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_6e5bf4cc" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
 </div>
 </section>
 <section id="end-break" class="slide level2" data-menu-title="# End #" data-background="#047C90">

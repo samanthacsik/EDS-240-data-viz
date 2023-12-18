@@ -414,7 +414,7 @@ ggplot(jobs_clean, aes(x = major_category)) +
 
 <hr>
 
-[We first need to transform our data from wide to long format, where total earning for males and females are in the same column (we'll name this `earnings_by_group`), and a secondary column denotes which group those earnings are associated with (`total_earnings_female`, `total_earnings_male`). Also note that because `geom_lollipop()` doesn't accept a `position` parameter, we'll instead use `geom_linerange()` and `geom_point()`:]{.body-text-s}
+[We'll need to transform our data from wide to long format, where total earning for males and females are in the same column (we'll name this `earnings_by_group`), and a secondary column denotes which group those earnings are associated with (`total_earnings_female`, `total_earnings_male`). Also note that because `geom_lollipop()` doesn't accept a `position` parameter, we'll instead use `geom_linerange()` + `geom_point()`:]{.body-text-s}
 
 :::: columns 
 

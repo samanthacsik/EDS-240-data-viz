@@ -32,7 +32,7 @@
     "href": "resources.html#accessibility",
     "title": "Recommended reading & materials",
     "section": "Accessibility",
-    "text": "Accessibility\n\nColors\n\nPalette Generator, by Learn UI Design – supply a starting color(s) and this tool will generate a palette, single hue, or divergent color scheme\nViz Palette, by Elijah Meeks and Susie Lu – a tool that shows you how well your chosen colors work for tiny lines and big areas, warns if you have colors sharing the same name (which can make it more challenging to talk about your designs, say, in a presentation), and can simulate color vision deficiencies\nShade Generator – a tool for generating shade scales\nColorblind Safe Color Schemes, by the NCEAS Science Communication Resource Center – tips and examples of colorblind-friendly color palettes\nColor review, by Anton Robsarve – for understanding foreground and background contrasts\nYour Friendly Guide to Colors in Data Visualization, by Lisa Charlotte Muth – a blog post on useful tools for deciding data viz color palettes\nWhat to consider when choosing colors for data visualization, by Lisa Charlotte Muth – a blog post with explanations and examples\nSubtleties of Color, by Robert Simmon – a 6 part blog post series from NASA Earth Observatory about the use of color to map Earth observation data\n\n\n\nAlternative (alt) text\n\nHow to write good alternative descriptions for your data visualization, by Amy Cesal – great instructions (and examples) on how to construct informative alt text for data visualizations\nWriting Alt Text for Data Visualization, also by Amy Cesal – more great example of alt text for data viz!\n#TidyTuesday alt text instructions – a simple formula for writing alt text for data visualizations, as recommended for #TidyTuesday participants"
+    "text": "Accessibility\n\nColors\n\nPalette Generator, by Learn UI Design – supply a starting color(s) and this tool will generate a palette, single hue, or divergent color scheme\nViz Palette, by Elijah Meeks and Susie Lu – a tool that shows you how well your chosen colors work for tiny lines and big areas, warns if you have colors sharing the same name (which can make it more challenging to talk about your designs, say, in a presentation), and can simulate color vision deficiencies\nShade Generator – a tool for generating shade scales\nColorblind Safe Color Schemes, by the NCEAS Science Communication Resource Center – tips and examples of colorblind-friendly color palettes\nColor review, by Anton Robsarve – for understanding foreground and background contrasts\nYour Friendly Guide to Colors in Data Visualization, by Lisa Charlotte Muth – a blog post on useful tools for deciding data viz color palettes\nWhat to consider when choosing colors for data visualization, by Lisa Charlotte Muth – a blog post with explanations and examples\nSubtleties of Color, by Robert Simmon – a 6 part blog post series from NASA Earth Observatory about the use of color to map Earth observation data\n\n\n\nTypography\n\nGoogle Fonts – catalog of open-source fonts and icons, which can be imported for use with {ggplot2}\nWake up & smell the fonts, by Sarah Hyndman – a great 14min-long TEDx talk about how fonts turn words into stories that have the power to influence audience perceptions\n\n\n\nAlternative (alt) text\n\nHow to write good alternative descriptions for your data visualization, by Amy Cesal – great instructions (and examples) on how to construct informative alt text for data visualizations\nWriting Alt Text for Data Visualization, also by Amy Cesal – more great example of alt text for data viz!\n#TidyTuesday alt text instructions – a simple formula for writing alt text for data visualizations, as recommended for #TidyTuesday participants"
   },
   {
     "objectID": "resources.html#dei-in-data-visualization",
@@ -40,6 +40,13 @@
     "title": "Recommended reading & materials",
     "section": "DEI in Data Visualization",
     "text": "DEI in Data Visualization\n\nDo No Harm Guide: Applying Equity Awareness in Data Visualization, by Jonathan Schwabish and Alice Feng – a guide for for approaching data work (and particularly visualizations) through a lens of diversity, equity, and inclusion"
+  },
+  {
+    "objectID": "resources.html#podcasts",
+    "href": "resources.html#podcasts",
+    "title": "Recommended reading & materials",
+    "section": "Podcasts",
+    "text": "Podcasts\n\nTidy Tuesday, hosted by Jon Harmon – a weekly (very short, ~5min-long) podcast that reviews a visualization (or a few) produced by community members using the latest published data set; Jon describes the visualization and describes a couple key geoms and/or functions the author used to create it\nData is Plural, hosted by Jeremy Singer-Vine – a new podcast from the long-running newsletter, Data Is Plural, where each episode distills an expert interview into a crisp 15 minutes, taking you behind the scenes of another surprising data set"
   },
   {
     "objectID": "resources.html#inspirational-data-visualization-creators",
@@ -518,32 +525,46 @@
     "text": "Looking forward . . .\n\n\n\nNext week, we’ll start diving into improving the overall aesthetics of our data visualizations\n\n\n\n applying pre-made and custom color palettes\n\n\n\n\n updating fonts\n\n\n\n\n adding annotations\n\n\n\n\n fine-tuning themes\n\n\n\n\n centering our primary message\n\n\n\n\n\nToday, we’ll familiarize ourselves with a general set of rules and best practices."
   },
   {
-    "objectID": "slides/week4.3-visual-form-slides.html#good-design",
-    "href": "slides/week4.3-visual-form-slides.html#good-design",
+    "objectID": "slides/week4.3-visual-form-slides.html#good-design1",
+    "href": "slides/week4.3-visual-form-slides.html#good-design1",
     "title": "EDS 240",
     "section": "",
-    "text": "Good data visualization design considers:\n\n\n\n\ndata-ink ratio (less is more)\nhow to reduce eye movement and improve readability / interpretability (e.g. through alternative legend positions, direct annotations)\nusing visual hierarchy to guide the reader\nconsistent use of colors, spacing, typefaces, weights\ncolor choices (and making sure that they’re colorblindness-friendly)\nhow to draw the main attention to the most important info\nincluding alt text\n\n\n\n\n\nThe above should always be considered in your design process, but may not always be necessary"
+    "text": "Good data visualization design considers:\n\n\n\n\ndata-ink ratio (less is more)\nhow to reduce eye movement and improve readability / interpretability (e.g. through alternative legend positions, direct annotations)\nusing visual hierarchy to guide the reader\ntype choices and how they affect audience emotions and perceptions\ncolor choices (and making sure that they’re colorblindness-friendly)\nconsistent use of colors, spacing, typefaces, weights\nhow to draw the main attention to the most important info\nincluding alt text\n\n\n\n\n\nThe above should always be considered in your design process, but may not always be necessary"
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#good-design2",
+    "href": "slides/week4.3-visual-form-slides.html#good-design2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Good data visualization design considers:\n\n\n\ndata-ink ratio (less is more)\nhow to reduce eye movement and improve readability / interpretability (e.g. through alternative legend positions, direct annotations)\nusing visual hierarchy to guide the reader\ntype choices and how they affect audience emotions and perceptions\ncolor choices (and making sure that they’re colorblindness-friendly)\nconsistent use of colors, spacing, typefaces, weights\nhow to draw the main attention to the most important info\nincluding alt text\n\n\n\nThe above should always be considered in your design process, but may not always be necessary"
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#data-ink-eyes",
+    "href": "slides/week4.3-visual-form-slides.html#data-ink-eyes",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Simplify plots to reduce eye movement"
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#data-ink-ratio",
     "href": "slides/week4.3-visual-form-slides.html#data-ink-ratio",
     "title": "EDS 240",
     "section": "",
-    "text": "Data-Ink ratio: remove non-data ink\n\nThe Data-Ink ratio was introduced by Edward Tufte (The Visual Display of Quantitative Information, 1983) and argues that non-data-ink (i.e. ink used for for everything except the presentation of data itself) should be removed wherever possible.\n\\[\n\\text{Data-ink ratio} = \\frac{\\text{Data-ink}}{\\text{Total ink used to print the graphic}}\n\\] \n\n\n\nLow Data-Ink ratio\n\n\n\n\n\n\n\n\nHigh Data-Ink ratio"
+    "text": "Data-Ink ratio: remove non-data ink\n\nThe Data-Ink ratio was introduced by Edward Tufte (1983) and argues that non-data-ink (i.e. ink used for for everything except the presentation of data itself) should be removed wherever possible.\n\\[\n\\text{Data-ink ratio} = \\frac{\\text{Data-ink}}{\\text{Total ink used to print the graphic}}\n\\]\n\n\nDo so by starting with a complete theme (e.g. theme_classic(), theme_void()) and add / remove elements using theme().\n\n\n\n\nLow Data-Ink ratio\n\n\n\n\n\n\n\n\nHigh Data-Ink ratio"
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#data-ink-ratio-criticism",
     "href": "slides/week4.3-visual-form-slides.html#data-ink-ratio-criticism",
     "title": "EDS 240",
     "section": "",
-    "text": "Maximizing the Data-Ink ratio isn’t always best\n\n\n\n\nEliminating lots of non-data ink may render visualizations difficult to read\n\nInbar et al. (2007) found that students preferred a more maximilist visualization design over the minimalist version proposed by Tufte\n\n\n\n\n\nRisk of many boring graphics / less room for the creative display of data – how you choose to maximize your data-ink ratio will depend largely on who your visualization is for and the purpose it’s meant to serve.\n\n\n\n\n\nA general rule of thumb: aim to maximize the data-ink ratio while not sacrificing overall design and aesthetics."
+    "text": "Maximizing the Data-Ink ratio isn’t always best\n\n\n\n\nEliminating lots of non-data ink may render visualizations difficult to read\n\nInbar et al. (2007) found that students preferred a more maximalist visualization design over the minimalist version proposed by Tufte\n\n\n\n\n\nDesign choices depend on audience and purpose– how you choose to maximize your data-ink ratio will depend largely on who your visualization is for and the purpose it’s meant to serve (e.g. a scientific publication may have specific requirements for the design / aesthetics of a visualization, while an infographic-style visualization may leave space for more creative liberties)\n\n\n\n\n\nA general rule of thumb: aim to maximize the data-ink ratio while not sacrificing overall design and aesthetics."
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#remove-redundant-legend",
     "href": "slides/week4.3-visual-form-slides.html#remove-redundant-legend",
     "title": "EDS 240",
     "section": "",
-    "text": "Remove redundant legend information\n\nAsk yourself, “Does this legend provide additional information that I can’t get elsewhere?”. If not, remove a legend using:\n\nplot +\n  theme(\n    legend.position = \"none\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIncreases the data-ink ratio and reduces overall eye movement."
+    "text": "Remove redundant legend information\n\nAsk yourself, “Does this legend provide additional information that I can’t get elsewhere?”. If not, remove a legend using:\n\nplot +\n  theme(\n    legend.position = \"none\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDoing so increases the data-ink ratio and reduces overall eye movement."
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#labels-rotated-text",
@@ -574,11 +595,18 @@
     "text": "Move the legend (use direct labels)\n\nReduce eye movement and excess ink by including legend info as direct labels on the plot:\n\n\n\n\nOriginal plot:\n\n\n\n\n\n\n\n\n\n\n\n\nLegend as direct labels:"
   },
   {
+    "objectID": "slides/week4.3-visual-form-slides.html#draw-attention",
+    "href": "slides/week4.3-visual-form-slides.html#draw-attention",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Draw attention to important information / values"
+  },
+  {
     "objectID": "slides/week4.3-visual-form-slides.html#geom_vline",
     "href": "slides/week4.3-visual-form-slides.html#geom_vline",
     "title": "EDS 240",
     "section": "",
-    "text": "Draw attention to important information / values\n\n\nFig cap: Temporal Variation in Bottom Temperature. Monthly bottom (4.5 m depth) temperatures at Mohawk Reef (34.396290, -119.731297) in Santa Barbara, CA compiled from 2005-2017. Vertical dashed lines represent three of four treatment temperatures (11, 16, 21°C). Data Source: Santa Barbara Coastal Long-Term Ecological Research group (adapted from Csik et al. 2023)"
+    "text": "Draw attention to important information / values\n\nAdd vertical (geom_vline()) or horizontal (geom_hline()) lines at important values:\n\n\nFig cap: Temporal Variation in Bottom Temperature. Monthly bottom (4.5 m depth) temperatures at Mohawk Reef (34.396290, -119.731297) in Santa Barbara, CA compiled from 2005-2017. Vertical dashed lines represent three of four treatment temperatures (11, 16, 21°C). Data Source: Santa Barbara Coastal Long-Term Ecological Research group (adapted from Csik et al. 2023)"
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#highlight-groups",
@@ -609,11 +637,25 @@
     "text": "Use annotations to improve readability / interpretability\n\n\n“The key thing we do is to add a title to the chart, as an entry point and to explain what is going on. Text and other annotations add enourmous value for non-chart people.”\n\n\n-John Burn-Murdoch, Financial Times\n\n\n\n\n\nVaccines and Omicron mean Covid now less deadly than flu in England, by John Burn-Murdoch"
   },
   {
-    "objectID": "slides/week4.3-visual-form-slides.html#typography",
-    "href": "slides/week4.3-visual-form-slides.html#typography",
+    "objectID": "slides/week4.3-visual-form-slides.html#typeography",
+    "href": "slides/week4.3-visual-form-slides.html#typeography",
     "title": "EDS 240",
     "section": "",
-    "text": "Typography – what is it?\n\n\n“Typography is the art and technique of arranging type to make written language legible, readable and appealing when displayed.”\n\n\n-Wikipedia\n\nSome helpful definitions:\n\nTypeface (aka font family): underlying visual design that can exist in many different typesetting technologies (e.g. Times New Roman, Helvetica, Roboto)\nFont: an implementation of a typeface; they can come in different weights and styles (e.g. bold, italic)\n\n\n\n\nYou choose a typeface (e.g. Nunito).\nYou use a font (regular, italic, bold).\n\n\nWant to dive deeper into the world of typography? Start with this quick read, Why care about typography? and explore other great articles by Google Fonts."
+    "text": "Type and font choice influences audience perception"
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#typography-importance",
+    "href": "slides/week4.3-visual-form-slides.html#typography-importance",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Typeface choices affect emotions and perceptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n“Typography is the art and technique of arranging type to make written language legible, readable and appealing when displayed.”\n\n\n-Wikipedia\n\n\nLike colors, typefaces / fonts influence the how viewers perceive information (check out this short TEDx talk).\n\n Source: The Daily Egg\n\n\n\nWant to dive deeper into the world of typography? Start with this quick read, Why care about typography? and explore other great articles by Google Fonts."
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#typography-defs",
+    "href": "slides/week4.3-visual-form-slides.html#typography-defs",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Some helpful definitions:\n\n\n\nTypeface (aka font family): underlying visual design (e.g. Times New Roman, Helvetica, Roboto)\n\n\n\n\n\n\n\n\n\n\nFont: an implementation of a typeface; they can come in different weights and styles (e.g. bold, italic)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou choose a typeface (e.g. Nunito)\n\nYou use a font (e.g. regular, italic, bold)"
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#font-choices",
@@ -621,6 +663,13 @@
     "title": "EDS 240",
     "section": "",
     "text": "How to choose the right typeface(s) & font(s)\n\n\n\n\ncontext matters – the type(s) should fit the topic and audience\nwhen in doubt, use a sans-serif style (and avoid fancy types (especially squiggley ones))\nstrategically use types & fonts to create hierarchy\navoid using too many typefaces (stick to just 1-3)\navoid (extensively) using ALL CAPS\nuse monospaced types for numbers\n\n\n\n\nThere are lots of excellent resources out there for choosing the right typeface / font – here are a few I recommend starting with:\n\nThis collection of short articles on choosing type, by Google Fonts\nChoosing Fonts for Your Data Visualization, by Tiffany France (Nightingale)\nWhich fonts to use for your charts and tables, by Lisa Charlotte Muth (Datawrapper)\n\n\nHorror films, by Cristophe Nicault https://github.com/cnicault/tidytuesday/tree/master/2022/2022-44-horror-movies"
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#font-psychology",
+    "href": "slides/week4.3-visual-form-slides.html#font-psychology",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Type & font choice affect how readers perceive info\n\nTypefaces and fonts communicate beyond more than just the written text – they can evoke emotions and can be used to better connect your audience with your work.\n\n\n\nSource: Typography for a better user experience, by Suvo Ray\n\n\nInterested in font pyschology? Check out this short video and this article to learn a bit more."
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#typographic-hierarchy",
@@ -665,39 +714,53 @@
     "text": "Typeface creates hierarchy\n\n \n\nI am important!\n\n\nI am also pretty important!\n\n \n\nThanks for reading me\n\n\nI know, I’m kinda boring"
   },
   {
-    "objectID": "slides/week4.3-visual-form-slides.html#font-cobo",
-    "href": "slides/week4.3-visual-form-slides.html#font-cobo",
+    "objectID": "slides/week4.3-visual-form-slides.html#font-combo",
+    "href": "slides/week4.3-visual-form-slides.html#font-combo",
     "title": "EDS 240",
     "section": "",
     "text": "Combining different approaches to create hierarchy\n\n\n\nI am important!\n\n\nI am also pretty important!\n\n \n\nThanks for reading me\n\n\nI know, I’m kinda boring"
   },
   {
-    "objectID": "slides/week4.3-visual-form-slides.html#colorblindness",
-    "href": "slides/week4.3-visual-form-slides.html#colorblindness",
+    "objectID": "slides/week4.3-visual-form-slides.html#examples",
+    "href": "slides/week4.3-visual-form-slides.html#examples",
     "title": "EDS 240",
     "section": "",
-    "text": "tbd\n\nWe’ll spend a lot more time talking about colors next week!"
+    "text": "Let’s look at some examples together"
   },
   {
-    "objectID": "slides/week4.3-visual-form-slides.html#combining-things-air",
-    "href": "slides/week4.3-visual-form-slides.html#combining-things-air",
+    "objectID": "slides/week4.3-visual-form-slides.html#co2-1",
+    "href": "slides/week4.3-visual-form-slides.html#co2-1",
     "title": "EDS 240",
     "section": "",
-    "text": "Putting it all together\n\n\n\nSource: Why crowded meetings and conference rooms make you so, so tired, by Christopher Ingraham (The Washington Post)"
+    "text": "CO2 in conference rooms\n\n\n\n\n\n\n\n\n\n\n\n\n\nClearing the Air, by Christopher Ingraham, writing for The Washington Post\n\n\n \nTake some time to discuss the following:\n\nwhere are your eyes drawn first, second, etc.?\nwhat are the main messages / takeaways?\nwhere has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?\nwhat would you change about this visualization?\n\n\n\n\n\n\n−+\n05:00"
   },
   {
-    "objectID": "slides/week4.3-visual-form-slides.html#combining-things-penguins",
-    "href": "slides/week4.3-visual-form-slides.html#combining-things-penguins",
+    "objectID": "slides/week4.3-visual-form-slides.html#co2-2",
+    "href": "slides/week4.3-visual-form-slides.html#co2-2",
     "title": "EDS 240",
     "section": "",
-    "text": "Putting it all together\n\n\n\n\n\n\n\n\n\n\n\n\n\nPerfectly Proportional Penguins, by Cara Thompson (code)\n\n\n \nCara Thompson implements a number of the above considerations in her take on exploring the Palmer Penguins.\n\nTake some time to discuss the following:\n\nwhere are your eyes drawn first, second, etc.?\nwhat are the main messages / takeaways?\nwhat (if anything) is unclear?\n\n\n\n\n\n\n−+\n05:00"
+    "text": "Annotations adapted from @chezVoila"
   },
   {
-    "objectID": "slides/week4.3-visual-form-slides.html#alt-text",
-    "href": "slides/week4.3-visual-form-slides.html#alt-text",
+    "objectID": "slides/week4.3-visual-form-slides.html#penguins",
+    "href": "slides/week4.3-visual-form-slides.html#penguins",
     "title": "EDS 240",
     "section": "",
-    "text": "Reminder: include alt text!\n\n\n\nAlternative (alt) text makes our data visualizations accessible to a broader community. Always include alt text when publishing a data visualization online.\n\n\n\n\n\nReview the guidelines and examples for writing effective alt text in the week 2 discussion slides."
+    "text": "Palmer penguin classification\n\n\n\n\n\n\n\n\n\n\n\n\n\nPerfectly Proportional Penguins, by Cara Thompson as part of TidyTuesday (code)\n\n\n \nTake some time to discuss the following:\n\nwhere are your eyes drawn first, second, etc.?\nwhat are the main messages / takeaways?\nwhere has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?\nwhat would you change about this visualization?\n\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#glimmers",
+    "href": "slides/week4.3-visual-form-slides.html#glimmers",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Glimmers of hope in large carnivore recovery\n\n\n\n\n\n\n\n\n\n\n\n\n\nFig. 3, by Ingeman et al. 2022: Glimmers of hope and critical cases. Distribution of large carnivore species across categories of current IUCN status (x-axis) and population trend (y-axis). Improvements in status are indicated by gold and declines by blue, with bubble size indicating the number of status category changes. The majority of species have not undergone any changes in status (shown in light gray). Note: No change in status may indicate lack of recent assessment, insufficient data, or, in the case of species designated Least Concern, effective conservation efforts.\n\n\n \nTake some time to discuss the following:\n\nwhere are your eyes drawn first, second, etc.?\nwhat are the main messages / takeaways?\nwhere has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?\nwhat would you change about this visualization?\n\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/week4.3-visual-form-slides.html#aquaculture",
+    "href": "slides/week4.3-visual-form-slides.html#aquaculture",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Public perceptions of aquaculture\n\n\n\n \n\n\n\n\n\n\n\n\n\n\nFig. 3, by Froehlich et al. 2017: Newspaper ‘offshore aquaculture’ media sentiment. Sentiment over time based on the frequency of newspaper headlines with negative (red), positive (blue), and neutral (gray) titles for (A) developed (n = 102) and (B) developing (n = 8) nations. Also depicted are the (C) proportional contributions of sentiment headlines relative to each developed and developing country, with the number of headlines from each country shown in parentheses. All countries used in the analysis are depicted. Headlines were compiled using the LexisNexis® platform.\n\n\n \nTake some time to discuss the following:\n\nwhere are your eyes drawn first, second, etc.?\nwhat are the main messages / takeaways?\nwhere has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?\nwhat would you change about this visualization?\n\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/week4.3-visual-form-slides.html#end-break",
@@ -2146,7 +2209,7 @@
     "href": "slides/week4.1-rankings-slides.html#more-cat-groups",
     "title": "EDS 240",
     "section": "",
-    "text": "Plotting 2+ groups (e.g. male vs. female earnings)\n\nWe first need to transform our data from wide to long format, where total earning for males and females are in the same column (we’ll name this earnings_by_group), and a secondary column denotes which group those earnings are associated with (total_earnings_female, total_earnings_male). Also note that because geom_lollipop() doesn’t accept a position parameter, we’ll instead use geom_linerange() and geom_point():\n\n\n\njobs_clean |&gt; \n  filter(year == 2016) |&gt; \n  slice_max(order_by = total_earnings, n = 10) |&gt; \n  pivot_longer(cols = c(total_earnings_female, total_earnings_male), names_to = \"group\", values_to = \"earnings_by_group\") |&gt; # wide to long (male vs female earnings)\n  mutate(sex = str_remove(group, pattern = \"total_earnings_\")) |&gt; # remove part of string, leaving only \"male\" or \"female\" in `sex` column \n  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = earnings_by_group, fill = sex)) + \n  geom_col() + # default `position = \"stack\"`\n  coord_flip()\n\n\n\n\n\n\njobs_clean |&gt; \n  filter(year == 2016) |&gt; \n  slice_max(order_by = total_earnings, n = 10) |&gt; \n  pivot_longer(cols = c(total_earnings_female, total_earnings_male), names_to = \"group\", values_to = \"earnings_by_group\") |&gt; # wide to long (male vs female earnings)\n  mutate(sex = str_remove(group, pattern = \"total_earnings_\")) |&gt; # remove part of string, leaving only \"male\" or \"female\" in `sex` column \n  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = earnings_by_group, color = sex)) +\n  geom_point() + # default `position = \"stack\"`\n  geom_linerange(aes(xmin = occupation, xmax = occupation, ymin = 0, ymax = earnings_by_group)) + # default `position = \"stack\"`\n  coord_flip()"
+    "text": "Plotting 2+ groups (e.g. male vs. female earnings)\n\nWe’ll need to transform our data from wide to long format, where total earning for males and females are in the same column (we’ll name this earnings_by_group), and a secondary column denotes which group those earnings are associated with (total_earnings_female, total_earnings_male). Also note that because geom_lollipop() doesn’t accept a position parameter, we’ll instead use geom_linerange() + geom_point():\n\n\n\njobs_clean |&gt; \n  filter(year == 2016) |&gt; \n  slice_max(order_by = total_earnings, n = 10) |&gt; \n  pivot_longer(cols = c(total_earnings_female, total_earnings_male), names_to = \"group\", values_to = \"earnings_by_group\") |&gt; # wide to long (male vs female earnings)\n  mutate(sex = str_remove(group, pattern = \"total_earnings_\")) |&gt; # remove part of string, leaving only \"male\" or \"female\" in `sex` column \n  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = earnings_by_group, fill = sex)) + \n  geom_col() + # default `position = \"stack\"`\n  coord_flip()\n\n\n\n\n\n\njobs_clean |&gt; \n  filter(year == 2016) |&gt; \n  slice_max(order_by = total_earnings, n = 10) |&gt; \n  pivot_longer(cols = c(total_earnings_female, total_earnings_male), names_to = \"group\", values_to = \"earnings_by_group\") |&gt; # wide to long (male vs female earnings)\n  mutate(sex = str_remove(group, pattern = \"total_earnings_\")) |&gt; # remove part of string, leaving only \"male\" or \"female\" in `sex` column \n  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = earnings_by_group, color = sex)) +\n  geom_point() + # default `position = \"stack\"`\n  geom_linerange(aes(xmin = occupation, xmax = occupation, ymin = 0, ymax = earnings_by_group)) + # default `position = \"stack\"`\n  coord_flip()"
   },
   {
     "objectID": "slides/week4.1-rankings-slides.html#dodge",
@@ -2489,7 +2552,7 @@
     "href": "course-materials/week4.html#discussion-materials",
     "title": "Fundamental chart types (part II), Visual form",
     "section": "Discussion Materials",
-    "text": "Discussion Materials\nThemes are used to modify the non-data components of plots (e.g. titles, labels, fonts, background, gridlines, legend). In addition to using pre-build themes (available via the {ggplot2} package and also from extension packages), you can fine-tune the appearance of your plots theme by making adjustments using the theme() function. This week’s discussion section will introduce the use of themes so that you can start to really make your data visualizations stand out \n\n Week 4 discussion slides"
+    "text": "Discussion Materials\nThemes are used to modify the non-data components of plots (e.g. titles, labels, fonts, background, gridlines, legend). In addition to using pre-built themes (available via the {ggplot2} package and also from extension packages), you can fine-tune the appearance of your plots theme by making adjustments using the theme() function. This week’s discussion section will introduce the use of themes so that you can start to really make your data visualizations stand out \n\nApplying pre-built themes:\n{ggplot2} comes with eight complete themes, which can be applied as-is, or further modified using theme() (see next section, below). There are also many additional themes which can be applied via ggplot extension packages. A small handful of packages are listed in the expandable note, below:\n\n\n\n\n\n\nA non-exhaustive list of ggplot theme extension packages\n\n\n\n\n\n\n{ggthemes}: a collection of popular themes, some of which also come with corresponding color scales\n{hrbrthemes}: typographic-centric themes and theme components\n{ggthemr}: a collection of color palettes and plot layouts for quickly setting a ggplot theme\n{ggtech}: themes based off large tech company color palettes\n{ggdark}: dark mode for ggplot complete themes\n{firatheme}: a ggplot theme with Fira font\n{urbnthemes}: tools for creating Urban Institute-themed plots and maps in R (also check out the Urban Institute Data Visualization Style Guide for a really great example of how an organization enforces a cohesive style across all published data viz content)\n{bbplot}: tools for creating ggplots in the style used by the BBC News data team\n{ggpomological}: a ggplot2 theme based on the USDA Pomological Watercolor Collection\n{tvthemes}: a collection of ggplot themes and color / fill palettes based on everybody’s favorite TV shows\n\nKeep your eye out for extension packages that supply both a geom(s) and a pre-build theme(s) designed specifically to work with that geom. For example, the {ggridges} package provides both a few different ridgeline plot geoms and a pre-built theme_ridges() theme to pair with them.\n\n\n\n\n\nUsing ggplot2::theme() to control plot elements:\nUse this (non-exhaustive) list to start tweaking elements of your plot’s appearance. It’s most common to start with a pre-built theme (see above) and modify from there. For a complete list of elements, explore the documentation for ggplot::theme().\n\n\n\n\n\n\n\n\n\n\nAdapted from Reproducible Science for Busy Researchers: How to Save Time using Literate Programming, by Andrew P. Lapointe\n\n\n\nExercise\nThis week, you’ll practice updating different ggplot theme elements. Choose some of the starter code below, apply a pre-built theme, then modify different pieces of the plot using theme(). Plan to share out something new that you’ve learned with the rest of the class.\n\n\n\n\n\n\nFind starter code here!\n\n\n\n\n\ncode here"
   },
   {
     "objectID": "course-materials/week4.html#assignment-reminders",

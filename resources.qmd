@@ -38,6 +38,10 @@ toc: true
 - **[What to consider when choosing colors for data visualization](https://blog.datawrapper.de/colors/), by Lisa Charlotte Muth** -- a blog post with explanations and examples
 - **[Subtleties of Color](https://earthobservatory.nasa.gov/blogs/elegantfigures/2013/08/05/subtleties-of-color-part-1-of-6/), by Robert Simmon** -- a 6 part blog post series from NASA Earth Observatory about the use of color to map Earth observation data
 
+### Typography
+- **[Google Fonts](https://fonts.google.com/)** -- catalog of open-source fonts and icons, which can be imported for use with `{ggplot2}`
+- **[Wake up & smell the fonts](https://www.youtube.com/watch?v=OXc-VZ4Vwbo), by Sarah Hyndman** -- a great 14min-long TEDx talk about how fonts turn words into stories that have the power to influence audience perceptions
+
 ### Alternative (alt) text
 - **[How to write good alternative descriptions for your data visualization](https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization), by Amy Cesal** -- great instructions (and examples) on how to construct informative alt text for data visualizations 
 - **[Writing Alt Text for Data Visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81), also by Amy Cesal** -- more great example of alt text for data viz!
@@ -46,6 +50,11 @@ toc: true
 ## DEI in Data Visualization
 
 - **[Do No Harm Guide: Applying Equity Awareness in Data Visualization](https://www.urban.org/sites/default/files/publication/104296/do-no-harm-guide.pdf), by Jonathan Schwabish and Alice Feng** -- a guide for for approaching data work (and particularly visualizations) through a lens of diversity, equity, and inclusion 
+
+## Podcasts
+
+- **[Tidy Tuesday](https://www.tidytuesday.com/), hosted by Jon Harmon** -- a weekly (very short, ~5min-long) podcast that reviews a visualization (or a few) produced by community members using the latest published data set; Jon describes the visualization and describes a couple key geoms and/or functions the author used to create it
+- **[Data is Plural](https://podcast.data-is-plural.com/), hosted by Jeremy Singer-Vine** -- a new podcast from the long-running newsletter, [Data Is Plural](https://www.data-is-plural.com/), where each episode distills an expert interview into a crisp 15 minutes, taking you behind the scenes of another surprising data set
 
 ## Inspirational data visualization creators
 

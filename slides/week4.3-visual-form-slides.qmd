@@ -75,7 +75,7 @@ Today, we'll familiarize ourselves with a general set of rules and best practice
 
 ---
 
-## {#good-design data-menu-title="Good data viz considerations"} 
+## {#good-design1 data-menu-title="Good data viz considerations"} 
 
 [Good data visualization design considers:]{.slide-title}
 
@@ -87,8 +87,9 @@ Today, we'll familiarize ourselves with a general set of rules and best practice
 - **data-ink ratio** (less is more)
 - how to **reduce eye movement** and **improve readability / interpretability** (e.g. through alternative legend positions, direct annotations)
 - using **visual hierarchy** to guide the reader
-- **consistent** use of colors, spacing, typefaces, weights
+- **type choices** and how they affect audience emotions and perceptions
 - **color choices** (and making sure that they're **colorblindness-friendly**)
+- **consistent** use of colors, spacing, typefaces, weights
 - how to **draw the main attention** to the most **important info**
 - including **alt text**
 ::::
@@ -103,18 +104,56 @@ The above should *always be considered* in your design process, but *may not alw
 
 ---
 
+## {#good-design2 data-menu-title="Good data viz considerations"} 
+
+[Good data visualization design considers:]{.slide-title}
+
+<hr>
+
+<br>
+
+- **data-ink ratio** (less is more)
+- how to **reduce eye movement** and **improve readability / interpretability** (e.g. through alternative legend positions, direct annotations)
+- using **visual hierarchy** to guide the reader
+- **type choices** and how they affect audience emotions and perceptions
+- [**color choices** (and making sure that they're **colorblindness-friendly**)]{.gray-text}
+- [**consistent** use of colors, spacing, typefaces, weights]{.gray-text}
+- how to **draw the main attention** to the most **important info**
+- [including **alt text**]{.gray-text}
+
+<br>
+
+::: {.center-text .body-text-m}
+The above should *always be considered* in your design process, but *may not always be necessary*
+:::
+
+---
+
+##  {#data-ink-eyes data-menu-title="# Less is more #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Simplify plots to reduce eye movement</p>
+</div>
+
+---
+
 ## {#data-ink-ratio data-menu-title="Data-Ink ratio"} 
 
 [Data-Ink ratio: remove non-data ink]{.slide-title}
 
 <hr>
 
-[The [Data-Ink ratio](https://infovis-wiki.net/wiki/Data-Ink_Ratio) was introduced by Edward Tufte ([The Visual Display of Quantitative Information](https://faculty.salisbury.edu/~jtanderson/teaching/cosc311/fa21/files/tufte.pdf), 1983) and argues that **non-data-ink** (i.e. ink used for for everything *except* the presentation of data itself) **should be removed wherever possible**.]{.body-text-s} 
+[The [Data-Ink ratio](https://infovis-wiki.net/wiki/Data-Ink_Ratio) was introduced by Edward Tufte ([1983](https://faculty.salisbury.edu/~jtanderson/teaching/cosc311/fa21/files/tufte.pdf)) and argues that **non-data-ink** (i.e. ink used for for everything *except* the presentation of data itself) **should be removed wherever possible**.]{.body-text-s} 
 
 $$
 \text{Data-ink ratio} = \frac{\text{Data-ink}}{\text{Total ink used to print the graphic}}
 $$
-<br>
+
+. . .
+
+::: {.body-text-s}
+Do so by starting with a complete theme (e.g. `theme_classic()`, `theme_void()`) and add / remove elements using `theme()`.
+:::
 
 :::: {.columns}
 
@@ -188,11 +227,11 @@ ggplot(penguins, aes(x = body_mass_g, fill = species)) +
 
 - Eliminating lots of non-data ink **may render visualizations difficult to read**
 
-    - [Inbar et al. (2007)](https://doi.org/10.1145/1362550.1362587) found that students preferred a more maximilist visualization design over the minimalist version proposed by Tufte
+    - [Inbar et al. (2007)](https://doi.org/10.1145/1362550.1362587) found that students preferred a more maximalist visualization design over the minimalist version proposed by Tufte
 
 . . . 
 
-- **Risk of many boring graphics / less room for the creative display of data **-- how you choose to maximize your data-ink ratio will depend largely on *who* your visualization is for and the *purpose* it's meant to serve.
+- **Design choices depend on audience and purpose**-- how you choose to maximize your data-ink ratio will depend largely on *who* your visualization is for and the *purpose* it's meant to serve (e.g. a scientific publication may have specific requirements for the design / aesthetics of a visualization, while an infographic-style visualization may leave space for more creative liberties)
 
 . . . 
 
@@ -280,7 +319,7 @@ ggplot(penguins, aes(x = fct_infreq(species), fill = species)) +
 ::::
 
 ::: {.center-text}
-Increases the data-ink ratio and reduces overall eye movement.
+Doing so increases the data-ink ratio and reduces overall eye movement.
 :::
 
 ---
@@ -611,11 +650,23 @@ Legend as direct labels:
 
 ---
 
+##  {#draw-attention data-menu-title="# Draw attention #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Draw attention to important information / values</p>
+</div>
+
+---
+
 ## {#geom_vline data-menu-title="Highlight important info (vert / horiz lines)"} 
 
 [Draw attention to important information / values]{.slide-title3}
 
 <hr>
+
+Add vertical (`geom_vline()`) or horizontal (`geom_hline()`) lines at important values:
+
+<br>
 
 ```{r}
 #| eval: true
@@ -646,7 +697,7 @@ Highlight data manually or by using helpful packages, like `{gghighlight}` (we s
 #| fig-align: "center"
 penguins_new <- penguins |> 
   mutate(color = case_when(
-    species == "Adelie" ~ "darkorange",
+    species == "Adelie" ~ "darkred",
     TRUE ~ "gray70"
   ))
 
@@ -708,7 +759,7 @@ ggplot(penguins, aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
     axis.text = element_text(size = 13),
     axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
     axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0)),
-    legend.position = "none"
+    legend.position = "top"
        )
 ```
 
@@ -782,36 +833,113 @@ knitr::include_graphics("images/week4/burn-murdoch-covid.png")
 
 ---
 
-## {#typography data-menu-title="What is typography?"} 
+##  {#typeography data-menu-title="# Typography #" background="#047C90"}
 
-[Typography -- what is it?]{.slide-title}
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Type and font choice influences audience perception</p>
+</div>
+
+---
+
+## {#typography-importance data-menu-title="Typography is important!"} 
+
+[Typeface choices affect emotions and perceptions]{.slide-title2}
 
 <hr>
 
-> "Typography is the art and technique of arranging type to make written language legible, readable and appealing when displayed."
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "70%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/psychology-fonts.png")
+```
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+
+> *"Typography is the art and technique of arranging type to make written language legible, readable and appealing when displayed."*
 
 ::: {.right-align-text .body-text-s}
 -[Wikipedia](https://en.wikipedia.org/wiki/Typography)
 :::
 
-**Some helpful definitions:**
+<br>
 
-- [**[Typeface](https://fonts.google.com/knowledge/glossary/typeface) (aka font family)**: underlying visual design that can exist in many different typesetting technologies (e.g. Times New Roman, Helvetica, Roboto)]{.body-text-s}
-- [**[Font](https://fonts.google.com/knowledge/glossary/font)**: an implementation of a typeface; they can come in different weights and styles (e.g. bold, italic)]{.body-text-s}
+
+Like colors, typefaces / fonts influence the how viewers perceive information (check out this short [TEDx talk](https://www.youtube.com/watch?v=OXc-VZ4Vwbo)).
 
 <br>
 
-. . .
+[{{< fa arrow-left title="an arrow pointing to the left" >}} Source: [The Daily Egg](https://www.crazyegg.com/blog/psychology-of-fonts-infographic/)]{.body-text-s .gray-text}
 
-::: {.center-text .body-text-m}
-**You choose a *typeface* (e.g. [Nunito](https://fonts.google.com/specimen/Nunito?query=nunito)).**
-
-**You use a *font* (regular, italic, bold).**
 :::
+
+::::
 
 ::: {.footer}
 Want to dive deeper into the world of typography? Start with this quick read, [Why care about typography?](https://fonts.google.com/knowledge/introducing_type/why_care_about_typography) and explore other great articles by [Google Fonts](https://fonts.google.com/knowledge).
 :::
+
+---
+
+## {#typography-defs data-menu-title="Typeography definitions"} 
+
+[Some helpful definitions:]{.slide-title}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+**[Typeface](https://fonts.google.com/knowledge/glossary/typeface) (aka font family)**: underlying visual design (e.g. Times New Roman, Helvetica, Roboto)
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/nunito-type.png")
+```
+:::
+
+::: {.column width="50%"}
+
+**[Font](https://fonts.google.com/knowledge/glossary/font)**: an implementation of a typeface; they can come in different weights and styles (e.g. bold, italic)
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/nunito-fonts.png")
+```
+:::
+
+::::
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="50%" .center-text}
+**You choose a *typeface* (e.g. [Nunito](https://fonts.google.com/specimen/Nunito?query=nunito))**
+:::
+
+::: {.column width="50%" .center-text}
+**You use a *font* (e.g. regular, italic, bold)**
+:::
+
+::::
 
 ---
 
@@ -846,6 +974,34 @@ There are *lots* of excellent resources out there for choosing the right typefac
 ::: notes
 Horror films, by Cristophe Nicault <https://github.com/cnicault/tidytuesday/tree/master/2022/2022-44-horror-movies>
 :::
+
+---
+
+## {#font-psychology data-menu-title="Psychology of typefaces"} 
+
+[Type & font choice affect how readers perceive info]{.slide-title3}
+
+<hr>
+
+Typefaces and fonts communicate beyond more than just the written text -- they can **evoke emotions** and can be used to **better connect your audience with your work**. 
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/find-you.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Source: [Typography for a better user experience](https://www.suvoray.com/notes/typography-for-a-better-user-experience), by [Suvo Ray](https://www.suvoray.com/)
+:::
+
+<br>
+
+Interested in font pyschology? Check out this [short video](https://www.youtube.com/watch?v=6Jlo9iOZvXY&t=65s) and [this article](https://designmodo.com/font-psychology/#:~:text=Serif%20fonts%20can%20evoke%20feelings,modernity%2C%20simplicity%2C%20and%20clarity.) to learn a bit more.
 
 ---
 
@@ -1032,7 +1188,7 @@ Source: [The UX Designer’s Guide to Typography](https://www.interaction-design
 
 ---
 
-## {#font-cobo data-menu-title="Hierarchy with fonts (combos)"} 
+## {#font-combo data-menu-title="Hierarchy with fonts (combos)"} 
 
 [Combining different approaches to create hierarchy]{.slide-title2}
 
@@ -1061,55 +1217,17 @@ Source: [The UX Designer’s Guide to Typography](https://www.interaction-design
 
 ---
 
-## {#colorblindness data-menu-title="Colorblindness"} 
+##  {#examples data-menu-title="# Data Viz Examples #" background="#047C90"}
 
-[tbd]{.slide-title}
-
-<hr>
-
-We'll spend a lot more time talking about colors next week!
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Let's look at some examples together</p>
+</div>
 
 ---
 
-## {#combining-things-air data-menu-title="Combining it all (Ex 1)"} 
+## {#co2-1 data-menu-title="CO2 in conf rooms"} 
 
-[Putting it all together]{.slide-title}
-
-<hr>
-
-```{r}
-#| eval: true
-#| echo: false
-#| out-width: "100%"
-#| fig-align: "center"
-knitr::include_graphics("images/week4/clearing-air.png")
-```
-
-
-::: {.footer .center-text .body-text-s}
-Source: [Why crowded meetings and conference rooms make you so, so tired](https://www.washingtonpost.com/business/2019/06/06/why-crowded-meetings-conference-rooms-make-you-so-so-tired/), by Christopher Ingraham (The Washington Post)
-:::
-
-
----
-
-```{r}
-#| eval: true
-#| echo: false
-#| out-width: "100%"
-#| fig-align: "center"
-knitr::include_graphics("images/week4/clearing-air-annotated.png")
-```
-
-::: {.center-text .gray-text .body-text-s}
-Adapted from [@chezVoila](https://twitter.com/chezVoila/status/1136631524919513088)
-:::
-
----
-
-## {#combining-things-penguins data-menu-title="Combining it all"} 
-
-[Putting it all together]{.slide-title}
+[CO~2~ in conference rooms]{.slide-title}
 
 <hr>
 
@@ -1121,11 +1239,11 @@ Adapted from [@chezVoila](https://twitter.com/chezVoila/status/11366315249195130
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/thompson-penguins.png")
+knitr::include_graphics("images/week4/clearing-air.png")
 ```
 
 ::: {.center-text .gray-text .body-text-s}
-Perfectly Proportional Penguins, by [Cara Thompson](https://www.cararthompson.com/) ([code](https://github.com/cararthompson/tidytuesdays/blob/main/scripts/202007d_penguins.R))
+Clearing the Air, by [Christopher Ingraham](https://www.washingtonpost.com/people/christopher-ingraham/), writing for [The Washington Post](https://www.washingtonpost.com/business/2019/06/06/why-crowded-meetings-conference-rooms-make-you-so-so-tired/)
 :::
 :::
 
@@ -1134,15 +1252,12 @@ Perfectly Proportional Penguins, by [Cara Thompson](https://www.cararthompson.co
 <br>
 <br>
 
-Cara Thompson implements a number of the above considerations in her take on exploring the Palmer Penguins.
-
-<br>
-
-Take some time to discuss the following:
+**Take some time to discuss the following:**
 
 - where are your eyes drawn first, second, etc.?
 - what are the main messages / takeaways?
-- what (if anything) is unclear?
+- where has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?
+- what would you change about this visualization?
 :::
 
 ::::
@@ -1165,33 +1280,190 @@ countdown::countdown(
 
 ---
 
-## {#alt-text data-menu-title="Alt text"} 
+## {#co2-2 data-menu-title="CO2 in conf rooms"} 
 
-[Reminder: include alt text!]{.slide-title}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/clearing-air-annotated.png")
+```
+
+::: {.center-text .gray-text .body-text-s}
+Annotations adapted from [@chezVoila](https://twitter.com/chezVoila/status/1136631524919513088)
+:::
+
+---
+
+## {#penguins data-menu-title="Palmer penguin classification"} 
+
+[Palmer penguin classification]{.slide-title}
 
 <hr>
 
-<br>
+:::: {.columns}
 
-::: {.center-text}
-Alternative (alt) text makes our data visualizations accessible to a broader community. **Always include alt text when publishing a data visualization online.**
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/thompson-penguins.png")
+```
+
+::: {.center-text .gray-text .body-text-s}
+Perfectly Proportional Penguins, by [Cara Thompson](https://www.cararthompson.com/) as part of [TidyTuesday](https://github.com/rfordatascience/tidytuesday) ([code](https://github.com/cararthompson/tidytuesdays/blob/main/scripts/202007d_penguins.R))
+:::
 :::
 
+::: {.column width="50%"}
+
+<br>
+<br>
+
+**Take some time to discuss the following:**
+
+- where are your eyes drawn first, second, etc.?
+- what are the main messages / takeaways?
+- where has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?
+- what would you change about this visualization?
+:::
+
+::::
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#glimmers data-menu-title="Large carnivore recovery"} 
+
+[Glimmers of hope in large carnivore recovery]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/ingeman-etal-fig3.png")
+```
+
+::: {.body-text-xs .gray-text}
+[Fig. 3](https://www.nature.com/articles/s41598-022-13671-7/figures/3), by [Ingeman et al. 2022](https://www.nature.com/articles/s41598-022-13671-7): **Glimmers of hope and critical cases.** Distribution of large carnivore species across categories of current IUCN status (x-axis) and population trend (y-axis). Improvements in status are indicated by gold and declines by blue, with bubble size indicating the number of status category changes. The majority of species have not undergone any changes in status (shown in light gray). Note: No change in status may indicate lack of recent assessment, insufficient data, or, in the case of species designated Least Concern, effective conservation efforts.
+:::
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+
+**Take some time to discuss the following:**
+
+- where are your eyes drawn first, second, etc.?
+- what are the main messages / takeaways?
+- where has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?
+- what would you change about this visualization?
+:::
+
+::::
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#aquaculture data-menu-title="Aquaculture sentiment"} 
+
+[Public perceptions of aquaculture]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
 <br>
 
 ```{r}
 #| eval: true
 #| echo: false
-#| out-width: "80%"
+#| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/alt-text.png")
+knitr::include_graphics("images/week4/froehlich-etal-2017-fig3.png")
 ```
 
+::: {.body-text-xs .gray-text}
+[Fig. 3](https://journals.plos.org/plosone/article/figure?id=10.1371/journal.pone.0169281.g003), by [Froehlich et al. 2017](https://doi.org/10.1371/journal.pone.0169281): **Newspaper ‘offshore aquaculture’ media sentiment.** Sentiment over time based on the frequency of newspaper headlines with negative (red), positive (blue), and neutral (gray) titles for (A) developed (n = 102) and (B) developing (n = 8) nations. Also depicted are the (C) proportional contributions of sentiment headlines relative to each developed and developing country, with the number of headlines from each country shown in parentheses. All countries used in the analysis are depicted. Headlines were compiled using the LexisNexis® platform.
+:::
+
+:::
+
+::: {.column width="50%"}
+
+<br>
 <br>
 
-::: {.center-text}
-**Review the guidelines and examples for writing effective alt text in the [week 2 discussion slides](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/discussion/week2/week2-alt-text.html#/title-slide).**
+**Take some time to discuss the following:**
+
+- where are your eyes drawn first, second, etc.?
+- what are the main messages / takeaways?
+- where has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?
+- what would you change about this visualization?
 :::
+
+::::
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
 
 ---
 
