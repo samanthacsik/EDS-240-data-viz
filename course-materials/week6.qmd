@@ -41,6 +41,14 @@ knitr::include_graphics("../images/horst-eco-r4ds.png")
   <!-- https://rviews.rstudio.com/2019/09/19/intro-to-ggforce/ -->
   
 
+<!-- Tanya Shapiro (~1:45) -->
+<!-- - annotations talk some trial & error -->
+<!-- - easiest to create a df with your annotation positions (x, y) and text AS WELL AS a df with arrrow positioning (xstart, xend, ystart,) -->
+
+<!-- see Dan Oehm's plot + code: https://github.com/doehm/tidyTuesday/tree/master/2022/week09-energy , https://twitter.com/danoehm/status/1498985113635663873 -->
+
+<!-- https://twitter.com/meghansharris/status/1728505525086650851 -->
+
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-4}

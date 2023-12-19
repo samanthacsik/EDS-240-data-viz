@@ -257,6 +257,7 @@ missing_temps <- naniar::vis_miss(bottom)
 # # created / saved for lecture 4.3 ----
 # ggplot(mko_clean, aes(x = Temp_bot, y = month_name, fill = after_stat(x))) +
 #   ggridges::geom_density_ridges_gradient(rel_min_height = 0.01, scale = 3) +
+#   geom_vline(xintercept = mean(mko_clean$Temp_bot, na.rm = TRUE), linetype = "dashed") +
 #   geom_vline(xintercept = 11, linetype = "dashed", color = "darkgray") +
 #   geom_vline(xintercept = 16, linetype = "dashed", color = "darkgray") +
 #   geom_vline(xintercept = 21, linetype = "dashed", color = "darkgray") +

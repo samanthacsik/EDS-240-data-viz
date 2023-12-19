@@ -13,7 +13,7 @@ editor_options:
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # State-level precipitation by year/month: <https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/statewide/mapping>
-# County-level precipitation by year/month: <https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value>
+# County-level precipitation by year/month: <https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value> and remove first few rows manually
 # Tutorial: <https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html>
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,7 +31,7 @@ counties <- map_data("county")
 
 #....................import precipitation data...................
 # NOTE: manually removed the first 5(?) rows of metadata from csv file before importing
-precip_counties <- read_csv(here::here("slides", "data", "county_precip_oct2023_2.csv")) |> 
+precip_counties <- read_csv(here::here("slides", "data", "county_precip_oct2023.csv"), skip = 4) |> 
   janitor::clean_names()
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
