@@ -32,7 +32,7 @@ library(tidyverse)
 library(janitor)
 
 #......................import fracking data......................
-fracking <- read_csv(here::here("week1", "data", "fracking-20240110.csv"))
+fracking <- read_csv(here::here("week1", "data", "fracking.csv"))
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                        clean/wrangle fracking data                       ----
@@ -44,15 +44,12 @@ fracking_clean <- fracking |>
   janitor::clean_names() |> 
   
   # clean up dates ----
-  mutate(job_start_date = str_remove(job_start_date, " AM")) |> 
-  mutate(datetime_start = mdy_hms(job_start_date)) |> 
-  mutate(year = year(datetime_start)) |> 
+  mutate(job_start_date = str_remove(job_start_date, " AM")) |> # remove 'AM' from string
+  mutate(datetime_start = mdy_hms(job_start_date)) |> # convert from string to date (save to new col)
+  mutate(year = year(datetime_start)) |> # create 'year' col from date
 
   # select relevant cols ----
   select(datetime_start, year, state_name, county_name, well_name, total_base_water_volume) |> 
-  
-  # convert state_name from string to factor ----
-  mutate(state_name = as.factor(state_name)) |> 
   
   # filter out non-state names ----
   filter(!state_name %in% c("Beaver", "Beckham", "Harper", "Hemphill", "Midland", "Red River", "Roosevelt", "Rusk", "State", "WARD")) |> 
@@ -87,37 +84,41 @@ fracking_clean <- fracking |>
     TRUE ~ sn # copy over rest of state names from as-is
   )) |> 
   
-  # remove rows that have a ? mark ----
-  filter(!str_detect(sn, "\\?")) |> # `?` is a special chr; escape with `\\` prefix
+  # remove rows that have a '?' mark ----
+  filter(!str_detect(string = sn, pattern = "\\?")) |> # `?` is a special chr; escape with `\\` prefix
   
-  # make all works uppercase (so that we can covert abb to state names) ----
+  # make all uppercase (so that we can covert abbreviation to state names) ----
   mutate(sn = str_to_upper(sn)) |> 
   
-  # mutate abbs to full state names ----
-  mutate(sn = ifelse(test = str_length(sn) == 2, 
-                     yes = usdata::abbr2state(sn),
-                     no = sn)) |> 
+  # mutate abbreviations to full state names ----
+  mutate(sn = ifelse(test = str_length(sn) == 2, # if string in 'sn' col is 2 chrs long
+                     yes = usdata::abbr2state(sn), # replace abbreviation with full state name 
+                     no = sn)) |> # if string in 'sn' col is not 2 chrs long, keep state name as-is
   
   # make all words title case again ----
   mutate(sn = str_to_title(sn)) |> 
   
-  # create a column of just state abbs ----
+  # create a column of just state abbreviations ----
   mutate(state_abb = usdata::state2abbr(sn)) |> 
   
-  # rename sn to state_name again for clarity ----
+  # rename 'sn' to 'state_name' again for clarity ----
   rename(state_name = sn, total_base_water_volume_gal = total_base_water_volume) |> 
   
-  # move state_abb col after state_name col ----
+  # move 'state_abb' col after state_name col ----
   relocate(state_abb, .after = state_name) |> 
   
-  # remove obs that don't have a measurement for total_base_water_volume (NA) ----
+  # convert 'state_name' & 'state_abb' from string to factor ----
+  mutate(state_name = as.factor(state_name),
+         state_abb = as.factor(state_abb)) |> 
+  
+  # remove obs that don't have a measurement for 'total_base_water_volume' (NA) ----
   drop_na(total_base_water_volume_gal)
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##      basic violin plot of total water used / job (top 3 states, 2015)    ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-fracking_areas |> 
+fracking_clean |> 
   filter(state_name %in% c("Texas", "Colorado", "North Dakota")) |> 
   filter(year == 2015) |> 
   # filter(total_base_water_volume_gal < 70000000) |> # uncomment this line to plot with two extreme outliers excluded

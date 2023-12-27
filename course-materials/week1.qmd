@@ -103,7 +103,7 @@ This week's data comes courtesy of Jeremy Singer-Vine's [Data is Plural](https:/
 
 > Since [launching in 2011](https://www.fracfocus.org/learn/about-fracfocus), [FracFocus](https://fracfocus.org/) has become the largest registry of [hydraulic fracturing](https://en.wikipedia.org/wiki/Fracking) chemical disclosures in the US. The database, available to explore online and [download in bulk](https://fracfocus.org/data-download), contains 210,000+ such disclosures from fracking operators; it details the location, timing, and water volume of each fracking job, plus the names and amounts of chemicals used. The project is [managed](https://fracfocus.org/about-us) by the [Ground Water Protection Council](https://www.gwpc.org/overview/), “a nonprofit 501(c)6 organization whose members consist of state ground water regulatory agencies”. As seen in: The latest [installment](https://www.nytimes.com/interactive/2023/09/25/climate/fracking-oil-gas-wells-water.html) of the New York Times’ [Uncharted Water series](https://www.nytimes.com/series/uncharted-waters).
 
-**Before coming to section, you'll need to install some pacakges and download data. For step-by-step instructions, unfold the following note (collapsed to save space):**
+**Before coming to section, you'll need to install some packages and download data. For step-by-step instructions, unfold the following note (collapsed to save space):**
 
 ::: {.callout-note icon=false collapse=true}
 ## Step-by-step pre-discussion prep instructions
@@ -117,9 +117,8 @@ install.packages("janitor") # tools for cleaning dirty data
 install.packages("usdata") # demographic data on the United States at the county and state levels spanning multiple years
 ```
 
-2. [Download the data](https://fracfocus.org/data-download) as a zip file (click the **Download CSV Data** button at the bottom of the page) and unzip. We'll only be using the file named `registryupload_1.csv` -- rename it as `fracking-20240110.csv` 
-3. Save `fracking-20240110.csv` to your class repo in the following location: `EDS-240-class-examples/week1/data/fracking-20240110.csv`
-4. We don't want to push any data in our repo to GitHub (GitHub enforces file size limits, and you'll run into some serious headaches when you try to push a file that's too big) -- to avoid doing this, we can add our data files to our `.gitignore` file, which, as the name implies, is a collection of files that we want Git to ignore. **Open up your `.gitignore` file and add the following line (anywhere is fine, but it makes sense to add it beneath the last line):**
+2. [Download the data (`fracking.csv`)](https://drive.google.com/file/d/1vR0Ppc8YaIsHmAOluxeOtmKu1DG_WaR9/view?usp=drive_link) from Google Drive and save it to your class repo in the following location: `EDS-240-class-examples/week1/data/fracking.csv` (NOTE: data were originally downloaded as a zip file from [FracFocus](https://fracfocus.org/data-download) in November 2023. Since then, FracFocus has published a cleaner version of these data, which defeats some of this purpose of this exercise. As such, we'll be working with this saved version of the data, rather than downloading directly from FracFocus's data download page.)
+3. We don't want to push any data in our repo to GitHub (GitHub enforces file size limits, and you'll run into some serious headaches when you try to push a file that's too big) -- to avoid doing this, we can add our data files to our `.gitignore` file, which, as the name implies, is a collection of files that we want Git to ignore. **Open up your `.gitignore` file and add the following line (anywhere is fine, but it makes sense to add it beneath the last line):**
 
 ```{bash filename=".gitignore"}
 #| eval: false

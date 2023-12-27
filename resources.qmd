@@ -82,6 +82,7 @@ Definitely don't limit yourself to just `{ggplot2}` creators! There are so many 
 - [Nadieh Bremer](https://www.visualcinnamon.com/)
 - [Mona Chalabi](https://monachalabi.com/)
 - [Sonja Kuijpers](https://www.studioterp.nl)
+- [Giorgia Lupi](https://giorgialupi.com/)
 - [Kinga Stryszowska-Hill](https://stryszowskakinga9.wixsite.com/kingastryszowskahill) (who does use R / `{ggplot2}`, among other data visualization tools)
 
 ## Data sources
@@ -120,22 +121,6 @@ The following Santa Barbara-based groups hold regular meetups, workshops, networ
 - **[EcoDataScience](https://ecodatascience.github.io/)** -- an environmental data science community based at the University of California Santa Barbara (UCSB), open to anyone who is interested in joining the journey of learning, advancing and applying data science skills in the environmental and ecological field
 - **[R-Ladies Santa Barbara](https://www.meetup.com/rladies-santa-barbara/)** -- a local chapter of R-Ladies Global, which exists to promote diversity in the R community
 - **[Santa Barbara Women in STEM](https://sbwomeninstem.org/)** -- a local network of professionals with a common goal to promote and encourage women in fields related to science, technology, engineering, and math
-
-<!-- ## R packages -->
-
-<!-- A list of the R packages that we've covered in this class so far: -->
-
-<!-- Week 1 -->
-<!-- - **[`{palmerpenguins}`](https://allisonhorst.github.io/palmerpenguins/):** a dataset for data exploration & visualization, as an alternative to `iris` -->
-<!-- - **[`{tidyverse}`](https://www.tidyverse.org/):** a collection of R packages for data wrangling / manipulation and visualization (includes `{ggplot2}`) -->
-<!-- - **[`{ggplot2}`](https://ggplot2.tidyverse.org/):** a system for declaratively creating graphics, based on The Grammar of Graphics -->
-<!-- - **[`{janitor}`](https://sfirke.github.io/janitor/):** simple functions for examining and cleaning dirty data -->
-<!-- - **[`{usdata}`](https://openintrostat.github.io/usdata/):** demographic data on the United States at the county and state levels spanning multiple years -->
-<!-- Week 2 -->
-<!-- - **[`{ggridges}`](https://wilkelab.org/ggridges/):** a `{ggplot2}` extension package for creating ridgeline plots -->
-<!-- - **[`{gghighlight}`](https://yutannihilation.github.io/gghighlight/index.html):** a `{ggplot2}` extension package for highlighting geoms  -->
-<!-- - **[`{tidytuesdayR}`](https://thebioengineer.github.io/tidytuesdayR/):** used to download TidyTuesday data -->
-<!-- - **[`{tidycensus}`](https://walker-data.com/tidycensus/):** an R package that allows users to interface with a select number of the US Census Bureau’s data APIs and return tidyverse-ready data frames, optionally with simple feature geometry included -->
 
 ```{r}
 #| eval: true 
