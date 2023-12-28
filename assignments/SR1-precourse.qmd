@@ -23,7 +23,7 @@ Because everyone is participating under unique circumstances, I want to learn ab
     - [ ] What kinds of assignments, skills, or behaviors have you felt most comfortable with / enjoy from past classes? Why do you enjoy them?
     - [ ] How confident do you feel in your data visualization skills? Why?
     - [ ] How confident do you feel in your coding skills (primarily R, but feel free to elaborate on any of the languages you’ve used)? Why?
-    - [ ] What have you struggled with in the past in other MEDS courses? Why?
+    - [ ] What have you struggled with in the past in other graduate-level courses? Why?
     - [ ] Of the courses you’re taking this quarter, which do you expect to be the most challenging? Most demanding?
     - [ ] What responsibilities do you have outside of school, and how do you want to balance them?
     - [ ] Which learning goals from the syllabus are you most excited about?
@@ -31,7 +31,7 @@ Because everyone is participating under unique circumstances, I want to learn ab
 
 3. [**Some fun questions:**]{.teal-text}  
 
-    - [ ] What activity(ies) (outside of school/work) bring you the most joy? How do you plan to incorporate that activity into your schedule this quarter (if at all)? If you are unable to do so, is there something else you can plan to do that will bring you similar joy? 
+    - [ ] What activity(ies) (outside of school / work) brings you the most joy? How do you plan to incorporate that activity into your schedule this quarter (if at all)? If you are unable to do so, is there something else you can plan to do that will bring you similar joy? 
     - [ ] What is a piece of media you enjoyed recently? (e.g. music, book, movie, tweet, meme)
 
 ## Rubric (specifications)
@@ -42,5 +42,5 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 
   - [ ] include your preferred name, and if you feel comfortable, your preferred pronouns in the `author` field of the `SR1-precourse-reflection.qmd` YAML 
   - [ ] address all parts of each question above in [at least 2 sentences each]{.peach-text}
-  - [ ] push `SR1-precourse-reflection.qmd` to GitHub using GitHub Classrooms by 11:59pm PT on Sat 01/13/2024
+  - [ ] push your completed `SR1-precourse-reflection.qmd` to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/13/2024
 

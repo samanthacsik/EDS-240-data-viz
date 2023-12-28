@@ -489,8 +489,8 @@ It would be hard to use a method of encoding from the top of the hierarchy! In t
 
 ## {#chart-selectors data-menu-title="Resources for selecting charts"} 
 
-[1: What task(s) to enable / message(s) to convey]{.slide-title3}  
-[2. # of variables & data points, data types]{.slide-title3}
+[1. What task(s) to enable / message(s) to convey]{.slide-title3}  
+[2. Number of variables & data points, data types]{.slide-title3}
 
 <hr>
 

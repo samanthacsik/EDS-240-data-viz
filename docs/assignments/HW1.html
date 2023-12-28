@@ -277,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="pink-box">
 <p><strong><em>You must earn a “Satisfactory” mark for each individual Part (I and II) to earn a “Satisfactory” mark for Assignment #1.</em></strong></p>
 <p><strong>NOTE:</strong> Assignments are to be submitted via GitHub Classrooms, unless otherwise noted. Each student receives one “free pass” for not submitting assignments via specified channels, after which you will receive a “Not Yet” mark.</p>
-<p>Read each part of the assignment carefully!</p>
+<p>Read each part of the assignment carefully, and use the check boxes to ensure you’ve addressed all elements of the assignment!</p>
 </div>
 </div>
 <p><br></p>
@@ -292,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="description" class="level2">
 <h2 class="anchored" data-anchor-id="description">Description</h2>
-<p>Much of your time as a data scientist will be spent looking at code written by others – maybe you’re trying to learn from and adapt someone else’s code for your own work, or perhaps you’ve been asked to conduct a code review for a colleague. Being able to look at and make sense of code that you did not write yourself is an invaluable skill and an important one to practice throughout your learning journey. Here, you’ll be asked to interpret and annotate <code>ggplot2</code> code written by someone else. This will likely require running code (both as a whole <em>and</em> line-by-line), as well as Googling and/or reading documentation.</p>
+<p>Much of your time as a data scientist will be spent looking at code written by others – maybe you’re trying to learn from and adapt someone else’s code for your own work, or perhaps you’ve been asked to conduct a code review for a colleague. Being able to look at and make sense of code that you did not write yourself is an invaluable skill and an important one to practice throughout your learning journey. Here, you’ll be asked to interpret and annotate <code>{ggplot2}</code> code written by someone else. This will likely require running code (both as a whole <em>and</em> line-by-line), as well as Googling and / or reading documentation.</p>
 <p><em>I recognize that there is (likely) <strong>a lot</strong> of new code presented here, and that we haven’t covered much at all yet in this course. This is intentionally an exercise is resourcefulness! By the end of this exercise, you should feel a bit more confident in your ability to interpret (and maybe even reuse!) code written by others.</em></p>
 <p><span class="teal-text"><strong>Annotate the following code</strong></span>, adapted from <a href="https://github.com/cnicault">Christophe Nicault’s</a> visualization titled, <strong><em>Evolution of deaths from indoor air pollution</em></strong> (<a href="https://github.com/cnicault/tidytuesday/blob/master/2022/2022-15-indoor_air_pollution/indoor_air_pollution.Rmd">original code</a>) – to enlarge image (in Chrome) <strong>right-click on image</strong> &gt; <strong>Open Image in New Tab</strong>:</p>
 <div class="cell" data-layout-align="center">
@@ -311,13 +311,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Click here to expand the code
+Click here to expand the code AND for tips on getting started
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Install the following packages (if you don’t already have them) using <code>install.packages("package_name")</code> or <code>install.packages("package_name1", "package_name2", ...)</code>:</p>
+<p>Install the following packages (if you don’t already have them) using <code>install.packages("package_name")</code> or <code>install.packages(pkgs = c("package_name1", "package_name2", ...))</code>:</p>
 <ul>
 <li><a href="https://cran.r-project.org/web/packages/tidytuesdayR/index.html"><code>{tidytuesdayR}</code></a></li>
 <li><a href="https://cran.r-project.org/web/packages/tidyverse/index.html"><code>{tidyverse}</code></a></li>
@@ -332,9 +332,9 @@ Click here to expand the code
 <p><strong>Tips:</strong></p>
 <ul>
 <li>See lines 114 and 120 (among others) for examples of code annotations – aim to include this level of detail.</li>
-<li>Writing clean annotations makes it easier for you and others to read them – I love using the <a href="https://github.com/Hzhang-ouce/ARTofR"><code>{ARTofR}</code> package</a> to create titles, dividers, and block comments in my scripts and Qmd/Rmd files. Read more about how to create different dividers using the <code>{ARTofR}</code> package on <a href="http://localhost:7166/clean-code-guide.html#annotating-code">this resource page</a> of the course website.</li>
+<li>Writing clean annotations makes it easier for you and others to read them – I love using the <a href="https://github.com/Hzhang-ouce/ARTofR"><code>{ARTofR}</code> package</a> to create titles, dividers, and block comments in my scripts and Qmd / Rmd files. Read more about how to create different dividers using the <code>{ARTofR}</code> package on <a href="http://localhost:7166/clean-code-guide.html#annotating-code">this resource page</a> of the course website.</li>
 <li>Pull up documentation for a function directly in RStudio’s <strong>Help</strong> pane by running <code>?function_name</code> in the console. Vignettes and <code>pkgdown</code> sites are incredible resources as well (e.g.&nbsp;here is a <a href="https://cloud.r-project.org/web/packages/patchwork/vignettes/patchwork.html">vignette</a> and the <a href="https://patchwork.data-imaginist.com/">pkgdown</a> site for the <code>{patchwork}</code> package)</li>
-<li>If you don’t immediately understand the purpose of a line/chunk of code, skip over it (temporarily) and continue working your way through the following code – it oftentimes becomes more evident given additional context.</li>
+<li>If you don’t immediately understand the purpose of a line / chunk of code, skip over it (temporarily) and continue working your way through the following code – it oftentimes becomes more evident given additional context.</li>
 <li>Plots may look <em>super</em> squished in the RStudio Viewer pane – use the <strong>Zoom</strong> button to pop them open in a separate window.</li>
 <li><strong>Keep in mind:</strong> While this is fairly complex ggplot code, remember that it’s constructed in layers – meaning you can run code line-by-line to see exactly how the plot is changing with each new layer. You may come across functions and arguments that you’re already familiar with (yay!), and of course, others that are totally new.</li>
 </ul>
@@ -343,12 +343,12 @@ Click here to expand the code
 <span id="cb1-2"><a href="#cb1-2"></a><span class="do">##                                  1. setup                                ----</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="co">#......ANNOTATE (generally, what does this code block do?).......</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co">#..........................load packages.........................</span></span>
 <span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(tidyverse) <span class="co"># ANNOTATE (brief explanation of pkg) ----</span></span>
 <span id="cb1-7"><a href="#cb1-7"></a><span class="fu">library</span>(patchwork) <span class="co"># ANNOTATE (brief explanation of pkg) ----</span></span>
 <span id="cb1-8"><a href="#cb1-8"></a><span class="fu">library</span>(showtext) <span class="co"># ANNOTATE (brief explanation of pkg) ----</span></span>
 <span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co">#......ANNOTATE (generally, what does this code block do?).......</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co">#......................download Google Fonts.....................</span></span>
 <span id="cb1-11"><a href="#cb1-11"></a><span class="co"># ANNOTATE (explain differences between arguments `name` &amp; `family`) ----</span></span>
 <span id="cb1-12"><a href="#cb1-12"></a><span class="fu">font_add_google</span>(<span class="at">name =</span> <span class="st">"Roboto"</span>, <span class="at">family =</span> <span class="st">"roboto"</span>)</span>
 <span id="cb1-13"><a href="#cb1-13"></a><span class="fu">font_add_google</span>(<span class="at">name =</span> <span class="st">"Roboto Condensed"</span>, <span class="at">family =</span> <span class="st">"roboto condensed"</span>)</span>
@@ -363,7 +363,7 @@ Click here to expand the code
 <span id="cb1-22"><a href="#cb1-22"></a><span class="co">#................load TidyTuesday data from GitHub...............</span></span>
 <span id="cb1-23"><a href="#cb1-23"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="at">x =</span> <span class="dv">2022</span>, <span class="at">week =</span> <span class="dv">15</span>)</span>
 <span id="cb1-24"><a href="#cb1-24"></a></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="co">#......ANNOTATE (generally, what does this code block do?).......</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="co">#........extract individual data sets from tuesdata (list).......</span></span>
 <span id="cb1-26"><a href="#cb1-26"></a>indoor_pollution <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>indoor_pollution </span>
 <span id="cb1-27"><a href="#cb1-27"></a>death_ts <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>death_timeseries</span>
 <span id="cb1-28"><a href="#cb1-28"></a>death_full <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>death_fuel</span>
@@ -659,12 +659,13 @@ Click here to expand the code
 <h2 class="anchored" data-anchor-id="rubric-specifications">Rubric (specifications)</h2>
 <p>You must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part I:</p>
 <p><strong>Complete the following steps in your GitHub Classroom repo (<code>eds240-HW1/Part1.qmd</code>):</strong></p>
-<ul>
-<li><input type="checkbox">update each comment line in the code that reads, <code>ANNOTATE</code>, with a <em>brief</em> description, written in your own words (see lines 114 &amp; 120 for example annotations; there are other lines that have been already annotated for you as well, i.e.&nbsp;lines 152 - 173, 295 - 305 – you do not need to re-write these) – you are allowed up to three incorrect or missing annotations</li>
+<ul class="task-list">
+<li><input type="checkbox">include your preferred name, and if you feel comfortable, your preferred pronouns in the <code>author</code> field of the <code>Part1.qmd</code> YAML</li>
+<li><input type="checkbox">update each comment line in the code that reads, <code>ANNOTATE</code>, with a <em>brief</em> description, written in your own words (see lines 114 &amp; 120 for example annotations; there are other lines that have been already annotated for you as well – you do not need to re-write these annotations – you are allowed up to three incorrect or missing annotations</li>
 <li><input type="checkbox">leave the code chunk options set to <code>eval: false</code> and <code>echo: true</code> (since you won’t be adding any new code, just annotations, we don’t need to see that the code successfully runs)</li>
-<li><input type="checkbox">we should be able to render <code>Part1.qmd</code> without errors</li>
 <li><input type="checkbox">answer the three concluding questions adhering to the length requirements specified at the end of each question prompt</li>
-<li>[ ] <!-- - [ ] HW #1 Part I must be submitted via GitHub classrooms. --></li>
+<li><input type="checkbox">we should be able to render <code>Part1.qmd</code> without errors</li>
+<li><input type="checkbox">push your completed <code>Part1.qmd</code> to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024</li>
 </ul>
 <p><br></p>
 <div class="center-text large-fa-icon teal-text">
@@ -685,13 +686,13 @@ Click here to expand the code
 <li>write code from scratch and read and adapt code written by others</li>
 <li>apply a DEI (Diversity, Equity &amp; Inclusion) lens to the process of designing data visualizations</li>
 </ul>
-<p>This week, we’ll mostly be focused on some prep work. Read the Description, below, for details.</p>
+<p>This week, we’ll mostly be focused on some prep work. Read the description, below, for details.</p>
 </section>
 <section id="description-1" class="level2">
 <h2 class="anchored" data-anchor-id="description-1">Description</h2>
 <p><em>A small part of each homework assignment will be dedicated to working on a series of data visualizations which will be due as part of Assignment #4 at the end of the quarter.</em> Assignment #4 will ask you to build three related, but different data visualizations – all which will use the same data set(s), but present those data differently for three different audiences / purposes:</p>
 <ol type="1">
-<li><strong>a visualization for a general audience (i.e.&nbsp;without domain expertise)</strong> – this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), and/or may even blend both art and science</li>
+<li><strong>a visualization for a general audience (i.e.&nbsp;without domain expertise)</strong> – this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), display findings in an atypical but creative way, and / or may blend both art and science</li>
 <li><strong>a visualization to be included in a paper, technical documentation, or report</strong> – this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.</li>
 <li><strong>a visualization that you could include in a presentation</strong> – you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you’re animating pieces of your visualization onto a slide)</li>
 </ol>
@@ -711,11 +712,11 @@ Click here to expand the code
 <li><input type="checkbox"><strong>1.</strong> Describe your data set(s). Be sure to address the following <span class="peach-text"><strong>(&lt;=4 sentences)</strong></span>
 <ul class="task-list">
 <li><input type="checkbox"><strong>1a.</strong> Where did you find these data?</li>
-<li><input type="checkbox"><strong>1b.</strong> What variables does it contain? Is there sufficient metadata for understanding what those variables are?</li>
+<li><input type="checkbox"><strong>1b.</strong> What variables do these data contain? Is there sufficient metadata for understanding what those variables are?</li>
 </ul></li>
 <li><input type="checkbox"><strong>2.</strong> What steps are involved in downloading or accessing the data (e.g.&nbsp;“I can download using a button via this online portal,” “There’s an R package for scraping the data,” “I need to use an API to scrape the data,” etc.)? <span class="peach-text"><strong>(1-2 sentences)</strong></span></li>
 <li><input type="checkbox"><strong>3.</strong> What question(s) do you want to answer using these data (it’s okay if these questions evolve over time, this is just a starting point)? <span class="peach-text"><strong>(&lt;=4 sentences)</strong></span></li>
-<li><input type="checkbox"><strong>4.</strong> Will you need to combine multiple data sets to successfully answer your question(s)? If so, have you found all the necessary data? Do you have a way to combine it? <span class="peach-text"><strong>(&lt;=4 sentences)</strong></span></li>
+<li><input type="checkbox"><strong>4.</strong> Will you need to combine multiple data sets to successfully answer your question(s)? If so, have you found all the necessary data? Do you have a way to combine it (e.g.&nbsp;matching key values across all data sets)? <span class="peach-text"><strong>(&lt;=4 sentences)</strong></span></li>
 <li><input type="checkbox"><strong>Optional:</strong> Import your data into R! (this will be a part of the next homework assignment) <strong>IMPORTANT:</strong> If your data files are large (&gt;2GB) DO NOT push your data to GitHub – instead, add your data file(s) or entire data folder to your <code>.gitignore</code> (you’ll practice this in Discussion section this week).</li>
 </ul>
 </section>
@@ -725,12 +726,14 @@ Click here to expand the code
 <p><strong>Complete the following step under your own personal GitHub profile, <em>not</em> in GitHub Classrooms:</strong></p>
 <ul class="task-list">
 <li><input type="checkbox">create a GitHub repository named <code>lastName-eds240-HW4</code>, which is where you’ll be doing any / all work related to Assignment #4. Be sure to make your repository public, initialize your repository with a README, and add a <code>.gitignore</code> file.</li>
+<li><input type="checkbox">add your repository’s URL next to your name on <a href="https://docs.google.com/spreadsheets/d/1tv32Ng_-QI1-eB5ws59HgCN0EoOpHe4UHX6qHhbQGds/edit?usp=sharing">this Google Sheet</a></li>
 </ul>
 <p><strong>Complete the following steps in your GitHub Classroom repo (<code>eds240-HW1/Part2.qmd</code>):</strong></p>
 <ul class="task-list">
 <li><input type="checkbox">link to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4</li>
 <li><input type="checkbox">answer all parts of the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you <em>do not</em> need to complete the <strong>optional</strong> importing of data – if you <em>do</em> want to import your data, be sure to do so in your <code>lastName-eds240-HW4</code> repository</li>
 <li><input type="checkbox">we should be able to render <code>Part2.qmd</code> without errors</li>
+<li><input type="checkbox">push your completed <code>Part2.qmd</code> to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024</li>
 </ul>
 <p><br></p>
 <div class="center-text large-fa-icon teal-text">

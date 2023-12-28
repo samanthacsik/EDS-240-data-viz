@@ -329,7 +329,7 @@ mko_clean |>
 
 ## {#hist-group-num data-menu-title="Histogram group number"} 
 
-[Histograms - best with a few groups]{.slide-title}
+[Histograms - avoid plotting too many groups]{.slide-title2}
 
 <hr>
 
@@ -337,7 +337,10 @@ Twelve groups (`month_name`) is too many groups!
 ```{r}
 #| eval: true
 #| echo: true
-ggplot(mko_clean, aes(x = Temp_bot, fill = month_name)) +
+#| out-width: "100%"
+mko_clean |> 
+  mutate(month_name = factor(month_name, levels = month.name)) |> 
+  ggplot(aes(x = Temp_bot, fill = month_name)) +
   geom_histogram(position = "identity", alpha = 0.5)
 ```
 
@@ -351,15 +354,31 @@ ggplot(mko_clean, aes(x = Temp_bot, fill = month_name)) +
 
 ::: panel-tabset
 
+## Small multiples
+
+If you want to plot all groups, consider splitting them into small multiples. If so, does color add any valuable information? Remove if not:
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "50%"
+#| code-line-numbers: "5"
+mko_clean |> 
+  mutate(month_name = factor(month_name, levels = month.name)) |> 
+  ggplot(aes(x = Temp_bot)) +
+  geom_histogram(position = "identity") +
+  facet_wrap(~month_name)
+```
+
 ## Fewer groups
 
 Let's instead compare just three months: April (generally the coldest month), October (generally a hot month), June (somewhere in between):
 ```{r}
 #| eval: true
 #| echo: true
-#| out-width: "50%"
-#| code-line-numbers: "1-2,5"
+#| out-width: "40%"
+#| code-line-numbers: "3"
 mko_clean |> 
+  mutate(month_name = factor(month_name, levels = month.name)) |> 
   filter(month_name %in% c("April", "June", "October")) |> 
   ggplot(aes(x = Temp_bot, fill = month_name)) + # piping data into ggplot, so don't need to define `data` arg
   geom_histogram(position = "identity", alpha = 0.5)
@@ -372,8 +391,9 @@ Use `fill` to fill bars with a specified color(s) and `color` to outline bars wi
 #| eval: true
 #| echo: true
 #| out-width: "50%"
-#| code-line-numbers: "3-5"
+#| code-line-numbers: "4-6"
 mko_clean |> 
+  mutate(month_name = factor(month_name, levels = month.name)) |> 
   filter(month_name %in% c("April", "June", "October")) |> 
   ggplot(aes(x = Temp_bot, fill = month_name)) + 
   geom_histogram(position = "identity", alpha = 0.5,  color = "black") +
@@ -387,9 +407,10 @@ Modify `binwidth` (**30 `bins`** by default) -- does a bin width of 1 (degree Ce
 #| eval: true
 #| echo: true
 #| out-width: "50%"
-#| code-line-numbers: "4"
+#| code-line-numbers: "5"
 mko_clean |> 
   filter(month_name %in% c("April", "June", "October")) |> 
+  mutate(month_name = factor(month_name, levels = month.name)) |> 
   ggplot(aes(x = Temp_bot, fill = month_name)) +
   geom_histogram(position = "identity", alpha = 0.5, binwidth = 1) +
   scale_fill_manual(values = c("#2C5374", "#ADD8E6", "#8B3A3A"))
@@ -445,14 +466,15 @@ mko_clean |>
 
 ## {#density-group-num data-menu-title="Density group number"} 
 
-[Density plots - best with a few groups]{.slide-title}
+[Density plots - avoid plotting too many groups]{.slide-title2}
 
 <hr>
 
-Similar to the histogram, twelve groups (`month_name`) is too many groups!
+Similar to the histogram, twelve groups (`month_name`) is too many groups! Consider small multiples (using `facet_wrap()`) if you want to keep all groups.
 ```{r}
 #| eval: true
 #| echo: true
+#| out-width: "90%"
 ggplot(mko_clean, aes(x = Temp_bot, fill = month_name)) +
   geom_density(alpha = 0.5)
 ```
@@ -818,13 +840,14 @@ ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
 
 ::: panel-tabset
 
-## Modify outliers aesthetics
+## Outliers
 
+[You can modify outlier aesthetics inside `geom_boxplot()`:]{.body-text-s}
 ```{r}
 #| eval: true
 #| echo: true
 #| code-line-numbers: "2"
-#| out-width: "70%"
+#| out-width: "55%"
 ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
   geom_boxplot(outlier.colour = "purple", outlier.shape = "circle open", outlier.size = 5) +
   scale_x_discrete(limits = rev(month.name)) +
@@ -833,12 +856,12 @@ ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
 
 ## Highlight a group(s)
 
-Highlight a group of interest using the [`{gghighlight}` package](https://yutannihilation.github.io/gghighlight/index.html). Here, we specify a specific month (`"October"`) to highlight:
+[Highlight a group of interest -- one easy way to do so is by using the [`{gghighlight}` package](https://yutannihilation.github.io/gghighlight/index.html). Here, we specify a specific month (`"October"`) to highlight:]{.body-text-s}
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "1-5,8,10"
-#| out-width: "30%"
+#| code-line-numbers: "5,7"
+#| out-width: "40%"
 mko_clean |> 
   ggplot(aes(x = month_name, y = Temp_bot, fill = month_name)) +
   geom_boxplot() +
@@ -860,13 +883,30 @@ Since box plots hide sample size, consider overlaying raw data points using `geo
 #| out-width: "40%"
 ggplot(na.omit(penguins), aes(x = species, y = body_mass_g)) +
   geom_boxplot(outlier.shape = NA) +
-  geom_jitter(color = "black", alpha = 0.5) +
+  geom_jitter(color = "black", alpha = 0.5, width = 0.2) +
   coord_flip()
 ```
 
+## Dodged groups
+
+[You may have data where you want to include an additional grouping variable -- for example, let's say we want to plot penguin body masses by species *and* year. We'll need to at least `dodge` our overlaid points so that they sit on top of the correct box. Preferably, we both `jitter` *and* `dodge` our points:]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "40%"
+penguins |> 
+  mutate(year = as.factor(year)) |> 
+  ggplot(aes(x = species, y = body_mass_g, color = year)) +
+  geom_boxplot(outlier.shape = NA) +
+  geom_point(alpha = 0.5, position = position_jitterdodge(jitter.width = 0.2)) +
+  coord_flip()
+```
+
+
 ## Overlay beeswarm
 
-[Similar to overlaying the raw jittered data points, we can combine our box plot with a **beeswarm plot** using `{ggbeeswarm}`. Beeswarm plots visualize the density of data at each point, as well as arrange points that would normally overlap so that they fall next to one another instead (we'll again use the `palmerpenguins::penguins` data set to demo):]{.body-text-s}
+[Similar to overlaying the raw jittered data points, we can combine our box plot with a **beeswarm plot** using `{ggbeeswarm}`. Beeswarm plots visualize the density of data at each point, as well as arrange points that would normally overlap so that they fall next to one another instead. Consider using a standalone beeswarm plot here as well! We'll again use the `palmerpenguins::penguins` data set to demo:]{.body-text-s}
 ```{r}
 #| eval: true
 #| echo: true
@@ -901,7 +941,7 @@ ggplot(na.omit(penguins), aes(x = species, y = body_mass_g)) +
 
 [**Important considerations:**]{.teal-text}   
 
-- order groups by median value can make it easier to understand  
+- ordering groups by median value can make it easier to understand  
 - show sample size when comparing groups with very different distributions (e.g. half violin plot) 
 :::
 
@@ -946,12 +986,15 @@ ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
 
 ## {#box-violin-combo data-menu-title="Violin & box plot combo"} 
 
-[Combining geoms - violin & box plot]{.slide-title}
+[Combining geoms - adjustments]{.slide-title}
 
 <hr>
 
-Overlaying a box plot inside a violin plot can be helpful in providing your audience with summary stats in a compact form:
+::: {.panel-tabset}
 
+## Overlay boxplot
+
+Overlaying a box plot inside a violin plot can be helpful in providing your audience with summary stats in a compact form:
 ```{r}
 #| eval: true
 #| echo: true
@@ -965,6 +1008,19 @@ ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
   coord_flip()
 ```
 
+## Half-violin half-dot plot
+
+[The [`{see}` package](https://easystats.github.io/see/) provides `geom_violindot()`, which is useful for simultaneously visualizing distribution and sample size. Because it can quickly get overcrowded with large sample sizes (like `Temp_bot`), we'll use `palmerpenguins::penguins` to demo here:]{.body-text-s}
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "50%"
+ggplot(penguins, aes(x = species, y = bill_length_mm, fill = species)) +
+  see::geom_violindot(size_dots = 5, alpha = 0.5) +
+  theme(legend.position = "none")
+```
+
+:::
 ---
 
 ##  {#end-break data-menu-title="# End / Break #" background="#047C90"}

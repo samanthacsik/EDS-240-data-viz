@@ -5,27 +5,30 @@ title-block-banner: true
 toc: true
 ---
 
-# [Part I: Building a basic ggplot]{.pink-text}
+::: {.center-text}
+<div class="pink-box">
+***You must earn a "Satisfactory" mark for each individual Part (I, II & III) to earn a "Satisfactory" mark for Assignment #2.***
+
+**NOTE:** Assignments are to be submitted via GitHub Classrooms, unless otherwise noted. Each student receives one "free pass" for not submitting assignments via specified channels, after which you will receive a "Not Yet" mark.
+
+Read each part of the assignment carefully, and use the check boxes to ensure you've addressed all elements of the assignment!
+</div>
+:::
+
+# [Part I: Choosing the right graphic form]{.pink-text}
 
 ## Learning Outcomes 
 
 - identify which types of visualizations are most appropriate for your data and your audience
 - prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations
+- build effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages
 
 ## Description 
 
-In class, we discussed a [five-step workflow](https://ucsb-meds.github.io/ggplot2-workflow/) for breaking down the process of transforming data into a visualization. The five steps are listed below:
+In class, we discussed strategies and considerations for choosing the right graphic form to represent your data and convey your intended message. Here, you'll apply what we've learned to a data set on lobster abundance and sizes, collected from coastal rocky reef sites within the [Santa Barbara Coastal LTER](https://sbclter.msi.ucsb.edu/). Unfold the following note to read more about the data before continuing on (collapsed to save space):
 
-1. Determine data type(s)
-2. Determine appropriate visualization type(s)
-3. Create a basic plot
-4. Improve clarity & take home message
-5. Final touches / polishing
-
-Here, you will apply this workflow to visualize lobster size data across multiple rocky reef sites along the Santa Barbara coastline.
-
-::: {.callout-note}
-## Understanding the data
+::: {.callout-note icon=false collapse=true}
+## Learn about the data:
 
 #### About SBC LTER
 The [Santa Barbara Coastal Long Term Ecological Research](https://sbclter.msi.ucsb.edu/) (SBC LTER) site was established in 2000 as part of the [LTER Network](https://lternet.edu/) to understand the ecology of coastal kelp forest ecosystems. Research and long-term ecological and environmental monitoring data is collected within a 10,000 square kilometer area of the northern portion of the Southern California Bight, which includes the Santa Barbara Channel, coastal watersheds, small estuaries, and sandy beaches that border the Channel. You can explore the full [data catalog](https://sbclter.msi.ucsb.edu/data/catalog/).
@@ -62,7 +65,7 @@ Reed, D, R. Miller. 2023. SBC LTER: Reef: Abundance, size and fishing effort for
 knitr::include_graphics("../images/download-lob-data.png")
 ```
 
-Use this url inside `read_csv()` to import the data into your script or Qmd/Rmd file:
+Use this url inside `read_csv()` to import the data into your script or Qmd / Rmd file:
 
 ```{r}
 #| eval: false
@@ -72,44 +75,96 @@ lobster_data <- read_csv("https://portal.edirepository.org/nis/dataviewer?packag
 
 :::
 
-Given the above data set, apply the five-step workflow to create a data visualization that explores how lobster size differs across each of the five coastal rocky reef SBC LTER sites for the years 2012 (the IVEE and NAPL were established as MPAs) and 2022 (10 years later).
+Given the above data set, **create a visualization that explores how lobster size differs across each of the five coastal rocky reef SBC LTER sites for the years 2012 (when IVEE and NAPL were established as MPAs) and 2022 (10 years later)**. This will first require some data exploration and wrangling. Some tips (unfold below):
 
-[**You must complete steps 1 - 3**]{.teal-text} (you may need to do some Googling or reference documentation to determine what `geom_*` to use when creating your basic plot). 
+::: {.callout-tip icon=false collapse=true}
+## Data exploration & wrangling tips
 
-- [ ] **(step 1)** write out, in words, the data types of the variables from the above data set (you only need to do this for the variables used in creating your plot) [**(1-2 sentences)**]{.peach-text}
-- [ ] **(step 2)** write out, in words, the appropriate visualization types you considered given these data types *(hint: revisit [from Data to Viz](https://www.data-to-viz.com/) for a helpful decision tree)* [**(1-2 sentences)**]{.peach-text}
-- [ ] **(step 3)** write ggplot code to create a basic plot to visualize these data (this will first require some data wrangling)
+[**Data exploration tips:**]{.body-text-l .dark-blue-text}
 
-[**Physically coding steps 4 & 5 is optional -- instead, you may explain, in writing and/or by sketching out on paper, the following:**]{.teal-text} 
+- Use `glimpse()` and / or `str()` to check out your variables and data types
+- Extract unique elements using `unique(df$column_name)`
+- Open up the spreadsheet-style data viewer using `View(df)`
+- Be sure to review the [metadata](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.77.9) (including methods & protocols) to fully understand the data
 
-- [ ] **(representing step 4)** how you would improve plot clarity/the take home message(s) (consider the following prompts)? [**(2-3 sentences total)**]{.peach-text}
-    - [ ] Do you see any trends that you may want to explore further and/or highlight?
-    - [ ] How might you use colors and/or shapes to highlight important site groupings and/or years?
-- [ ] **(representing step 5)** some design choices you might make as you polish off your data visualization (consider the following prompts) [**(2-3 sentences total)**]{.peach-text}
-    - [ ] What plot elements should you update to really polish up this visualization?
-    - [ ] What text might you include?
+[**Data wrangling tips:**]{.body-text-l .dark-blue-text}
 
-**Note:** Steps 4 and 5, above, are thought exercises -- it's okay if you don't yet know exactly how to approach answering these (we'll be spending time during these first few weeks of class talking about data communication and design theory), but do your best to write down a few things that you think would help to improve both the clarity and overall design of your data visualization .
+- I love starting all my cleaning pipelines with `janitor::clean_names()` to convert column headers into lowercase snake_case (not necessary, but easy to implement and super helpful for yourself and others)
+- You'll want to keep just the years of interest
+- Missing size measurements are denoted with `-99999` -- consider how to deal with these
+- Each row is **not** always a single observation, but rather summed lobster counts at each size observed within a site / transect / replicate. You'll want to wrangle the data such that each row represents a single lobster observation. You may need to do some Googling to figure out a solution for this (HINT: you're looking to perform the opposite of `count()`).
+- I often find that I'll need to return to my data wrangling pipeline again *after* I start plotting my data --  it's at this stage that I'll often catch variables that are the wrong data type (e.g. numeric, factor, character) for plotting and need to make the appropriate updates.
+:::
+
+[**After exploring and wrangling your data, answer the following questions:**]{.teal-text}
+
+- [ ] **1.** What are your variables of interest and what kinds of data (e.g. numeric, categorical, ordered, etc.) are they? [**(a bullet point list here is fine)**]{.peach-text}
+- [ ] **2.** Using [From Data to Viz](https://www.data-to-viz.com/), identify which visualization forms are appropriate, given your data. List out the visualization types. [**(a bullet point list here is fine)**]{.peach-text}
+- [ ] **3.** Now that you have a list of potential visualization types, what are some of your considerations as you decide which to create? For example, is it important / valuable to show sample size? Why or why not? How will you represent multiple groups? etc. Feel free to return to this question after first playing around with some ggplots. [**(3-4 sentences)**]{.peach-text}
+
+Now that you've explored and starting wrangling your data, it's time to create some plots. It's often important to try out multiple graphic forms (e.g. `geom_*()`s) as you decide which is the most effective way of presenting your data. This process is commonly referred to as **Exploratory Data Analysis or Exploratory Data Visualization**. Some tips (unfold below):
+
+::: {.callout-tip icon=false collapse=true}
+## Data viz creation tips
+
+[**Data viz creation tips:**]{.body-text-l .dark-blue-text}
+
+- I always find it helpful to sketch things out on paper first
+- We created a number of different plot types together in class, exploring different geoms and some of the arguments that each ggplot layer can take. Be sure to take a look back at the lecture materials, but also know that you may need to reference documentation and / or online examples to create / modify your intended visualizations.
+:::
+
+[**Complete the following:**]{.teal-text}
+
+- [ ] Create at least three different plots as part of your exploratory data visualization phase to test out what visual forms works best. Your last plot should be the version that you feel is best suited for presenting your data. 
+    - **NOTE:** Your first two plots *do not* need to be at all polished -- during the exploratory data visualization phase, we're most concerned with choosing a visual form / geom(s) for effectively presenting our data. 
+- [ ] For your third (final) plot only: Consider modifications that we discussed in lecture that may make this plot easier to interpret (e.g. updating colors, moving or removing legends, highlighting groups, ordering groups) -- be sure to update your plot as appropriate.
+- [ ] Explain why you chose to make the above modifications. [**(3-6 sentences)**]{.peach-text}
+- [ ] Polish your third (final) plot by updating the theme (we'll cover this during [week 4 discussion section](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week4.html#discussion-materials)). 
+-  [ ] Consider all three of your plots. What about the visual forms / geoms used in plots #1 and #2 was not as effective as plot #3?  [**(5-8 sentences)**]{.peach-text}
+- [ ] Describe two or more challenges you encountered while deciding on / creating your plots -- these can be theoretical (e.g. determining how to best represent your data) and / or technical (e.g. code-based challenges). [**(4-8 sentences)**]{.peach-text}
+- [ ] Add alt text to your final visualization following the formula discussed during [week 2's discussion section](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/discussion/week2/week2-alt-text.html#/title-slide) and using the `#| fig-alt:` code chunk option.
+
+
+
+ 
+
+
+<!-- [**You must complete steps 1 - 3**]{.teal-text} (you may need to do some Googling or reference documentation to determine what `geom_*` to use when creating your basic plot).  -->
+
+<!-- - [ ] write out, in words, the data types of the variables from the above data set (you only need to do this for the variables used in creating your plot) [**(1-2 sentences)**]{.peach-text} -->
+<!-- - [ ]  write out, in words, the appropriate visualization types you considered given these data types *(hint: revisit [from Data to Viz](https://www.data-to-viz.com/) for a helpful decision tree)* [**(1-2 sentences)**]{.peach-text} -->
+<!-- - [ ] write ggplot code to create a basic plot to visualize these data (this will first require some data wrangling) -->
+
+<!-- [**Physically coding steps 4 & 5 is optional -- instead, you may explain, in writing and/or by sketching out on paper, the following:**]{.teal-text}  -->
+
+<!-- - [ ] how you would improve plot clarity/the take home message(s) (consider the following prompts)? [**(2-3 sentences total)**]{.peach-text} -->
+<!--     - [ ] Do you see any trends that you may want to explore further and/or highlight? -->
+<!--     - [ ] How might you use colors and/or shapes to highlight important site groupings and/or years? -->
+<!-- - [ ] some design choices you might make as you polish off your data visualization (consider the following prompts) [**(2-3 sentences total)**]{.peach-text} -->
+<!--     - [ ] What plot elements should you update to really polish up this visualization? -->
+<!--     - [ ] What text might you include? -->
+
+<!-- **Note:** Steps 4 and 5, above, are thought exercises -- it's okay if you don't yet know exactly how to approach answering these (we'll be spending time during these first few weeks of class talking about data communication and design theory), but do your best to write down a few things that you think would help to improve both the clarity and overall design of your data visualization . -->
 
 ## Rubric (specifications)
 
-You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part II:
+You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part I:
 
-- [ ] all responses and code are written in `filename.qmd`, arranged according to the template 
-- [ ] complete steps 1 & 2 (as detailed above in the Description), adhering to the length requirements specified at the end of each writing prompt
-- [ ] complete step 3 (as detailed above in the Description); use the checklist below to ensure you receive full marks:
-    - [ ] import the data
-    - [ ] wrangle the data so that it's in the correct format for plotting 
-    - [ ] build a basic visualization, which should include the following two lines of code:
-        - [ ] a line of code to initialize your ggplot object
-        - [ ] a line of code to specify the appropriate `geom_*`
-    - [ ] code is annotated
-    - [ ] all code runs 
+<!-- - [ ] all responses and code are written in `filename.qmd`, arranged according to the template  -->
+<!-- - [ ] complete steps 1 & 2 (as detailed above in the Description), adhering to the length requirements specified at the end of each writing prompt -->
+<!-- - [ ] complete step 3 (as detailed above in the Description); use the checklist below to ensure you receive full marks: -->
+<!--     - [ ] import the data -->
+<!--     - [ ] wrangle the data so that it's in the correct format for plotting  -->
+<!--     - [ ] build a basic visualization, which should include the following two lines of code: -->
+<!--         - [ ] a line of code to initialize your ggplot object -->
+<!--         - [ ] a line of code to specify the appropriate `geom_*` -->
+<!--     - [ ] code is annotated -->
+<!--     - [ ] all code runs  -->
 
 <br>
 
 ::: {.center-text .large-fa-icon .teal-text}
-{{< fa chart-line title="A simple line chart" >}} End Part II {{< fa chart-line title="A simple line chart" >}}
+{{< fa chart-line title="A simple line chart" >}} End Part I {{< fa chart-line title="A simple line chart" >}}
 :::
 
 <br>

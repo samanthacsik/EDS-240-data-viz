@@ -919,7 +919,7 @@ lyme_pop |>
 lyme_pop |> 
   filter(year %in% c(2010:2020)) |> 
   filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
-  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
+  ggplot(aes(x = year, y = cases_per100k, group = state, color = state)) +
   geom_line() +
   facet_wrap(~state)
 ```

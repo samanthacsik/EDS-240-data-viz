@@ -37,6 +37,7 @@ install.packages("tidycensus") # an R package that allows users to interface wit
 install.packages("ggridges") # {ggplot2} extension for creating ridgeline plots
 install.packages("gghighlight") # {ggplot2} extension for highlighting geoms
 install.packages("ggbeeswarm") # {ggplot2} extension for creating categorical scatter (violin point) plots
+install.packages("see") # {ggplot2} extension for model visualization (we'll be using it for it's geom, geom_violindot())
 install.packages("scales") # provides the internal scaling infrastructure used by ggplot2, and gives you tools to override the default breaks, labels, transformations and palettes (installed automatically with {ggplot2} or {tidyverse})
 ```
 
