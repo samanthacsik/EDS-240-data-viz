@@ -287,6 +287,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<div class="center-text gray-text body-text-s">
+<p><em>Art by <a href="https://allisonhorst.com/">Allison Horst</a></em></p>
+</div>
 </section>
 <section id="whitespace-conventions" class="level3">
 <h3 class="anchored" data-anchor-id="whitespace-conventions">Whitespace conventions:</h3>
@@ -364,17 +367,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><strong>For major section dividers</strong>, <code>xxx_title2("text here")</code> renders as:</li>
 </ul>
-<pre><code>##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                                  text here                               ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="do">##                                  text here                               ----</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ul>
 <li><strong>For subsection dividers</strong>, <code>xxx_divider1("text here")</code> renders as:</li>
 </ul>
-<pre><code>#............................text here...........................</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#............................text here...........................</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ul>
 <li><strong>For line-level annotations</strong>, I also often use (not created using <code>{ARTofR}</code>):</li>
 </ul>
-<pre><code># text here ---- </code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># text here ---- </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Here’s a short example script demonstrating how I like to use these dividers:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>

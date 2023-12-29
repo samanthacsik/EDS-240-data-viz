@@ -25,6 +25,10 @@ Stick to these standards (as suggested by [The tidyverse style guide](https://st
 knitr::include_graphics("images/horst-cases.png")
 ```
 
+::: {.center-text .gray-text .body-text-s}
+*Art by [Allison Horst](https://allisonhorst.com/)*
+:::
+
 ### Whitespace conventions:
 
 - **Space around any infix operators (`==`, `+`, `-`, `<-`, etc)** -- for example:
@@ -124,7 +128,8 @@ A couple dividers that I use often:
 
 - **For major section dividers**, `xxx_title2("text here")` renders as: 
 
-```
+```{r}
+#| code-line-numbers: false
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                                  text here                               ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -132,13 +137,15 @@ A couple dividers that I use often:
 
 - **For subsection dividers**, `xxx_divider1("text here")` renders as: 
 
-```
+```{r}
+#| code-line-numbers: false
 #............................text here...........................
 ```
 
 - **For line-level annotations**, I also often use (not created using `{ARTofR}`):
 
-```
+```{r}
+#| code-line-numbers: false
 # text here ---- 
 ```
 

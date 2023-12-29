@@ -258,6 +258,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description">Description</a></li>
   <li><a href="#rubric-specifications" id="toc-rubric-specifications" class="nav-link" data-scroll-target="#rubric-specifications">Rubric (specifications)</a></li>
   </ul></li>
+  <li><a href="#part-ii-data-wrangling-exploratory-data-viz-using-your-own-data" id="toc-part-ii-data-wrangling-exploratory-data-viz-using-your-own-data" class="nav-link" data-scroll-target="#part-ii-data-wrangling-exploratory-data-viz-using-your-own-data"><span class="pink-text">Part II: Data wrangling &amp; exploratory data viz using your own data</span></a>
+  <ul class="collapse">
+  <li><a href="#learning-outcomes-1" id="toc-learning-outcomes-1" class="nav-link" data-scroll-target="#learning-outcomes-1">Learning Outcomes</a></li>
+  <li><a href="#description-1" id="toc-description-1" class="nav-link" data-scroll-target="#description-1">Description</a></li>
+  <li><a href="#rubric-specifications-1" id="toc-rubric-specifications-1" class="nav-link" data-scroll-target="#rubric-specifications-1">Rubric (specifications)</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -269,9 +275,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="center-text">
 <div class="pink-box">
-<p><strong><em>You must earn a “Satisfactory” mark for each individual Part (I, II &amp; III) to earn a “Satisfactory” mark for Assignment #2.</em></strong></p>
+<p><strong><em>You must earn a “Satisfactory” mark for each individual Part (I and II) to earn a “Satisfactory” mark for Assignment #2.</em></strong></p>
 <p><strong>NOTE:</strong> Assignments are to be submitted via GitHub Classrooms, unless otherwise noted. Each student receives one “free pass” for not submitting assignments via specified channels, after which you will receive a “Not Yet” mark.</p>
-<p>Read each part of the assignment carefully, and use the check boxes to ensure you’ve addressed all elements of the assignment!</p>
+<p><strong>Read each part of the assignment carefully</strong>, and use the check boxes to ensure you’ve addressed all elements of the assignment!</p>
 </div>
 </div>
 <section id="part-i-choosing-the-right-graphic-form" class="level1">
@@ -344,7 +350,7 @@ Learn about the data:
 </div>
 </div>
 </div>
-<p>Given the above data set, <strong>create a visualization that explores how lobster size differs across each of the five coastal rocky reef SBC LTER sites for the years 2012 (when IVEE and NAPL were established as MPAs) and 2022 (10 years later)</strong>. This will first require some data exploration and wrangling. Some tips (unfold below):</p>
+<p><em>Your goal is to create a visualization that explores how lobster size differs across each of the five coastal rocky reef SBC LTER sites for the years 2012 (when IVEE and NAPL were established as MPAs) and 2022 (10 years later)</em>. This will first require some data exploration and wrangling. Some tips (unfold below):</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -375,11 +381,11 @@ Data exploration &amp; wrangling tips
 </div>
 </div>
 </div>
-<p><span class="teal-text"><strong>After exploring and wrangling your data, answer the following questions:</strong></span></p>
+<p><span class="teal-text"><strong>(Part 1a) After exploring and wrangling your data, answer the following questions:</strong></span></p>
 <ul class="task-list">
 <li><input type="checkbox"><strong>1.</strong> What are your variables of interest and what kinds of data (e.g.&nbsp;numeric, categorical, ordered, etc.) are they? <span class="peach-text"><strong>(a bullet point list here is fine)</strong></span></li>
 <li><input type="checkbox"><strong>2.</strong> Using <a href="https://www.data-to-viz.com/">From Data to Viz</a>, identify which visualization forms are appropriate, given your data. List out the visualization types. <span class="peach-text"><strong>(a bullet point list here is fine)</strong></span></li>
-<li><input type="checkbox"><strong>3.</strong> Now that you have a list of potential visualization types, what are some of your considerations as you decide which to create? For example, is it important / valuable to show sample size? Why or why not? How will you represent multiple groups? etc. Feel free to return to this question after first playing around with some ggplots. <span class="peach-text"><strong>(3-4 sentences)</strong></span></li>
+<li><input type="checkbox"><strong>3.</strong> Now that you have a list of potential visualization types, what are some of your considerations as you decide which to create? For example, is it important / valuable to show sample size? Why or why not? How will you represent multiple groups? etc. <span class="peach-text"><strong>(3-4 sentences)</strong></span></li>
 </ul>
 <p>Now that you’ve explored and starting wrangling your data, it’s time to create some plots. It’s often important to try out multiple graphic forms (e.g.&nbsp;<code>geom_*()</code>s) as you decide which is the most effective way of presenting your data. This process is commonly referred to as <strong>Exploratory Data Analysis or Exploratory Data Visualization</strong>. Some tips (unfold below):</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -402,50 +408,92 @@ Data viz creation tips
 </div>
 </div>
 </div>
-<p><span class="teal-text"><strong>Complete the following:</strong></span></p>
+<p><span class="teal-text"><strong>(Part 1b) Complete the following:</strong></span></p>
 <ul class="task-list">
-<li><input type="checkbox">Create at least three different plots as part of your exploratory data visualization phase to test out what visual forms works best. Your last plot should be the version that you feel is best suited for presenting your data.
+<li><input type="checkbox">Create at least three different plots as part of your exploratory data visualization phase to test out which graphic forms / geoms works best. Your last plot should be the version that you feel is best suited for presenting your data.
 <ul>
-<li><strong>NOTE:</strong> Your first two plots <em>do not</em> need to be at all polished – during the exploratory data visualization phase, we’re most concerned with choosing a visual form / geom(s) for effectively presenting our data.</li>
+<li><strong>NOTE:</strong> Your first two plots <em>do not</em> need to be at all polished – during the exploratory data visualization phase, we’re most concerned with choosing a graphic form / geom(s) for effectively presenting our data.</li>
 </ul></li>
-<li><input type="checkbox">For your third (final) plot only: Consider modifications that we discussed in lecture that may make this plot easier to interpret (e.g.&nbsp;updating colors, moving or removing legends, highlighting groups, ordering groups) – be sure to update your plot as appropriate.</li>
-<li><input type="checkbox">Explain why you chose to make the above modifications. <span class="peach-text"><strong>(3-6 sentences)</strong></span></li>
+<li><input type="checkbox">Consider all three of your plots. What about the graphic forms / geoms used in plots #1 and #2 was not as effective as plot #3? Justify your decision to pursue plot #3. <span class="peach-text"><strong>(5-8 sentences)</strong></span></li>
+<li><input type="checkbox">(For plot #3 only) Consider modifications that we discussed in lecture that may make this plot easier to interpret (e.g.&nbsp;updating colors, moving or removing legends, highlighting groups, ordering groups) – be sure to update your plot as appropriate.</li>
+<li><input type="checkbox">Explain why you chose to make the above modifications. If you chose not to make any of these modifications, why not? <span class="peach-text"><strong>(3-6 sentences)</strong></span></li>
 <li><input type="checkbox">Polish your third (final) plot by updating the theme (we’ll cover this during <a href="https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week4.html#discussion-materials">week 4 discussion section</a>).</li>
-<li><input type="checkbox">Consider all three of your plots. What about the visual forms / geoms used in plots #1 and #2 was not as effective as plot #3? <span class="peach-text"><strong>(5-8 sentences)</strong></span></li>
-<li><input type="checkbox">Describe two or more challenges you encountered while deciding on / creating your plots – these can be theoretical (e.g.&nbsp;determining how to best represent your data) and / or technical (e.g.&nbsp;code-based challenges). <span class="peach-text"><strong>(4-8 sentences)</strong></span></li>
+<li><input type="checkbox">Describe two or more challenges you encountered while deciding on / creating your plots – these can be conceptual (e.g.&nbsp;challenges in determining how to best represent your data) and / or technical (e.g.&nbsp;code-based challenges). <span class="peach-text"><strong>(4-8 sentences)</strong></span></li>
 <li><input type="checkbox">Add alt text to your final visualization following the formula discussed during <a href="https://samanthacsik.github.io/EDS-240-data-viz/course-materials/discussion/week2/week2-alt-text.html#/title-slide">week 2’s discussion section</a> and using the <code>#| fig-alt:</code> code chunk option.</li>
 </ul>
-<!-- [**You must complete steps 1 - 3**]{.teal-text} (you may need to do some Googling or reference documentation to determine what `geom_*` to use when creating your basic plot).  -->
-<!-- - [ ] write out, in words, the data types of the variables from the above data set (you only need to do this for the variables used in creating your plot) [**(1-2 sentences)**]{.peach-text} -->
-<!-- - [ ]  write out, in words, the appropriate visualization types you considered given these data types *(hint: revisit [from Data to Viz](https://www.data-to-viz.com/) for a helpful decision tree)* [**(1-2 sentences)**]{.peach-text} -->
-<!-- - [ ] write ggplot code to create a basic plot to visualize these data (this will first require some data wrangling) -->
-<!-- [**Physically coding steps 4 & 5 is optional -- instead, you may explain, in writing and/or by sketching out on paper, the following:**]{.teal-text}  -->
-<!-- - [ ] how you would improve plot clarity/the take home message(s) (consider the following prompts)? [**(2-3 sentences total)**]{.peach-text} -->
-<!--     - [ ] Do you see any trends that you may want to explore further and/or highlight? -->
-<!--     - [ ] How might you use colors and/or shapes to highlight important site groupings and/or years? -->
-<!-- - [ ] some design choices you might make as you polish off your data visualization (consider the following prompts) [**(2-3 sentences total)**]{.peach-text} -->
-<!--     - [ ] What plot elements should you update to really polish up this visualization? -->
-<!--     - [ ] What text might you include? -->
-<!-- **Note:** Steps 4 and 5, above, are thought exercises -- it's okay if you don't yet know exactly how to approach answering these (we'll be spending time during these first few weeks of class talking about data communication and design theory), but do your best to write down a few things that you think would help to improve both the clarity and overall design of your data visualization . -->
 </section>
 <section id="rubric-specifications" class="level2">
 <h2 class="anchored" data-anchor-id="rubric-specifications">Rubric (specifications)</h2>
-<p>You must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part I:</p>
-<!-- - [ ] all responses and code are written in `filename.qmd`, arranged according to the template  -->
-<!-- - [ ] complete steps 1 & 2 (as detailed above in the Description), adhering to the length requirements specified at the end of each writing prompt -->
-<!-- - [ ] complete step 3 (as detailed above in the Description); use the checklist below to ensure you receive full marks: -->
-<!--     - [ ] import the data -->
-<!--     - [ ] wrangle the data so that it's in the correct format for plotting  -->
-<!--     - [ ] build a basic visualization, which should include the following two lines of code: -->
-<!--         - [ ] a line of code to initialize your ggplot object -->
-<!--         - [ ] a line of code to specify the appropriate `geom_*` -->
-<!--     - [ ] code is annotated -->
-<!--     - [ ] all code runs  -->
+<p>You must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #2, Part I:</p>
+<p><strong>Complete the following steps in your GitHub Classroom repo (<code>eds240-HW2/Part1.qmd</code>):</strong></p>
+<ul class="task-list">
+<li><input type="checkbox">include your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the <code>Part1.qmd</code> YAML</li>
+<li><input type="checkbox">answer the three Part 1a questions, adhering to the length requirements specified at the end of each question prompt</li>
+<li><input type="checkbox">create three different plots (two unpolished exploratory data visualizations and one polished final plot) in accordance with Part 1b instructions (<strong>NOTE:</strong> there isn’t necessarily a single correct answer here, but your final plot should clearly display the variables of interest and you should be able to justify your choice in your written responses)</li>
+<li><input type="checkbox">code should be clearly organized and annotated following conventions and guidelines outlined in the <a href="https://samanthacsik.github.io/EDS-240-data-viz/clean-code-guide.html">Writing clean code</a> page on the course website</li>
+<li><input type="checkbox">answer the three Part 1b questions, adhering to the length requirements specified at the end of each question prompt</li>
+<li><input type="checkbox">add alt text to your final visualization in accordance with Part 1b instructions</li>
+<li><input type="checkbox">we should be able to run individual lines / chunks of code <em>and</em> render <code>Part1.qmd</code> without errors</li>
+<li><input type="checkbox">all three plot outputs should appear in your rendered doc</li>
+<li><input type="checkbox">push your completed <code>Part1.qmd</code> to GitHub via GitHub Classrooms by 11:59pm PT on Sat 02/03/2024</li>
+</ul>
 <p><br></p>
 <div class="center-text large-fa-icon teal-text">
 <p><i class="fa-solid fa-chart-line" title="A simple line chart" aria-label="chart-line"></i> End Part I <i class="fa-solid fa-chart-line" title="A simple line chart" aria-label="chart-line"></i></p>
 </div>
 <p><br></p>
+</section>
+</section>
+<section id="part-ii-data-wrangling-exploratory-data-viz-using-your-own-data" class="level1">
+<h1><span class="pink-text">Part II: Data wrangling &amp; exploratory data viz using your own data</span></h1>
+<section id="learning-outcomes-1" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes-1">Learning Outcomes</h2>
+<p><strong>Note:</strong> This part of HW #2 is a continuation of <a href="https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW1.html#part-ii-find-a-data-sets-that-interests-you">HW #1, Part II</a> and is the next step in working towards your final course assignment. Your final assignment is meant to combine nearly all of the course learning outcomes(!):</p>
+<ul>
+<li>identify which types of visualizations are most appropriate for your data and your audience</li>
+<li>prepare (e.g.&nbsp;clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations</li>
+<li>build effective, responsible, accessible, and aesthetically-pleasing visualizations using the R programming language, and specifically <code>{ggplot2}</code> + ggplot2 extension packages</li>
+<li>write code from scratch and read and adapt code written by others</li>
+<li>apply a DEI (Diversity, Equity &amp; Inclusion) lens to the process of designing data visualizations</li>
+</ul>
+<p>Read the description, below, for details on what to work on this week.</p>
+</section>
+<section id="description-1" class="level2">
+<h2 class="anchored" data-anchor-id="description-1">Description</h2>
+<p><em>A small part of each homework assignment will be dedicated to working on a series of data visualizations which will be due as part of Assignment #4 at the end of the quarter.</em> Assignment #4 will ask you to build three related, but different data visualizations – all which will use the same data set(s), but present those data differently for three different audiences / purposes:</p>
+<ol type="1">
+<li><strong>a visualization for a general audience (i.e.&nbsp;without domain expertise)</strong> – this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), display findings in an atypical but creative way, and / or may blend both art and science</li>
+<li><strong>a visualization to be included in a paper, technical documentation, or report</strong> – this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.</li>
+<li><strong>a visualization that you could include in a presentation</strong> – you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you’re animating pieces of your visualization onto a slide)</li>
+</ol>
+<p><span class="teal-text"><strong>This week, you’ll focus on importing / wrangling / and beginning the exploratory data visualization phase, using the data you found as part of <a href="https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW1.html#part-ii-find-a-data-sets-that-interests-you">HW #1, Part II</a>. Complete the following:</strong></span></p>
+<ul class="task-list">
+<li><input type="checkbox">Create an <code>HW4-viz.qmd</code> file within your repo and add appropriate YAML fields</li>
+<li><input type="checkbox">Load necessary packages and read in your data</li>
+<li><input type="checkbox">Clean &amp; wrangle your data</li>
+<li><input type="checkbox">Create at least <strong>three</strong> exploratory visualizations (similar to plot #1 and #2 in Part I of this assignment)</li>
+<li><input type="checkbox"><strong>IMPORTANTLY:</strong> If you have a downloaded data file saved to your repo (e.g.&nbsp;you’re not reading in your data directly from online, from a server, etc.) be sure to add your data folder / file to your <code>.gitignore</code>, particularly if this file is large.</li>
+</ul>
+<p><span class="teal-text"><strong>After completing the above steps, answer the following questions:</strong></span></p>
+<ul class="task-list">
+<li><input type="checkbox"><strong>1.</strong></li>
+<li><input type="checkbox"><strong>2.</strong> What, if any, potentially interesting patterns have emerged?</li>
+<li><input type="checkbox"><strong>3.</strong> What challenges do you foresee encountering with your data? These can be data wrangling and / or visualization challenges.</li>
+</ul>
+</section>
+<section id="rubric-specifications-1" class="level2">
+<h2 class="anchored" data-anchor-id="rubric-specifications-1">Rubric (specifications)</h2>
+<p>You must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #2, Part II:</p>
+<p><strong>Complete the following steps under your <code>lastName-eds240-HW4</code> repo, <em>not</em> in GitHub Classrooms:</strong></p>
+<ul class="task-list">
+<li><input type="checkbox">perform all code-based steps, as described above in <code>HW4-viz.qmd</code></li>
+<li><input type="checkbox"><code>HW4-viz.qmd</code> should be neatly – this does not need to be a perfectly polished document, but sections should be clearly labeled with prose and / or annotations so that we can easily follow along</li>
+<li><input type="checkbox">answer questions 1 - X, adhering to the length requirements specified at the end of each question prompt</li>
+</ul>
+<p><br></p>
+<div class="center-text large-fa-icon teal-text">
+<p><i class="fa-solid fa-chart-column" title="A column chart" aria-label="chart-column"></i> End Part II <i class="fa-solid fa-chart-area" title="An area chart" aria-label="chart-area"></i></p>
+</div>
 
 
 </section>

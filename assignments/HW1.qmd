@@ -11,7 +11,7 @@ toc: true
 
 **NOTE:** Assignments are to be submitted via GitHub Classrooms, unless otherwise noted. Each student receives one "free pass" for not submitting assignments via specified channels, after which you will receive a "Not Yet" mark.
 
-Read each part of the assignment carefully, and use the check boxes to ensure you've addressed all elements of the assignment!
+**Read each part of the assignment carefully**, and use the check boxes to ensure you've addressed all elements of the assignment!
 </div>
 :::
 
@@ -30,7 +30,7 @@ Much of your time as a data scientist will be spent looking at code written by o
 
 *I recognize that there is (likely) **a lot** of new code presented here, and that we haven't covered much at all yet in this course. This is intentionally an exercise is resourcefulness! By the end of this exercise, you should feel a bit more confident in your ability to interpret (and maybe even reuse!) code written by others.*
 
-[**Annotate the following code**]{.teal-text}, adapted from [Christophe Nicault's](https://github.com/cnicault) visualization titled, ***Evolution of deaths from indoor air pollution*** ([original code](https://github.com/cnicault/tidytuesday/blob/master/2022/2022-15-indoor_air_pollution/indoor_air_pollution.Rmd)) -- to enlarge image (in Chrome) **right-click on image** > **Open Image in New Tab**:
+[**(Part 1a) Annotate the following code**]{.teal-text}, adapted from [Christophe Nicault's](https://github.com/cnicault) visualization titled, ***Evolution of deaths from indoor air pollution*** ([original code](https://github.com/cnicault/tidytuesday/blob/master/2022/2022-15-indoor_air_pollution/indoor_air_pollution.Rmd)) -- to enlarge image (in Chrome) **right-click on image** > **Open Image in New Tab**:
 
 ```{r}
 #| eval: true
@@ -378,7 +378,7 @@ dev.off()
 ```
 :::
 
-[**Once complete, answer the following questions:**]{.teal-text}
+[**(Part 1b) Once complete, answer the following questions:**]{.teal-text}
 
 - [ ] **1.** Describe two elements of this plot that you find visually-pleasing / easy to understand / intuitive. Why? [**(4-10 sentences)**]{.peach-text}
 - [ ] **2.** Describe two elements of this plot that you feel could be better presented in a different way. Why? [**(4-10 sentences)**]{.peach-text}
@@ -393,7 +393,7 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 - [ ] include your preferred name, and if you feel comfortable, your preferred pronouns in the `author` field of the `Part1.qmd` YAML 
 - [ ] update each comment line in the code that reads, `ANNOTATE`, with a *brief* description, written in your own words (see lines 114 & 120 for example annotations; there are other lines that have been already annotated for you as well -- you do not need to re-write these annotations -- you are allowed up to three incorrect or missing annotations
 - [ ] leave the code chunk options set to `eval: false` and `echo: true` (since you won't be adding any new code, just annotations, we don't need to see that the code successfully runs)
-- [ ] answer the three concluding questions adhering to the length requirements specified at the end of each question prompt
+- [ ] answer all three Part 1b questions adhering to the length requirements specified at the end of each question prompt
 - [ ] we should be able to render `Part1.qmd` without errors 
 - [ ] push your completed `Part1.qmd` to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024
 
@@ -405,7 +405,6 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 
 <br>
 
-
 # [Part II: Find a data set(s) that interests you]{.pink-text}
 
 ## Learning Outcomes 
@@ -414,7 +413,7 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 
 - identify which types of visualizations are most appropriate for your data and your audience
 - prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations
-- build effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages
+- build effective, responsible, accessible, and aesthetically-pleasing visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages
 - write code from scratch and read and adapt code written by others
 - apply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations 
 
@@ -431,8 +430,6 @@ This week, we'll mostly be focused on some prep work. Read the description, belo
 [**This week, you’ll focus on finding data that interest you and begin brainstorming some questions that you might explore / answer using those data.**]{.teal-text} 
 
 Your data set(s) may be related to a past project, or even your current Capstone or GP. It may also be a completely new data set(s), unrelated to anything you're currently working on. Some places to check out if you're looking for data (you are not limited to just these data sources): 
-
-<!-- should -- to some degree -- have an environmental focus. It -->
 
 - **[Data is Plural](https://www.data-is-plural.com/archive/)** -- is a weekly newsletter (and seasonal podcast) of useful / curious data sets, published by [Jeremy Singer-Vine](https://www.jsvine.com/)
 - **[awesome-public-datasets](https://github.com/awesomedata/awesome-public-datasets)** -- a repository containing a list of topic-centric public data sources in high quality. They are collected and tidied from blogs, answers, and user responses
