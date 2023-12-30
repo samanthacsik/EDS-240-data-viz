@@ -384,8 +384,8 @@ Data exploration &amp; wrangling tips
 <p><span class="teal-text"><strong>(Part 1a) After exploring and wrangling your data, answer the following questions:</strong></span></p>
 <ul class="task-list">
 <li><input type="checkbox"><strong>1.</strong> What are your variables of interest and what kinds of data (e.g.&nbsp;numeric, categorical, ordered, etc.) are they? <span class="peach-text"><strong>(a bullet point list here is fine)</strong></span></li>
-<li><input type="checkbox"><strong>2.</strong> Using <a href="https://www.data-to-viz.com/">From Data to Viz</a>, identify which visualization forms are appropriate, given your data. List out the visualization types. <span class="peach-text"><strong>(a bullet point list here is fine)</strong></span></li>
-<li><input type="checkbox"><strong>3.</strong> Now that you have a list of potential visualization types, what are some of your considerations as you decide which to create? For example, is it important / valuable to show sample size? Why or why not? How will you represent multiple groups? etc. <span class="peach-text"><strong>(3-4 sentences)</strong></span></li>
+<li><input type="checkbox"><strong>2.</strong> Using <a href="https://www.data-to-viz.com/">From Data to Viz</a>, identify which graphic forms / geoms are appropriate, given your data. List them out. <span class="peach-text"><strong>(a bullet point list here is fine)</strong></span></li>
+<li><input type="checkbox"><strong>3.</strong> Now that you have a list of options, what are some of your considerations as you decide which type of graph create? For example, is it important / valuable to show sample size? Why or why not? How will you represent multiple groups? etc. <span class="peach-text"><strong>(3-4 sentences)</strong></span></li>
 </ul>
 <p>Now that you’ve explored and starting wrangling your data, it’s time to create some plots. It’s often important to try out multiple graphic forms (e.g.&nbsp;<code>geom_*()</code>s) as you decide which is the most effective way of presenting your data. This process is commonly referred to as <strong>Exploratory Data Analysis or Exploratory Data Visualization</strong>. Some tips (unfold below):</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -403,6 +403,7 @@ Data viz creation tips
 <p><span class="body-text-l dark-blue-text"><strong>Data viz creation tips:</strong></span></p>
 <ul>
 <li>I always find it helpful to sketch things out on paper first</li>
+<li>There’s no need to create anything special or particularly visually-pleasing during this exploratory visualization phase. It <em>can</em> be helpful to make minor modifications, (e.g.&nbsp;rearranging groups in a logical order, color groups, etc.) to help you identify any emerging patterns</li>
 <li>We created a number of different plot types together in class, exploring different geoms and some of the arguments that each ggplot layer can take. Be sure to take a look back at the lecture materials, but also know that you may need to reference documentation and / or online examples to create / modify your intended visualizations.</li>
 </ul>
 </div>
@@ -410,14 +411,11 @@ Data viz creation tips
 </div>
 <p><span class="teal-text"><strong>(Part 1b) Complete the following:</strong></span></p>
 <ul class="task-list">
-<li><input type="checkbox">Create at least three different plots as part of your exploratory data visualization phase to test out which graphic forms / geoms works best. Your last plot should be the version that you feel is best suited for presenting your data.
-<ul>
-<li><strong>NOTE:</strong> Your first two plots <em>do not</em> need to be at all polished – during the exploratory data visualization phase, we’re most concerned with choosing a graphic form / geom(s) for effectively presenting our data.</li>
-</ul></li>
+<li><input type="checkbox">Create at least <strong>three</strong> different plots as part of your exploratory data visualization phase to test out which graphic forms / geoms works best. Your last plot should be the version that you feel is best suited for presenting your data. (<em><strong>NOTE:</strong> Your first two plots do not need to be at all polished – during the exploratory data visualization phase, we’re most concerned with choosing a graphic form / geom(s) for effectively presenting our data.</em>)</li>
 <li><input type="checkbox">Consider all three of your plots. What about the graphic forms / geoms used in plots #1 and #2 was not as effective as plot #3? Justify your decision to pursue plot #3. <span class="peach-text"><strong>(5-8 sentences)</strong></span></li>
 <li><input type="checkbox">(For plot #3 only) Consider modifications that we discussed in lecture that may make this plot easier to interpret (e.g.&nbsp;updating colors, moving or removing legends, highlighting groups, ordering groups) – be sure to update your plot as appropriate.</li>
 <li><input type="checkbox">Explain why you chose to make the above modifications. If you chose not to make any of these modifications, why not? <span class="peach-text"><strong>(3-6 sentences)</strong></span></li>
-<li><input type="checkbox">Polish your third (final) plot by updating the theme (we’ll cover this during <a href="https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week4.html#discussion-materials">week 4 discussion section</a>).</li>
+<li><input type="checkbox">Polish your third (final) plot by updating the labels and theme (we’ll cover theme modifications during <a href="https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week4.html#discussion-materials">week 4 discussion section</a>).</li>
 <li><input type="checkbox">Describe two or more challenges you encountered while deciding on / creating your plots – these can be conceptual (e.g.&nbsp;challenges in determining how to best represent your data) and / or technical (e.g.&nbsp;code-based challenges). <span class="peach-text"><strong>(4-8 sentences)</strong></span></li>
 <li><input type="checkbox">Add alt text to your final visualization following the formula discussed during <a href="https://samanthacsik.github.io/EDS-240-data-viz/course-materials/discussion/week2/week2-alt-text.html#/title-slide">week 2’s discussion section</a> and using the <code>#| fig-alt:</code> code chunk option.</li>
 </ul>
@@ -466,19 +464,19 @@ Data viz creation tips
 <li><strong>a visualization to be included in a paper, technical documentation, or report</strong> – this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.</li>
 <li><strong>a visualization that you could include in a presentation</strong> – you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you’re animating pieces of your visualization onto a slide)</li>
 </ol>
-<p><span class="teal-text"><strong>This week, you’ll focus on importing / wrangling / and beginning the exploratory data visualization phase, using the data you found as part of <a href="https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW1.html#part-ii-find-a-data-sets-that-interests-you">HW #1, Part II</a>. Complete the following:</strong></span></p>
+<p><span class="teal-text"><strong>(Part 2a) This week, you’ll focus on importing / wrangling / and beginning the exploratory data visualization phase, using the data you found as part of <a href="https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW1.html#part-ii-find-a-data-sets-that-interests-you">HW #1, Part II</a>. Complete the following:</strong></span></p>
 <ul class="task-list">
-<li><input type="checkbox">Create an <code>HW4-viz.qmd</code> file within your repo and add appropriate YAML fields</li>
+<li><input type="checkbox">Create an file named, <code>HW2-exploration.qmd</code> within your <code>lastName-eds240-HW4</code> repo and add appropriate YAML fields</li>
 <li><input type="checkbox">Load necessary packages and read in your data</li>
 <li><input type="checkbox">Clean &amp; wrangle your data</li>
-<li><input type="checkbox">Create at least <strong>three</strong> exploratory visualizations (similar to plot #1 and #2 in Part I of this assignment)</li>
-<li><input type="checkbox"><strong>IMPORTANTLY:</strong> If you have a downloaded data file saved to your repo (e.g.&nbsp;you’re not reading in your data directly from online, from a server, etc.) be sure to add your data folder / file to your <code>.gitignore</code>, particularly if this file is large.</li>
+<li><input type="checkbox">Create at least <strong>four</strong> (but of course feel free to create more!) exploratory visualizations (similar to plot #1 and #2 in Part I of this assignment).</li>
+<li><input type="checkbox"><strong>IMPORTANT:</strong> If you have a downloaded data file saved to your repo (e.g.&nbsp;you’re not reading in your data directly from online, from a server, etc.) be sure to add your data folder / file to your <code>.gitignore</code>, particularly if this file is large.</li>
 </ul>
-<p><span class="teal-text"><strong>After completing the above steps, answer the following questions:</strong></span></p>
+<p><span class="teal-text"><strong>(Part 2b) After completing the above steps, answer the following questions:</strong></span></p>
 <ul class="task-list">
-<li><input type="checkbox"><strong>1.</strong></li>
-<li><input type="checkbox"><strong>2.</strong> What, if any, potentially interesting patterns have emerged?</li>
-<li><input type="checkbox"><strong>3.</strong> What challenges do you foresee encountering with your data? These can be data wrangling and / or visualization challenges.</li>
+<li><input type="checkbox"><strong>1.</strong> What have you learned about your data? Have any potentially interesting patterns emerged? <span class="peach-text"><strong>(5-8 sentences)</strong></span></li>
+<li><input type="checkbox"><strong>2.</strong> In HW #1, you outlined some questions that you wanted to answer using these data. Have you made any strides towards answering those questions? If yes, how so? If no, what next steps do you need to take (e.g.&nbsp;I need to create X plot type, I still need to track down Y data, I need to restructure existing data so that you can visualize it in Z ways, etc.)? <span class="peach-text"><strong>(8-12 sentences)</strong></span></li>
+<li><input type="checkbox"><strong>3.</strong> What challenges do you foresee encountering with your data? These can be data wrangling and / or visualization challenges. <span class="peach-text"><strong>(4-6 sentences)</strong></span></li>
 </ul>
 </section>
 <section id="rubric-specifications-1" class="level2">
@@ -486,9 +484,11 @@ Data viz creation tips
 <p>You must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #2, Part II:</p>
 <p><strong>Complete the following steps under your <code>lastName-eds240-HW4</code> repo, <em>not</em> in GitHub Classrooms:</strong></p>
 <ul class="task-list">
-<li><input type="checkbox">perform all code-based steps, as described above in <code>HW4-viz.qmd</code></li>
-<li><input type="checkbox"><code>HW4-viz.qmd</code> should be neatly – this does not need to be a perfectly polished document, but sections should be clearly labeled with prose and / or annotations so that we can easily follow along</li>
-<li><input type="checkbox">answer questions 1 - X, adhering to the length requirements specified at the end of each question prompt</li>
+<li><input type="checkbox">perform all Part 2a steps, as described above, in <code>HW2-exploration.qmd</code></li>
+<li><input type="checkbox">answer Part 2b questions, also in <code>HW2-exploration.qmd</code>, adhering to the length requirements specified at the end of each question prompt</li>
+<li><input type="checkbox">all four plot outputs should appear in your rendered doc</li>
+<li><input type="checkbox"><code>HW2-exploration.qmd</code> should be neatly organized – this does not need to be a perfectly polished document, but sections should be clearly labeled with prose and / or annotations so that we can easily follow along.</li>
+<li><input type="checkbox">push your completed <code>HW2-exploration.qmd</code> to your repo by 11:59pm PT on Sat 02/03/2024</li>
 </ul>
 <p><br></p>
 <div class="center-text large-fa-icon teal-text">

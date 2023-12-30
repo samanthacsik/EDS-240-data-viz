@@ -99,8 +99,8 @@ lobster_data <- read_csv("https://portal.edirepository.org/nis/dataviewer?packag
 [**(Part 1a) After exploring and wrangling your data, answer the following questions:**]{.teal-text}
 
 - [ ] **1.** What are your variables of interest and what kinds of data (e.g. numeric, categorical, ordered, etc.) are they? [**(a bullet point list here is fine)**]{.peach-text}
-- [ ] **2.** Using [From Data to Viz](https://www.data-to-viz.com/), identify which visualization forms are appropriate, given your data. List out the visualization types. [**(a bullet point list here is fine)**]{.peach-text}
-- [ ] **3.** Now that you have a list of potential visualization types, what are some of your considerations as you decide which to create? For example, is it important / valuable to show sample size? Why or why not? How will you represent multiple groups? etc. [**(3-4 sentences)**]{.peach-text}
+- [ ] **2.** Using [From Data to Viz](https://www.data-to-viz.com/), identify which graphic forms / geoms are appropriate, given your data. List them out. [**(a bullet point list here is fine)**]{.peach-text}
+- [ ] **3.** Now that you have a list of options, what are some of your considerations as you decide which type of graph create? For example, is it important / valuable to show sample size? Why or why not? How will you represent multiple groups? etc. [**(3-4 sentences)**]{.peach-text}
 
 Now that you've explored and starting wrangling your data, it's time to create some plots. It's often important to try out multiple graphic forms (e.g. `geom_*()`s) as you decide which is the most effective way of presenting your data. This process is commonly referred to as **Exploratory Data Analysis or Exploratory Data Visualization**. Some tips (unfold below):
 
@@ -110,17 +110,17 @@ Now that you've explored and starting wrangling your data, it's time to create s
 [**Data viz creation tips:**]{.body-text-l .dark-blue-text}
 
 - I always find it helpful to sketch things out on paper first
+- There's no need to create anything special or particularly visually-pleasing during this exploratory visualization phase. It *can* be helpful to make minor modifications, (e.g. rearranging groups in a logical order, color groups, etc.) to help you identify any emerging patterns
 - We created a number of different plot types together in class, exploring different geoms and some of the arguments that each ggplot layer can take. Be sure to take a look back at the lecture materials, but also know that you may need to reference documentation and / or online examples to create / modify your intended visualizations.
 :::
 
 [**(Part 1b) Complete the following:**]{.teal-text}
 
-- [ ] Create at least three different plots as part of your exploratory data visualization phase to test out which graphic forms / geoms works best. Your last plot should be the version that you feel is best suited for presenting your data. 
-    - **NOTE:** Your first two plots *do not* need to be at all polished -- during the exploratory data visualization phase, we're most concerned with choosing a graphic form / geom(s) for effectively presenting our data. 
+- [ ] Create at least **three** different plots as part of your exploratory data visualization phase to test out which graphic forms / geoms works best. Your last plot should be the version that you feel is best suited for presenting your data. (***NOTE:** Your first two plots do not need to be at all polished -- during the exploratory data visualization phase, we're most concerned with choosing a graphic form / geom(s) for effectively presenting our data.*) 
 -  [ ] Consider all three of your plots. What about the graphic forms / geoms used in plots #1 and #2 was not as effective as plot #3? Justify your decision to pursue plot #3. [**(5-8 sentences)**]{.peach-text}
 - [ ] (For plot #3 only) Consider modifications that we discussed in lecture that may make this plot easier to interpret (e.g. updating colors, moving or removing legends, highlighting groups, ordering groups) -- be sure to update your plot as appropriate.
 - [ ] Explain why you chose to make the above modifications. If you chose not to make any of these modifications, why not? [**(3-6 sentences)**]{.peach-text}
-- [ ] Polish your third (final) plot by updating the theme (we'll cover this during [week 4 discussion section](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week4.html#discussion-materials)). 
+- [ ] Polish your third (final) plot by updating the labels and theme (we'll cover theme modifications during [week 4 discussion section](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week4.html#discussion-materials)). 
 - [ ] Describe two or more challenges you encountered while deciding on / creating your plots -- these can be conceptual (e.g. challenges in determining how to best represent your data) and / or technical (e.g. code-based challenges). [**(4-8 sentences)**]{.peach-text}
 - [ ] Add alt text to your final visualization following the formula discussed during [week 2's discussion section](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/discussion/week2/week2-alt-text.html#/title-slide) and using the `#| fig-alt:` code chunk option.
 
@@ -170,19 +170,19 @@ Read the description, below, for details on what to work on this week.
 2. **a visualization to be included in a paper, technical documentation, or report** -- this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.
 3. **a visualization that you could include in a presentation** -- you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you're animating pieces of your visualization onto a slide) 
 
-[**This week, you’ll focus on importing / wrangling / and beginning the exploratory data visualization phase, using the data you found as part of [HW #1, Part II](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW1.html#part-ii-find-a-data-sets-that-interests-you). Complete the following:**]{.teal-text} 
+[**(Part 2a) This week, you’ll focus on importing / wrangling / and beginning the exploratory data visualization phase, using the data you found as part of [HW #1, Part II](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW1.html#part-ii-find-a-data-sets-that-interests-you). Complete the following:**]{.teal-text} 
 
-- [ ] Create an `HW4-viz.qmd` file within your repo and add appropriate YAML fields
+- [ ] Create an file named, `HW2-exploration.qmd` within your `lastName-eds240-HW4` repo and add appropriate YAML fields
 - [ ] Load necessary packages and read in your data
 - [ ] Clean & wrangle your data
-- [ ] Create at least **three** exploratory visualizations (similar to plot #1 and #2 in Part I of this assignment)
-- [ ] **IMPORTANTLY:** If you have a downloaded data file saved to your repo (e.g. you're not reading in your data directly from online, from a server, etc.) be sure to add your data folder / file to your `.gitignore`, particularly if this file is large.
+- [ ] Create at least **four** (but of course feel free to create more!) exploratory visualizations (similar to plot #1 and #2 in Part I of this assignment). 
+- [ ] **IMPORTANT:** If you have a downloaded data file saved to your repo (e.g. you're not reading in your data directly from online, from a server, etc.) be sure to add your data folder / file to your `.gitignore`, particularly if this file is large.
 
-[**After completing the above steps, answer the following questions:**]{.teal-text}
+[**(Part 2b) After completing the above steps, answer the following questions:**]{.teal-text}
 
-- [ ] **1.** 
-- [ ] **2.** What, if any, potentially interesting patterns have emerged?
-- [ ] **3.** What challenges do you foresee encountering with your data? These can be data wrangling and / or visualization challenges.
+- [ ] **1.** What have you learned about your data? Have any potentially interesting patterns emerged? [**(5-8 sentences)**]{.peach-text}
+- [ ] **2.** In HW #1, you outlined some questions that you wanted to answer using these data. Have you made any strides towards answering those questions? If yes, how so? If no, what next steps do you need to take (e.g. I need to create X plot type, I still need to track down Y data, I need to restructure existing data so that you can visualize it in Z ways, etc.)? [**(8-12 sentences)**]{.peach-text}
+- [ ] **3.** What challenges do you foresee encountering with your data? These can be data wrangling and / or visualization challenges. [**(4-6 sentences)**]{.peach-text}
 
 ## Rubric (specifications)
 
@@ -190,9 +190,11 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 
 **Complete the following steps under your `lastName-eds240-HW4` repo, *not* in GitHub Classrooms:**
 
--  [ ] perform all code-based steps, as described above in `HW4-viz.qmd`
-- [ ] `HW4-viz.qmd` should be neatly -- this does not need to be a perfectly polished document, but sections should be clearly labeled with prose and / or annotations so that we can easily follow along
-- [ ] answer questions 1 - X, adhering to the length requirements specified at the end of each question prompt
+- [ ] perform all Part 2a steps, as described above, in `HW2-exploration.qmd`
+- [ ] answer Part 2b questions, also in `HW2-exploration.qmd`, adhering to the length requirements specified at the end of each question prompt
+- [ ] all four plot outputs should appear in your rendered doc
+- [ ] `HW2-exploration.qmd` should be neatly organized -- this does not need to be a perfectly polished document, but sections should be clearly labeled with prose and / or annotations so that we can easily follow along.
+- [ ] push your completed `HW2-exploration.qmd` to your repo by 11:59pm PT on Sat 02/03/2024
 
 <br>
 
