@@ -1,0 +1,710 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../meds-slides-styles.scss
+editor_options: 
+  chunk_output_type: console
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 4.4]{.custom-title}
+
+[*Typography*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[Week 4 | January 29^th^, 2024]{.custom-subtitle3}
+
+---
+
+##  {#typeography data-menu-title="# Typography #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Type and font choice influences audience perception and readability</p>
+</div>
+
+---
+
+## {#typography-defs data-menu-title="Typeography definitions"} 
+
+[Typeface vs. font]{.slide-title}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+**[Typeface](https://fonts.google.com/knowledge/glossary/typeface) (aka font family)**: underlying visual design (e.g. Times New Roman, Helvetica, Roboto)
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/nunito-type.png")
+```
+:::
+
+::: {.column width="50%"}
+
+**[Font](https://fonts.google.com/knowledge/glossary/font)**: an implementation of a typeface; they can come in different weights and styles (e.g. bold, italic)
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/nunito-fonts.png")
+```
+:::
+
+::::
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="50%" .center-text}
+**You choose a *typeface* (e.g. [Nunito](https://fonts.google.com/specimen/Nunito?query=nunito))**
+:::
+
+::: {.column width="50%" .center-text}
+**You use a *font* (e.g.** regular, *italic*, **bold)**
+:::
+
+::::
+
+---
+
+## {#typography-importance data-menu-title="Typography is important!"} 
+
+[Typeface choices affect emotions and perceptions]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "70%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/psychology-fonts.png")
+```
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+
+> *"Typography is the art and technique of arranging type to make written language legible, readable and appealing when displayed."*
+
+::: {.right-align-text .body-text-s}
+-[Wikipedia](https://en.wikipedia.org/wiki/Typography)
+:::
+
+<br>
+
+
+Like colors, typefaces / fonts influence the how viewers perceive information (check out this short [TEDx talk](https://www.youtube.com/watch?v=OXc-VZ4Vwbo)).
+
+<br>
+
+[{{< fa arrow-left title="an arrow pointing to the left" >}} Source: [The Daily Egg](https://www.crazyegg.com/blog/psychology-of-fonts-infographic/)]{.body-text-s .gray-text}
+
+:::
+
+::::
+
+::: {.footer}
+Want to dive deeper into the world of typography? Start with this quick read, [Why care about typography?](https://fonts.google.com/knowledge/introducing_type/why_care_about_typography) and explore other great articles by [Google Fonts](https://fonts.google.com/knowledge).
+:::
+
+---
+
+## {#font-psychology data-menu-title="Psychology of typefaces"} 
+
+[Context matters - choose typeface accordingly]{.slide-title2}
+
+<hr>
+
+Typefaces and fonts communicate beyond more than just the written text -- they can **evoke emotions** and can be used to **better connect your audience with your work**. 
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/find-you.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Source: [Typography for a better user experience](https://www.suvoray.com/notes/typography-for-a-better-user-experience), by [Suvo Ray](https://www.suvoray.com/)
+:::
+
+<br>
+
+::: {.footer}
+Interested in font pyschology? Check out this [short video](https://www.youtube.com/watch?v=6Jlo9iOZvXY&t=65s) and [this article](https://designmodo.com/font-psychology/#:~:text=Serif%20fonts%20can%20evoke%20feelings,modernity%2C%20simplicity%2C%20and%20clarity.) to learn a bit more.
+:::
+
+---
+
+## {#sans-serifs data-menu-title="Use sans-serif fonts"} 
+
+[When in doubt, use sans-serif fonts]{.slide-title}
+
+<hr>
+
+**Serif fonts** have small decorative lines (aka "tails" or "feet") that extend off characters while **sans serif fonts** don't. 
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/sans-vs-serif-fonts.png")
+```
+:::
+
+::: {.column width="50%" .incremental}
+- **Sans-serif** fonts = **cleaner** and easier to read.
+  - [[Roboto](https://fonts.google.com/specimen/Roboto), [Lato](https://fonts.google.com/specimen/Lato), [Open Sans](https://fonts.google.com/specimen/Open+Sans) are good, free options]{.body-text-s}
+- **Serif** fonts = classy / traditional / professional / serious tone; typically only used for **visualization headlines**
+  - [If your organization uses a serif font, consider using it in your visualization's headline]{.body-text-s}
+:::
+
+::::
+
+<br>
+
+::: {.footer}
+*Example from [Which fonts to use for your charts and tables](https://blog.datawrapper.de/fonts-for-data-visualization/), by 
+Lisa Charlotte Muth*
+:::
+
+---
+
+## {#lining data-menu-title="Lining figures"} 
+
+[Use a typeface with lining figures for numerals]{.slide-title2}
+
+<hr>
+
+Different typefaces display numbers differently. Serif fonts tend to have "oldstyle figures", which extend above and below the "line" -- these can be difficult to read in a visualization. 
+
+**Instead, look for options with lining figures, where numbers "line up", i.e. they're all the same height.**
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/lining.png")
+```
+
+::: {.footer}
+*Example from [Which fonts to use for your charts and tables](https://blog.datawrapper.de/fonts-for-data-visualization/), by 
+Lisa Charlotte Muth*
+:::
+
+---
+
+## {#monospaced data-menu-title="Monospaced font for numbers"} 
+
+[Use a monospaced typeface for numerals]{.slide-title}
+
+<hr>
+
+<br>
+
+Typefaces with **tabular figures** print **every character with equal width** -- you may see these referred to as **monospaced** typefaces. These work well in tables, visualizations, or any scenario where figures should line up vertically (see how you can quickly identify how many figures a number has in the table on the right, below).
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<br>
+<br>
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/tabular-figures.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/tabular-google.svg")
+```
+:::
+
+::::
+
+::: {.footer}
+*Examples from [Which fonts to use for your charts and tables](https://blog.datawrapper.de/fonts-for-data-visualization/), by 
+Lisa Charlotte Muth* & [Understanding numerals](https://fonts.google.com/knowledge/introducing_type/understanding_numerals#when-to-use-tabular-lining-numerals) article by Google Fonts
+:::
+
+---
+
+## {#symbols data-menu-title="Symbols"} 
+
+[Use a typeface with all the symbols you need]{.slide-title2}
+
+<hr>
+
+<br>
+
+Confirm that all symbols (aka **glyphs**) that you need exist *and* that they look good for your chosen typeface.
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/symbols.png")
+```
+
+<br>
+
+Consider special characters for different languages, currency symbols, math symbols, reference marks, sub / superscript numbers, etc.
+
+::: {.footer}
+*Example from [Which fonts to use for your charts and tables](https://blog.datawrapper.de/fonts-for-data-visualization/), by 
+Lisa Charlotte Muth*
+:::
+
+---
+
+## {#bold data-menu-title="Bold font"} 
+
+[Use bold fonts for emphasis only]{.slide-title}
+
+<hr>
+
+[**Most typefaces come with fonts for different weights** (Google Fonts uses numbers for font weights -- extra light (200), light (300), regular (400, default), medium (500), semi bold (600), bold (700), extra bold (800)).]{.body-text-s} 
+
+[**Use bold text for titles or to emphasize a few words in annotations.** Regular or medium weights are often easiest for longer text (descriptions, annotations, notes).]{.body-text-s} 
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/bold.png")
+```
+
+<br>
+
+::: {.footer}
+*Example from [Which fonts to use for your charts and tables](https://blog.datawrapper.de/fonts-for-data-visualization/), by 
+Lisa Charlotte Muth*
+:::
+
+---
+
+## {#thin data-menu-title="Thin font"} 
+
+[Avoid really thin fonts]{.slide-title}
+
+<hr>
+
+Thin (light-weight fonts) fonts are hard to read. **Only use them in a high-contrast color and in large sizes** (often, titles are the only place you'll want to use think fonts.)
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/bold.png")
+```
+
+<br>
+
+::: {.footer}
+*Example from [Which fonts to use for your charts and tables](https://blog.datawrapper.de/fonts-for-data-visualization/), by 
+Lisa Charlotte Muth*
+:::
+
+---
+
+## {#large-font-size data-menu-title="Large enough font size"} 
+
+[Ensure your font size is large enough]{.slide-title}
+
+<hr>
+
+**Make sure your font size is large enough, especially when presenting visualizations in a slide-based presentation** (this oftentimes means increasing it larger than you would have it in print). In ggplot, adjust font sizes using `theme()`.
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/large-enough-text.png")
+```
+
+<br>
+
+::: {.footer}
+*Example from [Which fonts to use for your charts and tables](https://blog.datawrapper.de/fonts-for-data-visualization/), by 
+Lisa Charlotte Muth*
+:::
+
+---
+
+## {#contrast data-menu-title="High contrast font color"} 
+
+[Use high-contrast color for most text]{.slide-title}
+
+<hr>
+
+[Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG21/#:~:text=Web%20Content%20Accessibility%20Guidelines%20(WCAG)%202.1%20defines%20how%20to%20make,%2C%20learning%2C%20and%20neurological%20disabilities.) (WCAG) recommends **a minimum contrast ratio of 4.5:1** -- use a [color contrast checker](https://userway.org/contrast/?fg=000000&bg=ffffff) to check your ratio (e.g. here is a color combo with a [good contrast ratio](https://userway.org/contrast/?fg=272F75&bg=ffffff) and a combo with a [bad contrast ratio](https://userway.org/contrast/?fg=5CDC8D&bg=ffffff)). 
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/contrast-ratio.png")
+```
+
+<br>
+
+::: {.footer}
+*Example from [Which fonts to use for your charts and tables](https://blog.datawrapper.de/fonts-for-data-visualization/), by 
+Lisa Charlotte Muth*
+:::
+
+---
+
+## {#uppercase data-menu-title="Use uppercase sparingly"} 
+
+[Use UPPERCASE text sparingly]{.slide-title}
+
+<hr>
+
+Uppercase text is more difficult to read compared to sentence case -- **limit use to headlines or labels**. Region labels on maps are commonly uppercase (e.g. see maps in these New York Times pieces, [How to Think About Ukraine, in Maps and Charts](https://www.nytimes.com/interactive/2022/02/25/opinion/russia-ukraine-invasion-maps.html) and [Closing the Back
+Door to Europe](https://www.nytimes.com/interactive/2015/09/15/world/europe/migrant-borders-europe.html)).
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/uppercase.png")
+```
+
+<br>
+
+::: {.footer}
+*Example from [Which fonts to use for your charts and tables](https://blog.datawrapper.de/fonts-for-data-visualization/), by 
+Lisa Charlotte Muth*
+:::
+
+---
+
+## {#recap-font-choices data-menu-title="Recap: font choices"} 
+
+[Recap: choosing the right typeface(s) & font(s)]{.slide-title2}
+
+<hr>
+
+<br>
+
+::: {.incremental}
+- **context matters** -- the type(s) should fit the topic and audience
+- when in doubt, **use a sans-serif style** 
+- choose a **monospaced** typeface with **lining figures** for numbers
+- ensure that your chosen typeface **has all the symbols you need *and* that they look okay**
+- use **bold fonts for emphasis** and **avoid thin fonts** 
+- make **font sizes large enough** to easily read
+- use **high-contrast** font colors
+- strategically use types & fonts to **create hierarchy** 
+- avoid (extensively) using **ALL CAPS**
+:::
+
+. . . 
+
+::: {.teal-text .body-text-m .center-text}
+**Avoid using too many typefaces (stick to just 1-3)**
+:::
+
+. . . 
+
+::: {.footer}
+There are *lots* of excellent resources out there for choosing the right typeface / font check out the [resources page](https://samanthacsik.github.io/EDS-240-data-viz/resources.html#typography) on the course website for some recommendations.
+:::
+
+::: notes
+Horror films, by Cristophe Nicault <https://github.com/cnicault/tidytuesday/tree/master/2022/2022-44-horror-movies>
+:::
+
+---
+
+## {#typographic-hierarchy data-menu-title="Typographic hierarchy"} 
+
+[Typographic hierarchy]{.slide-title}
+
+<hr>
+
+**No one wants to read a wall of text.** You can use font size, style, color, spacing, and typeface (or combinations of these) to create a hierarchy to guide your readers.
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/hierarchy.png")
+```
+
+<br>
+
+::: {.center-text .gray-text .body-text-s}
+Source: [The UX Designer’s Guide to Typography](https://www.interaction-design.org/literature/article/the-ux-designer-s-guide-to-typography)
+:::
+
+<!-- --- -->
+
+<!-- ## {#font-size data-menu-title="Hierarchy with fonts (size)"}  -->
+
+<!-- [Font *size* creates hierarchy]{.slide-title} -->
+
+<!-- <hr> -->
+
+<!-- <br> -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:3em;">I am important!</span> -->
+<!-- ::: -->
+
+<!-- <br> -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:2em;">I am also pretty important!</span> -->
+<!-- ::: -->
+
+<!-- <br> -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:1em;">Thanks for reading me</span> -->
+<!-- ::: -->
+
+<!-- <br> -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:0.6em;">I know, I'm kinda boring</span> -->
+<!-- ::: -->
+
+<!-- --- -->
+
+<!-- ## {#font-style data-menu-title="Hierarchy with fonts (style)"}  -->
+
+<!-- [Font *style* creates hierarchy]{.slide-title} -->
+
+<!-- <hr> -->
+
+<!-- <br> -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:2em; text-decoration: underline;">**I am important!**</span> -->
+<!-- ::: -->
+
+<!-- <br> -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:2em;">**I am also pretty important!**</span> -->
+<!-- ::: -->
+
+<!-- <br> -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:2em;">*Thanks for reading me*</span> -->
+<!-- ::: -->
+
+<!-- <br> -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:2em;">I know, I'm kinda boring</span> -->
+<!-- ::: -->
+
+<!-- --- -->
+
+<!-- ## {#font-color data-menu-title="Hierarchy with fonts (color)"}  -->
+
+<!-- [Font *color* creates hierarchy]{.slide-title} -->
+
+<!-- <hr> -->
+
+<!-- <br> -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:2em; color: #047C90;">I am important!</span> -->
+<!-- ::: -->
+
+<!-- <br> -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:2em;">I am also pretty important!</span> -->
+<!-- ::: -->
+
+<!-- <br> -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:2em; color: #ABABAB;">Thanks for reading me</span> -->
+<!-- ::: -->
+
+<!-- <br> -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:2em; color: #D1D1D1;">I know, I'm kinda boring</span> -->
+<!-- ::: -->
+
+<!-- --- -->
+
+<!-- ## {#font-spacing data-menu-title="Hierarchy with fonts (spacing)"}  -->
+
+<!-- [Font *spacing* creates hierarchy]{.slide-title} -->
+
+<!-- <hr> -->
+
+<!-- <br> -->
+<!-- <br> -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:1.5em;">I am important!</span> -->
+<!-- ::: -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:1.5em;">I am also pretty important!</span> -->
+<!-- ::: -->
+
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:1.5em;">Thanks for reading me</span> -->
+<!-- ::: -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:1.5em;">I know, I'm kinda boring</span> -->
+<!-- ::: -->
+
+<!-- --- -->
+
+<!-- ## {#font-typeface data-menu-title="Hierarchy with fonts (typeface)"}  -->
+
+<!-- [*Typeface* creates hierarchy]{.slide-title} -->
+
+<!-- <hr> -->
+
+<!-- <br> -->
+<!-- <br> -->
+
+<!-- ::: {.center-text .sanchez-font} -->
+<!-- <span style="font-size:1.5em;">I am important!</span> -->
+<!-- ::: -->
+
+<!-- ::: {.center-text .sanchez-font} -->
+<!-- <span style="font-size:1.5em;">I am also pretty important!</span> -->
+<!-- ::: -->
+
+<!-- <br> -->
+<!-- <br> -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:1.5em;">Thanks for reading me</span> -->
+<!-- ::: -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:1.5em;">I know, I'm kinda boring</span> -->
+<!-- ::: -->
+
+<!-- --- -->
+
+<!-- ## {#font-combo data-menu-title="Hierarchy with fonts (combos)"}  -->
+
+<!-- [Combining different approaches to create hierarchy]{.slide-title2} -->
+
+<!-- <hr> -->
+
+<!-- <br> -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:2.5em;">**I am important!**</span> -->
+<!-- ::: -->
+
+<!-- ::: {.center-text} -->
+<!-- <span style="font-size:1.5em; color: #047C90;">I am also pretty important!</span> -->
+<!-- ::: -->
+
+<!-- <br> -->
+<!-- <br> -->
+
+<!-- ::: {.center-text .nanum-font} -->
+<!-- <span style="font-size:1.2em;">Thanks for reading me</span> -->
+<!-- ::: -->
+
+<!-- ::: {.center-text .nanum-font} -->
+<!-- <span style="font-size:1.2em;">I know, I'm kinda boring</span> -->
+<!-- ::: -->
+
+---
+
+##  {#change-fonts data-menu-title="# Code example #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Let's learn how to import and use Google fonts in our ggplots</p>
+</div>
+
+---
+
+Code example here using `{ggtext}`
+
+---
+
+##  {#end data-menu-title="# End #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">See you next week!</p>
+<p class="caption-text">*~ This is the end of Lesson 4 (of 4) ~*</p>
+</div>

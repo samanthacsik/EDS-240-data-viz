@@ -357,7 +357,7 @@ lyme_pop |>
 ::: {.column width="50%"}
 
 ::: {.center-text .gray-text .body-text-s}
-A connected scatter plot by layering on `geom_point()`
+A line + scatter plot created by layering `geom_line()` & `geom_point()`
 :::
 
 ```{r}
@@ -767,7 +767,7 @@ Playing around with the `ratio` value yourself is the best way to get a sense fo
 
 <hr>
 
-[Instead of just a line or connected scatter plot to indicate the change in a numeric variable through time, the space between the line and the x-axis is colored or shaded in. Area plots are sometimes criticized for **violating the [data-ink ratio](https://infovis-wiki.net/wiki/Data-Ink_Ratio) rule**, which argues that any non-data-ink should be omitted wherever possible. If the number of observations is low (as in this example) a connected scatter plot may more clearly show when each observation was made.]{.body-text-s}
+[Instead of just a line or scatter plot to indicate the change in a numeric variable through time, the space between the line and the x-axis is colored or shaded in. Area plots are sometimes criticized for **violating the [data-ink ratio](https://infovis-wiki.net/wiki/Data-Ink_Ratio) rule**, which argues that any non-data-ink should be omitted wherever possible. If the number of observations is low (as in this example) a connected scatter plot may more clearly show when each observation was made.]{.body-text-s}
 
 :::: columns
 

@@ -25,9 +25,7 @@ toc: true
 - **[Chart Suggestions -- A Thought-Starter](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf), by A. Abela** -- a single pdf decision tree, which uses the four main chart types to guide users towards selecting an appropriate visualization
 - **[Data Viz Project](https://datavizproject.com/), by Ferdio (an infographic and data visualization agency in Copenhagen)** -- [100 different visualizations from one simple dataset](https://100.datavizproject.com/) 
 
-## Accessibility
-
-### Colors
+## Colors
 
 - **[Palette Generator](https://www.learnui.design/tools/data-color-picker.html#palette), by Learn UI Design** -- supply a starting color(s) and this tool will generate a palette, single hue, or divergent color scheme
 - **[Viz Palette](https://projects.susielu.com/viz-palette), by Elijah Meeks and Susie Lu** -- a tool that shows you how well your chosen colors work for tiny lines and big areas, warns if you have colors sharing the same name (which can make it more challenging to talk about your designs, say, in a presentation), and can simulate color vision deficiencies 
@@ -38,11 +36,13 @@ toc: true
 - **[What to consider when choosing colors for data visualization](https://blog.datawrapper.de/colors/), by Lisa Charlotte Muth** -- a blog post with explanations and examples
 - **[Subtleties of Color](https://earthobservatory.nasa.gov/blogs/elegantfigures/2013/08/05/subtleties-of-color-part-1-of-6/), by Robert Simmon** -- a 6 part blog post series from NASA Earth Observatory about the use of color to map Earth observation data
 
-### Typography
-- **[Google Fonts](https://fonts.google.com/)** -- catalog of open-source fonts and icons, which can be imported for use with `{ggplot2}`
+## Typography
+- **[Google Fonts](https://fonts.google.com/)** -- catalog of open-source fonts and icons, which can be imported for use with `{ggplot2}`; check out [this collection](https://fonts.google.com/knowledge/choosing_type) of short articles on choosing type
+- **[Which fonts to use for your charts and tables](https://blog.datawrapper.de/fonts-for-data-visualization/), by Lisa Charlotte Muth**
+- **[Choosing Fonts for Your Data Visualization](https://nightingaledvs.com/choosing-fonts-for-your-data-visualization/), by Tiffany France**
 - **[Wake up & smell the fonts](https://www.youtube.com/watch?v=OXc-VZ4Vwbo), by Sarah Hyndman** -- a great 14min-long TEDx talk about how fonts turn words into stories that have the power to influence audience perceptions
 
-### Alternative (alt) text
+## Alternative (alt) text
 - **[How to write good alternative descriptions for your data visualization](https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization), by Amy Cesal** -- great instructions (and examples) on how to construct informative alt text for data visualizations 
 - **[Writing Alt Text for Data Visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81), also by Amy Cesal** -- more great example of alt text for data viz!
 - **[#TidyTuesday alt text instructions](https://github.com/rfordatascience/tidytuesday/blob/master/alt_text.md)** -- a simple formula for writing alt text for data visualizations, as recommended for #TidyTuesday participants
