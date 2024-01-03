@@ -246,9 +246,9 @@ Link is also bookmarked at the top of the **#eds-240-data-viz** Slack channel an
 |---------|---------------------------------------------------------------------|
 | 1/8     | course logistics, intro, `{ggplot2}` review                         |
 | 1/15    | [*no class* ]{.teal-text}                                           |
-| 1/22    | fundamental chart types (part I)                                    |
-| 1/29    | fundamental chart types (part II)                                   |
-| 2/5     | design principles & best practices (part II)                        |
+| 1/22    | graphic forms, fundamental chart types (part I)                     |
+| 1/29    | fundamental chart types (part II), visual form                      |
+| 2/5     | design principles & enhancing visualizations                        |
 | 2/12    | data communication                                                  |
 | 2/19    | [*no class* ]{.teal-text}                                           |
 | 2/26    | visualizing uncertainty & avoiding the misrepresentation of data    |
@@ -381,7 +381,7 @@ Higher Education”, by David Clark & Robert Talbert*
 - assignments receive either a **"Satisfactory"** or **"Not Yet"** mark
 - each assignment will have a **clear rubric** (containing specifications) which outline what must be completed and how in order to receive a "Satisfactory" mark; *not* meeting all specifications results in a "Not Yet" mark
 - students can **trade "tokens"** for the opportunity to:         
-    - revise/resubmit assignments that receive a "Not Yet" mark
+    - revise / resubmit assignments that receive a "Not Yet" mark (within a week)
     - assignment extensions
     - to miss class
 - students **earn tokens** (primarily) by attending discussion section
@@ -477,7 +477,7 @@ knitr::include_graphics("images/week1/grade-tracker.png")
 [Please adhere to these guidelines:]{.body-text-m}
 
 ::: incremental
-- you may use spell/grammar check and/or synonym identification tools
+- you may use spell / grammar check and / or synonym identification tools
 - be prepared to explain each line of code in your assignments and exercises
 - if you use GenAI in assignments, you **must include** a statement of which GenAI platform used and why, along with a copy of your initial prompt(s) and ensuing "conversation(s)"
 :::

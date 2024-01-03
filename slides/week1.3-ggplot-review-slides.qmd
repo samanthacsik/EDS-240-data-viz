@@ -214,7 +214,7 @@ knitr::include_graphics("images/week1/horst-untidy-data.png")
 library(tidyverse)
 ```
 
-Take this [tibble](https://tibble.tidyverse.org/) (a lazy/surly `data.frame`) of temperature recordings at three stations on three dates:
+Take this [tibble](https://tibble.tidyverse.org/) (a lazy / surly `data.frame`) of temperature recordings at three stations on three dates:
 
 ```{r}
 #| eval: true

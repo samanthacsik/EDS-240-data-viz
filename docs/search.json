@@ -718,7 +718,7 @@
     "href": "slides/week1.3-ggplot-review-slides.html#untidy-temps",
     "title": "EDS 240",
     "section": "",
-    "text": "An example: untidy temperatures\n\nTake this tibble (a lazy/surly data.frame) of temperature recordings at three stations on three dates:\n\ntemp_data_wide &lt;- tribble(\n  ~date, ~station1, ~station2,  ~station3,\n  \"2023-10-01\", 30.1, 29.8,  31.2,\n  \"2023-11-01\", 28.6, 29.1,  33.4,\n  \"2023-12-01\", 29.9, 28.5,  32.3\n)\n\nprint(temp_data_wide)\n\n# A tibble: 3 × 4\n  date       station1 station2 station3\n  &lt;chr&gt;         &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 2023-10-01     30.1     29.8     31.2\n2 2023-11-01     28.6     29.1     33.4\n3 2023-12-01     29.9     28.5     32.3\n\n\n\n\nThis tibble is in wide or untidy format."
+    "text": "An example: untidy temperatures\n\nTake this tibble (a lazy / surly data.frame) of temperature recordings at three stations on three dates:\n\ntemp_data_wide &lt;- tribble(\n  ~date, ~station1, ~station2,  ~station3,\n  \"2023-10-01\", 30.1, 29.8,  31.2,\n  \"2023-11-01\", 28.6, 29.1,  33.4,\n  \"2023-12-01\", 29.9, 28.5,  32.3\n)\n\nprint(temp_data_wide)\n\n# A tibble: 3 × 4\n  date       station1 station2 station3\n  &lt;chr&gt;         &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 2023-10-01     30.1     29.8     31.2\n2 2023-11-01     28.6     29.1     33.4\n3 2023-12-01     29.9     28.5     32.3\n\n\n\n\nThis tibble is in wide or untidy format."
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#make-temps-tidy",
@@ -1488,7 +1488,7 @@
     "href": "slides/week1.1-logistics-slides.html#tentative-schedule",
     "title": "EDS 240",
     "section": "",
-    "text": "Tentative Schedule & Materials\n\n\n\n\n\n\n\n\n\n\n\nDate\nTentative Topic\n\n\n\n\n1/8\ncourse logistics, intro, {ggplot2} review\n\n\n1/15\nno class\n\n\n1/22\nfundamental chart types (part I)\n\n\n1/29\nfundamental chart types (part II)\n\n\n2/5\ndesign principles & best practices (part II)\n\n\n2/12\ndata communication\n\n\n2/19\nno class\n\n\n2/26\nvisualizing uncertainty & avoiding the misrepresentation of data\n\n\n3/4\nOJS with Dr. Allison Horst\n\n\n3/11\ngrab bag & catch up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiscussion sections are held every week"
+    "text": "Tentative Schedule & Materials\n\n\n\n\n\n\n\n\n\n\n\nDate\nTentative Topic\n\n\n\n\n1/8\ncourse logistics, intro, {ggplot2} review\n\n\n1/15\nno class\n\n\n1/22\ngraphic forms, fundamental chart types (part I)\n\n\n1/29\nfundamental chart types (part II), visual form\n\n\n2/5\ndesign principles & enhancing visualizations\n\n\n2/12\ndata communication\n\n\n2/19\nno class\n\n\n2/26\nvisualizing uncertainty & avoiding the misrepresentation of data\n\n\n3/4\nOJS with Dr. Allison Horst\n\n\n3/11\ngrab bag & catch up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiscussion sections are held every week"
   },
   {
     "objectID": "slides/week1.1-logistics-slides.html#pre-class-prep",
@@ -1523,7 +1523,7 @@
     "href": "slides/week1.1-logistics-slides.html#how-does-specs-look",
     "title": "EDS 240",
     "section": "",
-    "text": "How does specs grading look in practice for this course?\n\n\nTL;DR: assignments receive either “Satisfactory” or “Not Yet” marks; tokens can be used to revise/resubmit assignments, for assignment extensions, or to miss class; earn tokens by attending discussions\n\n\n\nassignments receive either a “Satisfactory” or “Not Yet” mark\neach assignment will have a clear rubric (containing specifications) which outline what must be completed and how in order to receive a “Satisfactory” mark; not meeting all specifications results in a “Not Yet” mark\nstudents can trade “tokens” for the opportunity to:\n\nrevise/resubmit assignments that receive a “Not Yet” mark\nassignment extensions\nto miss class\n\nstudents earn tokens (primarily) by attending discussion section"
+    "text": "How does specs grading look in practice for this course?\n\n\nTL;DR: assignments receive either “Satisfactory” or “Not Yet” marks; tokens can be used to revise/resubmit assignments, for assignment extensions, or to miss class; earn tokens by attending discussions\n\n\n\nassignments receive either a “Satisfactory” or “Not Yet” mark\neach assignment will have a clear rubric (containing specifications) which outline what must be completed and how in order to receive a “Satisfactory” mark; not meeting all specifications results in a “Not Yet” mark\nstudents can trade “tokens” for the opportunity to:\n\nrevise / resubmit assignments that receive a “Not Yet” mark (within a week)\nassignment extensions\nto miss class\n\nstudents earn tokens (primarily) by attending discussion section"
   },
   {
     "objectID": "slides/week1.1-logistics-slides.html#why-tokens",
@@ -1551,7 +1551,7 @@
     "href": "slides/week1.1-logistics-slides.html#GenAI",
     "title": "EDS 240",
     "section": "",
-    "text": "Policy on Generative AI (GenAI)\n\nGenAI tools (such as ChatGPT) are strongly discouraged for the following reasons:\n\n\ncore competencies are built through practice\nbuilding your own programming proficiency will help you engage with GenAI tools more productively\nsubscription versions of GenAI tools may induce an inequitable learning environment\n\n\n\nPlease adhere to these guidelines:\n\n\nyou may use spell/grammar check and/or synonym identification tools\nbe prepared to explain each line of code in your assignments and exercises\nif you use GenAI in assignments, you must include a statement of which GenAI platform used and why, along with a copy of your initial prompt(s) and ensuing “conversation(s)”\n\n\n\n\n\nPlease read the full policy on the course syllabus"
+    "text": "Policy on Generative AI (GenAI)\n\nGenAI tools (such as ChatGPT) are strongly discouraged for the following reasons:\n\n\ncore competencies are built through practice\nbuilding your own programming proficiency will help you engage with GenAI tools more productively\nsubscription versions of GenAI tools may induce an inequitable learning environment\n\n\n\nPlease adhere to these guidelines:\n\n\nyou may use spell / grammar check and / or synonym identification tools\nbe prepared to explain each line of code in your assignments and exercises\nif you use GenAI in assignments, you must include a statement of which GenAI platform used and why, along with a copy of your initial prompt(s) and ensuing “conversation(s)”\n\n\n\n\n\nPlease read the full policy on the course syllabus"
   },
   {
     "objectID": "slides/week1.1-logistics-slides.html#help",
