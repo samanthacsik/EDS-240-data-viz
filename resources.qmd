@@ -13,11 +13,13 @@ toc: true
 - **[Data Visualization: A practical introduction](https://socviz.co/), by Kieran Healy** -- a hands-on intro to the principles and practice of looking at and presenting data using R and ggplot.
 - **[Hands-On Data Visualization](https://handsondataviz.org/index.html), by Jack Dougherty and Ilya Ilyankou** -- learn how to tell stories with your data using drag-and-drop tools (e.g. Google Sheets, Datawrapper, Tableau Public)
 - **[The Truthful Art: Data, Charts, and Maps for Communication](https://www.amazon.com/gp/product/0321934075/), by Albert Cairo** -- a guide to understanding information graphics and visualization (I have a hard copy in my office if you'd like to borrow it!)
+- **[](https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/), by Cédric Scherer** -- a blogpost that might as well be a book; an excellent introduction to many different ggplot options, ideas, and extension packages
 
 ## Readings, Journals, Reporting & Talks
 - **[Nightingale: Journal of the Data Visualization Society](https://nightingaledvs.com/)** -- focuses on data visualization from personal stories to exploratory research to interviews with leaders in the community, data ethics, and best practices
 - **[The Upshot](https://www.nytimes.com/section/upshot), by The New York Times** -- analysis that explains politics, policy and everyday life, with an emphasis on data and charts
 - **[TED Topics: Visualizations](https://www.ted.com/topics/visualizations)** -- a collection of TED talks (and more) on the topic of Visualizations
+- Grainger S, Mao F, Buytaert W (2016) **Environmental data visualisation for non-scientific contexts: Literature review and design framework.** Environmental Modelling & Software. 85:299-318. <https://doi.org/10.1016/j.envsoft.2016.09.004>
 
 ## Chart Types
 

@@ -48,7 +48,7 @@ editor_options:
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/nunito-type.png")
+knitr::include_graphics("images/week5/nunito-type.png")
 ```
 :::
 
@@ -61,7 +61,7 @@ knitr::include_graphics("images/week4/nunito-type.png")
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/nunito-fonts.png")
+knitr::include_graphics("images/week5/nunito-fonts.png")
 ```
 :::
 
@@ -98,7 +98,7 @@ knitr::include_graphics("images/week4/nunito-fonts.png")
 #| echo: false
 #| out-width: "70%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/psychology-fonts.png")
+knitr::include_graphics("images/week5/psychology-fonts.png")
 ```
 
 :::
@@ -148,7 +148,7 @@ Typefaces and fonts communicate beyond more than just the written text -- they c
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/find-you.png")
+knitr::include_graphics("images/week5/find-you.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
@@ -181,7 +181,7 @@ Interested in font pyschology? Check out this [short video](https://www.youtube.
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/sans-vs-serif-fonts.png")
+knitr::include_graphics("images/week5/sans-vs-serif-fonts.png")
 ```
 :::
 
@@ -220,7 +220,7 @@ Different typefaces display numbers differently. Serif fonts tend to have "oldst
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/lining.png")
+knitr::include_graphics("images/week5/lining.png")
 ```
 
 ::: {.footer}
@@ -250,7 +250,7 @@ Typefaces with **tabular figures** print **every character with equal width** --
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/tabular-figures.png")
+knitr::include_graphics("images/week5/tabular-figures.png")
 ```
 :::
 
@@ -260,7 +260,7 @@ knitr::include_graphics("images/week4/tabular-figures.png")
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/tabular-google.svg")
+knitr::include_graphics("images/week5/tabular-google.svg")
 ```
 :::
 
@@ -290,7 +290,7 @@ Confirm that all symbols (aka **glyphs**) that you need exist *and* that they lo
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/symbols.png")
+knitr::include_graphics("images/week5/symbols.png")
 ```
 
 <br>
@@ -321,7 +321,7 @@ Lisa Charlotte Muth*
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/bold.png")
+knitr::include_graphics("images/week5/bold.png")
 ```
 
 <br>
@@ -348,7 +348,7 @@ Thin (light-weight fonts) fonts are hard to read. **Only use them in a high-cont
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/bold.png")
+knitr::include_graphics("images/week5/bold.png")
 ```
 
 <br>
@@ -375,7 +375,7 @@ Lisa Charlotte Muth*
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/large-enough-text.png")
+knitr::include_graphics("images/week5/large-enough-text.png")
 ```
 
 <br>
@@ -402,7 +402,7 @@ Lisa Charlotte Muth*
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/contrast-ratio.png")
+knitr::include_graphics("images/week5/contrast-ratio.png")
 ```
 
 <br>
@@ -428,7 +428,7 @@ Door to Europe](https://www.nytimes.com/interactive/2015/09/15/world/europe/migr
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/uppercase.png")
+knitr::include_graphics("images/week5/uppercase.png")
 ```
 
 <br>
@@ -493,7 +493,7 @@ Horror films, by Cristophe Nicault <https://github.com/cnicault/tidytuesday/tree
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/hierarchy.png")
+knitr::include_graphics("images/week5/hierarchy.png")
 ```
 
 <br>

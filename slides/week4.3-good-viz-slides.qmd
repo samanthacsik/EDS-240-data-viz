@@ -1,0 +1,2089 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../meds-slides-styles.scss
+editor_options: 
+  chunk_output_type: console
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 4.3]{.custom-title}
+
+[*What makes a good data viz?*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[Week 4 | January 29^th^, 2024]{.custom-subtitle3}
+
+---
+
+## {#looking-forward data-menu-title="Looking forward"} 
+
+[Looking forward . . .]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.center-text .body-text-m}
+Next week, we'll really start diving into improving the overall aesthetics of our data visualizations
+:::
+
+. . . 
+
+::: {.center-text}
+{{< fa palette title="a paint palette" >}} applying pre-made and custom color palettes
+:::
+
+. . . 
+
+::: {.center-text}
+{{< fa font title="a stylized capital letter 'A'" >}} updating fonts
+:::
+
+. . . 
+
+::: {.center-text}
+{{< fa pencil title="pencil" >}} adding annotations
+:::
+
+. . . 
+
+::: {.center-text}
+{{< fa chart-line title="a line chart with an upwards trending line" >}} fine-tuning themes
+:::
+
+. . . 
+
+::: {.center-text}
+{{< fa highlighter title="highlighter" >}} centering our primary message
+:::
+
+. . . 
+
+<br>
+
+::: {.center-text .body-text-m}
+Today, we'll familiarize ourselves with a general set of rules and best practices.
+:::
+
+---
+
+## {#good-design1 data-menu-title="Good data viz considerations"} 
+
+[Good data visualization design considers:]{.slide-title}
+
+<hr>
+
+::: {.incremental}
+- **data-ink ratio** (less is more, within reason)
+- how to **reduce eye movement** and **improve readability / interpretability** (e.g. through alternative legend positions, direct annotations)
+- putting things **in context**
+- how to **draw the main attention** to the most **important info**
+- **consistent** use of colors, spacing, typefaces, weights
+- **typeface / font choices** and how they affect both readability *and* audience emotions and perceptions
+- using **visual hierarchy** to guide the reader
+- **color choices** (and making sure that they're **colorblindness-friendly**)
+- **centers the people and communities** represented in your data
+- including **alt text**
+::::
+
+. . . 
+
+::: {.center-text .body-text-m}
+The above should *always be considered* in your design process, but *may not always be necessary*
+:::
+
+---
+
+## {#good-design2 data-menu-title="Good data viz considerations"}
+
+[Good data visualization design considers:]{.slide-title}
+
+<hr>
+
+- **data-ink ratio** (less is more, within reason)
+- how to **reduce eye movement** and **improve readability / interpretability** (e.g. through alternative legend positions, direct annotations)
+- putting things **in context**
+- how to **draw the main attention** to the most **important info**
+- **consistent** use of colors, spacing, typefaces, weights
+- [**typeface / font choices** and how they affect both readability *and* audience emotions and perceptions]{.gray-text}
+- [using **visual hierarchy** to guide the reader]{.gray-text}
+- [**color choices** (and making sure that they're **colorblindness-friendly**)]{.gray-text}
+- [**centers the people and communities** represented in your data]{.gray-text}
+- [including **alt text**]{.gray-text}
+
+::: {.center-text .body-text-m}
+The above should *always be considered* in your design process, but *may not always be necessary*
+:::
+
+---
+
+##  {#data-ink-eyes data-menu-title="# Less is more #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Simplify plots to reduce eye movement & improve readability / interpretability</p>
+</div>
+
+---
+
+## {#data-ink-ratio data-menu-title="Data-Ink ratio"} 
+
+[Data-Ink ratio: remove non-data ink]{.slide-title}
+
+<hr>
+
+[The [Data-Ink ratio](https://infovis-wiki.net/wiki/Data-Ink_Ratio) was introduced by Edward Tufte ([1983](https://faculty.salisbury.edu/~jtanderson/teaching/cosc311/fa21/files/tufte.pdf)) and argues that **non-data-ink** (i.e. ink used for for everything *except* the presentation of data itself) **should be removed wherever possible**.]{.body-text-s} 
+
+$$
+\text{Data-ink ratio} = \frac{\text{Data-ink}}{\text{Total ink used to print the graphic}}
+$$
+
+. . .
+
+::: {.body-text-s}
+Do so by starting with a complete theme (e.g. `theme_classic()`, `theme_void()`) and add / remove elements using `theme()`.
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s .gray-text}
+Low Data-Ink ratio
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+
+ggplot(penguins, aes(x = body_mass_g, fill = species)) +
+  geom_histogram(alpha = 0.5, position = "identity") +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species") +
+  theme(
+    axis.title = element_text(size = 17),
+    axis.text = element_text(size = 15),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 17),
+    legend.position = "bottom"
+    )
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s .gray-text}
+High Data-Ink ratio
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+
+ggplot(penguins, aes(x = body_mass_g, fill = species)) +
+  geom_histogram(alpha = 0.5, position = "identity") +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species") +
+  theme_classic() +
+  theme(
+    axis.line = element_blank(),
+    axis.title = element_text(size = 17),
+    axis.text = element_text(size = 15),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 17),
+    legend.position = "bottom"
+  )
+```
+:::
+
+::::
+
+---
+
+## {#data-ink-ratio-criticism data-menu-title="Data-Ink ratio criticism"} 
+
+[Maximizing the Data-Ink ratio isn't always *best*]{.slide-title2}
+
+<hr>
+
+<br>
+
+. . . 
+
+- Eliminating lots of non-data ink **may render visualizations difficult to read**
+
+    - [Inbar et al. (2007)](https://doi.org/10.1145/1362550.1362587) found that students preferred a more maximalist visualization design over the minimalist version proposed by Tufte
+
+. . . 
+
+- **Design choices depend on audience and purpose** -- how you choose to maximize your data-ink ratio will depend largely on *who* your visualization is for and the *purpose* it's meant to serve (e.g. a scientific publication may have specific requirements for the design / aesthetics of a visualization, while an infographic-style visualization may leave space for more creative liberties)
+
+. . . 
+
+<br>
+
+::: {.center-text .body-text-m}
+A general rule of thumb: **aim to maximize the data-ink ratio while not sacrificing overall design and aesthetics**.
+:::
+
+---
+
+## {#remove-redundant-legend data-menu-title="Remove redundant legend"} 
+
+[Remove redundant legend information]{.slide-title}
+
+<hr>
+
+Ask yourself, *"Does this legend provide additional information that I can't get elsewhere?"*. If not, remove a legend using:
+
+```{r}
+#| eval: false
+#| echo: true
+plot +
+  theme(
+    legend.position = "none"
+  )
+```
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+library(tidyverse)
+library(palmerpenguins)
+
+ggplot(penguins, aes(x = fct_infreq(species), fill = species)) +
+  geom_bar(alpha = 0.8) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species") +
+  theme_classic() +
+  theme(
+    axis.line = element_blank(),
+    axis.title = element_text(size = 17),
+    axis.text = element_text(size = 15),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 17),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0))
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+library(tidyverse)
+library(palmerpenguins)
+
+ggplot(penguins, aes(x = fct_infreq(species), fill = species)) +
+  geom_bar(alpha = 0.8) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species") +
+  theme_classic() +
+  theme(
+    axis.line = element_blank(),
+    axis.title = element_text(size = 17),
+    axis.text = element_text(size = 15),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0)),
+    legend.position = "none"
+  )
+```
+:::
+
+::::
+
+::: {.center-text}
+Doing so increases the data-ink ratio and reduces overall eye movement.
+:::
+
+---
+
+## {#labels-rotated-text data-menu-title="Remove redundant legend"} 
+
+[Add direct labels & minimize rotated text]{.slide-title}
+
+<hr>
+
+We can use a combination of `coord_flip()`, `geom_text()`, `labs()`, and `theme()` to further eliminate non-data ink and reduce overall eye movement. 
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+library(tidyverse)
+library(palmerpenguins)
+
+ggplot(penguins, aes(x = fct_infreq(species), fill = species)) +
+  geom_bar(alpha = 0.8) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species") +
+  theme_classic() +
+  theme(
+    axis.line = element_blank(),
+    axis.title = element_text(size = 17),
+    axis.text = element_text(size = 15),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 17),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0))
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+library(tidyverse)
+library(palmerpenguins)
+
+ggplot(penguins, aes(x = fct_rev(fct_infreq(species)), fill = species)) +
+  geom_bar(alpha = 0.8) +
+  coord_flip() +
+  geom_text(aes(label = ..count..), stat = "count", hjust = 1.5, size = 6, colour = "white") +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species",
+       title = "Penguins counts at Palmer Station LTER", 
+       subtitle = "2007 - 2009") +
+  theme_classic() +
+  theme(
+    axis.line = element_blank(),
+    #axis.title = element_text(size = 17),
+    axis.text.y = element_text(size = 17),
+    axis.title = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    legend.position = "none",
+    plot.title.position = "plot",
+    plot.title = element_text(size = 25),
+    plot.subtitle = element_text(size = 20)
+  )
+```
+:::
+
+::::
+
+Of course, a visualization like this wouldn't be appropriate for all audiences / contexts (e.g. scientific journal), but it in many ways simplifies the presentation in a way where an audience could still walk away with the same type of information.
+
+---
+
+## {#move-legend-position data-menu-title="Move the legend (position)"} 
+
+[Move the legend (positioning)]{.slide-title}
+
+<hr>
+
+Reduce eye movement by updating the legend position (e.g.  move it onto the plot panel):
+
+```{r}
+#| eval: false
+#| echo: true
+plot + 
+  theme(
+    legend.position = c(0.85, 0.15) # you'll need to adjust these values for your plot!
+  )
+```
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Original plot:
+:::
+
+```{r}
+ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species)) +
+  geom_point(aes(color = species, shape = species),
+             size = 3, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE, aes(color = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin bill dimensions",
+       subtitle = "Bill length and depth for Adelie, Chinstrap and Gentoo Penguins at Palmer Station LTER",
+       x = "Bill length (mm)", y = "Bill depth (mm)",
+       color = "Penguin species", shape = "Penguin species") +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(size = 22),
+    plot.subtitle = element_text(size = 17, margin = margin(t = 0, r = 0, b = 15, l = 0)),
+    axis.title = element_text(size = 15),
+    axis.text = element_text(size = 13),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0)),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 16)
+       )
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Updated legend position:
+:::
+
+```{r}
+ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species)) +
+  geom_point(aes(color = species, shape = species),
+             size = 3, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE, aes(color = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin bill dimensions",
+       subtitle = "Bill length and depth for Adelie, Chinstrap and Gentoo Penguins at Palmer Station LTER",
+       x = "Bill length (mm)", y = "Bill depth (mm)",
+       color = "Penguin species", shape = "Penguin species") +
+  theme_minimal() +
+  theme(
+    legend.position = c(0.85, 0.15),
+    plot.title.position = "plot",
+    plot.title = element_text(size = 22),
+    plot.subtitle = element_text(size = 17, margin = margin(t = 0, r = 0, b = 15, l = 0)),
+    axis.title = element_text(size = 15),
+    axis.text = element_text(size = 13),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0)),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 16)
+       )
+```
+:::
+
+::::
+
+[Also note the redundant `species` mapping (color and shape) -- sometime redundancy is important for accessibility!]{.body-text-s}
+
+---
+
+## {#legend-ggtext data-menu-title="Move the legend (ggtext)"} 
+
+[Move the legend (incorporate into title text)]{.slide-title2}
+
+<hr>
+
+[Reduce eye movement and excess ink by including legend info in the plot (sub)title (here, using the [`{ggtext}` package](https://wilkelab.org/ggtext/); minimal code example, below):]{.body-text-s}
+
+```{r}
+#| eval: false
+#| echo: true
+
+plot +
+  labs(subtitle = "Some subtitle text where <span style='color:red;'>**these words**</span> are bolded and red") +
+  theme(plot.subtitle(ggtext::element_markdown()))
+```
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Original plot:
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species)) +
+  geom_point(aes(color = species, shape = species),
+             size = 3, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE, aes(color = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin bill dimensions",
+       subtitle = "Bill length and depth for Adelie, Chinstrap and Gentoo Penguins at Palmer Station LTER",
+       x = "Bill length (mm)", y = "Bill depth (mm)",
+       color = "Penguin species", shape = "Penguin species") +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(size = 22),
+    plot.subtitle = element_text(size = 17, margin = margin(t = 0, r = 0, b = 15, l = 0)),
+    axis.title = element_text(size = 15),
+    axis.text = element_text(size = 13),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0)),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 16)
+       )
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Legend as styled title text:
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+library(ggtext)
+
+ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species)) +
+  geom_point(aes(color = species, shape = species), size = 3, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE, aes(color = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin bill dimensions",
+       subtitle = "Bill length and depth for <span style='color:darkorange;'>**Adelie**</span>, <span style='color:purple;'>**Chinstrap**</span> and <span style='color:cyan4;'>**Gentoo**</span> Penguins at Palmer Station LTER",
+       x = "Bill length (mm)",
+       y = "Bill depth (mm)",
+       color = "Penguin species",
+       shape = "Penguin species") +
+  theme_minimal() +
+  theme(
+    legend.position = "none",
+    plot.title.position = "plot",
+    plot.title = element_text(size = 22),
+    plot.subtitle = ggtext::element_markdown(size = 17, margin = margin(t = 0, r = 0, b = 15, l = 0)),
+    axis.title = element_text(size = 15),
+    axis.text = element_text(size = 13),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0))
+    )
+```
+:::
+
+::::
+
+---
+
+## {#add-direct-labels data-menu-title="Move the legend (direct labels)"} 
+
+[Move the legend (use direct labels)]{.slide-title}
+
+<hr>
+
+[Reduce eye movement and excess ink by including legend info as direct labels on the plot (here, using the [`{geomtextpath}` package](https://allancameron.github.io/geomtextpath/); minimal code example, below):]{.body-text-s}
+
+```{r}
+#| eval: false
+#| echo: true
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = species)) +
+  geom_point(size = 3, alpha = 0.8) +
+  geomtextpath::geom_labelsmooth(aes(label = species), method = "lm", size = 5)
+```
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Original plot:
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(data = penguins, aes(x = bill_length_mm,y = bill_depth_mm, group = species)) +
+  geom_point(aes(color = species, shape = species),
+             size = 3, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE, aes(color = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin bill dimensions",
+       subtitle = "Bill length and depth for Adelie, Chinstrap and Gentoo Penguins at Palmer Station LTER",
+       x = "Bill length (mm)", y = "Bill depth (mm)",
+       color = "Penguin species", shape = "Penguin species") +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(size = 22),
+    plot.subtitle = ggtext::element_markdown(size = 17, margin = margin(t = 0, r = 0, b = 15, l = 0)),
+    axis.title = element_text(size = 15),
+    axis.text = element_text(size = 13),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0))
+    )
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Legend as direct labels:
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = species)) +
+  geom_point(size = 3, alpha = 0.8) +
+  geomtextpath::geom_labelsmooth(aes(label = species), method = "lm", size = 5) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin bill dimensions",
+       subtitle = "Bill length and depth for Adelie, Chinstrap and Gentoo Penguins at Palmer Station LTER",
+       x = "Bill length (mm)", y = "Bill depth (mm)",
+       color = "Penguin species", shape = "Penguin species") +
+  theme_minimal() +
+  theme(
+    legend.position = "none",
+    plot.title.position = "plot",
+    plot.title = element_text(size = 22),
+    plot.subtitle = ggtext::element_markdown(size = 17, margin = margin(t = 0, r = 0, b = 15, l = 0)),
+    axis.title = element_text(size = 15),
+    axis.text = element_text(size = 13),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0))
+    )
+```
+:::
+
+::::
+
+---
+
+## {#use-annotations-neil data-menu-title="Use annotations (Neil)"} 
+
+[Use annotations to improve readability / interpretability]{.slide-title3}
+
+<hr>
+
+Is the y-axis necessary for this plot? What's the author's goal? How do annotations help achieve that goal?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/neil-without-annotations.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/neil-with-annotations.png")
+```
+:::
+
+::::
+
+::: {.center-text .gray-text .body-text-s}
+[Is white space always your friend](https://questionsindataviz.com/2018/01/06/is-white-space-always-your-friend/), by Neil Richards
+:::
+
+---
+
+## {#use-annotations-covid data-menu-title="Use annotations (COVID)"} 
+
+[Use annotations to improve readability / interpretability]{.slide-title3}
+
+<hr>
+
+> "The key thing we do is to add a title to the chart, as an entry point and to explain what is going on. **Text and other annotations add enourmous value for non-chart people.**"
+
+::: {.right-align-text .body-text-s}
+-[John Burn-Murdoch](https://www.ft.com/john-burn-murdoch), Financial Times
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/burn-murdoch-covid.png")
+```
+
+<br>
+
+::: {.center-text .body-text-s .gray-text}
+[Vaccines and Omicron mean Covid now less deadly than flu in England](https://www.ft.com/content/e26c93a0-90e7-4dec-a796-3e25e94bc59b), by John Burn-Murdoch
+:::
+
+---
+
+##  {#put-in-context data-menu-title="# Provide context #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Consider ways to provide additional context for your data</p>
+</div>
+
+<!-- --- -->
+
+<!-- ## {#wilke-context data-menu-title="Provide context"}  -->
+
+<!-- [Plot groups against the whole when faceting]{.slide-title2} -->
+
+<!-- <hr> -->
+
+<!-- <br> -->
+
+<!-- :::: {.columns} -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "100%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week4/wilke-context-overlapping.png") -->
+<!-- ``` -->
+<!-- ::: -->
+
+<!-- ::: {.column width="50%"} -->
+
+<!-- ::: -->
+
+<!-- :::: -->
+
+<!-- ::: {.center-text .gray-text .body-text-s} -->
+<!-- *Source: [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/histograms-density-plots.html), by Claus Wilke* -->
+<!-- ::: -->
+
+---
+
+## {#wilke-context data-menu-title="Provide context"} 
+<!-- visibility="uncounted" -->
+
+[Plot groups against the whole when faceting]{.slide-title2}
+
+<hr>
+
+Facets (aka small multiples) allow us to more easily view individual groups. Here, the author plots individual groups (male vs. female passengers on the Titanic) against the data set total (all passengers): 
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center .body-text-s .gray-text}
+The area under each curve corresponds to the total number of male and female passengers with known age (468 (M) and 288 (F)).
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/wilke-context-overlapping.png")
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center .body-text-s .gray-text}
+The colored areas show the density estimates of the ages of M and F passengers, and the gray areas show the overall passenger age distribution.
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/wilke-context-separate.png")
+```
+:::
+
+::::
+
+::: {.footer}
+Example from [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/histograms-density-plots.html), by Claus Wilke
+:::
+
+---
+
+## {#benchmark-values data-menu-title="Benchmark values"} 
+
+[Add benchmark values]{.slide-title}
+
+<hr>
+
+Add vertical (`geom_vline()`) or horizontal (`geom_hline()`) lines at important values:
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/mko_temps.png")
+```
+:::
+
+::: {.column width="50%"}
+[*A minimal code example:*]{.body-text-s}
+```{r}
+#| eval: false
+#| echo: true
+plot + 
+  geom_vline(xintercept = 11) +
+  geom_vline(xintercept = 16) +
+  geom_vline(xintercept = 21) 
+```
+:::
+
+::::
+
+[**Fig cap:** Temporal Variation in Bottom Temperature. Monthly bottom (4.5 m depth) temperatures at Mohawk Reef (34.396290, -119.731297) in Santa Barbara, CA compiled from 2005-2017. Vertical dashed lines represent three of four treatment temperatures (11, 16, 21°C). Data Source: Santa Barbara Coastal Long-Term Ecological Research group (adapted from [Csik et al. 2023](https://doi.org/10.3389/fmars.2023.1072807))]{.body-text-s}
+
+---
+
+## {#1-1-line data-menu-title="1:1 line"} 
+
+[Add 1:1 line, if relevant]{.slide-title}
+
+<hr>
+
+For data where the **relevant comparison is the x = y line** (e.g. scatter plots of paired data), **plot the 1:1 line**. 
+
+Below, the author compares gene expression levels in a mutant virus to the non-mutated (wild-type) variant. He presents three (increasingly better) versions of the same plot:
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="33%"}
+::: {.center-text .body-text-s .gray-text}
+Bad
+:::
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/x-y-bad.png")
+```
+:::
+
+::: {.column width="33%"}
+::: {.center-text .body-text-s .gray-text}
+Better
+:::
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/x-y-better.png")
+```
+:::
+
+::: {.column width="33%"}
+::: {.center-text .body-text-s .gray-text}
+Best
+:::
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/x-y-best.png")
+```
+:::
+
+::::
+
+::: {.footer}
+Example from [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/balance-data-context.html), by Claus Wilke
+:::
+
+
+---
+
+##  {#draw-attention data-menu-title="# Draw attention #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Draw attention to important information / values</p>
+</div>
+
+---
+
+## {#color-groups data-menu-title="Color groups"} 
+
+[Use color to highlight groups / values]{.slide-title}
+
+<hr>
+
+Highlight data by coloring groups of interest either manually or by using helpful packages, like `{gghighlight}` (we saw an example of this in [lecture 3.3](https://samanthacsik.github.io/EDS-240-data-viz/slides/week3.3-evolution-slides.html#/spaghetti-plot)):
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+penguins_new <- penguins |> 
+  mutate(color = case_when(
+    species == "Adelie" ~ "darkred",
+    TRUE ~ "gray70"
+  ))
+
+ggplot() +
+  geom_bar(penguins_new, 
+           mapping = aes(x = fct_rev(fct_infreq(species)), fill = color), alpha = 0.8) +
+  coord_flip() +
+  geom_text(penguins_new,
+            mapping = aes(x = fct_rev(fct_infreq(species)), label = ..count..), 
+            stat = "count", hjust = 1.5, size = 6, colour = "black") +
+  scale_fill_identity(guide = "none") +
+  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species",
+       title = "Penguins counts at Palmer Station LTER", 
+       subtitle = "2007 - 2009") +
+  theme_classic() +
+  theme(
+    axis.line = element_blank(),
+    axis.text.y = element_text(size = 17),
+    axis.title = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    legend.position = "none",
+    plot.title.position = "plot",
+    plot.title = element_text(size = 25),
+    plot.subtitle = element_text(size = 20)
+  )
+```
+
+---
+
+## {#ggforce data-menu-title="Annotate groups"} 
+
+[Use annotations to highlight groups / values]{.slide-title2}
+
+<hr>
+
+Or add annotations to your plots to call attention to data of interest (here, shown using the `{ggforce}` package; minimal code example, below):
+
+```{r}
+#| eval: false
+#| echo: true
+
+plot + 
+  ggforce::geom_mark_ellipse(aes(filter = species == "Gentoo", label = "Gentoo penguins", 
+                                 description = "This species tends to have..."))
+```
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+ggplot(penguins, aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
+  geom_point() +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  ggforce::geom_mark_ellipse(aes(filter = species == "Gentoo", label = "Gentoo penguins", 
+                        description = "This species tends to have larger body masses and flipper lengths than the other species")) +
+  coord_cartesian(clip = "off") +
+  labs(x = "Body mass (g)", y = "Flipper length (mm)", color = "Penguins species") +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(size = 22),
+    plot.subtitle = element_text(size = 17, margin = margin(t = 0, r = 0, b = 15, l = 0)),
+    axis.title = element_text(size = 15),
+    axis.text = element_text(size = 13),
+    axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0)),
+    legend.position = "top"
+       )
+```
+
+---
+
+## {#show-values-directly1 data-menu-title="Show important values directly"} 
+
+[Show important thresholds / values directly]{.slide-title2}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "90%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/aqi-goleta.png")
+```
+
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::: {.center-text .gray-text .body-text-s}
+*Source: [Looking Back: The Thomas Fire’s Impact on Santa Barbara Air Quality](https://dailynexus.com/2018-01-22/looking-back-the-thomas-fires-impact-on-santa-barbara-air-quality/), in The Daily Nexus*
+:::
+
+::::
+
+---
+
+## {#show-values-directly2 data-menu-title="Show important values directly" visibility="uncounted"} 
+
+[Show important thresholds / values directly]{.slide-title2}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "90%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/aqi-goleta.png")
+```
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "90%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/aqi-table.png")
+```
+:::
+
+::: {.center-text .gray-text .body-text-s}
+*Source: [Looking Back: The Thomas Fire’s Impact on Santa Barbara Air Quality](https://dailynexus.com/2018-01-22/looking-back-the-thomas-fires-impact-on-santa-barbara-air-quality/), in The Daily Nexus*
+:::
+
+::::
+
+---
+
+##  {#avoid data-menu-title="# Things to avoid #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">What *doesn't* work so well in data visualization?</p>
+</div>
+
+---
+
+## {#bad-data-viz data-menu-title="Bad data viz considerations"} 
+
+[Good data visualization design *generally* avoids...]{.slide-title2}
+
+<hr>
+
+<br>
+
+::: {.incremental}
+- **information overload** (e.g. too many colors / shapes / fonts, groups, variables)
+- **dual axes** (can easily mislead audiences)
+- **pie charts** (really hard for humans to effectively compare the size of angles)
+- **3D plots** (distort perception and are generally distracting)
+:::
+
+<br>
+
+. . . 
+
+::: {.center-text}
+**Our job is to make it as easy as possible for our readers to understand our data without having to do mental gymnastics.** The chart types above (more often than not) ask too much of our readers in their quest to understand the information being presented.
+:::
+
+. . . 
+
+<br>
+<br>
+<br>
+
+::: {.center-text .body-text-m}
+There *may* be circumstances where the above are executed well...but more often than not, you're safest avoiding them.
+:::
+
+---
+
+## {#info-overload-map data-menu-title="Info overload"}
+
+[Information overload is no fun . . . ]{.slide-title}
+
+<hr>
+
+It can be nearly impossible to easily process many different variables, colors, shapes, etc. on the same visualization (and realistically, most people won't want to take the time to even try):
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/overload-map.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+*Source: [Stack Exchange](https://gis.stackexchange.com/a/3132)*
+:::
+
+---
+
+## {#info-overload-scatter data-menu-title="Info overload" visibility="uncounted"}
+
+[Information overload is no fun . . . ]{.slide-title}
+
+<hr>
+
+It can be nearly impossible to easily process many different variables, colors, shapes, etc. on the same visualization (and realistically, most people won't want to take the time to even try):
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/idk-plot.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+*Source: Unknown, but borrowed from Allison Horst's [lecture](https://docs.google.com/presentation/d/e/2PACX-1vSpUdai7BTXprh3dwSNBpJymNGUIOFhEgQn5XbQWZhWy8EpUyd64Lem08YK_kc6tP0iyoJ5wRAVvSYe/pub?start=false&loop=false&delayms=3000&slide=id.ge99f105fe7_0_25)*
+:::
+
+---
+
+## {#info-overload-parallel data-menu-title="Info overload" visibility="uncounted"}
+
+[Information overload is no fun . . . ]{.slide-title}
+
+<hr>
+
+It can be nearly impossible to easily process many different variables, colors, shapes, etc. on the same visualization (and realistically, most people won't want to take the time to even try):
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/parallel-plot.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+*Source: Unknown, but borrowed from Allison Horst's [lecture](https://docs.google.com/presentation/d/e/2PACX-1vSpUdai7BTXprh3dwSNBpJymNGUIOFhEgQn5XbQWZhWy8EpUyd64Lem08YK_kc6tP0iyoJ5wRAVvSYe/pub?start=false&loop=false&delayms=3000&slide=id.ge99f105fe7_0_30)*
+:::
+
+---
+
+## {#info-overload-fixes data-menu-title="Overwhelming map"}
+
+[Reduce information overload whenever possible]{.slide-title2}
+
+<hr>
+
+<br>
+
+[Consider some of the approaches we've already discussed:]{.body-text-m}
+
+- **highlighting** the most important groups / values
+- **faceting** (small multiples)
+- creating **separate visualizations**
+- cohesive and intuitive **color scheme** (more on colors next week)
+
+<br>
+
+. . . 
+
+[Or some that we haven't covered:]{.body-text-m}
+
+- create **interactive** tables and / or visualizations using [htmlwidgets](https://www.htmlwidgets.org/) (e.g. [leaflet](https://rstudio.github.io/leaflet/) maps, [plotly](https://plotly.com/r/), charts, [DT](https://rstudio.github.io/DT/) data tables)
+- create **reactive** outputs using tools like [`{shiny}`](https://shiny.posit.co/)
+  - check out the [EDS 430 (Intro to Shiny)](https://ucsb-meds.github.io/EDS-430-Intro-to-Shiny/) materials as a starting point!
+
+---
+
+## {#dual-axes1 data-menu-title="Dual axes 1"} 
+
+[Dual y-axes can deliberately mislead readers]{.slide-title2}
+
+<hr>
+
+[**The scales of dual axis charts are arbitrary and therefore can (deliberately) mislead readers about the relationship between the two data series.** Let's take this example using real [Worldbank data](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2016&start=1960&view=chart) for the German GDP and the global GDP between 2004 and 2016:]{.body-text-s}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<br>
+<br>
+<br>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/dual-axis1.png")
+```
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+::: {.footer}
+Example from [Why not to use two axes, and what to use instead](https://blog.datawrapper.de/dualaxis/), by Lisa Charlotte Muth
+:::
+
+---
+
+## {#dual-axes2 data-menu-title="Dual axes 2" visibility="uncounted"} 
+
+[Dual y-axes can deliberately mislead readers]{.slide-title2}
+
+<hr>
+
+[**The scales of dual axis charts are arbitrary and therefore can (deliberately) mislead readers about the relationship between the two data series.** Let's take this example using real [Worldbank data](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2016&start=1960&view=chart) for the German GDP and the global GDP between 2004 and 2016:]{.body-text-s}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<br>
+<br>
+<br>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/dual-axis1.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/dual-axis2.png")
+```
+:::
+
+::::
+
+::: {.footer}
+Example from [Why not to use two axes, and what to use instead](https://blog.datawrapper.de/dualaxis/), by Lisa Charlotte Muth
+:::
+
+::: notes
+The proportions of the two scales are often different from each other in dual axis charts. If the left axis would go down to zero, the chart would be twice as long. If the right axis would go down to zero, the chart would be almost three times as long. This is how both axes look like when we extend them to zero.
+
+So while the chart looks like the German GDP and the global GDP go up at roughly the same rate (at least until 2014), they don’t. The global GDP increased by 80% until 2014; the GDP of Germany by 40%.
+:::
+
+---
+
+## {#dual-axes3 data-menu-title="Dual axes 3" visibility="uncounted"} 
+
+[Dual y-axes can deliberately mislead readers]{.slide-title2}
+
+<hr>
+
+[**The scales of dual axis charts are arbitrary and therefore can (deliberately) mislead readers about the relationship between the two data series.** Let's take this example using real [Worldbank data](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2016&start=1960&view=chart) for the German GDP and the global GDP between 2004 and 2016:]{.body-text-s}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<br>
+<br>
+<br>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/dual-axis1.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/dual-axis3.png")
+```
+:::
+
+::::
+
+::: {.footer}
+Example from [Why not to use two axes, and what to use instead](https://blog.datawrapper.de/dualaxis/), by Lisa Charlotte Muth
+:::
+
+::: notes
+This is how the chart looks like with the same baseline. (Meaning, if we extended both y-axes to zero, they would have the same height.). In the best case, our readers will now think: “Seems like the global GDP increased more than the German GDP”. Yes! Success! In the worst case, our readers will think: “In the first years, the German GDP was higher than the global GDP. And then in 2011, the two GDP’s were the same:”
+
+**If things look close-by on a chart, it’s hard to constantly remember that actually, they are miles apart.**
+:::
+
+---
+
+## {#dual-axes-alt-two-charts data-menu-title="Dual axes (alt: side-by-side)"} 
+
+[Alternatives to dual y-axes: side-by-side charts]{.slide-title2}
+
+<hr>
+
+Separate your data series into **side-by-side charts** -- this allows us to create two different axes for two different charts. 
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/dual-two-charts.png")
+```
+
+<br>
+
+::: {.footer}
+Example from [Why not to use two axes, and what to use instead](https://blog.datawrapper.de/dualaxis/), by Lisa Charlotte Muth
+:::
+
+---
+
+## {#dual-axes-alt-indexed data-menu-title="Dual axes (alt: indexed)"} 
+
+[Alternatives to dual y-axes: indexed charts]{.slide-title2}
+
+<hr>
+
+**Indexed charts** show the *relative change* (percentage increase of decrease) of our data series over time. Consider adding labels or tooltips (e.g. using [`{plotly}`](https://plotly.com/r/)) to include important absolute numbers.
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/dual-axes-indexed.png")
+```
+
+<br>
+
+::: {.footer}
+Example from [Why not to use two axes, and what to use instead](https://blog.datawrapper.de/dualaxis/), by Lisa Charlotte Muth
+:::
+
+---
+
+## {#dual-axes-alt-prioritize data-menu-title="Dual axes (alt: prioritize / label)"} 
+
+[Alternatives to dual y-axes: prioritize & label]{.slide-title2}
+
+<hr>
+
+Consider **prioritizing and plotting the more important of the two data series**. Then **use annotations** to add information about the omitted variable. This option may not work well for all data sets, but can be effective for dual-axis charts that present both absolute and relative numbers of the same measure.
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/dual-labeling.png")
+```
+
+<br>
+
+::: {.footer}
+Example from [Why not to use two axes, and what to use instead](https://blog.datawrapper.de/dualaxis/), by Lisa Charlotte Muth
+:::
+
+---
+
+## {#dual-axes-alt-connected-scatter data-menu-title="Dual axes (alt: connected scatterplot)"} 
+
+[Alternatives to dual y-axes: connected scatterplot]{.slide-title2}
+
+<hr>
+
+A **connected scatterplot** places one variable on the y-axis and the other on the x-axis (here, replacing time). Be mindful that these plots are generally less inutitive for a reader and may take more time to decipher patterns.
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/connected-scatterplot.png")
+```
+
+<br>
+
+::: {.footer}
+Example from [Why not to use two axes, and what to use instead](https://blog.datawrapper.de/dualaxis/), by Lisa Charlotte Muth
+:::
+
+---
+
+## {#pie-charts1 data-menu-title="Pie charts (single pie)"}
+
+[The problem with pie charts . . .]{.slide-title}
+
+<hr>
+
+<br>
+
+. . .  is actually a problem with humans -- **we're not so great at comparing angles**. We're bad at comparing angles within a **single** pie chart if they're all similar:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%"
+knitr::include_graphics("images/week4/single-pie.png")
+```
+:::
+
+::: {.column width="50%"}
+:::
+
+::::
+
+<br>
+
+::: {.footer}
+Examples from [Allison Horst](https://docs.google.com/presentation/d/e/2PACX-1vSpUdai7BTXprh3dwSNBpJymNGUIOFhEgQn5XbQWZhWy8EpUyd64Lem08YK_kc6tP0iyoJ5wRAVvSYe/pub?start=false&loop=false&delayms=3000&slide=id.ge99f105fe7_0_66), who adapted from [From Data to Viz](https://www.data-to-viz.com/caveat/pie.html)
+:::
+
+---
+
+## {#pie-charts2 data-menu-title="Pie charts (single pie + bar)" visibility="uncounted"}
+
+[The problem with pie charts . . .]{.slide-title}
+
+<hr>
+
+<br>
+
+. . .  is actually a problem with humans -- **we're not so great at comparing angles**. We're bad at comparing angles within a **single** pie chart if they're all similar:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%"
+knitr::include_graphics("images/week4/single-pie.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "60%"
+knitr::include_graphics("images/week4/single-bar.png")
+```
+:::
+
+::::
+
+<br>
+
+::: {.footer}
+Examples from [Allison Horst](https://docs.google.com/presentation/d/e/2PACX-1vSpUdai7BTXprh3dwSNBpJymNGUIOFhEgQn5XbQWZhWy8EpUyd64Lem08YK_kc6tP0iyoJ5wRAVvSYe/pub?start=false&loop=false&delayms=3000&slide=id.ge99f105fe7_0_66), who adapted from [From Data to Viz](https://www.data-to-viz.com/caveat/pie.html)
+:::
+
+---
+
+## {#pie-charts3 data-menu-title="Pie charts (multiple)"}
+
+[The problem with pie charts . . .]{.slide-title}
+
+<hr>
+
+<br>
+
+. . .  is actually a problem with humans -- **we're not so great at comparing angles**. And we're even worse at comparing angles **across multiple** pie charts:
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "60%"
+knitr::include_graphics("images/week4/multiple-pies.png")
+```
+
+<br>
+
+::: {.footer}
+Examples from [Allison Horst](https://docs.google.com/presentation/d/e/2PACX-1vSpUdai7BTXprh3dwSNBpJymNGUIOFhEgQn5XbQWZhWy8EpUyd64Lem08YK_kc6tP0iyoJ5wRAVvSYe/pub?start=false&loop=false&delayms=3000&slide=id.ge99f105fe7_0_66), who adapted from [From Data to Viz](https://www.data-to-viz.com/caveat/pie.html)
+:::
+
+---
+
+## {#good-pie data-menu-title="Good pie"}
+
+[Sometimes, pie charts can be a good option]{.slide-title2}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "60%"
+knitr::include_graphics("images/week4/good-pie.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+*ABC Enterprise Sales. Source: [How to Use Charts and Graphs Effectively](https://www.mindtools.com/ahb9niu/how-to-use-charts-and-graphs-effectively), by MindTools*
+:::
+:::
+
+::: {.column width="50%"}
+**IF** you decide a pie chart is the right option, consider: 
+
+::: {.incremental}
+- [are the main takeaways clear (e.g. proportions different enough)?]{.body-text-s}
+- [avoiding lots of wedges]{.body-text-s}
+- [aggregating if there are many tiny ones]{.body-text-s}
+- [emphasizing most important wedge]{.body-text-s}
+- [labeling directly on the chart]{.body-text-s}
+- [comparing to a bar chart version to see which is a better version]{.body-text-s}
+:::
+
+:::
+
+::::
+
+<br>
+
+::: {.footer}
+Examples from [Allison Horst](https://docs.google.com/presentation/d/e/2PACX-1vSpUdai7BTXprh3dwSNBpJymNGUIOFhEgQn5XbQWZhWy8EpUyd64Lem08YK_kc6tP0iyoJ5wRAVvSYe/pub?start=false&loop=false&delayms=3000&slide=id.ge99f105fe7_0_66), who adapted from [From Data to Viz](https://www.data-to-viz.com/caveat/pie.html)
+:::
+
+---
+
+## {#treemap data-menu-title="Pie (alt: treemap)"}
+
+[Pie chart alternative: treemap]{.slide-title}
+
+<hr>
+
+<br>
+
+As an alternative to a pie chart, consider [**treemaps**](https://www.data-to-viz.com/graph/treemap.html). Treemaps display hierarchical data as a set of nested rectangles -- simpler versions can be used to display parts of a whole using rectangles (which are easier for us to estimate than angles).
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<br>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/treemap-simple.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+*Source: [From Data to Viz](https://www.data-to-viz.com/caveat/pie.html)*
+:::
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "60%"
+knitr::include_graphics("images/week4/treemap-nested.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+*Source: [`{treemapify}` pkgdown site](https://wilkox.org/treemapify/)*
+:::
+:::
+
+::::
+
+---
+
+## {#3d-charts-occlusion data-menu-title="3D charts (occlusion)"}
+
+[3D charts distort perspective]{.slide-title}
+
+<hr>
+
+[**Occlusion:**]{.teal-text} When we see one object occlude (aka obstruct) another on a 2D surface, our brain perceives the object being hidden as farther away:
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/occlusion.png")
+```
+
+<br>
+
+::: {.footer}
+Source: [Data Visualization: Why 3D charts are a terrible idea](https://medium.com/@purohitpraveen/data-vizualization-why-3d-charts-are-a-terrible-idea-32657fbb928e)
+:::
+
+---
+
+## {#3d-charts-pers-dist data-menu-title="3D charts (perspective distortion)"}
+
+[3D charts distort perspective]{.slide-title2}
+
+<hr>
+
+[**Perspective distortion:**]{.teal-text} When we view objects in 3D, the objects farther away appear smaller, but our brain perceives them to be of larger size than in the picture:
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/perspective-distortion.png")
+```
+
+<br>
+
+::: {.footer}
+Source: [Data Visualization: Why 3D charts are a terrible idea](https://medium.com/@purohitpraveen/data-vizualization-why-3d-charts-are-a-terrible-idea-32657fbb928e)
+:::
+
+---
+
+## {#gratuitous-3d data-menu-title="Gratuitous 3D"}
+
+[Avoid *gratuitous* 3D]{.slide-title}
+
+<hr>
+
+Consider how gray and blue areas visually compare in the 3D version? What about gray and orange? Now how do your interpretations change when inspecting the 2D version?
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/3d-pie.png")
+```
+
+<br>
+ 
+**The pie chart on the right is an example of using 3D purely for decorative purposes.** Here, the third dimension doesn't actually convey any additional data. Claus Wilke [calls this](https://clauswilke.com/dataviz/no-3d.html) **gratuitous 3D**, and you should always avoid it.
+
+::: {.footer}
+Source: [Data Visualization: Why 3D charts are a terrible idea](https://medium.com/@purohitpraveen/data-vizualization-why-3d-charts-are-a-terrible-idea-32657fbb928e)
+:::
+
+---
+
+## {#3d-position-scales data-menu-title="3D charts (Ex: 3D position scales)"}
+
+[Avoid 3D position scales]{.slide-title}
+
+<hr>
+
+A plot with three genuine position scales (x, y, and z) to represent `mtcars` data (viewed from four different perspectives:
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/3d-fuel-eff.png")
+```
+
+::: {.footer}
+Source: [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/no-3d.html), by Claus Wilke
+:::
+
+---
+
+## {#3d-position-scales-alt1 data-menu-title="3D charts (alt 1)"}
+
+[Alternative (a) to 3D position scales]{.slide-title}
+
+<hr>
+
+If we primarily care about fuel efficiency as the response variable, **plot it twice** (once against displacement and once against power):
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/2d-fuel-eff.png")
+```
+
+<br>
+
+::: {.footer}
+Source: [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/no-3d.html), by Claus Wilke
+:::
+
+---
+
+## {#3d-position-scales-alt2 data-menu-title="3D charts (alt 2)"}
+
+[Alternative (b) to 3D position scales]{.slide-title}
+
+<hr>
+
+[If we are more interested in how displacement and power relate to each other, with fuel efficiency as a secondary variable of interest, **create a bubble chart** (plot power vs. displacement and map fuel efficiency onto the size of the dots). Be mindful that three variables (even in a 2D space) are still challenging for readers to quickly comprehend.]{.body-text-s}
+
+<br>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/bubble-fuel-eff.png")
+```
+
+<br>
+
+::: {.footer}
+Source: [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/no-3d.html), by Claus Wilke
+:::
+
+---
+
+##  {#examples data-menu-title="# Data Viz Examples #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Let's consider some example data visualizations together</p>
+</div>
+
+---
+
+## {#co2-1 data-menu-title="CO2 in conf rooms"} 
+
+[CO~2~ in conference rooms]{.slide-title}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/clearing-air.png")
+```
+
+::: {.center-text .gray-text .body-text-s}
+Clearing the Air, by [Christopher Ingraham](https://www.washingtonpost.com/people/christopher-ingraham/), writing for [The Washington Post](https://www.washingtonpost.com/business/2019/06/06/why-crowded-meetings-conference-rooms-make-you-so-so-tired/)
+:::
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+
+**Take some time to discuss the following:**
+
+- where are your eyes drawn first, second, etc.?
+- what are the main messages / takeaways?
+- where has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?
+- what would you change about this visualization?
+:::
+
+::::
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#co2-2 data-menu-title="CO2 in conf rooms"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/clearing-air-annotated.png")
+```
+
+::: {.center-text .gray-text .body-text-s}
+Annotations adapted from [@chezVoila](https://twitter.com/chezVoila/status/1136631524919513088)
+:::
+
+---
+
+## {#penguins data-menu-title="Palmer penguin classification"} 
+
+[Palmer penguin classification]{.slide-title}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/thompson-penguins.png")
+```
+
+::: {.center-text .gray-text .body-text-s}
+Perfectly Proportional Penguins, by [Cara Thompson](https://www.cararthompson.com/) as part of [TidyTuesday](https://github.com/rfordatascience/tidytuesday) ([code](https://github.com/cararthompson/tidytuesdays/blob/main/scripts/202007d_penguins.R))
+:::
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+
+**Take some time to discuss the following:**
+
+- where are your eyes drawn first, second, etc.?
+- what are the main messages / takeaways?
+- where has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?
+- what would you change about this visualization?
+:::
+
+::::
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#glimmers data-menu-title="Large carnivore recovery"} 
+
+[Glimmers of hope in large carnivore recovery]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/ingeman-etal-fig3.png")
+```
+
+::: {.body-text-xs .gray-text}
+[Fig. 3](https://www.nature.com/articles/s41598-022-13671-7/figures/3), by [Ingeman et al. 2022](https://www.nature.com/articles/s41598-022-13671-7): **Glimmers of hope and critical cases.** Distribution of large carnivore species across categories of current IUCN status (x-axis) and population trend (y-axis). Improvements in status are indicated by gold and declines by blue, with bubble size indicating the number of status category changes. The majority of species have not undergone any changes in status (shown in light gray). Note: No change in status may indicate lack of recent assessment, insufficient data, or, in the case of species designated Least Concern, effective conservation efforts.
+:::
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+
+**Take some time to discuss the following:**
+
+- where are your eyes drawn first, second, etc.?
+- what are the main messages / takeaways?
+- where has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?
+- what would you change about this visualization?
+:::
+
+::::
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#aquaculture data-menu-title="Aquaculture sentiment"} 
+
+[Public perceptions of aquaculture]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week4/froehlich-etal-2017-fig3.png")
+```
+
+::: {.body-text-xs .gray-text}
+[Fig. 3](https://journals.plos.org/plosone/article/figure?id=10.1371/journal.pone.0169281.g003), by [Froehlich et al. 2017](https://doi.org/10.1371/journal.pone.0169281): **Newspaper ‘offshore aquaculture’ media sentiment.** Sentiment over time based on the frequency of newspaper headlines with negative (red), positive (blue), and neutral (gray) titles for (A) developed (n = 102) and (B) developing (n = 8) nations. Also depicted are the (C) proportional contributions of sentiment headlines relative to each developed and developing country, with the number of headlines from each country shown in parentheses. All countries used in the analysis are depicted. Headlines were compiled using the LexisNexis® platform.
+:::
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+
+**Take some time to discuss the following:**
+
+- where are your eyes drawn first, second, etc.?
+- what are the main messages / takeaways?
+- where has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?
+- what would you change about this visualization?
+:::
+
+::::
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+https://docs.google.com/presentation/d/e/2PACX-1vR1QB0S3AfBfdJZ1nnhUw2iKSxV83GDc5l9BYPC6yQhxBdnzRpAAZ2lh7QWhX4kY65Uf_q0yK9FtHmW/pub?start=false&loop=false&delayms=3000&slide=id.p
+
+---
+
+##  {#end-break data-menu-title="# Break #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">{{< fa mug-hot title="a mug with steam rising out the top" >}} Take a Break</p>
+<p class="caption-text">*~ This is the end of Lesson 3 (of 4) ~*</p>
+</div>

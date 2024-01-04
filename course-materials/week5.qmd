@@ -1,5 +1,5 @@
 ---
-title: "Design principles & enhancing visualizations"
+title: "Enhancing visualizations"
 subtitle: "Week 5"
 description: "Monday February 5^th^, 2024"
 title-block-banner: true
@@ -25,31 +25,31 @@ knitr::include_graphics("../images/horst-ggplot-masterpiece.png")
 
 ## Lecture Materials 
 
-*Coming soon!*
+Week 5 instruction is broken down into three lessons:
 
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-4}
 ::: {.center-text}
+[**Typography**]{.teal-text .body-text-m}
+
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 5.1 slides](../slides/week5.1-typography-slides.qmd){.btn role="button" target="_blank"} 
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.center-text}
 [**Colors**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 4.3 slides](../slides/week5.1-colors-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 5.2 slides](../slides/week5.1-colors-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
 ::: {.g-col-12 .g-col-md-4}
 ::: {.center-text}
-[**tbd**]{.teal-text .body-text-m}
+[**Annotations**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 4.3 slides](../slides/tbd.qmd){.btn role="button" target="_blank"} 
-:::
-:::
-
-::: {.g-col-12 .g-col-md-4}
-::: {.center-text}
-[**tbd**]{.teal-text .body-text-m}
-
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 4.3 slides](../slides/tbd.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 5.3 slides](../slides/tbd.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 

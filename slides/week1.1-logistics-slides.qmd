@@ -247,8 +247,8 @@ Link is also bookmarked at the top of the **#eds-240-data-viz** Slack channel an
 | 1/8     | course logistics, intro, `{ggplot2}` review                         |
 | 1/15    | [*no class* ]{.teal-text}                                           |
 | 1/22    | graphic forms, fundamental chart types (part I)                     |
-| 1/29    | fundamental chart types (part II), visual form                      |
-| 2/5     | design principles & enhancing visualizations                        |
+| 1/29    | fundamental chart types (part II), good vs. bad viz                 |
+| 2/5     | enhancing visualizations                                            |
 | 2/12    | data communication                                                  |
 | 2/19    | [*no class* ]{.teal-text}                                           |
 | 2/26    | visualizing uncertainty & avoiding the misrepresentation of data    |

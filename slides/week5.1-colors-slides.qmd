@@ -47,3 +47,7 @@ editor_options:
   
   https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/
   https://blog.datawrapper.de/colors/
+  
+  ---
+  
+  example of bad color map (poverty): https://en.wikipedia.org/wiki/Poverty

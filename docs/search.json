@@ -4,21 +4,21 @@
     "href": "resources.html",
     "title": "Recommended reading & materials",
     "section": "",
-    "text": "Fundamentals of Data Visualization, by Claus O. Wilke – a primer on making informative and compelling figures\nR for Data Science (2e), by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund – an excellent primer on all things R for programming, data wrangling, visualizing, and communicating\nggplot2: Elegant Graphics for Data Analysis (3e), by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen – helpful for understanding the underlying theory of ggplot2 graphics (NOTE: this is currently (as of November 2023) a work-in-progress, and as the authors put it, “a dumping ground for ideas…we don’t recommend reading it” – it’s still worth noting its existence so that you can return to it in the future!)\nData Visualization: A practical introduction, by Kieran Healy – a hands-on intro to the principles and practice of looking at and presenting data using R and ggplot.\nHands-On Data Visualization, by Jack Dougherty and Ilya Ilyankou – learn how to tell stories with your data using drag-and-drop tools (e.g. Google Sheets, Datawrapper, Tableau Public)\nThe Truthful Art: Data, Charts, and Maps for Communication, by Albert Cairo – a guide to understanding information graphics and visualization (I have a hard copy in my office if you’d like to borrow it!)"
+    "text": "Fundamentals of Data Visualization, by Claus O. Wilke – a primer on making informative and compelling figures\nR for Data Science (2e), by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund – an excellent primer on all things R for programming, data wrangling, visualizing, and communicating\nggplot2: Elegant Graphics for Data Analysis (3e), by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen – helpful for understanding the underlying theory of ggplot2 graphics (NOTE: this is currently (as of November 2023) a work-in-progress, and as the authors put it, “a dumping ground for ideas…we don’t recommend reading it” – it’s still worth noting its existence so that you can return to it in the future!)\nData Visualization: A practical introduction, by Kieran Healy – a hands-on intro to the principles and practice of looking at and presenting data using R and ggplot.\nHands-On Data Visualization, by Jack Dougherty and Ilya Ilyankou – learn how to tell stories with your data using drag-and-drop tools (e.g. Google Sheets, Datawrapper, Tableau Public)\nThe Truthful Art: Data, Charts, and Maps for Communication, by Albert Cairo – a guide to understanding information graphics and visualization (I have a hard copy in my office if you’d like to borrow it!)\n, by Cédric Scherer – a blogpost that might as well be a book; an excellent introduction to many different ggplot options, ideas, and extension packages"
   },
   {
     "objectID": "resources.html#books",
     "href": "resources.html#books",
     "title": "Recommended reading & materials",
     "section": "",
-    "text": "Fundamentals of Data Visualization, by Claus O. Wilke – a primer on making informative and compelling figures\nR for Data Science (2e), by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund – an excellent primer on all things R for programming, data wrangling, visualizing, and communicating\nggplot2: Elegant Graphics for Data Analysis (3e), by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen – helpful for understanding the underlying theory of ggplot2 graphics (NOTE: this is currently (as of November 2023) a work-in-progress, and as the authors put it, “a dumping ground for ideas…we don’t recommend reading it” – it’s still worth noting its existence so that you can return to it in the future!)\nData Visualization: A practical introduction, by Kieran Healy – a hands-on intro to the principles and practice of looking at and presenting data using R and ggplot.\nHands-On Data Visualization, by Jack Dougherty and Ilya Ilyankou – learn how to tell stories with your data using drag-and-drop tools (e.g. Google Sheets, Datawrapper, Tableau Public)\nThe Truthful Art: Data, Charts, and Maps for Communication, by Albert Cairo – a guide to understanding information graphics and visualization (I have a hard copy in my office if you’d like to borrow it!)"
+    "text": "Fundamentals of Data Visualization, by Claus O. Wilke – a primer on making informative and compelling figures\nR for Data Science (2e), by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund – an excellent primer on all things R for programming, data wrangling, visualizing, and communicating\nggplot2: Elegant Graphics for Data Analysis (3e), by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen – helpful for understanding the underlying theory of ggplot2 graphics (NOTE: this is currently (as of November 2023) a work-in-progress, and as the authors put it, “a dumping ground for ideas…we don’t recommend reading it” – it’s still worth noting its existence so that you can return to it in the future!)\nData Visualization: A practical introduction, by Kieran Healy – a hands-on intro to the principles and practice of looking at and presenting data using R and ggplot.\nHands-On Data Visualization, by Jack Dougherty and Ilya Ilyankou – learn how to tell stories with your data using drag-and-drop tools (e.g. Google Sheets, Datawrapper, Tableau Public)\nThe Truthful Art: Data, Charts, and Maps for Communication, by Albert Cairo – a guide to understanding information graphics and visualization (I have a hard copy in my office if you’d like to borrow it!)\n, by Cédric Scherer – a blogpost that might as well be a book; an excellent introduction to many different ggplot options, ideas, and extension packages"
   },
   {
     "objectID": "resources.html#readings-journals-reporting-talks",
     "href": "resources.html#readings-journals-reporting-talks",
     "title": "Recommended reading & materials",
     "section": "Readings, Journals, Reporting & Talks",
-    "text": "Readings, Journals, Reporting & Talks\n\nNightingale: Journal of the Data Visualization Society – focuses on data visualization from personal stories to exploratory research to interviews with leaders in the community, data ethics, and best practices\nThe Upshot, by The New York Times – analysis that explains politics, policy and everyday life, with an emphasis on data and charts\nTED Topics: Visualizations – a collection of TED talks (and more) on the topic of Visualizations"
+    "text": "Readings, Journals, Reporting & Talks\n\nNightingale: Journal of the Data Visualization Society – focuses on data visualization from personal stories to exploratory research to interviews with leaders in the community, data ethics, and best practices\nThe Upshot, by The New York Times – analysis that explains politics, policy and everyday life, with an emphasis on data and charts\nTED Topics: Visualizations – a collection of TED talks (and more) on the topic of Visualizations\nGrainger S, Mao F, Buytaert W (2016) Environmental data visualisation for non-scientific contexts: Literature review and design framework. Environmental Modelling & Software. 85:299-318. https://doi.org/10.1016/j.envsoft.2016.09.004"
   },
   {
     "objectID": "resources.html#chart-types",
@@ -177,28 +177,28 @@
   {
     "objectID": "course-materials/week5.html#pre-class-prep",
     "href": "course-materials/week5.html#pre-class-prep",
-    "title": "Design principles & enhancing visualizations",
+    "title": "Enhancing visualizations",
     "section": "Pre-class Prep",
     "text": "Pre-class Prep\nComing soon"
   },
   {
     "objectID": "course-materials/week5.html#lecture-materials",
     "href": "course-materials/week5.html#lecture-materials",
-    "title": "Design principles & enhancing visualizations",
+    "title": "Enhancing visualizations",
     "section": "Lecture Materials",
-    "text": "Lecture Materials\nComing soon!\n\n\n\nColors\n lecture 4.3 slides\n\n\n\n\ntbd\n lecture 4.3 slides\n\n\n\n\ntbd\n lecture 4.3 slides"
+    "text": "Lecture Materials\nWeek 5 instruction is broken down into three lessons:\n\n\n\nTypography\n lecture 5.1 slides\n\n\n\n\nColors\n lecture 5.2 slides\n\n\n\n\nAnnotations\n lecture 5.3 slides"
   },
   {
     "objectID": "course-materials/week5.html#discussion-materials",
     "href": "course-materials/week5.html#discussion-materials",
-    "title": "Design principles & enhancing visualizations",
+    "title": "Enhancing visualizations",
     "section": "Discussion Materials",
     "text": "Discussion Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week5.html#assignment-reminders",
     "href": "course-materials/week5.html#assignment-reminders",
-    "title": "Design principles & enhancing visualizations",
+    "title": "Enhancing visualizations",
     "section": "Assignment Reminders",
     "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT"
   },
@@ -530,132 +530,6 @@
     "title": "EDS 240",
     "section": "",
     "text": "Take a Break\n\n\n~ This is the end of Lesson 2 (of 4) ~\n\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#title-slide",
-    "href": "slides/week4.4-typography.html#title-slide",
-    "title": "EDS 240",
-    "section": "",
-    "text": "EDS 240: Lecture 4.4\nTypography\n\nWeek 4 | January 29th, 2024"
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#typeography",
-    "href": "slides/week4.4-typography.html#typeography",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Type and font choice influences audience perception and readability"
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#typography-defs",
-    "href": "slides/week4.4-typography.html#typography-defs",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Typeface vs. font\n\n\n\nTypeface (aka font family): underlying visual design (e.g. Times New Roman, Helvetica, Roboto)\n\n\n\n\n\n\n\n\n\n\nFont: an implementation of a typeface; they can come in different weights and styles (e.g. bold, italic)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou choose a typeface (e.g. Nunito)\n\nYou use a font (e.g. regular, italic, bold)"
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#typography-importance",
-    "href": "slides/week4.4-typography.html#typography-importance",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Typeface choices affect emotions and perceptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n“Typography is the art and technique of arranging type to make written language legible, readable and appealing when displayed.”\n\n\n-Wikipedia\n\n\nLike colors, typefaces / fonts influence the how viewers perceive information (check out this short TEDx talk).\n\n Source: The Daily Egg\n\n\n\nWant to dive deeper into the world of typography? Start with this quick read, Why care about typography? and explore other great articles by Google Fonts."
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#font-psychology",
-    "href": "slides/week4.4-typography.html#font-psychology",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Context matters - choose typeface accordingly\n\nTypefaces and fonts communicate beyond more than just the written text – they can evoke emotions and can be used to better connect your audience with your work.\n\n\n\nSource: Typography for a better user experience, by Suvo Ray\n\n\n\nInterested in font pyschology? Check out this short video and this article to learn a bit more."
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#sans-serifs",
-    "href": "slides/week4.4-typography.html#sans-serifs",
-    "title": "EDS 240",
-    "section": "",
-    "text": "When in doubt, use sans-serif fonts\n\nSerif fonts have small decorative lines (aka “tails” or “feet”) that extend off characters while sans serif fonts don’t.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSans-serif fonts = cleaner and easier to read.\n\nRoboto, Lato, Open Sans are good, free options\n\nSerif fonts = classy / traditional / professional / serious tone; typically only used for visualization headlines\n\nIf your organization uses a serif font, consider using it in your visualization’s headline\n\n\n\n\n\n\nExample from Which fonts to use for your charts and tables, by Lisa Charlotte Muth"
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#lining",
-    "href": "slides/week4.4-typography.html#lining",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Use a typeface with lining figures for numerals\n\nDifferent typefaces display numbers differently. Serif fonts tend to have “oldstyle figures”, which extend above and below the “line” – these can be difficult to read in a visualization.\nInstead, look for options with lining figures, where numbers “line up”, i.e. they’re all the same height.\n\n\n\nExample from Which fonts to use for your charts and tables, by Lisa Charlotte Muth"
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#monospaced",
-    "href": "slides/week4.4-typography.html#monospaced",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Use a monospaced typeface for numerals\n\n\nTypefaces with tabular figures print every character with equal width – you may see these referred to as monospaced typefaces. These work well in tables, visualizations, or any scenario where figures should line up vertically (see how you can quickly identify how many figures a number has in the table on the right, below).\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExamples from Which fonts to use for your charts and tables, by Lisa Charlotte Muth & Understanding numerals article by Google Fonts"
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#symbols",
-    "href": "slides/week4.4-typography.html#symbols",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Use a typeface with all the symbols you need\n\n\nConfirm that all symbols (aka glyphs) that you need exist and that they look good for your chosen typeface.\n\n\n\nConsider special characters for different languages, currency symbols, math symbols, reference marks, sub / superscript numbers, etc.\n\nExample from Which fonts to use for your charts and tables, by Lisa Charlotte Muth"
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#bold",
-    "href": "slides/week4.4-typography.html#bold",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Use bold fonts for emphasis only\n\nMost typefaces come with fonts for different weights (Google Fonts uses numbers for font weights – extra light (200), light (300), regular (400, default), medium (500), semi bold (600), bold (700), extra bold (800)).\nUse bold text for titles or to emphasize a few words in annotations. Regular or medium weights are often easiest for longer text (descriptions, annotations, notes).\n\n\n\n\nExample from Which fonts to use for your charts and tables, by Lisa Charlotte Muth"
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#thin",
-    "href": "slides/week4.4-typography.html#thin",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Avoid really thin fonts\n\nThin (light-weight fonts) fonts are hard to read. Only use them in a high-contrast color and in large sizes (often, titles are the only place you’ll want to use think fonts.)\n\n\n\n\nExample from Which fonts to use for your charts and tables, by Lisa Charlotte Muth"
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#large-font-size",
-    "href": "slides/week4.4-typography.html#large-font-size",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Ensure your font size is large enough\n\nMake sure your font size is large enough, especially when presenting visualizations in a slide-based presentation (this oftentimes means increasing it larger than you would have it in print). In ggplot, adjust font sizes using theme().\n\n\n\n\nExample from Which fonts to use for your charts and tables, by Lisa Charlotte Muth"
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#contrast",
-    "href": "slides/week4.4-typography.html#contrast",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Use high-contrast color for most text\n\nWeb Content Accessibility Guidelines (WCAG) recommends a minimum contrast ratio of 4.5:1 – use a color contrast checker to check your ratio (e.g. here is a color combo with a good contrast ratio and a combo with a bad contrast ratio).\n\n\n\n\nExample from Which fonts to use for your charts and tables, by Lisa Charlotte Muth"
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#uppercase",
-    "href": "slides/week4.4-typography.html#uppercase",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Use UPPERCASE text sparingly\n\nUppercase text is more difficult to read compared to sentence case – limit use to headlines or labels. Region labels on maps are commonly uppercase (e.g. see maps in these New York Times pieces, How to Think About Ukraine, in Maps and Charts and Closing the Back Door to Europe).\n\n\n\nExample from Which fonts to use for your charts and tables, by Lisa Charlotte Muth"
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#recap-font-choices",
-    "href": "slides/week4.4-typography.html#recap-font-choices",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Recap: choosing the right typeface(s) & font(s)\n\n\n\n\ncontext matters – the type(s) should fit the topic and audience\nwhen in doubt, use a sans-serif style\nchoose a monospaced typeface with lining figures for numbers\nensure that your chosen typeface has all the symbols you need and that they look okay\nuse bold fonts for emphasis and avoid thin fonts\nmake font sizes large enough to easily read\nuse high-contrast font colors\nstrategically use types & fonts to create hierarchy\navoid (extensively) using ALL CAPS\n\n\n\n\nAvoid using too many typefaces (stick to just 1-3)\n\n\n\n\nThere are lots of excellent resources out there for choosing the right typeface / font check out the resources page on the course website for some recommendations.\n\n\nHorror films, by Cristophe Nicault https://github.com/cnicault/tidytuesday/tree/master/2022/2022-44-horror-movies"
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#typographic-hierarchy",
-    "href": "slides/week4.4-typography.html#typographic-hierarchy",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Typographic hierarchy\n\nNo one wants to read a wall of text. You can use font size, style, color, spacing, and typeface (or combinations of these) to create a hierarchy to guide your readers.\n\n\n\n\nSource: The UX Designer’s Guide to Typography"
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#change-fonts",
-    "href": "slides/week4.4-typography.html#change-fonts",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Let’s learn how to import and use Google fonts in our ggplots"
-  },
-  {
-    "objectID": "slides/week4.4-typography.html#end",
-    "href": "slides/week4.4-typography.html#end",
-    "title": "EDS 240",
-    "section": "",
-    "text": "See you next week!\n\n\n~ This is the end of Lesson 4 (of 4) ~"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#title-slide",
@@ -1015,606 +889,529 @@
     "text": "Assignments\n\n\n\nEnd-of-class Survey #1 (EOC #1) – Due Mon 01/08 at 11:55pm\n\n2 multiple choice + 2 short answer + 1 optional question\n\n\nPre-course Reflection (SR #1) – Due Sat 01/13 at 11:59pm\n\n3 sets of questions about school & life, the way you learn best, learning goals, some fun stuff\n\n\n\nHomework Assignment #1 (HW #1) – Due Sat 01/20 at 11:59pm\n\n2 parts:\n\ninterpreting & annotating ggplot code\nfinding data that you’re interested in visualizing for your final assignment"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#title-slide",
-    "href": "slides/week1.2-intro-slides.html#title-slide",
+    "objectID": "slides/week4.3-good-viz-slides.html#title-slide",
+    "href": "slides/week4.3-good-viz-slides.html#title-slide",
     "title": "EDS 240",
     "section": "",
-    "text": "EDS 240: Lecture 1.2\nData visualization: an intro\n\nWeek 1 | January 8th, 2024"
+    "text": "EDS 240: Lecture 4.3\nWhat makes a good data viz?\n\nWeek 4 | January 29th, 2024"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#what-is-visualization1",
-    "href": "slides/week1.2-intro-slides.html#what-is-visualization1",
+    "objectID": "slides/week4.3-good-viz-slides.html#looking-forward",
+    "href": "slides/week4.3-good-viz-slides.html#looking-forward",
     "title": "EDS 240",
     "section": "",
-    "text": "What is data visualization?\n\n\n“…the practice of designing and creating easy-to-communicate and easy-to-understand graphic or visual representations of a large amount of complex quantitative and qualitative data and information with the help of static, dynamic or interactive visual items.”\n\n\n-from Wikipedia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreated using {ggplot2}\n\n\n\nCreated using {gganimate}\n\n\n\nCreated using {shiny}"
+    "text": "Looking forward . . .\n\n\n\nNext week, we’ll really start diving into improving the overall aesthetics of our data visualizations\n\n\n\n applying pre-made and custom color palettes\n\n\n\n\n updating fonts\n\n\n\n\n adding annotations\n\n\n\n\n fine-tuning themes\n\n\n\n\n centering our primary message\n\n\n\n\n\nToday, we’ll familiarize ourselves with a general set of rules and best practices."
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#what-is-visualization2",
-    "href": "slides/week1.2-intro-slides.html#what-is-visualization2",
+    "objectID": "slides/week4.3-good-viz-slides.html#good-design1",
+    "href": "slides/week4.3-good-viz-slides.html#good-design1",
     "title": "EDS 240",
     "section": "",
-    "text": "What is data visualization?\n\n \n\n“any graphical representation of information and data”\n\n\n-Cédric Scherer, Effective Data Visualization\n\n\n\n\n“part art and part science”\n\n\n-Claus O. Wilke, Fundamentals of Data Visualization"
+    "text": "Good data visualization design considers:\n\n\n\ndata-ink ratio (less is more, within reason)\nhow to reduce eye movement and improve readability / interpretability (e.g. through alternative legend positions, direct annotations)\nputting things in context\nhow to draw the main attention to the most important info\nconsistent use of colors, spacing, typefaces, weights\ntypeface / font choices and how they affect both readability and audience emotions and perceptions\nusing visual hierarchy to guide the reader\ncolor choices (and making sure that they’re colorblindness-friendly)\ncenters the people and communities represented in your data\nincluding alt text\n\n\n\n\nThe above should always be considered in your design process, but may not always be necessary"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#history1",
-    "href": "slides/week1.2-intro-slides.html#history1",
+    "objectID": "slides/week4.3-good-viz-slides.html#good-design2",
+    "href": "slides/week4.3-good-viz-slides.html#good-design2",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "Good data visualization design considers:\n\n\ndata-ink ratio (less is more, within reason)\nhow to reduce eye movement and improve readability / interpretability (e.g. through alternative legend positions, direct annotations)\nputting things in context\nhow to draw the main attention to the most important info\nconsistent use of colors, spacing, typefaces, weights\ntypeface / font choices and how they affect both readability and audience emotions and perceptions\nusing visual hierarchy to guide the reader\ncolor choices (and making sure that they’re colorblindness-friendly)\ncenters the people and communities represented in your data\nincluding alt text\n\n\nThe above should always be considered in your design process, but may not always be necessary"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#history2",
-    "href": "slides/week1.2-intro-slides.html#history2",
+    "objectID": "slides/week4.3-good-viz-slides.html#data-ink-eyes",
+    "href": "slides/week4.3-good-viz-slides.html#data-ink-eyes",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "Simplify plots to reduce eye movement & improve readability / interpretability"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#history3",
-    "href": "slides/week1.2-intro-slides.html#history3",
+    "objectID": "slides/week4.3-good-viz-slides.html#data-ink-ratio",
+    "href": "slides/week4.3-good-viz-slides.html#data-ink-ratio",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "Data-Ink ratio: remove non-data ink\n\nThe Data-Ink ratio was introduced by Edward Tufte (1983) and argues that non-data-ink (i.e. ink used for for everything except the presentation of data itself) should be removed wherever possible.\n\\[\n\\text{Data-ink ratio} = \\frac{\\text{Data-ink}}{\\text{Total ink used to print the graphic}}\n\\]\n\n\nDo so by starting with a complete theme (e.g. theme_classic(), theme_void()) and add / remove elements using theme().\n\n\n\n\nLow Data-Ink ratio\n\n\n\n\n\n\n\n\nHigh Data-Ink ratio"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#history4",
-    "href": "slides/week1.2-intro-slides.html#history4",
+    "objectID": "slides/week4.3-good-viz-slides.html#data-ink-ratio-criticism",
+    "href": "slides/week4.3-good-viz-slides.html#data-ink-ratio-criticism",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "Maximizing the Data-Ink ratio isn’t always best\n\n\n\n\nEliminating lots of non-data ink may render visualizations difficult to read\n\nInbar et al. (2007) found that students preferred a more maximalist visualization design over the minimalist version proposed by Tufte\n\n\n\n\n\nDesign choices depend on audience and purpose – how you choose to maximize your data-ink ratio will depend largely on who your visualization is for and the purpose it’s meant to serve (e.g. a scientific publication may have specific requirements for the design / aesthetics of a visualization, while an infographic-style visualization may leave space for more creative liberties)\n\n\n\n\n\nA general rule of thumb: aim to maximize the data-ink ratio while not sacrificing overall design and aesthetics."
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#history5",
-    "href": "slides/week1.2-intro-slides.html#history5",
+    "objectID": "slides/week4.3-good-viz-slides.html#remove-redundant-legend",
+    "href": "slides/week4.3-good-viz-slides.html#remove-redundant-legend",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "Remove redundant legend information\n\nAsk yourself, “Does this legend provide additional information that I can’t get elsewhere?”. If not, remove a legend using:\n\nplot +\n  theme(\n    legend.position = \"none\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDoing so increases the data-ink ratio and reduces overall eye movement."
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#history6",
-    "href": "slides/week1.2-intro-slides.html#history6",
+    "objectID": "slides/week4.3-good-viz-slides.html#labels-rotated-text",
+    "href": "slides/week4.3-good-viz-slides.html#labels-rotated-text",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "Add direct labels & minimize rotated text\n\nWe can use a combination of coord_flip(), geom_text(), labs(), and theme() to further eliminate non-data ink and reduce overall eye movement.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOf course, a visualization like this wouldn’t be appropriate for all audiences / contexts (e.g. scientific journal), but it in many ways simplifies the presentation in a way where an audience could still walk away with the same type of information."
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#history7",
-    "href": "slides/week1.2-intro-slides.html#history7",
+    "objectID": "slides/week4.3-good-viz-slides.html#move-legend-position",
+    "href": "slides/week4.3-good-viz-slides.html#move-legend-position",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "Move the legend (positioning)\n\nReduce eye movement by updating the legend position (e.g. move it onto the plot panel):\n\nplot + \n  theme(\n    legend.position = c(0.85, 0.15) # you'll need to adjust these values for your plot!\n  )\n\n\n\n\nOriginal plot:\n\n\n\n\n\n\n\n\nUpdated legend position:\n\n\n\n\n\n\n\n\nAlso note the redundant species mapping (color and shape) – sometime redundancy is important for accessibility!"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#history8",
-    "href": "slides/week1.2-intro-slides.html#history8",
+    "objectID": "slides/week4.3-good-viz-slides.html#legend-ggtext",
+    "href": "slides/week4.3-good-viz-slides.html#legend-ggtext",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "Move the legend (incorporate into title text)\n\nReduce eye movement and excess ink by including legend info in the plot (sub)title (here, using the {ggtext} package; minimal code example, below):\n\nplot +\n  labs(subtitle = \"Some subtitle text where &lt;span style='color:red;'&gt;**these words**&lt;/span&gt; are bolded and red\") +\n  theme(plot.subtitle(ggtext::element_markdown()))\n\n\n\n\n\nOriginal plot:\n\n\n\n\n\n\n\n\n\n\n\n\nLegend as styled title text:"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#history9",
-    "href": "slides/week1.2-intro-slides.html#history9",
+    "objectID": "slides/week4.3-good-viz-slides.html#add-direct-labels",
+    "href": "slides/week4.3-good-viz-slides.html#add-direct-labels",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "Move the legend (use direct labels)\n\nReduce eye movement and excess ink by including legend info as direct labels on the plot (here, using the {geomtextpath} package; minimal code example, below):\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = species)) +\n  geom_point(size = 3, alpha = 0.8) +\n  geomtextpath::geom_labelsmooth(aes(label = species), method = \"lm\", size = 5)\n\n\n\n\n\nOriginal plot:\n\n\n\n\n\n\n\n\n\n\n\n\nLegend as direct labels:"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#history10",
-    "href": "slides/week1.2-intro-slides.html#history10",
+    "objectID": "slides/week4.3-good-viz-slides.html#use-annotations-neil",
+    "href": "slides/week4.3-good-viz-slides.html#use-annotations-neil",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "Use annotations to improve readability / interpretability\n\nIs the y-axis necessary for this plot? What’s the author’s goal? How do annotations help achieve that goal?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIs white space always your friend, by Neil Richards"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#history11",
-    "href": "slides/week1.2-intro-slides.html#history11",
+    "objectID": "slides/week4.3-good-viz-slides.html#use-annotations-covid",
+    "href": "slides/week4.3-good-viz-slides.html#use-annotations-covid",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "Use annotations to improve readability / interpretability\n\n\n“The key thing we do is to add a title to the chart, as an entry point and to explain what is going on. Text and other annotations add enourmous value for non-chart people.”\n\n\n-John Burn-Murdoch, Financial Times\n\n\n\n\n\nVaccines and Omicron mean Covid now less deadly than flu in England, by John Burn-Murdoch"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#why-visualize",
-    "href": "slides/week1.2-intro-slides.html#why-visualize",
+    "objectID": "slides/week4.3-good-viz-slides.html#put-in-context",
+    "href": "slides/week4.3-good-viz-slides.html#put-in-context",
     "title": "EDS 240",
     "section": "",
-    "text": "Why do we visualize data?\n\n\nSpend the next few minutes discussing with your Learning Partners, and if possible, pull up some example visualizations that demonstrate your thoughts / discussion points\n\n\n\n\n\n−+\n05:00"
+    "text": "Consider ways to provide additional context for your data"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#answer-qs",
-    "href": "slides/week1.2-intro-slides.html#answer-qs",
+    "objectID": "slides/week4.3-good-viz-slides.html#wilke-context",
+    "href": "slides/week4.3-good-viz-slides.html#wilke-context",
     "title": "EDS 240",
     "section": "",
-    "text": ". . . to answer questions / derive insights\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRipple et al. 2023\n\nFig Caption: Unusual climate anomalies in 2023 (the red line, which appears bold in print). Sea ice extent (a, b), temperatures (c–e), and area burned in Canada (f) are presently far outside their historical ranges. These anomalies may be due to both climate change and other factors. Sources and additional details about each variable are provided in supplemental file S1. Each line corresponds to a different year, with darker gray representing later years.\n\n\nA nice Twitter thread on key takeaways from the above paper"
+    "text": "Plot groups against the whole when faceting\n\nFacets (aka small multiples) allow us to more easily view individual groups. Here, the author plots individual groups (male vs. female passengers on the Titanic) against the data set total (all passengers):\n\n\n\n\nThe area under each curve corresponds to the total number of male and female passengers with known age (468 (M) and 288 (F)).\n\n\n\n\n\n\n\n\n\n\n\n\nThe colored areas show the density estimates of the ages of M and F passengers, and the gray areas show the overall passenger age distribution.\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample from Fundamentals of Data Visualization, by Claus Wilke"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#exploration",
-    "href": "slides/week1.2-intro-slides.html#exploration",
+    "objectID": "slides/week4.3-good-viz-slides.html#benchmark-values",
+    "href": "slides/week4.3-good-viz-slides.html#benchmark-values",
     "title": "EDS 240",
     "section": "",
-    "text": ". . . to explore & generate new questions\n\n\n“Exploratory data analysis (EDA) is not a formal process with a strict set of rules. More than anything, EDS is a state of mind…you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends. As your exploration continues, you will hone in on a few particularly productive insights that you’ll eventually write-up and communicate to others.”\n\n\n-Hadley Wickham, author of R for Data Science\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(diamonds, aes(x = carat)) +\n  geom_histogram(binwidth = 0.5)\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(mpg, aes(x = fct_reorder(class, hwy, median), y = hwy)) +\n  geom_boxplot()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(diamonds, aes(x = price, y = after_stat(density))) + \n  geom_freqpoly(aes(color = cut), binwidth = 500, linewidth = 0.75)"
+    "text": "Add benchmark values\n\nAdd vertical (geom_vline()) or horizontal (geom_hline()) lines at important values:\n\n\n\n\n\n\n\n\n\n\n\n\n\nA minimal code example:\n\nplot + \n  geom_vline(xintercept = 11) +\n  geom_vline(xintercept = 16) +\n  geom_vline(xintercept = 21) \n\n\n\nFig cap: Temporal Variation in Bottom Temperature. Monthly bottom (4.5 m depth) temperatures at Mohawk Reef (34.396290, -119.731297) in Santa Barbara, CA compiled from 2005-2017. Vertical dashed lines represent three of four treatment temperatures (11, 16, 21°C). Data Source: Santa Barbara Coastal Long-Term Ecological Research group (adapted from Csik et al. 2023)"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#see-trends",
-    "href": "slides/week1.2-intro-slides.html#see-trends",
+    "objectID": "slides/week4.3-good-viz-slides.html#1-1-line",
+    "href": "slides/week4.3-good-viz-slides.html#1-1-line",
     "title": "EDS 240",
     "section": "",
-    "text": ". . . to identify trends\n\n\nSame summary statistics, different distributions!\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnscombe’s Quartet\n(Anscombe 1973)\n\n\n\nDatasaurus Dozen\n(Matejka & Fitzmaurice 2017)"
+    "text": "Add 1:1 line, if relevant\n\nFor data where the relevant comparison is the x = y line (e.g. scatter plots of paired data), plot the 1:1 line.\nBelow, the author compares gene expression levels in a mutant virus to the non-mutated (wild-type) variant. He presents three (increasingly better) versions of the same plot:\n\n\n\n\nBad\n\n\n\n\n\n\n\n\n\n\n\n\nBetter\n\n\n\n\n\n\n\n\n\n\n\n\nBest\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample from Fundamentals of Data Visualization, by Claus Wilke"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#prompt-discussion1",
-    "href": "slides/week1.2-intro-slides.html#prompt-discussion1",
+    "objectID": "slides/week4.3-good-viz-slides.html#draw-attention",
+    "href": "slides/week4.3-good-viz-slides.html#draw-attention",
     "title": "EDS 240",
     "section": "",
-    "text": ". . . to prompt discussion\n\n\n\n\n\nWarming Strips, by Ed Hawkins"
+    "text": "Draw attention to important information / values"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#prompt-discussion2",
-    "href": "slides/week1.2-intro-slides.html#prompt-discussion2",
+    "objectID": "slides/week4.3-good-viz-slides.html#color-groups",
+    "href": "slides/week4.3-good-viz-slides.html#color-groups",
     "title": "EDS 240",
     "section": "",
-    "text": ". . . to prompt discussion\n\n\n\n\n\ngif created from Antti Lipponen’s Temperature Anomolies."
+    "text": "Use color to highlight groups / values\n\nHighlight data by coloring groups of interest either manually or by using helpful packages, like {gghighlight} (we saw an example of this in lecture 3.3):"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#prompt-discussion3",
-    "href": "slides/week1.2-intro-slides.html#prompt-discussion3",
+    "objectID": "slides/week4.3-good-viz-slides.html#ggforce",
+    "href": "slides/week4.3-good-viz-slides.html#ggforce",
     "title": "EDS 240",
     "section": "",
-    "text": ". . . to prompt discussion\n\n\n\n\n\ngif created from Mark SubbaRao’s Climate Spiral. For a similar visualization with accompanying {ggplot2} code, see Nicola Rennie’s TidyTuesday contribution!"
+    "text": "Use annotations to highlight groups / values\n\nOr add annotations to your plots to call attention to data of interest (here, shown using the {ggforce} package; minimal code example, below):\n\nplot + \n  ggforce::geom_mark_ellipse(aes(filter = species == \"Gentoo\", label = \"Gentoo penguins\", \n                                 description = \"This species tends to have...\"))"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#bremer-pathwork",
-    "href": "slides/week1.2-intro-slides.html#bremer-pathwork",
+    "objectID": "slides/week4.3-good-viz-slides.html#show-values-directly1",
+    "href": "slides/week4.3-good-viz-slides.html#show-values-directly1",
     "title": "EDS 240",
     "section": "",
-    "text": ". . . to create art / tell a story\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPatchwork Kingdoms, by Nadieh Bremer\n\n\n“Patchwork Kingdoms” is a data & generative art charity collection that I created for the Giga Connect project of UNICEF. All proceeds from the sale went to this project, which aims to connect all of the schools in the world to the internet. The Giga project has a dataset of 1 million schools and for ±280,000 of those they know if those schools are connected to the internet. I took this data about the schools, split it into 1000 subsets, and turned each school into a tiny square. All the squares together build up into two separate kingdoms, where those in the upright kingdoms are schools that are already connected to the internet, while those in the hidden / upside down kingdoms are not. Each of the 1000 pieces is thereby showing the “digital divide” that still exists in our world, and the funds from this sale will help to bring more schools from the hidden to the upright kingdom."
+    "text": "Show important thresholds / values directly\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Looking Back: The Thomas Fire’s Impact on Santa Barbara Air Quality, in The Daily Nexus"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#astronauts",
-    "href": "slides/week1.2-intro-slides.html#astronauts",
+    "objectID": "slides/week4.3-good-viz-slides.html#show-values-directly2",
+    "href": "slides/week4.3-good-viz-slides.html#show-values-directly2",
     "title": "EDS 240",
     "section": "",
-    "text": ". . . to create art / tell a story\n\n\n\nTo enlarge, Right click &gt; Open Image in New Tab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTraveling to Outer Space, by Cédric Scherer\n\n\n\n\n\n\n\n\n\n\n\n\n\nGalaxy of Astronauts, by Ijeamaka Anyene\n\n\n\n\n\n\n\n\n\n\n\n\nAges Through Time and Space, by Cara Thompson"
+    "text": "Show important thresholds / values directly\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Looking Back: The Thomas Fire’s Impact on Santa Barbara Air Quality, in The Daily Nexus"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#vertices",
-    "href": "slides/week1.2-intro-slides.html#vertices",
+    "objectID": "slides/week4.3-good-viz-slides.html#avoid",
+    "href": "slides/week4.3-good-viz-slides.html#avoid",
     "title": "EDS 240",
     "section": "",
-    "text": "Vertices of Visualization\n\n\n\nVertices of Communication by Albert Cairo, as presented by Cédric Scherer during his 2022 Graphic Design with ggplot2 workshop (slides)"
+    "text": "What doesn’t work so well in data visualization?"
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#r-for-data-viz",
-    "href": "slides/week1.2-intro-slides.html#r-for-data-viz",
+    "objectID": "slides/week4.3-good-viz-slides.html#bad-data-viz",
+    "href": "slides/week4.3-good-viz-slides.html#bad-data-viz",
     "title": "EDS 240",
     "section": "",
-    "text": "Why R for data viz?\n\n\n\n   \n\n\nI’m most comfortable in R \ngreat ecosystem of data wrangling & visualization packages (inc. a massive and growing collection of {ggplot2} extensions)\namazing online learning communities\ndata viz fundamentals apply no matter the language / tool"
+    "text": "Good data visualization design generally avoids…\n\n\n\n\ninformation overload (e.g. too many colors / shapes / fonts, groups, variables)\ndual axes (can easily mislead audiences)\npie charts (really hard for humans to effectively compare the size of angles)\n3D plots (distort perception and are generally distracting)\n\n\n\n\n\nOur job is to make it as easy as possible for our readers to understand our data without having to do mental gymnastics. The chart types above (more often than not) ask too much of our readers in their quest to understand the information being presented.\n\n\n\n  \n\nThere may be circumstances where the above are executed well…but more often than not, you’re safest avoiding them."
   },
   {
-    "objectID": "slides/week1.2-intro-slides.html#end-break",
-    "href": "slides/week1.2-intro-slides.html#end-break",
+    "objectID": "slides/week4.3-good-viz-slides.html#info-overload-map",
+    "href": "slides/week4.3-good-viz-slides.html#info-overload-map",
     "title": "EDS 240",
     "section": "",
-    "text": "Take a Break\n\n\n~ This is the end of Lesson 2 (of 3) ~\n\n\n\n\n\n−+\n05:00"
+    "text": "Information overload is no fun . . .\n\nIt can be nearly impossible to easily process many different variables, colors, shapes, etc. on the same visualization (and realistically, most people won’t want to take the time to even try):\n\n\nSource: Stack Exchange"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#title-slide",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#title-slide",
+    "objectID": "slides/week4.3-good-viz-slides.html#info-overload-scatter",
+    "href": "slides/week4.3-good-viz-slides.html#info-overload-scatter",
     "title": "EDS 240",
     "section": "",
-    "text": "EDS 240: Lecture 3.1\nChoosing the right graphic form\n\nWeek 3 | January 22nd, 2024"
+    "text": "Information overload is no fun . . .\n\nIt can be nearly impossible to easily process many different variables, colors, shapes, etc. on the same visualization (and realistically, most people won’t want to take the time to even try):\n\n\nSource: Unknown, but borrowed from Allison Horst’s lecture"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#viz-complex-nums",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#viz-complex-nums",
+    "objectID": "slides/week4.3-good-viz-slides.html#info-overload-parallel",
+    "href": "slides/week4.3-good-viz-slides.html#info-overload-parallel",
     "title": "EDS 240",
     "section": "",
-    "text": "We understand complex numbers better when they’re represented visually\n\n\n“Exams will have a total of 137 points rather than the usual 100. This scoring system has no efect on the grade you get in the course, but it seems to make you happier”\n\n\n-Richard H. Thaler, economist & professor\n\n\nEarly years: exam graded 0 - 100 with an average score of 72 points = lots of complaints\nLater years: exam graded 0 - 137 with an average score of 96 points = no complaints\n\n\n\n\n\n\n\n\n\n\n\n\nAlbert Cairo’s visualization of the scores from Thaler’s exam case study"
+    "text": "Information overload is no fun . . .\n\nIt can be nearly impossible to easily process many different variables, colors, shapes, etc. on the same visualization (and realistically, most people won’t want to take the time to even try):\n\n\nSource: Unknown, but borrowed from Allison Horst’s lecture"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#vision-sense",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#vision-sense",
+    "objectID": "slides/week4.3-good-viz-slides.html#info-overload-fixes",
+    "href": "slides/week4.3-good-viz-slides.html#info-overload-fixes",
     "title": "EDS 240",
     "section": "",
-    "text": "Vision is our most well-developed sense\n\n  \n\nMapping data into visual properties is powerful\n\n\n\n\nMapping?\nHow values of a variable(s) of interest are represented by visuals (e.g height of bar, shaded region of area plot, color of data points)"
+    "text": "Reduce information overload whenever possible\n\n\nConsider some of the approaches we’ve already discussed:\n\nhighlighting the most important groups / values\nfaceting (small multiples)\ncreating separate visualizations\ncohesive and intuitive color scheme (more on colors next week)\n\n\n\nOr some that we haven’t covered:\n\ncreate interactive tables and / or visualizations using htmlwidgets (e.g. leaflet maps, plotly, charts, DT data tables)\ncreate reactive outputs using tools like {shiny}\n\ncheck out the EDS 430 (Intro to Shiny) materials as a starting point!"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#choose-graphic",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#choose-graphic",
+    "objectID": "slides/week4.3-good-viz-slides.html#dual-axes1",
+    "href": "slides/week4.3-good-viz-slides.html#dual-axes1",
     "title": "EDS 240",
     "section": "",
-    "text": "How do you choose the right graphic form to represent your data?\n\n  \n\n\n“If I had the answer to that, I’d be rich by now…I have no idea, but I can give you some clues to make your own choices based on what we know about why and how visualization works”\n\n\n\n-Albert Cairo1, in his book, The Truthful Art\n\n\n1Someone who, in fact, knows a lot about effectively visualizing data"
+    "text": "Dual y-axes can deliberately mislead readers\n\nThe scales of dual axis charts are arbitrary and therefore can (deliberately) mislead readers about the relationship between the two data series. Let’s take this example using real Worldbank data for the German GDP and the global GDP between 2004 and 2016:\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample from Why not to use two axes, and what to use instead, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#ex-choose-graph",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#ex-choose-graph",
+    "objectID": "slides/week4.3-good-viz-slides.html#dual-axes2",
+    "href": "slides/week4.3-good-viz-slides.html#dual-axes2",
     "title": "EDS 240",
     "section": "",
-    "text": "Exercise: Map data to visual properties\n\n  \n\n\n\n−+\n03:00\n\n\n\nLet’s say you want to compare unemployment rates of 5 countries: A, B, C, D, E (the actual values here are not important).\n\n\nHow would you map the unemployment rates to visual properties in a way that enables your readers to accurately compare values without having to read all the numbers?\n\nExample adapted from Albert Cairo’s, The Truthful Art"
+    "text": "Dual y-axes can deliberately mislead readers\n\nThe scales of dual axis charts are arbitrary and therefore can (deliberately) mislead readers about the relationship between the two data series. Let’s take this example using real Worldbank data for the German GDP and the global GDP between 2004 and 2016:\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample from Why not to use two axes, and what to use instead, by Lisa Charlotte Muth\n\n\nThe proportions of the two scales are often different from each other in dual axis charts. If the left axis would go down to zero, the chart would be twice as long. If the right axis would go down to zero, the chart would be almost three times as long. This is how both axes look like when we extend them to zero.\nSo while the chart looks like the German GDP and the global GDP go up at roughly the same rate (at least until 2014), they don’t. The global GDP increased by 80% until 2014; the GDP of Germany by 40%."
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#ex-possible-choices",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#ex-possible-choices",
+    "objectID": "slides/week4.3-good-viz-slides.html#dual-axes3",
+    "href": "slides/week4.3-good-viz-slides.html#dual-axes3",
     "title": "EDS 240",
     "section": "",
-    "text": "Different methods of encoding the same data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGraphs recreated based on Albert Cairo’s example (Fig 5.2) in The Truthful Art\nFor all graphics: A (22%), B (25%), C (24%), D (29%), E (32%)\n\n\nLENGHT, HEIGHT, POSITION probably the best (have students discuss)"
+    "text": "Dual y-axes can deliberately mislead readers\n\nThe scales of dual axis charts are arbitrary and therefore can (deliberately) mislead readers about the relationship between the two data series. Let’s take this example using real Worldbank data for the German GDP and the global GDP between 2004 and 2016:\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample from Why not to use two axes, and what to use instead, by Lisa Charlotte Muth\n\n\nThis is how the chart looks like with the same baseline. (Meaning, if we extended both y-axes to zero, they would have the same height.). In the best case, our readers will now think: “Seems like the global GDP increased more than the German GDP”. Yes! Success! In the worst case, our readers will think: “In the first years, the German GDP was higher than the global GDP. And then in 2011, the two GDP’s were the same:”\nIf things look close-by on a chart, it’s hard to constantly remember that actually, they are miles apart."
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#hierarchy",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#hierarchy",
+    "objectID": "slides/week4.3-good-viz-slides.html#dual-axes-alt-two-charts",
+    "href": "slides/week4.3-good-viz-slides.html#dual-axes-alt-two-charts",
     "title": "EDS 240",
     "section": "",
-    "text": "“Hierarchy of elementary perceptual tasks”\n\n\n\n\nWilliam S. Cleveland & Robert McGill (1984) Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods, Journal of the American Statistical Association, 79:387, 531-554, DOI: 10.1080/01621459.1984.10478080\n\n\n\na viewer performs one or more of these mental-visual tasks (judging position, perceiving angles / areas, etc.) to extract the values of real variables represented on most graphs\nsuccessful charts are constructed based on elementary tasks “as high in the hierarchy as possible”\n\nAlbert Cairo’s recreation of Cleveland & McGill’s Hierarchy of Elementary Perceptual Tasks \n\n\n\n\n\n\n\n\n\n\n\nA recreation of Cleveland & McGill’s hierarchy of elementary perceptual tasks, by Albert Cairo"
+    "text": "Alternatives to dual y-axes: side-by-side charts\n\nSeparate your data series into side-by-side charts – this allows us to create two different axes for two different charts.\n\n\n\n\nExample from Why not to use two axes, and what to use instead, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#compare-circles",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#compare-circles",
+    "objectID": "slides/week4.3-good-viz-slides.html#dual-axes-alt-indexed",
+    "href": "slides/week4.3-good-viz-slides.html#dual-axes-alt-indexed",
     "title": "EDS 240",
     "section": "",
-    "text": "Exercise: How many times bigger is the larger circle?\n\n\n\n\n\n−+\n01:00"
+    "text": "Alternatives to dual y-axes: indexed charts\n\nIndexed charts show the relative change (percentage increase of decrease) of our data series over time. Consider adding labels or tooltips (e.g. using {plotly}) to include important absolute numbers.\n\n\n\n\nExample from Why not to use two axes, and what to use instead, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#compare-bars",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#compare-bars",
+    "objectID": "slides/week4.3-good-viz-slides.html#dual-axes-alt-prioritize",
+    "href": "slides/week4.3-good-viz-slides.html#dual-axes-alt-prioritize",
     "title": "EDS 240",
     "section": "",
-    "text": "Exercise: How many times bigger is the larger bar?\n\n\n\n\n\n−+\n01:00"
+    "text": "Alternatives to dual y-axes: prioritize & label\n\nConsider prioritizing and plotting the more important of the two data series. Then use annotations to add information about the omitted variable. This option may not work well for all data sets, but can be effective for dual-axis charts that present both absolute and relative numbers of the same measure.\n\n\n\n\nExample from Why not to use two axes, and what to use instead, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#7x",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#7x",
+    "objectID": "slides/week4.3-good-viz-slides.html#dual-axes-alt-connected-scatter",
+    "href": "slides/week4.3-good-viz-slides.html#dual-axes-alt-connected-scatter",
     "title": "EDS 240",
     "section": "",
-    "text": "Both the circles & rectangles differ by a magnitude of 7"
+    "text": "Alternatives to dual y-axes: connected scatterplot\n\nA connected scatterplot places one variable on the y-axis and the other on the x-axis (here, replacing time). Be mindful that these plots are generally less inutitive for a reader and may take more time to decipher patterns.\n\n\n\n\nExample from Why not to use two axes, and what to use instead, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#caveats1",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#caveats1",
+    "objectID": "slides/week4.3-good-viz-slides.html#pie-charts1",
+    "href": "slides/week4.3-good-viz-slides.html#pie-charts1",
     "title": "EDS 240",
     "section": "",
-    "text": "Caveats to the hierarchy\n\n \n1. Cleveland & McGill only considered statistical charts. What about data maps, for example, that rely on area / shading / hue, which fall lower on the hierarchy?"
+    "text": "The problem with pie charts . . .\n\n\n. . . is actually a problem with humans – we’re not so great at comparing angles. We’re bad at comparing angles within a single pie chart if they’re all similar:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExamples from Allison Horst, who adapted from From Data to Viz"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#caveats1.1",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#caveats1.1",
+    "objectID": "slides/week4.3-good-viz-slides.html#pie-charts2",
+    "href": "slides/week4.3-good-viz-slides.html#pie-charts2",
     "title": "EDS 240",
     "section": "",
-    "text": "Caveats to the hierarchy - an example\n\nLower scale methods can be appropriate when the goal is to reveal general patterns. For example, a choropleth map displays divided geographical areas / regions, which are colored in relation to a numeric variable.\n\n\n\n\nPrecipitation data downloaded from NOAA’s National Centers for Environmental Information. Map created using the {maps} package."
+    "text": "The problem with pie charts . . .\n\n\n. . . is actually a problem with humans – we’re not so great at comparing angles. We’re bad at comparing angles within a single pie chart if they’re all similar:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExamples from Allison Horst, who adapted from From Data to Viz"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#caveats2",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#caveats2",
+    "objectID": "slides/week4.3-good-viz-slides.html#pie-charts3",
+    "href": "slides/week4.3-good-viz-slides.html#pie-charts3",
     "title": "EDS 240",
     "section": "",
-    "text": "Caveats to the hierarchy\n\n \n1. Cleveland & McGill only considered statistical charts. What about data maps, for example, that reply on area / shading / hue, which fall lower on the hierarchy?\n\n2. No method of choosing a graphic form is perfect! It’s important to think critically about your graphic’s purpose and how best to represent your data to serve that purpose."
+    "text": "The problem with pie charts . . .\n\n\n. . . is actually a problem with humans – we’re not so great at comparing angles. And we’re even worse at comparing angles across multiple pie charts:\n\n\n\nExamples from Allison Horst, who adapted from From Data to Viz"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#caveats2.1",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#caveats2.1",
+    "objectID": "slides/week4.3-good-viz-slides.html#good-pie",
+    "href": "slides/week4.3-good-viz-slides.html#good-pie",
     "title": "EDS 240",
     "section": "",
-    "text": "Caveats to the hierarchy - an example\n\nConsider how you might display the same data in the following Sankey diagram depicted the flow of refugees in 2022, using graph types from the top of Cleveland & McGill’s hierarchy. What is the purpose of this chart?\n\n\n\n\n\n\nGraphic recreated following Louise E. Sinks’ blog post, TidyTuesday: Exploring Refugee Flow with A Sankey Diagram\n\nIt would be hard to use a method of encoding from the top of the hierarchy! In this Sankey diagram, readers need to decode length and area, but that’s not a huge issue since the purpose of the chart is to show high-level trends / flows of refugees"
+    "text": "Sometimes, pie charts can be a good option\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nABC Enterprise Sales. Source: How to Use Charts and Graphs Effectively, by MindTools\n\n\nIF you decide a pie chart is the right option, consider:\n\n\nare the main takeaways clear (e.g. proportions different enough)?\navoiding lots of wedges\naggregating if there are many tiny ones\nemphasizing most important wedge\nlabeling directly on the chart\ncomparing to a bar chart version to see which is a better version\n\n\n\n\n\n\nExamples from Allison Horst, who adapted from From Data to Viz"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips0",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips0",
+    "objectID": "slides/week4.3-good-viz-slides.html#treemap",
+    "href": "slides/week4.3-good-viz-slides.html#treemap",
     "title": "EDS 240",
     "section": "",
-    "text": "Tips for choosing the right graphic form\n\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\n\n\n\n\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\n\n\n\n\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\n\n\n\n\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\n\n\n\n\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
+    "text": "Pie chart alternative: treemap\n\n\nAs an alternative to a pie chart, consider treemaps. Treemaps display hierarchical data as a set of nested rectangles – simpler versions can be used to display parts of a whole using rectangles (which are easier for us to estimate than angles).\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: From Data to Viz\n\n\n\n\n\n\n\n\n\n\n\n\nSource: {treemapify} pkgdown site"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips1-2",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips1-2",
+    "objectID": "slides/week4.3-good-viz-slides.html#3d-charts-occlusion",
+    "href": "slides/week4.3-good-viz-slides.html#3d-charts-occlusion",
     "title": "EDS 240",
     "section": "",
-    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
+    "text": "3D charts distort perspective\n\nOcclusion: When we see one object occlude (aka obstruct) another on a 2D surface, our brain perceives the object being hidden as farther away:\n\n\n\n\nSource: Data Visualization: Why 3D charts are a terrible idea"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#chart-selectors",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#chart-selectors",
+    "objectID": "slides/week4.3-good-viz-slides.html#3d-charts-pers-dist",
+    "href": "slides/week4.3-good-viz-slides.html#3d-charts-pers-dist",
     "title": "EDS 240",
     "section": "",
-    "text": "1. What task(s) to enable / message(s) to convey\n2. Number of variables & data points, data types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Viz Project\ndisplays one small data set 100 different ways\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Data to Viz\nsearch graphic types by data type or by function (+ R & Python Graph Gallery)\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Visualization Universe\ncompares most popular graphic forms"
+    "text": "3D charts distort perspective\n\nPerspective distortion: When we view objects in 3D, the objects farther away appear smaller, but our brain perceives them to be of larger size than in the picture:\n\n\n\n\nSource: Data Visualization: Why 3D charts are a terrible idea"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips3",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips3",
+    "objectID": "slides/week4.3-good-viz-slides.html#gratuitous-3d",
+    "href": "slides/week4.3-good-viz-slides.html#gratuitous-3d",
     "title": "EDS 240",
     "section": "",
-    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
+    "text": "Avoid gratuitous 3D\n\nConsider how gray and blue areas visually compare in the 3D version? What about gray and orange? Now how do your interpretations change when inspecting the 2D version?\n\n\n\nThe pie chart on the right is an example of using 3D purely for decorative purposes. Here, the third dimension doesn’t actually convey any additional data. Claus Wilke calls this gratuitous 3D, and you should always avoid it.\n\nSource: Data Visualization: Why 3D charts are a terrible idea"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#choro-bar",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#choro-bar",
+    "objectID": "slides/week4.3-good-viz-slides.html#3d-position-scales",
+    "href": "slides/week4.3-good-viz-slides.html#3d-position-scales",
     "title": "EDS 240",
     "section": "",
-    "text": "3. Try different graphic forms\n\nRecall our choropleth map from earlier, which displays total precipitation by US county. What if we want to compare precipitation between CA counties? Choosing a graphical form from the top of the hierarchy (e.g. bar chart) may be more effective.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIf we want to show both big picture patterns and detailed comparisons, we may consider including multiple graphic forms in the same visualization."
+    "text": "Avoid 3D position scales\n\nA plot with three genuine position scales (x, y, and z) to represent mtcars data (viewed from four different perspectives:\n\n\nSource: Fundamentals of Data Visualization, by Claus Wilke"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips4",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips4",
+    "objectID": "slides/week4.3-good-viz-slides.html#3d-position-scales-alt1",
+    "href": "slides/week4.3-good-viz-slides.html#3d-position-scales-alt1",
     "title": "EDS 240",
     "section": "",
-    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
+    "text": "Alternative (a) to 3D position scales\n\nIf we primarily care about fuel efficiency as the response variable, plot it twice (once against displacement and once against power):\n\n\n\n\nSource: Fundamentals of Data Visualization, by Claus Wilke"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#ad-methods1",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#ad-methods1",
+    "objectID": "slides/week4.3-good-viz-slides.html#3d-position-scales-alt2",
+    "href": "slides/week4.3-good-viz-slides.html#3d-position-scales-alt2",
     "title": "EDS 240",
     "section": "",
-    "text": "4. Arrange components of the graphic\n\n How does the influence of in-theater advertising change across generations?  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages from Albert Cairo’s The Truthful Art"
+    "text": "Alternative (b) to 3D position scales\n\nIf we are more interested in how displacement and power relate to each other, with fuel efficiency as a secondary variable of interest, create a bubble chart (plot power vs. displacement and map fuel efficiency onto the size of the dots). Be mindful that three variables (even in a 2D space) are still challenging for readers to quickly comprehend.\n\n\n\n\nSource: Fundamentals of Data Visualization, by Claus Wilke"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#ad-methods2",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#ad-methods2",
+    "objectID": "slides/week4.3-good-viz-slides.html#examples",
+    "href": "slides/week4.3-good-viz-slides.html#examples",
     "title": "EDS 240",
     "section": "",
-    "text": "4. Arrange components of the graphic\n\n How does the influence of in-theater advertising change across generations?  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages from Albert Cairo’s The Truthful Art"
+    "text": "Let’s consider some example data visualizations together"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#fed-spending1",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#fed-spending1",
+    "objectID": "slides/week4.3-good-viz-slides.html#co2-1",
+    "href": "slides/week4.3-good-viz-slides.html#co2-1",
     "title": "EDS 240",
     "section": "",
-    "text": "4. Arrange components of the graphic\n\nLet’s say we’re interested in:\n\nchanges in the amount spent on Social Security over time (2012-2015) relative to other major spending categories?\n\n\n\n\n\nExample from Derek L. Sonderegger’s online textbook, STA 141 - Exploratory Data Analysis and Visualization"
+    "text": "CO2 in conference rooms\n\n\n\n\n\n\n\n\n\n\n\n\n\nClearing the Air, by Christopher Ingraham, writing for The Washington Post\n\n\n \nTake some time to discuss the following:\n\nwhere are your eyes drawn first, second, etc.?\nwhat are the main messages / takeaways?\nwhere has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?\nwhat would you change about this visualization?\n\n\n\n\n\n\n−+\n05:00"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#fed-spending2",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#fed-spending2",
+    "objectID": "slides/week4.3-good-viz-slides.html#co2-2",
+    "href": "slides/week4.3-good-viz-slides.html#co2-2",
     "title": "EDS 240",
     "section": "",
-    "text": "4. Arrange components of the graphic\n\nLet’s say we’re interested in:\n\nchanges in the amount spent on Social Security over time (2012-2015) relative to other major spending categories?\nthe amount of money spent on Social Security over time (2012-2015)?\n\n\n\n\n\nExample from Derek L. Sonderegger’s online textbook, STA 141 - Exploratory Data Analysis and Visualization"
+    "text": "Annotations adapted from @chezVoila"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#internet1",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#internet1",
+    "objectID": "slides/week4.3-good-viz-slides.html#penguins",
+    "href": "slides/week4.3-good-viz-slides.html#penguins",
     "title": "EDS 240",
     "section": "",
-    "text": "4. Arrange components of the graphic\n\nDo we want to convey:\n\ninternet usage in 2016? or\n\n\n\n\nExample from Claus Wilke’s, Fundamentals of Data Visualization"
+    "text": "Palmer penguin classification\n\n\n\n\n\n\n\n\n\n\n\n\n\nPerfectly Proportional Penguins, by Cara Thompson as part of TidyTuesday (code)\n\n\n \nTake some time to discuss the following:\n\nwhere are your eyes drawn first, second, etc.?\nwhat are the main messages / takeaways?\nwhere has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?\nwhat would you change about this visualization?\n\n\n\n\n\n\n−+\n05:00"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#internet2",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#internet2",
+    "objectID": "slides/week4.3-good-viz-slides.html#glimmers",
+    "href": "slides/week4.3-good-viz-slides.html#glimmers",
     "title": "EDS 240",
     "section": "",
-    "text": "4. Arrange components of the graphic\n\nDo we want to convey:\n\ninternet usage in 2016? or\nhow early or late adoption of internet relates to current-day usage?\n\n\n\n\nExample from Claus Wilke’s, Fundamentals of Data Visualization"
+    "text": "Glimmers of hope in large carnivore recovery\n\n\n\n\n\n\n\n\n\n\n\n\n\nFig. 3, by Ingeman et al. 2022: Glimmers of hope and critical cases. Distribution of large carnivore species across categories of current IUCN status (x-axis) and population trend (y-axis). Improvements in status are indicated by gold and declines by blue, with bubble size indicating the number of status category changes. The majority of species have not undergone any changes in status (shown in light gray). Note: No change in status may indicate lack of recent assessment, insufficient data, or, in the case of species designated Least Concern, effective conservation efforts.\n\n\n \nTake some time to discuss the following:\n\nwhere are your eyes drawn first, second, etc.?\nwhat are the main messages / takeaways?\nwhere has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?\nwhat would you change about this visualization?\n\n\n\n\n\n\n−+\n05:00"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips5",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips5",
+    "objectID": "slides/week4.3-good-viz-slides.html#aquaculture",
+    "href": "slides/week4.3-good-viz-slides.html#aquaculture",
     "title": "EDS 240",
     "section": "",
-    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
+    "text": "Public perceptions of aquaculture\n\n\n\n \n\n\n\n\n\n\n\n\n\n\nFig. 3, by Froehlich et al. 2017: Newspaper ‘offshore aquaculture’ media sentiment. Sentiment over time based on the frequency of newspaper headlines with negative (red), positive (blue), and neutral (gray) titles for (A) developed (n = 102) and (B) developing (n = 8) nations. Also depicted are the (C) proportional contributions of sentiment headlines relative to each developed and developing country, with the number of headlines from each country shown in parentheses. All countries used in the analysis are depicted. Headlines were compiled using the LexisNexis® platform.\n\n\n \nTake some time to discuss the following:\n\nwhere are your eyes drawn first, second, etc.?\nwhat are the main messages / takeaways?\nwhere has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?\nwhat would you change about this visualization?\n\n\n\n\n\n\n−+\n05:00"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#iraq",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#iraq",
+    "objectID": "slides/week4.3-good-viz-slides.html#end-break",
+    "href": "slides/week4.3-good-viz-slides.html#end-break",
     "title": "EDS 240",
     "section": "",
-    "text": "5. Test the outcomes of your graphic on others\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Iraq’s bloody toll.\n\n\n\n\nTo enlarge image (in Chrome), right click on image &gt; Open image in New Tab\n\n\n\nWhat is the take home message of this graphic?\nWhat is effective? What is confusing?\n\n\n\n\n−+\n03:00"
+    "text": "Take a Break\n\n\n~ This is the end of Lesson 3 (of 4) ~"
   },
   {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#guns1",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#guns1",
-    "title": "EDS 240",
-    "section": "",
-    "text": "5. Test the outcomes of your graphic on others\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: This Chart Shows An Alarming Rise In Florida Gun Deaths After ‘Stand Your Ground’ Was Enacted.\n\n\n\n\nTo enlarge image (in Chrome), right click on image &gt; Open image in New Tab\n\n\n\nWhat is the take home message of this graphic?\nWhat is effective? What is confusing?\n\n\n\n\n−+\n03:00"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#iraq-guns",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#iraq-guns",
-    "title": "EDS 240",
-    "section": "",
-    "text": "5. Test the outcomes of your graphic on others\n\n\n\n\n\n\n\n\n\n\n\n\nBaseline at the top is clear, suggesting that bars are falling from it. Clear metaphor (dripping blood).\n\n\n\n\n\n\n\n\n\n\nEyes are drawn to baseline at the bottom, on top of which data are sitting. Headline indicates rise but visually represented by falling. Thick black line makes white area stand out over red (data).\n\n\n\n\nCritique by Albert Cairo in his post In visualization, baselines and negative space matter"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#guns2",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#guns2",
-    "title": "EDS 240",
-    "section": "",
-    "text": "5. Test the outcomes of your graphic on others\n\nBusiness Insider published an updated graphic (originally designed by Reuters), which was submitted by a reader that, “more clearly shows that gun deaths increased between 2005 and 2007 by flipping the y-axis”:"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#critique-considerations",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#critique-considerations",
-    "title": "EDS 240",
-    "section": "",
-    "text": "5. Test the outcomes of your graphic on others\n\n\nCritiquing a data visualization:\n\nIdentify the primary and secondary insights that the graphic is trying to convey.\nIdentify elementary perceptual tasks (e.g. comparing lengths, angles) and what is confusing or difficult to do.\nIdentify how to use more effective elementary perceptual tasks for the primary and secondary insights.\nIdentify points of confusion and decide how those could be addressed (e.g. a different graphic form, rearranging components, including an introduction graph, better annotation)\n\n\n\nAdapted from Derek L. Sonderegger’s online textbook, STA 141 - Exploratory Data Analysis and Visualization"
-  },
-  {
-    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#end-break",
-    "href": "slides/week3.1-choosing-graphic-forms-slides.html#end-break",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Take a Break\n\n\n~ This is the end of Lesson 1 (of 3) ~\n\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "slides/week1.1-logistics-slides.html#title-slide",
-    "href": "slides/week1.1-logistics-slides.html#title-slide",
-    "title": "EDS 240",
-    "section": "",
-    "text": "EDS 240: Lecture 1.1\nCourse logistics & syllabus\n\nWeek 1 | January 8th, 2024"
-  },
-  {
-    "objectID": "slides/week1.1-logistics-slides.html#welcome",
-    "href": "slides/week1.1-logistics-slides.html#welcome",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Welcome to EDS 240!\n\nThis course will focus on the basic principles for effective communication through data visualization and using technical tools and workflows for creating and sharing data visualizations with diverse audiences.\n\n\nArtwork by Allison Horst"
-  },
-  {
-    "objectID": "slides/week1.1-logistics-slides.html#logistics",
-    "href": "slides/week1.1-logistics-slides.html#logistics",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Meeting times & locations\n\n\nClass: Mondays 1:00-4:00pm PT (attendance is mandatory)\nDiscussion Sections: Wednesdays 10:00-10:50am PT & 11:00-11:50am PT\n\n\n\nClass & Discussion Sections meet in the NCEAS 1st floor classroom"
-  },
-  {
-    "objectID": "slides/week1.1-logistics-slides.html#instructor",
-    "href": "slides/week1.1-logistics-slides.html#instructor",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Teaching team\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\nStudent hours: M 4-5pm @ NCEAS\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nSevan Esaian\nEmail: sevan.esaian@lifesci.ucsb.edu\nLearn more: linkedin.com/in/sevan-esaian Student hours: W 9-10am @ NCEAS"
-  },
-  {
-    "objectID": "slides/week1.1-logistics-slides.html#meet-one-another",
-    "href": "slides/week1.1-logistics-slides.html#meet-one-another",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Meet one another!\n\n\nSpend the next few minutes getting to know your Learning Partners! Below are some conversation starters:\n\n\nWhere do you feel most at home?\n\n\nWhat parts of Santa Barbara have you enjoyed exploring?\n\n\nWhat’s the most exciting thing you’ve learned this year, so far?\n\n\nWhat’s your favorite color or typeface?\n\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "slides/week1.1-logistics-slides.html#student-resources",
-    "href": "slides/week1.1-logistics-slides.html#student-resources",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Student Resources\n\n\nBasic Needs Resources & Food Security: https://basicneeds.ucsb.edu/ (schedule a CalFresh Appoinment or Basic Needs Advising Session)\nCounseling & Psychological Services (CAPS): http://caps.sa.ucsb.edu\nResource Center for Sexual and Gender Diversity (RCSGD): https://rcsgd.sa.ucsb.edu/\nUndocumented Student Services (USS) Program: https://uss.sa.ucsb.edu/\nCampus Learning Assistance Services (CLAS): http://clas.sa.ucsb.edu\nStudent Resource Building (SRB): http://www.sa.ucsb.edu/student-resource-building/home\nMulticultural Center (MCC): http://mcc.sa.ucsb.edu/\nCampus Advocacy, Resources, & Education (CARE): http://wgse.sa.ucsb.edu/care/home\nFinancial Crisis Response Team: financialcrisis@sa.ucsb.edu (contact)\nHealth and Wellness: https://wellbeing.ucsb.edu/\n\n\n\nYour mental and physical health is more important than your grade in any course.\nI’m always happy to help you identify resources or help on campus – DM or email me!"
-  },
-  {
-    "objectID": "slides/week1.1-logistics-slides.html#conduct",
-    "href": "slides/week1.1-logistics-slides.html#conduct",
-    "title": "EDS 240",
+    "objectID": "slides/random-notes.html",
+    "href": "slides/random-notes.html",
+    "title": "random things to find a place for",
     "section": "",
-    "text": "Conduct, Inclusion, Accommodations\n\n \nCourse Conduct: We are committed to actively creating, modeling, and maintaining an inclusive climate and supportive learning environment for all – harassment of any kind will not be tolerated. Everyone is expected read and adhere to the Bren School Code of Conduct and the UCSB Code of Conduct\n\n\nAccess & accommodations: It’s never too late to apply for DSP accommodations\n\n\n\nNames & pronouns: Everyone has the right to be addressed and referred by to name and pronouns in accordance with their identity – you can add your pronouns to your UCSB Registrar profile"
+    "text": "plot data directly\ne.g. plot income and expenses as separate lines or just plot a singe net income line? (latter) plot your data directly, if difference matters more, plot the difference! (need environmental example here)\n\nSOME TIPS\n\nbaselines\nbreaking up plots when data vary so much that presenting them all on a single chart renders it useless (e.g. use fracking data?)\nordering variables / categories – e.g. see trends across age groups by grouping bars by media (see pg 139) (NEED EDS EXAMPLE HERE)\n\n\nuse logical & meaningful baselines\n\nbar, lollipops, histograms, etc should always have a 0 baseline – cannot truncate when main visual cue is height/length measured from a common baseline\nscatterplot, line graph, ec. – can be okay to truncate axes since main visual cue is position, not height/length"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#course-website",
-    "href": "slides/week1.1-logistics-slides.html#course-website",
+    "objectID": "slides/week5.1-colors-slides.html#title-slide",
+    "href": "slides/week5.1-colors-slides.html#title-slide",
     "title": "EDS 240",
     "section": "",
-    "text": "Everything you’ll need lives on the course website!\n\n\nhttps://samanthacsik.github.io/EDS-240-data-viz\n\n\n\nLink is also bookmarked at the top of the #eds-240-data-viz Slack channel and linked on the Courses page of the MEDS website."
+    "text": "EDS 240: Lecture 4.4\nColors\n\nWeek 4 | January 29th, 2024"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#tentative-schedule",
-    "href": "slides/week1.1-logistics-slides.html#tentative-schedule",
+    "objectID": "slides/week5.1-colors-slides.html#choosing-colors",
+    "href": "slides/week5.1-colors-slides.html#choosing-colors",
     "title": "EDS 240",
     "section": "",
-    "text": "Tentative Schedule & Materials\n\n\n\n\n\n\n\n\n\n\n\nDate\nTentative Topic\n\n\n\n\n1/8\ncourse logistics, intro, {ggplot2} review\n\n\n1/15\nno class\n\n\n1/22\ngraphic forms, fundamental chart types (part I)\n\n\n1/29\nfundamental chart types (part II), visual form\n\n\n2/5\ndesign principles & enhancing visualizations\n\n\n2/12\ndata communication\n\n\n2/19\nno class\n\n\n2/26\nvisualizing uncertainty & avoiding the misrepresentation of data\n\n\n3/4\nOJS with Dr. Allison Horst\n\n\n3/11\ngrab bag & catch up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiscussion sections are held every week"
+    "text": "tbd\n\n\npicking colors is hard! use them purposefully\n\nyour brand\npulling colors from a related image\ntake inspiration from other data viz/art\ngoogle “[whatever you like] palette”\n\n\n{monochromeR}\n\ncolors & common pitfalls\n\nwhat to consider when choosing colors for data visualization (datawrapper)\ngradients for cont data\nbe consistent with colors\ncolor gradients (consider binned colors)\nmisleading color palettes (rainbow color palette): https://eagereyes.org/blog/2013/rainbow-color-map\nthink about color palettes before you create your viz! use color blindness tools\n\nhttps://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/ https://blog.datawrapper.de/colors/\n\nexample of bad color map (poverty): https://en.wikipedia.org/wiki/Poverty"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#pre-class-prep",
-    "href": "slides/week1.1-logistics-slides.html#pre-class-prep",
+    "objectID": "slides/week5.1-typography-slides.html#title-slide",
+    "href": "slides/week5.1-typography-slides.html#title-slide",
     "title": "EDS 240",
     "section": "",
-    "text": "Complete all items under Pre-class Prep before lecture\n\nPlease be sure to carefully complete all required prep (e.g. installing packages, downloading data) under the Pre-class Prep section (organized by week) before lecture – be mindful that some items may take time to download/install.\n\n\nIt is highly recommended that you do this well in advance of attending lecture."
+    "text": "EDS 240: Lecture 4.4\nTypography\n\nWeek 4 | January 29th, 2024"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#assignments",
-    "href": "slides/week1.1-logistics-slides.html#assignments",
+    "objectID": "slides/week5.1-typography-slides.html#typeography",
+    "href": "slides/week5.1-typography-slides.html#typeography",
     "title": "EDS 240",
     "section": "",
-    "text": "Assignments\n\n\n\nYour course grade will be based off the following:\n\n\n\n3 Self-reflections - a place to reflect on your learning plan / goals, challenges, etc. (5 days to complete each)\n4 Homework Assignments - longer assignments where you’ll apply conceptual knowledge & technical skills to data viz tasks (10+ days to complete each)\n8 End-of-class surveys - short surveys to help me better understand your weekly class experience (due by EOD each day there is lecture)\n8 Lectures - a mix of slide-based lectures, live-coding, and individual / group-based critical thinking and technical exercises (attendance mandatory, Mondays 1:00-4:00pm PT)"
+    "text": "Type and font choice influences audience perception and readability"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#grading",
-    "href": "slides/week1.1-logistics-slides.html#grading",
+    "objectID": "slides/week5.1-typography-slides.html#typography-defs",
+    "href": "slides/week5.1-typography-slides.html#typography-defs",
     "title": "EDS 240",
     "section": "",
-    "text": "How will I be evaluated?\n\n\nThis class will implement an alternative grading approach called specifications (specs) grading.\n\n\n\n\n“an alternative grading method where instructors create a list of specifications that describe the qualities and characteristics of a successful submission for an assignment. Student work is graded holistically based on those specifications, earning a single mark: “Satisfactory” or “Not Yet”. Students have the chance to use feedback by revisiting and resubmitting for full credit.”\n\n\n\n-expert from “Grading for Growth: A Guide to Alternative Grading Practices That Promote Authentic Learning and Student Engagement in Higher Education”, by David Clark & Robert Talbert"
+    "text": "Typeface vs. font\n\n\n\nTypeface (aka font family): underlying visual design (e.g. Times New Roman, Helvetica, Roboto)\n\n\n\n\n\n\n\n\n\n\nFont: an implementation of a typeface; they can come in different weights and styles (e.g. bold, italic)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou choose a typeface (e.g. Nunito)\n\nYou use a font (e.g. regular, italic, bold)"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#why-specs",
-    "href": "slides/week1.1-logistics-slides.html#why-specs",
+    "objectID": "slides/week5.1-typography-slides.html#typography-importance",
+    "href": "slides/week5.1-typography-slides.html#typography-importance",
     "title": "EDS 240",
     "section": "",
-    "text": "Why Specs grading?\n\n\n“Traditional” grading can come with some challenges:\n\n\n\nlacks feedback loops\nbenefits those who learn fast or have prior experience\nbias-prone (e.g. awarding points, granting extensions)\ncan discourage learning for its own sake\ncan promote unhealthy student-instructor relationships"
+    "text": "Typeface choices affect emotions and perceptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n“Typography is the art and technique of arranging type to make written language legible, readable and appealing when displayed.”\n\n\n-Wikipedia\n\n\nLike colors, typefaces / fonts influence the how viewers perceive information (check out this short TEDx talk).\n\n Source: The Daily Egg\n\n\n\nWant to dive deeper into the world of typography? Start with this quick read, Why care about typography? and explore other great articles by Google Fonts."
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#how-does-specs-look",
-    "href": "slides/week1.1-logistics-slides.html#how-does-specs-look",
+    "objectID": "slides/week5.1-typography-slides.html#font-psychology",
+    "href": "slides/week5.1-typography-slides.html#font-psychology",
     "title": "EDS 240",
     "section": "",
-    "text": "How does specs grading look in practice for this course?\n\n\nTL;DR: assignments receive either “Satisfactory” or “Not Yet” marks; tokens can be used to revise/resubmit assignments, for assignment extensions, or to miss class; earn tokens by attending discussions\n\n\n\nassignments receive either a “Satisfactory” or “Not Yet” mark\neach assignment will have a clear rubric (containing specifications) which outline what must be completed and how in order to receive a “Satisfactory” mark; not meeting all specifications results in a “Not Yet” mark\nstudents can trade “tokens” for the opportunity to:\n\nrevise / resubmit assignments that receive a “Not Yet” mark (within a week)\nassignment extensions\nto miss class\n\nstudents earn tokens (primarily) by attending discussion section"
+    "text": "Context matters - choose typeface accordingly\n\nTypefaces and fonts communicate beyond more than just the written text – they can evoke emotions and can be used to better connect your audience with your work.\n\n\n\nSource: Typography for a better user experience, by Suvo Ray\n\n\n\nInterested in font pyschology? Check out this short video and this article to learn a bit more."
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#why-tokens",
-    "href": "slides/week1.1-logistics-slides.html#why-tokens",
+    "objectID": "slides/week5.1-typography-slides.html#sans-serifs",
+    "href": "slides/week5.1-typography-slides.html#sans-serifs",
     "title": "EDS 240",
     "section": "",
-    "text": "Why tokens?\n\n\nEveryone has different responsibilities & demands – tokens give you the power and freedom to ask for the accommodations you need.\n\n\nYou do not need to provide a reason to request an extension, resubmission, or to miss class, but you must have enough tokens to do so.\n\n\n\n\nTokens are not limitless and they accrue weekly (i.e. you don’t receive them all at the start), so use them wisely!"
+    "text": "When in doubt, use sans-serif fonts\n\nSerif fonts have small decorative lines (aka “tails” or “feet”) that extend off characters while sans serif fonts don’t.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSans-serif fonts = cleaner and easier to read.\n\nRoboto, Lato, Open Sans are good, free options\n\nSerif fonts = classy / traditional / professional / serious tone; typically only used for visualization headlines\n\nIf your organization uses a serif font, consider using it in your visualization’s headline\n\n\n\n\n\n\nExample from Which fonts to use for your charts and tables, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#tokens",
-    "href": "slides/week1.1-logistics-slides.html#tokens",
+    "objectID": "slides/week5.1-typography-slides.html#lining",
+    "href": "slides/week5.1-typography-slides.html#lining",
     "title": "EDS 240",
     "section": "",
-    "text": "Earning & using tokens\n\n\nEarn tokens:\n\n\neveryone starts with 0 tokens\nearn your first token by attending discussion section on Wednesday 1/10\nearn 2 more tokens by submitting Self-reflection #1\nearn 1 token per week by attending discussion section (full 50min)\n\n\n\n\nUse tokens:\nFill out this Google form: https://forms.gle/6FdV9g5KA9GgrxXBA and email Sam & Sevan to let them know"
+    "text": "Use a typeface with lining figures for numerals\n\nDifferent typefaces display numbers differently. Serif fonts tend to have “oldstyle figures”, which extend above and below the “line” – these can be difficult to read in a visualization.\nInstead, look for options with lining figures, where numbers “line up”, i.e. they’re all the same height.\n\n\n\nExample from Which fonts to use for your charts and tables, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#grade-tracker",
-    "href": "slides/week1.1-logistics-slides.html#grade-tracker",
+    "objectID": "slides/week5.1-typography-slides.html#monospaced",
+    "href": "slides/week5.1-typography-slides.html#monospaced",
     "title": "EDS 240",
     "section": "",
-    "text": "Use the Grade Tracker to determine your course grade"
+    "text": "Use a monospaced typeface for numerals\n\n\nTypefaces with tabular figures print every character with equal width – you may see these referred to as monospaced typefaces. These work well in tables, visualizations, or any scenario where figures should line up vertically (see how you can quickly identify how many figures a number has in the table on the right, below).\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExamples from Which fonts to use for your charts and tables, by Lisa Charlotte Muth & Understanding numerals article by Google Fonts"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#GenAI",
-    "href": "slides/week1.1-logistics-slides.html#GenAI",
+    "objectID": "slides/week5.1-typography-slides.html#symbols",
+    "href": "slides/week5.1-typography-slides.html#symbols",
     "title": "EDS 240",
     "section": "",
-    "text": "Policy on Generative AI (GenAI)\n\nGenAI tools (such as ChatGPT) are strongly discouraged for the following reasons:\n\n\ncore competencies are built through practice\nbuilding your own programming proficiency will help you engage with GenAI tools more productively\nsubscription versions of GenAI tools may induce an inequitable learning environment\n\n\n\nPlease adhere to these guidelines:\n\n\nyou may use spell / grammar check and / or synonym identification tools\nbe prepared to explain each line of code in your assignments and exercises\nif you use GenAI in assignments, you must include a statement of which GenAI platform used and why, along with a copy of your initial prompt(s) and ensuing “conversation(s)”\n\n\n\n\n\nPlease read the full policy on the course syllabus"
+    "text": "Use a typeface with all the symbols you need\n\n\nConfirm that all symbols (aka glyphs) that you need exist and that they look good for your chosen typeface.\n\n\n\nConsider special characters for different languages, currency symbols, math symbols, reference marks, sub / superscript numbers, etc.\n\nExample from Which fonts to use for your charts and tables, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#help",
-    "href": "slides/week1.1-logistics-slides.html#help",
+    "objectID": "slides/week5.1-typography-slides.html#bold",
+    "href": "slides/week5.1-typography-slides.html#bold",
     "title": "EDS 240",
     "section": "",
-    "text": "Getting unstuck\n\nTroubleshooting, deciphering code, and trying (and failing at) new things is a large part of being a data scientist. Grad school is a safe space to get comfy with and practice these! Here’s how you should approach getting unstuck:\n\nCheck out the getting unstuck page (under “resources”) on the course website for more tips – particularly a reminder of how to ask a question."
+    "text": "Use bold fonts for emphasis only\n\nMost typefaces come with fonts for different weights (Google Fonts uses numbers for font weights – extra light (200), light (300), regular (400, default), medium (500), semi bold (600), bold (700), extra bold (800)).\nUse bold text for titles or to emphasize a few words in annotations. Regular or medium weights are often easiest for longer text (descriptions, annotations, notes).\n\n\n\n\nExample from Which fonts to use for your charts and tables, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#sucking-less",
-    "href": "slides/week1.1-logistics-slides.html#sucking-less",
+    "objectID": "slides/week5.1-typography-slides.html#thin",
+    "href": "slides/week5.1-typography-slides.html#thin",
     "title": "EDS 240",
     "section": "",
-    "text": "A note on pushing through the challenges\n\n\n\n \n\n\n“There is no way of [going from] knowing nothing about a subject to knowing something about a subject without going through a period of much frustration and suckiness.” “Push through. You’ll suck less.”\n\n\n\n-Hadley Wickham, author of {ggplot2}\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\nSlide adapted from Andrew Heiss’ lesson, Truth, beauty, and data (PMAP 8101: Data Visualization)"
+    "text": "Avoid really thin fonts\n\nThin (light-weight fonts) fonts are hard to read. Only use them in a high-contrast color and in large sizes (often, titles are the only place you’ll want to use think fonts.)\n\n\n\n\nExample from Which fonts to use for your charts and tables, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#slack",
-    "href": "slides/week1.1-logistics-slides.html#slack",
+    "objectID": "slides/week5.1-typography-slides.html#large-font-size",
+    "href": "slides/week5.1-typography-slides.html#large-font-size",
     "title": "EDS 240",
     "section": "",
-    "text": "A note on using Slack\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll course-related content questions should be asked in the #eds-240-data-viz channel – oftentimes there are others who have the same question and will benefit from seeing the discussion!\n\nAny questions sent as DMs will be copied into #eds-240-data-viz and answered there.\n\nOf course, please direct message or email with any personal questions or concerns."
+    "text": "Ensure your font size is large enough\n\nMake sure your font size is large enough, especially when presenting visualizations in a slide-based presentation (this oftentimes means increasing it larger than you would have it in print). In ggplot, adjust font sizes using theme().\n\n\n\n\nExample from Which fonts to use for your charts and tables, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#expectations",
-    "href": "slides/week1.1-logistics-slides.html#expectations",
+    "objectID": "slides/week5.1-typography-slides.html#contrast",
+    "href": "slides/week5.1-typography-slides.html#contrast",
     "title": "EDS 240",
     "section": "",
-    "text": "A note on expectations\n\nReminders:\n\nWe are not mind-readers (as helpful as that would be!). Please help us help you by bringing any issues to our attention (EOC surveys are a great place to do this, or via DM / email) – the earlier the better!\n\n\nPromises:\n\n\nWe are working, and will continue to work, really hard to make this a great class!\nWe are super passionate about teaching, but doesn’t mean it’s easy or that we’re infallible. We will do our best to adapt to student / class needs as the quarter progresses. There may be times where we won’t or can’t make changes to the course plan – if so, we will be transparent in our reasoning why.\n\n\n\n\nBoundaries:\n\n\nThis course (unfortunately) isn’t our only professional responsibility this quarter – we will not be available at all times to respond to requests / questions. Here’s what you can expect:\n\nWe will try our best to respond to Slack questions within 24hr (during the week)\nA response after-hours (5pm - 9am) is not guaranteed (we will try our best, as our personal lives allow for)\nWe will not be responding to questions over the weekend"
+    "text": "Use high-contrast color for most text\n\nWeb Content Accessibility Guidelines (WCAG) recommends a minimum contrast ratio of 4.5:1 – use a color contrast checker to check your ratio (e.g. here is a color combo with a good contrast ratio and a combo with a bad contrast ratio).\n\n\n\n\nExample from Which fonts to use for your charts and tables, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#this-course1",
-    "href": "slides/week1.1-logistics-slides.html#this-course1",
+    "objectID": "slides/week5.1-typography-slides.html#uppercase",
+    "href": "slides/week5.1-typography-slides.html#uppercase",
     "title": "EDS 240",
     "section": "",
-    "text": "What is EDS 240?\n\n\n\nEDS 240: Data Visualization and Communication is about two related, but distinct things:\n\n\n\n1. The theory of effective communication and data design\n How people perceive and interpret graphical information\n Human-centered design as it relates to data visualizations\n\n\n\n2. The physical act of building effective data visualizations using software and data science tools\n Using the Grammar of Graphics / {ggplot2} framework to create effective, truthful, and beautiful data visualizations"
+    "text": "Use UPPERCASE text sparingly\n\nUppercase text is more difficult to read compared to sentence case – limit use to headlines or labels. Region labels on maps are commonly uppercase (e.g. see maps in these New York Times pieces, How to Think About Ukraine, in Maps and Charts and Closing the Back Door to Europe).\n\n\n\nExample from Which fonts to use for your charts and tables, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#this-course2",
-    "href": "slides/week1.1-logistics-slides.html#this-course2",
+    "objectID": "slides/week5.1-typography-slides.html#recap-font-choices",
+    "href": "slides/week5.1-typography-slides.html#recap-font-choices",
     "title": "EDS 240",
     "section": "",
-    "text": "What is EDS 240?\n\n\n\nThe topic of data visualization is pretty darn massive.\n\n\n\nWe cannot and will not cover every data visualization type, consideration, package, etc.\n\n\n\n\n\nWe will work towards a conceptual and technical understanding of data viz fundamentals.\n\n\n\n\n\nData viz is a science and technical skill, but there’s also a lot of space for creativity.\n\n\n\n\n\nWhat you create can be used in your professional portfolio! The more you put in, the more you’ll get out."
+    "text": "Recap: choosing the right typeface(s) & font(s)\n\n\n\n\ncontext matters – the type(s) should fit the topic and audience\nwhen in doubt, use a sans-serif style\nchoose a monospaced typeface with lining figures for numbers\nensure that your chosen typeface has all the symbols you need and that they look okay\nuse bold fonts for emphasis and avoid thin fonts\nmake font sizes large enough to easily read\nuse high-contrast font colors\nstrategically use types & fonts to create hierarchy\navoid (extensively) using ALL CAPS\n\n\n\n\nAvoid using too many typefaces (stick to just 1-3)\n\n\n\n\nThere are lots of excellent resources out there for choosing the right typeface / font check out the resources page on the course website for some recommendations.\n\n\nHorror films, by Cristophe Nicault https://github.com/cnicault/tidytuesday/tree/master/2022/2022-44-horror-movies"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#LOs",
-    "href": "slides/week1.1-logistics-slides.html#LOs",
+    "objectID": "slides/week5.1-typography-slides.html#typographic-hierarchy",
+    "href": "slides/week5.1-typography-slides.html#typographic-hierarchy",
     "title": "EDS 240",
     "section": "",
-    "text": "Course Learning Objectives\n\n Identify which types of visualizations are most appropriate for your data and your audience\n\n\n Prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\n\n\n\n Build effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically ggplot2 + ggplot2 extension packages\n\n\n\n Write code from scratch and read and adapt code written by others\n\n\n\n Apply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations\n\n\n\n Assess, critique, and provide constructive feedback on data visualizations"
+    "text": "Typographic hierarchy\n\nNo one wants to read a wall of text. You can use font size, style, color, spacing, and typeface (or combinations of these) to create a hierarchy to guide your readers.\n\n\n\n\nSource: The UX Designer’s Guide to Typography"
   },
   {
-    "objectID": "slides/week1.1-logistics-slides.html#end-break",
-    "href": "slides/week1.1-logistics-slides.html#end-break",
+    "objectID": "slides/week5.1-typography-slides.html#change-fonts",
+    "href": "slides/week5.1-typography-slides.html#change-fonts",
     "title": "EDS 240",
     "section": "",
-    "text": "Take a Break\n\n\n~ This is the end of Lesson 1 (of 3) ~\n\n\n\n\n\n−+\n05:00"
+    "text": "Let’s learn how to import and use Google fonts in our ggplots"
   },
   {
-    "objectID": "slides/sections/3.3-lyme.html",
-    "href": "slides/sections/3.3-lyme.html",
+    "objectID": "slides/week5.1-typography-slides.html#end",
+    "href": "slides/week5.1-typography-slides.html#end",
     "title": "EDS 240",
     "section": "",
-    "text": "Warning: package 'tidycensus' was built under R version 4.3.1\n\n\nWarning: package 'ggplot2' was built under R version 4.3.1\n\n\nWarning: package 'dplyr' was built under R version 4.3.1\n\n\nWarning: package 'stringr' was built under R version 4.3.1\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nAttaching package: 'janitor'\n\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\n\nTo install your API key for use in future sessions, run this function with `install = TRUE`.\n\nRows: 3143 Columns: 25\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (3): Ctyname, Stname, ststatus\ndbl (22): STCODE, CTYCODE, Cases2001, Cases2002, Cases2003, Cases2004, Cases...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n`summarise()` has grouped output by 'year'. You can override using the `.groups` argument.\nJoining with `by = join_by(state)`"
+    "text": "See you next week!\n\n\n~ This is the end of Lesson 4 (of 4) ~"
   },
   {
     "objectID": "getting-unstuck.html",
@@ -1876,25 +1673,606 @@
     "text": "Acknowledgements\nBuilding this course meant learning from the many incredible folks who think a lot about producing effective, beautiful, and responsible data visualizations. I relied heavily on the open source R / {ggplot2} / data viz teaching materials and tutorials that this wonderful data science community shares so willingly. Attribution will be included on any slides / materials where content is adapted from other educators."
   },
   {
-    "objectID": "slides/week5.1-colors-slides.html#title-slide",
-    "href": "slides/week5.1-colors-slides.html#title-slide",
+    "objectID": "slides/sections/3.3-lyme.html",
+    "href": "slides/sections/3.3-lyme.html",
     "title": "EDS 240",
     "section": "",
-    "text": "EDS 240: Lecture 4.4\nColors\n\nWeek 4 | January 29th, 2024"
+    "text": "Warning: package 'tidycensus' was built under R version 4.3.1\n\n\nWarning: package 'ggplot2' was built under R version 4.3.1\n\n\nWarning: package 'dplyr' was built under R version 4.3.1\n\n\nWarning: package 'stringr' was built under R version 4.3.1\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nAttaching package: 'janitor'\n\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\n\nTo install your API key for use in future sessions, run this function with `install = TRUE`.\n\nRows: 3143 Columns: 25\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (3): Ctyname, Stname, ststatus\ndbl (22): STCODE, CTYCODE, Cases2001, Cases2002, Cases2003, Cases2004, Cases...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n`summarise()` has grouped output by 'year'. You can override using the `.groups` argument.\nJoining with `by = join_by(state)`"
   },
   {
-    "objectID": "slides/week5.1-colors-slides.html#choosing-colors",
-    "href": "slides/week5.1-colors-slides.html#choosing-colors",
+    "objectID": "slides/week1.1-logistics-slides.html#title-slide",
+    "href": "slides/week1.1-logistics-slides.html#title-slide",
     "title": "EDS 240",
     "section": "",
-    "text": "tbd\n\n\npicking colors is hard! use them purposefully\n\nyour brand\npulling colors from a related image\ntake inspiration from other data viz/art\ngoogle “[whatever you like] palette”\n\n\n{monochromeR}\n\ncolors & common pitfalls\n\nwhat to consider when choosing colors for data visualization (datawrapper)\ngradients for cont data\nbe consistent with colors\ncolor gradients (consider binned colors)\nmisleading color palettes (rainbow color palette): https://eagereyes.org/blog/2013/rainbow-color-map\nthink about color palettes before you create your viz! use color blindness tools\n\nhttps://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/ https://blog.datawrapper.de/colors/"
+    "text": "EDS 240: Lecture 1.1\nCourse logistics & syllabus\n\nWeek 1 | January 8th, 2024"
   },
   {
-    "objectID": "slides/random-notes.html",
-    "href": "slides/random-notes.html",
-    "title": "random things to find a place for",
+    "objectID": "slides/week1.1-logistics-slides.html#welcome",
+    "href": "slides/week1.1-logistics-slides.html#welcome",
+    "title": "EDS 240",
     "section": "",
-    "text": "plot data directly\ne.g. plot income and expenses as separate lines or just plot a singe net income line? (latter) plot your data directly, if difference matters more, plot the difference! (need environmental example here)\n\nSOME TIPS\n\nbaselines\nbreaking up plots when data vary so much that presenting them all on a single chart renders it useless (e.g. use fracking data?)\nordering variables / categories – e.g. see trends across age groups by grouping bars by media (see pg 139) (NEED EDS EXAMPLE HERE)\n\n\nuse logical & meaningful baselines\n\nbar, lollipops, histograms, etc should always have a 0 baseline – cannot truncate when main visual cue is height/length measured from a common baseline\nscatterplot, line graph, ec. – can be okay to truncate axes since main visual cue is position, not height/length"
+    "text": "Welcome to EDS 240!\n\nThis course will focus on the basic principles for effective communication through data visualization and using technical tools and workflows for creating and sharing data visualizations with diverse audiences.\n\n\nArtwork by Allison Horst"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#logistics",
+    "href": "slides/week1.1-logistics-slides.html#logistics",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Meeting times & locations\n\n\nClass: Mondays 1:00-4:00pm PT (attendance is mandatory)\nDiscussion Sections: Wednesdays 10:00-10:50am PT & 11:00-11:50am PT\n\n\n\nClass & Discussion Sections meet in the NCEAS 1st floor classroom"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#instructor",
+    "href": "slides/week1.1-logistics-slides.html#instructor",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Teaching team\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\nStudent hours: M 4-5pm @ NCEAS\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nSevan Esaian\nEmail: sevan.esaian@lifesci.ucsb.edu\nLearn more: linkedin.com/in/sevan-esaian Student hours: W 9-10am @ NCEAS"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#meet-one-another",
+    "href": "slides/week1.1-logistics-slides.html#meet-one-another",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Meet one another!\n\n\nSpend the next few minutes getting to know your Learning Partners! Below are some conversation starters:\n\n\nWhere do you feel most at home?\n\n\nWhat parts of Santa Barbara have you enjoyed exploring?\n\n\nWhat’s the most exciting thing you’ve learned this year, so far?\n\n\nWhat’s your favorite color or typeface?\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#student-resources",
+    "href": "slides/week1.1-logistics-slides.html#student-resources",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Student Resources\n\n\nBasic Needs Resources & Food Security: https://basicneeds.ucsb.edu/ (schedule a CalFresh Appoinment or Basic Needs Advising Session)\nCounseling & Psychological Services (CAPS): http://caps.sa.ucsb.edu\nResource Center for Sexual and Gender Diversity (RCSGD): https://rcsgd.sa.ucsb.edu/\nUndocumented Student Services (USS) Program: https://uss.sa.ucsb.edu/\nCampus Learning Assistance Services (CLAS): http://clas.sa.ucsb.edu\nStudent Resource Building (SRB): http://www.sa.ucsb.edu/student-resource-building/home\nMulticultural Center (MCC): http://mcc.sa.ucsb.edu/\nCampus Advocacy, Resources, & Education (CARE): http://wgse.sa.ucsb.edu/care/home\nFinancial Crisis Response Team: financialcrisis@sa.ucsb.edu (contact)\nHealth and Wellness: https://wellbeing.ucsb.edu/\n\n\n\nYour mental and physical health is more important than your grade in any course.\nI’m always happy to help you identify resources or help on campus – DM or email me!"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#conduct",
+    "href": "slides/week1.1-logistics-slides.html#conduct",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Conduct, Inclusion, Accommodations\n\n \nCourse Conduct: We are committed to actively creating, modeling, and maintaining an inclusive climate and supportive learning environment for all – harassment of any kind will not be tolerated. Everyone is expected read and adhere to the Bren School Code of Conduct and the UCSB Code of Conduct\n\n\nAccess & accommodations: It’s never too late to apply for DSP accommodations\n\n\n\nNames & pronouns: Everyone has the right to be addressed and referred by to name and pronouns in accordance with their identity – you can add your pronouns to your UCSB Registrar profile"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#course-website",
+    "href": "slides/week1.1-logistics-slides.html#course-website",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Everything you’ll need lives on the course website!\n\n\nhttps://samanthacsik.github.io/EDS-240-data-viz\n\n\n\nLink is also bookmarked at the top of the #eds-240-data-viz Slack channel and linked on the Courses page of the MEDS website."
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#tentative-schedule",
+    "href": "slides/week1.1-logistics-slides.html#tentative-schedule",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tentative Schedule & Materials\n\n\n\n\n\n\n\n\n\n\n\nDate\nTentative Topic\n\n\n\n\n1/8\ncourse logistics, intro, {ggplot2} review\n\n\n1/15\nno class\n\n\n1/22\ngraphic forms, fundamental chart types (part I)\n\n\n1/29\nfundamental chart types (part II), good vs. bad viz\n\n\n2/5\nenhancing visualizations\n\n\n2/12\ndata communication\n\n\n2/19\nno class\n\n\n2/26\nvisualizing uncertainty & avoiding the misrepresentation of data\n\n\n3/4\nOJS with Dr. Allison Horst\n\n\n3/11\ngrab bag & catch up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiscussion sections are held every week"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#pre-class-prep",
+    "href": "slides/week1.1-logistics-slides.html#pre-class-prep",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Complete all items under Pre-class Prep before lecture\n\nPlease be sure to carefully complete all required prep (e.g. installing packages, downloading data) under the Pre-class Prep section (organized by week) before lecture – be mindful that some items may take time to download/install.\n\n\nIt is highly recommended that you do this well in advance of attending lecture."
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#assignments",
+    "href": "slides/week1.1-logistics-slides.html#assignments",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Assignments\n\n\n\nYour course grade will be based off the following:\n\n\n\n3 Self-reflections - a place to reflect on your learning plan / goals, challenges, etc. (5 days to complete each)\n4 Homework Assignments - longer assignments where you’ll apply conceptual knowledge & technical skills to data viz tasks (10+ days to complete each)\n8 End-of-class surveys - short surveys to help me better understand your weekly class experience (due by EOD each day there is lecture)\n8 Lectures - a mix of slide-based lectures, live-coding, and individual / group-based critical thinking and technical exercises (attendance mandatory, Mondays 1:00-4:00pm PT)"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#grading",
+    "href": "slides/week1.1-logistics-slides.html#grading",
+    "title": "EDS 240",
+    "section": "",
+    "text": "How will I be evaluated?\n\n\nThis class will implement an alternative grading approach called specifications (specs) grading.\n\n\n\n\n“an alternative grading method where instructors create a list of specifications that describe the qualities and characteristics of a successful submission for an assignment. Student work is graded holistically based on those specifications, earning a single mark: “Satisfactory” or “Not Yet”. Students have the chance to use feedback by revisiting and resubmitting for full credit.”\n\n\n\n-expert from “Grading for Growth: A Guide to Alternative Grading Practices That Promote Authentic Learning and Student Engagement in Higher Education”, by David Clark & Robert Talbert"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#why-specs",
+    "href": "slides/week1.1-logistics-slides.html#why-specs",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Why Specs grading?\n\n\n“Traditional” grading can come with some challenges:\n\n\n\nlacks feedback loops\nbenefits those who learn fast or have prior experience\nbias-prone (e.g. awarding points, granting extensions)\ncan discourage learning for its own sake\ncan promote unhealthy student-instructor relationships"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#how-does-specs-look",
+    "href": "slides/week1.1-logistics-slides.html#how-does-specs-look",
+    "title": "EDS 240",
+    "section": "",
+    "text": "How does specs grading look in practice for this course?\n\n\nTL;DR: assignments receive either “Satisfactory” or “Not Yet” marks; tokens can be used to revise/resubmit assignments, for assignment extensions, or to miss class; earn tokens by attending discussions\n\n\n\nassignments receive either a “Satisfactory” or “Not Yet” mark\neach assignment will have a clear rubric (containing specifications) which outline what must be completed and how in order to receive a “Satisfactory” mark; not meeting all specifications results in a “Not Yet” mark\nstudents can trade “tokens” for the opportunity to:\n\nrevise / resubmit assignments that receive a “Not Yet” mark (within a week)\nassignment extensions\nto miss class\n\nstudents earn tokens (primarily) by attending discussion section"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#why-tokens",
+    "href": "slides/week1.1-logistics-slides.html#why-tokens",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Why tokens?\n\n\nEveryone has different responsibilities & demands – tokens give you the power and freedom to ask for the accommodations you need.\n\n\nYou do not need to provide a reason to request an extension, resubmission, or to miss class, but you must have enough tokens to do so.\n\n\n\n\nTokens are not limitless and they accrue weekly (i.e. you don’t receive them all at the start), so use them wisely!"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#tokens",
+    "href": "slides/week1.1-logistics-slides.html#tokens",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Earning & using tokens\n\n\nEarn tokens:\n\n\neveryone starts with 0 tokens\nearn your first token by attending discussion section on Wednesday 1/10\nearn 2 more tokens by submitting Self-reflection #1\nearn 1 token per week by attending discussion section (full 50min)\n\n\n\n\nUse tokens:\nFill out this Google form: https://forms.gle/6FdV9g5KA9GgrxXBA and email Sam & Sevan to let them know"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#grade-tracker",
+    "href": "slides/week1.1-logistics-slides.html#grade-tracker",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Use the Grade Tracker to determine your course grade"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#GenAI",
+    "href": "slides/week1.1-logistics-slides.html#GenAI",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Policy on Generative AI (GenAI)\n\nGenAI tools (such as ChatGPT) are strongly discouraged for the following reasons:\n\n\ncore competencies are built through practice\nbuilding your own programming proficiency will help you engage with GenAI tools more productively\nsubscription versions of GenAI tools may induce an inequitable learning environment\n\n\n\nPlease adhere to these guidelines:\n\n\nyou may use spell / grammar check and / or synonym identification tools\nbe prepared to explain each line of code in your assignments and exercises\nif you use GenAI in assignments, you must include a statement of which GenAI platform used and why, along with a copy of your initial prompt(s) and ensuing “conversation(s)”\n\n\n\n\n\nPlease read the full policy on the course syllabus"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#help",
+    "href": "slides/week1.1-logistics-slides.html#help",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Getting unstuck\n\nTroubleshooting, deciphering code, and trying (and failing at) new things is a large part of being a data scientist. Grad school is a safe space to get comfy with and practice these! Here’s how you should approach getting unstuck:\n\nCheck out the getting unstuck page (under “resources”) on the course website for more tips – particularly a reminder of how to ask a question."
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#sucking-less",
+    "href": "slides/week1.1-logistics-slides.html#sucking-less",
+    "title": "EDS 240",
+    "section": "",
+    "text": "A note on pushing through the challenges\n\n\n\n \n\n\n“There is no way of [going from] knowing nothing about a subject to knowing something about a subject without going through a period of much frustration and suckiness.” “Push through. You’ll suck less.”\n\n\n\n-Hadley Wickham, author of {ggplot2}\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\nSlide adapted from Andrew Heiss’ lesson, Truth, beauty, and data (PMAP 8101: Data Visualization)"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#slack",
+    "href": "slides/week1.1-logistics-slides.html#slack",
+    "title": "EDS 240",
+    "section": "",
+    "text": "A note on using Slack\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll course-related content questions should be asked in the #eds-240-data-viz channel – oftentimes there are others who have the same question and will benefit from seeing the discussion!\n\nAny questions sent as DMs will be copied into #eds-240-data-viz and answered there.\n\nOf course, please direct message or email with any personal questions or concerns."
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#expectations",
+    "href": "slides/week1.1-logistics-slides.html#expectations",
+    "title": "EDS 240",
+    "section": "",
+    "text": "A note on expectations\n\nReminders:\n\nWe are not mind-readers (as helpful as that would be!). Please help us help you by bringing any issues to our attention (EOC surveys are a great place to do this, or via DM / email) – the earlier the better!\n\n\nPromises:\n\n\nWe are working, and will continue to work, really hard to make this a great class!\nWe are super passionate about teaching, but doesn’t mean it’s easy or that we’re infallible. We will do our best to adapt to student / class needs as the quarter progresses. There may be times where we won’t or can’t make changes to the course plan – if so, we will be transparent in our reasoning why.\n\n\n\n\nBoundaries:\n\n\nThis course (unfortunately) isn’t our only professional responsibility this quarter – we will not be available at all times to respond to requests / questions. Here’s what you can expect:\n\nWe will try our best to respond to Slack questions within 24hr (during the week)\nA response after-hours (5pm - 9am) is not guaranteed (we will try our best, as our personal lives allow for)\nWe will not be responding to questions over the weekend"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#this-course1",
+    "href": "slides/week1.1-logistics-slides.html#this-course1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "What is EDS 240?\n\n\n\nEDS 240: Data Visualization and Communication is about two related, but distinct things:\n\n\n\n1. The theory of effective communication and data design\n How people perceive and interpret graphical information\n Human-centered design as it relates to data visualizations\n\n\n\n2. The physical act of building effective data visualizations using software and data science tools\n Using the Grammar of Graphics / {ggplot2} framework to create effective, truthful, and beautiful data visualizations"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#this-course2",
+    "href": "slides/week1.1-logistics-slides.html#this-course2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "What is EDS 240?\n\n\n\nThe topic of data visualization is pretty darn massive.\n\n\n\nWe cannot and will not cover every data visualization type, consideration, package, etc.\n\n\n\n\n\nWe will work towards a conceptual and technical understanding of data viz fundamentals.\n\n\n\n\n\nData viz is a science and technical skill, but there’s also a lot of space for creativity.\n\n\n\n\n\nWhat you create can be used in your professional portfolio! The more you put in, the more you’ll get out."
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#LOs",
+    "href": "slides/week1.1-logistics-slides.html#LOs",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Course Learning Objectives\n\n Identify which types of visualizations are most appropriate for your data and your audience\n\n\n Prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\n\n\n\n Build effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically ggplot2 + ggplot2 extension packages\n\n\n\n Write code from scratch and read and adapt code written by others\n\n\n\n Apply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations\n\n\n\n Assess, critique, and provide constructive feedback on data visualizations"
+  },
+  {
+    "objectID": "slides/week1.1-logistics-slides.html#end-break",
+    "href": "slides/week1.1-logistics-slides.html#end-break",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Take a Break\n\n\n~ This is the end of Lesson 1 (of 3) ~\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#title-slide",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#title-slide",
+    "title": "EDS 240",
+    "section": "",
+    "text": "EDS 240: Lecture 3.1\nChoosing the right graphic form\n\nWeek 3 | January 22nd, 2024"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#viz-complex-nums",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#viz-complex-nums",
+    "title": "EDS 240",
+    "section": "",
+    "text": "We understand complex numbers better when they’re represented visually\n\n\n“Exams will have a total of 137 points rather than the usual 100. This scoring system has no efect on the grade you get in the course, but it seems to make you happier”\n\n\n-Richard H. Thaler, economist & professor\n\n\nEarly years: exam graded 0 - 100 with an average score of 72 points = lots of complaints\nLater years: exam graded 0 - 137 with an average score of 96 points = no complaints\n\n\n\n\n\n\n\n\n\n\n\n\nAlbert Cairo’s visualization of the scores from Thaler’s exam case study"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#vision-sense",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#vision-sense",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Vision is our most well-developed sense\n\n  \n\nMapping data into visual properties is powerful\n\n\n\n\nMapping?\nHow values of a variable(s) of interest are represented by visuals (e.g height of bar, shaded region of area plot, color of data points)"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#choose-graphic",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#choose-graphic",
+    "title": "EDS 240",
+    "section": "",
+    "text": "How do you choose the right graphic form to represent your data?\n\n  \n\n\n“If I had the answer to that, I’d be rich by now…I have no idea, but I can give you some clues to make your own choices based on what we know about why and how visualization works”\n\n\n\n-Albert Cairo1, in his book, The Truthful Art\n\n\n1Someone who, in fact, knows a lot about effectively visualizing data"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#ex-choose-graph",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#ex-choose-graph",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Exercise: Map data to visual properties\n\n  \n\n\n\n−+\n03:00\n\n\n\nLet’s say you want to compare unemployment rates of 5 countries: A, B, C, D, E (the actual values here are not important).\n\n\nHow would you map the unemployment rates to visual properties in a way that enables your readers to accurately compare values without having to read all the numbers?\n\nExample adapted from Albert Cairo’s, The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#ex-possible-choices",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#ex-possible-choices",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Different methods of encoding the same data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGraphs recreated based on Albert Cairo’s example (Fig 5.2) in The Truthful Art\nFor all graphics: A (22%), B (25%), C (24%), D (29%), E (32%)\n\n\nLENGHT, HEIGHT, POSITION probably the best (have students discuss)"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#hierarchy",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#hierarchy",
+    "title": "EDS 240",
+    "section": "",
+    "text": "“Hierarchy of elementary perceptual tasks”\n\n\n\n\nWilliam S. Cleveland & Robert McGill (1984) Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods, Journal of the American Statistical Association, 79:387, 531-554, DOI: 10.1080/01621459.1984.10478080\n\n\n\na viewer performs one or more of these mental-visual tasks (judging position, perceiving angles / areas, etc.) to extract the values of real variables represented on most graphs\nsuccessful charts are constructed based on elementary tasks “as high in the hierarchy as possible”\n\nAlbert Cairo’s recreation of Cleveland & McGill’s Hierarchy of Elementary Perceptual Tasks \n\n\n\n\n\n\n\n\n\n\n\nA recreation of Cleveland & McGill’s hierarchy of elementary perceptual tasks, by Albert Cairo"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#compare-circles",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#compare-circles",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Exercise: How many times bigger is the larger circle?\n\n\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#compare-bars",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#compare-bars",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Exercise: How many times bigger is the larger bar?\n\n\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#7x",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#7x",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Both the circles & rectangles differ by a magnitude of 7"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#caveats1",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#caveats1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Caveats to the hierarchy\n\n \n1. Cleveland & McGill only considered statistical charts. What about data maps, for example, that rely on area / shading / hue, which fall lower on the hierarchy?"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#caveats1.1",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#caveats1.1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Caveats to the hierarchy - an example\n\nLower scale methods can be appropriate when the goal is to reveal general patterns. For example, a choropleth map displays divided geographical areas / regions, which are colored in relation to a numeric variable.\n\n\n\n\nPrecipitation data downloaded from NOAA’s National Centers for Environmental Information. Map created using the {maps} package."
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#caveats2",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#caveats2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Caveats to the hierarchy\n\n \n1. Cleveland & McGill only considered statistical charts. What about data maps, for example, that reply on area / shading / hue, which fall lower on the hierarchy?\n\n2. No method of choosing a graphic form is perfect! It’s important to think critically about your graphic’s purpose and how best to represent your data to serve that purpose."
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#caveats2.1",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#caveats2.1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Caveats to the hierarchy - an example\n\nConsider how you might display the same data in the following Sankey diagram depicted the flow of refugees in 2022, using graph types from the top of Cleveland & McGill’s hierarchy. What is the purpose of this chart?\n\n\n\n\n\n\nGraphic recreated following Louise E. Sinks’ blog post, TidyTuesday: Exploring Refugee Flow with A Sankey Diagram\n\nIt would be hard to use a method of encoding from the top of the hierarchy! In this Sankey diagram, readers need to decode length and area, but that’s not a huge issue since the purpose of the chart is to show high-level trends / flows of refugees"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips0",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips0",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tips for choosing the right graphic form\n\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\n\n\n\n\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\n\n\n\n\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\n\n\n\n\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\n\n\n\n\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips1-2",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips1-2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#chart-selectors",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#chart-selectors",
+    "title": "EDS 240",
+    "section": "",
+    "text": "1. What task(s) to enable / message(s) to convey\n2. Number of variables & data points, data types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Viz Project\ndisplays one small data set 100 different ways\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Data to Viz\nsearch graphic types by data type or by function (+ R & Python Graph Gallery)\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Visualization Universe\ncompares most popular graphic forms"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips3",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips3",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#choro-bar",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#choro-bar",
+    "title": "EDS 240",
+    "section": "",
+    "text": "3. Try different graphic forms\n\nRecall our choropleth map from earlier, which displays total precipitation by US county. What if we want to compare precipitation between CA counties? Choosing a graphical form from the top of the hierarchy (e.g. bar chart) may be more effective.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIf we want to show both big picture patterns and detailed comparisons, we may consider including multiple graphic forms in the same visualization."
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips4",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips4",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#ad-methods1",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#ad-methods1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "4. Arrange components of the graphic\n\n How does the influence of in-theater advertising change across generations?  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages from Albert Cairo’s The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#ad-methods2",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#ad-methods2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "4. Arrange components of the graphic\n\n How does the influence of in-theater advertising change across generations?  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages from Albert Cairo’s The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#fed-spending1",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#fed-spending1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "4. Arrange components of the graphic\n\nLet’s say we’re interested in:\n\nchanges in the amount spent on Social Security over time (2012-2015) relative to other major spending categories?\n\n\n\n\n\nExample from Derek L. Sonderegger’s online textbook, STA 141 - Exploratory Data Analysis and Visualization"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#fed-spending2",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#fed-spending2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "4. Arrange components of the graphic\n\nLet’s say we’re interested in:\n\nchanges in the amount spent on Social Security over time (2012-2015) relative to other major spending categories?\nthe amount of money spent on Social Security over time (2012-2015)?\n\n\n\n\n\nExample from Derek L. Sonderegger’s online textbook, STA 141 - Exploratory Data Analysis and Visualization"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#internet1",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#internet1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "4. Arrange components of the graphic\n\nDo we want to convey:\n\ninternet usage in 2016? or\n\n\n\n\nExample from Claus Wilke’s, Fundamentals of Data Visualization"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#internet2",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#internet2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "4. Arrange components of the graphic\n\nDo we want to convey:\n\ninternet usage in 2016? or\nhow early or late adoption of internet relates to current-day usage?\n\n\n\n\nExample from Claus Wilke’s, Fundamentals of Data Visualization"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips5",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips5",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tips for choosing the right graphic form\n\n\nThink about the task(s) you want to enable or message(s) you want to convey. For example, do you want to compare, see change or flow, reveal relationships or connections, envision temporal or spatial patterns.\nConsider the number of variables and the number of data points, as well as the data types you’re working with. For example, do you have several vs. many data points? How many categorical and/or numeric variables? Are your variables ordered or not ordered? Data types can dictate which graphical form is appropriate.\nTry different graphic forms, especially if you have more than one task to enable or message to convey.\nArrange the components of the graphic to make it as easy as possible to extract meaning from your graphic quickly.\nTest the outcomes of your graphic on others, particularly on those who are representative of the audience you are trying to reach.\n\n\nMost of the above tips are adapted from Albert Cairo’s The Truthful Art"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#iraq",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#iraq",
+    "title": "EDS 240",
+    "section": "",
+    "text": "5. Test the outcomes of your graphic on others\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Iraq’s bloody toll.\n\n\n\n\nTo enlarge image (in Chrome), right click on image &gt; Open image in New Tab\n\n\n\nWhat is the take home message of this graphic?\nWhat is effective? What is confusing?\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#guns1",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#guns1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "5. Test the outcomes of your graphic on others\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: This Chart Shows An Alarming Rise In Florida Gun Deaths After ‘Stand Your Ground’ Was Enacted.\n\n\n\n\nTo enlarge image (in Chrome), right click on image &gt; Open image in New Tab\n\n\n\nWhat is the take home message of this graphic?\nWhat is effective? What is confusing?\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#iraq-guns",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#iraq-guns",
+    "title": "EDS 240",
+    "section": "",
+    "text": "5. Test the outcomes of your graphic on others\n\n\n\n\n\n\n\n\n\n\n\n\nBaseline at the top is clear, suggesting that bars are falling from it. Clear metaphor (dripping blood).\n\n\n\n\n\n\n\n\n\n\nEyes are drawn to baseline at the bottom, on top of which data are sitting. Headline indicates rise but visually represented by falling. Thick black line makes white area stand out over red (data).\n\n\n\n\nCritique by Albert Cairo in his post In visualization, baselines and negative space matter"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#guns2",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#guns2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "5. Test the outcomes of your graphic on others\n\nBusiness Insider published an updated graphic (originally designed by Reuters), which was submitted by a reader that, “more clearly shows that gun deaths increased between 2005 and 2007 by flipping the y-axis”:"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#critique-considerations",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#critique-considerations",
+    "title": "EDS 240",
+    "section": "",
+    "text": "5. Test the outcomes of your graphic on others\n\n\nCritiquing a data visualization:\n\nIdentify the primary and secondary insights that the graphic is trying to convey.\nIdentify elementary perceptual tasks (e.g. comparing lengths, angles) and what is confusing or difficult to do.\nIdentify how to use more effective elementary perceptual tasks for the primary and secondary insights.\nIdentify points of confusion and decide how those could be addressed (e.g. a different graphic form, rearranging components, including an introduction graph, better annotation)\n\n\n\nAdapted from Derek L. Sonderegger’s online textbook, STA 141 - Exploratory Data Analysis and Visualization"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#end-break",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#end-break",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Take a Break\n\n\n~ This is the end of Lesson 1 (of 3) ~\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#title-slide",
+    "href": "slides/week1.2-intro-slides.html#title-slide",
+    "title": "EDS 240",
+    "section": "",
+    "text": "EDS 240: Lecture 1.2\nData visualization: an intro\n\nWeek 1 | January 8th, 2024"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#what-is-visualization1",
+    "href": "slides/week1.2-intro-slides.html#what-is-visualization1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "What is data visualization?\n\n\n“…the practice of designing and creating easy-to-communicate and easy-to-understand graphic or visual representations of a large amount of complex quantitative and qualitative data and information with the help of static, dynamic or interactive visual items.”\n\n\n-from Wikipedia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreated using {ggplot2}\n\n\n\nCreated using {gganimate}\n\n\n\nCreated using {shiny}"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#what-is-visualization2",
+    "href": "slides/week1.2-intro-slides.html#what-is-visualization2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "What is data visualization?\n\n \n\n“any graphical representation of information and data”\n\n\n-Cédric Scherer, Effective Data Visualization\n\n\n\n\n“part art and part science”\n\n\n-Claus O. Wilke, Fundamentals of Data Visualization"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#history1",
+    "href": "slides/week1.2-intro-slides.html#history1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#history2",
+    "href": "slides/week1.2-intro-slides.html#history2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#history3",
+    "href": "slides/week1.2-intro-slides.html#history3",
+    "title": "EDS 240",
+    "section": "",
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#history4",
+    "href": "slides/week1.2-intro-slides.html#history4",
+    "title": "EDS 240",
+    "section": "",
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#history5",
+    "href": "slides/week1.2-intro-slides.html#history5",
+    "title": "EDS 240",
+    "section": "",
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#history6",
+    "href": "slides/week1.2-intro-slides.html#history6",
+    "title": "EDS 240",
+    "section": "",
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#history7",
+    "href": "slides/week1.2-intro-slides.html#history7",
+    "title": "EDS 240",
+    "section": "",
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#history8",
+    "href": "slides/week1.2-intro-slides.html#history8",
+    "title": "EDS 240",
+    "section": "",
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#history9",
+    "href": "slides/week1.2-intro-slides.html#history9",
+    "title": "EDS 240",
+    "section": "",
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#history10",
+    "href": "slides/week1.2-intro-slides.html#history10",
+    "title": "EDS 240",
+    "section": "",
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#history11",
+    "href": "slides/week1.2-intro-slides.html#history11",
+    "title": "EDS 240",
+    "section": "",
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#why-visualize",
+    "href": "slides/week1.2-intro-slides.html#why-visualize",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Why do we visualize data?\n\n\nSpend the next few minutes discussing with your Learning Partners, and if possible, pull up some example visualizations that demonstrate your thoughts / discussion points\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#answer-qs",
+    "href": "slides/week1.2-intro-slides.html#answer-qs",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . to answer questions / derive insights\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRipple et al. 2023\n\nFig Caption: Unusual climate anomalies in 2023 (the red line, which appears bold in print). Sea ice extent (a, b), temperatures (c–e), and area burned in Canada (f) are presently far outside their historical ranges. These anomalies may be due to both climate change and other factors. Sources and additional details about each variable are provided in supplemental file S1. Each line corresponds to a different year, with darker gray representing later years.\n\n\nA nice Twitter thread on key takeaways from the above paper"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#exploration",
+    "href": "slides/week1.2-intro-slides.html#exploration",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . to explore & generate new questions\n\n\n“Exploratory data analysis (EDA) is not a formal process with a strict set of rules. More than anything, EDS is a state of mind…you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends. As your exploration continues, you will hone in on a few particularly productive insights that you’ll eventually write-up and communicate to others.”\n\n\n-Hadley Wickham, author of R for Data Science\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(diamonds, aes(x = carat)) +\n  geom_histogram(binwidth = 0.5)\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(mpg, aes(x = fct_reorder(class, hwy, median), y = hwy)) +\n  geom_boxplot()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(diamonds, aes(x = price, y = after_stat(density))) + \n  geom_freqpoly(aes(color = cut), binwidth = 500, linewidth = 0.75)"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#see-trends",
+    "href": "slides/week1.2-intro-slides.html#see-trends",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . to identify trends\n\n\nSame summary statistics, different distributions!\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnscombe’s Quartet\n(Anscombe 1973)\n\n\n\nDatasaurus Dozen\n(Matejka & Fitzmaurice 2017)"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#prompt-discussion1",
+    "href": "slides/week1.2-intro-slides.html#prompt-discussion1",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . to prompt discussion\n\n\n\n\n\nWarming Strips, by Ed Hawkins"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#prompt-discussion2",
+    "href": "slides/week1.2-intro-slides.html#prompt-discussion2",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . to prompt discussion\n\n\n\n\n\ngif created from Antti Lipponen’s Temperature Anomolies."
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#prompt-discussion3",
+    "href": "slides/week1.2-intro-slides.html#prompt-discussion3",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . to prompt discussion\n\n\n\n\n\ngif created from Mark SubbaRao’s Climate Spiral. For a similar visualization with accompanying {ggplot2} code, see Nicola Rennie’s TidyTuesday contribution!"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#bremer-pathwork",
+    "href": "slides/week1.2-intro-slides.html#bremer-pathwork",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . to create art / tell a story\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPatchwork Kingdoms, by Nadieh Bremer\n\n\n“Patchwork Kingdoms” is a data & generative art charity collection that I created for the Giga Connect project of UNICEF. All proceeds from the sale went to this project, which aims to connect all of the schools in the world to the internet. The Giga project has a dataset of 1 million schools and for ±280,000 of those they know if those schools are connected to the internet. I took this data about the schools, split it into 1000 subsets, and turned each school into a tiny square. All the squares together build up into two separate kingdoms, where those in the upright kingdoms are schools that are already connected to the internet, while those in the hidden / upside down kingdoms are not. Each of the 1000 pieces is thereby showing the “digital divide” that still exists in our world, and the funds from this sale will help to bring more schools from the hidden to the upright kingdom."
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#astronauts",
+    "href": "slides/week1.2-intro-slides.html#astronauts",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . to create art / tell a story\n\n\n\nTo enlarge, Right click &gt; Open Image in New Tab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTraveling to Outer Space, by Cédric Scherer\n\n\n\n\n\n\n\n\n\n\n\n\n\nGalaxy of Astronauts, by Ijeamaka Anyene\n\n\n\n\n\n\n\n\n\n\n\n\nAges Through Time and Space, by Cara Thompson"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#vertices",
+    "href": "slides/week1.2-intro-slides.html#vertices",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Vertices of Visualization\n\n\n\nVertices of Communication by Albert Cairo, as presented by Cédric Scherer during his 2022 Graphic Design with ggplot2 workshop (slides)"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#r-for-data-viz",
+    "href": "slides/week1.2-intro-slides.html#r-for-data-viz",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Why R for data viz?\n\n\n\n   \n\n\nI’m most comfortable in R \ngreat ecosystem of data wrangling & visualization packages (inc. a massive and growing collection of {ggplot2} extensions)\namazing online learning communities\ndata viz fundamentals apply no matter the language / tool"
+  },
+  {
+    "objectID": "slides/week1.2-intro-slides.html#end-break",
+    "href": "slides/week1.2-intro-slides.html#end-break",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Take a Break\n\n\n~ This is the end of Lesson 2 (of 3) ~\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/week6.1-good-viz-slides.html#title-slide",
@@ -2035,216 +2413,6 @@
     "title": "EDS 240",
     "section": "",
     "text": "Select graphic forms that help to tell your story\n\n\n\n\n\n\n\n\n\n\n\n\n\nAustralian Fires, by Cédric Scherer (code)\n(puts scale of fires into something more familiar)\n\n\n\n\n\n\n\n\n\n\n\n\n\nNot my cup of coffee, by Cédric Scherer (code)\n(combines many different aesthetics)\n\n\n\n\nInformative | Story | Visual Form"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#title-slide",
-    "href": "slides/week4.3-visual-form-slides.html#title-slide",
-    "title": "EDS 240",
-    "section": "",
-    "text": "EDS 240: Lecture 4.3\nVisual form (an intro)\n\nWeek 4 | January 29th, 2024"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#looking-forward",
-    "href": "slides/week4.3-visual-form-slides.html#looking-forward",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Looking forward . . .\n\n\n\nNext week, we’ll start diving into improving the overall aesthetics of our data visualizations\n\n\n\n applying pre-made and custom color palettes\n\n\n\n\n updating fonts\n\n\n\n\n adding annotations\n\n\n\n\n fine-tuning themes\n\n\n\n\n centering our primary message\n\n\n\n\n\nToday, we’ll familiarize ourselves with a general set of rules and best practices."
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#good-design1",
-    "href": "slides/week4.3-visual-form-slides.html#good-design1",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Good data visualization design considers:\n\n\n\n\ndata-ink ratio (less is more)\nhow to reduce eye movement and improve readability / interpretability (e.g. through alternative legend positions, direct annotations)\ntypeface / font choices and how they affect both readability and audience emotions and perceptions\nusing visual hierarchy to guide the reader\ncolor choices (and making sure that they’re colorblindness-friendly)\nconsistent use of colors, spacing, typefaces, weights\nhow to draw the main attention to the most important info\nincluding alt text\n\n\n\n\nThe above should always be considered in your design process, but may not always be necessary"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#data-ink-eyes",
-    "href": "slides/week4.3-visual-form-slides.html#data-ink-eyes",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Simplify plots to reduce eye movement"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#data-ink-ratio",
-    "href": "slides/week4.3-visual-form-slides.html#data-ink-ratio",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Data-Ink ratio: remove non-data ink\n\nThe Data-Ink ratio was introduced by Edward Tufte (1983) and argues that non-data-ink (i.e. ink used for for everything except the presentation of data itself) should be removed wherever possible.\n\\[\n\\text{Data-ink ratio} = \\frac{\\text{Data-ink}}{\\text{Total ink used to print the graphic}}\n\\]\n\n\nDo so by starting with a complete theme (e.g. theme_classic(), theme_void()) and add / remove elements using theme().\n\n\n\n\nLow Data-Ink ratio\n\n\n\n\n\n\n\n\nHigh Data-Ink ratio"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#data-ink-ratio-criticism",
-    "href": "slides/week4.3-visual-form-slides.html#data-ink-ratio-criticism",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Maximizing the Data-Ink ratio isn’t always best\n\n\n\n\nEliminating lots of non-data ink may render visualizations difficult to read\n\nInbar et al. (2007) found that students preferred a more maximalist visualization design over the minimalist version proposed by Tufte\n\n\n\n\n\nDesign choices depend on audience and purpose– how you choose to maximize your data-ink ratio will depend largely on who your visualization is for and the purpose it’s meant to serve (e.g. a scientific publication may have specific requirements for the design / aesthetics of a visualization, while an infographic-style visualization may leave space for more creative liberties)\n\n\n\n\n\nA general rule of thumb: aim to maximize the data-ink ratio while not sacrificing overall design and aesthetics."
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#remove-redundant-legend",
-    "href": "slides/week4.3-visual-form-slides.html#remove-redundant-legend",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Remove redundant legend information\n\nAsk yourself, “Does this legend provide additional information that I can’t get elsewhere?”. If not, remove a legend using:\n\nplot +\n  theme(\n    legend.position = \"none\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDoing so increases the data-ink ratio and reduces overall eye movement."
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#labels-rotated-text",
-    "href": "slides/week4.3-visual-form-slides.html#labels-rotated-text",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Add direct labels & minimize rotated text\n\nWe can use a combination of coord_flip(), geom_text(), labs(), and theme() to further eliminate non-data ink and reduce overall eye movement.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOf course, a visualization like this wouldn’t be appropriate for all audiences / contexts (e.g. scientific journal), but it in many ways simplifies the presentation in a way where an audience could still walk away with the same type of information."
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#move-legend-position",
-    "href": "slides/week4.3-visual-form-slides.html#move-legend-position",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Move the legend (positioning)\n\nReduce eye movement by updating the legend position (e.g. move it onto the plot panel):\n\nplot + \n  theme(\n    legend.position = c(0.85, 0.15) # you'll need to adjust these values for your plot!\n  )\n\n\n\n\nOriginal plot:\n\n\n\n\n\n\n\n\nUpdated legend position:\n\n\n\n\n\n\n\n\nAlso note the redundant species mapping (color and shape) – sometime redundancy is important for accessibility!"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#legend-ggtext",
-    "href": "slides/week4.3-visual-form-slides.html#legend-ggtext",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Move the legend (incorporate into title text)\n\nReduce eye movement and excess ink by including legend info in the plot (sub)title (here, using the {ggtext} package):\n\n\n\n\nOriginal plot:\n\n\n\n\n\n\n\n\n\n\n\n\nLegend as styled title text:"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#add-direct-labels",
-    "href": "slides/week4.3-visual-form-slides.html#add-direct-labels",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Move the legend (use direct labels)\n\nReduce eye movement and excess ink by including legend info as direct labels on the plot:\n\n\n\n\nOriginal plot:\n\n\n\n\n\n\n\n\n\n\n\n\nLegend as direct labels:"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#draw-attention",
-    "href": "slides/week4.3-visual-form-slides.html#draw-attention",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Draw attention to important information / values"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#geom_vline",
-    "href": "slides/week4.3-visual-form-slides.html#geom_vline",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Draw attention to important information / values\n\nAdd vertical (geom_vline()) or horizontal (geom_hline()) lines at important values:\n\n\nFig cap: Temporal Variation in Bottom Temperature. Monthly bottom (4.5 m depth) temperatures at Mohawk Reef (34.396290, -119.731297) in Santa Barbara, CA compiled from 2005-2017. Vertical dashed lines represent three of four treatment temperatures (11, 16, 21°C). Data Source: Santa Barbara Coastal Long-Term Ecological Research group (adapted from Csik et al. 2023)"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#highlight-groups",
-    "href": "slides/week4.3-visual-form-slides.html#highlight-groups",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Draw attention to important information / values\n\nHighlight data manually or by using helpful packages, like {gghighlight} (we saw an example of this in lecture 3.3):"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#ggforce",
-    "href": "slides/week4.3-visual-form-slides.html#ggforce",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Draw attention to important information / values\n\nOr add annotations to your plots to call attention to data of interest (here, shown using the {ggforce} package):"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#use-annotations-neil",
-    "href": "slides/week4.3-visual-form-slides.html#use-annotations-neil",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Use annotations to improve readability / interpretability\n\nIs the y-axis necessary for this plot? What’s the author’s goal? How do annotations help achieve that goal?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIs white space always your friend, by Neil Richards"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#use-annotations-covid",
-    "href": "slides/week4.3-visual-form-slides.html#use-annotations-covid",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Use annotations to improve readability / interpretability\n\n\n“The key thing we do is to add a title to the chart, as an entry point and to explain what is going on. Text and other annotations add enourmous value for non-chart people.”\n\n\n-John Burn-Murdoch, Financial Times\n\n\n\n\n\nVaccines and Omicron mean Covid now less deadly than flu in England, by John Burn-Murdoch"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#avoid",
-    "href": "slides/week4.3-visual-form-slides.html#avoid",
-    "title": "EDS 240",
-    "section": "",
-    "text": "What doesn’t work so well in data visualization?"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#bad-data-viz",
-    "href": "slides/week4.3-visual-form-slides.html#bad-data-viz",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Good data visualization design avoids…\n\n\n\n\ndual axes (can easily mislead audiences)\npie charts (really hard for humans to effectively compare the size of angles)\n3D plots (distort perception and are generally distracting)\ninformation overload (e.g. too many colors / shapes, groups, variables)\n\n\n\n    \n\nThere may be circumstances where the above are executed well…but more often than not, you’re safest avoiding them."
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#dual-axes",
-    "href": "slides/week4.3-visual-form-slides.html#dual-axes",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Dual y-axes can deliberately mislead readers\n\n\nThe scales of dual axis charts are arbitrary and can therefore (deliberately) mislead readers about the relationship between the two data series.\n::: {.footer} Example from Why not to use two axes, and what to use instead, by Lisa Charlotte Muth"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#pie-charts",
-    "href": "slides/week4.3-visual-form-slides.html#pie-charts",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Pie charts…"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#3d-charts",
-    "href": "slides/week4.3-visual-form-slides.html#3d-charts",
-    "title": "EDS 240",
-    "section": "",
-    "text": "3D charts…"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#info-overload",
-    "href": "slides/week4.3-visual-form-slides.html#info-overload",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Information overload…"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#examples",
-    "href": "slides/week4.3-visual-form-slides.html#examples",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Let’s discuss some examples together"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#co2-1",
-    "href": "slides/week4.3-visual-form-slides.html#co2-1",
-    "title": "EDS 240",
-    "section": "",
-    "text": "CO2 in conference rooms\n\n\n\n\n\n\n\n\n\n\n\n\n\nClearing the Air, by Christopher Ingraham, writing for The Washington Post\n\n\n \nTake some time to discuss the following:\n\nwhere are your eyes drawn first, second, etc.?\nwhat are the main messages / takeaways?\nwhere has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?\nwhat would you change about this visualization?\n\n\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#co2-2",
-    "href": "slides/week4.3-visual-form-slides.html#co2-2",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Annotations adapted from @chezVoila"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#penguins",
-    "href": "slides/week4.3-visual-form-slides.html#penguins",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Palmer penguin classification\n\n\n\n\n\n\n\n\n\n\n\n\n\nPerfectly Proportional Penguins, by Cara Thompson as part of TidyTuesday (code)\n\n\n \nTake some time to discuss the following:\n\nwhere are your eyes drawn first, second, etc.?\nwhat are the main messages / takeaways?\nwhere has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?\nwhat would you change about this visualization?\n\n\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#glimmers",
-    "href": "slides/week4.3-visual-form-slides.html#glimmers",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Glimmers of hope in large carnivore recovery\n\n\n\n\n\n\n\n\n\n\n\n\n\nFig. 3, by Ingeman et al. 2022: Glimmers of hope and critical cases. Distribution of large carnivore species across categories of current IUCN status (x-axis) and population trend (y-axis). Improvements in status are indicated by gold and declines by blue, with bubble size indicating the number of status category changes. The majority of species have not undergone any changes in status (shown in light gray). Note: No change in status may indicate lack of recent assessment, insufficient data, or, in the case of species designated Least Concern, effective conservation efforts.\n\n\n \nTake some time to discuss the following:\n\nwhere are your eyes drawn first, second, etc.?\nwhat are the main messages / takeaways?\nwhere has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?\nwhat would you change about this visualization?\n\n\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#aquaculture",
-    "href": "slides/week4.3-visual-form-slides.html#aquaculture",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Public perceptions of aquaculture\n\n\n\n \n\n\n\n\n\n\n\n\n\n\nFig. 3, by Froehlich et al. 2017: Newspaper ‘offshore aquaculture’ media sentiment. Sentiment over time based on the frequency of newspaper headlines with negative (red), positive (blue), and neutral (gray) titles for (A) developed (n = 102) and (B) developing (n = 8) nations. Also depicted are the (C) proportional contributions of sentiment headlines relative to each developed and developing country, with the number of headlines from each country shown in parentheses. All countries used in the analysis are depicted. Headlines were compiled using the LexisNexis® platform.\n\n\n \nTake some time to discuss the following:\n\nwhere are your eyes drawn first, second, etc.?\nwhat are the main messages / takeaways?\nwhere has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?\nwhat would you change about this visualization?\n\n\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "slides/week4.3-visual-form-slides.html#end-break",
-    "href": "slides/week4.3-visual-form-slides.html#end-break",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Take a Break\n\n\n~ This is the end of Lesson 3 (of 4) ~"
   },
   {
     "objectID": "slides/week6.2-tbd.html#title-slide",
@@ -2622,14 +2790,14 @@
     "href": "course-materials/week7.html",
     "title": "[No Lecture]",
     "section": "",
-    "text": "Coming soon"
+    "text": "NA"
   },
   {
     "objectID": "course-materials/week7.html#pre-class-prep",
     "href": "course-materials/week7.html#pre-class-prep",
     "title": "[No Lecture]",
     "section": "",
-    "text": "Coming soon"
+    "text": "NA"
   },
   {
     "objectID": "course-materials/week7.html#lecture-materials",
@@ -2655,28 +2823,28 @@
   {
     "objectID": "course-materials/week4.html#pre-class-prep",
     "href": "course-materials/week4.html#pre-class-prep",
-    "title": "Fundamental chart types (part II), Visual form",
+    "title": "Fundamental chart types (part II), What makes a good data viz?",
     "section": "Pre-class Prep",
     "text": "Pre-class Prep\nPlease be sure to complete the following before class:\n\nInstall required packages\n\ninstall.packages(\"ggalt\") # extra coordinate systems, geoms, statistical transformations, scales and fonts for 'ggplot2' (includes `geom_lollipop()`)"
   },
   {
     "objectID": "course-materials/week4.html#lecture-materials",
     "href": "course-materials/week4.html#lecture-materials",
-    "title": "Fundamental chart types (part II), Visual form",
+    "title": "Fundamental chart types (part II), What makes a good data viz?",
     "section": "Lecture Materials",
-    "text": "Lecture Materials\nWeek 4 instruction is broken down into three lessons:\n\n\n\nVisualizing rankings\n lecture 4.1 slides\n\n\n\n\nVisualizing relationships\n lecture 4.2 slides\n\n\n\n\nVisual form (intro)\n lecture 4.3 slides\n\n\n\n\nTypography\n lecture 4.3 slides"
+    "text": "Lecture Materials\nWeek 4 instruction is broken down into three lessons:\n\n\n\nVisualizing rankings\n lecture 4.1 slides\n\n\n\n\nVisualizing relationships\n lecture 4.2 slides\n\n\n\n\nWhat makes a good viz?\n lecture 4.3 slides"
   },
   {
     "objectID": "course-materials/week4.html#discussion-materials",
     "href": "course-materials/week4.html#discussion-materials",
-    "title": "Fundamental chart types (part II), Visual form",
+    "title": "Fundamental chart types (part II), What makes a good data viz?",
     "section": "Discussion Materials",
     "text": "Discussion Materials\nThemes are used to modify the non-data components of plots (e.g. titles, labels, fonts, background, gridlines, legend). In addition to using pre-built themes (available via the {ggplot2} package and also from extension packages), you can fine-tune the appearance of your plots theme by making adjustments using the theme() function. This week’s discussion section will introduce the use of themes so that you can start to really make your data visualizations stand out \n\nApplying pre-built themes:\n{ggplot2} comes with eight complete themes, which can be applied as-is, or further modified using theme() (see next section, below). There are also many additional themes which can be applied via ggplot extension packages. A small handful of packages are listed in the expandable note, below:\n\n\n\n\n\n\nA non-exhaustive list of ggplot theme extension packages\n\n\n\n\n\n\n{ggthemes}: a collection of popular themes, some of which also come with corresponding color scales\n{hrbrthemes}: typographic-centric themes and theme components\n{ggthemr}: a collection of color palettes and plot layouts for quickly setting a ggplot theme\n{ggtech}: themes based off large tech company color palettes\n{ggdark}: dark mode for ggplot complete themes\n{firatheme}: a ggplot theme with Fira font\n{urbnthemes}: tools for creating Urban Institute-themed plots and maps in R (also check out the Urban Institute Data Visualization Style Guide for a really great example of how an organization enforces a cohesive style across all published data viz content)\n{bbplot}: tools for creating ggplots in the style used by the BBC News data team\n{ggpomological}: a ggplot2 theme based on the USDA Pomological Watercolor Collection\n{tvthemes}: a collection of ggplot themes and color / fill palettes based on everybody’s favorite TV shows\n\nKeep your eye out for extension packages that supply both a geom(s) and a pre-build theme(s) designed specifically to work with that geom. For example, the {ggridges} package provides both a few different ridgeline plot geoms and a pre-built theme_ridges() theme to pair with them.\n\n\n\n\n\nUsing ggplot2::theme() to control plot elements:\nUse this (non-exhaustive) list to start tweaking elements of your plot’s appearance. It’s most common to start with a pre-built theme (see above) and modify from there. For a complete list of elements, explore the documentation for ggplot::theme().\n\n\n\n\n\n\n\n\n\n\nAdapted from Reproducible Science for Busy Researchers: How to Save Time using Literate Programming, by Andrew P. Lapointe\n\n\n\nExercise\nThis week, you’ll practice updating different ggplot theme elements. Choose some of the starter code below, apply a pre-built theme, then modify different pieces of the plot using theme(). Plan to share out something new that you’ve learned with the rest of the class.\n\n\n\n\n\n\nFind starter code here!\n\n\n\n\n\ncode here"
   },
   {
     "objectID": "course-materials/week4.html#assignment-reminders",
     "href": "course-materials/week4.html#assignment-reminders",
-    "title": "Fundamental chart types (part II), Visual form",
+    "title": "Fundamental chart types (part II), What makes a good data viz?",
     "section": "Assignment Reminders",
     "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT"
   },
