@@ -368,6 +368,7 @@ Step-by-step instructions for creating and cloning a GitHub repo:
 <blockquote class="blockquote">
 <p>Since <a href="https://www.fracfocus.org/learn/about-fracfocus">launching in 2011</a>, <a href="https://fracfocus.org/">FracFocus</a> has become the largest registry of <a href="https://en.wikipedia.org/wiki/Fracking">hydraulic fracturing</a> chemical disclosures in the US. The database, available to explore online and <a href="https://fracfocus.org/data-download">download in bulk</a>, contains 210,000+ such disclosures from fracking operators; it details the location, timing, and water volume of each fracking job, plus the names and amounts of chemicals used. The project is <a href="https://fracfocus.org/about-us">managed</a> by the <a href="https://www.gwpc.org/overview/">Ground Water Protection Council</a>, “a nonprofit 501(c)6 organization whose members consist of state ground water regulatory agencies”. As seen in: The latest <a href="https://www.nytimes.com/interactive/2023/09/25/climate/fracking-oil-gas-wells-water.html">installment</a> of the New York Times’ <a href="https://www.nytimes.com/series/uncharted-waters">Uncharted Water series</a>.</p>
 </blockquote>
+<p>Interested in reading more about fracking? Check out <a href="https://www.usgs.gov/news/national-news-release/water-used-hydraulic-fracturing-varies-widely-across-united-states">this communications piece</a> from USGS to start.</p>
 <p><strong>Before coming to section, you’ll need to install some packages and download data. For step-by-step instructions, unfold the following note (collapsed to save space):</strong></p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -535,17 +536,23 @@ Complete code for week 1 discussion (fracking)
 <span id="cb4-90"><a href="#cb4-90"></a>  <span class="fu">drop_na</span>(total_base_water_volume_gal)</span>
 <span id="cb4-91"><a href="#cb4-91"></a></span>
 <span id="cb4-92"><a href="#cb4-92"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb4-93"><a href="#cb4-93"></a><span class="do">##      basic violin plot of total water used / job (top 3 states, 2015)    ----</span></span>
+<span id="cb4-93"><a href="#cb4-93"></a><span class="do">##          some exploratory data viz + a few plot mods for practice        ----</span></span>
 <span id="cb4-94"><a href="#cb4-94"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
 <span id="cb4-95"><a href="#cb4-95"></a></span>
 <span id="cb4-96"><a href="#cb4-96"></a>fracking_clean <span class="sc">|&gt;</span> </span>
 <span id="cb4-97"><a href="#cb4-97"></a>  <span class="fu">filter</span>(state_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Texas"</span>, <span class="st">"Colorado"</span>, <span class="st">"North Dakota"</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb4-98"><a href="#cb4-98"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2015</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb4-99"><a href="#cb4-99"></a>  <span class="co"># filter(total_base_water_volume_gal &lt; 70000000) |&gt; # uncomment this line to plot with two extreme outliers excluded</span></span>
-<span id="cb4-100"><a href="#cb4-100"></a>  <span class="fu">group_by</span>(state_name) <span class="sc">|&gt;</span> </span>
-<span id="cb4-101"><a href="#cb4-101"></a>  <span class="fu">mutate</span>(<span class="at">state_name =</span> <span class="fu">fct_relevel</span>(state_name, <span class="fu">c</span>(<span class="st">"Texas"</span>, <span class="st">"Colorado"</span>, <span class="st">"North Dakota"</span>))) <span class="sc">|&gt;</span> <span class="co"># pipe directly into ggplot </span></span>
-<span id="cb4-102"><a href="#cb4-102"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> state_name, <span class="at">y =</span> total_base_water_volume_gal)) <span class="sc">+</span></span>
-<span id="cb4-103"><a href="#cb4-103"></a>  <span class="fu">geom_violin</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-99"><a href="#cb4-99"></a>  <span class="fu">group_by</span>(state_name) <span class="sc">|&gt;</span> <span class="co"># pipe directly into ggplot</span></span>
+<span id="cb4-100"><a href="#cb4-100"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_rev</span>(<span class="fu">fct_infreq</span>(state_name)), <span class="at">y =</span> total_base_water_volume_gal)) <span class="sc">+</span> <span class="co"># need to reverse fct order for coord_flip() (plots lowest freq at top by default)</span></span>
+<span id="cb4-101"><a href="#cb4-101"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.3</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"gray15"</span>) <span class="sc">+</span></span>
+<span id="cb4-102"><a href="#cb4-102"></a>  <span class="fu">geom_violin</span>(<span class="at">color =</span> <span class="st">"red4"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb4-103"><a href="#cb4-103"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>()) <span class="sc">+</span></span>
+<span id="cb4-104"><a href="#cb4-104"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Total base water volumn (gal)"</span>) <span class="sc">+</span></span>
+<span id="cb4-105"><a href="#cb4-105"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb4-106"><a href="#cb4-106"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb4-107"><a href="#cb4-107"></a>  <span class="fu">theme</span>(</span>
+<span id="cb4-108"><a href="#cb4-108"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb4-109"><a href="#cb4-109"></a>    ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
