@@ -3,33 +3,37 @@ library(googlesheets4)
 library(tidyverse)
 
 #.................import spreadsheet of students.................
-students <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1UnGwZ6TMr8ik3PpEo65GJU1R9Pk-xmkjlMn3kOqfrvY/edit?usp=sharing")
+#students <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1UnGwZ6TMr8ik3PpEo65GJU1R9Pk-xmkjlMn3kOqfrvY/edit?usp=sharing")
+roster <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1guUVFA4FeHZOuWFdQ1uGaE6RK1Y5lABp8MDDd9hdCYU/edit?usp=sharing")
 
-#......................initialize empty df.......................
-all_groups <- data.frame()
+#............................wrangle.............................
 
-#..........................create groups.........................
-generate_groups <- function(data){
+students <- roster |>
+  select(name)
 
-  for (i in 1:14) { # for a class size of 40: 13 groups of three, 1 group of four
+#................randomly generate group numbers.................
 
-    # create group number ----
-    group_number <- paste0("group", i)
+group_num <- c(1, 1, 1,
+               2, 2, 2,
+               3, 3, 3,
+               4, 4, 4,
+               5, 5, 5,
+               6, 6, 6,
+               7, 7, 7,
+               8, 8, 8,
+               9, 9, 9,
+               10, 10, 10,
+               11, 11, 11,
+               12, 12, 12,
+               13, 13)
 
-    # assign group members----
-    random_group <- students |>
-      slice_sample(n = 3, replace = FALSE) |>
-      mutate(group_assignment = rep(group_number))
+group_num <- sample(group_num)
 
-    # add group to df ----
-    all_groups <- rbind(all_groups, random_group)
+#....................cbind numbers to roster.....................
 
-  }
+student_groups <- cbind(students, group_num) |>
+  arrange(group_num)
 
-}
+#..........................write out csv.........................
+write_csv(x = student_groups, file = here::here("student_groups", "week1_learning_partners.csv"))
 
-
-n_students <- 40
-x <- sample(1:n_students)
-levels <- 14
-groupings <- split(x, x%%levels)

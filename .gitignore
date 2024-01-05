@@ -56,3 +56,6 @@ data/
 
 # API keys
 slides/sections/KEYS.R
+
+# student groups
+student_groups/

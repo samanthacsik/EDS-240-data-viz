@@ -388,13 +388,13 @@ dev.off()
 
 You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #1, Part I:
 
-**Complete the following steps in your GitHub Classroom repo (`eds240-HW1/Part1.qmd`):**
+**Complete the following steps in your GitHub Classroom repo (`eds240-hw1-USERNAME/Part1.qmd`):**
 
 - [ ] include your preferred name, and if you feel comfortable, your preferred pronouns in the `author` field of the `Part1.qmd` YAML 
 - [ ] update each comment line in the code that reads, `ANNOTATE`, with a *brief* description, written in your own words (see lines 114 & 120 for example annotations; there are other lines that have been already annotated for you as well -- you do not need to re-write these annotations -- you are allowed up to three incorrect or missing annotations
-- [ ] leave the code chunk options set to `eval: false` and `echo: true` (since you won't be adding any new code, just annotations, we don't need to see that the code successfully runs)
+- [ ] leave the code chunk options set to `eval: false` and `echo: true` 
 - [ ] answer all three Part 1b questions adhering to the length requirements specified at the end of each question prompt
-- [ ] we should be able to render `Part1.qmd` without errors 
+- [ ] we (your instructors) should be able to successfully render `Part1.qmd` locally without errors, *however* **do not push any html files to GitHub** (i.e. `Part1.html` and `Part1_files/`; consider adding these to your `.gitignore` so that you don't accidentally push them)
 - [ ] push your completed `Part1.qmd` to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024
 
 <br>
@@ -458,11 +458,11 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 - [ ] add Sam and Sevan as collaborators on your repo (on GitHub: **Settings** > **Collaborators** > **Add people**; our user names are **samanthacsik** and **SevanEsaian**)
 - [ ] add your repository's URL next to your name on [this Google Sheet](https://docs.google.com/spreadsheets/d/1tv32Ng_-QI1-eB5ws59HgCN0EoOpHe4UHX6qHhbQGds/edit?usp=sharing)
 
-**Complete the following steps in your GitHub Classroom repo (`eds240-HW1/Part2.qmd`):**
+**Complete the following steps in your GitHub Classroom repo (`eds240-hw1-USERNAME/Part2.qmd`):**
 
 - [ ] link to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4
 - [ ] answer all parts of the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you *do not* need to complete the **optional** importing of data -- if you *do* want to practice importing your data, be sure to do so in your `lastName-eds240-HW4` repository
-- [ ] we should be able to render `Part2.qmd` without errors 
+- [ ] we (your instructors) should be able to successfully render `Part2.qmd` locally without errors, *however* **do not push any html files to GitHub** (i.e. `Part2.html` and `Part2_files/`; consider adding these to your `.gitignore` so that you don't accidentally push them) -- **only push `Part2.qmd`**
 - [ ] push your completed `Part2.qmd` to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024
 
 <br>
