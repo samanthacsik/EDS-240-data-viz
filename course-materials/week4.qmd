@@ -29,6 +29,8 @@ Please be sure to complete the following before class:
 #| echo: true
 #| code-line-numbers: false
 install.packages("ggalt") # extra coordinate systems, geoms, statistical transformations, scales and fonts for 'ggplot2' (includes `geom_lollipop()`)
+install.packages("ggExtra") # {ggplot2} extension2222 which can be used to add marginal histograms/boxplots/density plots to ggplot2 scatterplots
+install.packages("ggdensity") # {ggplot2} extension providing more interpretable visualizations of density estimates based on highest density regions (HDRs)
 ```
 
 ## Lecture Materials 

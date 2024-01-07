@@ -489,8 +489,8 @@ It would be hard to use a method of encoding from the top of the hierarchy! In t
 
 ## {#chart-selectors data-menu-title="Resources for selecting charts"} 
 
-[1. What task(s) to enable / message(s) to convey]{.slide-title3}  
-[2. Number of variables & data points, data types]{.slide-title3}
+[1. What task(s) to enable / message(s) to convey]{.slide-title2}  
+[2. Number of variables & data points, data types]{.slide-title2}
 
 <hr>
 
@@ -554,6 +554,79 @@ knitr::include_graphics("images/week3/vu.png")
 :::
 
 ::::
+
+---
+
+## {#cat-disc1 data-menu-title="Categorical vs. discrete"} 
+
+[2. Number of variables & data points, data types]{.slide-title2}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "Cartoon comparison of continuous versus discrete data. On the left: 'Continuous - measured data, can have infinite values within possible range.' Below is an illustration of a chick, with text 'I am 3.1 inches tall, I weight 34.16 grams.' On the right: 'Discrete - observations can only exist at limited values, often counts.' Below is an illustration of an octopus with text 'I have 8 legs and 4 spots!'"
+knitr::include_graphics("images/week3/horst-cont-disc.png")
+```
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+::: {.center-text .gray-text}
+*Art by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+---
+
+## {#cat-disc2 data-menu-title="Discrete types" visibility="uncounted"} 
+
+[2. Number of variables & data points, data types]{.slide-title2}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "Cartoon comparison of continuous versus discrete data. On the left: 'Continuous - measured data, can have infinite values within possible range.' Below is an illustration of a chick, with text 'I am 3.1 inches tall, I weight 34.16 grams.' On the right: 'Discrete - observations can only exist at limited values, often counts.' Below is an illustration of an octopus with text 'I have 8 legs and 4 spots!'"
+knitr::include_graphics("images/week3/horst-cont-disc.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "Visual representations of nominal, ordinal, and binary variables. Left: Nominal (ordered descriptions) with illustrations below of a turtle, snail, and butterfly. Center: Ordinal (ordered descriptions) with illustrations below of three bees - one looks unhappy (saying 'I am unhappy'), one looks ok (saying 'I am OK'), and one looks very happy (saying 'I am awesome!'). Right: Binary (only 2 mutually exclusive outcomes), with below a T-rex saying 'I am extinct' and a shark saying 'HA.'"
+knitr::include_graphics("images/week3/horst-nom-org-binary.png")
+```
+:::
+
+::::
+
+::: {.center-text .gray-text}
+*Art by [Allison Horst](https://allisonhorst.com/)*
+:::
 
 ---
 

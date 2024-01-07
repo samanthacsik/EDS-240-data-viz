@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #a55a00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #a55a00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #00769e; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #00769e; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #a55a00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -333,20 +398,329 @@
 <section id="title-slide" class="slide level2 center" data-menu-title="Title Slide" data-background="#053660">
 <h2></h2>
 <p><span class="custom-title">EDS 240: Lecture 4.1</span></p>
-<p><span class="custom-subtitle"><em>Visualizing relationships</em></span></p>
+<p><span class="custom-subtitle"><em>Visualizing numerical relationships</em></span></p>
 <hr class="hr-teal">
 <p><span class="custom-subtitle3">Week 4 | January 29<sup>th</sup>, 2024</span></p>
 </section>
+<section id="numerical-relationshops" class="slide level2" data-menu-title="Visualizing numerical relationships">
+<h2></h2>
+<p><span class="slide-title">Visualizing <em>numerical relationships</em>?</span></p>
+<hr>
+<p><br> <br></p>
+<div class="center-text body-text-m">
+<p>For visualizing the relationship between (typically) two <strong>numeric variables</strong>.</p>
+</div>
+<p><br></p>
+
+<img data-src="week4.2-relationships-slides_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section class="slide level2">
 
 <p>Visualizing data <em>relationships</em>?</p>
 <p>to study a relationship between two numeric variables</p>
 <p>can also view by a group (categorical variable) sometimes with a third numeric variable (points = size e.g.&nbsp;bubble plot) - not generally recommended - encoding the same type of variable (numeric) on two different scales: position &amp; size - hard to compare strengths of different associations - much easier to perceive diffferences when encoded by position rather than size - hard to see small differences in size - difficult to match scale of circle size to scale of difference</p>
 </section>
+<section id="roadmap" class="slide level2" data-menu-title="Roadmap">
+<h2></h2>
+<p><span class="slide-title">Roadmap</span></p>
+<hr>
+</section>
+<section id="stream-data" class="slide level2" data-menu-title="About the data">
+<h2></h2>
+<p><span class="slide-title3">The data: Hubbard Brook Watershed stream chemistry</span></p>
+<hr>
+<p><span class="body-text-s">The <a href="https://hubbardbrook.org/">Hubbard Brook Experimenatal Forest</a> is a 8,700-acre hardwood research forest in the White Mountains of New Hampshire and home to a series of small watersheds occupying the valley’s north- and south-facing slopes.</span></p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week4/hbef-map.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text body-text-xs gray-text">
+<p><em>Map of Hubbard Brook Experimental Forest, downloaded from the Hubbard Brook Ecosystem Study <a href="http://data.hubbardbrook.org/photos/">Photo Galleries</a></em></p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><span class="body-text-s">Since 1963, researchers have collected and analyzed weekly stream and precipitation data from the forest’s watersheds.</span></p>
+<p><span class="body-text-s">These long-term data have contributed to important research, including the <strong>discovery of acid rain</strong> in North America. These data have also been used to <strong>document the effectiveness of federal clean air legislation</strong> in reducing coalfired power plant emissions.</span></p>
+<p><span class="body-text-s">In this lesson, we’ll explore the effects of various compounds on stream water pH (a lower pH = more acidic).</span></p>
+</div>
+</div>
+<div class="footer">
+<p><em>I admittedly don’t know much about water chemistry, but have skimmed a number of helpful resources throughout the creation of this lesson. They’ll be linked as referenced.</em></p>
+</div>
+</section>
 <section class="slide level2">
 
-<p>When samples size is large, overplotting can disguise trends</p>
-<p>strategies for dealing: - use smaller points and/or transparency - add color by group - add jittering - add a rug plot or marginal density plot - create a hexbin</p>
+<p>but after skimming through some literature (<a href="https://doi.org/10.1029/2009JG001082">Erlandsson et al.&nbsp;2010</a>), I’ve learned that higher levels of dissolved organic carbon (DOC) can lower water pH, which in turn increases aluminum (Al) solubility. High levels of Al can <a href="https://www.fondriest.com/environmental-measurements/parameters/water-quality/ph/#:~:text=Pollution%20in%20the%20air%2C%20soil,known%20as%20acid%20rain%20%C2%B2%C2%B9.">limit the growth and reproduction</a> of aquatic species.</p>
+<p>have learned that low pH levels increase the solubility of metals (e.g.&nbsp;<strong>aluminum</strong>), which in turn can <a href="https://www.fondriest.com/environmental-measurements/parameters/water-quality/ph/#:~:text=Pollution%20in%20the%20air%2C%20soil,known%20as%20acid%20rain%20%C2%B2%C2%B9.">limit the growth and reproduction</a> of aquatic species]{.body-text-s}</p>
+<p><strong>sulfates</strong> contribute to the acidification of surface waters and that higher dissolved metal concentrations (e.g.&nbsp;<strong>aluminum</strong>) can further lower <strong>pH</strong>. High concentrations of Al can <a href="https://www.fondriest.com/environmental-measurements/parameters/water-quality/ph/#:~:text=Pollution%20in%20the%20air%2C%20soil,known%20as%20acid%20rain%20%C2%B2%C2%B9.">limit the growth and reproduction</a> of aquatic species.]{.body-text-s}</p>
+</section>
+<section id="data-wrangling" class="slide level2" data-menu-title="Data wrangling">
+<h2></h2>
+<p><span class="slide-title">Data wrangling</span></p>
+<hr>
+<p>Out data don’t require much wrangling, though we will practice using the <a href="https://github.com/NCEAS/metajam"><code>{metajam}</code> package</a> for downloading and reading in data from repositories in the <a href="https://www.dataone.org/">DataOne</a> network.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="do">##                                    setup                                 ----</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co">#..........................load packages.........................</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(metajam) </span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co">#...................download data from DataOne...................</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="fu">download_d1_data</span>(<span class="st">"https://cn.dataone.org/cn/v2/resolve/https%3A%2F%2Fpasta.lternet.edu%2Fpackage%2Fdata%2Feml%2Fknb-lter-hbr%2F208%2F9%2F3b3cf7ea447cb875d7c7d68ebdfd24c7"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11"></a>                 <span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week4"</span>)) </span>
+<span id="cb1-12"><a href="#cb1-12"></a></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="co">#  ~ </span><span class="al">NOTE</span><span class="co">: I recommend renaming the downloaded folder to 'data/' so that it's ignored by .gitignore! ~</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="co">#....................read in downloaded files....................</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>stream_chem_all <span class="ot">&lt;-</span> <span class="fu">read_d1_files</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week4"</span>, <span class="st">"data"</span>))</span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co">#........................get the data file.......................</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>stream_chem_data <span class="ot">&lt;-</span> stream_chem_all<span class="sc">$</span>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="basic-scatter" class="slide level2" data-menu-title="Basic scatter plot">
+<h2></h2>
+<p><span class="slide-title">Basic scatter plot</span></p>
+<hr>
+<p>The pH of surface water and topsoil may be lower in the presence of dissolved organic matter (e.g.&nbsp;see <a href="https://doi.org/10.1029/2009JG001082">Erlandsson et al.&nbsp;2010</a> &amp; <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6798867/#:~:text=In%20general%2C%20pH%20values%20in,Gan%20%26%20Chen%2C%202019">Zhou et al.&nbsp;2019</a>.)). To start, let’s look at the <strong>effects of DOC on pH</strong> for just the most recent water year (2021):</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>stream_chem_data <span class="sc">|&gt;</span> </span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">filter</span>(waterYr <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> DOC, <span class="at">y =</span> pH)) <span class="sc">+</span> </span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="week4.2-relationships-slides_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:60.0%" class="r-stretch quarto-figure-center"></section>
+<section id="rug-plot" class="slide level2" data-menu-title="Add a rug plot">
+<h2></h2>
+<p><span class="slide-title2">Rug plots help to visualize the distribution of data</span></p>
+<hr>
+<p>Rug plots add distribution marks (one narrow line for each data point) along the x and y axes of your plot:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>stream_chem_data <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">filter</span>(waterYr <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> DOC, <span class="at">y =</span> pH)) <span class="sc">+</span> </span>
+<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">geom_rug</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="week4.2-relationships-slides_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:60.0%" class="r-stretch quarto-figure-center"></section>
+<section id="ggMarginal" class="slide level2" data-menu-title="Marginal plots">
+<h2></h2>
+<p><span class="slide-title3">Try marginal plots as an alternative to <code>geom_rug()</code></span></p>
+<hr>
+<p>The <a href="https://cran.r-project.org/web/packages/ggExtra/vignettes/ggExtra.html"><code>{ggExtra}</code> package</a> can be used to add marginal histograms / boxplots / density plots to ggplot scatter plots:</p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>p1 <span class="ot">&lt;-</span> stream_chem_data <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">filter</span>(waterYr <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> DOC, <span class="at">y =</span> pH)) <span class="sc">+</span> </span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)</span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a>ggExtra<span class="sc">::</span><span class="fu">ggMarginal</span>(p1, <span class="at">type =</span> <span class="st">"histogram"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week4.2-relationships-slides_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>p1 <span class="ot">&lt;-</span> stream_chem_data <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">filter</span>(waterYr <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> DOC, <span class="at">y =</span> pH)) <span class="sc">+</span> </span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)</span>
+<span id="cb5-5"><a href="#cb5-5"></a></span>
+<span id="cb5-6"><a href="#cb5-6"></a>ggExtra<span class="sc">::</span><span class="fu">ggMarginal</span>(p1, <span class="at">type =</span> <span class="st">"density"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week4.2-relationships-slides_files/figure-revealjs/unnamed-chunk-8-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>p1 <span class="ot">&lt;-</span> stream_chem_data <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">filter</span>(waterYr <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> DOC, <span class="at">y =</span> pH)) <span class="sc">+</span> </span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)</span>
+<span id="cb6-5"><a href="#cb6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6"></a>ggExtra<span class="sc">::</span><span class="fu">ggMarginal</span>(p1, <span class="at">type =</span> <span class="st">"boxplot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week4.2-relationships-slides_files/figure-revealjs/unnamed-chunk-9-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><span class="body-text-s">Explore a variety of other parameters to adjust the appearance of your marginal plots (e.g.&nbsp;<code>col</code>, <code>fill</code>, <code>binwidth</code>, etc.). You can add marginal plots on just a single axis (e.g.&nbsp;<code>margins = "x"</code> for just a marginal plot along the x-axis), or separately adjust the appearance of marginal plots (e.g.&nbsp;<code>xparams = list(fill = "red")</code>)</span></p>
+</section>
+<section id="ggMarginal-groups" class="slide level2" data-menu-title="Marginal plots (with groups)">
+<h2></h2>
+<p><span class="slide-title">Marginal plots also work with groups</span></p>
+<hr>
+<p>Here, we color points by <code>site</code>. It can be helpful to move the legend above or below the plot so that the marginal plot sit cleanly against the right-hand side of graph:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="3,5,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>p2 <span class="ot">&lt;-</span> stream_chem_data <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">filter</span>(waterYr <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> DOC, <span class="at">y =</span> pH, <span class="at">color =</span> site)) <span class="sc">+</span> </span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a>ggExtra<span class="sc">::</span><span class="fu">ggMarginal</span>(p2, <span class="at">type =</span> <span class="st">"density"</span>, <span class="at">groupFill =</span> <span class="cn">TRUE</span>, <span class="at">groupColour =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="week4.2-relationships-slides_files/figure-revealjs/unnamed-chunk-10-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<section id="trend-lines" class="slide level2" data-menu-title="Trend lines">
+<h2></h2>
+<p><span class="slide-title">Trend lines</span></p>
+<hr>
+<p>https://intro2r.com/the-start-of-the-end.html https://ggplot2-book.org/getting-started#sec-smooth</p>
+</section>
+<section id="third-var" class="slide level2" data-menu-title="Third variable">
+<h2></h2>
+<p><span class="slide-title3">Bubble charts for visualizing a third numeric variable</span></p>
+<hr>
+<p><span class="body-text-s">Low pH levels can increase the solubility of heavy metals, like aluminum (Al). High levels of Al can <a href="https://www.fondriest.com/environmental-measurements/parameters/water-quality/ph/">limit the growth and reproduction</a> of aquatic species.</span></p>
+<p><span class="body-text-s">We can use a bubble chart to represent this third numeric variable (Al) through the size of our scatter plot points. Here, we also update our x-axis and legend titles:</span></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="3,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>stream_chem_data <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">filter</span>(waterYr <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> DOC, <span class="at">y =</span> pH, <span class="at">color =</span> site, <span class="at">size =</span> Al_ICP)) <span class="sc">+</span> </span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"DOC (mg/L)"</span>, <span class="at">size =</span> <span class="st">"Al (mg/L)"</span>, <span class="at">color =</span> <span class="st">"Site"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="week4.2-relationships-slides_files/figure-revealjs/unnamed-chunk-11-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<section id="bub-size" class="slide level2" data-menu-title="Adjust bubble size">
+<h2></h2>
+<p><span class="slide-title">Adjust the size range of bubbles</span></p>
+<hr>
+<p>Use <code>scale_size()</code> to adjust the <strong>area</strong> range of the bubbles:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>stream_chem_data <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">filter</span>(waterYr <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> DOC, <span class="at">y =</span> pH, <span class="at">color =</span> site, <span class="at">size =</span> Al_ICP)) <span class="sc">+</span> </span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"DOC (mg/L)"</span>, <span class="at">size =</span> <span class="st">"Al (mg/L)"</span>, <span class="at">color =</span> <span class="st">"Site"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="week4.2-relationships-slides_files/figure-revealjs/unnamed-chunk-12-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p>Alternatively, using <code>scale_size_area()</code> ensures that <a href="https://community.rstudio.com/t/ggplot2-scale-size-area-not-mapping-zero-to-zero-area/173705">the value of 0 is mapped to a size of 0</a>.</p>
+</section>
+<section id="third-var-difficult" class="slide level2" data-menu-title="Use size cautiously">
+<h2></h2>
+<p><span class="slide-title3">Use size to represent a third numeric variable cautiously</span></p>
+<hr>
+<p><br></p>
+<p><span class="body-text-m">Bubble charts encode values based on both position (within the Cartesian coordinate system) <em>and</em> size. <strong>Some challenges</strong> with this:</span></p>
+<div>
+<ul>
+<li class="fragment">we (humans) generally have an easier time perceiving differences in position rather than size – the <strong>relationship between your x- and y-axis variables will be the primary focus</strong></li>
+<li class="fragment">it can be <strong>hard to compare the strengths of different associations</strong> – is there an alternative way of presenting your data to better highlight this?</li>
+<li class="fragment">it’s difficult to see small differences in size – <strong>if the range of values mapped to size is small, your bubbles will look indistinguishable from one another</strong></li>
+<li class="fragment">it can be difficult to match a bubble’s size to the scale of difference in the legend – <strong>consider adjusting the size range of your scale</strong></li>
+</ul>
+</div>
+</section>
+<section id="bub-size-area" class="slide level2" data-menu-title="Sizing best practices">
+<h2></h2>
+<p><span class="slide-title">Always scale bubble <em>area</em> by value</span></p>
+<hr>
+<p>By default, ggplot scales bubble <em>area</em> by value, rather than radius or diameter. <strong>Scaling the radius or diameter by value can be deceiving</strong> – a point with 2x the value of another point would end up having 4x the area, making it’s value appear larger than warranted:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text gray-text body-text-s">
+<p>Scaling size by area using <code>scale_size()</code></p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>stream_chem_data <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">filter</span>(waterYr <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> DOC, <span class="at">y =</span> pH, <span class="at">color =</span> site, <span class="at">size =</span> Al_ICP)) <span class="sc">+</span> </span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"DOC (mg/L)"</span>, <span class="at">size =</span> <span class="st">"Al (mg/L)"</span>, <span class="at">color =</span> <span class="st">"Site"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week4.2-relationships-slides_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text gray-text body-text-s">
+<p>Scaling size by radius using <code>scale_radius()</code></p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>stream_chem_data <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">filter</span>(waterYr <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> DOC, <span class="at">y =</span> pH, <span class="at">color =</span> site, <span class="at">size =</span> Al_ICP)) <span class="sc">+</span> </span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">scale_radius</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"DOC (mg/L)"</span>, <span class="at">size =</span> <span class="st">"Al (mg/L)"</span>, <span class="at">color =</span> <span class="st">"Site"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week4.2-relationships-slides_files/figure-revealjs/unnamed-chunk-14-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="scale-by-color" class="slide level2" data-menu-title="Scale by color">
+<h2></h2>
+<p><span class="slide-title2">Visualizing a third numeric variable using color</span></p>
+<hr>
+<p>Rather than coloring points by <code>site</code>, we can color them based on our third continuous numeric variable, <code>Al_ICP</code>. We’ll also apply the viridis color map:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="3,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>stream_chem_data <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">filter</span>(waterYr <span class="sc">==</span> <span class="dv">2021</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> DOC, <span class="at">y =</span> pH, <span class="at">color =</span> Al_ICP)) <span class="sc">+</span> </span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"DOC (mg/L)"</span>, <span class="at">color =</span> <span class="st">"Al (mg/L)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="week4.2-relationships-slides_files/figure-revealjs/unnamed-chunk-15-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<section id="overplotting" class="slide level2" data-menu-title="Overplotting">
+<h2></h2>
+<p><span class="slide-title2">Overplotting can disguise trends</span></p>
+<hr>
+<p>Sometimes, we just have too many data points for a traditional scatter plot to be effective. For example….</p>
+<p>strategies for dealing: - use smaller points and/or transparency - add color by group - add a rug plot or marginal density plot</p>
+</section>
+<section class="slide level2">
+
+<p>alternatively, use a 2d density plot. there are some built-in options: - geom_hexbin() - geom_density_2d() – good for getting a general sense of the density (generates its contours as equidistant level sets of the estimated bivariate density, i.e.&nbsp;taking horizontal slices of the 3d surface at equally-spaced heights, and projecting the intersections down into the plane; interpret a contour, you would need to multiply its height by the area it bounds) - geom_density_2d_filled()</p>
+<p>latter 2 can be hard to interpret</p>
+</section>
+<section class="slide level2">
+
+<p>instead, consider using {ggdensity} functions:</p>
+<ul>
+<li>geom_hdr (instead of geom_density_2d_filled()): probs here tells us the probability bounded by the corresponding region, and the regions are computed to be the smallest such regions that bound that level of probability; these are called highest density regions or HDRs. By default, the plotted regions show the 50%, 80%, 95%, and 99% HDRs of the estimated density, but this can be changed with the probs argument to geom_hdr()</li>
+<li>geom_hdr_lines() (instead of geom_density_2d())</li>
+</ul>
 <!-- --- -->
 <!-- scatter plot -->
 <!-- fitting linear models & smoothers (e.g. lowess) -->
@@ -378,12 +752,12 @@
 <i class="fa-solid fa-mug-hot" title="a mug with steam rising out the top" aria-label="mug-hot"></i> Take a Break
 </p>
 <p class="caption-text">
-<em>~ This is the end of Lesson 2 (of 4) ~</em>
+<em>~ This is the end of Lesson 2 (of 3) ~</em>
 </p>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_06015332" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_65f3a378" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>

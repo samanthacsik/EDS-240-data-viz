@@ -15,11 +15,44 @@ editor_options:
 
 [EDS 240: Lecture 4.1]{.custom-title}
 
-[*Visualizing relationships*]{.custom-subtitle}
+[*Visualizing numerical relationships*]{.custom-subtitle}
 
 <hr class="hr-teal">
 
 [Week 4 | January 29^th^, 2024]{.custom-subtitle3}
+
+---
+
+## {#numerical-relationshops data-menu-title="Visualizing numerical relationships"} 
+
+[Visualizing *numerical relationships*?]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+::: {.center-text .body-text-m}
+For visualizing the relationship between (typically) two **numeric variables**.
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+library(tidyverse)
+library(palmerpenguins)
+
+penguins |> 
+  filter(species == "Gentoo") |> 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point() + 
+  labs(x = "Numeric variable 1",
+       y = "Numeric variable 2") +
+  theme(axis.title = element_text(size = 17)) 
+```
 
 ---
 
@@ -38,14 +71,444 @@ sometimes with a third numeric variable (points = size e.g. bubble plot)
 
 ---
 
-When samples size is large, overplotting can disguise trends
+## {#roadmap data-menu-title="Roadmap"} 
+
+[Roadmap]{.slide-title}
+
+<hr>
+
+---
+
+## {#stream-data data-menu-title="About the data"} 
+
+[The data: Hubbard Brook Watershed stream chemistry]{.slide-title3}
+
+<hr>
+
+[The [Hubbard Brook Experimenatal Forest](https://hubbardbrook.org/) is a 8,700-acre hardwood research forest in the White Mountains of New Hampshire and home to a series of small watersheds occupying the valley’s north- and south-facing slopes.]{.body-text-s}
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/hbef-map.png")
+```
+
+::: {.center-text .body-text-xs .gray-text}
+*Map of Hubbard Brook Experimental Forest, downloaded from the Hubbard Brook Ecosystem Study [Photo Galleries](http://data.hubbardbrook.org/photos/)*
+:::
+:::
+
+::: {.column width="50%"}
+[Since 1963, researchers have collected and analyzed weekly stream and precipitation data from the forest's watersheds.]{.body-text-s}
+
+[These long-term data have contributed to important research, including the **discovery of acid rain** in North America. These data have also been used to **document the effectiveness of federal clean air legislation** in reducing coalfired power plant emissions.]{.body-text-s}
+
+[In this lesson, we'll explore the effects of various compounds on stream water pH (a lower pH = more acidic).]{.body-text-s}
+:::
+
+::::
+
+::: {.footer}
+*I admittedly don't know much about water chemistry, but have skimmed a number of helpful resources throughout the creation of this lesson. They'll be linked as referenced.*
+:::
+
+---
+
+ but after skimming through some literature ([Erlandsson et al. 2010](https://doi.org/10.1029/2009JG001082)), I've learned that higher levels of dissolved organic carbon (DOC) can lower water pH, which in turn increases aluminum (Al) solubility. High levels of Al can [limit the growth and reproduction](https://www.fondriest.com/environmental-measurements/parameters/water-quality/ph/#:~:text=Pollution%20in%20the%20air%2C%20soil,known%20as%20acid%20rain%20%C2%B2%C2%B9.) of aquatic species.
+
+
+have learned that low pH levels increase the solubility of metals (e.g. **aluminum**), which in turn can [limit the growth and reproduction](https://www.fondriest.com/environmental-measurements/parameters/water-quality/ph/#:~:text=Pollution%20in%20the%20air%2C%20soil,known%20as%20acid%20rain%20%C2%B2%C2%B9.) of aquatic species]{.body-text-s}
+
+**sulfates** contribute to the acidification of surface waters and that higher dissolved metal concentrations (e.g. **aluminum**) can further lower **pH**. High concentrations of Al can [limit the growth and reproduction](https://www.fondriest.com/environmental-measurements/parameters/water-quality/ph/#:~:text=Pollution%20in%20the%20air%2C%20soil,known%20as%20acid%20rain%20%C2%B2%C2%B9.) of aquatic species.]{.body-text-s}
+
+---
+
+## {#data-wrangling data-menu-title="Data wrangling"} 
+
+[Data wrangling]{.slide-title}
+
+<hr>
+
+Out data don't require much wrangling, though we will practice using the [`{metajam}` package](https://github.com/NCEAS/metajam) for downloading and reading in data from repositories in the  [DataOne](https://www.dataone.org/) network.
+
+```{r}
+#| eval: false
+#| echo: true
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    setup                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..........................load packages.........................
+library(metajam) 
+library(tidyverse)
+
+#...................download data from DataOne...................
+download_d1_data("https://cn.dataone.org/cn/v2/resolve/https%3A%2F%2Fpasta.lternet.edu%2Fpackage%2Fdata%2Feml%2Fknb-lter-hbr%2F208%2F9%2F3b3cf7ea447cb875d7c7d68ebdfd24c7",
+                 path = here::here("week4")) 
+
+#  ~ NOTE: I recommend renaming the downloaded folder to 'data/' so that it's ignored by .gitignore! ~
+
+#....................read in downloaded files....................
+stream_chem_all <- read_d1_files(here::here("week4", "data"))
+
+#........................get the data file.......................
+stream_chem_data <- stream_chem_all$data
+```
+
+```{r}
+#| eval: true
+#| echo: false
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    setup                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..........................load packages.........................
+library(metajam) 
+library(tidyverse)
+
+#...................download data from DataOne...................
+# download_d1_data("https://cn.dataone.org/cn/v2/resolve/https%3A%2F%2Fpasta.lternet.edu%2Fpackage%2Fdata%2Feml%2Fknb-lter-hbr%2F208%2F9%2F3b3cf7ea447cb875d7c7d68ebdfd24c7",
+#                  path = here::here("slides", "data")) 
+
+#  ~ NOTE: I recommend renaming the downloaded folder to 'data/' so that it's ignored by .gitignore! ~
+
+#....................read in downloaded files....................
+stream_chem_all <- read_d1_files(here::here("slides", "data", "https_pasta.lternet.edu_package_metadata_eml_knb-lter-hbr_208_9__HubbardBrook_weekly_stream_chemistry__csv"))
+
+#........................get the data file.......................
+stream_chem_data <- stream_chem_all$data
+```
+
+---
+
+## {#basic-scatter data-menu-title="Basic scatter plot"} 
+
+[Basic scatter plot]{.slide-title}
+
+<hr>
+
+The pH of surface water and topsoil may be lower in the presence of dissolved organic matter (e.g. see [Erlandsson et al. 2010](https://doi.org/10.1029/2009JG001082) & [Zhou et al. 2019](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6798867/#:~:text=In%20general%2C%20pH%20values%20in,Gan%20%26%20Chen%2C%202019).)). To start, let's look at the **effects of DOC on pH** for just the most recent water year (2021): 
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "60%"
+#| fig-align: "center"
+stream_chem_data |> 
+  filter(waterYr == 2021) |> 
+  ggplot(aes(x = DOC, y = pH)) + 
+  geom_point(alpha = 0.5)
+```
+
+---
+
+## {#rug-plot data-menu-title="Add a rug plot"} 
+
+[Rug plots help to visualize the distribution of data]{.slide-title2}
+
+<hr>
+
+Rug plots add distribution marks (one narrow line for each data point) along the x and y axes of your plot:
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "60%"
+#| fig-align: "center"
+#| code-line-numbers: "5"
+stream_chem_data |> 
+  filter(waterYr == 2021) |> 
+  ggplot(aes(x = DOC, y = pH)) + 
+  geom_point(alpha = 0.5) +
+  geom_rug()
+```
+
+---
+
+## {#ggMarginal data-menu-title="Marginal plots"} 
+
+[Try marginal plots as an alternative to `geom_rug()`]{.slide-title3}
+
+<hr>
+
+The [`{ggExtra}` package](https://cran.r-project.org/web/packages/ggExtra/vignettes/ggExtra.html) can be used to add marginal histograms / boxplots / density plots to ggplot scatter plots:
+
+:::: {.columns}
+
+::: {.column width="33%"}
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+#| code-line-numbers: "6"
+p1 <- stream_chem_data |> 
+  filter(waterYr == 2021) |> 
+  ggplot(aes(x = DOC, y = pH)) + 
+  geom_point(alpha = 0.5)
+
+ggExtra::ggMarginal(p1, type = "histogram")
+```
+:::
+
+::: {.column width="33%"}
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+#| code-line-numbers: "6"
+p1 <- stream_chem_data |> 
+  filter(waterYr == 2021) |> 
+  ggplot(aes(x = DOC, y = pH)) + 
+  geom_point(alpha = 0.5)
+
+ggExtra::ggMarginal(p1, type = "density")
+```
+:::
+
+::: {.column width="33%"}
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+#| code-line-numbers: "6"
+p1 <- stream_chem_data |> 
+  filter(waterYr == 2021) |> 
+  ggplot(aes(x = DOC, y = pH)) + 
+  geom_point(alpha = 0.5)
+
+ggExtra::ggMarginal(p1, type = "boxplot")
+```
+:::
+
+::::
+
+[Explore a variety of other parameters to adjust the appearance of your marginal plots (e.g. `col`, `fill`, `binwidth`, etc.). You can add marginal plots on just a single axis (e.g. `margins = "x"` for just a marginal plot along the x-axis), or separately adjust the appearance of marginal plots (e.g. `xparams = list(fill = "red")`)]{.body-text-s}
+
+---
+
+## {#ggMarginal-groups data-menu-title="Marginal plots (with groups)"} 
+
+[Marginal plots also work with groups]{.slide-title}
+
+<hr>
+
+Here, we color points by `site`. It can be helpful to move the legend above or below the plot so that the marginal plot sit cleanly against the right-hand side of graph:
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+#| code-line-numbers: "3,5,7"
+p2 <- stream_chem_data |> 
+  filter(waterYr == 2021) |> 
+  ggplot(aes(x = DOC, y = pH, color = site)) + 
+  geom_point(alpha = 0.5) +
+  theme(legend.position = "bottom")
+
+ggExtra::ggMarginal(p2, type = "density", groupFill = TRUE, groupColour = TRUE)
+```
+
+---
+
+## {#trend-lines data-menu-title="Trend lines"} 
+
+[Trend lines]{.slide-title}
+
+<hr>
+
+https://intro2r.com/the-start-of-the-end.html
+https://ggplot2-book.org/getting-started#sec-smooth
+
+---
+
+## {#third-var data-menu-title="Third variable"} 
+
+[Bubble charts for visualizing a third numeric variable]{.slide-title3}
+
+<hr>
+
+[Low pH levels can increase the solubility of heavy metals, like aluminum (Al). High levels of Al can [limit the growth and reproduction](https://www.fondriest.com/environmental-measurements/parameters/water-quality/ph/) of aquatic species.]{.body-text-s}
+
+[We can use a bubble chart to represent this third numeric variable (Al) through the size of our scatter plot points. Here, we also update our x-axis and legend titles:]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+#| code-line-numbers: "3,5"
+stream_chem_data |> 
+  filter(waterYr == 2021) |> 
+  ggplot(aes(x = DOC, y = pH, color = site, size = Al_ICP)) + 
+  geom_point(alpha = 0.5) +
+  labs(x = "DOC (mg/L)", size = "Al (mg/L)", color = "Site")
+```
+
+---
+
+## {#bub-size data-menu-title="Adjust bubble size"} 
+
+[Adjust the size range of bubbles]{.slide-title}
+
+<hr>
+
+Use `scale_size()` to adjust the **area** range of the bubbles:
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+#| code-line-numbers: "5"
+stream_chem_data |> 
+  filter(waterYr == 2021) |> 
+  ggplot(aes(x = DOC, y = pH, color = site, size = Al_ICP)) + 
+  geom_point(alpha = 0.5) +
+  scale_size(range = c(1, 10)) +
+  labs(x = "DOC (mg/L)", size = "Al (mg/L)", color = "Site")
+```
+
+Alternatively, using `scale_size_area()` ensures that [the value of 0 is mapped to a size of 0](https://community.rstudio.com/t/ggplot2-scale-size-area-not-mapping-zero-to-zero-area/173705).
+
+---
+
+## {#third-var-difficult data-menu-title="Use size cautiously"} 
+
+[Use size to represent a third numeric variable cautiously]{.slide-title3}
+
+<hr>
+
+<br>
+
+[Bubble charts encode values based on both position (within the Cartesian coordinate system) *and* size. **Some challenges** with this:]{.body-text-m}
+
+::: {.incremental}
+- we (humans) generally have an easier time perceiving differences in position rather than size -- the **relationship between your x- and y-axis variables will be the primary focus**
+- it can be **hard to compare the strengths of different associations** -- is there an alternative way of presenting your data to better highlight this?
+- it's difficult to see small differences in size -- **if the range of values mapped to size is small, your bubbles will look indistinguishable from one another** 
+- it can be difficult to match a bubble's size to the scale of difference in the legend -- **consider adjusting the size range of your scale**
+:::
+
+---
+
+## {#bub-size-area data-menu-title="Sizing best practices"} 
+
+[Always scale bubble *area* by value]{.slide-title}
+
+<hr>
+
+By default, ggplot scales bubble *area* by value, rather than radius or diameter. **Scaling the radius or diameter by value can be deceiving** -- a point with 2x the value of another point would end up having 4x the area, making it's value appear larger than warranted:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.center-text .gray-text .body-text-s}
+Scaling size by area using `scale_size()`
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+#| code-line-numbers: "5"
+stream_chem_data |> 
+  filter(waterYr == 2021) |> 
+  ggplot(aes(x = DOC, y = pH, color = site, size = Al_ICP)) + 
+  geom_point(alpha = 0.5) +
+  scale_size(range = c(1, 10)) +
+  labs(x = "DOC (mg/L)", size = "Al (mg/L)", color = "Site")
+```
+:::
+
+::: {.column width="50%"}
+::: {.center-text .gray-text .body-text-s}
+Scaling size by radius using `scale_radius()`
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+#| code-line-numbers: "5"
+stream_chem_data |> 
+  filter(waterYr == 2021) |> 
+  ggplot(aes(x = DOC, y = pH, color = site, size = Al_ICP)) + 
+  geom_point(alpha = 0.5) +
+  scale_radius(range = c(1, 10)) +
+  labs(x = "DOC (mg/L)", size = "Al (mg/L)", color = "Site")
+```
+:::
+
+::::
+
+---
+
+## {#scale-by-color data-menu-title="Scale by color"} 
+
+[Visualizing a third numeric variable using color]{.slide-title2}
+
+<hr>
+
+Rather than coloring points by `site`, we can color them based on our third continuous numeric variable, `Al_ICP`. We'll also apply the viridis color map:
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+#| code-line-numbers: "3,5"
+stream_chem_data |> 
+  filter(waterYr == 2021) |> 
+  ggplot(aes(x = DOC, y = pH, color = Al_ICP)) + 
+  geom_point(alpha = 0.5, size = 2) +
+  scale_color_viridis_c() +
+  labs(x = "DOC (mg/L)", color = "Al (mg/L)")
+```
+
+----
+
+## {#overplotting data-menu-title="Overplotting"} 
+
+[Overplotting can disguise trends]{.slide-title2}
+
+<hr>
+
+Sometimes, we just have too many data points for a traditional scatter plot to be effective. For example....
+
 
 strategies for dealing: 
 - use smaller points and/or transparency
 - add color by group
-- add jittering
 - add a rug plot or marginal density plot
-- create a hexbin
+
+---
+
+alternatively, use a 2d density plot. there are some built-in options:
+- geom_hexbin()
+- geom_density_2d() -- good for getting a general sense of the density (generates its contours as equidistant level sets of the estimated bivariate density, i.e. taking horizontal slices of the 3d surface at equally-spaced heights, and projecting the intersections down into the plane; interpret a contour, you would need to multiply its height by the area it bounds)
+- geom_density_2d_filled()
+
+latter 2 can be hard to interpret
+
+---
+
+instead, consider using {ggdensity} functions:
+
+- geom_hdr (instead of geom_density_2d_filled()): probs here tells us the probability bounded by the corresponding region, and the regions are computed to be the smallest such regions that bound that level of probability; these are called highest density regions or HDRs. By default, the plotted regions show the 50%, 80%, 95%, and 99% HDRs of the estimated density, but this can be changed with the probs argument to geom_hdr()
+- geom_hdr_lines() (instead of geom_density_2d())
 
 <!-- --- -->
 
@@ -79,7 +542,7 @@ looking forward
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">{{< fa mug-hot title="a mug with steam rising out the top" >}} Take a Break</p>
-<p class="caption-text">*~ This is the end of Lesson 2 (of 4) ~*</p>
+<p class="caption-text">*~ This is the end of Lesson 2 (of 3) ~*</p>
 </div>
 
 ```{r}

@@ -522,14 +522,119 @@
     "href": "slides/week4.2-relationships-slides.html#title-slide",
     "title": "EDS 240",
     "section": "",
-    "text": "EDS 240: Lecture 4.1\nVisualizing relationships\n\nWeek 4 | January 29th, 2024"
+    "text": "EDS 240: Lecture 4.1\nVisualizing numerical relationships\n\nWeek 4 | January 29th, 2024"
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#numerical-relationshops",
+    "href": "slides/week4.2-relationships-slides.html#numerical-relationshops",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Visualizing numerical relationships?\n\n \n\nFor visualizing the relationship between (typically) two numeric variables."
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#roadmap",
+    "href": "slides/week4.2-relationships-slides.html#roadmap",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Roadmap"
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#stream-data",
+    "href": "slides/week4.2-relationships-slides.html#stream-data",
+    "title": "EDS 240",
+    "section": "",
+    "text": "The data: Hubbard Brook Watershed stream chemistry\n\nThe Hubbard Brook Experimenatal Forest is a 8,700-acre hardwood research forest in the White Mountains of New Hampshire and home to a series of small watersheds occupying the valley’s north- and south-facing slopes.\n\n\n\n\n\n\n\n\n\n\n\n\n\nMap of Hubbard Brook Experimental Forest, downloaded from the Hubbard Brook Ecosystem Study Photo Galleries\n\n\nSince 1963, researchers have collected and analyzed weekly stream and precipitation data from the forest’s watersheds.\nThese long-term data have contributed to important research, including the discovery of acid rain in North America. These data have also been used to document the effectiveness of federal clean air legislation in reducing coalfired power plant emissions.\nIn this lesson, we’ll explore the effects of various compounds on stream water pH (a lower pH = more acidic).\n\n\n\nI admittedly don’t know much about water chemistry, but have skimmed a number of helpful resources throughout the creation of this lesson. They’ll be linked as referenced."
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#data-wrangling",
+    "href": "slides/week4.2-relationships-slides.html#data-wrangling",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Data wrangling\n\nOut data don’t require much wrangling, though we will practice using the {metajam} package for downloading and reading in data from repositories in the DataOne network.\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                                    setup                                 ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n#..........................load packages.........................\nlibrary(metajam) \nlibrary(tidyverse)\n\n#...................download data from DataOne...................\ndownload_d1_data(\"https://cn.dataone.org/cn/v2/resolve/https%3A%2F%2Fpasta.lternet.edu%2Fpackage%2Fdata%2Feml%2Fknb-lter-hbr%2F208%2F9%2F3b3cf7ea447cb875d7c7d68ebdfd24c7\",\n                 path = here::here(\"week4\")) \n\n#  ~ NOTE: I recommend renaming the downloaded folder to 'data/' so that it's ignored by .gitignore! ~\n\n#....................read in downloaded files....................\nstream_chem_all &lt;- read_d1_files(here::here(\"week4\", \"data\"))\n\n#........................get the data file.......................\nstream_chem_data &lt;- stream_chem_all$data"
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#basic-scatter",
+    "href": "slides/week4.2-relationships-slides.html#basic-scatter",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Basic scatter plot\n\nThe pH of surface water and topsoil may be lower in the presence of dissolved organic matter (e.g. see Erlandsson et al. 2010 & Zhou et al. 2019.)). To start, let’s look at the effects of DOC on pH for just the most recent water year (2021):\n\nstream_chem_data |&gt; \n  filter(waterYr == 2021) |&gt; \n  ggplot(aes(x = DOC, y = pH)) + \n  geom_point(alpha = 0.5)"
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#rug-plot",
+    "href": "slides/week4.2-relationships-slides.html#rug-plot",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Rug plots help to visualize the distribution of data\n\nRug plots add distribution marks (one narrow line for each data point) along the x and y axes of your plot:\n\nstream_chem_data |&gt; \n  filter(waterYr == 2021) |&gt; \n  ggplot(aes(x = DOC, y = pH)) + \n  geom_point(alpha = 0.5) +\n  geom_rug()"
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#ggMarginal",
+    "href": "slides/week4.2-relationships-slides.html#ggMarginal",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Try marginal plots as an alternative to geom_rug()\n\nThe {ggExtra} package can be used to add marginal histograms / boxplots / density plots to ggplot scatter plots:\n\n\n\np1 &lt;- stream_chem_data |&gt; \n  filter(waterYr == 2021) |&gt; \n  ggplot(aes(x = DOC, y = pH)) + \n  geom_point(alpha = 0.5)\n\nggExtra::ggMarginal(p1, type = \"histogram\")\n\n\n\n\n\n\n\n\n\n\np1 &lt;- stream_chem_data |&gt; \n  filter(waterYr == 2021) |&gt; \n  ggplot(aes(x = DOC, y = pH)) + \n  geom_point(alpha = 0.5)\n\nggExtra::ggMarginal(p1, type = \"density\")\n\n\n\n\n\n\n\n\n\n\np1 &lt;- stream_chem_data |&gt; \n  filter(waterYr == 2021) |&gt; \n  ggplot(aes(x = DOC, y = pH)) + \n  geom_point(alpha = 0.5)\n\nggExtra::ggMarginal(p1, type = \"boxplot\")\n\n\n\n\n\n\n\n\n\n\nExplore a variety of other parameters to adjust the appearance of your marginal plots (e.g. col, fill, binwidth, etc.). You can add marginal plots on just a single axis (e.g. margins = \"x\" for just a marginal plot along the x-axis), or separately adjust the appearance of marginal plots (e.g. xparams = list(fill = \"red\"))"
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#ggMarginal-groups",
+    "href": "slides/week4.2-relationships-slides.html#ggMarginal-groups",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Marginal plots also work with groups\n\nHere, we color points by site. It can be helpful to move the legend above or below the plot so that the marginal plot sit cleanly against the right-hand side of graph:\n\np2 &lt;- stream_chem_data |&gt; \n  filter(waterYr == 2021) |&gt; \n  ggplot(aes(x = DOC, y = pH, color = site)) + \n  geom_point(alpha = 0.5) +\n  theme(legend.position = \"bottom\")\n\nggExtra::ggMarginal(p2, type = \"density\", groupFill = TRUE, groupColour = TRUE)"
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#trend-lines",
+    "href": "slides/week4.2-relationships-slides.html#trend-lines",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Trend lines\n\nhttps://intro2r.com/the-start-of-the-end.html https://ggplot2-book.org/getting-started#sec-smooth"
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#third-var",
+    "href": "slides/week4.2-relationships-slides.html#third-var",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Bubble charts for visualizing a third numeric variable\n\nLow pH levels can increase the solubility of heavy metals, like aluminum (Al). High levels of Al can limit the growth and reproduction of aquatic species.\nWe can use a bubble chart to represent this third numeric variable (Al) through the size of our scatter plot points. Here, we also update our x-axis and legend titles:\n\nstream_chem_data |&gt; \n  filter(waterYr == 2021) |&gt; \n  ggplot(aes(x = DOC, y = pH, color = site, size = Al_ICP)) + \n  geom_point(alpha = 0.5) +\n  labs(x = \"DOC (mg/L)\", size = \"Al (mg/L)\", color = \"Site\")"
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#bub-size",
+    "href": "slides/week4.2-relationships-slides.html#bub-size",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Adjust the size range of bubbles\n\nUse scale_size() to adjust the area range of the bubbles:\n\nstream_chem_data |&gt; \n  filter(waterYr == 2021) |&gt; \n  ggplot(aes(x = DOC, y = pH, color = site, size = Al_ICP)) + \n  geom_point(alpha = 0.5) +\n  scale_size(range = c(1, 10)) +\n  labs(x = \"DOC (mg/L)\", size = \"Al (mg/L)\", color = \"Site\")\n\n\nAlternatively, using scale_size_area() ensures that the value of 0 is mapped to a size of 0."
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#third-var-difficult",
+    "href": "slides/week4.2-relationships-slides.html#third-var-difficult",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Use size to represent a third numeric variable cautiously\n\n\nBubble charts encode values based on both position (within the Cartesian coordinate system) and size. Some challenges with this:\n\n\nwe (humans) generally have an easier time perceiving differences in position rather than size – the relationship between your x- and y-axis variables will be the primary focus\nit can be hard to compare the strengths of different associations – is there an alternative way of presenting your data to better highlight this?\nit’s difficult to see small differences in size – if the range of values mapped to size is small, your bubbles will look indistinguishable from one another\nit can be difficult to match a bubble’s size to the scale of difference in the legend – consider adjusting the size range of your scale"
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#bub-size-area",
+    "href": "slides/week4.2-relationships-slides.html#bub-size-area",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Always scale bubble area by value\n\nBy default, ggplot scales bubble area by value, rather than radius or diameter. Scaling the radius or diameter by value can be deceiving – a point with 2x the value of another point would end up having 4x the area, making it’s value appear larger than warranted:\n\n\n\nScaling size by area using scale_size()\n\n\nstream_chem_data |&gt; \n  filter(waterYr == 2021) |&gt; \n  ggplot(aes(x = DOC, y = pH, color = site, size = Al_ICP)) + \n  geom_point(alpha = 0.5) +\n  scale_size(range = c(1, 10)) +\n  labs(x = \"DOC (mg/L)\", size = \"Al (mg/L)\", color = \"Site\")\n\n\n\n\n\n\n\n\n\n\nScaling size by radius using scale_radius()\n\n\nstream_chem_data |&gt; \n  filter(waterYr == 2021) |&gt; \n  ggplot(aes(x = DOC, y = pH, color = site, size = Al_ICP)) + \n  geom_point(alpha = 0.5) +\n  scale_radius(range = c(1, 10)) +\n  labs(x = \"DOC (mg/L)\", size = \"Al (mg/L)\", color = \"Site\")"
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#scale-by-color",
+    "href": "slides/week4.2-relationships-slides.html#scale-by-color",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Visualizing a third numeric variable using color\n\nRather than coloring points by site, we can color them based on our third continuous numeric variable, Al_ICP. We’ll also apply the viridis color map:\n\nstream_chem_data |&gt; \n  filter(waterYr == 2021) |&gt; \n  ggplot(aes(x = DOC, y = pH, color = Al_ICP)) + \n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  labs(x = \"DOC (mg/L)\", color = \"Al (mg/L)\")"
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#overplotting",
+    "href": "slides/week4.2-relationships-slides.html#overplotting",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Overplotting can disguise trends\n\nSometimes, we just have too many data points for a traditional scatter plot to be effective. For example….\nstrategies for dealing: - use smaller points and/or transparency - add color by group - add a rug plot or marginal density plot"
   },
   {
     "objectID": "slides/week4.2-relationships-slides.html#end-break",
     "href": "slides/week4.2-relationships-slides.html#end-break",
     "title": "EDS 240",
     "section": "",
-    "text": "Take a Break\n\n\n~ This is the end of Lesson 2 (of 4) ~\n\n\n\n\n\n−+\n05:00"
+    "text": "Take a Break\n\n\n~ This is the end of Lesson 2 (of 3) ~\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#title-slide",
@@ -1264,7 +1369,7 @@
     "href": "slides/week4.3-good-viz-slides.html#end-break",
     "title": "EDS 240",
     "section": "",
-    "text": "Take a Break\n\n\n~ This is the end of Lesson 3 (of 4) ~"
+    "text": "See you next week!\n\n\n~ This is the end of Lesson 3 (of 3) ~"
   },
   {
     "objectID": "slides/random-notes.html",
@@ -1981,6 +2086,20 @@
     "text": "1. What task(s) to enable / message(s) to convey\n2. Number of variables & data points, data types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Viz Project\ndisplays one small data set 100 different ways\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Data to Viz\nsearch graphic types by data type or by function (+ R & Python Graph Gallery)\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Visualization Universe\ncompares most popular graphic forms"
   },
   {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#cat-disc1",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#cat-disc1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "2. Number of variables & data points, data types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nArt by Allison Horst"
+  },
+  {
+    "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#cat-disc2",
+    "href": "slides/week3.1-choosing-graphic-forms-slides.html#cat-disc2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "2. Number of variables & data points, data types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nArt by Allison Horst"
+  },
+  {
     "objectID": "slides/week3.1-choosing-graphic-forms-slides.html#tips3",
     "href": "slides/week3.1-choosing-graphic-forms-slides.html#tips3",
     "title": "EDS 240",
@@ -2545,7 +2664,7 @@
     "href": "slides/week4.1-rankings-slides.html#end-break",
     "title": "EDS 240",
     "section": "",
-    "text": "Take a Break\n\n\n~ This is the end of Lesson 1 (of 4) ~\n\n\n\n\n\n−+\n05:00"
+    "text": "Take a Break\n\n\n~ This is the end of Lesson 1 (of 3) ~\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/week3.2-distributions-slides.html#title-slide",
@@ -2825,7 +2944,7 @@
     "href": "course-materials/week4.html#pre-class-prep",
     "title": "Fundamental chart types (part II), What makes a good data viz?",
     "section": "Pre-class Prep",
-    "text": "Pre-class Prep\nPlease be sure to complete the following before class:\n\nInstall required packages\n\ninstall.packages(\"ggalt\") # extra coordinate systems, geoms, statistical transformations, scales and fonts for 'ggplot2' (includes `geom_lollipop()`)"
+    "text": "Pre-class Prep\nPlease be sure to complete the following before class:\n\nInstall required packages\n\ninstall.packages(\"ggalt\") # extra coordinate systems, geoms, statistical transformations, scales and fonts for 'ggplot2' (includes `geom_lollipop()`)\ninstall.packages(\"ggExtra\") # {ggplot2} extension2222 which can be used to add marginal histograms/boxplots/density plots to ggplot2 scatterplots\ninstall.packages(\"ggdensity\") # {ggplot2} extension providing more interpretable visualizations of density estimates based on highest density regions (HDRs)"
   },
   {
     "objectID": "course-materials/week4.html#lecture-materials",
