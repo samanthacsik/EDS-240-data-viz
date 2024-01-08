@@ -23,20 +23,17 @@ editor_options:
 
 ---
 
-## {#numerical-relationshops data-menu-title="Visualizing numerical relationships"} 
+## {#numerical-relationships data-menu-title="Visualizing numerical relationships"} 
 
 [Visualizing *numerical relationships*?]{.slide-title}
 
 <hr>
 
 <br>
-<br>
 
 ::: {.center-text .body-text-m}
 For visualizing the relationship between (typically) two **numeric variables**.
 :::
-
-<br>
 
 ```{r}
 #| eval: true
@@ -54,20 +51,11 @@ penguins |>
   theme(axis.title = element_text(size = 17)) 
 ```
 
----
+<br>
 
-Visualizing data *relationships*?
-
-to study a relationship between two numeric variables
-
-can also view by a group (categorical variable)
-sometimes with a third numeric variable (points = size e.g. bubble plot)
-  - not generally recommended
-    - encoding the same type of variable (numeric) on two different scales: position & size
-    - hard to compare strengths of different associations
-    - much easier to perceive diffferences when encoded by position rather than size
-    - hard to see small differences in size
-    - difficult to match scale of circle size to scale of difference
+::: {.footer}
+Line graphs (from week 3) are similar to scatter plots, except the x-axis variable is ordered chronologically and points are connected by lines to emphasize trends.
+:::
 
 ---
 
@@ -118,15 +106,6 @@ knitr::include_graphics("images/week4/hbef-map.png")
 ::: {.footer}
 *I admittedly don't know much about water chemistry, but have skimmed a number of helpful resources throughout the creation of this lesson. They'll be linked as referenced.*
 :::
-
----
-
- but after skimming through some literature ([Erlandsson et al. 2010](https://doi.org/10.1029/2009JG001082)), I've learned that higher levels of dissolved organic carbon (DOC) can lower water pH, which in turn increases aluminum (Al) solubility. High levels of Al can [limit the growth and reproduction](https://www.fondriest.com/environmental-measurements/parameters/water-quality/ph/#:~:text=Pollution%20in%20the%20air%2C%20soil,known%20as%20acid%20rain%20%C2%B2%C2%B9.) of aquatic species.
-
-
-have learned that low pH levels increase the solubility of metals (e.g. **aluminum**), which in turn can [limit the growth and reproduction](https://www.fondriest.com/environmental-measurements/parameters/water-quality/ph/#:~:text=Pollution%20in%20the%20air%2C%20soil,known%20as%20acid%20rain%20%C2%B2%C2%B9.) of aquatic species]{.body-text-s}
-
-**sulfates** contribute to the acidification of surface waters and that higher dissolved metal concentrations (e.g. **aluminum**) can further lower **pH**. High concentrations of Al can [limit the growth and reproduction](https://www.fondriest.com/environmental-measurements/parameters/water-quality/ph/#:~:text=Pollution%20in%20the%20air%2C%20soil,known%20as%20acid%20rain%20%C2%B2%C2%B9.) of aquatic species.]{.body-text-s}
 
 ---
 
@@ -462,7 +441,7 @@ stream_chem_data |>
 
 <hr>
 
-Rather than coloring points by `site`, we can color them based on our third continuous numeric variable, `Al_ICP`. We'll also apply the viridis color map:
+Rather than coloring points by `site`, we can map color to them based on our third continuous numeric variable, `Al_ICP`. We'll also apply the viridis color map:
 
 ```{r}
 #| eval: true
@@ -482,26 +461,265 @@ stream_chem_data |>
 
 ## {#overplotting data-menu-title="Overplotting"} 
 
-[Overplotting can disguise trends]{.slide-title2}
+[Overplotting can disguise trends]{.slide-title}
 
 <hr>
 
-Sometimes, we just have too many data points for a traditional scatter plot to be effective. For example....
+Sometimes, we just have too many data points for a traditional scatter plot to be effective. For example, what if we want to plot *all* data (not just the 2021 water year subset)? Here, we plot **sulfate concentration (`SO4`)
+against pH**:
 
-
-strategies for dealing: 
-- use smaller points and/or transparency
-- add color by group
-- add a rug plot or marginal density plot
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(stream_chem_data, aes(x = SO4, y = pH)) + 
+  geom_point()
+```
 
 ---
 
-alternatively, use a 2d density plot. there are some built-in options:
-- geom_hexbin()
-- geom_density_2d() -- good for getting a general sense of the density (generates its contours as equidistant level sets of the estimated bivariate density, i.e. taking horizontal slices of the 3d surface at equally-spaced heights, and projecting the intersections down into the plane; interpret a contour, you would need to multiply its height by the area it bounds)
-- geom_density_2d_filled()
+## {#initial-strategies data-menu-title="Initial strategies for overplotting"} 
 
-latter 2 can be hard to interpret
+[Some initial strategies]{.slide-title}
+
+<hr>
+
+Depending on how many points you have and the message you want to convey, you may consider the following:
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="33%"}
+::: {.center-text .gray-text .body-text-s}
+Smaller points and / or transparency
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(stream_chem_data, aes(x = SO4, y = pH)) + 
+  geom_point(size = 0.5, alpha = 0.3) 
+```
+:::
+
+::: {.column width="33%"}
+::: {.center-text .gray-text .body-text-s}
+Add a rug plot
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(stream_chem_data, aes(x = SO4, y = pH)) + 
+  geom_point(size = 0.5, alpha = 0.3) +
+  geom_rug()
+```
+:::
+
+::: {.column width="33%"}
+::: {.center-text .gray-text .body-text-s}
+Color by group
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(stream_chem_data, aes(x = SO4, y = pH, color = site)) + 
+  geom_point(size = 0.5, alpha = 0.3) 
+```
+:::
+
+::::
+
+. . . 
+
+::: {.center-text .body-text-m}
+But with a really large number of points, these strategies may not make interpretation much easier...
+:::
+
+---
+
+## {#heatmaps data-menu-title="Heatmaps"} 
+
+[Alternatively, try a heatmap]{.slide-title}
+
+<hr>
+
+You might imagine that you're looking down on a histogram, where lighter areas indicate a higher density of points.
+
+:::: {.columns}
+
+::: {.column width="50%}
+::: {.center-text .gray-text .body-text-s}
+heatmap of 2d bin counts
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(stream_chem_data, aes(x = SO4, y = pH)) +
+  geom_bin2d() +
+  scale_fill_viridis_c()
+```
+:::
+
+::: {.column width="50%}
+::: {.center-text .gray-text .body-text-s}
+hexagonal heatmap of 2d bin counts
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(stream_chem_data, aes(x = SO4, y = pH)) +
+  geom_hex() +
+  scale_fill_viridis_c()
+```
+:::
+
+::::
+
+Similar to a histogram, you can update the number of `bins` or `binwidth`.
+
+---
+
+## {#cont-legend data-menu-title="Legend appearance"} 
+
+[Adjust legend appearance using `guides()`]{.slide-title}
+
+<hr>
+
+Check out the `guides()` function for tweaking the appearance of your legend (e.g. increasing the height can help readers more easily read the continuous color scale):
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(stream_chem_data, aes(x = SO4, y = pH)) +
+  geom_hex() +
+  scale_fill_viridis_c() + 
+  guides(fill = guide_colourbar(title = "Count", 
+                                barwidth = 1, barheight = 15))
+```
+
+---
+
+## {#2d-density data-menu-title="2d density plot"} 
+
+[Another option: 2d density / contour plots]{.slide-title}
+
+<hr>
+
+These are the 2d equivalent to creating a density plot using `geom_density()` (see [week 3 materials](https://samanthacsik.github.io/EDS-240-data-viz/slides/week3.2-distributions-slides.html#/density-overview)).
+
+:::: {.columns}
+
+::: {.column width="50%}
+::: {.center-text .gray-text .body-text-s}
+contours of a 2d density estimate
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(stream_chem_data, aes(x = SO4, y = pH)) +
+  geom_density_2d()
+```
+:::
+
+::: {.column width="50%}
+::: {.center-text .gray-text .body-text-s}
+filled in contours
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(stream_chem_data, aes(x = SO4, y = pH)) +
+  geom_density_2d_filled()
+```
+:::
+
+::::
+
+. . . 
+
+However, it can be challenging to interpret these plots...
+
+---
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(stream_chem_data, aes(x = SO4, y = pH)) +
+  geom_density_2d_filled()
+```
+
+good for getting a general sense of the density (generates its contours as equidistant level sets of the estimated bivariate density, i.e. taking horizontal slices of the 3d surface at equally-spaced heights, and projecting the intersections down into the plane; interpret a contour, you would need to multiply its height by the area it bounds)
+
+https://jamesotto852.github.io/ggdensity/reference/geom_hdr.html
+
+---
+
+## {#ggdensity data-menu-title="{ggdensity}"} 
+
+[Consider using the `{ggdensity}` equivalent geoms]{.slide-title3}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.center-text .gray-text .body-text-s}
+contour lines using `geom_hdr_lines()`
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(stream_chem_data, aes(x = SO4, y = pH)) +
+  ggdensity::geom_hdr_lines()
+```
+:::
+
+::: {.column width="50%"}
+::: {.center-text .gray-text .body-text-s}
+filled contours using `geom_hdr()`
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(stream_chem_data, aes(x = SO4, y = pH)) +
+  ggdensity::geom_hdr()
+```
+:::
+
+::::
+
 
 ---
 
@@ -509,6 +727,11 @@ instead, consider using {ggdensity} functions:
 
 - geom_hdr (instead of geom_density_2d_filled()): probs here tells us the probability bounded by the corresponding region, and the regions are computed to be the smallest such regions that bound that level of probability; these are called highest density regions or HDRs. By default, the plotted regions show the 50%, 80%, 95%, and 99% HDRs of the estimated density, but this can be changed with the probs argument to geom_hdr()
 - geom_hdr_lines() (instead of geom_density_2d())
+
+---
+
+plotly ?
+
 
 <!-- --- -->
 
@@ -523,18 +746,18 @@ instead, consider using {ggdensity} functions:
 
 <!-- https://www.tylervigen.com/spurious-correlations -->
 
----
+<!-- --- -->
 
-looking forward
+<!-- looking forward -->
 
-- sankey
-- choropleth
-- {geopfacet}
-- heatmaps
-- parallel coordinate plots
-- treemap
-- sunburst
-- radar plots
+<!-- - sankey -->
+<!-- - choropleth -->
+<!-- - {geopfacet} -->
+<!-- - heatmaps -->
+<!-- - parallel coordinate plots -->
+<!-- - treemap -->
+<!-- - sunburst -->
+<!-- - radar plots -->
 
 ---
 

@@ -428,7 +428,7 @@ mko_clean |>
 
 [**What are they?**]{.teal-text} 
 
-- A smoothed version of a histogram. Density plots are representations of the **distribution of a *numeric* variable(s)**, which uses a **[kernel density estimate](https://chemicalstatistician.wordpress.com/2013/06/09/exploratory-data-analysis-kernel-density-estimation-in-r-on-ozone-pollution-data-in-new-york-and-ozonopolis/)** to show the [probability density function](https://en.wikipedia.org/wiki/Probability_density_function) of the variable. The area under each curve is equal to 1.
+- A smoothed version of a histogram. Density plots are representations of the **distribution of a *numeric* variable(s)**, which uses a **[kernel density estimate](https://chemicalstatistician.wordpress.com/2013/06/09/exploratory-data-analysis-kernel-density-estimation-in-r-on-ozone-pollution-data-in-new-york-and-ozonopolis/)** (KDE) to show the [probability density function](https://en.wikipedia.org/wiki/Probability_density_function) of the variable. The area under each curve is equal to 1.
 
 :::: columns 
 
@@ -461,6 +461,10 @@ mko_clean |>
 :::
 
 ::::
+
+::: {.footer}
+Check out [this cool interactive tool](https://mathisonian.github.io/kde/), by [Matthew Conlen](https://mathisonian.com/), for a succinct and clear explanation of KDE.
+:::
 
 ---
 

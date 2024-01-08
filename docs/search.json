@@ -525,11 +525,11 @@
     "text": "EDS 240: Lecture 4.1\nVisualizing numerical relationships\n\nWeek 4 | January 29th, 2024"
   },
   {
-    "objectID": "slides/week4.2-relationships-slides.html#numerical-relationshops",
-    "href": "slides/week4.2-relationships-slides.html#numerical-relationshops",
+    "objectID": "slides/week4.2-relationships-slides.html#numerical-relationships",
+    "href": "slides/week4.2-relationships-slides.html#numerical-relationships",
     "title": "EDS 240",
     "section": "",
-    "text": "Visualizing numerical relationships?\n\n \n\nFor visualizing the relationship between (typically) two numeric variables."
+    "text": "Visualizing numerical relationships?\n\n\n\nFor visualizing the relationship between (typically) two numeric variables.\n\n\n\n\nLine graphs (from week 3) are similar to scatter plots, except the x-axis variable is ordered chronologically and points are connected by lines to emphasize trends."
   },
   {
     "objectID": "slides/week4.2-relationships-slides.html#roadmap",
@@ -620,14 +620,49 @@
     "href": "slides/week4.2-relationships-slides.html#scale-by-color",
     "title": "EDS 240",
     "section": "",
-    "text": "Visualizing a third numeric variable using color\n\nRather than coloring points by site, we can color them based on our third continuous numeric variable, Al_ICP. We’ll also apply the viridis color map:\n\nstream_chem_data |&gt; \n  filter(waterYr == 2021) |&gt; \n  ggplot(aes(x = DOC, y = pH, color = Al_ICP)) + \n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  labs(x = \"DOC (mg/L)\", color = \"Al (mg/L)\")"
+    "text": "Visualizing a third numeric variable using color\n\nRather than coloring points by site, we can map color to them based on our third continuous numeric variable, Al_ICP. We’ll also apply the viridis color map:\n\nstream_chem_data |&gt; \n  filter(waterYr == 2021) |&gt; \n  ggplot(aes(x = DOC, y = pH, color = Al_ICP)) + \n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  labs(x = \"DOC (mg/L)\", color = \"Al (mg/L)\")"
   },
   {
     "objectID": "slides/week4.2-relationships-slides.html#overplotting",
     "href": "slides/week4.2-relationships-slides.html#overplotting",
     "title": "EDS 240",
     "section": "",
-    "text": "Overplotting can disguise trends\n\nSometimes, we just have too many data points for a traditional scatter plot to be effective. For example….\nstrategies for dealing: - use smaller points and/or transparency - add color by group - add a rug plot or marginal density plot"
+    "text": "Overplotting can disguise trends\n\nSometimes, we just have too many data points for a traditional scatter plot to be effective. For example, what if we want to plot all data (not just the 2021 water year subset)? Here, we plot sulfate concentration (SO4) against pH:\n\nggplot(stream_chem_data, aes(x = SO4, y = pH)) + \n  geom_point()"
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#initial-strategies",
+    "href": "slides/week4.2-relationships-slides.html#initial-strategies",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Some initial strategies\n\nDepending on how many points you have and the message you want to convey, you may consider the following:\n\n\n\n\nSmaller points and / or transparency\n\n\nggplot(stream_chem_data, aes(x = SO4, y = pH)) + \n  geom_point(size = 0.5, alpha = 0.3) \n\n\n\n\n\n\n\n\n\n\nAdd a rug plot\n\n\nggplot(stream_chem_data, aes(x = SO4, y = pH)) + \n  geom_point(size = 0.5, alpha = 0.3) +\n  geom_rug()\n\n\n\n\n\n\n\n\n\n\nColor by group\n\n\nggplot(stream_chem_data, aes(x = SO4, y = pH, color = site)) + \n  geom_point(size = 0.5, alpha = 0.3) \n\n\n\n\n\n\n\n\n\n\n\n\nBut with a really large number of points, these strategies may not make interpretation much easier…"
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#heatmaps",
+    "href": "slides/week4.2-relationships-slides.html#heatmaps",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Alternatively, try a heatmap\n\nYou might imagine that you’re looking down on a histogram, where lighter areas indicate a higher density of points.\n\n\n\nheatmap of 2d bin counts\n\n\nggplot(stream_chem_data, aes(x = SO4, y = pH)) +\n  geom_bin2d() +\n  scale_fill_viridis_c()\n\n\n\n\n\n\n\n\n\n\nhexagonal heatmap of 2d bin counts\n\n\nggplot(stream_chem_data, aes(x = SO4, y = pH)) +\n  geom_hex() +\n  scale_fill_viridis_c()\n\n\n\n\n\n\n\n\n\n\nSimilar to a histogram, you can update the number of bins or binwidth."
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#cont-legend",
+    "href": "slides/week4.2-relationships-slides.html#cont-legend",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Adjust legend appearance using guides()\n\nCheck out the guides() function for tweaking the appearance of your legend (e.g. increasing the height can help readers more easily read the continuous color scale):\n\nggplot(stream_chem_data, aes(x = SO4, y = pH)) +\n  geom_hex() +\n  scale_fill_viridis_c() + \n  guides(fill = guide_colourbar(title = \"Count\", \n                                barwidth = 1, barheight = 15))"
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#2d-density",
+    "href": "slides/week4.2-relationships-slides.html#2d-density",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Another option: 2d density / contour plots\n\nThese are the 2d equivalent to creating a density plot using geom_density() (see week 3 materials).\n\n\n\ncontours of a 2d density estimate\n\n\nggplot(stream_chem_data, aes(x = SO4, y = pH)) +\n  geom_density_2d()\n\n\n\n\n\n\n\n\n\n\nfilled in contours\n\n\nggplot(stream_chem_data, aes(x = SO4, y = pH)) +\n  geom_density_2d_filled()\n\n\n\n\n\n\n\n\n\n\n\nHowever, it can be challenging to interpret these plots…"
+  },
+  {
+    "objectID": "slides/week4.2-relationships-slides.html#ggdensity",
+    "href": "slides/week4.2-relationships-slides.html#ggdensity",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Consider using the {ggdensity} equivalent geoms\n\n\n\n\ncontour lines using geom_hdr_lines()\n\n\nggplot(stream_chem_data, aes(x = SO4, y = pH)) +\n  ggdensity::geom_hdr_lines()\n\n\n\n\n\n\n\n\n\n\nfilled contours using geom_hdr()\n\n\nggplot(stream_chem_data, aes(x = SO4, y = pH)) +\n  ggdensity::geom_hdr()"
   },
   {
     "objectID": "slides/week4.2-relationships-slides.html#end-break",
@@ -1607,7 +1642,7 @@
     "href": "assignments/HW1.html#rubric-specifications",
     "title": "Assignment #1 (HW #1)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part I:\nComplete the following steps in your GitHub Classroom repo (eds240-hw1-USERNAME/Part1.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the Part1.qmd YAML\nupdate each comment line in the code that reads, ANNOTATE, with a brief description, written in your own words (see lines 114 & 120 for example annotations; there are other lines that have been already annotated for you as well – you do not need to re-write these annotations – you are allowed up to three incorrect or missing annotations\nleave the code chunk options set to eval: false and echo: true\nanswer all three Part 1b questions adhering to the length requirements specified at the end of each question prompt\nwe (your instructors) should be able to successfully render Part1.qmd locally without errors, however do not push any html files to GitHub (i.e. Part1.html and Part1_files/; consider adding these to your .gitignore so that you don’t accidentally push them)\npush your completed Part1.qmd to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024\n\n\n\n End Part I"
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part I:\nComplete the following steps in your GitHub Classroom repo (eds240-hw1-USERNAME/Part1.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the Part1.qmd YAML\nupdate each comment line in the code that reads, ANNOTATE, with a brief description, written in your own words (see lines 114 & 120 for example annotations; there are other lines that have been already annotated for you as well – you do not need to re-write these annotations – you are allowed up to five incorrect or missing annotations\nleave the code chunk options set to eval: false and echo: true\nanswer all three Part 1b questions adhering to the length requirements specified at the end of each question prompt\nwe (your instructors) should be able to successfully render Part1.qmd locally without errors, however do not push any html files to GitHub (i.e. Part1.html and Part1_files/; consider adding these to your .gitignore so that you don’t accidentally push them)\npush your completed Part1.qmd to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024\n\n\n\n End Part I"
   },
   {
     "objectID": "assignments/HW1.html#learning-outcomes-1",
@@ -1831,7 +1866,7 @@
     "href": "slides/week1.1-logistics-slides.html#conduct",
     "title": "EDS 240",
     "section": "",
-    "text": "Conduct, Inclusion, Accommodations\n\n \nCourse Conduct: We are committed to actively creating, modeling, and maintaining an inclusive climate and supportive learning environment for all – harassment of any kind will not be tolerated. Everyone is expected read and adhere to the Bren School Code of Conduct and the UCSB Code of Conduct\n\n\nAccess & accommodations: It’s never too late to apply for DSP accommodations\n\n\n\nNames & pronouns: Everyone has the right to be addressed and referred by to name and pronouns in accordance with their identity – you can add your pronouns to your UCSB Registrar profile"
+    "text": "Conduct, Inclusion, Accommodations\n\n \nCourse Conduct: We are committed to actively creating, modeling, and maintaining an inclusive climate and supportive learning environment for all – harassment of any kind will not be tolerated. Everyone is expected read and adhere to the Bren School Code of Conduct and the UCSB Code of Conduct\n\n\nAccess & accommodations: It’s never too late to apply for DSP accommodations\n\n\n\nNames & pronouns: Everyone has the right to be addressed and referred by to name and pronouns in accordance with their identity – you can add your pronouns to your UCSB Registrar profile\n\nApplying for DSP accommodations is a multi-step process and students should begin this as soon as possible as it can take 10 days to process applications.\nStep 1: Submit an application with DSP, upload documentation and select the services needed.\nStep 2: For exam accommodations (more time, private setting, etc.) students need to submit a proctor request for each exam in each course that they need accommodations for. DSP has instructions on their website for completing these tasks and students can login to the DSP portal to check the status of their application and requests."
   },
   {
     "objectID": "slides/week1.1-logistics-slides.html#course-website",
@@ -1873,14 +1908,14 @@
     "href": "slides/week1.1-logistics-slides.html#why-specs",
     "title": "EDS 240",
     "section": "",
-    "text": "Why Specs grading?\n\n\n“Traditional” grading can come with some challenges:\n\n\n\nlacks feedback loops\nbenefits those who learn fast or have prior experience\nbias-prone (e.g. awarding points, granting extensions)\ncan discourage learning for its own sake\ncan promote unhealthy student-instructor relationships"
+    "text": "Why Specs grading?\n\n\n“Traditional” grading can come with some challenges:\n\n\n\nlacks feedback loops\nbenefits those who learn fast or have prior experience\nbias-prone (e.g. awarding points, granting extensions)\ncan discourage learning for its own sake\ncan promote unhealthy student-instructor relationships\n\n\n\nTraditional grading = points are awarded for correct answers on assessments; graded assessments contribute some percentage towards your overall course grade; course score (typically a percentage) is convered to a letter grade"
   },
   {
     "objectID": "slides/week1.1-logistics-slides.html#how-does-specs-look",
     "href": "slides/week1.1-logistics-slides.html#how-does-specs-look",
     "title": "EDS 240",
     "section": "",
-    "text": "How does specs grading look in practice for this course?\n\n\nTL;DR: assignments receive either “Satisfactory” or “Not Yet” marks; tokens can be used to revise/resubmit assignments, for assignment extensions, or to miss class; earn tokens by attending discussions\n\n\n\nassignments receive either a “Satisfactory” or “Not Yet” mark\neach assignment will have a clear rubric (containing specifications) which outline what must be completed and how in order to receive a “Satisfactory” mark; not meeting all specifications results in a “Not Yet” mark\nstudents can trade “tokens” for the opportunity to:\n\nrevise / resubmit assignments that receive a “Not Yet” mark (within a week)\nassignment extensions\nto miss class\n\nstudents earn tokens (primarily) by attending discussion section"
+    "text": "How does specs grading look in practice for this course?\n\n\nTL;DR: assignments receive either “Satisfactory” or “Not Yet” marks; tokens can be used to revise / resubmit assignments, for assignment extensions, or to miss class; earn tokens by attending discussions\n\n\n\nassignments receive either a “Satisfactory” or “Not Yet” mark\neach assignment will have a clear rubric (containing specifications) which outline what must be completed and how in order to receive a “Satisfactory” mark; not meeting all specifications results in a “Not Yet” mark\nstudents can trade “tokens” for the opportunity to:\n\nrevise / resubmit assignments that receive a “Not Yet” mark (within a week)\nassignment extensions (24 or 72 hours)\nto miss class\n\nstudents earn tokens (primarily) by attending discussion section"
   },
   {
     "objectID": "slides/week1.1-logistics-slides.html#why-tokens",
@@ -1894,7 +1929,7 @@
     "href": "slides/week1.1-logistics-slides.html#tokens",
     "title": "EDS 240",
     "section": "",
-    "text": "Earning & using tokens\n\n\nEarn tokens:\n\n\neveryone starts with 0 tokens\nearn your first token by attending discussion section on Wednesday 1/10\nearn 2 more tokens by submitting Self-reflection #1\nearn 1 token per week by attending discussion section (full 50min)\n\n\n\n\nUse tokens:\nFill out this Google form: https://forms.gle/6FdV9g5KA9GgrxXBA and email Sam & Sevan to let them know"
+    "text": "Earning & using tokens\n\n\nEarn tokens:\n\n\neveryone starts with 0 tokens\nearn your first token by attending discussion section on Wednesday 1/10\nearn 2 more tokens by submitting Self-reflection #1\nearn 1 token per week by attending discussion section (full 50 min)\n\n\n\n\nUse tokens:\nFill out this Google form: https://forms.gle/6FdV9g5KA9GgrxXBA and email Sam & Sevan to let them know"
   },
   {
     "objectID": "slides/week1.1-logistics-slides.html#grade-tracker",
@@ -2237,14 +2272,14 @@
     "href": "slides/week1.2-intro-slides.html#history1",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter\n\n\n\nLascaux Caves in the southwest of France; Pleiades star cluster (seven sisters) also found on the cave walls"
   },
   {
     "objectID": "slides/week1.2-intro-slides.html#history2",
     "href": "slides/week1.2-intro-slides.html#history2",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter\n\n\n\nTurin Papyrus Map, generally considered the oldest surviving map of topographical interest in the ancient world; was prepared for Ramses IV’s quarrying expedition to the Wadi Hammamat; the expedition purpose was to obtain blocks of stone for building statues of the king"
   },
   {
     "objectID": "slides/week1.2-intro-slides.html#history3",
@@ -2258,7 +2293,7 @@
     "href": "slides/week1.2-intro-slides.html#history4",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter\n\n\n\nvan Langren was a dutch mathematician / astronomer; served as royal mathematician to King Phillip IV of Spain; worked on one of the most significant problems of his time (accurate determination of longitude between Toledo & Rome, particularly navigation by sea); graph shows all available estimates in distance (inaccuracies resulted in many shipwrecks)"
   },
   {
     "objectID": "slides/week1.2-intro-slides.html#history5",
@@ -2272,14 +2307,14 @@
     "href": "slides/week1.2-intro-slides.html#history6",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter\n\n\nWillard map maker & founder of first school for women’s higher education in the US; Temple of Time uses the architecture as a metaphor for history; foreground = present; columns represent centuries; she believed that facts must be connected to one another to be meaningful and that they will they be most easily retained if presented visually"
   },
   {
     "objectID": "slides/week1.2-intro-slides.html#history7",
     "href": "slides/week1.2-intro-slides.html#history7",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter\n\n\n\nNightingale was an English wartime nurse; campaigned to improve sanitary conditions of military hospitals; collected data and created data viz; used color to emphasize particular aspects; famous “polar-area” viz shows the causes of mortality in the military hospital &gt; deaths from preventable diseases (blue) outnumbered combat fatalities (red) in 1854 & early 1855; the changes she put in place greatly reduced those deaths by April 1855 (see here)"
   },
   {
     "objectID": "slides/week1.2-intro-slides.html#history8",
@@ -2293,21 +2328,21 @@
     "href": "slides/week1.2-intro-slides.html#history9",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter\n\n\n\nWEB DuBois was an African American writer, scholar and activist; first African American to earn a PhD from Harvard University; helped found the National Association for the Advancement of Colored People (NAACP)."
   },
   {
     "objectID": "slides/week1.2-intro-slides.html#history10",
     "href": "slides/week1.2-intro-slides.html#history10",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter\n\n\n\nTufte: statistician & professor emeritus at Yale; nobably famous for his books on information design; pioneer in the field of data viz; this book is a classic on statistical graphics"
   },
   {
     "objectID": "slides/week1.2-intro-slides.html#history11",
     "href": "slides/week1.2-intro-slides.html#history11",
     "title": "EDS 240",
     "section": "",
-    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter"
+    "text": "History of data visualization\n\nNote: this is by no means a comprehensive history of the visual representation of information!\n\n\nImages from BBC News, Wikipedia (a, b, c, d), Smithsonian, The Marginalian, Scientific American & Twitter\n\n\n\nR is a programming language for statistical computing and graphics\nTableau is a interactive data visualization software\nD3.js is a JavaScript library for producing dynamic, interactive data visualizations in web browsers"
   },
   {
     "objectID": "slides/week1.2-intro-slides.html#why-visualize",
@@ -2335,7 +2370,7 @@
     "href": "slides/week1.2-intro-slides.html#see-trends",
     "title": "EDS 240",
     "section": "",
-    "text": ". . . to identify trends\n\n\nSame summary statistics, different distributions!\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnscombe’s Quartet\n(Anscombe 1973)\n\n\n\nDatasaurus Dozen\n(Matejka & Fitzmaurice 2017)"
+    "text": ". . . to identify trends\n\n\nSame summary statistics, different distributions!\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnscombe’s Quartet\n(Anscombe 1973)\n\n\n\nDatasaurus Dozen\n(Matejka & Fitzmaurice 2017, expanding upon Albert Cairo’s Datasaurus)"
   },
   {
     "objectID": "slides/week1.2-intro-slides.html#prompt-discussion1",
@@ -2363,14 +2398,14 @@
     "href": "slides/week1.2-intro-slides.html#bremer-pathwork",
     "title": "EDS 240",
     "section": "",
-    "text": ". . . to create art / tell a story\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPatchwork Kingdoms, by Nadieh Bremer\n\n\n“Patchwork Kingdoms” is a data & generative art charity collection that I created for the Giga Connect project of UNICEF. All proceeds from the sale went to this project, which aims to connect all of the schools in the world to the internet. The Giga project has a dataset of 1 million schools and for ±280,000 of those they know if those schools are connected to the internet. I took this data about the schools, split it into 1000 subsets, and turned each school into a tiny square. All the squares together build up into two separate kingdoms, where those in the upright kingdoms are schools that are already connected to the internet, while those in the hidden / upside down kingdoms are not. Each of the 1000 pieces is thereby showing the “digital divide” that still exists in our world, and the funds from this sale will help to bring more schools from the hidden to the upright kingdom."
+    "text": ". . . to create art / tell a story\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPatchwork Kingdoms, by Nadieh Bremer portraying the “digital divide” in schools across the world\n\n\n\na data & generative art charity collection for the Giga Connect project of UNICEF which aims to connect all of the schools in the world to the internet.\na dataset of 1 million schools and for ±280,000 of those they know if those schools are connected to the internet\ntook this data about the schools, split it into 1000 subsets, and turned each school into a tiny square\nupright kingdoms are schools that are already connected to the internet, while those in the hidden / upside down kingdoms are not. Each of the 1000 pieces is thereby showing the “digital divide” that still exists in our world, and the funds from this sale will help to bring more schools from the hidden to the upright kingdom."
   },
   {
     "objectID": "slides/week1.2-intro-slides.html#astronauts",
     "href": "slides/week1.2-intro-slides.html#astronauts",
     "title": "EDS 240",
     "section": "",
-    "text": ". . . to create art / tell a story\n\n\n\nTo enlarge, Right click &gt; Open Image in New Tab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTraveling to Outer Space, by Cédric Scherer\n\n\n\n\n\n\n\n\n\n\n\n\n\nGalaxy of Astronauts, by Ijeamaka Anyene\n\n\n\n\n\n\n\n\n\n\n\n\nAges Through Time and Space, by Cara Thompson"
+    "text": ". . . to create art / tell a story\n\n\nTo enlarge, Right click &gt; Open Image in New Tab\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTraveling to Outer Space, by Cédric Scherer\n\n\n\n\n\n\n\n\n\n\n\n\n\nGalaxy of Astronauts, by Ijeamaka Anyene\n\n\n\n\n\n\n\n\n\n\n\n\nAges Through Time and Space, by Cara Thompson\n\n\n\n\n\nFind the data on the TidyTuesday repo"
   },
   {
     "objectID": "slides/week1.2-intro-slides.html#vertices",
@@ -2727,7 +2762,7 @@
     "href": "slides/week3.2-distributions-slides.html#density-overview",
     "title": "EDS 240",
     "section": "",
-    "text": "Density plots - ggplot2::geom_density()\n\nWhat are they?\n\nA smoothed version of a histogram. Density plots are representations of the distribution of a numeric variable(s), which uses a kernel density estimate to show the probability density function of the variable. The area under each curve is equal to 1.\n\n\n\nNeed:\n\na numeric variable with lots of values\n\nImportant considerations:\n\ncan be misleading with small data sets\nband width, which affects level of smoothing\nnumber of groups that you’re comparing (generally &lt;=3 is best)"
+    "text": "Density plots - ggplot2::geom_density()\n\nWhat are they?\n\nA smoothed version of a histogram. Density plots are representations of the distribution of a numeric variable(s), which uses a kernel density estimate (KDE) to show the probability density function of the variable. The area under each curve is equal to 1.\n\n\n\nNeed:\n\na numeric variable with lots of values\n\nImportant considerations:\n\ncan be misleading with small data sets\nband width, which affects level of smoothing\nnumber of groups that you’re comparing (generally &lt;=3 is best)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCheck out this cool interactive tool, by Matthew Conlen, for a succinct and clear explanation of KDE."
   },
   {
     "objectID": "slides/week3.2-distributions-slides.html#density-group-num",

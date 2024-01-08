@@ -205,6 +205,14 @@ countdown::countdown(
 
 **Names & pronouns:** Everyone has the right to be addressed and referred by to name and pronouns in accordance with their identity -- you can add your pronouns to your UCSB Registrar [profile](https://sso.my.ucsb.edu/adfs/ls/?wa=wsignin1.0&wtrealm=http%3a%2f%2fblue.sa.ucsb.edu%2fLanding%2f&wctx=rm%3d0%26id%3dpassive%26ru%3d%252fLanding%252fHomepage.aspx&wct=2023-08-09T18%3a30%3a46Z&rpsa-rn=5TFey%252fVSv9IF17J4Pn8osgH1LticIlQr%252blbEYGshM3OOsDWYP4J7emNKxAxFivBYQ9bjUpX68pv2TfPF1l10Gw%253d%253d&rpsa-an=AQYFW%252bAMuZU5NJ2X8VVjYJfEUAIzGOJ5TsVA9tf6taioBLLASrEwwwTwL3CfnBo0hlWxXzchkFxh%252frWqIlUAXA%253d%253d&rpsa-se=f5hRpBYXKP06s9Rp4Upm1RVnbN1guWDIEz%252bUg2%252fhCNeRJJGUTljXkJhT2q3Jc3CVoQo8gAKnlHeyxBa48wHcTA%253d%253d&rpsa-sedn=Ua%252fdFKWiVmSNkCOjsPoWPa%252bDhhvj5Uj6jpegUTzkSC8%253d) 
 
+::: {.notes}
+Applying for DSP accommodations is a multi-step process and students should begin this as soon as possible as it can take 10 days to process applications. 
+
+Step 1: Submit an application with DSP, upload documentation and select the services needed. 
+
+Step 2: For exam accommodations (more time, private setting, etc.) students need to submit a proctor request for each exam in each course that they need accommodations for. DSP has instructions on their [website](https://dsp.sa.ucsb.edu/) for completing these tasks and students can login to the DSP portal to check the status of their application and requests.
+:::
+
 ---
 
 ## {#course-website data-menu-title="Course website"} 
@@ -365,6 +373,10 @@ Higher Education”, by David Clark & Robert Talbert*
 - can promote unhealthy student-instructor relationships
 :::
 
+::: {.notes}
+Traditional grading = points are awarded for correct answers on assessments; graded assessments contribute some percentage towards your overall course grade; course score (typically a percentage) is convered to a letter grade
+:::
+
 ---
 
 ## {#how-does-specs-look data-menu-title="What does specs grading look like?"} 
@@ -374,7 +386,7 @@ Higher Education”, by David Clark & Robert Talbert*
 <hr>
 
 ::: {.body-text-m .pink-highlight}
-**TL;DR:** assignments receive either "Satisfactory" or "Not Yet" marks; tokens can be used to revise/resubmit assignments, for assignment extensions, or to miss class; earn tokens by attending discussions
+**TL;DR:** assignments receive either "Satisfactory" or "Not Yet" marks; tokens can be used to revise / resubmit assignments, for assignment extensions, or to miss class; earn tokens by attending discussions
 :::
 
 ::: incremental
@@ -382,7 +394,7 @@ Higher Education”, by David Clark & Robert Talbert*
 - each assignment will have a **clear rubric** (containing specifications) which outline what must be completed and how in order to receive a "Satisfactory" mark; *not* meeting all specifications results in a "Not Yet" mark
 - students can **trade "tokens"** for the opportunity to:         
     - revise / resubmit assignments that receive a "Not Yet" mark (within a week)
-    - assignment extensions
+    - assignment extensions (24 or 72 hours)
     - to miss class
 - students **earn tokens** (primarily) by attending discussion section
 :::
@@ -429,7 +441,7 @@ You *do not* need to provide a reason to request an extension, resubmission, or 
 - everyone starts with **0 tokens**
 - earn your **first token** by attending discussion section on Wednesday 1/10
 - earn **2 more tokens** by submitting Self-reflection #1 
-- earn **1 token per week** by attending discussion section (*full 50min*)
+- earn **1 token per week** by attending discussion section (*full 50 min*)
 :::
 
 <br>
@@ -506,7 +518,7 @@ Troubleshooting, deciphering code, and trying (and failing at) new things is a *
 knitr::include_graphics("images/week1/getting-help-steps.png")
 ```
 
-Check out the [getting unstuck](http://localhost:5908/getting-unstuck.html) page (under "resources") on the course website for more tips -- particularly a reminder of **how to ask a question.**
+Check out the [getting unstuck](https://samanthacsik.github.io/EDS-240-data-viz/getting-unstuck.html) page (under "resources") on the course website for more tips -- particularly a reminder of **how to ask a question.**
 
 ---
 

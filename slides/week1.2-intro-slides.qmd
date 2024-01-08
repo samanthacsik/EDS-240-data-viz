@@ -145,6 +145,10 @@ knitr::include_graphics("images/week1/history1.1.png")
 Images from [BBC News](http://news.bbc.co.uk/2/hi/science/nature/871930.stm), Wikipedia ([a](https://en.wikipedia.org/wiki/Turin_Papyrus_Map), [b](https://en.wikipedia.org/wiki/Michael_van_Langren), [c](https://en.wikipedia.org/wiki/William_Playfair), [d](https://en.wikipedia.org/wiki/Charles_Joseph_Minard)), [Smithsonian](https://www.si.edu/newsdesk/snapshot/quipu), [The Marginalian](https://www.themarginalian.org/2019/07/09/emma-willard/), [Scientific American](https://www.scientificamerican.com/article/how-florence-nightingale-changed-data-visualization-forever/) & [Twitter](https://twitter.com/ijeamaka_a/status/1361715338027560962)
 :::
 
+::: {.notes}
+- Lascaux Caves in the southwest of France; Pleiades star cluster (seven sisters) also found on the cave walls
+:::
+
 ---
 
 ## {#history2 data-menu-title="History 2" visibility="uncounted"}
@@ -165,6 +169,10 @@ knitr::include_graphics("images/week1/history1.2.png")
 
 ::: {.gray-text .body-text-s .center-text}
 Images from [BBC News](http://news.bbc.co.uk/2/hi/science/nature/871930.stm), Wikipedia ([a](https://en.wikipedia.org/wiki/Turin_Papyrus_Map), [b](https://en.wikipedia.org/wiki/Michael_van_Langren), [c](https://en.wikipedia.org/wiki/William_Playfair), [d](https://en.wikipedia.org/wiki/Charles_Joseph_Minard)), [Smithsonian](https://www.si.edu/newsdesk/snapshot/quipu), [The Marginalian](https://www.themarginalian.org/2019/07/09/emma-willard/), [Scientific American](https://www.scientificamerican.com/article/how-florence-nightingale-changed-data-visualization-forever/) & [Twitter](https://twitter.com/ijeamaka_a/status/1361715338027560962)
+:::
+
+::: {.notes}
+- Turin Papyrus Map, generally considered the oldest surviving map of topographical interest in the ancient world; was prepared for Ramses IV's quarrying expedition to the Wadi Hammamat; the expedition purpose was to obtain blocks of stone for building statues of the king
 :::
 
 ---
@@ -211,6 +219,10 @@ knitr::include_graphics("images/week1/history2.1.png")
 Images from [BBC News](http://news.bbc.co.uk/2/hi/science/nature/871930.stm), Wikipedia ([a](https://en.wikipedia.org/wiki/Turin_Papyrus_Map), [b](https://en.wikipedia.org/wiki/Michael_van_Langren), [c](https://en.wikipedia.org/wiki/William_Playfair), [d](https://en.wikipedia.org/wiki/Charles_Joseph_Minard)), [Smithsonian](https://www.si.edu/newsdesk/snapshot/quipu), [The Marginalian](https://www.themarginalian.org/2019/07/09/emma-willard/), [Scientific American](https://www.scientificamerican.com/article/how-florence-nightingale-changed-data-visualization-forever/) & [Twitter](https://twitter.com/ijeamaka_a/status/1361715338027560962)
 :::
 
+::: {.notes}
+- [van Langren](https://vincentarelbundock.github.io/Rdatasets/doc/HistData/Langren1644.html) was a dutch mathematician / astronomer; served as royal mathematician to King Phillip IV of Spain; worked on one of the most significant problems of his time (accurate determination of longitude between Toledo & Rome, particularly navigation by sea); graph shows all available estimates in distance (inaccuracies resulted in many shipwrecks)
+:::
+
 ---
 
 ## {#history5 data-menu-title="History 5" visibility="uncounted"}
@@ -255,6 +267,10 @@ knitr::include_graphics("images/week1/history2.3.png")
 Images from [BBC News](http://news.bbc.co.uk/2/hi/science/nature/871930.stm), Wikipedia ([a](https://en.wikipedia.org/wiki/Turin_Papyrus_Map), [b](https://en.wikipedia.org/wiki/Michael_van_Langren), [c](https://en.wikipedia.org/wiki/William_Playfair), [d](https://en.wikipedia.org/wiki/Charles_Joseph_Minard)), [Smithsonian](https://www.si.edu/newsdesk/snapshot/quipu), [The Marginalian](https://www.themarginalian.org/2019/07/09/emma-willard/), [Scientific American](https://www.scientificamerican.com/article/how-florence-nightingale-changed-data-visualization-forever/) & [Twitter](https://twitter.com/ijeamaka_a/status/1361715338027560962)
 :::
 
+::: {.notes}
+Willard map maker & founder of first school for women's higher education in the US; Temple of Time uses the architecture as a metaphor for history; foreground = present; columns represent centuries;  she believed that facts must be connected to one another to be meaningful and that they will they be most easily retained if presented visually
+:::
+
 ---
 
 ## {#history7 data-menu-title="History 7" visibility="uncounted"}
@@ -275,6 +291,10 @@ knitr::include_graphics("images/week1/history3.1.png")
 
 ::: {.gray-text .body-text-s .center-text}
 Images from [BBC News](http://news.bbc.co.uk/2/hi/science/nature/871930.stm), Wikipedia ([a](https://en.wikipedia.org/wiki/Turin_Papyrus_Map), [b](https://en.wikipedia.org/wiki/Michael_van_Langren), [c](https://en.wikipedia.org/wiki/William_Playfair), [d](https://en.wikipedia.org/wiki/Charles_Joseph_Minard)), [Smithsonian](https://www.si.edu/newsdesk/snapshot/quipu), [The Marginalian](https://www.themarginalian.org/2019/07/09/emma-willard/), [Scientific American](https://www.scientificamerican.com/article/how-florence-nightingale-changed-data-visualization-forever/) & [Twitter](https://twitter.com/ijeamaka_a/status/1361715338027560962)
+:::
+
+::: {.notes}
+- Nightingale was an English wartime nurse; campaigned to improve sanitary conditions of military hospitals; collected data and created data viz; used color to emphasize particular aspects; famous "polar-area" viz shows the causes of mortality in the military hospital > deaths from preventable diseases (blue) outnumbered combat fatalities (red) in 1854 & early 1855; the changes she put in place greatly reduced those deaths by April 1855 (see [here](https://daily.jstor.org/florence-nightingale-data-visualization-visionary/))
 :::
 
 ---
@@ -321,6 +341,10 @@ knitr::include_graphics("images/week1/history4.png")
 Images from [BBC News](http://news.bbc.co.uk/2/hi/science/nature/871930.stm), Wikipedia ([a](https://en.wikipedia.org/wiki/Turin_Papyrus_Map), [b](https://en.wikipedia.org/wiki/Michael_van_Langren), [c](https://en.wikipedia.org/wiki/William_Playfair), [d](https://en.wikipedia.org/wiki/Charles_Joseph_Minard)), [Smithsonian](https://www.si.edu/newsdesk/snapshot/quipu), [The Marginalian](https://www.themarginalian.org/2019/07/09/emma-willard/), [Scientific American](https://www.scientificamerican.com/article/how-florence-nightingale-changed-data-visualization-forever/) & [Twitter](https://twitter.com/ijeamaka_a/status/1361715338027560962)
 :::
 
+::: {.notes}
+- WEB DuBois was an African American writer, scholar and activist; first African American to earn a PhD from Harvard University; helped found the National Association for the Advancement of Colored People (NAACP).
+:::
+
 ---
 
 ## {#history10 data-menu-title="History 10" visibility="uncounted"}
@@ -343,6 +367,10 @@ knitr::include_graphics("images/week1/history5.1.png")
 Images from [BBC News](http://news.bbc.co.uk/2/hi/science/nature/871930.stm), Wikipedia ([a](https://en.wikipedia.org/wiki/Turin_Papyrus_Map), [b](https://en.wikipedia.org/wiki/Michael_van_Langren), [c](https://en.wikipedia.org/wiki/William_Playfair), [d](https://en.wikipedia.org/wiki/Charles_Joseph_Minard)), [Smithsonian](https://www.si.edu/newsdesk/snapshot/quipu), [The Marginalian](https://www.themarginalian.org/2019/07/09/emma-willard/), [Scientific American](https://www.scientificamerican.com/article/how-florence-nightingale-changed-data-visualization-forever/) & [Twitter](https://twitter.com/ijeamaka_a/status/1361715338027560962)
 :::
 
+::: {.notes}
+- Tufte: statistician & professor emeritus at Yale; nobably famous for his books on information design; pioneer in the field of data viz; this book is a classic on statistical graphics
+:::
+
 ---
 
 ## {#history11 data-menu-title="History 11" visibility="uncounted"}
@@ -363,6 +391,12 @@ knitr::include_graphics("images/week1/history5.2.png")
 
 ::: {.gray-text .body-text-s .center-text}
 Images from [BBC News](http://news.bbc.co.uk/2/hi/science/nature/871930.stm), Wikipedia ([a](https://en.wikipedia.org/wiki/Turin_Papyrus_Map), [b](https://en.wikipedia.org/wiki/Michael_van_Langren), [c](https://en.wikipedia.org/wiki/William_Playfair), [d](https://en.wikipedia.org/wiki/Charles_Joseph_Minard)), [Smithsonian](https://www.si.edu/newsdesk/snapshot/quipu), [The Marginalian](https://www.themarginalian.org/2019/07/09/emma-willard/), [Scientific American](https://www.scientificamerican.com/article/how-florence-nightingale-changed-data-visualization-forever/) & [Twitter](https://twitter.com/ijeamaka_a/status/1361715338027560962)
+:::
+
+::: {.notes}
+- R is a programming language for statistical computing and graphics
+- Tableau is a interactive data visualization software
+- D3.js is a JavaScript library for producing dynamic, interactive data visualizations in web browsers
 :::
 
 ---
@@ -554,7 +588,7 @@ Anscombe's Quartet
 ::: {.column width="50%"}
 ::: {.center-text}
 Datasaurus Dozen  
-([Matejka & Fitzmaurice 2017](https://doi.org/10.1145/3025453.3025912))
+([Matejka & Fitzmaurice 2017](https://doi.org/10.1145/3025453.3025912), expanding upon Albert Cairo's [Datasaurus](http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html))
 :::
 :::
 
@@ -678,12 +712,14 @@ knitr::include_graphics("images/week1/bremer-patchwork-kingdoms3.png")
 ::::
 
 ::: {.center-text .gray-text}
-[Patchwork Kingdoms](https://www.visualcinnamon.com/art/patchwork-kingdoms/), by [Nadieh Bremer](https://www.visualcinnamon.com/about/)
+[Patchwork Kingdoms](https://www.visualcinnamon.com/art/patchwork-kingdoms/), by [Nadieh Bremer](https://www.visualcinnamon.com/about/) portraying the "digital divide" in schools across the world
 :::
 
-
 ::: notes
-“Patchwork Kingdoms” is a data & generative art charity collection that I created for the Giga Connect project of UNICEF. All proceeds from the sale went to this project, which aims to connect all of the schools in the world to the internet. The Giga project has a dataset of 1 million schools and for ±280,000 of those they know if those schools are connected to the internet. I took this data about the schools, split it into 1000 subsets, and turned each school into a tiny square. All the squares together build up into two separate kingdoms, where those in the upright kingdoms are schools that are already connected to the internet, while those in the hidden / upside down kingdoms are not. Each of the 1000 pieces is thereby showing the “digital divide” that still exists in our world, and the funds from this sale will help to bring more schools from the hidden to the upright kingdom.
+- a data & generative art charity collection for the [Giga Connect](https://www.unicefusa.org/stories/giga-initiative-connecting-worlds-schools-internet) project of UNICEF which aims to connect all of the schools in the world to the internet. 
+- a dataset of 1 million schools and for ±280,000 of those they know if those schools are connected to the internet
+- took this data about the schools, split it into 1000 subsets, and turned each school into a tiny square
+- upright kingdoms are schools that are already connected to the internet, while those in the hidden / upside down kingdoms are not. Each of the 1000 pieces is thereby showing the “digital divide” that still exists in our world, and the funds from this sale will help to bring more schools from the hidden to the upright kingdom.
 :::
 
 ---
@@ -693,8 +729,6 @@ knitr::include_graphics("images/week1/bremer-patchwork-kingdoms3.png")
 [. . . to create art / tell a story]{.slide-title}
 
 <hr>
-
-<br>
 
 ::: {.center-text}
 To enlarge, **Right click** > **Open Image in New Tab**
@@ -750,8 +784,13 @@ knitr::include_graphics("images/week1/thompson-astronauts.png")
 :::
 :::
 
-
 ::::
+
+<br>
+
+::: {.footer}
+Find the data on the [TidyTuesday repo](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-07-14/readme.md)
+:::
 
 ---
 
