@@ -284,7 +284,7 @@
     "href": "course-materials/week1.html#assignment-reminders",
     "title": "Course logistics, Intro, {ggplot2} review",
     "section": "Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEnd-of-class survey (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEnd-of-class survey (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT"
   },
   {
     "objectID": "course-materials/week8.html",
@@ -683,7 +683,7 @@
     "href": "slides/week1.3-ggplot-review-slides.html#ggplot2-advantages",
     "title": "EDS 240",
     "section": "",
-    "text": "Advantages of {ggplot2}\n\n\n\n\n\n\n\nconsistent underlying “grammar of graphics” (Wilkinson 2005)\nsuper flexible, layered plot specification (see Wickham 2008)\ntheme system for polishing plot appearance\nlots of additional functionality thanks to extensions\nactive and helpful community\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\nadapted from Cédric Scherer’s rstudio::conf(2022) workshop, Graphic Design with ggplot2\n\n–"
+    "text": "Advantages of {ggplot2}\n\n\n\n\n\n\n\nconsistent underlying “grammar of graphics” (Wilkinson 2005)\nsuper flexible, layered plot specification (see Wickham 2008)\ntheme system for polishing plot appearance\nlots of additional functionality thanks to extensions\nactive and helpful community\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\nadapted from Cédric Scherer’s rstudio::conf(2022) workshop, Graphic Design with ggplot2\n\n\nGrammar of graphics: provides a structure to combine graphical elements into figures that display data in a meaningful way.\n\n–"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#grammar-of-graphics",
@@ -697,7 +697,7 @@
     "href": "slides/week1.3-ggplot-review-slides.html#graphic-layers",
     "title": "EDS 240",
     "section": "",
-    "text": "{ggplot2} graphic layers\n\n\nFirst these:\n1. data – in tidy format + define aesthetics (how variables map onto a plot e.g. axes, shape, color, size)\n2. geometric objects (aka geoms) – define the type of plot(s)\n\n\nThen these:\n3. statistical transformations – algorithm used to calculate new values for a graph\n4. position adjustments – control the fine details of position when geoms might otherwise overlap\n5. coordinate system – change what x and y axes mean (e.g. Cartesian (default), polar, flipped)\n6. facet – create subplots that each display one subset of the data\n\n\nNote: You many not apply or customize all of the above layers (or in this exact order) for every plot you build"
+    "text": "{ggplot2} graphic layers\n\n\nFirst these:\n1. data – in tidy format + define aesthetics (how variables map onto a plot e.g. axes, shape, color, size)\n2. geometric objects (aka geoms) – define the type of plot(s)\n\n\nThen these:\n3. statistical transformations – algorithm used to calculate new values for a graph\n4. position adjustments – control the fine details of position when geoms might otherwise overlap\n5. coordinate system – change what x and y axes mean (e.g. Cartesian (default), polar, flipped)\n6. facet – create subplots that each display one subset of the data\n\nNote: You many not apply or customize all of the above layers (or in this exact order) for every plot you build"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#comm-layers",
@@ -711,7 +711,7 @@
     "href": "slides/week1.3-ggplot-review-slides.html#aside-tidy-data",
     "title": "EDS 240",
     "section": "",
-    "text": "An aside . . ."
+    "text": "An aside . . .\n\n\n\nArt by Allison Horst"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#tidy-data",
@@ -732,7 +732,7 @@
     "href": "slides/week1.3-ggplot-review-slides.html#untidy-temps",
     "title": "EDS 240",
     "section": "",
-    "text": "An example: untidy temperatures\n\nTake this tibble (a lazy / surly data.frame) of temperature recordings at three stations on three dates:\n\ntemp_data_wide &lt;- tribble(\n  ~date, ~station1, ~station2,  ~station3,\n  \"2023-10-01\", 30.1, 29.8,  31.2,\n  \"2023-11-01\", 28.6, 29.1,  33.4,\n  \"2023-12-01\", 29.9, 28.5,  32.3\n)\n\nprint(temp_data_wide)\n\n# A tibble: 3 × 4\n  date       station1 station2 station3\n  &lt;chr&gt;         &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 2023-10-01     30.1     29.8     31.2\n2 2023-11-01     28.6     29.1     33.4\n3 2023-12-01     29.9     28.5     32.3\n\n\n\n\nThis tibble is in wide or untidy format."
+    "text": "An example: untidy temperatures\n\nTake this tibble (a lazy / surly data.frame) of temperature recordings at three stations on three dates:\n\n# untidy data ----\ntemp_data_wide &lt;- tribble(\n  ~date, ~station1, ~station2,  ~station3,\n  \"2023-10-01\", 30.1, 29.8,  31.2,\n  \"2023-11-01\", 28.6, 29.1,  33.4,\n  \"2023-12-01\", 29.9, 28.5,  32.3\n)\n\n# make tidy ----\ntemp_data_long &lt;- temp_data_wide |&gt; \n  pivot_longer(cols = starts_with(\"station\"),\n               names_to = \"station_id\", \n               values_to = \"temp_c\")\n\n\n\nThis tibble is in wide or untidy format."
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#make-temps-tidy",
@@ -788,7 +788,7 @@
     "href": "slides/week1.3-ggplot-review-slides.html#initialize",
     "title": "EDS 240",
     "section": "",
-    "text": "Initialize a plot object\n\nInitialize your plot object using ggplot() – this creates a graph that’s primed to display the penguins data set, but empty since we haven’t told ggplot how to map our data onto the graph yet (in other words: we haven’t told ggplot what type of plot to create):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(data = penguins)\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+    "text": "Initialize a plot object\n\nInitialize your plot object using ggplot() – this creates a graph that’s primed to display the penguins data set, but empty since we haven’t told ggplot how to map our data onto the graph yet (in other words: we haven’t told ggplot what variables to display and where, as well as what type of plot to create):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(data = penguins)\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#aesthetics",
@@ -837,14 +837,14 @@
     "href": "slides/week1.3-ggplot-review-slides.html#color-points-by-spp-local",
     "title": "EDS 240",
     "section": "",
-    "text": "Mapping color at a local level\n\nAlternatively, map color at a local (i.e. within a specific geom) rather than global (i.e. within ggplot()) layer:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +\n  geom_point(mapping = aes(color = species))\n\n\n\nlabels | annotations | scales | themes | layout"
+    "text": "Mapping color at a local level\n\nAlternatively, map color at a local (i.e. within a specific geom) rather than global (i.e. within ggplot()) layer:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +\n  geom_point(aes(color = species))\n\n\n\nlabels | annotations | scales | themes | layout"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#why-local-mapping",
     "href": "slides/week1.3-ggplot-review-slides.html#why-local-mapping",
     "title": "EDS 240",
     "section": "",
-    "text": "Why map locally?\n\nHere, we use geom_smooth() to add a best fit line (based on a linear model, using method = \"lm\") to our plot:\n\n\nGlobal mappings are passed down to each subsequent geom layer. Therefore, the color = species mapping is also passed to geom_smooth(), resulting in a best fit line for each species.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n\n\n\n\nLocal mappings (e.g. within geom_point()) only apply to that particular layer. Therefore, the color = species mapping is only applied to geom_point(), and geom_smooth() fits a best fit line to the entire data set.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +\n  geom_point(mapping = aes(color = species)) +\n  geom_smooth(method = \"lm\")"
+    "text": "Why map locally?\n\nHere, we use geom_smooth() to add a best fit line (based on a linear model, using method = \"lm\") to our plot:\n\n\nGlobal mappings are passed down to each subsequent geom layer. Therefore, the color = species mapping is also passed to geom_smooth(), resulting in a best fit line for each species.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n\n\n\n\n\n\n\n\nLocal mappings (e.g. within geom_point()) only apply to that particular layer. Therefore, the color = species mapping is only applied to geom_point(), and geom_smooth() fits a best fit line to the entire data set.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +\n  geom_point(aes(color = species)) +\n  geom_smooth(method = \"lm\")"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#one-color",
@@ -865,7 +865,7 @@
     "href": "slides/week1.3-ggplot-review-slides.html#color-points-by-mass",
     "title": "EDS 240",
     "section": "",
-    "text": "Use color to describe a continuous variable\n\nIn the previous example, we mapped color to a categorical variable (species). We can also map color to continuous variables (e.g. body_mass_g):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = body_mass_g)) +\n  geom_point() +\n  scale_color_gradient(low = \"#132B43\", high = \"#F7DD4C\")\n\n\n\nlabels | annotations | scales | themes | layout"
+    "text": "Use color to describe a continuous variable\n\nIn the previous example, we mapped color to a categorical variable (species). We can also map color to continuous variables (e.g. body_mass_g):\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = body_mass_g, y = flipper_length_mm, color = body_mass_g)) +\n  geom_point() +\n  scale_color_gradient(low = \"#132B43\", high = \"#F7DD4C\")\n\n\n\nlabels | annotations | scales | themes | layout"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#plot2",
@@ -886,7 +886,7 @@
     "href": "slides/week1.3-ggplot-review-slides.html#stat-transformation",
     "title": "EDS 240",
     "section": "",
-    "text": "What is a statistical transformation?\n\nSome geoms, like scatterplots, plot the raw values of your data set. Other geoms, like bar charts, histograms, boxplots, smoothers, etc. calculate new values to plot.\n\n\nEach point on our scatterplot represents a raw observation value (one point = one penguin)\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +\n  geom_point()\n\n\n\n\n\nEach bar represents a species count (note the y-axis, count, which is not a variable in our penguins data set)\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar()\n\n\n\n\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+    "text": "What is a statistical transformation?\n\nSome geoms, like scatterplots, plot the raw values of your data set. Other geoms, like bar charts, histograms, boxplots, smoothers, etc. calculate new values to plot.\n\n\nEach point on our scatterplot represents a raw observation value (one point = one penguin)\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\nEach bar represents a species count (note the y-axis, count, which is not a variable in our penguins data set)\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#default-stat",
@@ -935,7 +935,14 @@
     "href": "slides/week1.3-ggplot-review-slides.html#pos-alts",
     "title": "EDS 240",
     "section": "",
-    "text": "Alternative position adjustments for geom_bar()\n\nBelow are a few position options available for use with geom_bar():\n\n\nposition = \"fill\" creates a set of stacked bars but makes each set the same height (easier to compare proportions across groups)\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species, fill = island)) +\n  geom_bar(position = \"fill\")\n\n\n\n\n\nposition = \"dodge\" places overlapping bars directly beside one another (easier to compare individual values)\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species, fill = island)) +\n  geom_bar(position = \"dodge\")\n\n\n\n\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+    "text": "Alternative position adjustments for geom_bar()\n\nBelow are a few position options available for use with geom_bar():\n\n\nposition = \"fill\" creates a set of stacked bars but makes each set the same height (easier to compare proportions across groups)\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species, fill = island)) +\n  geom_bar(position = \"fill\")\n\n\n\n\n\n\n\n\n\nposition = \"dodge\" places overlapping bars directly beside one another (easier to compare individual values)\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species, fill = island)) +\n  geom_bar(position = \"dodge\")\n\n\n\n\n\n\n\n\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+  },
+  {
+    "objectID": "slides/week1.3-ggplot-review-slides.html#pos-alt",
+    "href": "slides/week1.3-ggplot-review-slides.html#pos-alt",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Alternatively, use position = position_*()\n\nInstead of position = \"X\", you can use functions to update and further adjust your geom’s positions. Here, we’ll use position_dodge2() to also ensure the widths of each of our bars are equal:\n\nggplot(penguins, aes(x = species, fill = island)) +\n  geom_bar(position = position_dodge2(preserve = \"single\"))\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#default-coord",
@@ -949,21 +956,21 @@
     "href": "slides/week1.3-ggplot-review-slides.html#coord",
     "title": "EDS 240",
     "section": "",
-    "text": "Changing coordinate systems\n\nDepending on the type of data, axis label length, etc. it may make sense to change this coordinate system. Two options for our bar plot:\n\n\ncoord_flip() switches the x and y axes.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() + \n  coord_flip()\n\n\n\n\n\ncoord_polar() uses polar coordinates.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() + \n  coord_polar()\n\n\n\n\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
+    "text": "Changing coordinate systems\n\nDepending on the type of data, axis label length, etc. it may make sense to change this coordinate system. Two options for our bar plot:\n\n\ncoord_flip() switches the x and y axes.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() + \n  coord_flip()\n\n\n\n\n\n\n\n\n\ncoord_polar() uses polar coordinates.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() + \n  coord_polar()\n\n\n\n\n\n\n\n\n\n\n\ndata | geometric object | statistical transformation | position adjustment | coordinate system | facet"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#prebuilt-themes",
     "href": "slides/week1.3-ggplot-review-slides.html#prebuilt-themes",
     "title": "EDS 240",
     "section": "",
-    "text": "Use pre-made themes to update plot appearance\n\n{ggplot2} comes with a number of complete themes, which control all non-data display. See two examples below:\n\n\ndisplays x and y axis lines and no gridlines\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() +\n  theme_classic()\n\n\n\n\n\ndisplays light grey lines and axes\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() +\n  theme_light()\n\n\n\n\n\n\n\nlabels | annotations | scales | themes | layout"
+    "text": "Use pre-made themes to update plot appearance\n\n{ggplot2} comes with a number of complete themes, which control all non-data display. See two examples below:\n\n\ndisplays x and y axis lines and no gridlines\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() +\n  theme_classic()\n\n\n\n\n\n\n\n\n\ndisplays light grey lines and axes\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() +\n  theme_light()\n\n\n\n\n\n\n\n\n\n\n\nlabels | annotations | scales | themes | layout"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#custom-themes",
     "href": "slides/week1.3-ggplot-review-slides.html#custom-themes",
     "title": "EDS 240",
     "section": "",
-    "text": "Further customize plot appearance using theme()\n\nFurther modify nearly any non-data element of your plot using theme().\n\n\nStart with theme_light():\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() +\n  theme_light()\n\n\n\n\n\nFurther modify with theme():\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() +\n  theme_light() +\n  theme(\n    axis.title = element_text(size = 17, color = \"purple\")\n  )\n\n\n\n\n\n\n\nlabels | annotations | scales | themes | layout"
+    "text": "Further customize plot appearance using theme()\n\nFurther modify nearly any non-data element of your plot using theme().\n\n\nStart with theme_light():\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() +\n  theme_light()\n\n\n\n\n\n\n\n\n\nFurther modify with theme():\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = species)) +\n  geom_bar() +\n  theme_light() +\n  theme(\n    axis.title = element_text(size = 17, color = \"purple\")\n  )\n\n\n\n\n\n\n\nlabels | annotations | scales | themes | layout"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#plot3",
@@ -1670,21 +1677,21 @@
     "href": "assignments.html",
     "title": "Assignments",
     "section": "",
-    "text": "Earning “Satisfactory” marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
+    "text": "Earning “Satisfactory” marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
   },
   {
     "objectID": "assignments.html#assignments",
     "href": "assignments.html#assignments",
     "title": "Assignments",
     "section": "",
-    "text": "Earning “Satisfactory” marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
+    "text": "Earning “Satisfactory” marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
   },
   {
     "objectID": "assignments.html#end-of-class-surveys",
     "href": "assignments.html#end-of-class-surveys",
     "title": "Assignments",
     "section": "End-of-class surveys",
-    "text": "End-of-class surveys\nEnd-of-class surveys (EOCs) will become available at the end of each class (Mondays) and are due by end-of-day (11:55pm PT). Completing EOCs by the due dates/times will, in-part (along with class attendance), determine whether you earn a +/- on your course grade.\n\n\n\n\n\n\n\n\nEOC link\nDate Assigned\nDate Due\n\n\n\n\nEOC (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 2)\nNA\nNA\n\n\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nEOC (week 6)\nMon 02/12/2024\nMon 02/12/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 7)\nNA\nNA\n\n\nEOC (week 8)\nMon 02/26/2024\nMon 02/26/2024, 11:55pm PT\n\n\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT"
+    "text": "End-of-class surveys\nEnd-of-class surveys (EOCs) will become available at the end of each class (Mondays) and are due by end-of-day (11:55pm PT). Completing EOCs by the due dates/times will, in-part (along with class attendance), determine whether you earn a +/- on your course grade.\n\n\n\nEOC link\nDate Assigned\nDate Due\n\n\n\n\nEOC (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 2)\nNA\nNA\n\n\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nEOC (week 6)\nMon 02/12/2024\nMon 02/12/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 7)\nNA\nNA\n\n\nEOC (week 8)\nMon 02/26/2024\nMon 02/26/2024, 11:55pm PT\n\n\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT"
   },
   {
     "objectID": "assignments.html#grade-tracker",
@@ -2937,7 +2944,7 @@
     "href": "course-materials/week2.html#assignment-reminders",
     "title": "[No Lecture]",
     "section": "Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT"
+    "text": "Assignment Reminders\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT"
   },
   {
     "objectID": "course-materials/week7.html",

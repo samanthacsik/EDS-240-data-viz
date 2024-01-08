@@ -66,6 +66,10 @@ knitr::include_graphics("images/week1/ggplot2.png")
 adapted from [Cédric Scherer's](https://www.cedricscherer.com/) rstudio::conf(2022) workshop, [Graphic Design with ggplot2](https://rstudio-conf-2022.github.io/ggplot2-graphic-design/) 
 :::
 
+::: {.notes}
+Grammar of graphics: provides a structure to combine graphical elements into figures that display data in a meaningful way.
+:::
+
 --
 
 ## {#grammar-of-graphics data-menu-title="Grammar of Graphics"} 
@@ -115,7 +119,6 @@ adapted from [Cédric Scherer's](https://www.cedricscherer.com/) rstudio::conf(2
 **4. position adjustments** -- control the fine details of position when geoms might otherwise overlap  
 **5. coordinate system** -- change what `x` and `y` axes mean (e.g. Cartesian (default), polar, flipped)    
 **6. facet** -- create subplots that each display one subset of the data   
-<!-- **7. theme** -- customize the non-data elements of your plot   -->
 
 ::: footer
 **Note:** You many not apply or customize all of the above layers (or in this exact order) for every plot you build
@@ -157,6 +160,10 @@ adapted from [Cédric Scherer's](https://www.cedricscherer.com/) rstudio::conf(2
 #| fig-alt: "Digital illustration of two cute fuzzy monsters sitting on a park bench with a smiling data table between them, all eating ice cream together. In text above the illustration are the hand drawn words 'make friends with tidy data.'"
 knitr::include_graphics("images/week1/horst-tidy-data-friends.png")
 ```
+
+::: {.center-text .body-text-s .gray-text}
+Art by [Allison Horst](https://allisonhorst.com/)
+:::
 
 ---
 
@@ -219,6 +226,8 @@ Take this [tibble](https://tibble.tidyverse.org/) (a lazy / surly `data.frame`) 
 ```{r}
 #| eval: true
 #| echo: true
+
+# untidy data ----
 temp_data_wide <- tribble(
   ~date, ~station1, ~station2,  ~station3,
   "2023-10-01", 30.1, 29.8,  31.2,
@@ -226,7 +235,11 @@ temp_data_wide <- tribble(
   "2023-12-01", 29.9, 28.5,  32.3
 )
 
-print(temp_data_wide)
+# make tidy ----
+temp_data_long <- temp_data_wide |> 
+  pivot_longer(cols = starts_with("station"),
+               names_to = "station_id", 
+               values_to = "temp_c")
 ```
 
 <br>
@@ -445,10 +458,11 @@ We'll start by exploring the relationship between penguin **bill length** and **
 
 <hr>
 
-Initialize your plot object using `ggplot()` -- this creates a graph that's primed to display the `penguins` data set, but empty since we haven't told ggplot how to map our data onto the graph yet (in other words: we haven't told ggplot what *type* of plot to create):
+Initialize your plot object using `ggplot()` -- this creates a graph that's primed to display the `penguins` data set, but empty since we haven't told ggplot how to map our data onto the graph yet (in other words: we haven't told ggplot what variables to display and where, as well as what *type* of plot to create):
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -472,6 +486,7 @@ The `mapping` argument defines how variables in your data set are mapped to visu
 #| eval: true
 #| echo: true
 #| code-line-numbers: "5"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -499,6 +514,7 @@ The `data` and `mapping` arguments are often not explicitly written in `ggplot()
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -522,7 +538,7 @@ You can also pipe (using `%>%` or `|>`) directly from a data set into a `ggplot(
 ```{r}
 #| eval: true
 #| echo: true
-
+#| fig-align: "center"
 penguins |> 
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm))
 ```
@@ -544,6 +560,7 @@ Next, we'll layer on a geometric object (aka geom) that our plot will use to rep
 #| eval: true
 #| echo: true
 #| code-line-numbers: "5"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -567,6 +584,7 @@ You can also define the data and mapping layers within a `geom_*()` (rather than
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -591,6 +609,7 @@ data | [**geometric object**]{.teal-text} | statistical transformation | positio
 #| eval: true
 #| echo: true
 #| code-line-numbers: "4"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -615,11 +634,12 @@ Alternatively, map color at a **local** (i.e. within a specific geom) rather tha
 #| eval: true
 #| echo: true
 #| code-line-numbers: "5"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
 ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
-  geom_point(mapping = aes(color = species))
+  geom_point(aes(color = species))
 ```
 
 ::: footer
@@ -644,6 +664,7 @@ labels | annotations | [**scales**]{.teal-text} | themes | layout
 #| eval: true
 #| echo: true
 #| code-line-numbers: "4,6"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -659,11 +680,12 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
 #| eval: true
 #| echo: true
 #| code-line-numbers: "5-6"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
 ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
-  geom_point(mapping = aes(color = species)) +
+  geom_point(aes(color = species)) +
   geom_smooth(method = "lm")
 ```
 :::
@@ -683,6 +705,7 @@ Do so within the corresponding `geom_*()` and outside of the `aes()` function! *
 #| eval: true
 #| echo: true
 #| code-line-numbers: "5"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -703,6 +726,7 @@ Here, we use `scale_color_manual()` to update the colors of our data points. Col
 #| eval: true
 #| echo: true
 #| code-line-numbers: "6"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -728,10 +752,11 @@ In the previous example, we mapped color to a **categorical** variable (`species
 #| eval: true
 #| echo: true
 #| code-line-numbers: "4,6"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
-ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = body_mass_g)) +
+ggplot(penguins, aes(x = body_mass_g, y = flipper_length_mm, color = body_mass_g)) +
   geom_point() +
   scale_color_gradient(low = "#132B43", high = "#F7DD4C")
 ```
@@ -782,6 +807,7 @@ Similar to our first scatterplot, we start by initializing our plot object with 
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -810,6 +836,7 @@ Some geoms, like scatterplots, plot the raw values of your data set. Other geoms
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -823,6 +850,7 @@ ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -852,6 +880,7 @@ The default statistical transformation used in `geom_bar()` is **count**, which 
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -875,6 +904,7 @@ Let's say we have a data frame with calculated count values (e.g. `penguins_summ
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -902,6 +932,7 @@ Now let's say we'd like to display the same bar chart with y-axis values as prop
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -927,6 +958,7 @@ Here, we plot the min, mean, and max values of penguin `body_mass_g` by species:
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -956,6 +988,7 @@ Position adjustments apply minor tweaks to the position of elements to resolve o
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -980,6 +1013,7 @@ data | geometric object | statistical transformation | [**position adjustment**]
 #| eval: true
 #| echo: true
 #| code-line-numbers: "5"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -1009,6 +1043,7 @@ Below are a few position options available for use with `geom_bar()`:
 #| eval: true
 #| echo: true
 #| code-line-numbers: "5"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -1024,6 +1059,7 @@ ggplot(penguins, aes(x = species, fill = island)) +
 #| eval: true
 #| echo: true
 #| code-line-numbers: "5"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -1033,6 +1069,29 @@ ggplot(penguins, aes(x = species, fill = island)) +
 :::
 
 ::::
+
+::: footer
+data | geometric object | statistical transformation | [**position adjustment**]{.teal-text} | coordinate system | facet
+:::
+
+---
+
+## {#pos-alt data-menu-title="Alternative ways to define positions"} 
+
+[{{< fa chart-line title="a line chart" >}} Alternatively, use `position = position_*()`]{.slide-title3}
+
+<hr>
+
+Instead of `position = "X"`, you can use [functions](https://ggplot2.tidyverse.org/reference/#position-adjustment) to update and further adjust your geom's positions. Here, we'll use `position_dodge2()` to also ensure the widths of each of our bars are equal:
+
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "2"
+#| fig-align: "center"
+ggplot(penguins, aes(x = species, fill = island)) +
+  geom_bar(position = position_dodge2(preserve = "single"))
+```
 
 ::: footer
 data | geometric object | statistical transformation | [**position adjustment**]{.teal-text} | coordinate system | facet
@@ -1052,6 +1111,7 @@ A Coordinate System is a system that uses one or more numbers (coordinates), to 
 #| eval: true
 #| echo: true
 #| code-line-numbers: "6"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -1083,6 +1143,7 @@ Depending on the type of data, axis label length, etc. it may make sense to chan
 #| eval: true
 #| echo: true
 #| code-line-numbers: "6"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -1100,6 +1161,7 @@ ggplot(penguins, aes(x = species)) +
 #| eval: true
 #| echo: true
 #| code-line-numbers: "6"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -1134,6 +1196,7 @@ data | geometric object | statistical transformation | position adjustment | [**
 #| eval: true
 #| echo: true
 #| code-line-numbers: "6"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -1149,6 +1212,7 @@ ggplot(penguins, aes(x = species)) +
 #| eval: true
 #| echo: true
 #| code-line-numbers: "6"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -1182,6 +1246,7 @@ Further modify nearly any non-data element of your plot using [`theme()`](https:
 #| eval: true
 #| echo: true
 #| code-line-numbers: "6"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -1258,6 +1323,7 @@ We'll again start by initializing our plot object with data, mapping our aesthet
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -1282,6 +1348,7 @@ ggplot(penguins, aes(x = flipper_length_mm)) +
 #| eval: true
 #| echo: true
 #| code-line-numbers: "4,6"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -1307,6 +1374,7 @@ Let's update the position of our binned bars from `"stack"` to `"identity"` and 
 #| eval: true
 #| echo: true
 #| code-line-numbers: "5"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -1332,6 +1400,7 @@ Update axis and legend titles and add a plot title using `labs()`:
 #| eval: true
 #| echo: true
 #| code-line-numbers: "7-8"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -1359,6 +1428,7 @@ ggplot(penguins, aes(x = flipper_length_mm, fill = species)) +
 #| eval: true
 #| echo: true
 #| code-line-numbers: "9"
+#| fig-align: "center"
 library(palmerpenguins)
 library(tidyverse)
 

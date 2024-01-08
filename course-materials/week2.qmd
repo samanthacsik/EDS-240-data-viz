@@ -37,10 +37,10 @@ Image from [Amy Cesal](https://www.amycesal.com/)'s article, [Writing Alt Text f
 
 ## Assignment Reminders
 
-| Assignment Type | Assignment Title       | Date Assigned  | Date Due                   |
-|:---------------:|------------------------|----------------|----------------------------|
-| HW              | Homework Assignment #1 | Mon 01/08/2024 | Sat 01/20/2024, 11:59pm PT | 
+<!-- | Assignment Type | Assignment Title       | Date Assigned  | Date Due                   | -->
+<!-- |:---------------:|------------------------|----------------|----------------------------| -->
+<!-- | HW              | Homework Assignment #1 | Mon 01/08/2024 | Sat 01/20/2024, 11:59pm PT |  -->
 
-<!-- | Assignment Type | Assignment Title                                 | Date Assigned  | Date Due                   | -->
-<!-- |:---------------:|------------------------------------------------- |----------------|----------------------------| -->
-<!-- | HW              | [Homework Assignment #1](../assignments/HW1.qmd) | Mon 01/08/2024 | Sat 01/20/2024, 11:59pm PT |  -->
+| Assignment Type | Assignment Title                                 | Date Assigned  | Date Due                   |
+|:---------------:|------------------------------------------------- |----------------|----------------------------|
+| HW              | [Homework Assignment #1](../assignments/HW1.qmd) | Mon 01/08/2024 | Sat 01/20/2024, 11:59pm PT |
