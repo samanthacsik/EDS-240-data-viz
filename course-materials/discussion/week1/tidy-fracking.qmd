@@ -30,6 +30,7 @@ fracking <- read_csv(here::here("course-materials", "discussion", "week1", "data
 #..........................load packages.........................
 library(tidyverse)
 library(janitor)
+library(usdata)
 
 #......................import fracking data......................
 fracking <- read_csv(here::here("week1", "data", "fracking.csv"))

@@ -97,9 +97,9 @@ Week 1 instruction is broken down into three lessons:
 <!-- See [Chapter 5, R for Data Science (2e)](https://r4ds.hadley.nz/data-tidy.html), by Hadley Wickham, Mine Çetinkaya-Rundel & Garrett Grolemund -->
 
 <!-- Is is **not** language-specific or tool-specific, it is not an "R thing", and it is not the `{tidyverse}` *"It is a way or organizing data that will make life easier for people who work with data."* (quote from Allison Horst). Because it makes life so much easier, tidying data is a critical first step in building any data visualization using grammar of graphics. In discussion section, we'll practice tidying a very untidy data set on fracking.  -->
-By now, you may have heard / read something like, "Data scientists spend 80% of their time preparing their data for analysis and/or visualization." And while that may not be totally accurate for all data scientists or all projects, you *will* spend lots of time wrestling with data. [**You'll spend this week's discussion cleaning up a messy data set on hydraulic fracturing (aka [fracking](https://en.wikipedia.org/wiki/Fracking)), with the goal of (re)familiarizing yourselves with some of commonly-used tidyverse functions.**]{.teal-text}
+By now, you may have heard / read something like, "Data scientists spend 80% of their time preparing their data for analysis and / or visualization." And while that may not be totally accurate for all data scientists or all projects, you *will* spend lots of time wrestling with data. [**You'll spend this week's discussion cleaning up a messy data set on hydraulic fracturing (aka [fracking](https://en.wikipedia.org/wiki/Fracking)), with the goal of (re)familiarizing yourselves with some of commonly-used tidyverse functions.**]{.teal-text}
 
-This week's data comes courtesy of Jeremy Singer-Vine's [Data is Plural](https://www.data-is-plural.com/) weekly newsletter of useful/curious data sets (the [2023.09.27 edition](https://www.data-is-plural.com/archive/2023-09-27-edition/)). Singer-Vine's description:
+This week's data comes courtesy of Jeremy Singer-Vine's [Data is Plural](https://www.data-is-plural.com/) weekly newsletter of useful / curious data sets (the [2023.09.27 edition](https://www.data-is-plural.com/archive/2023-09-27-edition/)). Singer-Vine's description:
 
 > Since [launching in 2011](https://www.fracfocus.org/learn/about-fracfocus), [FracFocus](https://fracfocus.org/) has become the largest registry of [hydraulic fracturing](https://en.wikipedia.org/wiki/Fracking) chemical disclosures in the US. The database, available to explore online and [download in bulk](https://fracfocus.org/data-download), contains 210,000+ such disclosures from fracking operators; it details the location, timing, and water volume of each fracking job, plus the names and amounts of chemicals used. The project is [managed](https://fracfocus.org/about-us) by the [Ground Water Protection Council](https://www.gwpc.org/overview/), “a nonprofit 501(c)6 organization whose members consist of state ground water regulatory agencies”. As seen in: The latest [installment](https://www.nytimes.com/interactive/2023/09/25/climate/fracking-oil-gas-wells-water.html) of the New York Times’ [Uncharted Water series](https://www.nytimes.com/series/uncharted-waters).
 
@@ -116,6 +116,7 @@ Interested in reading more about fracking? Check out [this communications piece]
 #| echo: true
 #| code-line-numbers: false
 install.packages("janitor") # tools for cleaning dirty data
+install.packages("usdata") # demographic data on the United States at the county and state levels spanning multiple years.
 ```
 
 2. [Download the data (`fracking.csv`)](https://drive.google.com/file/d/1vR0Ppc8YaIsHmAOluxeOtmKu1DG_WaR9/view?usp=drive_link) from Google Drive and save it to your class repo in the following location: `EDS-240-class-examples/week1/data/fracking.csv` (NOTE: data were originally downloaded as a zip file from [FracFocus](https://fracfocus.org/data-download) in November 2023. Since then, FracFocus has published a cleaner version of these data, which defeats some of this purpose of this exercise. As such, we'll be working with this saved version of the data, rather than downloading directly from FracFocus's data download page.)
@@ -154,9 +155,19 @@ An example repo with three folders: `week1/`, `week2/`, and `other-stuff/`. Each
 *(but try not to look during section!)*
 :::
 
+***Note:** Some of the wrangling in the solution (collapsed, below) may seem a bit superfluous -- we've included lots of steps to (re)introduce as many of the common wrangling functions as possible, given our data set.*
+
 ::: {.callout-tip icon=false collapse=true}
 ## Complete code for week 1 discussion (fracking)
 {{< include discussion/week1/tidy-fracking.qmd >}}
+:::
+
+### Supplemental discussion materials
+
+<br>
+
+::: {.center-text}
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Week 1 discussion slides](https://docs.google.com/presentation/d/1woLc3uKgbnlNfc5qQoEbs4PUEJeYMKajo-YpeYbsaxo/edit#slide=id.p){.btn role="button" target="_blank"} 
 :::
 
 <br>
