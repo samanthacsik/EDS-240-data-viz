@@ -227,7 +227,6 @@ Take this [tibble](https://tibble.tidyverse.org/) (a lazy / surly `data.frame`) 
 #| eval: true
 #| echo: true
 
-# untidy data ----
 temp_data_wide <- tribble(
   ~date, ~station1, ~station2,  ~station3,
   "2023-10-01", 30.1, 29.8,  31.2,
@@ -235,11 +234,7 @@ temp_data_wide <- tribble(
   "2023-12-01", 29.9, 28.5,  32.3
 )
 
-# make tidy ----
-temp_data_long <- temp_data_wide |> 
-  pivot_longer(cols = starts_with("station"),
-               names_to = "station_id", 
-               values_to = "temp_c")
+print(temp_data_wide)
 ```
 
 <br>

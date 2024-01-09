@@ -732,7 +732,7 @@
     "href": "slides/week1.3-ggplot-review-slides.html#untidy-temps",
     "title": "EDS 240",
     "section": "",
-    "text": "An example: untidy temperatures\n\nTake this tibble (a lazy / surly data.frame) of temperature recordings at three stations on three dates:\n\n# untidy data ----\ntemp_data_wide &lt;- tribble(\n  ~date, ~station1, ~station2,  ~station3,\n  \"2023-10-01\", 30.1, 29.8,  31.2,\n  \"2023-11-01\", 28.6, 29.1,  33.4,\n  \"2023-12-01\", 29.9, 28.5,  32.3\n)\n\n# make tidy ----\ntemp_data_long &lt;- temp_data_wide |&gt; \n  pivot_longer(cols = starts_with(\"station\"),\n               names_to = \"station_id\", \n               values_to = \"temp_c\")\n\n\n\nThis tibble is in wide or untidy format."
+    "text": "An example: untidy temperatures\n\nTake this tibble (a lazy / surly data.frame) of temperature recordings at three stations on three dates:\n\ntemp_data_wide &lt;- tribble(\n  ~date, ~station1, ~station2,  ~station3,\n  \"2023-10-01\", 30.1, 29.8,  31.2,\n  \"2023-11-01\", 28.6, 29.1,  33.4,\n  \"2023-12-01\", 29.9, 28.5,  32.3\n)\n\nprint(temp_data_wide)\n\n# A tibble: 3 × 4\n  date       station1 station2 station3\n  &lt;chr&gt;         &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 2023-10-01     30.1     29.8     31.2\n2 2023-11-01     28.6     29.1     33.4\n3 2023-12-01     29.9     28.5     32.3\n\n\n\n\nThis tibble is in wide or untidy format."
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#make-temps-tidy",
