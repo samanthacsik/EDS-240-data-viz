@@ -351,23 +351,6 @@ jobs_clean |>
 
 ---
 
-consider polar axis option here?  
-see https://r-graph-gallery.com/296-add-labels-to-circular-barplot.html  
-and cedric's cool plot: https://github.com/z3tt/TidyTuesday/blob/main/R/2020_29_Astronauts.Rmd  
-```{r}
-# jobs_clean |> 
-#   filter(year == 2016) |> 
-#   slice_max(order_by = total_earnings, n = 25) |> 
-#   ggplot(aes(x = fct_reorder(occupation, total_earnings), y = total_earnings)) +
-#   ggalt::geom_lollipop(alpha = 0.5) +
-#   gghighlight::gghighlight(max(total_earnings)) +
-#   #geom_text(aes(label = scales::dollar(total_earnings)), hjust = -0.2) + 
-#   scale_y_continuous(limits = c(0, 250000)) + # expand axis to make room for values
-#   coord_polar(theta = "y", direction = -1, start = -70)
-```
-
----
-
 ## {#col-vs-bar data-menu-title="geom_col() vs. geom_bar()"} 
 
 [An aside: `geom_col()` vs. `geom_bar()`]{.slide-title}
@@ -699,10 +682,6 @@ ggplot(subset_jobs) +
   scale_x_continuous(labels = scales::label_dollar(scale = 0.001, suffix = "k"),
                      breaks = c(25000, 50000, 75000, 100000, 125000))
 ```
-
----
-
-heatmap?
 
 ---
 

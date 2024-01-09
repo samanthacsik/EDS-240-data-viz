@@ -116,7 +116,6 @@ Interested in reading more about fracking? Check out [this communications piece]
 #| echo: true
 #| code-line-numbers: false
 install.packages("janitor") # tools for cleaning dirty data
-install.packages("usdata") # demographic data on the United States at the county and state levels spanning multiple years
 ```
 
 2. [Download the data (`fracking.csv`)](https://drive.google.com/file/d/1vR0Ppc8YaIsHmAOluxeOtmKu1DG_WaR9/view?usp=drive_link) from Google Drive and save it to your class repo in the following location: `EDS-240-class-examples/week1/data/fracking.csv` (NOTE: data were originally downloaded as a zip file from [FracFocus](https://fracfocus.org/data-download) in November 2023. Since then, FracFocus has published a cleaner version of these data, which defeats some of this purpose of this exercise. As such, we'll be working with this saved version of the data, rather than downloading directly from FracFocus's data download page.)

@@ -634,12 +634,6 @@
 <p><span class="body-text-s">For some more advanced label manipulation, see <a href="https://www.cedricscherer.com/2021/07/05/a-quick-how-to-on-labelling-bar-graphs-in-ggplot2/">A Quick How-to on Labelling Bar Graphs in ggplot2</a>, by Cédric Scherer</span></p>
 </div>
 </section>
-<section class="slide level2">
-
-<p>consider polar axis option here?<br>
-see https://r-graph-gallery.com/296-add-labels-to-circular-barplot.html<br>
-and cedric’s cool plot: https://github.com/z3tt/TidyTuesday/blob/main/R/2020_29_Astronauts.Rmd</p>
-</section>
 <section id="col-vs-bar" class="slide level2" data-menu-title="geom_col() vs. geom_bar()">
 <h2></h2>
 <p><span class="slide-title">An aside: <code>geom_col()</code> vs.&nbsp;<code>geom_bar()</code></span></p>
@@ -655,7 +649,7 @@ and cedric’s cool plot: https://github.com/z3tt/TidyTuesday/blob/main/R/2020_2
 <span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
 <span id="cb10-6"><a href="#cb10-6"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week4.1-rankings-slides_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:60.0%"></p>
+<p><img data-src="week4.1-rankings-slides_files/figure-revealjs/unnamed-chunk-12-1.png" style="width:60.0%"></p>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -665,7 +659,7 @@ and cedric’s cool plot: https://github.com/z3tt/TidyTuesday/blob/main/R/2020_2
 <span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
 <span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week4.1-rankings-slides_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+<p><img data-src="week4.1-rankings-slides_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -688,7 +682,7 @@ and cedric’s cool plot: https://github.com/z3tt/TidyTuesday/blob/main/R/2020_2
 <span id="cb12-7"><a href="#cb12-7"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> <span class="co"># default `position = "stack"`</span></span>
 <span id="cb12-8"><a href="#cb12-8"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week4.1-rankings-slides_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+<p><img data-src="week4.1-rankings-slides_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -703,7 +697,7 @@ and cedric’s cool plot: https://github.com/z3tt/TidyTuesday/blob/main/R/2020_2
 <span id="cb13-8"><a href="#cb13-8"></a>  <span class="fu">geom_linerange</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> occupation, <span class="at">xmax =</span> occupation, <span class="at">ymin =</span> <span class="dv">0</span>, <span class="at">ymax =</span> earnings_by_group)) <span class="sc">+</span> <span class="co"># default `position = "stack"`</span></span>
 <span id="cb13-9"><a href="#cb13-9"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week4.1-rankings-slides_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+<p><img data-src="week4.1-rankings-slides_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -726,7 +720,7 @@ and cedric’s cool plot: https://github.com/z3tt/TidyTuesday/blob/main/R/2020_2
 <span id="cb14-7"><a href="#cb14-7"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
 <span id="cb14-8"><a href="#cb14-8"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week4.1-rankings-slides_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+<p><img data-src="week4.1-rankings-slides_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -743,7 +737,7 @@ and cedric’s cool plot: https://github.com/z3tt/TidyTuesday/blob/main/R/2020_2
 <span id="cb15-10"><a href="#cb15-10"></a>                 <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
 <span id="cb15-11"><a href="#cb15-11"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week4.1-rankings-slides_files/figure-revealjs/unnamed-chunk-18-1.png" style="width:80.0%"></p>
+<p><img data-src="week4.1-rankings-slides_files/figure-revealjs/unnamed-chunk-17-1.png" style="width:80.0%"></p>
 </div>
 </div>
 </div>
@@ -814,7 +808,7 @@ and cedric’s cool plot: https://github.com/z3tt/TidyTuesday/blob/main/R/2020_2
 <hr>
 <p>Dumbbell plots can be a really simple and intuitive way to visualize a change or difference in two sets of data points:</p>
 
-<img data-src="week4.1-rankings-slides_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch quarto-figure-center"><p>We can make dumbbell plots using a combination of <code>geom_segment()</code> and <code>geom_point()</code>.</p>
+<img data-src="week4.1-rankings-slides_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch quarto-figure-center"><p>We can make dumbbell plots using a combination of <code>geom_segment()</code> and <code>geom_point()</code>.</p>
 <aside class="notes">
 <p>See note: <a href="https://stackoverflow.com/questions/35322919/grouped-data-by-factor-with-geom-segment" class="uri">https://stackoverflow.com/questions/35322919/grouped-data-by-factor-with-geom-segment</a></p>
 <p>“You can think of <code>geom_linerange()</code> as a convenient version of geom_segment for a specific use case. <code>geom_segment()</code> is for when you need to draw arbitrary line segments in a fairly non-systematic way. <code>geom_linerange()</code> is for the specific case of a collection of vertical bars at specified x values with different lengths (e.g.&nbsp;error bars, etc)”</p>
@@ -887,11 +881,7 @@ and cedric’s cool plot: https://github.com/z3tt/TidyTuesday/blob/main/R/2020_2
 <span id="cb17-14"><a href="#cb17-14"></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">25000</span>, <span class="dv">50000</span>, <span class="dv">75000</span>, <span class="dv">100000</span>, <span class="dv">125000</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week4.1-rankings-slides_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section>
-<section class="slide level2">
-
-<p>heatmap?</p>
-</section>
+<img data-src="week4.1-rankings-slides_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
 <section id="end-break" class="slide level2" data-menu-title="# Break #" data-background="#047C90">
 <h2></h2>
 <div class="page-center vertical-center">
@@ -904,7 +894,7 @@ and cedric’s cool plot: https://github.com/z3tt/TidyTuesday/blob/main/R/2020_2
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c0ba61b7" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_8c99815c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
