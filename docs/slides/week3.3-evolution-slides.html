@@ -547,7 +547,7 @@
 <span id="cb1-9"><a href="#cb1-9"></a><span class="fu">library</span>(gghighlight)</span>
 <span id="cb1-10"><a href="#cb1-10"></a></span>
 <span id="cb1-11"><a href="#cb1-11"></a><span class="co">#.........................source API key.........................</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"KEYS.R"</span>))</span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week3"</span>, <span class="st">"KEYS.R"</span>))</span>
 <span id="cb1-13"><a href="#cb1-13"></a><span class="fu">census_api_key</span>(censusKEY)</span>
 <span id="cb1-14"><a href="#cb1-14"></a></span>
 <span id="cb1-15"><a href="#cb1-15"></a><span class="co">#..........................import data...........................</span></span>
@@ -680,28 +680,36 @@
 <div class="center-text gray-text body-text-s">
 <p>E.g. I’m interested in how Lyme disease in New Jersey compares to other states.</p>
 </div>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb5" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
 <span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state)) <span class="sc">+</span></span>
 <span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
 <span id="cb5-5"><a href="#cb5-5"></a>  gghighlight<span class="sc">::</span><span class="fu">gghighlight</span>(state <span class="sc">==</span> <span class="st">"New Jersey"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="center-text gray-text body-text-s">
 <p>E.g. I’m interested in states where Lyme disease incidence is (or at one point was) &gt; 100 cases / 100k people.</p>
 </div>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb6" data-code-line-numbers="3,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
 <span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state, <span class="at">color =</span> state)) <span class="sc">+</span></span>
 <span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
 <span id="cb6-5"><a href="#cb6-5"></a>  gghighlight<span class="sc">::</span><span class="fu">gghighlight</span>(<span class="fu">max</span>(cases_per100k) <span class="sc">&gt;</span> <span class="dv">100</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -718,14 +726,18 @@
 <p>Lyme disease incidence from 2013 - 2019<br>
 (cut y-axis = default)</p>
 </div>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
 <span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2013</span><span class="sc">:</span><span class="dv">2019</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"Vermont"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state)) <span class="sc">+</span></span>
 <span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -733,7 +745,7 @@
 <p>Lyme disease incidence from 2013 - 2019<br>
 (force y-axis origin at 0)</p>
 </div>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb8" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
 <span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2013</span><span class="sc">:</span><span class="dv">2019</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"Vermont"</span>) <span class="sc">|&gt;</span> </span>
@@ -741,7 +753,11 @@
 <span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
 <span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -890,7 +906,7 @@
 <p><strong>Note:</strong> This plot doesn’t render well in thse slides <em>or</em> in the RStudio plot pane. I recommend running the code in RStudio, then clicking the <strong>Zoom button</strong> in the <strong>Plot pane</strong> for best viewing.</p>
 </div>
 <p><br></p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb10" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
 <span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"Vermont"</span>) <span class="sc">|&gt;</span> </span>
@@ -909,7 +925,7 @@
 <p><strong>Note:</strong> This plot doesn’t render well in thse slides <em>or</em> in the RStudio plot pane. I recommend running the code in RStudio, then clicking the <strong>Zoom button</strong> in the <strong>Plot pane</strong> for best viewing.</p>
 </div>
 <p><br></p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb11" data-code-line-numbers="7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
 <span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"Vermont"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
@@ -929,7 +945,7 @@
 <p><strong>Note:</strong> This plot doesn’t render well in thse slides <em>or</em> in the RStudio plot pane. I recommend running the code in RStudio, then clicking the <strong>Zoom button</strong> in the <strong>Plot pane</strong> for best viewing.</p>
 </div>
 <p><br></p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb12" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
 <span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"Vermont"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
@@ -952,21 +968,25 @@
 <div class="center-text gray-text body-text-s">
 <p>A basic area plot (New Jersey)</p>
 </div>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
 <span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"New Jersey"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb13-4"><a href="#cb13-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state)) <span class="sc">+</span></span>
 <span id="cb13-5"><a href="#cb13-5"></a>  <span class="fu">geom_area</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-29-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="center-text gray-text body-text-s">
 <p>Update the fill color</p>
 </div>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb14" data-code-line-numbers="4,6-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
 <span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"New Jersey"</span>) <span class="sc">|&gt;</span> </span>
@@ -975,7 +995,11 @@
 <span id="cb14-6"><a href="#cb14-6"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#047C90"</span>)) <span class="sc">+</span></span>
 <span id="cb14-7"><a href="#cb14-7"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-30-1.png" style="width:80.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -986,7 +1010,7 @@
 <p><span class="slide-title3">Stacked area charts show the evolution of a whole + the relative contribution of each group</span></p>
 <hr>
 <p><span class="body-text-s"><strong>Stacked area charts are useful for showing the evolution of a whole and the relative proportions of each group that make up the whole</strong>. For example, the top of the colored area shows the total Lyme disease incidence (# cases / 100k people) across all groups (notice the difference in y-axis values), while the individual colors are the relative contributions of the top 4 states with the highest lyme disease incidence:</span></p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
 <span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">filter</span>(state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Maine"</span>, <span class="st">"Rhode Island"</span>, <span class="st">"New Hampshire"</span>, <span class="st">"Vermont"</span>)) <span class="sc">|&gt;</span> </span>
@@ -994,13 +1018,13 @@
 <span id="cb15-5"><a href="#cb15-5"></a>  <span class="fu">geom_area</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch"></section>
+<img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="proportional-stacked-area" class="slide level2" data-menu-title="Proportional stacked area chart">
 <h2></h2>
 <p><span class="slide-title3">A variant: proportional stacked area charts</span></p>
 <hr>
 <p>Proportional stacked area charts <strong>plot percentage contribution instead of absolute numbers on the y-axis</strong>. The focus of this version is the proportion of contribution made by each category rather than absolute numbers.</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb16" data-code-line-numbers="5-6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
 <span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">filter</span>(state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Maine"</span>, <span class="st">"Rhode Island"</span>, <span class="st">"New Hampshire"</span>, <span class="st">"Vermont"</span>)) <span class="sc">|&gt;</span> </span>
@@ -1009,7 +1033,7 @@
 <span id="cb16-6"><a href="#cb16-6"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">scale =</span> <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-32-1.png" width="960" class="r-stretch"></section>
+<img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-32-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="stacked-area-group-order" class="slide level2" data-menu-title="Stacked area group order">
 <h2></h2>
 <p><span class="slide-title">Group order matters!</span></p>
@@ -1040,14 +1064,18 @@
 <p>It is super <strong>challenging to subtract the height of groups from one another at any / each given point in time</strong>. For example, both of the charts below show the same data (Lyme disease incidence (# cases / 100k people) for Maine, New Hampshire, Rhode Island, and Vermont):</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>lyme_pop <span class="sc">|&gt;</span> </span>
 <span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2020</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">filter</span>(state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Maine"</span>, <span class="st">"Rhode Island"</span>, <span class="st">"New Hampshire"</span>, <span class="st">"Vermont"</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb17-4"><a href="#cb17-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> cases_per100k, <span class="at">group =</span> state, <span class="at">fill =</span> state)) <span class="sc">+</span></span>
 <span id="cb17-5"><a href="#cb17-5"></a>  <span class="fu">geom_area</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="week3.3-evolution-slides_files/figure-revealjs/unnamed-chunk-34-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">

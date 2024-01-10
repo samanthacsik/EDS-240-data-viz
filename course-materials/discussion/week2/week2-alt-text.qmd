@@ -234,6 +234,42 @@ countdown::countdown(
 #| eval: true
 #| echo: false
 #| fig-align: "center"
+#| out-width: "70%"
+knitr::include_graphics("images/ingeman-etal-2019.png")
+```
+
+::: footer
+Fig 3A from [Ingeman et al. 2019](https://www.science.org/doi/10.1126/science.aav1004)
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#practice3 data-menu-title="Practice 3"}
+
+[Practice writing alt text:]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
 #| out-width: "90%"
 knitr::include_graphics("images/co2-emissions.png")
 ```

@@ -1,0 +1,26 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../meds-slides-styles.scss
+editor_options: 
+  chunk_output_type: console
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 5.3]{.custom-title}
+
+[*Annotations*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[Week 5 | February 5^th^, 2024]{.custom-subtitle3}
+
+---
+
+https://www.bbc.com/news/science-environment-67861954

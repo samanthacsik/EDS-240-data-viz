@@ -25,7 +25,7 @@ toc: true
 
 ## Description 
 
-In class, we discussed strategies and considerations for choosing the right graphic form to represent your data and convey your intended message. Here, you'll apply what we've learned to a data set on lobster abundance and sizes, collected from coastal rocky reef sites within the [Santa Barbara Coastal LTER](https://sbclter.msi.ucsb.edu/). Unfold the following note to read more about the data before continuing on (collapsed to save space):
+In class, we discussed strategies and considerations for choosing the right graphic form to represent your data and convey your intended message. Here, you'll apply what we've learned to a data set on lobster abundance and sizes, collected from coastal rocky reef sites within the [Santa Barbara Coastal LTER](https://sbclter.msi.ucsb.edu/). **Unfold the following note to read more about the data before continuing on (collapsed to save space):**
 
 ::: {.callout-note icon=false collapse=true}
 ## Learn about the data:
@@ -75,7 +75,9 @@ lobster_data <- read_csv("https://portal.edirepository.org/nis/dataviewer?packag
 
 :::
 
-*Your goal is to create a visualization that explores how lobster size differs across each of the five coastal rocky reef SBC LTER sites for the years 2012 (when IVEE and NAPL were established as MPAs) and 2022 (10 years later)*. This will first require some data exploration and wrangling. Some tips (unfold below):
+***Your goal is to create a visualization that explores how lobster size differs across each of the five coastal rocky reef SBC LTER sites for the years 2012 (when IVEE and NAPL were established as MPAs) and 2022 (10 years later).*** 
+
+This will first require some data exploration and wrangling. Some tips (unfold below):
 
 ::: {.callout-tip icon=false collapse=true}
 ## Data exploration & wrangling tips
@@ -83,6 +85,7 @@ lobster_data <- read_csv("https://portal.edirepository.org/nis/dataviewer?packag
 [**Data exploration tips:**]{.body-text-l .dark-blue-text}
 
 - Use `glimpse()` and / or `str()` to check out your variables and data types
+- Use `names()` to return all column names
 - Extract unique elements using `unique(df$column_name)`
 - Open up the spreadsheet-style data viewer using `View(df)`
 - Be sure to review the [metadata](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.77.9) (including methods & protocols) to fully understand the data
@@ -117,12 +120,11 @@ Now that you've explored and starting wrangling your data, it's time to create s
 [**(Part 1b) Complete the following:**]{.teal-text}
 
 - [ ] Create at least **three** different plots as part of your exploratory data visualization phase to test out which graphic forms / geoms works best. Your last plot should be the version that you feel is best suited for presenting your data. (***NOTE:** Your first two plots do not need to be at all polished -- during the exploratory data visualization phase, we're most concerned with choosing a graphic form / geom(s) for effectively presenting our data.*) 
--  [ ] Consider all three of your plots. What about the graphic forms / geoms used in plots #1 and #2 was not as effective as plot #3? Justify your decision to pursue plot #3. [**(5-8 sentences)**]{.peach-text}
-- [ ] (For plot #3 only) Consider modifications that we discussed in lecture that may make this plot easier to interpret (e.g. updating colors, moving or removing legends, highlighting groups, ordering groups) -- be sure to update your plot as appropriate.
-- [ ] Explain why you chose to make the above modifications. If you chose not to make any of these modifications, why not? [**(3-6 sentences)**]{.peach-text}
-- [ ] Polish your third (final) plot by updating the labels and theme (we'll cover theme modifications during [week 4 discussion section](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week4.html#discussion-materials)). 
-- [ ] Describe two or more challenges you encountered while deciding on / creating your plots -- these can be conceptual (e.g. challenges in determining how to best represent your data) and / or technical (e.g. code-based challenges). [**(4-8 sentences)**]{.peach-text}
-- [ ] Add alt text to your final visualization following the formula discussed during [week 2's discussion section](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/discussion/week2/week2-alt-text.html#/title-slide) and using the `#| fig-alt:` code chunk option.
+-  [ ] **1.** Consider all three of your plots. What about the graphic forms / geoms used in plots #1 and #2 was not as effective as plot #3? Justify your decision to pursue plot #3. [**(5-8 sentences)**]{.peach-text}
+- [ ] **2.** (For plot #3 only) Consider modifications that we discussed in lecture that may make this plot easier to interpret (e.g. updating colors, moving or removing legends, highlighting groups, ordering groups) -- be sure to update your plot as appropriate, then explain why you chose to make the above modifications. If you chose not to make any of these modifications, why not? [**(3-6 sentences)**]{.peach-text}
+- [ ] **3.** Polish your third (final) plot by updating the labels and theme (we'll cover theme modifications during [week 4 discussion section](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week4.html#discussion-materials)). List out the changes you made to your plot's theme (e.g. "updated axis text size", "removed minor gridlines", etc.). [**(a bullet list here is fine)**]{.peach-text}
+- [ ] **4.** Describe two or more challenges you encountered while deciding on / creating your plots -- these can be conceptual (e.g. challenges in determining how to best represent your data) and / or technical (e.g. code-based challenges). [**(4-8 sentences)**]{.peach-text}
+- [ ] **5.** Add alt text to your final visualization following the formula discussed during [week 2's discussion section](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/discussion/week2/week2-alt-text.html#/title-slide) and using the `#| fig-alt:` code chunk option.
 
 ## Rubric (specifications)
 
@@ -134,7 +136,7 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 - [ ] answer the three Part 1a questions, adhering to the length requirements specified at the end of each question prompt
 - [ ] create three different plots (two unpolished exploratory data visualizations and one polished final plot) in accordance with Part 1b instructions (**NOTE:** there isn't necessarily a single correct answer here, but your final plot should clearly display the variables of interest and you should be able to justify your choice in your written responses)
 - [ ] code should be clearly organized and annotated following conventions and guidelines outlined in the [Writing clean code](https://samanthacsik.github.io/EDS-240-data-viz/clean-code-guide.html) page on the course website
-- [ ] answer the three Part 1b questions, adhering to the length requirements specified at the end of each question prompt
+- [ ] answer the five Part 1b questions, adhering to the length requirements specified at the end of each question prompt
 - [ ] add alt text to your final visualization in accordance with Part 1b instructions
 - [ ] we should be able to run individual lines / chunks of code *and* render `Part1.qmd` without errors
 - [ ] all three plot outputs should appear in your rendered doc
@@ -175,7 +177,7 @@ Read the description, below, for details on what to work on this week.
 - [ ] Create an file named, `HW2-exploration.qmd` within your `lastName-eds240-HW4` repo and add appropriate YAML fields
 - [ ] Load necessary packages and read in your data
 - [ ] Clean & wrangle your data
-- [ ] Create at least **four** (but of course feel free to create more!) exploratory visualizations (similar to plot #1 and #2 in Part I of this assignment). 
+- [ ] Create at least **three** (but of course feel free to create more!) exploratory visualizations (similar to plot #1 and #2 in Part I of this assignment). 
 - [ ] **IMPORTANT:** If you have a downloaded data file saved to your repo (e.g. you're not reading in your data directly from online, from a server, etc.) be sure to add your data folder / file to your `.gitignore`, particularly if this file is large.
 
 [**(Part 2b) After completing the above steps, answer the following questions:**]{.teal-text}

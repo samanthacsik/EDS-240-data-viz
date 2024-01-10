@@ -35,5 +35,5 @@ student_groups <- cbind(students, group_num) |>
   arrange(group_num)
 
 #..........................write out csv.........................
-write_csv(x = student_groups, file = here::here("student_groups", "week1_learning_partners.csv"))
+# write_csv(x = student_groups, file = here::here("student_groups", "week3_learning_partners.csv"))
 

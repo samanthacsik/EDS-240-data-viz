@@ -229,7 +229,7 @@ library(janitor)
 library(gghighlight)
 
 #.........................source API key.........................
-source(here::here("KEYS.R"))
+source(here::here("week3", "KEYS.R"))
 census_api_key(censusKEY)
 
 #..........................import data...........................
@@ -395,6 +395,7 @@ E.g. I'm interested in how Lyme disease in New Jersey compares to other states.
 #| eval: true
 #| echo: true
 #| code-line-numbers: "5"
+#| fig-align: "center"
 lyme_pop |> 
   filter(year %in% c(2010:2020)) |> 
   ggplot(aes(x = year, y = cases_per100k, group = state)) +
@@ -413,6 +414,7 @@ E.g. I'm interested in states where Lyme disease incidence is (or at one point w
 #| eval: true
 #| echo: true
 #| code-line-numbers: "3,5"
+#| fig-align: "center"
 lyme_pop |> 
   filter(year %in% c(2010:2020)) |> 
   ggplot(aes(x = year, y = cases_per100k, group = state, color = state)) +
@@ -445,6 +447,7 @@ Lyme disease incidence from 2013 - 2019
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 lyme_pop |> 
   filter(year %in% c(2013:2019)) |> 
   filter(state == "Vermont") |> 
@@ -464,6 +467,7 @@ Lyme disease incidence from 2013 - 2019
 #| eval: true
 #| echo: true
 #| code-line-numbers: "6"
+#| fig-align: "center"
 lyme_pop |> 
   filter(year %in% c(2013:2019)) |> 
   filter(state == "Vermont") |> 
@@ -684,6 +688,7 @@ lyme_pop |>
 #| eval: false
 #| echo: true
 #| code-line-numbers: "6"
+#| fig-align: "center"
 lyme_pop |> 
   filter(year %in% c(2010:2020)) |> 
   filter(state == "Vermont") |> 
@@ -714,6 +719,7 @@ lyme_pop |>
 #| eval: false
 #| echo: true
 #| code-line-numbers: "7"
+#| fig-align: "center"
 lyme_pop |> 
   filter(state == "Vermont") |> 
   filter(year %in% c(2010:2020)) |> 
@@ -745,6 +751,7 @@ lyme_pop |>
 #| eval: false
 #| echo: true
 #| code-line-numbers: "6"
+#| fig-align: "center"
 lyme_pop |> 
   filter(state == "Vermont") |> 
   filter(year %in% c(2010:2020)) |> 
@@ -780,6 +787,7 @@ A basic area plot (New Jersey)
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 lyme_pop |> 
   filter(year %in% c(2010:2020)) |> 
   filter(state == "New Jersey") |> 
@@ -799,6 +807,7 @@ Update the fill color
 #| echo: true
 #| out-width: "80%"
 #| code-line-numbers: "4,6-7"
+#| fig-align: "center"
 lyme_pop |> 
   filter(year %in% c(2010:2020)) |> 
   filter(state == "New Jersey") |> 
@@ -824,6 +833,7 @@ lyme_pop |>
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 lyme_pop |> 
   filter(year %in% c(2010:2020)) |> 
   filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
@@ -845,6 +855,7 @@ Proportional stacked area charts **plot percentage contribution instead of absol
 #| eval: true
 #| echo: true
 #| code-line-numbers: "5-6"
+#| fig-align: "center"
 lyme_pop |> 
   filter(year %in% c(2010:2020)) |> 
   filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
@@ -904,6 +915,7 @@ It is super **challenging to subtract the height of groups from one another at a
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 lyme_pop |> 
   filter(year %in% c(2010:2020)) |> 
   filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 

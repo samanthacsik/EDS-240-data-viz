@@ -13,13 +13,13 @@ editor_options:
 
 ## {#title-slide data-menu-title="Title Slide" background="#053660"} 
 
-[EDS 240: Lecture 4.4]{.custom-title}
+[EDS 240: Lecture 5.2]{.custom-title}
 
 [*Typography*]{.custom-subtitle}
 
 <hr class="hr-teal">
 
-[Week 4 | January 29^th^, 2024]{.custom-subtitle3}
+[Week 5 | February 5^th^, 2024]{.custom-subtitle3}
 
 ---
 

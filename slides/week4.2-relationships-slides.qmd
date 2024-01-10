@@ -59,11 +59,45 @@ Line graphs (from week 3) are similar to scatter plots, except the x-axis variab
 
 ---
 
+## {#roadmap1 data-menu-title="Roadmap"} 
+
+[Roadmap]{.slide-title}
+
+<hr>
+
+<br>
+
+In this lesson, we'll be exploring two main primary chart types:
+
+<br>
+
+[1. scatter plots]{.body-text-m}
+
+[2. 2d density plots]{.body-text-m}
+
+---
+
 ## {#roadmap data-menu-title="Roadmap"} 
 
 [Roadmap]{.slide-title}
 
 <hr>
+
+<br>
+
+[In this lesson, we'll be exploring two main primary chart types:]{.gray-text}
+
+<br>
+
+[1. scatter plots]{.body-text-m .gray-text}
+
+  - adding rug or marginal density plots to visualize distribution
+  - adding trend lines
+  - adding a third numeric variable (challenges & considerations)
+    
+[2. 2d density plots]{.body-text-m .gray-text}
+
+  - strategies for dealing with overplotting
 
 ---
 
@@ -74,8 +108,6 @@ Line graphs (from week 3) are similar to scatter plots, except the x-axis variab
 <hr>
 
 [The [Hubbard Brook Experimenatal Forest](https://hubbardbrook.org/) is a 8,700-acre hardwood research forest in the White Mountains of New Hampshire and home to a series of small watersheds occupying the valley’s north- and south-facing slopes.]{.body-text-s}
-
-<br>
 
 :::: {.columns}
 
@@ -94,11 +126,11 @@ knitr::include_graphics("images/week4/hbef-map.png")
 :::
 
 ::: {.column width="50%"}
-[Since 1963, researchers have collected and analyzed weekly stream and precipitation data from the forest's watersheds.]{.body-text-s}
+[Since 1963, researchers have collected and analyzed weekly stream and precipitation data from the forest's watersheds. [Read about these long term data on DataOne](https://search.dataone.org/view/https%3A%2F%2Fpasta.lternet.edu%2Fpackage%2Fmetadata%2Feml%2Fknb-lter-hbr%2F208%2F9).]{.body-text-s}
 
 [These long-term data have contributed to important research, including the **discovery of acid rain** in North America. These data have also been used to **document the effectiveness of federal clean air legislation** in reducing coalfired power plant emissions.]{.body-text-s}
 
-[In this lesson, we'll explore the effects of various compounds on stream water pH (a lower pH = more acidic).]{.body-text-s}
+[In this lesson, we'll explore the **effects of various compounds on stream water pH** (a lower pH = more acidic).]{.body-text-s}
 :::
 
 ::::
@@ -115,7 +147,7 @@ knitr::include_graphics("images/week4/hbef-map.png")
 
 <hr>
 
-Out data don't require much wrangling, though we will practice using the [`{metajam}` package](https://github.com/NCEAS/metajam) for downloading and reading in data from repositories in the  [DataOne](https://www.dataone.org/) network.
+[Our data don't require much wrangling, though we will practice using the [`{metajam}` package](https://github.com/NCEAS/metajam) for downloading and reading in data from repositories in the  [DataOne](https://www.dataone.org/) network.]{.body-text-s}
 
 ```{r}
 #| eval: false
@@ -300,14 +332,62 @@ ggExtra::ggMarginal(p2, type = "density", groupFill = TRUE, groupColour = TRUE)
 
 ---
 
-## {#trend-lines data-menu-title="Trend lines"} 
+## {#trend-lines1 data-menu-title="Trend lines (defaults)"} 
 
-[Trend lines]{.slide-title}
+[Adding trend lines -- default behavior]{.slide-title}
 
 <hr>
 
-https://intro2r.com/the-start-of-the-end.html
-https://ggplot2-book.org/getting-started#sec-smooth
+[You may consider adding a best fit line to help you readers more easily identify trends in your data. Let's do that for a subset of our data (site W8, year 2021).]{.body-text-s}
+
+. . . 
+
+[If you have <1000 data points, **`geom_smooth()` defaults to using a method called “[LOESS](https://en.wikipedia.org/wiki/Local_regression)” (locally estimated scatter plot smoothing)**, which draws a line that's similar to a moving average. It will also include a confidence interval ribbon:]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "45%"
+stream_chem_data |> 
+  filter(waterYr == 2021) |> 
+  filter(site == "W8") |> 
+  ggplot(aes(x = DOC, y = pH)) + 
+  geom_point(alpha = 0.5) +
+  geom_smooth()
+```
+
+---
+
+## {#trend-lines2 data-menu-title="Trend lines (lm)"} 
+
+[Update method & remove CI]{.slide-title}
+
+<hr>
+
+[Oftentimes, you'll want a **line of best fit**. Specify a linear model using the `method` argument.]{.body-text-s} 
+
+[It's also best to **remove the confidence interval band** -- it can make it a bit clearer to your audience that this is *just* a trend line and not a properly analyzed linear model (e.g. we haven't checked for equal variances, normality of residuals).]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "45%"
+#| code-line-numbers: "6"
+stream_chem_data |> 
+  filter(waterYr == 2021) |> 
+  filter(site == "W8") |> 
+  ggplot(aes(x = DOC, y = pH)) + 
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+<br>
+
+::: {.footer}
+Check out [chapter 5.2](https://intro2r.com/the-start-of-the-end.html#the-purest-of-ggplots) & [chapter 6.3](https://intro2r.com/simple_lm.html) in [An Introduction to R](https://intro2r.com/), by Alex Douglas, Deon Roos, Francesca Mancini, Ana Couto & David Lusseau, for a great (re)introduction to `geom_smooth()` and simple linear modeling.
+:::
 
 ---
 
@@ -374,7 +454,7 @@ Alternatively, using `scale_size_area()` ensures that [the value of 0 is mapped 
 
 ::: {.incremental}
 - we (humans) generally have an easier time perceiving differences in position rather than size -- the **relationship between your x- and y-axis variables will be the primary focus**
-- it can be **hard to compare the strengths of different associations** -- is there an alternative way of presenting your data to better highlight this?
+- it can be **hard to compare the strengths of different associations** -- is there an alternative (e.g. 2+ separate scatter plots) way of presenting your data to better highlight this?
 - it's difficult to see small differences in size -- **if the range of values mapped to size is small, your bubbles will look indistinguishable from one another** 
 - it can be difficult to match a bubble's size to the scale of difference in the legend -- **consider adjusting the size range of your scale**
 :::
@@ -409,6 +489,7 @@ stream_chem_data |>
   scale_size(range = c(1, 10)) +
   labs(x = "DOC (mg/L)", size = "Al (mg/L)", color = "Site")
 ```
+
 :::
 
 ::: {.column width="50%"}
@@ -428,6 +509,51 @@ stream_chem_data |>
   geom_point(alpha = 0.5) +
   scale_radius(range = c(1, 10)) +
   labs(x = "DOC (mg/L)", size = "Al (mg/L)", color = "Site")
+```
+
+:::
+
+::::
+
+---
+
+## {#2-scatter-plots data-menu-title="2 scatter plots"} 
+
+[Alternatively, just use 2 separate scatter plots]{.slide-title2}
+
+<hr>
+
+<br>
+
+Rather than mapping a third numeric variable to point size, consider if just creating two separate scatter plots may help to more effectively visualize the relationships:
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.center-text .body-text-s .gray-text}
+Visualizing the effect of `DOC` on `pH`
+:::
+
+```{r}
+stream_chem_data |> 
+  filter(waterYr == 2021) |> 
+  ggplot(aes(x = DOC, y = pH, color = site)) + 
+  geom_point(alpha = 0.5)
+```
+:::
+
+::: {.column width="50%"}
+::: {.center-text .body-text-s .gray-text}
+Visualizing the effect of `Al_ICP` on `pH`
+:::
+
+```{r}
+stream_chem_data |> 
+  filter(waterYr == 2021) |> 
+  ggplot(aes(x = Al_ICP, y = pH, color = site)) + 
+  geom_point(alpha = 0.5)
 ```
 :::
 
@@ -608,6 +734,7 @@ Check out the `guides()` function for tweaking the appearance of your legend (e.
 #| echo: true
 #| out-width: "100%"
 #| fig-align: "center"
+#| code-line-numbers: "4-5"
 ggplot(stream_chem_data, aes(x = SO4, y = pH)) +
   geom_hex() +
   scale_fill_viridis_c() + 
@@ -623,7 +750,7 @@ ggplot(stream_chem_data, aes(x = SO4, y = pH)) +
 
 <hr>
 
-These are the 2d equivalent to creating a density plot using `geom_density()` (see [week 3 materials](https://samanthacsik.github.io/EDS-240-data-viz/slides/week3.2-distributions-slides.html#/density-overview)).
+These are the 2d equivalents to creating a density plot using `geom_density()` (see [week 3 materials](https://samanthacsik.github.io/EDS-240-data-viz/slides/week3.2-distributions-slides.html#/density-overview)).
 
 :::: {.columns}
 
@@ -638,7 +765,7 @@ contours of a 2d density estimate
 #| out-width: "100%"
 #| fig-align: "center"
 ggplot(stream_chem_data, aes(x = SO4, y = pH)) +
-  geom_density_2d()
+  geom_density_2d() # include `aes(color = ..level..)` if you want to color contours by level of density
 ```
 :::
 
@@ -661,22 +788,30 @@ ggplot(stream_chem_data, aes(x = SO4, y = pH)) +
 
 . . . 
 
-However, it can be challenging to interpret these plots...
+::: {.center-text .body-text-m}
+These can be a bit confusing to read / interpret
+:::
 
 ---
 
+## {#2d-density-interpretation data-menu-title="2d density interpretation"} 
+
+[What's up with that legend?]{.slide-title}
+
+<hr>
+
+The legend provides us with an estimate of the proportion of data points fall within a colored region. The density of the distribution of points sums to 1. 
+
 ```{r}
 #| eval: true
-#| echo: true
+#| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
 ggplot(stream_chem_data, aes(x = SO4, y = pH)) +
   geom_density_2d_filled()
 ```
 
-good for getting a general sense of the density (generates its contours as equidistant level sets of the estimated bivariate density, i.e. taking horizontal slices of the 3d surface at equally-spaced heights, and projecting the intersections down into the plane; interpret a contour, you would need to multiply its height by the area it bounds)
-
-https://jamesotto852.github.io/ggdensity/reference/geom_hdr.html
+In this example, 0-2% of of points fall within a 1x1 square in the darkest blue region, while 26-28% fall within a 1x1 square in the brightest yellow region. 
 
 ---
 
@@ -685,6 +820,10 @@ https://jamesotto852.github.io/ggdensity/reference/geom_hdr.html
 [Consider using the `{ggdensity}` equivalent geoms]{.slide-title3}
 
 <hr>
+
+[The [`{ggdensity}` package](https://jamesotto852.github.io/ggdensity/index.html) provides alternative functions, `geom_hdr_lines()` and `geom_hdr()`, as drop-in replacements for `geom_density_2d()` and `geom_density_2d_filled()` (respectively).]{.body-text-s}
+
+<br>
 
 :::: {.columns}
 
@@ -720,44 +859,24 @@ ggplot(stream_chem_data, aes(x = SO4, y = pH)) +
 
 ::::
 
-
 ---
 
-instead, consider using {ggdensity} functions:
+## {#interpret-ggdensity data-menu-title="Interpret {ggdensity} plots"} 
 
-- geom_hdr (instead of geom_density_2d_filled()): probs here tells us the probability bounded by the corresponding region, and the regions are computed to be the smallest such regions that bound that level of probability; these are called highest density regions or HDRs. By default, the plotted regions show the 50%, 80%, 95%, and 99% HDRs of the estimated density, but this can be changed with the probs argument to geom_hdr()
-- geom_hdr_lines() (instead of geom_density_2d())
+[Interpreting `{ggdensity}` plots]{.slide-title}
 
----
+<hr>
 
-plotly ?
+[These geoms similarly perform 2D density estimation, then compute and plot the resulting **highest density regions (HDRs)**. These HDRs are computed to be the smallest such regions that bound that level of probability. By default, regions show the 50%, 80%, 95%, and 99% HDRs of the estimated density (though this can be updated using the `probs` argument).]{.body-text-s}
 
-
-<!-- --- -->
-
-<!-- scatter plot -->
-<!-- fitting linear models & smoothers (e.g. lowess) -->
-<!-- correlation matrix / heat map -->
-<!-- parallel coordinates plot -->
-<!-- data transformation (e.g log10) -->
-<!-- see culment depth & culment length scatter plot: https://www.kaggle.com/code/florianspire/palmer-penguins-data-preprocessing-and-analysis -->
-
-<!-- --- -->
-
-<!-- https://www.tylervigen.com/spurious-correlations -->
-
-<!-- --- -->
-
-<!-- looking forward -->
-
-<!-- - sankey -->
-<!-- - choropleth -->
-<!-- - {geopfacet} -->
-<!-- - heatmaps -->
-<!-- - parallel coordinate plots -->
-<!-- - treemap -->
-<!-- - sunburst -->
-<!-- - radar plots -->
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+ggplot(stream_chem_data, aes(x = SO4, y = pH)) +
+  ggdensity::geom_hdr() # update prob level e.g. `probs = c(0.99, 0.75, 0.5, 0.25)`
+```
 
 ---
 

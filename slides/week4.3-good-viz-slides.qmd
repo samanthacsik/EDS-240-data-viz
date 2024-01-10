@@ -2077,10 +2077,6 @@ countdown::countdown(
 
 ---
 
-https://docs.google.com/presentation/d/e/2PACX-1vR1QB0S3AfBfdJZ1nnhUw2iKSxV83GDc5l9BYPC6yQhxBdnzRpAAZ2lh7QWhX4kY65Uf_q0yK9FtHmW/pub?start=false&loop=false&delayms=3000&slide=id.p
-
----
-
 ##  {#end-break data-menu-title="# END #" background="#047C90"}
 
 <div class="page-center vertical-center">

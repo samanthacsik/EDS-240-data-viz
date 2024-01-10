@@ -315,14 +315,14 @@ Step-by-step pre-class prep instructions
 <ul>
 <li><a href="https://www.cdc.gov/lyme/resources/datasurveillance/LD-Case-Counts-by-County-01-20.csv">County-level Lyme disease data from 2001-2020</a>, made available by the CDC (read more on <a href="https://www.cdc.gov/lyme/stats/survfaq.html">this CDC web page</a>)
 <ul>
-<li>rename file as <code>lyme-cdc-2001-2020.csv</code> and save to your class repo at the file path: <code>EDS-240-class-examples/week3/data/lyme-cdc-2001-2020.csv</code></li>
+<li>save the downloaded data (<code>LD-Case-Counts-by-County-01-20.csv</code>) to your class repo at the file path: <code>EDS-240-class-examples/week3/data/LD-Case-Counts-by-County-01-20.csv</code></li>
 </ul></li>
 </ul>
 </section>
 <section id="request-a-us-census-bureau-api-key" class="level3">
 <h3 class="anchored" data-anchor-id="request-a-us-census-bureau-api-key">Request a US Census Bureau API key</h3>
 <ol type="1">
-<li><p>To use the <a href=""><code>{tidycensus}</code> package</a> to access US Census Bureau data, you’ll first need to <strong>request and activate an API key</strong>. Do so by following these steps:</p>
+<li><p>To use the <a href="https://walker-data.com/tidycensus/"><code>{tidycensus}</code> package</a> to access US Census Bureau data, you’ll first need to <strong>request and activate an API key</strong>. Do so by following these steps:</p>
 <ol type="a">
 <li>Request an API key at <a href="http://api.census.gov/data/key_signup.html" class="uri">http://api.census.gov/data/key_signup.html</a></li>
 <li>After a short period of time, you should receive an email with your key (it may be helpful to star/bookmark that email), and click the included link to activate your key (<strong>Note:</strong> if you get an error when activating your key, close your browser window and try clicking the activation link again)</li>
@@ -330,12 +330,13 @@ Step-by-step pre-class prep instructions
 <li><p><strong>For security purposes, you should never push any API keys to GitHub.</strong> To prevent us from accidentally pushing our key(s), we can save it to a separate file which we’ll add to our <code>.gitignore</code>. Do so by following these steps:</p></li>
 </ol>
 <ol type="a">
-<li>Create a file in your class repo’s root directory called <code>KEYS.R</code>, and save your API key to an object name like this:</li>
+<li><p>Create a <code>week3/</code> folder in the root directory of your class repo</p></li>
+<li><p>Add a file to your <code>week3/</code> folder called <code>KEYS.R</code>, and save your API key to an object name like this:</p></li>
 </ol>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>KEYS.R</strong></pre>
+<pre><strong>~/week3/KEYS.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>censusKEY <span class="ot">&lt;-</span> <span class="st">"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -348,13 +349,13 @@ Step-by-step pre-class prep instructions
 <div class="code-with-filename-file">
 <pre><strong>.gitignore</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>KEYS.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="sc">/</span>week3<span class="sc">/</span>KEYS.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ol start="3" type="a">
 <li>Save <code>.gitignore</code> (once saved, you should see the newly added <code>KEYS.R</code> file disappear from your <strong>Git</strong> pane in RStudio, and a modified <code>.gitignore</code> appear). Stage/add, commit, and push this <code>.gitignore</code> file to GitHub</li>
 </ol>
-<p>In class, we’ll source our key (by running <code>source("KEYS.R")</code>) into any scripts/Qmd files, where required.</p>
+<p>In class, we’ll source our key (by running <code>source(here::here("week3", "KEYS.R"))</code>) into any scripts / Qmd files, where required.</p>
 </section>
 </div>
 </div>

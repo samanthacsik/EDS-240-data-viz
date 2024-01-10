@@ -32,7 +32,6 @@ editor_options:
 <br>
 <br>
 <br>
-<br>
 
 . . .
 
@@ -198,7 +197,7 @@ We'll be exploring **bottom temperatures recorded at Mohawk Reef**, a near-shore
 
 <hr>
 
-Data are imported directly from the [EDI Data Portal](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=77). Explore the metadata package online to learn more about these data.
+Data are imported directly from the [EDI Data Portal](https://portal.edirepository.org/nis/home.jsp). Explore the [metadata package](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=77) online to learn more about these data.
 
 ```{r}
 #| eval: true
@@ -305,7 +304,7 @@ missing_temps <- naniar::vis_miss(bottom)
 [**Important considerations:**]{.teal-text} 
 
 - bin width (30 **bins** by default)
-- number of groups that you're comparing (generally <=3 is best)
+- too few / too many bins
 :::
 
 ::: {.column width="50%"}
@@ -333,11 +332,12 @@ mko_clean |>
 
 <hr>
 
-Twelve groups (`month_name`) is too many groups!
+Twelve groups (`month_name`) is too many groups -- especially when the range of temperature values for each of our groups largely overlap:
 ```{r}
 #| eval: true
 #| echo: true
 #| out-width: "100%"
+#| fig-align: "center"
 mko_clean |> 
   mutate(month_name = factor(month_name, levels = month.name)) |> 
   ggplot(aes(x = Temp_bot, fill = month_name)) +
@@ -362,10 +362,11 @@ If you want to plot all groups, consider splitting them into small multiples. If
 #| echo: true
 #| out-width: "50%"
 #| code-line-numbers: "5"
+#| fig-align: "center"
 mko_clean |> 
   mutate(month_name = factor(month_name, levels = month.name)) |> 
   ggplot(aes(x = Temp_bot)) +
-  geom_histogram(position = "identity") +
+  geom_histogram() +
   facet_wrap(~month_name)
 ```
 
@@ -377,6 +378,7 @@ Let's instead compare just three months: April (generally the coldest month), Oc
 #| echo: true
 #| out-width: "40%"
 #| code-line-numbers: "3"
+#| fig-align: "center"
 mko_clean |> 
   mutate(month_name = factor(month_name, levels = month.name)) |> 
   filter(month_name %in% c("April", "June", "October")) |> 
@@ -392,6 +394,7 @@ Use `fill` to fill bars with a specified color(s) and `color` to outline bars wi
 #| echo: true
 #| out-width: "50%"
 #| code-line-numbers: "4-6"
+#| fig-align: "center"
 mko_clean |> 
   mutate(month_name = factor(month_name, levels = month.name)) |> 
   filter(month_name %in% c("April", "June", "October")) |> 
@@ -402,12 +405,13 @@ mko_clean |>
 
 ## Modify bin widths
 
-Modify `binwidth` (**30 `bins`** by default) -- does a bin width of 1 (degree Celsius) actually make sense? Consider scale of interest.
+[Modify `binwidth` (**30 `bins`** by default) -- does a bin width of 1 (degree Celsius) actually make sense? Consider scale of interest. Also be mindful when using `bins` -- too few bins will result in loss of distribution shape.]{.body-text-s}
 ```{r}
 #| eval: true
 #| echo: true
 #| out-width: "50%"
 #| code-line-numbers: "5"
+#| fig-align: "center"
 mko_clean |> 
   filter(month_name %in% c("April", "June", "October")) |> 
   mutate(month_name = factor(month_name, levels = month.name)) |> 
@@ -439,9 +443,9 @@ mko_clean |>
 
 [**Important considerations:**]{.teal-text} 
 
+- useful when you want to visualize the shape of your data (not affected by bin number)
 - can be misleading with small data sets
 - band width, which affects level of smoothing
-- number of groups that you're comparing (generally <=3 is best)
 :::
 
 ::: {.column width="50%"}
@@ -479,7 +483,10 @@ Similar to the histogram, twelve groups (`month_name`) is too many groups! Consi
 #| eval: true
 #| echo: true
 #| out-width: "90%"
-ggplot(mko_clean, aes(x = Temp_bot, fill = month_name)) +
+#| fig-align: "center"
+mko_clean |> 
+  mutate(month_name = factor(month_name, levels = month.name)) |> 
+  ggplot(aes(x = Temp_bot, fill = month_name)) +
   geom_density(alpha = 0.5)
 ```
 
@@ -493,6 +500,22 @@ ggplot(mko_clean, aes(x = Temp_bot, fill = month_name)) +
 
 ::: panel-tabset
 
+## Small multiples
+
+If you want to plot all groups, consider splitting them into small multiples. If so, does color add any valuable information? Remove if not:
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "50%"
+#| code-line-numbers: "5"
+#| fig-align: "center"
+mko_clean |> 
+  mutate(month_name = factor(month_name, levels = month.name)) |> 
+  ggplot(aes(x = Temp_bot)) +
+  geom_density(fill = "gray7") +
+  facet_wrap(~month_name)
+```
+
 ## Fewer groups
 
 Let's instead compare three months: April (generally the coldest month), October (generally a hot month), June (somewhere in between):
@@ -501,6 +524,7 @@ Let's instead compare three months: April (generally the coldest month), October
 #| echo: true
 #| out-width: "50%"
 #| code-line-numbers: "1-2,5"
+#| fig-align: "center"
 mko_clean |> 
   filter(month_name %in% c("April", "June", "October")) |> 
   ggplot(aes(x = Temp_bot, fill = month_name)) +
@@ -516,6 +540,7 @@ Modify bandwidth by declaring a multiplier of the default bandwidth adjustment. 
 #| echo: true
 #| out-width: "50%"
 #| code-line-numbers: "4"
+#| fig-align: "center"
 mko_clean |> 
   filter(month_name %in% c("April", "June", "October")) |> 
   ggplot(aes(x = Temp_bot, fill = month_name)) +
@@ -523,6 +548,73 @@ mko_clean |>
   scale_fill_manual(values = c("#2C5374", "#ADD8E6", "#8B3A3A"))
 ```
 
+:::
+
+---
+
+## {#hist-vs-dens1 data-menu-title="Histogram vs. density"} 
+
+[An important distinction]{.slide-title}
+
+<hr>
+
+**Histograms** show us the **counts** (frequency) of values in each range (bin), represented by the height of the bars. 
+
+**Density plots** show the **proportion** of values in each range (area under the curve equal 1). 
+
+<br>
+
+We'll use some dummy data to demonstrate how this differs visually:
+
+```{r}
+#| eval: true
+#| echo: true
+dummy_data <- data.frame(value = c(rnorm(n = 100, mean = 5),
+                                   rnorm(n = 200, mean = 10)),
+                         group = rep(c("A", "B"),
+                                     times = c(100, 200)))
+```
+
+Here we two groups (`A`, `B`) of values which are normally distributed, but with different means. Group `A` also has a smaller sample size (100) than group `B` (200).
+
+---
+
+## {#hist-vs-dens2 data-menu-title="Histogram vs. density"} 
+
+[An important distinction]{.slide-title}
+
+<hr>
+
+[It's easy to see that group `B` has a larger sample size than group `A` when looking at our histogram. Additionally, we can get a good sense of our data distribution. *But* what happens when you reduce the `bin` number (e.g. set `bin = 4`)?]{.body-text-s}
+
+[We lose information about sample size / frequency in our density plot (note that both curves are the same height, despite group `B` having 2x as many observations). However, they're great for visualizing the shape of our distributions since they aren't affected by the number of bins.]{.body-text-s}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+ggplot(dummy_data, aes(x = value, fill = group)) +
+  geom_histogram(position = "identity", alpha = 0.7)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+ggplot(dummy_data, aes(x = value, fill = group)) +
+  geom_density(alpha = 0.7)
+```
+:::
+
+::::
+
+::: {.notes}
+In the histogram, group B has higher bars; differnce in height disappears in density plot
 :::
 
 ---
@@ -537,6 +629,7 @@ Overlaying a histogram and density plot requires scaling down the histogram to m
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 ggplot(mko_clean, aes(x = Temp_bot, y = ..density..)) + # scale down hist to match density curve
   geom_histogram(fill = "gray", color = "black", alpha = 0.75) +
   geom_density(size = 1) # increase line thickness
@@ -606,6 +699,7 @@ The [`{ggridges}` package](https://wilkelab.org/ggridges/) has a number of diffe
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 ggplot(mko_clean, aes(x = Temp_bot, y = month_name)) +
   ggridges::geom_density_ridges()
 ```
@@ -616,6 +710,7 @@ ggplot(mko_clean, aes(x = Temp_bot, y = month_name)) +
 ```{r}
 #| eval: true
 #| echo: true
+#| fig-align: "center"
 ggplot(mko_clean, aes(x = Temp_bot, y = month_name, fill = after_stat(x))) +
   ggridges::geom_density_ridges_gradient() +
   scale_fill_gradientn(colors = c("#2C5374","#778798", "#ADD8E6", "#EF8080", "#8B3A3A"))
@@ -644,6 +739,7 @@ ggplot(mko_clean, aes(x = Temp_bot, y = month_name, fill = after_stat(x))) +
 #| eval: true
 #| echo: true
 #| code-line-numbers: "3"
+#| fig-align: "center"
 ggplot(mko_clean, aes(x = Temp_bot, y = month_name, fill = after_stat(x))) +
   ggridges::geom_density_ridges_gradient() +
   scale_y_discrete(limits = rev(month.name)) +
@@ -657,6 +753,7 @@ ggplot(mko_clean, aes(x = Temp_bot, y = month_name, fill = after_stat(x))) +
 #| eval: true
 #| echo: true
 #| code-line-numbers: "1-2"
+#| fig-align: "center"
 mko_clean |> 
   mutate(month_name = fct_reorder(month_name, Temp_bot, .fun = mean)) |> 
   ggplot(mko_clean, mapping = aes(x = Temp_bot, y = month_name, fill = after_stat(x))) +
@@ -675,24 +772,11 @@ mko_clean |>
 #| echo: true
 #| code-line-numbers: "2"
 #| out-width: "50%"
+#| fig-align: "center"
 ggplot(mko_clean, aes(x = Temp_bot, y = month_name, fill = after_stat(x))) +
   ggridges::geom_density_ridges_gradient(rel_min_height = 0.01, scale = 3) +
   scale_y_discrete(limits = rev(month.name)) +
   scale_fill_gradientn(colors = c("#2C5374","#778798", "#ADD8E6", "#EF8080", "#8B3A3A"))
-```
-
-## Histogram variant
-
-Make ridgeline plots using histogram bars by updating the `stat` to `"binline"`(filling with a continous scale gradient not advised):
-```{r}
-#| eval: true
-#| echo: true
-#| code-line-numbers: "3"
-#| out-width: "50%"
-ggplot(mko_clean, aes(x = Temp_bot, y = month_name)) +
-  ggridges::geom_density_ridges(rel_min_height = 0.01, scale = 3,
-                                stat = "binline", binwidth = 1) +
-  scale_y_discrete(limits = rev(month.name)) 
 ```
 
 ## Quantiles
@@ -703,6 +787,7 @@ Include a median line by using the `stat_density_ridges()` geom and setting the 
 #| echo: true
 #| code-line-numbers: "3"
 #| out-width: "50%"
+#| fig-align: "center"
 ggplot(mko_clean, aes(x = Temp_bot, y = month_name)) +
   ggridges::stat_density_ridges(rel_min_height = 0.01, scale = 3,
                                 quantile_lines = TRUE, quantiles = 2) +
@@ -731,25 +816,12 @@ Jittered points
 #| eval: true
 #| echo: true
 #| code-line-numbers: "2-3"
+#| fig-align: "center"
 ggplot(penguins, aes(x = body_mass_g, y = species)) +
   ggridges::geom_density_ridges(jittered_points = TRUE, 
                                 alpha = 0.5, point_size = 0.5)
 ```
 :::
-
-<!-- ::: {.column width="33%"} -->
-<!-- [Rug plot:]{.body-text-s} -->
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: true -->
-<!-- #| #| code-line-numbers: "3" -->
-<!-- ggplot(penguins, aes(x = body_mass_g, y = species)) + -->
-<!--   ggridges::geom_density_ridges(jittered_points = TRUE,  -->
-<!--                                 position = position_points_jitter(width = 0.05, height = 0), -->
-<!--                                 point_shape = '|', point_size = 3, point_alpha = 1, -->
-<!--                                 alpha = 0.7) -->
-<!-- ``` -->
-<!-- ::: -->
 
 ::: {.column width="50%"}
 
@@ -761,6 +833,7 @@ Raincloud plot:
 #| eval: true
 #| echo: true
 #| code-line-numbers: "2-4"
+#| fig-align: "center"
 ggplot(penguins, aes(x = body_mass_g, y = species)) +
   ggridges::geom_density_ridges(jittered_points = TRUE, alpha = 0.5, 
                                 point_size = 0.5, scale = 0.6,
@@ -827,6 +900,7 @@ Box plots are great for a few to multiple groups (too many boxes just results in
 #| eval: true
 #| echo: true
 #| out-width: "50%"
+#| fig-align: "center"
 ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
   geom_boxplot() +
   scale_x_discrete(limits = rev(month.name)) +
@@ -841,7 +915,6 @@ ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
 
 <hr>
 
-
 ::: panel-tabset
 
 ## Outliers
@@ -852,6 +925,7 @@ ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
 #| echo: true
 #| code-line-numbers: "2"
 #| out-width: "55%"
+#| fig-align: "center"
 ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
   geom_boxplot(outlier.colour = "purple", outlier.shape = "circle open", outlier.size = 5) +
   scale_x_discrete(limits = rev(month.name)) +
@@ -866,6 +940,7 @@ ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
 #| echo: true
 #| code-line-numbers: "5,7"
 #| out-width: "40%"
+#| fig-align: "center"
 mko_clean |> 
   ggplot(aes(x = month_name, y = Temp_bot, fill = month_name)) +
   geom_boxplot() +
@@ -885,6 +960,7 @@ Since box plots hide sample size, consider overlaying raw data points using `geo
 #| echo: true
 #| code-line-numbers: "2-3"
 #| out-width: "40%"
+#| fig-align: "center"
 ggplot(na.omit(penguins), aes(x = species, y = body_mass_g)) +
   geom_boxplot(outlier.shape = NA) +
   geom_jitter(color = "black", alpha = 0.5, width = 0.2) +
@@ -899,6 +975,7 @@ ggplot(na.omit(penguins), aes(x = species, y = body_mass_g)) +
 #| eval: true
 #| echo: true
 #| out-width: "40%"
+#| fig-align: "center"
 penguins |> 
   mutate(year = as.factor(year)) |> 
   ggplot(aes(x = species, y = body_mass_g, color = year)) +
@@ -916,6 +993,7 @@ penguins |>
 #| echo: true
 #| code-line-numbers: "2-3"
 #| out-width: "40%"
+#| fig-align: "center"
 ggplot(na.omit(penguins), aes(x = species, y = body_mass_g)) +
   geom_boxplot(outlier.shape = NA) +
   ggbeeswarm::geom_beeswarm(size = 1) +
@@ -980,6 +1058,7 @@ Violin plots are great for a few to multiple groups, and are often a better choi
 #| eval: true
 #| echo: true
 #| out-width: "50%"
+#| fig-align: "center"
 ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
   geom_violin() +
   scale_x_discrete(limits = rev(month.name)) +
@@ -1004,6 +1083,7 @@ Overlaying a box plot inside a violin plot can be helpful in providing your audi
 #| echo: true
 #| out-width: "50%"
 #| code-line-numbers: "3-4"
+#| fig-align: "center"
 ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
   geom_violin() +
   geom_boxplot(width = 0.1, color = "gray", alpha = 0.5, 
@@ -1019,6 +1099,7 @@ ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
 #| eval: true
 #| echo: true
 #| out-width: "50%"
+#| fig-align: "center"
 ggplot(penguins, aes(x = species, y = bill_length_mm, fill = species)) +
   see::geom_violindot(size_dots = 5, alpha = 0.5) +
   theme(legend.position = "none")
