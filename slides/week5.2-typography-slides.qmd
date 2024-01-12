@@ -484,7 +484,7 @@ Horror films, by Cristophe Nicault <https://github.com/cnicault/tidytuesday/tree
 
 <hr>
 
-**No one wants to read a wall of text.** You can use font size, style, color, spacing, and typeface (or combinations of these) to create a hierarchy to guide your readers.
+**No one wants to read a wall of text.** You can use font size, style, color, spacing, and typeface (or combinations of these) to create a hierarchy that guide your readers.
 
 <br>
 
@@ -501,6 +501,34 @@ knitr::include_graphics("images/week5/hierarchy.png")
 ::: {.center-text .gray-text .body-text-s}
 Source: [The UX Designer’s Guide to Typography](https://www.interaction-design.org/literature/article/the-ux-designer-s-guide-to-typography)
 :::
+
+---
+
+##  {#change-fonts data-menu-title="# Code example #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Let's learn how to import and use Google fonts in our ggplots</p>
+</div>
+
+---
+
+Code example here using `{ggtext}`
+
+---
+
+##  {#end data-menu-title="# End #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">See you next week!</p>
+<p class="caption-text">*~ This is the end of Lesson 2 (of 3) ~*</p>
+</div>
+
+
+
+
+
+
+
 
 <!-- --- -->
 
@@ -687,24 +715,3 @@ Source: [The UX Designer’s Guide to Typography](https://www.interaction-design
 <!-- ::: {.center-text .nanum-font} -->
 <!-- <span style="font-size:1.2em;">I know, I'm kinda boring</span> -->
 <!-- ::: -->
-
----
-
-##  {#change-fonts data-menu-title="# Code example #" background="#047C90"}
-
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">Let's learn how to import and use Google fonts in our ggplots</p>
-</div>
-
----
-
-Code example here using `{ggtext}`
-
----
-
-##  {#end data-menu-title="# End #" background="#047C90"}
-
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">See you next week!</p>
-<p class="caption-text">*~ This is the end of Lesson 4 (of 4) ~*</p>
-</div>

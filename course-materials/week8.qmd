@@ -24,6 +24,7 @@ toc: true
 <!-- https://github.com/nrokh/ScientificFigures/blob/main/FigureSpectrum/FigureSpectrum.png -->
 <!-- log scales -->
 <!-- https://tylervigen.com/spurious-correlations -->
+<!-- https://twitter.com/visualisingdata/status/1237276833286103045 -->
 
 ## Discussion Materials
 

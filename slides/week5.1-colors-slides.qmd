@@ -23,11 +23,198 @@ editor_options:
 
 ---
 
-## {#choosing-colors data-menu-title="Choosing colors"} 
+## {#tbd data-menu-title="Tbd"} 
 
 [tbd]{.slide-title}
 
 <hr>
+
+---
+
+~start by showing examples of data viz & colors to get reactions~
+
+- green ocean vs blue ocean map
+- warm city cold city (temperature scales)
+- precipitation
+- urban areas
+- forests
+- bright colors on elevation maps = high areas; dark = low areas
+- happy vs. sad
+
+---
+
+##  {#color-theory data-menu-title="# Basic Color Theory #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">A crash course in color theory and some important definitions</p>
+</div>
+
+---
+
+## {#color-properties data-menu-title="Color properties"} 
+
+[There are a few important properties of color]{.slide-title2}
+
+<hr>
+
+- hue
+- saturation (aka chroma)
+- lightness / darkness (aka value)
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/hue-sat-val.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Image source: [medium.com](https://medium.com/awkbit/choosing-a-color-scheme-for-your-website-awkbit-59ab750151dc)
+:::
+
+---
+
+## {#hue data-menu-title="Hue"} 
+
+[Hue is a pure color]{.slide-title}
+
+<hr>
+
+- **Primary colors** are the main colors in a given color system (e.g. light (RGB) = [red]{style="background-color:#FF0000; color=#FFFFFF;" .white-text}, [green]{style="background-color:#00FF00"} [blue]{style="background-color:#0000FF" .white-text}). *Primary colors cannot be produced by mixing other colors in that system together.*
+
+. . .
+
+- **Secondary colors** are made by *mixing two primary colors* in a given color system
+  <!-- - [red]{style="background-color:#FF0000; color=#FFFFFF;" .white-text} + [green]{style="background-color:#00FF00"} =  [yellow]{style="background-color:#FFFF00"} -->
+  <!-- - [green]{style="background-color:#00FF00"} + [blue]{style="background-color:#0000FF" .white-text} = [cyan]{style="background-color:#00FFFF"} -->
+  <!-- - [blue]{style="background-color:#0000FF" .white-text} + [red]{style="background-color:#FF0000; color=#FFFFFF;" .white-text} = [magenta]{style="background-color:#FF00FF" .white-text} -->
+  
+- **Tertiary colors** are made by *mixing a primary and secondary color* in a given color system
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "60%"
+knitr::include_graphics("images/week5/color-wheels.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Common color models. Image source: [medium.com](https://broworks.medium.com/color-guide-terms-definitions-and-useful-websites-6fa4f13bcb85)
+:::
+:::
+
+::: {.column width="50%" .center-text .body-text-m .teal-text}
+We **associate meaning** with different hues (e.g. cold = blue, hot = red).
+
+These associations can **[differ among cultures](https://informationisbeautiful.net/visualizations/colours-in-cultures/)**.
+:::
+::::
+
+<!-- ::: {.footer} -->
+<!-- Fun side note: the primary colors of *print* are [cyan]{style="background-color:#00FFFF"}, [magenta]{style="background-color:#FF00FF" .white-text}, [yellow]{style="background-color:#FFFF00"} -- next time you reload your printer's ink, check out the colors printed on the calibration test page -->
+<!-- ::: -->
+
+::: {.notes}
+- RGB: basis for all colors on the screen (with these primary colors, we can make all other colors digitally)
+- RYB: known as painting color system (used by artists in painting)
+- CMYK: used on modern printing
+:::
+
+---
+
+## {#saturation data-menu-title="Saturation"} 
+
+[Saturation is how bold or pale a hue is]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "60%"
+knitr::include_graphics("images/week5/saturation.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Image source: [Scrappy Applique](https://shannon-brinkley.com/blogs/shannon-brinkley-studio-1/color-confidence-for-quilters-what-is-color-saturation)
+:::
+
+----
+
+## {#lightness data-menu-title="Lightness"} 
+
+[Lightness is how much white / black / gray is added to a hue]{.slide-title3}
+
+<hr>
+
+**lightness:** how much white, black, or gray is added to a color
+  - **tints** are made by **adding white** to a color, resulting in **lighter** versions
+  - **shades** are made by **adding black** to a color, resulting in **darker** versions
+  - **tones** are made by **adding gray** to a color
+  
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/tint-tone-shade-paint.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Image source: [Wikipedia](https://en.wikipedia.org/wiki/Tint,_shade_and_tone)
+:::
+
+---
+
+- lightness 
+- brightness
+- saturation
+
+---
+
+toned colors are often more pleasing to the eye (bright, pure colors are often associated with children: https://color-wheel-artist.com/hue/)
+
+---
+
+##  {#color-emotion data-menu-title="# Color & Emotions #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Colors used in our data visualizations elicit emotions from our audience</p>
+</div>
+
+---
+
+- together can communicate the level of seriousness, intensity, and emotional weight in a visual work (David Machin's [Introduction to Multimodal Analysis](https://books.google.de/books/about/Introduction_to_Multimodal_Analysis.html?id=xSyDAAAACAAJ&redir_esc=y))
+
+- dark / saturated > more dramatic / anger / sadness
+- bright / flat > opposite
+
+---
+
+- colors perceived differently by different cultures https://informationisbeautiful.net/visualizations/colours-in-cultures/
+
+---
+
+- emotions
+- inclusive colors
+
+---
+
+##  {#accessibility data-menu-title="# Accessibility #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Ensuring accessbility through your color choices</p>
+</div>
+
+---
 
 - picking colors is hard! use them purposefully
   - your brand
@@ -46,6 +233,7 @@ editor_options:
   - think about color palettes before you create your viz! use color blindness tools
   
   https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/
+  
   https://blog.datawrapper.de/colors/
   
   ---

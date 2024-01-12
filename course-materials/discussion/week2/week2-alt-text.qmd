@@ -72,7 +72,7 @@ editor_options:
 
 ---
 
-## {#writing-alt-text data-menu-title="Writing alt text"}
+## {#alt-text-formula data-menu-title="Alt text formula"}
 
 [A formula for writing alt text]{.slide-title}
 
@@ -101,7 +101,7 @@ knitr::include_graphics("images/hawkins-warming-stripes.png")
 
 ---
 
-## {#writing-alt-text2 data-menu-title="Writing alt text (another example)"}
+## {#example-milk data-menu-title="Example (milk)"}
 
 [Another example]{.slide-title}
 
@@ -123,6 +123,32 @@ knitr::include_graphics("images/haake-milk.png")
 ::: footer
 [Example from [Datawrapper](https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization)]{.gray-text}
 :::
+
+---
+
+## {#example-penguins data-menu-title="Example (penguins)"}
+
+[Another example]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| fig-alt: "A boxplot of penguin flipper lengths where Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins."
+library(tidyverse)
+library(palmerpenguins)
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
+  geom_boxplot(aes(color = species), width = 0.3, show.legend = FALSE) +
+  geom_jitter(aes(color = species), alpha = 0.5, show.legend = FALSE, position = position_jitter(width = 0.2, seed = 0)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Species",
+       y = "Flipper length (mm)") +
+  theme_minimal()
+```
+
+**alt="[A boxplot]{style="background-color:#FFE600"} of [penguin flipper lengths]{style="background-color:#6DFFF8"} where [Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins.]{style="background-color:#74FF75"}"**
 
 ---
 
@@ -348,6 +374,50 @@ ggplot(...) +
 ::::
 
 ---
+
+## {#adding-alt-text-ggplot data-menu-title="Adding alt text (ggplot)"}
+
+[Adding alt text (ggplot example)]{.slide-title}
+
+<hr>
+
+```{{r}}
+#| eval: true
+#| echo: true
+#| fig-cap: "A boxplot of penguin flipper lengths"
+#| fig-alt: "A boxplot of penguin flipper lengths where Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins."
+
+library(tidyverse)
+library(palmerpenguins)
+
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
+  geom_boxplot(aes(color = species), width = 0.3, show.legend = FALSE) +
+  geom_jitter(aes(color = species), alpha = 0.5, show.legend = FALSE, position = position_jitter(width = 0.2, seed = 0)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Species",
+       y = "Flipper length (mm)") +
+  theme_minimal()
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "left"
+#| fig-cap: "Boxplot of penguin flipper lengths"
+#| fig-alt: "A boxplot of penguin flipper lengths where Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins."
+library(tidyverse)
+library(palmerpenguins)
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
+  geom_boxplot(aes(color = species), width = 0.3, show.legend = FALSE) +
+  geom_jitter(aes(color = species), alpha = 0.5, show.legend = FALSE, position = position_jitter(width = 0.2, seed = 0)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Species",
+       y = "Flipper length (mm)") +
+  theme_minimal()
+```
+
+---
+
 ## {#checking-alt-text data-menu-title="Checking your alt text"}
 
 [Check to make sure your alt text was applied]{.slide-title2}

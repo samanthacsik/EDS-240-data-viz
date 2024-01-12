@@ -433,7 +433,7 @@
 <p><span class="teal-text"><strong>Because of this, it’s important that we include good alt text with any data visualizations we publish online!</strong></span></p>
 </div>
 </section>
-<section id="writing-alt-text" class="slide level2" data-menu-title="Writing alt text">
+<section id="alt-text-formula" class="slide level2" data-menu-title="Alt text formula">
 <h2></h2>
 <p><span class="slide-title">A formula for writing alt text</span></p>
 <hr>
@@ -455,7 +455,7 @@
 </div>
 </div>
 </section>
-<section id="writing-alt-text2" class="slide level2" data-menu-title="Writing alt text (another example)">
+<section id="example-milk" class="slide level2" data-menu-title="Example (milk)">
 <h2></h2>
 <p><span class="slide-title">Another example</span></p>
 <hr>
@@ -465,6 +465,13 @@
 <div class="footer">
 <p><span class="gray-text">Example from <a href="https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization">Datawrapper</a></span></p>
 </div>
+</section>
+<section id="example-penguins" class="slide level2" data-menu-title="Example (penguins)">
+<h2></h2>
+<p><span class="slide-title">Another example</span></p>
+<hr>
+
+<img data-src="week2-alt-text_files/figure-revealjs/unnamed-chunk-3-1.png" alt="A boxplot of penguin flipper lengths where Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins." width="960" class="r-stretch quarto-figure-center"><p><strong>alt=“<span style="background-color:#FFE600">A boxplot</span> of <span style="background-color:#6DFFF8">penguin flipper lengths</span> where <span style="background-color:#74FF75">Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins.</span>”</strong></p>
 </section>
 <section id="alt-vs-cap" class="slide level2" data-menu-title="Alt vs. caption">
 <h2></h2>
@@ -518,7 +525,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_4630fba6" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_a7e43288" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -535,7 +542,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_ac80e350" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_f9d79c9b" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -552,7 +559,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_a6544588" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_b594bd80" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -595,6 +602,27 @@
 </div>
 </div>
 </section>
+<section id="adding-alt-text-ggplot" class="slide level2" data-menu-title="Adding alt text (ggplot)">
+<h2></h2>
+<p><span class="slide-title">Adding alt text (ggplot example)</span></p>
+<hr>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>#| eval: true</span>
+<span id="cb4-2"><a href="#cb4-2"></a>#| echo: true</span>
+<span id="cb4-3"><a href="#cb4-3"></a>#| fig-cap: "A boxplot of penguin flipper lengths"</span>
+<span id="cb4-4"><a href="#cb4-4"></a>#| fig-alt: "A boxplot of penguin flipper lengths where Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins."</span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a>library(tidyverse)</span>
+<span id="cb4-7"><a href="#cb4-7"></a>library(palmerpenguins)</span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a>ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +</span>
+<span id="cb4-10"><a href="#cb4-10"></a>  geom_boxplot(aes(color = species), width = 0.3, show.legend = FALSE) +</span>
+<span id="cb4-11"><a href="#cb4-11"></a>  geom_jitter(aes(color = species), alpha = 0.5, show.legend = FALSE, position = position_jitter(width = 0.2, seed = 0)) +</span>
+<span id="cb4-12"><a href="#cb4-12"></a>  scale_color_manual(values = c("darkorange","purple","cyan4")) +</span>
+<span id="cb4-13"><a href="#cb4-13"></a>  labs(x = "Species",</span>
+<span id="cb4-14"><a href="#cb4-14"></a>       y = "Flipper length (mm)") +</span>
+<span id="cb4-15"><a href="#cb4-15"></a>  theme_minimal()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<img data-src="week2-alt-text_files/figure-revealjs/unnamed-chunk-13-1.png" alt="A boxplot of penguin flipper lengths where Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins." width="960" class="r-stretch quarto-figure-left"><p class="caption">Boxplot of penguin flipper lengths</p></section>
 <section id="checking-alt-text" class="slide level2" data-menu-title="Checking your alt text">
 <h2></h2>
 <p><span class="slide-title2">Check to make sure your alt text was applied</span></p>

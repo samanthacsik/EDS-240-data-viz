@@ -333,10 +333,170 @@
 <hr class="hr-teal">
 <p><span class="custom-subtitle3">Week 5 | February 5<sup>th</sup>, 2024</span></p>
 </section>
-<section id="choosing-colors" class="slide level2" data-menu-title="Choosing colors">
+<section id="tbd" class="slide level2" data-menu-title="Tbd">
 <h2></h2>
 <p><span class="slide-title">tbd</span></p>
 <hr>
+</section>
+<section class="slide level2">
+
+<p>~start by showing examples of data viz &amp; colors to get reactions~</p>
+<ul>
+<li>green ocean vs blue ocean map</li>
+<li>warm city cold city (temperature scales)</li>
+<li>precipitation</li>
+<li>urban areas</li>
+<li>forests</li>
+<li>bright colors on elevation maps = high areas; dark = low areas</li>
+<li>happy vs.&nbsp;sad</li>
+</ul>
+</section>
+<section id="color-theory" class="slide level2" data-menu-title="# Basic Color Theory #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+A crash course in color theory and some important definitions
+</p>
+</div>
+</section>
+<section id="color-properties" class="slide level2" data-menu-title="Color properties">
+<h2></h2>
+<p><span class="slide-title2">There are a few important properties of color</span></p>
+<hr>
+<ul>
+<li>hue</li>
+<li>saturation (aka chroma)</li>
+<li>lightness / darkness (aka value)</li>
+</ul>
+
+<img data-src="images/week5/hue-sat-val.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s gray-text">
+<p>Image source: <a href="https://medium.com/awkbit/choosing-a-color-scheme-for-your-website-awkbit-59ab750151dc">medium.com</a></p>
+</div>
+</section>
+<section id="hue" class="slide level2" data-menu-title="Hue">
+<h2></h2>
+<p><span class="slide-title">Hue is a pure color</span></p>
+<hr>
+<ul>
+<li><strong>Primary colors</strong> are the main colors in a given color system (e.g.&nbsp;light (RGB) = <span class="white-text" style="background-color:#FF0000; color=#FFFFFF;">red</span>, <span style="background-color:#00FF00">green</span> <span class="white-text" style="background-color:#0000FF">blue</span>). <em>Primary colors cannot be produced by mixing other colors in that system together.</em></li>
+</ul>
+<div class="fragment">
+<ul>
+<li><p><strong>Secondary colors</strong> are made by <em>mixing two primary colors</em> in a given color system <!-- - [red]{style="background-color:#FF0000; color=#FFFFFF;" .white-text} + [green]{style="background-color:#00FF00"} =  [yellow]{style="background-color:#FFFF00"} --> <!-- - [green]{style="background-color:#00FF00"} + [blue]{style="background-color:#0000FF" .white-text} = [cyan]{style="background-color:#00FFFF"} --> <!-- - [blue]{style="background-color:#0000FF" .white-text} + [red]{style="background-color:#FF0000; color=#FFFFFF;" .white-text} = [magenta]{style="background-color:#FF00FF" .white-text} --></p></li>
+<li><p><strong>Tertiary colors</strong> are made by <em>mixing a primary and secondary color</em> in a given color system</p></li>
+</ul>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/color-wheels.png" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text body-text-s gray-text">
+<p>Common color models. Image source: <a href="https://broworks.medium.com/color-guide-terms-definitions-and-useful-websites-6fa4f13bcb85">medium.com</a></p>
+</div>
+</div><div class="column center-text body-text-m teal-text" style="width:50%;">
+<p>We <strong>associate meaning</strong> with different hues (e.g.&nbsp;cold = blue, hot = red).</p>
+<p>These associations can <strong><a href="https://informationisbeautiful.net/visualizations/colours-in-cultures/">differ among cultures</a></strong>.</p>
+</div>
+</div>
+<!-- ::: {.footer} -->
+<!-- Fun side note: the primary colors of *print* are [cyan]{style="background-color:#00FFFF"}, [magenta]{style="background-color:#FF00FF" .white-text}, [yellow]{style="background-color:#FFFF00"} -- next time you reload your printer's ink, check out the colors printed on the calibration test page -->
+<!-- ::: -->
+<aside class="notes">
+<ul>
+<li>RGB: basis for all colors on the screen (with these primary colors, we can make all other colors digitally)</li>
+<li>RYB: known as painting color system (used by artists in painting)</li>
+<li>CMYK: used on modern printing</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="saturation" class="slide level2" data-menu-title="Saturation">
+<h2></h2>
+<p><span class="slide-title">Saturation is how bold or pale a hue is</span></p>
+<hr>
+
+<img data-src="images/week5/saturation.png" style="width:60.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s gray-text">
+<p>Image source: <a href="https://shannon-brinkley.com/blogs/shannon-brinkley-studio-1/color-confidence-for-quilters-what-is-color-saturation">Scrappy Applique</a></p>
+</div>
+</section>
+<section id="lightness" class="slide level2" data-menu-title="Lightness">
+<h2></h2>
+<p><span class="slide-title3">Lightness is how much white / black / gray is added to a hue</span></p>
+<hr>
+<p><strong>lightness:</strong> how much white, black, or gray is added to a color - <strong>tints</strong> are made by <strong>adding white</strong> to a color, resulting in <strong>lighter</strong> versions - <strong>shades</strong> are made by <strong>adding black</strong> to a color, resulting in <strong>darker</strong> versions - <strong>tones</strong> are made by <strong>adding gray</strong> to a color</p>
+
+<img data-src="images/week5/tint-tone-shade-paint.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s gray-text">
+<p>Image source: <a href="https://en.wikipedia.org/wiki/Tint,_shade_and_tone">Wikipedia</a></p>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>lightness</li>
+<li>brightness</li>
+<li>saturation</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>toned colors are often more pleasing to the eye (bright, pure colors are often associated with children: https://color-wheel-artist.com/hue/)</p>
+</section>
+<section id="color-emotion" class="slide level2" data-menu-title="# Color &amp; Emotions #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+Colors used in our data visualizations elicit emotions from our audience
+</p>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>together can communicate the level of seriousness, intensity, and emotional weight in a visual work (David Machin’s <a href="https://books.google.de/books/about/Introduction_to_Multimodal_Analysis.html?id=xSyDAAAACAAJ&amp;redir_esc=y">Introduction to Multimodal Analysis</a>)</p></li>
+<li><p>dark / saturated &gt; more dramatic / anger / sadness</p></li>
+<li><p>bright / flat &gt; opposite</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>colors perceived differently by different cultures https://informationisbeautiful.net/visualizations/colours-in-cultures/</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>emotions</li>
+<li>inclusive colors</li>
+</ul>
+</section>
+<section id="accessibility" class="slide level2" data-menu-title="# Accessibility #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+Ensuring accessbility through your color choices
+</p>
+</div>
+</section>
+<section class="slide level2">
+
 <ul>
 <li>picking colors is hard! use them purposefully
 <ul>
@@ -357,7 +517,8 @@
 <li>misleading color palettes (rainbow color palette): https://eagereyes.org/blog/2013/rainbow-color-map</li>
 <li>think about color palettes before you create your viz! use color blindness tools</li>
 </ul>
-<p>https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/ https://blog.datawrapper.de/colors/</p>
+<p>https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/</p>
+<p>https://blog.datawrapper.de/colors/</p>
 <hr>
 <p>example of bad color map (poverty): https://en.wikipedia.org/wiki/Poverty</p></li>
 </ul>
@@ -579,6 +740,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

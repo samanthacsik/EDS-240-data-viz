@@ -119,18 +119,25 @@
     "text": "Alt text serves many different communities and functions\n\n\nJust a few examples:\n\n\nAlt text is read aloud by assistive technologies, like screen readers, helping users with visual or certain cognitive disabilities to perceive the content and function of visual elements on web pages\nAlt text will appear in place of visual elements for those who are using a slow internet connection, or who have limited or expensive bandwidth\nAlt text may serve those with “situational limitations,” such as viewing a computer screen in bright sunlight\nAlt text provides more accurate image descriptions / context to search engine crawlers, which improves their assessment of a page’s purpose and content\n\n\n\nBecause of this, it’s important that we include good alt text with any data visualizations we publish online!"
   },
   {
-    "objectID": "course-materials/discussion/week2/week2-alt-text.html#writing-alt-text",
-    "href": "course-materials/discussion/week2/week2-alt-text.html#writing-alt-text",
+    "objectID": "course-materials/discussion/week2/week2-alt-text.html#alt-text-formula",
+    "href": "course-materials/discussion/week2/week2-alt-text.html#alt-text-formula",
     "title": "EDS 240",
     "section": "",
     "text": "A formula for writing alt text\n\nData viz designer and instructor, Amy Cesal, suggests this rule of thumb for writing alt text for data visualizations: alt=“Chart type of type of data where reason for including chart.\n\n\n\n\n\n\n\n\n\n\n\nalt=“Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature”\n\nExample from Amy Cesal’s article, Writing Alt Text for Data Visualization"
   },
   {
-    "objectID": "course-materials/discussion/week2/week2-alt-text.html#writing-alt-text2",
-    "href": "course-materials/discussion/week2/week2-alt-text.html#writing-alt-text2",
+    "objectID": "course-materials/discussion/week2/week2-alt-text.html#example-milk",
+    "href": "course-materials/discussion/week2/week2-alt-text.html#example-milk",
     "title": "EDS 240",
     "section": "",
     "text": "Another example\n\n\n\nalt=“A split bars chart of different types of milk’s (dairy and plant-based) environmental impact, where cow’s milk scores significantly worst in carbon emissions, land use, and water use than the other milk alternatives. Cow’s milk produces two times more carbon emissions, uses nine times more land, and twice the water that rice milk uses. Rice milk is the second most contaminating type of milk in terms of carbon emissions.”\n\nExample from Datawrapper"
+  },
+  {
+    "objectID": "course-materials/discussion/week2/week2-alt-text.html#example-penguins",
+    "href": "course-materials/discussion/week2/week2-alt-text.html#example-penguins",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Another example\n\n\nalt=“A boxplot of penguin flipper lengths where Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins.”"
   },
   {
     "objectID": "course-materials/discussion/week2/week2-alt-text.html#alt-vs-cap",
@@ -173,6 +180,13 @@
     "title": "EDS 240",
     "section": "",
     "text": "Adding alt text\n\nInclude alt text with your data visualizations, no matter how you choose to embed them:\n\nIf you’re rendering ggplot (or other data visualization) code within a .qmd file, add the fig-alt code chunk option:\n\n#| eval: true\n#| echo: false\n#| fig-cap: \"Figure caption text goes here\"\n#| fig-alt: \"Alt text goes here\"\nggplot(...) +\n  geom_*()\n\n\nIf you’ve save your data visualization as an image file, you can embed it in a .qmd file using either markdown or html syntax:\n\n\n\n\nMarkdown\n\n\n![Figure caption goes here](file/path/to/image){fig-alt=\"Alt text goes here\"}\n\n\n\nHTML\n\n\n&lt;img src=\"file/path/to/image\" alt=\"Alt text goes here\"&gt;"
+  },
+  {
+    "objectID": "course-materials/discussion/week2/week2-alt-text.html#adding-alt-text-ggplot",
+    "href": "course-materials/discussion/week2/week2-alt-text.html#adding-alt-text-ggplot",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Adding alt text (ggplot example)\n\n#| eval: true\n#| echo: true\n#| fig-cap: \"A boxplot of penguin flipper lengths\"\n#| fig-alt: \"A boxplot of penguin flipper lengths where Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins.\"\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\nggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +\n  geom_boxplot(aes(color = species), width = 0.3, show.legend = FALSE) +\n  geom_jitter(aes(color = species), alpha = 0.5, show.legend = FALSE, position = position_jitter(width = 0.2, seed = 0)) +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(x = \"Species\",\n       y = \"Flipper length (mm)\") +\n  theme_minimal()\n\nBoxplot of penguin flipper lengths"
   },
   {
     "objectID": "course-materials/discussion/week2/week2-alt-text.html#checking-alt-text",
@@ -823,7 +837,7 @@
     "href": "slides/week5.2-typography-slides.html#typographic-hierarchy",
     "title": "EDS 240",
     "section": "",
-    "text": "Typographic hierarchy\n\nNo one wants to read a wall of text. You can use font size, style, color, spacing, and typeface (or combinations of these) to create a hierarchy to guide your readers.\n\n\n\n\nSource: The UX Designer’s Guide to Typography"
+    "text": "Typographic hierarchy\n\nNo one wants to read a wall of text. You can use font size, style, color, spacing, and typeface (or combinations of these) to create a hierarchy that guide your readers.\n\n\n\n\nSource: The UX Designer’s Guide to Typography"
   },
   {
     "objectID": "slides/week5.2-typography-slides.html#change-fonts",
@@ -837,7 +851,7 @@
     "href": "slides/week5.2-typography-slides.html#end",
     "title": "EDS 240",
     "section": "",
-    "text": "See you next week!\n\n\n~ This is the end of Lesson 4 (of 4) ~"
+    "text": "See you next week!\n\n\n~ This is the end of Lesson 2 (of 3) ~"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#title-slide",
@@ -1596,11 +1610,60 @@
     "text": "EDS 240: Lecture 5.1\nColors\n\nWeek 5 | February 5th, 2024"
   },
   {
-    "objectID": "slides/week5.1-colors-slides.html#choosing-colors",
-    "href": "slides/week5.1-colors-slides.html#choosing-colors",
+    "objectID": "slides/week5.1-colors-slides.html#tbd",
+    "href": "slides/week5.1-colors-slides.html#tbd",
     "title": "EDS 240",
     "section": "",
-    "text": "tbd\n\n\npicking colors is hard! use them purposefully\n\nyour brand\npulling colors from a related image\ntake inspiration from other data viz/art\ngoogle “[whatever you like] palette”\n\n\n{monochromeR}\n\ncolors & common pitfalls\n\nwhat to consider when choosing colors for data visualization (datawrapper)\ngradients for cont data\nbe consistent with colors\ncolor gradients (consider binned colors)\nmisleading color palettes (rainbow color palette): https://eagereyes.org/blog/2013/rainbow-color-map\nthink about color palettes before you create your viz! use color blindness tools\n\nhttps://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/ https://blog.datawrapper.de/colors/\n\nexample of bad color map (poverty): https://en.wikipedia.org/wiki/Poverty"
+    "text": "tbd"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#color-theory",
+    "href": "slides/week5.1-colors-slides.html#color-theory",
+    "title": "EDS 240",
+    "section": "",
+    "text": "A crash course in color theory and some important definitions"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#color-properties",
+    "href": "slides/week5.1-colors-slides.html#color-properties",
+    "title": "EDS 240",
+    "section": "",
+    "text": "There are a few important properties of color\n\n\nhue\nsaturation (aka chroma)\nlightness / darkness (aka value)\n\n\n\nImage source: medium.com"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#hue",
+    "href": "slides/week5.1-colors-slides.html#hue",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Hue is a pure color\n\n\nPrimary colors are the main colors in a given color system (e.g. light (RGB) = red, green blue). Primary colors cannot be produced by mixing other colors in that system together.\n\n\n\nSecondary colors are made by mixing two primary colors in a given color system   \nTertiary colors are made by mixing a primary and secondary color in a given color system\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCommon color models. Image source: medium.com\n\n\nWe associate meaning with different hues (e.g. cold = blue, hot = red).\nThese associations can differ among cultures.\n\n\n\n\n\n\n\nRGB: basis for all colors on the screen (with these primary colors, we can make all other colors digitally)\nRYB: known as painting color system (used by artists in painting)\nCMYK: used on modern printing"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#saturation",
+    "href": "slides/week5.1-colors-slides.html#saturation",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Saturation is how bold or pale a hue is\n\n\n\nImage source: Scrappy Applique"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#lightness",
+    "href": "slides/week5.1-colors-slides.html#lightness",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Lightness is how much white / black / gray is added to a hue\n\nlightness: how much white, black, or gray is added to a color - tints are made by adding white to a color, resulting in lighter versions - shades are made by adding black to a color, resulting in darker versions - tones are made by adding gray to a color\n\n\nImage source: Wikipedia"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#color-emotion",
+    "href": "slides/week5.1-colors-slides.html#color-emotion",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Colors used in our data visualizations elicit emotions from our audience"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#accessibility",
+    "href": "slides/week5.1-colors-slides.html#accessibility",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Ensuring accessbility through your color choices"
   },
   {
     "objectID": "index.html#course-description",
