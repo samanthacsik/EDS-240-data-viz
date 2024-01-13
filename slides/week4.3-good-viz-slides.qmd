@@ -1811,6 +1811,7 @@ Source: [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/no-3
 [If we are more interested in how displacement and power relate to each other, with fuel efficiency as a secondary variable of interest, **create a bubble chart** (plot power vs. displacement and map fuel efficiency onto the size of the dots). Be mindful that three variables (even in a 2D space) are still challenging for readers to quickly comprehend.]{.body-text-s}
 
 <br>
+
 ```{r}
 #| eval: true
 #| echo: false
@@ -1823,6 +1824,58 @@ knitr::include_graphics("images/week4/bubble-fuel-eff.png")
 
 ::: {.footer}
 Source: [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/no-3d.html), by Claus Wilke
+:::
+
+---
+
+##  {#break-rules data-menu-title="# Breaking rules #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Are there ever opportunties to bend / break the rules & guidelines for creating "good" data viz?</p>
+</div>
+
+---
+
+## {#ok-break-rules data-menu-title="Considering how to break rules"}
+
+[Breaking the rules is sometimes okay]{.slide-title}
+
+<hr>
+
+<br>
+
+Data visualization is both a science and an *art*. **Following these rules / best practices can help us avoid common pitfalls** and avoid creating objectively difficult-to-interpret data visualizations. 
+
+<br>
+
+*However,* there are arguments for bending (or breaking) the rules every now and again. Consider the following posts:
+
+<br>
+
+- [Why you sometimes need to break the rules in data viz](https://medium.economist.com/why-you-sometimes-need-to-break-the-rules-in-data-viz-4d8ece284919), by Rosamund Pearce
+- [Master the rules - then break them](https://www.datylon.com/blog/master-and-break-data-visualization-rules#:~:text=The%20key%20take%2Dout%20is,a%20better%2C%20more%20engaging%20way.), by Dieuwertje van Dijk
+- [Does Data Visualization Have Rules? Or Is It All Just “It Depends”?](https://nightingaledvs.com/does-data-visualization-have-rules-or-is-it-all-just-it-depends/), by Nick Desbarats
+
+---
+
+## {#iraq-war data-menu-title="Iraq's bloody toll"}
+
+[Breaking the rules is sometimes okay]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week4/iraq-bloody-toll-alt.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Award-winning data visualization by [Simon Scarr](https://www.simonscarr.com/iraqs-bloody-toll#:~:text=This%20graphic%20was%20created%20to,the%20visual%20metaphor%20of%20blood.) (left), and a copy / remake of that visualization which follows the rules, created by [Andy Cotgreave](https://www.infoworld.com/article/3088166/why-how-to-lie-with-statistics-did-us-a-disservice.html) (right).
+
+Image & caption source: [Master the rules - then break them](https://www.datylon.com/blog/master-and-break-data-visualization-rules#:~:text=The%20key%20take%2Dout%20is,a%20better%2C%20more%20engaging%20way.)
 :::
 
 ---

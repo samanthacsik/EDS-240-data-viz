@@ -107,5 +107,22 @@ drought_clean |>
     legend.position = "bottom",
   )
 
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##            BONUS: using {geofacet} to plot data for all states           ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#......remove HI & AK (no data) and also DC from preset grid.....
+mygrid <- geofacet::us_state_grid1 |>
+  filter(!code %in% c("DC", "HI", "AK"))
+
+#..............................plot..............................
+drought_clean |> 
+  filter(drought_lvl != "None") |> 
+  ggplot(aes(x = date, y = area_pct, fill = drought_lvl_long)) +
+  geom_area(position = position_stack(reverse = TRUE)) +
+  geofacet::facet_geo(~state_abb, grid = mygrid) +
+  scale_fill_manual(values = c("#853904", "#FF0000", "#FFC100", "#FFD965", "#FFFF00"))
 ```
+
 

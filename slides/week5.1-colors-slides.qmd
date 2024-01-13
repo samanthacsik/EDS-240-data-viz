@@ -46,20 +46,20 @@ editor_options:
 ##  {#color-theory data-menu-title="# Basic Color Theory #" background="#047C90"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">A crash course in color theory and some important definitions</p>
+<p class="custom-subtitle bottombr">A crash course in color theory and what it means for data viz</p>
 </div>
 
 ---
 
 ## {#color-properties data-menu-title="Color properties"} 
 
-[There are a few important properties of color]{.slide-title2}
+[Three important color properties]{.slide-title}
 
 <hr>
 
-- hue
-- saturation (aka chroma)
-- lightness / darkness (aka value)
+Hue, saturation (aka chroma) and value (degree of lightness / darkness) are properties of color.
+
+<br>
 
 ```{r}
 #| eval: true
@@ -83,39 +83,31 @@ Image source: [medium.com](https://medium.com/awkbit/choosing-a-color-scheme-for
 
 - **Primary colors** are the main colors in a given color system (e.g. light (RGB) = [red]{style="background-color:#FF0000; color=#FFFFFF;" .white-text}, [green]{style="background-color:#00FF00"} [blue]{style="background-color:#0000FF" .white-text}). *Primary colors cannot be produced by mixing other colors in that system together.*
 
-. . .
-
 - **Secondary colors** are made by *mixing two primary colors* in a given color system
-  <!-- - [red]{style="background-color:#FF0000; color=#FFFFFF;" .white-text} + [green]{style="background-color:#00FF00"} =  [yellow]{style="background-color:#FFFF00"} -->
-  <!-- - [green]{style="background-color:#00FF00"} + [blue]{style="background-color:#0000FF" .white-text} = [cyan]{style="background-color:#00FFFF"} -->
-  <!-- - [blue]{style="background-color:#0000FF" .white-text} + [red]{style="background-color:#FF0000; color=#FFFFFF;" .white-text} = [magenta]{style="background-color:#FF00FF" .white-text} -->
   
 - **Tertiary colors** are made by *mixing a primary and secondary color* in a given color system
 
-<br>
-
-:::: {.columns}
-
-::: {.column width="50%"}
 ```{r}
 #| eval: true
 #| echo: false
 #| fig-align: "center"
-#| out-width: "60%"
+#| out-width: "65%"
 knitr::include_graphics("images/week5/color-wheels.png")
 ```
 
-::: {.center-text .body-text-s .gray-text}
-Common color models. Image source: [medium.com](https://broworks.medium.com/color-guide-terms-definitions-and-useful-websites-6fa4f13bcb85)
-:::
-:::
+<br>
 
-::: {.column width="50%" .center-text .body-text-m .teal-text}
-We **associate meaning** with different hues (e.g. cold = blue, hot = red).
-
-These associations can **[differ among cultures](https://informationisbeautiful.net/visualizations/colours-in-cultures/)**.
+::: {.footer}
+Common color models: RYB (used by painters), RGB (used in electonic displays), CMYK (used in modern printing). Image source: [medium.com](https://broworks.medium.com/color-guide-terms-definitions-and-useful-websites-6fa4f13bcb85)
 :::
-::::
+<!-- ::: -->
+
+<!-- ::: {.column width="50%" .center-text .body-text-m .teal-text} -->
+<!-- We **associate meaning** with different hues (e.g. cold / sadness = blue, hot / anger = red). -->
+
+<!-- These associations can **[differ among cultures](https://informationisbeautiful.net/visualizations/colours-in-cultures/)**. -->
+<!-- ::: -->
+<!-- :::: -->
 
 <!-- ::: {.footer} -->
 <!-- Fun side note: the primary colors of *print* are [cyan]{style="background-color:#00FFFF"}, [magenta]{style="background-color:#FF00FF" .white-text}, [yellow]{style="background-color:#FFFF00"} -- next time you reload your printer's ink, check out the colors printed on the calibration test page -->
@@ -129,9 +121,9 @@ These associations can **[differ among cultures](https://informationisbeautiful.
 
 ---
 
-## {#saturation data-menu-title="Saturation"} 
+## {#colors-harmonies1 data-menu-title="Color harmonies"} 
 
-[Saturation is how bold or pale a hue is]{.slide-title}
+[Use color wheels identify color harmonies]{.slide-title2}
 
 <hr>
 
@@ -139,7 +131,201 @@ These associations can **[differ among cultures](https://informationisbeautiful.
 #| eval: true
 #| echo: false
 #| fig-align: "center"
-#| out-width: "60%"
+#| out-width: "65%"
+knitr::include_graphics("images/week5/color-harmonies.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Image source: [htmlcolorcodes.com](https://htmlcolorcodes.com/color-picker/)
+:::
+
+. . . 
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<br>
+<br>
+
+::: {.center-text .body-text-m}
+[blue-green]{style="background-color:#088F8F" .white-text} & [red-orange]{style="background-color:#FF4433" .white-text} are complimentary 
+:::
+
+::: {.center-text .body-text-s}
+Find descriptions of [blue-green](https://htmlcolorcodes.com/colors/blue-green/) & [red-orange](https://htmlcolorcodes.com/colors/red-orange/) on [htmlcolorcodes.com](https://htmlcolorcodes.com/)
+:::
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(na.omit(penguins), aes(x = species, fill = sex)) +
+  geom_bar()
+```
+:::
+
+::::
+
+---
+
+## {#hue-meaning data-menu-title="Hue meaning"} 
+
+[Hues have associated meaning]{.slide-title}
+
+<hr>
+
+::: {.center-text}
+We associate meaning with different hues (e.g. cold / sad = blue, hot / angry = red), and *importantly,* these [**associations can differ among cultures**]{.teal-text}.
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/colors-cultures.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Source: [Information is Beautiful](https://informationisbeautiful.net/visualizations/colours-in-cultures/)
+:::
+
+---
+
+## {#multicultural-colors data-menu-title="Multicultural colors"} 
+
+[Some associations span multiple cultures]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/colors-cultures-highlights.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Source: [Information is Beautiful](https://informationisbeautiful.net/visualizations/colours-in-cultures/)
+:::
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/hawkins-warming-stripes.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Source: Ed Hawkins [(showyourstripes.info)](https://showyourstripes.info/)
+:::
+
+:::
+
+::::
+
+---
+
+## {#avoid-pure-hue data-menu-title="Avoid pure hues"} 
+
+[Using pure hues can be overwhelming]{.slide-title}
+
+<hr>
+
+Though it may be temping to use bright / bold colors to grab attention, it can lead to eye strain and make it more challenging for your readers to focus on your chart.
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/pure-hue1.png")
+```
+
+::: {.center-text .gray-text .body-text-s}
+Image source: [5 pitfalls to avoid when working with color in data visualization](https://flourish.studio/blog/color-in-data-visualization/)
+:::
+
+---
+
+## {#more-subdued data-menu-title="Avoid pure hues"} 
+
+[Use more subdued colors instead]{.slide-title}
+
+<hr>
+
+Though it may be temping to use bright / bold colors to grab attention, it can lead to eye strain and make it more challenging for your readers to focus on your chart.
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/pure-hue2.png")
+```
+
+::: {.center-text .gray-text .body-text-s}
+Image source: [5 pitfalls to avoid when working with color in data visualization](https://flourish.studio/blog/color-in-data-visualization/)
+:::
+
+---
+
+## {#generate-subdued-colors data-menu-title="Generating subdued colors"} 
+
+[A few approaches for subduing a pure hue]{.slide-title}
+
+<hr>
+
+<br>
+
+- adjust the saturation (i.e. the level of intensity of a color; 100% saturation = a pure hue)
+- adjust the lightness / darkness by tinting (add white), toning (add gray), or shading (add black)
+- add opacity (e.g. using the `alpha` argument)
+
+
+
+---
+
+## {#saturation data-menu-title="Saturation"} 
+
+[Saturation is the level of intensity of a color]{.slide-title2}
+
+<hr>
+
+<br>
+
+::: {.body-text-m .teal-text .center-text}
+We tend to associate **more saturated** colors with **greater values**.
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
 knitr::include_graphics("images/week5/saturation.png")
 ```
 
@@ -147,19 +333,21 @@ knitr::include_graphics("images/week5/saturation.png")
 Image source: [Scrappy Applique](https://shannon-brinkley.com/blogs/shannon-brinkley-studio-1/color-confidence-for-quilters-what-is-color-saturation)
 :::
 
+---
+
+saturation data viz example
+
 ----
 
 ## {#lightness data-menu-title="Lightness"} 
 
-[Lightness is how much white / black / gray is added to a hue]{.slide-title3}
+[Lightness is how much white/black/gray is added to a hue]{.slide-title3}
 
 <hr>
 
-**lightness:** how much white, black, or gray is added to a color
-  - **tints** are made by **adding white** to a color, resulting in **lighter** versions
-  - **shades** are made by **adding black** to a color, resulting in **darker** versions
-  - **tones** are made by **adding gray** to a color
-  
+:::: {.columns}
+
+::: {.column width="50%"}
 ```{r}
 #| eval: true
 #| echo: false
@@ -171,6 +359,15 @@ knitr::include_graphics("images/week5/tint-tone-shade-paint.png")
 ::: {.center-text .body-text-s .gray-text}
 Image source: [Wikipedia](https://en.wikipedia.org/wiki/Tint,_shade_and_tone)
 :::
+:::
+
+::: {.column width="50%"}
+  - **tints** are made by **adding white** to a color, resulting in **lighter** versions
+  - **shades** are made by **adding black** to a color, resulting in **darker** versions
+  - **tones** are made by **adding gray** to a color
+:::
+
+::::
 
 ---
 
@@ -208,6 +405,14 @@ toned colors are often more pleasing to the eye (bright, pure colors are often a
 
 ---
 
+##  {#palette-types data-menu-title="# Palettes #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Different data types require different types of palettes</p>
+</div>
+
+---
+
 ##  {#accessibility data-menu-title="# Accessibility #" background="#047C90"}
 
 <div class="page-center vertical-center">
@@ -235,7 +440,5 @@ toned colors are often more pleasing to the eye (bright, pure colors are often a
   https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/
   
   https://blog.datawrapper.de/colors/
-  
-  ---
   
   example of bad color map (poverty): https://en.wikipedia.org/wiki/Poverty

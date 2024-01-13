@@ -355,19 +355,16 @@
 <h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
-A crash course in color theory and some important definitions
+A crash course in color theory and what it means for data viz
 </p>
 </div>
 </section>
 <section id="color-properties" class="slide level2" data-menu-title="Color properties">
 <h2></h2>
-<p><span class="slide-title2">There are a few important properties of color</span></p>
+<p><span class="slide-title">Three important color properties</span></p>
 <hr>
-<ul>
-<li>hue</li>
-<li>saturation (aka chroma)</li>
-<li>lightness / darkness (aka value)</li>
-</ul>
+<p>Hue, saturation (aka chroma) and value (degree of lightness / darkness) are properties of color.</p>
+<p><br></p>
 
 <img data-src="images/week5/hue-sat-val.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s gray-text">
 <p>Image source: <a href="https://medium.com/awkbit/choosing-a-color-scheme-for-your-website-awkbit-59ab750151dc">medium.com</a></p>
@@ -378,33 +375,21 @@ A crash course in color theory and some important definitions
 <p><span class="slide-title">Hue is a pure color</span></p>
 <hr>
 <ul>
-<li><strong>Primary colors</strong> are the main colors in a given color system (e.g.&nbsp;light (RGB) = <span class="white-text" style="background-color:#FF0000; color=#FFFFFF;">red</span>, <span style="background-color:#00FF00">green</span> <span class="white-text" style="background-color:#0000FF">blue</span>). <em>Primary colors cannot be produced by mixing other colors in that system together.</em></li>
-</ul>
-<div class="fragment">
-<ul>
-<li><p><strong>Secondary colors</strong> are made by <em>mixing two primary colors</em> in a given color system <!-- - [red]{style="background-color:#FF0000; color=#FFFFFF;" .white-text} + [green]{style="background-color:#00FF00"} =  [yellow]{style="background-color:#FFFF00"} --> <!-- - [green]{style="background-color:#00FF00"} + [blue]{style="background-color:#0000FF" .white-text} = [cyan]{style="background-color:#00FFFF"} --> <!-- - [blue]{style="background-color:#0000FF" .white-text} + [red]{style="background-color:#FF0000; color=#FFFFFF;" .white-text} = [magenta]{style="background-color:#FF00FF" .white-text} --></p></li>
+<li><p><strong>Primary colors</strong> are the main colors in a given color system (e.g.&nbsp;light (RGB) = <span class="white-text" style="background-color:#FF0000; color=#FFFFFF;">red</span>, <span style="background-color:#00FF00">green</span> <span class="white-text" style="background-color:#0000FF">blue</span>). <em>Primary colors cannot be produced by mixing other colors in that system together.</em></p></li>
+<li><p><strong>Secondary colors</strong> are made by <em>mixing two primary colors</em> in a given color system</p></li>
 <li><p><strong>Tertiary colors</strong> are made by <em>mixing a primary and secondary color</em> in a given color system</p></li>
 </ul>
-<p><br></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week5/color-wheels.png" style="width:60.0%"></p>
-</figure>
+
+<img data-src="images/week5/color-wheels.png" style="width:65.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="footer">
+<p>Common color models: RYB (used by painters), RGB (used in electonic displays), CMYK (used in modern printing). Image source: <a href="https://broworks.medium.com/color-guide-terms-definitions-and-useful-websites-6fa4f13bcb85">medium.com</a></p>
 </div>
-</div>
-</div>
-<div class="center-text body-text-s gray-text">
-<p>Common color models. Image source: <a href="https://broworks.medium.com/color-guide-terms-definitions-and-useful-websites-6fa4f13bcb85">medium.com</a></p>
-</div>
-</div><div class="column center-text body-text-m teal-text" style="width:50%;">
-<p>We <strong>associate meaning</strong> with different hues (e.g.&nbsp;cold = blue, hot = red).</p>
-<p>These associations can <strong><a href="https://informationisbeautiful.net/visualizations/colours-in-cultures/">differ among cultures</a></strong>.</p>
-</div>
-</div>
+<!-- ::: -->
+<!-- ::: {.column width="50%" .center-text .body-text-m .teal-text} -->
+<!-- We **associate meaning** with different hues (e.g. cold / sadness = blue, hot / anger = red). -->
+<!-- These associations can **[differ among cultures](https://informationisbeautiful.net/visualizations/colours-in-cultures/)**. -->
+<!-- ::: -->
+<!-- :::: -->
 <!-- ::: {.footer} -->
 <!-- Fun side note: the primary colors of *print* are [cyan]{style="background-color:#00FFFF"}, [magenta]{style="background-color:#FF00FF" .white-text}, [yellow]{style="background-color:#FFFF00"} -- next time you reload your printer's ink, check out the colors printed on the calibration test page -->
 <!-- ::: -->
@@ -425,25 +410,169 @@ A crash course in color theory and some important definitions
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="colors-harmonies1" class="slide level2" data-menu-title="Color harmonies">
+<h2></h2>
+<p><span class="slide-title2">Use color wheels identify color harmonies</span></p>
+<hr>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/color-harmonies.png" style="width:65.0%"></p>
+</figure>
 </div>
+</div>
+</div>
+<div class="center-text body-text-s gray-text">
+<p>Image source: <a href="https://htmlcolorcodes.com/color-picker/">htmlcolorcodes.com</a></p>
+</div>
+<div class="fragment">
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br> <br></p>
+<div class="center-text body-text-m">
+<p><span class="white-text" style="background-color:#088F8F">blue-green</span> &amp; <span class="white-text" style="background-color:#FF4433">red-orange</span> are complimentary</p>
+</div>
+<div class="center-text body-text-s">
+<p>Find descriptions of <a href="https://htmlcolorcodes.com/colors/blue-green/">blue-green</a> &amp; <a href="https://htmlcolorcodes.com/colors/red-orange/">red-orange</a> on <a href="https://htmlcolorcodes.com/">htmlcolorcodes.com</a></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="hue-meaning" class="slide level2" data-menu-title="Hue meaning">
+<h2></h2>
+<p><span class="slide-title">Hues have associated meaning</span></p>
+<hr>
+<div class="center-text">
+<p>We associate meaning with different hues (e.g.&nbsp;cold / sad = blue, hot / angry = red), and <em>importantly,</em> these <span class="teal-text"><strong>associations can differ among cultures</strong></span>.</p>
+</div>
+
+<img data-src="images/week5/colors-cultures.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s gray-text">
+<p>Source: <a href="https://informationisbeautiful.net/visualizations/colours-in-cultures/">Information is Beautiful</a></p>
+</div>
+</section>
+<section id="multicultural-colors" class="slide level2" data-menu-title="Multicultural colors">
+<h2></h2>
+<p><span class="slide-title">Some associations span multiple cultures</span></p>
+<hr>
+<p><br> <br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/colors-cultures-highlights.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text body-text-s gray-text">
+<p>Source: <a href="https://informationisbeautiful.net/visualizations/colours-in-cultures/">Information is Beautiful</a></p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/hawkins-warming-stripes.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text body-text-s gray-text">
+<p>Source: Ed Hawkins <a href="https://showyourstripes.info/">(showyourstripes.info)</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="avoid-pure-hue" class="slide level2" data-menu-title="Avoid pure hues">
+<h2></h2>
+<p><span class="slide-title">Using pure hues can be overwhelming</span></p>
+<hr>
+<p>Though it may be temping to use bright / bold colors to grab attention, it can lead to eye strain and make it more challenging for your readers to focus on your chart.</p>
+
+<img data-src="images/week5/pure-hue1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text gray-text body-text-s">
+<p>Image source: <a href="https://flourish.studio/blog/color-in-data-visualization/">5 pitfalls to avoid when working with color in data visualization</a></p>
+</div>
+</section>
+<section id="more-subdued" class="slide level2" data-menu-title="Avoid pure hues">
+<h2></h2>
+<p><span class="slide-title">Use more subdued colors instead</span></p>
+<hr>
+<p>Though it may be temping to use bright / bold colors to grab attention, it can lead to eye strain and make it more challenging for your readers to focus on your chart.</p>
+
+<img data-src="images/week5/pure-hue2.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text gray-text body-text-s">
+<p>Image source: <a href="https://flourish.studio/blog/color-in-data-visualization/">5 pitfalls to avoid when working with color in data visualization</a></p>
+</div>
+</section>
+<section id="generate-subdued-colors" class="slide level2" data-menu-title="Generating subdued colors">
+<h2></h2>
+<p><span class="slide-title">A few approaches for subduing a pure hue</span></p>
+<hr>
+<p><br></p>
+<ul>
+<li>adjust the saturation (i.e.&nbsp;the level of intensity of a color; 100% saturation = a pure hue)</li>
+<li>adjust the lightness / darkness by tinting (add white), toning (add gray), or shading (add black)</li>
+<li>add opacity (e.g.&nbsp;using the <code>alpha</code> argument)</li>
+</ul>
 </section>
 <section id="saturation" class="slide level2" data-menu-title="Saturation">
 <h2></h2>
-<p><span class="slide-title">Saturation is how bold or pale a hue is</span></p>
+<p><span class="slide-title2">Saturation is the level of intensity of a color</span></p>
 <hr>
+<p><br></p>
+<div class="body-text-m teal-text center-text">
+<p>We tend to associate <strong>more saturated</strong> colors with <strong>greater values</strong>.</p>
+</div>
 
-<img data-src="images/week5/saturation.png" style="width:60.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s gray-text">
+<img data-src="images/week5/saturation.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s gray-text">
 <p>Image source: <a href="https://shannon-brinkley.com/blogs/shannon-brinkley-studio-1/color-confidence-for-quilters-what-is-color-saturation">Scrappy Applique</a></p>
 </div>
 </section>
+<section class="slide level2">
+
+<p>saturation data viz example</p>
+</section>
 <section id="lightness" class="slide level2" data-menu-title="Lightness">
 <h2></h2>
-<p><span class="slide-title3">Lightness is how much white / black / gray is added to a hue</span></p>
+<p><span class="slide-title3">Lightness is how much white/black/gray is added to a hue</span></p>
 <hr>
-<p><strong>lightness:</strong> how much white, black, or gray is added to a color - <strong>tints</strong> are made by <strong>adding white</strong> to a color, resulting in <strong>lighter</strong> versions - <strong>shades</strong> are made by <strong>adding black</strong> to a color, resulting in <strong>darker</strong> versions - <strong>tones</strong> are made by <strong>adding gray</strong> to a color</p>
-
-<img data-src="images/week5/tint-tone-shade-paint.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s gray-text">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/tint-tone-shade-paint.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text body-text-s gray-text">
 <p>Image source: <a href="https://en.wikipedia.org/wiki/Tint,_shade_and_tone">Wikipedia</a></p>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><strong>tints</strong> are made by <strong>adding white</strong> to a color, resulting in <strong>lighter</strong> versions</li>
+<li><strong>shades</strong> are made by <strong>adding black</strong> to a color, resulting in <strong>darker</strong> versions</li>
+<li><strong>tones</strong> are made by <strong>adding gray</strong> to a color</li>
+</ul>
+</div>
 </div>
 </section>
 <section class="slide level2">
@@ -487,6 +616,14 @@ Colors used in our data visualizations elicit emotions from our audience
 <li>inclusive colors</li>
 </ul>
 </section>
+<section id="palette-types" class="slide level2" data-menu-title="# Palettes #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+Different data types require different types of palettes
+</p>
+</div>
+</section>
 <section id="accessibility" class="slide level2" data-menu-title="# Accessibility #" data-background="#047C90">
 <h2></h2>
 <div class="page-center vertical-center">
@@ -519,7 +656,6 @@ Ensuring accessbility through your color choices
 </ul>
 <p>https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/</p>
 <p>https://blog.datawrapper.de/colors/</p>
-<hr>
 <p>example of bad color map (poverty): https://en.wikipedia.org/wiki/Poverty</p></li>
 </ul>
 

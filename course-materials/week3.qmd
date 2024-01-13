@@ -115,11 +115,6 @@ Week 3 instruction is broken down into three lessons:
 
 [*Today's lectures are inspired by and draw largely on materials created by a number of other educators, including [Albert Cairo](https://www.albertocairo.com/) and his book [The Truthful Art](https://www.amazon.com/gp/product/0321934075/ref=as_li_qf_sp_asin_il_tl?camp=1789&creative=9325&creativeASIN=0321934075&ie=UTF8&linkCode=as2&linkId=A7BVNPNHHPEPJU7K&tag=thefunart03-20), [Meghan Hall](https://meghan.rbind.io/) and her course, [CMU 36-315: Statistical Graphics & Visualization](https://cmu-36315.netlify.app/#lectures), as well as information curated by [Yan Holtz](https://github.com/holtzy) & [Conor Healy](https://www.linkedin.com/in/conor-healy-b0299810a/) as part of their [From Data to Viz](https://www.data-to-viz.com/) project.*]{.gray-text .body-text-s}
 
-<!-- - EDA (https://htmlpreview.github.io/?https://github.com/gexijin/gEDA/blob/main/example_report.html)-->
-<!-- - visualizing quantitative, qualitative, temporal data (no spatial data, covered in EDS 223) -->
-<!-- - charts, graphs, plots, diagrams -->
-<!-- - other/advanced e.g. heat maps, treemaps -->
-
 ## Discussion Materials
 
 The [U.S. Drought Monitor](https://droughtmonitor.unl.edu/) (USDM) is a collection of measures that allows experts to assess droughts in the United States. It is produced through a partnership between the [National Drought Mitigation Center at the University of Nebraska-Lincoln](https://drought.unl.edu/), the [United States Department of Agriculture](https://www.usda.gov/) and the [National Oceanic and Atmospheric Administration](https://www.noaa.gov/). You can download and explore comprehensive statistics through their [data portal](https://droughtmonitor.unl.edu/DmData/DataDownload/ComprehensiveStatistics.aspx).
@@ -139,7 +134,16 @@ knitr::include_graphics("images/usdm.png")
 
 **Before coming to section, please be sure to:**
 
-1. **(Optional)** Install the [ColorPick Eyedropper](https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg) Google Chrome extension, which makes it easy to select color values from webpages.
+1. Install the following packages:
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+install.packages("geofacet")
+```
+
+2. **(Optional)** Install the [ColorPick Eyedropper](https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg) Google Chrome extension, which makes it easy to select color values from webpages.
 
 <!-- ::: {.center-text} -->
 <!-- *Complete code will be posted here after both discussion sections are finished.* -->

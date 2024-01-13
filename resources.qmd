@@ -30,10 +30,13 @@ toc: true
 
 ## Colors
 
+- **[htmlcolorcodes.com](https://htmlcolorcodes.com/)** -- a color picker for HTML color codes, Hex color codes, RGB and HSL values
+- **[coolors.co](https://coolors.co/)** -- a super fast color palette generator, that also includes lots of [pre-built palettes](https://coolors.co/palettes/palettes) to draw inspiration from, an [image picker](https://coolors.co/image-picker) to extract colors from your uploaded images, and a [color contrast checker](https://coolors.co/contrast-checker/112a46-acc8e5)
 - **[Palette Generator](https://www.learnui.design/tools/data-color-picker.html#palette), by Learn UI Design** -- supply a starting color(s) and this tool will generate a palette, single hue, or divergent color scheme
 - **[Viz Palette](https://projects.susielu.com/viz-palette), by Elijah Meeks and Susie Lu** -- a tool that shows you how well your chosen colors work for tiny lines and big areas, warns if you have colors sharing the same name (which can make it more challenging to talk about your designs, say, in a presentation), and can simulate color vision deficiencies 
 - **[Shade Generator](https://www.shadegenerator.com/047C90)** -- a tool for generating shade scales
 - **[Colorblind Safe Color Schemes](https://www.nceas.ucsb.edu/sites/default/files/2022-06/Colorblind%20Safe%20Color%20Schemes.pdf), by the NCEAS Science Communication Resource Center** -- tips and examples of colorblind-friendly color palettes
+- **[Let's get color blind](https://chromewebstore.google.com/detail/lets-get-color-blind/bkdgdianpkfahpkmphgehigalpighjck)** -- Google Chrome extension for simulating color deficiencies in the web browser
 - **[Color review](https://color.review/), by Anton Robsarve** -- for understanding foreground and background contrasts
 - **[Your Friendly Guide to Colors in Data Visualization](https://blog.datawrapper.de/colorguide/#Make-sure-your-colors-work), by Lisa Charlotte Muth** -- a blog post on useful tools for deciding data viz color palettes
 - **[What to consider when choosing colors for data visualization](https://blog.datawrapper.de/colors/), by Lisa Charlotte Muth** -- a blog post with explanations and examples
@@ -100,6 +103,7 @@ Data are *everywhere*, but that doesn't mean they're necessarily easy to track d
 - **[Data is Plural](https://www.data-is-plural.com/archive/)** – a weekly newsletter (and seasonal podcast) of useful / curious data sets, published by [Jeremy Singer-Vine](https://www.jsvine.com/)
 - **[tidytuesday](https://github.com/rfordatascience/tidytuesday)** – a weekly social data project that shares minimally-cleaned data sets covering a variety of topics for the [R4DS community](https://rfordatasci.com/) to visualize; organizers share links to the original data sources, as well as the scripts used to clean them prior to publishing
 - **[awesome-public-datasets](https://github.com/awesomedata/awesome-public-datasets)** – a repository containing a list of high quality, topic-centric public data sources 
+- **[Information is Beautiful](https://informationisbeautiful.net/data/)** -- Founded by [David McCandless](https://davidmccandless.com/), Information is Beautiful is dedicated to making sense of the world with graphics & data-visuals. We set out to explain, distill and clarify. All our visualizations are based on facts and data: constantly updated, revised and revisioned.
 
 ### Government Agencies
 - **[Centers for Disease Control and Prevention (CDC)](https://www.cdc.gov/datastatistics/index.html)** – there are tons of data sets buried in the pages of this website (you'll likely have to do a bit of digging)
