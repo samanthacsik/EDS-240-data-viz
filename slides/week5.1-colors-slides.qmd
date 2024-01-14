@@ -23,11 +23,34 @@ editor_options:
 
 ---
 
-## {#tbd data-menu-title="Tbd"} 
+##  {#why-color data-menu-title="# Why use color? #" background="#047C90"}
 
-[tbd]{.slide-title}
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">{{< fa palette title="a painter's palette" >}} Why do we use color?</p>
+<p class="caption-text">*Spend a couple minutes discussing with your Learning Partners why and / or when we use color in data visualizations:*</p>
+</div>
 
-<hr>
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+::: {.notes}
+- evoke emotions
+- highlight important data / concepts
+- branding
+:::
 
 ---
 
@@ -53,11 +76,11 @@ editor_options:
 
 ## {#color-properties data-menu-title="Color properties"} 
 
-[Three important color properties]{.slide-title}
+[Three color properties influence how we perceive information]{.slide-title3}
 
 <hr>
 
-Hue, saturation (aka chroma) and value (degree of lightness / darkness) are properties of color.
+Changing **hue** (the pure color), **saturation** (aka chroma; the intensity of a color) and / or **value** (degree of lightness / darkness) can influence how readers perceive information in a data visualization.
 
 <br>
 
@@ -75,31 +98,71 @@ Image source: [medium.com](https://medium.com/awkbit/choosing-a-color-scheme-for
 
 ---
 
-## {#hue data-menu-title="Hue"} 
+## {#select-hue data-menu-title="Selecting hues"} 
 
-[Hue is a pure color]{.slide-title}
+[Select hues using color wheels / pickers]{.slide-title}
 
 <hr>
 
-- **Primary colors** are the main colors in a given color system (e.g. light (RGB) = [red]{style="background-color:#FF0000; color=#FFFFFF;" .white-text}, [green]{style="background-color:#00FF00"} [blue]{style="background-color:#0000FF" .white-text}). *Primary colors cannot be produced by mixing other colors in that system together.*
+<!-- - **Primary colors** are the main colors in a given color system (e.g. light (RGB) = [red]{style="background-color:#FF0000; color=#FFFFFF;" .white-text}, [green]{style="background-color:#00FF00"} [blue]{style="background-color:#0000FF" .white-text}). *Primary colors cannot be produced by mixing other colors in that system together.* -->
 
-- **Secondary colors** are made by *mixing two primary colors* in a given color system
-  
-- **Tertiary colors** are made by *mixing a primary and secondary color* in a given color system
+<!-- - **Secondary colors** are made by *mixing two primary colors* in a given color system -->
+
+<!-- - **Tertiary colors** are made by *mixing a primary and secondary color* in a given color system -->
+
+<!-- Hues (pure colors) are found around the **outer edge of color wheels**, or by adjusting the HEX code (sliding scale), then ensuring that selector is set to the **far right edge of a color picker box**: -->
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+There are lots of different variations of color wheels, but look for hues along the **outer edge**:
+:::
+
+<br>
 
 ```{r}
 #| eval: true
 #| echo: false
 #| fig-align: "center"
-#| out-width: "65%"
+#| out-width: "100%"
 knitr::include_graphics("images/week5/color-wheels.png")
 ```
 
 <br>
+<br>
 
-::: {.footer}
+::: {.center-text .body-text-s .gray-text}
 Common color models: RYB (used by painters), RGB (used in electonic displays), CMYK (used in modern printing). Image source: [medium.com](https://broworks.medium.com/color-guide-terms-definitions-and-useful-websites-6fa4f13bcb85)
 :::
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+When using a color picker, **adjust the HEX code sliding scale** to pick a hue and ensure that the selector is set to the **far right edge** of the box:
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/google-color-picker.png")
+```
+::: {.center-text .body-text-s .gray-text}
+There are lots of great color pickers out there, though [Google color picker](https://www.google.com/search?q=google+color+picker&sca_esv=598283965&ei=uVyjZdXpLtL3kPIPhdaOaA&ved=0ahUKEwiVqoat_9uDAxXSO0QIHQWrAw0Q4dUDCBA&uact=5&oq=google+color+picker&gs_lp=Egxnd3Mtd2l6LXNlcnAiE2dvb2dsZSBjb2xvciBwaWNrZXIyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyDRAAGIAEGIoFGEMYsAMyDRAuGIAEGIoFGEMYsANI6QRQAFgAcAF4AZABAJgBAKABAKoBALgBA8gBAOIDBBgAIEGIBgGQBgo&sclient=gws-wiz-serp) is a quick one to navigate to
+:::
+:::
+
+::::
+
+<br>
+
+<!-- ::: {.footer} -->
+<!-- Common color models: RYB (used by painters), RGB (used in electonic displays), CMYK (used in modern printing). Image source: [medium.com](https://broworks.medium.com/color-guide-terms-definitions-and-useful-websites-6fa4f13bcb85) -->
+<!-- ::: -->
 <!-- ::: -->
 
 <!-- ::: {.column width="50%" .center-text .body-text-m .teal-text} -->
@@ -147,10 +210,9 @@ Image source: [htmlcolorcodes.com](https://htmlcolorcodes.com/color-picker/)
 
 ::: {.column width="50%"}
 <br>
-<br>
 
-::: {.center-text .body-text-m}
-[blue-green]{style="background-color:#088F8F" .white-text} & [red-orange]{style="background-color:#FF4433" .white-text} are complimentary 
+::: {.center-text}
+[blue-green]{style="background-color:#088F8F" .white-text} & [red-orange]{style="background-color:#FF4433" .white-text} are complementary and therefore offer the strongest possible contrast
 :::
 
 ::: {.center-text .body-text-s}
@@ -305,37 +367,124 @@ Image source: [5 pitfalls to avoid when working with color in data visualization
 - adjust the lightness / darkness by tinting (add white), toning (add gray), or shading (add black)
 - add opacity (e.g. using the `alpha` argument)
 
+```{r}
+#| eval: false
+#| echo: false
+lyme_pop <- read_csv(here::here("slides", "data", "lyme.csv"))
+
+# original ----
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
+  geom_area(position = "fill") +
+  scale_y_continuous(labels = scales::percent_format(scale = 100)) +
+  scale_fill_manual(values = c("#C77600", "#49C700", "#00AFC7", "#9400C7")) +
+  theme_bw() +
+  theme(panel.grid = element_blank())
+
+# saturation ----
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
+  geom_area(position = "fill") +
+  scale_y_continuous(labels = scales::percent_format(scale = 100)) +
+  scale_fill_manual(values = c("#ae7219", "#50ae19", "#199dae", "#8919ae")) +
+  theme_bw() +
+  theme(panel.grid = element_blank())
+
+# darkness ----
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
+  geom_area(position = "fill") +
+  scale_y_continuous(labels = scales::percent_format(scale = 100)) +
+  scale_fill_manual(values = c("#804d00", "#2f8000", "#007180", "#600080")) +
+  theme_bw() +
+  theme(panel.grid = element_blank())
+
+# lightness ----
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
+  geom_area(position = "fill") +
+  scale_y_continuous(labels = scales::percent_format(scale = 100)) +
+  scale_fill_manual(values = c("#ffcc80", "#aeff80", "#80f0ff", "#df80ff")) +
+  theme_bw() +
+  theme(panel.grid = element_blank())
+
+# opacity ----
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
+  geom_area(position = "fill", alpha = 0.75) +
+  scale_y_continuous(labels = scales::percent_format(scale = 100)) +
+  scale_fill_manual(values = c("#C77600", "#49C700", "#00AFC7", "#9400C7")) +
+  theme_bw() +
+  theme(panel.grid = element_blank())
+```
 
 
 ---
 
 ## {#saturation data-menu-title="Saturation"} 
 
-[Saturation is the level of intensity of a color]{.slide-title2}
+[High saturation = greater / more important values]{.slide-title2}
 
 <hr>
 
 <br>
 
-::: {.body-text-m .teal-text .center-text}
-We tend to associate **more saturated** colors with **greater values**.
+::: {.body-text-m .center-text}
+It's okay to use saturated colors in moderation. 
+
+*We tend to associate **more saturated** colors with **greater values**.*
 :::
 
+:::: {.columns}
+
+::: {.column width="50%"}
 ```{r}
 #| eval: true
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week5/saturation.png")
+knitr::include_graphics("images/week5/2020-election.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
-Image source: [Scrappy Applique](https://shannon-brinkley.com/blogs/shannon-brinkley-studio-1/color-confidence-for-quilters-what-is-color-saturation)
+Image source: [New York Times](https://www.nytimes.com/interactive/2021/upshot/2020-election-map.html)
+:::
 :::
 
----
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/ggdensity-saturation.png")
+```
 
-saturation data viz example
+::: {.center-text .body-text-s .gray-text}
+Image source: [`{ggdensity}` pkgdown site](https://jamesotto852.github.io/ggdensity/index.html). 
+:::
+:::
+
+::::
+
+----
+
+## {#color-picker-saturation data-menu-title="Use a color picker"} 
+
+[Use a color picker to adjust hue, saturation, value]{.slide-title3}
+
+<hr>
+
 
 ----
 
@@ -371,16 +520,6 @@ Image source: [Wikipedia](https://en.wikipedia.org/wiki/Tint,_shade_and_tone)
 
 ---
 
-- lightness 
-- brightness
-- saturation
-
----
-
-toned colors are often more pleasing to the eye (bright, pure colors are often associated with children: https://color-wheel-artist.com/hue/)
-
----
-
 ##  {#color-emotion data-menu-title="# Color & Emotions #" background="#047C90"}
 
 <div class="page-center vertical-center">
@@ -393,10 +532,6 @@ toned colors are often more pleasing to the eye (bright, pure colors are often a
 
 - dark / saturated > more dramatic / anger / sadness
 - bright / flat > opposite
-
----
-
-- colors perceived differently by different cultures https://informationisbeautiful.net/visualizations/colours-in-cultures/
 
 ---
 
@@ -413,11 +548,44 @@ toned colors are often more pleasing to the eye (bright, pure colors are often a
 
 ---
 
+General rules:
+
+- categorical data: change hue; continuous data, changed saturation or lightness
+
+- don't use a gradient color palette for categories (e.g. don't used different shades one hue for categorical data to make it look less colorful)
+  - readers associate dark colors with greater values, paler colors with lower values
+  - instead use different hues
+  - if your chart is too colorful, consider a differnt way to visualize your data
+  
+- comparing one thing to the rest? use a stand-out hue for the one thing and gray for the rest
+- comparing 2 things to the rest? use two complimentary colors 
+  
+- don't use too many colors
+
+---
+
 ##  {#accessibility data-menu-title="# Accessibility #" background="#047C90"}
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">Ensuring accessbility through your color choices</p>
 </div>
+
+---
+
+##  {#accessibility data-menu-title="# Accessibility #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Ensuring accessbility through your color choices</p>
+</div>
+
+---
+
+##  {#reminders-recap data-menu-title="# Reminders & recap #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Some parting words, reminders, and a recap of all the colorful ideas discussed</p>
+</div>
+
 
 ---
 
@@ -442,3 +610,16 @@ toned colors are often more pleasing to the eye (bright, pure colors are often a
   https://blog.datawrapper.de/colors/
   
   example of bad color map (poverty): https://en.wikipedia.org/wiki/Poverty
+
+---
+
+## {#recap data-menu-title="Recap"} 
+
+[Recap]{.slide-title3}
+
+<hr>
+
+- color theory can help us identify colors that look nice together
+- hues have associated meaning -- it's important to consider our intended audience and be mindful of how those associations differ among cultures 
+- avoid using *only* pure hues 
+- 

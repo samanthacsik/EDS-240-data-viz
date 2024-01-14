@@ -90,6 +90,14 @@ lyme_pop <- left_join(lyme_states, us_state_pop) |>
   
   # calculate num cases per 100k people (common way of reporting disease incidence) ----
   mutate(cases_per100k = total_cases/pop100k) 
+
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                  save as csv file for use in lecture 5.1                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# write_csv(lyme_pop, here::here("slides", "data", "lyme.csv"))
+
 ```
 
 ```{r}

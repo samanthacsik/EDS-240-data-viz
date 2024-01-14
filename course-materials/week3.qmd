@@ -140,7 +140,7 @@ knitr::include_graphics("images/usdm.png")
 #| eval: false
 #| echo: true
 #| code-line-numbers: false
-install.packages("geofacet")
+install.packages("geofacet") # facet data for different geographical regions using panels arranged in shapes that mimic geographic topology
 ```
 
 2. **(Optional)** Install the [ColorPick Eyedropper](https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg) Google Chrome extension, which makes it easy to select color values from webpages.

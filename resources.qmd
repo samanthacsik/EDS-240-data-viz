@@ -8,12 +8,12 @@ toc: true
 ## Books
 
 - **[Fundamentals of Data Visualization](https://clauswilke.com/dataviz/), by Claus O. Wilke** -- a primer on making informative and compelling figures
-- **[R for Data Science (2e)](https://r4ds.hadley.nz/), by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund** -- an excellent primer on all things R for programming, data wrangling, visualizing, and communicating
+- **[R for Data Science (2e)](https://r4ds.hadley.nz/), by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund** -- an excellent primer on all things R for data wrangling, exploration, visualizing, and communicating, largely focused on using the `{tidyverse}`
 - **[ggplot2: Elegant Graphics for Data Analysis (3e)](https://ggplot2-book.org/), by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen** -- helpful for understanding the underlying theory of ggplot2 graphics (NOTE: this is currently (as of November 2023) a work-in-progress, and as the authors put it, "a dumping ground for ideas...we don't recommend reading it" -- it's still worth noting its existence so that you can return to it in the future!)
 - **[Data Visualization: A practical introduction](https://socviz.co/), by Kieran Healy** -- a hands-on intro to the principles and practice of looking at and presenting data using R and ggplot.
 - **[Hands-On Data Visualization](https://handsondataviz.org/index.html), by Jack Dougherty and Ilya Ilyankou** -- learn how to tell stories with your data using drag-and-drop tools (e.g. Google Sheets, Datawrapper, Tableau Public)
 - **[The Truthful Art: Data, Charts, and Maps for Communication](https://www.amazon.com/gp/product/0321934075/), by Albert Cairo** -- a guide to understanding information graphics and visualization (I have a hard copy in my office if you'd like to borrow it!)
-- **[](https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/), by Cédric Scherer** -- a blogpost that might as well be a book; an excellent introduction to many different ggplot options, ideas, and extension packages
+- **[A ggplot2 Tutorial for Beautiful Plotting in R](https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/), by Cédric Scherer** -- a blog post that might as well be a book; an excellent introduction to many different ggplot options, ideas, and extension packages
 
 ## A mix of a cool resources (readings, journals, reporting, talks, YouTube channels) 
 - **[Nightingale: Journal of the Data Visualization Society](https://nightingaledvs.com/)** -- focuses on data visualization from personal stories to exploratory research to interviews with leaders in the community, data ethics, and best practices
@@ -30,17 +30,26 @@ toc: true
 
 ## Colors
 
+### color theory & rules for data visualization
+- **[Your Friendly Guide to Colors in Data Visualization](https://blog.datawrapper.de/colorguide/), by Lisa Charlotte Muth** -- a blog post on useful tools for deciding data viz color palettes
+- **[What to consider when choosing colors for data visualization](https://blog.datawrapper.de/colors/), by Lisa Charlotte Muth** -- a blog post with explanations and examples
+- **[Picking the right colors](https://www.storytellingwithdata.com/blog/2020/5/6/picking-the-right-colors), by Mike Cisneros** -- blog post on important considerations for choosing colors for your data visualization
+- **[5 pitfalls to avoid when working with color in data visualization](https://flourish.studio/blog/color-in-data-visualization/), by Vanessa Fillis, Mafe Callejón and Simona Tselova** -- common pitfalls in choosing colors for data viz and how to avoid them
+- **[Colors and Emotions in Data Visualization](https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/), by Cédric Scherer** -- how colors influence our emotional response to data visualizations
+- **[Subtleties of Color](https://earthobservatory.nasa.gov/blogs/elegantfigures/2013/08/05/subtleties-of-color-part-1-of-6/), by Robert Simmon** -- a 6 part blog post series from NASA Earth Observatory about the use of color to map Earth observation data
+
+### color pickers & palette generators 
+- **[Google color picker](https://www.google.com/search?q=google+color+picker&sca_esv=598283965&ei=uVyjZdXpLtL3kPIPhdaOaA&ved=0ahUKEwiVqoat_9uDAxXSO0QIHQWrAw0Q4dUDCBA&uact=5&oq=google+color+picker&gs_lp=Egxnd3Mtd2l6LXNlcnAiE2dvb2dsZSBjb2xvciBwaWNrZXIyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyDRAAGIAEGIoFGEMYsAMyDRAuGIAEGIoFGEMYsANI6QRQAFgAcAF4AZABAJgBAKABAKoBALgBA8gBAOIDBBgAIEGIBgGQBgo&sclient=gws-wiz-serp)** -- a color picker
 - **[htmlcolorcodes.com](https://htmlcolorcodes.com/)** -- a color picker for HTML color codes, Hex color codes, RGB and HSL values
 - **[coolors.co](https://coolors.co/)** -- a super fast color palette generator, that also includes lots of [pre-built palettes](https://coolors.co/palettes/palettes) to draw inspiration from, an [image picker](https://coolors.co/image-picker) to extract colors from your uploaded images, and a [color contrast checker](https://coolors.co/contrast-checker/112a46-acc8e5)
 - **[Palette Generator](https://www.learnui.design/tools/data-color-picker.html#palette), by Learn UI Design** -- supply a starting color(s) and this tool will generate a palette, single hue, or divergent color scheme
 - **[Viz Palette](https://projects.susielu.com/viz-palette), by Elijah Meeks and Susie Lu** -- a tool that shows you how well your chosen colors work for tiny lines and big areas, warns if you have colors sharing the same name (which can make it more challenging to talk about your designs, say, in a presentation), and can simulate color vision deficiencies 
 - **[Shade Generator](https://www.shadegenerator.com/047C90)** -- a tool for generating shade scales
+
+### accessibility & colors
 - **[Colorblind Safe Color Schemes](https://www.nceas.ucsb.edu/sites/default/files/2022-06/Colorblind%20Safe%20Color%20Schemes.pdf), by the NCEAS Science Communication Resource Center** -- tips and examples of colorblind-friendly color palettes
 - **[Let's get color blind](https://chromewebstore.google.com/detail/lets-get-color-blind/bkdgdianpkfahpkmphgehigalpighjck)** -- Google Chrome extension for simulating color deficiencies in the web browser
 - **[Color review](https://color.review/), by Anton Robsarve** -- for understanding foreground and background contrasts
-- **[Your Friendly Guide to Colors in Data Visualization](https://blog.datawrapper.de/colorguide/#Make-sure-your-colors-work), by Lisa Charlotte Muth** -- a blog post on useful tools for deciding data viz color palettes
-- **[What to consider when choosing colors for data visualization](https://blog.datawrapper.de/colors/), by Lisa Charlotte Muth** -- a blog post with explanations and examples
-- **[Subtleties of Color](https://earthobservatory.nasa.gov/blogs/elegantfigures/2013/08/05/subtleties-of-color-part-1-of-6/), by Robert Simmon** -- a 6 part blog post series from NASA Earth Observatory about the use of color to map Earth observation data
 
 ## Typography
 - **[Google Fonts](https://fonts.google.com/)** -- catalog of open-source fonts and icons, which can be imported for use with `{ggplot2}`; check out [this collection](https://fonts.google.com/knowledge/choosing_type) of short articles on choosing type

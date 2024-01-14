@@ -221,7 +221,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#books" id="toc-books" class="nav-link active" data-scroll-target="#books">Books</a></li>
   <li><a href="#a-mix-of-a-cool-resources-readings-journals-reporting-talks-youtube-channels" id="toc-a-mix-of-a-cool-resources-readings-journals-reporting-talks-youtube-channels" class="nav-link" data-scroll-target="#a-mix-of-a-cool-resources-readings-journals-reporting-talks-youtube-channels">A mix of a cool resources (readings, journals, reporting, talks, YouTube channels)</a></li>
   <li><a href="#chart-types" id="toc-chart-types" class="nav-link" data-scroll-target="#chart-types">Chart Types</a></li>
-  <li><a href="#colors" id="toc-colors" class="nav-link" data-scroll-target="#colors">Colors</a></li>
+  <li><a href="#colors" id="toc-colors" class="nav-link" data-scroll-target="#colors">Colors</a>
+  <ul class="collapse">
+  <li><a href="#color-theory-rules-for-data-visualization" id="toc-color-theory-rules-for-data-visualization" class="nav-link" data-scroll-target="#color-theory-rules-for-data-visualization">color theory &amp; rules for data visualization</a></li>
+  <li><a href="#color-pickers-palette-generators" id="toc-color-pickers-palette-generators" class="nav-link" data-scroll-target="#color-pickers-palette-generators">color pickers &amp; palette generators</a></li>
+  <li><a href="#accessibility-colors" id="toc-accessibility-colors" class="nav-link" data-scroll-target="#accessibility-colors">accessibility &amp; colors</a></li>
+  </ul></li>
   <li><a href="#typography" id="toc-typography" class="nav-link" data-scroll-target="#typography">Typography</a></li>
   <li><a href="#alternative-alt-text" id="toc-alternative-alt-text" class="nav-link" data-scroll-target="#alternative-alt-text">Alternative (alt) text</a></li>
   <li><a href="#dei-in-data-visualization" id="toc-dei-in-data-visualization" class="nav-link" data-scroll-target="#dei-in-data-visualization">DEI in Data Visualization</a></li>
@@ -252,12 +257,12 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="books">Books</h2>
 <ul>
 <li><strong><a href="https://clauswilke.com/dataviz/">Fundamentals of Data Visualization</a>, by Claus O. Wilke</strong> – a primer on making informative and compelling figures</li>
-<li><strong><a href="https://r4ds.hadley.nz/">R for Data Science (2e)</a>, by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund</strong> – an excellent primer on all things R for programming, data wrangling, visualizing, and communicating</li>
+<li><strong><a href="https://r4ds.hadley.nz/">R for Data Science (2e)</a>, by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund</strong> – an excellent primer on all things R for data wrangling, exploration, visualizing, and communicating, largely focused on using the <code>{tidyverse}</code></li>
 <li><strong><a href="https://ggplot2-book.org/">ggplot2: Elegant Graphics for Data Analysis (3e)</a>, by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen</strong> – helpful for understanding the underlying theory of ggplot2 graphics (NOTE: this is currently (as of November 2023) a work-in-progress, and as the authors put it, “a dumping ground for ideas…we don’t recommend reading it” – it’s still worth noting its existence so that you can return to it in the future!)</li>
 <li><strong><a href="https://socviz.co/">Data Visualization: A practical introduction</a>, by Kieran Healy</strong> – a hands-on intro to the principles and practice of looking at and presenting data using R and ggplot.</li>
 <li><strong><a href="https://handsondataviz.org/index.html">Hands-On Data Visualization</a>, by Jack Dougherty and Ilya Ilyankou</strong> – learn how to tell stories with your data using drag-and-drop tools (e.g.&nbsp;Google Sheets, Datawrapper, Tableau Public)</li>
 <li><strong><a href="https://www.amazon.com/gp/product/0321934075/">The Truthful Art: Data, Charts, and Maps for Communication</a>, by Albert Cairo</strong> – a guide to understanding information graphics and visualization (I have a hard copy in my office if you’d like to borrow it!)</li>
-<li><strong><a href="https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/"></a>, by Cédric Scherer</strong> – a blogpost that might as well be a book; an excellent introduction to many different ggplot options, ideas, and extension packages</li>
+<li><strong><a href="https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/">A ggplot2 Tutorial for Beautiful Plotting in R</a>, by Cédric Scherer</strong> – a blog post that might as well be a book; an excellent introduction to many different ggplot options, ideas, and extension packages</li>
 </ul>
 </section>
 <section id="a-mix-of-a-cool-resources-readings-journals-reporting-talks-youtube-channels" class="level2">
@@ -280,19 +285,36 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="colors" class="level2">
 <h2 class="anchored" data-anchor-id="colors">Colors</h2>
+<section id="color-theory-rules-for-data-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="color-theory-rules-for-data-visualization">color theory &amp; rules for data visualization</h3>
 <ul>
+<li><strong><a href="https://blog.datawrapper.de/colorguide/">Your Friendly Guide to Colors in Data Visualization</a>, by Lisa Charlotte Muth</strong> – a blog post on useful tools for deciding data viz color palettes</li>
+<li><strong><a href="https://blog.datawrapper.de/colors/">What to consider when choosing colors for data visualization</a>, by Lisa Charlotte Muth</strong> – a blog post with explanations and examples</li>
+<li><strong><a href="https://www.storytellingwithdata.com/blog/2020/5/6/picking-the-right-colors">Picking the right colors</a>, by Mike Cisneros</strong> – blog post on important considerations for choosing colors for your data visualization</li>
+<li><strong><a href="https://flourish.studio/blog/color-in-data-visualization/">5 pitfalls to avoid when working with color in data visualization</a>, by Vanessa Fillis, Mafe Callejón and Simona Tselova</strong> – common pitfalls in choosing colors for data viz and how to avoid them</li>
+<li><strong><a href="https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/">Colors and Emotions in Data Visualization</a>, by Cédric Scherer</strong> – how colors influence our emotional response to data visualizations</li>
+<li><strong><a href="https://earthobservatory.nasa.gov/blogs/elegantfigures/2013/08/05/subtleties-of-color-part-1-of-6/">Subtleties of Color</a>, by Robert Simmon</strong> – a 6 part blog post series from NASA Earth Observatory about the use of color to map Earth observation data</li>
+</ul>
+</section>
+<section id="color-pickers-palette-generators" class="level3">
+<h3 class="anchored" data-anchor-id="color-pickers-palette-generators">color pickers &amp; palette generators</h3>
+<ul>
+<li><strong><a href="https://www.google.com/search?q=google+color+picker&amp;sca_esv=598283965&amp;ei=uVyjZdXpLtL3kPIPhdaOaA&amp;ved=0ahUKEwiVqoat_9uDAxXSO0QIHQWrAw0Q4dUDCBA&amp;uact=5&amp;oq=google+color+picker&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiE2dvb2dsZSBjb2xvciBwaWNrZXIyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyDRAAGIAEGIoFGEMYsAMyDRAuGIAEGIoFGEMYsANI6QRQAFgAcAF4AZABAJgBAKABAKoBALgBA8gBAOIDBBgAIEGIBgGQBgo&amp;sclient=gws-wiz-serp">Google color picker</a></strong> – a color picker</li>
 <li><strong><a href="https://htmlcolorcodes.com/">htmlcolorcodes.com</a></strong> – a color picker for HTML color codes, Hex color codes, RGB and HSL values</li>
 <li><strong><a href="https://coolors.co/">coolors.co</a></strong> – a super fast color palette generator, that also includes lots of <a href="https://coolors.co/palettes/palettes">pre-built palettes</a> to draw inspiration from, an <a href="https://coolors.co/image-picker">image picker</a> to extract colors from your uploaded images, and a <a href="https://coolors.co/contrast-checker/112a46-acc8e5">color contrast checker</a></li>
 <li><strong><a href="https://www.learnui.design/tools/data-color-picker.html#palette">Palette Generator</a>, by Learn UI Design</strong> – supply a starting color(s) and this tool will generate a palette, single hue, or divergent color scheme</li>
 <li><strong><a href="https://projects.susielu.com/viz-palette">Viz Palette</a>, by Elijah Meeks and Susie Lu</strong> – a tool that shows you how well your chosen colors work for tiny lines and big areas, warns if you have colors sharing the same name (which can make it more challenging to talk about your designs, say, in a presentation), and can simulate color vision deficiencies</li>
 <li><strong><a href="https://www.shadegenerator.com/047C90">Shade Generator</a></strong> – a tool for generating shade scales</li>
+</ul>
+</section>
+<section id="accessibility-colors" class="level3">
+<h3 class="anchored" data-anchor-id="accessibility-colors">accessibility &amp; colors</h3>
+<ul>
 <li><strong><a href="https://www.nceas.ucsb.edu/sites/default/files/2022-06/Colorblind%20Safe%20Color%20Schemes.pdf">Colorblind Safe Color Schemes</a>, by the NCEAS Science Communication Resource Center</strong> – tips and examples of colorblind-friendly color palettes</li>
 <li><strong><a href="https://chromewebstore.google.com/detail/lets-get-color-blind/bkdgdianpkfahpkmphgehigalpighjck">Let’s get color blind</a></strong> – Google Chrome extension for simulating color deficiencies in the web browser</li>
 <li><strong><a href="https://color.review/">Color review</a>, by Anton Robsarve</strong> – for understanding foreground and background contrasts</li>
-<li><strong><a href="https://blog.datawrapper.de/colorguide/#Make-sure-your-colors-work">Your Friendly Guide to Colors in Data Visualization</a>, by Lisa Charlotte Muth</strong> – a blog post on useful tools for deciding data viz color palettes</li>
-<li><strong><a href="https://blog.datawrapper.de/colors/">What to consider when choosing colors for data visualization</a>, by Lisa Charlotte Muth</strong> – a blog post with explanations and examples</li>
-<li><strong><a href="https://earthobservatory.nasa.gov/blogs/elegantfigures/2013/08/05/subtleties-of-color-part-1-of-6/">Subtleties of Color</a>, by Robert Simmon</strong> – a 6 part blog post series from NASA Earth Observatory about the use of color to map Earth observation data</li>
 </ul>
+</section>
 </section>
 <section id="typography" class="level2">
 <h2 class="anchored" data-anchor-id="typography">Typography</h2>
