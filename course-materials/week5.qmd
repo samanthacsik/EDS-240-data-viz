@@ -21,7 +21,31 @@ knitr::include_graphics("../images/horst-ggplot-masterpiece.png")
 
 ## Pre-class Prep
 
-*Coming soon* 
+Please be sure to complete the following before class:
+
+### Install required packages
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+install.packages("maps") # for drawing geographical maps
+```
+
+### Download data
+ 
+- [County-level precipitation data (October 2023) for the contiguous U.S](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202312/1/value), made available by [NOAA National Centers for Environmental Information (NCEI)](https://www.ncei.noaa.gov/) (the download buttons are located just beneath the rendered map -- **choose the CSV option**)
+  - rename the data file as `county-precip-dec2023.csv` and save it to your class repo at the file path: `EDS-240-class-examples/week5/data/county-precip-dec2023.csv`
+
+### Install Google Chrome extensions (optional, but recommended)
+
+I'll be using both of these (really wonderful and easy-to-use) tools during lecture and encourage you to install them!
+
+1. [Let's get color blind](https://chromewebstore.google.com/detail/lets-get-color-blind/bkdgdianpkfahpkmphgehigalpighjck): simulates different color deficiencies in the browser
+2. [ColorPick Eyedropper](https://chromewebstore.google.com/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg): a browser-based color chooser tool (I recommended that you install this for week 3 discussion, so you may already have it!)
+
+
+-- I'll be using tGoogle Chrome extension in class. It's a really wonderful and easy-to-use tool if you typically use the Google Chrome web browser. I recommend installing it!
 
 ## Lecture Materials 
 

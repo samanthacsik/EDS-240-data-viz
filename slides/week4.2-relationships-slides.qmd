@@ -583,6 +583,16 @@ stream_chem_data |>
   labs(x = "DOC (mg/L)", color = "Al (mg/L)")
 ```
 
+---
+
+## {#highlighting data-menu-title="Highlighting"} 
+
+[Highlighting]{.slide-title2}
+
+<hr>
+
+<https://andrewirwin.github.io/data-visualization/colour.html#highlighting>
+
 ----
 
 ## {#overplotting data-menu-title="Overplotting"} 

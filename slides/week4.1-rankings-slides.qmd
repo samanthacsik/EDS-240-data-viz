@@ -158,21 +158,14 @@ jobs_clean <- jobs |>
   # make occupation a factor ----
   mutate(occupation = as_factor(occupation)) |> 
   
-  # ---- these next steps are necessary for creating our dumbbell plots ----
+  # ---- this next steps are necessary for creating our dumbbell plots ----
 
   # classify jobs by percentage male or female ----
   mutate(group_label = case_when(
     percent_female >= 75 ~ "Occupations that are 75%+ female",
     percent_female >= 45 & percent_female <= 55 ~ "Occupations that are 45-55% female",
     percent_male >= 75 ~ "Occupations that are 75%+ male"
-  )) #|> 
-  
-  # # column with short names for groups ----
-  # mutate(percentage_group_short = case_when(
-  #   percent_female >= 75 ~ "f75",
-  #   percent_female >= 45 & percent_female <= 55 ~ "f50",
-  #   percent_male >= 75 ~"m75"
-  # )) 
+  )) 
 ```
 
 ---

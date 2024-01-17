@@ -200,7 +200,7 @@
     "href": "course-materials/week5.html#pre-class-prep",
     "title": "Enhancing visualizations",
     "section": "Pre-class Prep",
-    "text": "Pre-class Prep\nComing soon"
+    "text": "Pre-class Prep\nPlease be sure to complete the following before class:\n\nInstall required packages\n\ninstall.packages(\"maps\") # for drawing geographical maps\n\n\n\nDownload data\n\nCounty-level precipitation data (October 2023) for the contiguous U.S, made available by NOAA National Centers for Environmental Information (NCEI) (the download buttons are located just beneath the rendered map – choose the CSV option)\n\nrename the data file as county-precip-dec2023.csv and save it to your class repo at the file path: EDS-240-class-examples/week5/data/county-precip-dec2023.csv\n\n\n\n\nInstall Google Chrome extensions (optional, but recommended)\nI’ll be using both of these (really wonderful and easy-to-use) tools during lecture and encourage you to install them!\n\nLet’s get color blind: simulates different color deficiencies in the browser\nColorPick Eyedropper: a browser-based color chooser tool (I recommended that you install this for week 3 discussion, so you may already have it!)\n\n– I’ll be using tGoogle Chrome extension in class. It’s a really wonderful and easy-to-use tool if you typically use the Google Chrome web browser. I recommend installing it!"
   },
   {
     "objectID": "course-materials/week5.html#lecture-materials",
@@ -235,7 +235,7 @@
     "href": "course-materials/week6.html#lecture-materials",
     "title": "Data communication",
     "section": "Lecture Materials",
-    "text": "Lecture Materials\n\n\n\n\n\n\n\n\n\n\n     \n\n\n\n\n\n\n\n\nData communication\n lecture 6.1 slides\n\n\n\n\ntbd\n lecture 6.2 slides\n\n\n\n\ntbd\n lecture 6.3 slides"
+    "text": "Lecture Materials\n\n\n\n\n\n\n\n\n \n\n  \n\n\n\n\n\n\nData communication\n lecture 6.1 slides\n\n\n\n\ntbd\n lecture 6.2 slides\n\n\n\n\ntbd\n lecture 6.3 slides"
   },
   {
     "objectID": "course-materials/week6.html#discussion-materials",
@@ -665,6 +665,13 @@
     "text": "Visualizing a third numeric variable using color\n\nRather than coloring points by site, we can map color to them based on our third continuous numeric variable, Al_ICP. We’ll also apply the viridis color map:\n\nstream_chem_data |&gt; \n  filter(waterYr == 2021) |&gt; \n  ggplot(aes(x = DOC, y = pH, color = Al_ICP)) + \n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  labs(x = \"DOC (mg/L)\", color = \"Al (mg/L)\")"
   },
   {
+    "objectID": "slides/week4.2-relationships-slides.html#highlighting",
+    "href": "slides/week4.2-relationships-slides.html#highlighting",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Highlighting\n\nhttps://andrewirwin.github.io/data-visualization/colour.html#highlighting"
+  },
+  {
     "objectID": "slides/week4.2-relationships-slides.html#overplotting",
     "href": "slides/week4.2-relationships-slides.html#overplotting",
     "title": "EDS 240",
@@ -847,11 +854,11 @@
     "text": "Let’s learn how to import and use Google fonts in our ggplots"
   },
   {
-    "objectID": "slides/week5.2-typography-slides.html#end",
-    "href": "slides/week5.2-typography-slides.html#end",
+    "objectID": "slides/week5.2-typography-slides.html#break",
+    "href": "slides/week5.2-typography-slides.html#break",
     "title": "EDS 240",
     "section": "",
-    "text": "See you next week!\n\n\n~ This is the end of Lesson 2 (of 3) ~"
+    "text": "Take a Break\n\n\n~ This is the end of Lesson 2 (of 3) ~\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/week1.3-ggplot-review-slides.html#title-slide",
@@ -1635,28 +1642,168 @@
     "href": "slides/week5.1-colors-slides.html#why-color",
     "title": "EDS 240",
     "section": "",
-    "text": "Why do we use color?\n\n\nSpend a couple minutes discussing with your Learning Partners why and / or when we use color in data visualizations:\n\n\n\n\n\n−+\n02:00\n\n\n\n\n\nevoke emotions\nhighlight important data / concepts\nbranding"
+    "text": "Why do we use color?\n\n\nSpend a couple minutes discussing with your Learning Partners the following:\n\n\nWhy and / or when we use color in data visualizations?\n\n\nFind an example(s) of a data viz that uses color to convey information to share in #eds-240-data viz. Note some of your own observations about the color choices (i.e. why do you think these colors were chosen?).\n\n\n\n\n\n−+\n05:00\n\n\n\n\n\nevoke emotions\nhighlight important data / concepts\nbranding"
   },
   {
-    "objectID": "slides/week5.1-colors-slides.html#color-theory",
-    "href": "slides/week5.1-colors-slides.html#color-theory",
+    "objectID": "slides/week5.1-colors-slides.html#colors-difficult",
+    "href": "slides/week5.1-colors-slides.html#colors-difficult",
     "title": "EDS 240",
     "section": "",
-    "text": "A crash course in color theory and what it means for data viz"
+    "text": "Choosing colors is difficult and they should be purposefully chosen\n\n\n\nYou’ll probably iterate on them as you sit with your visualization and of course, as you get feedback from others.\n\n\n\nSome places to start / things to consider:\n\nis using color the best and / or only way to visually represent your variable(s)?\n\n\n\n\nare you designing for a particular organization / brand?\nwhat emotions are you trying (or not trying) to elicit?\nwho is your audience?\nare your data commonly represented using a particular color scheme?\nwhat data types (e.g. discrete vs. continuous) are you working with?"
   },
   {
     "objectID": "slides/week5.1-colors-slides.html#color-properties",
     "href": "slides/week5.1-colors-slides.html#color-properties",
     "title": "EDS 240",
     "section": "",
-    "text": "Three color properties influence how we perceive information\n\nChanging hue (the pure color), saturation (aka chroma; the intensity of a color) and / or value (degree of lightness / darkness) can influence how readers perceive information in a data visualization.\n\n\n\nImage source: medium.com"
+    "text": "First, some important definitions:\n\nChanging hue (the pure color), saturation (aka chroma; the intensity of a color) and / or value (degree of lightness / darkness) can influence how readers perceive information in a data visualization.\n\n\n\nImage source: medium.com"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#data-types",
+    "href": "slides/week5.1-colors-slides.html#data-types",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Different data types require different palette types"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#palette-types",
+    "href": "slides/week5.1-colors-slides.html#palette-types",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Three major types of color palette\n\n\nQualitative (for categorical / discrete data)\nSequential (for continuous numeric or inherently ordered data)\nDiverging (for continuous numeric data with a meaningful central value)"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#qual-pal",
+    "href": "slides/week5.1-colors-slides.html#qual-pal",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Three major types of color palette\n\n\nQualitative (for categorical / discrete data)\n\ncolors assigned to each group must be distinct\nlimit to no more than 7 colors\nmainly formed by selecting differet hues\n\nSequential (for continuous numeric or inherently ordered data)\nDiverging (for continuous numeric data with a meaningful central value)"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#seq-pal",
+    "href": "slides/week5.1-colors-slides.html#seq-pal",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Three major types of color palette\n\n\nQualitative (for categorical / discrete data)\nSequential (for continuous numeric or inherently ordered data)\n\ncolors assigned to data values in a continuum, based on lightness, hue, or both\nlower values typically associated with lighter colors & higher values associated with darker colors\ncan use a single hue (light to dark) or two hues (tyipcally a warmer / brighter hue for lower values and cooler / darker hue for higher values)\n\nDiverging (for continuous numeric data with a meaningful central value)"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#div-pal",
+    "href": "slides/week5.1-colors-slides.html#div-pal",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Three major types of color palette\n\n\nQualitative (for categorical / discrete data)\nSequential (for continuous numeric or inherently ordered data)\nDiverging (for continuous numeric data with a meaningful central value)\n\ncombination of two sequential palettes with a shared endpoint at the central value\nuse a distinctive hue for each of the component palettes\ncentral value is assigned a light color (light gray is best)"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#use-or-make",
+    "href": "slides/week5.1-colors-slides.html#use-or-make",
+    "title": "EDS 240",
+    "section": "",
+    "text": "You can use pre-existing palettes, or create your own\n\nSequential and diverging palettes can be used to map continuous values to color in two different ways:\n\nDiscrete\nContinuous"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#accessibility",
+    "href": "slides/week5.1-colors-slides.html#accessibility",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Ensuring inclusive and accessible design through your color choices"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#colorblindness",
+    "href": "slides/week5.1-colors-slides.html#colorblindness",
+    "title": "EDS 240",
+    "section": "",
+    "text": "What is colorblindness?\n\nColor vision deficiency aka colorblindness is the decreased ability to see color or differences in color. It’s estimated that about 1 in 12 men (8%) and 1 in 200 women (0.5%) are affected (Wikipedia).\n\n\nColor plate tests are used to help identify different forms of color blindness. Try using the Let’s get color blind Chrome extension to emulate different forms of colorblindness while looking at the above plates. Image source: American Optometric Association"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#rainbow-colormaps",
+    "href": "slides/week5.1-colors-slides.html#rainbow-colormaps",
+    "title": "EDS 240",
+    "section": "",
+    "text": "The problem with rainbow color maps\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncolors don’t follow any natural perceived ordering (no innate sense of higher or lower)\nperceptual changes in rainbow colors are not uniform (e.g. colors appear to change faster in yellow region than green region)\ninsensitive to color vision deficiencies\n\n\n\n\n\nTop image source: Why we use bad color maps and what you cando about it | Bottom left image source: Ware C, Stone M, Albers Szafir D (2023) Rainbow colormaps are not all bad. IEEE Computer Graphics and Applications 43:88-93 10.1109/MCG.2023.3246111 | For another example of poor use of rainbow color maps, see this world map with binned colors"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#rainbow-colormaps-alt",
+    "href": "slides/week5.1-colors-slides.html#rainbow-colormaps-alt",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Rainbow colormaps aren’t all bad\n\n\n\n\n\nProblematic, perceptually nonuniform and unordered rainbow colormaps\n\n\n\n\n\n\n\n\n\n\n\n\nImproved, perceptual uniform and diverging rainbow colormaps\n\n\n\n\n\n\n\n\n\n\n\n\n\nImage source: Ware C, Stone M, Albers Szafir D (2023) Rainbow colormaps are not all bad. IEEE Computer Graphics and Applications 43:88-93 10.1109/MCG.2023.3246111\n\n\nAlso check out Stoelzle & Stein (2021), https://doi.org/10.5194/hess-25-4549-2021 (Figure 1 is particularly helpful!) and Crameri et al. (2020) https://doi.org/10.1038/s41467-020-19160-7 for some really great supplemental reading"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#viridis",
+    "href": "slides/week5.1-colors-slides.html#viridis",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Alternative: Viridis\n\nThe viridis color scales are perceptually-uniform (even when printed in gray scale) and colorblindness-friendly:\n\n\n\n\nContinuous viridis scales\n\n\n\n\n\n\n\n\n\n\n\n\nBinned viridis scales\n\n\n\n\n\n\n\n\n\n\n\n\nThere are a number of different ways to apply viridis color scales, but I often opt for scale_*_viridis_*() functions, which come pre-loaded with {ggplot}."
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#use-viridis",
+    "href": "slides/week5.1-colors-slides.html#use-viridis",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Use viridis color scales\n\n\n\n\nContinuous viridis scales\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_viridis_c(option = \"magma\")\n\n\n\n\n\n\nDiscrete viridis scales\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = species)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_viridis_d(option = \"viridis\") \n\n\n\n\n\n\n\n\n\n\nUse option to specify palette and explore some of the other arguments in the documentation."
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#color-brewer",
+    "href": "slides/week5.1-colors-slides.html#color-brewer",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Alternative: RColorBrewer\n\nThe ColorBrewer color scales provides color schemes for maps and other graphics. There is also a web-based interface for generating palettes.\n\n\n\nRColorBrewer::display.brewer.all()\n\n\n\n\n\n\n\n\n\n\n\n\nRColorBrewer::display.brewer.all(colorblindFriendly = TRUE)"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#use-RColorBrewer",
+    "href": "slides/week5.1-colors-slides.html#use-RColorBrewer",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Use RColorBrewer color palettes\n\nUse the right function (all pre-loaded with {ggplot2}) for the type of data / palette:\n\n\n\n\nUse scale_color_brewer() to apply a qualitative palette to discrete data\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = species)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_brewer(palette = \"Dark2\") \n\n\n\n\n\n\nUse scale_color_distiller() for sequential versions of continuous color scales\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_distiller(palette = \"BuPu\")\n\n\n\n\n\n\nUse scale_color_fermenter() for binned versions of continuous color scales\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_fermenter(palette = \"YlGnBu\")"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#redundant-mapping",
+    "href": "slides/week5.1-colors-slides.html#redundant-mapping",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Use redundant mapping whenever possible\n\nRecall that colors are low on the hierarchy of elementary perceptual tasks. Avoid conveying important information purely through color – consider how you might additionally use shapes, symbols, typography, or annotations.\n\n\nFigure 2 from Apigo A and Oono R (2022) Plant abundance, but not plant evolutionary history, shapes patterns of host specificity in foliar fungal endophytes. Ecosphere. 13(1):e03879. https://doi.org/10.1002/ecs2.3879"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#premade-palettes",
+    "href": "slides/week5.1-colors-slides.html#premade-palettes",
+    "title": "EDS 240",
+    "section": "",
+    "text": "There are so many great pre-made color palettes to explore, many of which take into consideration color vision deficiencies (but always double check!)"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#color-palette-packages",
+    "href": "slides/week5.1-colors-slides.html#color-palette-packages",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Here are just a few color palette packages to start exploring!"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#climate-colors",
+    "href": "slides/week5.1-colors-slides.html#climate-colors",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Climate and environmental science visualizations can (should) draw from community standards, when possible"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#suggested-colors",
+    "href": "slides/week5.1-colors-slides.html#suggested-colors",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Some widely-used climate science palettes\n\n\n\n\n\nFigure 4. Appropriate diverging and sequential colour schemes for the following climate data (a), absolute temperature (b), absolute precipitation (c), temperature anomaly (d), precipitation or runoff anomaly (e and f) other climate variables with no symbolic association . Schemes in this figure are 7 class ones designed by Cynthia Brewer, (Brewer et al. 2003)\n\n\n\nCitation: Kaye NR, Hartley A, Hemming D (2012) Mapping the climate: guidance on appropriate techniques to map climate variables and their uncertainty. Geoscientific Model Development. 5:245-256. www.geosci-model-dev.net/5/245/2012/ (PDF download)"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#color-theory",
+    "href": "slides/week5.1-colors-slides.html#color-theory",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Want to design your own palette? Knowing just a smidge of color theory can help guide you."
   },
   {
     "objectID": "slides/week5.1-colors-slides.html#select-hue",
     "href": "slides/week5.1-colors-slides.html#select-hue",
     "title": "EDS 240",
     "section": "",
-    "text": "Select hues using color wheels / pickers\n\n\n\n\n\n\n\n\nThere are lots of different variations of color wheels, but look for hues along the outer edge:\n\n\n\n\n\n\n\n\n\n\n\n \n\nCommon color models: RYB (used by painters), RGB (used in electonic displays), CMYK (used in modern printing). Image source: medium.com\n\n\n\nWhen using a color picker, adjust the HEX code sliding scale to pick a hue and ensure that the selector is set to the far right edge of the box:\n\n\n\n\n\n\n\n\n\n\n\nThere are lots of great color pickers out there, though Google color picker is a quick one to navigate to\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRGB: basis for all colors on the screen (with these primary colors, we can make all other colors digitally)\nRYB: known as painting color system (used by artists in painting)\nCMYK: used on modern printing"
+    "text": "Select hues using color wheels / pickers\n\n\n\n\n\n\n\n\nThere are lots of different variations of color wheels, but look for hues along the outer edge:\n\n\n\n\n\n\n\n\n\n\n\n \n\nCommon color models: RYB (used by painters), RGB (used in electonic displays), CMYK (used in modern printing). Image source: medium.com\n\n\n\nWhen using a color picker, adjust the HEX code sliding scale to pick a hue and ensure that the selector is set to the far right edge of the box:\n\n\n\n\n\n\n\n\n\n\n\nThere are lots of great color pickers out there, though Google color picker is a quick one to navigate to. HTML color codes is my personal favorite.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRGB: basis for all colors on the screen (with these primary colors, we can make all other colors digitally)\nRYB: known as painting color system (used by artists in painting)\nCMYK: used on modern printing"
   },
   {
     "objectID": "slides/week5.1-colors-slides.html#colors-harmonies1",
@@ -1680,6 +1827,27 @@
     "text": "Some associations span multiple cultures\n\n \n\n\n\n\n\n\n\n\n\n\n\n\nSource: Information is Beautiful\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Ed Hawkins (showyourstripes.info)"
   },
   {
+    "objectID": "slides/week5.1-colors-slides.html#emotional-response-bake-off",
+    "href": "slides/week5.1-colors-slides.html#emotional-response-bake-off",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Colors elicit emotional responses\n\n“lightness, brightness, and saturation can communicate the level of seriousness, intensity, and emotional weight in a visual work” (Cédric Scherer)\n\n\n\n\n\n\n\n\n\n\n\n\nThe Great British Bake Off | Race to the Top, by Cara Thompson (source code)\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe LEGO Color Explosion, by Cédric Scherer (source code)"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#emotional-response-covid-cases",
+    "href": "slides/week5.1-colors-slides.html#emotional-response-covid-cases",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Colors elicit emotional responses\n\n“lightness, brightness, and saturation can communicate the level of seriousness, intensity, and emotional weight in a visual work” (Cédric Scherer)\n\n\n\n(Right) COVID-19 tracker by the Johns Hopkins University (screenshot from 2020-07-27, courtesy of Cédric Scherer). Red tends to elicit panic / fear. (Left) A map of confirmed COVID-19 cases by Datawrapper (screenshot from 2020-07-27, courtesy of Cédric Scherer). Blues and greens help to avoid such a strong fearful emotional response."
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#emotional-response-covid-deaths",
+    "href": "slides/week5.1-colors-slides.html#emotional-response-covid-deaths",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Colors elicit emotional responses\n\n \n\n\n“We show the current or confirmed cases in another color than red. The coronavirus is not a death sentence. Most infected people will survive. If you’re infected, you want to find yourself on a map as a blue (or yellow, or beige, or purple…) dot, not as a “attention, danger, run!”-screaming red dot. Related, we show deaths in black, not red – it feels more respectful.”\n\n\n\n-Lisa Charlotte Muth in 17 (or so) responsible live visualizations about the coronavirus, for you to use,\npublished March 3, 2020"
+  },
+  {
     "objectID": "slides/week5.1-colors-slides.html#avoid-pure-hue",
     "href": "slides/week5.1-colors-slides.html#avoid-pure-hue",
     "title": "EDS 240",
@@ -1694,214 +1862,263 @@
     "text": "Use more subdued colors instead\n\nThough it may be temping to use bright / bold colors to grab attention, it can lead to eye strain and make it more challenging for your readers to focus on your chart.\n\n\nImage source: 5 pitfalls to avoid when working with color in data visualization"
   },
   {
-    "objectID": "slides/week5.1-colors-slides.html#generate-subdued-colors",
-    "href": "slides/week5.1-colors-slides.html#generate-subdued-colors",
+    "objectID": "slides/week5.1-colors-slides.html#adjust-sat1",
+    "href": "slides/week5.1-colors-slides.html#adjust-sat1",
     "title": "EDS 240",
     "section": "",
-    "text": "A few approaches for subduing a pure hue\n\n\n\nadjust the saturation (i.e. the level of intensity of a color; 100% saturation = a pure hue)\nadjust the lightness / darkness by tinting (add white), toning (add gray), or shading (add black)\nadd opacity (e.g. using the alpha argument)"
+    "text": "A few approaches for subduing a pure hue\n\n1. adjust the saturation (i.e. the level of intensity of a color)\n2. adjust value: tint (add white), tone (add gray), or shade (add black)\n3. increase transparency (e.g. using the alpha argument)\n\n\n\nGreen (HEX #00FF33 / 132° on the color wheel) at 100% saturation\n\n\n\n\n\n\n\n\n\n\n\n\nGreen (HEX #00FF33 / 132° on the color wheel) at 40% saturation\n\n\n\n\n\n\n\n\n\n\n\n\n\nSaturation adjusted using the HSL (Hue, Saturation, Lightness) color model. Read about HSL vs HSV color models if you want a deeper dive."
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#adjust-sat2",
+    "href": "slides/week5.1-colors-slides.html#adjust-sat2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "A few approaches for subduing a pure hue\n\n1. adjust the saturation (i.e. the level of intensity of a color)\n2. adjust value: tint (add white), tone (add gray), or shade (add black)\n3. increase transparency (e.g. using the alpha argument)\n\n\n\nThe default chroma for ggplots is set to 100%\n\n\nggplot(na.omit(penguins), aes(x = species, fill = sex)) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\nUse scale_*_hue() to adjust chroma (saturation)\n\n\nggplot(na.omit(penguins), aes(x = species, fill = sex)) +\n  geom_bar() +\n  scale_fill_hue(c = 80)\n\n\n\n\n\n\n\n\n\n\n\nscale_*_hue() uses colors based on the HCL color space."
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#adjust-lightness1",
+    "href": "slides/week5.1-colors-slides.html#adjust-lightness1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "A few approaches for subduing a pure hue\n\n1. adjust the saturation (i.e. the level of intensity of a color)\n2. adjust value: tint (add white), tone (add gray), or shade (add black)\n3. increase transparency (e.g. using the alpha argument)\n\n\n\nGreen (HEX #00FF33 / 132° on the color wheel) with lightness adjusted to 10% (more white)\n\n\n\n\n\n\n\n\n\n\n\n\nGreen (HEX #00FF33 / 132° on the color wheel) with lightness adjusted to 90% (more black)\n\n\n\n\n\n\n\n\n\n\n\n\n\nLightness adjusted using the HSL (Hue, Saturation, Lightness) color model. Read about HSL vs HSV color models if you want a deeper dive."
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#adjust-lightness2",
+    "href": "slides/week5.1-colors-slides.html#adjust-lightness2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "A few approaches for subduing a pure hue\n\n1. adjust the saturation (i.e. the level of intensity of a color)\n2. adjust value: tint (add white), tone (add gray), or shade (add black)\n3. increase transparency (e.g. using the alpha argument)\n\n\n\nThe default lightness for ggplots is set to 65%\n\n\nggplot(na.omit(penguins), aes(x = bill_length_mm, y = bill_depth_mm, color = sex)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\nUse scale_*_hue() to adjust lightness / darkness\n\n\nggplot(na.omit(penguins), aes(x = bill_length_mm, y = bill_depth_mm, color = sex)) +\n  geom_point() +\n  scale_color_hue(l = 45)\n\n\n\n\n\n\n\n\n\n\n\nscale_*_hue() uses colors based on the HCL color space. The default lightness value of 65(%) is good for filled areas but may be a bit light for points and lines."
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#adjust-opacity",
+    "href": "slides/week5.1-colors-slides.html#adjust-opacity",
+    "title": "EDS 240",
+    "section": "",
+    "text": "A few approaches for subduing a pure hue\n\n1. adjust the saturation (i.e. the level of intensity of a color)\n2. adjust value: tint (add white), tone (add gray), or shade (add black)\n3. increase transparency (e.g. using the alpha argument)\n\n\n\nGreen (HEX #00FF33 / 132° on the color wheel) with default opacity (100%)\n\n\n\n\n\n\n\n\nGreen (HEX #00FF33 / 132° on the color wheel) with opacity reduced to 50%"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#build-palettes",
+    "href": "slides/week5.1-colors-slides.html#build-palettes",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Building your own color scale\n\nscale_*_manual()"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#general-rules",
+    "href": "slides/week5.1-colors-slides.html#general-rules",
+    "title": "EDS 240",
+    "section": "",
+    "text": "There are also some additional rules / guidelines that you should pretty much always abide by when selecting colors"
   },
   {
     "objectID": "slides/week5.1-colors-slides.html#saturation",
     "href": "slides/week5.1-colors-slides.html#saturation",
     "title": "EDS 240",
     "section": "",
-    "text": "High saturation = greater / more important values\n\n\n\nIt’s okay to use saturated colors in moderation.\nWe tend to associate more saturated colors with greater values.\n\n\n\n\n\n\n\n\n\n\n\n\n\nImage source: New York Times\n\n\n\n\n\n\n\n\n\n\n\n\nImage source: {ggdensity} pkgdown site."
+    "text": "High saturation = greater / more important values\n\n\n\nIt’s okay to use saturated / brighter colors in moderation.\nWe tend to associate more saturated colors with greater values.\n\n\n\n\n\n\n\n\n\n\n\n\n\nImage source: New York Times\n\n\n\n\n\n\n\n\n\n\n\n\nImage source: {ggdensity} pkgdown site."
   },
   {
-    "objectID": "slides/week5.1-colors-slides.html#color-picker-saturation",
-    "href": "slides/week5.1-colors-slides.html#color-picker-saturation",
+    "objectID": "slides/week5.1-colors-slides.html#no-more-than-7",
+    "href": "slides/week5.1-colors-slides.html#no-more-than-7",
     "title": "EDS 240",
     "section": "",
-    "text": "Use a color picker to adjust hue, saturation, value"
+    "text": "No more than 7 colors\n\n\nIf you need more than seven colors, consider alternative chart types.\n\n\n\n\n\nExample from What to consider when choosing colors for data visualization, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week5.1-colors-slides.html#lightness",
-    "href": "slides/week5.1-colors-slides.html#lightness",
+    "objectID": "slides/week5.1-colors-slides.html#consistency",
+    "href": "slides/week5.1-colors-slides.html#consistency",
     "title": "EDS 240",
     "section": "",
-    "text": "Lightness is how much white/black/gray is added to a hue\n\n\n\n\n\n\n\n\n\n\n\n\n\nImage source: Wikipedia\n\n\n\ntints are made by adding white to a color, resulting in lighter versions\nshades are made by adding black to a color, resulting in darker versions\ntones are made by adding gray to a color"
+    "text": "Use colors consistently\n\n\nEnsure consistent use of colors across multiple visualizations that display the same groups.\n\n\n\n\n\nExample from What to consider when choosing colors for data visualization, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week5.1-colors-slides.html#color-emotion",
-    "href": "slides/week5.1-colors-slides.html#color-emotion",
+    "objectID": "slides/week5.1-colors-slides.html#legend",
+    "href": "slides/week5.1-colors-slides.html#legend",
     "title": "EDS 240",
     "section": "",
-    "text": "Colors used in our data visualizations elicit emotions from our audience"
+    "text": "Explain what your colors encode\n\n\nAlways include a color key, in the form of a traditional legend or otherwise.\n\n\n\n\n\nExample from What to consider when choosing colors for data visualization, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week5.1-colors-slides.html#palette-types",
-    "href": "slides/week5.1-colors-slides.html#palette-types",
+    "objectID": "slides/week5.1-colors-slides.html#highlight",
+    "href": "slides/week5.1-colors-slides.html#highlight",
     "title": "EDS 240",
     "section": "",
-    "text": "Different data types require different types of palettes"
+    "text": "Highlight important values\n\n\nUse gray for less important groups / values, annotations, contextual information, etc.\n\n\n\n\n\nExample from What to consider when choosing colors for data visualization, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week5.1-colors-slides.html#accessibility",
-    "href": "slides/week5.1-colors-slides.html#accessibility",
+    "objectID": "slides/week5.1-colors-slides.html#intuitive-colors",
+    "href": "slides/week5.1-colors-slides.html#intuitive-colors",
     "title": "EDS 240",
     "section": "",
-    "text": "Ensuring accessbility through your color choices"
+    "text": "Be predictable in your color choices\n\n\nUse intuitive colors (e.g. green for forest, blue for water) but avoid stereotypes (e.g. pink for women, blue for men)\n\n\n\n\n\nExample from What to consider when choosing colors for data visualization, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week5.1-colors-slides.html#reminders-recap",
-    "href": "slides/week5.1-colors-slides.html#reminders-recap",
+    "objectID": "slides/week5.1-colors-slides.html#gradient-low-high",
+    "href": "slides/week5.1-colors-slides.html#gradient-low-high",
     "title": "EDS 240",
     "section": "",
-    "text": "Some parting words, reminders, and a recap of all the colorful ideas discussed"
+    "text": "Bright = low, dark = high\n\n\nIn most cases, readers will associate bright colors with lower values and darker colors with higher values. Build gradients accordingly.\n\n\n\n\n\nExample from What to consider when choosing colors for data visualization, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "slides/week5.1-colors-slides.html#recap",
-    "href": "slides/week5.1-colors-slides.html#recap",
+    "objectID": "slides/week5.1-colors-slides.html#gradient-high-low",
+    "href": "slides/week5.1-colors-slides.html#gradient-high-low",
     "title": "EDS 240",
     "section": "",
-    "text": "Recap\n\n\ncolor theory can help us identify colors that look nice together\nhues have associated meaning – it’s important to consider our intended audience and be mindful of how those associations differ among cultures\navoid using only pure hues"
+    "text": "Except in some cases…\n\nbright colors associated with elevation"
   },
   {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "Data Visualization & Communication",
-    "section": "Course Description",
-    "text": "Course Description\nEffectively communicating your work in a responsible, accessible and visually-pleasing way is often (if not, always) a central part of data science. This course will focus on the basic principles for effective communication through data visualization and using technical tools and workflows for creating and sharing data visualizations with diverse audiences.\nBy the end of this course, learners should be able to:\n\nIdentify which types of visualizations are most appropriate for your data and your audience\nPrepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\nBuild effective, responsible, accessible, and aesthetically-pleasing visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages\nWrite code from scratch and read and adapt code written by others\nApply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations\nAssess, critique, and provide constructive feedback on data visualizations"
-  },
-  {
-    "objectID": "index.html#teaching-team",
-    "href": "index.html#teaching-team",
-    "title": "Data Visualization & Communication",
-    "section": "Teaching Team",
-    "text": "Teaching Team\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nSevan Esaian\nEmail: sevan.esaian@lifesci.ucsb.edu\nLearn more: linkedin.com/in/sevan-esaian"
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Data Visualization & Communication",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nBuilding this course meant learning from the many incredible folks who think a lot about producing effective, beautiful, and responsible data visualizations. I relied heavily on the open source R / {ggplot2} / data viz teaching materials and tutorials that this wonderful data science community shares so willingly. Attribution will be included on any slides / materials where content is adapted from other educators."
-  },
-  {
-    "objectID": "assignments/SR2-midcourse.html",
-    "href": "assignments/SR2-midcourse.html",
-    "title": "Mid-course reflection (SR #2)",
+    "objectID": "slides/week5.1-colors-slides.html#gradients-continuous",
+    "href": "slides/week5.1-colors-slides.html#gradients-continuous",
+    "title": "EDS 240",
     "section": "",
-    "text": "In this assignment, you’ll be writing about your learning throughout this course so far. Remember that these assignments are opportunities for you to reflect on your own progress in the course.\nReread your responses to your Pre-course reflection (SR #1) to refresh your memory, and answer the following questions in 2-3 sentences:\n\nHow have you progressed towards your learning goals for this course?\nWhat skills are you proud of developing?\nIf you’ve needed help, how have you sought it out? If you haven’t sought out help, why not?\nLooking forward, how have your learning goals changed? Have they stayed the same?\nWhat topics have excited you the most (so far)? Have you spent time or efforts outside of class and/or the assignments diving deeper into any of these topics? If yes, what did you learn?\nHow would you change the structure of this course, if at all? If you wouldn’t, what in particular has been working for you?\nIs there anything about this course that you are really enjoying? Anything that isn’t working for you?\nWhat else would you like me to know about your experience in the course thus far?"
+    "text": "Gradient palettes for continuous data only\n\n\nMost readers will associate dark colors with “high / important” and bright or light colors with “low / less”. Using a gradient palette with discrete data may imply a ranking of categories where there shouldn’t be.\n\n\n\n\n\nExample from What to consider when choosing colors for data visualization, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "assignments/SR2-midcourse.html#description",
-    "href": "assignments/SR2-midcourse.html#description",
-    "title": "Mid-course reflection (SR #2)",
+    "objectID": "slides/week5.1-colors-slides.html#lightness-gradient",
+    "href": "slides/week5.1-colors-slides.html#lightness-gradient",
+    "title": "EDS 240",
     "section": "",
-    "text": "In this assignment, you’ll be writing about your learning throughout this course so far. Remember that these assignments are opportunities for you to reflect on your own progress in the course.\nReread your responses to your Pre-course reflection (SR #1) to refresh your memory, and answer the following questions in 2-3 sentences:\n\nHow have you progressed towards your learning goals for this course?\nWhat skills are you proud of developing?\nIf you’ve needed help, how have you sought it out? If you haven’t sought out help, why not?\nLooking forward, how have your learning goals changed? Have they stayed the same?\nWhat topics have excited you the most (so far)? Have you spent time or efforts outside of class and/or the assignments diving deeper into any of these topics? If yes, what did you learn?\nHow would you change the structure of this course, if at all? If you wouldn’t, what in particular has been working for you?\nIs there anything about this course that you are really enjoying? Anything that isn’t working for you?\nWhat else would you like me to know about your experience in the course thus far?"
+    "text": "Use lightness, not just hue, to build gradients\n\n\nGradients should also work in black and white.\n\n\n\n\n\nExample from What to consider when choosing colors for data visualization, by Lisa Charlotte Muth"
   },
   {
-    "objectID": "assignments/SR2-midcourse.html#rubric-specifications",
-    "href": "assignments/SR2-midcourse.html#rubric-specifications",
-    "title": "Mid-course reflection (SR #2)",
+    "objectID": "slides/week5.1-colors-slides.html#two-hues",
+    "href": "slides/week5.1-colors-slides.html#two-hues",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Two hues are sometimes better than one\n\n\nReaders are generally better able to distinguish colors on a gradient better if they are encoded through both lightness and two (sometimes three) carefully-selected hues.\n\n\n\n\n\nExample from What to consider when choosing colors for data visualization, by Lisa Charlotte Muth"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#break",
+    "href": "slides/week5.1-colors-slides.html#break",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Take a Break\n\n\n~ A coding exercise is up next! ~\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#making-map",
+    "href": "slides/week5.1-colors-slides.html#making-map",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Let’s apply what we learn to a choropleth map visualizing precipitation"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#choropleth",
+    "href": "slides/week5.1-colors-slides.html#choropleth",
+    "title": "EDS 240",
+    "section": "",
+    "text": "What’s a choropleth?\n\n\nChoropleths are maps that display the spatial distribution of a variable across divided geographical areas / regions, where variable is encoded by color. \n\nsome examples here\ncan be tricky to get right\nyou’ll often have to think critically about classifying yourd ata"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#data",
+    "href": "slides/week5.1-colors-slides.html#data",
+    "title": "EDS 240",
+    "section": "",
+    "text": "The Data\n\nNOAA National Centers for Environmental Information (NCEI) is responsible for preserving, monitoring, assessing, and providing public access to the Nation’s geophysical data and information.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFind public access to a massive inventory of climate data on their Climate Monitoring page. Today’s lesson will use the Climate at a Glance collection. Specifically, we’ll be exploring precipitation data at the county level, accessed via the County Mapping portal.\n\nA lot of the following data viz code draws from and was inspired by the wonderful Making Maps with R tutorial, by Eric C. Anderson."
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#plan",
+    "href": "slides/week5.1-colors-slides.html#plan",
+    "title": "EDS 240",
+    "section": "",
+    "text": "The Plan\n\nThe type of color palette we use will vary with the type of data we hope to visualize. In this following section, we’ll create a series of choropleth maps visualizing different data types (categorical vs. numerical) that require different color palettes.\n\n\nWe’ll create maps that color counties based on the following:\n\nCategorical variable\n\nColor counties based on whether their total precipitation in Dec 2023 was above or below the 1991 - 2000 mean\n\nNumeric variable\n\nSequential (either linear or binned): Color counties based on the total amount of precipitation received in Dec 2023\nDiverging (either linear or binned): Color counties based off the difference between the 1901 - 2000 mean and Dec 2023 precipitation totals\n\n\n\n\n\nFirst, some data wrangling"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#data-wrangling",
+    "href": "slides/week5.1-colors-slides.html#data-wrangling",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Data Wrangling\n\nHere, we’ll wrangle our precipitation data, then join it with our US county data (courtesy of the {maps} package):\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                                    setup                                 ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n#..........................load packages.........................\nlibrary(tidyverse)\nlibrary(maps) \n\n#.........................get shape data.........................\nstates &lt;- map_data(\"state\")\ncounties &lt;- map_data(\"county\")\n\n#....................import precipitation data...................\nprecip_counties &lt;- read_csv(here::here(\"week5\", \"data\", \"county-precip-jan2023.csv\"), skip = 4) |&gt; \n  janitor::clean_names()\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                               data wrangling                             ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n#..............update names of counties df variables.............\nus_counties &lt;- counties |&gt; \n  select(state = region, county = subregion, long, lat, group, order)\n  \n#..........clean precip data & make sure var names match.........\nprecip_counties_wrangled &lt;- precip_counties |&gt; \n  \n  # more intuitive column name ----\n  rename(county = name) |&gt; \n  \n  # convert count and state names to all lowercase ----\n  mutate(county = str_to_lower(county),\n         state = str_to_lower(state)) |&gt; \n  \n  # remove the word \"county\" from all county names ----\n  mutate(county = str_remove(county, pattern = \" county\")) |&gt; \n  \n  # remove the word \"parish\" from the end of Louisiana counties ----\n  mutate(county = str_remove(county, pattern = \" parish\")) |&gt; \n  \n  # add col denoting if Oct precip is above or below 1901 - 2000 mean\n  mutate(comp_mean = ifelse(value &gt; x1901_2000_mean, # if `value` &gt; `x1901_2000_mean`\n                     yes = \"above mean\", # replace abbreviation with full state name \n                     no = \"below mean\")) |&gt; # if string in 'sn' col is not 2 chrs long, keep state name as-is\n  \n  # select & rename relevant cols ----\n  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period, comp_mean) |&gt;\n  \n  # make precip var numeric (was chr) ----\n  mutate(precip = as.numeric(precip))\n\n#............................join dfs............................\njoined_precip_us_counties &lt;- full_join(precip_counties_wrangled, us_counties)"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#cat-data",
+    "href": "slides/week5.1-colors-slides.html#cat-data",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Map color to a categorical variable\n\nHere, we color county based on whether it received more or less precipitation in Dec 2023 as compared to the 1901 - 2000 mean (categorical variable). Colors chosen follow those suggested for use with precipitation variables in Kaye et al. 2012 and are a verified colorblind-friendly combo:\n\n\n# 'group' controls whether adjacent points are connected by lines (each county is a \"group,\" therefore points are connected) ----\nggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + \n  \n  # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----\n  geom_polygon(data = joined_precip_us_counties, aes(fill = comp_mean), color = \"#DDDDDD\", linewidth = 0.1) + \n  \n  # darken state lines ----\n  geom_polygon(color = \"#2F2D2C\", fill = NA, linewidth = 0.1) +\n  \n  # to fix the relationship between one unit in the y direction and one unit in the x direction; may need different values for different regions depending on where they are on the globe (e.g. close to the poles)\n  coord_fixed(1.3) +\n  \n  # # OPTION 1: update colors with pre-fab palette ----\n  # scale_fill_viridis_d(option = \"D\") +\n  \n  # # OPTION 2: update colors manually (based on suggested palette for precip in Kay et al. 2012) ----\n  # scale_fill_manual(values = c(\"#00665E\", \"#8D5103\")) +\n\n  # OPTION 3: adjust (tint / lighten) suggested colors slightly to be easier on the eyes ----\n  scale_fill_manual(values = c(\"#3DB1A6\", \"#E3BE6B\")) +\n\n  # update labels ----\n  labs(title = \"October 2023 precipitation relative to historical (1901-2000) average\",\n       subtitle = \"Counties whose rainfall exceeded or was below average\") +\n  \n  # set theme to clean up appearance ----\n  theme_void()"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#seq-num",
+    "href": "slides/week5.1-colors-slides.html#seq-num",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Map color to a sequential numeric variable (1 hue)\n\nHere, we color county based on the total precipitation it received in October 2023 (sequential numeric). Because blue is often associated with precipitation, we’ll create a color gradient using that hue:\nhttps://stackoverflow.com/questions/8069837/is-there-a-built-in-way-to-do-a-logarithmic-color-scale-in-ggplot2\n\n\nnoaa_colors &lt;- c(\"#543006\", \"#975F1C\", \"#AC7E42\", \"#C09C66\", \"#EBD9B0\", \"#B2DDD7\", \"#8BC2BC\", \"#3B8E86\", \"#16726B\", \"#003C30\")\n\nkaye_colors &lt;- c(\"#8D5102\", \"#DAB566\", \"#F5E7C2\", \"#F5F5F5\", \"#C8ECE6\", \"#5AB6AF\", \"#01665E\")\n\n\n# 'group' controls whether adjacent points are connected by lines (each county is a \"group,\" therefore points are connected) ----\nggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + \n  \n  # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----\n  geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + \n  \n  # darken state lines ----\n  geom_polygon(color = \"#2F2D2C\", fill = NA, linewidth = 0.1) +\n  \n  # to fix the relationship between one unit in the y direction and one unit in the x direction; may need different values for different regions depending on where they are on the globe (e.g. close to the poles)\n  coord_fixed(1.3) +\n  \n  # # OPTION 1: update colors with pre-fab palette ----\n  # scale_fill_viridis_c(option = \"D\") +\n  # scale_fill_distiller(palette = 'Purples')\n  # scale_fill_viridis_c(trans = \"log\", breaks=c(0.1, 0.5, 2,4,6, 8, 10, 12, 15, 20, 25), \n  #                  name=\"Number of restaurant\", \n  #                  guide = guide_legend( \n  #                                        label.position = \"bottom\", \n  #                                        title.position = 'top',\n  #                                        nrow=1))\n  # \n  # OPTION 2: manually create a color gradient ----\n  # scale_fill_gradient(low = \"#C8ECE6\", high = \"#213943\") +\n  \n  # OPTION 2: manually create a color gradient ----\n  #scale_fill_gradient2(low = \"#77A8B9\", mid = \"#FFFFFF\", high = \"#213943\") +\n  scale_fill_stepsn(trans = \"log\",\n                    colors = c(\"#543006\", \"#975F1C\", \"#AC7E42\", \"#C09C66\", \"#EBD9B0\", \"#B2DDD7\", \"#8BC2BC\", \"#3B8E86\", \"#16726B\", \"#003C30\"), \n                    breaks = c(0, 0.1, 0.5, 1, 2, 4, 6, 8, 10, 12, 15, 20, 25)) +\n  \n  # update legend ----\n  guides(fill = guide_coloursteps(title = \"Precipitation (inches)\", \n                                  title.position = \"top\",\n                                  barwidth = 15, barheight = 1)) +\n  \n  # update labels ----\n  labs(title = \"Total Precipitation, by County\",\n       subtitle = \"January 2023\") +\n  \n  # set theme to clean up appearance ----\n  theme_void() + \n  \n  # theme adjustments ----\n  theme(\n    legend.position = \"bottom\"\n  )"
+  },
+  {
+    "objectID": "slides/sections/choropleth-practice.html",
+    "href": "slides/sections/choropleth-practice.html",
+    "title": "———————————–",
+    "section": "",
+    "text": "Warning: package 'ggplot2' was built under R version 4.3.1\n\n\nWarning: package 'dplyr' was built under R version 4.3.1\n\n\nWarning: package 'stringr' was built under R version 4.3.1\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nWarning: package 'maps' was built under R version 4.3.1\n\n\n\nAttaching package: 'maps'\n\nThe following object is masked from 'package:purrr':\n\n    map\n\n\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)\n\n\nRows: 3107 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (5): ID, Name, State, Value, 1901-2000 Mean\ndbl (2): Rank, Anomaly (1901-2000 base period)\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `precip = as.numeric(precip)`.\nCaused by warning:\n! NAs introduced by coercion\n\n\nJoining with `by = join_by(state, county)`\n\n\n\n———————————–\nfollowing Albert Cairo # ———————————– #\nFIRST ATTEMPT\n\n# 'group' controls whether adjacent points are connected by lines (each county is a \"group,\" therefore points are connected) ----\noriginal &lt;- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + \n  \n  # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----\n  geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + \n  \n  # darken state lines ----\n  geom_polygon(color = \"#2F2D2C\", fill = NA, linewidth = 0.1) +\n  \n  # to fix the relationship between one unit in the y direction and one unit in the x direction; may need different values for different regions depending on where they are on the globe (e.g. close to the poles)\n  coord_fixed(1.3) +\n  \n  # manually create a binned color gradient ----\n  scale_fill_stepsn(colors = c(\"#543006\", \"#975F1C\", \"#AC7E42\", \"#C09C66\", \"#EBD9B0\",  \n                               \"#E8E8E8\", \"#B2DDD7\", \"#8BC2BC\", \"#3B8E86\", \"#16726B\", \"#003C30\")) +\n                   \n\n  # update legend ----\n  guides(fill = guide_colourbar(title = \"Precipitation (inches)\",\n                                title.position = \"top\",\n                                barwidth = 15, barheight = 1)) +\n  \n  # update labels ----\n  labs(title = \"Total Precipitation, by County\",\n       subtitle = \"January 2023\") +\n  \n  # set theme to clean up appearance ----\n  theme_void() + \n  \n  # theme adjustments ----\n  theme(\n    legend.position = \"bottom\"\n  )\n  \noriginal\n\nINVESTIGATE FURTHER: skewed distribution (most values are between 0-5”)\n\nggplot(joined_precip_us_counties, aes(x = precip)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\nWarning: Removed 1568 rows containing non-finite values (`stat_bin()`).\n\n\n\n\n\nMETHOD 1: EQUAL INTERVALS - boundaries will enclose equal ranges of data (e.g. 0-10, 11-20, 21-30, etc.) - works well when frequencies are constant - to calculate breaks: get max and min precipitations, subtract them, divide result by number of classes (intervals) that you wat\n\nrange(na.omit(joined_precip_us_counties)$precip) # 0.04 - 18.22\n\n[1]  0.04 18.22\n\n(max(na.omit(joined_precip_us_counties)$precip) - min(na.omit(joined_precip_us_counties)$precip))/11 # 1.65\n\n[1] 1.652727\n\n\nso class size would be 1.7 (e.g. 0-1.7, 1.8-3.5, 3.6-5.3)\nSECOND ATTEMPT\n\n# 'group' controls whether adjacent points are connected by lines (each county is a \"group,\" therefore points are connected) ----\nmethod1 &lt;- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + \n  \n  # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----\n  geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + \n  \n  # darken state lines ----\n  geom_polygon(color = \"#2F2D2C\", fill = NA, linewidth = 0.1) +\n  \n  # to fix the relationship between one unit in the y direction and one unit in the x direction; may need different values for different regions depending on where they are on the globe (e.g. close to the poles)\n  coord_fixed(1.3) +\n  \n  # manually create a binned color gradient ----\n  scale_fill_stepsn(colors = c(\"#543006\", \"#975F1C\", \"#AC7E42\", \"#C09C66\", \"#D6BB8C\", \"#EBD9B0\",  \n                               \"#E8E8E8\", \n                               \"#B2DDD7\", \"#8BC2BC\", \"#64A7A1\", \"#3B8E86\", \"#16726B\", \"#003C30\"),\n                    breaks = c(0, 1.7, 3.4, 5.1, 6.8, 8.5, 10.2, 11.9, 13.6, 15.3, 17, 18.7)) +\n                   \n\n  # update legend ----\n  guides(fill = guide_colourbar(title = \"Precipitation (inches)\",\n                                title.position = \"top\",\n                                barwidth = 25, barheight = 1)) +\n  \n  # update labels ----\n  labs(title = \"Total Precipitation, by County\",\n       subtitle = \"January 2023\") +\n  \n  # set theme to clean up appearance ----\n  theme_void() + \n  \n  # theme adjustments ----\n  theme(\n    legend.position = \"bottom\"\n  )\n  \nmethod1\n\nATTEMPT #2 is better, but we still might be loosing some important details at the lower end of the spectrum, since so many states received rainfall in the 0-5” range.\nMETHOD 2: BASED ON MEAN & SD\n\nmean(na.omit(joined_precip_us_counties$precip)) # 4.18\n\n[1] 4.177673\n\nsd(na.omit(joined_precip_us_counties$precip)) # 2.87\n\n[1] 2.869352\n\n\n\n# 'group' controls whether adjacent points are connected by lines (each county is a \"group,\" therefore points are connected) ----\nmethod2 &lt;- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + \n  \n  # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----\n  geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + \n  \n  # darken state lines ----\n  geom_polygon(color = \"#2F2D2C\", fill = NA, linewidth = 0.1) +\n  \n  # to fix the relationship between one unit in the y direction and one unit in the x direction; may need different values for different regions depending on where they are on the globe (e.g. close to the poles)\n  coord_fixed(1.3) +\n  \n  # manually create a binned color gradient ----\n  scale_fill_stepsn(colors = c(\"#543006\", \"#975F1C\", \"#AC7E42\", \"#C09C66\", \"#D6BB8C\", \"#EBD9B0\",  \n                               \"#E8E8E8\", \n                               \"#B2DDD7\", \"#8BC2BC\", \"#64A7A1\", \"#3B8E86\", \"#16726B\", \"#003C30\"),\n                    breaks = c(0, 1, 4, 7, 10, 13, 16, 19)) +\n                   \n\n  # update legend ----\n  guides(fill = guide_colourbar(title = \"Precipitation (inches)\",\n                                title.position = \"top\",\n                                barwidth = 25, barheight = 1)) +\n  \n  # update labels ----\n  labs(title = \"Total Precipitation, by County\",\n       subtitle = \"January 2023\") +\n  \n  # set theme to clean up appearance ----\n  theme_void() + \n  \n  # theme adjustments ----\n  theme(\n    legend.position = \"bottom\"\n  )\n  \nmethod2\n\nMETHOD3: log transformation\n\n# 'group' controls whether adjacent points are connected by lines (each county is a \"group,\" therefore points are connected) ----\nmethod3 &lt;- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + \n  \n  # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----\n  geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + \n  \n  # darken state lines ----\n  geom_polygon(color = \"#2F2D2C\", fill = NA, linewidth = 0.1) +\n  \n  # to fix the relationship between one unit in the y direction and one unit in the x direction; may need different values for different regions depending on where they are on the globe (e.g. close to the poles)\n  coord_fixed(1.3) +\n  \n  # # OPTION 1: update colors with pre-fab palette ----\n  # scale_fill_viridis_c(option = \"D\") +\n  # scale_fill_distiller(palette = 'Purples')\n  # scale_fill_viridis_c(trans = \"log\", breaks=c(0.1, 0.5, 2,4,6, 8, 10, 12, 15, 20, 25), \n  #                  name=\"Number of restaurant\", \n  #                  guide = guide_legend( \n  #                                        label.position = \"bottom\", \n  #                                        title.position = 'top',\n  #                                        nrow=1))\n  # \n  # OPTION 2: manually create a color gradient ----\n  # scale_fill_gradient(low = \"#C8ECE6\", high = \"#213943\") +\n  \n  # OPTION 2: manually create a color gradient ----\n  #scale_fill_gradient2(low = \"#77A8B9\", mid = \"#FFFFFF\", high = \"#213943\") +\n  scale_fill_steps2(#trans = \"log\",\n                    low = \"#543006\", mid = \"#E8E8E8\", high = \"#003C30\",\n                    midpoint = 4) +\n                    # colors = c(\"#543006\", \"#975F1C\", \"#AC7E42\", \"#C09C66\", \"#D6BB8C\", \"#EBD9B0\",  \n                    #            \"#E8E8E8\", \n                    #            \"#B2DDD7\", \"#8BC2BC\", \"#64A7A1\", \"#3B8E86\", \"#16726B\", \"#003C30\"), \n                    # breaks = c(0, 0.1, 0.5, 1, 2, 4, 6, 8, 10, 12, 15, 20, 25)) +\n  \n  # update legend ----\n  guides(fill = guide_coloursteps(title = \"Precipitation (inches)\", \n                                  title.position = \"top\",\n                                  barwidth = 25, barheight = 1)) +\n  \n  # update labels ----\n  labs(title = \"Total Precipitation, by County\",\n       subtitle = \"January 2023\") +\n  \n  # set theme to clean up appearance ----\n  theme_void() + \n  \n  # theme adjustments ----\n  theme(\n    legend.position = \"bottom\"\n  )\n\nmethod3\n\n\n\n\n\n\n\n\n\n  # # OPTION 2: manually create a color gradient ----\n  # #scale_fill_gradient2(low = \"#77A8B9\", mid = \"#FFFFFF\", high = \"#213943\") +\n  # scale_fill_stepsn(trans = \"log\",\n  #                   colors = c(\"#543006\", \"#975F1C\", \"#AC7E42\", \"#C09C66\", \"#EBD9B0\", \"#B2DDD7\", \"#8BC2BC\", \"#3B8E86\", \"#16726B\", \"#003C30\"), \n  #                   breaks = c(0, 0.1, 0.5, 1, 2, 4, 6, 8, 10, 12, 15, 20, 25)) +\n  # \n  # # update legend ----\n  # guides(fill = guide_coloursteps(title = \"Precipitation (inches)\", \n  #                                 title.position = \"top\",\n  #                                 barwidth = 15, barheight = 1)) +\n  # \n  # # update labels ----\n  # labs(title = \"Total Precipitation, by County\",\n  #      subtitle = \"January 2023\") +\n  # \n  # # set theme to clean up appearance ----\n  # theme_void() + \n  # \n  # # theme adjustments ----\n  # theme(\n  #   legend.position = \"bottom\"\n  # )"
+  },
+  {
+    "objectID": "slides/sections/3.3-lyme.html",
+    "href": "slides/sections/3.3-lyme.html",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Warning: package 'tidycensus' was built under R version 4.3.1\n\n\nWarning: package 'ggplot2' was built under R version 4.3.1\n\n\nWarning: package 'dplyr' was built under R version 4.3.1\n\n\nWarning: package 'stringr' was built under R version 4.3.1\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nAttaching package: 'janitor'\n\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\n\nTo install your API key for use in future sessions, run this function with `install = TRUE`.\n\nRows: 3143 Columns: 25\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (3): Ctyname, Stname, ststatus\ndbl (22): STCODE, CTYCODE, Cases2001, Cases2002, Cases2003, Cases2004, Cases...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n`summarise()` has grouped output by 'year'. You can override using the `.groups` argument.\nJoining with `by = join_by(state)`"
+  },
+  {
+    "objectID": "getting-unstuck.html",
+    "href": "getting-unstuck.html",
+    "title": "Getting unstuck",
+    "section": "",
+    "text": "A large part of being a data scientist is ~being okay~ with not immediately knowing the answers to your code challenges – troubleshooting errors, deciphering code, and trying new things (and likely failing at some…er many…of them) is all a part of the job. We all experience it, no matter how many years we’ve been at it."
+  },
+  {
+    "objectID": "getting-unstuck.html#where-to-find-help",
+    "href": "getting-unstuck.html#where-to-find-help",
+    "title": "Getting unstuck",
+    "section": "Where to find help",
+    "text": "Where to find help\nWe often learn the most (and remember more of what we learned) when we take the time to troubleshoot on our own (or at least narrow down the potential problem(s)), so you should always plan to start there . The graphic below shows the order in which you should approach different resources for help:"
+  },
+  {
+    "objectID": "getting-unstuck.html#roadblock-checklist",
+    "href": "getting-unstuck.html#roadblock-checklist",
+    "title": "Getting unstuck",
+    "section": "Roadblock checklist",
+    "text": "Roadblock checklist\nIf you hit a roadblock, run through this checklist to make sure you’ve done your due diligence before bringing your question(s) to a peer, TA, or instructor:\n\nrevisit the course materials – your question may already be answered in the slides\nread the documentation – you can do so directly from RStudio by typing ?function_name in the console\nsearch for and read the package’s, vignette if available – these are often linked on CRAN under the Documents section (e.g. see {dplyr} on CRAN) or found by Googling package_name vignette (e.g. the result of Googling dplyr vignette leads to the dplyr vignette)\ntry Googling! – don’t forget to a look back some of our suggested troubleshooting and Googling tips in Teach Me How to Google:"
+  },
+  {
+    "objectID": "getting-unstuck.html#how-to-ask-questions",
+    "href": "getting-unstuck.html#how-to-ask-questions",
+    "title": "Getting unstuck",
+    "section": "How to ask questions",
+    "text": "How to ask questions\nWhen you decide you’re going to ask a question to a peer / TA / instructor, be sure to (borrowed from Dr. Allison Horst’s Troubleshooting 101 lecture, EDS 221):\n\nProvide context. For example, “I’m trying to do this…” or “I’m working on the task where we do this…”\nShare the specific challenge. “I’m specifically trying to [insert function / package] to do this thing.”\nShare what happens and what you’ve learned. “I repeatedly get an error message that says [this]. I’ve tried [this] and [this]”\nShow your code ideally with a reprex that they can run / test.\nValue and expect the Socratic method, especially in classes and workshops – our goal is to provide critical thinking that is transferable, not just to provide a quick fix for a single error."
+  },
+  {
+    "objectID": "getting-unstuck.html#some-words-of-wisdom",
+    "href": "getting-unstuck.html#some-words-of-wisdom",
+    "title": "Getting unstuck",
+    "section": "Some words of wisdom",
+    "text": "Some words of wisdom\nFinally, Julia Evans shares some funny (and highly relatable) words of wisdom:"
+  },
+  {
+    "objectID": "assignments/SR3-endcourse.html",
+    "href": "assignments/SR3-endcourse.html",
+    "title": "End-of-course reflection (SR #3)",
+    "section": "",
+    "text": "In this assignment, you’ll reflect on your learning throughout this class. Revisit your self-evaluations from the start and middle of the quarter, and answer the following questions:\n\nSince your mid-quarter self-evaluation, have you improved any of your existing skills? Have you learned new ones?\nHave you accomplished your learning goals for this quarter (that you set at the beginning of the quarter)? If you did, how did you do it?\nWhat are you proudest of accomplishing in this course?\nWhat are some transferable skills that you developed in this course? How might you apply them to other courses / deliverables within the MEDS program or jobs in the future?\nWhat is one thing that you really liked about this course, and why? What is one thing you think could be improved about this course, and how?\nIs there anything else you’d like the instructors to know about your experience in the course?"
+  },
+  {
+    "objectID": "assignments/SR3-endcourse.html#description",
+    "href": "assignments/SR3-endcourse.html#description",
+    "title": "End-of-course reflection (SR #3)",
+    "section": "",
+    "text": "In this assignment, you’ll reflect on your learning throughout this class. Revisit your self-evaluations from the start and middle of the quarter, and answer the following questions:\n\nSince your mid-quarter self-evaluation, have you improved any of your existing skills? Have you learned new ones?\nHave you accomplished your learning goals for this quarter (that you set at the beginning of the quarter)? If you did, how did you do it?\nWhat are you proudest of accomplishing in this course?\nWhat are some transferable skills that you developed in this course? How might you apply them to other courses / deliverables within the MEDS program or jobs in the future?\nWhat is one thing that you really liked about this course, and why? What is one thing you think could be improved about this course, and how?\nIs there anything else you’d like the instructors to know about your experience in the course?"
+  },
+  {
+    "objectID": "assignments/SR3-endcourse.html#rubric-specifications",
+    "href": "assignments/SR3-endcourse.html#rubric-specifications",
+    "title": "End-of-course reflection (SR #3)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this Mid-course reflection:\nComplete the following steps in your GitHub Classroom repo (eds240-SR2/SR2-midcourse-reflection.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the title of the SR1-precourse-reflection.qmd YAML\naddress the 8 topics above (but please feel free to expand on these if you would like)\npush SR2-midcourse-reflection.qmd to GitHub using GitHub Classrooms by 11:59pm PT on Sat 02/10/2024"
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this End-of-course reflection:\nComplete the following steps in your GitHub Classroom repo (eds240-SR3/SR3-endcourse-reflection.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the title of the SR3-endcourse-reflection.qmd YAML\nbe ~300-400 words\naddress the 6 topics above (but please feel free to expand on these if you would like)\npush SR3-endcourse-reflection.qmd to GitHub using GitHub Classrooms by 11:59pm PT on Sat 03/16/2024\n\nAdditionally, please complete the ESCI evaluations associated with this course (EDS 240) for both the instructor (Sam Csik) and TA (tbd) by the deadline (Friday, 03/15/2024)."
   },
   {
-    "objectID": "assignments/HW4.html#rubric-specifications",
-    "href": "assignments/HW4.html#rubric-specifications",
-    "title": "Assignment #4 (HW #4)",
+    "objectID": "assignments/HW3.html#rubric-specifications",
+    "href": "assignments/HW3.html#rubric-specifications",
+    "title": "Assignment #3 (HW #3)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #4:"
-  },
-  {
-    "objectID": "assignments/HW2.html",
-    "href": "assignments/HW2.html",
-    "title": "Assignment #2 (HW #2)",
-    "section": "",
-    "text": "You must earn a “Satisfactory” mark for each individual Part (I and II) to earn a “Satisfactory” mark for Assignment #2.\nNOTE: Assignments are to be submitted via GitHub Classrooms, unless otherwise noted. Each student receives one “free pass” for not submitting assignments via specified channels, after which you will receive a “Not Yet” mark.\nRead each part of the assignment carefully, and use the check boxes to ensure you’ve addressed all elements of the assignment!"
-  },
-  {
-    "objectID": "assignments/HW2.html#learning-outcomes",
-    "href": "assignments/HW2.html#learning-outcomes",
-    "title": "Assignment #2 (HW #2)",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nidentify which types of visualizations are most appropriate for your data and your audience\nprepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\nbuild effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages"
-  },
-  {
-    "objectID": "assignments/HW2.html#description",
-    "href": "assignments/HW2.html#description",
-    "title": "Assignment #2 (HW #2)",
-    "section": "Description",
-    "text": "Description\nIn class, we discussed strategies and considerations for choosing the right graphic form to represent your data and convey your intended message. Here, you’ll apply what we’ve learned to a data set on lobster abundance and sizes, collected from coastal rocky reef sites within the Santa Barbara Coastal LTER. Unfold the following note to read more about the data before continuing on (collapsed to save space):\n\n\n\n\n\n\nLearn about the data:\n\n\n\n\n\n\nAbout SBC LTER\nThe Santa Barbara Coastal Long Term Ecological Research (SBC LTER) site was established in 2000 as part of the LTER Network to understand the ecology of coastal kelp forest ecosystems. Research and long-term ecological and environmental monitoring data is collected within a 10,000 square kilometer area of the northern portion of the Southern California Bight, which includes the Santa Barbara Channel, coastal watersheds, small estuaries, and sandy beaches that border the Channel. You can explore the full data catalog.\n\n\nAbout the data set\nThere are five coastal rocky reef research sites at which the SBC LTER collects long-term monitoring data:\n\nNaples Reef (NAPL)\nIsla Vista Reef (IVEE)\nArroyo Quemado Reef (AQUE)\nMohawk Reef (MOHK)\nCarpinteria Reef (CARP)\n\nIn January 2012, Naples Reef and Isla Vista Reef were designated as Marine Protected Areas (MPAs), prohibiting any future take of lobsters (along with other living marine resources). Since then, the SBC LTER has conducted annual (late summer) benthic surveys at each of the above five sites, where SCUBA divers record lobster abundance and sizes. Explore the metadata for more information.\n\n\nData citation\nReed, D, R. Miller. 2023. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012 ver 9. Environmental Data Initiative. https://doi.org/10.6073/pasta/3595322687af94cd532620ad9db94c77.\n\n\nFinding this data set\nKnowing how to search for data can be tricky! Here’s how I accessed this particular data set, should you want to search for LTER data yourself, in the future:\n\nFilter the SBC LTER Data Catalog for data sets related to Reef/Kelp Forest habitats (check the box next to the habitat type of interest, or filter by measurement type or LTER Core Research Area). This produces a table of data collections, descriptions, and links to individual data and metadata records.\nChoose a data set of interest. I was interested in the SBC LTER: Spiny lobster in California Collection, which includes three different data sets. I specifically chose, Lobster abundace, size, and fishing pressure – here, you’ll find lots of metadata, including people and organizations involved in this data collection, temporal, geographic, and taxonomic coverage, methods and protocols, and links to data files. Additionally, you’ll see a link to the EDI Data Portal (top right corner), which is the data repository that maintains all data and metadata produced by the LTER. EDI assigns a DOI (Digital Object Identifier) to each version of a data package (data package = data + metadata; SBC LTER updates this data set each year when new data is collected – each update receives a new DOI).\nDownload or import the data. You can download the data file from either the SBC LTER Data Catalog or the EDI Data Package. However I prefer reading in the data directly from online (that way, I don’t need to worry about storing large data files). I recommend doing this from the EDI Data Package (rather than the SBC LTER Data Catalog), since the DOI ensures you can re-reference the exact same version, even after the data set is updated with new data (SBC LTER Data Catalog only has a download link for the most up-to-date version of the data). To do so, right click on the Download Data button, then select Copy Link Address.\n\n\n\n\n\n\n\n\n\n\nUse this url inside read_csv() to import the data into your script or Qmd / Rmd file:\n\nlobster_data &lt;- read_csv(\"https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-sbc.77.9&entityid=f32823fba432f58f66c06b589b7efac6\")\n\n\n\n\n\nYour goal is to create a visualization that explores how lobster size differs across each of the five coastal rocky reef SBC LTER sites for the years 2012 (when IVEE and NAPL were established as MPAs) and 2022 (10 years later).\nThis will first require some data exploration and wrangling. Some tips (unfold below):\n\n\n\n\n\n\nData exploration & wrangling tips\n\n\n\n\n\nData exploration tips:\n\nUse glimpse() and / or str() to check out your variables and data types\nUse names() to return all column names\nExtract unique elements using unique(df$column_name)\nOpen up the spreadsheet-style data viewer using View(df)\nBe sure to review the metadata (including methods & protocols) to fully understand the data\n\nData wrangling tips:\n\nI love starting all my cleaning pipelines with janitor::clean_names() to convert column headers into lowercase snake_case (not necessary, but easy to implement and super helpful for yourself and others)\nYou’ll want to keep just the years of interest\nMissing size measurements are denoted with -99999 – consider how to deal with these\nEach row is not always a single observation, but rather summed lobster counts at each size observed within a site / transect / replicate. You’ll want to wrangle the data such that each row represents a single lobster observation. You may need to do some Googling to figure out a solution for this (HINT: you’re looking to perform the opposite of count()).\nI often find that I’ll need to return to my data wrangling pipeline again after I start plotting my data – it’s at this stage that I’ll often catch variables that are the wrong data type (e.g. numeric, factor, character) for plotting and need to make the appropriate updates.\n\n\n\n\n(Part 1a) After exploring and wrangling your data, answer the following questions:\n\n1. What are your variables of interest and what kinds of data (e.g. numeric, categorical, ordered, etc.) are they? (a bullet point list here is fine)\n2. Using From Data to Viz, identify which graphic forms / geoms are appropriate, given your data. List them out. (a bullet point list here is fine)\n3. Now that you have a list of options, what are some of your considerations as you decide which type of graph create? For example, is it important / valuable to show sample size? Why or why not? How will you represent multiple groups? etc. (3-4 sentences)\n\nNow that you’ve explored and starting wrangling your data, it’s time to create some plots. It’s often important to try out multiple graphic forms (e.g. geom_*()s) as you decide which is the most effective way of presenting your data. This process is commonly referred to as Exploratory Data Analysis or Exploratory Data Visualization. Some tips (unfold below):\n\n\n\n\n\n\nData viz creation tips\n\n\n\n\n\nData viz creation tips:\n\nI always find it helpful to sketch things out on paper first\nThere’s no need to create anything special or particularly visually-pleasing during this exploratory visualization phase. It can be helpful to make minor modifications, (e.g. rearranging groups in a logical order, color groups, etc.) to help you identify any emerging patterns\nWe created a number of different plot types together in class, exploring different geoms and some of the arguments that each ggplot layer can take. Be sure to take a look back at the lecture materials, but also know that you may need to reference documentation and / or online examples to create / modify your intended visualizations.\n\n\n\n\n(Part 1b) Complete the following:\n\nCreate at least three different plots as part of your exploratory data visualization phase to test out which graphic forms / geoms works best. Your last plot should be the version that you feel is best suited for presenting your data. (NOTE: Your first two plots do not need to be at all polished – during the exploratory data visualization phase, we’re most concerned with choosing a graphic form / geom(s) for effectively presenting our data.)\n1. Consider all three of your plots. What about the graphic forms / geoms used in plots #1 and #2 was not as effective as plot #3? Justify your decision to pursue plot #3. (5-8 sentences)\n2. (For plot #3 only) Consider modifications that we discussed in lecture that may make this plot easier to interpret (e.g. updating colors, moving or removing legends, highlighting groups, ordering groups) – be sure to update your plot as appropriate, then explain why you chose to make the above modifications. If you chose not to make any of these modifications, why not? (3-6 sentences)\n3. Polish your third (final) plot by updating the labels and theme (we’ll cover theme modifications during week 4 discussion section). List out the changes you made to your plot’s theme (e.g. “updated axis text size”, “removed minor gridlines”, etc.). (a bullet list here is fine)\n4. Describe two or more challenges you encountered while deciding on / creating your plots – these can be conceptual (e.g. challenges in determining how to best represent your data) and / or technical (e.g. code-based challenges). (4-8 sentences)\n5. Add alt text to your final visualization following the formula discussed during week 2’s discussion section and using the #| fig-alt: code chunk option."
-  },
-  {
-    "objectID": "assignments/HW2.html#rubric-specifications",
-    "href": "assignments/HW2.html#rubric-specifications",
-    "title": "Assignment #2 (HW #2)",
-    "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #2, Part I:\nComplete the following steps in your GitHub Classroom repo (eds240-HW2/Part1.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the Part1.qmd YAML\nanswer the three Part 1a questions, adhering to the length requirements specified at the end of each question prompt\ncreate three different plots (two unpolished exploratory data visualizations and one polished final plot) in accordance with Part 1b instructions (NOTE: there isn’t necessarily a single correct answer here, but your final plot should clearly display the variables of interest and you should be able to justify your choice in your written responses)\ncode should be clearly organized and annotated following conventions and guidelines outlined in the Writing clean code page on the course website\nanswer the five Part 1b questions, adhering to the length requirements specified at the end of each question prompt\nadd alt text to your final visualization in accordance with Part 1b instructions\nwe should be able to run individual lines / chunks of code and render Part1.qmd without errors\nall three plot outputs should appear in your rendered doc\npush your completed Part1.qmd to GitHub via GitHub Classrooms by 11:59pm PT on Sat 02/03/2024\n\n\n\n End Part I"
-  },
-  {
-    "objectID": "assignments/HW2.html#learning-outcomes-1",
-    "href": "assignments/HW2.html#learning-outcomes-1",
-    "title": "Assignment #2 (HW #2)",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\nNote: This part of HW #2 is a continuation of HW #1, Part II and is the next step in working towards your final course assignment. Your final assignment is meant to combine nearly all of the course learning outcomes(!):\n\nidentify which types of visualizations are most appropriate for your data and your audience\nprepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\nbuild effective, responsible, accessible, and aesthetically-pleasing visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages\nwrite code from scratch and read and adapt code written by others\napply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations\n\nRead the description, below, for details on what to work on this week."
-  },
-  {
-    "objectID": "assignments/HW2.html#description-1",
-    "href": "assignments/HW2.html#description-1",
-    "title": "Assignment #2 (HW #2)",
-    "section": "Description",
-    "text": "Description\nA small part of each homework assignment will be dedicated to working on a series of data visualizations which will be due as part of Assignment #4 at the end of the quarter. Assignment #4 will ask you to build three related, but different data visualizations – all which will use the same data set(s), but present those data differently for three different audiences / purposes:\n\na visualization for a general audience (i.e. without domain expertise) – this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), display findings in an atypical but creative way, and / or may blend both art and science\na visualization to be included in a paper, technical documentation, or report – this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.\na visualization that you could include in a presentation – you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you’re animating pieces of your visualization onto a slide)\n\n(Part 2a) This week, you’ll focus on importing / wrangling / and beginning the exploratory data visualization phase, using the data you found as part of HW #1, Part II. Complete the following:\n\nCreate an file named, HW2-exploration.qmd within your lastName-eds240-HW4 repo and add appropriate YAML fields\nLoad necessary packages and read in your data\nClean & wrangle your data\nCreate at least three (but of course feel free to create more!) exploratory visualizations (similar to plot #1 and #2 in Part I of this assignment).\nIMPORTANT: If you have a downloaded data file saved to your repo (e.g. you’re not reading in your data directly from online, from a server, etc.) be sure to add your data folder / file to your .gitignore, particularly if this file is large.\n\n(Part 2b) After completing the above steps, answer the following questions:\n\n1. What have you learned about your data? Have any potentially interesting patterns emerged? (5-8 sentences)\n2. In HW #1, you outlined some questions that you wanted to answer using these data. Have you made any strides towards answering those questions? If yes, how so? If no, what next steps do you need to take (e.g. I need to create X plot type, I still need to track down Y data, I need to restructure existing data so that you can visualize it in Z ways, etc.)? (8-12 sentences)\n3. What challenges do you foresee encountering with your data? These can be data wrangling and / or visualization challenges. (4-6 sentences)"
-  },
-  {
-    "objectID": "assignments/HW2.html#rubric-specifications-1",
-    "href": "assignments/HW2.html#rubric-specifications-1",
-    "title": "Assignment #2 (HW #2)",
-    "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #2, Part II:\nComplete the following steps under your lastName-eds240-HW4 repo, not in GitHub Classrooms:\n\nperform all Part 2a steps, as described above, in HW2-exploration.qmd\nanswer Part 2b questions, also in HW2-exploration.qmd, adhering to the length requirements specified at the end of each question prompt\nall four plot outputs should appear in your rendered doc\nHW2-exploration.qmd should be neatly organized – this does not need to be a perfectly polished document, but sections should be clearly labeled with prose and / or annotations so that we can easily follow along.\npush your completed HW2-exploration.qmd to your repo by 11:59pm PT on Sat 02/03/2024\n\n\n\n End Part II"
-  },
-  {
-    "objectID": "assignments/SR1-precourse.html",
-    "href": "assignments/SR1-precourse.html",
-    "title": "Pre-course reflection (SR #1)",
-    "section": "",
-    "text": "In this assignment, you’ll introduce yourself, come up with a plan for what you’d like to get out of the class, and roughly outline how you’ll accomplish your goals throughout the quarter. You’ll continue visiting the goals you set for yourself in this assignment throughout the quarter, so it’s worthwhile to be reflective!\nBecause everyone is participating under unique circumstances, I want to learn about your learning contexts. I can best support you in this class if you address the following:\n\nSome questions about school and life:\n\nWhere are you coming from (e.g. “I recently finished my undergraduate degree”, “I’ve been working in industry X for Y years”) (1-2 sentences)\nWhat do you hope to get out of this class? (3-4 sentences)\nIf you have a particular career goal in mind, how does this course apply to your future career, if at all? (1-3 sentences)\nWhat do you wish your instructors knew about you, but don’t? (2-4 sentences)\n\nSome questions about the way you like to learn:\n\nWhat kinds of assignments, skills, or behaviors have you felt most comfortable with / enjoy from past classes? Why do you enjoy them? (4-5 sentences)\nHow confident do you feel in your data visualization skills? Why? (3-4 sentences)\nHow confident do you feel in your coding skills (primarily R, but feel free to elaborate on any of the languages you’ve used)? Why? (3-4 sentences)\nWhat have you struggled with in the past in other graduate-level courses? Why? (3-4 sentences)\nOf the courses you’re taking this quarter, which do you expect to be the most challenging? Most demanding? (1-2 sentences)\nWhat responsibilities do you have outside of school, and how do you want to balance them? (3-4 sentences)\nWhich learning goals from the syllabus are you most excited about? (3-4 sentences)\nMost importantly, how do you plan on accomplishing your learning goals for this course? Note: be specific here! Instead of writing, “I will complete homework assignments” or “I will study”, you can make these more specific strategies: “I will create a schedule to map out assignments“ (elaborate on this), “I will use the homework assignments as opportunities to practice X,” I will communicate with classmates to ask for help after trying X,” “I will participate in online learning communities, such as TidyTuesday…” etc. (5-8 sentences)\n\nSome fun questions:\n\nWhat activity(ies) (outside of school / work) brings you the most joy? How do you plan to incorporate that activity into your schedule this quarter (if at all)? If you are unable to do so, is there something else you can plan to do that will bring you similar joy? (3-5 sentences)\nWhat is a piece of media you enjoyed recently? (e.g. music, book, movie, tweet, meme) (2-4 sentences)"
-  },
-  {
-    "objectID": "assignments/SR1-precourse.html#description",
-    "href": "assignments/SR1-precourse.html#description",
-    "title": "Pre-course reflection (SR #1)",
-    "section": "",
-    "text": "In this assignment, you’ll introduce yourself, come up with a plan for what you’d like to get out of the class, and roughly outline how you’ll accomplish your goals throughout the quarter. You’ll continue visiting the goals you set for yourself in this assignment throughout the quarter, so it’s worthwhile to be reflective!\nBecause everyone is participating under unique circumstances, I want to learn about your learning contexts. I can best support you in this class if you address the following:\n\nSome questions about school and life:\n\nWhere are you coming from (e.g. “I recently finished my undergraduate degree”, “I’ve been working in industry X for Y years”) (1-2 sentences)\nWhat do you hope to get out of this class? (3-4 sentences)\nIf you have a particular career goal in mind, how does this course apply to your future career, if at all? (1-3 sentences)\nWhat do you wish your instructors knew about you, but don’t? (2-4 sentences)\n\nSome questions about the way you like to learn:\n\nWhat kinds of assignments, skills, or behaviors have you felt most comfortable with / enjoy from past classes? Why do you enjoy them? (4-5 sentences)\nHow confident do you feel in your data visualization skills? Why? (3-4 sentences)\nHow confident do you feel in your coding skills (primarily R, but feel free to elaborate on any of the languages you’ve used)? Why? (3-4 sentences)\nWhat have you struggled with in the past in other graduate-level courses? Why? (3-4 sentences)\nOf the courses you’re taking this quarter, which do you expect to be the most challenging? Most demanding? (1-2 sentences)\nWhat responsibilities do you have outside of school, and how do you want to balance them? (3-4 sentences)\nWhich learning goals from the syllabus are you most excited about? (3-4 sentences)\nMost importantly, how do you plan on accomplishing your learning goals for this course? Note: be specific here! Instead of writing, “I will complete homework assignments” or “I will study”, you can make these more specific strategies: “I will create a schedule to map out assignments“ (elaborate on this), “I will use the homework assignments as opportunities to practice X,” I will communicate with classmates to ask for help after trying X,” “I will participate in online learning communities, such as TidyTuesday…” etc. (5-8 sentences)\n\nSome fun questions:\n\nWhat activity(ies) (outside of school / work) brings you the most joy? How do you plan to incorporate that activity into your schedule this quarter (if at all)? If you are unable to do so, is there something else you can plan to do that will bring you similar joy? (3-5 sentences)\nWhat is a piece of media you enjoyed recently? (e.g. music, book, movie, tweet, meme) (2-4 sentences)"
-  },
-  {
-    "objectID": "assignments/SR1-precourse.html#rubric-specifications",
-    "href": "assignments/SR1-precourse.html#rubric-specifications",
-    "title": "Pre-course reflection (SR #1)",
-    "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this Pre-course reflection:\nComplete the following steps in your GitHub Classroom repo (eds240-sr1-USERNAME/SR1-precourse-reflection.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the SR1-precourse-reflection.qmd YAML\nanswer all questions above, adhering to the length requirements specified at the end of each question prompt\nwe (your instructors) should be able to successfully render SR1-precourse-reflection.qmd locally without error, however do not push any html files to GitHub (i.e. SR1-precourse-reflection.html and SR1-precourse-reflection_files/; consider adding these to your .gitignore so that you don’t accidentally push them)\npush your completed SR1-precourse-reflection.qmd to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/13/2024"
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Earning “Satisfactory” marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
-  },
-  {
-    "objectID": "assignments.html#assignments",
-    "href": "assignments.html#assignments",
-    "title": "Assignments",
-    "section": "",
-    "text": "Earning “Satisfactory” marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
-  },
-  {
-    "objectID": "assignments.html#end-of-class-surveys",
-    "href": "assignments.html#end-of-class-surveys",
-    "title": "Assignments",
-    "section": "End-of-class surveys",
-    "text": "End-of-class surveys\nEnd-of-class surveys (EOCs) will become available at the end of each class (Mondays) and are due by end-of-day (11:55pm PT). Completing EOCs by the due dates/times will, in-part (along with class attendance), determine whether you earn a +/- on your course grade.\n\n\n\nEOC link\nDate Assigned\nDate Due\n\n\n\n\nEOC (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 2)\nNA\nNA\n\n\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nEOC (week 6)\nMon 02/12/2024\nMon 02/12/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 7)\nNA\nNA\n\n\nEOC (week 8)\nMon 02/26/2024\nMon 02/26/2024, 11:55pm PT\n\n\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT"
-  },
-  {
-    "objectID": "assignments.html#grade-tracker",
-    "href": "assignments.html#grade-tracker",
-    "title": "Assignments",
-    "section": "Grade Tracker",
-    "text": "Grade Tracker\nUse the Grade Tracker, below, to determine your course grade:\n\n\n\n\n\n\n\n\n\nRedeem tokens in exchange for assignment extensions, missing class, or to revise/resubmit an assignment that received a “Not Yet” mark."
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #3:\nprovide students with a poorly-made ggplot (bad color choices, text, arrangement of groups, etc.). provide data set. students should wrangle and recreate the plot with improvements to aesthetics. also should add at least one additional improvement (e.g. annotations, etc.)"
   },
   {
     "objectID": "assignments/HW1.html",
@@ -1953,74 +2170,151 @@
     "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part II:\nComplete the following step under your own personal GitHub profile, not in GitHub Classrooms:\n\ncreate a GitHub repository named lastName-eds240-HW4, which is where you’ll be doing any / all work related to Assignment #4. Be sure to make your repository public, initialize your repository with a README, and add a .gitignore file.\nadd Sam and Sevan as collaborators on your repo (on GitHub: Settings &gt; Collaborators &gt; Add people; our user names are samanthacsik and SevanEsaian)\nadd your repository’s URL next to your name on this Google Sheet\n\nComplete the following steps in your GitHub Classroom repo (eds240-hw1-USERNAME/Part2.qmd):\n\nlink to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4\nanswer all parts of the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you do not need to complete the optional importing of data – if you do want to practice importing your data, be sure to do so in your lastName-eds240-HW4 repository\nwe (your instructors) should be able to successfully render Part2.qmd locally without errors, however do not push any html files to GitHub (i.e. Part2.html and Part2_files/; consider adding these to your .gitignore so that you don’t accidentally push them) – only push Part2.qmd\npush your completed Part2.qmd to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024\n\n\n\n End Part II"
   },
   {
-    "objectID": "assignments/HW3.html#rubric-specifications",
-    "href": "assignments/HW3.html#rubric-specifications",
-    "title": "Assignment #3 (HW #3)",
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Earning “Satisfactory” marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
+  },
+  {
+    "objectID": "assignments.html#assignments",
+    "href": "assignments.html#assignments",
+    "title": "Assignments",
+    "section": "",
+    "text": "Earning “Satisfactory” marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
+  },
+  {
+    "objectID": "assignments.html#end-of-class-surveys",
+    "href": "assignments.html#end-of-class-surveys",
+    "title": "Assignments",
+    "section": "End-of-class surveys",
+    "text": "End-of-class surveys\nEnd-of-class surveys (EOCs) will become available at the end of each class (Mondays) and are due by end-of-day (11:55pm PT). Completing EOCs by the due dates/times will, in-part (along with class attendance), determine whether you earn a +/- on your course grade.\n\n\n\nEOC link\nDate Assigned\nDate Due\n\n\n\n\nEOC (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 2)\nNA\nNA\n\n\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nEOC (week 6)\nMon 02/12/2024\nMon 02/12/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 7)\nNA\nNA\n\n\nEOC (week 8)\nMon 02/26/2024\nMon 02/26/2024, 11:55pm PT\n\n\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT"
+  },
+  {
+    "objectID": "assignments.html#grade-tracker",
+    "href": "assignments.html#grade-tracker",
+    "title": "Assignments",
+    "section": "Grade Tracker",
+    "text": "Grade Tracker\nUse the Grade Tracker, below, to determine your course grade:\n\n\n\n\n\n\n\n\n\nRedeem tokens in exchange for assignment extensions, missing class, or to revise/resubmit an assignment that received a “Not Yet” mark."
+  },
+  {
+    "objectID": "assignments/SR1-precourse.html",
+    "href": "assignments/SR1-precourse.html",
+    "title": "Pre-course reflection (SR #1)",
+    "section": "",
+    "text": "In this assignment, you’ll introduce yourself, come up with a plan for what you’d like to get out of the class, and roughly outline how you’ll accomplish your goals throughout the quarter. You’ll continue visiting the goals you set for yourself in this assignment throughout the quarter, so it’s worthwhile to be reflective!\nBecause everyone is participating under unique circumstances, I want to learn about your learning contexts. I can best support you in this class if you address the following:\n\nSome questions about school and life:\n\nWhere are you coming from (e.g. “I recently finished my undergraduate degree”, “I’ve been working in industry X for Y years”) (1-2 sentences)\nWhat do you hope to get out of this class? (3-4 sentences)\nIf you have a particular career goal in mind, how does this course apply to your future career, if at all? (1-3 sentences)\nWhat do you wish your instructors knew about you, but don’t? (2-4 sentences)\n\nSome questions about the way you like to learn:\n\nWhat kinds of assignments, skills, or behaviors have you felt most comfortable with / enjoy from past classes? Why do you enjoy them? (4-5 sentences)\nHow confident do you feel in your data visualization skills? Why? (3-4 sentences)\nHow confident do you feel in your coding skills (primarily R, but feel free to elaborate on any of the languages you’ve used)? Why? (3-4 sentences)\nWhat have you struggled with in the past in other graduate-level courses? Why? (3-4 sentences)\nOf the courses you’re taking this quarter, which do you expect to be the most challenging? Most demanding? (1-2 sentences)\nWhat responsibilities do you have outside of school, and how do you want to balance them? (3-4 sentences)\nWhich learning goals from the syllabus are you most excited about? (3-4 sentences)\nMost importantly, how do you plan on accomplishing your learning goals for this course? Note: be specific here! Instead of writing, “I will complete homework assignments” or “I will study”, you can make these more specific strategies: “I will create a schedule to map out assignments“ (elaborate on this), “I will use the homework assignments as opportunities to practice X,” I will communicate with classmates to ask for help after trying X,” “I will participate in online learning communities, such as TidyTuesday…” etc. (5-8 sentences)\n\nSome fun questions:\n\nWhat activity(ies) (outside of school / work) brings you the most joy? How do you plan to incorporate that activity into your schedule this quarter (if at all)? If you are unable to do so, is there something else you can plan to do that will bring you similar joy? (3-5 sentences)\nWhat is a piece of media you enjoyed recently? (e.g. music, book, movie, tweet, meme) (2-4 sentences)"
+  },
+  {
+    "objectID": "assignments/SR1-precourse.html#description",
+    "href": "assignments/SR1-precourse.html#description",
+    "title": "Pre-course reflection (SR #1)",
+    "section": "",
+    "text": "In this assignment, you’ll introduce yourself, come up with a plan for what you’d like to get out of the class, and roughly outline how you’ll accomplish your goals throughout the quarter. You’ll continue visiting the goals you set for yourself in this assignment throughout the quarter, so it’s worthwhile to be reflective!\nBecause everyone is participating under unique circumstances, I want to learn about your learning contexts. I can best support you in this class if you address the following:\n\nSome questions about school and life:\n\nWhere are you coming from (e.g. “I recently finished my undergraduate degree”, “I’ve been working in industry X for Y years”) (1-2 sentences)\nWhat do you hope to get out of this class? (3-4 sentences)\nIf you have a particular career goal in mind, how does this course apply to your future career, if at all? (1-3 sentences)\nWhat do you wish your instructors knew about you, but don’t? (2-4 sentences)\n\nSome questions about the way you like to learn:\n\nWhat kinds of assignments, skills, or behaviors have you felt most comfortable with / enjoy from past classes? Why do you enjoy them? (4-5 sentences)\nHow confident do you feel in your data visualization skills? Why? (3-4 sentences)\nHow confident do you feel in your coding skills (primarily R, but feel free to elaborate on any of the languages you’ve used)? Why? (3-4 sentences)\nWhat have you struggled with in the past in other graduate-level courses? Why? (3-4 sentences)\nOf the courses you’re taking this quarter, which do you expect to be the most challenging? Most demanding? (1-2 sentences)\nWhat responsibilities do you have outside of school, and how do you want to balance them? (3-4 sentences)\nWhich learning goals from the syllabus are you most excited about? (3-4 sentences)\nMost importantly, how do you plan on accomplishing your learning goals for this course? Note: be specific here! Instead of writing, “I will complete homework assignments” or “I will study”, you can make these more specific strategies: “I will create a schedule to map out assignments“ (elaborate on this), “I will use the homework assignments as opportunities to practice X,” I will communicate with classmates to ask for help after trying X,” “I will participate in online learning communities, such as TidyTuesday…” etc. (5-8 sentences)\n\nSome fun questions:\n\nWhat activity(ies) (outside of school / work) brings you the most joy? How do you plan to incorporate that activity into your schedule this quarter (if at all)? If you are unable to do so, is there something else you can plan to do that will bring you similar joy? (3-5 sentences)\nWhat is a piece of media you enjoyed recently? (e.g. music, book, movie, tweet, meme) (2-4 sentences)"
+  },
+  {
+    "objectID": "assignments/SR1-precourse.html#rubric-specifications",
+    "href": "assignments/SR1-precourse.html#rubric-specifications",
+    "title": "Pre-course reflection (SR #1)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #3:"
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this Pre-course reflection:\nComplete the following steps in your GitHub Classroom repo (eds240-sr1-USERNAME/SR1-precourse-reflection.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the SR1-precourse-reflection.qmd YAML\nanswer all questions above, adhering to the length requirements specified at the end of each question prompt\nwe (your instructors) should be able to successfully render SR1-precourse-reflection.qmd locally without error, however do not push any html files to GitHub (i.e. SR1-precourse-reflection.html and SR1-precourse-reflection_files/; consider adding these to your .gitignore so that you don’t accidentally push them)\npush your completed SR1-precourse-reflection.qmd to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/13/2024"
   },
   {
-    "objectID": "assignments/SR3-endcourse.html",
-    "href": "assignments/SR3-endcourse.html",
-    "title": "End-of-course reflection (SR #3)",
+    "objectID": "assignments/HW2.html",
+    "href": "assignments/HW2.html",
+    "title": "Assignment #2 (HW #2)",
     "section": "",
-    "text": "In this assignment, you’ll reflect on your learning throughout this class. Revisit your self-evaluations from the start and middle of the quarter, and answer the following questions:\n\nSince your mid-quarter self-evaluation, have you improved any of your existing skills? Have you learned new ones?\nHave you accomplished your learning goals for this quarter (that you set at the beginning of the quarter)? If you did, how did you do it?\nWhat are you proudest of accomplishing in this course?\nWhat are some transferable skills that you developed in this course? How might you apply them to other courses / deliverables within the MEDS program or jobs in the future?\nWhat is one thing that you really liked about this course, and why? What is one thing you think could be improved about this course, and how?\nIs there anything else you’d like the instructors to know about your experience in the course?"
+    "text": "You must earn a “Satisfactory” mark for each individual Part (I and II) to earn a “Satisfactory” mark for Assignment #2.\nNOTE: Assignments are to be submitted via GitHub Classrooms, unless otherwise noted. Each student receives one “free pass” for not submitting assignments via specified channels, after which you will receive a “Not Yet” mark.\nRead each part of the assignment carefully, and use the check boxes to ensure you’ve addressed all elements of the assignment!"
   },
   {
-    "objectID": "assignments/SR3-endcourse.html#description",
-    "href": "assignments/SR3-endcourse.html#description",
-    "title": "End-of-course reflection (SR #3)",
-    "section": "",
-    "text": "In this assignment, you’ll reflect on your learning throughout this class. Revisit your self-evaluations from the start and middle of the quarter, and answer the following questions:\n\nSince your mid-quarter self-evaluation, have you improved any of your existing skills? Have you learned new ones?\nHave you accomplished your learning goals for this quarter (that you set at the beginning of the quarter)? If you did, how did you do it?\nWhat are you proudest of accomplishing in this course?\nWhat are some transferable skills that you developed in this course? How might you apply them to other courses / deliverables within the MEDS program or jobs in the future?\nWhat is one thing that you really liked about this course, and why? What is one thing you think could be improved about this course, and how?\nIs there anything else you’d like the instructors to know about your experience in the course?"
+    "objectID": "assignments/HW2.html#learning-outcomes",
+    "href": "assignments/HW2.html#learning-outcomes",
+    "title": "Assignment #2 (HW #2)",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nidentify which types of visualizations are most appropriate for your data and your audience\nprepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\nbuild effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages"
   },
   {
-    "objectID": "assignments/SR3-endcourse.html#rubric-specifications",
-    "href": "assignments/SR3-endcourse.html#rubric-specifications",
-    "title": "End-of-course reflection (SR #3)",
+    "objectID": "assignments/HW2.html#description",
+    "href": "assignments/HW2.html#description",
+    "title": "Assignment #2 (HW #2)",
+    "section": "Description",
+    "text": "Description\nIn class, we discussed strategies and considerations for choosing the right graphic form to represent your data and convey your intended message. Here, you’ll apply what we’ve learned to a data set on lobster abundance and sizes, collected from coastal rocky reef sites within the Santa Barbara Coastal LTER. Unfold the following note to read more about the data before continuing on (collapsed to save space):\n\n\n\n\n\n\nLearn about the data:\n\n\n\n\n\n\nAbout SBC LTER\nThe Santa Barbara Coastal Long Term Ecological Research (SBC LTER) site was established in 2000 as part of the LTER Network to understand the ecology of coastal kelp forest ecosystems. Research and long-term ecological and environmental monitoring data is collected within a 10,000 square kilometer area of the northern portion of the Southern California Bight, which includes the Santa Barbara Channel, coastal watersheds, small estuaries, and sandy beaches that border the Channel. You can explore the full data catalog.\n\n\nAbout the data set\nThere are five coastal rocky reef research sites at which the SBC LTER collects long-term monitoring data:\n\nNaples Reef (NAPL)\nIsla Vista Reef (IVEE)\nArroyo Quemado Reef (AQUE)\nMohawk Reef (MOHK)\nCarpinteria Reef (CARP)\n\nIn January 2012, Naples Reef and Isla Vista Reef were designated as Marine Protected Areas (MPAs), prohibiting any future take of lobsters (along with other living marine resources). Since then, the SBC LTER has conducted annual (late summer) benthic surveys at each of the above five sites, where SCUBA divers record lobster abundance and sizes. Explore the metadata for more information.\n\n\nData citation\nReed, D, R. Miller. 2023. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012 ver 9. Environmental Data Initiative. https://doi.org/10.6073/pasta/3595322687af94cd532620ad9db94c77.\n\n\nFinding this data set\nKnowing how to search for data can be tricky! Here’s how I accessed this particular data set, should you want to search for LTER data yourself, in the future:\n\nFilter the SBC LTER Data Catalog for data sets related to Reef/Kelp Forest habitats (check the box next to the habitat type of interest, or filter by measurement type or LTER Core Research Area). This produces a table of data collections, descriptions, and links to individual data and metadata records.\nChoose a data set of interest. I was interested in the SBC LTER: Spiny lobster in California Collection, which includes three different data sets. I specifically chose, Lobster abundace, size, and fishing pressure – here, you’ll find lots of metadata, including people and organizations involved in this data collection, temporal, geographic, and taxonomic coverage, methods and protocols, and links to data files. Additionally, you’ll see a link to the EDI Data Portal (top right corner), which is the data repository that maintains all data and metadata produced by the LTER. EDI assigns a DOI (Digital Object Identifier) to each version of a data package (data package = data + metadata; SBC LTER updates this data set each year when new data is collected – each update receives a new DOI).\nDownload or import the data. You can download the data file from either the SBC LTER Data Catalog or the EDI Data Package. However I prefer reading in the data directly from online (that way, I don’t need to worry about storing large data files). I recommend doing this from the EDI Data Package (rather than the SBC LTER Data Catalog), since the DOI ensures you can re-reference the exact same version, even after the data set is updated with new data (SBC LTER Data Catalog only has a download link for the most up-to-date version of the data). To do so, right click on the Download Data button, then select Copy Link Address.\n\n\n\n\n\n\n\n\n\n\nUse this url inside read_csv() to import the data into your script or Qmd / Rmd file:\n\nlobster_data &lt;- read_csv(\"https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-sbc.77.9&entityid=f32823fba432f58f66c06b589b7efac6\")\n\n\n\n\n\nYour goal is to create a visualization that explores how lobster size differs across each of the five coastal rocky reef SBC LTER sites for the years 2012 (when IVEE and NAPL were established as MPAs) and 2022 (10 years later).\nThis will first require some data exploration and wrangling. Some tips (unfold below):\n\n\n\n\n\n\nData exploration & wrangling tips\n\n\n\n\n\nData exploration tips:\n\nUse glimpse() and / or str() to check out your variables and data types\nUse names() to return all column names\nExtract unique elements using unique(df$column_name)\nOpen up the spreadsheet-style data viewer using View(df)\nBe sure to review the metadata (including methods & protocols) to fully understand the data\n\nData wrangling tips:\n\nI love starting all my cleaning pipelines with janitor::clean_names() to convert column headers into lowercase snake_case (not necessary, but easy to implement and super helpful for yourself and others)\nYou’ll want to keep just the years of interest\nMissing size measurements are denoted with -99999 – consider how to deal with these\nEach row is not always a single observation, but rather summed lobster counts at each size observed within a site / transect / replicate. You’ll want to wrangle the data such that each row represents a single lobster observation. You may need to do some Googling to figure out a solution for this (HINT: you’re looking to perform the opposite of count()).\nI often find that I’ll need to return to my data wrangling pipeline again after I start plotting my data – it’s at this stage that I’ll often catch variables that are the wrong data type (e.g. numeric, factor, character) for plotting and need to make the appropriate updates.\n\n\n\n\n(Part 1a) After exploring and wrangling your data, answer the following questions:\n\n1. What are your variables of interest and what kinds of data (e.g. numeric, categorical, ordered, etc.) are they? (a bullet point list here is fine)\n2. Using From Data to Viz, identify which graphic forms / geoms are appropriate, given your data. List them out. (a bullet point list here is fine)\n3. Now that you have a list of options, what are some of your considerations as you decide which type of graph create? For example, is it important / valuable to show sample size? Why or why not? How will you represent multiple groups? etc. (3-4 sentences)\n\nNow that you’ve explored and starting wrangling your data, it’s time to create some plots. It’s often important to try out multiple graphic forms (e.g. geom_*()s) as you decide which is the most effective way of presenting your data. This process is commonly referred to as Exploratory Data Analysis or Exploratory Data Visualization. Some tips (unfold below):\n\n\n\n\n\n\nData viz creation tips\n\n\n\n\n\nData viz creation tips:\n\nI always find it helpful to sketch things out on paper first\nThere’s no need to create anything special or particularly visually-pleasing during this exploratory visualization phase. It can be helpful to make minor modifications, (e.g. rearranging groups in a logical order, color groups, etc.) to help you identify any emerging patterns\nWe created a number of different plot types together in class, exploring different geoms and some of the arguments that each ggplot layer can take. Be sure to take a look back at the lecture materials, but also know that you may need to reference documentation and / or online examples to create / modify your intended visualizations.\n\n\n\n\n(Part 1b) Complete the following:\n\nCreate at least three different plots as part of your exploratory data visualization phase to test out which graphic forms / geoms works best. Your last plot should be the version that you feel is best suited for presenting your data. (NOTE: Your first two plots do not need to be at all polished – during the exploratory data visualization phase, we’re most concerned with choosing a graphic form / geom(s) for effectively presenting our data.)\n1. Consider all three of your plots. What about the graphic forms / geoms used in plots #1 and #2 was not as effective as plot #3? Justify your decision to pursue plot #3. (5-8 sentences)\n2. (For plot #3 only) Consider modifications that we discussed in lecture that may make this plot easier to interpret (e.g. updating colors, moving or removing legends, highlighting groups, ordering groups) – be sure to update your plot as appropriate, then explain why you chose to make the above modifications. If you chose not to make any of these modifications, why not? (3-6 sentences)\n3. Polish your third (final) plot by updating the labels and theme (we’ll cover theme modifications during week 4 discussion section). List out the changes you made to your plot’s theme (e.g. “updated axis text size”, “removed minor gridlines”, etc.). (a bullet list here is fine)\n4. Describe two or more challenges you encountered while deciding on / creating your plots – these can be conceptual (e.g. challenges in determining how to best represent your data) and / or technical (e.g. code-based challenges). (4-8 sentences)\n5. Add alt text to your final visualization following the formula discussed during week 2’s discussion section and using the #| fig-alt: code chunk option."
+  },
+  {
+    "objectID": "assignments/HW2.html#rubric-specifications",
+    "href": "assignments/HW2.html#rubric-specifications",
+    "title": "Assignment #2 (HW #2)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this End-of-course reflection:\nComplete the following steps in your GitHub Classroom repo (eds240-SR3/SR3-endcourse-reflection.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the title of the SR3-endcourse-reflection.qmd YAML\nbe ~300-400 words\naddress the 6 topics above (but please feel free to expand on these if you would like)\npush SR3-endcourse-reflection.qmd to GitHub using GitHub Classrooms by 11:59pm PT on Sat 03/16/2024\n\nAdditionally, please complete the ESCI evaluations associated with this course (EDS 240) for both the instructor (Sam Csik) and TA (tbd) by the deadline (Friday, 03/15/2024)."
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #2, Part I:\nComplete the following steps in your GitHub Classroom repo (eds240-HW2/Part1.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the Part1.qmd YAML\nanswer the three Part 1a questions, adhering to the length requirements specified at the end of each question prompt\ncreate three different plots (two unpolished exploratory data visualizations and one polished final plot) in accordance with Part 1b instructions (NOTE: there isn’t necessarily a single correct answer here, but your final plot should clearly display the variables of interest and you should be able to justify your choice in your written responses)\ncode should be clearly organized and annotated following conventions and guidelines outlined in the Writing clean code page on the course website\nanswer the five Part 1b questions, adhering to the length requirements specified at the end of each question prompt\nadd alt text to your final visualization in accordance with Part 1b instructions\nwe should be able to run individual lines / chunks of code and render Part1.qmd without errors\nall three plot outputs should appear in your rendered doc\npush your completed Part1.qmd to GitHub via GitHub Classrooms by 11:59pm PT on Sat 02/03/2024\n\n\n\n End Part I"
   },
   {
-    "objectID": "getting-unstuck.html",
-    "href": "getting-unstuck.html",
-    "title": "Getting unstuck",
+    "objectID": "assignments/HW2.html#learning-outcomes-1",
+    "href": "assignments/HW2.html#learning-outcomes-1",
+    "title": "Assignment #2 (HW #2)",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nNote: This part of HW #2 is a continuation of HW #1, Part II and is the next step in working towards your final course assignment. Your final assignment is meant to combine nearly all of the course learning outcomes(!):\n\nidentify which types of visualizations are most appropriate for your data and your audience\nprepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\nbuild effective, responsible, accessible, and aesthetically-pleasing visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages\nwrite code from scratch and read and adapt code written by others\napply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations\n\nRead the description, below, for details on what to work on this week."
+  },
+  {
+    "objectID": "assignments/HW2.html#description-1",
+    "href": "assignments/HW2.html#description-1",
+    "title": "Assignment #2 (HW #2)",
+    "section": "Description",
+    "text": "Description\nA small part of each homework assignment will be dedicated to working on a series of data visualizations which will be due as part of Assignment #4 at the end of the quarter. Assignment #4 will ask you to build three related, but different data visualizations – all which will use the same data set(s), but present those data differently for three different audiences / purposes:\n\na visualization for a general audience (i.e. without domain expertise) – this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), display findings in an atypical but creative way, and / or may blend both art and science\na visualization to be included in a paper, technical documentation, or report – this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.\na visualization that you could include in a presentation – you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you’re animating pieces of your visualization onto a slide)\n\n(Part 2a) This week, you’ll focus on importing / wrangling / and beginning the exploratory data visualization phase, using the data you found as part of HW #1, Part II. Complete the following:\n\nCreate an file named, HW2-exploration.qmd within your lastName-eds240-HW4 repo and add appropriate YAML fields\nLoad necessary packages and read in your data\nClean & wrangle your data\nCreate at least three (but of course feel free to create more!) exploratory visualizations (similar to plot #1 and #2 in Part I of this assignment).\nIMPORTANT: If you have a downloaded data file saved to your repo (e.g. you’re not reading in your data directly from online, from a server, etc.) be sure to add your data folder / file to your .gitignore, particularly if this file is large.\n\n(Part 2b) After completing the above steps, answer the following questions:\n\n1. What have you learned about your data? Have any potentially interesting patterns emerged? (5-8 sentences)\n2. In HW #1, you outlined some questions that you wanted to answer using these data. Have you made any strides towards answering those questions? If yes, how so? If no, what next steps do you need to take (e.g. I need to create X plot type, I still need to track down Y data, I need to restructure existing data so that you can visualize it in Z ways, etc.)? (8-12 sentences)\n3. What challenges do you foresee encountering with your data? These can be data wrangling and / or visualization challenges. (4-6 sentences)"
+  },
+  {
+    "objectID": "assignments/HW2.html#rubric-specifications-1",
+    "href": "assignments/HW2.html#rubric-specifications-1",
+    "title": "Assignment #2 (HW #2)",
+    "section": "Rubric (specifications)",
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #2, Part II:\nComplete the following steps under your lastName-eds240-HW4 repo, not in GitHub Classrooms:\n\nperform all Part 2a steps, as described above, in HW2-exploration.qmd\nanswer Part 2b questions, also in HW2-exploration.qmd, adhering to the length requirements specified at the end of each question prompt\nall four plot outputs should appear in your rendered doc\nHW2-exploration.qmd should be neatly organized – this does not need to be a perfectly polished document, but sections should be clearly labeled with prose and / or annotations so that we can easily follow along.\npush your completed HW2-exploration.qmd to your repo by 11:59pm PT on Sat 02/03/2024\n\n\n\n End Part II"
+  },
+  {
+    "objectID": "assignments/HW4.html#rubric-specifications",
+    "href": "assignments/HW4.html#rubric-specifications",
+    "title": "Assignment #4 (HW #4)",
+    "section": "Rubric (specifications)",
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #4:"
+  },
+  {
+    "objectID": "assignments/SR2-midcourse.html",
+    "href": "assignments/SR2-midcourse.html",
+    "title": "Mid-course reflection (SR #2)",
     "section": "",
-    "text": "A large part of being a data scientist is ~being okay~ with not immediately knowing the answers to your code challenges – troubleshooting errors, deciphering code, and trying new things (and likely failing at some…er many…of them) is all a part of the job. We all experience it, no matter how many years we’ve been at it."
+    "text": "In this assignment, you’ll be writing about your learning throughout this course so far. Remember that these assignments are opportunities for you to reflect on your own progress in the course.\nReread your responses to your Pre-course reflection (SR #1) to refresh your memory, and answer the following questions in 2-3 sentences:\n\nHow have you progressed towards your learning goals for this course?\nWhat skills are you proud of developing?\nIf you’ve needed help, how have you sought it out? If you haven’t sought out help, why not?\nLooking forward, how have your learning goals changed? Have they stayed the same?\nWhat topics have excited you the most (so far)? Have you spent time or efforts outside of class and/or the assignments diving deeper into any of these topics? If yes, what did you learn?\nHow would you change the structure of this course, if at all? If you wouldn’t, what in particular has been working for you?\nIs there anything about this course that you are really enjoying? Anything that isn’t working for you?\nWhat else would you like me to know about your experience in the course thus far?"
   },
   {
-    "objectID": "getting-unstuck.html#where-to-find-help",
-    "href": "getting-unstuck.html#where-to-find-help",
-    "title": "Getting unstuck",
-    "section": "Where to find help",
-    "text": "Where to find help\nWe often learn the most (and remember more of what we learned) when we take the time to troubleshoot on our own (or at least narrow down the potential problem(s)), so you should always plan to start there . The graphic below shows the order in which you should approach different resources for help:"
-  },
-  {
-    "objectID": "getting-unstuck.html#roadblock-checklist",
-    "href": "getting-unstuck.html#roadblock-checklist",
-    "title": "Getting unstuck",
-    "section": "Roadblock checklist",
-    "text": "Roadblock checklist\nIf you hit a roadblock, run through this checklist to make sure you’ve done your due diligence before bringing your question(s) to a peer, TA, or instructor:\n\nrevisit the course materials – your question may already be answered in the slides\nread the documentation – you can do so directly from RStudio by typing ?function_name in the console\nsearch for and read the package’s, vignette if available – these are often linked on CRAN under the Documents section (e.g. see {dplyr} on CRAN) or found by Googling package_name vignette (e.g. the result of Googling dplyr vignette leads to the dplyr vignette)\ntry Googling! – don’t forget to a look back some of our suggested troubleshooting and Googling tips in Teach Me How to Google:"
-  },
-  {
-    "objectID": "getting-unstuck.html#how-to-ask-questions",
-    "href": "getting-unstuck.html#how-to-ask-questions",
-    "title": "Getting unstuck",
-    "section": "How to ask questions",
-    "text": "How to ask questions\nWhen you decide you’re going to ask a question to a peer / TA / instructor, be sure to (borrowed from Dr. Allison Horst’s Troubleshooting 101 lecture, EDS 221):\n\nProvide context. For example, “I’m trying to do this…” or “I’m working on the task where we do this…”\nShare the specific challenge. “I’m specifically trying to [insert function / package] to do this thing.”\nShare what happens and what you’ve learned. “I repeatedly get an error message that says [this]. I’ve tried [this] and [this]”\nShow your code ideally with a reprex that they can run / test.\nValue and expect the Socratic method, especially in classes and workshops – our goal is to provide critical thinking that is transferable, not just to provide a quick fix for a single error."
-  },
-  {
-    "objectID": "getting-unstuck.html#some-words-of-wisdom",
-    "href": "getting-unstuck.html#some-words-of-wisdom",
-    "title": "Getting unstuck",
-    "section": "Some words of wisdom",
-    "text": "Some words of wisdom\nFinally, Julia Evans shares some funny (and highly relatable) words of wisdom:"
-  },
-  {
-    "objectID": "slides/sections/3.3-lyme.html",
-    "href": "slides/sections/3.3-lyme.html",
-    "title": "EDS 240",
+    "objectID": "assignments/SR2-midcourse.html#description",
+    "href": "assignments/SR2-midcourse.html#description",
+    "title": "Mid-course reflection (SR #2)",
     "section": "",
-    "text": "Warning: package 'tidycensus' was built under R version 4.3.1\n\n\nWarning: package 'ggplot2' was built under R version 4.3.1\n\n\nWarning: package 'dplyr' was built under R version 4.3.1\n\n\nWarning: package 'stringr' was built under R version 4.3.1\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nAttaching package: 'janitor'\n\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\n\nTo install your API key for use in future sessions, run this function with `install = TRUE`.\n\nRows: 3143 Columns: 25\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (3): Ctyname, Stname, ststatus\ndbl (22): STCODE, CTYCODE, Cases2001, Cases2002, Cases2003, Cases2004, Cases...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n`summarise()` has grouped output by 'year'. You can override using the `.groups` argument.\nJoining with `by = join_by(state)`"
+    "text": "In this assignment, you’ll be writing about your learning throughout this course so far. Remember that these assignments are opportunities for you to reflect on your own progress in the course.\nReread your responses to your Pre-course reflection (SR #1) to refresh your memory, and answer the following questions in 2-3 sentences:\n\nHow have you progressed towards your learning goals for this course?\nWhat skills are you proud of developing?\nIf you’ve needed help, how have you sought it out? If you haven’t sought out help, why not?\nLooking forward, how have your learning goals changed? Have they stayed the same?\nWhat topics have excited you the most (so far)? Have you spent time or efforts outside of class and/or the assignments diving deeper into any of these topics? If yes, what did you learn?\nHow would you change the structure of this course, if at all? If you wouldn’t, what in particular has been working for you?\nIs there anything about this course that you are really enjoying? Anything that isn’t working for you?\nWhat else would you like me to know about your experience in the course thus far?"
+  },
+  {
+    "objectID": "assignments/SR2-midcourse.html#rubric-specifications",
+    "href": "assignments/SR2-midcourse.html#rubric-specifications",
+    "title": "Mid-course reflection (SR #2)",
+    "section": "Rubric (specifications)",
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this Mid-course reflection:\nComplete the following steps in your GitHub Classroom repo (eds240-SR2/SR2-midcourse-reflection.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the title of the SR1-precourse-reflection.qmd YAML\naddress the 8 topics above (but please feel free to expand on these if you would like)\npush SR2-midcourse-reflection.qmd to GitHub using GitHub Classrooms by 11:59pm PT on Sat 02/10/2024"
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Data Visualization & Communication",
+    "section": "Course Description",
+    "text": "Course Description\nEffectively communicating your work in a responsible, accessible and visually-pleasing way is often (if not, always) a central part of data science. This course will focus on the basic principles for effective communication through data visualization and using technical tools and workflows for creating and sharing data visualizations with diverse audiences.\nBy the end of this course, learners should be able to:\n\nIdentify which types of visualizations are most appropriate for your data and your audience\nPrepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations\nBuild effective, responsible, accessible, and aesthetically-pleasing visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages\nWrite code from scratch and read and adapt code written by others\nApply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations\nAssess, critique, and provide constructive feedback on data visualizations"
+  },
+  {
+    "objectID": "index.html#teaching-team",
+    "href": "index.html#teaching-team",
+    "title": "Data Visualization & Communication",
+    "section": "Teaching Team",
+    "text": "Teaching Team\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nSevan Esaian\nEmail: sevan.esaian@lifesci.ucsb.edu\nLearn more: linkedin.com/in/sevan-esaian"
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Data Visualization & Communication",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nBuilding this course meant learning from the many incredible folks who think a lot about producing effective, beautiful, and responsible data visualizations. I relied heavily on the open source R / {ggplot2} / data viz teaching materials and tutorials that this wonderful data science community shares so willingly. Attribution will be included on any slides / materials where content is adapted from other educators."
   },
   {
     "objectID": "slides/week1.1-logistics-slides.html#title-slide",
@@ -2818,7 +3112,7 @@
     "href": "slides/week4.1-rankings-slides.html#data-wrangling",
     "title": "EDS 240",
     "section": "",
-    "text": "Data wrangling\n\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                                    setup                                 ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n#..........................load packages.........................\nlibrary(tidyverse)\n\n#..........................import data...........................\njobs &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-05/jobs_gender.csv\")\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                                wrangle data                              ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\njobs_clean &lt;- jobs |&gt; \n  \n  # add cols (needed for dumbbell plot) ----\n  mutate(percent_male = 100 - percent_female, # % of females within each industry was already included\n         difference_earnings = total_earnings_male - total_earnings_female) |&gt;  # diff in earnings between M & F\n  \n  # rearrange columns ----\n  relocate(year, major_category, minor_category, occupation,\n          total_workers, workers_male, workers_female,\n          percent_male, percent_female,\n          total_earnings, total_earnings_male, total_earnings_female, difference_earnings,\n          wage_percent_of_male) |&gt; \n  \n  # drop rows with missing earning data ----\n  drop_na(total_earnings_male, total_earnings_female) |&gt; \n  \n  # make occupation a factor ----\n  mutate(occupation = as_factor(occupation)) |&gt; \n  \n  # ---- these next steps are necessary for creating our dumbbell plots ----\n\n  # classify jobs by percentage male or female ----\n  mutate(group_label = case_when(\n    percent_female &gt;= 75 ~ \"Occupations that are 75%+ female\",\n    percent_female &gt;= 45 & percent_female &lt;= 55 ~ \"Occupations that are 45-55% female\",\n    percent_male &gt;= 75 ~ \"Occupations that are 75%+ male\"\n  )) #|&gt; \n  \n  # # column with short names for groups ----\n  # mutate(percentage_group_short = case_when(\n  #   percent_female &gt;= 75 ~ \"f75\",\n  #   percent_female &gt;= 45 & percent_female &lt;= 55 ~ \"f50\",\n  #   percent_male &gt;= 75 ~\"m75\"\n  # ))"
+    "text": "Data wrangling\n\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                                    setup                                 ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n#..........................load packages.........................\nlibrary(tidyverse)\n\n#..........................import data...........................\njobs &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-05/jobs_gender.csv\")\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                                wrangle data                              ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\njobs_clean &lt;- jobs |&gt; \n  \n  # add cols (needed for dumbbell plot) ----\n  mutate(percent_male = 100 - percent_female, # % of females within each industry was already included\n         difference_earnings = total_earnings_male - total_earnings_female) |&gt;  # diff in earnings between M & F\n  \n  # rearrange columns ----\n  relocate(year, major_category, minor_category, occupation,\n          total_workers, workers_male, workers_female,\n          percent_male, percent_female,\n          total_earnings, total_earnings_male, total_earnings_female, difference_earnings,\n          wage_percent_of_male) |&gt; \n  \n  # drop rows with missing earning data ----\n  drop_na(total_earnings_male, total_earnings_female) |&gt; \n  \n  # make occupation a factor ----\n  mutate(occupation = as_factor(occupation)) |&gt; \n  \n  # ---- this next steps are necessary for creating our dumbbell plots ----\n\n  # classify jobs by percentage male or female ----\n  mutate(group_label = case_when(\n    percent_female &gt;= 75 ~ \"Occupations that are 75%+ female\",\n    percent_female &gt;= 45 & percent_female &lt;= 55 ~ \"Occupations that are 45-55% female\",\n    percent_male &gt;= 75 ~ \"Occupations that are 75%+ male\"\n  ))"
   },
   {
     "objectID": "slides/week4.1-rankings-slides.html#bar-lolli-1group",

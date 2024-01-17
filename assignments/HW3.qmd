@@ -9,3 +9,7 @@ title-block-banner: true
 ## Rubric (specifications)
 
 You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #3:
+
+
+provide students with a poorly-made ggplot (bad color choices, text, arrangement of groups, etc.). provide data set. students should wrangle and recreate the plot with improvements to aesthetics. also should add at least one additional improvement (e.g. annotations, etc.)
+

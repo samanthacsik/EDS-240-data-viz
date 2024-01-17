@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -224,7 +258,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pre-class-prep" id="toc-pre-class-prep" class="nav-link active" data-scroll-target="#pre-class-prep">Pre-class Prep</a></li>
+  <li><a href="#pre-class-prep" id="toc-pre-class-prep" class="nav-link active" data-scroll-target="#pre-class-prep">Pre-class Prep</a>
+  <ul class="collapse">
+  <li><a href="#install-required-packages" id="toc-install-required-packages" class="nav-link" data-scroll-target="#install-required-packages">Install required packages</a></li>
+  <li><a href="#download-data" id="toc-download-data" class="nav-link" data-scroll-target="#download-data">Download data</a></li>
+  <li><a href="#install-google-chrome-extensions-optional-but-recommended" id="toc-install-google-chrome-extensions-optional-but-recommended" class="nav-link" data-scroll-target="#install-google-chrome-extensions-optional-but-recommended">Install Google Chrome extensions (optional, but recommended)</a></li>
+  </ul></li>
   <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials">Lecture Materials</a></li>
   <li><a href="#discussion-materials" id="toc-discussion-materials" class="nav-link" data-scroll-target="#discussion-materials">Discussion Materials</a></li>
   <li><a href="#assignment-reminders" id="toc-assignment-reminders" class="nav-link" data-scroll-target="#assignment-reminders">Assignment Reminders</a></li>
@@ -251,7 +290,31 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="pre-class-prep" class="level2">
 <h2 class="anchored" data-anchor-id="pre-class-prep">Pre-class Prep</h2>
-<p><em>Coming soon</em></p>
+<p>Please be sure to complete the following before class:</p>
+<section id="install-required-packages" class="level3">
+<h3 class="anchored" data-anchor-id="install-required-packages">Install required packages</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"maps"</span>) <span class="co"># for drawing geographical maps</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="download-data" class="level3">
+<h3 class="anchored" data-anchor-id="download-data">Download data</h3>
+<ul>
+<li><a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202312/1/value">County-level precipitation data (October 2023) for the contiguous U.S</a>, made available by <a href="https://www.ncei.noaa.gov/">NOAA National Centers for Environmental Information (NCEI)</a> (the download buttons are located just beneath the rendered map – <strong>choose the CSV option</strong>)
+<ul>
+<li>rename the data file as <code>county-precip-dec2023.csv</code> and save it to your class repo at the file path: <code>EDS-240-class-examples/week5/data/county-precip-dec2023.csv</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="install-google-chrome-extensions-optional-but-recommended" class="level3">
+<h3 class="anchored" data-anchor-id="install-google-chrome-extensions-optional-but-recommended">Install Google Chrome extensions (optional, but recommended)</h3>
+<p>I’ll be using both of these (really wonderful and easy-to-use) tools during lecture and encourage you to install them!</p>
+<ol type="1">
+<li><a href="https://chromewebstore.google.com/detail/lets-get-color-blind/bkdgdianpkfahpkmphgehigalpighjck">Let’s get color blind</a>: simulates different color deficiencies in the browser</li>
+<li><a href="https://chromewebstore.google.com/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg">ColorPick Eyedropper</a>: a browser-based color chooser tool (I recommended that you install this for week 3 discussion, so you may already have it!)</li>
+</ol>
+<p>– I’ll be using tGoogle Chrome extension in class. It’s a really wonderful and easy-to-use tool if you typically use the Google Chrome web browser. I recommend installing it!</p>
+</section>
 </section>
 <section id="lecture-materials" class="level2">
 <h2 class="anchored" data-anchor-id="lecture-materials">Lecture Materials</h2>

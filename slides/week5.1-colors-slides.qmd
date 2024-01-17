@@ -27,12 +27,14 @@ editor_options:
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">{{< fa palette title="a painter's palette" >}} Why do we use color?</p>
-<p class="caption-text">*Spend a couple minutes discussing with your Learning Partners why and / or when we use color in data visualizations:*</p>
+<p class="caption-text">*Spend a couple minutes discussing with your Learning Partners the following:*</p>
+<p class="dark-blue-text">**Why and / or when we use color in data visualizations?**</p>
+<p class="dark-blue-text">**Find an example(s) of a data viz that uses color to convey information to share in #eds-240-data viz. Note some of your own observations about the color choices (i.e. why do you think these colors were chosen?).**</p>
 </div>
 
 ```{r}
 countdown::countdown(
-  minutes = 2,
+  minutes = 5,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -52,31 +54,53 @@ countdown::countdown(
 - branding
 :::
 
+<!-- --- -->
+
+<!-- ~start by showing examples of data viz & colors to get reactions~ -->
+
+<!-- - green ocean vs blue ocean map -->
+<!-- - warm city cold city (temperature scales): https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/ -->
+<!-- - precipitation -->
+<!-- - urban areas -->
+<!-- - forests -->
+<!-- - bright colors on elevation maps = high areas; dark = low areas -->
+<!-- - happy vs. sad -->
+
 ---
 
-~start by showing examples of data viz & colors to get reactions~
+## {#colors-difficult data-menu-title="It's hard to choose colors!"} 
 
-- green ocean vs blue ocean map
-- warm city cold city (temperature scales)
-- precipitation
-- urban areas
-- forests
-- bright colors on elevation maps = high areas; dark = low areas
-- happy vs. sad
+[Choosing colors is difficult and they should be purposefully chosen]{.slide-title3}
 
----
+<hr>
 
-##  {#color-theory data-menu-title="# Basic Color Theory #" background="#047C90"}
+<br>
 
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">A crash course in color theory and what it means for data viz</p>
-</div>
+::: {.center-text .body-text-m}
+You'll probably iterate on them as you sit with your visualization and of course, as you get feedback from others.
+:::
+
+<br>
+
+. . . 
+
+**Some places to start / things to consider:**
+
+- is using color the best and / or only way to visually represent your variable(s)?
+
+. . . 
+
+- are you designing for a particular organization / brand?
+- what emotions are you trying (or not trying) to elicit?
+- who is your audience?
+- are your data commonly represented using a particular color scheme?
+- what data types (e.g. discrete vs. continuous) are you working with?
 
 ---
 
 ## {#color-properties data-menu-title="Color properties"} 
 
-[Three color properties influence how we perceive information]{.slide-title3}
+[First, some important definitions:]{.slide-title}
 
 <hr>
 
@@ -95,6 +119,527 @@ knitr::include_graphics("images/week5/hue-sat-val.png")
 ::: {.center-text .body-text-s .gray-text}
 Image source: [medium.com](https://medium.com/awkbit/choosing-a-color-scheme-for-your-website-awkbit-59ab750151dc)
 :::
+
+---
+
+##  {#data-types data-menu-title="# Data types #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Different data types require different palette types</p>
+</div>
+
+---
+
+## {#palette-types data-menu-title="Palette types"} 
+
+[Three major types of color palette]{.slide-title}
+
+<hr>
+
+1. **Qualitative (for categorical / discrete data)**
+2. **Sequential (for continuous numeric or inherently ordered data)**
+3. **Diverging (for continuous numeric data with a meaningful central value)**
+
+---
+
+## {#qual-pal data-menu-title="Qualitative palettes"} 
+
+[Three major types of color palette]{.slide-title}
+
+<hr>
+
+1. **Qualitative (for categorical / discrete data)**
+
+    - [colors assigned to each group must be distinct]{.body-text-s}
+    - [limit to no more than 7 colors]{.body-text-s}
+    - [mainly formed by selecting differet *hues*]{.body-text-s}
+    
+2. [**Sequential (for continuous numeric or inherently ordered data)**]{.gray-text}
+3. [**Diverging (for continuous numeric data with a meaningful central value)**]{.gray-text}
+
+---
+
+## {#seq-pal data-menu-title="Sequential palettes"} 
+
+[Three major types of color palette]{.slide-title}
+
+<hr>
+
+1. [**Qualitative (for categorical / discrete data)**]{.gray-text}
+2. **Sequential (for continuous numeric or inherently ordered data)**
+
+    - [colors assigned to data values in a continuum, based on lightness, hue, or both]{.body-text-s}
+    - [lower values typically associated with lighter colors & higher values associated with darker colors]{.body-text-s}
+    - [can use a single hue (light to dark) *or* two hues (tyipcally a warmer / brighter hue for lower values and cooler / darker hue for higher values)]{.body-text-s}
+    
+3. [**Diverging (for continuous numeric data with a meaningful central value)**]{.gray-text}
+
+---
+
+## {#div-pal data-menu-title="Diverging palettes"} 
+
+[Three major types of color palette]{.slide-title}
+
+<hr>
+
+1. [**Qualitative (for categorical / discrete data)**]{.gray-text}
+2. [**Sequential (for continuous numeric or inherently ordered data)**]{.gray-text}
+3. **Diverging (for continuous numeric data with a meaningful central value)**
+
+    - [combination of two sequential palettes with a shared endpoint at the central value]{.body-text-s}
+    - [use a distinctive hue for each of the component palettes]{.body-text-s}
+    - [central value is assigned a light color (light gray is best)]{.body-text-s}
+
+---
+
+## {#use-or-make data-menu-title="Use pre-made palettes or create your own"} 
+
+[You can use pre-existing palettes, or create your own]{.slide-title2}
+
+<hr>
+
+Sequential and diverging palettes can be used to map continuous values to color in two different ways:
+
+a. Discrete 
+b. Continuous
+
+---
+
+##  {#accessibility data-menu-title="# Accessibility #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Ensuring inclusive and accessible design through your color choices</p>
+</div>
+
+---
+
+## {#colorblindness data-menu-title="Colorblindness"} 
+
+[What is colorblindness?]{.slide-title}
+
+<hr>
+
+Color vision deficiency aka colorblindness is the decreased ability to see color or differences in color. It's estimated that about 1 in 12 men (8%) and 1 in 200 women (0.5%) are affected ([Wikipedia](https://en.wikipedia.org/wiki/Color_blindness)).
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/color-test-plates.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Color plate tests are used to help identify different forms of color blindness. Try using the [Let's get color blind](https://chromewebstore.google.com/detail/lets-get-color-blind/bkdgdianpkfahpkmphgehigalpighjck) Chrome extension to emulate different forms of colorblindness while looking at the above plates. Image source: [American Optometric Association](https://www.aoa.org/healthy-eyes/eye-and-vision-conditions/color-vision-deficiency?sso=y)
+:::
+
+---
+
+## {#rainbow-colormaps data-menu-title="Rainbow colormaps"} 
+
+[The problem with rainbow color maps]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/moreland-rainbow.png")
+```
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "65%"
+knitr::include_graphics("images/week5/noaa-weathermap.png")
+```
+:::
+
+::: {.column width="50%"}
+- [colors don't follow any natural perceived ordering (no innate sense of higher or lower)]{.body-text-s}
+
+- [perceptual changes in rainbow colors are not uniform (e.g. colors appear to change faster in yellow region than green region)]{.body-text-s}
+
+- [insensitive to color vision deficiencies]{.body-text-s}
+:::
+
+::::
+
+<br>
+
+::: {.footer}
+Top image source: [Why we use bad color maps and what you cando about it](https://www.kennethmoreland.com/color-advice/BadColorMaps.pdf) | Bottom left image source: Ware C, Stone M, Albers Szafir D (2023) Rainbow colormaps are not all bad. IEEE Computer Graphics and Applications 43:88-93 [10.1109/MCG.2023.3246111](https://www.computer.org/csdl/magazine/cg/2023/03/10128890/1NdJMHqISnS) | For another example of poor use of rainbow color maps, see this [world map with binned colors](https://en.wikipedia.org/wiki/Poverty#/media/File:Countries_by_Human_Development_Index_(2020).png)
+:::
+
+---
+
+## {#rainbow-colormaps-alt data-menu-title="Alt rainbow colormaps"} 
+
+[Rainbow colormaps aren't all bad]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s .gray-text}
+Problematic, perceptually nonuniform and unordered rainbow colormaps
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/bad-rainbow.png")
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s .gray-text}
+Improved, perceptual uniform and diverging rainbow colormaps
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/better-rainbow.png")
+```
+:::
+
+::::
+
+::: {.center-text .body-text-s .gray-text}
+Image source: Ware C, Stone M, Albers Szafir D (2023) Rainbow colormaps are not all bad. IEEE Computer Graphics and Applications 43:88-93 [10.1109/MCG.2023.3246111](https://www.computer.org/csdl/magazine/cg/2023/03/10128890/1NdJMHqISnS)
+:::
+
+::: {.footer}
+Also check out Stoelzle & Stein (2021), <https://doi.org/10.5194/hess-25-4549-2021> (Figure 1 is particularly helpful!) and Crameri et al. (2020) <https://doi.org/10.1038/s41467-020-19160-7> for some really great supplemental reading 
+:::
+
+---
+
+## {#viridis data-menu-title="Viridis"} 
+
+[Alternative: Viridis]{.slide-title}
+
+<hr>
+
+[The `viridis` color scales](https://ggplot2.tidyverse.org/reference/scale_viridis.html) are perceptually-uniform (even when printed in gray scale) and colorblindness-friendly:
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s .gray-text}
+Continuous viridis scales
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week5/viridis-continuous.png")
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s .gray-text}
+Binned viridis scales
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week5/viridis-binned.png")
+```
+:::
+
+::::
+
+There are a number of different ways to apply `viridis` color scales, but I often opt for [`scale_*_viridis_*()` functions](https://ggplot2.tidyverse.org/reference/scale_viridis.html), which come pre-loaded with `{ggplot}`.
+
+---
+
+## {#use-viridis data-menu-title="Use viridis"} 
+
+[Use viridis color scales]{.slide-title}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s .gray-text}
+Continuous viridis scales
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| #| fig-align: "center"
+#| out-width: "100%"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
+  geom_point(size = 4, alpha = 0.8) +
+  scale_color_viridis_c(option = "magma")
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s .gray-text}
+Discrete viridis scales
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = species)) +
+  geom_point(size = 4, alpha = 0.8) +
+  scale_color_viridis_d(option = "viridis") 
+```
+:::
+
+::::
+
+[Use `option` to specify palette and explore some of the other arguments in the [documentation](https://ggplot2.tidyverse.org/reference/scale_viridis.html).]{.body-text-s}
+
+---
+
+## {#color-brewer data-menu-title="ColorBrewer"} 
+
+[Alternative: RColorBrewer]{.slide-title}
+
+<hr>
+
+[The [ColorBrewer color scales](https://ggplot2.tidyverse.org/reference/scale_brewer.html) provides color schemes for maps and other graphics. There is also a [web-based interface](http://colorbrewer2.org) for generating palettes.]{.body-text-s}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+RColorBrewer::display.brewer.all()
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week5/brewer-all.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+RColorBrewer::display.brewer.all(colorblindFriendly = TRUE)
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week5/brewer-colorblind.png")
+```
+:::
+
+::::
+
+---
+
+## {#use-RColorBrewer data-menu-title="Use RColorBrewer"} 
+
+[Use RColorBrewer color palettes]{.slide-title}
+
+<hr>
+
+Use the right function (all pre-loaded with `{ggplot2}`) for the type of data / palette:
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="33%"}
+
+::: {.center-text .body-text-s .gray-text}
+Use `scale_color_brewer()` to apply a qualitative palette to discrete data
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| #| fig-align: "center"
+#| out-width: "100%"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = species)) +
+  geom_point(size = 4, alpha = 0.8) +
+  scale_color_brewer(palette = "Dark2") 
+```
+:::
+
+::: {.column width="33%"}
+
+::: {.center-text .body-text-s .gray-text}
+Use `scale_color_distiller()` for sequential versions of continuous color scales
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| #| fig-align: "center"
+#| out-width: "100%"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
+  geom_point(size = 4, alpha = 0.8) +
+  scale_color_distiller(palette = "BuPu")
+```
+:::
+
+::: {.column width="33%"}
+
+::: {.center-text .body-text-s .gray-text}
+Use `scale_color_fermenter()` for binned versions of continuous color scales
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
+  geom_point(size = 4, alpha = 0.8) +
+  scale_color_fermenter(palette = "YlGnBu")
+```
+:::
+
+::::
+
+---
+
+## {#redundant-mapping data-menu-title="Redundant mapping"} 
+
+[Use redundant mapping whenever possible]{.slide-title}
+
+<hr>
+
+Recall that colors are [low on the hierarchy of elementary perceptual tasks](https://samanthacsik.github.io/EDS-240-data-viz/slides/week3.1-choosing-graphic-forms-slides.html#/hierarchy). **Avoid conveying important information purely through color** -- consider how you might additionally use shapes, symbols, typography, or annotations.
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/apigo2022.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Figure 2 from Apigo A and Oono R (2022) Plant abundance, but not plant evolutionary history, shapes patterns of host specificity in foliar fungal endophytes. Ecosphere. 13(1):e03879. [https://doi.org/10.1002/ecs2.3879](https://doi.org/10.1002/ecs2.3879)
+:::
+
+---
+
+##  {#premade-palettes data-menu-title="# Pre-made palettes #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">There are *so many* great pre-made color palettes to explore, many of which take into consideration color vision deficiencies (but always double check!)</p>
+</div>
+
+---
+
+## {#color-palette-packages data-menu-title="Color palette packages"} 
+
+[Here are just a few color palette packages to start exploring!]{.slide-title3}
+
+<hr>
+
+---
+
+##  {#climate-colors data-menu-title="# Climate colors #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Climate and environmental science visualizations can (should) draw from community standards, when possible</p>
+</div>
+
+---
+
+## {#suggested-colors data-menu-title="Kaye et al. 2012"} 
+
+[Some widely-used climate science palettes]{.slide-title}
+
+<hr>
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "40%"
+#| fig-align: "center"
+knitr::include_graphics("images/week5/kaye-etal-2012-colors.png")
+```
+
+<br>
+
+::: {.center-text .body-text-s}
+**Figure 4.** Appropriate diverging and sequential colour schemes for the following climate data (a), absolute temperature (b), absolute precipitation (c), temperature anomaly (d), precipitation or runoff anomaly (e and f) other climate variables with no symbolic association . Schemes in this figure are 7 class ones designed by Cynthia Brewer, ([Brewer et al. 2003](https://tizmogollon.weebly.com/uploads/1/5/4/7/15475746/brewer_etal_2003_colorbrewer_in_print.pdf))
+:::
+
+<br>
+
+::: {.footer}
+**Citation:** Kaye NR, Hartley A, Hemming D (2012) Mapping the climate: guidance on appropriate techniques to map climate variables and their uncertainty. Geoscientific Model Development. 5:245-256. www.geosci-model-dev.net/5/245/2012/ ([PDF download](https://www.researchgate.net/publication/307824079_Mapping_the_climate_guidance_on_appropriate_techniques_to_map_climate_variables_and_their_uncertainty))
+:::
+
+---
+
+##  {#color-theory data-menu-title="# Basic Color Theory #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Want to design your own palette? Knowing just a smidge of color theory can help guide you.</p>
+</div>
 
 ---
 
@@ -152,7 +697,7 @@ When using a color picker, **adjust the HEX code sliding scale** to pick a hue a
 knitr::include_graphics("images/week5/google-color-picker.png")
 ```
 ::: {.center-text .body-text-s .gray-text}
-There are lots of great color pickers out there, though [Google color picker](https://www.google.com/search?q=google+color+picker&sca_esv=598283965&ei=uVyjZdXpLtL3kPIPhdaOaA&ved=0ahUKEwiVqoat_9uDAxXSO0QIHQWrAw0Q4dUDCBA&uact=5&oq=google+color+picker&gs_lp=Egxnd3Mtd2l6LXNlcnAiE2dvb2dsZSBjb2xvciBwaWNrZXIyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyDRAAGIAEGIoFGEMYsAMyDRAuGIAEGIoFGEMYsANI6QRQAFgAcAF4AZABAJgBAKABAKoBALgBA8gBAOIDBBgAIEGIBgGQBgo&sclient=gws-wiz-serp) is a quick one to navigate to
+There are lots of great color pickers out there, though [Google color picker](https://www.google.com/search?q=google+color+picker&sca_esv=598283965&ei=uVyjZdXpLtL3kPIPhdaOaA&ved=0ahUKEwiVqoat_9uDAxXSO0QIHQWrAw0Q4dUDCBA&uact=5&oq=google+color+picker&gs_lp=Egxnd3Mtd2l6LXNlcnAiE2dvb2dsZSBjb2xvciBwaWNrZXIyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyDRAAGIAEGIoFGEMYsAMyDRAuGIAEGIoFGEMYsANI6QRQAFgAcAF4AZABAJgBAKABAKoBALgBA8gBAOIDBBgAIEGIBgGQBgo&sclient=gws-wiz-serp) is a quick one to navigate to. [HTML color codes](https://htmlcolorcodes.com/) is my personal favorite.
 :::
 :::
 
@@ -186,7 +731,7 @@ There are lots of great color pickers out there, though [Google color picker](ht
 
 ## {#colors-harmonies1 data-menu-title="Color harmonies"} 
 
-[Use color wheels identify color harmonies]{.slide-title2}
+[Use color wheels identify color harmonies]{.slide-title}
 
 <hr>
 
@@ -311,6 +856,109 @@ Source: Ed Hawkins [(showyourstripes.info)](https://showyourstripes.info/)
 
 ---
 
+## {#emotional-response-bake-off data-menu-title="Color & emotions (bake off)"} 
+
+[Colors elicit emotional responses]{.slide-title}
+
+<hr>
+
+["lightness, brightness, and saturation can communicate the level of seriousness, intensity, and emotional weight in a visual work" ([Cédric Scherer](https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/))]{.body-text-s}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week5/thompson-bake-off.png")
+```
+
+::: {.center-text .gray-text .body-text-s}
+[The Great British Bake Off | Race to the Top](https://github.com/cararthompson/tidytuesdays?tab=readme-ov-file#2022-09---gbbo), by [Cara Thompson](https://www.cararthompson.com/) ([source code](https://github.com/cararthompson/tidytuesdays/blob/main/scripts/202210_gbbo.R))
+:::
+:::
+
+::: {.column width="50%"}
+<br>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/scherer-legos.png")
+```
+
+::: {.center-text .gray-text .body-text-s}
+[The LEGO Color Explosion](https://github.com/z3tt/TidyTuesday?tab=readme-ov-file#202236--lego-database-by-rebrickable), by [Cédric Scherer](https://www.cedricscherer.com/) ([source code](https://github.com/z3tt/TidyTuesday/blob/main/R/2022_36_LEGO_bricks.qmd))
+:::
+:::
+
+::::
+---
+
+## {#emotional-response-covid-cases data-menu-title="Color & emotions (covid cases)"} 
+
+[Colors elicit emotional responses]{.slide-title}
+
+<hr>
+
+["lightness, brightness, and saturation can communicate the level of seriousness, intensity, and emotional weight in a visual work" ([Cédric Scherer](https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/))]{.body-text-s}
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/jh-covid.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+(Right) [COVID-19 tracker](https://coronavirus.jhu.edu/map.html) by the Johns Hopkins University (screenshot from 2020-07-27, courtesy of [Cédric Scherer](https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/)). Red tends to elicit panic / fear. (Left) A map of confirmed COVID-19 cases by Datawrapper (screenshot from 2020-07-27, courtesy of [Cédric Scherer](https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/)). Blues and greens help to avoid such a strong fearful emotional response.
+:::
+
+---
+
+## {#emotional-response-covid-deaths data-menu-title="Color & emotions (covid deaths)"} 
+
+[Colors elicit emotional responses]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+::: {.body-text-m}
+> "We show the **current or confirmed cases in another color than red**. The coronavirus is **not a death sentence**. Most infected people will survive. If you’re infected, you want to find yourself on a map as a blue (or yellow, or beige, or purple…) dot, not as a “attention, danger, run!”-screaming red dot. **Related, we show deaths in black, not red – it feels more respectful**."
+:::
+
+::: {.right-align-text .body-text-s}
+-Lisa Charlotte Muth in [17 (or so) responsible live visualizations about the coronavirus, for you to use](https://blog.datawrapper.de/coronaviruscharts/), 
+
+published March 3, 2020
+:::
+
+---
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/one-million-deaths.png")
+```
+
+<br>
+
+::: {.footer}
+Learn more about this award-winning visualization in an interview with Carrie Mifsud: [Capturing One Million Deaths on a Page: A Chat with NYT’s Carrie Mifsud](https://nightingaledvs.com/capturing-one-million-deaths-on-a-page-carrie-mifsud/)
+:::
+
+---
+
 ## {#avoid-pure-hue data-menu-title="Avoid pure hues"} 
 
 [Using pure hues can be overwhelming]{.slide-title}
@@ -333,7 +981,7 @@ Image source: [5 pitfalls to avoid when working with color in data visualization
 
 ---
 
-## {#more-subdued data-menu-title="Avoid pure hues"} 
+## {#more-subdued data-menu-title="Use more subdued hues"} 
 
 [Use more subdued colors instead]{.slide-title}
 
@@ -355,78 +1003,298 @@ Image source: [5 pitfalls to avoid when working with color in data visualization
 
 ---
 
-## {#generate-subdued-colors data-menu-title="Generating subdued colors"} 
+## {#adjust-sat1 data-menu-title="Adjust saturation 1"} 
 
 [A few approaches for subduing a pure hue]{.slide-title}
 
 <hr>
 
-<br>
+[1. **adjust the saturation** (i.e. the level of intensity of a color)]{.body-text-m}
 
-- adjust the saturation (i.e. the level of intensity of a color; 100% saturation = a pure hue)
-- adjust the lightness / darkness by tinting (add white), toning (add gray), or shading (add black)
-- add opacity (e.g. using the `alpha` argument)
+[2. **adjust value**: tint (add white), tone (add gray), or shade (add black)]{.gray-text .body-text-m}
+
+[3. **increase transparency** (e.g. using the `alpha` argument)]{.gray-text .body-text-m}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+Green (HEX #00FF33 / 132° on the color wheel) at 100% saturation
+:::
 
 ```{r}
-#| eval: false
+#| eval: true
 #| echo: false
-lyme_pop <- read_csv(here::here("slides", "data", "lyme.csv"))
-
-# original ----
-lyme_pop |> 
-  filter(year %in% c(2010:2020)) |> 
-  filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
-  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
-  geom_area(position = "fill") +
-  scale_y_continuous(labels = scales::percent_format(scale = 100)) +
-  scale_fill_manual(values = c("#C77600", "#49C700", "#00AFC7", "#9400C7")) +
-  theme_bw() +
-  theme(panel.grid = element_blank())
-
-# saturation ----
-lyme_pop |> 
-  filter(year %in% c(2010:2020)) |> 
-  filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
-  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
-  geom_area(position = "fill") +
-  scale_y_continuous(labels = scales::percent_format(scale = 100)) +
-  scale_fill_manual(values = c("#ae7219", "#50ae19", "#199dae", "#8919ae")) +
-  theme_bw() +
-  theme(panel.grid = element_blank())
-
-# darkness ----
-lyme_pop |> 
-  filter(year %in% c(2010:2020)) |> 
-  filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
-  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
-  geom_area(position = "fill") +
-  scale_y_continuous(labels = scales::percent_format(scale = 100)) +
-  scale_fill_manual(values = c("#804d00", "#2f8000", "#007180", "#600080")) +
-  theme_bw() +
-  theme(panel.grid = element_blank())
-
-# lightness ----
-lyme_pop |> 
-  filter(year %in% c(2010:2020)) |> 
-  filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
-  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
-  geom_area(position = "fill") +
-  scale_y_continuous(labels = scales::percent_format(scale = 100)) +
-  scale_fill_manual(values = c("#ffcc80", "#aeff80", "#80f0ff", "#df80ff")) +
-  theme_bw() +
-  theme(panel.grid = element_blank())
-
-# opacity ----
-lyme_pop |> 
-  filter(year %in% c(2010:2020)) |> 
-  filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
-  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
-  geom_area(position = "fill", alpha = 0.75) +
-  scale_y_continuous(labels = scales::percent_format(scale = 100)) +
-  scale_fill_manual(values = c("#C77600", "#49C700", "#00AFC7", "#9400C7")) +
-  theme_bw() +
-  theme(panel.grid = element_blank())
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week5/green-100sat.png")
 ```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+Green (HEX #00FF33 / 132° on the color wheel) at 40% saturation
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week5/green-40sat.png")
+```
+:::
+
+::::
+
+::: {.footer}
+Saturation adjusted using the HSL (Hue, Saturation, Lightness) color model. Read about [HSL vs HSV color models](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=HSL%20stands%20for%20hue%2C%20saturation,hue%2C%20saturation%2C%20and%20intensity.) if you want a deeper dive.
+:::
+
+---
+
+## {#adjust-sat2 data-menu-title="Adjust saturation 2"} 
+
+[A few approaches for subduing a pure hue]{.slide-title}
+
+<hr>
+
+[1. **adjust the saturation** (i.e. the level of intensity of a color)]{.body-text-m}
+
+[2. **adjust value**: tint (add white), tone (add gray), or shade (add black)]{.gray-text .body-text-m}
+
+[3. **increase transparency** (e.g. using the `alpha` argument)]{.gray-text .body-text-m}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+The default chroma for ggplots is set to 100%
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "80%"
+ggplot(na.omit(penguins), aes(x = species, fill = sex)) +
+  geom_bar()
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+Use `scale_*_hue()` to adjust chroma (saturation)
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "80%"
+ggplot(na.omit(penguins), aes(x = species, fill = sex)) +
+  geom_bar() +
+  scale_fill_hue(c = 80)
+```
+
+:::
+
+::::
+
+::: {.footer}
+`scale_*_hue()` uses colors based on the [HCL color space](https://en.wikipedia.org/wiki/HCL_color_space).
+:::
+
+---
+
+## {#adjust-lightness1 data-menu-title="Adjust lightness 1"} 
+
+[A few approaches for subduing a pure hue]{.slide-title}
+
+<hr>
+
+[1. **adjust the saturation** (i.e. the level of intensity of a color)]{.gray-text .body-text-m}
+
+[2. **adjust value**: tint (add white), tone (add gray), or shade (add black)]{.body-text-m}
+
+[3. **increase transparency** (e.g. using the `alpha` argument)]{.gray-text .body-text-m}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+Green (HEX #00FF33 / 132° on the color wheel) with lightness adjusted to 10% (more white) 
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week5/green-tint.png")
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+Green (HEX #00FF33 / 132° on the color wheel) with lightness adjusted to 90% (more black)
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week5/green-shade.png")
+```
+:::
+
+::::
+
+::: {.footer}
+Lightness adjusted using the HSL (Hue, Saturation, Lightness) color model. Read about [HSL vs HSV color models](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=HSL%20stands%20for%20hue%2C%20saturation,hue%2C%20saturation%2C%20and%20intensity.) if you want a deeper dive.
+:::
+
+---
+
+## {#adjust-lightness2 data-menu-title="Adjust lightness 2"} 
+
+[A few approaches for subduing a pure hue]{.slide-title}
+
+<hr>
+
+[1. **adjust the saturation** (i.e. the level of intensity of a color)]{.gray-text .body-text-m}
+
+[2. **adjust value**: tint (add white), tone (add gray), or shade (add black)]{.body-text-m}
+
+[3. **increase transparency** (e.g. using the `alpha` argument)]{.gray-text .body-text-m}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+The default lightness for ggplots is set to 65%
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "80%"
+ggplot(na.omit(penguins), aes(x = bill_length_mm, y = bill_depth_mm, color = sex)) +
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+Use `scale_*_hue()` to adjust lightness / darkness
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "80%"
+ggplot(na.omit(penguins), aes(x = bill_length_mm, y = bill_depth_mm, color = sex)) +
+  geom_point() +
+  scale_color_hue(l = 45)
+```
+
+:::
+
+::::
+
+::: {.footer}
+`scale_*_hue()` uses colors based on the [HCL color space](https://en.wikipedia.org/wiki/HCL_color_space). The default lightness value of 65(%) is good for filled areas but may be a bit light for points and lines.
+:::
+
+---
+
+## {#adjust-opacity data-menu-title="Adjust opacity"} 
+
+[A few approaches for subduing a pure hue]{.slide-title}
+
+<hr>
+
+[1. **adjust the saturation** (i.e. the level of intensity of a color)]{.gray-text .body-text-m}
+
+[2. **adjust value**: tint (add white), tone (add gray), or shade (add black)]{.gray-text .body-text-m}
+
+[3. **increase transparency** (e.g. using the `alpha` argument)]{.body-text-m}
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+library(tidyverse)
+
+data <- tribble(
+  ~group, ~value,
+  "A", 10,
+  "B", 14, 
+  "C", 12,
+  "D", 15
+)
+```
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+Green (HEX #00FF33 / 132° on the color wheel) with default opacity (100%)
+:::
+
+```{r}
+ggplot(data, aes(x = group, y = value)) +
+  geom_col(fill = "#00FF33", color = "gray7") + 
+  theme_classic() +
+  theme(axis.title = element_blank()) 
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+Green (HEX #00FF33 / 132° on the color wheel) with opacity reduced to 50%
+:::
+
+```{r}
+ggplot(data, aes(x = group, y = value)) +
+  geom_col(fill = "#00FF33", color = "gray7", alpha = 0.5) + 
+  theme_classic() +
+  theme(axis.title = element_blank())
+```
+:::
+
+::::
+
+---
+
+## {#build-palettes data-menu-title="Building your own palette"} 
+
+[Building your own color scale]{.slide-title2}
+
+<hr>
+
+`scale_*_manual()`
+
+---
+
+##  {#general-rules data-menu-title="# General rules #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">There are also some additional rules / guidelines that you should pretty much always abide by when selecting colors</p>
+</div>
 
 
 ---
@@ -440,7 +1308,7 @@ lyme_pop |>
 <br>
 
 ::: {.body-text-m .center-text}
-It's okay to use saturated colors in moderation. 
+It's okay to use saturated / brighter colors in moderation. 
 
 *We tend to associate **more saturated** colors with **greater values**.*
 :::
@@ -477,149 +1345,653 @@ Image source: [`{ggdensity}` pkgdown site](https://jamesotto852.github.io/ggdens
 
 ::::
 
-----
+---
 
-## {#color-picker-saturation data-menu-title="Use a color picker"} 
+## {#no-more-than-7 data-menu-title="No more than 7"} 
 
-[Use a color picker to adjust hue, saturation, value]{.slide-title3}
-
-<hr>
-
-
-----
-
-## {#lightness data-menu-title="Lightness"} 
-
-[Lightness is how much white/black/gray is added to a hue]{.slide-title3}
+[No more than 7 colors]{.slide-title}
 
 <hr>
 
-:::: {.columns}
+::: {.center-text .body-text-m}
+If you need more than seven colors, consider alternative chart types.
+:::
 
-::: {.column width="50%"}
+<br>
+
 ```{r}
 #| eval: true
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week5/tint-tone-shade-paint.png")
+knitr::include_graphics("images/week5/7colors.png")
 ```
 
-::: {.center-text .body-text-s .gray-text}
-Image source: [Wikipedia](https://en.wikipedia.org/wiki/Tint,_shade_and_tone)
+<br>
+
+::: {.footer}
+*Example from [What to consider when choosing colors for data visualization](https://blog.datawrapper.de/colors/), by Lisa Charlotte Muth*
 :::
+
+---
+
+## {#consistency data-menu-title="Be consistent"} 
+
+[Use colors consistently]{.slide-title}
+
+<hr>
+
+::: {.center-text .body-text-m}
+Ensure consistent use of colors across multiple visualizations that display the same groups.
+:::
+
+<br>
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/consistent-colors.png")
+```
+
+<br>
+
+::: {.footer}
+*Example from [What to consider when choosing colors for data visualization](https://blog.datawrapper.de/colors/), by Lisa Charlotte Muth*
+:::
+
+---
+
+## {#legend data-menu-title="Include legend"} 
+
+[Explain what your colors encode]{.slide-title}
+
+<hr>
+
+::: {.center-text .body-text-m}
+Always include a color key, in the form of a traditional legend or otherwise.
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/consistent-colors.png")
+```
+
+<br>
+
+::: {.footer}
+*Example from [What to consider when choosing colors for data visualization](https://blog.datawrapper.de/colors/), by Lisa Charlotte Muth*
+:::
+
+---
+
+## {#highlight data-menu-title="Highlight"} 
+
+[Highlight important values]{.slide-title}
+
+<hr>
+
+::: {.center-text .body-text-m}
+Use gray for less important groups / values, annotations, contextual information, etc.
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/use-gray.png")
+```
+
+<br>
+
+::: {.footer}
+*Example from [What to consider when choosing colors for data visualization](https://blog.datawrapper.de/colors/), by Lisa Charlotte Muth*
+:::
+
+---
+
+## {#intuitive-colors data-menu-title="Intuitive colors"} 
+
+[Be predictable in your color choices]{.slide-title}
+
+<hr>
+
+::: {.center-text .body-text-m}
+Use intuitive colors (e.g. green for forest, blue for water) but avoid stereotypes (e.g. pink for women, blue for men)
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/intuitive-colors.png")
+```
+
+
+<br>
+
+::: {.footer}
+*Example from [What to consider when choosing colors for data visualization](https://blog.datawrapper.de/colors/), by Lisa Charlotte Muth*
+:::
+
+---
+
+## {#gradient-low-high data-menu-title="Bright = low, dark = high"} 
+
+[Bright = low, dark = high]{.slide-title}
+
+<hr>
+
+::: {.center-text .body-text-m}
+In most cases, readers will associate bright colors with lower values and darker colors with higher values. Build gradients accordingly.
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/low-high-choropleth.png")
+```
+
+<br>
+
+::: {.footer}
+*Example from [What to consider when choosing colors for data visualization](https://blog.datawrapper.de/colors/), by Lisa Charlotte Muth*
+:::
+
+---
+
+## {#gradient-high-low data-menu-title="Bright = high, dark = low"} 
+
+[Except in some cases...]{.slide-title}
+
+<hr>
+
+bright colors associated with elevation 
+
+---
+
+## {#gradients-continuous data-menu-title="Gradients for continuous data"} 
+
+[Gradient palettes for continuous data only]{.slide-title}
+
+<hr>
+
+::: {.center-text .body-text-m}
+Most readers will associate dark colors with "high / important" and bright or light colors with "low / less". Using a gradient palette with discrete data may imply a ranking of categories where there shouldn't be.
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/no-gradient-for-discrete.png")
+```
+
+<br>
+
+::: {.footer}
+*Example from [What to consider when choosing colors for data visualization](https://blog.datawrapper.de/colors/), by Lisa Charlotte Muth*
+:::
+
+---
+
+## {#lightness-gradient data-menu-title="Lightness + hue"} 
+
+[Use lightness, not just hue, to build gradients]{.slide-title}
+
+<hr>
+
+::: {.center-text .body-text-m}
+Gradients should also work in black and white.
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/lightness-gradient.png")
+```
+
+<br>
+
+::: {.footer}
+*Example from [What to consider when choosing colors for data visualization](https://blog.datawrapper.de/colors/), by Lisa Charlotte Muth*
+:::
+
+---
+
+## {#two-hues data-menu-title="Two hues"} 
+
+[Two hues are sometimes better than one]{.slide-title}
+
+<hr>
+
+::: {.center-text .body-text-m}
+Readers are generally better able to distinguish colors on a gradient better if they are encoded through both lightness and two (sometimes three) carefully-selected hues.
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/1-or-2-hues.png")
+```
+
+<br>
+
+::: {.footer}
+*Example from [What to consider when choosing colors for data visualization](https://blog.datawrapper.de/colors/), by Lisa Charlotte Muth*
+:::
+
+---
+
+##  {#break data-menu-title="# Break #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">{{< fa mug-hot title="a mug with steam rising out the top" >}} Take a Break</p>
+<p class="caption-text">*~ A coding exercise is up next! ~*</p>
+</div>
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+##  {#making-map data-menu-title="# Map #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Let's apply what we learn to a choropleth map visualizing precipitation</p>
+</div>
+
+---
+
+## {#choropleth data-menu-title="Choropleth"} 
+
+[What's a choropleth?]{.slide-title}
+
+<hr>
+
+::: {.center-text}
+**Choropleths are maps that display the spatial distribution of a variable across divided geographical areas / regions, where variable is encoded by color. ** 
+:::
+
+some examples here
+
+can be tricky to get right 
+
+you'll often have to think critically about classifying yourd ata
+
+---
+
+## {#data data-menu-title="The Data"} 
+
+[The Data]{.slide-title}
+
+<hr>
+
+[[NOAA National Centers for Environmental Information](https://www.ncei.noaa.gov/) (NCEI) is responsible for preserving, monitoring, assessing, and providing public access to the Nation's geophysical data and information.]{.body-text-s}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<br>
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "60%"
+#| fig-align: "center"
+knitr::include_graphics("images/week5/ncei-logo1.png")
+```
 :::
 
 ::: {.column width="50%"}
-  - **tints** are made by **adding white** to a color, resulting in **lighter** versions
-  - **shades** are made by **adding black** to a color, resulting in **darker** versions
-  - **tones** are made by **adding gray** to a color
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "60%"
+#| fig-align: "center"
+knitr::include_graphics("images/week5/ncei-logo2.png")
+```
 :::
 
 ::::
 
----
+[Find public access to a massive inventory of climate data on their [Climate Monitoring](https://www.ncei.noaa.gov/access/monitoring/products/) page. Today's lesson will use the [Climate at a Glance](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/) collection. Specifically, **we'll be exploring precipitation data at the county level, accessed via the [County Mapping](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value) portal**.]{.body-text-s}
 
-##  {#color-emotion data-menu-title="# Color & Emotions #" background="#047C90"}
-
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">Colors used in our data visualizations elicit emotions from our audience</p>
-</div>
+::: {.footer}
+A lot of the following data viz code draws from and was inspired by the wonderful [Making Maps with R](https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html) tutorial, by [Eric C. Anderson](https://github.com/eriqande).
+:::
 
 ---
 
-- together can communicate the level of seriousness, intensity, and emotional weight in a visual work (David Machin's [Introduction to Multimodal Analysis](https://books.google.de/books/about/Introduction_to_Multimodal_Analysis.html?id=xSyDAAAACAAJ&redir_esc=y))
+MAP PROJECTION??
 
-- dark / saturated > more dramatic / anger / sadness
-- bright / flat > opposite
+----
 
----
+## {#plan data-menu-title="The Plan"} 
 
-- emotions
-- inclusive colors
-
----
-
-##  {#palette-types data-menu-title="# Palettes #" background="#047C90"}
-
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">Different data types require different types of palettes</p>
-</div>
-
----
-
-General rules:
-
-- categorical data: change hue; continuous data, changed saturation or lightness
-
-- don't use a gradient color palette for categories (e.g. don't used different shades one hue for categorical data to make it look less colorful)
-  - readers associate dark colors with greater values, paler colors with lower values
-  - instead use different hues
-  - if your chart is too colorful, consider a differnt way to visualize your data
-  
-- comparing one thing to the rest? use a stand-out hue for the one thing and gray for the rest
-- comparing 2 things to the rest? use two complimentary colors 
-  
-- don't use too many colors
-
----
-
-##  {#accessibility data-menu-title="# Accessibility #" background="#047C90"}
-
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">Ensuring accessbility through your color choices</p>
-</div>
-
----
-
-##  {#accessibility data-menu-title="# Accessibility #" background="#047C90"}
-
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">Ensuring accessbility through your color choices</p>
-</div>
-
----
-
-##  {#reminders-recap data-menu-title="# Reminders & recap #" background="#047C90"}
-
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">Some parting words, reminders, and a recap of all the colorful ideas discussed</p>
-</div>
-
-
----
-
-- picking colors is hard! use them purposefully
-  - your brand
-  - pulling colors from a related image
-  - take inspiration from other data viz/art 
-  - google "[whatever you like] palette"
-
-{monochromeR}
-
-- colors & common pitfalls
-  - what to consider when choosing colors for data visualization (datawrapper)
-  - gradients for cont data
-  - be consistent with colors
-  - color gradients (consider binned colors)
-  - misleading color palettes (rainbow color palette): https://eagereyes.org/blog/2013/rainbow-color-map
-  - think about color palettes before you create your viz! use color blindness tools
-  
-  https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/
-  
-  https://blog.datawrapper.de/colors/
-  
-  example of bad color map (poverty): https://en.wikipedia.org/wiki/Poverty
-
----
-
-## {#recap data-menu-title="Recap"} 
-
-[Recap]{.slide-title3}
+[The Plan]{.slide-title}
 
 <hr>
 
-- color theory can help us identify colors that look nice together
-- hues have associated meaning -- it's important to consider our intended audience and be mindful of how those associations differ among cultures 
-- avoid using *only* pure hues 
-- 
+**The type of color palette we use will vary with the type of data we hope to visualize.** In this following section, we'll create a series of choropleth maps visualizing different data types (categorical vs. numerical) that require different color palettes. 
+
+<br>
+
+. . . 
+
+**We'll create maps that color counties based on the following:**
+
+- [**Categorical variable**]{.teal-text}
+    - Color counties based on whether their total precipitation in Dec 2023 was above or below the 1991 - 2000 mean 
+- [**Numeric variable**]{.teal-text}
+    - [**Sequential (either linear or binned):**]{.teal-text .body-text-s} Color counties based on the total amount of precipitation received in Dec 2023
+    - [**Diverging (either linear or binned):**]{.teal-text .body-text-s} Color counties based off the difference between the 1901 - 2000 mean and Dec 2023 precipitation totals
+    
+. . .
+
+::: {.center-text .body-text-m}
+**First, some data wrangling**
+:::
+
+----
+
+## {#data-wrangling data-menu-title="Data wrangling"} 
+
+[Data Wrangling]{.slide-title}
+
+<hr>
+
+Here, we'll wrangle our precipitation data, then join it with our US county data (courtesy of the [`{maps}` package](https://cran.r-project.org/web/packages/maps/index.html)):
+
+```{r}
+#| eval: true
+#| echo: false
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    setup                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..........................load packages.........................
+library(tidyverse)
+library(maps) 
+
+#.........................get shape data.........................
+states <- map_data("state")
+counties <- map_data("county")
+
+#....................import precipitation data...................
+precip_counties <- read_csv(here::here("slides", "data", "county-precip-jan2023.csv"), skip = 4) |> 
+  janitor::clean_names()
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                               data wrangling                             ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..............update names of counties df variables.............
+us_counties <- counties |> 
+  select(state = region, county = subregion, long, lat, group, order)
+  
+#..........clean precip data & make sure var names match.........
+precip_counties_wrangled <- precip_counties |> 
+  
+  # more intuitive column name ----
+  rename(county = name) |> 
+  
+  # convert count and state names to all lowercase ----
+  mutate(county = str_to_lower(county),
+         state = str_to_lower(state)) |> 
+  
+  # remove the word "county" from all county names ----
+  mutate(county = str_remove(county, pattern = " county")) |> 
+  
+  # remove the word "parish" from the end of Louisiana counties ----
+  # NOTE: there are more counties that need cleaning for seamless joining with `us_counties` df; I've don't done a complete sweep of the data, so you'll notice data gaps once plotted
+  mutate(county = str_remove(county, pattern = " parish")) |> 
+  
+  # add col denoting if Oct precip is above or below 1901 - 2000 mean
+  mutate(comp_mean = ifelse(value > x1901_2000_mean, # if `value` > `x1901_2000_mean`
+                     yes = "above mean", # replace abbreviation with full state name 
+                     no = "below mean")) |> # if string in 'sn' col is not 2 chrs long, keep state name as-is
+  
+  # select & rename relevant cols ----
+  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period, comp_mean) |>
+  
+  # make precip var numeric (was chr) ----
+  mutate(precip = as.numeric(precip))
+
+#............................join dfs............................
+joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties)
+```
+
+```{r}
+#| eval: false
+#| echo: true
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    setup                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..........................load packages.........................
+library(tidyverse)
+library(maps) 
+
+#.........................get shape data.........................
+states <- map_data("state")
+counties <- map_data("county")
+
+#....................import precipitation data...................
+precip_counties <- read_csv(here::here("week5", "data", "county-precip-jan2023.csv"), skip = 4) |> 
+  janitor::clean_names()
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                               data wrangling                             ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..............update names of counties df variables.............
+us_counties <- counties |> 
+  select(state = region, county = subregion, long, lat, group, order)
+  
+#..........clean precip data & make sure var names match.........
+precip_counties_wrangled <- precip_counties |> 
+  
+  # more intuitive column name ----
+  rename(county = name) |> 
+  
+  # convert count and state names to all lowercase ----
+  mutate(county = str_to_lower(county),
+         state = str_to_lower(state)) |> 
+  
+  # remove the word "county" from all county names ----
+  mutate(county = str_remove(county, pattern = " county")) |> 
+  
+  # remove the word "parish" from the end of Louisiana counties ----
+  mutate(county = str_remove(county, pattern = " parish")) |> 
+  
+  # add col denoting if Oct precip is above or below 1901 - 2000 mean
+  mutate(comp_mean = ifelse(value > x1901_2000_mean, # if `value` > `x1901_2000_mean`
+                     yes = "above mean", # replace abbreviation with full state name 
+                     no = "below mean")) |> # if string in 'sn' col is not 2 chrs long, keep state name as-is
+  
+  # select & rename relevant cols ----
+  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period, comp_mean) |>
+  
+  # make precip var numeric (was chr) ----
+  mutate(precip = as.numeric(precip))
+
+#............................join dfs............................
+joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties)
+```
+
+---
+
+## {#cat-data data-menu-title="Categorical data"} 
+
+[Map color to a categorical variable]{.slide-title}
+
+<hr>
+
+[Here, we **color county based on whether it received more or less precipitation in Dec 2023 as compared to the 1901 - 2000 mean (categorical variable)**. Colors chosen follow those suggested for use with precipitation variables in [Kaye et al. 2012](https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/suggested-colors) and are a [verified colorblind-friendly combo](https://www.nceas.ucsb.edu/sites/default/files/2022-06/Colorblind%20Safe%20Color%20Schemes.pdf):]{.body-text-s}
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+#| output-location: column
+# 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----
+ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + 
+  
+  # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----
+  geom_polygon(data = joined_precip_us_counties, aes(fill = comp_mean), color = "#DDDDDD", linewidth = 0.1) + 
+  
+  # darken state lines ----
+  geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
+  
+  # to fix the relationship between one unit in the y direction and one unit in the x direction; may need different values for different regions depending on where they are on the globe (e.g. close to the poles)
+  coord_fixed(1.3) +
+  
+  # # OPTION 1: update colors with pre-fab palette ----
+  # scale_fill_viridis_d(option = "D") +
+  
+  # # OPTION 2: update colors manually (based on suggested palette for precip in Kay et al. 2012) ----
+  # scale_fill_manual(values = c("#00665E", "#8D5103")) +
+
+  # OPTION 3: adjust (tint / lighten) suggested colors slightly to be easier on the eyes ----
+  scale_fill_manual(values = c("#3DB1A6", "#E3BE6B")) +
+
+  # update labels ----
+  labs(title = "October 2023 precipitation relative to historical (1901-2000) average",
+       subtitle = "Counties whose rainfall exceeded or was below average") +
+  
+  # set theme to clean up appearance ----
+  theme_void()
+```
+
+---
+
+---
+
+skewed distribution
+```{r}
+ggplot(joined_precip_us_counties, aes(x = precip)) +
+  geom_histogram()
+```
+
+```{r}
+range(na.omit(joined_precip_us_counties)$precip) # 0.4 - 18.22
+```
+
+```{r}
+mean(na.omit(joined_precip_us_counties)$precip) # 4.18
+```
+
+---
+
+## {#seq-num data-menu-title="Sequntial numerical data"} 
+
+[Map color to a sequential numeric variable (1 hue)]{.slide-title2}
+
+<hr>
+
+[Here, we **color county based on the total precipitation it received in October 2023 (sequential numeric)**. Because blue is often associated with precipitation, we'll create a color gradient using that hue:]{.body-text-s}
+
+https://stackoverflow.com/questions/8069837/is-there-a-built-in-way-to-do-a-logarithmic-color-scale-in-ggplot2
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+#| output-location: column
+
+noaa_colors <- c("#543006", "#975F1C", "#AC7E42", "#C09C66", "#EBD9B0", "#B2DDD7", "#8BC2BC", "#3B8E86", "#16726B", "#003C30")
+
+kaye_colors <- c("#8D5102", "#DAB566", "#F5E7C2", "#F5F5F5", "#C8ECE6", "#5AB6AF", "#01665E")
+
+
+# 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----
+ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + 
+  
+  # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----
+  geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + 
+  
+  # darken state lines ----
+  geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
+  
+  # to fix the relationship between one unit in the y direction and one unit in the x direction; may need different values for different regions depending on where they are on the globe (e.g. close to the poles)
+  coord_fixed(1.3) +
+  
+  # # OPTION 1: update colors with pre-fab palette ----
+  # scale_fill_viridis_c(option = "D") +
+  # scale_fill_distiller(palette = 'Purples')
+  # scale_fill_viridis_c(trans = "log", breaks=c(0.1, 0.5, 2,4,6, 8, 10, 12, 15, 20, 25), 
+  #                  name="Number of restaurant", 
+  #                  guide = guide_legend( 
+  #                                        label.position = "bottom", 
+  #                                        title.position = 'top',
+  #                                        nrow=1))
+  # 
+  # OPTION 2: manually create a color gradient ----
+  # scale_fill_gradient(low = "#C8ECE6", high = "#213943") +
+  
+  # OPTION 2: manually create a color gradient ----
+  #scale_fill_gradient2(low = "#77A8B9", mid = "#FFFFFF", high = "#213943") +
+  scale_fill_stepsn(trans = "log",
+                    colors = c("#543006", "#975F1C", "#AC7E42", "#C09C66", "#EBD9B0", "#B2DDD7", "#8BC2BC", "#3B8E86", "#16726B", "#003C30"), 
+                    breaks = c(0, 0.1, 0.5, 1, 2, 4, 6, 8, 10, 12, 15, 20, 25)) +
+  
+  # update legend ----
+  guides(fill = guide_coloursteps(title = "Precipitation (inches)", 
+                                  title.position = "top",
+                                  barwidth = 15, barheight = 1)) +
+  
+  # update labels ----
+  labs(title = "Total Precipitation, by County",
+       subtitle = "January 2023") +
+  
+  # set theme to clean up appearance ----
+  theme_void() + 
+  
+  # theme adjustments ----
+  theme(
+    legend.position = "bottom"
+  )
+```
+

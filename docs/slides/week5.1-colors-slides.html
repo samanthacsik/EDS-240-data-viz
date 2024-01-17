@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #a55a00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #a55a00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #00769e; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #00769e; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #a55a00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -344,14 +409,20 @@
 <i class="fa-solid fa-palette" title="a painter’s palette" aria-label="palette"></i> Why do we use color?
 </p>
 <p class="caption-text">
-<em>Spend a couple minutes discussing with your Learning Partners why and / or when we use color in data visualizations:</em>
+<em>Spend a couple minutes discussing with your Learning Partners the following:</em>
+</p>
+<p class="dark-blue-text">
+<strong>Why and / or when we use color in data visualizations?</strong>
+</p>
+<p class="dark-blue-text">
+<strong>Find an example(s) of a data viz that uses color to convey information to share in #eds-240-data viz.&nbsp;Note some of your own observations about the color choices (i.e.&nbsp;why do you think these colors were chosen?).</strong>
 </p>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_1b6a8808" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_9f98aa92" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -372,37 +443,447 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+<!-- --- -->
+<!-- ~start by showing examples of data viz & colors to get reactions~ -->
+<!-- - green ocean vs blue ocean map -->
+<!-- - warm city cold city (temperature scales): https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/ -->
+<!-- - precipitation -->
+<!-- - urban areas -->
+<!-- - forests -->
+<!-- - bright colors on elevation maps = high areas; dark = low areas -->
+<!-- - happy vs. sad -->
 </section>
-<section class="slide level2">
-
-<p>~start by showing examples of data viz &amp; colors to get reactions~</p>
-<ul>
-<li>green ocean vs blue ocean map</li>
-<li>warm city cold city (temperature scales)</li>
-<li>precipitation</li>
-<li>urban areas</li>
-<li>forests</li>
-<li>bright colors on elevation maps = high areas; dark = low areas</li>
-<li>happy vs.&nbsp;sad</li>
-</ul>
-</section>
-<section id="color-theory" class="slide level2" data-menu-title="# Basic Color Theory #" data-background="#047C90">
+<section id="colors-difficult" class="slide level2" data-menu-title="It's hard to choose colors!">
 <h2></h2>
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">
-A crash course in color theory and what it means for data viz
-</p>
+<p><span class="slide-title3">Choosing colors is difficult and they should be purposefully chosen</span></p>
+<hr>
+<p><br></p>
+<div class="center-text body-text-m">
+<p>You’ll probably iterate on them as you sit with your visualization and of course, as you get feedback from others.</p>
+</div>
+<p><br></p>
+<div class="fragment">
+<p><strong>Some places to start / things to consider:</strong></p>
+<ul>
+<li>is using color the best and / or only way to visually represent your variable(s)?</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>are you designing for a particular organization / brand?</li>
+<li>what emotions are you trying (or not trying) to elicit?</li>
+<li>who is your audience?</li>
+<li>are your data commonly represented using a particular color scheme?</li>
+<li>what data types (e.g.&nbsp;discrete vs.&nbsp;continuous) are you working with?</li>
+</ul>
 </div>
 </section>
 <section id="color-properties" class="slide level2" data-menu-title="Color properties">
 <h2></h2>
-<p><span class="slide-title3">Three color properties influence how we perceive information</span></p>
+<p><span class="slide-title">First, some important definitions:</span></p>
 <hr>
 <p>Changing <strong>hue</strong> (the pure color), <strong>saturation</strong> (aka chroma; the intensity of a color) and / or <strong>value</strong> (degree of lightness / darkness) can influence how readers perceive information in a data visualization.</p>
 <p><br></p>
 
 <img data-src="images/week5/hue-sat-val.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s gray-text">
 <p>Image source: <a href="https://medium.com/awkbit/choosing-a-color-scheme-for-your-website-awkbit-59ab750151dc">medium.com</a></p>
+</div>
+</section>
+<section id="data-types" class="slide level2" data-menu-title="# Data types #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+Different data types require different palette types
+</p>
+</div>
+</section>
+<section id="palette-types" class="slide level2" data-menu-title="Palette types">
+<h2></h2>
+<p><span class="slide-title">Three major types of color palette</span></p>
+<hr>
+<ol type="1">
+<li><strong>Qualitative (for categorical / discrete data)</strong></li>
+<li><strong>Sequential (for continuous numeric or inherently ordered data)</strong></li>
+<li><strong>Diverging (for continuous numeric data with a meaningful central value)</strong></li>
+</ol>
+</section>
+<section id="qual-pal" class="slide level2" data-menu-title="Qualitative palettes">
+<h2></h2>
+<p><span class="slide-title">Three major types of color palette</span></p>
+<hr>
+<ol type="1">
+<li><p><strong>Qualitative (for categorical / discrete data)</strong></p>
+<ul>
+<li><span class="body-text-s">colors assigned to each group must be distinct</span></li>
+<li><span class="body-text-s">limit to no more than 7 colors</span></li>
+<li><span class="body-text-s">mainly formed by selecting differet <em>hues</em></span></li>
+</ul></li>
+<li><p><span class="gray-text"><strong>Sequential (for continuous numeric or inherently ordered data)</strong></span></p></li>
+<li><p><span class="gray-text"><strong>Diverging (for continuous numeric data with a meaningful central value)</strong></span></p></li>
+</ol>
+</section>
+<section id="seq-pal" class="slide level2" data-menu-title="Sequential palettes">
+<h2></h2>
+<p><span class="slide-title">Three major types of color palette</span></p>
+<hr>
+<ol type="1">
+<li><p><span class="gray-text"><strong>Qualitative (for categorical / discrete data)</strong></span></p></li>
+<li><p><strong>Sequential (for continuous numeric or inherently ordered data)</strong></p>
+<ul>
+<li><span class="body-text-s">colors assigned to data values in a continuum, based on lightness, hue, or both</span></li>
+<li><span class="body-text-s">lower values typically associated with lighter colors &amp; higher values associated with darker colors</span></li>
+<li><span class="body-text-s">can use a single hue (light to dark) <em>or</em> two hues (tyipcally a warmer / brighter hue for lower values and cooler / darker hue for higher values)</span></li>
+</ul></li>
+<li><p><span class="gray-text"><strong>Diverging (for continuous numeric data with a meaningful central value)</strong></span></p></li>
+</ol>
+</section>
+<section id="div-pal" class="slide level2" data-menu-title="Diverging palettes">
+<h2></h2>
+<p><span class="slide-title">Three major types of color palette</span></p>
+<hr>
+<ol type="1">
+<li><p><span class="gray-text"><strong>Qualitative (for categorical / discrete data)</strong></span></p></li>
+<li><p><span class="gray-text"><strong>Sequential (for continuous numeric or inherently ordered data)</strong></span></p></li>
+<li><p><strong>Diverging (for continuous numeric data with a meaningful central value)</strong></p>
+<ul>
+<li><span class="body-text-s">combination of two sequential palettes with a shared endpoint at the central value</span></li>
+<li><span class="body-text-s">use a distinctive hue for each of the component palettes</span></li>
+<li><span class="body-text-s">central value is assigned a light color (light gray is best)</span></li>
+</ul></li>
+</ol>
+</section>
+<section id="use-or-make" class="slide level2" data-menu-title="Use pre-made palettes or create your own">
+<h2></h2>
+<p><span class="slide-title2">You can use pre-existing palettes, or create your own</span></p>
+<hr>
+<p>Sequential and diverging palettes can be used to map continuous values to color in two different ways:</p>
+<ol type="a">
+<li>Discrete</li>
+<li>Continuous</li>
+</ol>
+</section>
+<section id="accessibility" class="slide level2" data-menu-title="# Accessibility #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+Ensuring inclusive and accessible design through your color choices
+</p>
+</div>
+</section>
+<section id="colorblindness" class="slide level2" data-menu-title="Colorblindness">
+<h2></h2>
+<p><span class="slide-title">What is colorblindness?</span></p>
+<hr>
+<p>Color vision deficiency aka colorblindness is the decreased ability to see color or differences in color. It’s estimated that about 1 in 12 men (8%) and 1 in 200 women (0.5%) are affected (<a href="https://en.wikipedia.org/wiki/Color_blindness">Wikipedia</a>).</p>
+
+<img data-src="images/week5/color-test-plates.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s gray-text">
+<p>Color plate tests are used to help identify different forms of color blindness. Try using the <a href="https://chromewebstore.google.com/detail/lets-get-color-blind/bkdgdianpkfahpkmphgehigalpighjck">Let’s get color blind</a> Chrome extension to emulate different forms of colorblindness while looking at the above plates. Image source: <a href="https://www.aoa.org/healthy-eyes/eye-and-vision-conditions/color-vision-deficiency?sso=y">American Optometric Association</a></p>
+</div>
+</section>
+<section id="rainbow-colormaps" class="slide level2" data-menu-title="Rainbow colormaps">
+<h2></h2>
+<p><span class="slide-title">The problem with rainbow color maps</span></p>
+<hr>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/moreland-rainbow.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/noaa-weathermap.png" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p><span class="body-text-s">colors don’t follow any natural perceived ordering (no innate sense of higher or lower)</span></p></li>
+<li><p><span class="body-text-s">perceptual changes in rainbow colors are not uniform (e.g.&nbsp;colors appear to change faster in yellow region than green region)</span></p></li>
+<li><p><span class="body-text-s">insensitive to color vision deficiencies</span></p></li>
+</ul>
+</div>
+</div>
+<p><br></p>
+<div class="footer">
+<p>Top image source: <a href="https://www.kennethmoreland.com/color-advice/BadColorMaps.pdf">Why we use bad color maps and what you cando about it</a> | Bottom left image source: Ware C, Stone M, Albers Szafir D (2023) Rainbow colormaps are not all bad. IEEE Computer Graphics and Applications 43:88-93 <a href="https://www.computer.org/csdl/magazine/cg/2023/03/10128890/1NdJMHqISnS">10.1109/MCG.2023.3246111</a> | For another example of poor use of rainbow color maps, see this <a href="https://en.wikipedia.org/wiki/Poverty#/media/File:Countries_by_Human_Development_Index_(2020).png">world map with binned colors</a></p>
+</div>
+</section>
+<section id="rainbow-colormaps-alt" class="slide level2" data-menu-title="Alt rainbow colormaps">
+<h2></h2>
+<p><span class="slide-title">Rainbow colormaps aren’t all bad</span></p>
+<hr>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s gray-text">
+<p>Problematic, perceptually nonuniform and unordered rainbow colormaps</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/bad-rainbow.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s gray-text">
+<p>Improved, perceptual uniform and diverging rainbow colormaps</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/better-rainbow.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="center-text body-text-s gray-text">
+<p>Image source: Ware C, Stone M, Albers Szafir D (2023) Rainbow colormaps are not all bad. IEEE Computer Graphics and Applications 43:88-93 <a href="https://www.computer.org/csdl/magazine/cg/2023/03/10128890/1NdJMHqISnS">10.1109/MCG.2023.3246111</a></p>
+</div>
+<div class="footer">
+<p>Also check out Stoelzle &amp; Stein (2021), <a href="https://doi.org/10.5194/hess-25-4549-2021" class="uri">https://doi.org/10.5194/hess-25-4549-2021</a> (Figure 1 is particularly helpful!) and Crameri et al.&nbsp;(2020) <a href="https://doi.org/10.1038/s41467-020-19160-7" class="uri">https://doi.org/10.1038/s41467-020-19160-7</a> for some really great supplemental reading</p>
+</div>
+</section>
+<section id="viridis" class="slide level2" data-menu-title="Viridis">
+<h2></h2>
+<p><span class="slide-title">Alternative: Viridis</span></p>
+<hr>
+<p><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">The <code>viridis</code> color scales</a> are perceptually-uniform (even when printed in gray scale) and colorblindness-friendly:</p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s gray-text">
+<p>Continuous viridis scales</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/viridis-continuous.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s gray-text">
+<p>Binned viridis scales</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/viridis-binned.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>There are a number of different ways to apply <code>viridis</code> color scales, but I often opt for <a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html"><code>scale_*_viridis_*()</code> functions</a>, which come pre-loaded with <code>{ggplot}</code>.</p>
+</section>
+<section id="use-viridis" class="slide level2" data-menu-title="Use viridis">
+<h2></h2>
+<p><span class="slide-title">Use viridis color scales</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s gray-text">
+<p>Continuous viridis scales</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">"magma"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-10-1.png" style="width:100.0%"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s gray-text">
+<p>Discrete viridis scales</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="fu">scale_color_viridis_d</span>(<span class="at">option =</span> <span class="st">"viridis"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-11-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><span class="body-text-s">Use <code>option</code> to specify palette and explore some of the other arguments in the <a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">documentation</a>.</span></p>
+</section>
+<section id="color-brewer" class="slide level2" data-menu-title="ColorBrewer">
+<h2></h2>
+<p><span class="slide-title">Alternative: RColorBrewer</span></p>
+<hr>
+<p><span class="body-text-s">The <a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">ColorBrewer color scales</a> provides color schemes for maps and other graphics. There is also a <a href="http://colorbrewer2.org">web-based interface</a> for generating palettes.</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.all</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/brewer-all.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.all</span>(<span class="at">colorblindFriendly =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/brewer-colorblind.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="use-RColorBrewer" class="slide level2" data-menu-title="Use RColorBrewer">
+<h2></h2>
+<p><span class="slide-title">Use RColorBrewer color palettes</span></p>
+<hr>
+<p>Use the right function (all pre-loaded with <code>{ggplot2}</code>) for the type of data / palette:</p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="center-text body-text-s gray-text">
+<p>Use <code>scale_color_brewer()</code> to apply a qualitative palette to discrete data</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-16-1.png" style="width:100.0%"></p>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="center-text body-text-s gray-text">
+<p>Use <code>scale_color_distiller()</code> for sequential versions of continuous color scales</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">scale_color_distiller</span>(<span class="at">palette =</span> <span class="st">"BuPu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-17-1.png" style="width:100.0%"></p>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="center-text body-text-s gray-text">
+<p>Use <code>scale_color_fermenter()</code> for binned versions of continuous color scales</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>  <span class="fu">scale_color_fermenter</span>(<span class="at">palette =</span> <span class="st">"YlGnBu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-18-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="redundant-mapping" class="slide level2" data-menu-title="Redundant mapping">
+<h2></h2>
+<p><span class="slide-title">Use redundant mapping whenever possible</span></p>
+<hr>
+<p>Recall that colors are <a href="https://samanthacsik.github.io/EDS-240-data-viz/slides/week3.1-choosing-graphic-forms-slides.html#/hierarchy">low on the hierarchy of elementary perceptual tasks</a>. <strong>Avoid conveying important information purely through color</strong> – consider how you might additionally use shapes, symbols, typography, or annotations.</p>
+
+<img data-src="images/week5/apigo2022.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s gray-text">
+<p>Figure 2 from Apigo A and Oono R (2022) Plant abundance, but not plant evolutionary history, shapes patterns of host specificity in foliar fungal endophytes. Ecosphere. 13(1):e03879. <a href="https://doi.org/10.1002/ecs2.3879">https://doi.org/10.1002/ecs2.3879</a></p>
+</div>
+</section>
+<section id="premade-palettes" class="slide level2" data-menu-title="# Pre-made palettes #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+There are <em>so many</em> great pre-made color palettes to explore, many of which take into consideration color vision deficiencies (but always double check!)
+</p>
+</div>
+</section>
+<section id="color-palette-packages" class="slide level2" data-menu-title="Color palette packages">
+<h2></h2>
+<p><span class="slide-title3">Here are just a few color palette packages to start exploring!</span></p>
+<hr>
+</section>
+<section id="climate-colors" class="slide level2" data-menu-title="# Climate colors #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+Climate and environmental science visualizations can (should) draw from community standards, when possible
+</p>
+</div>
+</section>
+<section id="suggested-colors" class="slide level2" data-menu-title="Kaye et al. 2012">
+<h2></h2>
+<p><span class="slide-title">Some widely-used climate science palettes</span></p>
+<hr>
+<p><br></p>
+
+<img data-src="images/week5/kaye-etal-2012-colors.png" style="width:40.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="center-text body-text-s">
+<p><strong>Figure 4.</strong> Appropriate diverging and sequential colour schemes for the following climate data (a), absolute temperature (b), absolute precipitation (c), temperature anomaly (d), precipitation or runoff anomaly (e and f) other climate variables with no symbolic association . Schemes in this figure are 7 class ones designed by Cynthia Brewer, (<a href="https://tizmogollon.weebly.com/uploads/1/5/4/7/15475746/brewer_etal_2003_colorbrewer_in_print.pdf">Brewer et al.&nbsp;2003</a>)</p>
+</div>
+<p><br></p>
+<div class="footer">
+<p><strong>Citation:</strong> Kaye NR, Hartley A, Hemming D (2012) Mapping the climate: guidance on appropriate techniques to map climate variables and their uncertainty. Geoscientific Model Development. 5:245-256. www.geosci-model-dev.net/5/245/2012/ (<a href="https://www.researchgate.net/publication/307824079_Mapping_the_climate_guidance_on_appropriate_techniques_to_map_climate_variables_and_their_uncertainty">PDF download</a>)</p>
+</div>
+</section>
+<section id="color-theory" class="slide level2" data-menu-title="# Basic Color Theory #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+Want to design your own palette? Knowing just a smidge of color theory can help guide you.
+</p>
 </div>
 </section>
 <section id="select-hue" class="slide level2" data-menu-title="Selecting hues">
@@ -446,7 +927,7 @@ A crash course in color theory and what it means for data viz
 </div>
 </div>
 <div class="center-text body-text-s gray-text">
-<p>There are lots of great color pickers out there, though <a href="https://www.google.com/search?q=google+color+picker&amp;sca_esv=598283965&amp;ei=uVyjZdXpLtL3kPIPhdaOaA&amp;ved=0ahUKEwiVqoat_9uDAxXSO0QIHQWrAw0Q4dUDCBA&amp;uact=5&amp;oq=google+color+picker&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiE2dvb2dsZSBjb2xvciBwaWNrZXIyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyDRAAGIAEGIoFGEMYsAMyDRAuGIAEGIoFGEMYsANI6QRQAFgAcAF4AZABAJgBAKABAKoBALgBA8gBAOIDBBgAIEGIBgGQBgo&amp;sclient=gws-wiz-serp">Google color picker</a> is a quick one to navigate to</p>
+<p>There are lots of great color pickers out there, though <a href="https://www.google.com/search?q=google+color+picker&amp;sca_esv=598283965&amp;ei=uVyjZdXpLtL3kPIPhdaOaA&amp;ved=0ahUKEwiVqoat_9uDAxXSO0QIHQWrAw0Q4dUDCBA&amp;uact=5&amp;oq=google+color+picker&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiE2dvb2dsZSBjb2xvciBwaWNrZXIyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyDRAAGIAEGIoFGEMYsAMyDRAuGIAEGIoFGEMYsANI6QRQAFgAcAF4AZABAJgBAKABAKoBALgBA8gBAOIDBBgAIEGIBgGQBgo&amp;sclient=gws-wiz-serp">Google color picker</a> is a quick one to navigate to. <a href="https://htmlcolorcodes.com/">HTML color codes</a> is my personal favorite.</p>
 </div>
 </div>
 </div>
@@ -483,7 +964,7 @@ A crash course in color theory and what it means for data viz
 </section>
 <section id="colors-harmonies1" class="slide level2" data-menu-title="Color harmonies">
 <h2></h2>
-<p><span class="slide-title2">Use color wheels identify color harmonies</span></p>
+<p><span class="slide-title">Use color wheels identify color harmonies</span></p>
 <hr>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -513,7 +994,7 @@ A crash course in color theory and what it means for data viz
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:100.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-24-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -570,6 +1051,76 @@ A crash course in color theory and what it means for data viz
 </div>
 </div>
 </section>
+<section id="emotional-response-bake-off" class="slide level2" data-menu-title="Color &amp; emotions (bake off)">
+<h2></h2>
+<p><span class="slide-title">Colors elicit emotional responses</span></p>
+<hr>
+<p><span class="body-text-s">“lightness, brightness, and saturation can communicate the level of seriousness, intensity, and emotional weight in a visual work” (<a href="https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/">Cédric Scherer</a>)</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/thompson-bake-off.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text gray-text body-text-s">
+<p><a href="https://github.com/cararthompson/tidytuesdays?tab=readme-ov-file#2022-09---gbbo">The Great British Bake Off | Race to the Top</a>, by <a href="https://www.cararthompson.com/">Cara Thompson</a> (<a href="https://github.com/cararthompson/tidytuesdays/blob/main/scripts/202210_gbbo.R">source code</a>)</p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/scherer-legos.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text gray-text body-text-s">
+<p><a href="https://github.com/z3tt/TidyTuesday?tab=readme-ov-file#202236--lego-database-by-rebrickable">The LEGO Color Explosion</a>, by <a href="https://www.cedricscherer.com/">Cédric Scherer</a> (<a href="https://github.com/z3tt/TidyTuesday/blob/main/R/2022_36_LEGO_bricks.qmd">source code</a>)</p>
+</div>
+</div>
+</div>
+</section>
+<section id="emotional-response-covid-cases" class="slide level2" data-menu-title="Color &amp; emotions (covid cases)">
+<h2></h2>
+<p><span class="slide-title">Colors elicit emotional responses</span></p>
+<hr>
+<p><span class="body-text-s">“lightness, brightness, and saturation can communicate the level of seriousness, intensity, and emotional weight in a visual work” (<a href="https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/">Cédric Scherer</a>)</span></p>
+<p><br></p>
+
+<img data-src="images/week5/jh-covid.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s gray-text">
+<p>(Right) <a href="https://coronavirus.jhu.edu/map.html">COVID-19 tracker</a> by the Johns Hopkins University (screenshot from 2020-07-27, courtesy of <a href="https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/">Cédric Scherer</a>). Red tends to elicit panic / fear. (Left) A map of confirmed COVID-19 cases by Datawrapper (screenshot from 2020-07-27, courtesy of <a href="https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/">Cédric Scherer</a>). Blues and greens help to avoid such a strong fearful emotional response.</p>
+</div>
+</section>
+<section id="emotional-response-covid-deaths" class="slide level2" data-menu-title="Color &amp; emotions (covid deaths)">
+<h2></h2>
+<p><span class="slide-title">Colors elicit emotional responses</span></p>
+<hr>
+<p><br> <br></p>
+<div class="body-text-m">
+<blockquote>
+<p>“We show the <strong>current or confirmed cases in another color than red</strong>. The coronavirus is <strong>not a death sentence</strong>. Most infected people will survive. If you’re infected, you want to find yourself on a map as a blue (or yellow, or beige, or purple…) dot, not as a “attention, danger, run!”-screaming red dot. <strong>Related, we show deaths in black, not red – it feels more respectful</strong>.”</p>
+</blockquote>
+</div>
+<div class="right-align-text body-text-s">
+<p>-Lisa Charlotte Muth in <a href="https://blog.datawrapper.de/coronaviruscharts/">17 (or so) responsible live visualizations about the coronavirus, for you to use</a>,</p>
+<p>published March 3, 2020</p>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/week5/one-million-deaths.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="footer">
+<p>Learn more about this award-winning visualization in an interview with Carrie Mifsud: <a href="https://nightingaledvs.com/capturing-one-million-deaths-on-a-page-carrie-mifsud/">Capturing One Million Deaths on a Page: A Chat with NYT’s Carrie Mifsud</a></p>
+</div>
+</section>
 <section id="avoid-pure-hue" class="slide level2" data-menu-title="Avoid pure hues">
 <h2></h2>
 <p><span class="slide-title">Using pure hues can be overwhelming</span></p>
@@ -580,7 +1131,7 @@ A crash course in color theory and what it means for data viz
 <p>Image source: <a href="https://flourish.studio/blog/color-in-data-visualization/">5 pitfalls to avoid when working with color in data visualization</a></p>
 </div>
 </section>
-<section id="more-subdued" class="slide level2" data-menu-title="Avoid pure hues">
+<section id="more-subdued" class="slide level2" data-menu-title="Use more subdued hues">
 <h2></h2>
 <p><span class="slide-title">Use more subdued colors instead</span></p>
 <hr>
@@ -590,16 +1141,218 @@ A crash course in color theory and what it means for data viz
 <p>Image source: <a href="https://flourish.studio/blog/color-in-data-visualization/">5 pitfalls to avoid when working with color in data visualization</a></p>
 </div>
 </section>
-<section id="generate-subdued-colors" class="slide level2" data-menu-title="Generating subdued colors">
+<section id="adjust-sat1" class="slide level2" data-menu-title="Adjust saturation 1">
 <h2></h2>
 <p><span class="slide-title">A few approaches for subduing a pure hue</span></p>
 <hr>
-<p><br></p>
-<ul>
-<li>adjust the saturation (i.e.&nbsp;the level of intensity of a color; 100% saturation = a pure hue)</li>
-<li>adjust the lightness / darkness by tinting (add white), toning (add gray), or shading (add black)</li>
-<li>add opacity (e.g.&nbsp;using the <code>alpha</code> argument)</li>
-</ul>
+<p><span class="body-text-m">1. <strong>adjust the saturation</strong> (i.e.&nbsp;the level of intensity of a color)</span></p>
+<p><span class="gray-text body-text-m">2. <strong>adjust value</strong>: tint (add white), tone (add gray), or shade (add black)</span></p>
+<p><span class="gray-text body-text-m">3. <strong>increase transparency</strong> (e.g.&nbsp;using the <code>alpha</code> argument)</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>Green (HEX #00FF33 / 132° on the color wheel) at 100% saturation</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/green-100sat.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>Green (HEX #00FF33 / 132° on the color wheel) at 40% saturation</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/green-40sat.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>Saturation adjusted using the HSL (Hue, Saturation, Lightness) color model. Read about <a href="https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=HSL%20stands%20for%20hue%2C%20saturation,hue%2C%20saturation%2C%20and%20intensity.">HSL vs HSV color models</a> if you want a deeper dive.</p>
+</div>
+</section>
+<section id="adjust-sat2" class="slide level2" data-menu-title="Adjust saturation 2">
+<h2></h2>
+<p><span class="slide-title">A few approaches for subduing a pure hue</span></p>
+<hr>
+<p><span class="body-text-m">1. <strong>adjust the saturation</strong> (i.e.&nbsp;the level of intensity of a color)</span></p>
+<p><span class="gray-text body-text-m">2. <strong>adjust value</strong>: tint (add white), tone (add gray), or shade (add black)</span></p>
+<p><span class="gray-text body-text-m">3. <strong>increase transparency</strong> (e.g.&nbsp;using the <code>alpha</code> argument)</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>The default chroma for ggplots is set to 100%</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(penguins), <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-36-1.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>Use <code>scale_*_hue()</code> to adjust chroma (saturation)</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(penguins), <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">scale_fill_hue</span>(<span class="at">c =</span> <span class="dv">80</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-37-1.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p><code>scale_*_hue()</code> uses colors based on the <a href="https://en.wikipedia.org/wiki/HCL_color_space">HCL color space</a>.</p>
+</div>
+</section>
+<section id="adjust-lightness1" class="slide level2" data-menu-title="Adjust lightness 1">
+<h2></h2>
+<p><span class="slide-title">A few approaches for subduing a pure hue</span></p>
+<hr>
+<p><span class="gray-text body-text-m">1. <strong>adjust the saturation</strong> (i.e.&nbsp;the level of intensity of a color)</span></p>
+<p><span class="body-text-m">2. <strong>adjust value</strong>: tint (add white), tone (add gray), or shade (add black)</span></p>
+<p><span class="gray-text body-text-m">3. <strong>increase transparency</strong> (e.g.&nbsp;using the <code>alpha</code> argument)</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>Green (HEX #00FF33 / 132° on the color wheel) with lightness adjusted to 10% (more white)</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/green-tint.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>Green (HEX #00FF33 / 132° on the color wheel) with lightness adjusted to 90% (more black)</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/green-shade.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>Lightness adjusted using the HSL (Hue, Saturation, Lightness) color model. Read about <a href="https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=HSL%20stands%20for%20hue%2C%20saturation,hue%2C%20saturation%2C%20and%20intensity.">HSL vs HSV color models</a> if you want a deeper dive.</p>
+</div>
+</section>
+<section id="adjust-lightness2" class="slide level2" data-menu-title="Adjust lightness 2">
+<h2></h2>
+<p><span class="slide-title">A few approaches for subduing a pure hue</span></p>
+<hr>
+<p><span class="gray-text body-text-m">1. <strong>adjust the saturation</strong> (i.e.&nbsp;the level of intensity of a color)</span></p>
+<p><span class="body-text-m">2. <strong>adjust value</strong>: tint (add white), tone (add gray), or shade (add black)</span></p>
+<p><span class="gray-text body-text-m">3. <strong>increase transparency</strong> (e.g.&nbsp;using the <code>alpha</code> argument)</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>The default lightness for ggplots is set to 65%</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(penguins), <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-40-1.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>Use <code>scale_*_hue()</code> to adjust lightness / darkness</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(penguins), <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">scale_color_hue</span>(<span class="at">l =</span> <span class="dv">45</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-41-1.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p><code>scale_*_hue()</code> uses colors based on the <a href="https://en.wikipedia.org/wiki/HCL_color_space">HCL color space</a>. The default lightness value of 65(%) is good for filled areas but may be a bit light for points and lines.</p>
+</div>
+</section>
+<section id="adjust-opacity" class="slide level2" data-menu-title="Adjust opacity">
+<h2></h2>
+<p><span class="slide-title">A few approaches for subduing a pure hue</span></p>
+<hr>
+<p><span class="gray-text body-text-m">1. <strong>adjust the saturation</strong> (i.e.&nbsp;the level of intensity of a color)</span></p>
+<p><span class="gray-text body-text-m">2. <strong>adjust value</strong>: tint (add white), tone (add gray), or shade (add black)</span></p>
+<p><span class="body-text-m">3. <strong>increase transparency</strong> (e.g.&nbsp;using the <code>alpha</code> argument)</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>Green (HEX #00FF33 / 132° on the color wheel) with default opacity (100%)</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-43-1.png" width="960"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>Green (HEX #00FF33 / 132° on the color wheel) with opacity reduced to 50%</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-44-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="build-palettes" class="slide level2" data-menu-title="Building your own palette">
+<h2></h2>
+<p><span class="slide-title2">Building your own color scale</span></p>
+<hr>
+<p><code>scale_*_manual()</code></p>
+</section>
+<section id="general-rules" class="slide level2" data-menu-title="# General rules #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+There are also some additional rules / guidelines that you should pretty much always abide by when selecting colors
+</p>
+</div>
 </section>
 <section id="saturation" class="slide level2" data-menu-title="Saturation">
 <h2></h2>
@@ -607,7 +1360,7 @@ A crash course in color theory and what it means for data viz
 <hr>
 <p><br></p>
 <div class="body-text-m center-text">
-<p>It’s okay to use saturated colors in moderation.</p>
+<p>It’s okay to use saturated / brighter colors in moderation.</p>
 <p><em>We tend to associate <strong>more saturated</strong> colors with <strong>greater values</strong>.</em></p>
 </div>
 <div class="columns">
@@ -640,146 +1393,434 @@ A crash course in color theory and what it means for data viz
 </div>
 </div>
 </section>
-<section id="color-picker-saturation" class="slide level2" data-menu-title="Use a color picker">
+<section id="no-more-than-7" class="slide level2" data-menu-title="No more than 7">
 <h2></h2>
-<p><span class="slide-title3">Use a color picker to adjust hue, saturation, value</span></p>
+<p><span class="slide-title">No more than 7 colors</span></p>
 <hr>
+<div class="center-text body-text-m">
+<p>If you need more than seven colors, consider alternative chart types.</p>
+</div>
+<p><br></p>
+
+<img data-src="images/week5/7colors.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="footer">
+<p><em>Example from <a href="https://blog.datawrapper.de/colors/">What to consider when choosing colors for data visualization</a>, by Lisa Charlotte Muth</em></p>
+</div>
 </section>
-<section id="lightness" class="slide level2" data-menu-title="Lightness">
+<section id="consistency" class="slide level2" data-menu-title="Be consistent">
 <h2></h2>
-<p><span class="slide-title3">Lightness is how much white/black/gray is added to a hue</span></p>
+<p><span class="slide-title">Use colors consistently</span></p>
 <hr>
+<div class="center-text body-text-m">
+<p>Ensure consistent use of colors across multiple visualizations that display the same groups.</p>
+</div>
+<p><br></p>
+
+<img data-src="images/week5/consistent-colors.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="footer">
+<p><em>Example from <a href="https://blog.datawrapper.de/colors/">What to consider when choosing colors for data visualization</a>, by Lisa Charlotte Muth</em></p>
+</div>
+</section>
+<section id="legend" class="slide level2" data-menu-title="Include legend">
+<h2></h2>
+<p><span class="slide-title">Explain what your colors encode</span></p>
+<hr>
+<div class="center-text body-text-m">
+<p>Always include a color key, in the form of a traditional legend or otherwise.</p>
+</div>
+<p><br></p>
+
+<img data-src="images/week5/consistent-colors.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="footer">
+<p><em>Example from <a href="https://blog.datawrapper.de/colors/">What to consider when choosing colors for data visualization</a>, by Lisa Charlotte Muth</em></p>
+</div>
+</section>
+<section id="highlight" class="slide level2" data-menu-title="Highlight">
+<h2></h2>
+<p><span class="slide-title">Highlight important values</span></p>
+<hr>
+<div class="center-text body-text-m">
+<p>Use gray for less important groups / values, annotations, contextual information, etc.</p>
+</div>
+<p><br></p>
+
+<img data-src="images/week5/use-gray.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="footer">
+<p><em>Example from <a href="https://blog.datawrapper.de/colors/">What to consider when choosing colors for data visualization</a>, by Lisa Charlotte Muth</em></p>
+</div>
+</section>
+<section id="intuitive-colors" class="slide level2" data-menu-title="Intuitive colors">
+<h2></h2>
+<p><span class="slide-title">Be predictable in your color choices</span></p>
+<hr>
+<div class="center-text body-text-m">
+<p>Use intuitive colors (e.g.&nbsp;green for forest, blue for water) but avoid stereotypes (e.g.&nbsp;pink for women, blue for men)</p>
+</div>
+<p><br></p>
+
+<img data-src="images/week5/intuitive-colors.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="footer">
+<p><em>Example from <a href="https://blog.datawrapper.de/colors/">What to consider when choosing colors for data visualization</a>, by Lisa Charlotte Muth</em></p>
+</div>
+</section>
+<section id="gradient-low-high" class="slide level2" data-menu-title="Bright = low, dark = high">
+<h2></h2>
+<p><span class="slide-title">Bright = low, dark = high</span></p>
+<hr>
+<div class="center-text body-text-m">
+<p>In most cases, readers will associate bright colors with lower values and darker colors with higher values. Build gradients accordingly.</p>
+</div>
+<p><br></p>
+
+<img data-src="images/week5/low-high-choropleth.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="footer">
+<p><em>Example from <a href="https://blog.datawrapper.de/colors/">What to consider when choosing colors for data visualization</a>, by Lisa Charlotte Muth</em></p>
+</div>
+</section>
+<section id="gradient-high-low" class="slide level2" data-menu-title="Bright = high, dark = low">
+<h2></h2>
+<p><span class="slide-title">Except in some cases…</span></p>
+<hr>
+<p>bright colors associated with elevation</p>
+</section>
+<section id="gradients-continuous" class="slide level2" data-menu-title="Gradients for continuous data">
+<h2></h2>
+<p><span class="slide-title">Gradient palettes for continuous data only</span></p>
+<hr>
+<div class="center-text body-text-m">
+<p>Most readers will associate dark colors with “high / important” and bright or light colors with “low / less”. Using a gradient palette with discrete data may imply a ranking of categories where there shouldn’t be.</p>
+</div>
+<p><br></p>
+
+<img data-src="images/week5/no-gradient-for-discrete.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="footer">
+<p><em>Example from <a href="https://blog.datawrapper.de/colors/">What to consider when choosing colors for data visualization</a>, by Lisa Charlotte Muth</em></p>
+</div>
+</section>
+<section id="lightness-gradient" class="slide level2" data-menu-title="Lightness + hue">
+<h2></h2>
+<p><span class="slide-title">Use lightness, not just hue, to build gradients</span></p>
+<hr>
+<div class="center-text body-text-m">
+<p>Gradients should also work in black and white.</p>
+</div>
+<p><br></p>
+
+<img data-src="images/week5/lightness-gradient.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="footer">
+<p><em>Example from <a href="https://blog.datawrapper.de/colors/">What to consider when choosing colors for data visualization</a>, by Lisa Charlotte Muth</em></p>
+</div>
+</section>
+<section id="two-hues" class="slide level2" data-menu-title="Two hues">
+<h2></h2>
+<p><span class="slide-title">Two hues are sometimes better than one</span></p>
+<hr>
+<div class="center-text body-text-m">
+<p>Readers are generally better able to distinguish colors on a gradient better if they are encoded through both lightness and two (sometimes three) carefully-selected hues.</p>
+</div>
+<p><br></p>
+
+<img data-src="images/week5/1-or-2-hues.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="footer">
+<p><em>Example from <a href="https://blog.datawrapper.de/colors/">What to consider when choosing colors for data visualization</a>, by Lisa Charlotte Muth</em></p>
+</div>
+</section>
+<section id="break" class="slide level2" data-menu-title="# Break #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+<i class="fa-solid fa-mug-hot" title="a mug with steam rising out the top" aria-label="mug-hot"></i> Take a Break
+</p>
+<p class="caption-text">
+<em>~ A coding exercise is up next! ~</em>
+</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_288d9674" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="making-map" class="slide level2" data-menu-title="# Map #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+Let’s apply what we learn to a choropleth map visualizing precipitation
+</p>
+</div>
+</section>
+<section id="choropleth" class="slide level2" data-menu-title="Choropleth">
+<h2></h2>
+<p><span class="slide-title">What’s a choropleth?</span></p>
+<hr>
+<div class="center-text">
+<p><strong>Choropleths are maps that display the spatial distribution of a variable across divided geographical areas / regions, where variable is encoded by color. </strong></p>
+</div>
+<p>some examples here</p>
+<p>can be tricky to get right</p>
+<p>you’ll often have to think critically about classifying yourd ata</p>
+</section>
+<section id="data" class="slide level2" data-menu-title="The Data">
+<h2></h2>
+<p><span class="slide-title">The Data</span></p>
+<hr>
+<p><span class="body-text-s"><a href="https://www.ncei.noaa.gov/">NOAA National Centers for Environmental Information</a> (NCEI) is responsible for preserving, monitoring, assessing, and providing public access to the Nation’s geophysical data and information.</span></p>
 <div class="columns">
 <div class="column" style="width:50%;">
+<p><br></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week5/tint-tone-shade-paint.png" style="width:100.0%"></p>
+<p><img data-src="images/week5/ncei-logo1.png" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-<div class="center-text body-text-s gray-text">
-<p>Image source: <a href="https://en.wikipedia.org/wiki/Tint,_shade_and_tone">Wikipedia</a></p>
-</div>
 </div><div class="column" style="width:50%;">
-<ul>
-<li><strong>tints</strong> are made by <strong>adding white</strong> to a color, resulting in <strong>lighter</strong> versions</li>
-<li><strong>shades</strong> are made by <strong>adding black</strong> to a color, resulting in <strong>darker</strong> versions</li>
-<li><strong>tones</strong> are made by <strong>adding gray</strong> to a color</li>
-</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week5/ncei-logo2.png" style="width:60.0%"></p>
+</figure>
 </div>
 </div>
-</section>
-<section id="color-emotion" class="slide level2" data-menu-title="# Color &amp; Emotions #" data-background="#047C90">
-<h2></h2>
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">
-Colors used in our data visualizations elicit emotions from our audience
-</p>
 </div>
-</section>
-<section class="slide level2">
-
-<ul>
-<li><p>together can communicate the level of seriousness, intensity, and emotional weight in a visual work (David Machin’s <a href="https://books.google.de/books/about/Introduction_to_Multimodal_Analysis.html?id=xSyDAAAACAAJ&amp;redir_esc=y">Introduction to Multimodal Analysis</a>)</p></li>
-<li><p>dark / saturated &gt; more dramatic / anger / sadness</p></li>
-<li><p>bright / flat &gt; opposite</p></li>
-</ul>
-</section>
-<section class="slide level2">
-
-<ul>
-<li>emotions</li>
-<li>inclusive colors</li>
-</ul>
-</section>
-<section id="palette-types" class="slide level2" data-menu-title="# Palettes #" data-background="#047C90">
-<h2></h2>
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">
-Different data types require different types of palettes
-</p>
+</div>
+</div>
+<p><span class="body-text-s">Find public access to a massive inventory of climate data on their <a href="https://www.ncei.noaa.gov/access/monitoring/products/">Climate Monitoring</a> page. Today’s lesson will use the <a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/">Climate at a Glance</a> collection. Specifically, <strong>we’ll be exploring precipitation data at the county level, accessed via the <a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value">County Mapping</a> portal</strong>.</span></p>
+<div class="footer">
+<p>A lot of the following data viz code draws from and was inspired by the wonderful <a href="https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html">Making Maps with R</a> tutorial, by <a href="https://github.com/eriqande">Eric C. Anderson</a>.</p>
 </div>
 </section>
 <section class="slide level2">
 
-<p>General rules:</p>
-<ul>
-<li><p>categorical data: change hue; continuous data, changed saturation or lightness</p></li>
-<li><p>don’t use a gradient color palette for categories (e.g.&nbsp;don’t used different shades one hue for categorical data to make it look less colorful)</p>
-<ul>
-<li>readers associate dark colors with greater values, paler colors with lower values</li>
-<li>instead use different hues</li>
-<li>if your chart is too colorful, consider a differnt way to visualize your data</li>
-</ul></li>
-<li><p>comparing one thing to the rest? use a stand-out hue for the one thing and gray for the rest</p></li>
-<li><p>comparing 2 things to the rest? use two complimentary colors</p></li>
-<li><p>don’t use too many colors</p></li>
-</ul>
+<p>MAP PROJECTION??</p>
 </section>
-<section id="accessibility" class="slide level2" data-menu-title="# Accessibility #" data-background="#047C90">
+<section id="plan" class="slide level2" data-menu-title="The Plan">
 <h2></h2>
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">
-Ensuring accessbility through your color choices
-</p>
-</div>
-</section>
-<section id="accessibility" class="slide level2" data-menu-title="# Accessibility #" data-background="#047C90">
-<h2></h2>
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">
-Ensuring accessbility through your color choices
-</p>
-</div>
-</section>
-<section id="reminders-recap" class="slide level2" data-menu-title="# Reminders &amp; recap #" data-background="#047C90">
-<h2></h2>
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">
-Some parting words, reminders, and a recap of all the colorful ideas discussed
-</p>
-</div>
-</section>
-<section class="slide level2">
-
-<ul>
-<li>picking colors is hard! use them purposefully
-<ul>
-<li>your brand</li>
-<li>pulling colors from a related image</li>
-<li>take inspiration from other data viz/art</li>
-<li>google “[whatever you like] palette”</li>
-</ul></li>
-</ul>
-<p>{monochromeR}</p>
-<ul>
-<li><p>colors &amp; common pitfalls</p>
-<ul>
-<li>what to consider when choosing colors for data visualization (datawrapper)</li>
-<li>gradients for cont data</li>
-<li>be consistent with colors</li>
-<li>color gradients (consider binned colors)</li>
-<li>misleading color palettes (rainbow color palette): https://eagereyes.org/blog/2013/rainbow-color-map</li>
-<li>think about color palettes before you create your viz! use color blindness tools</li>
-</ul>
-<p>https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/</p>
-<p>https://blog.datawrapper.de/colors/</p>
-<p>example of bad color map (poverty): https://en.wikipedia.org/wiki/Poverty</p></li>
-</ul>
-</section>
-<section id="recap" class="slide level2" data-menu-title="Recap">
-<h2></h2>
-<p><span class="slide-title3">Recap</span></p>
+<p><span class="slide-title">The Plan</span></p>
 <hr>
+<p><strong>The type of color palette we use will vary with the type of data we hope to visualize.</strong> In this following section, we’ll create a series of choropleth maps visualizing different data types (categorical vs.&nbsp;numerical) that require different color palettes.</p>
+<p><br></p>
+<div class="fragment">
+<p><strong>We’ll create maps that color counties based on the following:</strong></p>
 <ul>
-<li>color theory can help us identify colors that look nice together</li>
-<li>hues have associated meaning – it’s important to consider our intended audience and be mindful of how those associations differ among cultures</li>
-<li>avoid using <em>only</em> pure hues</li>
-<li></li>
+<li><span class="teal-text"><strong>Categorical variable</strong></span>
+<ul>
+<li>Color counties based on whether their total precipitation in Dec 2023 was above or below the 1991 - 2000 mean</li>
+</ul></li>
+<li><span class="teal-text"><strong>Numeric variable</strong></span>
+<ul>
+<li><span class="teal-text body-text-s"><strong>Sequential (either linear or binned):</strong></span> Color counties based on the total amount of precipitation received in Dec 2023</li>
+<li><span class="teal-text body-text-s"><strong>Diverging (either linear or binned):</strong></span> Color counties based off the difference between the 1901 - 2000 mean and Dec 2023 precipitation totals</li>
+</ul></li>
 </ul>
+</div>
+<div class="fragment">
+<div class="center-text body-text-m">
+<p><strong>First, some data wrangling</strong></p>
+</div>
+</div>
+</section>
+<section id="data-wrangling" class="slide level2" data-menu-title="Data wrangling">
+<h2></h2>
+<p><span class="slide-title">Data Wrangling</span></p>
+<hr>
+<p>Here, we’ll wrangle our precipitation data, then join it with our US county data (courtesy of the <a href="https://cran.r-project.org/web/packages/maps/index.html"><code>{maps}</code> package</a>):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="do">##                                    setup                                 ----</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="co">#..........................load packages.........................</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="fu">library</span>(maps) </span>
+<span id="cb12-8"><a href="#cb12-8"></a></span>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="co">#.........................get shape data.........................</span></span>
+<span id="cb12-10"><a href="#cb12-10"></a>states <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"state"</span>)</span>
+<span id="cb12-11"><a href="#cb12-11"></a>counties <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"county"</span>)</span>
+<span id="cb12-12"><a href="#cb12-12"></a></span>
+<span id="cb12-13"><a href="#cb12-13"></a><span class="co">#....................import precipitation data...................</span></span>
+<span id="cb12-14"><a href="#cb12-14"></a>precip_counties <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week5"</span>, <span class="st">"data"</span>, <span class="st">"county-precip-jan2023.csv"</span>), <span class="at">skip =</span> <span class="dv">4</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb12-15"><a href="#cb12-15"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb12-16"><a href="#cb12-16"></a></span>
+<span id="cb12-17"><a href="#cb12-17"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb12-18"><a href="#cb12-18"></a><span class="do">##                               data wrangling                             ----</span></span>
+<span id="cb12-19"><a href="#cb12-19"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb12-20"><a href="#cb12-20"></a></span>
+<span id="cb12-21"><a href="#cb12-21"></a><span class="co">#..............update names of counties df variables.............</span></span>
+<span id="cb12-22"><a href="#cb12-22"></a>us_counties <span class="ot">&lt;-</span> counties <span class="sc">|&gt;</span> </span>
+<span id="cb12-23"><a href="#cb12-23"></a>  <span class="fu">select</span>(<span class="at">state =</span> region, <span class="at">county =</span> subregion, long, lat, group, order)</span>
+<span id="cb12-24"><a href="#cb12-24"></a>  </span>
+<span id="cb12-25"><a href="#cb12-25"></a><span class="co">#..........clean precip data &amp; make sure var names match.........</span></span>
+<span id="cb12-26"><a href="#cb12-26"></a>precip_counties_wrangled <span class="ot">&lt;-</span> precip_counties <span class="sc">|&gt;</span> </span>
+<span id="cb12-27"><a href="#cb12-27"></a>  </span>
+<span id="cb12-28"><a href="#cb12-28"></a>  <span class="co"># more intuitive column name ----</span></span>
+<span id="cb12-29"><a href="#cb12-29"></a>  <span class="fu">rename</span>(<span class="at">county =</span> name) <span class="sc">|&gt;</span> </span>
+<span id="cb12-30"><a href="#cb12-30"></a>  </span>
+<span id="cb12-31"><a href="#cb12-31"></a>  <span class="co"># convert count and state names to all lowercase ----</span></span>
+<span id="cb12-32"><a href="#cb12-32"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_to_lower</span>(county),</span>
+<span id="cb12-33"><a href="#cb12-33"></a>         <span class="at">state =</span> <span class="fu">str_to_lower</span>(state)) <span class="sc">|&gt;</span> </span>
+<span id="cb12-34"><a href="#cb12-34"></a>  </span>
+<span id="cb12-35"><a href="#cb12-35"></a>  <span class="co"># remove the word "county" from all county names ----</span></span>
+<span id="cb12-36"><a href="#cb12-36"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_remove</span>(county, <span class="at">pattern =</span> <span class="st">" county"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb12-37"><a href="#cb12-37"></a>  </span>
+<span id="cb12-38"><a href="#cb12-38"></a>  <span class="co"># remove the word "parish" from the end of Louisiana counties ----</span></span>
+<span id="cb12-39"><a href="#cb12-39"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_remove</span>(county, <span class="at">pattern =</span> <span class="st">" parish"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb12-40"><a href="#cb12-40"></a>  </span>
+<span id="cb12-41"><a href="#cb12-41"></a>  <span class="co"># add col denoting if Oct precip is above or below 1901 - 2000 mean</span></span>
+<span id="cb12-42"><a href="#cb12-42"></a>  <span class="fu">mutate</span>(<span class="at">comp_mean =</span> <span class="fu">ifelse</span>(value <span class="sc">&gt;</span> x1901_2000_mean, <span class="co"># if `value` &gt; `x1901_2000_mean`</span></span>
+<span id="cb12-43"><a href="#cb12-43"></a>                     <span class="at">yes =</span> <span class="st">"above mean"</span>, <span class="co"># replace abbreviation with full state name </span></span>
+<span id="cb12-44"><a href="#cb12-44"></a>                     <span class="at">no =</span> <span class="st">"below mean"</span>)) <span class="sc">|&gt;</span> <span class="co"># if string in 'sn' col is not 2 chrs long, keep state name as-is</span></span>
+<span id="cb12-45"><a href="#cb12-45"></a>  </span>
+<span id="cb12-46"><a href="#cb12-46"></a>  <span class="co"># select &amp; rename relevant cols ----</span></span>
+<span id="cb12-47"><a href="#cb12-47"></a>  <span class="fu">select</span>(state, county, <span class="at">precip =</span> value, <span class="at">mean_1901_2000 =</span> x1901_2000_mean, <span class="at">anomaly =</span> anomaly_1901_2000_base_period, comp_mean) <span class="sc">|&gt;</span></span>
+<span id="cb12-48"><a href="#cb12-48"></a>  </span>
+<span id="cb12-49"><a href="#cb12-49"></a>  <span class="co"># make precip var numeric (was chr) ----</span></span>
+<span id="cb12-50"><a href="#cb12-50"></a>  <span class="fu">mutate</span>(<span class="at">precip =</span> <span class="fu">as.numeric</span>(precip))</span>
+<span id="cb12-51"><a href="#cb12-51"></a></span>
+<span id="cb12-52"><a href="#cb12-52"></a><span class="co">#............................join dfs............................</span></span>
+<span id="cb12-53"><a href="#cb12-53"></a>joined_precip_us_counties <span class="ot">&lt;-</span> <span class="fu">full_join</span>(precip_counties_wrangled, us_counties)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="cat-data" class="slide level2" data-menu-title="Categorical data">
+<h2></h2>
+<p><span class="slide-title">Map color to a categorical variable</span></p>
+<hr>
+<p><span class="body-text-s">Here, we <strong>color county based on whether it received more or less precipitation in Dec 2023 as compared to the 1901 - 2000 mean (categorical variable)</strong>. Colors chosen follow those suggested for use with precipitation variables in <a href="https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/suggested-colors">Kaye et al.&nbsp;2012</a> and are a <a href="https://www.nceas.ucsb.edu/sites/default/files/2022-06/Colorblind%20Safe%20Color%20Schemes.pdf">verified colorblind-friendly combo</a>:</span></p>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">ggplot</span>(<span class="at">data =</span> states, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group)) <span class="sc">+</span> </span>
+<span id="cb13-3"><a href="#cb13-3"></a>  </span>
+<span id="cb13-4"><a href="#cb13-4"></a>  <span class="co"># plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> joined_precip_us_counties, <span class="fu">aes</span>(<span class="at">fill =</span> comp_mean), <span class="at">color =</span> <span class="st">"#DDDDDD"</span>, <span class="at">linewidth =</span> <span class="fl">0.1</span>) <span class="sc">+</span> </span>
+<span id="cb13-6"><a href="#cb13-6"></a>  </span>
+<span id="cb13-7"><a href="#cb13-7"></a>  <span class="co"># darken state lines ----</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a>  <span class="fu">geom_polygon</span>(<span class="at">color =</span> <span class="st">"#2F2D2C"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb13-9"><a href="#cb13-9"></a>  </span>
+<span id="cb13-10"><a href="#cb13-10"></a>  <span class="co"># to fix the relationship between one unit in the y direction and one unit in the x direction; may need different values for different regions depending on where they are on the globe (e.g. close to the poles)</span></span>
+<span id="cb13-11"><a href="#cb13-11"></a>  <span class="fu">coord_fixed</span>(<span class="fl">1.3</span>) <span class="sc">+</span></span>
+<span id="cb13-12"><a href="#cb13-12"></a>  </span>
+<span id="cb13-13"><a href="#cb13-13"></a>  <span class="co"># # OPTION 1: update colors with pre-fab palette ----</span></span>
+<span id="cb13-14"><a href="#cb13-14"></a>  <span class="co"># scale_fill_viridis_d(option = "D") +</span></span>
+<span id="cb13-15"><a href="#cb13-15"></a>  </span>
+<span id="cb13-16"><a href="#cb13-16"></a>  <span class="co"># # OPTION 2: update colors manually (based on suggested palette for precip in Kay et al. 2012) ----</span></span>
+<span id="cb13-17"><a href="#cb13-17"></a>  <span class="co"># scale_fill_manual(values = c("#00665E", "#8D5103")) +</span></span>
+<span id="cb13-18"><a href="#cb13-18"></a></span>
+<span id="cb13-19"><a href="#cb13-19"></a>  <span class="co"># OPTION 3: adjust (tint / lighten) suggested colors slightly to be easier on the eyes ----</span></span>
+<span id="cb13-20"><a href="#cb13-20"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#3DB1A6"</span>, <span class="st">"#E3BE6B"</span>)) <span class="sc">+</span></span>
+<span id="cb13-21"><a href="#cb13-21"></a></span>
+<span id="cb13-22"><a href="#cb13-22"></a>  <span class="co"># update labels ----</span></span>
+<span id="cb13-23"><a href="#cb13-23"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"October 2023 precipitation relative to historical (1901-2000) average"</span>,</span>
+<span id="cb13-24"><a href="#cb13-24"></a>       <span class="at">subtitle =</span> <span class="st">"Counties whose rainfall exceeded or was below average"</span>) <span class="sc">+</span></span>
+<span id="cb13-25"><a href="#cb13-25"></a>  </span>
+<span id="cb13-26"><a href="#cb13-26"></a>  <span class="co"># set theme to clean up appearance ----</span></span>
+<span id="cb13-27"><a href="#cb13-27"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-61-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+</section>
+<section class="slide level2">
+
+<p>skewed distribution</p>
+
+<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-62-1.png" width="960" class="r-stretch"><div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  0.04 18.22</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.178564</code></pre>
+</div>
+</div>
+</section>
+<section id="seq-num" class="slide level2" data-menu-title="Sequntial numerical data">
+<h2></h2>
+<p><span class="slide-title2">Map color to a sequential numeric variable (1 hue)</span></p>
+<hr>
+<p><span class="body-text-s">Here, we <strong>color county based on the total precipitation it received in October 2023 (sequential numeric)</strong>. Because blue is often associated with precipitation, we’ll create a color gradient using that hue:</span></p>
+<p>https://stackoverflow.com/questions/8069837/is-there-a-built-in-way-to-do-a-logarithmic-color-scale-in-ggplot2</p>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>noaa_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#543006"</span>, <span class="st">"#975F1C"</span>, <span class="st">"#AC7E42"</span>, <span class="st">"#C09C66"</span>, <span class="st">"#EBD9B0"</span>, <span class="st">"#B2DDD7"</span>, <span class="st">"#8BC2BC"</span>, <span class="st">"#3B8E86"</span>, <span class="st">"#16726B"</span>, <span class="st">"#003C30"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2"></a></span>
+<span id="cb16-3"><a href="#cb16-3"></a>kaye_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#8D5102"</span>, <span class="st">"#DAB566"</span>, <span class="st">"#F5E7C2"</span>, <span class="st">"#F5F5F5"</span>, <span class="st">"#C8ECE6"</span>, <span class="st">"#5AB6AF"</span>, <span class="st">"#01665E"</span>)</span>
+<span id="cb16-4"><a href="#cb16-4"></a></span>
+<span id="cb16-5"><a href="#cb16-5"></a></span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="co"># 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----</span></span>
+<span id="cb16-7"><a href="#cb16-7"></a><span class="fu">ggplot</span>(<span class="at">data =</span> states, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group)) <span class="sc">+</span> </span>
+<span id="cb16-8"><a href="#cb16-8"></a>  </span>
+<span id="cb16-9"><a href="#cb16-9"></a>  <span class="co"># plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> joined_precip_us_counties, <span class="fu">aes</span>(<span class="at">fill =</span> precip)) <span class="sc">+</span> </span>
+<span id="cb16-11"><a href="#cb16-11"></a>  </span>
+<span id="cb16-12"><a href="#cb16-12"></a>  <span class="co"># darken state lines ----</span></span>
+<span id="cb16-13"><a href="#cb16-13"></a>  <span class="fu">geom_polygon</span>(<span class="at">color =</span> <span class="st">"#2F2D2C"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb16-14"><a href="#cb16-14"></a>  </span>
+<span id="cb16-15"><a href="#cb16-15"></a>  <span class="co"># to fix the relationship between one unit in the y direction and one unit in the x direction; may need different values for different regions depending on where they are on the globe (e.g. close to the poles)</span></span>
+<span id="cb16-16"><a href="#cb16-16"></a>  <span class="fu">coord_fixed</span>(<span class="fl">1.3</span>) <span class="sc">+</span></span>
+<span id="cb16-17"><a href="#cb16-17"></a>  </span>
+<span id="cb16-18"><a href="#cb16-18"></a>  <span class="co"># # OPTION 1: update colors with pre-fab palette ----</span></span>
+<span id="cb16-19"><a href="#cb16-19"></a>  <span class="co"># scale_fill_viridis_c(option = "D") +</span></span>
+<span id="cb16-20"><a href="#cb16-20"></a>  <span class="co"># scale_fill_distiller(palette = 'Purples')</span></span>
+<span id="cb16-21"><a href="#cb16-21"></a>  <span class="co"># scale_fill_viridis_c(trans = "log", breaks=c(0.1, 0.5, 2,4,6, 8, 10, 12, 15, 20, 25), </span></span>
+<span id="cb16-22"><a href="#cb16-22"></a>  <span class="co">#                  name="Number of restaurant", </span></span>
+<span id="cb16-23"><a href="#cb16-23"></a>  <span class="co">#                  guide = guide_legend( </span></span>
+<span id="cb16-24"><a href="#cb16-24"></a>  <span class="co">#                                        label.position = "bottom", </span></span>
+<span id="cb16-25"><a href="#cb16-25"></a>  <span class="co">#                                        title.position = 'top',</span></span>
+<span id="cb16-26"><a href="#cb16-26"></a>  <span class="co">#                                        nrow=1))</span></span>
+<span id="cb16-27"><a href="#cb16-27"></a>  <span class="co"># </span></span>
+<span id="cb16-28"><a href="#cb16-28"></a>  <span class="co"># OPTION 2: manually create a color gradient ----</span></span>
+<span id="cb16-29"><a href="#cb16-29"></a>  <span class="co"># scale_fill_gradient(low = "#C8ECE6", high = "#213943") +</span></span>
+<span id="cb16-30"><a href="#cb16-30"></a>  </span>
+<span id="cb16-31"><a href="#cb16-31"></a>  <span class="co"># OPTION 2: manually create a color gradient ----</span></span>
+<span id="cb16-32"><a href="#cb16-32"></a>  <span class="co">#scale_fill_gradient2(low = "#77A8B9", mid = "#FFFFFF", high = "#213943") +</span></span>
+<span id="cb16-33"><a href="#cb16-33"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">trans =</span> <span class="st">"log"</span>,</span>
+<span id="cb16-34"><a href="#cb16-34"></a>                    <span class="at">colors =</span> <span class="fu">c</span>(<span class="st">"#543006"</span>, <span class="st">"#975F1C"</span>, <span class="st">"#AC7E42"</span>, <span class="st">"#C09C66"</span>, <span class="st">"#EBD9B0"</span>, <span class="st">"#B2DDD7"</span>, <span class="st">"#8BC2BC"</span>, <span class="st">"#3B8E86"</span>, <span class="st">"#16726B"</span>, <span class="st">"#003C30"</span>), </span>
+<span id="cb16-35"><a href="#cb16-35"></a>                    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">25</span>)) <span class="sc">+</span></span>
+<span id="cb16-36"><a href="#cb16-36"></a>  </span>
+<span id="cb16-37"><a href="#cb16-37"></a>  <span class="co"># update legend ----</span></span>
+<span id="cb16-38"><a href="#cb16-38"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_coloursteps</span>(<span class="at">title =</span> <span class="st">"Precipitation (inches)"</span>, </span>
+<span id="cb16-39"><a href="#cb16-39"></a>                                  <span class="at">title.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb16-40"><a href="#cb16-40"></a>                                  <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb16-41"><a href="#cb16-41"></a>  </span>
+<span id="cb16-42"><a href="#cb16-42"></a>  <span class="co"># update labels ----</span></span>
+<span id="cb16-43"><a href="#cb16-43"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Total Precipitation, by County"</span>,</span>
+<span id="cb16-44"><a href="#cb16-44"></a>       <span class="at">subtitle =</span> <span class="st">"January 2023"</span>) <span class="sc">+</span></span>
+<span id="cb16-45"><a href="#cb16-45"></a>  </span>
+<span id="cb16-46"><a href="#cb16-46"></a>  <span class="co"># set theme to clean up appearance ----</span></span>
+<span id="cb16-47"><a href="#cb16-47"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span> </span>
+<span id="cb16-48"><a href="#cb16-48"></a>  </span>
+<span id="cb16-49"><a href="#cb16-49"></a>  <span class="co"># theme adjustments ----</span></span>
+<span id="cb16-50"><a href="#cb16-50"></a>  <span class="fu">theme</span>(</span>
+<span id="cb16-51"><a href="#cb16-51"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
+<span id="cb16-52"><a href="#cb16-52"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-65-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 
 <div class="footer footer-default">
 

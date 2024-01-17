@@ -1,0 +1,353 @@
+
+```{r}
+#| eval: true
+#| echo: false
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                              important links                             ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# State-level precipitation by year/month: <https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/statewide/mapping>
+# County-level precipitation by year/month: <https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value> and remove first few rows manually
+# Tutorial: <https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html>
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    setup                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..........................load packages.........................
+library(tidyverse)
+library(maps) 
+
+#.........................get shape data.........................
+# usa <- map_data("usa")
+states <- map_data("state")
+counties <- map_data("county")
+
+#....................import precipitation data...................
+# NOTE: manually removed the first 4 rows of metadata from csv file before importing
+precip_counties <- read_csv(here::here("slides", "data", "county-precip-jan2023.csv"), skip = 4) |> 
+  janitor::clean_names()
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                               data wrangling                             ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..............update names of counties df variables.............
+us_counties <- counties |> 
+  select(state = region, county = subregion, long, lat, group, order)
+  
+#..........clean precip data & make sure var names match.........
+precip_counties_wrangled <- precip_counties |> 
+  
+  # more intuitive column name ----
+  rename(county = name) |> 
+  
+  # convert count and state names to all lowercase ----
+  mutate(county = str_to_lower(county),
+         state = str_to_lower(state)) |> 
+  
+  # remove the word "county" from all county names ----
+  mutate(county = str_remove(county, pattern = " county")) |> 
+  
+  # remove the word "parish" from the end of Louisiana counties ----
+  # NOTE: there are more counties that need cleaning for seamless joining with `us_counties` df; I've don't done a complete sweep of the data, so you'll notice data gaps once plotted
+  mutate(county = str_remove(county, pattern = " parish")) |> 
+  
+  # add col denoting if Oct precip is above or below 1901 - 2000 mean
+  mutate(comp_mean = ifelse(value > x1901_2000_mean, # if `value` > `x1901_2000_mean`
+                     yes = "above mean", # replace abbreviation with full state name 
+                     no = "below mean")) |> # if string in 'sn' col is not 2 chrs long, keep state name as-is
+  
+  # select & rename relevant cols ----
+  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period, comp_mean) |>
+  
+  # make precip var numeric (was chr) ----
+  mutate(precip = as.numeric(precip))
+
+#............................join dfs............................
+joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties)
+```
+
+
+# ----------------------------------- #
+following Albert Cairo
+# ----------------------------------- #
+
+FIRST ATTEMPT
+```{r}
+#| eval: false
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+#| output-location: column
+
+# 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----
+original <- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + 
+  
+  # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----
+  geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + 
+  
+  # darken state lines ----
+  geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
+  
+  # to fix the relationship between one unit in the y direction and one unit in the x direction; may need different values for different regions depending on where they are on the globe (e.g. close to the poles)
+  coord_fixed(1.3) +
+  
+  # manually create a binned color gradient ----
+  scale_fill_stepsn(colors = c("#543006", "#975F1C", "#AC7E42", "#C09C66", "#EBD9B0",  
+                               "#E8E8E8", "#B2DDD7", "#8BC2BC", "#3B8E86", "#16726B", "#003C30")) +
+                   
+
+  # update legend ----
+  guides(fill = guide_colourbar(title = "Precipitation (inches)",
+                                title.position = "top",
+                                barwidth = 15, barheight = 1)) +
+  
+  # update labels ----
+  labs(title = "Total Precipitation, by County",
+       subtitle = "January 2023") +
+  
+  # set theme to clean up appearance ----
+  theme_void() + 
+  
+  # theme adjustments ----
+  theme(
+    legend.position = "bottom"
+  )
+  
+original
+```
+
+INVESTIGATE FURTHER: skewed distribution (most values are between 0-5")
+```{r}
+ggplot(joined_precip_us_counties, aes(x = precip)) +
+  geom_histogram()
+```
+
+METHOD 1: EQUAL INTERVALS
+- boundaries will enclose equal ranges of data (e.g. 0-10, 11-20, 21-30, etc.)
+- works well when frequencies are constant
+- to calculate breaks: get max and min precipitations, subtract them, divide result by number of classes (intervals) that you wat
+```{r}
+range(na.omit(joined_precip_us_counties)$precip) # 0.04 - 18.22
+(max(na.omit(joined_precip_us_counties)$precip) - min(na.omit(joined_precip_us_counties)$precip))/11 # 1.65
+```
+so class size would be 1.7 (e.g. 0-1.7, 1.8-3.5, 3.6-5.3)
+
+SECOND ATTEMPT
+```{r}
+#| eval: false
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+#| output-location: column
+
+# 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----
+method1 <- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + 
+  
+  # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----
+  geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + 
+  
+  # darken state lines ----
+  geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
+  
+  # to fix the relationship between one unit in the y direction and one unit in the x direction; may need different values for different regions depending on where they are on the globe (e.g. close to the poles)
+  coord_fixed(1.3) +
+  
+  # manually create a binned color gradient ----
+  scale_fill_stepsn(colors = c("#543006", "#975F1C", "#AC7E42", "#C09C66", "#D6BB8C", "#EBD9B0",  
+                               "#E8E8E8", 
+                               "#B2DDD7", "#8BC2BC", "#64A7A1", "#3B8E86", "#16726B", "#003C30"),
+                    breaks = c(0, 1.7, 3.4, 5.1, 6.8, 8.5, 10.2, 11.9, 13.6, 15.3, 17, 18.7)) +
+                   
+
+  # update legend ----
+  guides(fill = guide_colourbar(title = "Precipitation (inches)",
+                                title.position = "top",
+                                barwidth = 25, barheight = 1)) +
+  
+  # update labels ----
+  labs(title = "Total Precipitation, by County",
+       subtitle = "January 2023") +
+  
+  # set theme to clean up appearance ----
+  theme_void() + 
+  
+  # theme adjustments ----
+  theme(
+    legend.position = "bottom"
+  )
+  
+method1
+```
+
+ATTEMPT #2 is better, but we still might be loosing some important details at the lower end of the spectrum, since so many states received rainfall in the 0-5" range.
+
+METHOD 2: BASED ON MEAN & SD
+
+```{r}
+mean(na.omit(joined_precip_us_counties$precip)) # 4.18
+sd(na.omit(joined_precip_us_counties$precip)) # 2.87
+```
+
+```{r}
+#| eval: false
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+#| output-location: column
+
+# 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----
+method2 <- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + 
+  
+  # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----
+  geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + 
+  
+  # darken state lines ----
+  geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
+  
+  # to fix the relationship between one unit in the y direction and one unit in the x direction; may need different values for different regions depending on where they are on the globe (e.g. close to the poles)
+  coord_fixed(1.3) +
+  
+  # manually create a binned color gradient ----
+  scale_fill_stepsn(colors = c("#543006", "#975F1C", "#AC7E42", "#C09C66", "#D6BB8C", "#EBD9B0",  
+                               "#E8E8E8", 
+                               "#B2DDD7", "#8BC2BC", "#64A7A1", "#3B8E86", "#16726B", "#003C30"),
+                    breaks = c(0, 1, 4, 7, 10, 13, 16, 19)) +
+                   
+
+  # update legend ----
+  guides(fill = guide_colourbar(title = "Precipitation (inches)",
+                                title.position = "top",
+                                barwidth = 25, barheight = 1)) +
+  
+  # update labels ----
+  labs(title = "Total Precipitation, by County",
+       subtitle = "January 2023") +
+  
+  # set theme to clean up appearance ----
+  theme_void() + 
+  
+  # theme adjustments ----
+  theme(
+    legend.position = "bottom"
+  )
+  
+method2
+```
+
+METHOD3: log transformation
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+#| output-location: column
+
+# 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----
+method3 <- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + 
+  
+  # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----
+  geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + 
+  
+  # darken state lines ----
+  geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
+  
+  # to fix the relationship between one unit in the y direction and one unit in the x direction; may need different values for different regions depending on where they are on the globe (e.g. close to the poles)
+  coord_fixed(1.3) +
+  
+  # # OPTION 1: update colors with pre-fab palette ----
+  # scale_fill_viridis_c(option = "D") +
+  # scale_fill_distiller(palette = 'Purples')
+  # scale_fill_viridis_c(trans = "log", breaks=c(0.1, 0.5, 2,4,6, 8, 10, 12, 15, 20, 25), 
+  #                  name="Number of restaurant", 
+  #                  guide = guide_legend( 
+  #                                        label.position = "bottom", 
+  #                                        title.position = 'top',
+  #                                        nrow=1))
+  # 
+  # OPTION 2: manually create a color gradient ----
+  # scale_fill_gradient(low = "#C8ECE6", high = "#213943") +
+  
+  # OPTION 2: manually create a color gradient ----
+  #scale_fill_gradient2(low = "#77A8B9", mid = "#FFFFFF", high = "#213943") +
+  scale_fill_steps2(#trans = "log",
+                    low = "#543006", mid = "#E8E8E8", high = "#003C30",
+                    midpoint = 4) +
+                    # colors = c("#543006", "#975F1C", "#AC7E42", "#C09C66", "#D6BB8C", "#EBD9B0",  
+                    #            "#E8E8E8", 
+                    #            "#B2DDD7", "#8BC2BC", "#64A7A1", "#3B8E86", "#16726B", "#003C30"), 
+                    # breaks = c(0, 0.1, 0.5, 1, 2, 4, 6, 8, 10, 12, 15, 20, 25)) +
+  
+  # update legend ----
+  guides(fill = guide_coloursteps(title = "Precipitation (inches)", 
+                                  title.position = "top",
+                                  barwidth = 25, barheight = 1)) +
+  
+  # update labels ----
+  labs(title = "Total Precipitation, by County",
+       subtitle = "January 2023") +
+  
+  # set theme to clean up appearance ----
+  theme_void() + 
+  
+  # theme adjustments ----
+  theme(
+    legend.position = "bottom"
+  )
+
+method3
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+  # # OPTION 2: manually create a color gradient ----
+  # #scale_fill_gradient2(low = "#77A8B9", mid = "#FFFFFF", high = "#213943") +
+  # scale_fill_stepsn(trans = "log",
+  #                   colors = c("#543006", "#975F1C", "#AC7E42", "#C09C66", "#EBD9B0", "#B2DDD7", "#8BC2BC", "#3B8E86", "#16726B", "#003C30"), 
+  #                   breaks = c(0, 0.1, 0.5, 1, 2, 4, 6, 8, 10, 12, 15, 20, 25)) +
+  # 
+  # # update legend ----
+  # guides(fill = guide_coloursteps(title = "Precipitation (inches)", 
+  #                                 title.position = "top",
+  #                                 barwidth = 15, barheight = 1)) +
+  # 
+  # # update labels ----
+  # labs(title = "Total Precipitation, by County",
+  #      subtitle = "January 2023") +
+  # 
+  # # set theme to clean up appearance ----
+  # theme_void() + 
+  # 
+  # # theme adjustments ----
+  # theme(
+  #   legend.position = "bottom"
+  # )
+```
+
+
