@@ -559,25 +559,30 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)
 
 ---
 
+## {#outline-points data-menu-title="Tip: outline points"} 
+
+[Tip: outline points to make light colors more visible]{.slide-title2}
+
+<hr>
+
+Rather than `color` points by `body_mass_g`, we can `fill` points by `body_mass_g`. Then, we need to change the [`shape` of our points to `21`](https://ggplot2.tidyverse.org/articles/ggplot2-specs.html#sec:shape-spec), which is the code for an outlined, fill-able point: 
+
 ```{r}
 #| eval: true
 #| echo: true
-#| #| fig-align: "center"
+#| fig-align: "center"
 #| out-width: "100%"
+#| code-line-numbers: "4,5"
 library(palmerpenguins)
 library(tidyverse)
 
 ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, fill = body_mass_g)) +
   geom_point(shape = 21, size = 4, alpha = 0.8) +
   scale_fill_distiller(palette = "BuPu")
-
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, fill = body_mass_g)) +
-  geom_point(shape = 21, size = 4, alpha = 0.8) +
-  scale_fill_fermenter(palette = "YlGnBu")
 ```
 
 ::: {.footer}
-Trick comes courtesy of [Albert Rapp]() and his [How to Use Better Colors in ggplot (3 Easy Ways)](https://www.youtube.com/watch?v=ZVSbY4z7tMY) video tutorial. Check out his [YouTube channel](https://www.youtube.com/@rappa753) for *tons* of great R content.
+Trick comes courtesy of [Albert Rapp](https://albert-rapp.de/) and his [How to Use Better Colors in ggplot (3 Easy Ways)](https://www.youtube.com/watch?v=ZVSbY4z7tMY) video tutorial. Check out his [YouTube channel](https://www.youtube.com/@rappa753) for *tons* of great R content.
 :::
 
 ---
@@ -1305,11 +1310,260 @@ ggplot(data, aes(x = group, y = value)) +
 
 ## {#build-palettes data-menu-title="Building your own palette"} 
 
-[Building your own color scale]{.slide-title2}
+[Building your own color palette]{.slide-title}
 
 <hr>
 
-`scale_*_manual()`
+Be sure to consider what we've already discussed:
+
+- [ensure that you're picking colorblind-friendly color combos]{.body-text-s}
+- [use color wheels to identify color harmonies]{.body-text-s}
+- [think carefully about what emotions / messages your color choices will convey]{.body-text-s}
+- [avoid lots of pure / fully-saturated hues]{.body-text-s}
+
+. . . 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<br>
+And also consider some other important sources of inspiration: 
+
+- [your company or organization's brand / logo]{.body-text-s}
+- [steal colors from your favorite / relevant images using [Color Theif](https://lokeshdhakar.com/projects/color-thief/)]{.body-text-s}
+- [use a randomized palette generator, like [coolers.co](https://coolors.co/?home) {{< fa arrow-right title="an arrow pointing to the right" >}}]{.body-text-s}
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+knitr::include_graphics("images/week5/coolers.png")
+```
+:::
+
+::::
+
+---
+
+## {#apply-palettes data-menu-title="Applying your palette"} 
+
+[Some common functions for mapping colors]{.slide-title2}
+
+<hr>
+
+**For discrete / categorical data:**
+
+- [`scale_*_manual()`]{.body-text-s}
+
+**For continuous data:**
+
+Sequential palettes:
+
+- [`scale_*_gradient()`: creates a two color gradient (low-high)]{.body-text-s}
+- [`scale_*_gradient2()`: creates a diverging color gradient (low-mid-high)]{.body-text-s}
+- [`scale_*_gradientn()`: creates a n-color gradient]{.body-text-s}
+
+Binned palettes:
+
+- [`scale_*steps()`: creates a two color binned gradient (low-high)]{.body-text-s}
+- [`scale_*_steps2()`: creates a diverging binned color gradient (low-mid-high)]{.body-text-s}
+- [`scale_*_stepsn()`: creates a n-color binned gradient]{.body-text-s}
+
+::: {.center-text .body-text-s}
+**Use the `fill` variant of the above functions for areas, bars, etc. and the `color` variant for points, lines, etc.**
+:::
+
+---
+
+## {#save-palette data-menu-title="Save palette outside plot"} 
+
+[Tip: Save your palette outside of your ggplot]{.slide-title2}
+
+<hr>
+
+[I recommend saving your palette to a named vector *outside* of your ggplot -- this prevents lengthy palettes from creating cluttered ggplot code *and* allows you to reuse your palette across multiple plots:]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+my_palette <- c("#32DE8A", "#E36414", "#0F4C5C")
+```
+
+[Here, we map our colors to a categorical variable (sex) using `scale_color_manual()`:]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point(size = 4, alpha = 0.8) +
+  scale_color_manual(values = my_palette)
+```
+
+---
+
+## {#set-color-names1 data-menu-title="Set color names 1"} 
+
+[Tip: Set color names (1/2)]{.slide-title}
+
+<hr>
+
+[We should always be consistent with our colors. **E.g. if Gentoo penguins are blue in one plot, they should be blue in all plots.** Notice that our colors don't "stick" with the species they represent, but rather they're applied in the order that they appear in our palette:]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+my_palette <- c("#32DE8A", "#E36414", "#0F4C5C")
+```
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.center-text .body-text-s .gray-text}
+Adelie, Chinstrap & Gentoo penguins
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point(size = 4, alpha = 0.8) +
+  scale_color_manual(values = my_palette)
+```
+:::
+
+::: {.column width="50%"}
+::: {.center-text .body-text-s .gray-text}
+Just Adelie & Gentoo penguins
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| code-line-numbers: "1-2"
+penguins |> 
+  filter(species != "Chinstrap") |> 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point(size = 4, alpha = 0.8) +
+  scale_color_manual(values = my_palette)
+```
+:::
+
+::::
+
+---
+
+## {#set-color-names2 data-menu-title="Set color names 2"} 
+
+[Tip: Set color names (2/2)]{.slide-title}
+
+<hr>
+
+[Setting the names of our vector elements (colors) ensures that they stick with those factor levels across all of our visualizations:]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+my_palette_named <- c("#32DE8A", "#E36414", "#0F4C5C")
+names(my_palette_named) <- c("Adelie", "Chinstrap", "Gentoo")
+```
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.center-text .body-text-s .gray-text}
+Adelie, Chinstrap & Gentoo penguins
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point(size = 4, alpha = 0.8) +
+  scale_color_manual(values = my_palette_named)
+```
+:::
+
+::: {.column width="50%"}
+::: {.center-text .body-text-s .gray-text}
+Just Adelie & Gentoo penguins
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| code-line-numbers: "1-2"
+penguins |> 
+  filter(species != "Chinstrap") |> 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point(size = 4, alpha = 0.8) +
+  scale_color_manual(values = my_palette_named)
+```
+:::
+
+::::
+
+---
+
+## {#modify-df data-menu-title="Modify df"} 
+
+[Tip: modify df to apply colors to observations]{.slide-title2}
+
+<hr>
+
+[The [`scale_*_identity()` functions](https://ggplot2.tidyverse.org/reference/scale_identity.html) allows you to map aesthetic values from your data frame to individual points. They will not produce a legend unless specified using `guide = "legend"`.]{.body-text-s}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+penguins |> 
+  mutate(
+    my_color = case_when(
+      bill_length_mm < 40 ~ "#D7263D",
+      between(bill_length_mm, 40, 50) ~ "#E4BB97",
+      bill_length_mm > 50 ~ "#386150"
+    )
+  ) |> 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, color = my_color)) +
+  geom_point(size = 4, alpha = 0.8) +
+  scale_color_identity()
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+penguins |> 
+  mutate(
+    my_color = case_when(
+      body_mass_g > 6000 ~ "#D7263D",
+      TRUE ~ "gray50"
+    )
+  ) |> 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, color = my_color)) +
+  geom_point(size = 4, alpha = 0.8) +
+  scale_color_identity(guide = "legend", 
+                       name = "Body mass (g)", labels = c(">6000", "<= 6000"))
+```
+
+:::
+
+::::
 
 ---
 
@@ -1318,7 +1572,6 @@ ggplot(data, aes(x = group, y = value)) +
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">There are also some additional rules / guidelines that you should pretty much always abide by when selecting colors</p>
 </div>
-
 
 ---
 
@@ -1444,7 +1697,7 @@ Always include a color key, in the form of a traditional legend or otherwise.
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week5/consistent-colors.png")
+knitr::include_graphics("images/week5/legend.png")
 ```
 
 <br>

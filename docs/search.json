@@ -235,7 +235,7 @@
     "href": "course-materials/week6.html#lecture-materials",
     "title": "Data communication",
     "section": "Lecture Materials",
-    "text": "Lecture Materials\n\n\n\n\n\n\n\n\n \n\n  \n\n\n\n\n\n\nData communication\n lecture 6.1 slides\n\n\n\n\ntbd\n lecture 6.2 slides\n\n\n\n\ntbd\n lecture 6.3 slides"
+    "text": "Lecture Materials\n\n\n\n\n\n\n\n\n \n\n\n  \n\n\n\n\n\n\nData communication\n lecture 6.1 slides\n\n\n\n\ntbd\n lecture 6.2 slides\n\n\n\n\ntbd\n lecture 6.3 slides"
   },
   {
     "objectID": "course-materials/week6.html#discussion-materials",
@@ -1757,6 +1757,13 @@
     "text": "Use RColorBrewer color palettes\n\nUse the right function (all pre-loaded with {ggplot2}) for the type of data / palette:\n\n\n\n\nUse scale_color_brewer() to apply a qualitative palette to discrete data\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = species)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_brewer(palette = \"Dark2\") \n\n\n\n\n\n\nUse scale_color_distiller() for sequential versions of continuous color scales\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_distiller(palette = \"BuPu\")\n\n\n\n\n\n\nUse scale_color_fermenter() for binned versions of continuous color scales\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_fermenter(palette = \"YlGnBu\")"
   },
   {
+    "objectID": "slides/week5.1-colors-slides.html#outline-points",
+    "href": "slides/week5.1-colors-slides.html#outline-points",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tip: outline points to make light colors more visible\n\nRather than color points by body_mass_g, we can fill points by body_mass_g. Then, we need to change the shape of our points to 21, which is the code for an outlined, fill-able point:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, fill = body_mass_g)) +\n  geom_point(shape = 21, size = 4, alpha = 0.8) +\n  scale_fill_distiller(palette = \"BuPu\")\n\n\n\nTrick comes courtesy of Albert Rapp and his How to Use Better Colors in ggplot (3 Easy Ways) video tutorial. Check out his YouTube channel for tons of great R content."
+  },
+  {
     "objectID": "slides/week5.1-colors-slides.html#redundant-mapping",
     "href": "slides/week5.1-colors-slides.html#redundant-mapping",
     "title": "EDS 240",
@@ -1901,7 +1908,42 @@
     "href": "slides/week5.1-colors-slides.html#build-palettes",
     "title": "EDS 240",
     "section": "",
-    "text": "Building your own color scale\n\nscale_*_manual()"
+    "text": "Building your own color palette\n\nBe sure to consider what we’ve already discussed:\n\nensure that you’re picking colorblind-friendly color combos\nuse color wheels to identify color harmonies\nthink carefully about what emotions / messages your color choices will convey\navoid lots of pure / fully-saturated hues\n\n\n\n\n And also consider some other important sources of inspiration:\n\nyour company or organization’s brand / logo\nsteal colors from your favorite / relevant images using Color Theif\nuse a randomized palette generator, like coolers.co"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#apply-palettes",
+    "href": "slides/week5.1-colors-slides.html#apply-palettes",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Some common functions for mapping colors\n\nFor discrete / categorical data:\n\nscale_*_manual()\n\nFor continuous data:\nSequential palettes:\n\nscale_*_gradient(): creates a two color gradient (low-high)\nscale_*_gradient2(): creates a diverging color gradient (low-mid-high)\nscale_*_gradientn(): creates a n-color gradient\n\nBinned palettes:\n\nscale_*steps(): creates a two color binned gradient (low-high)\nscale_*_steps2(): creates a diverging binned color gradient (low-mid-high)\nscale_*_stepsn(): creates a n-color binned gradient\n\n\nUse the fill variant of the above functions for areas, bars, etc. and the color variant for points, lines, etc."
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#save-palette",
+    "href": "slides/week5.1-colors-slides.html#save-palette",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tip: Save your palette outside of your ggplot\n\nI recommend saving your palette to a named vector outside of your ggplot – this prevents lengthy palettes from creating cluttered ggplot code and allows you to reuse your palette across multiple plots:\n\nmy_palette &lt;- c(\"#32DE8A\", \"#E36414\", \"#0F4C5C\")\n\nHere, we map our colors to a categorical variable (sex) using scale_color_manual():\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_manual(values = my_palette)"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#set-color-names1",
+    "href": "slides/week5.1-colors-slides.html#set-color-names1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tip: Set color names (1/2)\n\nWe should always be consistent with our colors. E.g. if Gentoo penguins are blue in one plot, they should be blue in all plots. Notice that our colors don’t “stick” with the species they represent, but rather they’re applied in the order that they appear in our palette:\n\nmy_palette &lt;- c(\"#32DE8A\", \"#E36414\", \"#0F4C5C\")\n\n\n\n\nAdelie, Chinstrap & Gentoo penguins\n\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_manual(values = my_palette)\n\n\n\n\n\n\n\n\n\n\nJust Adelie & Gentoo penguins\n\n\npenguins |&gt; \n  filter(species != \"Chinstrap\") |&gt; \n  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_manual(values = my_palette)"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#set-color-names2",
+    "href": "slides/week5.1-colors-slides.html#set-color-names2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tip: Set color names (2/2)\n\nSetting the names of our vector elements (colors) ensures that they stick with those factor levels across all of our visualizations:\n\nmy_palette_named &lt;- c(\"#32DE8A\", \"#E36414\", \"#0F4C5C\")\nnames(my_palette_named) &lt;- c(\"Adelie\", \"Chinstrap\", \"Gentoo\")\n\n\n\n\nAdelie, Chinstrap & Gentoo penguins\n\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_manual(values = my_palette_named)\n\n\n\n\n\n\n\n\n\n\nJust Adelie & Gentoo penguins\n\n\npenguins |&gt; \n  filter(species != \"Chinstrap\") |&gt; \n  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_manual(values = my_palette_named)"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#modify-df",
+    "href": "slides/week5.1-colors-slides.html#modify-df",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Tip: modify df to apply colors to observations\n\nThe scale_*_identity() functions allows you to map aesthetic values from your data frame to individual points. They will not produce a legend unless specified using guide = \"legend\".\n\n\n\npenguins |&gt; \n  mutate(\n    my_color = case_when(\n      bill_length_mm &lt; 40 ~ \"#D7263D\",\n      between(bill_length_mm, 40, 50) ~ \"#E4BB97\",\n      bill_length_mm &gt; 50 ~ \"#386150\"\n    )\n  ) |&gt; \n  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, color = my_color)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_identity()\n\n\n\n\n\n\n\n\n\n\npenguins |&gt; \n  mutate(\n    my_color = case_when(\n      body_mass_g &gt; 6000 ~ \"#D7263D\",\n      TRUE ~ \"gray50\"\n    )\n  ) |&gt; \n  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, color = my_color)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_identity(guide = \"legend\", \n                       name = \"Body mass (g)\", labels = c(\"&gt;6000\", \"&lt;= 6000\"))"
   },
   {
     "objectID": "slides/week5.1-colors-slides.html#general-rules",

@@ -17,6 +17,7 @@ toc: true
 <!-- - parallel coordinate plots -->
 <!-- - radar plots  -->
 <!-- - sankey diagrams -->
+<!-- bump charts -->
 <!-- treemap -->
 <!-- sunburst -->
 <!-- - choropleth -->

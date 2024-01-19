@@ -79,9 +79,12 @@ Week 5 instruction is broken down into three lessons:
 <!-- - 1 color theory -->
 <!-- 2 typography -->
 <!-- 3 annotations -- {ggtext} {ggtextpath} see https://cararthompson.github.io/nhsr-2023-level-up-workshop/level-up-workshop.html#/title-slide-->
-<!-- https://albert-rapp.de/posts/ggplot2-tips/07_four_ways_colors_more_efficiently/07_four_ways_colors_more_efficiently -->
+<!-- Nice bit on annotations: https://albert-rapp.de/posts/ggplot2-tips/07_four_ways_colors_more_efficiently/07_four_ways_colors_more_efficiently -->
+<!-- Covers {ggtext} https://www.youtube.com/watch?v=fWP7KnIhmpQ -->
 <!-- https://www.cararthompson.com/talks/user2022/media/useR2022_level_up_your_labels.pdf -->
 <!-- - 3 DEI (using icons & colors for equity awareness) -->
+
+<!-- recreate pew center chart Albert Rapp: https://www.youtube.com/watch?v=k34IjRXq1BI -->
 
 <!-- https://albert-rapp.de/posts/ggplot2-tips/07_four_ways_colors_more_efficiently/07_four_ways_colors_more_efficiently.html -->
 <!-- legends -->
