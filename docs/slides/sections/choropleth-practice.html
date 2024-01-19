@@ -367,30 +367,28 @@ Caused by warning:
 <section id="initial-attempt-manually-create-binned-color-gradient" class="level2">
 <h2 class="anchored" data-anchor-id="initial-attempt-manually-create-binned-color-gradient">—————– Initial attempt: manually create binned color gradient —————–</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># plot (viridis) ----</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>base_map_proj <span class="sc">+</span> </span>
-<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"g"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># # plot (viridis) ----</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="co"># base_map_proj + </span></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="co">#   scale_fill_viridis_c() +</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="co">#   custom_guide(type = "g")</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a></span>
+<span id="cb14-6"><a href="#cb14-6"></a><span class="co"># define palette ----</span></span>
+<span id="cb14-7"><a href="#cb14-7"></a>my_palette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#543006"</span>, <span class="st">"#975F1C"</span>, <span class="st">"#AC7E42"</span>, <span class="st">"#C09C66"</span>, <span class="st">"#D6BB8C"</span>, <span class="st">"#EBD9B0"</span>,<span class="st">"#D5D4CE"</span>,</span>
+<span id="cb14-8"><a href="#cb14-8"></a>                 <span class="st">"#B2DDD7"</span>, <span class="st">"#8BC2BC"</span>, <span class="st">"#64A7A1"</span>, <span class="st">"#3B8E86"</span>, <span class="st">"#16726B"</span>, <span class="st">"#003C30"</span>)</span>
+<span id="cb14-9"><a href="#cb14-9"></a></span>
+<span id="cb14-10"><a href="#cb14-10"></a><span class="co"># plot (gradient) ----</span></span>
+<span id="cb14-11"><a href="#cb14-11"></a>base_map_proj <span class="sc">+</span> </span>
+<span id="cb14-12"><a href="#cb14-12"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_palette) <span class="sc">+</span></span>
+<span id="cb14-13"><a href="#cb14-13"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"g"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="choropleth-practice_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># define palette ----</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a>my_palette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#543006"</span>, <span class="st">"#975F1C"</span>, <span class="st">"#AC7E42"</span>, <span class="st">"#C09C66"</span>, <span class="st">"#D6BB8C"</span>, <span class="st">"#EBD9B0"</span>,<span class="st">"#D5D4CE"</span>,</span>
-<span id="cb15-3"><a href="#cb15-3"></a>                 <span class="st">"#B2DDD7"</span>, <span class="st">"#8BC2BC"</span>, <span class="st">"#64A7A1"</span>, <span class="st">"#3B8E86"</span>, <span class="st">"#16726B"</span>, <span class="st">"#003C30"</span>)</span>
-<span id="cb15-4"><a href="#cb15-4"></a></span>
-<span id="cb15-5"><a href="#cb15-5"></a><span class="co"># plot (gradient) ----</span></span>
-<span id="cb15-6"><a href="#cb15-6"></a>base_map_proj <span class="sc">+</span> </span>
-<span id="cb15-7"><a href="#cb15-7"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_palette) <span class="sc">+</span></span>
-<span id="cb15-8"><a href="#cb15-8"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"g"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># plot (binned) ----</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>base_map_proj <span class="sc">+</span> </span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_palette) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"b"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="choropleth-practice_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
-</div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># plot (binned) ----</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>base_map_proj <span class="sc">+</span> </span>
-<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_palette) <span class="sc">+</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"b"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="choropleth-practice_files/figure-html/unnamed-chunk-5-3.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We have a map (yay!) but the binned version is not so helpful yet. We’re not seeing much detail (most of the country is colored brown, having received 0-5”). ggplot is also defaulting to 5 bins (colors), which is not what we want. We’ll have to define our own bins. One approach is to calculate &amp; specify equal bin sizes:</p>
@@ -400,34 +398,46 @@ Caused by warning:
 <li>divide the result by the number of intervals that we want (11 colors, ideally)</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># range of data ----</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">range</span>(<span class="fu">na.omit</span>(joined_precip_us_counties)<span class="sc">$</span>precip) <span class="co"># 0.0-10.2 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># range of data ----</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">range</span>(<span class="fu">na.omit</span>(joined_precip_us_counties)<span class="sc">$</span>precip) <span class="co"># 0.0-10.2 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  0.0 10.2</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># calculate bin size ----</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a>(<span class="fu">max</span>(<span class="fu">na.omit</span>(joined_precip_us_counties)<span class="sc">$</span>precip) <span class="sc">-</span> <span class="fu">min</span>(<span class="fu">na.omit</span>(joined_precip_us_counties)<span class="sc">$</span>precip))<span class="sc">/</span><span class="dv">11</span> <span class="co"># 0.93</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># calculate bin size ----</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>(<span class="fu">max</span>(<span class="fu">na.omit</span>(joined_precip_us_counties)<span class="sc">$</span>precip) <span class="sc">-</span> <span class="fu">min</span>(<span class="fu">na.omit</span>(joined_precip_us_counties)<span class="sc">$</span>precip))<span class="sc">/</span><span class="dv">11</span> <span class="co"># 0.93</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9272727</code></pre>
 </div>
 </div>
 <p>Using this approach, class size would be 1 (rounded from 0.93). To achieve that, we need to set breaks that are a width of 1 from our min value (0) to our max (11, since max value is 10.2). We also need the appropriate amount of colors to fill those bins.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># define palette ----</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a>my_palette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#543006"</span>, <span class="st">"#975F1C"</span>, <span class="st">"#C09C66"</span>, <span class="st">"#D6BB8C"</span>, <span class="st">"#EBD9B0"</span>,<span class="st">"#E8E8E8"</span>,</span>
-<span id="cb21-3"><a href="#cb21-3"></a>                 <span class="st">"#B2DDD7"</span>, <span class="st">"#8BC2BC"</span>, <span class="st">"#64A7A1"</span>, <span class="st">"#16726B"</span>, <span class="st">"#003C30"</span>) </span>
-<span id="cb21-4"><a href="#cb21-4"></a></span>
-<span id="cb21-5"><a href="#cb21-5"></a><span class="co"># define breaks ----</span></span>
-<span id="cb21-6"><a href="#cb21-6"></a>my_breaks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span>
-<span id="cb21-7"><a href="#cb21-7"></a></span>
-<span id="cb21-8"><a href="#cb21-8"></a><span class="co"># plot ----</span></span>
-<span id="cb21-9"><a href="#cb21-9"></a>base_map_proj <span class="sc">+</span> </span>
-<span id="cb21-10"><a href="#cb21-10"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_palette,</span>
-<span id="cb21-11"><a href="#cb21-11"></a>                    <span class="at">breaks =</span> my_breaks) <span class="sc">+</span></span>
-<span id="cb21-12"><a href="#cb21-12"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"b"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># define palette ----</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>my_palette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#543006"</span>, <span class="st">"#975F1C"</span>, <span class="st">"#C09C66"</span>, <span class="st">"#D6BB8C"</span>, <span class="st">"#EBD9B0"</span>,<span class="st">"#E8E8E8"</span>,</span>
+<span id="cb20-3"><a href="#cb20-3"></a>                 <span class="st">"#B2DDD7"</span>, <span class="st">"#8BC2BC"</span>, <span class="st">"#64A7A1"</span>, <span class="st">"#16726B"</span>, <span class="st">"#003C30"</span>) </span>
+<span id="cb20-4"><a href="#cb20-4"></a></span>
+<span id="cb20-5"><a href="#cb20-5"></a><span class="co"># define breaks ----</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a>my_breaks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span>
+<span id="cb20-7"><a href="#cb20-7"></a></span>
+<span id="cb20-8"><a href="#cb20-8"></a><span class="co"># plot ----</span></span>
+<span id="cb20-9"><a href="#cb20-9"></a>base_map_proj <span class="sc">+</span> </span>
+<span id="cb20-10"><a href="#cb20-10"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_palette,</span>
+<span id="cb20-11"><a href="#cb20-11"></a>                    <span class="at">breaks =</span> my_breaks,</span>
+<span id="cb20-12"><a href="#cb20-12"></a>                    <span class="at">values =</span> scales<span class="sc">::</span><span class="fu">rescale</span>(my_breaks)) <span class="sc">+</span></span>
+<span id="cb20-13"><a href="#cb20-13"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"b"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="choropleth-practice_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># base_map_proj + </span></span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="co">#   scale_fill_stepsn(colors = my_palette,</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="co">#                     breaks = my_breaks, </span></span>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="co">#                     values = scales::rescale(my_breaks)) +</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a><span class="co">#   custom_guide(type = "b")</span></span>
+<span id="cb21-6"><a href="#cb21-6"></a><span class="co"># </span></span>
+<span id="cb21-7"><a href="#cb21-7"></a><span class="co"># </span></span>
+<span id="cb21-8"><a href="#cb21-8"></a><span class="co"># scale_fill_stepsn(name = "", </span></span>
+<span id="cb21-9"><a href="#cb21-9"></a><span class="co">#                     colors =c("#2171b5", "#6baed6", "#bdd7e7", "#fcae91", "#fb6a4a", "#cb181d"),</span></span>
+<span id="cb21-10"><a href="#cb21-10"></a><span class="co">#                     breaks = c(-25, -10, 0, 10, 50),</span></span>
+<span id="cb21-11"><a href="#cb21-11"></a><span class="co">#                     values = scales::rescale(c(-25, -10, 0, 10, 25, 50))) </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Attempt B is a better, though it would be wise to look at the distribution of our precipitation data to see if we might be losing any important details:</p>
 <div class="cell">

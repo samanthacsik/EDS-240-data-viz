@@ -559,6 +559,29 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)
 
 ---
 
+```{r}
+#| eval: true
+#| echo: true
+#| #| fig-align: "center"
+#| out-width: "100%"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, fill = body_mass_g)) +
+  geom_point(shape = 21, size = 4, alpha = 0.8) +
+  scale_fill_distiller(palette = "BuPu")
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, fill = body_mass_g)) +
+  geom_point(shape = 21, size = 4, alpha = 0.8) +
+  scale_fill_fermenter(palette = "YlGnBu")
+```
+
+::: {.footer}
+Trick comes courtesy of [Albert Rapp]() and his [How to Use Better Colors in ggplot (3 Easy Ways)](https://www.youtube.com/watch?v=ZVSbY4z7tMY) video tutorial. Check out his [YouTube channel](https://www.youtube.com/@rappa753) for *tons* of great R content.
+:::
+
+---
+
 ## {#redundant-mapping data-menu-title="Redundant mapping"} 
 
 [Use redundant mapping whenever possible]{.slide-title}
@@ -1106,7 +1129,7 @@ ggplot(na.omit(penguins), aes(x = species, fill = sex)) +
 ::::
 
 ::: {.footer}
-`scale_*_hue()` uses colors based on the [HCL color space](https://en.wikipedia.org/wiki/HCL_color_space).
+`scale_*_hue()` uses colors based on the [HCL color model](https://en.wikipedia.org/wiki/HCL_color_space).
 :::
 
 ---
@@ -1998,4 +2021,13 @@ base_map_proj +
 :::
 
 ::::
+
+::: {.footer}
+By default, `scale_fill_stepsn()` sets `nice.breaks = TRUE`
+:::
+
+
+
+
+
 

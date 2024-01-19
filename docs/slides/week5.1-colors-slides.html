@@ -420,7 +420,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_5229409d" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_92d0eec2" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -832,6 +832,29 @@ Ensuring inclusive and accessible design through your color choices
 </div>
 </div>
 </section>
+<section class="slide level2">
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">fill =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">21</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"BuPu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-19-1.png" style="width:100.0%"></p>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">fill =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">21</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">scale_fill_fermenter</span>(<span class="at">palette =</span> <span class="st">"YlGnBu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-19-2.png" style="width:100.0%"></p>
+</div>
+</div>
+<div class="footer">
+<p>Trick comes courtesy of <a href="">Albert Rapp</a> and his <a href="https://www.youtube.com/watch?v=ZVSbY4z7tMY">How to Use Better Colors in ggplot (3 Easy Ways)</a> video tutorial. Check out his <a href="https://www.youtube.com/@rappa753">YouTube channel</a> for <em>tons</em> of great R content.</p>
+</div>
+</section>
 <section id="redundant-mapping" class="slide level2" data-menu-title="Redundant mapping">
 <h2></h2>
 <p><span class="slide-title">Use redundant mapping whenever possible</span></p>
@@ -994,7 +1017,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-24-1.png" style="width:100.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-25-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -1194,12 +1217,12 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <p>The default chroma for ggplots is set to 100%</p>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(penguins), <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(penguins), <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-36-1.png" style="width:80.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-37-1.png" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -1209,13 +1232,13 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <p>Use <code>scale_*_hue()</code> to adjust chroma (saturation)</p>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(penguins), <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">scale_fill_hue</span>(<span class="at">c =</span> <span class="dv">80</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(penguins), <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">scale_fill_hue</span>(<span class="at">c =</span> <span class="dv">80</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-37-1.png" style="width:80.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-38-1.png" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -1223,7 +1246,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 </div>
 </div>
 <div class="footer">
-<p><code>scale_*_hue()</code> uses colors based on the <a href="https://en.wikipedia.org/wiki/HCL_color_space">HCL color space</a>.</p>
+<p><code>scale_*_hue()</code> uses colors based on the <a href="https://en.wikipedia.org/wiki/HCL_color_space">HCL color model</a>.</p>
 </div>
 </section>
 <section id="adjust-lightness1" class="slide level2" data-menu-title="Adjust lightness 1">
@@ -1279,12 +1302,12 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <p>The default lightness for ggplots is set to 65%</p>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(penguins), <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(penguins), <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-40-1.png" style="width:80.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-41-1.png" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -1294,13 +1317,13 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <p>Use <code>scale_*_hue()</code> to adjust lightness / darkness</p>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(penguins), <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">scale_color_hue</span>(<span class="at">l =</span> <span class="dv">45</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(penguins), <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">scale_color_hue</span>(<span class="at">l =</span> <span class="dv">45</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-41-1.png" style="width:80.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-42-1.png" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -1325,7 +1348,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-43-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-44-1.png" width="960"></p>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1334,7 +1357,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-44-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-45-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1537,7 +1560,7 @@ There are also some additional rules / guidelines that you should pretty much al
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c9cdbff3" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_a79df69f" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1621,56 +1644,56 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 <hr>
 <p>Here, we’ll wrangle our precipitation data, then join it with our US county data (courtesy of the <a href="https://cran.r-project.org/web/packages/maps/index.html"><code>{maps}</code> package</a>):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="do">##                                    setup                                 ----</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a></span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="co">#..........................load packages.........................</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="fu">library</span>(maps) </span>
-<span id="cb12-8"><a href="#cb12-8"></a></span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="co">#.........................get shape data.........................</span></span>
-<span id="cb12-10"><a href="#cb12-10"></a>states <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"state"</span>)</span>
-<span id="cb12-11"><a href="#cb12-11"></a>counties <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"county"</span>)</span>
-<span id="cb12-12"><a href="#cb12-12"></a></span>
-<span id="cb12-13"><a href="#cb12-13"></a><span class="co">#....................import precipitation data...................</span></span>
-<span id="cb12-14"><a href="#cb12-14"></a>precip_counties <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week5"</span>, <span class="st">"data"</span>, <span class="st">"county-precip-oct2023.csv"</span>), <span class="at">skip =</span> <span class="dv">4</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-15"><a href="#cb12-15"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
-<span id="cb12-16"><a href="#cb12-16"></a></span>
-<span id="cb12-17"><a href="#cb12-17"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb12-18"><a href="#cb12-18"></a><span class="do">##                               data wrangling                             ----</span></span>
-<span id="cb12-19"><a href="#cb12-19"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb12-20"><a href="#cb12-20"></a></span>
-<span id="cb12-21"><a href="#cb12-21"></a><span class="co">#..............update names of counties df variables.............</span></span>
-<span id="cb12-22"><a href="#cb12-22"></a>us_counties <span class="ot">&lt;-</span> counties <span class="sc">|&gt;</span> </span>
-<span id="cb12-23"><a href="#cb12-23"></a>  <span class="fu">select</span>(<span class="at">state =</span> region, <span class="at">county =</span> subregion, long, lat, group, order)</span>
-<span id="cb12-24"><a href="#cb12-24"></a></span>
-<span id="cb12-25"><a href="#cb12-25"></a>  </span>
-<span id="cb12-26"><a href="#cb12-26"></a><span class="co">#..........clean precip data &amp; make sure var names match.........</span></span>
-<span id="cb12-27"><a href="#cb12-27"></a>precip_counties_wrangled <span class="ot">&lt;-</span> precip_counties <span class="sc">|&gt;</span> </span>
-<span id="cb12-28"><a href="#cb12-28"></a>  </span>
-<span id="cb12-29"><a href="#cb12-29"></a>  <span class="co"># more intuitive column name ----</span></span>
-<span id="cb12-30"><a href="#cb12-30"></a>  <span class="fu">rename</span>(<span class="at">county =</span> name) <span class="sc">|&gt;</span> </span>
-<span id="cb12-31"><a href="#cb12-31"></a>  </span>
-<span id="cb12-32"><a href="#cb12-32"></a>  <span class="co"># convert count and state names to all lowercase ----</span></span>
-<span id="cb12-33"><a href="#cb12-33"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_to_lower</span>(county),</span>
-<span id="cb12-34"><a href="#cb12-34"></a>         <span class="at">state =</span> <span class="fu">str_to_lower</span>(state)) <span class="sc">|&gt;</span> </span>
-<span id="cb12-35"><a href="#cb12-35"></a>  </span>
-<span id="cb12-36"><a href="#cb12-36"></a>  <span class="co"># remove the word "county" from all county names ----</span></span>
-<span id="cb12-37"><a href="#cb12-37"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_remove</span>(county, <span class="at">pattern =</span> <span class="st">" county"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb12-38"><a href="#cb12-38"></a>  </span>
-<span id="cb12-39"><a href="#cb12-39"></a>  <span class="co"># remove the word "parish" from the end of Louisiana counties ----</span></span>
-<span id="cb12-40"><a href="#cb12-40"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: there are more counties that need cleaning for seamless joining with `us_counties` df; I've don't done a complete sweep of the data, so you'll notice data gaps once plotted</span></span>
-<span id="cb12-41"><a href="#cb12-41"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_remove</span>(county, <span class="at">pattern =</span> <span class="st">" parish"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb12-42"><a href="#cb12-42"></a></span>
-<span id="cb12-43"><a href="#cb12-43"></a>  <span class="co"># select &amp; rename relevant cols ----</span></span>
-<span id="cb12-44"><a href="#cb12-44"></a>  <span class="fu">select</span>(state, county, <span class="at">precip =</span> value, <span class="at">mean_1901_2000 =</span> x1901_2000_mean, <span class="at">anomaly =</span> anomaly_1901_2000_base_period) <span class="sc">|&gt;</span> <span class="co"># comp_mean</span></span>
-<span id="cb12-45"><a href="#cb12-45"></a>  </span>
-<span id="cb12-46"><a href="#cb12-46"></a>  <span class="co"># make precip var numeric (was chr) ----</span></span>
-<span id="cb12-47"><a href="#cb12-47"></a>  <span class="fu">mutate</span>(<span class="at">precip =</span> <span class="fu">as.numeric</span>(precip))</span>
-<span id="cb12-48"><a href="#cb12-48"></a></span>
-<span id="cb12-49"><a href="#cb12-49"></a><span class="co">#............................join dfs............................</span></span>
-<span id="cb12-50"><a href="#cb12-50"></a>joined_precip_us_counties <span class="ot">&lt;-</span> <span class="fu">full_join</span>(precip_counties_wrangled, us_counties)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="do">##                                    setup                                 ----</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a></span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="co">#..........................load packages.........................</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb14-7"><a href="#cb14-7"></a><span class="fu">library</span>(maps) </span>
+<span id="cb14-8"><a href="#cb14-8"></a></span>
+<span id="cb14-9"><a href="#cb14-9"></a><span class="co">#.........................get shape data.........................</span></span>
+<span id="cb14-10"><a href="#cb14-10"></a>states <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"state"</span>)</span>
+<span id="cb14-11"><a href="#cb14-11"></a>counties <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"county"</span>)</span>
+<span id="cb14-12"><a href="#cb14-12"></a></span>
+<span id="cb14-13"><a href="#cb14-13"></a><span class="co">#....................import precipitation data...................</span></span>
+<span id="cb14-14"><a href="#cb14-14"></a>precip_counties <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week5"</span>, <span class="st">"data"</span>, <span class="st">"county-precip-oct2023.csv"</span>), <span class="at">skip =</span> <span class="dv">4</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-15"><a href="#cb14-15"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb14-16"><a href="#cb14-16"></a></span>
+<span id="cb14-17"><a href="#cb14-17"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb14-18"><a href="#cb14-18"></a><span class="do">##                               data wrangling                             ----</span></span>
+<span id="cb14-19"><a href="#cb14-19"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb14-20"><a href="#cb14-20"></a></span>
+<span id="cb14-21"><a href="#cb14-21"></a><span class="co">#..............update names of counties df variables.............</span></span>
+<span id="cb14-22"><a href="#cb14-22"></a>us_counties <span class="ot">&lt;-</span> counties <span class="sc">|&gt;</span> </span>
+<span id="cb14-23"><a href="#cb14-23"></a>  <span class="fu">select</span>(<span class="at">state =</span> region, <span class="at">county =</span> subregion, long, lat, group, order)</span>
+<span id="cb14-24"><a href="#cb14-24"></a></span>
+<span id="cb14-25"><a href="#cb14-25"></a>  </span>
+<span id="cb14-26"><a href="#cb14-26"></a><span class="co">#..........clean precip data &amp; make sure var names match.........</span></span>
+<span id="cb14-27"><a href="#cb14-27"></a>precip_counties_wrangled <span class="ot">&lt;-</span> precip_counties <span class="sc">|&gt;</span> </span>
+<span id="cb14-28"><a href="#cb14-28"></a>  </span>
+<span id="cb14-29"><a href="#cb14-29"></a>  <span class="co"># more intuitive column name ----</span></span>
+<span id="cb14-30"><a href="#cb14-30"></a>  <span class="fu">rename</span>(<span class="at">county =</span> name) <span class="sc">|&gt;</span> </span>
+<span id="cb14-31"><a href="#cb14-31"></a>  </span>
+<span id="cb14-32"><a href="#cb14-32"></a>  <span class="co"># convert count and state names to all lowercase ----</span></span>
+<span id="cb14-33"><a href="#cb14-33"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_to_lower</span>(county),</span>
+<span id="cb14-34"><a href="#cb14-34"></a>         <span class="at">state =</span> <span class="fu">str_to_lower</span>(state)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-35"><a href="#cb14-35"></a>  </span>
+<span id="cb14-36"><a href="#cb14-36"></a>  <span class="co"># remove the word "county" from all county names ----</span></span>
+<span id="cb14-37"><a href="#cb14-37"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_remove</span>(county, <span class="at">pattern =</span> <span class="st">" county"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-38"><a href="#cb14-38"></a>  </span>
+<span id="cb14-39"><a href="#cb14-39"></a>  <span class="co"># remove the word "parish" from the end of Louisiana counties ----</span></span>
+<span id="cb14-40"><a href="#cb14-40"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: there are more counties that need cleaning for seamless joining with `us_counties` df; I've don't done a complete sweep of the data, so you'll notice data gaps once plotted</span></span>
+<span id="cb14-41"><a href="#cb14-41"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_remove</span>(county, <span class="at">pattern =</span> <span class="st">" parish"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-42"><a href="#cb14-42"></a></span>
+<span id="cb14-43"><a href="#cb14-43"></a>  <span class="co"># select &amp; rename relevant cols ----</span></span>
+<span id="cb14-44"><a href="#cb14-44"></a>  <span class="fu">select</span>(state, county, <span class="at">precip =</span> value, <span class="at">mean_1901_2000 =</span> x1901_2000_mean, <span class="at">anomaly =</span> anomaly_1901_2000_base_period) <span class="sc">|&gt;</span> <span class="co"># comp_mean</span></span>
+<span id="cb14-45"><a href="#cb14-45"></a>  </span>
+<span id="cb14-46"><a href="#cb14-46"></a>  <span class="co"># make precip var numeric (was chr) ----</span></span>
+<span id="cb14-47"><a href="#cb14-47"></a>  <span class="fu">mutate</span>(<span class="at">precip =</span> <span class="fu">as.numeric</span>(precip))</span>
+<span id="cb14-48"><a href="#cb14-48"></a></span>
+<span id="cb14-49"><a href="#cb14-49"></a><span class="co">#............................join dfs............................</span></span>
+<span id="cb14-50"><a href="#cb14-50"></a>joined_precip_us_counties <span class="ot">&lt;-</span> <span class="fu">full_join</span>(precip_counties_wrangled, us_counties)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="base-map" class="slide level2" data-menu-title="Create base map">
@@ -1679,31 +1702,31 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 <hr>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a>base_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> states, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group)) <span class="sc">+</span> </span>
-<span id="cb13-3"><a href="#cb13-3"></a>  </span>
-<span id="cb13-4"><a href="#cb13-4"></a>  <span class="co"># plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----</span></span>
-<span id="cb13-5"><a href="#cb13-5"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> joined_precip_us_counties, <span class="fu">aes</span>(<span class="at">fill =</span> precip)) <span class="sc">+</span> </span>
-<span id="cb13-6"><a href="#cb13-6"></a>  </span>
-<span id="cb13-7"><a href="#cb13-7"></a>  <span class="co"># darken state lines ----</span></span>
-<span id="cb13-8"><a href="#cb13-8"></a>  <span class="fu">geom_polygon</span>(<span class="at">color =</span> <span class="st">"#2F2D2C"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb13-9"><a href="#cb13-9"></a>  </span>
-<span id="cb13-10"><a href="#cb13-10"></a>  <span class="co"># update labels ----</span></span>
-<span id="cb13-11"><a href="#cb13-11"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Total Precipitation, by County"</span>,</span>
-<span id="cb13-12"><a href="#cb13-12"></a>       <span class="at">subtitle =</span> <span class="st">"October 2023"</span>) <span class="sc">+</span></span>
-<span id="cb13-13"><a href="#cb13-13"></a>  </span>
-<span id="cb13-14"><a href="#cb13-14"></a>  <span class="co"># set theme to clean up appearance ----</span></span>
-<span id="cb13-15"><a href="#cb13-15"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span> </span>
-<span id="cb13-16"><a href="#cb13-16"></a>  </span>
-<span id="cb13-17"><a href="#cb13-17"></a>  <span class="co"># theme adjustments ----</span></span>
-<span id="cb13-18"><a href="#cb13-18"></a>  <span class="fu">theme</span>(</span>
-<span id="cb13-19"><a href="#cb13-19"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
-<span id="cb13-20"><a href="#cb13-20"></a>  )</span>
-<span id="cb13-21"><a href="#cb13-21"></a>  </span>
-<span id="cb13-22"><a href="#cb13-22"></a>base_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>base_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> states, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group)) <span class="sc">+</span> </span>
+<span id="cb15-3"><a href="#cb15-3"></a>  </span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="co"># plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> joined_precip_us_counties, <span class="fu">aes</span>(<span class="at">fill =</span> precip)) <span class="sc">+</span> </span>
+<span id="cb15-6"><a href="#cb15-6"></a>  </span>
+<span id="cb15-7"><a href="#cb15-7"></a>  <span class="co"># darken state lines ----</span></span>
+<span id="cb15-8"><a href="#cb15-8"></a>  <span class="fu">geom_polygon</span>(<span class="at">color =</span> <span class="st">"#2F2D2C"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb15-9"><a href="#cb15-9"></a>  </span>
+<span id="cb15-10"><a href="#cb15-10"></a>  <span class="co"># update labels ----</span></span>
+<span id="cb15-11"><a href="#cb15-11"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Total Precipitation, by County"</span>,</span>
+<span id="cb15-12"><a href="#cb15-12"></a>       <span class="at">subtitle =</span> <span class="st">"October 2023"</span>) <span class="sc">+</span></span>
+<span id="cb15-13"><a href="#cb15-13"></a>  </span>
+<span id="cb15-14"><a href="#cb15-14"></a>  <span class="co"># set theme to clean up appearance ----</span></span>
+<span id="cb15-15"><a href="#cb15-15"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span> </span>
+<span id="cb15-16"><a href="#cb15-16"></a>  </span>
+<span id="cb15-17"><a href="#cb15-17"></a>  <span class="co"># theme adjustments ----</span></span>
+<span id="cb15-18"><a href="#cb15-18"></a>  <span class="fu">theme</span>(</span>
+<span id="cb15-19"><a href="#cb15-19"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
+<span id="cb15-20"><a href="#cb15-20"></a>  )</span>
+<span id="cb15-21"><a href="#cb15-21"></a>  </span>
+<span id="cb15-22"><a href="#cb15-22"></a>base_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-61-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-62-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1717,13 +1740,13 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 <hr>
 <p><a href="https://en.wikipedia.org/wiki/Lambert_conformal_conic_projection">Lambert conformal conic</a> and <a href="https://en.wikipedia.org/wiki/Mercator_projection">Mercator projections</a> are both commonly used for mapping the United States. Here, we’ll apply the latter:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>base_map_proj <span class="ot">&lt;-</span> base_map <span class="sc">+</span> </span>
-<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">coord_map</span>(<span class="at">projection =</span> <span class="st">"mercator"</span>)</span>
-<span id="cb14-3"><a href="#cb14-3"></a></span>
-<span id="cb14-4"><a href="#cb14-4"></a>base_map_proj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>base_map_proj <span class="ot">&lt;-</span> base_map <span class="sc">+</span> </span>
+<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">coord_map</span>(<span class="at">projection =</span> <span class="st">"mercator"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3"></a></span>
+<span id="cb16-4"><a href="#cb16-4"></a>base_map_proj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-62-1.png" width="960" class="r-stretch quarto-figure-center"><aside class="notes">
+<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-63-1.png" width="960" class="r-stretch quarto-figure-center"><aside class="notes">
 <p>Alternatively:</p>
 <ul>
 <li>fix the relationship between lat &amp; long by using <code>coord_fixed(1.3)</code></li>
@@ -1749,21 +1772,21 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 <p><span class="body-text-s">We’re going to create a couple different choropleths to look at the differences between gradient vs.&nbsp;binned color scales. Customizing the appearance (title, position, width / height) of our legend requires two different functions (<code>guide_colorbar()</code> and <code>guide_colorsteps()</code>), depending on which type of scale you use.</span></p>
 <p><span class="body-text-s">Instead of having to type these long functions out each time we want to style our colorbar, we can instead <strong>write our own function to streamline our code</strong>:</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>custom_guide <span class="ot">&lt;-</span> <span class="cf">function</span>(type) {</span>
-<span id="cb15-2"><a href="#cb15-2"></a>  </span>
-<span id="cb15-3"><a href="#cb15-3"></a>  <span class="co"># if gradient, use guide_color() ----</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a>  <span class="cf">if</span> (type <span class="sc">==</span> <span class="st">"g"</span>) {</span>
-<span id="cb15-5"><a href="#cb15-5"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">title =</span> <span class="st">"Precipitation (inches)"</span>,</span>
-<span id="cb15-6"><a href="#cb15-6"></a>                                 <span class="at">title.position =</span> <span class="st">"top"</span>,</span>
-<span id="cb15-7"><a href="#cb15-7"></a>                                 <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="dv">1</span>))</span>
-<span id="cb15-8"><a href="#cb15-8"></a>    </span>
-<span id="cb15-9"><a href="#cb15-9"></a>  <span class="co"># if bin, use guide_colorsteps() ----</span></span>
-<span id="cb15-10"><a href="#cb15-10"></a>  } <span class="cf">else</span> <span class="cf">if</span> (type <span class="sc">==</span> <span class="st">"b"</span>) {</span>
-<span id="cb15-11"><a href="#cb15-11"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">title =</span> <span class="st">"Precipitation (inches)"</span>,</span>
-<span id="cb15-12"><a href="#cb15-12"></a>                                   <span class="at">title.position =</span> <span class="st">"top"</span>,</span>
-<span id="cb15-13"><a href="#cb15-13"></a>                                   <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="dv">1</span>))</span>
-<span id="cb15-14"><a href="#cb15-14"></a>  }</span>
-<span id="cb15-15"><a href="#cb15-15"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>custom_guide <span class="ot">&lt;-</span> <span class="cf">function</span>(type) {</span>
+<span id="cb17-2"><a href="#cb17-2"></a>  </span>
+<span id="cb17-3"><a href="#cb17-3"></a>  <span class="co"># if gradient, use guide_color() ----</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a>  <span class="cf">if</span> (type <span class="sc">==</span> <span class="st">"g"</span>) {</span>
+<span id="cb17-5"><a href="#cb17-5"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">title =</span> <span class="st">"Precipitation (inches)"</span>,</span>
+<span id="cb17-6"><a href="#cb17-6"></a>                                 <span class="at">title.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb17-7"><a href="#cb17-7"></a>                                 <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="dv">1</span>))</span>
+<span id="cb17-8"><a href="#cb17-8"></a>    </span>
+<span id="cb17-9"><a href="#cb17-9"></a>  <span class="co"># if bin, use guide_colorsteps() ----</span></span>
+<span id="cb17-10"><a href="#cb17-10"></a>  } <span class="cf">else</span> <span class="cf">if</span> (type <span class="sc">==</span> <span class="st">"b"</span>) {</span>
+<span id="cb17-11"><a href="#cb17-11"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">title =</span> <span class="st">"Precipitation (inches)"</span>,</span>
+<span id="cb17-12"><a href="#cb17-12"></a>                                   <span class="at">title.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb17-13"><a href="#cb17-13"></a>                                   <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="dv">1</span>))</span>
+<span id="cb17-14"><a href="#cb17-14"></a>  }</span>
+<span id="cb17-15"><a href="#cb17-15"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="initial-attempts" class="slide level2" data-menu-title="Initial mapping attempts)">
@@ -1772,29 +1795,16 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 <hr>
 <p>First, create a color palette:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>my_palette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#543006"</span>, <span class="st">"#975F1C"</span>, <span class="st">"#AC7E42"</span>, <span class="st">"#C09C66"</span>, <span class="st">"#D6BB8C"</span>, <span class="st">"#EBD9B0"</span>,<span class="st">"#D5D4CE"</span>,</span>
-<span id="cb16-2"><a href="#cb16-2"></a>                 <span class="st">"#B2DDD7"</span>, <span class="st">"#8BC2BC"</span>, <span class="st">"#64A7A1"</span>, <span class="st">"#3B8E86"</span>, <span class="st">"#16726B"</span>, <span class="st">"#003C30"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>my_palette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#543006"</span>, <span class="st">"#975F1C"</span>, <span class="st">"#AC7E42"</span>, <span class="st">"#C09C66"</span>, <span class="st">"#D6BB8C"</span>, <span class="st">"#EBD9B0"</span>,<span class="st">"#D5D4CE"</span>,</span>
+<span id="cb18-2"><a href="#cb18-2"></a>                 <span class="st">"#B2DDD7"</span>, <span class="st">"#8BC2BC"</span>, <span class="st">"#64A7A1"</span>, <span class="st">"#3B8E86"</span>, <span class="st">"#16726B"</span>, <span class="st">"#003C30"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Then map:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>base_map_proj <span class="sc">+</span> </span>
-<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_palette) <span class="sc">+</span></span>
-<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"g"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-65-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>base_map_proj <span class="sc">+</span> </span>
-<span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_palette) <span class="sc">+</span></span>
-<span id="cb18-3"><a href="#cb18-3"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"b"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>base_map_proj <span class="sc">+</span> </span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_palette) <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"g"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1803,7 +1813,23 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 </div>
 </div>
 </div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>base_map_proj <span class="sc">+</span> </span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_palette) <span class="sc">+</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"b"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-67-1.png" width="960"></p>
+</figure>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>By default, <code>scale_fill_stepsn()</code> sets <code>nice.breaks = TRUE</code></p>
 </div>
 
 <div class="footer footer-default">

@@ -26,13 +26,11 @@ library(tidyverse)
 library(maps) 
 
 #.........................get shape data.........................
-#usa <- map_data("usa")
 states <- map_data("state")
 counties <- map_data("county")
 
 #....................import precipitation data...................
-# NOTE: manually removed the first 5(?) rows of metadata from csv file before importing
-precip_counties <- read_csv(here::here("slides", "data", "county-precip-jan2023.csv"), skip = 4) |> 
+precip_counties <- read_csv(here::here("slides", "data", "county-precip-oct2023.csv"), skip = 4) |> 
   janitor::clean_names()
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -44,47 +42,71 @@ us_counties <- counties |>
   select(state = region, county = subregion, long, lat, group, order)
   
 #..........clean precip data & make sure var names match.........
-precip_counties <- precip_counties |> 
-  mutate(county = str_to_lower(name),
+precip_counties_wrangled <- precip_counties |> 
+  rename(county = name) |> 
+  mutate(county = str_to_lower(county),
          state = str_to_lower(state)) |> 
   mutate(county = str_remove(county, pattern = " county")) |> 
-  mutate(county = str_remove(county, pattern = " parish")) |> # for louisiana
-  select(state, county, precip = value) |> 
+  mutate(county = str_remove(county, pattern = " parish")) |> 
+  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period) |>
   mutate(precip = as.numeric(precip))
 
 #............................join dfs............................
-joined_precip_us_counties <- full_join(precip_counties, us_counties)
+joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties)
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                                 create map                               ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+# define palette ----
+my_palette <- c("#543006", "#975F1C", "#AC7E42", "#C09C66", "#D6BB8C", "#EBD9B0","#D5D4CE",
+                 "#B2DDD7", "#8BC2BC", "#64A7A1", "#3B8E86", "#16726B", "#003C30")
+
+# create map -----
 ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + 
-  coord_fixed(1.3) + 
-  geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + #, color = "gray"
+  geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + 
+  coord_map(projection = "mercator") +
   geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
-  scale_fill_gradientn(colours = rev(c("#B10025", "#FF8A37", "#FBFE82", "#00712F", "#9CDC94", "#C2EDBA", "#FFFFFF")), 
-                       breaks = c(0, 2, 4, 6, 8, 10, 12)) +
+  scale_fill_gradientn(colors = my_palette) +
+  guides(fill = guide_colorbar(title = "Precipitation (inches)",
+                                 title.position = "top",
+                                 barwidth = 15, barheight = 1)) +
   labs(title = "Total Precipitation, by County",
-       subtitle = "October 2023",
-       fill = "Precip\n(inches)") +
-  theme_void()
+       subtitle = "October 2023") +
+  theme_void() + 
+  theme(
+    legend.position = "bottom"
+  )
+
+# ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + 
+#   coord_fixed(1.3) + 
+#   geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + #, color = "gray"
+#   geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
+#   scale_fill_gradientn(colours = rev(c("#B10025", "#FF8A37", "#FBFE82", "#00712F", "#9CDC94", "#C2EDBA", "#FFFFFF")), 
+#                        breaks = c(0, 2, 4, 6, 8, 10, 12)) +
+#   labs(title = "Total Precipitation, by County",
+#        subtitle = "October 2023",
+#        fill = "Precip\n(inches)") +
+#   theme_void()
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                              create bar chart                            ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #...............precipitation data for CA counties...............
-ca_precip <- precip_counties |> 
+ca_precip <- precip_counties_wrangled |> 
   filter(state == "california") |> 
   mutate(county = str_to_title(county))
 
 #.........................create barplot.........................
-ggplot(ca_precip, aes(x = reorder(county, precip), y = precip)) +
+
+ca_precip |> 
+  slice_max(n = 20, order_by = precip) |> 
+  ggplot(aes(x = reorder(county, precip), y = precip)) +
   geom_bar(stat = "identity", width = 0.9, fill = "#635F5F") +
   coord_flip() +
-  labs(x = "", y = "Total Precipitation (inches)") +
-  scale_fill_gradientn(colours = rev(c("#B10025", "#FF8A37", "#FBFE82", "#00712F", "#9CDC94", "#C2EDBA", "#FFFFFF"))) +
+  labs(x = "", y = "Total Precipitation (inches)",
+       title = "Top 20 California counties to recieve the most rainfall in October 2023") +
   theme_classic()
 ```
 

@@ -139,10 +139,10 @@ custom_guide <- function(type) {
 ## ----------------- Initial attempt: manually create binned color gradient -----------------
 
 ```{r}
-# plot (viridis) ----
-base_map_proj + 
-  scale_fill_viridis_c() +
-  custom_guide(type = "g")
+# # plot (viridis) ----
+# base_map_proj + 
+#   scale_fill_viridis_c() +
+#   custom_guide(type = "g")
 
 # define palette ----
 my_palette <- c("#543006", "#975F1C", "#AC7E42", "#C09C66", "#D6BB8C", "#EBD9B0","#D5D4CE",
@@ -186,8 +186,27 @@ my_breaks <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
 # plot ----
 base_map_proj + 
   scale_fill_stepsn(colors = my_palette,
-                    breaks = my_breaks) +
+                    breaks = my_breaks,
+                    values = scales::rescale(my_breaks)) +
   custom_guide(type = "b")
+
+
+
+
+
+# base_map_proj + 
+#   scale_fill_stepsn(colors = my_palette,
+#                     breaks = my_breaks, 
+#                     values = scales::rescale(my_breaks)) +
+#   custom_guide(type = "b")
+# 
+# 
+# scale_fill_stepsn(name = "", 
+#                     colors =c("#2171b5", "#6baed6", "#bdd7e7", "#fcae91", "#fb6a4a", "#cb181d"),
+#                     breaks = c(-25, -10, 0, 10, 50),
+#                     values = scales::rescale(c(-25, -10, 0, 10, 25, 50))) 
+
+
 ```
 
 Attempt B is a better, though it would be wise to look at the distribution of our precipitation data to see if we might be losing any important details:
