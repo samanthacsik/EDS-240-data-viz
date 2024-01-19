@@ -44,9 +44,6 @@ I'll be using both of these (really wonderful and easy-to-use) tools during lect
 1. [Let's get color blind](https://chromewebstore.google.com/detail/lets-get-color-blind/bkdgdianpkfahpkmphgehigalpighjck): simulates different color deficiencies in the browser
 2. [ColorPick Eyedropper](https://chromewebstore.google.com/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg): a browser-based color chooser tool (I recommended that you install this for week 3 discussion, so you may already have it!)
 
-
--- I'll be using tGoogle Chrome extension in class. It's a really wonderful and easy-to-use tool if you typically use the Google Chrome web browser. I recommend installing it!
-
 ## Lecture Materials 
 
 Week 5 instruction is broken down into three lessons:

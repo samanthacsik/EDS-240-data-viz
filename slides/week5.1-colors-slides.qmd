@@ -104,7 +104,7 @@ You'll probably iterate on them as you sit with your visualization and of course
 
 <hr>
 
-Changing **hue** (the pure color), **saturation** (aka chroma; the intensity of a color) and / or **value** (degree of lightness / darkness) can influence how readers perceive information in a data visualization.
+Changing **hue** (the pure color), **saturation** (aka chroma; the intensity / purity of a color) and / or **value** (degree of lightness / darkness) can influence how readers perceive information in a data visualization.
 
 <br>
 
@@ -1695,43 +1695,41 @@ knitr::include_graphics("images/week5/ncei-logo2.png")
 
 ::::
 
-[Find public access to a massive inventory of climate data on their [Climate Monitoring](https://www.ncei.noaa.gov/access/monitoring/products/) page. Today's lesson will use the [Climate at a Glance](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/) collection. Specifically, **we'll be exploring precipitation data at the county level, accessed via the [County Mapping](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value) portal**.]{.body-text-s}
+[Find public access to a massive inventory of climate data on their [Climate Monitoring](https://www.ncei.noaa.gov/access/monitoring/products/) page. Today's lesson will use the [Climate at a Glance](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/) collection. Specifically, **we'll be exploring county-level precipitation data from October 2023, accessed via the [County Mapping](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value) portal**.]{.body-text-s}
+
+<!-- https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value -->
 
 ::: {.footer}
 A lot of the following data viz code draws from and was inspired by the wonderful [Making Maps with R](https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html) tutorial, by [Eric C. Anderson](https://github.com/eriqande).
 :::
 
----
+<!-- ---- -->
 
-MAP PROJECTION??
+<!-- ## {#plan data-menu-title="The Plan"}  -->
 
-----
+<!-- [The Plan]{.slide-title} -->
 
-## {#plan data-menu-title="The Plan"} 
+<!-- <hr> -->
 
-[The Plan]{.slide-title}
+<!-- **The type of color palette we use will vary with the type of data we hope to visualize.** In this following section, we'll create a series of choropleth maps visualizing different data types (categorical vs. numerical) that require different color palettes.  -->
 
-<hr>
+<!-- <br> -->
 
-**The type of color palette we use will vary with the type of data we hope to visualize.** In this following section, we'll create a series of choropleth maps visualizing different data types (categorical vs. numerical) that require different color palettes. 
+<!-- . . .  -->
 
-<br>
+<!-- **We'll create maps that color counties based on the following:** -->
 
-. . . 
+<!-- - [**Categorical variable**]{.teal-text} -->
+<!--     - Color counties based on whether their total precipitation in Dec 2023 was above or below the 1991 - 2000 mean  -->
+<!-- - [**Numeric variable**]{.teal-text} -->
+<!--     - [**Sequential (either linear or binned):**]{.teal-text .body-text-s} Color counties based on the total amount of precipitation received in Dec 2023 -->
+<!--     - [**Diverging (either linear or binned):**]{.teal-text .body-text-s} Color counties based off the difference between the 1901 - 2000 mean and Dec 2023 precipitation totals -->
 
-**We'll create maps that color counties based on the following:**
+<!-- . . . -->
 
-- [**Categorical variable**]{.teal-text}
-    - Color counties based on whether their total precipitation in Dec 2023 was above or below the 1991 - 2000 mean 
-- [**Numeric variable**]{.teal-text}
-    - [**Sequential (either linear or binned):**]{.teal-text .body-text-s} Color counties based on the total amount of precipitation received in Dec 2023
-    - [**Diverging (either linear or binned):**]{.teal-text .body-text-s} Color counties based off the difference between the 1901 - 2000 mean and Dec 2023 precipitation totals
-    
-. . .
-
-::: {.center-text .body-text-m}
-**First, some data wrangling**
-:::
+<!-- ::: {.center-text .body-text-m} -->
+<!-- **First, some data wrangling** -->
+<!-- ::: -->
 
 ----
 
@@ -1759,7 +1757,7 @@ states <- map_data("state")
 counties <- map_data("county")
 
 #....................import precipitation data...................
-precip_counties <- read_csv(here::here("slides", "data", "county-precip-jan2023.csv"), skip = 4) |> 
+precip_counties <- read_csv(here::here("slides", "data", "county-precip-oct2023.csv"), skip = 4) |> 
   janitor::clean_names()
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1769,6 +1767,7 @@ precip_counties <- read_csv(here::here("slides", "data", "county-precip-jan2023.
 #..............update names of counties df variables.............
 us_counties <- counties |> 
   select(state = region, county = subregion, long, lat, group, order)
+
   
 #..........clean precip data & make sure var names match.........
 precip_counties_wrangled <- precip_counties |> 
@@ -1786,14 +1785,9 @@ precip_counties_wrangled <- precip_counties |>
   # remove the word "parish" from the end of Louisiana counties ----
   # NOTE: there are more counties that need cleaning for seamless joining with `us_counties` df; I've don't done a complete sweep of the data, so you'll notice data gaps once plotted
   mutate(county = str_remove(county, pattern = " parish")) |> 
-  
-  # add col denoting if Oct precip is above or below 1901 - 2000 mean
-  mutate(comp_mean = ifelse(value > x1901_2000_mean, # if `value` > `x1901_2000_mean`
-                     yes = "above mean", # replace abbreviation with full state name 
-                     no = "below mean")) |> # if string in 'sn' col is not 2 chrs long, keep state name as-is
-  
+
   # select & rename relevant cols ----
-  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period, comp_mean) |>
+  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period) |> # comp_mean
   
   # make precip var numeric (was chr) ----
   mutate(precip = as.numeric(precip))
@@ -1818,7 +1812,7 @@ states <- map_data("state")
 counties <- map_data("county")
 
 #....................import precipitation data...................
-precip_counties <- read_csv(here::here("week5", "data", "county-precip-jan2023.csv"), skip = 4) |> 
+precip_counties <- read_csv(here::here("week5", "data", "county-precip-oct2023.csv"), skip = 4) |> 
   janitor::clean_names()
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1828,6 +1822,7 @@ precip_counties <- read_csv(here::here("week5", "data", "county-precip-jan2023.c
 #..............update names of counties df variables.............
 us_counties <- counties |> 
   select(state = region, county = subregion, long, lat, group, order)
+
   
 #..........clean precip data & make sure var names match.........
 precip_counties_wrangled <- precip_counties |> 
@@ -1843,15 +1838,11 @@ precip_counties_wrangled <- precip_counties |>
   mutate(county = str_remove(county, pattern = " county")) |> 
   
   # remove the word "parish" from the end of Louisiana counties ----
+  # NOTE: there are more counties that need cleaning for seamless joining with `us_counties` df; I've don't done a complete sweep of the data, so you'll notice data gaps once plotted
   mutate(county = str_remove(county, pattern = " parish")) |> 
-  
-  # add col denoting if Oct precip is above or below 1901 - 2000 mean
-  mutate(comp_mean = ifelse(value > x1901_2000_mean, # if `value` > `x1901_2000_mean`
-                     yes = "above mean", # replace abbreviation with full state name 
-                     no = "below mean")) |> # if string in 'sn' col is not 2 chrs long, keep state name as-is
-  
+
   # select & rename relevant cols ----
-  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period, comp_mean) |>
+  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period) |> # comp_mean
   
   # make precip var numeric (was chr) ----
   mutate(precip = as.numeric(precip))
@@ -1862,92 +1853,18 @@ joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties)
 
 ---
 
-## {#cat-data data-menu-title="Categorical data"} 
+## {#base-map data-menu-title="Create base map"} 
 
-[Map color to a categorical variable]{.slide-title}
-
-<hr>
-
-[Here, we **color county based on whether it received more or less precipitation in Dec 2023 as compared to the 1901 - 2000 mean (categorical variable)**. Colors chosen follow those suggested for use with precipitation variables in [Kaye et al. 2012](https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/suggested-colors) and are a [verified colorblind-friendly combo](https://www.nceas.ucsb.edu/sites/default/files/2022-06/Colorblind%20Safe%20Color%20Schemes.pdf):]{.body-text-s}
-```{r}
-#| eval: true
-#| echo: true
-#| fig-align: "center"
-#| out-width: "100%"
-#| output-location: column
-# 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----
-ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + 
-  
-  # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----
-  geom_polygon(data = joined_precip_us_counties, aes(fill = comp_mean), color = "#DDDDDD", linewidth = 0.1) + 
-  
-  # darken state lines ----
-  geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
-  
-  # to fix the relationship between one unit in the y direction and one unit in the x direction; may need different values for different regions depending on where they are on the globe (e.g. close to the poles)
-  coord_fixed(1.3) +
-  
-  # # OPTION 1: update colors with pre-fab palette ----
-  # scale_fill_viridis_d(option = "D") +
-  
-  # # OPTION 2: update colors manually (based on suggested palette for precip in Kay et al. 2012) ----
-  # scale_fill_manual(values = c("#00665E", "#8D5103")) +
-
-  # OPTION 3: adjust (tint / lighten) suggested colors slightly to be easier on the eyes ----
-  scale_fill_manual(values = c("#3DB1A6", "#E3BE6B")) +
-
-  # update labels ----
-  labs(title = "October 2023 precipitation relative to historical (1901-2000) average",
-       subtitle = "Counties whose rainfall exceeded or was below average") +
-  
-  # set theme to clean up appearance ----
-  theme_void()
-```
-
----
-
----
-
-skewed distribution
-```{r}
-ggplot(joined_precip_us_counties, aes(x = precip)) +
-  geom_histogram()
-```
-
-```{r}
-range(na.omit(joined_precip_us_counties)$precip) # 0.4 - 18.22
-```
-
-```{r}
-mean(na.omit(joined_precip_us_counties)$precip) # 4.18
-```
-
----
-
-## {#seq-num data-menu-title="Sequntial numerical data"} 
-
-[Map color to a sequential numeric variable (1 hue)]{.slide-title2}
+[Create a base map]{.slide-title}
 
 <hr>
-
-[Here, we **color county based on the total precipitation it received in October 2023 (sequential numeric)**. Because blue is often associated with precipitation, we'll create a color gradient using that hue:]{.body-text-s}
-
-https://stackoverflow.com/questions/8069837/is-there-a-built-in-way-to-do-a-logarithmic-color-scale-in-ggplot2
 
 ```{r}
 #| eval: true
 #| echo: true
-#| fig-align: "center"
-#| out-width: "100%"
 #| output-location: column
-
-noaa_colors <- c("#543006", "#975F1C", "#AC7E42", "#C09C66", "#EBD9B0", "#B2DDD7", "#8BC2BC", "#3B8E86", "#16726B", "#003C30")
-
-kaye_colors <- c("#8D5102", "#DAB566", "#F5E7C2", "#F5F5F5", "#C8ECE6", "#5AB6AF", "#01665E")
-
-
 # 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----
-ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + 
+base_map <- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + 
   
   # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----
   geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + 
@@ -1955,36 +1872,9 @@ ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) +
   # darken state lines ----
   geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
   
-  # to fix the relationship between one unit in the y direction and one unit in the x direction; may need different values for different regions depending on where they are on the globe (e.g. close to the poles)
-  coord_fixed(1.3) +
-  
-  # # OPTION 1: update colors with pre-fab palette ----
-  # scale_fill_viridis_c(option = "D") +
-  # scale_fill_distiller(palette = 'Purples')
-  # scale_fill_viridis_c(trans = "log", breaks=c(0.1, 0.5, 2,4,6, 8, 10, 12, 15, 20, 25), 
-  #                  name="Number of restaurant", 
-  #                  guide = guide_legend( 
-  #                                        label.position = "bottom", 
-  #                                        title.position = 'top',
-  #                                        nrow=1))
-  # 
-  # OPTION 2: manually create a color gradient ----
-  # scale_fill_gradient(low = "#C8ECE6", high = "#213943") +
-  
-  # OPTION 2: manually create a color gradient ----
-  #scale_fill_gradient2(low = "#77A8B9", mid = "#FFFFFF", high = "#213943") +
-  scale_fill_stepsn(trans = "log",
-                    colors = c("#543006", "#975F1C", "#AC7E42", "#C09C66", "#EBD9B0", "#B2DDD7", "#8BC2BC", "#3B8E86", "#16726B", "#003C30"), 
-                    breaks = c(0, 0.1, 0.5, 1, 2, 4, 6, 8, 10, 12, 15, 20, 25)) +
-  
-  # update legend ----
-  guides(fill = guide_coloursteps(title = "Precipitation (inches)", 
-                                  title.position = "top",
-                                  barwidth = 15, barheight = 1)) +
-  
   # update labels ----
   labs(title = "Total Precipitation, by County",
-       subtitle = "January 2023") +
+       subtitle = "October 2023") +
   
   # set theme to clean up appearance ----
   theme_void() + 
@@ -1993,5 +1883,119 @@ ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) +
   theme(
     legend.position = "bottom"
   )
+  
+base_map
 ```
+
+::: {.center-text}
+This looks a bit wonky, so we'll need to specify a projection, next.
+:::
+
+---
+
+## {#map-projection data-menu-title="Map projection"} 
+
+[Apply a Mercator projection]{.slide-title}
+
+<hr>
+
+[Lambert conformal conic](https://en.wikipedia.org/wiki/Lambert_conformal_conic_projection) and [Mercator projections](https://en.wikipedia.org/wiki/Mercator_projection) are both commonly used for mapping the United States. Here, we'll apply the latter:
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+base_map_proj <- base_map + 
+  coord_map(projection = "mercator")
+
+base_map_proj
+```
+
+::: {.notes}
+Alternatively:
+
+- fix the relationship between lat & long by using `coord_fixed(1.3)`
+- apply a Lambert conformal projection, conic projection, using `coord_fixed(projection = "conic", lat0 = 30)`
+- NOTE: `coord_map()` has been been superceded by `coord_sf()`: https://ggplot2.tidyverse.org/reference/coord_map.html
+:::
+
+---
+
+## {#colorbar-styling-fxn data-menu-title="Colorbar styling function"} 
+
+[Create a function for adding the correct colorbar styling]{.slide-title3}
+
+<hr>
+
+[We're going to create a couple different choropleths to look at the differences between gradient vs. binned color scales. Customizing the appearance (title, position, width / height) of our legend requires two different functions (`guide_colorbar()` and `guide_colorsteps()`), depending on which type of scale you use. ]{.body-text-s}
+
+[Instead of having to type these long functions out each time we want to style our colorbar, we can instead **write our own function to streamline our code**:]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+
+custom_guide <- function(type) {
+  
+  # if gradient, use guide_color() ----
+  if (type == "g") {
+    guides(fill = guide_colorbar(title = "Precipitation (inches)",
+                                 title.position = "top",
+                                 barwidth = 15, barheight = 1))
+    
+  # if bin, use guide_colorsteps() ----
+  } else if (type == "b") {
+    guides(fill = guide_colorsteps(title = "Precipitation (inches)",
+                                   title.position = "top",
+                                   barwidth = 15, barheight = 1))
+  }
+}
+```
+
+---
+
+## {#initial-attempts data-menu-title="Initial mapping attempts)"} 
+
+[A few initial mapping attempts]{.slide-title}
+
+<hr>
+
+First, create a color palette:
+
+```{r}
+#| eval: true
+#| echo: true
+
+my_palette <- c("#543006", "#975F1C", "#AC7E42", "#C09C66", "#D6BB8C", "#EBD9B0","#D5D4CE",
+                 "#B2DDD7", "#8BC2BC", "#64A7A1", "#3B8E86", "#16726B", "#003C30")
+
+```
+
+Then map:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+base_map_proj + 
+  scale_fill_gradientn(colors = my_palette) +
+  custom_guide(type = "g")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+base_map_proj + 
+  scale_fill_stepsn(colors = my_palette) +
+  custom_guide(type = "b")
+```
+:::
+
+::::
 

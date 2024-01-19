@@ -88,24 +88,9 @@ Week 1 instruction is broken down into three lessons:
 
 ## Discussion Materials
 
-<!-- **Tidy data** is a predictable way of organizing data where: -->
+### Pre-discussion Prep
 
-<!-- 1. each variable is a column -->
-<!-- 2. each observation is a row -->
-<!-- 3. each cell contains a single value -->
-
-<!-- See [Chapter 5, R for Data Science (2e)](https://r4ds.hadley.nz/data-tidy.html), by Hadley Wickham, Mine Çetinkaya-Rundel & Garrett Grolemund -->
-
-<!-- Is is **not** language-specific or tool-specific, it is not an "R thing", and it is not the `{tidyverse}` *"It is a way or organizing data that will make life easier for people who work with data."* (quote from Allison Horst). Because it makes life so much easier, tidying data is a critical first step in building any data visualization using grammar of graphics. In discussion section, we'll practice tidying a very untidy data set on fracking.  -->
-By now, you may have heard / read something like, "Data scientists spend 80% of their time preparing their data for analysis and / or visualization." And while that may not be totally accurate for all data scientists or all projects, you *will* spend lots of time wrestling with data. [**You'll spend this week's discussion cleaning up a messy data set on hydraulic fracturing (aka [fracking](https://en.wikipedia.org/wiki/Fracking)), with the goal of (re)familiarizing yourselves with some of commonly-used tidyverse functions.**]{.teal-text}
-
-This week's data comes courtesy of Jeremy Singer-Vine's [Data is Plural](https://www.data-is-plural.com/) weekly newsletter of useful / curious data sets (the [2023.09.27 edition](https://www.data-is-plural.com/archive/2023-09-27-edition/)). Singer-Vine's description:
-
-> Since [launching in 2011](https://www.fracfocus.org/learn/about-fracfocus), [FracFocus](https://fracfocus.org/) has become the largest registry of [hydraulic fracturing](https://en.wikipedia.org/wiki/Fracking) chemical disclosures in the US. The database, available to explore online and [download in bulk](https://fracfocus.org/data-download), contains 210,000+ such disclosures from fracking operators; it details the location, timing, and water volume of each fracking job, plus the names and amounts of chemicals used. The project is [managed](https://fracfocus.org/about-us) by the [Ground Water Protection Council](https://www.gwpc.org/overview/), “a nonprofit 501(c)6 organization whose members consist of state ground water regulatory agencies”. As seen in: The latest [installment](https://www.nytimes.com/interactive/2023/09/25/climate/fracking-oil-gas-wells-water.html) of the New York Times’ [Uncharted Water series](https://www.nytimes.com/series/uncharted-waters).
-
-Interested in reading more about fracking? Check out [this communications piece](https://www.usgs.gov/news/national-news-release/water-used-hydraulic-fracturing-varies-widely-across-united-states) from USGS to start.
-
-**Before coming to section, you'll need to install some packages and download data. For step-by-step instructions, unfold the following note (collapsed to save space):**
+Before coming to section, you'll need to install some packages and download data. For step-by-step instructions, unfold the following note (collapsed to save space):
 
 ::: {.callout-note icon=false collapse=true}
 ## Step-by-step pre-discussion prep instructions
@@ -146,28 +131,48 @@ An example repo with three folders: `week1/`, `week2/`, and `other-stuff/`. Each
 
 :::
 
+### Background
+
+<!-- **Tidy data** is a predictable way of organizing data where: -->
+
+<!-- 1. each variable is a column -->
+<!-- 2. each observation is a row -->
+<!-- 3. each cell contains a single value -->
+
+<!-- See [Chapter 5, R for Data Science (2e)](https://r4ds.hadley.nz/data-tidy.html), by Hadley Wickham, Mine Çetinkaya-Rundel & Garrett Grolemund -->
+
+<!-- Is is **not** language-specific or tool-specific, it is not an "R thing", and it is not the `{tidyverse}` *"It is a way or organizing data that will make life easier for people who work with data."* (quote from Allison Horst). Because it makes life so much easier, tidying data is a critical first step in building any data visualization using grammar of graphics. In discussion section, we'll practice tidying a very untidy data set on fracking.  -->
+By now, you may have heard / read something like, "Data scientists spend 80% of their time preparing their data for analysis and / or visualization." And while that may not be totally accurate for all data scientists or all projects, you *will* spend lots of time wrestling with data. [**You'll spend this week's discussion cleaning up a messy data set on hydraulic fracturing (aka [fracking](https://en.wikipedia.org/wiki/Fracking)), with the goal of (re)familiarizing yourselves with some of commonly-used tidyverse functions.**]{.teal-text}
+
+This week's data comes courtesy of Jeremy Singer-Vine's [Data is Plural](https://www.data-is-plural.com/) weekly newsletter of useful / curious data sets (the [2023.09.27 edition](https://www.data-is-plural.com/archive/2023-09-27-edition/)). Singer-Vine's description:
+
+> Since [launching in 2011](https://www.fracfocus.org/learn/about-fracfocus), [FracFocus](https://fracfocus.org/) has become the largest registry of [hydraulic fracturing](https://en.wikipedia.org/wiki/Fracking) chemical disclosures in the US. The database, available to explore online and [download in bulk](https://fracfocus.org/data-download), contains 210,000+ such disclosures from fracking operators; it details the location, timing, and water volume of each fracking job, plus the names and amounts of chemicals used. The project is [managed](https://fracfocus.org/about-us) by the [Ground Water Protection Council](https://www.gwpc.org/overview/), “a nonprofit 501(c)6 organization whose members consist of state ground water regulatory agencies”. As seen in: The latest [installment](https://www.nytimes.com/interactive/2023/09/25/climate/fracking-oil-gas-wells-water.html) of the New York Times’ [Uncharted Water series](https://www.nytimes.com/series/uncharted-waters).
+
+Interested in reading more about fracking? Check out [this communications piece](https://www.usgs.gov/news/national-news-release/water-used-hydraulic-fracturing-varies-widely-across-united-states) from USGS to start.
+
+::: {.center-text}
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Week 1 discussion slides](https://docs.google.com/presentation/d/1woLc3uKgbnlNfc5qQoEbs4PUEJeYMKajo-YpeYbsaxo/edit#slide=id.p){.btn role="button" target="_blank"} 
+:::
+
+### Solution 
+
 <!-- ::: {.center-text} -->
 <!-- *Complete code will be posted here after both discussion sections are finished.* -->
 <!-- ::: -->
 
-::: {.center-text}
-[**Solution**]{.body-text-m .teal-text}  
-*(but try not to look during section!)*
-:::
+<!-- ::: {.center-text} -->
+<!-- [**Solution**]{.body-text-m .teal-text}   -->
+<!-- *(but try not to look during section!)* -->
+<!-- ::: -->
+
+
+You'll get the most out of discussion section if you physically type out the code yourself (rather than copying / pasting)!
 
 ***Note:** Some of the wrangling in the solution (collapsed, below) may seem a bit superfluous -- we've included lots of steps to (re)introduce as many of the common wrangling functions as possible, given our data set.*
 
 ::: {.callout-tip icon=false collapse=true}
 ## Complete code for week 1 discussion (fracking)
 {{< include discussion/week1/tidy-fracking.qmd >}}
-:::
-
-### Supplemental discussion materials
-
-<br>
-
-::: {.center-text}
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Week 1 discussion slides](https://docs.google.com/presentation/d/1woLc3uKgbnlNfc5qQoEbs4PUEJeYMKajo-YpeYbsaxo/edit#slide=id.p){.btn role="button" target="_blank"} 
 :::
 
 <br>

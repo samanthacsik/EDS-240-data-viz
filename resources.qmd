@@ -109,6 +109,7 @@ Data are *everywhere*, but that doesn't mean they're necessarily easy to track d
 - **[EDI Data Portal](https://portal.edirepository.org/nis/advancedSearch.jsp)** – contains environmental and ecological data and metadata derived from publicly funded research contributed by a number of participating organizations (e.g. EDI is the main repository for all [Long Term Ecological Research (LTER)](https://lternet.edu/) data)
 
 ### Newsletters / Data Collections 
+- **[ESIIL Data Library](https://cu-esiil.github.io/data-library/)** – The Environmental Data Science Innovation and Inclusion Lab (ESIIL) Data Library, which features a diverse range of datasets, each with its own dedicated web page
 - **[Data is Plural](https://www.data-is-plural.com/archive/)** – a weekly newsletter (and seasonal podcast) of useful / curious data sets, published by [Jeremy Singer-Vine](https://www.jsvine.com/)
 - **[tidytuesday](https://github.com/rfordatascience/tidytuesday)** – a weekly social data project that shares minimally-cleaned data sets covering a variety of topics for the [R4DS community](https://rfordatasci.com/) to visualize; organizers share links to the original data sources, as well as the scripts used to clean them prior to publishing
 - **[awesome-public-datasets](https://github.com/awesomedata/awesome-public-datasets)** – a repository containing a list of high quality, topic-centric public data sources 

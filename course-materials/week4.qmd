@@ -67,9 +67,15 @@ Week 4 instruction is broken down into three lessons:
 
 ## Discussion Materials
 
-**Themes** are used to modify the non-data components of plots (e.g. titles, labels, fonts, background, gridlines, legend). In addition to using pre-built themes (available via the [`{ggplot2}` package](https://ggplot2.tidyverse.org/reference/ggtheme.html) and also from extension packages), you can fine-tune the appearance of your plots theme by making adjustments using the [`theme()` function](https://ggplot2.tidyverse.org/reference/theme.html). This week's discussion section will introduce the use of themes so that you can start to really make your data visualizations stand out {{< fa palette title="a paint palette" >}}
+Last week's discussion focused on recreating the data layers of the U.S. Drought Monitor's [visualization](https://en.wikipedia.org/wiki/Droughts_in_California#/media/File:Drought_area_in_California.svg) of CA drought conditions through time. [**This week, you'll focus on refining the theme (non-data plot elements) to match the original visualization as closely as possible.**]{.teal-text}
 
-### Applying pre-built themes:
+### Background
+
+**Themes** are used to modify the non-data components of plots (e.g. titles, labels, fonts, background, gridlines, legend). In addition to using pre-built themes (available via the [`{ggplot2}` package](https://ggplot2.tidyverse.org/reference/ggtheme.html) and also from extension packages), you can fine-tune the appearance of your plots theme by making adjustments using the [`theme()` function](https://ggplot2.tidyverse.org/reference/theme.html). 
+
+<!-- This week's discussion section will introduce the use of themes so that you can start to really make your data visualizations stand out {{< fa palette title="a paint palette" >}} -->
+
+#### Applying pre-built themes:
 
 `{ggplot2}` comes with eight [complete themes](https://ggplot2.tidyverse.org/reference/ggtheme.html), which can be applied as-is, or further modified using `theme()` (see next section, below). There are also *many* additional themes which can be applied via ggplot extension packages. A small handful of packages are listed in the expandable note, below:
 
@@ -90,7 +96,7 @@ Week 4 instruction is broken down into three lessons:
 Keep your eye out for extension packages that supply both a geom(s) *and* a pre-build theme(s) designed specifically to work with that geom. For example, the [`{ggridges}` package](https://wilkelab.org/ggridges/index.html) provides both a few different ridgeline plot geoms and a [pre-built `theme_ridges()` theme](https://wilkelab.org/ggridges/articles/introduction.html#themes) to pair with them.
 :::
 
-### Using `ggplot2::theme()` to control plot elements:
+#### Using `ggplot2::theme()` to control plot elements:
 
 Use this (non-exhaustive) list to start tweaking elements of your plot's appearance. It's most common to start with a pre-built theme (see above) and modify from there. For a complete list of elements, explore the documentation for [`ggplot::theme()`](https://ggplot2.tidyverse.org/reference/theme.html).
 
@@ -107,15 +113,26 @@ knitr::include_graphics("../images/ggplot-theme.png")
 *Adapted from [Reproducible Science for Busy Researchers: How to Save Time using Literate Programming](https://bookdown.org/alapo/learnr/data-visualisation.html#anatomy-of-a-ggplot), by Andrew P. Lapointe*
 :::
 
-### Exercise
+### Solution
 
-This week, you'll practice updating different ggplot theme elements. Choose some of the starter code below, apply a pre-built theme, then modify different pieces of the plot using `theme()`. Plan to share out something new that you've learned with the rest of the class.
+You'll get the most out of discussion section if you physically type out the code yourself (rather than copying / pasting)!
 
-::: {.callout-note icon=false collapse=true}
-## Find starter code here!
+**Note:** Code lines 1 - 69 are copied over from last week's discussion materials. [***Newly added theme code begins on line 70.***]{.teal-text}
 
-code here
+<!-- ::: {.center-text} -->
+<!-- [**Solution**]{.body-text-m .teal-text}   -->
+<!-- *(but try not to look during section!)* -->
+<!-- ::: -->
+
+::: {.callout-tip icon=false collapse=true}
+## Complete code for week 4 discussion
+{{< include discussion/week4/CA-drought-theme.qmd >}}
 :::
+
+<!-- ### Exercise -->
+
+<!-- This week, you'll practice updating different ggplot theme elements. Choose some of the starter code below, apply a pre-built theme, then modify different pieces of the plot using `theme()`. Plan to share out something new that you've learned with the rest of the class. -->
+<br>
 
 ## Assignment Reminders
 

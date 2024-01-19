@@ -29,6 +29,8 @@ Image from [Amy Cesal](https://www.amycesal.com/)'s article, [Writing Alt Text f
 
 ## Discussion Materials
 
+### Background
+
 **[Alternative text](https://webaim.org/techniques/alttext/),** aka **alt text**, makes our data visualizations accessible to a broader community. Today's section will focus crafting effective alt text, as well as how to include it when rendering visualizations in reproducible reports, websites, etc. using publishing tools like Quarto.
 
 ::: {.center-text}

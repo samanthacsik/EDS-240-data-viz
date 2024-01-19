@@ -76,26 +76,41 @@ drought_clean |>
                      expand = c(0,0)) +
   
   # add title ----
-  labs(title = "Drought area in California") 
-
+  labs(title = "Drought area in California") +
+  
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##            BONUS: using {geofacet} to plot data for all states           ----
+##                                                                            --
+##------------------------- NEWLY ADDED THEME CODE!-----------------------------
+##                                                                            --
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#......remove HI & AK (no data) and also DC from preset grid.....
-mygrid <- geofacet::us_state_grid1 |>
-  filter(!code %in% c("DC", "HI", "AK"))
+  # set theme minimal (includes major/minor grid lines, no axes) ----
+  theme_minimal() +
+  
+  # fine-tune adjustments to plot theme ----
+  theme(
+    
+    # update axis lines & ticks color ----
+    axis.line = element_line(color = "#5A9CD6"),
+    axis.ticks = element_line(color = "#5A9CD6"),
+    
+    # adjust length of axis ticks ----
+    axis.ticks.length = unit(.2, "cm"),
+    
+    # center plot title ----
+    plot.title = element_text(hjust = 0.5, color = "#686868", size = 25,
+                              margin = margin(t = 10, r = 0, b = 15, l = 0)),
+    
+    # remove axis & legend titles ----
+    axis.title = element_blank(),
+    legend.title = element_blank(),
+    
+    # axis text color & size ----
+    axis.text = element_text(color = "#686868", size = 15),
+    legend.text = element_text(color = "#686868", size = 15),
+    
+    # move legend below plot ----
+    legend.position = "bottom",
+  )
 
-#..............................plot..............................
-
-# NOTE: this takes a minute to render!
-
-drought_clean |> 
-  filter(drought_lvl != "None") |> 
-  ggplot(aes(x = date, y = area_pct, fill = drought_lvl_long)) +
-  geom_area(position = position_stack(reverse = TRUE)) +
-  geofacet::facet_geo(~state_abb, grid = mygrid) +
-  scale_fill_manual(values = c("#853904", "#FF0000", "#FFC100", "#FFD965", "#FFFF00"))
 ```
-
-

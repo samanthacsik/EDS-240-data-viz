@@ -266,7 +266,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials">Lecture Materials</a></li>
   <li><a href="#discussion-materials" id="toc-discussion-materials" class="nav-link" data-scroll-target="#discussion-materials">Discussion Materials</a>
   <ul class="collapse">
-  <li><a href="#supplemental-discussion-materials" id="toc-supplemental-discussion-materials" class="nav-link" data-scroll-target="#supplemental-discussion-materials">Supplemental discussion materials</a></li>
+  <li><a href="#pre-discussion-prep" id="toc-pre-discussion-prep" class="nav-link" data-scroll-target="#pre-discussion-prep">Pre-discussion Prep</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
   </ul></li>
   <li><a href="#assignment-reminders" id="toc-assignment-reminders" class="nav-link" data-scroll-target="#assignment-reminders">Assignment Reminders</a></li>
   </ul>
@@ -359,20 +361,9 @@ Step-by-step instructions for creating and cloning a GitHub repo:
 </section>
 <section id="discussion-materials" class="level2">
 <h2 class="anchored" data-anchor-id="discussion-materials">Discussion Materials</h2>
-
-<!-- **Tidy data** is a predictable way of organizing data where: -->
-<!-- 1. each variable is a column -->
-<!-- 2. each observation is a row -->
-<!-- 3. each cell contains a single value -->
-<!-- See [Chapter 5, R for Data Science (2e)](https://r4ds.hadley.nz/data-tidy.html), by Hadley Wickham, Mine Çetinkaya-Rundel & Garrett Grolemund -->
-<!-- Is is **not** language-specific or tool-specific, it is not an "R thing", and it is not the `{tidyverse}` *"It is a way or organizing data that will make life easier for people who work with data."* (quote from Allison Horst). Because it makes life so much easier, tidying data is a critical first step in building any data visualization using grammar of graphics. In discussion section, we'll practice tidying a very untidy data set on fracking.  -->
-<p>By now, you may have heard / read something like, “Data scientists spend 80% of their time preparing their data for analysis and / or visualization.” And while that may not be totally accurate for all data scientists or all projects, you <em>will</em> spend lots of time wrestling with data. <span class="teal-text"><strong>You’ll spend this week’s discussion cleaning up a messy data set on hydraulic fracturing (aka <a href="https://en.wikipedia.org/wiki/Fracking">fracking</a>), with the goal of (re)familiarizing yourselves with some of commonly-used tidyverse functions.</strong></span></p>
-<p>This week’s data comes courtesy of Jeremy Singer-Vine’s <a href="https://www.data-is-plural.com/">Data is Plural</a> weekly newsletter of useful / curious data sets (the <a href="https://www.data-is-plural.com/archive/2023-09-27-edition/">2023.09.27 edition</a>). Singer-Vine’s description:</p>
-<blockquote class="blockquote">
-<p>Since <a href="https://www.fracfocus.org/learn/about-fracfocus">launching in 2011</a>, <a href="https://fracfocus.org/">FracFocus</a> has become the largest registry of <a href="https://en.wikipedia.org/wiki/Fracking">hydraulic fracturing</a> chemical disclosures in the US. The database, available to explore online and <a href="https://fracfocus.org/data-download">download in bulk</a>, contains 210,000+ such disclosures from fracking operators; it details the location, timing, and water volume of each fracking job, plus the names and amounts of chemicals used. The project is <a href="https://fracfocus.org/about-us">managed</a> by the <a href="https://www.gwpc.org/overview/">Ground Water Protection Council</a>, “a nonprofit 501(c)6 organization whose members consist of state ground water regulatory agencies”. As seen in: The latest <a href="https://www.nytimes.com/interactive/2023/09/25/climate/fracking-oil-gas-wells-water.html">installment</a> of the New York Times’ <a href="https://www.nytimes.com/series/uncharted-waters">Uncharted Water series</a>.</p>
-</blockquote>
-<p>Interested in reading more about fracking? Check out <a href="https://www.usgs.gov/news/national-news-release/water-used-hydraulic-fracturing-varies-widely-across-united-states">this communications piece</a> from USGS to start.</p>
-<p><strong>Before coming to section, you’ll need to install some packages and download data. For step-by-step instructions, unfold the following note (collapsed to save space):</strong></p>
+<section id="pre-discussion-prep" class="level3">
+<h3 class="anchored" data-anchor-id="pre-discussion-prep">Pre-discussion Prep</h3>
+<p>Before coming to section, you’ll need to install some packages and download data. For step-by-step instructions, unfold the following note (collapsed to save space):</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -421,13 +412,36 @@ Step-by-step pre-discussion prep instructions
 </div>
 </div>
 </div>
+</section>
+<section id="background" class="level3">
+<h3 class="anchored" data-anchor-id="background">Background</h3>
+
+<!-- **Tidy data** is a predictable way of organizing data where: -->
+<!-- 1. each variable is a column -->
+<!-- 2. each observation is a row -->
+<!-- 3. each cell contains a single value -->
+<!-- See [Chapter 5, R for Data Science (2e)](https://r4ds.hadley.nz/data-tidy.html), by Hadley Wickham, Mine Çetinkaya-Rundel & Garrett Grolemund -->
+<!-- Is is **not** language-specific or tool-specific, it is not an "R thing", and it is not the `{tidyverse}` *"It is a way or organizing data that will make life easier for people who work with data."* (quote from Allison Horst). Because it makes life so much easier, tidying data is a critical first step in building any data visualization using grammar of graphics. In discussion section, we'll practice tidying a very untidy data set on fracking.  -->
+<p>By now, you may have heard / read something like, “Data scientists spend 80% of their time preparing their data for analysis and / or visualization.” And while that may not be totally accurate for all data scientists or all projects, you <em>will</em> spend lots of time wrestling with data. <span class="teal-text"><strong>You’ll spend this week’s discussion cleaning up a messy data set on hydraulic fracturing (aka <a href="https://en.wikipedia.org/wiki/Fracking">fracking</a>), with the goal of (re)familiarizing yourselves with some of commonly-used tidyverse functions.</strong></span></p>
+<p>This week’s data comes courtesy of Jeremy Singer-Vine’s <a href="https://www.data-is-plural.com/">Data is Plural</a> weekly newsletter of useful / curious data sets (the <a href="https://www.data-is-plural.com/archive/2023-09-27-edition/">2023.09.27 edition</a>). Singer-Vine’s description:</p>
+<blockquote class="blockquote">
+<p>Since <a href="https://www.fracfocus.org/learn/about-fracfocus">launching in 2011</a>, <a href="https://fracfocus.org/">FracFocus</a> has become the largest registry of <a href="https://en.wikipedia.org/wiki/Fracking">hydraulic fracturing</a> chemical disclosures in the US. The database, available to explore online and <a href="https://fracfocus.org/data-download">download in bulk</a>, contains 210,000+ such disclosures from fracking operators; it details the location, timing, and water volume of each fracking job, plus the names and amounts of chemicals used. The project is <a href="https://fracfocus.org/about-us">managed</a> by the <a href="https://www.gwpc.org/overview/">Ground Water Protection Council</a>, “a nonprofit 501(c)6 organization whose members consist of state ground water regulatory agencies”. As seen in: The latest <a href="https://www.nytimes.com/interactive/2023/09/25/climate/fracking-oil-gas-wells-water.html">installment</a> of the New York Times’ <a href="https://www.nytimes.com/series/uncharted-waters">Uncharted Water series</a>.</p>
+</blockquote>
+<p>Interested in reading more about fracking? Check out <a href="https://www.usgs.gov/news/national-news-release/water-used-hydraulic-fracturing-varies-widely-across-united-states">this communications piece</a> from USGS to start.</p>
+<div class="center-text">
+<p><a href="https://docs.google.com/presentation/d/1woLc3uKgbnlNfc5qQoEbs4PUEJeYMKajo-YpeYbsaxo/edit#slide=id.p" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> Week 1 discussion slides</a></p>
+</div>
+</section>
+<section id="solution" class="level3">
+<h3 class="anchored" data-anchor-id="solution">Solution</h3>
 <!-- ::: {.center-text} -->
 <!-- *Complete code will be posted here after both discussion sections are finished.* -->
 <!-- ::: -->
-<div class="center-text">
-<p><span class="body-text-m teal-text"><strong>Solution</strong></span><br>
-<em>(but try not to look during section!)</em></p>
-</div>
+<!-- ::: {.center-text} -->
+<!-- [**Solution**]{.body-text-m .teal-text}   -->
+<!-- *(but try not to look during section!)* -->
+<!-- ::: -->
+<p>You’ll get the most out of discussion section if you physically type out the code yourself (rather than copying / pasting)!</p>
 <p><em><strong>Note:</strong> Some of the wrangling in the solution (collapsed, below) may seem a bit superfluous – we’ve included lots of steps to (re)introduce as many of the common wrangling functions as possible, given our data set.</em></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -561,12 +575,6 @@ Complete code for week 1 discussion (fracking)
 </div>
 </div>
 </div>
-</div>
-<section id="supplemental-discussion-materials" class="level3">
-<h3 class="anchored" data-anchor-id="supplemental-discussion-materials">Supplemental discussion materials</h3>
-<p><br></p>
-<div class="center-text">
-<p><a href="https://docs.google.com/presentation/d/1woLc3uKgbnlNfc5qQoEbs4PUEJeYMKajo-YpeYbsaxo/edit#slide=id.p" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> Week 1 discussion slides</a></p>
 </div>
 <p><br></p>
 </section>
