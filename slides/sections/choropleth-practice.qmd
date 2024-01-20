@@ -188,7 +188,8 @@ base_map_proj +
   scale_fill_stepsn(colors = my_palette,
                     breaks = my_breaks,
                     values = scales::rescale(my_breaks)) +
-  custom_guide(type = "b")
+  custom_guide(type = "b") 
+  
 
 
 

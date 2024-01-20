@@ -39,6 +39,7 @@ toc: true
 - **[Subtleties of Color](https://earthobservatory.nasa.gov/blogs/elegantfigures/2013/08/05/subtleties-of-color-part-1-of-6/), by Robert Simmon** -- a 6 part blog post series from NASA Earth Observatory about the use of color to map Earth observation data
 
 ### color pickers & palette generators 
+- **[`{paletteer}`](https://github.com/EmilHvitfeldt/r-color-palettes)**: provides common functions for accessing a near comprehensive list of palettes; be sure to also check out the **[R Color Palettes](https://emilhvitfeldt.github.io/r-color-palettes/) website**, which includes previews of all palettes (clicking on one will reveal the `{paletteer}` code for using it or the associated HEX codes, along with example visualizations)
 - **[Google color picker](https://www.google.com/search?q=google+color+picker&sca_esv=598283965&ei=uVyjZdXpLtL3kPIPhdaOaA&ved=0ahUKEwiVqoat_9uDAxXSO0QIHQWrAw0Q4dUDCBA&uact=5&oq=google+color+picker&gs_lp=Egxnd3Mtd2l6LXNlcnAiE2dvb2dsZSBjb2xvciBwaWNrZXIyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyChAAGEcY1gQYsAMyDRAAGIAEGIoFGEMYsAMyDRAuGIAEGIoFGEMYsANI6QRQAFgAcAF4AZABAJgBAKABAKoBALgBA8gBAOIDBBgAIEGIBgGQBgo&sclient=gws-wiz-serp)** -- a color picker
 - **[htmlcolorcodes.com](https://htmlcolorcodes.com/)** -- a color picker for HTML color codes, Hex color codes, RGB and HSL values
 - **[coolors.co](https://coolors.co/)** -- a super fast color palette generator, that also includes lots of [pre-built palettes](https://coolors.co/palettes/palettes) to draw inspiration from, an [image picker](https://coolors.co/image-picker) to extract colors from your uploaded images, and a [color contrast checker](https://coolors.co/contrast-checker/112a46-acc8e5)
@@ -97,6 +98,7 @@ Definitely don't limit yourself to just `{ggplot2}` creators! There are so many 
 - [Nadieh Bremer](https://www.visualcinnamon.com/)
 - [Mona Chalabi](https://monachalabi.com/)
 - [Sonja Kuijpers](https://www.studioterp.nl)
+- [Lisa Charlotte Muth](https://lisacharlottemuth.com/)
 - [Giorgia Lupi](https://giorgialupi.com/)
 - [Kinga Stryszowska-Hill](https://stryszowskakinga9.wixsite.com/kingastryszowskahill) (who does use R / `{ggplot2}`, among other data visualization tools)
 

@@ -29,7 +29,7 @@ editor_options:
 <p class="custom-subtitle bottombr">{{< fa palette title="a painter's palette" >}} Why do we use color?</p>
 <p class="caption-text">*Spend a couple minutes discussing with your Learning Partners the following:*</p>
 <p class="dark-blue-text">**Why and / or when we use color in data visualizations?**</p>
-<p class="dark-blue-text">**Find an example(s) of a data viz that uses color to convey information to share in #eds-240-data viz. Note some of your own observations about the color choices (i.e. why do you think these colors were chosen?).**</p>
+<p class="dark-blue-text">**Find an example(s) of a data viz that uses color to convey information to share in #eds-240-data viz. Note some of your own observations about the color choices (i.e. why these colors? palette arrangement?).**</p>
 </div>
 
 ```{r}
@@ -100,11 +100,68 @@ You'll probably iterate on them as you sit with your visualization and of course
 
 ## {#color-properties data-menu-title="Color properties"} 
 
-[First, some important definitions:]{.slide-title}
+[What is color?]{.slide-title}
 
 <hr>
 
-Changing **hue** (the pure color), **saturation** (aka chroma; the intensity / purity of a color) and / or **value** (degree of lightness / darkness) can influence how readers perceive information in a data visualization.
+[There are a number of **different color spaces that are used to represent and define color**. [HSV and HSL](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=HSL%20stands%20for%20hue%2C%20saturation,hue%2C%20saturation%2C%20and%20intensity.) are used commonly in color pickers (e.g. [Google color picker](https://www.google.com/search?q=google+color+picker&oq=google+color+picker&gs_lcrp=EgZjaHJvbWUqCggAEAAYsQMYgAQyCggAEAAYsQMYgAQyBggBEEUYQDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDIwMDhqMGo0qAIAsAIA&sourceid=chrome&ie=UTF-8)). [HCL](https://en.wikipedia.org/wiki/HCL_color_space) underlies some default `{ggplot2}` parameters. You don't need to worry much about the underlying theory of color theory / color spaces, but know that **changing any of the parameters (e.g. hue, saturation, etc.) can influence how we perceive information in a data visualization.**]{.body-text-s}
+
+<!-- Changing **hue** (the pure color), **saturation** (aka chroma; the intensity / purity of a color) and / or **value** (degree of lightness / darkness) can influence how readers perceive information in a data visualization. -->
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.center-text .body-text-s .gray-text}
+HSL 
+:::
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week5/hue-sat-val.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Image source: [medium.com](https://medium.com/awkbit/choosing-a-color-scheme-for-your-website-awkbit-59ab750151dc)
+:::
+:::
+
+::: {.column width="50%"}
+::: {.center-text .body-text-s .gray-text}
+HCL
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week5/hcl.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Image source: Stauffer et al. (2015) <https://doi.org/10.1175/BAMS-D-13-00155.1>
+:::
+:::
+
+::::
+
+<!-- --- -->
+
+<!-- ##  {#data-types data-menu-title="# Data types #" background="#047C90"} -->
+
+<!-- <div class="page-center vertical-center"> -->
+<!-- <p class="custom-subtitle bottombr">Different data types require different palette types</p> -->
+<!-- </div> -->
+
+---
+
+## {#palette-types data-menu-title="Palette types"} 
+
+[Different palettes types for different data types]{.slide-title2}
+
+<hr>
 
 <br>
 
@@ -113,95 +170,119 @@ Changing **hue** (the pure color), **saturation** (aka chroma; the intensity / p
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week5/hue-sat-val.png")
+knitr::include_graphics("images/week5/palette-types.png")
 ```
 
-::: {.center-text .body-text-s .gray-text}
-Image source: [medium.com](https://medium.com/awkbit/choosing-a-color-scheme-for-your-website-awkbit-59ab750151dc)
+<br>
+
+::: {.center-text .gray-text .body-text-s}
+Image source: [Which color scale to use when visualizing data](https://blog.datawrapper.de/which-color-scale-to-use-in-data-vis/), by Lisa Charlottte Muth. This is the first article of a 4 part series ([Part 2](https://blog.datawrapper.de/quantitative-vs-qualitative-color-scales/) / [Part 3](https://blog.datawrapper.de/diverging-vs-sequential-color-scales/) / [Part 4](https://blog.datawrapper.de/classed-vs-unclassed-color-scales/)) -- I highly recommend reading!
 :::
 
----
+<!-- 1. **Qualitative (for categorical / discrete data)** -->
+<!-- 2. **Quantitative (for continuous numeric data)** -->
+<!-- 2. **Sequential (for continuous numeric or inherently ordered data)** -->
+<!-- 3. **Diverging (for continuous numeric data with a meaningful central value)** -->
 
-##  {#data-types data-menu-title="# Data types #" background="#047C90"}
+<!-- --- -->
 
-<div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">Different data types require different palette types</p>
-</div>
+<!-- ## {#qual-pal data-menu-title="Qualitative palettes"}  -->
 
----
+<!-- [Palette Types]{.slide-title} -->
 
-## {#palette-types data-menu-title="Palette types"} 
+<!-- <hr> -->
 
-[Three major types of color palette]{.slide-title}
+<!-- 1. **Qualitative (for categorical / discrete data)** -->
 
-<hr>
+<!--     - [colors assigned to each group must be distinct and ideally have different lightnesses (so that they also work in grayscale)]{.body-text-s} -->
+<!--     - [groups don't have an intrinsic order]{.body-text-s} -->
+<!--     - [limit to no more than 7 colors]{.body-text-s} -->
+<!--     - [mainly formed by selecting differet *hues*]{.body-text-s} -->
 
-1. **Qualitative (for categorical / discrete data)**
-2. **Sequential (for continuous numeric or inherently ordered data)**
-3. **Diverging (for continuous numeric data with a meaningful central value)**
+<!-- 2. [**Sequential (for continuous numeric or inherently ordered data)**]{.gray-text} -->
+<!-- 3. [**Diverging (for continuous numeric data with a meaningful central value)**]{.gray-text} -->
 
----
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| fig-align: "center" -->
+<!-- #| out-width: "80%" -->
+<!-- #knitr::include_graphics("images/week5/hcl.png") -->
+<!-- ``` -->
 
-## {#qual-pal data-menu-title="Qualitative palettes"} 
+<!-- ::: {.center-text .body-text-s .gray-text} -->
+<!-- tbd -->
+<!-- ::: -->
 
-[Three major types of color palette]{.slide-title}
+<!-- --- -->
 
-<hr>
+<!-- ## {#seq-pal data-menu-title="Sequential palettes"}  -->
 
-1. **Qualitative (for categorical / discrete data)**
+<!-- [Three major types of color palette]{.slide-title} -->
 
-    - [colors assigned to each group must be distinct]{.body-text-s}
-    - [limit to no more than 7 colors]{.body-text-s}
-    - [mainly formed by selecting differet *hues*]{.body-text-s}
-    
-2. [**Sequential (for continuous numeric or inherently ordered data)**]{.gray-text}
-3. [**Diverging (for continuous numeric data with a meaningful central value)**]{.gray-text}
+<!-- <hr> -->
 
----
+<!-- 1. [**Qualitative (for categorical / discrete data)**]{.gray-text} -->
+<!-- 2. **Sequential (for continuous numeric or inherently ordered data)** -->
 
-## {#seq-pal data-menu-title="Sequential palettes"} 
+<!--     - [colors assigned to data values in a continuum, based on lightness, hue, or both]{.body-text-s} -->
+<!--     - [lower values typically associated with lighter colors & higher values associated with darker colors]{.body-text-s} -->
+<!--     - [can use a single hue (light to dark) *or* two hues (tyipcally a warmer / brighter hue for lower values and cooler / darker hue for higher values)]{.body-text-s} -->
 
-[Three major types of color palette]{.slide-title}
+<!-- 3. [**Diverging (for continuous numeric data with a meaningful central value)**]{.gray-text} -->
 
-<hr>
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| fig-align: "center" -->
+<!-- #| out-width: "80%" -->
+<!-- #knitr::include_graphics("images/week5/hcl.png") -->
+<!-- ``` -->
 
-1. [**Qualitative (for categorical / discrete data)**]{.gray-text}
-2. **Sequential (for continuous numeric or inherently ordered data)**
+<!-- ::: {.center-text .body-text-s .gray-text} -->
+<!-- tbd -->
+<!-- ::: -->
 
-    - [colors assigned to data values in a continuum, based on lightness, hue, or both]{.body-text-s}
-    - [lower values typically associated with lighter colors & higher values associated with darker colors]{.body-text-s}
-    - [can use a single hue (light to dark) *or* two hues (tyipcally a warmer / brighter hue for lower values and cooler / darker hue for higher values)]{.body-text-s}
-    
-3. [**Diverging (for continuous numeric data with a meaningful central value)**]{.gray-text}
+<!-- --- -->
 
----
+<!-- ## {#div-pal data-menu-title="Diverging palettes"}  -->
 
-## {#div-pal data-menu-title="Diverging palettes"} 
+<!-- [Three major types of color palette]{.slide-title} -->
 
-[Three major types of color palette]{.slide-title}
+<!-- <hr> -->
 
-<hr>
+<!-- 1. [**Qualitative (for categorical / discrete data)**]{.gray-text} -->
+<!-- 2. [**Sequential (for continuous numeric or inherently ordered data)**]{.gray-text} -->
+<!-- 3. **Diverging (for continuous numeric data with a meaningful central value)** -->
 
-1. [**Qualitative (for categorical / discrete data)**]{.gray-text}
-2. [**Sequential (for continuous numeric or inherently ordered data)**]{.gray-text}
-3. **Diverging (for continuous numeric data with a meaningful central value)**
+<!--     - [combination of two sequential palettes with a shared endpoint at the central value]{.body-text-s} -->
+<!--     - [use a distinctive hue for each of the component palettes]{.body-text-s} -->
+<!--     - [central value is assigned a light color (light gray is best)]{.body-text-s} -->
 
-    - [combination of two sequential palettes with a shared endpoint at the central value]{.body-text-s}
-    - [use a distinctive hue for each of the component palettes]{.body-text-s}
-    - [central value is assigned a light color (light gray is best)]{.body-text-s}
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| fig-align: "center" -->
+<!-- #| out-width: "80%" -->
+<!-- #knitr::include_graphics("images/week5/hcl.png") -->
+<!-- ``` -->
 
----
+<!-- ::: {.center-text .body-text-s .gray-text} -->
+<!-- tbd -->
+<!-- ::: -->
 
-## {#use-or-make data-menu-title="Use pre-made palettes or create your own"} 
+<!-- --- -->
 
-[You can use pre-existing palettes, or create your own]{.slide-title2}
+<!-- ## {#use-or-make data-menu-title="Use pre-made palettes or create your own"}  -->
 
-<hr>
+<!-- [You can use pre-existing palettes, or create your own]{.slide-title2} -->
 
-Sequential and diverging palettes can be used to map continuous values to color in two different ways:
+<!-- <hr> -->
 
-a. Discrete 
-b. Continuous
+<!-- Sequential and diverging palettes can be used to map continuous values to color in two different ways: -->
+
+<!-- a. Discrete  -->
+<!-- b. Continuous -->
 
 ---
 
@@ -381,7 +462,7 @@ There are a number of different ways to apply `viridis` color scales, but I ofte
 
 ## {#use-viridis data-menu-title="Use viridis"} 
 
-[Use viridis color scales]{.slide-title}
+[Using viridis color scales]{.slide-title}
 
 <hr>
 
@@ -483,9 +564,57 @@ knitr::include_graphics("images/week5/brewer-colorblind.png")
 
 ---
 
+## {#color-brewer-pal data-menu-title="Show RColorBrewer palette"} 
+
+[Alternative: RColorBrewer]{.slide-title}
+
+<hr>
+
+<br>
+
+`{RColorBrewer}` comes with a couple useful functions for quickly viewing and assembling your palette HEX codes: 
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.center-text .gray-text .body-text-s}
+Preview a palette with your number of desired colors:
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+RColorBrewer::display.brewer.pal(n = 4, name = 'Dark2')
+```
+
+:::
+
+::: {.column width="50%"}
+::: {.center-text .gray-text .body-text-s}
+Print the HEX codes of your palette:
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+RColorBrewer::brewer.pal(n = 4, name = 'Dark2')
+```
+
+:::
+
+::::
+
+---
+
 ## {#use-RColorBrewer data-menu-title="Use RColorBrewer"} 
 
-[Use RColorBrewer color palettes]{.slide-title}
+[Using RColorBrewer color palettes]{.slide-title}
 
 <hr>
 
@@ -609,7 +738,7 @@ Figure 2 from Apigo A and Oono R (2022) Plant abundance, but not plant evolution
 
 ---
 
-##  {#premade-palettes data-menu-title="# Pre-made palettes #" background="#047C90"}
+##  {#premade-palettes data-menu-title="# Additional palette packages#" background="#047C90"}
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">There are *so many* great pre-made color palettes to explore, many of which take into consideration color vision deficiencies (but always double check!)</p>
@@ -617,11 +746,162 @@ Figure 2 from Apigo A and Oono R (2022) Plant abundance, but not plant evolution
 
 ---
 
-## {#color-palette-packages data-menu-title="Color palette packages"} 
+## {#paletteer data-menu-title="Paletteer"} 
 
-[Here are just a few color palette packages to start exploring!]{.slide-title3}
+[Use paletteer to access TONS of palettes]{.slide-title2}
 
 <hr>
+
+[It would be impossible to list out on one slide all the palette packages available for use, but the [`{paletteer}` package](https://emilhvitfeldt.github.io/paletteer/) gets close to doing just that -- it provides **a common interface for accessing a near comprehensive list of palettes (over 2,000!!) across various packages**. A couple options:]{.body-text-s}
+
+- [Use it to **generate a list of HEX codes** from any of the supported palette packages using one of [three functions](https://emilhvitfeldt.github.io/paletteer/#examples): `paletteer_c()`, `paletteer_d()`, `paletteer_dynamic()`]{.body-text-s}
+- [Use it to **apply a palette directly to your ggplot** using one of [three scaling functions](): `scale_*_paletteer_c()`, `scale_*_paletteer_d()`, `scale_*_paletteer_binned()`]{.body-text-s}
+
+. . . 
+
+:::: {.columns
+}
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s .gray-text}
+Find most palettes on the **[R Color Palettes](https://emilhvitfeldt.github.io/r-color-palettes/) website**
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "50%"
+knitr::include_graphics("images/week5/r-color-palettes.png")
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s .gray-text}
+Click on any palette for more information & example plots 
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "50%"
+knitr::include_graphics("images/week5/wesanderson.png")
+```
+:::
+
+::::
+
+---
+
+## {#try-paletteer data-menu-title="Try paletteer"} 
+
+[Give `{paletteer}` a try (or use any package directly)!]{.slide-title3}
+
+<hr>
+
+Update the colors of the plots below, either by using the `{paletteer}` package *or* by following the documentation for any specific package. It's helpful to start by looking over the [list of supported packages](https://emilhvitfeldt.github.io/paletteer/#included-packages).
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "90%"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point(size = 4, alpha = 0.8) 
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "590%"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
+  geom_point(size = 4, alpha = 0.8) 
+```
+:::
+
+::::
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#try-paletteer-ex data-menu-title="Try paletteer (examples)"} 
+
+[Examples]{.slide-title}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.center-text .gray-text .body-text-s}
+**superbloom3** palette from [`{calecopal}`](https://github.com/an-bui/calecopal), applied using the `paletteer::scale_color_paletteer_d()`
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "90%"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point(size = 4, alpha = 0.8) +
+  paletteer::scale_color_paletteer_d("calecopal::superbloom3")
+```
+:::
+
+::: {.column width="50%"}
+::: {.center-text .gray-text .body-text-s}
+**WindCave** palette from [`{NatParksPalette}`](https://github.com/kevinsblake/NatParksPalettes), created using `{NatParksPalette}` & applied using `scale_color_gradientn()`
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "590%"
+library(palmerpenguins)
+library(tidyverse)
+
+my_parks_palette <- NatParksPalettes::natparks.pals(name = "WindCave", n = 20, type = "continuous")
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
+  geom_point(size = 4, alpha = 0.8) +
+  scale_color_gradientn(colors = rev(my_parks_palette))
+```
+:::
+
+::::
 
 ---
 
@@ -1330,7 +1610,7 @@ Be sure to consider what we've already discussed:
 And also consider some other important sources of inspiration: 
 
 - [your company or organization's brand / logo]{.body-text-s}
-- [steal colors from your favorite / relevant images using [Color Theif](https://lokeshdhakar.com/projects/color-thief/)]{.body-text-s}
+- [steal colors from your favorite / relevant images using tools like [Color Thief](https://lokeshdhakar.com/projects/color-thief/)]{.body-text-s}
 - [use a randomized palette generator, like [coolers.co](https://coolors.co/?home) {{< fa arrow-right title="an arrow pointing to the right" >}}]{.body-text-s}
 :::
 
@@ -1349,23 +1629,23 @@ knitr::include_graphics("images/week5/coolers.png")
 
 ## {#apply-palettes data-menu-title="Applying your palette"} 
 
-[Some common functions for mapping colors]{.slide-title2}
+[Some common functions for scaling colors]{.slide-title2}
 
 <hr>
 
-**For discrete / categorical data:**
+**For qualitative (categorical) data:**
 
 - [`scale_*_manual()`]{.body-text-s}
 
-**For continuous data:**
+**For quantitative (numeric) data:**
 
-Sequential palettes:
+Unclassed palettes:
 
 - [`scale_*_gradient()`: creates a two color gradient (low-high)]{.body-text-s}
 - [`scale_*_gradient2()`: creates a diverging color gradient (low-mid-high)]{.body-text-s}
 - [`scale_*_gradientn()`: creates a n-color gradient]{.body-text-s}
 
-Binned palettes:
+Classed palettes:
 
 - [`scale_*steps()`: creates a two color binned gradient (low-high)]{.body-text-s}
 - [`scale_*_steps2()`: creates a diverging binned color gradient (low-mid-high)]{.body-text-s}
@@ -1391,7 +1671,7 @@ Binned palettes:
 my_palette <- c("#32DE8A", "#E36414", "#0F4C5C")
 ```
 
-[Here, we map our colors to a categorical variable (sex) using `scale_color_manual()`:]{.body-text-s}
+[Here, we scale our colors for a categorical variable (species) using `scale_color_manual()`:]{.body-text-s}
 
 ```{r}
 #| eval: true
@@ -1564,6 +1844,66 @@ penguins |>
 :::
 
 ::::
+
+---
+
+## {#create-palette data-menu-title="Create your own palette"} 
+
+[Create your own palettes!]{.slide-title}
+
+<hr>
+
+Create your own palettes and use them to scale colors in the plots below: 
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "90%"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point(size = 4, alpha = 0.8) 
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "590%"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
+  geom_point(size = 4, alpha = 0.8) 
+```
+:::
+
+::::
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
 
 ---
 
@@ -1795,11 +2135,43 @@ knitr::include_graphics("images/week5/low-high-choropleth.png")
 
 ## {#gradient-high-low data-menu-title="Bright = high, dark = low"} 
 
-[Except in some cases...]{.slide-title}
+[Except in some cases. . .]{.slide-title}
 
 <hr>
 
-bright colors associated with elevation 
+>"humans perceive bright colors on elevation maps to represent a high altitude, with darker colors representing naturally low-lying and shady areas like valley" (Cédric Scherer, [Colors and Emotions in Data Visualization](https://www.cedricscherer.com/2021/06/08/colors-and-emotions-in-data-visualization/#:~:text=Dark%20and%20saturated%20colors%20are,perceived%20differently%20in%20different%20cultures.)) 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/shasta.png")
+```
+
+::: {.center-text .body-text-s .gray-test}
+Filled contour plot of Mt. Shasta. Image source: [EarthLab](https://www.earthdatascience.org/tutorials/visualize-digital-elevation-model-contours-matplotlib/)
+:::
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%"
+knitr::include_graphics("images/week5/pohnpei.png")
+```
+
+::: {.center-text .body-text-s .gray-test}
+USGS Digital Elevation Model of Pohnpei (Micronesia). Image source: [PacIOOS](https://www.pacioos.hawaii.edu/voyager-news/digital-elevation-models/)
+:::
+:::
+
+::::
 
 ---
 
@@ -1935,6 +2307,8 @@ some examples here
 can be tricky to get right 
 
 you'll often have to think critically about classifying yourd ata
+
+https://blog.datawrapper.de/classed-vs-unclassed-color-scales/
 
 ---
 
