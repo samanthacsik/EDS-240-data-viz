@@ -45,3 +45,8 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
   - [ ] we (your instructors) should be able to successfully render `SR1-precourse-reflection.qmd` locally without error, *however* **do not push any html files to GitHub** (i.e. `SR1-precourse-reflection.html` and `SR1-precourse-reflection_files/`; consider adding these to your `.gitignore` so that you don't accidentally push them)
   - [ ] push your completed `SR1-precourse-reflection.qmd` to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/13/2024
 
+<!-- <br> -->
+
+<!-- ::: {.center-text .body-text-m} -->
+<!-- **GitHub Classroom URL: <https://classroom.github.com/a/t8oAcbbP>** -->
+<!-- ::: -->

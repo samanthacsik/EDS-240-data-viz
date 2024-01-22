@@ -216,7 +216,7 @@ mko_clean <- mko |>
   # keep only necessary columns ----
   select(year, month, day, decimal_time, Temp_bot, Temp_top, Temp_mid) |>
 
-  # create datetime column ----
+  # create datetime column (not totally necessary for our plots, but it can helpful to know how to do this!) ----
   unite(date, year, month, day, sep = "-", remove = FALSE) |>
   mutate(time = chron::times(decimal_time)) |>
   unite(date_time, date, time, sep = " ") |>
@@ -241,8 +241,8 @@ mko_clean <- mko |>
 #......................explore missing data......................
 
 # counts and percentage of missing data by year ----
-see_NAs <- mko_clean %>%
-  group_by(year) %>%
+see_NAs <- mko_clean |> 
+  group_by(year) |> 
   naniar::miss_var_summary() |>
   filter(variable == "Temp_bot")
 
@@ -566,7 +566,7 @@ mko_clean |>
 
 . . . 
 
-**Density plots** show the **proportion** of values in each range (area under the curve equal 1; peaks indicate where more values are concentrated, but it does *not* tell us anything about the *the number* observations). 
+**Density plots** show the **proportion** of values in each range (area under the curve equal 1; peaks indicate where more values are concentrated, but it does *not* tell us anything about the *the number* of observations). 
 
 . . . 
 

@@ -472,3 +472,9 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 :::
 
 <br>
+
+<!-- <br> -->
+
+<!-- ::: {.center-text .body-text-m} -->
+<!-- **GitHub Classroom URL: <https://classroom.github.com/a/uVzN9LMg>** -->
+<!-- ::: -->

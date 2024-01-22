@@ -178,12 +178,12 @@ You'll get the most out of discussion section if you physically type out the cod
 
 ## Assignment Reminders
 
-| Assignment Type | Assignment Title         | Date Assigned  | Date Due                   |
-|:---------------:|--------------------------|----------------|----------------------------|
-| EOC             | EOC (week 3)             | Mon 01/22/2024 | Mon 01/22/2024, 11:55pm PT |
-| HW              | Homework Assignment #2   | Mon 01/22/2024 | Sat 02/03/2024, 11:59pm PT |
+<!-- | Assignment Type | Assignment Title         | Date Assigned  | Date Due                   | -->
+<!-- |:---------------:|--------------------------|----------------|----------------------------| -->
+<!-- | EOC             | EOC (week 3)             | Mon 01/22/2024 | Mon 01/22/2024, 11:55pm PT | -->
+<!-- | HW              | Homework Assignment #2   | Mon 01/22/2024 | Sat 02/03/2024, 11:59pm PT | -->
 
-<!-- | Assignment Type | Assignment Title                                     | Date Assigned  | Date Due                   | -->
-<!-- |:---------------:|------------------------------------------------------|----------------|----------------------------| -->
-<!-- | EOC             | [EOC (week 3)](https://forms.gle/2BockakcBR7rsm26A)  | Mon 01/22/2024 | Mon 01/22/2024, 11:55pm PT | -->
-<!-- | HW              | [Homework Assignment #2](../assignments/HW2.qmd)     | Mon 01/22/2024 | Sat 02/03/2024, 11:59pm PT | -->
+| Assignment Type | Assignment Title                                     | Date Assigned  | Date Due                   |
+|:---------------:|------------------------------------------------------|----------------|----------------------------|
+| EOC             | [EOC (week 3)](https://forms.gle/2BockakcBR7rsm26A)  | Mon 01/22/2024 | Mon 01/22/2024, 11:55pm PT |
+| HW              | [Homework Assignment #2](../assignments/HW2.qmd)     | Mon 01/22/2024 | Sat 02/03/2024, 11:59pm PT |

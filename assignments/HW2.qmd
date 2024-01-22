@@ -204,3 +204,10 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 {{< fa chart-column title="A column chart" >}} End Part II {{< fa chart-area title="An area chart" >}}
 :::
 
+<!-- <br> -->
+
+<!-- ::: {.center-text .body-text-m} -->
+<!-- **GitHub Classroom URL: <https://classroom.github.com/a/bb_tAOlI>** -->
+<!-- ::: -->
+
+
