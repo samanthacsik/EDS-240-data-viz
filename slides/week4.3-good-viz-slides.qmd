@@ -707,8 +707,24 @@ knitr::include_graphics("images/week4/neil-with-annotations.png")
 ::::
 
 ::: {.center-text .gray-text .body-text-s}
-[Is white space always your friend](https://questionsindataviz.com/2018/01/06/is-white-space-always-your-friend/), by Neil Richards
+[Is white space always your friend?](https://questionsindataviz.com/2018/01/06/is-white-space-always-your-friend/), by Neil Richards
 :::
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
 
 ---
 

@@ -7,7 +7,7 @@ title-block-banner: true
 
 ## Description 
 
-In this assignment, you’ll reflect on your learning throughout this class. Revisit your self-evaluations from the start and middle of the quarter,  and answer the following questions:
+In this assignment, you’ll reflect on your learning throughout this class. Revisit your self-evaluations from the start and middle of the quarter,  and answer the following questions in [**2-6 sentences**]{.peach-text} each:
 
 - [ ] Since your mid-quarter self-evaluation, have you improved any of your existing skills? Have you learned new ones?
 - [ ] Have you accomplished your learning goals for this quarter (that you set at the beginning of the quarter)? If you did, how did you do it?
@@ -24,8 +24,7 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 **Complete the following steps in your GitHub Classroom repo (eds240-SR3/SR3-endcourse-reflection.qmd):**
 
 - [ ] include your preferred name, and if you feel comfortable, your preferred pronouns in the `title` of the `SR3-endcourse-reflection.qmd` YAML 
-- [ ] be ~300-400 words
-- [ ] address the 6 topics above (but please feel free to expand on these if you would like)
+- [ ] address each question in at least 2-6 sentences (but please feel free to expand on any of these, if you'd like)
 - [ ] push `SR3-endcourse-reflection.qmd` to GitHub using GitHub Classrooms by 11:59pm PT on Sat 03/16/2024
 
-Additionally, please complete the ESCI evaluations associated with this course (EDS 240) for both the instructor (Sam Csik) and TA (tbd) by the deadline (Friday, 03/15/2024).
+Additionally, please complete the ESCI evaluations associated with this course (EDS 240) for both the instructor (Sam Csik) and TA (Sevan Esaian) by the deadline (Friday, 03/15/2024).

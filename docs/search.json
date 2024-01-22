@@ -1313,7 +1313,7 @@
     "href": "slides/week4.3-good-viz-slides.html#use-annotations-neil",
     "title": "EDS 240",
     "section": "",
-    "text": "Use annotations to improve readability / interpretability\n\nIs the y-axis necessary for this plot? What’s the author’s goal? How do annotations help achieve that goal?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIs white space always your friend, by Neil Richards"
+    "text": "Use annotations to improve readability / interpretability\n\nIs the y-axis necessary for this plot? What’s the author’s goal? How do annotations help achieve that goal?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIs white space always your friend?, by Neil Richards\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/week4.3-good-viz-slides.html#use-annotations-covid",
@@ -2181,21 +2181,21 @@
     "href": "assignments/SR2-midcourse.html",
     "title": "Mid-course reflection (SR #2)",
     "section": "",
-    "text": "In this assignment, you’ll be writing about your learning throughout this course so far. Remember that these assignments are opportunities for you to reflect on your own progress in the course.\nReread your responses to your Pre-course reflection (SR #1) to refresh your memory, and answer the following questions in 2-3 sentences:\n\nHow have you progressed towards your learning goals for this course?\nWhat skills are you proud of developing?\nIf you’ve needed help, how have you sought it out? If you haven’t sought out help, why not?\nLooking forward, how have your learning goals changed? Have they stayed the same?\nWhat topics have excited you the most (so far)? Have you spent time or efforts outside of class and/or the assignments diving deeper into any of these topics? If yes, what did you learn?\nHow would you change the structure of this course, if at all? If you wouldn’t, what in particular has been working for you?\nIs there anything about this course that you are really enjoying? Anything that isn’t working for you?\nWhat else would you like me to know about your experience in the course thus far?"
+    "text": "In this assignment, you’ll be writing about your learning throughout this course so far. Remember that these assignments are opportunities for you to reflect on your own progress in the course.\nReread your responses to your Pre-course reflection (SR #1) to refresh your memory, and answer the following questions in 2-6 sentences each:\n\nHow have you progressed towards your learning goals for this course?\nWhat skills are you proud of developing?\nIf you’ve needed help, how have you sought it out? If you haven’t sought out help, why not?\nLooking forward, how have your learning goals changed? Have they stayed the same?\nWhat topics have excited you the most (so far)? Have you spent time or efforts outside of class and/or the assignments diving deeper into any of these topics? If yes, what did you learn?\nHow would you change the structure of this course, if at all? If you wouldn’t, what in particular has been working for you?\nIs there anything about this course that you are really enjoying? Anything that isn’t working for you?\nWhat else would you like me to know about your experience in the course thus far?"
   },
   {
     "objectID": "assignments/SR2-midcourse.html#description",
     "href": "assignments/SR2-midcourse.html#description",
     "title": "Mid-course reflection (SR #2)",
     "section": "",
-    "text": "In this assignment, you’ll be writing about your learning throughout this course so far. Remember that these assignments are opportunities for you to reflect on your own progress in the course.\nReread your responses to your Pre-course reflection (SR #1) to refresh your memory, and answer the following questions in 2-3 sentences:\n\nHow have you progressed towards your learning goals for this course?\nWhat skills are you proud of developing?\nIf you’ve needed help, how have you sought it out? If you haven’t sought out help, why not?\nLooking forward, how have your learning goals changed? Have they stayed the same?\nWhat topics have excited you the most (so far)? Have you spent time or efforts outside of class and/or the assignments diving deeper into any of these topics? If yes, what did you learn?\nHow would you change the structure of this course, if at all? If you wouldn’t, what in particular has been working for you?\nIs there anything about this course that you are really enjoying? Anything that isn’t working for you?\nWhat else would you like me to know about your experience in the course thus far?"
+    "text": "In this assignment, you’ll be writing about your learning throughout this course so far. Remember that these assignments are opportunities for you to reflect on your own progress in the course.\nReread your responses to your Pre-course reflection (SR #1) to refresh your memory, and answer the following questions in 2-6 sentences each:\n\nHow have you progressed towards your learning goals for this course?\nWhat skills are you proud of developing?\nIf you’ve needed help, how have you sought it out? If you haven’t sought out help, why not?\nLooking forward, how have your learning goals changed? Have they stayed the same?\nWhat topics have excited you the most (so far)? Have you spent time or efforts outside of class and/or the assignments diving deeper into any of these topics? If yes, what did you learn?\nHow would you change the structure of this course, if at all? If you wouldn’t, what in particular has been working for you?\nIs there anything about this course that you are really enjoying? Anything that isn’t working for you?\nWhat else would you like me to know about your experience in the course thus far?"
   },
   {
     "objectID": "assignments/SR2-midcourse.html#rubric-specifications",
     "href": "assignments/SR2-midcourse.html#rubric-specifications",
     "title": "Mid-course reflection (SR #2)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this Mid-course reflection:\nComplete the following steps in your GitHub Classroom repo (eds240-SR2/SR2-midcourse-reflection.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the title of the SR1-precourse-reflection.qmd YAML\naddress the 8 topics above (but please feel free to expand on these if you would like)\npush SR2-midcourse-reflection.qmd to GitHub using GitHub Classrooms by 11:59pm PT on Sat 02/10/2024"
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this Mid-course reflection:\nComplete the following steps in your GitHub Classroom repo (eds240-sr2/SR2-midcourse-reflection.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the title of the SR1-precourse-reflection.qmd YAML\naddress each question in at least 2-6 sentences (but please feel free to expand on any of these, if you’d like)\npush SR2-midcourse-reflection.qmd to GitHub using GitHub Classrooms by 11:59pm PT on Sat 02/10/2024"
   },
   {
     "objectID": "assignments/HW4.html#rubric-specifications",
@@ -2352,32 +2352,46 @@
     "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part II:\nComplete the following step under your own personal GitHub profile, not in GitHub Classrooms:\n\ncreate a GitHub repository named lastName-eds240-HW4, which is where you’ll be doing any / all work related to Assignment #4. Be sure to make your repository public, initialize your repository with a README, and add a .gitignore file.\nadd Sam and Sevan as collaborators on your repo (on GitHub: Settings &gt; Collaborators &gt; Add people; our user names are samanthacsik and SevanEsaian)\nadd your repository’s URL next to your name on this Google Sheet\n\nComplete the following steps in your GitHub Classroom repo (eds240-hw1-USERNAME/Part2.qmd):\n\nlink to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4\nanswer all parts of the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you do not need to complete the optional importing of data – if you do want to practice importing your data, be sure to do so in your lastName-eds240-HW4 repository\nwe (your instructors) should be able to successfully render Part2.qmd locally without errors, however do not push any html files to GitHub (i.e. Part2.html and Part2_files/; consider adding these to your .gitignore so that you don’t accidentally push them) – only push Part2.qmd\npush your completed Part2.qmd to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024\n\n\n\n End Part II"
   },
   {
+    "objectID": "assignments/HW3.html",
+    "href": "assignments/HW3.html",
+    "title": "Assignment #3 (HW #3)",
+    "section": "",
+    "text": "You must earn a “Satisfactory” mark for Part I only to earn a “Satisfactory” mark for Assignment #3 – Part II is optional extra practice (will not be graded) in case you’re looking for some additional practice.\nNOTE: Assignments are to be submitted via GitHub Classrooms, unless otherwise noted. Each student receives one “free pass” for not submitting assignments via specified channels, after which you will receive a “Not Yet” mark.\nRead each part of the assignment carefully, and use the check boxes to ensure you’ve addressed all elements of the assignment!"
+  },
+  {
+    "objectID": "assignments/HW3.html#description",
+    "href": "assignments/HW3.html#description",
+    "title": "Assignment #3 (HW #3)",
+    "section": "Description",
+    "text": "Description"
+  },
+  {
     "objectID": "assignments/HW3.html#rubric-specifications",
     "href": "assignments/HW3.html#rubric-specifications",
     "title": "Assignment #3 (HW #3)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #3:\nprovide students with a poorly-made ggplot (bad color choices, text, arrangement of groups, etc.). provide data set. students should wrangle and recreate the plot with improvements to aesthetics. also should add at least one additional improvement (e.g. annotations, etc.)"
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #3:\nprovide students with a poorly-made ggplot (bad color choices, text, arrangement of groups, etc.). provide data set. students should wrangle and recreate the plot with improvements to aesthetics. also should add at least one additional improvement (e.g. annotations, etc.) ? maybe only have 1 part this assignment (working with own data & drafting plots)"
   },
   {
     "objectID": "assignments/SR3-endcourse.html",
     "href": "assignments/SR3-endcourse.html",
     "title": "End-of-course reflection (SR #3)",
     "section": "",
-    "text": "In this assignment, you’ll reflect on your learning throughout this class. Revisit your self-evaluations from the start and middle of the quarter, and answer the following questions:\n\nSince your mid-quarter self-evaluation, have you improved any of your existing skills? Have you learned new ones?\nHave you accomplished your learning goals for this quarter (that you set at the beginning of the quarter)? If you did, how did you do it?\nWhat are you proudest of accomplishing in this course?\nWhat are some transferable skills that you developed in this course? How might you apply them to other courses / deliverables within the MEDS program or jobs in the future?\nWhat is one thing that you really liked about this course, and why? What is one thing you think could be improved about this course, and how?\nIs there anything else you’d like the instructors to know about your experience in the course?"
+    "text": "In this assignment, you’ll reflect on your learning throughout this class. Revisit your self-evaluations from the start and middle of the quarter, and answer the following questions in 2-6 sentences each:\n\nSince your mid-quarter self-evaluation, have you improved any of your existing skills? Have you learned new ones?\nHave you accomplished your learning goals for this quarter (that you set at the beginning of the quarter)? If you did, how did you do it?\nWhat are you proudest of accomplishing in this course?\nWhat are some transferable skills that you developed in this course? How might you apply them to other courses / deliverables within the MEDS program or jobs in the future?\nWhat is one thing that you really liked about this course, and why? What is one thing you think could be improved about this course, and how?\nIs there anything else you’d like the instructors to know about your experience in the course?"
   },
   {
     "objectID": "assignments/SR3-endcourse.html#description",
     "href": "assignments/SR3-endcourse.html#description",
     "title": "End-of-course reflection (SR #3)",
     "section": "",
-    "text": "In this assignment, you’ll reflect on your learning throughout this class. Revisit your self-evaluations from the start and middle of the quarter, and answer the following questions:\n\nSince your mid-quarter self-evaluation, have you improved any of your existing skills? Have you learned new ones?\nHave you accomplished your learning goals for this quarter (that you set at the beginning of the quarter)? If you did, how did you do it?\nWhat are you proudest of accomplishing in this course?\nWhat are some transferable skills that you developed in this course? How might you apply them to other courses / deliverables within the MEDS program or jobs in the future?\nWhat is one thing that you really liked about this course, and why? What is one thing you think could be improved about this course, and how?\nIs there anything else you’d like the instructors to know about your experience in the course?"
+    "text": "In this assignment, you’ll reflect on your learning throughout this class. Revisit your self-evaluations from the start and middle of the quarter, and answer the following questions in 2-6 sentences each:\n\nSince your mid-quarter self-evaluation, have you improved any of your existing skills? Have you learned new ones?\nHave you accomplished your learning goals for this quarter (that you set at the beginning of the quarter)? If you did, how did you do it?\nWhat are you proudest of accomplishing in this course?\nWhat are some transferable skills that you developed in this course? How might you apply them to other courses / deliverables within the MEDS program or jobs in the future?\nWhat is one thing that you really liked about this course, and why? What is one thing you think could be improved about this course, and how?\nIs there anything else you’d like the instructors to know about your experience in the course?"
   },
   {
     "objectID": "assignments/SR3-endcourse.html#rubric-specifications",
     "href": "assignments/SR3-endcourse.html#rubric-specifications",
     "title": "End-of-course reflection (SR #3)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this End-of-course reflection:\nComplete the following steps in your GitHub Classroom repo (eds240-SR3/SR3-endcourse-reflection.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the title of the SR3-endcourse-reflection.qmd YAML\nbe ~300-400 words\naddress the 6 topics above (but please feel free to expand on these if you would like)\npush SR3-endcourse-reflection.qmd to GitHub using GitHub Classrooms by 11:59pm PT on Sat 03/16/2024\n\nAdditionally, please complete the ESCI evaluations associated with this course (EDS 240) for both the instructor (Sam Csik) and TA (tbd) by the deadline (Friday, 03/15/2024)."
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this End-of-course reflection:\nComplete the following steps in your GitHub Classroom repo (eds240-SR3/SR3-endcourse-reflection.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the title of the SR3-endcourse-reflection.qmd YAML\naddress each question in at least 2-6 sentences (but please feel free to expand on any of these, if you’d like)\npush SR3-endcourse-reflection.qmd to GitHub using GitHub Classrooms by 11:59pm PT on Sat 03/16/2024\n\nAdditionally, please complete the ESCI evaluations associated with this course (EDS 240) for both the instructor (Sam Csik) and TA (Sevan Esaian) by the deadline (Friday, 03/15/2024)."
   },
   {
     "objectID": "getting-unstuck.html",

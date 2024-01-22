@@ -9,23 +9,23 @@ title-block-banner: true
 
 In this assignment, you’ll be writing about your learning throughout this course so far. Remember that these assignments are opportunities for you to reflect on your own progress in the course. 
 
-Reread your responses to your Pre-course reflection (SR #1) to refresh your memory, and answer the following questions in 2-3 sentences:
+Reread your responses to your Pre-course reflection (SR #1) to refresh your memory, and answer the following questions in [**2-6 sentences**]{.peach-text} each:
 
-- [ ] How have you progressed towards your learning goals for this course?
-- [ ] What skills are you proud of developing?
+- [ ] How have you progressed towards your learning goals for this course? 
+- [ ] What skills are you proud of developing? 
 - [ ] If you’ve needed help, how have you sought it out? If you haven’t sought out help, why not?
-- [ ] Looking forward, how have your learning goals changed? Have they stayed the same?
+- [ ] Looking forward, how have your learning goals changed? Have they stayed the same? 
 - [ ] What topics have excited you the most (so far)? Have you spent time or efforts outside of class and/or the assignments diving deeper into any of these topics? If yes, what did you learn?
 - [ ] How would you change the structure of this course, if at all? If you wouldn’t, what in particular has been working for you?
-- [ ] Is there anything about this course that you are really enjoying? Anything that isn’t working for you?
-- [ ] What else would you like me to know about your experience in the course thus far?
+- [ ] Is there anything about this course that you are really enjoying? Anything that isn’t working for you? 
+- [ ] What else would you like me to know about your experience in the course thus far? 
 
 ## Rubric (specifications)
 
 You must complete the following, as detailed below, to receive a "Satisfactory" mark for this Mid-course reflection:
 
-**Complete the following steps in your GitHub Classroom repo (eds240-SR2/SR2-midcourse-reflection.qmd):**
+**Complete the following steps in your GitHub Classroom repo (eds240-sr2/SR2-midcourse-reflection.qmd):**
 
   - [ ] include your preferred name, and if you feel comfortable, your preferred pronouns in the `title` of the `SR1-precourse-reflection.qmd` YAML 
-  - [ ] address the 8 topics above (but please feel free to expand on these if you would like)
+  - [ ] address each question in at least 2-6 sentences (but please feel free to expand on any of these, if you'd like)
   - [ ] push `SR2-midcourse-reflection.qmd` to GitHub using GitHub Classrooms by 11:59pm PT on Sat 02/10/2024

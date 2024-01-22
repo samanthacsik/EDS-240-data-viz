@@ -779,7 +779,7 @@ Example adapted from [Meghan Hall](https://meghan.rbind.io/)'s CMU 36-315 [Lectu
 ggplot(mko_clean, aes(x = Temp_bot, y = month_name, fill = after_stat(x))) +
   ggridges::geom_density_ridges_gradient(rel_min_height = 0.01, scale = 3) +
   scale_y_discrete(limits = rev(month.name)) +
-  scale_fill_gradientn(colors = c("#2C5374","#778798", "#ADD8E6", "#EF8080", "#8B3A3A"))
+  scale_fill_gradientn(colors = c("#2C5374","#849BB4", "#D9E7EC", "#EF8080", "#8B3A3A"))
 ```
 :::
 
