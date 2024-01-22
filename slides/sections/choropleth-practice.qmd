@@ -39,9 +39,19 @@ precip_counties <- read_csv(here::here("slides", "data", "county-precip-oct2023.
 
 #..............update names of counties df variables.............
 us_counties <- counties |> 
-  select(state = region, county = subregion, long, lat, group, order)
+  select(state = region, county = subregion, long, lat, group, order) |> 
+  mutate(county = str_to_title(county),
+         state = str_to_title(state)) |> 
+  mutate(county = str_replace(string = county, pattern = "St ", replacement = "St. ")) |> 
+  mutate(county = case_when(
+    county == "De Kalb" ~ "DeKalb",
+    TRUE ~ county
+  ))
+  # mutate(county = case_when(
+  #   county == "De kalb" ~ "DeKalb",
+  #   TRUE ~ county
+  # ))
 
-  
 #..........clean precip data & make sure var names match.........
 precip_counties_wrangled <- precip_counties |> 
   
@@ -49,15 +59,16 @@ precip_counties_wrangled <- precip_counties |>
   rename(county = name) |> 
   
   # convert count and state names to all lowercase ----
-  mutate(county = str_to_lower(county),
-         state = str_to_lower(state)) |> 
+  # mutate(county = str_to_lower(county),
+  #        state = str_to_lower(state)) |> 
   
   # remove the word "county" from all county names ----
-  mutate(county = str_remove(county, pattern = " county")) |> 
+  mutate(county = str_remove(county, pattern = " County")) |> 
   
+
   # remove the word "parish" from the end of Louisiana counties ----
   # NOTE: there are more counties that need cleaning for seamless joining with `us_counties` df; I've don't done a complete sweep of the data, so you'll notice data gaps once plotted
-  mutate(county = str_remove(county, pattern = " parish")) |> 
+  mutate(county = str_remove(county, pattern = " Parish")) |> 
   
   # # add col denoting if Oct precip is above or below 1901 - 2000 mean
   # mutate(comp_mean = ifelse(value > x1901_2000_mean, # if `value` > `x1901_2000_mean`
@@ -69,6 +80,22 @@ precip_counties_wrangled <- precip_counties |>
   
   # make precip var numeric (was chr) ----
   mutate(precip = as.numeric(precip))
+
+
+####################
+
+unique_us_counties <- us_counties |> 
+  distinct(state, county)
+
+unique_precip_counties <- precip_counties_wrangled |> 
+  distinct(state, county)
+
+missing_from_us_counties <- anti_join(unique_precip_counties, unique_us_counties) |> 
+  rename(county_in_us = county)
+missing_from_precip_counties <- anti_join(unique_us_counties, unique_precip_counties) |> 
+  rename(county_in_precip = county)
+
+######################
 
 #............................join dfs............................
 joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties)

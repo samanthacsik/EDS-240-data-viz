@@ -37,36 +37,101 @@ precip_counties <- read_csv(here::here("slides", "data", "county-precip-oct2023.
 
 #..............update names of counties df variables.............
 us_counties <- counties |> 
-  select(state = region, county = subregion, long, lat, group, order)
-
   
+  # select / rename cols of interest ----
+  select(state = region, county = subregion, long, lat, group, order) |> 
+  
+  # make all county & state names Title Case ----
+  mutate(county = str_to_title(county),
+         state = str_to_title(state)) |> 
+  
+  # fix different spellings so that they match county names in precip data ----
+  mutate(county = case_when(
+    county == "De Kalb" ~ "DeKalb",
+    county == "De Soto" ~ "DeSoto", # works for FL & MI
+    county == "Du Page" ~ "DuPage",
+    county == "La Porte" ~ "LaPorte",
+    county == "Obrien" ~ "O'Brien",
+    county == "Prince Georges" ~ "Prince George's",
+    county == "Queen Annes" ~ "Queen Anne's",
+    county == "Ste Genevieve" ~ "Ste. Genevieve",
+    county == "La Moure" ~ "LaMoure",
+    state == "Texas" & county == "De Witt" ~ "DeWitt",
+    # county == "St. Marys" ~ "St. Mary's", # isn't working??
+    TRUE ~ county
+    )) |> 
+  mutate(county = str_replace(string = county, pattern = "St ", replacement = "St. ")) |> 
+  
+  # remove DC & Yellowstone National Park ----
+  filter(!state %in% c("District Of Columbia")) |> 
+  filter(!county %in% c("Yellowstone National"))
+
+
 #..........clean precip data & make sure var names match.........
 precip_counties_wrangled <- precip_counties |> 
   
-  # more intuitive column name ----
+  # more intuitive col name ----
   rename(county = name) |> 
   
-  # convert count and state names to all lowercase ----
+  # make all county & state names lower case ----
   mutate(county = str_to_lower(county),
-         state = str_to_lower(state)) |> 
+         state = str_to_lower(state)) |>
   
-  # remove the word "county" from all county names ----
-  mutate(county = str_remove(county, pattern = " county")) |> 
+  # remove recurring patterns ----
+  mutate(county = str_remove(county, pattern = " county")) |> # across all county names
+  mutate(county = str_remove(county, pattern = " parish")) |> # LA
   
-  # remove the word "parish" from the end of Louisiana counties ----
-  # NOTE: there are more counties that need cleaning for seamless joining with `us_counties` df; I've don't done a complete sweep of the data, so you'll notice data gaps once plotted
-  mutate(county = str_remove(county, pattern = " parish")) |> 
+  # make state & county names Title Case again ----
+  mutate(county = str_to_title(county),
+         state = str_to_title(state)) |> 
   
-  # # add col denoting if Oct precip is above or below 1901 - 2000 mean
-  # mutate(comp_mean = ifelse(value > x1901_2000_mean, # if `value` > `x1901_2000_mean`
-  #                    yes = "above mean", # replace abbreviation with full state name 
-  #                    no = "below mean")) |> # if string in 'sn' col is not 2 chrs long, keep state name as-is
+  # fix different spellings so that they match county names in precip data ----
+  mutate(county = case_when(
+    county == "Dekalb" ~ "DeKalb",
+    county == "Desoto" ~ "DeSoto", # works for FL & MI
+    state == "Louisiana" & county == "De Soto" ~ "DeSoto",
+    county == "Dupage" ~ "DuPage",
+    county == "Lasalle" ~ "La Salle",
+    county == "Laporte" ~ "LaPorte",
+    county == "O'brien" ~ "O'Brien",
+    county == "Lamoure" ~ "LaMoure",
+    state == "Texas" & county == "Dewitt" ~ "DeWitt",
+    county == "St. Mary's" ~ "St. Marys",
+    county == "Suffolk City" ~ "Suffolk",
+    county == "Hampton City" ~ "Hampton",
+    county == "Virginia Beach City" ~ "Virginia Beach",
+    county == "Newport News City" ~ "Newport News",
+    county == "Norfolk City" ~ "Norfolk",
+    TRUE ~ county
+  )) |> 
   
-  # select & rename relevant cols ----
-  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period) |> # comp_mean
+  # remove DC & other non-counties
+  filter(!county %in% c("Washington, D.c.", "Alexandria City", "Bristol City")) |>
   
-  # make precip var numeric (was chr) ----
+  # select & rename cols ----
+  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period) |> 
+  
+  # coerce precip from chr to numeric ----
   mutate(precip = as.numeric(precip))
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##  ~ used for identifying which county names to edit  ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# unique_us_counties <- us_counties |> 
+#   distinct(state, county)
+# 
+# unique_precip_counties <- precip_counties_wrangled |> 
+#   distinct(state, county)
+# 
+# missing_from_us_counties <- anti_join(unique_precip_counties, unique_us_counties) |> 
+#   rename(county_in_us = county)
+# missing_from_precip_counties <- anti_join(unique_us_counties, unique_precip_counties) |> 
+#   rename(county_in_precip = county)
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##  ~ -----------------------------------------------  ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #............................join dfs............................
 joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties)

@@ -21,7 +21,7 @@ toc: true
 
 - identify which types of visualizations are most appropriate for your data and your audience
 - prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations
-- build effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically {ggplot2} + ggplot2 extension packages
+- build effective, responsible, accessible, and aesthetically-pleasing, visualizations using the R programming language, and specifically `{ggplot2}` + ggplot2 extension packages
 
 ## Description 
 
@@ -94,7 +94,7 @@ This will first require some data exploration and wrangling. Some tips (unfold b
 
 - I love starting all my cleaning pipelines with `janitor::clean_names()` to convert column headers into lowercase snake_case (not necessary, but easy to implement and super helpful for yourself and others)
 - You'll want to keep just the years of interest
-- Missing size measurements are denoted with `-99999` -- consider how to deal with these
+- Missing size measurements are denoted with `-99999` -- you do not want to leave those values as-is (what's a lobster with -9999 mm carapace length?? {{< fa face-smile title="a smiling face" >}}); consider how to deal with these
 - Each row is **not** always a single observation, but rather summed lobster counts at each size observed within a site / transect / replicate. You'll want to wrangle the data such that each row represents a single lobster observation. You may need to do some Googling to figure out a solution for this (HINT: you're looking to perform the opposite of `count()`).
 - I often find that I'll need to return to my data wrangling pipeline again *after* I start plotting my data --  it's at this stage that I'll often catch variables that are the wrong data type (e.g. numeric, factor, character) for plotting and need to make the appropriate updates.
 :::
@@ -121,8 +121,8 @@ Now that you've explored and starting wrangling your data, it's time to create s
 
 - [ ] Create at least **three** different plots as part of your exploratory data visualization phase to test out which graphic forms / geoms works best. Your last plot should be the version that you feel is best suited for presenting your data. (***NOTE:** Your first two plots do not need to be at all polished -- during the exploratory data visualization phase, we're most concerned with choosing a graphic form / geom(s) for effectively presenting our data.*) 
 -  [ ] **1.** Consider all three of your plots. What about the graphic forms / geoms used in plots #1 and #2 was not as effective as plot #3? Justify your decision to pursue plot #3. [**(5-8 sentences)**]{.peach-text}
-- [ ] **2.** (For plot #3 only) Consider modifications that we discussed in lecture that may make this plot easier to interpret (e.g. updating colors, moving or removing legends, highlighting groups, ordering groups) -- be sure to update your plot as appropriate, then explain why you chose to make the above modifications. If you chose not to make any of these modifications, why not? [**(3-6 sentences)**]{.peach-text}
-- [ ] **3.** Polish your third (final) plot by updating the labels and theme (we'll cover theme modifications during [week 4 discussion section](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week4.html#discussion-materials)). List out the changes you made to your plot's theme (e.g. "updated axis text size", "removed minor gridlines", etc.). [**(a bullet list here is fine)**]{.peach-text}
+- [ ] **2.** (For plot #3 only) Consider modifications that we discussed in lecture that may make this plot easier to interpret (e.g. updating colors, moving or removing legends, highlighting groups, ordering groups) -- be sure to update your plot as appropriate, then explain why you chose to make the above modifications. If you chose not to make any of these modifications, why not? [**(2-5 sentences)**]{.peach-text}
+- [ ] **3.** Polish your third (final) plot by updating the labels and theme (we'll cover theme modifications during [week 4 discussion section](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week4.html#discussion-materials), so you may consider waiting until then). List out the changes you made to your plot's theme (e.g. "updated axis text size", "removed minor gridlines", etc.). [**(a bullet list here is fine)**]{.peach-text}
 - [ ] **4.** Describe two or more challenges you encountered while deciding on / creating your plots -- these can be conceptual (e.g. challenges in determining how to best represent your data) and / or technical (e.g. code-based challenges). [**(4-8 sentences)**]{.peach-text}
 - [ ] **5.** Add alt text to your final visualization following the formula discussed during [week 2's discussion section](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/discussion/week2/week2-alt-text.html#/title-slide) and using the `#| fig-alt:` code chunk option.
 

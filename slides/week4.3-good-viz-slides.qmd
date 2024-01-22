@@ -828,7 +828,7 @@ knitr::include_graphics("images/week4/wilke-context-separate.png")
 ::::
 
 ::: {.footer}
-Example from [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/histograms-density-plots.html), by Claus Wilke
+Example from [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/histograms-density-plots.html), by Claus Wilke. For an example with code, check out Meghan Hall's [lecture 7 slides](https://cmu-36315.netlify.app/slides/36-315_summer2021_lec7#75)
 :::
 
 ---

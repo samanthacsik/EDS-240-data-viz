@@ -163,7 +163,7 @@ knitr::include_graphics("images/week3/census-bureau-logo.png")
 
 ::::
 
-[Using the publicly-available CDC data on Lyme disease and population estimates from the [US Census Bureau](https://www.census.gov/) (via the [`{tidycensus}` package]()), we'll explore **changes in Lyme disease cases over time**, by state.]{.body-text-s}
+[Using the publicly-available CDC data on Lyme disease and population estimates from the [US Census Bureau](https://www.census.gov/) (via the [`{tidycensus}` package]()), we'll explore **changes in Lyme disease incidence (cases/100k people) over time**, by state.]{.body-text-s}
 
 ::: notes
 NNDSS is a nationwide collaboration that enables all levels of public health to share health information to monitor, control, and prevent the occurrence and spread of state-reportable and nationally notifiable infectious (and some noninfectious) diseases and conditions.
@@ -259,7 +259,7 @@ lyme_clean <- lyme |>
   select(year, city, state, status, reported_cases)
 
 #................calculate total cases per state.................
-lyme_states <- lyme_clean |> 
+lyme_by_state <- lyme_clean |> 
   group_by(year, state) |> 
   summarize(total_cases = sum(reported_cases)) 
 
@@ -283,7 +283,7 @@ us_state_pop <- get_estimates(geography = "state",
 ##                            join lyme & pop dfs                           ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-lyme_pop <- left_join(lyme_states, us_state_pop) |> 
+lyme_pop <- left_join(lyme_by_state, us_state_pop) |> 
   
   # add col with num of 100k people per state ----
   mutate(pop100k = population/100000) |> 
@@ -433,7 +433,7 @@ lyme_pop |>
 
 <hr>
 
-Line graphs encode data by **position** and not **length** (e.g. as in the height of a bar graph), therefore, you can choose to include the 0 origin only if it makes sense.
+Line graphs encode data **by position** and **not length** (e.g. as in the height of a bar graph), therefore, you can choose to include the 0 origin only if it makes sense.
 
 :::: columns 
 
@@ -473,7 +473,7 @@ lyme_pop |>
   filter(state == "Vermont") |> 
   ggplot(aes(x = year, y = cases_per100k, group = state)) +
   geom_line() +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
+  scale_y_continuous(limits = c(0, NA))
 ```
 
 :::
@@ -515,7 +515,7 @@ knitr::include_graphics("images/week3/dow-cut-y.png")
 ::::
 
 ::: footer
-Example from [Meagan Hall](https://meghan.rbind.io/)'s [Statistical Graphics & Visualization](https://cmu-36315.netlify.app/) course [Lecture 5 slides](https://cmu-36315.netlify.app/slides/36-315_summer2021_lec5#1).
+Example from [Meghan Hall](https://meghan.rbind.io/)'s [Statistical Graphics & Visualization](https://cmu-36315.netlify.app/) course [Lecture 5 slides](https://cmu-36315.netlify.app/slides/36-315_summer2021_lec5#1).
 :::
 
 ---
@@ -553,7 +553,7 @@ knitr::include_graphics("images/week3/temps-cut-y.png")
 ::::
 
 ::: footer
-Example from [Meagan Hall](https://meghan.rbind.io/)'s [Statistical Graphics & Visualization](https://cmu-36315.netlify.app/) course [Lecture 5 slides](https://cmu-36315.netlify.app/slides/36-315_summer2021_lec5#1).
+Example from [Meghan Hall](https://meghan.rbind.io/)'s [Statistical Graphics & Visualization](https://cmu-36315.netlify.app/) course [Lecture 5 slides](https://cmu-36315.netlify.app/slides/36-315_summer2021_lec5#1).
 :::
 
 --- 
@@ -679,7 +679,7 @@ lyme_pop |>
 <br>
 
 ::: {.body-text-s .pink-highlight .center-text}
-**Note:** This plot doesn't render well in thse slides *or* in the RStudio plot pane. I recommend running the code in RStudio, then clicking the **Zoom button** in the **Plot pane** for best viewing.
+**Note:** This plot doesn't render well on these slides *or* in the RStudio plot pane. I recommend running the code in RStudio, then clicking the **Zoom button** in the **Plot pane** for best viewing.
 :::
 
 <br>
@@ -739,19 +739,12 @@ lyme_pop |>
 
 [Ratios > 1 will make units on the y-axis longer than units on the x-axis (resulting in steeper slopes). Ratios < 1 will make units on the x-axis longer than units on the y-axis (resulting in shallower slopes). **If we want to make our graph wider, we'll need to update `ratio` so that it's < 1.** For example:]{.body-text-s} 
 
-<br>
-
-::: {.body-text-s .pink-highlight .center-text}
-**Note:** This plot doesn't render well in thse slides *or* in the RStudio plot pane. I recommend running the code in RStudio, then clicking the **Zoom button** in the **Plot pane** for best viewing.
-:::
-
-<br>
-
 ```{r}
-#| eval: false
+#| eval: true
 #| echo: true
 #| code-line-numbers: "6"
 #| fig-align: "center"
+#| out-width: "100%"
 lyme_pop |> 
   filter(state == "Vermont") |> 
   filter(year %in% c(2010:2020)) |> 
@@ -759,8 +752,6 @@ lyme_pop |>
   geom_line() + 
   coord_fixed(ratio = 1/50)
 ```
-
-<br>
 
 ::: {.center-text}
 Playing around with the `ratio` value yourself is the best way to get a sense for how the aspect ratio of a given ggplot will change.
@@ -778,7 +769,7 @@ Playing around with the `ratio` value yourself is the best way to get a sense fo
 
 :::: columns
 
-::: {.column width="50%"}
+::: {.column width="33%"}
 
 ::: {.center-text .gray-text .body-text-s}
 A basic area plot (New Jersey)
@@ -796,7 +787,7 @@ lyme_pop |>
 ```
 :::
 
-::: {.column width="50%"}
+::: {.column width="33%"}
 
 ::: {.center-text .gray-text .body-text-s}
 Update the fill color
@@ -814,6 +805,30 @@ lyme_pop |>
   ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
   geom_area() +
   scale_fill_manual(values = c("#047C90")) +
+  theme(legend.position = "none")
+```
+:::
+
+::: {.column width="33%"}
+
+::: {.center-text .gray-text .body-text-s}
+Expand area to panel margins
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "80%"
+#| code-line-numbers: "7-8"
+#| fig-align: "center"
+lyme_pop |> 
+  filter(year %in% c(2010:2020)) |> 
+  filter(state == "New Jersey") |> 
+  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
+  geom_area() +
+  scale_fill_manual(values = c("#047C90")) +
+  scale_x_discrete(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
   theme(legend.position = "none")
 ```
 :::
@@ -968,6 +983,8 @@ lyme_pop |>
 
 [**Homework Assignment #2 (HW #2)** -- *Due [Sat 02/03]{.magenta-text} at 11:59pm*]{.body-text-m}
 
-- tbd
+- 2 parts:
+  - choosing the right graphic form (SBC LTER data)
+  - data wrangling & exploratory data viz using your own data (HW #4)
 
 

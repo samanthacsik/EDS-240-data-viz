@@ -94,7 +94,7 @@ You'll probably iterate on them as you sit with your visualization and of course
 - what emotions are you trying (or not trying) to elicit?
 - who is your audience?
 - are your data commonly represented using a particular color scheme?
-- what data types (e.g. discrete vs. continuous) are you working with?
+- what data types (e.g. numeric vs. categorical, discrete vs. continuous?) are you working with?
 
 ---
 
@@ -147,6 +147,14 @@ Image source: Stauffer et al. (2015) <https://doi.org/10.1175/BAMS-D-13-00155.1>
 
 ::::
 
+::: {.notes}
+- Hue ranges from 0 to 360 (an angle) and gives the “colour” of the colour (blue, red, orange, etc).
+- Chroma is the “purity” of a colour, ranging from 0 (grey) to a maximum that varies with luminance.
+- Luminance is the lightness of the colour, ranging from 0 (black) to 1 (white).
+
+Source: <https://ggplot2-book.org/scales-colour>
+:::
+
 <!-- --- -->
 
 <!-- ##  {#data-types data-menu-title="# Data types #" background="#047C90"} -->
@@ -157,9 +165,9 @@ Image source: Stauffer et al. (2015) <https://doi.org/10.1175/BAMS-D-13-00155.1>
 
 ---
 
-## {#palette-types data-menu-title="Palette types"} 
+## {#color-scales data-menu-title="Color scales"} 
 
-[Different palettes types for different data types]{.slide-title2}
+[Different color scales for different data types]{.slide-title2}
 
 <hr>
 
@@ -179,110 +187,79 @@ knitr::include_graphics("images/week5/palette-types.png")
 Image source: [Which color scale to use when visualizing data](https://blog.datawrapper.de/which-color-scale-to-use-in-data-vis/), by Lisa Charlottte Muth. This is the first article of a 4 part series ([Part 2](https://blog.datawrapper.de/quantitative-vs-qualitative-color-scales/) / [Part 3](https://blog.datawrapper.de/diverging-vs-sequential-color-scales/) / [Part 4](https://blog.datawrapper.de/classed-vs-unclassed-color-scales/)) -- I highly recommend reading!
 :::
 
-<!-- 1. **Qualitative (for categorical / discrete data)** -->
-<!-- 2. **Quantitative (for continuous numeric data)** -->
-<!-- 2. **Sequential (for continuous numeric or inherently ordered data)** -->
-<!-- 3. **Diverging (for continuous numeric data with a meaningful central value)** -->
+---
 
-<!-- --- -->
+## {#categorical data-menu-title="Categorical scales"} 
 
-<!-- ## {#qual-pal data-menu-title="Qualitative palettes"}  -->
+[Categorical scales]{.slide-title2}
 
-<!-- [Palette Types]{.slide-title} -->
+<hr>
 
-<!-- <hr> -->
+  - [colors assigned to each group must be distinct and ideally have different lightnesses]{.body-text-s}
+  - [groups don't have an intrinsic order]{.body-text-s}
+  - [limit to no more than 7 colors]{.body-text-s}
+  - [mainly formed by selecting differet *hues*]{.body-text-s}
 
-<!-- 1. **Qualitative (for categorical / discrete data)** -->
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/categorical-scales.png")
+```
 
-<!--     - [colors assigned to each group must be distinct and ideally have different lightnesses (so that they also work in grayscale)]{.body-text-s} -->
-<!--     - [groups don't have an intrinsic order]{.body-text-s} -->
-<!--     - [limit to no more than 7 colors]{.body-text-s} -->
-<!--     - [mainly formed by selecting differet *hues*]{.body-text-s} -->
+::: {.footer}
+Map source: [Analyzing US Census Data](https://walker-data.com/census-r/index.html), by Kyle Walker
+:::
 
-<!-- 2. [**Sequential (for continuous numeric or inherently ordered data)**]{.gray-text} -->
-<!-- 3. [**Diverging (for continuous numeric data with a meaningful central value)**]{.gray-text} -->
+---
 
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: false -->
-<!-- #| fig-align: "center" -->
-<!-- #| out-width: "80%" -->
-<!-- #knitr::include_graphics("images/week5/hcl.png") -->
-<!-- ``` -->
+## {#sequential data-menu-title="Sequential scales"} 
 
-<!-- ::: {.center-text .body-text-s .gray-text} -->
-<!-- tbd -->
-<!-- ::: -->
+[Sequential scales]{.slide-title2}
 
-<!-- --- -->
+<hr>
 
-<!-- ## {#seq-pal data-menu-title="Sequential palettes"}  -->
+  - [colors assigned to data values in a continuum, based on lightness, hue, or both]{.body-text-s}
+  - [lower values typically associated with lighter colors & higher values associated with darker colors]{.body-text-s}
+  - [can use a single hue (light to dark) *or* two hues (tyipcally a warmer / brighter hue for lower values and cooler / darker hue for higher values)]{.body-text-s}
 
-<!-- [Three major types of color palette]{.slide-title} -->
 
-<!-- <hr> -->
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/sequential-scales.png")
+```
 
-<!-- 1. [**Qualitative (for categorical / discrete data)**]{.gray-text} -->
-<!-- 2. **Sequential (for continuous numeric or inherently ordered data)** -->
+::: {.footer}
+Map source: [Analyzing US Census Data](https://walker-data.com/census-r/index.html), by Kyle Walker
+:::
 
-<!--     - [colors assigned to data values in a continuum, based on lightness, hue, or both]{.body-text-s} -->
-<!--     - [lower values typically associated with lighter colors & higher values associated with darker colors]{.body-text-s} -->
-<!--     - [can use a single hue (light to dark) *or* two hues (tyipcally a warmer / brighter hue for lower values and cooler / darker hue for higher values)]{.body-text-s} -->
+---
 
-<!-- 3. [**Diverging (for continuous numeric data with a meaningful central value)**]{.gray-text} -->
+## {#diverging data-menu-title="Diverging scales"} 
 
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: false -->
-<!-- #| fig-align: "center" -->
-<!-- #| out-width: "80%" -->
-<!-- #knitr::include_graphics("images/week5/hcl.png") -->
-<!-- ``` -->
+[Sequential scales]{.slide-title2}
 
-<!-- ::: {.center-text .body-text-s .gray-text} -->
-<!-- tbd -->
-<!-- ::: -->
+<hr>
 
-<!-- --- -->
+  - [combination of two sequential palettes with a shared endpoint at the central value]{.body-text-s}
+  - [use a distinctive hue for each of the component palettes]{.body-text-s}
+  - [central value is assigned a light color (light gray is best)]{.body-text-s}
 
-<!-- ## {#div-pal data-menu-title="Diverging palettes"}  -->
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/diverging-scales.png")
+```
 
-<!-- [Three major types of color palette]{.slide-title} -->
-
-<!-- <hr> -->
-
-<!-- 1. [**Qualitative (for categorical / discrete data)**]{.gray-text} -->
-<!-- 2. [**Sequential (for continuous numeric or inherently ordered data)**]{.gray-text} -->
-<!-- 3. **Diverging (for continuous numeric data with a meaningful central value)** -->
-
-<!--     - [combination of two sequential palettes with a shared endpoint at the central value]{.body-text-s} -->
-<!--     - [use a distinctive hue for each of the component palettes]{.body-text-s} -->
-<!--     - [central value is assigned a light color (light gray is best)]{.body-text-s} -->
-
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: false -->
-<!-- #| fig-align: "center" -->
-<!-- #| out-width: "80%" -->
-<!-- #knitr::include_graphics("images/week5/hcl.png") -->
-<!-- ``` -->
-
-<!-- ::: {.center-text .body-text-s .gray-text} -->
-<!-- tbd -->
-<!-- ::: -->
-
-<!-- --- -->
-
-<!-- ## {#use-or-make data-menu-title="Use pre-made palettes or create your own"}  -->
-
-<!-- [You can use pre-existing palettes, or create your own]{.slide-title2} -->
-
-<!-- <hr> -->
-
-<!-- Sequential and diverging palettes can be used to map continuous values to color in two different ways: -->
-
-<!-- a. Discrete  -->
-<!-- b. Continuous -->
+::: {.footer}
+Map source: [2020 U.S. Election Mapped: TrumpLand vs Biden Archipelago](https://vividmaps.com/us-election-2020/), by Vivid Maps
+:::
 
 ---
 
@@ -1845,6 +1822,10 @@ penguins |>
 
 ::::
 
+::: {.notes}
+This isn't the only way to do this! Try creating a `highlight` variable in your data frame. See <https://andrewirwin.github.io/data-visualization/colour.html#highlighting> and
+:::
+
 ---
 
 ## {#create-palette data-menu-title="Create your own palette"} 
@@ -2353,34 +2334,6 @@ knitr::include_graphics("images/week5/ncei-logo2.png")
 A lot of the following data viz code draws from and was inspired by the wonderful [Making Maps with R](https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html) tutorial, by [Eric C. Anderson](https://github.com/eriqande).
 :::
 
-<!-- ---- -->
-
-<!-- ## {#plan data-menu-title="The Plan"}  -->
-
-<!-- [The Plan]{.slide-title} -->
-
-<!-- <hr> -->
-
-<!-- **The type of color palette we use will vary with the type of data we hope to visualize.** In this following section, we'll create a series of choropleth maps visualizing different data types (categorical vs. numerical) that require different color palettes.  -->
-
-<!-- <br> -->
-
-<!-- . . .  -->
-
-<!-- **We'll create maps that color counties based on the following:** -->
-
-<!-- - [**Categorical variable**]{.teal-text} -->
-<!--     - Color counties based on whether their total precipitation in Dec 2023 was above or below the 1991 - 2000 mean  -->
-<!-- - [**Numeric variable**]{.teal-text} -->
-<!--     - [**Sequential (either linear or binned):**]{.teal-text .body-text-s} Color counties based on the total amount of precipitation received in Dec 2023 -->
-<!--     - [**Diverging (either linear or binned):**]{.teal-text .body-text-s} Color counties based off the difference between the 1901 - 2000 mean and Dec 2023 precipitation totals -->
-
-<!-- . . . -->
-
-<!-- ::: {.center-text .body-text-m} -->
-<!-- **First, some data wrangling** -->
-<!-- ::: -->
-
 ----
 
 ## {#data-wrangling data-menu-title="Data wrangling"} 
@@ -2407,7 +2360,7 @@ states <- map_data("state")
 counties <- map_data("county")
 
 #....................import precipitation data...................
-precip_counties <- read_csv(here::here("slides", "data", "county-precip-oct2023.csv"), skip = 4) |> 
+precip_counties <- read_csv(here::here("slides", "data", "county-precip-2023.csv"), skip = 4) |> 
   janitor::clean_names()
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2416,31 +2369,102 @@ precip_counties <- read_csv(here::here("slides", "data", "county-precip-oct2023.
 
 #..............update names of counties df variables.............
 us_counties <- counties |> 
-  select(state = region, county = subregion, long, lat, group, order)
-
   
+  # select / rename cols of interest ----
+  select(state = region, county = subregion, long, lat, group, order) |> 
+  
+  # make all county & state names Title Case ----
+  mutate(county = str_to_title(county),
+         state = str_to_title(state)) |> 
+  
+  # fix different spellings so that they match county names in precip data ----
+  mutate(county = case_when(
+    county == "De Kalb" ~ "DeKalb",
+    county == "De Soto" ~ "DeSoto", # works for FL & MI
+    county == "Du Page" ~ "DuPage",
+    county == "La Porte" ~ "LaPorte",
+    county == "Obrien" ~ "O'Brien",
+    county == "Prince Georges" ~ "Prince George's",
+    county == "Queen Annes" ~ "Queen Anne's",
+    county == "Ste Genevieve" ~ "Ste. Genevieve",
+    county == "La Moure" ~ "LaMoure",
+    state == "Texas" & county == "De Witt" ~ "DeWitt",
+    # county == "St. Marys" ~ "St. Mary's", # isn't working??
+    TRUE ~ county
+    )) |> 
+  mutate(county = str_replace(string = county, pattern = "St ", replacement = "St. ")) |> 
+  
+  # remove DC & Yellowstone National Park ----
+  filter(!state %in% c("District Of Columbia")) |> 
+  filter(!county %in% c("Yellowstone National"))
+
+
 #..........clean precip data & make sure var names match.........
 precip_counties_wrangled <- precip_counties |> 
   
-  # more intuitive column name ----
+  # more intuitive col name ----
   rename(county = name) |> 
   
-  # convert count and state names to all lowercase ----
+  # make all county & state names lower case ----
   mutate(county = str_to_lower(county),
-         state = str_to_lower(state)) |> 
+         state = str_to_lower(state)) |>
   
-  # remove the word "county" from all county names ----
-  mutate(county = str_remove(county, pattern = " county")) |> 
+  # remove recurring patterns ----
+  mutate(county = str_remove(county, pattern = " county")) |> # across all county names
+  mutate(county = str_remove(county, pattern = " parish")) |> # LA
   
-  # remove the word "parish" from the end of Louisiana counties ----
-  # NOTE: there are more counties that need cleaning for seamless joining with `us_counties` df; I've don't done a complete sweep of the data, so you'll notice data gaps once plotted
-  mutate(county = str_remove(county, pattern = " parish")) |> 
-
-  # select & rename relevant cols ----
-  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period) |> # comp_mean
+  # make state & county names Title Case again ----
+  mutate(county = str_to_title(county),
+         state = str_to_title(state)) |> 
   
-  # make precip var numeric (was chr) ----
+  # fix different spellings so that they match county names in precip data ----
+  mutate(county = case_when(
+    county == "Dekalb" ~ "DeKalb",
+    county == "Desoto" ~ "DeSoto", # works for FL & MI
+    state == "Louisiana" & county == "De Soto" ~ "DeSoto",
+    county == "Dupage" ~ "DuPage",
+    county == "Lasalle" ~ "La Salle",
+    county == "Laporte" ~ "LaPorte",
+    county == "O'brien" ~ "O'Brien",
+    county == "Lamoure" ~ "LaMoure",
+    state == "Texas" & county == "Dewitt" ~ "DeWitt",
+    county == "St. Mary's" ~ "St. Marys",
+    county == "Suffolk City" ~ "Suffolk",
+    county == "Hampton City" ~ "Hampton",
+    county == "Virginia Beach City" ~ "Virginia Beach",
+    county == "Newport News City" ~ "Newport News",
+    county == "Norfolk City" ~ "Norfolk",
+    TRUE ~ county
+  )) |> 
+  
+  # remove DC & other non-counties
+  filter(!county %in% c("Washington, D.c.", "Alexandria City", "Bristol City")) |>
+  
+  # select & rename cols ----
+  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period) |> 
+  
+  # coerce precip from chr to numeric ----
   mutate(precip = as.numeric(precip))
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##  ~ used to identify which county names don't match across dfs  ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# unique_us_counties <- us_counties |> 
+#   distinct(state, county)
+# 
+# unique_precip_counties <- precip_counties_wrangled |> 
+#   distinct(state, county)
+# 
+# missing_from_us_counties <- anti_join(unique_precip_counties, unique_us_counties) |> 
+#   rename(county_in_us = county)
+#
+# missing_from_precip_counties <- anti_join(unique_us_counties, unique_precip_counties) |> 
+#   rename(county_in_precip = county)
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##  ~ ----------------------------------------------------------  ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #............................join dfs............................
 joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties)
@@ -2462,7 +2486,7 @@ states <- map_data("state")
 counties <- map_data("county")
 
 #....................import precipitation data...................
-precip_counties <- read_csv(here::here("week5", "data", "county-precip-oct2023.csv"), skip = 4) |> 
+precip_counties <- read_csv(here::here("week5", "data", "county-precip-2023.csv"), skip = 4) |> 
   janitor::clean_names()
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2471,35 +2495,138 @@ precip_counties <- read_csv(here::here("week5", "data", "county-precip-oct2023.c
 
 #..............update names of counties df variables.............
 us_counties <- counties |> 
-  select(state = region, county = subregion, long, lat, group, order)
-
   
+  # select / rename cols of interest ----
+  select(state = region, county = subregion, long, lat, group, order) |> 
+  
+  # make all county & state names Title Case ----
+  mutate(county = str_to_title(county),
+         state = str_to_title(state)) |> 
+  
+  # fix different spellings so that they match county names in precip data ----
+  mutate(county = case_when(
+    county == "De Kalb" ~ "DeKalb",
+    county == "De Soto" ~ "DeSoto", 
+    county == "Du Page" ~ "DuPage",
+    county == "La Porte" ~ "LaPorte",
+    county == "Obrien" ~ "O'Brien",
+    county == "Prince Georges" ~ "Prince George's",
+    county == "Queen Annes" ~ "Queen Anne's",
+    county == "Ste Genevieve" ~ "Ste. Genevieve",
+    county == "La Moure" ~ "LaMoure",
+    state == "Texas" & county == "De Witt" ~ "DeWitt",
+    TRUE ~ county
+    )) |> 
+  mutate(county = str_replace(string = county, pattern = "St ", replacement = "St. ")) |> 
+  
+  # remove DC & Yellowstone National Park ----
+  filter(!state %in% c("District Of Columbia")) |> 
+  filter(!county %in% c("Yellowstone National"))
+
+
 #..........clean precip data & make sure var names match.........
 precip_counties_wrangled <- precip_counties |> 
   
-  # more intuitive column name ----
+  # more intuitive col name ----
   rename(county = name) |> 
   
-  # convert count and state names to all lowercase ----
+  # make all county & state names lower case ----
   mutate(county = str_to_lower(county),
-         state = str_to_lower(state)) |> 
+         state = str_to_lower(state)) |>
   
-  # remove the word "county" from all county names ----
+  # remove recurring patterns ----
   mutate(county = str_remove(county, pattern = " county")) |> 
-  
-  # remove the word "parish" from the end of Louisiana counties ----
-  # NOTE: there are more counties that need cleaning for seamless joining with `us_counties` df; I've don't done a complete sweep of the data, so you'll notice data gaps once plotted
   mutate(county = str_remove(county, pattern = " parish")) |> 
-
-  # select & rename relevant cols ----
-  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period) |> # comp_mean
   
-  # make precip var numeric (was chr) ----
+  # make state & county names Title Case again ----
+  mutate(county = str_to_title(county),
+         state = str_to_title(state)) |> 
+  
+  # fix different spellings so that they match county names in precip data ----
+  mutate(county = case_when(
+    county == "Dekalb" ~ "DeKalb",
+    county == "Desoto" ~ "DeSoto", 
+    state == "Louisiana" & county == "De Soto" ~ "DeSoto",
+    county == "Dupage" ~ "DuPage",
+    county == "Lasalle" ~ "La Salle",
+    county == "Laporte" ~ "LaPorte",
+    county == "O'brien" ~ "O'Brien",
+    county == "Lamoure" ~ "LaMoure",
+    state == "Texas" & county == "Dewitt" ~ "DeWitt",
+    county == "St. Mary's" ~ "St. Marys",
+    county == "Suffolk City" ~ "Suffolk",
+    county == "Hampton City" ~ "Hampton",
+    county == "Virginia Beach City" ~ "Virginia Beach",
+    county == "Newport News City" ~ "Newport News",
+    county == "Norfolk City" ~ "Norfolk",
+    TRUE ~ county
+  )) |> 
+  
+  # remove DC & other non-counties
+  filter(!county %in% c("Washington, D.c.", "Alexandria City", "Bristol City")) |>
+  
+  # select & rename cols ----
+  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period) |> 
+  
+  # coerce precip from chr to numeric ----
   mutate(precip = as.numeric(precip))
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##  ~ used to identify which county names don't match across dfs  ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# unique_us_counties <- us_counties |> 
+#   distinct(state, county)
+# 
+# unique_precip_counties <- precip_counties_wrangled |> 
+#   distinct(state, county)
+# 
+# missing_from_us_counties <- anti_join(unique_precip_counties, unique_us_counties) |> 
+#   rename(county_in_us = county)
+#
+# missing_from_precip_counties <- anti_join(unique_us_counties, unique_precip_counties) |> 
+#   rename(county_in_precip = county)
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##  ~ ----------------------------------------------------------  ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #............................join dfs............................
 joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties)
 ```
+
+---
+
+## {#consider-data data-menu-title="Consider data & colors"} 
+
+[Let's first consider our data]{.slide-title}
+
+<hr>
+
+There are pros and cons to both classed and unclassed color scales.
+
+Use a **classed** if we want to **communicate statistical brackets**:
+  - the focus is on which data units fall into a particular predefined class, rather than the overall pattern of the map
+  - If you want your readers to see if certain regions fall into a statistical bracket, use classes
+  - Use a classed color scales if you want readers to read values
+  - more classes, less readable
+  - So if you want readers to read specific value ranges, go for a classed map with only a few classes. That’s especially important when you show static maps (e.g., in print or PDF reports) where people don’t have the option to see tooltips or hover over a legend.
+  
+Use an **unclassed** color scale if you want to **show a general pattern** (e.g. "the west got less precipitation than the east")
+  - makes it harder to see which statistical brackets counties fall into (e.g. which counties got more or less precipitation than the national average)
+  - “The unclassed choropleth is the most exact representation of the data model possible,” Judith A. Tyner
+  - The more classes you show, the more nuanced your map becomes
+  - Use an unclassed color scale if you don’t want to interpret for the reader. It makes it easier to see:
+    - …outliers
+    - …if the transition between clusters is smooth or abrupt
+    - …if the region I’m interested in as a reader has a higher or lower value than the neighboring regions
+  - “How does my region compare?” is a question that’s better answered with an unclassed map.
+  
+No matter if you decide for a classed map at the end, you should start your process by looking at an unclassed map. This will help you see subtle differences between regions and make a conscious decision if and how you should simplify them. 
+
+---
+
+<https://blog.datawrapper.de/classed-vs-unclassed-color-scales/>
 
 ---
 
@@ -2524,7 +2651,7 @@ base_map <- ggplot(data = states, mapping = aes(x = long, y = lat, group = group
   
   # update labels ----
   labs(title = "Total Precipitation, by County",
-       subtitle = "October 2023") +
+       subtitle = "2023") +
   
   # set theme to clean up appearance ----
   theme_void() + 
@@ -2616,9 +2743,11 @@ First, create a color palette:
 #| eval: true
 #| echo: true
 
-my_palette <- c("#543006", "#975F1C", "#AC7E42", "#C09C66", "#D6BB8C", "#EBD9B0","#D5D4CE",
+my_palette <- c("#543006", "#975F1C", "#AC7E42", "#C09C66", "#D6BB8C", "#EBD9B0",#"#D5D4CE",
                  "#B2DDD7", "#8BC2BC", "#64A7A1", "#3B8E86", "#16726B", "#003C30")
 
+RColorBrewer::display.brewer.pal(n = 11, name = 'BrBG')
+my_brew_palette <- RColorBrewer::brewer.pal(n = 11, name = 'BrBG')
 ```
 
 Then map:
@@ -2652,6 +2781,21 @@ base_map_proj +
 ::: {.footer}
 By default, `scale_fill_stepsn()` sets `nice.breaks = TRUE`
 :::
+
+---
+
+Determine the mean
+
+```{r}
+mean_precip <- mean(na.omit(precip_counties_wrangled$precip)) 
+mean_precip # 36.5
+
+total_precip <- sum(na.omit(precip_counties_wrangled$precip))
+num_counties <- length(unique(na.omit(precip_counties_wrangled$county)))
+
+total_precip / num_counties
+total_precip / 3107
+```
 
 
 

@@ -294,7 +294,9 @@ Caused by warning:
 ! NAs introduced by coercion</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Joining with `by = join_by(state, county)`</code></pre>
+<pre><code>Joining with `by = join_by(state, county)`
+Joining with `by = join_by(state, county)`
+Joining with `by = join_by(state, county)`</code></pre>
 </div>
 </div>
 </section>
@@ -448,7 +450,7 @@ Caused by warning:
 <pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 1568 rows containing non-finite values (`stat_bin()`).</code></pre>
+<pre><code>Warning: Removed 1626 rows containing non-finite values (`stat_bin()`).</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="choropleth-practice_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
@@ -456,7 +458,7 @@ Caused by warning:
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># calculate median ----</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a><span class="fu">median</span>(<span class="fu">na.omit</span>(joined_precip_us_counties)<span class="sc">$</span>precip) <span class="co"># 2.02</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.02</code></pre>
+<pre><code>[1] 2.01</code></pre>
 </div>
 </div>
 <p>Our data are heavily right-skewed (most are smaller values), and our median value is 2.02” – meaning half our our data fall below 2.02”. This means that we’re likely losing details at the lower end of the spectrum, since we have so many small precipitation totals. Let’s take an even closer look by calculating some quantiles:</p>
@@ -467,7 +469,7 @@ Caused by warning:
 <span id="cb27-4"><a href="#cb27-4"></a>         <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   0%   25%   50%   75%  100% 
- 0.00  1.19  2.02  3.31 10.20 </code></pre>
+ 0.00  1.18  2.01  3.30 10.20 </code></pre>
 </div>
 </div>
 <p>How do we interpret this?</p>
@@ -484,8 +486,8 @@ Caused by warning:
 <span id="cb29-2"><a href="#cb29-2"></a>         <span class="at">probs =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">by =</span> <span class="fl">0.10</span>),</span>
 <span id="cb29-3"><a href="#cb29-3"></a>         <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   0%   10%   20%   30%   40%   50%   60%   70%   80%   90%  100% 
- 0.00  0.65  1.05  1.35  1.61  2.02  2.51  3.05  3.61  4.47 10.20 </code></pre>
+<pre><code>    0%    10%    20%    30%    40%    50%    60%    70%    80%    90%   100% 
+ 0.000  0.640  1.050  1.340  1.600  2.010  2.490  3.040  3.610  4.478 10.200 </code></pre>
 </div>
 </div>
 <p>We see here that 10% of all our precipitation recordings live below 0.65”! And 90% live below 4.47”.</p>

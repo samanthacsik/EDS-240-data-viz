@@ -33,8 +33,6 @@ library(networkD3)
 pop2022 <- refugees::population |> 
   filter(year == 2022) |> 
   select(year, coo_name, coa_name, refugees) #|> 
-  # mutate(coo_name = as.factor(coo_name),
-  #        coa_name = as.factor(coa_name))
 
 #....................top 3 countries of origin...................
 top_3_coo <- pop2022 |> 
@@ -77,15 +75,12 @@ pop2022_no_other <- pop2022_no_other |>
   mutate(IDsource = match(pop2022_no_other$coo_name, nodes$name) - 1,
          IDtarget = match(pop2022_no_other$coa_name,  nodes$name) - 1)
 
-# pop_test <- pop2022_no_other |> 
-#   select(coo_name, coa_name, refugees)
-
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                                create sankey                             ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # color scale ----
-ColorScale = 'd3.scaleOrdinal([`#94438B`, `#B6366A`,`#E1AAC9`, `#909497`,`#6AA26F`, `#A3C7AC`, `#E3EEAE`])' # `#a36629`, `#92462f`
+ColorScale = 'd3.scaleOrdinal([`#94438B`, `#B6366A`,`#E1AAC9`, `#909497`,`#6AA26F`, `#A3C7AC`, `#E3EEAE`])' 
 
 # Make the Network ----
 sankey <- sankeyNetwork(
@@ -108,24 +103,4 @@ sankey
 ```
 
 
-```{r}
-#| eval: false
-#| echo: false
-# df <- pop_test |> 
-# df<-  make_long(coo_name, coa_name, refugees)
-# 
-# ggplot(df, aes(x = x,
-#                next_x = next_x,
-#                node = node,
-#                next_node = next_node,
-#                fill = factor(node))) +
-#   geom_sankey()
-# 
-# ggplot(pop2022_no_other, aes(x = refugees, next_x = coa_name,
-#                node = coo_name, next_node = coa_name, #fill = factor(refugees)
-#                )) +
-#   geom_sankey() +
-#   theme_sankey(base_size = 16) 
-  
-```
 

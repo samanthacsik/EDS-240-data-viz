@@ -29,14 +29,14 @@ editor_options:
 
 <hr>
 
->"Exams will have a total of 137 points rather than the usual 100. This scoring system has no efect on the grade you get in the course, but it seems to make you happier"
+>"Exams will have a total of 137 points rather than the usual 100. This scoring system has no effect on the grade you get in the course, but it seems to make you happier"
 
 ::: {.right-align-text}
 -[Richard H. Thaler](https://www.chicagobooth.edu/faculty/directory/t/richard-h-thaler), economist & professor
 :::
 
 - [**Early years:** exam graded 0 - 100 with an average score of 72 points = lots of complaints]{.body-text-s}
-- [**Later years:** exam graded 0 - 137 with an average score of 96 points = no complaints]{.body-text-s}
+- [**Later years:** exam graded 0 - 137 with an average score of 96 points = very few complaints]{.body-text-s}
 
 . . . 
 
@@ -95,6 +95,7 @@ Albert Cairo's visualization of the scores from Thaler's exam case study
 [***Mapping data into visual properties is powerful***]{.body-text-m .teal-text} 
 :::
 
+<br>
 <br>
 
 . . . 
@@ -234,7 +235,7 @@ William S. Cleveland & Robert McGill (1984) **Graphical Perception: Theory, Expe
 
 - successful charts are constructed based on elementary tasks "as high in the hierarchy as possible"
 
-[Albert Cairo's recreation of Cleveland & McGill's Hierarchy of Elementary Perceptual Tasks {{< fa arrow-right title="an arrow pointing to the right" >}}]{.body-text-s .gray-text}
+[[Albert Cairo's recreation](https://badriadhikari.github.io/data-viz-workshop-2021/activity-perceptual-task/Solution.html) of Cleveland & McGill's Hierarchy of Elementary Perceptual Tasks {{< fa arrow-right title="an arrow pointing to the right" >}}]{.body-text-s .gray-text}
 
 :::
 
@@ -246,10 +247,6 @@ William S. Cleveland & Robert McGill (1984) **Graphical Perception: Theory, Expe
 #| out-width: "75%"
 knitr::include_graphics("images/week3/cairo-elementary-visual-perception.png")
 ```
-
-::: {.center-text}
-[A recreation of Cleveland & McGill's hierarchy of elementary perceptual tasks, by Albert Cairo]{.gray-text}
-:::
 
 :::
 
@@ -421,11 +418,13 @@ Precipitation data downloaded from NOAA's [National Centers for Environmental In
 
 <hr>
 
-Consider how you might display the same data in the following Sankey diagram depicted the flow of refugees in 2022, using graph types from the top of Cleveland & McGill's hierarchy. **What is the purpose of this chart?**
+Consider how you might display the same data in the following Sankey diagram, which depicts the flow of refugees in 2022, using graph types from the top of Cleveland & McGill's hierarchy. **What is the purpose of this chart?**
 
 {{< include sections/3.1-sankey.qmd >}}
 
-[Graphic recreated following [Louise E. Sinks'](https://lsinks.github.io/) blog post, [TidyTuesday: Exploring Refugee Flow with A Sankey Diagram](https://lsinks.github.io/posts/2023-08-28-TidyTuesday-Refugees/TidyTuesday34-refugees.html)]{.gray-text .body-text-s}
+::: {.gray-text .center-text .body-text-s}
+Graphic recreated using the [`{networkD3}` package](https://christophergandrud.github.io/networkD3/) following [Louise E. Sinks'](https://lsinks.github.io/) blog post, [TidyTuesday: Exploring Refugee Flow with A Sankey Diagram](https://lsinks.github.io/posts/2023-08-28-TidyTuesday-Refugees/TidyTuesday34-refugees.html)
+:::
 
 ::: notes
 It would be hard to use a method of encoding from the top of the hierarchy! In this Sankey diagram, readers need to decode length and area, but that's not a huge issue since the purpose of the chart is to show high-level trends / flows of refugees
@@ -498,8 +497,6 @@ It would be hard to use a method of encoding from the top of the hierarchy! In t
 
 ::: {.column width="33%"}
 
-<br>
-
 ```{r}
 #| eval: true
 #| echo: false
@@ -516,8 +513,6 @@ knitr::include_graphics("images/week3/dvp.png")
 :::
 
 ::: {.column width="33%"}
-
-<br>
 
 ```{r}
 #| eval: true
@@ -536,8 +531,6 @@ knitr::include_graphics("images/week3/dtv.png")
 
 ::: {.column width="33%"}
 
-<br>
-
 ```{r}
 #| eval: true
 #| echo: false
@@ -554,6 +547,26 @@ knitr::include_graphics("images/week3/vu.png")
 :::
 
 ::::
+
+::: {.footer}
+Spend a couple minutes exploring these tools.
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
 
 ---
 
@@ -576,6 +589,13 @@ knitr::include_graphics("images/week3/vu.png")
 #| fig-alt: "Cartoon comparison of continuous versus discrete data. On the left: 'Continuous - measured data, can have infinite values within possible range.' Below is an illustration of a chick, with text 'I am 3.1 inches tall, I weight 34.16 grams.' On the right: 'Discrete - observations can only exist at limited values, often counts.' Below is an illustration of an octopus with text 'I have 8 legs and 4 spots!'"
 knitr::include_graphics("images/week3/horst-cont-disc.png")
 ```
+
+::: {.center-text .body-text-xs .gray-text}
+**Continuous variables:** temperature (10.6°C, 14.9°C, 8.1°C), rainfall (1.7", 3.3", 9.4")
+
+**Discrete variables:** # of species counted in a region (1, 4, 6), a county's population size (1,578, 10,324, 540,013)
+:::
+
 :::
 
 ::: {.column width="50%"}
@@ -584,7 +604,7 @@ knitr::include_graphics("images/week3/horst-cont-disc.png")
 
 ::::
 
-::: {.center-text .gray-text}
+::: {.footer}
 *Art by [Allison Horst](https://allisonhorst.com/)*
 :::
 
@@ -609,6 +629,13 @@ knitr::include_graphics("images/week3/horst-cont-disc.png")
 #| fig-alt: "Cartoon comparison of continuous versus discrete data. On the left: 'Continuous - measured data, can have infinite values within possible range.' Below is an illustration of a chick, with text 'I am 3.1 inches tall, I weight 34.16 grams.' On the right: 'Discrete - observations can only exist at limited values, often counts.' Below is an illustration of an octopus with text 'I have 8 legs and 4 spots!'"
 knitr::include_graphics("images/week3/horst-cont-disc.png")
 ```
+
+::: {.center-text .body-text-xs .gray-text}
+**Continuous variables:** temperature (10.6°C, 14.9°C, 8.1°C), rainfall (1.7", 3.3", 9.4")  
+
+**Discrete variables:** # of species counted in a region (1, 4, 6), a county's population size (1,578, 10,324, 540,013)
+:::
+
 :::
 
 ::: {.column width="50%"}
@@ -620,11 +647,20 @@ knitr::include_graphics("images/week3/horst-cont-disc.png")
 #| fig-alt: "Visual representations of nominal, ordinal, and binary variables. Left: Nominal (ordered descriptions) with illustrations below of a turtle, snail, and butterfly. Center: Ordinal (ordered descriptions) with illustrations below of three bees - one looks unhappy (saying 'I am unhappy'), one looks ok (saying 'I am OK'), and one looks very happy (saying 'I am awesome!'). Right: Binary (only 2 mutually exclusive outcomes), with below a T-rex saying 'I am extinct' and a shark saying 'HA.'"
 knitr::include_graphics("images/week3/horst-nom-org-binary.png")
 ```
+
+::: {.center-text .body-text-xs .gray-text}
+**Nominal variables:** gender identity (cisgender, transgender, non-binary), species (dog, cat, bird), land use (residential, parks, agriculture)  
+
+**Ordinal variables:** income level (low / middle / high), satisfaction level (unsatisfied, neutral, satisfied)   
+
+**Binary:** penguin sex (male / female), habitat type (shade / sun)
+:::
+
 :::
 
 ::::
 
-::: {.center-text .gray-text}
+::: {.footer}
 *Art by [Allison Horst](https://allisonhorst.com/)*
 :::
 
@@ -724,6 +760,22 @@ Images from [Albert Cairo's *The Truthful Art*](https://www.albertocairo.com/)
 :::
 :::
 
+```{r}
+countdown::countdown(
+  minutes = 1,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
 ---
 
 ## {#ad-methods2 data-menu-title="Advertising methods 2"} 
@@ -777,7 +829,7 @@ Images from [Albert Cairo's *The Truthful Art*](https://www.albertocairo.com/)
 
 **Let's say we're interested in:**
 
-a. changes in the amount spent on Social Security over time (2012-2015) relative to other major spending categories?
+a. changes in the amount spent on Social Security relative to other major spending categories over time (2012-2015)?
 
 
 ```{r}
@@ -806,7 +858,7 @@ Example from Derek L. Sonderegger's online textbook, [STA 141 - Exploratory Data
 
 **Let's say we're interested in:**
 
-a. changes in the amount spent on Social Security over time (2012-2015) relative to other major spending categories?
+a. changes in the amount spent on Social Security relative to other major spending categories over time (2012-2015)?
 
 b. the amount of money spent on Social Security over time (2012-2015)?
 
@@ -1114,8 +1166,17 @@ knitr::include_graphics("images/week3/gun-deaths-revised.png")
 [**Critiquing a data visualization:**]{.teal-text .body-text-l}
 
 1. Identify the primary and secondary insights that the graphic is trying to convey.
+
+. .  .
+
 2. Identify elementary perceptual tasks (e.g. comparing lengths, angles) and what is confusing or difficult to do.
-3. Identify how to use more effective elementary perceptual tasks for the primary and secondary insights.
+
+. .  .
+
+3. Identify if it's possible (*and* if it makes sense) to use more effective elementary perceptual tasks for the primary and secondary insights
+
+. .  .
+
 4. Identify points of confusion and decide how those could be addressed (e.g. a different graphic form, rearranging components, including an introduction graph, better annotation)
 
 ::: footer

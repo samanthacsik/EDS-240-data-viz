@@ -32,6 +32,8 @@ Before coming to class, you'll need to install some packages, download data, and
 #| eval: false
 #| echo: true
 #| code-line-numbers: false
+install.packages("chron") # for working with dates / times
+install.packages("naniar") # tools for exploring & handing missing data
 install.packages("tidytuesdayR") # used to download TidyTuesday data
 install.packages("tidycensus") # an R package that allows users to interface with a select number of the US Census Bureau’s data APIs and return tidyverse-ready data frames
 install.packages("ggridges") # {ggplot2} extension for creating ridgeline plots

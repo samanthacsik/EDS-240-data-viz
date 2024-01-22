@@ -420,7 +420,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_e4af32de" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_83c31779" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -474,7 +474,7 @@
 <li>what emotions are you trying (or not trying) to elicit?</li>
 <li>who is your audience?</li>
 <li>are your data commonly represented using a particular color scheme?</li>
-<li>what data types (e.g.&nbsp;discrete vs.&nbsp;continuous) are you working with?</li>
+<li>what data types (e.g.&nbsp;numeric vs.&nbsp;categorical, discrete vs.&nbsp;continuous?) are you working with?</li>
 </ul>
 </div>
 </section>
@@ -519,15 +519,33 @@
 </div>
 </div>
 </div>
+<aside class="notes">
+<ul>
+<li>Hue ranges from 0 to 360 (an angle) and gives the “colour” of the colour (blue, red, orange, etc).</li>
+<li>Chroma is the “purity” of a colour, ranging from 0 (grey) to a maximum that varies with luminance.</li>
+<li>Luminance is the lightness of the colour, ranging from 0 (black) to 1 (white).</li>
+</ul>
+<p>Source: <a href="https://ggplot2-book.org/scales-colour" class="uri">https://ggplot2-book.org/scales-colour</a></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <!-- --- -->
 <!-- ##  {#data-types data-menu-title="# Data types #" background="#047C90"} -->
 <!-- <div class="page-center vertical-center"> -->
 <!-- <p class="custom-subtitle bottombr">Different data types require different palette types</p> -->
 <!-- </div> -->
 </section>
-<section id="palette-types" class="slide level2" data-menu-title="Palette types">
+<section id="color-scales" class="slide level2" data-menu-title="Color scales">
 <h2></h2>
-<p><span class="slide-title2">Different palettes types for different data types</span></p>
+<p><span class="slide-title2">Different color scales for different data types</span></p>
 <hr>
 <p><br></p>
 
@@ -535,78 +553,49 @@
 <div class="center-text gray-text body-text-s">
 <p>Image source: <a href="https://blog.datawrapper.de/which-color-scale-to-use-in-data-vis/">Which color scale to use when visualizing data</a>, by Lisa Charlottte Muth. This is the first article of a 4 part series (<a href="https://blog.datawrapper.de/quantitative-vs-qualitative-color-scales/">Part 2</a> / <a href="https://blog.datawrapper.de/diverging-vs-sequential-color-scales/">Part 3</a> / <a href="https://blog.datawrapper.de/classed-vs-unclassed-color-scales/">Part 4</a>) – I highly recommend reading!</p>
 </div>
-<!-- 1. **Qualitative (for categorical / discrete data)** -->
-<!-- 2. **Quantitative (for continuous numeric data)** -->
-<!-- 2. **Sequential (for continuous numeric or inherently ordered data)** -->
-<!-- 3. **Diverging (for continuous numeric data with a meaningful central value)** -->
-<!-- --- -->
-<!-- ## {#qual-pal data-menu-title="Qualitative palettes"}  -->
-<!-- [Palette Types]{.slide-title} -->
-<!-- <hr> -->
-<!-- 1. **Qualitative (for categorical / discrete data)** -->
-<!--     - [colors assigned to each group must be distinct and ideally have different lightnesses (so that they also work in grayscale)]{.body-text-s} -->
-<!--     - [groups don't have an intrinsic order]{.body-text-s} -->
-<!--     - [limit to no more than 7 colors]{.body-text-s} -->
-<!--     - [mainly formed by selecting differet *hues*]{.body-text-s} -->
-<!-- 2. [**Sequential (for continuous numeric or inherently ordered data)**]{.gray-text} -->
-<!-- 3. [**Diverging (for continuous numeric data with a meaningful central value)**]{.gray-text} -->
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: false -->
-<!-- #| fig-align: "center" -->
-<!-- #| out-width: "80%" -->
-<!-- #knitr::include_graphics("images/week5/hcl.png") -->
-<!-- ``` -->
-<!-- ::: {.center-text .body-text-s .gray-text} -->
-<!-- tbd -->
-<!-- ::: -->
-<!-- --- -->
-<!-- ## {#seq-pal data-menu-title="Sequential palettes"}  -->
-<!-- [Three major types of color palette]{.slide-title} -->
-<!-- <hr> -->
-<!-- 1. [**Qualitative (for categorical / discrete data)**]{.gray-text} -->
-<!-- 2. **Sequential (for continuous numeric or inherently ordered data)** -->
-<!--     - [colors assigned to data values in a continuum, based on lightness, hue, or both]{.body-text-s} -->
-<!--     - [lower values typically associated with lighter colors & higher values associated with darker colors]{.body-text-s} -->
-<!--     - [can use a single hue (light to dark) *or* two hues (tyipcally a warmer / brighter hue for lower values and cooler / darker hue for higher values)]{.body-text-s} -->
-<!-- 3. [**Diverging (for continuous numeric data with a meaningful central value)**]{.gray-text} -->
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: false -->
-<!-- #| fig-align: "center" -->
-<!-- #| out-width: "80%" -->
-<!-- #knitr::include_graphics("images/week5/hcl.png") -->
-<!-- ``` -->
-<!-- ::: {.center-text .body-text-s .gray-text} -->
-<!-- tbd -->
-<!-- ::: -->
-<!-- --- -->
-<!-- ## {#div-pal data-menu-title="Diverging palettes"}  -->
-<!-- [Three major types of color palette]{.slide-title} -->
-<!-- <hr> -->
-<!-- 1. [**Qualitative (for categorical / discrete data)**]{.gray-text} -->
-<!-- 2. [**Sequential (for continuous numeric or inherently ordered data)**]{.gray-text} -->
-<!-- 3. **Diverging (for continuous numeric data with a meaningful central value)** -->
-<!--     - [combination of two sequential palettes with a shared endpoint at the central value]{.body-text-s} -->
-<!--     - [use a distinctive hue for each of the component palettes]{.body-text-s} -->
-<!--     - [central value is assigned a light color (light gray is best)]{.body-text-s} -->
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: false -->
-<!-- #| fig-align: "center" -->
-<!-- #| out-width: "80%" -->
-<!-- #knitr::include_graphics("images/week5/hcl.png") -->
-<!-- ``` -->
-<!-- ::: {.center-text .body-text-s .gray-text} -->
-<!-- tbd -->
-<!-- ::: -->
-<!-- --- -->
-<!-- ## {#use-or-make data-menu-title="Use pre-made palettes or create your own"}  -->
-<!-- [You can use pre-existing palettes, or create your own]{.slide-title2} -->
-<!-- <hr> -->
-<!-- Sequential and diverging palettes can be used to map continuous values to color in two different ways: -->
-<!-- a. Discrete  -->
-<!-- b. Continuous -->
+</section>
+<section id="categorical" class="slide level2" data-menu-title="Categorical scales">
+<h2></h2>
+<p><span class="slide-title2">Categorical scales</span></p>
+<hr>
+<ul>
+<li><span class="body-text-s">colors assigned to each group must be distinct and ideally have different lightnesses</span></li>
+<li><span class="body-text-s">groups don’t have an intrinsic order</span></li>
+<li><span class="body-text-s">limit to no more than 7 colors</span></li>
+<li><span class="body-text-s">mainly formed by selecting differet <em>hues</em></span></li>
+</ul>
+
+<img data-src="images/week5/categorical-scales.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Map source: <a href="https://walker-data.com/census-r/index.html">Analyzing US Census Data</a>, by Kyle Walker</p>
+</div>
+</section>
+<section id="sequential" class="slide level2" data-menu-title="Sequential scales">
+<h2></h2>
+<p><span class="slide-title2">Sequential scales</span></p>
+<hr>
+<ul>
+<li><span class="body-text-s">colors assigned to data values in a continuum, based on lightness, hue, or both</span></li>
+<li><span class="body-text-s">lower values typically associated with lighter colors &amp; higher values associated with darker colors</span></li>
+<li><span class="body-text-s">can use a single hue (light to dark) <em>or</em> two hues (tyipcally a warmer / brighter hue for lower values and cooler / darker hue for higher values)</span></li>
+</ul>
+
+<img data-src="images/week5/sequential-scales.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Map source: <a href="https://walker-data.com/census-r/index.html">Analyzing US Census Data</a>, by Kyle Walker</p>
+</div>
+</section>
+<section id="diverging" class="slide level2" data-menu-title="Diverging scales">
+<h2></h2>
+<p><span class="slide-title2">Sequential scales</span></p>
+<hr>
+<ul>
+<li><span class="body-text-s">combination of two sequential palettes with a shared endpoint at the central value</span></li>
+<li><span class="body-text-s">use a distinctive hue for each of the component palettes</span></li>
+<li><span class="body-text-s">central value is assigned a light color (light gray is best)</span></li>
+</ul>
+
+<img data-src="images/week5/diverging-scales.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Map source: <a href="https://vividmaps.com/us-election-2020/">2020 U.S. Election Mapped: TrumpLand vs Biden Archipelago</a>, by Vivid Maps</p>
+</div>
 </section>
 <section id="accessibility" class="slide level2" data-menu-title="# Accessibility #" data-background="#047C90">
 <h2></h2>
@@ -758,7 +747,7 @@ Ensuring inclusive and accessible design through your color choices
 <span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
 <span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">"magma"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-12-1.png" style="width:100.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-15-1.png" style="width:100.0%"></p>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -775,7 +764,7 @@ Ensuring inclusive and accessible design through your color choices
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:100.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-16-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -836,7 +825,7 @@ Ensuring inclusive and accessible design through your color choices
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-18-1.png" style="width:100.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-21-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -873,7 +862,7 @@ Ensuring inclusive and accessible design through your color choices
 <span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
 <span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-20-1.png" style="width:100.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-23-1.png" style="width:100.0%"></p>
 </div>
 </div>
 </div><div class="column" style="width:33%;">
@@ -888,7 +877,7 @@ Ensuring inclusive and accessible design through your color choices
 <span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
 <span id="cb9-6"><a href="#cb9-6"></a>  <span class="fu">scale_color_distiller</span>(<span class="at">palette =</span> <span class="st">"BuPu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-21-1.png" style="width:100.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-24-1.png" style="width:100.0%"></p>
 </div>
 </div>
 </div><div class="column" style="width:33%;">
@@ -905,7 +894,7 @@ Ensuring inclusive and accessible design through your color choices
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-22-1.png" style="width:100.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-25-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -927,7 +916,7 @@ Ensuring inclusive and accessible design through your color choices
 <span id="cb11-6"><a href="#cb11-6"></a>  <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"BuPu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-23-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-26-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
 <p>Trick comes courtesy of <a href="https://albert-rapp.de/">Albert Rapp</a> and his <a href="https://www.youtube.com/watch?v=ZVSbY4z7tMY">How to Use Better Colors in ggplot (3 Easy Ways)</a> video tutorial. Check out his <a href="https://www.youtube.com/@rappa753">YouTube channel</a> for <em>tons</em> of great R content.</p>
 </div>
 </section>
@@ -1006,7 +995,7 @@ There are <em>so many</em> great pre-made color palettes to explore, many of whi
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-27-1.png" style="width:90.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-30-1.png" style="width:90.0%"></p>
 </figure>
 </div>
 </div>
@@ -1021,7 +1010,7 @@ There are <em>so many</em> great pre-made color palettes to explore, many of whi
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-28-1.png" style="width:590.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-31-1.png" style="width:590.0%"></p>
 </figure>
 </div>
 </div>
@@ -1030,7 +1019,7 @@ There are <em>so many</em> great pre-made color palettes to explore, many of whi
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6cd9ce9c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_37aa4bec" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1056,7 +1045,7 @@ There are <em>so many</em> great pre-made color palettes to explore, many of whi
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-30-1.png" style="width:90.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-33-1.png" style="width:90.0%"></p>
 </figure>
 </div>
 </div>
@@ -1077,7 +1066,7 @@ There are <em>so many</em> great pre-made color palettes to explore, many of whi
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-31-1.png" style="width:590.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-34-1.png" style="width:590.0%"></p>
 </figure>
 </div>
 </div>
@@ -1224,7 +1213,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-36-1.png" style="width:100.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-39-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -1429,7 +1418,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-48-1.png" style="width:80.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-51-1.png" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -1445,7 +1434,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-49-1.png" style="width:80.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-52-1.png" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -1514,7 +1503,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-52-1.png" style="width:80.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-55-1.png" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -1530,7 +1519,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-53-1.png" style="width:80.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-56-1.png" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -1555,7 +1544,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-55-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-58-1.png" width="960"></p>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1564,7 +1553,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-56-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-59-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1644,7 +1633,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> my_palette)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-59-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-62-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="set-color-names1" class="slide level2" data-menu-title="Set color names 1">
 <h2></h2>
 <p><span class="slide-title">Tip: Set color names (1/2)</span></p>
@@ -1665,7 +1654,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-61-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-64-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1683,7 +1672,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-62-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-65-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1712,7 +1701,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-64-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-67-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1730,7 +1719,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-65-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-68-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1760,7 +1749,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-66-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-69-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1781,13 +1770,26 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-67-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-70-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>This isn’t the only way to do this! Try creating a <code>highlight</code> variable in your data frame. See <a href="https://andrewirwin.github.io/data-visualization/colour.html#highlighting" class="uri">https://andrewirwin.github.io/data-visualization/colour.html#highlighting</a> and</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="create-palette" class="slide level2" data-menu-title="Create your own palette">
 <h2></h2>
@@ -1806,7 +1808,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-68-1.png" style="width:90.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-71-1.png" style="width:90.0%"></p>
 </figure>
 </div>
 </div>
@@ -1821,7 +1823,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-69-1.png" style="width:590.0%"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-72-1.png" style="width:590.0%"></p>
 </figure>
 </div>
 </div>
@@ -1830,7 +1832,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_d2dbd33a" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_ab33ed02" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -2059,7 +2061,7 @@ There are also some additional rules / guidelines that you should pretty much al
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_2146eb87" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_ad82977d" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -2120,23 +2122,6 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 <div class="footer">
 <p>A lot of the following data viz code draws from and was inspired by the wonderful <a href="https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html">Making Maps with R</a> tutorial, by <a href="https://github.com/eriqande">Eric C. Anderson</a>.</p>
 </div>
-<!-- ---- -->
-<!-- ## {#plan data-menu-title="The Plan"}  -->
-<!-- [The Plan]{.slide-title} -->
-<!-- <hr> -->
-<!-- **The type of color palette we use will vary with the type of data we hope to visualize.** In this following section, we'll create a series of choropleth maps visualizing different data types (categorical vs. numerical) that require different color palettes.  -->
-<!-- <br> -->
-<!-- . . .  -->
-<!-- **We'll create maps that color counties based on the following:** -->
-<!-- - [**Categorical variable**]{.teal-text} -->
-<!--     - Color counties based on whether their total precipitation in Dec 2023 was above or below the 1991 - 2000 mean  -->
-<!-- - [**Numeric variable**]{.teal-text} -->
-<!--     - [**Sequential (either linear or binned):**]{.teal-text .body-text-s} Color counties based on the total amount of precipitation received in Dec 2023 -->
-<!--     - [**Diverging (either linear or binned):**]{.teal-text .body-text-s} Color counties based off the difference between the 1901 - 2000 mean and Dec 2023 precipitation totals -->
-<!-- . . . -->
-<!-- ::: {.center-text .body-text-m} -->
-<!-- **First, some data wrangling** -->
-<!-- ::: -->
 </section>
 <section id="data-wrangling" class="slide level2" data-menu-title="Data wrangling">
 <h2></h2>
@@ -2157,7 +2142,7 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 <span id="cb32-11"><a href="#cb32-11"></a>counties <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"county"</span>)</span>
 <span id="cb32-12"><a href="#cb32-12"></a></span>
 <span id="cb32-13"><a href="#cb32-13"></a><span class="co">#....................import precipitation data...................</span></span>
-<span id="cb32-14"><a href="#cb32-14"></a>precip_counties <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week5"</span>, <span class="st">"data"</span>, <span class="st">"county-precip-oct2023.csv"</span>), <span class="at">skip =</span> <span class="dv">4</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb32-14"><a href="#cb32-14"></a>precip_counties <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week5"</span>, <span class="st">"data"</span>, <span class="st">"county-precip-2023.csv"</span>), <span class="at">skip =</span> <span class="dv">4</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb32-15"><a href="#cb32-15"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
 <span id="cb32-16"><a href="#cb32-16"></a></span>
 <span id="cb32-17"><a href="#cb32-17"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
@@ -2166,35 +2151,118 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 <span id="cb32-20"><a href="#cb32-20"></a></span>
 <span id="cb32-21"><a href="#cb32-21"></a><span class="co">#..............update names of counties df variables.............</span></span>
 <span id="cb32-22"><a href="#cb32-22"></a>us_counties <span class="ot">&lt;-</span> counties <span class="sc">|&gt;</span> </span>
-<span id="cb32-23"><a href="#cb32-23"></a>  <span class="fu">select</span>(<span class="at">state =</span> region, <span class="at">county =</span> subregion, long, lat, group, order)</span>
-<span id="cb32-24"><a href="#cb32-24"></a></span>
-<span id="cb32-25"><a href="#cb32-25"></a>  </span>
-<span id="cb32-26"><a href="#cb32-26"></a><span class="co">#..........clean precip data &amp; make sure var names match.........</span></span>
-<span id="cb32-27"><a href="#cb32-27"></a>precip_counties_wrangled <span class="ot">&lt;-</span> precip_counties <span class="sc">|&gt;</span> </span>
-<span id="cb32-28"><a href="#cb32-28"></a>  </span>
-<span id="cb32-29"><a href="#cb32-29"></a>  <span class="co"># more intuitive column name ----</span></span>
-<span id="cb32-30"><a href="#cb32-30"></a>  <span class="fu">rename</span>(<span class="at">county =</span> name) <span class="sc">|&gt;</span> </span>
-<span id="cb32-31"><a href="#cb32-31"></a>  </span>
-<span id="cb32-32"><a href="#cb32-32"></a>  <span class="co"># convert count and state names to all lowercase ----</span></span>
-<span id="cb32-33"><a href="#cb32-33"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_to_lower</span>(county),</span>
-<span id="cb32-34"><a href="#cb32-34"></a>         <span class="at">state =</span> <span class="fu">str_to_lower</span>(state)) <span class="sc">|&gt;</span> </span>
-<span id="cb32-35"><a href="#cb32-35"></a>  </span>
-<span id="cb32-36"><a href="#cb32-36"></a>  <span class="co"># remove the word "county" from all county names ----</span></span>
-<span id="cb32-37"><a href="#cb32-37"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_remove</span>(county, <span class="at">pattern =</span> <span class="st">" county"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb32-38"><a href="#cb32-38"></a>  </span>
-<span id="cb32-39"><a href="#cb32-39"></a>  <span class="co"># remove the word "parish" from the end of Louisiana counties ----</span></span>
-<span id="cb32-40"><a href="#cb32-40"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: there are more counties that need cleaning for seamless joining with `us_counties` df; I've don't done a complete sweep of the data, so you'll notice data gaps once plotted</span></span>
-<span id="cb32-41"><a href="#cb32-41"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_remove</span>(county, <span class="at">pattern =</span> <span class="st">" parish"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb32-42"><a href="#cb32-42"></a></span>
-<span id="cb32-43"><a href="#cb32-43"></a>  <span class="co"># select &amp; rename relevant cols ----</span></span>
-<span id="cb32-44"><a href="#cb32-44"></a>  <span class="fu">select</span>(state, county, <span class="at">precip =</span> value, <span class="at">mean_1901_2000 =</span> x1901_2000_mean, <span class="at">anomaly =</span> anomaly_1901_2000_base_period) <span class="sc">|&gt;</span> <span class="co"># comp_mean</span></span>
-<span id="cb32-45"><a href="#cb32-45"></a>  </span>
-<span id="cb32-46"><a href="#cb32-46"></a>  <span class="co"># make precip var numeric (was chr) ----</span></span>
-<span id="cb32-47"><a href="#cb32-47"></a>  <span class="fu">mutate</span>(<span class="at">precip =</span> <span class="fu">as.numeric</span>(precip))</span>
-<span id="cb32-48"><a href="#cb32-48"></a></span>
-<span id="cb32-49"><a href="#cb32-49"></a><span class="co">#............................join dfs............................</span></span>
-<span id="cb32-50"><a href="#cb32-50"></a>joined_precip_us_counties <span class="ot">&lt;-</span> <span class="fu">full_join</span>(precip_counties_wrangled, us_counties)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-23"><a href="#cb32-23"></a>  </span>
+<span id="cb32-24"><a href="#cb32-24"></a>  <span class="co"># select / rename cols of interest ----</span></span>
+<span id="cb32-25"><a href="#cb32-25"></a>  <span class="fu">select</span>(<span class="at">state =</span> region, <span class="at">county =</span> subregion, long, lat, group, order) <span class="sc">|&gt;</span> </span>
+<span id="cb32-26"><a href="#cb32-26"></a>  </span>
+<span id="cb32-27"><a href="#cb32-27"></a>  <span class="co"># make all county &amp; state names Title Case ----</span></span>
+<span id="cb32-28"><a href="#cb32-28"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_to_title</span>(county),</span>
+<span id="cb32-29"><a href="#cb32-29"></a>         <span class="at">state =</span> <span class="fu">str_to_title</span>(state)) <span class="sc">|&gt;</span> </span>
+<span id="cb32-30"><a href="#cb32-30"></a>  </span>
+<span id="cb32-31"><a href="#cb32-31"></a>  <span class="co"># fix different spellings so that they match county names in precip data ----</span></span>
+<span id="cb32-32"><a href="#cb32-32"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">case_when</span>(</span>
+<span id="cb32-33"><a href="#cb32-33"></a>    county <span class="sc">==</span> <span class="st">"De Kalb"</span> <span class="sc">~</span> <span class="st">"DeKalb"</span>,</span>
+<span id="cb32-34"><a href="#cb32-34"></a>    county <span class="sc">==</span> <span class="st">"De Soto"</span> <span class="sc">~</span> <span class="st">"DeSoto"</span>, </span>
+<span id="cb32-35"><a href="#cb32-35"></a>    county <span class="sc">==</span> <span class="st">"Du Page"</span> <span class="sc">~</span> <span class="st">"DuPage"</span>,</span>
+<span id="cb32-36"><a href="#cb32-36"></a>    county <span class="sc">==</span> <span class="st">"La Porte"</span> <span class="sc">~</span> <span class="st">"LaPorte"</span>,</span>
+<span id="cb32-37"><a href="#cb32-37"></a>    county <span class="sc">==</span> <span class="st">"Obrien"</span> <span class="sc">~</span> <span class="st">"O'Brien"</span>,</span>
+<span id="cb32-38"><a href="#cb32-38"></a>    county <span class="sc">==</span> <span class="st">"Prince Georges"</span> <span class="sc">~</span> <span class="st">"Prince George's"</span>,</span>
+<span id="cb32-39"><a href="#cb32-39"></a>    county <span class="sc">==</span> <span class="st">"Queen Annes"</span> <span class="sc">~</span> <span class="st">"Queen Anne's"</span>,</span>
+<span id="cb32-40"><a href="#cb32-40"></a>    county <span class="sc">==</span> <span class="st">"Ste Genevieve"</span> <span class="sc">~</span> <span class="st">"Ste. Genevieve"</span>,</span>
+<span id="cb32-41"><a href="#cb32-41"></a>    county <span class="sc">==</span> <span class="st">"La Moure"</span> <span class="sc">~</span> <span class="st">"LaMoure"</span>,</span>
+<span id="cb32-42"><a href="#cb32-42"></a>    state <span class="sc">==</span> <span class="st">"Texas"</span> <span class="sc">&amp;</span> county <span class="sc">==</span> <span class="st">"De Witt"</span> <span class="sc">~</span> <span class="st">"DeWitt"</span>,</span>
+<span id="cb32-43"><a href="#cb32-43"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> county</span>
+<span id="cb32-44"><a href="#cb32-44"></a>    )) <span class="sc">|&gt;</span> </span>
+<span id="cb32-45"><a href="#cb32-45"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_replace</span>(<span class="at">string =</span> county, <span class="at">pattern =</span> <span class="st">"St "</span>, <span class="at">replacement =</span> <span class="st">"St. "</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb32-46"><a href="#cb32-46"></a>  </span>
+<span id="cb32-47"><a href="#cb32-47"></a>  <span class="co"># remove DC &amp; Yellowstone National Park ----</span></span>
+<span id="cb32-48"><a href="#cb32-48"></a>  <span class="fu">filter</span>(<span class="sc">!</span>state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"District Of Columbia"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb32-49"><a href="#cb32-49"></a>  <span class="fu">filter</span>(<span class="sc">!</span>county <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Yellowstone National"</span>))</span>
+<span id="cb32-50"><a href="#cb32-50"></a></span>
+<span id="cb32-51"><a href="#cb32-51"></a></span>
+<span id="cb32-52"><a href="#cb32-52"></a><span class="co">#..........clean precip data &amp; make sure var names match.........</span></span>
+<span id="cb32-53"><a href="#cb32-53"></a>precip_counties_wrangled <span class="ot">&lt;-</span> precip_counties <span class="sc">|&gt;</span> </span>
+<span id="cb32-54"><a href="#cb32-54"></a>  </span>
+<span id="cb32-55"><a href="#cb32-55"></a>  <span class="co"># more intuitive col name ----</span></span>
+<span id="cb32-56"><a href="#cb32-56"></a>  <span class="fu">rename</span>(<span class="at">county =</span> name) <span class="sc">|&gt;</span> </span>
+<span id="cb32-57"><a href="#cb32-57"></a>  </span>
+<span id="cb32-58"><a href="#cb32-58"></a>  <span class="co"># make all county &amp; state names lower case ----</span></span>
+<span id="cb32-59"><a href="#cb32-59"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_to_lower</span>(county),</span>
+<span id="cb32-60"><a href="#cb32-60"></a>         <span class="at">state =</span> <span class="fu">str_to_lower</span>(state)) <span class="sc">|&gt;</span></span>
+<span id="cb32-61"><a href="#cb32-61"></a>  </span>
+<span id="cb32-62"><a href="#cb32-62"></a>  <span class="co"># remove recurring patterns ----</span></span>
+<span id="cb32-63"><a href="#cb32-63"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_remove</span>(county, <span class="at">pattern =</span> <span class="st">" county"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb32-64"><a href="#cb32-64"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_remove</span>(county, <span class="at">pattern =</span> <span class="st">" parish"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb32-65"><a href="#cb32-65"></a>  </span>
+<span id="cb32-66"><a href="#cb32-66"></a>  <span class="co"># make state &amp; county names Title Case again ----</span></span>
+<span id="cb32-67"><a href="#cb32-67"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_to_title</span>(county),</span>
+<span id="cb32-68"><a href="#cb32-68"></a>         <span class="at">state =</span> <span class="fu">str_to_title</span>(state)) <span class="sc">|&gt;</span> </span>
+<span id="cb32-69"><a href="#cb32-69"></a>  </span>
+<span id="cb32-70"><a href="#cb32-70"></a>  <span class="co"># fix different spellings so that they match county names in precip data ----</span></span>
+<span id="cb32-71"><a href="#cb32-71"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">case_when</span>(</span>
+<span id="cb32-72"><a href="#cb32-72"></a>    county <span class="sc">==</span> <span class="st">"Dekalb"</span> <span class="sc">~</span> <span class="st">"DeKalb"</span>,</span>
+<span id="cb32-73"><a href="#cb32-73"></a>    county <span class="sc">==</span> <span class="st">"Desoto"</span> <span class="sc">~</span> <span class="st">"DeSoto"</span>, </span>
+<span id="cb32-74"><a href="#cb32-74"></a>    state <span class="sc">==</span> <span class="st">"Louisiana"</span> <span class="sc">&amp;</span> county <span class="sc">==</span> <span class="st">"De Soto"</span> <span class="sc">~</span> <span class="st">"DeSoto"</span>,</span>
+<span id="cb32-75"><a href="#cb32-75"></a>    county <span class="sc">==</span> <span class="st">"Dupage"</span> <span class="sc">~</span> <span class="st">"DuPage"</span>,</span>
+<span id="cb32-76"><a href="#cb32-76"></a>    county <span class="sc">==</span> <span class="st">"Lasalle"</span> <span class="sc">~</span> <span class="st">"La Salle"</span>,</span>
+<span id="cb32-77"><a href="#cb32-77"></a>    county <span class="sc">==</span> <span class="st">"Laporte"</span> <span class="sc">~</span> <span class="st">"LaPorte"</span>,</span>
+<span id="cb32-78"><a href="#cb32-78"></a>    county <span class="sc">==</span> <span class="st">"O'brien"</span> <span class="sc">~</span> <span class="st">"O'Brien"</span>,</span>
+<span id="cb32-79"><a href="#cb32-79"></a>    county <span class="sc">==</span> <span class="st">"Lamoure"</span> <span class="sc">~</span> <span class="st">"LaMoure"</span>,</span>
+<span id="cb32-80"><a href="#cb32-80"></a>    state <span class="sc">==</span> <span class="st">"Texas"</span> <span class="sc">&amp;</span> county <span class="sc">==</span> <span class="st">"Dewitt"</span> <span class="sc">~</span> <span class="st">"DeWitt"</span>,</span>
+<span id="cb32-81"><a href="#cb32-81"></a>    county <span class="sc">==</span> <span class="st">"St. Mary's"</span> <span class="sc">~</span> <span class="st">"St. Marys"</span>,</span>
+<span id="cb32-82"><a href="#cb32-82"></a>    county <span class="sc">==</span> <span class="st">"Suffolk City"</span> <span class="sc">~</span> <span class="st">"Suffolk"</span>,</span>
+<span id="cb32-83"><a href="#cb32-83"></a>    county <span class="sc">==</span> <span class="st">"Hampton City"</span> <span class="sc">~</span> <span class="st">"Hampton"</span>,</span>
+<span id="cb32-84"><a href="#cb32-84"></a>    county <span class="sc">==</span> <span class="st">"Virginia Beach City"</span> <span class="sc">~</span> <span class="st">"Virginia Beach"</span>,</span>
+<span id="cb32-85"><a href="#cb32-85"></a>    county <span class="sc">==</span> <span class="st">"Newport News City"</span> <span class="sc">~</span> <span class="st">"Newport News"</span>,</span>
+<span id="cb32-86"><a href="#cb32-86"></a>    county <span class="sc">==</span> <span class="st">"Norfolk City"</span> <span class="sc">~</span> <span class="st">"Norfolk"</span>,</span>
+<span id="cb32-87"><a href="#cb32-87"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> county</span>
+<span id="cb32-88"><a href="#cb32-88"></a>  )) <span class="sc">|&gt;</span> </span>
+<span id="cb32-89"><a href="#cb32-89"></a>  </span>
+<span id="cb32-90"><a href="#cb32-90"></a>  <span class="co"># remove DC &amp; other non-counties</span></span>
+<span id="cb32-91"><a href="#cb32-91"></a>  <span class="fu">filter</span>(<span class="sc">!</span>county <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Washington, D.c."</span>, <span class="st">"Alexandria City"</span>, <span class="st">"Bristol City"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb32-92"><a href="#cb32-92"></a>  </span>
+<span id="cb32-93"><a href="#cb32-93"></a>  <span class="co"># select &amp; rename cols ----</span></span>
+<span id="cb32-94"><a href="#cb32-94"></a>  <span class="fu">select</span>(state, county, <span class="at">precip =</span> value, <span class="at">mean_1901_2000 =</span> x1901_2000_mean, <span class="at">anomaly =</span> anomaly_1901_2000_base_period) <span class="sc">|&gt;</span> </span>
+<span id="cb32-95"><a href="#cb32-95"></a>  </span>
+<span id="cb32-96"><a href="#cb32-96"></a>  <span class="co"># coerce precip from chr to numeric ----</span></span>
+<span id="cb32-97"><a href="#cb32-97"></a>  <span class="fu">mutate</span>(<span class="at">precip =</span> <span class="fu">as.numeric</span>(precip))</span>
+<span id="cb32-98"><a href="#cb32-98"></a></span>
+<span id="cb32-99"><a href="#cb32-99"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb32-100"><a href="#cb32-100"></a><span class="do">##  ~ used to identify which county names don't match across dfs  ----</span></span>
+<span id="cb32-101"><a href="#cb32-101"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb32-102"><a href="#cb32-102"></a></span>
+<span id="cb32-103"><a href="#cb32-103"></a><span class="co"># unique_us_counties &lt;- us_counties |&gt; </span></span>
+<span id="cb32-104"><a href="#cb32-104"></a><span class="co">#   distinct(state, county)</span></span>
+<span id="cb32-105"><a href="#cb32-105"></a><span class="co"># </span></span>
+<span id="cb32-106"><a href="#cb32-106"></a><span class="co"># unique_precip_counties &lt;- precip_counties_wrangled |&gt; </span></span>
+<span id="cb32-107"><a href="#cb32-107"></a><span class="co">#   distinct(state, county)</span></span>
+<span id="cb32-108"><a href="#cb32-108"></a><span class="co"># </span></span>
+<span id="cb32-109"><a href="#cb32-109"></a><span class="co"># missing_from_us_counties &lt;- anti_join(unique_precip_counties, unique_us_counties) |&gt; </span></span>
+<span id="cb32-110"><a href="#cb32-110"></a><span class="co">#   rename(county_in_us = county)</span></span>
+<span id="cb32-111"><a href="#cb32-111"></a><span class="co">#</span></span>
+<span id="cb32-112"><a href="#cb32-112"></a><span class="co"># missing_from_precip_counties &lt;- anti_join(unique_us_counties, unique_precip_counties) |&gt; </span></span>
+<span id="cb32-113"><a href="#cb32-113"></a><span class="co">#   rename(county_in_precip = county)</span></span>
+<span id="cb32-114"><a href="#cb32-114"></a></span>
+<span id="cb32-115"><a href="#cb32-115"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb32-116"><a href="#cb32-116"></a><span class="do">##  ~ ----------------------------------------------------------  ----</span></span>
+<span id="cb32-117"><a href="#cb32-117"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb32-118"><a href="#cb32-118"></a></span>
+<span id="cb32-119"><a href="#cb32-119"></a><span class="co">#............................join dfs............................</span></span>
+<span id="cb32-120"><a href="#cb32-120"></a>joined_precip_us_counties <span class="ot">&lt;-</span> <span class="fu">full_join</span>(precip_counties_wrangled, us_counties)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="consider-data" class="slide level2" data-menu-title="Consider data &amp; colors">
+<h2></h2>
+<p><span class="slide-title">Let’s first consider our data</span></p>
+<hr>
+<p>There are pros and cons to both classed and unclassed color scales.</p>
+<p>Use a <strong>classed</strong> if we want to <strong>communicate statistical brackets</strong>: - the focus is on which data units fall into a particular predefined class, rather than the overall pattern of the map - If you want your readers to see if certain regions fall into a statistical bracket, use classes - Use a classed color scales if you want readers to read values - more classes, less readable - So if you want readers to read specific value ranges, go for a classed map with only a few classes. That’s especially important when you show static maps (e.g., in print or PDF reports) where people don’t have the option to see tooltips or hover over a legend.</p>
+<p>Use an <strong>unclassed</strong> color scale if you want to <strong>show a general pattern</strong> (e.g.&nbsp;“the west got less precipitation than the east”) - makes it harder to see which statistical brackets counties fall into (e.g.&nbsp;which counties got more or less precipitation than the national average) - “The unclassed choropleth is the most exact representation of the data model possible,” Judith A. Tyner - The more classes you show, the more nuanced your map becomes - Use an unclassed color scale if you don’t want to interpret for the reader. It makes it easier to see: - …outliers - …if the transition between clusters is smooth or abrupt - …if the region I’m interested in as a reader has a higher or lower value than the neighboring regions - “How does my region compare?” is a question that’s better answered with an unclassed map.</p>
+<p>No matter if you decide for a classed map at the end, you should start your process by looking at an unclassed map. This will help you see subtle differences between regions and make a conscious decision if and how you should simplify them.</p>
+</section>
+<section class="slide level2">
+
+<p><a href="https://blog.datawrapper.de/classed-vs-unclassed-color-scales/" class="uri">https://blog.datawrapper.de/classed-vs-unclassed-color-scales/</a></p>
 </section>
 <section id="base-map" class="slide level2" data-menu-title="Create base map">
 <h2></h2>
@@ -2213,7 +2281,7 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 <span id="cb33-9"><a href="#cb33-9"></a>  </span>
 <span id="cb33-10"><a href="#cb33-10"></a>  <span class="co"># update labels ----</span></span>
 <span id="cb33-11"><a href="#cb33-11"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Total Precipitation, by County"</span>,</span>
-<span id="cb33-12"><a href="#cb33-12"></a>       <span class="at">subtitle =</span> <span class="st">"October 2023"</span>) <span class="sc">+</span></span>
+<span id="cb33-12"><a href="#cb33-12"></a>       <span class="at">subtitle =</span> <span class="st">"2023"</span>) <span class="sc">+</span></span>
 <span id="cb33-13"><a href="#cb33-13"></a>  </span>
 <span id="cb33-14"><a href="#cb33-14"></a>  <span class="co"># set theme to clean up appearance ----</span></span>
 <span id="cb33-15"><a href="#cb33-15"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span> </span>
@@ -2226,7 +2294,7 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 <span id="cb33-22"><a href="#cb33-22"></a>base_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-89-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-92-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -2246,7 +2314,7 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 <span id="cb34-4"><a href="#cb34-4"></a>base_map_proj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-90-1.png" width="960" class="r-stretch quarto-figure-center"><aside class="notes">
+<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-93-1.png" width="960" class="r-stretch quarto-figure-center"><aside class="notes">
 <p>Alternatively:</p>
 <ul>
 <li>fix the relationship between lat &amp; long by using <code>coord_fixed(1.3)</code></li>
@@ -2295,33 +2363,39 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 <hr>
 <p>First, create a color palette:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>my_palette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#543006"</span>, <span class="st">"#975F1C"</span>, <span class="st">"#AC7E42"</span>, <span class="st">"#C09C66"</span>, <span class="st">"#D6BB8C"</span>, <span class="st">"#EBD9B0"</span>,<span class="st">"#D5D4CE"</span>,</span>
-<span id="cb36-2"><a href="#cb36-2"></a>                 <span class="st">"#B2DDD7"</span>, <span class="st">"#8BC2BC"</span>, <span class="st">"#64A7A1"</span>, <span class="st">"#3B8E86"</span>, <span class="st">"#16726B"</span>, <span class="st">"#003C30"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>my_palette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#543006"</span>, <span class="st">"#975F1C"</span>, <span class="st">"#AC7E42"</span>, <span class="st">"#C09C66"</span>, <span class="st">"#D6BB8C"</span>, <span class="st">"#EBD9B0"</span>,<span class="co">#"#D5D4CE",</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a>                 <span class="st">"#B2DDD7"</span>, <span class="st">"#8BC2BC"</span>, <span class="st">"#64A7A1"</span>, <span class="st">"#3B8E86"</span>, <span class="st">"#16726B"</span>, <span class="st">"#003C30"</span>)</span>
+<span id="cb36-3"><a href="#cb36-3"></a></span>
+<span id="cb36-4"><a href="#cb36-4"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.pal</span>(<span class="at">n =</span> <span class="dv">11</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-95-1.png" width="960"></p>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>my_brew_palette <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">11</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Then map:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>base_map_proj <span class="sc">+</span> </span>
-<span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_palette) <span class="sc">+</span></span>
-<span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"g"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>base_map_proj <span class="sc">+</span> </span>
+<span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_palette) <span class="sc">+</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"g"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-93-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-96-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>base_map_proj <span class="sc">+</span> </span>
-<span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_palette) <span class="sc">+</span></span>
-<span id="cb38-3"><a href="#cb38-3"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"b"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>base_map_proj <span class="sc">+</span> </span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_palette) <span class="sc">+</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"b"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-94-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-97-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2330,6 +2404,21 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 </div>
 <div class="footer">
 <p>By default, <code>scale_fill_stepsn()</code> sets <code>nice.breaks = TRUE</code></p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Determine the mean</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 36.47677</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 62.62383</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 36.44155</code></pre>
+</div>
 </div>
 
 <div class="footer footer-default">

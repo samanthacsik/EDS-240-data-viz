@@ -197,7 +197,7 @@ We'll be exploring **bottom temperatures recorded at Mohawk Reef**, a near-shore
 
 <hr>
 
-Data are imported directly from the [EDI Data Portal](https://portal.edirepository.org/nis/home.jsp). Explore the [metadata package](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=77) online to learn more about these data.
+Data are imported directly from the [EDI Data Portal](https://portal.edirepository.org/nis/home.jsp). Explore the [metadata package](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=2007) online to learn more about these data.
 
 ```{r}
 #| eval: true
@@ -218,23 +218,22 @@ mko_clean <- mko |>
 
   # create datetime column ----
   unite(date, year, month, day, sep = "-", remove = FALSE) |>
-  mutate(time = chron::times(as.numeric(decimal_time))) |>
+  mutate(time = chron::times(decimal_time)) |>
   unite(date_time, date, time, sep = " ") |>
 
   # coerce data types ----
-  mutate(date_time = as.POSIXct(date_time, "%Y-%m-%d %H:%M:%S", tz = "GMT"),
+  mutate(date_time = as.POSIXct(date_time, "%Y-%m-%d %H:%M:%S", tz = "GMT"), # see <https://www.neonscience.org/resources/learning-hub/tutorials/dc-convert-date-time-posix-r> for overview of POSIXct vs POSIXlt
          year = as.factor(year),
          month = as.factor(month),
-         day = as.numeric(day),
-         Temp_top = as.numeric(Temp_top),
-         Temp_mid = as.numeric(Temp_mid),
-         Temp_bot = as.numeric(Temp_bot)) |>
+         day = as.numeric(day)) |>
 
-  # add month abbreviation ----
+  # add month name by indexing the built-in `month.name` vector ----
   mutate(month_name = as.factor(month.name[month])) |>
 
   # replace 9999s with NAs ----
-  replace_with_na(replace = list(Temp_bot = 9999, Temp_top = 9999, Temp_mid = 9999)) |>
+  naniar::replace_with_na(replace = list(Temp_bot = 9999, 
+                                         Temp_top = 9999, 
+                                         Temp_mid = 9999)) |>
 
   # select/reorder desired columns ----
   select(date_time, year, month, day, month_name, Temp_bot, Temp_mid, Temp_top)
@@ -432,7 +431,7 @@ mko_clean |>
 
 [**What are they?**]{.teal-text} 
 
-- A smoothed version of a histogram. Density plots are representations of the **distribution of a *numeric* variable(s)**, which uses a **[kernel density estimate](https://chemicalstatistician.wordpress.com/2013/06/09/exploratory-data-analysis-kernel-density-estimation-in-r-on-ozone-pollution-data-in-new-york-and-ozonopolis/)** (KDE) to show the [probability density function](https://en.wikipedia.org/wiki/Probability_density_function) of the variable. The area under each curve is equal to 1.
+- A smoothed version of a histogram. Density plots are representations of the **distribution of a *numeric* variable(s)**, which uses a [kernel density estimate](https://chemicalstatistician.wordpress.com/2013/06/09/exploratory-data-analysis-kernel-density-estimation-in-r-on-ozone-pollution-data-in-new-york-and-ozonopolis/) (KDE) to show the [probability density function](https://en.wikipedia.org/wiki/Probability_density_function) of the variable. **The area under each curve is equal to 1.** *Use a density plot when you are most concerned with the shape of the distribution.*
 
 :::: columns 
 
@@ -444,6 +443,7 @@ mko_clean |>
 [**Important considerations:**]{.teal-text} 
 
 - useful when you want to visualize the shape of your data (not affected by bin number)
+- does not indicate sample size
 - can be misleading with small data sets
 - band width, which affects level of smoothing
 :::
@@ -470,6 +470,10 @@ mko_clean |>
 Check out [this cool interactive tool](https://mathisonian.github.io/kde/), by [Matthew Conlen](https://mathisonian.com/), for a succinct and clear explanation of KDE.
 :::
 
+::: {.notes}
+The PDF is used to specify the probability of the random variable falling within a particular range of values, as opposed to taking on any one value <https://en.wikipedia.org/wiki/Probability_density_function>
+:::
+
 ---
 
 ## {#density-group-num data-menu-title="Density group number"} 
@@ -485,7 +489,7 @@ Similar to the histogram, twelve groups (`month_name`) is too many groups! Consi
 #| out-width: "90%"
 #| fig-align: "center"
 mko_clean |> 
-  mutate(month_name = factor(month_name, levels = month.name)) |> 
+  mutate(month_name = factor(x = month_name, levels = month.name)) |> 
   ggplot(aes(x = Temp_bot, fill = month_name)) +
   geom_density(alpha = 0.5)
 ```
@@ -512,7 +516,7 @@ If you want to plot all groups, consider splitting them into small multiples. If
 mko_clean |> 
   mutate(month_name = factor(month_name, levels = month.name)) |> 
   ggplot(aes(x = Temp_bot)) +
-  geom_density(fill = "gray7") +
+  geom_density(fill = "gray30") +
   facet_wrap(~month_name)
 ```
 
@@ -560,7 +564,11 @@ mko_clean |>
 
 **Histograms** show us the **counts** (frequency) of values in each range (bin), represented by the height of the bars. 
 
-**Density plots** show the **proportion** of values in each range (area under the curve equal 1). 
+. . . 
+
+**Density plots** show the **proportion** of values in each range (area under the curve equal 1; peaks indicate where more values are concentrated, but it does *not* tell us anything about the *the number* observations). 
+
+. . . 
 
 <br>
 
@@ -575,7 +583,7 @@ dummy_data <- data.frame(value = c(rnorm(n = 100, mean = 5),
                                      times = c(100, 200)))
 ```
 
-Here we two groups (`A`, `B`) of values which are normally distributed, but with different means. Group `A` also has a smaller sample size (100) than group `B` (200).
+Here, we have two groups (`A`, `B`) of values which are normally distributed, but with different means. Group `A` also has a smaller sample size (100) than group `B` (200).
 
 ---
 
@@ -585,36 +593,44 @@ Here we two groups (`A`, `B`) of values which are normally distributed, but with
 
 <hr>
 
-[It's easy to see that group `B` has a larger sample size than group `A` when looking at our histogram. Additionally, we can get a good sense of our data distribution. *But* what happens when you reduce the `bin` number (e.g. set `bin = 4`)?]{.body-text-s}
-
-[We lose information about sample size / frequency in our density plot (note that both curves are the same height, despite group `B` having 2x as many observations). However, they're great for visualizing the shape of our distributions since they aren't affected by the number of bins.]{.body-text-s}
-
 :::: {.columns}
 
 ::: {.column width="50%"}
+
+[It's easy to see that group `B` has a larger sample size than group `A` when looking at our histogram. Additionally, we can get a good sense of our data distribution. *But* what happens when you reduce the number of `bins` (e.g. set `bins = 4`)?]{.body-text-s}
+
 ```{r}
 #| eval: true
 #| echo: true
 #| fig-align: "center"
 ggplot(dummy_data, aes(x = value, fill = group)) +
-  geom_histogram(position = "identity", alpha = 0.7)
+  geom_histogram(position = "identity", alpha = 0.7) +
+  geom_rug(aes(color = group), alpha = 0.75)
 ```
 :::
 
 ::: {.column width="50%"}
+
+[We lose information about sample size in our density plot (note that both curves are ~the same height, despite group `B` having 2x as many observations). However, they're great for visualizing the shape of our distributions since they are unaffected by the number of bins.]{.body-text-s}
+
 ```{r}
 #| eval: true
 #| echo: true
 #| fig-align: "center"
 ggplot(dummy_data, aes(x = value, fill = group)) +
-  geom_density(alpha = 0.7)
+  geom_density(alpha = 0.7) +
+  geom_rug(aes(color = group), alpha = 0.75)
 ```
 :::
 
 ::::
 
+::: {.footer}
+Rug plots added as an alternative way to visualize the data distribution and also as an indicator of sample size.
+:::
+
 ::: {.notes}
-In the histogram, group B has higher bars; differnce in height disappears in density plot
+In the histogram, group B has higher bars; difference in height disappears in density plot
 :::
 
 ---
@@ -625,18 +641,106 @@ In the histogram, group B has higher bars; differnce in height disappears in den
 
 <hr>
 
-Overlaying a histogram and density plot requires scaling down the histogram to match the density curve scale. Adding `y = ..density..` within the `aes()` function rescales the histogram counts so that bar areas integrate to 1:
+Overlaying a histogram and density plot requires scaling down the histogram to match the density curve scale. Adding `y = after_stat(density)` within the `aes()` function rescales the histogram counts so that bar areas integrate to 1:
 ```{r}
 #| eval: true
 #| echo: true
 #| fig-align: "center"
-ggplot(mko_clean, aes(x = Temp_bot, y = ..density..)) + # scale down hist to match density curve
+ggplot(mko_clean, aes(x = Temp_bot, y = after_stat(density))) + # scale down hist to match density curve
   geom_histogram(fill = "gray", color = "black", alpha = 0.75) +
-  geom_density(size = 1) # increase line thickness
+  geom_density(size = 1) 
 ```
+
+::: {.footer}
+Check out this [great blog post](https://yjunechoe.github.io/posts/2022-03-10-ggplot2-delayed-aes-1/) on the `after_stat()` function, by [June Choe](https://yjunechoe.github.io/index.html)
+:::
 
 ::: notes
 See <https://stackoverflow.com/questions/46734555/ggplot2-histogram-why-do-y-density-and-stat-density-differ>
+:::
+
+---
+
+## {#scaled-density data-menu-title="Scaled density"} 
+
+[Scaled density plots for comparing groups to a whole]{.slide-title3}
+
+<hr>
+
+[In a normal density plot, the area under the curve(s) is equal to 1. **In a scaled density plot, the area under the curve reflects the number of observations for each group.**]{.body-text-s}
+
+[We can use scaled density plots to compare individual group distributions to the total distribution. We'll do so using the `palmerpenguins::penguins` data set.]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: false
+library(palmerpenguins)
+```
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| output-location: column
+# use `after_stat(count)` to plot density of observations ----
+ggplot(penguins, aes(x = body_mass_g, y = after_stat(count))) +
+ 
+  # plot full distribution curve with label "all penguins"; remove 'species' col so that this doesn't get faceted later on ----
+  geom_density(data = select(penguins, -species), 
+               aes(fill = "all penguins"), color = "transparent") +
+  
+  # plot second curve with label "species" ----
+  geom_density(aes(fill = "species"), color = "transparent") +
+  
+  # facet wrap by species ----
+  facet_wrap(~species, nrow = 1) +
+  
+  # update colors, x-axis label, legend position ----
+  scale_fill_manual(values = c("grey","#0C8346"), name = NULL) +
+  labs(x = "Body Mass (g)") +
+  theme(legend.position = "top")
+```
+
+```{r}
+#| eval: false
+#| echo: false
+
+# # try with dummy data ----
+# ggplot(dummy_data, aes(x = value)) +
+#   geom_density()
+# 
+# ggplot(dummy_data, aes(x = value, y = after_stat(count))) +
+#   geom_density(data = select(dummy_data, -group), 
+#                aes(fill = "all groups"), color = "transparent") +
+#   geom_density(aes(fill = "group"), color = "transparent") +
+#   facet_wrap(~group) +
+#   scale_fill_manual(values = c("grey","#7C1B54"), name = NULL) +
+#   labs(x = "Value") +
+#   theme(legend.position = "top")
+# 
+# 
+# # use `after_stat(count)` to plot density of observations (a helpful blog post: <https://datawookie.dev/blog/2022/10/scaling-density-plots/> ----
+# # shape of curves remain the same as in a normal density plot, but area under curve represents the # samples of each group & height of curve represents the density of penguins in the sample (in penguins per g)
+# ggplot(penguins, aes(x = body_mass_g, y = after_stat(count))) +
+#  
+# # plot full distribution ----
+#   geom_density(data = select(penguins, -species), 
+#                 aes(fill = "all penguins"), color = "transparent") +
+#   
+#   # plot individual spp distributions ----
+#   geom_density(aes(fill = "species"), color = "transparent") +
+#   
+#   # facet wrap by spp ----
+#   facet_wrap(~species, nrow = 1) +
+#   
+#   # update colors, x-axis label, legend position ----
+#   scale_fill_manual(values = c("grey","#0C8346"), name = NULL) +
+#   labs(x = "Body Mass (g)") +
+#   theme(legend.position = "top")
+```
+
+::: {.footer}
+Example adapted from [Meghan Hall](https://meghan.rbind.io/)'s CMU 36-315 [Lecture 7](https://cmu-36315.netlify.app/slides/36-315_summer2021_lec7#75). For more on scaled density plots, check out [this post](https://datawookie.dev/blog/2022/10/scaling-density-plots/), by [Andrew Collier](https://github.com/datawookie).
 :::
 
 ---
@@ -657,12 +761,11 @@ See <https://stackoverflow.com/questions/46734555/ggplot2-histogram-why-do-y-den
 [**Need:**]{.teal-text} 
 
 - a numeric variable with lots of values
-- medium to high group numbers
 
 [**Important considerations:**]{.teal-text} 
 
 - work best when you have > 6 groups
-- works well when there is a clear pattern in the result (e.g. if there is an obvious ranking in groups) and/or when visualizing changes in distributions over time or space
+- works well when there is a clear pattern in the result (e.g. if there is an obvious ranking in groups) and / or when visualizing changes in distributions over time or space
 :::
 
 ::: {.column width="50%"}
@@ -690,7 +793,7 @@ ggplot(mko_clean, aes(x = Temp_bot, y = month_name, fill = after_stat(x))) +
 
 <hr>
 
-The [`{ggridges}` package](https://wilkelab.org/ggridges/) has a number of different geoms for creating ridgeline plots that work well for datasets with larger group numbers (e.g. `month_name`). Two great geoms to explore (to start):
+The [`{ggridges}` package](https://wilkelab.org/ggridges/) has a number of different geoms for creating ridgeline plots that work well for data sets with larger group numbers (e.g. months). Two great geoms to explore (to start):
 
 :::: columns
 
@@ -713,7 +816,7 @@ ggplot(mko_clean, aes(x = Temp_bot, y = month_name)) +
 #| fig-align: "center"
 ggplot(mko_clean, aes(x = Temp_bot, y = month_name, fill = after_stat(x))) +
   ggridges::geom_density_ridges_gradient() +
-  scale_fill_gradientn(colors = c("#2C5374","#778798", "#ADD8E6", "#EF8080", "#8B3A3A"))
+  scale_fill_gradientn(colors = c("#2C5374","#849BB4", "#D9E7EC", "#EF8080", "#8B3A3A"))
 ```
 :::
 
@@ -743,7 +846,7 @@ ggplot(mko_clean, aes(x = Temp_bot, y = month_name, fill = after_stat(x))) +
 ggplot(mko_clean, aes(x = Temp_bot, y = month_name, fill = after_stat(x))) +
   ggridges::geom_density_ridges_gradient() +
   scale_y_discrete(limits = rev(month.name)) +
-  scale_fill_gradientn(colors = c("#2C5374","#778798", "#ADD8E6", "#EF8080", "#8B3A3A"))
+  scale_fill_gradientn(colors = c("#2C5374","#849BB4", "#D9E7EC", "#EF8080", "#8B3A3A"))
 ```
 :::
 
@@ -758,7 +861,7 @@ mko_clean |>
   mutate(month_name = fct_reorder(month_name, Temp_bot, .fun = mean)) |> 
   ggplot(mko_clean, mapping = aes(x = Temp_bot, y = month_name, fill = after_stat(x))) +
   ggridges::geom_density_ridges_gradient() +
-  scale_fill_gradientn(colors = c("#2C5374","#778798", "#ADD8E6", "#EF8080", "#8B3A3A"))
+  scale_fill_gradientn(colors = c("#2C5374","#849BB4", "#D9E7EC", "#EF8080", "#8B3A3A"))
 ```
 :::
 
@@ -776,7 +879,7 @@ mko_clean |>
 ggplot(mko_clean, aes(x = Temp_bot, y = month_name, fill = after_stat(x))) +
   ggridges::geom_density_ridges_gradient(rel_min_height = 0.01, scale = 3) +
   scale_y_discrete(limits = rev(month.name)) +
-  scale_fill_gradientn(colors = c("#2C5374","#778798", "#ADD8E6", "#EF8080", "#8B3A3A"))
+  scale_fill_gradientn(colors = c("#2C5374","#849BB4", "#D9E7EC", "#EF8080", "#8B3A3A"))
 ```
 
 ## Quantiles
@@ -855,7 +958,7 @@ ggplot(penguins, aes(x = body_mass_g, y = species)) +
 
 [**What are they?**]{.teal-text} 
 
-- [Box plots **summarize the distribution of a numeric variable for one or serveral groups**, providing the median (line that divides the box), the upper (Q3) and lower (Q1) [quartiles](https://en.wikipedia.org/wiki/Quartile) (ends of the box), the highest and lowest values, excluding outliers (the whiskers), and potential outliers (dots extending beyond the end of the whiskers).]{.body-text-s}
+- [Box plots **summarize the distribution of a numeric variable for one or several groups**.]{.body-text-s}
 
 :::: columns 
 
@@ -866,7 +969,7 @@ ggplot(penguins, aes(x = body_mass_g, y = species)) +
 
 [**Important considerations:**]{.teal-text} 
 
-- box plots *summarize* data, meaning we can't see the underlying distribution (no way to know sample size)
+- box plots *summarize* data, meaning we can't see the underlying shape of the distribution or sample size
 - add jittered points on top, or if large sample size, consider a violin plot
 :::
 
@@ -877,7 +980,16 @@ ggplot(penguins, aes(x = body_mass_g, y = species)) +
 ```{r}
 #| eval: true
 #| echo: false
+#| out-width: "100%"
 #| fig-align: "center"
+knitr::include_graphics("images/week3/boxplot.png")
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "50%"
 ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
   geom_boxplot() +
   scale_x_discrete(limits = rev(month.name)) +
@@ -927,7 +1039,7 @@ ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
 #| out-width: "55%"
 #| fig-align: "center"
 ggplot(mko_clean, aes(x = month_name, y = Temp_bot)) +
-  geom_boxplot(outlier.colour = "purple", outlier.shape = "circle open", outlier.size = 5) +
+  geom_boxplot(outlier.color = "purple", outlier.shape = "circle open", outlier.size = 5) +
   scale_x_discrete(limits = rev(month.name)) +
   coord_flip()
 ```
@@ -963,7 +1075,7 @@ Since box plots hide sample size, consider overlaying raw data points using `geo
 #| fig-align: "center"
 ggplot(na.omit(penguins), aes(x = species, y = body_mass_g)) +
   geom_boxplot(outlier.shape = NA) +
-  geom_jitter(color = "black", alpha = 0.5, width = 0.2) +
+  geom_jitter(alpha = 0.5, width = 0.2) +
   coord_flip()
 ```
 
