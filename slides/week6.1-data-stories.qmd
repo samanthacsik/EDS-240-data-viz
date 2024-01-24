@@ -13,7 +13,7 @@ format:
 
 [EDS 240: Lecture 6.1]{.custom-title}
 
-[*What makes a good data viz?*]{.custom-subtitle}
+[*Using data to tell your story*]{.custom-subtitle}
 
 <hr class="hr-teal">
 

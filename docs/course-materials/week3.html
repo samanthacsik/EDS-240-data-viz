@@ -475,69 +475,66 @@ Complete code for week 3 discussion
 <span id="cb5-22"><a href="#cb5-22"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(date),</span>
 <span id="cb5-23"><a href="#cb5-23"></a>         <span class="at">month =</span> <span class="fu">month</span>(date, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb5-24"><a href="#cb5-24"></a>         <span class="at">day =</span> <span class="fu">day</span>(date)) <span class="sc">|&gt;</span></span>
-<span id="cb5-25"><a href="#cb5-25"></a>  </span>
-<span id="cb5-26"><a href="#cb5-26"></a>  <span class="co"># convert year to factor (necessary for next step) ----</span></span>
-<span id="cb5-27"><a href="#cb5-27"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.factor</span>(year)) <span class="sc">|&gt;</span> </span>
-<span id="cb5-28"><a href="#cb5-28"></a></span>
-<span id="cb5-29"><a href="#cb5-29"></a>  <span class="co"># add drought level conditions names ----</span></span>
-<span id="cb5-30"><a href="#cb5-30"></a>  <span class="fu">mutate</span>(<span class="at">drought_lvl_long =</span> <span class="fu">factor</span>(drought_lvl,</span>
-<span id="cb5-31"><a href="#cb5-31"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"D4"</span>, <span class="st">"D3"</span>, <span class="st">"D2"</span>, <span class="st">"D1"</span>,<span class="st">"D0"</span>, <span class="st">"None"</span>),</span>
-<span id="cb5-32"><a href="#cb5-32"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"(D4) Exceptional"</span>, <span class="st">"(D3) Extreme"</span>,</span>
-<span id="cb5-33"><a href="#cb5-33"></a>                                       <span class="st">"(D2) Severe"</span>, <span class="st">"(D1) Moderate"</span>, <span class="st">"(D0) Abnormally Dry"</span>, </span>
-<span id="cb5-34"><a href="#cb5-34"></a>                                       <span class="st">"No Drought"</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb5-35"><a href="#cb5-35"></a>  </span>
-<span id="cb5-36"><a href="#cb5-36"></a>  <span class="co"># reorder cols ----</span></span>
-<span id="cb5-37"><a href="#cb5-37"></a>  <span class="fu">select</span>(date, year, month, day, state_abb, drought_lvl, drought_lvl_long, area_pct)</span>
-<span id="cb5-38"><a href="#cb5-38"></a></span>
-<span id="cb5-39"><a href="#cb5-39"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb5-40"><a href="#cb5-40"></a><span class="do">##       create stacked area plot of CA drought conditions through time     ----</span></span>
-<span id="cb5-41"><a href="#cb5-41"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb5-42"><a href="#cb5-42"></a></span>
-<span id="cb5-43"><a href="#cb5-43"></a>drought_clean <span class="sc">|&gt;</span> </span>
-<span id="cb5-44"><a href="#cb5-44"></a>  </span>
-<span id="cb5-45"><a href="#cb5-45"></a>  <span class="co"># remove drought_lvl "None" &amp; filter for just CA ----</span></span>
-<span id="cb5-46"><a href="#cb5-46"></a>  <span class="fu">filter</span>(drought_lvl <span class="sc">!=</span> <span class="st">"None"</span>,</span>
-<span id="cb5-47"><a href="#cb5-47"></a>         state_abb <span class="sc">==</span> <span class="st">"CA"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-25"><a href="#cb5-25"></a></span>
+<span id="cb5-26"><a href="#cb5-26"></a>  <span class="co"># add drought level conditions names ----</span></span>
+<span id="cb5-27"><a href="#cb5-27"></a>  <span class="fu">mutate</span>(<span class="at">drought_lvl_long =</span> <span class="fu">factor</span>(drought_lvl,</span>
+<span id="cb5-28"><a href="#cb5-28"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"D4"</span>, <span class="st">"D3"</span>, <span class="st">"D2"</span>, <span class="st">"D1"</span>,<span class="st">"D0"</span>, <span class="st">"None"</span>),</span>
+<span id="cb5-29"><a href="#cb5-29"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"(D4) Exceptional"</span>, <span class="st">"(D3) Extreme"</span>,</span>
+<span id="cb5-30"><a href="#cb5-30"></a>                                       <span class="st">"(D2) Severe"</span>, <span class="st">"(D1) Moderate"</span>, <span class="st">"(D0) Abnormally Dry"</span>, </span>
+<span id="cb5-31"><a href="#cb5-31"></a>                                       <span class="st">"No Drought"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb5-32"><a href="#cb5-32"></a>  </span>
+<span id="cb5-33"><a href="#cb5-33"></a>  <span class="co"># reorder cols ----</span></span>
+<span id="cb5-34"><a href="#cb5-34"></a>  <span class="fu">select</span>(date, year, month, day, state_abb, drought_lvl, drought_lvl_long, area_pct)</span>
+<span id="cb5-35"><a href="#cb5-35"></a></span>
+<span id="cb5-36"><a href="#cb5-36"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb5-37"><a href="#cb5-37"></a><span class="do">##       create stacked area plot of CA drought conditions through time     ----</span></span>
+<span id="cb5-38"><a href="#cb5-38"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb5-39"><a href="#cb5-39"></a></span>
+<span id="cb5-40"><a href="#cb5-40"></a>drought_clean <span class="sc">|&gt;</span> </span>
+<span id="cb5-41"><a href="#cb5-41"></a>  </span>
+<span id="cb5-42"><a href="#cb5-42"></a>  <span class="co"># remove drought_lvl "None" &amp; filter for just CA ----</span></span>
+<span id="cb5-43"><a href="#cb5-43"></a>  <span class="fu">filter</span>(drought_lvl <span class="sc">!=</span> <span class="st">"None"</span>,</span>
+<span id="cb5-44"><a href="#cb5-44"></a>         state_abb <span class="sc">==</span> <span class="st">"CA"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-45"><a href="#cb5-45"></a>  </span>
+<span id="cb5-46"><a href="#cb5-46"></a>  <span class="co"># create ggplot ----</span></span>
+<span id="cb5-47"><a href="#cb5-47"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> area_pct, <span class="at">fill =</span> drought_lvl_long)) <span class="sc">+</span></span>
 <span id="cb5-48"><a href="#cb5-48"></a>  </span>
-<span id="cb5-49"><a href="#cb5-49"></a>  <span class="co"># create ggplot ----</span></span>
-<span id="cb5-50"><a href="#cb5-50"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> area_pct, <span class="at">fill =</span> drought_lvl_long)) <span class="sc">+</span></span>
+<span id="cb5-49"><a href="#cb5-49"></a>  <span class="co"># reverse order of groups so level D4 is closest to x-axis ----</span></span>
+<span id="cb5-50"><a href="#cb5-50"></a>  <span class="fu">geom_area</span>(<span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">reverse =</span> <span class="cn">TRUE</span>)) <span class="sc">+</span></span>
 <span id="cb5-51"><a href="#cb5-51"></a>  </span>
-<span id="cb5-52"><a href="#cb5-52"></a>  <span class="co"># reverse order of groups so level D4 is closest to x-axis ----</span></span>
-<span id="cb5-53"><a href="#cb5-53"></a>  <span class="fu">geom_area</span>(<span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">reverse =</span> <span class="cn">TRUE</span>)) <span class="sc">+</span></span>
+<span id="cb5-52"><a href="#cb5-52"></a>  <span class="co"># update colors to match US Drought Monitor (colors selected using ColorPick Eyedropper from original USDM data viz) ----</span></span>
+<span id="cb5-53"><a href="#cb5-53"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#853904"</span>, <span class="st">"#FF0000"</span>, <span class="st">"#FFC100"</span>, <span class="st">"#FFD965"</span>, <span class="st">"#FFFF00"</span>)) <span class="sc">+</span></span>
 <span id="cb5-54"><a href="#cb5-54"></a>  </span>
-<span id="cb5-55"><a href="#cb5-55"></a>  <span class="co"># update colors to match US Drought Monitor (colors selected using ColorPick Eyedropper from original USDM data viz) ----</span></span>
-<span id="cb5-56"><a href="#cb5-56"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#853904"</span>, <span class="st">"#FF0000"</span>, <span class="st">"#FFC100"</span>, <span class="st">"#FFD965"</span>, <span class="st">"#FFFF00"</span>)) <span class="sc">+</span></span>
-<span id="cb5-57"><a href="#cb5-57"></a>  </span>
-<span id="cb5-58"><a href="#cb5-58"></a>  <span class="co"># set x-axis breaks &amp; remove padding between data and x-axis ----</span></span>
-<span id="cb5-59"><a href="#cb5-59"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"2 years"</span>, <span class="at">date_labels =</span> <span class="st">"%Y"</span>,</span>
-<span id="cb5-60"><a href="#cb5-60"></a>               <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb5-61"><a href="#cb5-61"></a>  </span>
-<span id="cb5-62"><a href="#cb5-62"></a>  <span class="co"># set y-axis breaks &amp; convert values to percentages &amp; &amp; remove padding between data and y-axis----</span></span>
-<span id="cb5-63"><a href="#cb5-63"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">10</span>),</span>
-<span id="cb5-64"><a href="#cb5-64"></a>                     <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
-<span id="cb5-65"><a href="#cb5-65"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb5-66"><a href="#cb5-66"></a>  </span>
-<span id="cb5-67"><a href="#cb5-67"></a>  <span class="co"># add title ----</span></span>
-<span id="cb5-68"><a href="#cb5-68"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Drought area in California"</span>) </span>
-<span id="cb5-69"><a href="#cb5-69"></a></span>
-<span id="cb5-70"><a href="#cb5-70"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb5-71"><a href="#cb5-71"></a><span class="do">##            BONUS: using {geofacet} to plot data for all states           ----</span></span>
-<span id="cb5-72"><a href="#cb5-72"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb5-73"><a href="#cb5-73"></a></span>
-<span id="cb5-74"><a href="#cb5-74"></a><span class="co">#......remove HI &amp; AK (no data) and also DC from preset grid.....</span></span>
-<span id="cb5-75"><a href="#cb5-75"></a>mygrid <span class="ot">&lt;-</span> geofacet<span class="sc">::</span>us_state_grid1 <span class="sc">|&gt;</span></span>
-<span id="cb5-76"><a href="#cb5-76"></a>  <span class="fu">filter</span>(<span class="sc">!</span>code <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"DC"</span>, <span class="st">"HI"</span>, <span class="st">"AK"</span>))</span>
-<span id="cb5-77"><a href="#cb5-77"></a></span>
-<span id="cb5-78"><a href="#cb5-78"></a><span class="co">#..............................plot..............................</span></span>
-<span id="cb5-79"><a href="#cb5-79"></a></span>
-<span id="cb5-80"><a href="#cb5-80"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: this takes a minute to render!</span></span>
-<span id="cb5-81"><a href="#cb5-81"></a></span>
-<span id="cb5-82"><a href="#cb5-82"></a>drought_clean <span class="sc">|&gt;</span> </span>
-<span id="cb5-83"><a href="#cb5-83"></a>  <span class="fu">filter</span>(drought_lvl <span class="sc">!=</span> <span class="st">"None"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-84"><a href="#cb5-84"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> area_pct, <span class="at">fill =</span> drought_lvl_long)) <span class="sc">+</span></span>
-<span id="cb5-85"><a href="#cb5-85"></a>  <span class="fu">geom_area</span>(<span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">reverse =</span> <span class="cn">TRUE</span>)) <span class="sc">+</span></span>
-<span id="cb5-86"><a href="#cb5-86"></a>  geofacet<span class="sc">::</span><span class="fu">facet_geo</span>(<span class="sc">~</span>state_abb, <span class="at">grid =</span> mygrid) <span class="sc">+</span></span>
-<span id="cb5-87"><a href="#cb5-87"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#853904"</span>, <span class="st">"#FF0000"</span>, <span class="st">"#FFC100"</span>, <span class="st">"#FFD965"</span>, <span class="st">"#FFFF00"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-55"><a href="#cb5-55"></a>  <span class="co"># set x-axis breaks &amp; remove padding between data and x-axis ----</span></span>
+<span id="cb5-56"><a href="#cb5-56"></a>  <span class="fu">scale_x_date</span>(<span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_pretty</span>(<span class="at">n =</span> <span class="dv">10</span>),</span>
+<span id="cb5-57"><a href="#cb5-57"></a>               <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb5-58"><a href="#cb5-58"></a></span>
+<span id="cb5-59"><a href="#cb5-59"></a>  <span class="co"># set y-axis breaks &amp; convert values to percentages &amp; &amp; remove padding between data and y-axis----</span></span>
+<span id="cb5-60"><a href="#cb5-60"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">10</span>),</span>
+<span id="cb5-61"><a href="#cb5-61"></a>                     <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
+<span id="cb5-62"><a href="#cb5-62"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb5-63"><a href="#cb5-63"></a>  </span>
+<span id="cb5-64"><a href="#cb5-64"></a>  <span class="co"># add title ----</span></span>
+<span id="cb5-65"><a href="#cb5-65"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Drought area in California"</span>) </span>
+<span id="cb5-66"><a href="#cb5-66"></a></span>
+<span id="cb5-67"><a href="#cb5-67"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb5-68"><a href="#cb5-68"></a><span class="do">##            BONUS: using {geofacet} to plot data for all states           ----</span></span>
+<span id="cb5-69"><a href="#cb5-69"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb5-70"><a href="#cb5-70"></a></span>
+<span id="cb5-71"><a href="#cb5-71"></a><span class="co">#......remove HI &amp; AK (no data) and also DC from preset grid.....</span></span>
+<span id="cb5-72"><a href="#cb5-72"></a>mygrid <span class="ot">&lt;-</span> geofacet<span class="sc">::</span>us_state_grid1 <span class="sc">|&gt;</span></span>
+<span id="cb5-73"><a href="#cb5-73"></a>  <span class="fu">filter</span>(<span class="sc">!</span>code <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"DC"</span>, <span class="st">"HI"</span>, <span class="st">"AK"</span>))</span>
+<span id="cb5-74"><a href="#cb5-74"></a></span>
+<span id="cb5-75"><a href="#cb5-75"></a><span class="co">#..............................plot..............................</span></span>
+<span id="cb5-76"><a href="#cb5-76"></a></span>
+<span id="cb5-77"><a href="#cb5-77"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: this takes a minute to render!</span></span>
+<span id="cb5-78"><a href="#cb5-78"></a></span>
+<span id="cb5-79"><a href="#cb5-79"></a>drought_clean <span class="sc">|&gt;</span> </span>
+<span id="cb5-80"><a href="#cb5-80"></a>  <span class="fu">filter</span>(drought_lvl <span class="sc">!=</span> <span class="st">"None"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-81"><a href="#cb5-81"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> area_pct, <span class="at">fill =</span> drought_lvl_long)) <span class="sc">+</span></span>
+<span id="cb5-82"><a href="#cb5-82"></a>  <span class="fu">geom_area</span>(<span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">reverse =</span> <span class="cn">TRUE</span>)) <span class="sc">+</span></span>
+<span id="cb5-83"><a href="#cb5-83"></a>  geofacet<span class="sc">::</span><span class="fu">facet_geo</span>(<span class="sc">~</span>state_abb, <span class="at">grid =</span> mygrid) <span class="sc">+</span></span>
+<span id="cb5-84"><a href="#cb5-84"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#853904"</span>, <span class="st">"#FF0000"</span>, <span class="st">"#FFC100"</span>, <span class="st">"#FFD965"</span>, <span class="st">"#FFFF00"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>

@@ -514,6 +514,8 @@ Source: [The UX Designer’s Guide to Typography](https://www.interaction-design
 
 Code example here using `{ggtext}`
 
+TALK ABOUT INCLUDING TITLES / SUBTITLES, CAPTION
+
 ---
 
 ##  {#break data-menu-title="# Break #" background="#047C90"}

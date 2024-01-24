@@ -576,11 +576,14 @@ countdown::countdown(
 
 <hr>
 
-<br>
-
 :::: {.columns}
 
 ::: {.column width="50%"}
+
+::: {.center-text}
+[**Quantitative data**]{.teal-text}
+:::
+
 ```{r}
 #| eval: true
 #| echo: false
@@ -616,11 +619,14 @@ knitr::include_graphics("images/week3/horst-cont-disc.png")
 
 <hr>
 
-<br>
-
 :::: {.columns}
 
 ::: {.column width="50%"}
+
+::: {.center-text}
+[**Quantitative data**]{.teal-text}
+:::
+
 ```{r}
 #| eval: true
 #| echo: false
@@ -639,6 +645,11 @@ knitr::include_graphics("images/week3/horst-cont-disc.png")
 :::
 
 ::: {.column width="50%"}
+
+::: {.center-text}
+[**Qualitative data**]{.teal-text}
+:::
+
 ```{r}
 #| eval: true
 #| echo: false

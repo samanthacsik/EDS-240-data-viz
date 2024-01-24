@@ -49,13 +49,16 @@ knitr::include_graphics("../images/horst-eco-r4ds.png")
 
 <!-- https://twitter.com/meghansharris/status/1728505525086650851 -->
 
+<!-- TITLES! -->
+<!-- gganimate -->
+
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-4}
 ::: {.center-text}
 [**Data communication**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.1 slides](../slides/week6.1-good-viz-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.1 slides](../slides/week6.1-data-stories.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 

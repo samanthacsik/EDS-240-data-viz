@@ -34,7 +34,7 @@ editor_options:
 
 ```{r}
 countdown::countdown(
-  minutes = 5,
+  minutes = 2,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -104,7 +104,7 @@ You'll probably iterate on them as you sit with your visualization and of course
 
 <hr>
 
-[There are a number of **different color spaces that are used to represent and define color**. [HSV and HSL](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=HSL%20stands%20for%20hue%2C%20saturation,hue%2C%20saturation%2C%20and%20intensity.) are used commonly in color pickers (e.g. [Google color picker](https://www.google.com/search?q=google+color+picker&oq=google+color+picker&gs_lcrp=EgZjaHJvbWUqCggAEAAYsQMYgAQyCggAEAAYsQMYgAQyBggBEEUYQDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDIwMDhqMGo0qAIAsAIA&sourceid=chrome&ie=UTF-8)). [HCL](https://en.wikipedia.org/wiki/HCL_color_space) underlies some default `{ggplot2}` parameters. You don't need to worry much about the underlying theory of color theory / color spaces, but know that **changing any of the parameters (e.g. hue, saturation, etc.) can influence how we perceive information in a data visualization.**]{.body-text-s}
+[There are a number of **different color spaces that are used to represent and define color**. [HSV and HSL](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=HSL%20stands%20for%20hue%2C%20saturation,hue%2C%20saturation%2C%20and%20intensity.) are used commonly in color pickers (e.g. [Google color picker](https://www.google.com/search?q=google+color+picker&oq=google+color+picker&gs_lcrp=EgZjaHJvbWUqCggAEAAYsQMYgAQyCggAEAAYsQMYgAQyBggBEEUYQDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDIwMDhqMGo0qAIAsAIA&sourceid=chrome&ie=UTF-8)). [HCL](https://en.wikipedia.org/wiki/HCL_color_space) underlies some default `{ggplot2}` parameters. You don't need to worry much about the underlying theory of color spaces, but know that **changing any of the parameters (e.g. hue, saturation, etc.) can influence how we perceive information in a data visualization.**]{.body-text-s}
 
 <!-- Changing **hue** (the pure color), **saturation** (aka chroma; the intensity / purity of a color) and / or **value** (degree of lightness / darkness) can influence how readers perceive information in a data visualization. -->
 
@@ -384,7 +384,7 @@ Image source: Ware C, Stone M, Albers Szafir D (2023) Rainbow colormaps are not 
 :::
 
 ::: {.footer}
-Also check out Stoelzle & Stein (2021), <https://doi.org/10.5194/hess-25-4549-2021> (Figure 1 is particularly helpful!) and Crameri et al. (2020) <https://doi.org/10.1038/s41467-020-19160-7> for some really great supplemental reading 
+Also check out [Stoelzle & Stein (2021)](https://doi.org/10.5194/hess-25-4549-2021) (Figure 1 is particularly helpful!) and [Crameri et al. (2020)](https://doi.org/10.1038/s41467-020-19160-7) for some really great supplemental reading 
 :::
 
 ---
@@ -456,6 +456,7 @@ Continuous viridis scales
 #| echo: true
 #| #| fig-align: "center"
 #| out-width: "100%"
+#| code-line-numbers: "6"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -476,6 +477,7 @@ Discrete viridis scales
 #| echo: true
 #| fig-align: "center"
 #| out-width: "100%"
+#| code-line-numbers: "6"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -549,7 +551,7 @@ knitr::include_graphics("images/week5/brewer-colorblind.png")
 
 <br>
 
-`{RColorBrewer}` comes with a couple useful functions for quickly viewing and assembling your palette HEX codes: 
+`{RColorBrewer}` comes with a couple useful functions for quickly viewing and assembling your palette's HEX codes: 
 
 <br>
 
@@ -604,7 +606,7 @@ Use the right function (all pre-loaded with `{ggplot2}`) for the type of data / 
 ::: {.column width="33%"}
 
 ::: {.center-text .body-text-s .gray-text}
-Use `scale_color_brewer()` to apply a qualitative palette to discrete data
+Use `scale_color_brewer()` to apply **qualitative palettes** 
 :::
 
 ```{r}
@@ -624,7 +626,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species, sha
 ::: {.column width="33%"}
 
 ::: {.center-text .body-text-s .gray-text}
-Use `scale_color_distiller()` for sequential versions of continuous color scales
+Use `scale_color_distiller()` for **sequential** versions of **continuous color scales**
 :::
 
 ```{r}
@@ -644,7 +646,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)
 ::: {.column width="33%"}
 
 ::: {.center-text .body-text-s .gray-text}
-Use `scale_color_fermenter()` for binned versions of continuous color scales
+Use `scale_color_fermenter()` for **binned** versions of **continuous color scales**
 :::
 
 ```{r}
@@ -699,7 +701,7 @@ Trick comes courtesy of [Albert Rapp](https://albert-rapp.de/) and his [How to U
 
 <hr>
 
-Recall that colors are [low on the hierarchy of elementary perceptual tasks](https://samanthacsik.github.io/EDS-240-data-viz/slides/week3.1-choosing-graphic-forms-slides.html#/hierarchy). **Avoid conveying important information purely through color** -- consider how you might additionally use shapes, symbols, typography, or annotations.
+Recall that colors are [low on the hierarchy of elementary perceptual tasks](https://samanthacsik.github.io/EDS-240-data-viz/slides/week3.1-choosing-graphic-forms-slides.html#/hierarchy). **When possible, avoid conveying important information purely through color** -- consider how you might additionally use shapes, symbols, typography, or annotations.
 
 ```{r}
 #| eval: true
@@ -725,19 +727,58 @@ Figure 2 from Apigo A and Oono R (2022) Plant abundance, but not plant evolution
 
 ## {#paletteer data-menu-title="Paletteer"} 
 
-[Use paletteer to access TONS of palettes]{.slide-title2}
+[Use paletteer to access TONS of palettes]{.slide-title}
 
 <hr>
 
-[It would be impossible to list out on one slide all the palette packages available for use, but the [`{paletteer}` package](https://emilhvitfeldt.github.io/paletteer/) gets close to doing just that -- it provides **a common interface for accessing a near comprehensive list of palettes (over 2,000!!) across various packages**. A couple options:]{.body-text-s}
+<br>
 
-- [Use it to **generate a list of HEX codes** from any of the supported palette packages using one of [three functions](https://emilhvitfeldt.github.io/paletteer/#examples): `paletteer_c()`, `paletteer_d()`, `paletteer_dynamic()`]{.body-text-s}
-- [Use it to **apply a palette directly to your ggplot** using one of [three scaling functions](): `scale_*_paletteer_c()`, `scale_*_paletteer_d()`, `scale_*_paletteer_binned()`]{.body-text-s}
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%"
+knitr::include_graphics("images/week5/paletteer.png")
+```
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+It would be impossible to list out on one slide all the palette packages available for use, but the [`{paletteer}` package](https://emilhvitfeldt.github.io/paletteer/) gets close to doing just that.
+
+<br>
+
+It provides **a common interface for accessing a near-comprehensive list of palettes ([over 2,000!!]{.teal-text}) across various packages**.
+:::
+
+::::
+
+::: {.center-text .body-text-m}
+Explore the extensive list of [supported palette packages](https://emilhvitfeldt.github.io/paletteer/#included-packages)!
+:::
+
+---
+
+## {#paletteer-fxns data-menu-title="Paletteer functions"} 
+
+[Use `{paletteer}` to generate HEX codes *or* apply palettes directly]{.slide-title3}
+
+<hr>
+
+::: {.incremental}
+- **Generate a list of HEX codes** using one of [three `paletteer_*()` functions](https://emilhvitfeldt.github.io/paletteer/#examples) 
+- **Apply a palette directly to your ggplot** using one of [three `scale_*_paletteer_*()`  functions](https://emilhvitfeldt.github.io/paletteer/#ggplot2-scales)
+:::
 
 . . . 
 
-:::: {.columns
-}
+:::: {.columns}
+
 ::: {.column width="50%"}
 
 ::: {.center-text .body-text-s .gray-text}
@@ -748,7 +789,7 @@ Find most palettes on the **[R Color Palettes](https://emilhvitfeldt.github.io/r
 #| eval: true
 #| echo: false
 #| fig-align: "center"
-#| out-width: "50%"
+#| out-width: "70%"
 knitr::include_graphics("images/week5/r-color-palettes.png")
 ```
 :::
@@ -763,7 +804,7 @@ Click on any palette for more information & example plots
 #| eval: true
 #| echo: false
 #| fig-align: "center"
-#| out-width: "50%"
+#| out-width: "70%"
 knitr::include_graphics("images/week5/wesanderson.png")
 ```
 :::
@@ -778,7 +819,7 @@ knitr::include_graphics("images/week5/wesanderson.png")
 
 <hr>
 
-Update the colors of the plots below, either by using the `{paletteer}` package *or* by following the documentation for any specific package. It's helpful to start by looking over the [list of supported packages](https://emilhvitfeldt.github.io/paletteer/#included-packages).
+[Update the colors of the plots below, either by using the `{paletteer}` package *or* by following the documentation for any specific package. It's helpful to start by looking over the [list of supported packages](https://emilhvitfeldt.github.io/paletteer/#included-packages).]{.body-text-s}
 
 :::: {.columns}
 
@@ -814,7 +855,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)
 
 ```{r}
 countdown::countdown(
-  minutes = 5,
+  minutes = 3,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -1383,7 +1424,7 @@ Use `scale_*_hue()` to adjust chroma (saturation)
 #| out-width: "80%"
 ggplot(na.omit(penguins), aes(x = species, fill = sex)) +
   geom_bar() +
-  scale_fill_hue(c = 80)
+  scale_fill_hue(c = 70)
 ```
 
 :::
@@ -2163,7 +2204,7 @@ USGS Digital Elevation Model of Pohnpei (Micronesia). Image source: [PacIOOS](ht
 <hr>
 
 ::: {.center-text .body-text-m}
-Most readers will associate dark colors with "high / important" and bright or light colors with "low / less". Using a gradient palette with discrete data may imply a ranking of categories where there shouldn't be.
+Most readers will associate dark colors with "high / important" and bright or light colors with "low / less". Using a gradient palette with categorical data may imply a ranking of categories where there shouldn't be.
 :::
 
 <br>
@@ -2280,16 +2321,56 @@ countdown::countdown(
 <hr>
 
 ::: {.center-text}
-**Choropleths are maps that display the spatial distribution of a variable across divided geographical areas / regions, where variable is encoded by color. ** 
+Choropleths are maps that display the **spatial distribution of a variable** across divided geographical areas / regions, where variable is **encoded by color**. 
 :::
 
-some examples here
+<br>
 
-can be tricky to get right 
+:::: {.columns}
 
-you'll often have to think critically about classifying yourd ata
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/geopandas-choropleth.png")
+```
 
-https://blog.datawrapper.de/classed-vs-unclassed-color-scales/
+::: {.center-text .gray-text .body-text-s}
+Choropleth by [Ramiro Gómez](https://ramiro.org/) using [GeoPandas](https://geopandas.org/en/stable/index.html) ([blog post](https://ramiro.org/notebook/geopandas-choropleth/))
+:::
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week5/hanna-farnsworth-2013.png")
+```
+
+::: {.center-text .gray-text .body-text-s}
+Choropleth by [Hanna & Farnsworth (2013)](https://www.researchgate.net/publication/263851588_Visualizing_Virginia'_s_Changing_Electorate_Mapping_Presidential_Elections_from_2000_to_2012)
+:::
+
+:::
+
+::::
+
+. . . 
+
+::: {.center-text}
+One of the most important decisions you'll need to make is **what type of color scale** to use (and of course, what colors).
+:::
+
+<!-- can be tricky to get right  -->
+
+<!-- you'll often have to think critically about classifying yourd ata -->
+
+<!-- https://blog.datawrapper.de/classed-vs-unclassed-color-scales/ -->
 
 ---
 
@@ -2326,7 +2407,7 @@ knitr::include_graphics("images/week5/ncei-logo2.png")
 
 ::::
 
-[Find public access to a massive inventory of climate data on their [Climate Monitoring](https://www.ncei.noaa.gov/access/monitoring/products/) page. Today's lesson will use the [Climate at a Glance](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/) collection. Specifically, **we'll be exploring county-level precipitation data from October 2023, accessed via the [County Mapping](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value) portal**.]{.body-text-s}
+[Find public access to a massive inventory of climate data on their [Climate Monitoring](https://www.ncei.noaa.gov/access/monitoring/products/) page. Today's lesson will use the [Climate at a Glance](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/) collection. Specifically, **we'll be exploring county-level precipitation data from October 2023, accessed via the [County Mapping](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value) portal -- UPDATE THIS**.]{.body-text-s}
 
 <!-- https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value -->
 
@@ -2360,7 +2441,7 @@ states <- map_data("state")
 counties <- map_data("county")
 
 #....................import precipitation data...................
-precip_counties <- read_csv(here::here("slides", "data", "county-precip-2023.csv"), skip = 4) |> 
+precip_counties <- read_csv(here::here("slides", "data", "county-jan19-dec23-precip.csv"), skip = 4) |> 
   janitor::clean_names()
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2440,11 +2521,15 @@ precip_counties_wrangled <- precip_counties |>
   # remove DC & other non-counties
   filter(!county %in% c("Washington, D.c.", "Alexandria City", "Bristol City")) |>
   
-  # select & rename cols ----
-  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period) |> 
+  # coerce precip & 20th centruy avg from chr to numeric ----
+  mutate(value = as.numeric(value),
+         x1901_2000_mean = as.numeric(x1901_2000_mean)) |> 
+
+  # calculate % change ----
+  mutate(perc_change = ((value - x1901_2000_mean)/x1901_2000_mean)*100) |> 
   
-  # coerce precip from chr to numeric ----
-  mutate(precip = as.numeric(precip))
+  # select & rename cols ----
+  select(state, county, mean_1901_2000 = x1901_2000_mean, precip = value, perc_change, anomaly_1901_2000_base_period)
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##  ~ used to identify which county names don't match across dfs  ----
@@ -2565,11 +2650,15 @@ precip_counties_wrangled <- precip_counties |>
   # remove DC & other non-counties
   filter(!county %in% c("Washington, D.c.", "Alexandria City", "Bristol City")) |>
   
-  # select & rename cols ----
-  select(state, county, precip = value, mean_1901_2000 = x1901_2000_mean, anomaly = anomaly_1901_2000_base_period) |> 
+  # coerce precip & 20th centruy avg from chr to numeric ----
+  mutate(value = as.numeric(value),
+         x1901_2000_mean = as.numeric(x1901_2000_mean)) |> 
+
+  # calculate % change ----
+  mutate(perc_change = ((value - x1901_2000_mean)/x1901_2000_mean)*100) |> 
   
-  # coerce precip from chr to numeric ----
-  mutate(precip = as.numeric(precip))
+  # select & rename cols ----
+  select(state, county, mean_1901_2000 = x1901_2000_mean, precip = value, perc_change, anomaly_1901_2000_base_period)
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##  ~ used to identify which county names don't match across dfs  ----
@@ -2597,44 +2686,40 @@ joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties)
 
 ---
 
-## {#consider-data data-menu-title="Consider data & colors"} 
-
-[Let's first consider our data]{.slide-title}
-
-<hr>
-
-There are pros and cons to both classed and unclassed color scales.
-
-Use a **classed** if we want to **communicate statistical brackets**:
-  - the focus is on which data units fall into a particular predefined class, rather than the overall pattern of the map
-  - If you want your readers to see if certain regions fall into a statistical bracket, use classes
-  - Use a classed color scales if you want readers to read values
-  - more classes, less readable
-  - So if you want readers to read specific value ranges, go for a classed map with only a few classes. That’s especially important when you show static maps (e.g., in print or PDF reports) where people don’t have the option to see tooltips or hover over a legend.
-  
-Use an **unclassed** color scale if you want to **show a general pattern** (e.g. "the west got less precipitation than the east")
-  - makes it harder to see which statistical brackets counties fall into (e.g. which counties got more or less precipitation than the national average)
-  - “The unclassed choropleth is the most exact representation of the data model possible,” Judith A. Tyner
-  - The more classes you show, the more nuanced your map becomes
-  - Use an unclassed color scale if you don’t want to interpret for the reader. It makes it easier to see:
-    - …outliers
-    - …if the transition between clusters is smooth or abrupt
-    - …if the region I’m interested in as a reader has a higher or lower value than the neighboring regions
-  - “How does my region compare?” is a question that’s better answered with an unclassed map.
-  
-No matter if you decide for a classed map at the end, you should start your process by looking at an unclassed map. This will help you see subtle differences between regions and make a conscious decision if and how you should simplify them. 
-
----
-
-<https://blog.datawrapper.de/classed-vs-unclassed-color-scales/>
-
----
-
 ## {#base-map data-menu-title="Create base map"} 
 
-[Create a base map]{.slide-title}
+[Start by creating a base map]{.slide-title}
 
 <hr>
+
+```{r}
+#| eval: false
+#| echo: false
+#| output-location: column
+# 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----
+# base_map <- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + 
+#   
+#   # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----
+#   geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + 
+#   
+#   # darken state lines ----
+#   geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
+#   
+#   # update labels ----
+#   labs(title = "Total Precipitation, by County",
+#        subtitle = "2023") +
+#   
+#   # set theme to clean up appearance ----
+#   theme_void() + 
+#   
+#   # theme adjustments ----
+#   theme(
+#     legend.position = "bottom"
+#   )
+#   
+# base_map
+```
+
 
 ```{r}
 #| eval: true
@@ -2644,21 +2729,21 @@ No matter if you decide for a classed map at the end, you should start your proc
 base_map <- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + 
   
   # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----
-  geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + 
+  geom_polygon(data = joined_precip_us_counties, aes(fill = perc_change)) + 
   
   # darken state lines ----
   geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
   
   # update labels ----
-  labs(title = "Total Precipitation, by County",
-       subtitle = "2023") +
+  labs(title = "5-year precipitation compared with the 20th century average") +
   
   # set theme to clean up appearance ----
   theme_void() + 
   
   # theme adjustments ----
   theme(
-    legend.position = "bottom"
+    legend.position = "bottom",
+    legend.title = element_blank()
   )
   
 base_map
@@ -2698,33 +2783,174 @@ Alternatively:
 
 ---
 
-## {#colorbar-styling-fxn data-menu-title="Colorbar styling function"} 
+## {#decide-on-palette data-menu-title="Decide on palette"} 
 
-[Create a function for adding the correct colorbar styling]{.slide-title3}
+[Pick a color palette!]{.slide-title}
 
 <hr>
 
-[We're going to create a couple different choropleths to look at the differences between gradient vs. binned color scales. Customizing the appearance (title, position, width / height) of our legend requires two different functions (`guide_colorbar()` and `guide_colorsteps()`), depending on which type of scale you use. ]{.body-text-s}
+Recall [from earlier](https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/suggested-colors) that precipitation data is often encoded using a **brown / blue** color scheme (with drier conditions falling on the brown side and wetter conditions falling on the blue side). 
 
-[Instead of having to type these long functions out each time we want to style our colorbar, we can instead **write our own function to streamline our code**:]{.body-text-s}
+Lucky for us, **RColorBrewer** has this exact palette:
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Preview the palette using `display.brewer.pal()` with our desired number of hues:
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+RColorBrewer::display.brewer.pal(n = 11, name = 'BrBG')
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Save the HEX codes to a named object using `brewer.pal()` (we'll call this in our plot later):
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+my_brew_palette <- RColorBrewer::brewer.pal(n = 11, name = 'BrBG')
+my_brew_palette
+```
+:::
+
+::::
+
+---
+
+## {#decide-on-scale-type data-menu-title="Decide on scale type"} 
+
+[Classed or unclassed color scale?]{.slide-title}
+
+<hr>
+
+We've landed on a **diverging color palette**, but should we use a classed (aka binned) or unclassed (aka continuous) palette?
+
+<br>
+
+. . . 
+
+**Use a [classed]{.teal-text} color scale if you want to [communicate statistical brackets]{.teal-text}:** <img src="images/week5/classed.png" alt="A classed color scale with 5 binned colors ranging from dark green on the left to dark red on the right." style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;"/>
+
+  - [the focus is on which data units fall into pre-defined classes, rather than overall pattern]{.body-text-s}
+  - [best if you want you audience to read values (gets more difficult with more classes; easier with interactive visualizations)]{.body-text-s}
+  - [the more classes you have, the more nuanced your map becomes]{.body-text-s}
+
+. . . 
+
+**Use an [unclassed]{.teal-text} color scale if you want to [show general patterns]{.teal-text}:** <img src="images/week5/unclassed.png" alt="An unclassed color scale with colors that smoothly transition from dark green on the left to dark red on the right." style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;"/>
+
+  - [the focus is on general patterns, rather than which statistical brackets regions fall into]{.body-text-s}
+  - [best if you don't want to interpret for your reader -- it makes it easier to see outliers, transitions to and comparisons with neighboring regions]{.body-text-s}
+  
+::: {.footer}
+Adapted from [When to use classed and when to use unclassed color scales](https://blog.datawrapper.de/classed-vs-unclassed-color-scales/), by Lisa Charlotte Muth
+:::
+
+---
+
+## {#start-unclassed data-menu-title="Start unclassed"} 
+
+[Start with an unclassed scale]{.slide-title}
+
+<hr>
+  
+<br>
+  
+>“The unclassed choropleth is the most exact representation of the data model possible,” 
+
+::: {.right-align-text}
+-Judith A. Tyner, in [Priciples of Map Design](https://www.amazon.com/Principles-Map-Design-Judith-Tyner/dp/1462517129)
+:::
+  
+<br>
+
+. . . 
+
+> "No matter if you decide for a classed map at the end, you should **start your process by looking at an unclassed map**. This will help you see subtle differences between regions and make a conscious decision if and how you should simplify them."
+
+::: {.right-align-text}
+-Lisa Charlotte Muth, in [When to use classed and when to use unclassed color scales](https://blog.datawrapper.de/classed-vs-unclassed-color-scales/)
+:::
+
+. . . 
+
+<br>
+
+::: {.center-text .body-text-m}
+**We'll heed this advice and start with an unclassed map!**
+:::
+  
+---
+
+Add palette colors & adjust colorbar appearance
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+base_map_proj + 
+  scale_fill_gradientn(colors = my_brew_palette,
+                       labels = scales::percent_format(scale = 1)) +
+  guides(fill = guide_colorbar(label.hjust = 0.5,
+                               barwidth = 15, barheight = 0.75))
+```
+
+---
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+base_map_proj + 
+  scale_fill_gradientn(colors = my_brew_palette,
+                       labels = scales::label_percent(scale = 1),
+                       breaks = scales::breaks_width(width = 10)) +
+  guides(fill = guide_colorbar(label.hjust = 0.5,
+                               barwidth = 15, barheight = 0.75))
+```
+
+---
+
+<!-- ## {#colorbar-styling-fxn data-menu-title="Colorbar styling function"}  -->
+
+<!-- [Create a function for adding the correct colorbar styling]{.slide-title3} -->
+
+<!-- <hr> -->
+
+<!-- [We're going to create a couple different choropleths to look at the differences between gradient vs. binned color scales. Customizing the appearance (title, position, width / height) of our legend requires two different functions (`guide_colorbar()` and `guide_colorsteps()`), depending on which type of scale you use. ]{.body-text-s} -->
+
+<!-- [Instead of having to type these long functions out each time we want to style our colorbar, we can instead **write our own function to streamline our code**:]{.body-text-s} -->
 
 ```{r}
 #| eval: true
 #| echo: true
 
 custom_guide <- function(type) {
-  
+
   # if gradient, use guide_color() ----
   if (type == "g") {
-    guides(fill = guide_colorbar(title = "Precipitation (inches)",
+    guides(fill = guide_colorbar(title = "% change",
                                  title.position = "top",
-                                 barwidth = 15, barheight = 1))
-    
+                                 barwidth = 15, barheight = 0.75))
+
   # if bin, use guide_colorsteps() ----
   } else if (type == "b") {
-    guides(fill = guide_colorsteps(title = "Precipitation (inches)",
+    guides(fill = guide_colorsteps(title = "% change",
                                    title.position = "top",
-                                   barwidth = 15, barheight = 1))
+                                   barwidth = 15, barheight = 0.75))
   }
 }
 ```
@@ -2734,21 +2960,6 @@ custom_guide <- function(type) {
 ## {#initial-attempts data-menu-title="Initial mapping attempts)"} 
 
 [A few initial mapping attempts]{.slide-title}
-
-<hr>
-
-First, create a color palette:
-
-```{r}
-#| eval: true
-#| echo: true
-
-my_palette <- c("#543006", "#975F1C", "#AC7E42", "#C09C66", "#D6BB8C", "#EBD9B0",#"#D5D4CE",
-                 "#B2DDD7", "#8BC2BC", "#64A7A1", "#3B8E86", "#16726B", "#003C30")
-
-RColorBrewer::display.brewer.pal(n = 11, name = 'BrBG')
-my_brew_palette <- RColorBrewer::brewer.pal(n = 11, name = 'BrBG')
-```
 
 Then map:
 
@@ -2760,7 +2971,7 @@ Then map:
 #| echo: true
 #| fig-align: "center"
 base_map_proj + 
-  scale_fill_gradientn(colors = my_palette) +
+  scale_fill_gradientn(colors = my_brew_palette) +
   custom_guide(type = "g")
 ```
 :::
@@ -2771,7 +2982,7 @@ base_map_proj +
 #| echo: true
 #| fig-align: "center"
 base_map_proj + 
-  scale_fill_stepsn(colors = my_palette) +
+  scale_fill_stepsn(colors = my_brew_palette) +
   custom_guide(type = "b")
 ```
 :::
@@ -2797,8 +3008,18 @@ total_precip / num_counties
 total_precip / 3107
 ```
 
+---
 
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week5/nyt-precip.png")
+```
 
-
+::: {.center-text}
+[What's Going On in This Graph? | New Normal U.S. Precipitation](https://www.nytimes.com/2021/09/16/learning/whats-going-on-in-this-graph-new-normal-us-precipitation.html) (New York Times)
+::
 
 
