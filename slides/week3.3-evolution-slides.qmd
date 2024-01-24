@@ -65,7 +65,7 @@ ggplot(data, aes(x = time, y = value)) +
     x = "Time\n(when measurement was taken)",
     y = "Values\n(an ordered numeric variable)"
   ) +
-  scale_x_continuous(breaks = scales::pretty_breaks(n = 10)) +
+  scale_x_continuous(breaks = scales::breaks_pretty(n = 10)) +
   theme(axis.title = element_text(size = 17)) 
 ```
 
@@ -876,7 +876,7 @@ lyme_pop |>
   filter(state %in% c("Maine", "Rhode Island", "New Hampshire", "Vermont")) |> 
   ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +
   geom_area(position = "fill") +
-  scale_y_continuous(labels = scales::percent_format(scale = 100))
+  scale_y_continuous(labels = scales::label_percent(scale = 100))
 ```
 
 ---

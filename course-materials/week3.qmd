@@ -154,7 +154,7 @@ knitr::include_graphics("images/usdm.png")
 
 <br>
 
-[**This week, we'll focus on data layer, geometric layer, and scales. Next week, we'll work on tweaking the theme (all non-data elements) to get it to look just like the U.S. Drought Monitor's version.**]{.teal-text}
+[**This week, we'll focus on the data layer, geometric layer, and scales. Next week, we'll work on tweaking the theme (all non-data elements) to get it to look just like the U.S. Drought Monitor's version.**]{.teal-text}
 
 ### Solution
 

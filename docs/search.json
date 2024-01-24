@@ -270,7 +270,7 @@
     "href": "course-materials/week3.html#discussion-materials",
     "title": "Choosing a graphic form, Fundamental chart types (part I)",
     "section": "Discussion Materials",
-    "text": "Discussion Materials\n\nPre-discussion Prep\nBefore coming to section, please be sure to:\n\nInstall the following packages:\n\n\ninstall.packages(\"geofacet\") # facet data for different geographical regions using panels arranged in shapes that mimic geographic topology\n\n\n(Optional) Install the ColorPick Eyedropper Google Chrome extension, which makes it easy to select color values from webpages.\n\n\n\nBackground\nThe U.S. Drought Monitor (USDM) is a collection of measures that allows experts to assess droughts in the United States. It is produced through a partnership between the National Drought Mitigation Center at the University of Nebraska-Lincoln, the United States Department of Agriculture and the National Oceanic and Atmospheric Administration. You can download and explore comprehensive statistics through their data portal.\nThe TidyTuesday community wrangled and visualized USDM data back in 2021 (2021-07-20, week 30), so we’ll use the {tidytuesdayR} package to import some minimally-tidied data (TidyTuesday always provides the cleaning script that the organizers used to pre-process any of the data provided – these data comprise three separate data sets, which were converted from wide to long format, joined together, and had some columns renamed).\nOver the course of the next two discussion sections (week 3 & week 4), you’ll be recreating the following data visualization produced by U.S. Drought Monitor, which you can find on the Droughts in California Wikipedia page:\n\n\n\n\n\n\n\n\n\n\n\nThis week, we’ll focus on data layer, geometric layer, and scales. Next week, we’ll work on tweaking the theme (all non-data elements) to get it to look just like the U.S. Drought Monitor’s version.\n\n\nSolution\n\n\n\nYou’ll get the most out of discussion section if you physically type out the code yourself (rather than copying / pasting)!\n\n\n\n\n\n\n\n\n\n\nComplete code for week 3 discussion\n\n\n\n\n\n\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                                    setup                                 ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n#..........................load packages.........................\nlibrary(tidyverse)\n\n#..........................import data...........................\ntuesdata &lt;- tidytuesdayR::tt_load('2021-07-20')\ndrought &lt;- tuesdata$drought\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                            wrangle drought data                          ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\ndrought_clean &lt;- drought |&gt;\n\n  # select cols of interest & update names as needed ----\n  select(date = valid_start, state_abb, drought_lvl, area_pct) |&gt; \n\n  # add year, month & day cols using {lubridate} fxns ----\n  mutate(year = year(date),\n         month = month(date, label = TRUE, abbr = TRUE),\n         day = day(date)) |&gt;\n\n  # add drought level conditions names ----\n  mutate(drought_lvl_long = factor(drought_lvl,\n                            levels = c(\"D4\", \"D3\", \"D2\", \"D1\",\"D0\", \"None\"),\n                            labels = c(\"(D4) Exceptional\", \"(D3) Extreme\",\n                                       \"(D2) Severe\", \"(D1) Moderate\", \"(D0) Abnormally Dry\", \n                                       \"No Drought\"))) |&gt;\n  \n  # reorder cols ----\n  select(date, year, month, day, state_abb, drought_lvl, drought_lvl_long, area_pct)\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##       create stacked area plot of CA drought conditions through time     ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\ndrought_clean |&gt; \n  \n  # remove drought_lvl \"None\" & filter for just CA ----\n  filter(drought_lvl != \"None\",\n         state_abb == \"CA\") |&gt; \n  \n  # create ggplot ----\n  ggplot(mapping = aes(x = date, y = area_pct, fill = drought_lvl_long)) +\n  \n  # reverse order of groups so level D4 is closest to x-axis ----\n  geom_area(position = position_stack(reverse = TRUE)) +\n  \n  # update colors to match US Drought Monitor (colors selected using ColorPick Eyedropper from original USDM data viz) ----\n  scale_fill_manual(values = c(\"#853904\", \"#FF0000\", \"#FFC100\", \"#FFD965\", \"#FFFF00\")) +\n  \n  # set x-axis breaks & remove padding between data and x-axis ----\n  scale_x_date(breaks = scales::breaks_pretty(n = 10),\n               expand = c(0, 0)) +\n\n  # set y-axis breaks & convert values to percentages & & remove padding between data and y-axis----\n  scale_y_continuous(breaks = seq(0, 100, by = 10),\n                     labels = scales::label_percent(scale = 1),\n                     expand = c(0, 0)) +\n  \n  # add title ----\n  labs(title = \"Drought area in California\") \n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##            BONUS: using {geofacet} to plot data for all states           ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n#......remove HI & AK (no data) and also DC from preset grid.....\nmygrid &lt;- geofacet::us_state_grid1 |&gt;\n  filter(!code %in% c(\"DC\", \"HI\", \"AK\"))\n\n#..............................plot..............................\n\n# NOTE: this takes a minute to render!\n\ndrought_clean |&gt; \n  filter(drought_lvl != \"None\") |&gt; \n  ggplot(aes(x = date, y = area_pct, fill = drought_lvl_long)) +\n  geom_area(position = position_stack(reverse = TRUE)) +\n  geofacet::facet_geo(~state_abb, grid = mygrid) +\n  scale_fill_manual(values = c(\"#853904\", \"#FF0000\", \"#FFC100\", \"#FFD965\", \"#FFFF00\"))"
+    "text": "Discussion Materials\n\nPre-discussion Prep\nBefore coming to section, please be sure to:\n\nInstall the following packages:\n\n\ninstall.packages(\"geofacet\") # facet data for different geographical regions using panels arranged in shapes that mimic geographic topology\n\n\n(Optional) Install the ColorPick Eyedropper Google Chrome extension, which makes it easy to select color values from webpages.\n\n\n\nBackground\nThe U.S. Drought Monitor (USDM) is a collection of measures that allows experts to assess droughts in the United States. It is produced through a partnership between the National Drought Mitigation Center at the University of Nebraska-Lincoln, the United States Department of Agriculture and the National Oceanic and Atmospheric Administration. You can download and explore comprehensive statistics through their data portal.\nThe TidyTuesday community wrangled and visualized USDM data back in 2021 (2021-07-20, week 30), so we’ll use the {tidytuesdayR} package to import some minimally-tidied data (TidyTuesday always provides the cleaning script that the organizers used to pre-process any of the data provided – these data comprise three separate data sets, which were converted from wide to long format, joined together, and had some columns renamed).\nOver the course of the next two discussion sections (week 3 & week 4), you’ll be recreating the following data visualization produced by U.S. Drought Monitor, which you can find on the Droughts in California Wikipedia page:\n\n\n\n\n\n\n\n\n\n\n\nThis week, we’ll focus on the data layer, geometric layer, and scales. Next week, we’ll work on tweaking the theme (all non-data elements) to get it to look just like the U.S. Drought Monitor’s version.\n\n\nSolution\n\n\n\nYou’ll get the most out of discussion section if you physically type out the code yourself (rather than copying / pasting)!\n\n\n\n\n\n\n\n\n\n\nComplete code for week 3 discussion\n\n\n\n\n\n\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                                    setup                                 ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n#..........................load packages.........................\nlibrary(tidyverse)\n\n#..........................import data...........................\ntuesdata &lt;- tidytuesdayR::tt_load('2021-07-20')\ndrought &lt;- tuesdata$drought\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                            wrangle drought data                          ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\ndrought_clean &lt;- drought |&gt;\n\n  # select cols of interest & update names as needed ----\n  select(date = valid_start, state_abb, drought_lvl, area_pct) |&gt; \n\n  # add year, month & day cols using {lubridate} fxns ----\n  mutate(year = year(date),\n         month = month(date, label = TRUE, abbr = TRUE),\n         day = day(date)) |&gt;\n\n  # add drought level conditions names ----\n  mutate(drought_lvl_long = factor(drought_lvl,\n                            levels = c(\"D4\", \"D3\", \"D2\", \"D1\",\"D0\", \"None\"),\n                            labels = c(\"(D4) Exceptional\", \"(D3) Extreme\",\n                                       \"(D2) Severe\", \"(D1) Moderate\", \"(D0) Abnormally Dry\", \n                                       \"No Drought\"))) |&gt;\n  \n  # reorder cols ----\n  select(date, year, month, day, state_abb, drought_lvl, drought_lvl_long, area_pct)\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##       create stacked area plot of CA drought conditions through time     ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\ndrought_clean |&gt; \n  \n  # remove drought_lvl \"None\" & filter for just CA ----\n  filter(drought_lvl != \"None\",\n         state_abb == \"CA\") |&gt; \n  \n  # create ggplot ----\n  ggplot(mapping = aes(x = date, y = area_pct, fill = drought_lvl_long)) +\n  \n  # reverse order of groups so level D4 is closest to x-axis ----\n  geom_area(position = position_stack(reverse = TRUE)) +\n  \n  # update colors to match US Drought Monitor (colors selected using ColorPick Eyedropper from original USDM data viz) ----\n  scale_fill_manual(values = c(\"#853904\", \"#FF0000\", \"#FFC100\", \"#FFD965\", \"#FFFF00\")) +\n  \n  # set x-axis breaks & remove padding between data and x-axis ----\n  scale_x_date(breaks = scales::breaks_pretty(n = 10),\n               expand = c(0, 0)) +\n\n  # set y-axis breaks & convert values to percentages & & remove padding between data and y-axis----\n  scale_y_continuous(breaks = seq(0, 100, by = 10),\n                     labels = scales::label_percent(scale = 1),\n                     expand = c(0, 0)) +\n  \n  # add title ----\n  labs(title = \"Drought area in California\") \n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##            BONUS: using {geofacet} to plot data for all states           ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n#......remove HI & AK (no data) and also DC from preset grid.....\nmygrid &lt;- geofacet::us_state_grid1 |&gt;\n  filter(!code %in% c(\"DC\", \"HI\", \"AK\"))\n\n#..............................plot..............................\n\n# NOTE: this takes a minute to render!\n\ndrought_clean |&gt; \n  filter(drought_lvl != \"None\") |&gt; \n  ggplot(aes(x = date, y = area_pct, fill = drought_lvl_long)) +\n  geom_area(position = position_stack(reverse = TRUE)) +\n  geofacet::facet_geo(~state_abb, grid = mygrid) +\n  scale_fill_manual(values = c(\"#853904\", \"#FF0000\", \"#FFC100\", \"#FFD965\", \"#FFFF00\"))"
   },
   {
     "objectID": "course-materials/week3.html#assignment-reminders",
@@ -508,7 +508,7 @@
     "href": "slides/week3.3-evolution-slides.html#proportional-stacked-area",
     "title": "EDS 240",
     "section": "",
-    "text": "A variant: proportional stacked area charts\n\nProportional stacked area charts plot percentage contribution instead of absolute numbers on the y-axis. The focus of this version is the proportion of contribution made by each category rather than absolute numbers.\n\nlyme_pop |&gt; \n  filter(year %in% c(2010:2020)) |&gt; \n  filter(state %in% c(\"Maine\", \"Rhode Island\", \"New Hampshire\", \"Vermont\")) |&gt; \n  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +\n  geom_area(position = \"fill\") +\n  scale_y_continuous(labels = scales::percent_format(scale = 100))"
+    "text": "A variant: proportional stacked area charts\n\nProportional stacked area charts plot percentage contribution instead of absolute numbers on the y-axis. The focus of this version is the proportion of contribution made by each category rather than absolute numbers.\n\nlyme_pop |&gt; \n  filter(year %in% c(2010:2020)) |&gt; \n  filter(state %in% c(\"Maine\", \"Rhode Island\", \"New Hampshire\", \"Vermont\")) |&gt; \n  ggplot(aes(x = year, y = cases_per100k, group = state, fill = state)) +\n  geom_area(position = \"fill\") +\n  scale_y_continuous(labels = scales::label_percent(scale = 100))"
   },
   {
     "objectID": "slides/week3.3-evolution-slides.html#stacked-area-group-order",
@@ -1712,7 +1712,7 @@
     "href": "slides/week5.1-colors-slides.html#apply-palettes",
     "title": "EDS 240",
     "section": "",
-    "text": "Some common functions for scaling colors\n\nFor qualitative (categorical) data:\n\nscale_*_manual()\n\nFor quantitative (numeric) data:\nUnclassed palettes:\n\nscale_*_gradient(): creates a two color gradient (low-high)\nscale_*_gradient2(): creates a diverging color gradient (low-mid-high)\nscale_*_gradientn(): creates a n-color gradient\n\nClassed palettes:\n\nscale_*steps(): creates a two color binned gradient (low-high)\nscale_*_steps2(): creates a diverging binned color gradient (low-mid-high)\nscale_*_stepsn(): creates a n-color binned gradient\n\n\nUse the fill variant of the above functions for areas, bars, etc. and the color variant for points, lines, etc."
+    "text": "Some common functions for scaling colors\n\nFor qualitative (categorical) data  :\n\nscale_*_manual()\n\nFor quantitative (numeric) data:\nUnclassed palettes  :\n\nscale_*_gradient(): creates a two color gradient (low-high)\nscale_*_gradient2(): creates a diverging color gradient (low-mid-high)\nscale_*_gradientn(): creates a n-color gradient\n\nClassed palettes  :\n\nscale_*steps(): creates a two color binned gradient (low-high)\nscale_*_steps2(): creates a diverging binned color gradient (low-mid-high)\nscale_*_stepsn(): creates a n-color binned gradient\n\n\nUse the fill variant of the above functions for areas, bars, etc. and the color variant for points, lines, etc."
   },
   {
     "objectID": "slides/week5.1-colors-slides.html#save-palette",
@@ -1859,7 +1859,7 @@
     "href": "slides/week5.1-colors-slides.html#data",
     "title": "EDS 240",
     "section": "",
-    "text": "The Data\n\nNOAA National Centers for Environmental Information (NCEI) is responsible for preserving, monitoring, assessing, and providing public access to the Nation’s geophysical data and information.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFind public access to a massive inventory of climate data on their Climate Monitoring page. Today’s lesson will use the Climate at a Glance collection. Specifically, we’ll be exploring county-level precipitation data from October 2023, accessed via the County Mapping portal – UPDATE THIS.\n\n\nA lot of the following data viz code draws from and was inspired by the wonderful Making Maps with R tutorial, by Eric C. Anderson."
+    "text": "The Data\n\nNOAA National Centers for Environmental Information (NCEI) is responsible for preserving, monitoring, assessing, and providing public access to the Nation’s geophysical data and information.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFind public access to a massive inventory of climate data on their Climate Monitoring page. Today’s lesson will use the Climate at a Glance collection. Specifically, we’ll be exploring how county-level precipitation data, accessed via the County Mapping portal."
   },
   {
     "objectID": "slides/week5.1-colors-slides.html#data-wrangling",
@@ -1873,7 +1873,7 @@
     "href": "slides/week5.1-colors-slides.html#base-map",
     "title": "EDS 240",
     "section": "",
-    "text": "Start by creating a base map\n\n\n\n\n\n\n# 'group' controls whether adjacent points are connected by lines (each county is a \"group,\" therefore points are connected) ----\nbase_map &lt;- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + \n  \n  # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----\n  geom_polygon(data = joined_precip_us_counties, aes(fill = perc_change)) + \n  \n  # darken state lines ----\n  geom_polygon(color = \"#2F2D2C\", fill = NA, linewidth = 0.1) +\n  \n  # update labels ----\n  labs(title = \"5-year precipitation compared with the 20th century average\") +\n  \n  # set theme to clean up appearance ----\n  theme_void() + \n  \n  # theme adjustments ----\n  theme(\n    legend.position = \"bottom\",\n    legend.title = element_blank()\n  )\n  \nbase_map\n\n\n\n\n\n\n\nThis looks a bit wonky, so we’ll need to specify a projection, next."
+    "text": "Start by creating a base map\n\n\n\n# 'group' controls whether adjacent points are connected by lines (each county is a \"group,\" therefore points are connected) ----\nbase_map &lt;- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + \n  \n  # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----\n  geom_polygon(data = joined_precip_us_counties, aes(fill = perc_change)) + \n  \n  # darken state lines ----\n  geom_polygon(color = \"#2F2D2C\", fill = NA, linewidth = 0.1) +\n  \n  # update labels ----\n  labs(title = \"5-year precipitation compared with the 20th century average\",\n       caption = \"Source: National Centers for Environmental Information\") +\n  \n  # set theme to clean up appearance ----\n  theme_void() + \n  \n  # theme adjustments ----\n  theme(\n    legend.position = \"bottom\",\n    legend.title = element_blank(),\n    plot.caption = element_text(face = \"italic\", margin = margin(t = 20, r = 0, b = 0, l = 0))\n  )\n  \nbase_map\n\n\n\n\n\n\n\n\n\n\nEric C. Anderson’s Making Maps with R tutorial was a wonderful resource in getting started with the {maps} package."
   },
   {
     "objectID": "slides/week5.1-colors-slides.html#map-projection",
@@ -1881,13 +1881,6 @@
     "title": "EDS 240",
     "section": "",
     "text": "Apply a Mercator projection\n\nLambert conformal conic and Mercator projections are both commonly used for mapping the United States. Here, we’ll apply the latter:\n\nbase_map_proj &lt;- base_map + \n  coord_map(projection = \"mercator\")\n\nbase_map_proj\n\n\n\nAlternatively:\n\nfix the relationship between lat & long by using coord_fixed(1.3)\napply a Lambert conformal projection, conic projection, using coord_fixed(projection = \"conic\", lat0 = 30)\nNOTE: coord_map() has been been superceded by coord_sf(): https://ggplot2.tidyverse.org/reference/coord_map.html"
-  },
-  {
-    "objectID": "slides/week5.1-colors-slides.html#decide-on-palette",
-    "href": "slides/week5.1-colors-slides.html#decide-on-palette",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Pick a color palette!\n\nRecall from earlier that precipitation data is often encoded using a brown / blue color scheme (with drier conditions falling on the brown side and wetter conditions falling on the blue side).\nLucky for us, RColorBrewer has this exact palette:\n\n\n\n\nPreview the palette using display.brewer.pal() with our desired number of hues:\n\n\nRColorBrewer::display.brewer.pal(n = 11, name = 'BrBG')\n\n\n\n\n\n\n\n\n\n\nSave the HEX codes to a named object using brewer.pal() (we’ll call this in our plot later):\n\n\nmy_brew_palette &lt;- RColorBrewer::brewer.pal(n = 11, name = 'BrBG')\nmy_brew_palette\n\n [1] \"#543005\" \"#8C510A\" \"#BF812D\" \"#DFC27D\" \"#F6E8C3\" \"#F5F5F5\" \"#C7EAE5\"\n [8] \"#80CDC1\" \"#35978F\" \"#01665E\" \"#003C30\""
   },
   {
     "objectID": "slides/week5.1-colors-slides.html#decide-on-scale-type",
@@ -1904,11 +1897,88 @@
     "text": "Start with an unclassed scale\n\n\n\n“The unclassed choropleth is the most exact representation of the data model possible,”\n\n\n-Judith A. Tyner, in Priciples of Map Design\n\n\n\n\n“No matter if you decide for a classed map at the end, you should start your process by looking at an unclassed map. This will help you see subtle differences between regions and make a conscious decision if and how you should simplify them.”\n\n\n-Lisa Charlotte Muth, in When to use classed and when to use unclassed color scales\n\n\n\n\n\nWe’ll heed this advice and start with an unclassed map!"
   },
   {
-    "objectID": "slides/week5.1-colors-slides.html#initial-attempts",
-    "href": "slides/week5.1-colors-slides.html#initial-attempts",
+    "objectID": "slides/week5.1-colors-slides.html#decide-on-palette",
+    "href": "slides/week5.1-colors-slides.html#decide-on-palette",
     "title": "EDS 240",
     "section": "",
-    "text": "A few initial mapping attempts\nThen map:\n\n\n\nbase_map_proj + \n  scale_fill_gradientn(colors = my_brew_palette) +\n  custom_guide(type = \"g\")\n\n\n\n\n\n\n\n\n\n\nbase_map_proj + \n  scale_fill_stepsn(colors = my_brew_palette) +\n  custom_guide(type = \"b\")\n\n\n\n\n\n\n\n\n\n\n\nBy default, scale_fill_stepsn() sets nice.breaks = TRUE"
+    "text": "Pick a color palette!\n\nRecall from earlier that precipitation data is often encoded using a brown / blue color scheme (with drier conditions falling on the brown side and wetter conditions falling on the blue side).\nLucky for us, RColorBrewer has this exact palette. Let’s use all 11 hues for our unclassed map:\n\n\n\n\nPreview the palette using display.brewer.pal() with our desired number of hues:\n\n\nRColorBrewer::display.brewer.pal(n = 11, name = 'BrBG')\n\n\n\n\n\n\n\n\n\n\nSave the HEX codes to a named object using brewer.pal() (we’ll call this in our plot later):\n\n\nmy_brew_palette11 &lt;- RColorBrewer::brewer.pal(n = 11, name = 'BrBG')\nmy_brew_palette11\n\n [1] \"#543005\" \"#8C510A\" \"#BF812D\" \"#DFC27D\" \"#F6E8C3\" \"#F5F5F5\" \"#C7EAE5\"\n [8] \"#80CDC1\" \"#35978F\" \"#01665E\" \"#003C30\""
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#apply-palette-unclassed",
+    "href": "slides/week5.1-colors-slides.html#apply-palette-unclassed",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Apply our palette & adjust colorbar\n\nHere, we leverage the awesome {scales} package to add %s to the colorbar labels and set our breaks. We also use guides() + guide_colorbar() to update label positioning and colorbar size:\n\nbase_map_proj + \n  scale_fill_gradientn(colors = my_brew_palette11,\n                       labels = scales::label_percent(scale = 1),\n                       breaks = scales::breaks_width(width = 10)) +\n  guides(fill = guide_colorbar(label.hjust = 0.5,\n                               barwidth = 15, barheight = 0.75))"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#inspect-color-scale1",
+    "href": "slides/week5.1-colors-slides.html#inspect-color-scale1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Inspect the color scale – anything off?"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#misleading",
+    "href": "slides/week5.1-colors-slides.html#misleading",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Our color mapping may be misleading\n\n\n\n\n0% (i.e. no change between 5-year precipitation and 20th century average) is currently on the bluer side of our color scale, rather than on off-white color that’s at the center of our palette.\nAs a result, our map may be misleading – it would appear as if more counties received higher-than-average precipitation than in actuality."
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#rescale-colorbar",
+    "href": "slides/week5.1-colors-slides.html#rescale-colorbar",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Rescale the colorbar so that 0 is at the center\n\n\nbase_map_proj + \n  scale_fill_gradientn(colors = my_brew_palette11,\n                       labels = scales::label_percent(scale = 1),\n                       breaks = scales::breaks_width(width = 10),\n                       values = scales::rescale(x = c(\n                         min(joined_precip_us_counties$perc_change),\n                         0,\n                         max(joined_precip_us_counties$perc_change)))) +\n  guides(fill = guide_colorbar(label.hjust = 0.5,\n                               barwidth = 15, barheight = 0.75))"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#final-unclassed",
+    "href": "slides/week5.1-colors-slides.html#final-unclassed",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Our final unclassed map\n\n\n\nWe’ll come back to this map in our typography lesson to update and style our text elements."
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#classed-palette",
+    "href": "slides/week5.1-colors-slides.html#classed-palette",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Modify our palette for our classed map\n\nWe’ll be using the same color palette for our classed map, but this time, let’s keep 10 hues (this will drop the middle-most off-white hue):\n\n\n\nPreview the palette using display.brewer.pal() with our desired number of hues:\n\n\nRColorBrewer::display.brewer.pal(n = 10, name = 'BrBG')\n\n\n\n\n\n\n\n\n\n\nSave the HEX codes to a named object using brewer.pal() (we’ll call this in our plot later):\n\n\nmy_brew_palette10 &lt;- RColorBrewer::brewer.pal(n = 10, name = 'BrBG')\nmy_brew_palette10\n\n [1] \"#543005\" \"#8C510A\" \"#BF812D\" \"#DFC27D\" \"#F6E8C3\" \"#C7EAE5\" \"#80CDC1\"\n [8] \"#35978F\" \"#01665E\" \"#003C30\"\n\n\n\n\nBy dropping the off-white hue, we can construct our scale so that 0% sits at the break point between brown and blue shades – any county that received more than the historical average will be a shade of blue, and any that received less will be a shade of brown."
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#apply-palette-classed",
+    "href": "slides/week5.1-colors-slides.html#apply-palette-classed",
+    "title": "EDS 240",
+    "section": "",
+    "text": "By default, our resolution is pretty low\n\nWe only get 4 bins by default, which means we lose a lot of detail in our map:\n\nbase_map_proj + \n  scale_fill_stepsn(colors = my_brew_palette10,\n                    labels = scales::label_percent(scale = 1)) +\n  guides(fill = guide_colorsteps(barwidth = 25, barheight = 0.75))"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#increase-classes",
+    "href": "slides/week5.1-colors-slides.html#increase-classes",
+    "title": "EDS 240",
+    "section": "",
+    "text": "More classes = more nuance\n\n\n\n\nBreaks set to a width of 10\n\n\nbase_map_proj + \n  scale_fill_stepsn(colors = my_brew_palette10,\n                    labels = scales::label_percent(scale = 1),\n                    breaks = scales::breaks_width(width = 10)) +\n  guides(fill = guide_colorsteps(barwidth = 25, barheight = 0.75))\n\n\n\n\n\n\n\n\n\n\nBreaks set to a width of 5 & rescaled with 0 at center\n\n\nbase_map_proj + \n  scale_fill_stepsn(colors = my_brew_palette10,\n                    labels = scales::label_percent(scale = 1),\n                    values = scales::rescale(x = c(\n                         min(joined_precip_us_counties$perc_change),\n                         0,\n                         max(joined_precip_us_counties$perc_change))), \n                    breaks = scales::breaks_width(width = 5)) +\n  guides(fill = guide_colorsteps(barwidth = 25, barheight = 0.75))\n\n\n\n\n\n\n\n\n\n\n\nBut the more classes you have, the longer it will (likely) take a reader to interpret values."
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#unclassed-classed",
+    "href": "slides/week5.1-colors-slides.html#unclassed-classed",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Unclassed vs. classed maps\n\nWhat stories to each of these maps tell? When might you choose one over the other? What additional modifications might you make?\n\n\n\n\nUnclassed map:\n\n\n\n\n\n\n\n\n\n\n\n\nClassed map:"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#multiple-maps",
+    "href": "slides/week5.1-colors-slides.html#multiple-maps",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Choropleths are powerful in multiples\n\nSeveral maps side-by-side can help you better spot important patterns and tell a more complete story.\n\n\nWhat’s Going On in This Graph? | New Normal U.S. Precipitation (New York Times)"
+  },
+  {
+    "objectID": "slides/week5.1-colors-slides.html#end-break",
+    "href": "slides/week5.1-colors-slides.html#end-break",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Take a Break\n\n\n~ This is the end of Lesson 1 (of 3) ~\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/sections/choropleth-practice-NEW.html",

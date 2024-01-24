@@ -1651,19 +1651,19 @@ knitr::include_graphics("images/week5/coolers.png")
 
 <hr>
 
-**For qualitative (categorical) data:**
+**For qualitative (categorical) data <img src="images/week5/qualitative.png" alt="A qualitative color scale with 5 distinct colors: dark blue, medium blue, yellow, orange, red." style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;"/> :**
 
 - [`scale_*_manual()`]{.body-text-s}
 
 **For quantitative (numeric) data:**
 
-Unclassed palettes:
+Unclassed palettes <img src="images/week5/unclassed-seq.png" alt="An unclassed sequential color scale which transitions from light to dark blue moving left to right." style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;"/> :
 
 - [`scale_*_gradient()`: creates a two color gradient (low-high)]{.body-text-s}
 - [`scale_*_gradient2()`: creates a diverging color gradient (low-mid-high)]{.body-text-s}
 - [`scale_*_gradientn()`: creates a n-color gradient]{.body-text-s}
 
-Classed palettes:
+Classed palettes <img src="images/week5/classed-seq.png" alt="A classed sequential color scale with 5 binned colors ranging from light blue on the left to dark blue on the right." style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;"/> :
 
 - [`scale_*steps()`: creates a two color binned gradient (low-high)]{.body-text-s}
 - [`scale_*_steps2()`: creates a diverging binned color gradient (low-mid-high)]{.body-text-s}
@@ -2366,12 +2366,6 @@ Choropleth by [Hanna & Farnsworth (2013)](https://www.researchgate.net/publicati
 One of the most important decisions you'll need to make is **what type of color scale** to use (and of course, what colors).
 :::
 
-<!-- can be tricky to get right  -->
-
-<!-- you'll often have to think critically about classifying yourd ata -->
-
-<!-- https://blog.datawrapper.de/classed-vs-unclassed-color-scales/ -->
-
 ---
 
 ## {#data data-menu-title="The Data"} 
@@ -2407,13 +2401,13 @@ knitr::include_graphics("images/week5/ncei-logo2.png")
 
 ::::
 
-[Find public access to a massive inventory of climate data on their [Climate Monitoring](https://www.ncei.noaa.gov/access/monitoring/products/) page. Today's lesson will use the [Climate at a Glance](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/) collection. Specifically, **we'll be exploring county-level precipitation data from October 2023, accessed via the [County Mapping](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value) portal -- UPDATE THIS**.]{.body-text-s}
+[Find public access to a massive inventory of climate data on their [Climate Monitoring](https://www.ncei.noaa.gov/access/monitoring/products/) page. Today's lesson will use the [Climate at a Glance](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/) collection. Specifically, **we'll be exploring how county-level precipitation data, accessed via the [County Mapping](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value) portal**.]{.body-text-s}
+
+<!-- **we'll be exploring county-level precipitation data from October 2023, accessed via the [County Mapping](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value) portal -- UPDATE THIS** -->
 
 <!-- https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value -->
 
-::: {.footer}
-A lot of the following data viz code draws from and was inspired by the wonderful [Making Maps with R](https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html) tutorial, by [Eric C. Anderson](https://github.com/eriqande).
-:::
+<!-- 5-year precip: https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202312/60/value -->
 
 ----
 
@@ -2693,35 +2687,6 @@ joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties)
 <hr>
 
 ```{r}
-#| eval: false
-#| echo: false
-#| output-location: column
-# 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----
-# base_map <- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + 
-#   
-#   # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----
-#   geom_polygon(data = joined_precip_us_counties, aes(fill = precip)) + 
-#   
-#   # darken state lines ----
-#   geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
-#   
-#   # update labels ----
-#   labs(title = "Total Precipitation, by County",
-#        subtitle = "2023") +
-#   
-#   # set theme to clean up appearance ----
-#   theme_void() + 
-#   
-#   # theme adjustments ----
-#   theme(
-#     legend.position = "bottom"
-#   )
-#   
-# base_map
-```
-
-
-```{r}
 #| eval: true
 #| echo: true
 #| output-location: column
@@ -2735,7 +2700,8 @@ base_map <- ggplot(data = states, mapping = aes(x = long, y = lat, group = group
   geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
   
   # update labels ----
-  labs(title = "5-year precipitation compared with the 20th century average") +
+  labs(title = "5-year precipitation compared with the 20th century average",
+       caption = "Source: National Centers for Environmental Information") +
   
   # set theme to clean up appearance ----
   theme_void() + 
@@ -2743,14 +2709,19 @@ base_map <- ggplot(data = states, mapping = aes(x = long, y = lat, group = group
   # theme adjustments ----
   theme(
     legend.position = "bottom",
-    legend.title = element_blank()
+    legend.title = element_blank(),
+    plot.caption = element_text(face = "italic", margin = margin(t = 20, r = 0, b = 0, l = 0))
   )
   
 base_map
 ```
 
-::: {.center-text}
-This looks a bit wonky, so we'll need to specify a projection, next.
+<!-- ::: {.center-text} -->
+<!-- This looks a bit wonky, so we'll need to specify a projection, next. -->
+<!-- ::: -->
+
+::: {.footer}
+[Eric C. Anderson's](https://github.com/eriqande) [Making Maps with R](https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html) tutorial was a wonderful resource in getting started with the `{maps}` package.
 :::
 
 ---
@@ -2780,53 +2751,6 @@ Alternatively:
 - apply a Lambert conformal projection, conic projection, using `coord_fixed(projection = "conic", lat0 = 30)`
 - NOTE: `coord_map()` has been been superceded by `coord_sf()`: https://ggplot2.tidyverse.org/reference/coord_map.html
 :::
-
----
-
-## {#decide-on-palette data-menu-title="Decide on palette"} 
-
-[Pick a color palette!]{.slide-title}
-
-<hr>
-
-Recall [from earlier](https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/suggested-colors) that precipitation data is often encoded using a **brown / blue** color scheme (with drier conditions falling on the brown side and wetter conditions falling on the blue side). 
-
-Lucky for us, **RColorBrewer** has this exact palette:
-
-<br>
-
-:::: {.columns}
-
-::: {.column width="50%"}
-
-::: {.center-text .gray-text .body-text-s}
-Preview the palette using `display.brewer.pal()` with our desired number of hues:
-:::
-
-```{r}
-#| eval: true
-#| echo: true
-#| fig-align: "center"
-#| out-width: "100%"
-RColorBrewer::display.brewer.pal(n = 11, name = 'BrBG')
-```
-:::
-
-::: {.column width="50%"}
-
-::: {.center-text .gray-text .body-text-s}
-Save the HEX codes to a named object using `brewer.pal()` (we'll call this in our plot later):
-:::
-
-```{r}
-#| eval: true
-#| echo: true
-my_brew_palette <- RColorBrewer::brewer.pal(n = 11, name = 'BrBG')
-my_brew_palette
-```
-:::
-
-::::
 
 ---
 
@@ -2892,30 +2816,70 @@ Adapted from [When to use classed and when to use unclassed color scales](https:
 ::: {.center-text .body-text-m}
 **We'll heed this advice and start with an unclassed map!**
 :::
+
+---
+
+## {#decide-on-palette data-menu-title="Decide on palette"} 
+
+[Pick a color palette!]{.slide-title}
+
+<hr>
+
+Recall [from earlier](https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/suggested-colors) that precipitation data is often encoded using a **brown / blue** color scheme (with drier conditions falling on the brown side and wetter conditions falling on the blue side). 
+
+Lucky for us, **RColorBrewer** has this exact palette. **Let's use [all 11 hues]{.teal-text} for our unclassed map**:
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Preview the palette using `display.brewer.pal()` with our desired number of hues:
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+RColorBrewer::display.brewer.pal(n = 11, name = 'BrBG')
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Save the HEX codes to a named object using `brewer.pal()` (we'll call this in our plot later):
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+my_brew_palette11 <- RColorBrewer::brewer.pal(n = 11, name = 'BrBG')
+my_brew_palette11
+```
+:::
+
+::::
   
 ---
 
-Add palette colors & adjust colorbar appearance
+## {#apply-palette-unclassed data-menu-title="Apply our palette (unclassed)"} 
+
+[Apply our palette & adjust colorbar]{.slide-title}
+
+<hr>
+
+[Here, we leverage the awesome `{scales}` package to add **%s** to the colorbar labels and set our breaks. We also use `guides()` + `guide_colorbar()` to update label positioning and colorbar size:]{.body-text-s}
 
 ```{r}
 #| eval: true
 #| echo: true
 #| fig-align: "center"
 base_map_proj + 
-  scale_fill_gradientn(colors = my_brew_palette,
-                       labels = scales::percent_format(scale = 1)) +
-  guides(fill = guide_colorbar(label.hjust = 0.5,
-                               barwidth = 15, barheight = 0.75))
-```
-
----
-
-```{r}
-#| eval: true
-#| echo: true
-#| fig-align: "center"
-base_map_proj + 
-  scale_fill_gradientn(colors = my_brew_palette,
+  scale_fill_gradientn(colors = my_brew_palette11,
                        labels = scales::label_percent(scale = 1),
                        breaks = scales::breaks_width(width = 10)) +
   guides(fill = guide_colorbar(label.hjust = 0.5,
@@ -2924,91 +2888,300 @@ base_map_proj +
 
 ---
 
-<!-- ## {#colorbar-styling-fxn data-menu-title="Colorbar styling function"}  -->
+## {#inspect-color-scale1 data-menu-title="Inspect color scale"} 
 
-<!-- [Create a function for adding the correct colorbar styling]{.slide-title3} -->
+[Inspect the color scale -- anything off?]{.slide-title}
 
-<!-- <hr> -->
-
-<!-- [We're going to create a couple different choropleths to look at the differences between gradient vs. binned color scales. Customizing the appearance (title, position, width / height) of our legend requires two different functions (`guide_colorbar()` and `guide_colorsteps()`), depending on which type of scale you use. ]{.body-text-s} -->
-
-<!-- [Instead of having to type these long functions out each time we want to style our colorbar, we can instead **write our own function to streamline our code**:]{.body-text-s} -->
+<hr>
 
 ```{r}
 #| eval: true
-#| echo: true
-
-custom_guide <- function(type) {
-
-  # if gradient, use guide_color() ----
-  if (type == "g") {
-    guides(fill = guide_colorbar(title = "% change",
-                                 title.position = "top",
-                                 barwidth = 15, barheight = 0.75))
-
-  # if bin, use guide_colorsteps() ----
-  } else if (type == "b") {
-    guides(fill = guide_colorsteps(title = "% change",
-                                   title.position = "top",
-                                   barwidth = 15, barheight = 0.75))
-  }
-}
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+base_map_proj + 
+  scale_fill_gradientn(colors = my_brew_palette11,
+                       labels = scales::label_percent(scale = 1),
+                       breaks = scales::breaks_width(width = 10)) +
+  guides(fill = guide_colorbar(label.hjust = 0.5,
+                               barwidth = 15, barheight = 0.75))
 ```
 
 ---
 
-## {#initial-attempts data-menu-title="Initial mapping attempts)"} 
+## {#misleading data-menu-title="Misleading colors"} 
 
-[A few initial mapping attempts]{.slide-title}
+[Our color mapping may be misleading]{.slide-title}
 
-Then map:
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+base_map_proj + 
+  scale_fill_gradientn(colors = my_brew_palette11,
+                       labels = scales::label_percent(scale = 1),
+                       breaks = scales::breaks_width(width = 10)) +
+  guides(fill = guide_colorbar(label.hjust = 0.5,
+                               barwidth = 15, barheight = 0.75))
+```
+
+<br>
+
+::: {.center-text}
+**0%** (i.e. no change between 5-year precipitation and 20th century average) **is currently on the bluer side of our color scale**, rather than on off-white color that's at the center of our palette. 
+
+As a result, **our map may be misleading** -- it would appear as if more counties received higher-than-average precipitation than in actuality.
+:::
+
+---
+
+## {#rescale-colorbar data-menu-title="Rescale centerpoint"} 
+
+[Rescale the colorbar so that 0 is at the center]{.slide-title2}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| code-line-numbers: "5-8"
+base_map_proj + 
+  scale_fill_gradientn(colors = my_brew_palette11,
+                       labels = scales::label_percent(scale = 1),
+                       breaks = scales::breaks_width(width = 10),
+                       values = scales::rescale(x = c(
+                         min(joined_precip_us_counties$perc_change),
+                         0,
+                         max(joined_precip_us_counties$perc_change)))) +
+  guides(fill = guide_colorbar(label.hjust = 0.5,
+                               barwidth = 15, barheight = 0.75))
+```
+
+---
+
+## {#final-unclassed data-menu-title="Final unclassed map"} 
+
+[Our final unclassed map]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| code-line-numbers: "5-8"
+base_map_proj + 
+  scale_fill_gradientn(colors = my_brew_palette11,
+                       labels = scales::label_percent(scale = 1),
+                       breaks = scales::breaks_width(width = 10),
+                       values = scales::rescale(x = c(
+                         min(joined_precip_us_counties$perc_change),
+                         0,
+                         max(joined_precip_us_counties$perc_change)))) +
+  guides(fill = guide_colorbar(label.hjust = 0.5,
+                               barwidth = 15, barheight = 0.75))
+```
+
+::: {.footer}
+We'll come back to this map in our typography lesson to update and style our text elements.
+:::
+
+---
+
+## {#classed-palette data-menu-title="Classed palette"} 
+
+[Modify our palette for our classed map]{.slide-title}
+
+<hr>
+
+We'll be using the same color palette for our classed map, but this time, **let's keep [10 hues]{.teal-text} (this will drop the middle-most off-white hue)**:
 
 :::: {.columns}
 
 ::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Preview the palette using `display.brewer.pal()` with our desired number of hues:
+:::
+
 ```{r}
 #| eval: true
 #| echo: true
 #| fig-align: "center"
-base_map_proj + 
-  scale_fill_gradientn(colors = my_brew_palette) +
-  custom_guide(type = "g")
+#| out-width: "100%"
+RColorBrewer::display.brewer.pal(n = 10, name = 'BrBG')
 ```
 :::
 
 ::: {.column width="50%"}
+
+::: {.center-text .gray-text .body-text-s}
+Save the HEX codes to a named object using `brewer.pal()` (we'll call this in our plot later):
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+my_brew_palette10 <- RColorBrewer::brewer.pal(n = 10, name = 'BrBG')
+my_brew_palette10
+```
+:::
+
+::::
+
+[By dropping the off-white hue, we can construct our scale so that **0%** sits at the break point between brown and blue shades -- any county that received more than the historical average will be a shade of blue, and any that received less will be a shade of brown.]{.body-text-s}
+
+---
+
+## {#apply-palette-classed data-menu-title="Apply our palette (classed)"} 
+
+[By default, our resolution is pretty low]{.slide-title}
+
+<hr>
+
+We only get 4 bins by default, which means we lose a lot of detail in our map:
+
 ```{r}
 #| eval: true
 #| echo: true
 #| fig-align: "center"
+#| out-width: "100%"
 base_map_proj + 
-  scale_fill_stepsn(colors = my_brew_palette) +
-  custom_guide(type = "b")
+  scale_fill_stepsn(colors = my_brew_palette10,
+                    labels = scales::label_percent(scale = 1)) +
+  guides(fill = guide_colorsteps(barwidth = 25, barheight = 0.75))
+```
+
+---
+
+## {#increase-classes data-menu-title="Increase # of classes"} 
+
+[More classes = more nuance]{.slide-title}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s .gray-text}
+Breaks set to a width of **10**
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| code-line-numbers: "4"
+base_map_proj + 
+  scale_fill_stepsn(colors = my_brew_palette10,
+                    labels = scales::label_percent(scale = 1),
+                    breaks = scales::breaks_width(width = 10)) +
+  guides(fill = guide_colorsteps(barwidth = 25, barheight = 0.75))
+```
+:::
+
+::: {.column width="%"}
+
+::: {.center-text .body-text-s .gray-text}
+Breaks set to a width of **5** & rescaled with 0 at center
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| code-line-numbers: "4-8"
+base_map_proj + 
+  scale_fill_stepsn(colors = my_brew_palette10,
+                    labels = scales::label_percent(scale = 1),
+                    values = scales::rescale(x = c(
+                         min(joined_precip_us_counties$perc_change),
+                         0,
+                         max(joined_precip_us_counties$perc_change))), 
+                    breaks = scales::breaks_width(width = 5)) +
+  guides(fill = guide_colorsteps(barwidth = 25, barheight = 0.75))
 ```
 :::
 
 ::::
 
 ::: {.footer}
-By default, `scale_fill_stepsn()` sets `nice.breaks = TRUE`
+*But* the more classes you have, the longer it will (likely) take a reader to interpret values.
 :::
 
 ---
 
-Determine the mean
+## {#unclassed-classed data-menu-title="Unclassed vs. classed"} 
+
+[Unclassed vs. classed maps]{.slide-title}
+
+<hr>
+
+What stories to each of these maps tell? When might you choose one over the other? What additional modifications might you make?
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s .gray-text}
+Unclassed map:
+:::
 
 ```{r}
-mean_precip <- mean(na.omit(precip_counties_wrangled$precip)) 
-mean_precip # 36.5
-
-total_precip <- sum(na.omit(precip_counties_wrangled$precip))
-num_counties <- length(unique(na.omit(precip_counties_wrangled$county)))
-
-total_precip / num_counties
-total_precip / 3107
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+base_map_proj + 
+  scale_fill_gradientn(colors = my_brew_palette11,
+                       labels = scales::label_percent(scale = 1),
+                       breaks = scales::breaks_width(width = 10),
+                       values = scales::rescale(x = c(
+                         min(joined_precip_us_counties$perc_change),
+                         0,
+                         max(joined_precip_us_counties$perc_change)))) +
+  guides(fill = guide_colorbar(label.hjust = 0.5,
+                               barwidth = 15, barheight = 0.75))
 ```
+:::
+
+::: {.column width="%"}
+
+::: {.center-text .body-text-s .gray-text}
+Classed map:
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+base_map_proj + 
+  scale_fill_stepsn(colors = my_brew_palette10,
+                    labels = scales::label_percent(scale = 1),
+                    breaks = scales::breaks_width(width = 10)) +
+  guides(fill = guide_colorsteps(barwidth = 25, barheight = 0.75))
+```
+:::
+
+::::
 
 ---
+
+## {#multiple-maps data-menu-title="Multiple maps"} 
+
+[Choropleths are powerful in multiples]{.slide-title}
+
+<hr>
+
+Several maps side-by-side can help you better spot important patterns and tell a more complete story.
 
 ```{r}
 #| eval: true
@@ -3018,8 +3191,32 @@ total_precip / 3107
 knitr::include_graphics("images/week5/nyt-precip.png")
 ```
 
-::: {.center-text}
+::: {.footer}
 [What's Going On in This Graph? | New Normal U.S. Precipitation](https://www.nytimes.com/2021/09/16/learning/whats-going-on-in-this-graph-new-normal-us-precipitation.html) (New York Times)
-::
+:::
 
+---
+
+##  {#end-break data-menu-title="# Break #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">{{< fa mug-hot title="a mug with steam rising out the top" >}} Take a Break</p>
+<p class="caption-text">*~ This is the end of Lesson 1 (of 3) ~*</p>
+</div>
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
 

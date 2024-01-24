@@ -420,7 +420,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6b4e0022" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_59f5dd3e" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1047,7 +1047,7 @@ There are <em>so many</em> great pre-made color palettes to explore, many of whi
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_ae6821be" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_efdd3d1f" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1625,18 +1625,18 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 <h2></h2>
 <p><span class="slide-title2">Some common functions for scaling colors</span></p>
 <hr>
-<p><strong>For qualitative (categorical) data:</strong></p>
+<p><strong>For qualitative (categorical) data <img src="images/week5/qualitative.png" alt="A qualitative color scale with 5 distinct colors: dark blue, medium blue, yellow, orange, red." style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;"> :</strong></p>
 <ul>
 <li><span class="body-text-s"><code>scale_*_manual()</code></span></li>
 </ul>
 <p><strong>For quantitative (numeric) data:</strong></p>
-<p>Unclassed palettes:</p>
+<p>Unclassed palettes <img src="images/week5/unclassed-seq.png" alt="An unclassed sequential color scale which transitions from light to dark blue moving left to right." style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;"> :</p>
 <ul>
 <li><span class="body-text-s"><code>scale_*_gradient()</code>: creates a two color gradient (low-high)</span></li>
 <li><span class="body-text-s"><code>scale_*_gradient2()</code>: creates a diverging color gradient (low-mid-high)</span></li>
 <li><span class="body-text-s"><code>scale_*_gradientn()</code>: creates a n-color gradient</span></li>
 </ul>
-<p>Classed palettes:</p>
+<p>Classed palettes <img src="images/week5/classed-seq.png" alt="A classed sequential color scale with 5 binned colors ranging from light blue on the left to dark blue on the right." style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;"> :</p>
 <ul>
 <li><span class="body-text-s"><code>scale_*steps()</code>: creates a two color binned gradient (low-high)</span></li>
 <li><span class="body-text-s"><code>scale_*_steps2()</code>: creates a diverging binned color gradient (low-mid-high)</span></li>
@@ -1860,7 +1860,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_248c208b" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_f4dda185" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -2089,7 +2089,7 @@ There are also some additional rules / guidelines that you should pretty much al
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_d40ca034" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_c046fe52" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -2145,9 +2145,6 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 <div class="center-text">
 <p>One of the most important decisions you’ll need to make is <strong>what type of color scale</strong> to use (and of course, what colors).</p>
 </div>
-<!-- can be tricky to get right  -->
-<!-- you'll often have to think critically about classifying yourd ata -->
-<!-- https://blog.datawrapper.de/classed-vs-unclassed-color-scales/ -->
 </div>
 </section>
 <section id="data" class="slide level2" data-menu-title="The Data">
@@ -2179,11 +2176,10 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 </div>
 </div>
 </div>
-<p><span class="body-text-s">Find public access to a massive inventory of climate data on their <a href="https://www.ncei.noaa.gov/access/monitoring/products/">Climate Monitoring</a> page. Today’s lesson will use the <a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/">Climate at a Glance</a> collection. Specifically, <strong>we’ll be exploring county-level precipitation data from October 2023, accessed via the <a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value">County Mapping</a> portal – UPDATE THIS</strong>.</span></p>
+<p><span class="body-text-s">Find public access to a massive inventory of climate data on their <a href="https://www.ncei.noaa.gov/access/monitoring/products/">Climate Monitoring</a> page. Today’s lesson will use the <a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/">Climate at a Glance</a> collection. Specifically, <strong>we’ll be exploring how county-level precipitation data, accessed via the <a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value">County Mapping</a> portal</strong>.</span></p>
+<!-- **we'll be exploring county-level precipitation data from October 2023, accessed via the [County Mapping](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value) portal -- UPDATE THIS** -->
 <!-- https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value -->
-<div class="footer">
-<p>A lot of the following data viz code draws from and was inspired by the wonderful <a href="https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html">Making Maps with R</a> tutorial, by <a href="https://github.com/eriqande">Eric C. Anderson</a>.</p>
-</div>
+<!-- 5-year precip: https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202312/60/value -->
 </section>
 <section id="data-wrangling" class="slide level2" data-menu-title="Data wrangling">
 <h2></h2>
@@ -2321,9 +2317,6 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 <h2></h2>
 <p><span class="slide-title">Start by creating a base map</span></p>
 <hr>
-<div class="cell">
-
-</div>
 <div class="cell columns column-output-location">
 <div class="column">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----</span></span>
@@ -2336,26 +2329,31 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 <span id="cb33-8"><a href="#cb33-8"></a>  <span class="fu">geom_polygon</span>(<span class="at">color =</span> <span class="st">"#2F2D2C"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
 <span id="cb33-9"><a href="#cb33-9"></a>  </span>
 <span id="cb33-10"><a href="#cb33-10"></a>  <span class="co"># update labels ----</span></span>
-<span id="cb33-11"><a href="#cb33-11"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"5-year precipitation compared with the 20th century average"</span>) <span class="sc">+</span></span>
-<span id="cb33-12"><a href="#cb33-12"></a>  </span>
-<span id="cb33-13"><a href="#cb33-13"></a>  <span class="co"># set theme to clean up appearance ----</span></span>
-<span id="cb33-14"><a href="#cb33-14"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span> </span>
-<span id="cb33-15"><a href="#cb33-15"></a>  </span>
-<span id="cb33-16"><a href="#cb33-16"></a>  <span class="co"># theme adjustments ----</span></span>
-<span id="cb33-17"><a href="#cb33-17"></a>  <span class="fu">theme</span>(</span>
-<span id="cb33-18"><a href="#cb33-18"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb33-19"><a href="#cb33-19"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb33-20"><a href="#cb33-20"></a>  )</span>
-<span id="cb33-21"><a href="#cb33-21"></a>  </span>
-<span id="cb33-22"><a href="#cb33-22"></a>base_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-11"><a href="#cb33-11"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"5-year precipitation compared with the 20th century average"</span>,</span>
+<span id="cb33-12"><a href="#cb33-12"></a>       <span class="at">caption =</span> <span class="st">"Source: National Centers for Environmental Information"</span>) <span class="sc">+</span></span>
+<span id="cb33-13"><a href="#cb33-13"></a>  </span>
+<span id="cb33-14"><a href="#cb33-14"></a>  <span class="co"># set theme to clean up appearance ----</span></span>
+<span id="cb33-15"><a href="#cb33-15"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span> </span>
+<span id="cb33-16"><a href="#cb33-16"></a>  </span>
+<span id="cb33-17"><a href="#cb33-17"></a>  <span class="co"># theme adjustments ----</span></span>
+<span id="cb33-18"><a href="#cb33-18"></a>  <span class="fu">theme</span>(</span>
+<span id="cb33-19"><a href="#cb33-19"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb33-20"><a href="#cb33-20"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb33-21"><a href="#cb33-21"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">20</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">l =</span> <span class="dv">0</span>))</span>
+<span id="cb33-22"><a href="#cb33-22"></a>  )</span>
+<span id="cb33-23"><a href="#cb33-23"></a>  </span>
+<span id="cb33-24"><a href="#cb33-24"></a>base_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-96-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-95-1.png" width="960"></p>
 </div>
 </div>
 </div>
-<div class="center-text">
-<p>This looks a bit wonky, so we’ll need to specify a projection, next.</p>
+<!-- ::: {.center-text} -->
+<!-- This looks a bit wonky, so we'll need to specify a projection, next. -->
+<!-- ::: -->
+<div class="footer">
+<p><a href="https://github.com/eriqande">Eric C. Anderson’s</a> <a href="https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html">Making Maps with R</a> tutorial was a wonderful resource in getting started with the <code>{maps}</code> package.</p>
 </div>
 </section>
 <section id="map-projection" class="slide level2" data-menu-title="Map projection">
@@ -2370,7 +2368,7 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 <span id="cb34-4"><a href="#cb34-4"></a>base_map_proj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-97-1.png" width="960" class="r-stretch quarto-figure-center"><aside class="notes">
+<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-96-1.png" width="960" class="r-stretch quarto-figure-center"><aside class="notes">
 <p>Alternatively:</p>
 <ul>
 <li>fix the relationship between lat &amp; long by using <code>coord_fixed(1.3)</code></li>
@@ -2388,43 +2386,6 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="decide-on-palette" class="slide level2" data-menu-title="Decide on palette">
-<h2></h2>
-<p><span class="slide-title">Pick a color palette!</span></p>
-<hr>
-<p>Recall <a href="https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/suggested-colors">from earlier</a> that precipitation data is often encoded using a <strong>brown / blue</strong> color scheme (with drier conditions falling on the brown side and wetter conditions falling on the blue side).</p>
-<p>Lucky for us, <strong>RColorBrewer</strong> has this exact palette:</p>
-<p><br></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="center-text gray-text body-text-s">
-<p>Preview the palette using <code>display.brewer.pal()</code> with our desired number of hues:</p>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.pal</span>(<span class="at">n =</span> <span class="dv">11</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-98-1.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="center-text gray-text body-text-s">
-<p>Save the HEX codes to a named object using <code>brewer.pal()</code> (we’ll call this in our plot later):</p>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>my_brew_palette <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">11</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span>
-<span id="cb36-2"><a href="#cb36-2"></a>my_brew_palette</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "#543005" "#8C510A" "#BF812D" "#DFC27D" "#F6E8C3" "#F5F5F5" "#C7EAE5"
- [8] "#80CDC1" "#35978F" "#01665E" "#003C30"</code></pre>
-</div>
-</div>
-</div>
-</div>
 </section>
 <section id="decide-on-scale-type" class="slide level2" data-menu-title="Decide on scale type">
 <h2></h2>
@@ -2478,82 +2439,192 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 </div>
 </div>
 </section>
-<section class="slide level2">
-
-<p>Add palette colors &amp; adjust colorbar appearance</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>base_map_proj <span class="sc">+</span> </span>
-<span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_brew_palette,</span>
-<span id="cb38-3"><a href="#cb38-3"></a>                       <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">scale =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb38-4"><a href="#cb38-4"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">label.hjust =</span> <span class="fl">0.5</span>,</span>
-<span id="cb38-5"><a href="#cb38-5"></a>                               <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-100-1.png" width="960" class="r-stretch quarto-figure-center"></section>
-<section class="slide level2">
-
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>base_map_proj <span class="sc">+</span> </span>
-<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_brew_palette,</span>
-<span id="cb39-3"><a href="#cb39-3"></a>                       <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
-<span id="cb39-4"><a href="#cb39-4"></a>                       <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb39-5"><a href="#cb39-5"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">label.hjust =</span> <span class="fl">0.5</span>,</span>
-<span id="cb39-6"><a href="#cb39-6"></a>                               <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-101-1.png" width="960" class="r-stretch quarto-figure-center"></section>
-<section class="slide level2">
-
-<!-- ## {#colorbar-styling-fxn data-menu-title="Colorbar styling function"}  -->
-<!-- [Create a function for adding the correct colorbar styling]{.slide-title3} -->
-<!-- <hr> -->
-<!-- [We're going to create a couple different choropleths to look at the differences between gradient vs. binned color scales. Customizing the appearance (title, position, width / height) of our legend requires two different functions (`guide_colorbar()` and `guide_colorsteps()`), depending on which type of scale you use. ]{.body-text-s} -->
-<!-- [Instead of having to type these long functions out each time we want to style our colorbar, we can instead **write our own function to streamline our code**:]{.body-text-s} -->
-<div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>custom_guide <span class="ot">&lt;-</span> <span class="cf">function</span>(type) {</span>
-<span id="cb40-2"><a href="#cb40-2"></a></span>
-<span id="cb40-3"><a href="#cb40-3"></a>  <span class="co"># if gradient, use guide_color() ----</span></span>
-<span id="cb40-4"><a href="#cb40-4"></a>  <span class="cf">if</span> (type <span class="sc">==</span> <span class="st">"g"</span>) {</span>
-<span id="cb40-5"><a href="#cb40-5"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">title =</span> <span class="st">"% change"</span>,</span>
-<span id="cb40-6"><a href="#cb40-6"></a>                                 <span class="at">title.position =</span> <span class="st">"top"</span>,</span>
-<span id="cb40-7"><a href="#cb40-7"></a>                                 <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span>
-<span id="cb40-8"><a href="#cb40-8"></a></span>
-<span id="cb40-9"><a href="#cb40-9"></a>  <span class="co"># if bin, use guide_colorsteps() ----</span></span>
-<span id="cb40-10"><a href="#cb40-10"></a>  } <span class="cf">else</span> <span class="cf">if</span> (type <span class="sc">==</span> <span class="st">"b"</span>) {</span>
-<span id="cb40-11"><a href="#cb40-11"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">title =</span> <span class="st">"% change"</span>,</span>
-<span id="cb40-12"><a href="#cb40-12"></a>                                   <span class="at">title.position =</span> <span class="st">"top"</span>,</span>
-<span id="cb40-13"><a href="#cb40-13"></a>                                   <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span>
-<span id="cb40-14"><a href="#cb40-14"></a>  }</span>
-<span id="cb40-15"><a href="#cb40-15"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="initial-attempts" class="slide level2" data-menu-title="Initial mapping attempts)">
+<section id="decide-on-palette" class="slide level2" data-menu-title="Decide on palette">
 <h2></h2>
-<p><span class="slide-title">A few initial mapping attempts</span></p>
-<p>Then map:</p>
+<p><span class="slide-title">Pick a color palette!</span></p>
+<hr>
+<p>Recall <a href="https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/suggested-colors">from earlier</a> that precipitation data is often encoded using a <strong>brown / blue</strong> color scheme (with drier conditions falling on the brown side and wetter conditions falling on the blue side).</p>
+<p>Lucky for us, <strong>RColorBrewer</strong> has this exact palette. <strong>Let’s use <span class="teal-text">all 11 hues</span> for our unclassed map</strong>:</p>
+<p><br></p>
 <div class="columns">
 <div class="column" style="width:50%;">
+<div class="center-text gray-text body-text-s">
+<p>Preview the palette using <code>display.brewer.pal()</code> with our desired number of hues:</p>
+</div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>base_map_proj <span class="sc">+</span> </span>
-<span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_brew_palette) <span class="sc">+</span></span>
-<span id="cb41-3"><a href="#cb41-3"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"g"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.pal</span>(<span class="at">n =</span> <span class="dv">11</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-103-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-97-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
+<div class="center-text gray-text body-text-s">
+<p>Save the HEX codes to a named object using <code>brewer.pal()</code> (we’ll call this in our plot later):</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>my_brew_palette11 <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">11</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span>
+<span id="cb36-2"><a href="#cb36-2"></a>my_brew_palette11</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "#543005" "#8C510A" "#BF812D" "#DFC27D" "#F6E8C3" "#F5F5F5" "#C7EAE5"
+ [8] "#80CDC1" "#35978F" "#01665E" "#003C30"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="apply-palette-unclassed" class="slide level2" data-menu-title="Apply our palette (unclassed)">
+<h2></h2>
+<p><span class="slide-title">Apply our palette &amp; adjust colorbar</span></p>
+<hr>
+<p><span class="body-text-s">Here, we leverage the awesome <code>{scales}</code> package to add <strong>%s</strong> to the colorbar labels and set our breaks. We also use <code>guides()</code> + <code>guide_colorbar()</code> to update label positioning and colorbar size:</span></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>base_map_proj <span class="sc">+</span> </span>
-<span id="cb42-2"><a href="#cb42-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_brew_palette) <span class="sc">+</span></span>
-<span id="cb42-3"><a href="#cb42-3"></a>  <span class="fu">custom_guide</span>(<span class="at">type =</span> <span class="st">"b"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>base_map_proj <span class="sc">+</span> </span>
+<span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_brew_palette11,</span>
+<span id="cb38-3"><a href="#cb38-3"></a>                       <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
+<span id="cb38-4"><a href="#cb38-4"></a>                       <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb38-5"><a href="#cb38-5"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">label.hjust =</span> <span class="fl">0.5</span>,</span>
+<span id="cb38-6"><a href="#cb38-6"></a>                               <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-99-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<section id="inspect-color-scale1" class="slide level2" data-menu-title="Inspect color scale">
+<h2></h2>
+<p><span class="slide-title">Inspect the color scale – anything off?</span></p>
+<hr>
+
+<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-100-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<section id="misleading" class="slide level2" data-menu-title="Misleading colors">
+<h2></h2>
+<p><span class="slide-title">Our color mapping may be misleading</span></p>
+<hr>
+
+<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-101-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="center-text">
+<p><strong>0%</strong> (i.e.&nbsp;no change between 5-year precipitation and 20th century average) <strong>is currently on the bluer side of our color scale</strong>, rather than on off-white color that’s at the center of our palette.</p>
+<p>As a result, <strong>our map may be misleading</strong> – it would appear as if more counties received higher-than-average precipitation than in actuality.</p>
+</div>
+</section>
+<section id="rescale-colorbar" class="slide level2" data-menu-title="Rescale centerpoint">
+<h2></h2>
+<p><span class="slide-title2">Rescale the colorbar so that 0 is at the center</span></p>
+<hr>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb39" data-code-line-numbers="5-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>base_map_proj <span class="sc">+</span> </span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_brew_palette11,</span>
+<span id="cb39-3"><a href="#cb39-3"></a>                       <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
+<span id="cb39-4"><a href="#cb39-4"></a>                       <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>),</span>
+<span id="cb39-5"><a href="#cb39-5"></a>                       <span class="at">values =</span> scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="at">x =</span> <span class="fu">c</span>(</span>
+<span id="cb39-6"><a href="#cb39-6"></a>                         <span class="fu">min</span>(joined_precip_us_counties<span class="sc">$</span>perc_change),</span>
+<span id="cb39-7"><a href="#cb39-7"></a>                         <span class="dv">0</span>,</span>
+<span id="cb39-8"><a href="#cb39-8"></a>                         <span class="fu">max</span>(joined_precip_us_counties<span class="sc">$</span>perc_change)))) <span class="sc">+</span></span>
+<span id="cb39-9"><a href="#cb39-9"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">label.hjust =</span> <span class="fl">0.5</span>,</span>
+<span id="cb39-10"><a href="#cb39-10"></a>                               <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-102-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<section id="final-unclassed" class="slide level2" data-menu-title="Final unclassed map">
+<h2></h2>
+<p><span class="slide-title">Our final unclassed map</span></p>
+<hr>
+
+<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-103-1.png" width="960" class="r-stretch quarto-figure-center"><div class="footer">
+<p>We’ll come back to this map in our typography lesson to update and style our text elements.</p>
+</div>
+</section>
+<section id="classed-palette" class="slide level2" data-menu-title="Classed palette">
+<h2></h2>
+<p><span class="slide-title">Modify our palette for our classed map</span></p>
+<hr>
+<p>We’ll be using the same color palette for our classed map, but this time, <strong>let’s keep <span class="teal-text">10 hues</span> (this will drop the middle-most off-white hue)</strong>:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text gray-text body-text-s">
+<p>Preview the palette using <code>display.brewer.pal()</code> with our desired number of hues:</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.pal</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-104-1.png" width="960"></p>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-104-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text gray-text body-text-s">
+<p>Save the HEX codes to a named object using <code>brewer.pal()</code> (we’ll call this in our plot later):</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>my_brew_palette10 <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span>
+<span id="cb41-2"><a href="#cb41-2"></a>my_brew_palette10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "#543005" "#8C510A" "#BF812D" "#DFC27D" "#F6E8C3" "#C7EAE5" "#80CDC1"
+ [8] "#35978F" "#01665E" "#003C30"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p><span class="body-text-s">By dropping the off-white hue, we can construct our scale so that <strong>0%</strong> sits at the break point between brown and blue shades – any county that received more than the historical average will be a shade of blue, and any that received less will be a shade of brown.</span></p>
+</section>
+<section id="apply-palette-classed" class="slide level2" data-menu-title="Apply our palette (classed)">
+<h2></h2>
+<p><span class="slide-title">By default, our resolution is pretty low</span></p>
+<hr>
+<p>We only get 4 bins by default, which means we lose a lot of detail in our map:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>base_map_proj <span class="sc">+</span> </span>
+<span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_brew_palette10,</span>
+<span id="cb43-3"><a href="#cb43-3"></a>                    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">barwidth =</span> <span class="dv">25</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-106-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<section id="increase-classes" class="slide level2" data-menu-title="Increase # of classes">
+<h2></h2>
+<p><span class="slide-title">More classes = more nuance</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s gray-text">
+<p>Breaks set to a width of <strong>10</strong></p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb44" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>base_map_proj <span class="sc">+</span> </span>
+<span id="cb44-2"><a href="#cb44-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_brew_palette10,</span>
+<span id="cb44-3"><a href="#cb44-3"></a>                    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
+<span id="cb44-4"><a href="#cb44-4"></a>                    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb44-5"><a href="#cb44-5"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">barwidth =</span> <span class="dv">25</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-107-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:%;">
+<div class="center-text body-text-s gray-text">
+<p>Breaks set to a width of <strong>5</strong> &amp; rescaled with 0 at center</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb45" data-code-line-numbers="4-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>base_map_proj <span class="sc">+</span> </span>
+<span id="cb45-2"><a href="#cb45-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_brew_palette10,</span>
+<span id="cb45-3"><a href="#cb45-3"></a>                    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
+<span id="cb45-4"><a href="#cb45-4"></a>                    <span class="at">values =</span> scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="at">x =</span> <span class="fu">c</span>(</span>
+<span id="cb45-5"><a href="#cb45-5"></a>                         <span class="fu">min</span>(joined_precip_us_counties<span class="sc">$</span>perc_change),</span>
+<span id="cb45-6"><a href="#cb45-6"></a>                         <span class="dv">0</span>,</span>
+<span id="cb45-7"><a href="#cb45-7"></a>                         <span class="fu">max</span>(joined_precip_us_counties<span class="sc">$</span>perc_change))), </span>
+<span id="cb45-8"><a href="#cb45-8"></a>                    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb45-9"><a href="#cb45-9"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">barwidth =</span> <span class="dv">25</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-108-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2561,28 +2632,73 @@ Let’s apply what we learn to a choropleth map visualizing precipitation
 </div>
 </div>
 <div class="footer">
-<p>By default, <code>scale_fill_stepsn()</code> sets <code>nice.breaks = TRUE</code></p>
+<p><em>But</em> the more classes you have, the longer it will (likely) take a reader to interpret values.</p>
 </div>
 </section>
-<section class="slide level2">
+<section id="unclassed-classed" class="slide level2" data-menu-title="Unclassed vs. classed">
+<h2></h2>
+<p><span class="slide-title">Unclassed vs.&nbsp;classed maps</span></p>
+<hr>
+<p>What stories to each of these maps tell? When might you choose one over the other? What additional modifications might you make?</p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s gray-text">
+<p>Unclassed map:</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-109-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:%;">
+<div class="center-text body-text-s gray-text">
+<p>Classed map:</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week5.1-colors-slides_files/figure-revealjs/unnamed-chunk-110-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="multiple-maps" class="slide level2" data-menu-title="Multiple maps">
+<h2></h2>
+<p><span class="slide-title">Choropleths are powerful in multiples</span></p>
+<hr>
+<p>Several maps side-by-side can help you better spot important patterns and tell a more complete story.</p>
 
-<p>Determine the mean</p>
+<img data-src="images/week5/nyt-precip.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<p><a href="https://www.nytimes.com/2021/09/16/learning/whats-going-on-in-this-graph-new-normal-us-precipitation.html">What’s Going On in This Graph? | New Normal U.S. Precipitation</a> (New York Times)</p>
+</div>
+</section>
+<section id="end-break" class="slide level2" data-menu-title="# Break #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+<i class="fa-solid fa-mug-hot" title="a mug with steam rising out the top" aria-label="mug-hot"></i> Take a Break
+</p>
+<p class="caption-text">
+<em>~ This is the end of Lesson 1 (of 3) ~</em>
+</p>
+</div>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 198.5811</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 340.9269</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 198.3894</code></pre>
+<div class="cell-output-display">
+<div class="countdown" id="timer_cda3a9ea" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
-</section>
-<section class="slide level2">
-
-
-<img data-src="images/week5/nyt-precip.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p>::: {.center-text} <a href="https://www.nytimes.com/2021/09/16/learning/whats-going-on-in-this-graph-new-normal-us-precipitation.html">What’s Going On in This Graph? | New Normal U.S. Precipitation</a> (New York Times) ::</p>
+</div>
 
 <div class="footer footer-default">
 
