@@ -80,7 +80,7 @@ drought_clean |>
 ##            BONUS: using {geofacet} to plot data for all states           ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# NOTE 2024-01-24: The following code works for Sam, but apparently no one else! I'll 
+# NOTE 2024-01-24: The following code works for Sam, but apparently no one else! I'll keep digging into this and update folks when I have a solution
 
 #......remove HI & AK (no data) and also DC from preset grid.....
 mygrid <- geofacet::us_state_grid1 |>

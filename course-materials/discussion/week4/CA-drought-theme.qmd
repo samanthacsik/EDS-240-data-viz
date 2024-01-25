@@ -30,6 +30,7 @@ drought_clean <- drought |>
   select(date = valid_start, state_abb, drought_lvl, area_pct) |> 
 
   # add year, month & day cols using {lubridate} fxns ----
+  # NOTE: this step isn't necessary for our plot, but I'm including as examples of how to extract different date elements from a object of class Date using {lubridate}~ ----
   mutate(year = year(date),
          month = month(date, label = TRUE, abbr = TRUE),
          day = day(date)) |>
