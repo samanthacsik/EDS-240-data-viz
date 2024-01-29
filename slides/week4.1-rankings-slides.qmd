@@ -464,7 +464,7 @@ jobs_clean |>
   slice_max(order_by = total_earnings, n = 10) |> 
   pivot_longer(cols = c(total_earnings_female, total_earnings_male), names_to = "group", values_to = "earnings_by_group") |> 
   mutate(sex = str_remove(group, pattern = "total_earnings_")) |> 
-  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = earnings_by_group, fill = sex)) + 
+  ggplot(aes(x = fct_reorder(occupation, earnings_by_group), y = earnings_by_group, fill = sex)) + 
   geom_col() + # default `position = "stack"`
   coord_flip()
 ```
@@ -481,7 +481,7 @@ jobs_clean |>
   slice_max(order_by = total_earnings, n = 10) |> 
   pivot_longer(cols = c(total_earnings_female, total_earnings_male), names_to = "group", values_to = "earnings_by_group") |> 
   mutate(sex = str_remove(group, pattern = "total_earnings_")) |> 
-  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = earnings_by_group, color = sex)) +
+  ggplot(aes(x = fct_reorder(occupation, earnings_by_group), y = earnings_by_group, color = sex)) +
   geom_point() + # default `position = "stack"`
   geom_linerange(aes(xmin = occupation, xmax = occupation, 
                      ymin = 0, ymax = earnings_by_group)) + # default `position = "stack"`
@@ -515,7 +515,7 @@ jobs_clean |>
   slice_max(order_by = total_earnings, n = 10) |> 
   pivot_longer(cols = c(total_earnings_female, total_earnings_male), names_to = "group", values_to = "earnings_by_group") |> 
   mutate(sex = str_remove(group, pattern = "total_earnings_")) |> 
-  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = earnings_by_group, fill = sex)) +
+  ggplot(aes(x = fct_reorder(occupation, earnings_by_group), y = earnings_by_group, fill = sex)) +
   geom_col(position = position_dodge()) +
   coord_flip()
 ```
@@ -533,7 +533,7 @@ jobs_clean |>
   slice_max(order_by = total_earnings, n = 10) |>
   pivot_longer(cols = c(total_earnings_female, total_earnings_male), names_to = "group", values_to = "earnings_by_group") |>
   mutate(sex = str_remove(group, pattern = "total_earnings_")) |>
-  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = earnings_by_group, color = sex)) +
+  ggplot(aes(x = fct_reorder(occupation, earnings_by_group), y = earnings_by_group, color = sex)) +
   geom_point(position = position_dodge(width = 0.5)) +
   geom_linerange(aes(xmin = occupation, xmax = occupation, 
                      ymin = 0, ymax = earnings_by_group),
@@ -543,6 +543,14 @@ jobs_clean |>
 :::
 
 ::::
+
+::: {.notes}
+>@Nancy You can think of geom_linerange as a convenient version of geom_segment for a specific use case. geom_segment is for when you need to draw arbitrary line segments in a fairly non-systematic way. geom_linerange is for the specific case of a collection of vertical bars at specified x values with different lengths (e.g. error bars, etc).
+
+from [StackOverflow](https://stackoverflow.com/questions/35322919/grouped-data-by-factor-with-geom-segment)
+
+Also note from [ggplot2: Elegant Graphics for Data Analysis (3e)](https://ggplot2-book.org/layers) that `geom_segment()` is used to draw a line segment, specified by a start and end position, while `geom_linerange()` is used to draw a vertical line, often for displaying uncertainty
+:::
 
 ---
 
