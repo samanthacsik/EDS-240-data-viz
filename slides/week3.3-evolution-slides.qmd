@@ -588,7 +588,7 @@ knitr::include_graphics("images/week3/aspect-ratio.png")
 
 <hr>
 
-Consider this line graph of sunspot activity from 1700 - 2015, with a default aspect ratio (1:1). Can you easily identify where in time sunspot activity rises more quickly / sharply than others?
+Consider this line graph of sunspot activity from 1700 - 2015. It was created using [Stata](https://www.stata.com/)'s default aspect ratio. Can you easily identify where in time sunspot activity rises more quickly / sharply than others?
 
 ```{r}
 #| eval: true

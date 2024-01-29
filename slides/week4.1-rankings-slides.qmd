@@ -31,7 +31,6 @@ editor_options:
 
 <br>
 <br>
-<br>
 
 [Showing the relationship between a **numeric and categorical variable**, i.e. comparing categorical groups based on their numeric values.]{.body-text-m}
 
@@ -87,7 +86,7 @@ We'll discuss:
 - reordering groups
 - adding labels
 - comparing multiple groups
-- critical considerations when creating bar/lollipop plots
+- critical considerations when creating bar / lollipop plots
 
 ---
 
@@ -120,6 +119,8 @@ knitr::include_graphics("images/week4/pay-gap.png")
 [Data wrangling]{.slide-title}
 
 <hr>
+
+Be sure to check out the [data dictionary](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-03-05#data-dictionary-1) on the [TidyTuesday repo](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-03-05) for information about each variable in this data set.
 
 ```{r}
 #| eval: true
@@ -156,9 +157,9 @@ jobs_clean <- jobs |>
   drop_na(total_earnings_male, total_earnings_female) |> 
   
   # make occupation a factor ----
-  mutate(occupation = as_factor(occupation)) |> 
+  mutate(occupation = as.factor(occupation)) |> 
   
-  # ---- this next steps are necessary for creating our dumbbell plots ----
+  # ---- this next step is for creating our dumbbell plots ----
 
   # classify jobs by percentage male or female ----
   mutate(group_label = case_when(
@@ -187,7 +188,7 @@ jobs_clean <- jobs |>
 #| code-line-numbers: "5"
 #| fig-align: "center"
 jobs_clean |> 
-  filter(year == 2016) |> # filter for just 2016
+  filter(year == 2016) |> 
   slice_max(order_by = total_earnings, n = 10) |> # keep top 10 jobs with most `total_earnings`
   ggplot(aes(x = occupation, y = total_earnings)) +
   geom_col()
@@ -301,13 +302,60 @@ jobs_clean |>
 
 ---
 
-## {#add-labels data-menu-title="Add labels"} 
+## {#scales-pkg data-menu-title="{scales}"} 
 
-[Consider adding labels if the exact values are important]{.slide-title3}
+[`{scales}`: a true label-editing hero]{.slide-title}
 
 <hr>
 
-`geom_text()` is useful for labeling plots. Here, we pair it with the `{scales}` package to format dollar values:
+While we're on the topic of making things easier to read, let's use the [`{scales}` package](https://scales.r-lib.org/) to update our labels so that they read more like dollar values:
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true 
+#| code-line-numbers: "6"
+#| fig-align: "center"
+jobs_clean |> 
+  filter(year == 2016) |> 
+  slice_max(order_by = total_earnings, n = 10) |> 
+  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = total_earnings)) +
+  geom_col() +
+  scale_y_continuous(labels = scales::label_currency(accuracy = 1, scale = 0.001, suffix = "k")) + 
+  coord_flip()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "6"
+#| fig-align: "center"
+jobs_clean |> 
+  filter(year == 2016) |> 
+  slice_max(order_by = total_earnings, n = 10) |> 
+  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = total_earnings)) +
+  ggalt::geom_lollipop() +
+  scale_y_continuous(labels = scales::label_currency(accuracy = 1, scale = 0.001, suffix = "k")) + 
+  coord_flip()
+```
+:::
+
+::::
+
+
+---
+
+## {#add-labels data-menu-title="Add labels"} 
+
+[Add direct labels if the exact values are important]{.slide-title2}
+
+<hr>
+
+[`geom_text()` is useful for labeling plots. Here, we pair it with the `{scales}` package to format dollar values:]{.body-text-s}
 
 :::: columns
 
@@ -323,6 +371,7 @@ jobs_clean |>
   ggplot(aes(x = fct_reorder(occupation, total_earnings), y = total_earnings)) +
   geom_col() +
   geom_text(aes(label = scales::dollar(total_earnings)), hjust = 1.2, color = "white") + 
+  scale_y_continuous(labels = scales::label_currency(accuracy = 1, scale = 0.001, suffix = "k")) + 
   coord_flip()
 ```
 :::
@@ -331,7 +380,7 @@ jobs_clean |>
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "6-7"
+#| code-line-numbers: "6,8"
 #| fig-align: "center"
 jobs_clean |> 
   filter(year == 2016) |> 
@@ -339,15 +388,16 @@ jobs_clean |>
   ggplot(aes(x = fct_reorder(occupation, total_earnings), y = total_earnings)) +
   ggalt::geom_lollipop() +
   geom_text(aes(label = scales::dollar(total_earnings)), hjust = -0.2) + 
-  scale_y_continuous(limits = c(0, 250000)) + # expand axis to make room for values
+  scale_y_continuous(labels = scales::label_currency(accuracy = 1, scale = 0.001, suffix = "k"),
+                     limits = c(0, 250000)) + # expand axis to make room for values
   coord_flip()
 ```
 :::
 
 ::::
 
-::: {.footer .center-text}
-[For some more advanced label manipulation, see [A Quick How-to on Labelling Bar Graphs in ggplot2](https://www.cedricscherer.com/2021/07/05/a-quick-how-to-on-labelling-bar-graphs-in-ggplot2/), by Cédric Scherer]{.body-text-s}
+::: {.footer .center-text .body-text-s}
+[For some more advanced label manipulation, see [A Quick How-to on Labelling Bar Graphs in ggplot2](https://www.cedricscherer.com/2021/07/05/a-quick-how-to-on-labelling-bar-graphs-in-ggplot2/), by Cédric Scherer | Also, see this Posit Community [post](https://community.rstudio.com/t/using-label-percent-with-the-label-argument-of-geom-text-and-geom-label/54244) regarding the use of `scales::dollar()`]{.body-text-s}
 :::
 
 ---
@@ -412,8 +462,8 @@ ggplot(jobs_clean, aes(x = major_category)) +
 jobs_clean |> 
   filter(year == 2016) |> 
   slice_max(order_by = total_earnings, n = 10) |> 
-  pivot_longer(cols = c(total_earnings_female, total_earnings_male), names_to = "group", values_to = "earnings_by_group") |> # wide to long (male vs female earnings)
-  mutate(sex = str_remove(group, pattern = "total_earnings_")) |> # remove part of string, leaving only "male" or "female" in `sex` column 
+  pivot_longer(cols = c(total_earnings_female, total_earnings_male), names_to = "group", values_to = "earnings_by_group") |> 
+  mutate(sex = str_remove(group, pattern = "total_earnings_")) |> 
   ggplot(aes(x = fct_reorder(occupation, total_earnings), y = earnings_by_group, fill = sex)) + 
   geom_col() + # default `position = "stack"`
   coord_flip()
@@ -425,14 +475,16 @@ jobs_clean |>
 #| eval: true
 #| echo: true
 #| fig-align: "center"
+#| out-width: "70%"
 jobs_clean |> 
   filter(year == 2016) |> 
   slice_max(order_by = total_earnings, n = 10) |> 
-  pivot_longer(cols = c(total_earnings_female, total_earnings_male), names_to = "group", values_to = "earnings_by_group") |> # wide to long (male vs female earnings)
-  mutate(sex = str_remove(group, pattern = "total_earnings_")) |> # remove part of string, leaving only "male" or "female" in `sex` column 
+  pivot_longer(cols = c(total_earnings_female, total_earnings_male), names_to = "group", values_to = "earnings_by_group") |> 
+  mutate(sex = str_remove(group, pattern = "total_earnings_")) |> 
   ggplot(aes(x = fct_reorder(occupation, total_earnings), y = earnings_by_group, color = sex)) +
   geom_point() + # default `position = "stack"`
-  geom_linerange(aes(xmin = occupation, xmax = occupation, ymin = 0, ymax = earnings_by_group)) + # default `position = "stack"`
+  geom_linerange(aes(xmin = occupation, xmax = occupation, 
+                     ymin = 0, ymax = earnings_by_group)) + # default `position = "stack"`
   coord_flip()
 ```
 
@@ -504,7 +556,7 @@ jobs_clean |>
 The axis of a bar (or related) plot **must** start at zero
 :::
 
-[Truncated axes leads viewers to perceive illustrated differences as larger or more important than they actually are (i.e. a truncation effect). Yang et al. 2021 empirically tested this effect and found that this truncation effect persisted even after viewers were taught about the effects of y-axis truncation.]{.body-text-s} 
+[Truncated axes leads viewers to perceive illustrated differences as larger or more important than they actually are (i.e. a truncation effect). [Yang et al. (2021)](https://doi.org/10.1016/j.jarmac.2020.10.002) empirically tested this effect and found that this truncation effect persisted even after viewers were taught about the effects of y-axis truncation.]{.body-text-s} 
 
 <br>
 
@@ -534,7 +586,7 @@ Yang et al. (2021) Truncating bar graphs persistently misleads viewers. *Journal
 
 <hr>
 
-[Bar charts were designed for *categorical* data. but they're often (incorrectly) used to visualize continuous data. Weissgerber et al. (2015) cautions against this popular practice, since many different data distributions can lead to the same bar plots.]{.body-text-s}
+[Bar charts were designed for *categorical* data. but they're often (incorrectly) used to visualize continuous data. [Weissgerber et al. (2015)](https://doi.org/10.1371/journal.pbio.1002128) cautions against this popular practice, since many different data distributions can lead to the same bar plots.]{.body-text-s}
 
 <br>
 
@@ -638,26 +690,21 @@ set.seed(0)
 
 #.........get 10 random jobs that are 75%+ female (2016).........
 f75 <- jobs_clean |> 
-  filter(year == 2016,
-         group_label == "Occupations that are 75%+ female") |> 
+  filter(year == 2016, group_label == "Occupations that are 75%+ female") |> 
   slice_sample(n = 10)
 
 #..........get 10 random jobs that are 75%+ male (2016)..........
 m75 <- jobs_clean |> 
-  filter(year == 2016,
-         group_label == "Occupations that are 75%+ male") |> 
+  filter(year == 2016, group_label == "Occupations that are 75%+ male") |> 
   slice_sample(n = 10)
 
 #........get 10 random jobs that are 45-55%+ female (2016).......
 f50 <- jobs_clean |> 
-  filter(year == 2016,
-         group_label == "Occupations that are 45-55% female") |> 
+  filter(year == 2016, group_label == "Occupations that are 45-55% female") |> 
   slice_sample(n = 10)
 
-#..........................combine dfs...........................
+#.......combine dfs & relevel factors (for plotting order).......
 subset_jobs <- rbind(f75, m75, f50) |> 
-  
-  # relevel factors (for plotting order) ----
   mutate(group_label = fct_relevel(group_label, "Occupations that are 75%+ female", 
                                    "Occupations that are 45-55% female", "Occupations that are 75%+ male")) 
 ```
@@ -713,16 +760,16 @@ ggplot(subset_jobs) +
   
   # create dumbbells ----
   geom_segment(aes(x = total_earnings_female, xend = total_earnings_male, 
-                   y = fct_reorder(occupation, total_earnings), yend = occupation)) + # reorder occupation by avg_salary here
-  geom_point(aes(x = total_earnings_male, y = occupation), color = "#CD93D8", size = 2.5) +
-  geom_point(aes(x = total_earnings_female, y = occupation), color = "#6A1E99", size = 2.5) +
+                   y = fct_reorder(occupation, total_earnings), yend = occupation)) + # reorder occupation by avg_salary here) 
+  geom_point(aes(x = total_earnings_male, y = occupation), color = "#CD93D8", size = 3) +
+  geom_point(aes(x = total_earnings_female, y = occupation), color = "#6A1E99", size = 3) +
   
   # facet wrap by group ----
   facet_wrap(~group_label, nrow = 3, scales = "free_y") + # "free_y" plots only the axis labels that exist in each group
   
   # axis breaks & $ labels ----
-  scale_x_continuous(labels = scales::label_dollar(scale = 0.001, suffix = "k"),
-                     breaks = c(25000, 50000, 75000, 100000, 125000))
+  scale_x_continuous(labels = scales::label_dollar(accuracy = 1, scale = 0.001, suffix = "k"),
+                     breaks = c(25000, 50000, 75000))
 ```
 
 ---
