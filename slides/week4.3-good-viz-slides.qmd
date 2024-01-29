@@ -234,7 +234,7 @@ ggplot(penguins, aes(x = body_mass_g, fill = species)) +
 <br>
 
 ::: {.center-text .body-text-m}
-A general rule of thumb: **aim to maximize the data-ink ratio while not sacrificing overall design and aesthetics**.
+A general rule of thumb: **aim to maximize the data-ink ratio while not sacrificing overall readability, design, aesthetics**.
 :::
 
 ---
@@ -712,7 +712,7 @@ knitr::include_graphics("images/week4/neil-with-annotations.png")
 
 ```{r}
 countdown::countdown(
-  minutes = 5,
+  minutes = 3,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -805,7 +805,7 @@ knitr::include_graphics("images/week4/burn-murdoch-covid.png")
 
 <hr>
 
-Facets (aka small multiples) allow us to more easily view individual groups. Here, the author plots individual groups (male vs. female passengers on the Titanic) against the data set total (all passengers): 
+Facets (aka small multiples) allow us to more easily view individual groups. Here, the author plots individual groups (male vs. female passenger distributions on the Titanic) against the data set total (distribution of all passengers): 
 
 <br>
 
@@ -1051,77 +1051,77 @@ ggplot(penguins, aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
        )
 ```
 
----
+<!-- --- -->
 
-## {#show-values-directly1 data-menu-title="Show important values directly"} 
+<!-- ## {#show-values-directly1 data-menu-title="Show important values directly"}  -->
 
-[Show important thresholds / values directly]{.slide-title2}
+<!-- [Show important thresholds / values directly]{.slide-title2} -->
 
-<hr>
+<!-- <hr> -->
 
-<br>
+<!-- <br> -->
 
-:::: {.columns}
+<!-- :::: {.columns} -->
 
-::: {.column width="50%"}
-```{r}
-#| eval: true
-#| echo: false
-#| out-width: "90%"
-#| fig-align: "center"
-knitr::include_graphics("images/week4/aqi-goleta.png")
-```
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "90%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week4/aqi-goleta.png") -->
+<!-- ``` -->
 
-:::
+<!-- ::: -->
 
-::: {.column width="50%"}
+<!-- ::: {.column width="50%"} -->
 
-:::
+<!-- ::: -->
 
-::: {.center-text .gray-text .body-text-s}
-*Source: [Looking Back: The Thomas Fire’s Impact on Santa Barbara Air Quality](https://dailynexus.com/2018-01-22/looking-back-the-thomas-fires-impact-on-santa-barbara-air-quality/), in The Daily Nexus*
-:::
+<!-- ::: {.center-text .gray-text .body-text-s} -->
+<!-- *Source: [Looking Back: The Thomas Fire’s Impact on Santa Barbara Air Quality](https://dailynexus.com/2018-01-22/looking-back-the-thomas-fires-impact-on-santa-barbara-air-quality/), in The Daily Nexus* -->
+<!-- ::: -->
 
-::::
+<!-- :::: -->
 
----
+<!-- --- -->
 
-## {#show-values-directly2 data-menu-title="Show important values directly" visibility="uncounted"} 
+<!-- ## {#show-values-directly2 data-menu-title="Show important values directly" visibility="uncounted"}  -->
 
-[Show important thresholds / values directly]{.slide-title2}
+<!-- [Show important thresholds / values directly]{.slide-title2} -->
 
-<hr>
+<!-- <hr> -->
 
-<br>
+<!-- <br> -->
 
-:::: {.columns}
+<!-- :::: {.columns} -->
 
-::: {.column width="50%"}
-```{r}
-#| eval: true
-#| echo: false
-#| out-width: "90%"
-#| fig-align: "center"
-knitr::include_graphics("images/week4/aqi-goleta.png")
-```
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "90%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week4/aqi-goleta.png") -->
+<!-- ``` -->
 
-:::
+<!-- ::: -->
 
-::: {.column width="50%"}
-```{r}
-#| eval: true
-#| echo: false
-#| out-width: "90%"
-#| fig-align: "center"
-knitr::include_graphics("images/week4/aqi-table.png")
-```
-:::
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "90%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week4/aqi-table.png") -->
+<!-- ``` -->
+<!-- ::: -->
 
-::: {.center-text .gray-text .body-text-s}
-*Source: [Looking Back: The Thomas Fire’s Impact on Santa Barbara Air Quality](https://dailynexus.com/2018-01-22/looking-back-the-thomas-fires-impact-on-santa-barbara-air-quality/), in The Daily Nexus*
-:::
+<!-- ::: {.center-text .gray-text .body-text-s} -->
+<!-- *Source: [Looking Back: The Thomas Fire’s Impact on Santa Barbara Air Quality](https://dailynexus.com/2018-01-22/looking-back-the-thomas-fires-impact-on-santa-barbara-air-quality/), in The Daily Nexus* -->
+<!-- ::: -->
 
-::::
+<!-- :::: -->
 
 ---
 
@@ -1943,7 +1943,7 @@ Clearing the Air, by [Christopher Ingraham](https://www.washingtonpost.com/peopl
 
 ```{r}
 countdown::countdown(
-  minutes = 5,
+  minutes = 3,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -2014,7 +2014,7 @@ Perfectly Proportional Penguins, by [Cara Thompson](https://www.cararthompson.co
 
 ```{r}
 countdown::countdown(
-  minutes = 5,
+  minutes = 3,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -2070,7 +2070,7 @@ knitr::include_graphics("images/week4/ingeman-etal-fig3.png")
 
 ```{r}
 countdown::countdown(
-  minutes = 5,
+  minutes = 3,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -2084,65 +2084,65 @@ countdown::countdown(
   )
 ```
 
----
+<!-- --- -->
 
-## {#aquaculture data-menu-title="Aquaculture sentiment"} 
+<!-- ## {#aquaculture data-menu-title="Aquaculture sentiment"}  -->
 
-[Public perceptions of aquaculture]{.slide-title2}
+<!-- [Public perceptions of aquaculture]{.slide-title2} -->
 
-<hr>
+<!-- <hr> -->
 
-:::: {.columns}
+<!-- :::: {.columns} -->
 
-::: {.column width="50%"}
+<!-- ::: {.column width="50%"} -->
 
-<br>
-<br>
+<!-- <br> -->
+<!-- <br> -->
 
-```{r}
-#| eval: true
-#| echo: false
-#| out-width: "100%"
-#| fig-align: "center"
-knitr::include_graphics("images/week4/froehlich-etal-2017-fig3.png")
-```
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "100%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week4/froehlich-etal-2017-fig3.png") -->
+<!-- ``` -->
 
-::: {.body-text-xs .gray-text}
-[Fig. 3](https://journals.plos.org/plosone/article/figure?id=10.1371/journal.pone.0169281.g003), by [Froehlich et al. 2017](https://doi.org/10.1371/journal.pone.0169281): **Newspaper ‘offshore aquaculture’ media sentiment.** Sentiment over time based on the frequency of newspaper headlines with negative (red), positive (blue), and neutral (gray) titles for (A) developed (n = 102) and (B) developing (n = 8) nations. Also depicted are the (C) proportional contributions of sentiment headlines relative to each developed and developing country, with the number of headlines from each country shown in parentheses. All countries used in the analysis are depicted. Headlines were compiled using the LexisNexis® platform.
-:::
+<!-- ::: {.body-text-xs .gray-text} -->
+<!-- [Fig. 3](https://journals.plos.org/plosone/article/figure?id=10.1371/journal.pone.0169281.g003), by [Froehlich et al. 2017](https://doi.org/10.1371/journal.pone.0169281): **Newspaper ‘offshore aquaculture’ media sentiment.** Sentiment over time based on the frequency of newspaper headlines with negative (red), positive (blue), and neutral (gray) titles for (A) developed (n = 102) and (B) developing (n = 8) nations. Also depicted are the (C) proportional contributions of sentiment headlines relative to each developed and developing country, with the number of headlines from each country shown in parentheses. All countries used in the analysis are depicted. Headlines were compiled using the LexisNexis® platform. -->
+<!-- ::: -->
 
-:::
+<!-- ::: -->
 
-::: {.column width="50%"}
+<!-- ::: {.column width="50%"} -->
 
-<br>
-<br>
+<!-- <br> -->
+<!-- <br> -->
 
-**Take some time to discuss the following:**
+<!-- **Take some time to discuss the following:** -->
 
-- where are your eyes drawn first, second, etc.?
-- what are the main messages / takeaways?
-- where has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret?
-- what would you change about this visualization?
-:::
+<!-- - where are your eyes drawn first, second, etc.? -->
+<!-- - what are the main messages / takeaways? -->
+<!-- - where has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret? -->
+<!-- - what would you change about this visualization? -->
+<!-- ::: -->
 
-::::
+<!-- :::: -->
 
-```{r}
-countdown::countdown(
-  minutes = 5,
-  # left = 0, right = 0,
-  # Fanfare when it's over
-  play_sound = TRUE,
-  color_border              = "#FFFFFF",
-  color_text                = "#7aa81e",
-  color_running_background  = "#7aa81e",
-  color_running_text        = "#FFFFFF",
-  color_finished_background = "#ffa07a",
-  color_finished_text       = "#FFFFFF",
-  font_size = "2em",
-  )
-```
+<!-- ```{r} -->
+<!-- countdown::countdown( -->
+<!--   minutes = 5, -->
+<!--   # left = 0, right = 0, -->
+<!--   # Fanfare when it's over -->
+<!--   play_sound = TRUE, -->
+<!--   color_border              = "#FFFFFF", -->
+<!--   color_text                = "#7aa81e", -->
+<!--   color_running_background  = "#7aa81e", -->
+<!--   color_running_text        = "#FFFFFF", -->
+<!--   color_finished_background = "#ffa07a", -->
+<!--   color_finished_text       = "#FFFFFF", -->
+<!--   font_size = "2em", -->
+<!--   ) -->
+<!-- ``` -->
 
 ---
 

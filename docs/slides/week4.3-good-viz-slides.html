@@ -550,7 +550,7 @@ Simplify plots to reduce eye movement &amp; improve readability / interpretabili
 <div class="fragment">
 <p><br></p>
 <div class="center-text body-text-m">
-<p>A general rule of thumb: <strong>aim to maximize the data-ink ratio while not sacrificing overall design and aesthetics</strong>.</p>
+<p>A general rule of thumb: <strong>aim to maximize the data-ink ratio while not sacrificing overall readability, design, aesthetics</strong>.</p>
 </div>
 </div>
 </section>
@@ -773,9 +773,9 @@ Simplify plots to reduce eye movement &amp; improve readability / interpretabili
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_46e6c8aa" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_3e8221f0" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -831,7 +831,7 @@ Consider ways to provide additional context for your data
 <!-- visibility="uncounted" -->
 <p><span class="slide-title2">Plot groups against the whole when faceting</span></p>
 <hr>
-<p>Facets (aka small multiples) allow us to more easily view individual groups. Here, the author plots individual groups (male vs.&nbsp;female passengers on the Titanic) against the data set total (all passengers):</p>
+<p>Facets (aka small multiples) allow us to more easily view individual groups. Here, the author plots individual groups (male vs.&nbsp;female passenger distributions on the Titanic) against the data set total (distribution of all passengers):</p>
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -976,61 +976,57 @@ Draw attention to important information / values
 </div>
 <p><br></p>
 
-<img data-src="week4.3-good-viz-slides_files/figure-revealjs/unnamed-chunk-30-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
-<section id="show-values-directly1" class="slide level2" data-menu-title="Show important values directly">
-<h2></h2>
-<p><span class="slide-title2">Show important thresholds / values directly</span></p>
-<hr>
-<p><br></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week4/aqi-goleta.png" style="width:90.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
+<!-- --- -->
+<!-- ## {#show-values-directly1 data-menu-title="Show important values directly"}  -->
+<!-- [Show important thresholds / values directly]{.slide-title2} -->
+<!-- <hr> -->
+<!-- <br> -->
+<!-- :::: {.columns} -->
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "90%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week4/aqi-goleta.png") -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+<!-- ::: -->
+<!-- ::: {.center-text .gray-text .body-text-s} -->
+<!-- *Source: [Looking Back: The Thomas Fire’s Impact on Santa Barbara Air Quality](https://dailynexus.com/2018-01-22/looking-back-the-thomas-fires-impact-on-santa-barbara-air-quality/), in The Daily Nexus* -->
+<!-- ::: -->
+<!-- :::: -->
+<!-- --- -->
+<!-- ## {#show-values-directly2 data-menu-title="Show important values directly" visibility="uncounted"}  -->
+<!-- [Show important thresholds / values directly]{.slide-title2} -->
+<!-- <hr> -->
+<!-- <br> -->
+<!-- :::: {.columns} -->
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "90%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week4/aqi-goleta.png") -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "90%" -->
+<!-- #| fig-align: "center" -->
 
-</div><div class="center-text gray-text body-text-s">
-<p><em>Source: <a href="https://dailynexus.com/2018-01-22/looking-back-the-thomas-fires-impact-on-santa-barbara-air-quality/">Looking Back: The Thomas Fire’s Impact on Santa Barbara Air Quality</a>, in The Daily Nexus</em></p>
-</div>
-</div>
-</section>
-<section id="show-values-directly2" class="slide level2" data-menu-title="Show important values directly" data-visibility="uncounted">
-<h2></h2>
-<p><span class="slide-title2">Show important thresholds / values directly</span></p>
-<hr>
-<p><br></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week4/aqi-goleta.png" style="width:90.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week4/aqi-table.png" style="width:90.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="center-text gray-text body-text-s">
-<p><em>Source: <a href="https://dailynexus.com/2018-01-22/looking-back-the-thomas-fires-impact-on-santa-barbara-air-quality/">Looking Back: The Thomas Fire’s Impact on Santa Barbara Air Quality</a>, in The Daily Nexus</em></p>
-</div>
-</div>
-</section>
+<!-- knitr::include_graphics("images/week4/aqi-table.png") -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: {.center-text .gray-text .body-text-s} -->
+<!-- *Source: [Looking Back: The Thomas Fire’s Impact on Santa Barbara Air Quality](https://dailynexus.com/2018-01-22/looking-back-the-thomas-fires-impact-on-santa-barbara-air-quality/), in The Daily Nexus* -->
+<!-- ::: -->
+<!-- :::: -->
+<img data-src="week4.3-good-viz-slides_files/figure-revealjs/unnamed-chunk-30-1.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
 <section id="avoid" class="slide level2" data-menu-title="# Things to avoid #" data-background="#047C90">
 <h2></h2>
 <div class="page-center vertical-center">
@@ -1576,9 +1572,9 @@ Let’s consider some example data visualizations together
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_caac4c56" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_2531b82e" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -1621,9 +1617,9 @@ Let’s consider some example data visualizations together
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c1853126" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_60baef14" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -1659,51 +1655,56 @@ Let’s consider some example data visualizations together
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_f29deea0" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_29bf6591" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
-</section>
-<section id="aquaculture" class="slide level2" data-menu-title="Aquaculture sentiment">
-<h2></h2>
-<p><span class="slide-title2">Public perceptions of aquaculture</span></p>
-<hr>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><br> <br></p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week4/froehlich-etal-2017-fig3.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="body-text-xs gray-text">
-<p><a href="https://journals.plos.org/plosone/article/figure?id=10.1371/journal.pone.0169281.g003">Fig. 3</a>, by <a href="https://doi.org/10.1371/journal.pone.0169281">Froehlich et al.&nbsp;2017</a>: <strong>Newspaper ‘offshore aquaculture’ media sentiment.</strong> Sentiment over time based on the frequency of newspaper headlines with negative (red), positive (blue), and neutral (gray) titles for (A) developed (n = 102) and (B) developing (n = 8) nations. Also depicted are the (C) proportional contributions of sentiment headlines relative to each developed and developing country, with the number of headlines from each country shown in parentheses. All countries used in the analysis are depicted. Headlines were compiled using the LexisNexis® platform.</p>
-</div>
-</div><div class="column" style="width:50%;">
-<p><br> <br></p>
-<p><strong>Take some time to discuss the following:</strong></p>
-<ul>
-<li>where are your eyes drawn first, second, etc.?</li>
-<li>what are the main messages / takeaways?</li>
-<li>where has the author chosen to simplify this visualization (i.e.&nbsp;reduce extraneous elements)? does it make it easier / more challenging to interpret?</li>
-<li>what would you change about this visualization?</li>
-</ul>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_5e6f8b61" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
+<!-- --- -->
+<!-- ## {#aquaculture data-menu-title="Aquaculture sentiment"}  -->
+<!-- [Public perceptions of aquaculture]{.slide-title2} -->
+<!-- <hr> -->
+<!-- :::: {.columns} -->
+<!-- ::: {.column width="50%"} -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "100%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week4/froehlich-etal-2017-fig3.png") -->
+<!-- ``` -->
+<!-- ::: {.body-text-xs .gray-text} -->
+<!-- [Fig. 3](https://journals.plos.org/plosone/article/figure?id=10.1371/journal.pone.0169281.g003), by [Froehlich et al. 2017](https://doi.org/10.1371/journal.pone.0169281): **Newspaper ‘offshore aquaculture’ media sentiment.** Sentiment over time based on the frequency of newspaper headlines with negative (red), positive (blue), and neutral (gray) titles for (A) developed (n = 102) and (B) developing (n = 8) nations. Also depicted are the (C) proportional contributions of sentiment headlines relative to each developed and developing country, with the number of headlines from each country shown in parentheses. All countries used in the analysis are depicted. Headlines were compiled using the LexisNexis® platform. -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- **Take some time to discuss the following:** -->
+<!-- - where are your eyes drawn first, second, etc.? -->
+<!-- - what are the main messages / takeaways? -->
+<!-- - where has the author chosen to simplify this visualization (i.e. reduce extraneous elements)? does it make it easier / more challenging to interpret? -->
+<!-- - what would you change about this visualization? -->
+<!-- ::: -->
+<!-- :::: -->
+<!-- ```{r} -->
+<!-- countdown::countdown( -->
+<!--   minutes = 5, -->
+<!--   # left = 0, right = 0, -->
+<!--   # Fanfare when it's over -->
+<!--   play_sound = TRUE, -->
+<!--   color_border              = "#FFFFFF", -->
+<!--   color_text                = "#7aa81e", -->
+<!--   color_running_background  = "#7aa81e", -->
+<!--   color_running_text        = "#FFFFFF", -->
+<!--   color_finished_background = "#ffa07a", -->
+<!--   color_finished_text       = "#FFFFFF", -->
+<!--   font_size = "2em", -->
+<!--   ) -->
+<!-- ``` -->
 </section>
 <section id="end-break" class="slide level2" data-menu-title="# END #" data-background="#047C90">
 <h2></h2>

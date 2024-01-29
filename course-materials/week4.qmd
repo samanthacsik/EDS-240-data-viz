@@ -124,7 +124,7 @@ knitr::include_graphics("../images/ggplot-theme.png")
 
 You'll get the most out of discussion section if you physically type out the code yourself (rather than copying / pasting)!
 
-**Note:** Code lines 1 - 69 are copied over from last week's discussion materials. [***Newly added theme code begins on line 70.***]{.teal-text}
+**Note:** Much of the following code (data wrangling and ggplot code) was copied over from last week's discussion materials. [**Newly added theme code begins below the comment, `NEWLY ADDED THEME CODE!`.**]{.teal-text}
 
 <!-- ::: {.center-text} -->
 <!-- [**Solution**]{.body-text-m .teal-text}   -->
