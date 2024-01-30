@@ -582,7 +582,7 @@ Figure 2 from Yang et al. 2021. The left-most plot without a truncated y-axis wa
 
 <br>
 
-::: footer
+::: {.footer}
 Yang et al. (2021) Truncating bar graphs persistently misleads viewers. *Journal of Applied Research in Memory and Cognition* 10:2, 298-311. <https://doi.org/10.1016/j.jarmac.2020.10.002>
 :::
 
@@ -590,13 +590,18 @@ Yang et al. (2021) Truncating bar graphs persistently misleads viewers. *Journal
 
 ## {#cat-not-cont data-menu-title="Bar plots for categorical data"} 
 
-[IMPORTANT: Bar (& related) plots are for *categorical* data]{.slide-title3}
+<!-- [IMPORTANT: Bar (& related) plots are for *categorical* data]{.slide-title3} -->
+[Be cautious when using bar plots to summarize continuous data]{.slide-title3}
 
 <hr>
 
-[Bar charts were designed for *categorical* data. but they're often (incorrectly) used to visualize continuous data. [Weissgerber et al. (2015)](https://doi.org/10.1371/journal.pbio.1002128) cautions against this popular practice, since many different data distributions can lead to the same bar plots.]{.body-text-s}
+[**Bar plots shine when you need to compare counts** (e.g. populations size of different countries, total earnings by group, etc.). *However*, you should proceed with caution when using bar plots to visualize the distribution of / summarize your data. Doing so can be *misleading*, particularly when you have small sample sizes. Why?]{.body-text-s}
 
-<br>
+- [bar plots hide the distribution of the underlying data (many different distributions can lead to the same plot)]{.body-text-s}
+
+- [when used this way, the height of the bar (typically) represents the mean of the data, which can cause readers to incorrectly infer that the data are normally distributed with no outliers (this of course *may* be true in certain cases, but certainly not always)]{.body-text-s}
+
+<!-- [Bar charts were designed for *categorical* data. but they're often (incorrectly) used to visualize continuous data. [Weissgerber et al. (2015)](https://doi.org/10.1371/journal.pbio.1002128) cautions against this popular practice, since many different data distributions can lead to the same bar plots.]{.body-text-s} -->
 
 :::: columns
 
@@ -605,13 +610,13 @@ Yang et al. (2021) Truncating bar graphs persistently misleads viewers. *Journal
 #| eval: true
 #| echo: false
 #| fig-align: "center"
-#| out-width: "80%"
+#| out-width: "70%"
 knitr::include_graphics("images/week4/weissgerber-etal-2015.png")
 ```
 
-::: {.center-text .gray-text .body-text-s}
-[Figure 1](https://journals.plos.org/plosbiology/article?id=10.1371%2Fjournal.pbio.1002128#pbio-1002128-g001) from Weissgerber et al. 2015, which illustrates how many different data distributions can lead to the same bar plots
-:::
+<!-- ::: {.center-text .gray-text .body-text-s} -->
+<!-- [Figure 1](https://journals.plos.org/plosbiology/article?id=10.1371%2Fjournal.pbio.1002128#pbio-1002128-g001) from [Weissgerber et al. (2015)](https://doi.org/10.1371/journal.pbio.1002128), which illustrates how many different data distributions can lead to the same bar plots -->
+<!-- ::: -->
 :::
 
 ::: {.column width="50%"}
@@ -619,24 +624,31 @@ knitr::include_graphics("images/week4/weissgerber-etal-2015.png")
 #| eval: true
 #| echo: false
 #| fig-align: "center"
-#| out-width: "80%"
+#| out-width: "70%"
 #| fig-alt: "Main text: 'Are your summary statistics hiding something?' On the left is a opaque gray bar plot with an error bar, looking mischievous while hiding individual data points in a net behind it. On the right is a transparent bar plot with an error bar, looking exposed, with individual data points exposed and dancing. The bottom four data points have arms that spell 'YMCA' as if dancing to the Village People."
 knitr::include_graphics("images/week4/horst-barplot.png")
 ```
 
-::: {.center-text .gray-text .body-text-s}
-Artwork by [Allison Horst](https://allisonhorst.com/)
-:::
+<!-- ::: {.center-text .gray-text .body-text-s} -->
+<!-- Artwork by [Allison Horst](https://allisonhorst.com/) -->
+<!-- ::: -->
 :::
 
 ::::
 
 <br>
 
-::: footer
-Weissgerber et al. (2015) Beyond Bar and Line Graphs: Time for a New Data Presentation Paradigm. *PLOS Biology* 13:e1002128. 
+::: {.footer}
+**Left:** [Figure 1](https://journals.plos.org/plosbiology/article?id=10.1371%2Fjournal.pbio.1002128#pbio-1002128-g001) from Weissgerber et al. (2015) Beyond Bar and Line Graphs: Time for a New Data Presentation Paradigm. *PLOS Biology* 13:e1002128. <https://doi.org/10.1371/journal.pbio.1002128> | **Right:** Artwork by [Allison Horst](https://allisonhorst.com/)
+:::
 
-<https://doi.org/10.1371/journal.pbio.1002128>
+::: {.notes}
+- It’s okay to use bar (or related) plots anytime you’re comparing counts (e.g. population size of different countries, total earnings by group) — this is really where bar plots shine!
+If you are using a bar plot to visualize the distribution/summarize of your data, you should consider if there are better alternative options (e.g. box plots) — if you are inclined to include some sort of error bar / standard deviation on your bar plot, you are likely attempting to use your bar plot to visualize a distribution. Why is this wrong?
+
+- It’s not necessarily wrong, but it can be misleading, particularly when dealing with small sample sizes because (1) it’s impossible to know the distribution of the underlying data, and many different data distributions can lead to the same bar plot (see figure on lecture 4.1 slide 15). (2) When used this way, the height of the bar (typically) represents the mean of the data, which can cause readers to incorrectly infer that the data are normally distributed with no outliers (this of course may be true in certain cases, but certainly is not always true…particularly when dealing with small sample sizes where outliers are common)
+
+Bar plots are very commonly used in both ways (comparing counts and visualizing distributions) — for example, see [this online resource](https://www.labxchange.org/library/items/lb:LabXchange:e034541a:html:1) that reviews how to interpret both forms of a bar plot. However, you should proceed with extreme caution when using bar plots to summarize your data for the reasons outlined above. If you do choose to use a bar plot, consider layering on the raw data points as well (this isn’t always feasible with larger data sets). 
 :::
 
 ---

@@ -76,6 +76,10 @@ Week 4 instruction is broken down into three lessons:
 
 Last week's discussion focused on recreating the data layers of the U.S. Drought Monitor's [visualization](https://en.wikipedia.org/wiki/Droughts_in_California#/media/File:Drought_area_in_California.svg) of CA drought conditions through time. [**This week, you'll focus on refining the theme (non-data plot elements) to match the original visualization as closely as possible.**]{.teal-text}
 
+::: {.center-text}
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Week 4 discussion slides](https://docs.google.com/presentation/d/1D1JXHEsdMJoIbUJVa3byNn6qPTgQc7aeXvHgyIiOseo/edit#slide=id.p){.btn role="button" target="_blank"} 
+:::
+
 ### Background
 
 **Themes** are used to modify the non-data components of plots (e.g. titles, labels, fonts, background, gridlines, legend). In addition to using pre-built themes (available via the [`{ggplot2}` package](https://ggplot2.tidyverse.org/reference/ggtheme.html) and also from extension packages), you can fine-tune the appearance of your plots theme by making adjustments using the [`theme()` function](https://ggplot2.tidyverse.org/reference/theme.html). 

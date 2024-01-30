@@ -13,7 +13,7 @@ editor_options:
 
 ## {#title-slide data-menu-title="Title Slide" background="#053660"} 
 
-[EDS 240: Lecture 4.1]{.custom-title}
+[EDS 240: Lecture 4.2]{.custom-title}
 
 [*Visualizing numerical relationships*]{.custom-subtitle}
 
@@ -165,7 +165,7 @@ library(tidyverse)
 
 #...................download data from DataOne...................
 download_d1_data("https://cn.dataone.org/cn/v2/resolve/https%3A%2F%2Fpasta.lternet.edu%2Fpackage%2Fdata%2Feml%2Fknb-lter-hbr%2F208%2F9%2F3b3cf7ea447cb875d7c7d68ebdfd24c7",
-                 path = here::here("week4", "data")) 
+                 path = here::here("week4")) 
 
 #  ~ NOTE: I recommend renaming the downloaded folder to 'data/' so that it's ignored by .gitignore! ~
 

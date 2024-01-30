@@ -876,44 +876,65 @@
 </section>
 <section id="cat-not-cont" class="slide level2" data-menu-title="Bar plots for categorical data">
 <h2></h2>
-<p><span class="slide-title3">IMPORTANT: Bar (&amp; related) plots are for <em>categorical</em> data</span></p>
+<!-- [IMPORTANT: Bar (& related) plots are for *categorical* data]{.slide-title3} -->
+<p><span class="slide-title3">Be cautious when using bar plots to summarize continuous data</span></p>
 <hr>
-<p><span class="body-text-s">Bar charts were designed for <em>categorical</em> data. but they’re often (incorrectly) used to visualize continuous data. <a href="https://doi.org/10.1371/journal.pbio.1002128">Weissgerber et al.&nbsp;(2015)</a> cautions against this popular practice, since many different data distributions can lead to the same bar plots.</span></p>
-<p><br></p>
+<p><span class="body-text-s"><strong>Bar plots shine when you need to compare counts</strong> (e.g.&nbsp;populations size of different countries, total earnings by group, etc.). <em>However</em>, you should proceed with caution when using bar plots to visualize the distribution of / summarize your data. Doing so can be <em>misleading</em>, particularly when you have small sample sizes. Why?</span></p>
+<ul>
+<li><p><span class="body-text-s">bar plots hide the distribution of the underlying data (many different distributions can lead to the same plot)</span></p></li>
+<li><p><span class="body-text-s">when used this way, the height of the bar (typically) represents the mean of the data, which can cause readers to incorrectly infer that the data are normally distributed with no outliers (this of course <em>may</em> be true in certain cases, but certainly not always)</span></p></li>
+</ul>
+<!-- [Bar charts were designed for *categorical* data. but they're often (incorrectly) used to visualize continuous data. [Weissgerber et al. (2015)](https://doi.org/10.1371/journal.pbio.1002128) cautions against this popular practice, since many different data distributions can lead to the same bar plots.]{.body-text-s} -->
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week4/weissgerber-etal-2015.png" style="width:80.0%"></p>
+<p><img data-src="images/week4/weissgerber-etal-2015.png" style="width:70.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-<div class="center-text gray-text body-text-s">
-<p><a href="https://journals.plos.org/plosbiology/article?id=10.1371%2Fjournal.pbio.1002128#pbio-1002128-g001">Figure 1</a> from Weissgerber et al.&nbsp;2015, which illustrates how many different data distributions can lead to the same bar plots</p>
-</div>
+<!-- ::: {.center-text .gray-text .body-text-s} -->
+<!-- [Figure 1](https://journals.plos.org/plosbiology/article?id=10.1371%2Fjournal.pbio.1002128#pbio-1002128-g001) from [Weissgerber et al. (2015)](https://doi.org/10.1371/journal.pbio.1002128), which illustrates how many different data distributions can lead to the same bar plots -->
+<!-- ::: -->
 </div><div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week4/horst-barplot.png" style="width:80.0%" alt="Main text: 'Are your summary statistics hiding something?' On the left is a opaque gray bar plot with an error bar, looking mischievous while hiding individual data points in a net behind it. On the right is a transparent bar plot with an error bar, looking exposed, with individual data points exposed and dancing. The bottom four data points have arms that spell 'YMCA' as if dancing to the Village People."></p>
+<p><img data-src="images/week4/horst-barplot.png" style="width:70.0%" alt="Main text: 'Are your summary statistics hiding something?' On the left is a opaque gray bar plot with an error bar, looking mischievous while hiding individual data points in a net behind it. On the right is a transparent bar plot with an error bar, looking exposed, with individual data points exposed and dancing. The bottom four data points have arms that spell 'YMCA' as if dancing to the Village People."></p>
 </figure>
 </div>
 </div>
 </div>
-<div class="center-text gray-text body-text-s">
-<p>Artwork by <a href="https://allisonhorst.com/">Allison Horst</a></p>
-</div>
+<!-- ::: {.center-text .gray-text .body-text-s} -->
+<!-- Artwork by [Allison Horst](https://allisonhorst.com/) -->
+<!-- ::: -->
 </div>
 </div>
 <p><br></p>
 <div class="footer">
-<p>Weissgerber et al.&nbsp;(2015) Beyond Bar and Line Graphs: Time for a New Data Presentation Paradigm. <em>PLOS Biology</em> 13:e1002128.</p>
-<p><a href="https://doi.org/10.1371/journal.pbio.1002128" class="uri">https://doi.org/10.1371/journal.pbio.1002128</a></p>
+<p><strong>Left:</strong> <a href="https://journals.plos.org/plosbiology/article?id=10.1371%2Fjournal.pbio.1002128#pbio-1002128-g001">Figure 1</a> from Weissgerber et al.&nbsp;(2015) Beyond Bar and Line Graphs: Time for a New Data Presentation Paradigm. <em>PLOS Biology</em> 13:e1002128. <a href="https://doi.org/10.1371/journal.pbio.1002128" class="uri">https://doi.org/10.1371/journal.pbio.1002128</a> | <strong>Right:</strong> Artwork by <a href="https://allisonhorst.com/">Allison Horst</a></p>
 </div>
+<aside class="notes">
+<ul>
+<li><p>It’s okay to use bar (or related) plots anytime you’re comparing counts (e.g.&nbsp;population size of different countries, total earnings by group) — this is really where bar plots shine! If you are using a bar plot to visualize the distribution/summarize of your data, you should consider if there are better alternative options (e.g.&nbsp;box plots) — if you are inclined to include some sort of error bar / standard deviation on your bar plot, you are likely attempting to use your bar plot to visualize a distribution. Why is this wrong?</p></li>
+<li><p>It’s not necessarily wrong, but it can be misleading, particularly when dealing with small sample sizes because (1) it’s impossible to know the distribution of the underlying data, and many different data distributions can lead to the same bar plot (see figure on lecture 4.1 slide 15). (2) When used this way, the height of the bar (typically) represents the mean of the data, which can cause readers to incorrectly infer that the data are normally distributed with no outliers (this of course may be true in certain cases, but certainly is not always true…particularly when dealing with small sample sizes where outliers are common)</p></li>
+</ul>
+<p>Bar plots are very commonly used in both ways (comparing counts and visualizing distributions) — for example, see <a href="https://www.labxchange.org/library/items/lb:LabXchange:e034541a:html:1">this online resource</a> that reviews how to interpret both forms of a bar plot. However, you should proceed with extreme caution when using bar plots to summarize your data for the reasons outlined above. If you do choose to use a bar plot, consider layering on the raw data points as well (this isn’t always feasible with larger data sets).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="dumbbell-plot" class="slide level2" data-menu-title="Dumbbell plot">
 <h2></h2>
@@ -1011,7 +1032,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_300c23e5" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_446f6162" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
