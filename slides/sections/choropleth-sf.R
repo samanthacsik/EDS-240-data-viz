@@ -92,7 +92,17 @@ county_geo_wrangled <- county_geo |>
   filter(!state %in% c("Alaska", "Hawaii", "District of Columbia",
                        "United States Virgin Islands", "Puerto Rico", "American Samoa",
                        "Commonwealth of the Northern Mariana Islands", "Guam")) |>
-  mutate(county = str_replace(string = county, pattern = " city", replacement = " City"))
+  mutate(county = str_replace(string = county, pattern = " city", replacement = " City")) # |>
+  # mutate(county = case_when(
+  #   county == "Greater Bridgeport Planning Region" ~ "Fairfield County",
+  #   #county == "Capitol Planning Region" ~ "Hartford County",
+  #   county == "Northwest Hills Planning Region" ~ "Litchfield County",
+  #   county == "Lower Connecticut River Valley Planning Region" ~ "Middlesex County",
+  #   county == "Northwest Hills Planning Region" ~ "New Haven County",
+  #   county == "Southeastern Connecticut Planning Region" ~ "New London County",
+  #   #county == "Capitol Planning Region" ~ "Tolland County",
+  #   county == "Northeastern Connecticut Planning Region" ~ "Windham County"
+  #   ))
 
 precip_data <- read_csv(here::here("slides", "data", "county-jan19-dec23-precip.csv"), skip = 4)
 
@@ -143,9 +153,9 @@ base_map +
                        labels = scales::label_percent(scale = 1),
                        breaks = scales::breaks_width(width = 10),
                        values = scales::rescale(x = c(
-                         min(joined_precip_geom$perc_change),
+                         min(na.omit(joined_precip_geom)$perc_change),
                          0,
-                         max(joined_precip_geom$perc_change)))) +
+                         max(na.omit(joined_precip_geom)$perc_change)))) +
   guides(fill = guide_colorbar(label.hjust = 0.5,
                                barwidth = 15, barheight = 0.75))
 
@@ -167,8 +177,15 @@ base_map +
   scale_fill_stepsn(colors = my_brew_palette10,
                     labels = scales::label_percent(scale = 1),
                     values = scales::rescale(x = c(
-                      min(joined_precip_geom$perc_change),
+                      min(na.omit(joined_precip_geom)$perc_change),
                       0,
-                      max(joined_precip_geom$perc_change))),
+                      max(na.omit(joined_precip_geom)$perc_change))),
                     breaks = scales::breaks_width(width = 5)) +
   guides(fill = guide_colorsteps(barwidth = 25, barheight = 0.75))
+
+
+
+
+
+ct <- joined_precip_geom |>
+  filter(state == "Connecticut")

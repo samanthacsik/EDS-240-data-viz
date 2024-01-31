@@ -420,7 +420,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_796a3d76" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_add7f057" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1047,7 +1047,7 @@ There are <em>so many</em> great pre-made color palettes to explore, many of whi
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6a7a2d26" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_21224f45" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1860,7 +1860,7 @@ Want to design your own palette? Knowing just a smidge of color theory can help 
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_bc4a4701" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_30690872" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -2089,7 +2089,7 @@ There are also some additional rules / guidelines that you should pretty much al
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_3c0252db" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_94d8ad7b" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -2181,10 +2181,11 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <!-- https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value -->
 <!-- 5-year precip: https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202312/60/value -->
 </section>
-<section id="shapefiles-simple-features" class="slide level2" data-menu-title="shapefiles &amp; simple features">
+<section id="tigris" class="slide level2" data-menu-title="{tigris}">
 <h2></h2>
-<p><span class="slide-title2">Working with shapefiles &amp; simple features in R</span></p>
+<p><span class="slide-title2">Use <code>{tigris}</code> to download shapefiles</span></p>
 <hr>
+<p>We can use the <a href="https://github.com/walkerke/tigris"><code>{tigris}</code> package</a> to download and use Census <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html">TIGER/Line shapefiles</a> in R.</p>
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -2192,35 +2193,84 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week5/tigris.png" style="width:60.0%"></p>
+<p><img data-src="images/week5/tigris.png" style="width:70.0%"></p>
 </figure>
 </div>
 </div>
-</div>
-<div class="center-text gray-text body-text-s">
-<p>We can use the <a href="https://github.com/walkerke/tigris"><code>{tigris}</code> package</a> to download and use Census <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html">TIGER/Line shapefiles</a> in R.</p>
 </div>
 </div><div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/week5/sf.gif" style="width:70.0%"></p>
-</figure>
+<p><br></p>
+<ul>
+<li><p>A <strong>shapefile</strong> is a vector data file format commonly used for geospatial analysis.</p></li>
+<li><p>Shapefiles contain information for spatially describing features (e.g.&nbsp;points, lines, polygons), as well as any associated attribute information.</p></li>
+<li><p>You can find / download shapefiles online (e.g.&nbsp;from the <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.2023.html#list-tab-790442341">US Census Bureau</a>), or depending on the tools available, access them via packages (like we’re doing today).</p></li>
+</ul>
 </div>
 </div>
+<div class="footer">
+<p>Check out <a href="https://walker-data.com/census-r/census-geographic-data-and-applications-in-r.html">Ch. 5</a> of <a href="https://walker-data.com/census-r/index.html">Analyzing US Census Data: Methods, Mpas, and Models in R</a> by <a href="https://personal.tcu.edu/kylewalker/">Kyle E. Walker</a> for a great intro to <code>{tigris}</code></p>
 </div>
-<div class="center-text body-text-s gray-text">
-<p>The <a href="https://r-spatial.github.io/sf/"><code>{sf}</code> package</a> provides tools for working with <a href="https://r-spatial.github.io/sf/articles/sf1.html">simple features</a> in R.</p>
+</section>
+<section id="sf" class="slide level2" data-menu-title="simple features">
+<h2></h2>
+<p><span class="slide-title">Simple features in R</span></p>
+<hr>
+<div class="center-text">
+<p>Spatial data can take many forms – <strong><span class="teal-text">simple features</span> is a standard that allows different types of software to specify spatial data in a common way.</strong></p>
 </div>
+<p><br></p>
+<div class="fragment">
+<p><strong>Simple features are comprised of:</strong></p>
+<p><span class="body-text-s">1. a geometry object (e.g.&nbsp;a point, line, polygon) that describes where on Earth the feature is located</span></p>
+<p><span class="body-text-s">2. attribute data associated with the geometry object (e.g.&nbsp;the precipitation across a county during the last 5 years)</span></p>
+<p><br></p>
 </div>
+<div class="fragment">
+<p><span class="body-text-s">Because of how <code>sf</code> objects are represented in R (they look like data frames!), <strong>simple features can be maniupulated and plotted by other well-known packages like <code>{dplyr}</code> and <code>{ggplot2}</code></strong>. Packages like <a href="https://r-spatial.github.io/sf/"><code>{sf}</code></a> provide tools for working with simple features (<code>sf</code> objects), but we’ll only need to rely on <code>{ggplot2}</code>s built-in <code>geom_sf()</code> geometry to plot our data.</span></p>
+<p><br></p>
+</div>
+<div class="fragment">
+<p>When we download our shapefile using <code>{tigris}</code>, <strong>it’ll be loaded as a simple features (<code>sf</code>) object</strong> with geometries that allow us to plot county lines. We’ll join our county-level precipitation data to our <code>sf</code> object so that we can color counties by precipitation.</p>
+<!-- --- -->
+<!-- ## {#shapefiles-simple-features data-menu-title="shapefiles & simple features"}  -->
+<!-- [Working with shapefiles & simple features in R]{.slide-title2} -->
+<!-- <hr> -->
+<!-- :::: {.columns} -->
+<!-- ::: {.column width="50%"} -->
+<!-- ::: {.center-text .body-text-s} -->
+<!-- We can use the [`{tigris}` package](https://github.com/walkerke/tigris) to download and use Census [TIGER/Line shapefiles](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html) in R. -->
+<!-- ::: -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "60%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week5/tigris.png") -->
+<!-- ``` -->
+<!-- ::: {.center-text .gray-text .body-text-s} -->
+<!-- A **shapefile** is a vector data file format commonly used for geospatial analysis. The contain information for spatially describing features likes points, lines, and polygons, as well as any associated attribute information. You can find / download shapefiles online, or sometimes access them via packages (like we're doing today). -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "70%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week5/sf.gif") -->
+<!-- ``` -->
+<!-- ::: {.center-text .body-text-s .gray-text} -->
+<!-- The [`{sf}` package](https://r-spatial.github.io/sf/) provides tools for working with [simple features](https://r-spatial.github.io/sf/articles/sf1.html) in R.  -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- :::: -->
 </div>
 </section>
 <section id="data-wrangling" class="slide level2" data-menu-title="Data wrangling">
 <h2></h2>
 <p><span class="slide-title">Data Wrangling</span></p>
 <hr>
-<!-- Here, we'll wrangle our precipitation data, then join it with our US county data (courtesy of the [`{maps}` package](https://cran.r-project.org/web/packages/maps/index.html)): -->
+<p>Here, we’ll use the <code>{tigris}</code> package to import geometries for our US counties, then join it with our precipitation data:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
 <span id="cb32-2"><a href="#cb32-2"></a><span class="do">##                                    setup                                 ----</span></span>
@@ -2228,202 +2278,374 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <span id="cb32-4"><a href="#cb32-4"></a></span>
 <span id="cb32-5"><a href="#cb32-5"></a><span class="co">#..........................load packages.........................</span></span>
 <span id="cb32-6"><a href="#cb32-6"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb32-7"><a href="#cb32-7"></a><span class="fu">library</span>(maps)</span>
+<span id="cb32-7"><a href="#cb32-7"></a><span class="fu">library</span>(tigris)</span>
 <span id="cb32-8"><a href="#cb32-8"></a></span>
 <span id="cb32-9"><a href="#cb32-9"></a><span class="co">#.........................get shape data.........................</span></span>
-<span id="cb32-10"><a href="#cb32-10"></a>states <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"state"</span>)</span>
-<span id="cb32-11"><a href="#cb32-11"></a>counties <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"county"</span>)</span>
-<span id="cb32-12"><a href="#cb32-12"></a></span>
-<span id="cb32-13"><a href="#cb32-13"></a><span class="co">#....................import precipitation data...................</span></span>
-<span id="cb32-14"><a href="#cb32-14"></a>precip_counties <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week5"</span>, <span class="st">"data"</span>, <span class="st">"county-jan19-dec23-precip.csv"</span>), <span class="at">skip =</span> <span class="dv">4</span>) <span class="sc">|&gt;</span></span>
-<span id="cb32-15"><a href="#cb32-15"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
-<span id="cb32-16"><a href="#cb32-16"></a></span>
-<span id="cb32-17"><a href="#cb32-17"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb32-18"><a href="#cb32-18"></a><span class="do">##                               data wrangling                             ----</span></span>
-<span id="cb32-19"><a href="#cb32-19"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb32-20"><a href="#cb32-20"></a></span>
-<span id="cb32-21"><a href="#cb32-21"></a><span class="co">#..............update names of counties df variables.............</span></span>
-<span id="cb32-22"><a href="#cb32-22"></a>us_counties <span class="ot">&lt;-</span> counties <span class="sc">|&gt;</span></span>
-<span id="cb32-23"><a href="#cb32-23"></a></span>
-<span id="cb32-24"><a href="#cb32-24"></a>  <span class="co"># select / rename cols of interest ----</span></span>
-<span id="cb32-25"><a href="#cb32-25"></a>  <span class="fu">select</span>(<span class="at">state =</span> region, <span class="at">county =</span> subregion, long, lat, group, order) <span class="sc">|&gt;</span></span>
-<span id="cb32-26"><a href="#cb32-26"></a></span>
-<span id="cb32-27"><a href="#cb32-27"></a>  <span class="co"># make all county &amp; state names Title Case ----</span></span>
-<span id="cb32-28"><a href="#cb32-28"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_to_title</span>(county),</span>
-<span id="cb32-29"><a href="#cb32-29"></a>         <span class="at">state =</span> <span class="fu">str_to_title</span>(state)) <span class="sc">|&gt;</span></span>
-<span id="cb32-30"><a href="#cb32-30"></a></span>
-<span id="cb32-31"><a href="#cb32-31"></a>  <span class="co"># fix different spellings so that they match county names in precip data ----</span></span>
-<span id="cb32-32"><a href="#cb32-32"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">case_when</span>(</span>
-<span id="cb32-33"><a href="#cb32-33"></a>    county <span class="sc">==</span> <span class="st">"De Kalb"</span> <span class="sc">~</span> <span class="st">"DeKalb"</span>,</span>
-<span id="cb32-34"><a href="#cb32-34"></a>    county <span class="sc">==</span> <span class="st">"De Soto"</span> <span class="sc">~</span> <span class="st">"DeSoto"</span>,</span>
-<span id="cb32-35"><a href="#cb32-35"></a>    county <span class="sc">==</span> <span class="st">"Du Page"</span> <span class="sc">~</span> <span class="st">"DuPage"</span>,</span>
-<span id="cb32-36"><a href="#cb32-36"></a>    county <span class="sc">==</span> <span class="st">"La Porte"</span> <span class="sc">~</span> <span class="st">"LaPorte"</span>,</span>
-<span id="cb32-37"><a href="#cb32-37"></a>    county <span class="sc">==</span> <span class="st">"Obrien"</span> <span class="sc">~</span> <span class="st">"O'Brien"</span>,</span>
-<span id="cb32-38"><a href="#cb32-38"></a>    county <span class="sc">==</span> <span class="st">"Prince Georges"</span> <span class="sc">~</span> <span class="st">"Prince George's"</span>,</span>
-<span id="cb32-39"><a href="#cb32-39"></a>    county <span class="sc">==</span> <span class="st">"Queen Annes"</span> <span class="sc">~</span> <span class="st">"Queen Anne's"</span>,</span>
-<span id="cb32-40"><a href="#cb32-40"></a>    county <span class="sc">==</span> <span class="st">"Ste Genevieve"</span> <span class="sc">~</span> <span class="st">"Ste. Genevieve"</span>,</span>
-<span id="cb32-41"><a href="#cb32-41"></a>    county <span class="sc">==</span> <span class="st">"La Moure"</span> <span class="sc">~</span> <span class="st">"LaMoure"</span>,</span>
-<span id="cb32-42"><a href="#cb32-42"></a>    state <span class="sc">==</span> <span class="st">"Texas"</span> <span class="sc">&amp;</span> county <span class="sc">==</span> <span class="st">"De Witt"</span> <span class="sc">~</span> <span class="st">"DeWitt"</span>,</span>
-<span id="cb32-43"><a href="#cb32-43"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> county</span>
-<span id="cb32-44"><a href="#cb32-44"></a>    )) <span class="sc">|&gt;</span></span>
-<span id="cb32-45"><a href="#cb32-45"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_replace</span>(<span class="at">string =</span> county, <span class="at">pattern =</span> <span class="st">"St "</span>, <span class="at">replacement =</span> <span class="st">"St. "</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb32-46"><a href="#cb32-46"></a></span>
-<span id="cb32-47"><a href="#cb32-47"></a>  <span class="co"># remove DC &amp; Yellowstone National Park ----</span></span>
-<span id="cb32-48"><a href="#cb32-48"></a>  <span class="fu">filter</span>(<span class="sc">!</span>state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"District Of Columbia"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb32-49"><a href="#cb32-49"></a>  <span class="fu">filter</span>(<span class="sc">!</span>county <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Yellowstone National"</span>))</span>
-<span id="cb32-50"><a href="#cb32-50"></a></span>
-<span id="cb32-51"><a href="#cb32-51"></a></span>
-<span id="cb32-52"><a href="#cb32-52"></a><span class="co">#..........clean precip data &amp; make sure var names match.........</span></span>
-<span id="cb32-53"><a href="#cb32-53"></a>precip_counties_wrangled <span class="ot">&lt;-</span> precip_counties <span class="sc">|&gt;</span></span>
-<span id="cb32-54"><a href="#cb32-54"></a></span>
-<span id="cb32-55"><a href="#cb32-55"></a>  <span class="co"># more intuitive col name ----</span></span>
-<span id="cb32-56"><a href="#cb32-56"></a>  <span class="fu">rename</span>(<span class="at">county =</span> name) <span class="sc">|&gt;</span></span>
-<span id="cb32-57"><a href="#cb32-57"></a></span>
-<span id="cb32-58"><a href="#cb32-58"></a>  <span class="co"># make all county &amp; state names lower case ----</span></span>
-<span id="cb32-59"><a href="#cb32-59"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_to_lower</span>(county),</span>
-<span id="cb32-60"><a href="#cb32-60"></a>         <span class="at">state =</span> <span class="fu">str_to_lower</span>(state)) <span class="sc">|&gt;</span></span>
-<span id="cb32-61"><a href="#cb32-61"></a></span>
-<span id="cb32-62"><a href="#cb32-62"></a>  <span class="co"># remove recurring patterns ----</span></span>
-<span id="cb32-63"><a href="#cb32-63"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_remove</span>(county, <span class="at">pattern =</span> <span class="st">" county"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb32-64"><a href="#cb32-64"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_remove</span>(county, <span class="at">pattern =</span> <span class="st">" parish"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb32-65"><a href="#cb32-65"></a></span>
-<span id="cb32-66"><a href="#cb32-66"></a>  <span class="co"># make state &amp; county names Title Case again ----</span></span>
-<span id="cb32-67"><a href="#cb32-67"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_to_title</span>(county),</span>
-<span id="cb32-68"><a href="#cb32-68"></a>         <span class="at">state =</span> <span class="fu">str_to_title</span>(state)) <span class="sc">|&gt;</span></span>
+<span id="cb32-10"><a href="#cb32-10"></a>county_geo <span class="ot">&lt;-</span> tigris<span class="sc">::</span><span class="fu">counties</span>(<span class="at">class =</span> <span class="st">"sf"</span>, <span class="at">cb =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="co"># cb = TRUE to use cartographic boundary files</span></span>
+<span id="cb32-11"><a href="#cb32-11"></a>  </span>
+<span id="cb32-12"><a href="#cb32-12"></a>  <span class="co"># shift US to fit AK, HI, PR (we'll be filtering these out though) and transform CRS to USA Contiguous Albers Equal Area Conic (ESRI:102003) ----</span></span>
+<span id="cb32-13"><a href="#cb32-13"></a>  <span class="fu">shift_geometry</span>()</span>
+<span id="cb32-14"><a href="#cb32-14"></a></span>
+<span id="cb32-15"><a href="#cb32-15"></a><span class="co">#....................import precipitation data...................</span></span>
+<span id="cb32-16"><a href="#cb32-16"></a>precip_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week5"</span>, <span class="st">"data"</span>, <span class="st">"county-jan19-dec23-precip.csv"</span>), <span class="at">skip =</span> <span class="dv">4</span>)</span>
+<span id="cb32-17"><a href="#cb32-17"></a></span>
+<span id="cb32-18"><a href="#cb32-18"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb32-19"><a href="#cb32-19"></a><span class="do">##                               data wrangling                             ----</span></span>
+<span id="cb32-20"><a href="#cb32-20"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb32-21"><a href="#cb32-21"></a>     </span>
+<span id="cb32-22"><a href="#cb32-22"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb32-23"><a href="#cb32-23"></a><span class="do">##  ~ wrangle geometries  ----</span></span>
+<span id="cb32-24"><a href="#cb32-24"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb32-25"><a href="#cb32-25"></a></span>
+<span id="cb32-26"><a href="#cb32-26"></a>county_geo_wrangled <span class="ot">&lt;-</span> county_geo <span class="sc">|&gt;</span></span>
+<span id="cb32-27"><a href="#cb32-27"></a>  </span>
+<span id="cb32-28"><a href="#cb32-28"></a>  <span class="co"># clean up col names ----</span></span>
+<span id="cb32-29"><a href="#cb32-29"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
+<span id="cb32-30"><a href="#cb32-30"></a>  </span>
+<span id="cb32-31"><a href="#cb32-31"></a>  <span class="co"># rename county &amp; state cols ----</span></span>
+<span id="cb32-32"><a href="#cb32-32"></a>  <span class="fu">rename</span>(<span class="at">county =</span> namelsad, <span class="at">state =</span> state_name) <span class="sc">|&gt;</span></span>
+<span id="cb32-33"><a href="#cb32-33"></a>  </span>
+<span id="cb32-34"><a href="#cb32-34"></a>  <span class="co"># remove states / territories that we don't have precip data for ----</span></span>
+<span id="cb32-35"><a href="#cb32-35"></a>  <span class="fu">filter</span>(<span class="sc">!</span>state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Alaska"</span>, <span class="st">"Hawaii"</span>, <span class="st">"District of Columbia"</span>,</span>
+<span id="cb32-36"><a href="#cb32-36"></a>                       <span class="st">"United States Virgin Islands"</span>, <span class="st">"Puerto Rico"</span>, <span class="st">"American Samoa"</span>,</span>
+<span id="cb32-37"><a href="#cb32-37"></a>                       <span class="st">"Commonwealth of the Northern Mariana Islands"</span>, <span class="st">"Guam"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb32-38"><a href="#cb32-38"></a>  </span>
+<span id="cb32-39"><a href="#cb32-39"></a>  <span class="co"># capitalize "city" (VA) ----</span></span>
+<span id="cb32-40"><a href="#cb32-40"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_replace</span>(<span class="at">string =</span> county, <span class="at">pattern =</span> <span class="st">" city"</span>, <span class="at">replacement =</span> <span class="st">" City"</span>))</span>
+<span id="cb32-41"><a href="#cb32-41"></a></span>
+<span id="cb32-42"><a href="#cb32-42"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb32-43"><a href="#cb32-43"></a><span class="do">##  ~ wrangle precipitation data  ----</span></span>
+<span id="cb32-44"><a href="#cb32-44"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb32-45"><a href="#cb32-45"></a></span>
+<span id="cb32-46"><a href="#cb32-46"></a>precip_wrangled <span class="ot">&lt;-</span> precip_data <span class="sc">|&gt;</span></span>
+<span id="cb32-47"><a href="#cb32-47"></a>  </span>
+<span id="cb32-48"><a href="#cb32-48"></a>  <span class="co"># clean up col names ----</span></span>
+<span id="cb32-49"><a href="#cb32-49"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
+<span id="cb32-50"><a href="#cb32-50"></a>  </span>
+<span id="cb32-51"><a href="#cb32-51"></a>  <span class="co"># rename county col ----</span></span>
+<span id="cb32-52"><a href="#cb32-52"></a>  <span class="fu">rename</span>(<span class="at">county =</span> name) <span class="sc">|&gt;</span></span>
+<span id="cb32-53"><a href="#cb32-53"></a>  </span>
+<span id="cb32-54"><a href="#cb32-54"></a>  <span class="co"># filter out DC ----</span></span>
+<span id="cb32-55"><a href="#cb32-55"></a>  <span class="fu">filter</span>(<span class="sc">!</span>county <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Washington, D.C."</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb32-56"><a href="#cb32-56"></a>  </span>
+<span id="cb32-57"><a href="#cb32-57"></a>  <span class="co"># update name to match that in county_geo df ----</span></span>
+<span id="cb32-58"><a href="#cb32-58"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_replace</span>(<span class="at">string =</span> county, <span class="at">pattern =</span> <span class="st">"Dona Ana County"</span>, <span class="at">replacement =</span> <span class="st">"Doña Ana County"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb32-59"><a href="#cb32-59"></a>  </span>
+<span id="cb32-60"><a href="#cb32-60"></a>  <span class="co"># coerce precip &amp; 20th centruy avg from chr to numeric ----</span></span>
+<span id="cb32-61"><a href="#cb32-61"></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">as.numeric</span>(value),</span>
+<span id="cb32-62"><a href="#cb32-62"></a>         <span class="at">x1901_2000_mean =</span> <span class="fu">as.numeric</span>(x1901_2000_mean)) <span class="sc">|&gt;</span></span>
+<span id="cb32-63"><a href="#cb32-63"></a>  </span>
+<span id="cb32-64"><a href="#cb32-64"></a>  <span class="co"># calculate % change ----</span></span>
+<span id="cb32-65"><a href="#cb32-65"></a>  <span class="fu">mutate</span>(<span class="at">perc_change =</span> ((value <span class="sc">-</span> x1901_2000_mean)<span class="sc">/</span>x1901_2000_mean)<span class="sc">*</span><span class="dv">100</span>) <span class="sc">|&gt;</span></span>
+<span id="cb32-66"><a href="#cb32-66"></a>  </span>
+<span id="cb32-67"><a href="#cb32-67"></a>  <span class="co"># select, rename, reorder cols ----</span></span>
+<span id="cb32-68"><a href="#cb32-68"></a>  <span class="fu">select</span>(id, state, county, <span class="at">mean_1901_2000 =</span> x1901_2000_mean, <span class="at">precip =</span> value, perc_change, anomaly_1901_2000_base_period)</span>
 <span id="cb32-69"><a href="#cb32-69"></a></span>
-<span id="cb32-70"><a href="#cb32-70"></a>  <span class="co"># fix different spellings so that they match county names in precip data ----</span></span>
-<span id="cb32-71"><a href="#cb32-71"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">case_when</span>(</span>
-<span id="cb32-72"><a href="#cb32-72"></a>    county <span class="sc">==</span> <span class="st">"Dekalb"</span> <span class="sc">~</span> <span class="st">"DeKalb"</span>,</span>
-<span id="cb32-73"><a href="#cb32-73"></a>    county <span class="sc">==</span> <span class="st">"Desoto"</span> <span class="sc">~</span> <span class="st">"DeSoto"</span>,</span>
-<span id="cb32-74"><a href="#cb32-74"></a>    state <span class="sc">==</span> <span class="st">"Louisiana"</span> <span class="sc">&amp;</span> county <span class="sc">==</span> <span class="st">"De Soto"</span> <span class="sc">~</span> <span class="st">"DeSoto"</span>,</span>
-<span id="cb32-75"><a href="#cb32-75"></a>    county <span class="sc">==</span> <span class="st">"Dupage"</span> <span class="sc">~</span> <span class="st">"DuPage"</span>,</span>
-<span id="cb32-76"><a href="#cb32-76"></a>    county <span class="sc">==</span> <span class="st">"Lasalle"</span> <span class="sc">~</span> <span class="st">"La Salle"</span>,</span>
-<span id="cb32-77"><a href="#cb32-77"></a>    county <span class="sc">==</span> <span class="st">"Laporte"</span> <span class="sc">~</span> <span class="st">"LaPorte"</span>,</span>
-<span id="cb32-78"><a href="#cb32-78"></a>    county <span class="sc">==</span> <span class="st">"O'brien"</span> <span class="sc">~</span> <span class="st">"O'Brien"</span>,</span>
-<span id="cb32-79"><a href="#cb32-79"></a>    county <span class="sc">==</span> <span class="st">"Lamoure"</span> <span class="sc">~</span> <span class="st">"LaMoure"</span>,</span>
-<span id="cb32-80"><a href="#cb32-80"></a>    state <span class="sc">==</span> <span class="st">"Texas"</span> <span class="sc">&amp;</span> county <span class="sc">==</span> <span class="st">"Dewitt"</span> <span class="sc">~</span> <span class="st">"DeWitt"</span>,</span>
-<span id="cb32-81"><a href="#cb32-81"></a>    county <span class="sc">==</span> <span class="st">"St. Mary's"</span> <span class="sc">~</span> <span class="st">"St. Marys"</span>,</span>
-<span id="cb32-82"><a href="#cb32-82"></a>    county <span class="sc">==</span> <span class="st">"Suffolk City"</span> <span class="sc">~</span> <span class="st">"Suffolk"</span>,</span>
-<span id="cb32-83"><a href="#cb32-83"></a>    county <span class="sc">==</span> <span class="st">"Hampton City"</span> <span class="sc">~</span> <span class="st">"Hampton"</span>,</span>
-<span id="cb32-84"><a href="#cb32-84"></a>    county <span class="sc">==</span> <span class="st">"Virginia Beach City"</span> <span class="sc">~</span> <span class="st">"Virginia Beach"</span>,</span>
-<span id="cb32-85"><a href="#cb32-85"></a>    county <span class="sc">==</span> <span class="st">"Newport News City"</span> <span class="sc">~</span> <span class="st">"Newport News"</span>,</span>
-<span id="cb32-86"><a href="#cb32-86"></a>    county <span class="sc">==</span> <span class="st">"Norfolk City"</span> <span class="sc">~</span> <span class="st">"Norfolk"</span>,</span>
-<span id="cb32-87"><a href="#cb32-87"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> county</span>
-<span id="cb32-88"><a href="#cb32-88"></a>  )) <span class="sc">|&gt;</span></span>
-<span id="cb32-89"><a href="#cb32-89"></a></span>
-<span id="cb32-90"><a href="#cb32-90"></a>  <span class="co"># remove DC &amp; other non-counties</span></span>
-<span id="cb32-91"><a href="#cb32-91"></a>  <span class="fu">filter</span>(<span class="sc">!</span>county <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Washington, D.c."</span>, <span class="st">"Alexandria City"</span>, <span class="st">"Bristol City"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb32-92"><a href="#cb32-92"></a></span>
-<span id="cb32-93"><a href="#cb32-93"></a>  <span class="co"># coerce precip &amp; 20th centruy avg from chr to numeric ----</span></span>
-<span id="cb32-94"><a href="#cb32-94"></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">as.numeric</span>(value),</span>
-<span id="cb32-95"><a href="#cb32-95"></a>         <span class="at">x1901_2000_mean =</span> <span class="fu">as.numeric</span>(x1901_2000_mean)) <span class="sc">|&gt;</span></span>
-<span id="cb32-96"><a href="#cb32-96"></a></span>
-<span id="cb32-97"><a href="#cb32-97"></a>  <span class="co"># calculate % change ----</span></span>
-<span id="cb32-98"><a href="#cb32-98"></a>  <span class="fu">mutate</span>(<span class="at">perc_change =</span> ((value <span class="sc">-</span> x1901_2000_mean)<span class="sc">/</span>x1901_2000_mean)<span class="sc">*</span><span class="dv">100</span>) <span class="sc">|&gt;</span></span>
-<span id="cb32-99"><a href="#cb32-99"></a></span>
-<span id="cb32-100"><a href="#cb32-100"></a>  <span class="co"># select &amp; rename cols ----</span></span>
-<span id="cb32-101"><a href="#cb32-101"></a>  <span class="fu">select</span>(state, county, <span class="at">mean_1901_2000 =</span> x1901_2000_mean, <span class="at">precip =</span> value, perc_change, anomaly_1901_2000_base_period)</span>
-<span id="cb32-102"><a href="#cb32-102"></a></span>
-<span id="cb32-103"><a href="#cb32-103"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb32-104"><a href="#cb32-104"></a><span class="do">##  ~ used to identify which county names don't match across dfs  ----</span></span>
-<span id="cb32-105"><a href="#cb32-105"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb32-106"><a href="#cb32-106"></a></span>
-<span id="cb32-107"><a href="#cb32-107"></a><span class="co"># unique_us_counties &lt;- us_counties |&gt;</span></span>
-<span id="cb32-108"><a href="#cb32-108"></a><span class="co">#   distinct(state, county)</span></span>
-<span id="cb32-109"><a href="#cb32-109"></a><span class="co">#</span></span>
-<span id="cb32-110"><a href="#cb32-110"></a><span class="co"># unique_precip_counties &lt;- precip_counties_wrangled |&gt;</span></span>
-<span id="cb32-111"><a href="#cb32-111"></a><span class="co">#   distinct(state, county)</span></span>
-<span id="cb32-112"><a href="#cb32-112"></a><span class="co">#</span></span>
-<span id="cb32-113"><a href="#cb32-113"></a><span class="co"># missing_from_us_counties &lt;- anti_join(unique_precip_counties, unique_us_counties) |&gt;</span></span>
-<span id="cb32-114"><a href="#cb32-114"></a><span class="co">#   rename(county_in_us = county)</span></span>
-<span id="cb32-115"><a href="#cb32-115"></a><span class="co">#</span></span>
-<span id="cb32-116"><a href="#cb32-116"></a><span class="co"># missing_from_precip_counties &lt;- anti_join(unique_us_counties, unique_precip_counties) |&gt;</span></span>
-<span id="cb32-117"><a href="#cb32-117"></a><span class="co">#   rename(county_in_precip = county)</span></span>
-<span id="cb32-118"><a href="#cb32-118"></a></span>
-<span id="cb32-119"><a href="#cb32-119"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb32-120"><a href="#cb32-120"></a><span class="do">##  ~ ----------------------------------------------------------  ----</span></span>
-<span id="cb32-121"><a href="#cb32-121"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb32-122"><a href="#cb32-122"></a></span>
-<span id="cb32-123"><a href="#cb32-123"></a><span class="co">#............................join dfs............................</span></span>
-<span id="cb32-124"><a href="#cb32-124"></a>joined_precip_us_counties <span class="ot">&lt;-</span> <span class="fu">full_join</span>(precip_counties_wrangled, us_counties)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-70"><a href="#cb32-70"></a><span class="do">##~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb32-71"><a href="#cb32-71"></a><span class="do">##  ~ join dfs  ----</span></span>
+<span id="cb32-72"><a href="#cb32-72"></a><span class="do">##~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb32-73"><a href="#cb32-73"></a></span>
+<span id="cb32-74"><a href="#cb32-74"></a><span class="co"># join dfs (be sure to join precip TO sf object, not the other way around) -------</span></span>
+<span id="cb32-75"><a href="#cb32-75"></a>joined_precip_geom <span class="ot">&lt;-</span> <span class="fu">full_join</span>(county_geo_wrangled, precip_wrangled) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<!-- --- -->
+<!-- DATA WRANGLING ALTERNATIVE: USING THE {maps} PACKAGE -->
+<!-- Here, we'll wrangle our precipitation data, then join it with our US county data (courtesy of the [`{maps}` package](https://cran.r-project.org/web/packages/maps/index.html)): -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##                                    setup                                 ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- #..........................load packages......................... -->
+<!-- library(tidyverse) -->
+<!-- library(maps) -->
+<!-- #.........................get shape data......................... -->
+<!-- states <- map_data("state") -->
+<!-- counties <- map_data("county") -->
+<!-- #....................import precipitation data................... -->
+<!-- precip_counties <- read_csv(here::here("slides", "data", "county-jan19-dec23-precip.csv"), skip = 4) |> -->
+<!--   janitor::clean_names() -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##                               data wrangling                             ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- #..............update names of counties df variables............. -->
+<!-- us_counties <- counties |> -->
+<!--   # select / rename cols of interest ---- -->
+<!--   select(state = region, county = subregion, long, lat, group, order) |> -->
+<!--   # make all county & state names Title Case ---- -->
+<!--   mutate(county = str_to_title(county), -->
+<!--          state = str_to_title(state)) |> -->
+<!--   # fix different spellings so that they match county names in precip data ---- -->
+<!--   mutate(county = case_when( -->
+<!--     county == "De Kalb" ~ "DeKalb", -->
+<!--     county == "De Soto" ~ "DeSoto", # works for FL & MI -->
+<!--     county == "Du Page" ~ "DuPage", -->
+<!--     county == "La Porte" ~ "LaPorte", -->
+<!--     county == "Obrien" ~ "O'Brien", -->
+<!--     county == "Prince Georges" ~ "Prince George's", -->
+<!--     county == "Queen Annes" ~ "Queen Anne's", -->
+<!--     county == "Ste Genevieve" ~ "Ste. Genevieve", -->
+<!--     county == "La Moure" ~ "LaMoure", -->
+<!--     state == "Texas" & county == "De Witt" ~ "DeWitt", -->
+<!--     # county == "St. Marys" ~ "St. Mary's", # isn't working?? -->
+<!--     TRUE ~ county -->
+<!--     )) |> -->
+<!--   mutate(county = str_replace(string = county, pattern = "St ", replacement = "St. ")) |> -->
+<!--   # remove DC & Yellowstone National Park ---- -->
+<!--   filter(!state %in% c("District Of Columbia")) |> -->
+<!--   filter(!county %in% c("Yellowstone National")) -->
+<!-- #..........clean precip data & make sure var names match......... -->
+<!-- precip_counties_wrangled <- precip_counties |> -->
+<!--   # more intuitive col name ---- -->
+<!--   rename(county = name) |> -->
+<!--   # make all county & state names lower case ---- -->
+<!--   mutate(county = str_to_lower(county), -->
+<!--          state = str_to_lower(state)) |> -->
+<!--   # remove recurring patterns ---- -->
+<!--   mutate(county = str_remove(county, pattern = " county")) |> # across all county names -->
+<!--   mutate(county = str_remove(county, pattern = " parish")) |> # LA -->
+<!--   # make state & county names Title Case again ---- -->
+<!--   mutate(county = str_to_title(county), -->
+<!--          state = str_to_title(state)) |> -->
+<!--   # fix different spellings so that they match county names in precip data ---- -->
+<!--   mutate(county = case_when( -->
+<!--     county == "Dekalb" ~ "DeKalb", -->
+<!--     county == "Desoto" ~ "DeSoto", # works for FL & MI -->
+<!--     state == "Louisiana" & county == "De Soto" ~ "DeSoto", -->
+<!--     county == "Dupage" ~ "DuPage", -->
+<!--     county == "Lasalle" ~ "La Salle", -->
+<!--     county == "Laporte" ~ "LaPorte", -->
+<!--     county == "O'brien" ~ "O'Brien", -->
+<!--     county == "Lamoure" ~ "LaMoure", -->
+<!--     state == "Texas" & county == "Dewitt" ~ "DeWitt", -->
+<!--     county == "St. Mary's" ~ "St. Marys", -->
+<!--     county == "Suffolk City" ~ "Suffolk", -->
+<!--     county == "Hampton City" ~ "Hampton", -->
+<!--     county == "Virginia Beach City" ~ "Virginia Beach", -->
+<!--     county == "Newport News City" ~ "Newport News", -->
+<!--     county == "Norfolk City" ~ "Norfolk", -->
+<!--     TRUE ~ county -->
+<!--   )) |> -->
+<!--   # remove DC & other non-counties -->
+<!--   filter(!county %in% c("Washington, D.c.", "Alexandria City", "Bristol City")) |> -->
+<!--   # coerce precip & 20th centruy avg from chr to numeric ---- -->
+<!--   mutate(value = as.numeric(value), -->
+<!--          x1901_2000_mean = as.numeric(x1901_2000_mean)) |> -->
+<!--   # calculate % change ---- -->
+<!--   mutate(perc_change = ((value - x1901_2000_mean)/x1901_2000_mean)*100) |> -->
+<!--   # select & rename cols ---- -->
+<!--   select(state, county, mean_1901_2000 = x1901_2000_mean, precip = value, perc_change, anomaly_1901_2000_base_period) -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##  ~ used to identify which county names don't match across dfs  ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- # unique_us_counties <- us_counties |> -->
+<!-- #   distinct(state, county) -->
+<!-- # -->
+<!-- # unique_precip_counties <- precip_counties_wrangled |> -->
+<!-- #   distinct(state, county) -->
+<!-- # -->
+<!-- # missing_from_us_counties <- anti_join(unique_precip_counties, unique_us_counties) |> -->
+<!-- #   rename(county_in_us = county) -->
+<!-- # -->
+<!-- # missing_from_precip_counties <- anti_join(unique_us_counties, unique_precip_counties) |> -->
+<!-- #   rename(county_in_precip = county) -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##  ~ ----------------------------------------------------------  ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- #............................join dfs............................ -->
+<!-- joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties) -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##                                    setup                                 ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- #..........................load packages......................... -->
+<!-- library(tidyverse) -->
+<!-- library(maps) -->
+<!-- #.........................get shape data......................... -->
+<!-- states <- map_data("state") -->
+<!-- counties <- map_data("county") -->
+<!-- #....................import precipitation data................... -->
+<!-- precip_counties <- read_csv(here::here("week5", "data", "county-jan19-dec23-precip.csv"), skip = 4) |> -->
+<!--   janitor::clean_names() -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##                               data wrangling                             ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- #..............update names of counties df variables............. -->
+<!-- us_counties <- counties |> -->
+<!--   # select / rename cols of interest ---- -->
+<!--   select(state = region, county = subregion, long, lat, group, order) |> -->
+<!--   # make all county & state names Title Case ---- -->
+<!--   mutate(county = str_to_title(county), -->
+<!--          state = str_to_title(state)) |> -->
+<!--   # fix different spellings so that they match county names in precip data ---- -->
+<!--   mutate(county = case_when( -->
+<!--     county == "De Kalb" ~ "DeKalb", -->
+<!--     county == "De Soto" ~ "DeSoto", -->
+<!--     county == "Du Page" ~ "DuPage", -->
+<!--     county == "La Porte" ~ "LaPorte", -->
+<!--     county == "Obrien" ~ "O'Brien", -->
+<!--     county == "Prince Georges" ~ "Prince George's", -->
+<!--     county == "Queen Annes" ~ "Queen Anne's", -->
+<!--     county == "Ste Genevieve" ~ "Ste. Genevieve", -->
+<!--     county == "La Moure" ~ "LaMoure", -->
+<!--     state == "Texas" & county == "De Witt" ~ "DeWitt", -->
+<!--     TRUE ~ county -->
+<!--     )) |> -->
+<!--   mutate(county = str_replace(string = county, pattern = "St ", replacement = "St. ")) |> -->
+<!--   # remove DC & Yellowstone National Park ---- -->
+<!--   filter(!state %in% c("District Of Columbia")) |> -->
+<!--   filter(!county %in% c("Yellowstone National")) -->
+<!-- #..........clean precip data & make sure var names match......... -->
+<!-- precip_counties_wrangled <- precip_counties |> -->
+<!--   # more intuitive col name ---- -->
+<!--   rename(county = name) |> -->
+<!--   # make all county & state names lower case ---- -->
+<!--   mutate(county = str_to_lower(county), -->
+<!--          state = str_to_lower(state)) |> -->
+<!--   # remove recurring patterns ---- -->
+<!--   mutate(county = str_remove(county, pattern = " county")) |> -->
+<!--   mutate(county = str_remove(county, pattern = " parish")) |> -->
+<!--   # make state & county names Title Case again ---- -->
+<!--   mutate(county = str_to_title(county), -->
+<!--          state = str_to_title(state)) |> -->
+<!--   # fix different spellings so that they match county names in precip data ---- -->
+<!--   mutate(county = case_when( -->
+<!--     county == "Dekalb" ~ "DeKalb", -->
+<!--     county == "Desoto" ~ "DeSoto", -->
+<!--     state == "Louisiana" & county == "De Soto" ~ "DeSoto", -->
+<!--     county == "Dupage" ~ "DuPage", -->
+<!--     county == "Lasalle" ~ "La Salle", -->
+<!--     county == "Laporte" ~ "LaPorte", -->
+<!--     county == "O'brien" ~ "O'Brien", -->
+<!--     county == "Lamoure" ~ "LaMoure", -->
+<!--     state == "Texas" & county == "Dewitt" ~ "DeWitt", -->
+<!--     county == "St. Mary's" ~ "St. Marys", -->
+<!--     county == "Suffolk City" ~ "Suffolk", -->
+<!--     county == "Hampton City" ~ "Hampton", -->
+<!--     county == "Virginia Beach City" ~ "Virginia Beach", -->
+<!--     county == "Newport News City" ~ "Newport News", -->
+<!--     county == "Norfolk City" ~ "Norfolk", -->
+<!--     TRUE ~ county -->
+<!--   )) |> -->
+<!--   # remove DC & other non-counties -->
+<!--   filter(!county %in% c("Washington, D.c.", "Alexandria City", "Bristol City")) |> -->
+<!--   # coerce precip & 20th centruy avg from chr to numeric ---- -->
+<!--   mutate(value = as.numeric(value), -->
+<!--          x1901_2000_mean = as.numeric(x1901_2000_mean)) |> -->
+<!--   # calculate % change ---- -->
+<!--   mutate(perc_change = ((value - x1901_2000_mean)/x1901_2000_mean)*100) |> -->
+<!--   # select & rename cols ---- -->
+<!--   select(state, county, mean_1901_2000 = x1901_2000_mean, precip = value, perc_change, anomaly_1901_2000_base_period) -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##  ~ used to identify which county names don't match across dfs  ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- # unique_us_counties <- us_counties |> -->
+<!-- #   distinct(state, county) -->
+<!-- # -->
+<!-- # unique_precip_counties <- precip_counties_wrangled |> -->
+<!-- #   distinct(state, county) -->
+<!-- # -->
+<!-- # missing_from_us_counties <- anti_join(unique_precip_counties, unique_us_counties) |> -->
+<!-- #   rename(county_in_us = county) -->
+<!-- # -->
+<!-- # missing_from_precip_counties <- anti_join(unique_us_counties, unique_precip_counties) |> -->
+<!-- #   rename(county_in_precip = county) -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##  ~ ----------------------------------------------------------  ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- #............................join dfs............................ -->
+<!-- joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties) -->
+<!-- ``` -->
+<!-- --- -->
 </section>
 <section id="base-map" class="slide level2" data-menu-title="Create base map">
 <h2></h2>
 <p><span class="slide-title">Start by creating a base map</span></p>
 <hr>
-<div class="cell">
-
-</div>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a>base_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> states, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group)) <span class="sc">+</span></span>
-<span id="cb33-3"><a href="#cb33-3"></a></span>
-<span id="cb33-4"><a href="#cb33-4"></a>  <span class="co"># plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----</span></span>
-<span id="cb33-5"><a href="#cb33-5"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> joined_precip_us_counties, <span class="fu">aes</span>(<span class="at">fill =</span> perc_change)) <span class="sc">+</span></span>
-<span id="cb33-6"><a href="#cb33-6"></a></span>
-<span id="cb33-7"><a href="#cb33-7"></a>  <span class="co"># darken state lines ----</span></span>
-<span id="cb33-8"><a href="#cb33-8"></a>  <span class="fu">geom_polygon</span>(<span class="at">color =</span> <span class="st">"#2F2D2C"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb33-9"><a href="#cb33-9"></a></span>
-<span id="cb33-10"><a href="#cb33-10"></a>  <span class="co"># update labels ----</span></span>
-<span id="cb33-11"><a href="#cb33-11"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"5-year precipitation compared with the 20th century average"</span>,</span>
-<span id="cb33-12"><a href="#cb33-12"></a>       <span class="at">caption =</span> <span class="st">"Source: National Centers for Environmental Information"</span>) <span class="sc">+</span></span>
-<span id="cb33-13"><a href="#cb33-13"></a></span>
-<span id="cb33-14"><a href="#cb33-14"></a>  <span class="co"># set theme to clean up appearance ----</span></span>
-<span id="cb33-15"><a href="#cb33-15"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
-<span id="cb33-16"><a href="#cb33-16"></a></span>
-<span id="cb33-17"><a href="#cb33-17"></a>  <span class="co"># theme adjustments ----</span></span>
-<span id="cb33-18"><a href="#cb33-18"></a>  <span class="fu">theme</span>(</span>
-<span id="cb33-19"><a href="#cb33-19"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb33-20"><a href="#cb33-20"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb33-21"><a href="#cb33-21"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">20</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">l =</span> <span class="dv">0</span>))</span>
-<span id="cb33-22"><a href="#cb33-22"></a>  )</span>
-<span id="cb33-23"><a href="#cb33-23"></a></span>
-<span id="cb33-24"><a href="#cb33-24"></a>base_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>base_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(joined_precip_geom) <span class="sc">+</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> perc_change), <span class="at">linewidth =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"5-year precipitation compared with the 20th century average"</span>,</span>
+<span id="cb33-4"><a href="#cb33-4"></a>       <span class="at">subtitle =</span> <span class="st">"January 2019 - December 2023"</span>,</span>
+<span id="cb33-5"><a href="#cb33-5"></a>       <span class="at">caption =</span> <span class="st">"Source: National Centers for Environmental Information"</span>) <span class="sc">+</span></span>
+<span id="cb33-6"><a href="#cb33-6"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb33-7"><a href="#cb33-7"></a>  <span class="fu">theme</span>(</span>
+<span id="cb33-8"><a href="#cb33-8"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb33-9"><a href="#cb33-9"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb33-10"><a href="#cb33-10"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">20</span>, <span class="at">r =</span> <span class="dv">10</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">l =</span> <span class="dv">0</span>))</span>
+<span id="cb33-11"><a href="#cb33-11"></a>  )</span>
+<span id="cb33-12"><a href="#cb33-12"></a></span>
+<span id="cb33-13"><a href="#cb33-13"></a>base_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
-<p><img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-100-1.png" width="960"></p>
+<p><img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-96-1.png" width="960"></p>
 </div>
 </div>
 </div>
+<div class="fragment">
+<p><br></p>
 <div class="center-text">
-<p>This looks a bit wonky, so we’ll need to specify a projection, next.</p>
+<p>Because we want to map precipitation relative to the 20th century average (e.g.&nbsp;has precipitation for a given region over the last 5 years been <em>above</em> or <em>below</em> the average), a <strong>divering color palette</strong> makes a lot of sense.</p>
 </div>
 <div class="footer">
-<p><a href="https://github.com/eriqande">Eric C. Anderson’s</a> <a href="https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html">Making Maps with R</a> tutorial was a wonderful resource in getting started with the <code>{maps}</code> package.</p>
+<p>You may notice that Connecticut is missing most of it’s data. After some digging, I learned that CT recently (2022) replaced it’s eight counties with nine planning regions as county-equivalents (read more in the <a href="https://www.federalregister.gov/documents/2022/06/06/2022-12063/change-to-county-equivalents-in-the-state-of-connecticut">UC Census Bureau Notice on 06/06/2022</a>). I couldn’t quite make sense of how to match old county names to new planning regions, as there’s a decent amount of <a href="https://en.wikipedia.org/wiki/List_of_counties_in_Connecticut#/media/File:CT_Planning_vs_County_Census.png">overlap</a>, soooo I gave up (for now) <i class="fa-solid fa-face-grin-beam-sweat" title="grinning face with sweat dripping from forehead" aria-label="face-grin-beam-sweat"></i>.</p>
 </div>
-</section>
-<section id="map-projection" class="slide level2" data-menu-title="Map projection">
-<h2></h2>
-<p><span class="slide-title">Apply a Mercator projection</span></p>
-<hr>
-<p><a href="https://en.wikipedia.org/wiki/Lambert_conformal_conic_projection">Lambert conformal conic</a> and <a href="https://en.wikipedia.org/wiki/Mercator_projection">Mercator projections</a> are both commonly used for mapping the United States. Here, we’ll apply the latter:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>base_map_proj <span class="ot">&lt;-</span> base_map <span class="sc">+</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">coord_map</span>(<span class="at">projection =</span> <span class="st">"mercator"</span>)</span>
-<span id="cb34-3"><a href="#cb34-3"></a></span>
-<span id="cb34-4"><a href="#cb34-4"></a>base_map_proj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<!-- --- -->
+<!-- OLD  -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
+<!-- #| output-location: column -->
+<!-- # 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ---- -->
+<!-- base_map <- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + -->
+<!--   # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ---- -->
+<!--   geom_polygon(data = joined_precip_us_counties, aes(fill = perc_change)) + -->
+<!--   # darken state lines ---- -->
+<!--   geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) + -->
+<!--   # update labels ---- -->
+<!--   labs(title = "5-year precipitation compared with the 20th century average", -->
+<!--        caption = "Source: National Centers for Environmental Information") + -->
+<!--   # set theme to clean up appearance ---- -->
+<!--   theme_void() + -->
+<!--   # theme adjustments ---- -->
+<!--   theme( -->
+<!--     legend.position = "bottom", -->
+<!--     legend.title = element_blank(), -->
+<!--     plot.caption = element_text(face = "italic", margin = margin(t = 20, r = 0, b = 0, l = 0)) -->
+<!--   ) -->
+<!-- base_map -->
+<!-- ``` -->
+<!-- ::: {.center-text} -->
+<!-- This looks a bit wonky, so we'll need to specify a projection, next. -->
+<!-- ::: -->
+<!-- ::: {.footer} -->
+<!-- [Eric C. Anderson's](https://github.com/eriqande) [Making Maps with R](https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html) tutorial was a wonderful resource in getting started with the `{maps}` package. -->
+<!-- ::: -->
+<!-- --- -->
+<!-- ## {#map-projection data-menu-title="Map projection"} -->
+<!-- [Apply a Mercator projection]{.slide-title} -->
+<!-- <hr> -->
+<!-- [Lambert conformal conic](https://en.wikipedia.org/wiki/Lambert_conformal_conic_projection) and [Mercator projections](https://en.wikipedia.org/wiki/Mercator_projection) are both commonly used for mapping the United States. Here, we'll apply the latter: -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- #| fig-align: "center" -->
+<!-- base_map_proj <- base_map + -->
+<!--   coord_map(projection = "mercator") -->
+<!-- base_map_proj -->
+<!-- ``` -->
+<!-- ::: {.notes} -->
+<!-- Alternatively: -->
+<!-- - fix the relationship between lat & long by using `coord_fixed(1.3)` -->
+<!-- - apply a Lambert conformal projection, conic projection, using `coord_fixed(projection = "conic", lat0 = 30)` -->
+<!-- - NOTE: `coord_map()` has been been superceded by `coord_sf()`: https://ggplot2.tidyverse.org/reference/coord_map.html -->
+<!-- ::: -->
 </div>
-<img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-101-1.png" width="960" class="r-stretch quarto-figure-center"><aside class="notes">
-<p>Alternatively:</p>
-<ul>
-<li>fix the relationship between lat &amp; long by using <code>coord_fixed(1.3)</code></li>
-<li>apply a Lambert conformal projection, conic projection, using <code>coord_fixed(projection = "conic", lat0 = 30)</code></li>
-<li>NOTE: <code>coord_map()</code> has been been superceded by <code>coord_sf()</code>: https://ggplot2.tidyverse.org/reference/coord_map.html</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="decide-on-scale-type" class="slide level2" data-menu-title="Decide on scale type">
 <h2></h2>
@@ -2490,11 +2712,11 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <p>Preview the palette using <code>display.brewer.pal()</code> with our desired number of hues:</p>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.pal</span>(<span class="at">n =</span> <span class="dv">11</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.pal</span>(<span class="at">n =</span> <span class="dv">11</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-102-1.png" style="width:100.0%"></p>
+<p><img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-97-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -2504,8 +2726,8 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <p>Save the HEX codes to a named object using <code>brewer.pal()</code> (we’ll call this in our plot later):</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>my_brew_palette11 <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">11</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span>
-<span id="cb36-2"><a href="#cb36-2"></a>my_brew_palette11</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>my_brew_palette11 <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">11</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span>
+<span id="cb35-2"><a href="#cb35-2"></a>my_brew_palette11</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "#543005" "#8C510A" "#BF812D" "#DFC27D" "#F6E8C3" "#F5F5F5" "#C7EAE5"
  [8] "#80CDC1" "#35978F" "#01665E" "#003C30"</code></pre>
@@ -2520,27 +2742,27 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <hr>
 <p><span class="body-text-s">Here, we leverage the awesome <code>{scales}</code> package to add <strong>%s</strong> to the colorbar labels and set our breaks. We also use <code>guides()</code> + <code>guide_colorbar()</code> to update label positioning and colorbar size:</span></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>base_map_proj <span class="sc">+</span> </span>
-<span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_brew_palette11,</span>
-<span id="cb38-3"><a href="#cb38-3"></a>                       <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
-<span id="cb38-4"><a href="#cb38-4"></a>                       <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb38-5"><a href="#cb38-5"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">label.hjust =</span> <span class="fl">0.5</span>,</span>
-<span id="cb38-6"><a href="#cb38-6"></a>                               <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>base_map <span class="sc">+</span> </span>
+<span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_brew_palette11,</span>
+<span id="cb37-3"><a href="#cb37-3"></a>                       <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
+<span id="cb37-4"><a href="#cb37-4"></a>                       <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb37-5"><a href="#cb37-5"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">label.hjust =</span> <span class="fl">0.5</span>,</span>
+<span id="cb37-6"><a href="#cb37-6"></a>                               <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-104-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-99-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="inspect-color-scale1" class="slide level2" data-menu-title="Inspect color scale">
 <h2></h2>
 <p><span class="slide-title">Inspect the color scale – anything off?</span></p>
 <hr>
 
-<img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-105-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-100-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
 <section id="misleading" class="slide level2" data-menu-title="Misleading colors">
 <h2></h2>
 <p><span class="slide-title">Our color mapping may be misleading</span></p>
 <hr>
 
-<img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-106-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-101-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
 <div class="center-text">
 <p><strong>0%</strong> (i.e.&nbsp;no change between 5-year precipitation and 20th century average) <strong>is currently on the bluer side of our color scale</strong>, rather than on the off-white color that’s at the center of our palette.</p>
 <p>As a result, <strong>our map may be misleading</strong> – it would appear as if more counties received higher-than-average precipitation than in actuality.</p>
@@ -2551,25 +2773,25 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <p><span class="slide-title2">Rescale the colorbar so that 0 is at the center</span></p>
 <hr>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb39" data-code-line-numbers="5-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>base_map_proj <span class="sc">+</span> </span>
-<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_brew_palette11,</span>
-<span id="cb39-3"><a href="#cb39-3"></a>                       <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
-<span id="cb39-4"><a href="#cb39-4"></a>                       <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>),</span>
-<span id="cb39-5"><a href="#cb39-5"></a>                       <span class="at">values =</span> scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="at">x =</span> <span class="fu">c</span>(</span>
-<span id="cb39-6"><a href="#cb39-6"></a>                         <span class="fu">min</span>(joined_precip_us_counties<span class="sc">$</span>perc_change),</span>
-<span id="cb39-7"><a href="#cb39-7"></a>                         <span class="dv">0</span>,</span>
-<span id="cb39-8"><a href="#cb39-8"></a>                         <span class="fu">max</span>(joined_precip_us_counties<span class="sc">$</span>perc_change)))) <span class="sc">+</span></span>
-<span id="cb39-9"><a href="#cb39-9"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">label.hjust =</span> <span class="fl">0.5</span>,</span>
-<span id="cb39-10"><a href="#cb39-10"></a>                               <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38" data-code-line-numbers="5-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>base_map <span class="sc">+</span> </span>
+<span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_brew_palette11,</span>
+<span id="cb38-3"><a href="#cb38-3"></a>                       <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
+<span id="cb38-4"><a href="#cb38-4"></a>                       <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>),</span>
+<span id="cb38-5"><a href="#cb38-5"></a>                       <span class="at">values =</span> scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="at">x =</span> <span class="fu">c</span>(</span>
+<span id="cb38-6"><a href="#cb38-6"></a>                         <span class="fu">min</span>(<span class="fu">na.omit</span>(joined_precip_geom)<span class="sc">$</span>perc_change),</span>
+<span id="cb38-7"><a href="#cb38-7"></a>                         <span class="dv">0</span>,</span>
+<span id="cb38-8"><a href="#cb38-8"></a>                         <span class="fu">max</span>(<span class="fu">na.omit</span>(joined_precip_geom)<span class="sc">$</span>perc_change)))) <span class="sc">+</span></span>
+<span id="cb38-9"><a href="#cb38-9"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">label.hjust =</span> <span class="fl">0.5</span>,</span>
+<span id="cb38-10"><a href="#cb38-10"></a>                               <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-107-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-102-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="final-unclassed" class="slide level2" data-menu-title="Final unclassed map">
 <h2></h2>
 <p><span class="slide-title">Our final unclassed map</span></p>
 <hr>
 
-<img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-108-1.png" width="960" class="r-stretch quarto-figure-center"><div class="footer">
+<img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-103-1.png" width="960" class="r-stretch quarto-figure-center"><div class="footer">
 <p>We’ll come back to this map in our typography lesson to update and style our text elements.</p>
 </div>
 </section>
@@ -2584,11 +2806,11 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <p>Preview the palette using <code>display.brewer.pal()</code> with our desired number of hues:</p>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.pal</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.pal</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-109-1.png" style="width:100.0%"></p>
+<p><img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-104-1.png" style="width:90.0%"></p>
 </figure>
 </div>
 </div>
@@ -2598,8 +2820,8 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <p>Save the HEX codes to a named object using <code>brewer.pal()</code> (we’ll call this in our plot later):</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>my_brew_palette10 <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span>
-<span id="cb41-2"><a href="#cb41-2"></a>my_brew_palette10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>my_brew_palette10 <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span>
+<span id="cb40-2"><a href="#cb40-2"></a>my_brew_palette10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "#543005" "#8C510A" "#BF812D" "#DFC27D" "#F6E8C3" "#C7EAE5" "#80CDC1"
  [8] "#35978F" "#01665E" "#003C30"</code></pre>
@@ -2615,13 +2837,13 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <hr>
 <p>We only get 4 bins by default, which means we lose a lot of detail in our map:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>base_map <span class="sc">+</span> </span>
-<span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_brew_palette10,</span>
-<span id="cb43-3"><a href="#cb43-3"></a>                    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb43-4"><a href="#cb43-4"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">barwidth =</span> <span class="dv">25</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>base_map <span class="sc">+</span> </span>
+<span id="cb42-2"><a href="#cb42-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_brew_palette10,</span>
+<span id="cb42-3"><a href="#cb42-3"></a>                    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb42-4"><a href="#cb42-4"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">barwidth =</span> <span class="dv">25</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-111-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-106-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
 <section id="increase-classes" class="slide level2" data-menu-title="Increase # of classes">
 <h2></h2>
 <p><span class="slide-title">More classes = more nuance</span></p>
@@ -2632,15 +2854,15 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <p>Breaks set to a width of <strong>10</strong></p>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb44" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>base_map <span class="sc">+</span> </span>
-<span id="cb44-2"><a href="#cb44-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_brew_palette10,</span>
-<span id="cb44-3"><a href="#cb44-3"></a>                    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
-<span id="cb44-4"><a href="#cb44-4"></a>                    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb44-5"><a href="#cb44-5"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">barwidth =</span> <span class="dv">25</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>base_map <span class="sc">+</span> </span>
+<span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_brew_palette10,</span>
+<span id="cb43-3"><a href="#cb43-3"></a>                    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
+<span id="cb43-4"><a href="#cb43-4"></a>                    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb43-5"><a href="#cb43-5"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">barwidth =</span> <span class="dv">25</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-112-1.png" width="960"></p>
+<p><img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-107-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2650,19 +2872,19 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <p>Breaks set to a width of <strong>5</strong> &amp; rescaled with 0 at center</p>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb45" data-code-line-numbers="4-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>base_map_proj <span class="sc">+</span> </span>
-<span id="cb45-2"><a href="#cb45-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_brew_palette10,</span>
-<span id="cb45-3"><a href="#cb45-3"></a>                    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
-<span id="cb45-4"><a href="#cb45-4"></a>                    <span class="at">values =</span> scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="at">x =</span> <span class="fu">c</span>(</span>
-<span id="cb45-5"><a href="#cb45-5"></a>                         <span class="fu">min</span>(joined_precip_us_counties<span class="sc">$</span>perc_change),</span>
-<span id="cb45-6"><a href="#cb45-6"></a>                         <span class="dv">0</span>,</span>
-<span id="cb45-7"><a href="#cb45-7"></a>                         <span class="fu">max</span>(joined_precip_us_counties<span class="sc">$</span>perc_change))), </span>
-<span id="cb45-8"><a href="#cb45-8"></a>                    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
-<span id="cb45-9"><a href="#cb45-9"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">barwidth =</span> <span class="dv">25</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44" data-code-line-numbers="4-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>base_map <span class="sc">+</span> </span>
+<span id="cb44-2"><a href="#cb44-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_brew_palette10,</span>
+<span id="cb44-3"><a href="#cb44-3"></a>                    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
+<span id="cb44-4"><a href="#cb44-4"></a>                    <span class="at">values =</span> scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="at">x =</span> <span class="fu">c</span>(</span>
+<span id="cb44-5"><a href="#cb44-5"></a>                         <span class="fu">min</span>(<span class="fu">na.omit</span>(joined_precip_geom)<span class="sc">$</span>perc_change),</span>
+<span id="cb44-6"><a href="#cb44-6"></a>                         <span class="dv">0</span>,</span>
+<span id="cb44-7"><a href="#cb44-7"></a>                         <span class="fu">max</span>(<span class="fu">na.omit</span>(joined_precip_geom)<span class="sc">$</span>perc_change))), </span>
+<span id="cb44-8"><a href="#cb44-8"></a>                    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb44-9"><a href="#cb44-9"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">barwidth =</span> <span class="dv">25</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-113-1.png" width="960"></p>
+<p><img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-108-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2688,7 +2910,7 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-114-1.png" style="width:100.0%"></p>
+<p><img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-109-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -2701,7 +2923,7 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-115-1.png" style="width:100.0%"></p>
+<p><img data-src="week5.2-colors-slides_files/figure-revealjs/unnamed-chunk-110-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>

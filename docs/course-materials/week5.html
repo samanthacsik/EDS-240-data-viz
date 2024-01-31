@@ -263,7 +263,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#install-required-packages" id="toc-install-required-packages" class="nav-link" data-scroll-target="#install-required-packages">Install required packages</a></li>
   <li><a href="#download-data" id="toc-download-data" class="nav-link" data-scroll-target="#download-data">Download data</a></li>
   <li><a href="#install-google-chrome-extensions-optional-but-recommended" id="toc-install-google-chrome-extensions-optional-but-recommended" class="nav-link" data-scroll-target="#install-google-chrome-extensions-optional-but-recommended">Install Google Chrome extensions (optional, but recommended)</a></li>
-  <li><a href="#review-data-wrangling-code" id="toc-review-data-wrangling-code" class="nav-link" data-scroll-target="#review-data-wrangling-code">Review data wrangling code</a></li>
   </ul></li>
   <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials">Lecture Materials</a></li>
   <li><a href="#discussion-materials" id="toc-discussion-materials" class="nav-link" data-scroll-target="#discussion-materials">Discussion Materials</a></li>
@@ -298,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"paletteer"</span>) <span class="co"># a comprehensive collection of color palettes in R using a common interface</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"viridis"</span>) <span class="co"># Colorblind-Friendly Color Maps for R</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"RColorBrewer"</span>) <span class="co"># ColorBrewer Palettes</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"maps"</span>) <span class="co"># for drawing geographical maps</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tigris"</span>) <span class="co"># for downloading and using Census TIGER/Line shapefiles in R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="download-data" class="level3">
@@ -317,11 +316,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong><a href="https://chromewebstore.google.com/detail/lets-get-color-blind/bkdgdianpkfahpkmphgehigalpighjck">Let’s get color blind</a></strong>: simulates different color deficiencies in the browser</li>
 <li><strong><a href="https://chromewebstore.google.com/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg">ColorPick Eyedropper</a></strong>: a browser-based color chooser tool (I recommended that you install this for week 3 discussion, so you may already have it!)</li>
 </ol>
-</section>
-<section id="review-data-wrangling-code" class="level3">
-<h3 class="anchored" data-anchor-id="review-data-wrangling-code">Review data wrangling code</h3>
-<p>In lecture 5.2, we’ll be building a choropleth map to visualize county-level precipitation data across the contiguous U.S. To do so, we need to join our precipitation data (which you can download <a href="https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week5.html#download-data">above</a>) with spatial data, which we’ll access via the <a href="https://cran.r-project.org/web/packages/maps/index.html"><code>{maps}</code> package</a>. Joining these two data sets requires a fair amount of cleaning (namely, ensuring county names match).</p>
-<p>Please review the background information about our precipitation data on <a href="https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/data">slide 65</a> <em>and</em> walk through the data wrangling code on <a href="https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/data-wrangling">slide 66</a> ahead of class. Come prepared with any questions you may have about the code – we’ll set aside ~10 minutes to discuss before jumping into building our data visualization.</p>
+<!-- ### Review data wrangling code  -->
+<!-- In lecture 5.2, we'll be building a choropleth map to visualize county-level precipitation data across the contiguous U.S. To do so, we need to join our precipitation data (which you can download [above](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week5.html#download-data)) with spatial data, which we'll access via the [`{maps}` package](https://cran.r-project.org/web/packages/maps/index.html). Joining these two data sets requires a fair amount of cleaning (namely, ensuring county names match).  -->
+<!-- Please review the background information about our precipitation data on [slide 65](https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/data) *and* walk through the data wrangling code on [slide 66](https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/data-wrangling) ahead of class. Come prepared with any questions you may have about the code -- we'll set aside ~10 minutes to discuss before jumping into building our data visualization. -->
 </section>
 </section>
 <section id="lecture-materials" class="level2">
@@ -353,9 +350,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- ::: -->
 <!-- ::: -->
 </div>
-<!-- - 1 color theory -->
-<!-- 2 typography -->
-<!-- - 3 DEI (using icons & colors for equity awareness) -->
 </section>
 <section id="discussion-materials" class="level2">
 <h2 class="anchored" data-anchor-id="discussion-materials">Discussion Materials</h2>

@@ -2411,46 +2411,125 @@ knitr::include_graphics("images/week5/ncei-logo2.png")
 
 ---
 
-## {#shapefiles-simple-features data-menu-title="shapefiles & simple features"} 
+## {#tigris data-menu-title="{tigris}"} 
 
-[Working with shapefiles & simple features in R]{.slide-title2}
+[Use `{tigris}` to download shapefiles]{.slide-title2}
 
 <hr>
+
+We can use the [`{tigris}` package](https://github.com/walkerke/tigris) to download and use Census [TIGER/Line shapefiles](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html) in R.
 
 <br>
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-```{r}
-#| eval: true
-#| echo: false
-#| out-width: "60%"
-#| fig-align: "center"
-knitr::include_graphics("images/week5/tigris.png")
-```
 
-::: {.center-text .gray-text .body-text-s}
-We can use the [`{tigris}` package](https://github.com/walkerke/tigris) to download and use Census [TIGER/Line shapefiles](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html) in R.
-:::
-:::
-
-::: {.column width="50%"}
 ```{r}
 #| eval: true
 #| echo: false
 #| out-width: "70%"
 #| fig-align: "center"
-knitr::include_graphics("images/week5/sf.gif")
+knitr::include_graphics("images/week5/tigris.png")
 ```
 
-::: {.center-text .body-text-s .gray-text}
-The [`{sf}` package](https://r-spatial.github.io/sf/) provides tools for working with [simple features](https://r-spatial.github.io/sf/articles/sf1.html) in R. 
 :::
 
+::: {.column width="50%"}
+<br>
+
+- A **shapefile** is a vector data file format commonly used for geospatial analysis. 
+
+- Shapefiles contain information for spatially describing features (e.g. points, lines, polygons), as well as any associated attribute information. 
+
+- You can find / download shapefiles online (e.g. from the [US Census Bureau](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.2023.html#list-tab-790442341)), or depending on the tools available, access them via packages (like we're doing today).
 :::
 
 ::::
+
+::: {.footer}
+Check out [Ch. 5](https://walker-data.com/census-r/census-geographic-data-and-applications-in-r.html) of [Analyzing US Census Data: Methods, Mpas, and Models in R](https://walker-data.com/census-r/index.html) by [Kyle E. Walker](https://personal.tcu.edu/kylewalker/) for a great intro to `{tigris}`
+:::
+
+---
+
+## {#sf data-menu-title="simple features"} 
+
+[Simple features in R]{.slide-title}
+
+<hr>
+
+::: {.center-text}
+Spatial data can take many forms -- **[simple features]{.teal-text} is a standard that allows different types of software to specify spatial data in a common way.**
+:::
+
+<br>
+
+. . . 
+
+**Simple features are comprised of:**
+
+[1. a geometry object (e.g. a point, line, polygon) that describes where on Earth the feature is located]{.body-text-s}
+
+[2. attribute data associated with the geometry object (e.g. the precipitation across a county during the last 5 years)]{.body-text-s}
+
+<br>
+
+. . . 
+
+[Because of how `sf` objects are represented in R (they look like data frames!), **simple features can be maniupulated and plotted by other well-known packages like `{dplyr}` and `{ggplot2}`**. Packages like [`{sf}`](https://r-spatial.github.io/sf/) provide tools for working with simple features (`sf` objects), but we'll only need to rely on `{ggplot2}`s built-in `geom_sf()` geometry to plot our data.]{.body-text-s}
+
+<br>
+
+. . . 
+
+When we download our shapefile using `{tigris}`, **it'll be loaded as a simple features (`sf`) object** with geometries that allow us to plot county lines. We'll join our county-level precipitation data to our `sf` object so that we can color counties by precipitation.
+
+<!-- --- -->
+
+<!-- ## {#shapefiles-simple-features data-menu-title="shapefiles & simple features"}  -->
+
+<!-- [Working with shapefiles & simple features in R]{.slide-title2} -->
+
+<!-- <hr> -->
+
+<!-- :::: {.columns} -->
+
+<!-- ::: {.column width="50%"} -->
+
+<!-- ::: {.center-text .body-text-s} -->
+<!-- We can use the [`{tigris}` package](https://github.com/walkerke/tigris) to download and use Census [TIGER/Line shapefiles](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html) in R. -->
+<!-- ::: -->
+
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "60%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week5/tigris.png") -->
+<!-- ``` -->
+
+<!-- ::: {.center-text .gray-text .body-text-s} -->
+<!-- A **shapefile** is a vector data file format commonly used for geospatial analysis. The contain information for spatially describing features likes points, lines, and polygons, as well as any associated attribute information. You can find / download shapefiles online, or sometimes access them via packages (like we're doing today). -->
+<!-- ::: -->
+<!-- ::: -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "70%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week5/sf.gif") -->
+<!-- ``` -->
+
+<!-- ::: {.center-text .body-text-s .gray-text} -->
+<!-- The [`{sf}` package](https://r-spatial.github.io/sf/) provides tools for working with [simple features](https://r-spatial.github.io/sf/articles/sf1.html) in R.  -->
+<!-- ::: -->
+
+<!-- ::: -->
+
+<!-- :::: -->
 
 ---
 
@@ -2460,12 +2539,13 @@ The [`{sf}` package](https://r-spatial.github.io/sf/) provides tools for working
 
 <hr>
 
-<!-- Here, we'll wrangle our precipitation data, then join it with our US county data (courtesy of the [`{maps}` package](https://cran.r-project.org/web/packages/maps/index.html)): -->
+Here, we'll use the `{tigris}` package to import geometries for our US counties, then join it with our precipitation data:
 
 ```{r}
-#| eval: false
-#| echo: false
+#| eval: true
+#| echo: true
 #| message: false
+#| include: false
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                                    setup                                 ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2516,13 +2596,12 @@ precip_wrangled <- precip_data |>
 ##~~~~~~~~~~~~~~~~~~
 
 # join dfs (see https://github.com/tidyverse/ggplot2/issues/3936 & https://map-rfun.library.duke.edu/032_thematic_mapping_geom_sf.html) -------
-joined_precip_geom <- full_join(county_geo_wrangled, precip_wrangled) #|>
-  #drop_na(perc_change)
+joined_precip_geom <- full_join(county_geo_wrangled, precip_wrangled) 
 ```
 
 ```{r}
 #| eval: false
-#| echo: false
+#| echo: true
 #| message: false
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                                    setup                                 ----
@@ -2533,7 +2612,9 @@ library(tidyverse)
 library(tigris)
 
 #.........................get shape data.........................
-county_geo <- tigris::counties(class = "sf", cb = TRUE) |> 
+county_geo <- tigris::counties(class = "sf", cb = TRUE) |> # cb = TRUE to use cartographic boundary files
+  
+  # shift US to fit AK, HI, PR (we'll be filtering these out though) and transform CRS to USA Contiguous Albers Equal Area Conic (ESRI:102003) ----
   shift_geometry()
 
 #....................import precipitation data...................
@@ -2595,271 +2676,276 @@ precip_wrangled <- precip_data |>
 ##  ~ join dfs  ----
 ##~~~~~~~~~~~~~~~~~~
 
-# join dfs (be sure to join precip TO sf object) -------
-joined_precip_geom <- full_join(county_geo_wrangled, precip_wrangled) #|>
-  #drop_na(perc_change)
+# join dfs (be sure to join precip TO sf object, not the other way around) -------
+joined_precip_geom <- full_join(county_geo_wrangled, precip_wrangled) 
 ```
 
-```{r}
-#| eval: true
-#| echo: false
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                                    setup                                 ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<!-- --- -->
 
-#..........................load packages.........................
-library(tidyverse)
-library(maps)
+<!-- DATA WRANGLING ALTERNATIVE: USING THE {maps} PACKAGE -->
 
-#.........................get shape data.........................
-states <- map_data("state")
-counties <- map_data("county")
+<!-- Here, we'll wrangle our precipitation data, then join it with our US county data (courtesy of the [`{maps}` package](https://cran.r-project.org/web/packages/maps/index.html)): -->
 
-#....................import precipitation data...................
-precip_counties <- read_csv(here::here("slides", "data", "county-jan19-dec23-precip.csv"), skip = 4) |>
-  janitor::clean_names()
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##                                    setup                                 ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                               data wrangling                             ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<!-- #..........................load packages......................... -->
+<!-- library(tidyverse) -->
+<!-- library(maps) -->
 
-#..............update names of counties df variables.............
-us_counties <- counties |>
+<!-- #.........................get shape data......................... -->
+<!-- states <- map_data("state") -->
+<!-- counties <- map_data("county") -->
 
-  # select / rename cols of interest ----
-  select(state = region, county = subregion, long, lat, group, order) |>
+<!-- #....................import precipitation data................... -->
+<!-- precip_counties <- read_csv(here::here("slides", "data", "county-jan19-dec23-precip.csv"), skip = 4) |> -->
+<!--   janitor::clean_names() -->
 
-  # make all county & state names Title Case ----
-  mutate(county = str_to_title(county),
-         state = str_to_title(state)) |>
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##                               data wrangling                             ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-  # fix different spellings so that they match county names in precip data ----
-  mutate(county = case_when(
-    county == "De Kalb" ~ "DeKalb",
-    county == "De Soto" ~ "DeSoto", # works for FL & MI
-    county == "Du Page" ~ "DuPage",
-    county == "La Porte" ~ "LaPorte",
-    county == "Obrien" ~ "O'Brien",
-    county == "Prince Georges" ~ "Prince George's",
-    county == "Queen Annes" ~ "Queen Anne's",
-    county == "Ste Genevieve" ~ "Ste. Genevieve",
-    county == "La Moure" ~ "LaMoure",
-    state == "Texas" & county == "De Witt" ~ "DeWitt",
-    # county == "St. Marys" ~ "St. Mary's", # isn't working??
-    TRUE ~ county
-    )) |>
-  mutate(county = str_replace(string = county, pattern = "St ", replacement = "St. ")) |>
+<!-- #..............update names of counties df variables............. -->
+<!-- us_counties <- counties |> -->
 
-  # remove DC & Yellowstone National Park ----
-  filter(!state %in% c("District Of Columbia")) |>
-  filter(!county %in% c("Yellowstone National"))
+<!--   # select / rename cols of interest ---- -->
+<!--   select(state = region, county = subregion, long, lat, group, order) |> -->
 
+<!--   # make all county & state names Title Case ---- -->
+<!--   mutate(county = str_to_title(county), -->
+<!--          state = str_to_title(state)) |> -->
 
-#..........clean precip data & make sure var names match.........
-precip_counties_wrangled <- precip_counties |>
+<!--   # fix different spellings so that they match county names in precip data ---- -->
+<!--   mutate(county = case_when( -->
+<!--     county == "De Kalb" ~ "DeKalb", -->
+<!--     county == "De Soto" ~ "DeSoto", # works for FL & MI -->
+<!--     county == "Du Page" ~ "DuPage", -->
+<!--     county == "La Porte" ~ "LaPorte", -->
+<!--     county == "Obrien" ~ "O'Brien", -->
+<!--     county == "Prince Georges" ~ "Prince George's", -->
+<!--     county == "Queen Annes" ~ "Queen Anne's", -->
+<!--     county == "Ste Genevieve" ~ "Ste. Genevieve", -->
+<!--     county == "La Moure" ~ "LaMoure", -->
+<!--     state == "Texas" & county == "De Witt" ~ "DeWitt", -->
+<!--     # county == "St. Marys" ~ "St. Mary's", # isn't working?? -->
+<!--     TRUE ~ county -->
+<!--     )) |> -->
+<!--   mutate(county = str_replace(string = county, pattern = "St ", replacement = "St. ")) |> -->
 
-  # more intuitive col name ----
-  rename(county = name) |>
-
-  # make all county & state names lower case ----
-  mutate(county = str_to_lower(county),
-         state = str_to_lower(state)) |>
-
-  # remove recurring patterns ----
-  mutate(county = str_remove(county, pattern = " county")) |> # across all county names
-  mutate(county = str_remove(county, pattern = " parish")) |> # LA
-
-  # make state & county names Title Case again ----
-  mutate(county = str_to_title(county),
-         state = str_to_title(state)) |>
-
-  # fix different spellings so that they match county names in precip data ----
-  mutate(county = case_when(
-    county == "Dekalb" ~ "DeKalb",
-    county == "Desoto" ~ "DeSoto", # works for FL & MI
-    state == "Louisiana" & county == "De Soto" ~ "DeSoto",
-    county == "Dupage" ~ "DuPage",
-    county == "Lasalle" ~ "La Salle",
-    county == "Laporte" ~ "LaPorte",
-    county == "O'brien" ~ "O'Brien",
-    county == "Lamoure" ~ "LaMoure",
-    state == "Texas" & county == "Dewitt" ~ "DeWitt",
-    county == "St. Mary's" ~ "St. Marys",
-    county == "Suffolk City" ~ "Suffolk",
-    county == "Hampton City" ~ "Hampton",
-    county == "Virginia Beach City" ~ "Virginia Beach",
-    county == "Newport News City" ~ "Newport News",
-    county == "Norfolk City" ~ "Norfolk",
-    TRUE ~ county
-  )) |>
-
-  # remove DC & other non-counties
-  filter(!county %in% c("Washington, D.c.", "Alexandria City", "Bristol City")) |>
-
-  # coerce precip & 20th centruy avg from chr to numeric ----
-  mutate(value = as.numeric(value),
-         x1901_2000_mean = as.numeric(x1901_2000_mean)) |>
-
-  # calculate % change ----
-  mutate(perc_change = ((value - x1901_2000_mean)/x1901_2000_mean)*100) |>
-
-  # select & rename cols ----
-  select(state, county, mean_1901_2000 = x1901_2000_mean, precip = value, perc_change, anomaly_1901_2000_base_period)
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ~ used to identify which county names don't match across dfs  ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-# unique_us_counties <- us_counties |>
-#   distinct(state, county)
-#
-# unique_precip_counties <- precip_counties_wrangled |>
-#   distinct(state, county)
-#
-# missing_from_us_counties <- anti_join(unique_precip_counties, unique_us_counties) |>
-#   rename(county_in_us = county)
-#
-# missing_from_precip_counties <- anti_join(unique_us_counties, unique_precip_counties) |>
-#   rename(county_in_precip = county)
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ~ ----------------------------------------------------------  ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#............................join dfs............................
-joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties)
-```
-
-```{r}
-#| eval: false
-#| echo: true
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                                    setup                                 ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#..........................load packages.........................
-library(tidyverse)
-library(maps)
-
-#.........................get shape data.........................
-states <- map_data("state")
-counties <- map_data("county")
-
-#....................import precipitation data...................
-precip_counties <- read_csv(here::here("week5", "data", "county-jan19-dec23-precip.csv"), skip = 4) |>
-  janitor::clean_names()
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                               data wrangling                             ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#..............update names of counties df variables.............
-us_counties <- counties |>
-
-  # select / rename cols of interest ----
-  select(state = region, county = subregion, long, lat, group, order) |>
-
-  # make all county & state names Title Case ----
-  mutate(county = str_to_title(county),
-         state = str_to_title(state)) |>
-
-  # fix different spellings so that they match county names in precip data ----
-  mutate(county = case_when(
-    county == "De Kalb" ~ "DeKalb",
-    county == "De Soto" ~ "DeSoto",
-    county == "Du Page" ~ "DuPage",
-    county == "La Porte" ~ "LaPorte",
-    county == "Obrien" ~ "O'Brien",
-    county == "Prince Georges" ~ "Prince George's",
-    county == "Queen Annes" ~ "Queen Anne's",
-    county == "Ste Genevieve" ~ "Ste. Genevieve",
-    county == "La Moure" ~ "LaMoure",
-    state == "Texas" & county == "De Witt" ~ "DeWitt",
-    TRUE ~ county
-    )) |>
-  mutate(county = str_replace(string = county, pattern = "St ", replacement = "St. ")) |>
-
-  # remove DC & Yellowstone National Park ----
-  filter(!state %in% c("District Of Columbia")) |>
-  filter(!county %in% c("Yellowstone National"))
+<!--   # remove DC & Yellowstone National Park ---- -->
+<!--   filter(!state %in% c("District Of Columbia")) |> -->
+<!--   filter(!county %in% c("Yellowstone National")) -->
 
 
-#..........clean precip data & make sure var names match.........
-precip_counties_wrangled <- precip_counties |>
+<!-- #..........clean precip data & make sure var names match......... -->
+<!-- precip_counties_wrangled <- precip_counties |> -->
 
-  # more intuitive col name ----
-  rename(county = name) |>
+<!--   # more intuitive col name ---- -->
+<!--   rename(county = name) |> -->
 
-  # make all county & state names lower case ----
-  mutate(county = str_to_lower(county),
-         state = str_to_lower(state)) |>
+<!--   # make all county & state names lower case ---- -->
+<!--   mutate(county = str_to_lower(county), -->
+<!--          state = str_to_lower(state)) |> -->
 
-  # remove recurring patterns ----
-  mutate(county = str_remove(county, pattern = " county")) |>
-  mutate(county = str_remove(county, pattern = " parish")) |>
+<!--   # remove recurring patterns ---- -->
+<!--   mutate(county = str_remove(county, pattern = " county")) |> # across all county names -->
+<!--   mutate(county = str_remove(county, pattern = " parish")) |> # LA -->
 
-  # make state & county names Title Case again ----
-  mutate(county = str_to_title(county),
-         state = str_to_title(state)) |>
+<!--   # make state & county names Title Case again ---- -->
+<!--   mutate(county = str_to_title(county), -->
+<!--          state = str_to_title(state)) |> -->
 
-  # fix different spellings so that they match county names in precip data ----
-  mutate(county = case_when(
-    county == "Dekalb" ~ "DeKalb",
-    county == "Desoto" ~ "DeSoto",
-    state == "Louisiana" & county == "De Soto" ~ "DeSoto",
-    county == "Dupage" ~ "DuPage",
-    county == "Lasalle" ~ "La Salle",
-    county == "Laporte" ~ "LaPorte",
-    county == "O'brien" ~ "O'Brien",
-    county == "Lamoure" ~ "LaMoure",
-    state == "Texas" & county == "Dewitt" ~ "DeWitt",
-    county == "St. Mary's" ~ "St. Marys",
-    county == "Suffolk City" ~ "Suffolk",
-    county == "Hampton City" ~ "Hampton",
-    county == "Virginia Beach City" ~ "Virginia Beach",
-    county == "Newport News City" ~ "Newport News",
-    county == "Norfolk City" ~ "Norfolk",
-    TRUE ~ county
-  )) |>
+<!--   # fix different spellings so that they match county names in precip data ---- -->
+<!--   mutate(county = case_when( -->
+<!--     county == "Dekalb" ~ "DeKalb", -->
+<!--     county == "Desoto" ~ "DeSoto", # works for FL & MI -->
+<!--     state == "Louisiana" & county == "De Soto" ~ "DeSoto", -->
+<!--     county == "Dupage" ~ "DuPage", -->
+<!--     county == "Lasalle" ~ "La Salle", -->
+<!--     county == "Laporte" ~ "LaPorte", -->
+<!--     county == "O'brien" ~ "O'Brien", -->
+<!--     county == "Lamoure" ~ "LaMoure", -->
+<!--     state == "Texas" & county == "Dewitt" ~ "DeWitt", -->
+<!--     county == "St. Mary's" ~ "St. Marys", -->
+<!--     county == "Suffolk City" ~ "Suffolk", -->
+<!--     county == "Hampton City" ~ "Hampton", -->
+<!--     county == "Virginia Beach City" ~ "Virginia Beach", -->
+<!--     county == "Newport News City" ~ "Newport News", -->
+<!--     county == "Norfolk City" ~ "Norfolk", -->
+<!--     TRUE ~ county -->
+<!--   )) |> -->
 
-  # remove DC & other non-counties
-  filter(!county %in% c("Washington, D.c.", "Alexandria City", "Bristol City")) |>
+<!--   # remove DC & other non-counties -->
+<!--   filter(!county %in% c("Washington, D.c.", "Alexandria City", "Bristol City")) |> -->
 
-  # coerce precip & 20th centruy avg from chr to numeric ----
-  mutate(value = as.numeric(value),
-         x1901_2000_mean = as.numeric(x1901_2000_mean)) |>
+<!--   # coerce precip & 20th centruy avg from chr to numeric ---- -->
+<!--   mutate(value = as.numeric(value), -->
+<!--          x1901_2000_mean = as.numeric(x1901_2000_mean)) |> -->
 
-  # calculate % change ----
-  mutate(perc_change = ((value - x1901_2000_mean)/x1901_2000_mean)*100) |>
+<!--   # calculate % change ---- -->
+<!--   mutate(perc_change = ((value - x1901_2000_mean)/x1901_2000_mean)*100) |> -->
 
-  # select & rename cols ----
-  select(state, county, mean_1901_2000 = x1901_2000_mean, precip = value, perc_change, anomaly_1901_2000_base_period)
+<!--   # select & rename cols ---- -->
+<!--   select(state, county, mean_1901_2000 = x1901_2000_mean, precip = value, perc_change, anomaly_1901_2000_base_period) -->
 
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ~ used to identify which county names don't match across dfs  ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##  ~ used to identify which county names don't match across dfs  ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-# unique_us_counties <- us_counties |>
-#   distinct(state, county)
-#
-# unique_precip_counties <- precip_counties_wrangled |>
-#   distinct(state, county)
-#
-# missing_from_us_counties <- anti_join(unique_precip_counties, unique_us_counties) |>
-#   rename(county_in_us = county)
-#
-# missing_from_precip_counties <- anti_join(unique_us_counties, unique_precip_counties) |>
-#   rename(county_in_precip = county)
+<!-- # unique_us_counties <- us_counties |> -->
+<!-- #   distinct(state, county) -->
+<!-- # -->
+<!-- # unique_precip_counties <- precip_counties_wrangled |> -->
+<!-- #   distinct(state, county) -->
+<!-- # -->
+<!-- # missing_from_us_counties <- anti_join(unique_precip_counties, unique_us_counties) |> -->
+<!-- #   rename(county_in_us = county) -->
+<!-- # -->
+<!-- # missing_from_precip_counties <- anti_join(unique_us_counties, unique_precip_counties) |> -->
+<!-- #   rename(county_in_precip = county) -->
 
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ~ ----------------------------------------------------------  ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##  ~ ----------------------------------------------------------  ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-#............................join dfs............................
-joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties)
-```
+<!-- #............................join dfs............................ -->
+<!-- joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties) -->
+<!-- ``` -->
 
----
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##                                    setup                                 ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!-- #..........................load packages......................... -->
+<!-- library(tidyverse) -->
+<!-- library(maps) -->
+
+<!-- #.........................get shape data......................... -->
+<!-- states <- map_data("state") -->
+<!-- counties <- map_data("county") -->
+
+<!-- #....................import precipitation data................... -->
+<!-- precip_counties <- read_csv(here::here("week5", "data", "county-jan19-dec23-precip.csv"), skip = 4) |> -->
+<!--   janitor::clean_names() -->
+
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##                               data wrangling                             ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!-- #..............update names of counties df variables............. -->
+<!-- us_counties <- counties |> -->
+
+<!--   # select / rename cols of interest ---- -->
+<!--   select(state = region, county = subregion, long, lat, group, order) |> -->
+
+<!--   # make all county & state names Title Case ---- -->
+<!--   mutate(county = str_to_title(county), -->
+<!--          state = str_to_title(state)) |> -->
+
+<!--   # fix different spellings so that they match county names in precip data ---- -->
+<!--   mutate(county = case_when( -->
+<!--     county == "De Kalb" ~ "DeKalb", -->
+<!--     county == "De Soto" ~ "DeSoto", -->
+<!--     county == "Du Page" ~ "DuPage", -->
+<!--     county == "La Porte" ~ "LaPorte", -->
+<!--     county == "Obrien" ~ "O'Brien", -->
+<!--     county == "Prince Georges" ~ "Prince George's", -->
+<!--     county == "Queen Annes" ~ "Queen Anne's", -->
+<!--     county == "Ste Genevieve" ~ "Ste. Genevieve", -->
+<!--     county == "La Moure" ~ "LaMoure", -->
+<!--     state == "Texas" & county == "De Witt" ~ "DeWitt", -->
+<!--     TRUE ~ county -->
+<!--     )) |> -->
+<!--   mutate(county = str_replace(string = county, pattern = "St ", replacement = "St. ")) |> -->
+
+<!--   # remove DC & Yellowstone National Park ---- -->
+<!--   filter(!state %in% c("District Of Columbia")) |> -->
+<!--   filter(!county %in% c("Yellowstone National")) -->
+
+
+<!-- #..........clean precip data & make sure var names match......... -->
+<!-- precip_counties_wrangled <- precip_counties |> -->
+
+<!--   # more intuitive col name ---- -->
+<!--   rename(county = name) |> -->
+
+<!--   # make all county & state names lower case ---- -->
+<!--   mutate(county = str_to_lower(county), -->
+<!--          state = str_to_lower(state)) |> -->
+
+<!--   # remove recurring patterns ---- -->
+<!--   mutate(county = str_remove(county, pattern = " county")) |> -->
+<!--   mutate(county = str_remove(county, pattern = " parish")) |> -->
+
+<!--   # make state & county names Title Case again ---- -->
+<!--   mutate(county = str_to_title(county), -->
+<!--          state = str_to_title(state)) |> -->
+
+<!--   # fix different spellings so that they match county names in precip data ---- -->
+<!--   mutate(county = case_when( -->
+<!--     county == "Dekalb" ~ "DeKalb", -->
+<!--     county == "Desoto" ~ "DeSoto", -->
+<!--     state == "Louisiana" & county == "De Soto" ~ "DeSoto", -->
+<!--     county == "Dupage" ~ "DuPage", -->
+<!--     county == "Lasalle" ~ "La Salle", -->
+<!--     county == "Laporte" ~ "LaPorte", -->
+<!--     county == "O'brien" ~ "O'Brien", -->
+<!--     county == "Lamoure" ~ "LaMoure", -->
+<!--     state == "Texas" & county == "Dewitt" ~ "DeWitt", -->
+<!--     county == "St. Mary's" ~ "St. Marys", -->
+<!--     county == "Suffolk City" ~ "Suffolk", -->
+<!--     county == "Hampton City" ~ "Hampton", -->
+<!--     county == "Virginia Beach City" ~ "Virginia Beach", -->
+<!--     county == "Newport News City" ~ "Newport News", -->
+<!--     county == "Norfolk City" ~ "Norfolk", -->
+<!--     TRUE ~ county -->
+<!--   )) |> -->
+
+<!--   # remove DC & other non-counties -->
+<!--   filter(!county %in% c("Washington, D.c.", "Alexandria City", "Bristol City")) |> -->
+
+<!--   # coerce precip & 20th centruy avg from chr to numeric ---- -->
+<!--   mutate(value = as.numeric(value), -->
+<!--          x1901_2000_mean = as.numeric(x1901_2000_mean)) |> -->
+
+<!--   # calculate % change ---- -->
+<!--   mutate(perc_change = ((value - x1901_2000_mean)/x1901_2000_mean)*100) |> -->
+
+<!--   # select & rename cols ---- -->
+<!--   select(state, county, mean_1901_2000 = x1901_2000_mean, precip = value, perc_change, anomaly_1901_2000_base_period) -->
+
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##  ~ used to identify which county names don't match across dfs  ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!-- # unique_us_counties <- us_counties |> -->
+<!-- #   distinct(state, county) -->
+<!-- # -->
+<!-- # unique_precip_counties <- precip_counties_wrangled |> -->
+<!-- #   distinct(state, county) -->
+<!-- # -->
+<!-- # missing_from_us_counties <- anti_join(unique_precip_counties, unique_us_counties) |> -->
+<!-- #   rename(county_in_us = county) -->
+<!-- # -->
+<!-- # missing_from_precip_counties <- anti_join(unique_us_counties, unique_precip_counties) |> -->
+<!-- #   rename(county_in_precip = county) -->
+
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##  ~ ----------------------------------------------------------  ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!-- #............................join dfs............................ -->
+<!-- joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties) -->
+<!-- ``` -->
+
+<!-- --- -->
 
 ## {#base-map data-menu-title="Create base map"} 
 
@@ -2868,10 +2954,10 @@ joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties)
 <hr>
 
 ```{r}
-#| eval: false
-#| echo: false
+#| eval: true
+#| echo: true
 #| output-location: column
-base_map <- ggplot(joined_precip_us_counties) +
+base_map <- ggplot(joined_precip_geom) +
   geom_sf(aes(fill = perc_change), linewidth = 0.1) +
   labs(title = "5-year precipitation compared with the 20th century average",
        subtitle = "January 2019 - December 2023",
@@ -2886,71 +2972,87 @@ base_map <- ggplot(joined_precip_us_counties) +
 base_map
 ```
 
-```{r}
-#| eval: true
-#| echo: true
-#| output-location: column
-# 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ----
-base_map <- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) +
+. . . 
 
-  # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ----
-  geom_polygon(data = joined_precip_us_counties, aes(fill = perc_change)) +
-
-  # darken state lines ----
-  geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) +
-
-  # update labels ----
-  labs(title = "5-year precipitation compared with the 20th century average",
-       caption = "Source: National Centers for Environmental Information") +
-
-  # set theme to clean up appearance ----
-  theme_void() +
-
-  # theme adjustments ----
-  theme(
-    legend.position = "bottom",
-    legend.title = element_blank(),
-    plot.caption = element_text(face = "italic", margin = margin(t = 20, r = 0, b = 0, l = 0))
-  )
-
-base_map
-```
+<br>
 
 ::: {.center-text}
-This looks a bit wonky, so we'll need to specify a projection, next.
+Because we want to map precipitation relative to the 20th century average (e.g. has precipitation for a given region over the last 5 years been *above* or *below* the average), a **divering color palette** makes a lot of sense.
 :::
 
 ::: {.footer}
-[Eric C. Anderson's](https://github.com/eriqande) [Making Maps with R](https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html) tutorial was a wonderful resource in getting started with the `{maps}` package.
+You may notice that Connecticut is missing most of it's data. After some digging, I learned that CT recently (2022) replaced it's eight counties with nine planning regions as county-equivalents (read more in the [UC Census Bureau Notice on 06/06/2022](https://www.federalregister.gov/documents/2022/06/06/2022-12063/change-to-county-equivalents-in-the-state-of-connecticut)). I couldn't quite make sense of how to match old county names to new planning regions, as there's a decent amount of [overlap](https://en.wikipedia.org/wiki/List_of_counties_in_Connecticut#/media/File:CT_Planning_vs_County_Census.png), soooo I gave up (for now) {{< fa face-grin-beam-sweat title="grinning face with sweat dripping from forehead" >}}. 
 :::
 
----
+<!-- --- -->
 
-## {#map-projection data-menu-title="Map projection"}
+<!-- OLD  -->
 
-[Apply a Mercator projection]{.slide-title}
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
+<!-- #| output-location: column -->
+<!-- # 'group' controls whether adjacent points are connected by lines (each county is a "group," therefore points are connected) ---- -->
+<!-- base_map <- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + -->
 
-<hr>
+<!--   # plot precip values by county; geom_polygon() drawn lines between points and “closes them up” (i.e. draws a line from the last point back to the first point) ---- -->
+<!--   geom_polygon(data = joined_precip_us_counties, aes(fill = perc_change)) + -->
 
-[Lambert conformal conic](https://en.wikipedia.org/wiki/Lambert_conformal_conic_projection) and [Mercator projections](https://en.wikipedia.org/wiki/Mercator_projection) are both commonly used for mapping the United States. Here, we'll apply the latter:
+<!--   # darken state lines ---- -->
+<!--   geom_polygon(color = "#2F2D2C", fill = NA, linewidth = 0.1) + -->
 
-```{r}
-#| eval: true
-#| echo: true
-#| fig-align: "center"
-base_map_proj <- base_map +
-  coord_map(projection = "mercator")
+<!--   # update labels ---- -->
+<!--   labs(title = "5-year precipitation compared with the 20th century average", -->
+<!--        caption = "Source: National Centers for Environmental Information") + -->
 
-base_map_proj
-```
+<!--   # set theme to clean up appearance ---- -->
+<!--   theme_void() + -->
 
-::: {.notes}
-Alternatively:
+<!--   # theme adjustments ---- -->
+<!--   theme( -->
+<!--     legend.position = "bottom", -->
+<!--     legend.title = element_blank(), -->
+<!--     plot.caption = element_text(face = "italic", margin = margin(t = 20, r = 0, b = 0, l = 0)) -->
+<!--   ) -->
 
-- fix the relationship between lat & long by using `coord_fixed(1.3)`
-- apply a Lambert conformal projection, conic projection, using `coord_fixed(projection = "conic", lat0 = 30)`
-- NOTE: `coord_map()` has been been superceded by `coord_sf()`: https://ggplot2.tidyverse.org/reference/coord_map.html
-:::
+<!-- base_map -->
+<!-- ``` -->
+
+<!-- ::: {.center-text} -->
+<!-- This looks a bit wonky, so we'll need to specify a projection, next. -->
+<!-- ::: -->
+
+<!-- ::: {.footer} -->
+<!-- [Eric C. Anderson's](https://github.com/eriqande) [Making Maps with R](https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html) tutorial was a wonderful resource in getting started with the `{maps}` package. -->
+<!-- ::: -->
+
+<!-- --- -->
+
+<!-- ## {#map-projection data-menu-title="Map projection"} -->
+
+<!-- [Apply a Mercator projection]{.slide-title} -->
+
+<!-- <hr> -->
+
+<!-- [Lambert conformal conic](https://en.wikipedia.org/wiki/Lambert_conformal_conic_projection) and [Mercator projections](https://en.wikipedia.org/wiki/Mercator_projection) are both commonly used for mapping the United States. Here, we'll apply the latter: -->
+
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- #| fig-align: "center" -->
+<!-- base_map_proj <- base_map + -->
+<!--   coord_map(projection = "mercator") -->
+
+<!-- base_map_proj -->
+<!-- ``` -->
+
+<!-- ::: {.notes} -->
+<!-- Alternatively: -->
+
+<!-- - fix the relationship between lat & long by using `coord_fixed(1.3)` -->
+<!-- - apply a Lambert conformal projection, conic projection, using `coord_fixed(projection = "conic", lat0 = 30)` -->
+<!-- - NOTE: `coord_map()` has been been superceded by `coord_sf()`: https://ggplot2.tidyverse.org/reference/coord_map.html -->
+<!-- ::: -->
 
 ---
 
@@ -3078,7 +3180,7 @@ my_brew_palette11
 #| eval: true
 #| echo: true
 #| fig-align: "center"
-base_map_proj + 
+base_map + 
   scale_fill_gradientn(colors = my_brew_palette11,
                        labels = scales::label_percent(scale = 1),
                        breaks = scales::breaks_width(width = 10)) +
@@ -3099,7 +3201,7 @@ base_map_proj +
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-base_map_proj + 
+base_map + 
   scale_fill_gradientn(colors = my_brew_palette11,
                        labels = scales::label_percent(scale = 1),
                        breaks = scales::breaks_width(width = 10)) +
@@ -3120,7 +3222,7 @@ base_map_proj +
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-base_map_proj + 
+base_map + 
   scale_fill_gradientn(colors = my_brew_palette11,
                        labels = scales::label_percent(scale = 1),
                        breaks = scales::breaks_width(width = 10)) +
@@ -3149,14 +3251,14 @@ As a result, **our map may be misleading** -- it would appear as if more countie
 #| echo: true
 #| fig-align: "center"
 #| code-line-numbers: "5-8"
-base_map_proj + 
+base_map + 
   scale_fill_gradientn(colors = my_brew_palette11,
                        labels = scales::label_percent(scale = 1),
                        breaks = scales::breaks_width(width = 10),
                        values = scales::rescale(x = c(
-                         min(joined_precip_us_counties$perc_change),
+                         min(na.omit(joined_precip_geom)$perc_change),
                          0,
-                         max(joined_precip_us_counties$perc_change)))) +
+                         max(na.omit(joined_precip_geom)$perc_change)))) +
   guides(fill = guide_colorbar(label.hjust = 0.5,
                                barwidth = 15, barheight = 0.75))
 ```
@@ -3174,14 +3276,14 @@ base_map_proj +
 #| echo: false
 #| fig-align: "center"
 #| code-line-numbers: "5-8"
-base_map_proj + 
+base_map + 
   scale_fill_gradientn(colors = my_brew_palette11,
                        labels = scales::label_percent(scale = 1),
                        breaks = scales::breaks_width(width = 10),
                        values = scales::rescale(x = c(
-                         min(joined_precip_us_counties$perc_change),
+                         min(na.omit(joined_precip_geom)$perc_change),
                          0,
-                         max(joined_precip_us_counties$perc_change)))) +
+                         max(na.omit(joined_precip_geom)$perc_change)))) +
   guides(fill = guide_colorbar(label.hjust = 0.5,
                                barwidth = 15, barheight = 0.75))
 ```
@@ -3212,7 +3314,7 @@ Preview the palette using `display.brewer.pal()` with our desired number of hues
 #| eval: true
 #| echo: true
 #| fig-align: "center"
-#| out-width: "100%"
+#| out-width: "90%"
 RColorBrewer::display.brewer.pal(n = 10, name = 'BrBG')
 ```
 :::
@@ -3296,13 +3398,13 @@ Breaks set to a width of **5** & rescaled with 0 at center
 #| echo: true
 #| fig-align: "center"
 #| code-line-numbers: "4-8"
-base_map_proj + 
+base_map + 
   scale_fill_stepsn(colors = my_brew_palette10,
                     labels = scales::label_percent(scale = 1),
                     values = scales::rescale(x = c(
-                         min(joined_precip_us_counties$perc_change),
+                         min(na.omit(joined_precip_geom)$perc_change),
                          0,
-                         max(joined_precip_us_counties$perc_change))), 
+                         max(na.omit(joined_precip_geom)$perc_change))), 
                     breaks = scales::breaks_width(width = 5)) +
   guides(fill = guide_colorsteps(barwidth = 25, barheight = 0.75))
 ```
@@ -3339,14 +3441,14 @@ Unclassed map:
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-base_map_proj + 
+base_map + 
   scale_fill_gradientn(colors = my_brew_palette11,
                        labels = scales::label_percent(scale = 1),
                        breaks = scales::breaks_width(width = 10),
                        values = scales::rescale(x = c(
-                         min(joined_precip_us_counties$perc_change),
+                         min(na.omit(joined_precip_geom)$perc_change),
                          0,
-                         max(joined_precip_us_counties$perc_change)))) +
+                         max(na.omit(joined_precip_geom)$perc_change)))) +
   guides(fill = guide_colorbar(label.hjust = 0.5,
                                barwidth = 15, barheight = 0.75))
 ```
@@ -3363,7 +3465,7 @@ Classed map:
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-base_map_proj + 
+base_map + 
   scale_fill_stepsn(colors = my_brew_palette10,
                     labels = scales::label_percent(scale = 1),
                     breaks = scales::breaks_width(width = 10)) +
