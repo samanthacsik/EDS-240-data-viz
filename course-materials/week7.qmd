@@ -16,7 +16,7 @@ toc: true
 
 ## Discussion Materials
 
-*Coming soon!*
+- [The beauty of data visualization](https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization?referrer=playlist-making_sense_of_too_much_data), a TED Talk by [David McCandless](https://davidmccandless.com/) (founder of [information is beautiful](https://informationisbeautiful.net/))
 
 ## Assignment Reminders
 

@@ -690,7 +690,7 @@ Is the y-axis necessary for this plot? What's the author's goal? How do annotati
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/neil-without-annotations.png")
+knitr::include_graphics("images/week5/neil-without-annotations.png")
 ```
 :::
 
@@ -700,7 +700,7 @@ knitr::include_graphics("images/week4/neil-without-annotations.png")
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/neil-with-annotations.png")
+knitr::include_graphics("images/week5/neil-with-annotations.png")
 ```
 :::
 
@@ -747,7 +747,7 @@ countdown::countdown(
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/burn-murdoch-covid.png")
+knitr::include_graphics("images/week5/burn-murdoch-covid.png")
 ```
 
 <br>
@@ -822,7 +822,7 @@ The area under each curve corresponds to the total number of male and female pas
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/wilke-context-overlapping.png")
+knitr::include_graphics("images/week5/wilke-context-overlapping.png")
 ```
 :::
 
@@ -837,7 +837,7 @@ The colored areas show the density estimates of the ages of M and F passengers, 
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/wilke-context-separate.png")
+knitr::include_graphics("images/week5/wilke-context-separate.png")
 ```
 :::
 
@@ -867,7 +867,7 @@ Add vertical (`geom_vline()`) or horizontal (`geom_hline()`) lines at important 
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/mko_temps.png")
+knitr::include_graphics("images/week5/mko_temps.png")
 ```
 :::
 
@@ -912,7 +912,7 @@ Bad
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/x-y-bad.png")
+knitr::include_graphics("images/week5/x-y-bad.png")
 ```
 :::
 
@@ -925,7 +925,7 @@ Better
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/x-y-better.png")
+knitr::include_graphics("images/week5/x-y-better.png")
 ```
 :::
 
@@ -938,7 +938,7 @@ Best
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/x-y-best.png")
+knitr::include_graphics("images/week5/x-y-best.png")
 ```
 :::
 
@@ -1181,7 +1181,7 @@ It can be nearly impossible to easily process many different variables, colors, 
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/overload-map.png")
+knitr::include_graphics("images/week5/overload-map.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
@@ -1203,7 +1203,7 @@ It can be nearly impossible to easily process many different variables, colors, 
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/idk-plot.png")
+knitr::include_graphics("images/week5/idk-plot.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
@@ -1225,7 +1225,7 @@ It can be nearly impossible to easily process many different variables, colors, 
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/parallel-plot.png")
+knitr::include_graphics("images/week5/parallel-plot.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
@@ -1280,7 +1280,7 @@ knitr::include_graphics("images/week4/parallel-plot.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/dual-axis1.png")
+knitr::include_graphics("images/week5/dual-axis1.png")
 ```
 :::
 
@@ -1315,7 +1315,7 @@ Example from [Why not to use two axes, and what to use instead](https://blog.dat
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/dual-axis1.png")
+knitr::include_graphics("images/week5/dual-axis1.png")
 ```
 :::
 
@@ -1325,7 +1325,7 @@ knitr::include_graphics("images/week4/dual-axis1.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/dual-axis2.png")
+knitr::include_graphics("images/week5/dual-axis2.png")
 ```
 :::
 
@@ -1362,7 +1362,7 @@ So while the chart looks like the German GDP and the global GDP go up at roughly
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/dual-axis1.png")
+knitr::include_graphics("images/week5/dual-axis1.png")
 ```
 :::
 
@@ -1372,7 +1372,7 @@ knitr::include_graphics("images/week4/dual-axis1.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/dual-axis3.png")
+knitr::include_graphics("images/week5/dual-axis3.png")
 ```
 :::
 
@@ -1405,7 +1405,7 @@ Separate your data series into **side-by-side charts** -- this allows us to crea
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/dual-two-charts.png")
+knitr::include_graphics("images/week5/dual-two-charts.png")
 ```
 
 <br>
@@ -1431,7 +1431,7 @@ Example from [Why not to use two axes, and what to use instead](https://blog.dat
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/dual-axes-indexed.png")
+knitr::include_graphics("images/week5/dual-axes-indexed.png")
 ```
 
 <br>
@@ -1457,7 +1457,7 @@ Consider **prioritizing and plotting the more important of the two data series**
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/dual-labeling.png")
+knitr::include_graphics("images/week5/dual-labeling.png")
 ```
 
 <br>
@@ -1483,7 +1483,7 @@ A **connected scatterplot** places one variable on the y-axis and the other on t
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/connected-scatterplot.png")
+knitr::include_graphics("images/week5/connected-scatterplot.png")
 ```
 
 <br>
@@ -1512,7 +1512,7 @@ Example from [Why not to use two axes, and what to use instead](https://blog.dat
 #| echo: false
 #| fig-align: "center"
 #| out-width: "70%"
-knitr::include_graphics("images/week4/single-pie.png")
+knitr::include_graphics("images/week5/single-pie.png")
 ```
 :::
 
@@ -1547,7 +1547,7 @@ Examples from [Allison Horst](https://docs.google.com/presentation/d/e/2PACX-1vS
 #| echo: false
 #| fig-align: "center"
 #| out-width: "70%"
-knitr::include_graphics("images/week4/single-pie.png")
+knitr::include_graphics("images/week5/single-pie.png")
 ```
 :::
 
@@ -1557,7 +1557,7 @@ knitr::include_graphics("images/week4/single-pie.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "60%"
-knitr::include_graphics("images/week4/single-bar.png")
+knitr::include_graphics("images/week5/single-bar.png")
 ```
 :::
 
@@ -1586,7 +1586,7 @@ Examples from [Allison Horst](https://docs.google.com/presentation/d/e/2PACX-1vS
 #| echo: false
 #| fig-align: "center"
 #| out-width: "60%"
-knitr::include_graphics("images/week4/multiple-pies.png")
+knitr::include_graphics("images/week5/multiple-pies.png")
 ```
 
 <br>
@@ -1613,7 +1613,7 @@ Examples from [Allison Horst](https://docs.google.com/presentation/d/e/2PACX-1vS
 #| echo: false
 #| fig-align: "center"
 #| out-width: "60%"
-knitr::include_graphics("images/week4/good-pie.png")
+knitr::include_graphics("images/week5/good-pie.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
@@ -1664,7 +1664,7 @@ As an alternative to a pie chart, consider [**treemaps**](https://www.data-to-vi
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/treemap-simple.png")
+knitr::include_graphics("images/week5/treemap-simple.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
@@ -1678,7 +1678,7 @@ knitr::include_graphics("images/week4/treemap-simple.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "60%"
-knitr::include_graphics("images/week4/treemap-nested.png")
+knitr::include_graphics("images/week5/treemap-nested.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
@@ -1705,7 +1705,7 @@ knitr::include_graphics("images/week4/treemap-nested.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/occlusion.png")
+knitr::include_graphics("images/week5/occlusion.png")
 ```
 
 <br>
@@ -1731,7 +1731,7 @@ Source: [Data Visualization: Why 3D charts are a terrible idea](https://medium.c
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/perspective-distortion.png")
+knitr::include_graphics("images/week5/perspective-distortion.png")
 ```
 
 <br>
@@ -1757,7 +1757,7 @@ Consider how gray and blue areas visually compare in the 3D version? What about 
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/3d-pie.png")
+knitr::include_graphics("images/week5/3d-pie.png")
 ```
 
 <br>
@@ -1783,7 +1783,7 @@ A plot with three genuine position scales (x, y, and z) to represent `mtcars` da
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/3d-fuel-eff.png")
+knitr::include_graphics("images/week5/3d-fuel-eff.png")
 ```
 
 ::: {.footer}
@@ -1807,7 +1807,7 @@ If we primarily care about fuel efficiency as the response variable, **plot it t
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/2d-fuel-eff.png")
+knitr::include_graphics("images/week5/2d-fuel-eff.png")
 ```
 
 <br>
@@ -1833,7 +1833,7 @@ Source: [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/no-3
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/bubble-fuel-eff.png")
+knitr::include_graphics("images/week5/bubble-fuel-eff.png")
 ```
 
 <br>
@@ -1885,7 +1885,7 @@ Data visualization is both a science and an *art*. **Following these rules / bes
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
-knitr::include_graphics("images/week4/iraq-bloody-toll-alt.png")
+knitr::include_graphics("images/week5/iraq-bloody-toll-alt.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
@@ -1918,7 +1918,7 @@ Image & caption source: [Master the rules - then break them](https://www.datylon
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/clearing-air.png")
+knitr::include_graphics("images/week5/clearing-air.png")
 ```
 
 ::: {.center-text .gray-text .body-text-s}
@@ -1966,7 +1966,7 @@ countdown::countdown(
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/clearing-air-annotated.png")
+knitr::include_graphics("images/week5/clearing-air-annotated.png")
 ```
 
 ::: {.center-text .gray-text .body-text-s}
@@ -1989,7 +1989,7 @@ Annotations adapted from [@chezVoila](https://twitter.com/chezVoila/status/11366
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/thompson-penguins.png")
+knitr::include_graphics("images/week5/thompson-penguins.png")
 ```
 
 ::: {.center-text .gray-text .body-text-s}
@@ -2044,7 +2044,7 @@ countdown::countdown(
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week4/ingeman-etal-fig3.png")
+knitr::include_graphics("images/week5/ingeman-etal-fig3.png")
 ```
 
 ::: {.body-text-xs .gray-text}
@@ -2146,9 +2146,33 @@ countdown::countdown(
 
 ---
 
-##  {#end-break data-menu-title="# END #" background="#047C90"}
+##  {#end-break data-menu-title="# Break #" background="#047C90"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">See you next week!</p>
-<p class="caption-text">*~ This is the end of Lesson 3 (of 3) ~*</p>
+<p class="custom-subtitle bottombr">{{< fa mug-hot title="a mug with steam rising out the top" >}} Take a Break</p>
+<p class="caption-text">*~ This is the end of Lesson 1 (of 2) ~*</p>
 </div>
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+
+<!-- ##  {#end-break data-menu-title="# END #" background="#047C90"} -->
+
+<!-- <div class="page-center vertical-center"> -->
+<!-- <p class="custom-subtitle bottombr">See you next week!</p> -->
+<!-- <p class="caption-text">*~ This is the end of Lesson 3 (of 3) ~*</p> -->
+<!-- </div> -->

@@ -48,7 +48,7 @@ editor_options:
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week5/nunito-type.png")
+knitr::include_graphics("images/week6/nunito-type.png")
 ```
 :::
 
@@ -61,7 +61,7 @@ knitr::include_graphics("images/week5/nunito-type.png")
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week5/nunito-fonts.png")
+knitr::include_graphics("images/week6/nunito-fonts.png")
 ```
 :::
 
@@ -98,7 +98,7 @@ knitr::include_graphics("images/week5/nunito-fonts.png")
 #| echo: false
 #| out-width: "70%"
 #| fig-align: "center"
-knitr::include_graphics("images/week5/psychology-fonts.png")
+knitr::include_graphics("images/week6/psychology-fonts.png")
 ```
 
 :::
@@ -148,7 +148,7 @@ Typefaces and fonts communicate beyond more than just the written text -- they c
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week5/find-you.png")
+knitr::include_graphics("images/week6/find-you.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
@@ -181,7 +181,7 @@ Interested in font pyschology? Check out this [short video](https://www.youtube.
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week5/sans-vs-serif-fonts.png")
+knitr::include_graphics("images/week6/sans-vs-serif-fonts.png")
 ```
 :::
 
@@ -220,7 +220,7 @@ Different typefaces display numbers differently. Serif fonts tend to have "oldst
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week5/lining.png")
+knitr::include_graphics("images/week6/lining.png")
 ```
 
 ::: {.footer}
@@ -250,7 +250,7 @@ Typefaces with **tabular figures** print **every character with equal width** --
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week5/tabular-figures.png")
+knitr::include_graphics("images/week6/tabular-figures.png")
 ```
 :::
 
@@ -260,7 +260,7 @@ knitr::include_graphics("images/week5/tabular-figures.png")
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week5/tabular-google.svg")
+knitr::include_graphics("images/week6/tabular-google.svg")
 ```
 :::
 
@@ -290,7 +290,7 @@ Confirm that all symbols (aka **glyphs**) that you need exist *and* that they lo
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week5/symbols.png")
+knitr::include_graphics("images/week6/symbols.png")
 ```
 
 <br>
@@ -321,7 +321,7 @@ Lisa Charlotte Muth*
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week5/bold.png")
+knitr::include_graphics("images/week6/bold.png")
 ```
 
 <br>
@@ -348,7 +348,7 @@ Thin (light-weight fonts) fonts are hard to read. **Only use them in a high-cont
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week5/bold.png")
+knitr::include_graphics("images/week6/bold.png")
 ```
 
 <br>
@@ -375,7 +375,7 @@ Lisa Charlotte Muth*
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week5/large-enough-text.png")
+knitr::include_graphics("images/week6/large-enough-text.png")
 ```
 
 <br>
@@ -402,7 +402,7 @@ Lisa Charlotte Muth*
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week5/contrast-ratio.png")
+knitr::include_graphics("images/week6/contrast-ratio.png")
 ```
 
 <br>
@@ -428,7 +428,7 @@ Door to Europe](https://www.nytimes.com/interactive/2015/09/15/world/europe/migr
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week5/uppercase.png")
+knitr::include_graphics("images/week6/uppercase.png")
 ```
 
 <br>
@@ -436,6 +436,32 @@ knitr::include_graphics("images/week5/uppercase.png")
 ::: {.footer}
 *Example from [Which fonts to use for your charts and tables](https://blog.datawrapper.de/fonts-for-data-visualization/), by 
 Lisa Charlotte Muth*
+:::
+
+---
+
+## {#typographic-hierarchy data-menu-title="Typographic hierarchy"} 
+
+[Typographic hierarchy]{.slide-title}
+
+<hr>
+
+**No one wants to read a wall of text.** You can use font size, style, color, spacing, and typeface (or combinations of these) to create a hierarchy that guide your readers.
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week6/hierarchy.png")
+```
+
+<br>
+
+::: {.center-text .gray-text .body-text-s}
+Source: [The UX Designer’s Guide to Typography](https://www.interaction-design.org/literature/article/the-ux-designer-s-guide-to-typography)
 :::
 
 ---
@@ -472,34 +498,52 @@ Lisa Charlotte Muth*
 There are *lots* of excellent resources out there for choosing the right typeface / font check out the [resources page](https://samanthacsik.github.io/EDS-240-data-viz/resources.html#typography) on the course website for some recommendations.
 :::
 
-::: notes
-Horror films, by Cristophe Nicault <https://github.com/cnicault/tidytuesday/tree/master/2022/2022-44-horror-movies>
-:::
-
 ---
 
-## {#typographic-hierarchy data-menu-title="Typographic hierarchy"} 
-
-[Typographic hierarchy]{.slide-title}
-
-<hr>
-
-**No one wants to read a wall of text.** You can use font size, style, color, spacing, and typeface (or combinations of these) to create a hierarchy that guide your readers.
-
-<br>
+## {#nicault-horror data-menu-title="C Nicault (Horror Movies)"} 
 
 ```{r}
 #| eval: true
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week5/hierarchy.png")
+knitr::include_graphics("images/week6/nicault-horror.png")
 ```
 
-<br>
+::: {.center-text .body-text-s .gray-text}
+Horror Movies, by [Cristophe Nicault](https://www.christophenicault.com/) ([source code](https://github.com/cnicault/tidytuesday/blob/master/2022/2022-44-horror-movies/horror_movies.qmd))
+:::
 
-::: {.center-text .gray-text .body-text-s}
-Source: [The UX Designer’s Guide to Typography](https://www.interaction-design.org/literature/article/the-ux-designer-s-guide-to-typography)
+---
+
+## {#anyene-hbcu data-menu-title="I Anyene (HBCUs)"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week6/anyene-hbcu.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+HBCUs, by [Ijeamaka Anyene](https://ijeamaka-anyene.netlify.app/) ([source code](https://github.com/Ijeamakaanyene/tidytuesday/blob/master/scripts/2021_04_hbcu.Rmd))
+:::
+
+---
+
+## {#rennie-rladies data-menu-title="N Rennie (R-Ladies Events)"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week6/rennie-rladies.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+R-Ladies Chapter Events, by [Nicola Rennie](https://ijeamaka-anyene.netlify.app/) ([source code](https://github.com/nrennie/tidytuesday/tree/main/2023/2023-11-21)) | Font inspiried by [R-Ladies Global](https://rladies.org/)
 :::
 
 ---

@@ -57,7 +57,7 @@ website:
             url:  https://github.com/samanthacsik/EDS-240-data-viz/issues
   page-footer:
     background: dark
-    right: This website is built with {{< fa brands r-project title="R Project" >}} and [Quarto](https://quarto.org/)
+    right: This website is built with [{{< fa brands github title="the github octocat logo" >}}](https://github.com/samanthacsik/EDS-240-data-viz), [{{< fa brands r-project title="R Project" >}}](https://www.r-project.org/about.html) and [Quarto](https://quarto.org/)
     left: |
       <img src="images/bren-logo.png" alt="The Bren School of Environmental Science & Management logo" width="250"/>
 

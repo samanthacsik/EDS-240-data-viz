@@ -8,7 +8,7 @@
 
 <meta name="description" content="Monday February 5th, 2024">
 
-<title>EDS 240 - Enhancing visualizations</title>
+<title>EDS 240 - Enhancing visualizations (part I)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -231,7 +231,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Enhancing visualizations</h1>
+      <h1 class="title">Enhancing visualizations (part I)</h1>
             <p class="subtitle lead">Week 5</p>
                   <div>
         <div class="description">
@@ -263,6 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#install-required-packages" id="toc-install-required-packages" class="nav-link" data-scroll-target="#install-required-packages">Install required packages</a></li>
   <li><a href="#download-data" id="toc-download-data" class="nav-link" data-scroll-target="#download-data">Download data</a></li>
   <li><a href="#install-google-chrome-extensions-optional-but-recommended" id="toc-install-google-chrome-extensions-optional-but-recommended" class="nav-link" data-scroll-target="#install-google-chrome-extensions-optional-but-recommended">Install Google Chrome extensions (optional, but recommended)</a></li>
+  <li><a href="#review-data-wrangling-code" id="toc-review-data-wrangling-code" class="nav-link" data-scroll-target="#review-data-wrangling-code">Review data wrangling code</a></li>
   </ul></li>
   <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials">Lecture Materials</a></li>
   <li><a href="#discussion-materials" id="toc-discussion-materials" class="nav-link" data-scroll-target="#discussion-materials">Discussion Materials</a></li>
@@ -303,9 +304,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="download-data" class="level3">
 <h3 class="anchored" data-anchor-id="download-data">Download data</h3>
 <ul>
-<li><a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202312/1/value">County-level precipitation data (October 2023) for the contiguous U.S</a>, made available by <a href="https://www.ncei.noaa.gov/">NOAA National Centers for Environmental Information (NCEI)</a> (the download buttons are located just beneath the rendered map – <strong>choose the CSV option</strong>)
+<li><a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202312/60/value">County-level precipitation data (Jan 2019 - Dec 2023) for the contiguous U.S</a>, made available by <a href="https://www.ncei.noaa.gov/">NOAA National Centers for Environmental Information (NCEI)</a> (the download buttons are located just beneath the rendered map – <strong>choose the CSV option</strong>)
 <ul>
-<li>rename the data file as <code>county-precip-dec2023.csv</code> and save it to your class repo at the file path: <code>EDS-240-class-examples/week5/data/county-precip-dec2023.csv</code></li>
+<li>rename the data file as <code>county-jan19-dec23-precip.csv</code> and save it to your class repo at the file path: <code>EDS-240-class-examples/week5/data/county-jan19-dec23-precip.csv</code></li>
 </ul></li>
 </ul>
 </section>
@@ -313,33 +314,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="install-google-chrome-extensions-optional-but-recommended">Install Google Chrome extensions (optional, but recommended)</h3>
 <p>I’ll be using both of these (really wonderful and easy-to-use) tools during lecture and encourage you to install them!</p>
 <ol type="1">
-<li><a href="https://chromewebstore.google.com/detail/lets-get-color-blind/bkdgdianpkfahpkmphgehigalpighjck">Let’s get color blind</a>: simulates different color deficiencies in the browser</li>
-<li><a href="https://chromewebstore.google.com/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg">ColorPick Eyedropper</a>: a browser-based color chooser tool (I recommended that you install this for week 3 discussion, so you may already have it!)</li>
+<li><strong><a href="https://chromewebstore.google.com/detail/lets-get-color-blind/bkdgdianpkfahpkmphgehigalpighjck">Let’s get color blind</a></strong>: simulates different color deficiencies in the browser</li>
+<li><strong><a href="https://chromewebstore.google.com/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg">ColorPick Eyedropper</a></strong>: a browser-based color chooser tool (I recommended that you install this for week 3 discussion, so you may already have it!)</li>
 </ol>
+</section>
+<section id="review-data-wrangling-code" class="level3">
+<h3 class="anchored" data-anchor-id="review-data-wrangling-code">Review data wrangling code</h3>
+<p>In lecture 5.2, we’ll be building a choropleth map to visualize county-level precipitation data across the contiguous U.S. To do so, we need to join our precipitation data (which you can download <a href="https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week5.html#download-data">above</a>) with spatial data, which we’ll access via the <a href="https://cran.r-project.org/web/packages/maps/index.html"><code>{maps}</code> package</a>. Joining these two data sets requires a fair amount of cleaning (namely, ensuring county names match).</p>
+<p>Please review the background information about our precipitation data on <a href="https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/data">slide 65</a> <em>and</em> walk through the data wrangling code on <a href="https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/data-wrangling">slide 66</a> ahead of class. Come prepared with any questions you may have about the code – we’ll set aside ~10 minutes to discuss before jumping into building our data visualization.</p>
 </section>
 </section>
 <section id="lecture-materials" class="level2">
 <h2 class="anchored" data-anchor-id="lecture-materials">Lecture Materials</h2>
-<p>Week 5 instruction is broken down into three lessons:</p>
+<p>Week 5 instruction is broken down into two lessons:</p>
 <div class="grid">
-<div class="g-col-12 g-col-md-4">
+<div class="g-col-12 g-col-md-6">
+<div class="center-text">
+<p><span class="teal-text body-text-m"><strong>What makes a good viz?</strong></span></p>
+<p><a href="../slides/week5.1-good-viz-slides.html" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 4.3 slides</a></p>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6">
 <div class="center-text">
 <p><span class="teal-text body-text-m"><strong>Colors</strong></span></p>
-<p><a href="../slides/week5.1-colors-slides.html" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 5.1 slides</a></p>
+<p><a href="../slides/week5.2-colors-slides.html" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 5.1 slides</a></p>
 </div>
 </div>
-<div class="g-col-12 g-col-md-4">
-<div class="center-text">
-<p><span class="teal-text body-text-m"><strong>Typography</strong></span></p>
-<p><a href="../slides/week5.2-typography-slides.html" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 5.2 slides</a></p>
-</div>
-</div>
-<div class="g-col-12 g-col-md-4">
-<div class="center-text">
-<p><span class="teal-text body-text-m"><strong>Annotations &amp; legends</strong></span></p>
-<p><a href="../sliweek5.3-annotations-slides.qmd" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 5.3 slides</a></p>
-</div>
-</div>
+<!-- ::: {.g-col-12 .g-col-md-4} -->
+<!-- ::: {.center-text} -->
+<!-- [**Typography**]{.teal-text .body-text-m} -->
+<!-- [ lecture 5.2 slides](../slides/week5.2-typography-slides.qmd){.btn role="button" target="_blank"}  -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: {.g-col-12 .g-col-md-4} -->
+<!-- ::: {.center-text} -->
+<!-- [**Annotations & legends**]{.teal-text .body-text-m} -->
+<!-- [ lecture 5.3 slides](../sliweek5.3-annotations-slides.qmd){.btn role="button" target="_blank"}  -->
+<!-- ::: -->
+<!-- ::: -->
 </div>
 <!-- - 1 color theory -->
 <!-- 2 typography -->
@@ -630,7 +642,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">This website is built with <i class="fa-brands fa-r-project" title="R Project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a></div>
+    <div class="nav-footer-right">This website is built with <a href="https://github.com/samanthacsik/EDS-240-data-viz"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a>, <a href="https://www.r-project.org/about.html"><i class="fa-brands fa-r-project" title="R Project" aria-label="r-project"></i></a> and <a href="https://quarto.org/">Quarto</a></div>
   </div>
 </footer>
 

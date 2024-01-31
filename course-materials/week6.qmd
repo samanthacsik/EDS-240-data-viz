@@ -1,18 +1,19 @@
 ---
-title: "Data communication"
+title: "Enhancing visualizations (part II)"
 subtitle: "Week 6"
 description: "Monday February 12^th^, 2024"
 title-block-banner: true
 toc: true
 ---
 
+<!-- Data communication (used to be part of the planned week 6 title) -->
 ```{r}
 #| eval: true 
 #| echo: false
 #| fig-align: "center"
-#| out-width: "85%" 
-#| fig-alt: "An extended version of the classic R4DS schematic from Grolemund & Wickham, with environmental data science, communities, and communication added."
-knitr::include_graphics("../images/horst-eco-r4ds.png")
+#| out-width: "65%" 
+#| fig-alt: "A fuzzy monster in a beret and scarf, critiquing their own column graph on a canvas in front of them while other assistant monsters (also in berets) carry over boxes full of elements that can be used to customize a graph (like themes and geometric shapes). In the background is a wall with framed data visualizations. Stylized text reads 'ggplot2: build a data masterpiece.'"
+knitr::include_graphics("../images/horst-ggplot-masterpiece.png")
 ```
 
 :::{.gray-text .center-text}
@@ -25,78 +26,37 @@ knitr::include_graphics("../images/horst-eco-r4ds.png")
 
 ## Lecture Materials 
 
-<!-- - 3 DEI (using icons & colors for equity awareness) -->
-<!-- introduce three viz types and how to construct them this week -->
-<!-- also show scifig example -->
-<!-- https://github.com/nrokh/ScientificFigures/blob/main/FigureSpectrum/FigureSpectrum.png -->
-<!-- - storytelling (?) -->
-<!-- https://rstudio-conf-2022.github.io/ggplot2-graphic-design/materials/04_data_communication.pdf -->
-<!-- adding images to plots -->
-<!-- combining plots (cowplot & patchwork) -->
-  <!--     - talking about PEOPLE, so maybe we want to show exact numbers for an emotional perspective -->
-  <!--     - talk to experts -->
-
-<!-- {ggpattern} https://www.youtube.com/watch?v=fWP7KnIhmpQ -->
-<!-- https://jkunst.com/blog/posts/2023-07-10-my-favorite-ggplot2-packages-with-examples/ -->
-
-  <!-- covid 19 cases & deaths by US State https://www.cedricscherer.com/2020/03/31/corona-covid-19-death-tolls-worst-day-so-far/ -->
-  <!-- Todd Quartiere; source Wikipedia -->
-  <!-- too many colors; need to normalize by population; early in the pandemic there was arguments for normalizing by population size, but Cedric didn't like this; normally likes to normalize, but have to make a decision -->
-
-  <!-- https://rviews.rstudio.com/2019/09/19/intro-to-ggforce/ -->
-  
-<!-- see Dan Oehm's plot + code: https://github.com/doehm/tidyTuesday/tree/master/2022/week09-energy , https://twitter.com/danoehm/status/1498985113635663873 -->
-
-<!-- https://twitter.com/meghansharris/status/1728505525086650851 -->
-
-<!-- TITLES! -->
-<!-- gganimate -->
-
 ::: {.grid}
 
-::: {.g-col-12 .g-col-md-4}
+::: {.g-col-12 .g-col-md-6}
 ::: {.center-text}
-[**Data communication**]{.teal-text .body-text-m}
+[**Typography**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.1 slides](../slides/week6.1-data-stories.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.1 slides](../slides/week6.1-typography-slides.qmd){.btn role="button" target="_blank"}
 :::
 :::
 
-::: {.g-col-12 .g-col-md-4}
+::: {.g-col-12 .g-col-md-6}
 ::: {.center-text}
-[**tbd**]{.teal-text .body-text-m}
+[**Annotations & legends**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.2 slides](../slides/week6.2-tbd.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.2 slides](../sliweek6.2-annotations-slides.qmd){.btn role="button" target="_blank"}
 :::
 :::
 
-::: {.g-col-12 .g-col-md-4}
-::: {.center-text}
-[**tbd**]{.teal-text .body-text-m}
+<!-- ::: {.g-col-12 .g-col-md-4} -->
+<!-- ::: {.center-text} -->
+<!-- [**Data communication**]{.teal-text .body-text-m} -->
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.3 slides](../slides/week6.3-tbd.qmd){.btn role="button" target="_blank"}
-:::
-:::
+<!-- [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.1 slides](../slides/week6.1-data-stories.qmd){.btn role="button" target="_blank"}  -->
+<!-- ::: -->
+<!-- ::: -->
 
 :::
-
-<!-- - missing data -->
-<!-- no dual axes -->
-<!-- mentions dual axis: https://r-charts.com/ggplot2/axis/#:~:text=You%20can%20force%20the%20plot,y%20arguments%20of%20the%20function. -->
-<!-- - outlier detection -->
-<!-- - measures of uncertainty -->
-<!-- - normalizing data -->
-<!-- - avoiding biased comparisons -->
-<!-- - <https://eagereyes.org/blog/2017/communicating-uncertainty-when-lives-are-on-the-line> -->
-<!-- -[`{ggdist}`](https://mjskay.github.io/ggdist/) -->
-<!-- https://www.tandfonline.com/doi/full/10.1080/26939169.2021.1915215 -->
-<!-- https://policyviz.com/2021/02/15/the-ten-most-misleading-charts-during-donald-trumps-presidency/ -->
 
 ## Discussion Materials
 
-*Brainstorming ideas (not yet set in stone):*
-
-- [The beauty of data visualization](https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization?referrer=playlist-making_sense_of_too_much_data), a TED Talk by [David McCandless](https://davidmccandless.com/) (founder of [information is beautiful](https://informationisbeautiful.net/))
+*Coming soon*
 
 ## Assignment Reminders
 
