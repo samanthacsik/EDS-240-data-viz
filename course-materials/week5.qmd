@@ -55,23 +55,31 @@ I'll be using both of these (really wonderful and easy-to-use) tools during lect
 
 ## Lecture Materials 
 
-Week 5 instruction is broken down into two lessons:
+Week 5 instruction is broken down into three lessons:
 
 ::: {.grid}
 
-::: {.g-col-12 .g-col-md-6}
+::: {.g-col-12 .g-col-md-4}
 ::: {.center-text}
 [**What makes a good viz?**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 4.3 slides](../slides/week5.1-good-viz-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 5.1 slides](../slides/week5.1-good-viz-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
-::: {.g-col-12 .g-col-md-6}
+::: {.g-col-12 .g-col-md-4}
 ::: {.center-text}
 [**Colors**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 5.1 slides](../slides/week5.2-colors-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 5.2 slides](../slides/week5.2-colors-slides.qmd){.btn role="button" target="_blank"} 
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.center-text}
+[**Colors & Choropleths**]{.teal-text .body-text-m}
+
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 5.3 slides](../slides/week5.3-choropleth.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
