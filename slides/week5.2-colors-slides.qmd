@@ -28,7 +28,7 @@ editor_options:
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">{{< fa palette title="a painter's palette" >}} Why do we use color?</p>
 <p class="caption-text">*Spend a couple minutes discussing with your Learning Partners the following:*</p>
-<p class="dark-blue-text">**Why and / or when we use color in data visualizations?**</p>
+<p class="dark-blue-text">**Why and / or when should we use color in data visualizations?**</p>
 <p class="dark-blue-text">**Find an example(s) of a data viz that uses color to convey information to share in #eds-240-data viz. Note some of your own observations about the color choices (i.e. why these colors? palette arrangement?).**</p>
 </div>
 
@@ -112,7 +112,7 @@ You'll probably iterate on them as you sit with your visualization and of course
 
 ::: {.column width="50%"}
 ::: {.center-text .body-text-s .gray-text}
-HSL 
+HSV 
 :::
 ```{r}
 #| eval: true
@@ -191,7 +191,7 @@ Image source: [Which color scale to use when visualizing data](https://blog.data
 
 ## {#categorical data-menu-title="Categorical scales"} 
 
-[Categorical scales]{.slide-title2}
+[Categorical scales]{.slide-title}
 
 <hr>
 
@@ -216,13 +216,13 @@ Map source: [Analyzing US Census Data](https://walker-data.com/census-r/index.ht
 
 ## {#sequential data-menu-title="Sequential scales"} 
 
-[Sequential scales]{.slide-title2}
+[Sequential scales]{.slide-title}
 
 <hr>
 
   - [colors assigned to data values in a continuum, based on lightness, hue, or both]{.body-text-s}
   - [lower values typically associated with lighter colors & higher values associated with darker colors]{.body-text-s}
-  - [can use a single hue (light to dark) *or* two hues (tyipcally a warmer / brighter hue for lower values and cooler / darker hue for higher values)]{.body-text-s}
+  - [can use a single hue (light to dark) *or* two hues (typically a warmer / brighter hue for lower values and cooler / darker hue for higher values...but not always)]{.body-text-s}
 
 
 ```{r}
@@ -241,7 +241,7 @@ Map source: [Analyzing US Census Data](https://walker-data.com/census-r/index.ht
 
 ## {#diverging data-menu-title="Diverging scales"} 
 
-[Sequential scales]{.slide-title2}
+[Diverging scales]{.slide-title}
 
 <hr>
 
@@ -260,6 +260,61 @@ knitr::include_graphics("images/week5/diverging-scales.png")
 ::: {.footer}
 Map source: [2020 U.S. Election Mapped: TrumpLand vs Biden Archipelago](https://vividmaps.com/us-election-2020/), by Vivid Maps
 :::
+
+---
+
+## {#penguin-plots data-menu-title="Penguin base plots"} 
+
+[Base plots (for applying color scales to)]{.slide-title}
+
+<hr>
+
+[We'll be testing out different palettes throughout this lesson. Instead of having to retype the code for our plots each time, let's create and save two versions of a penguin scatterplot. We can then call either of these plot objects to modify with different color scales:]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+library(palmerpenguins)
+library(tidyverse)
+```
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.center-text .body-text-s .gray-text}
+Requires a categorical color scale
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+cat_color_plot <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = species)) +
+  geom_point(size = 4, alpha = 0.8)
+
+cat_color_plot 
+```
+:::
+
+::: {.column width="50%"}
+::: {.center-text .body-text-s .gray-text}
+Requires a continuous color scale
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+cont_color_plot <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
+  geom_point(size = 4, alpha = 0.8) 
+
+cont_color_plot 
+```
+:::
+
+::::
 
 ---
 
@@ -448,27 +503,6 @@ There are a number of different ways to apply `viridis` color scales, but I ofte
 ::: {.column width="50%"}
 
 ::: {.center-text .body-text-s .gray-text}
-Continuous viridis scales
-:::
-
-```{r}
-#| eval: true
-#| echo: true
-#| #| fig-align: "center"
-#| out-width: "100%"
-#| code-line-numbers: "6"
-library(palmerpenguins)
-library(tidyverse)
-
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
-  geom_point(size = 4, alpha = 0.8) +
-  scale_color_viridis_c(option = "magma")
-```
-:::
-
-::: {.column width="50%"}
-
-::: {.center-text .body-text-s .gray-text}
 Discrete viridis scales
 :::
 
@@ -477,19 +511,48 @@ Discrete viridis scales
 #| echo: true
 #| fig-align: "center"
 #| out-width: "100%"
-#| code-line-numbers: "6"
-library(palmerpenguins)
-library(tidyverse)
-
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = species)) +
-  geom_point(size = 4, alpha = 0.8) +
+cat_color_plot +
   scale_color_viridis_d(option = "viridis") 
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s .gray-text}
+Continuous viridis scales
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+#| #| fig-align: "center"
+#| out-width: "100%"
+cont_color_plot +
+  scale_color_viridis_c(option = "magma")
 ```
 :::
 
 ::::
 
-[Use `option` to specify palette and explore some of the other arguments in the [documentation](https://ggplot2.tidyverse.org/reference/scale_viridis.html).]{.body-text-s}
+::: {.center-text}
+Check out the [documentation](https://ggplot2.tidyverse.org/reference/scale_viridis.html) and play around with some alternative options.
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
 
 ---
 
@@ -614,11 +677,7 @@ Use `scale_color_brewer()` to apply **qualitative palettes**
 #| echo: true
 #| #| fig-align: "center"
 #| out-width: "100%"
-library(palmerpenguins)
-library(tidyverse)
-
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = species)) +
-  geom_point(size = 4, alpha = 0.8) +
+cat_color_plot +
   scale_color_brewer(palette = "Dark2") 
 ```
 :::
@@ -626,7 +685,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species, sha
 ::: {.column width="33%"}
 
 ::: {.center-text .body-text-s .gray-text}
-Use `scale_color_distiller()` for **sequential** versions of **continuous color scales**
+Use `scale_color_distiller()` for **unclassed** versions of **continuous color scales**
 :::
 
 ```{r}
@@ -634,11 +693,7 @@ Use `scale_color_distiller()` for **sequential** versions of **continuous color 
 #| echo: true
 #| #| fig-align: "center"
 #| out-width: "100%"
-library(palmerpenguins)
-library(tidyverse)
-
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
-  geom_point(size = 4, alpha = 0.8) +
+cont_color_plot +
   scale_color_distiller(palette = "BuPu")
 ```
 :::
@@ -646,7 +701,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)
 ::: {.column width="33%"}
 
 ::: {.center-text .body-text-s .gray-text}
-Use `scale_color_fermenter()` for **binned** versions of **continuous color scales**
+Use `scale_color_fermenter()` for **classed** versions of **continuous color scales**
 :::
 
 ```{r}
@@ -654,16 +709,30 @@ Use `scale_color_fermenter()` for **binned** versions of **continuous color scal
 #| echo: true
 #| fig-align: "center"
 #| out-width: "100%"
-library(palmerpenguins)
-library(tidyverse)
-
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
-  geom_point(size = 4, alpha = 0.8) +
+cont_color_plot +
   scale_color_fermenter(palette = "YlGnBu")
 ```
 :::
 
 ::::
+
+Check out the [documentation](https://ggplot2.tidyverse.org/reference/scale_brewer.html) and play around with some alternative options.
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
 
 ---
 
@@ -680,7 +749,6 @@ Rather than `color` points by `body_mass_g`, we can `fill` points by `body_mass_
 #| echo: true
 #| fig-align: "center"
 #| out-width: "100%"
-#| code-line-numbers: "4,5"
 library(palmerpenguins)
 library(tidyverse)
 
@@ -720,7 +788,7 @@ Figure 2 from Apigo A and Oono R (2022) Plant abundance, but not plant evolution
 ##  {#premade-palettes data-menu-title="# Additional palette packages#" background="#047C90"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">There are *so many* great pre-made color palettes to explore, many of which take into consideration color vision deficiencies (but always double check!)</p>
+<p class="custom-subtitle bottombr">There are *so many* other great pre-made color palettes to explore, many of which take into consideration color vision deficiencies (*but always double check!*)</p>
 </div>
 
 ---
@@ -819,7 +887,7 @@ knitr::include_graphics("images/week5/wesanderson.png")
 
 <hr>
 
-[Update the colors of the plots below, either by using the `{paletteer}` package *or* by following the documentation for any specific package. It's helpful to start by looking over the [list of supported packages](https://emilhvitfeldt.github.io/paletteer/#included-packages).]{.body-text-s}
+Update the colors of the plots below, either by using the `{paletteer}` package *or* by following the documentation for any specific package. It's helpful to start by looking over the [list of supported packages](https://emilhvitfeldt.github.io/paletteer/#included-packages).
 
 :::: {.columns}
 
@@ -829,11 +897,7 @@ knitr::include_graphics("images/week5/wesanderson.png")
 #| echo: true
 #| fig-align: "center"
 #| out-width: "90%"
-library(palmerpenguins)
-library(tidyverse)
-
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
-  geom_point(size = 4, alpha = 0.8) 
+cat_color_plot
 ```
 :::
 
@@ -843,11 +907,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
 #| echo: true
 #| fig-align: "center"
 #| out-width: "590%"
-library(palmerpenguins)
-library(tidyverse)
-
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
-  geom_point(size = 4, alpha = 0.8) 
+cont_color_plot
 ```
 :::
 
@@ -877,6 +937,8 @@ countdown::countdown(
 
 <hr>
 
+<br>
+
 :::: {.columns}
 
 ::: {.column width="50%"}
@@ -889,11 +951,7 @@ countdown::countdown(
 #| echo: true
 #| fig-align: "center"
 #| out-width: "90%"
-library(palmerpenguins)
-library(tidyverse)
-
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
-  geom_point(size = 4, alpha = 0.8) +
+cat_color_plot +
   paletteer::scale_color_paletteer_d("calecopal::superbloom3")
 ```
 :::
@@ -907,14 +965,10 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
 #| eval: true
 #| echo: true
 #| fig-align: "center"
-#| out-width: "590%"
-library(palmerpenguins)
-library(tidyverse)
-
+#| out-width: "90%"
 my_parks_palette <- NatParksPalettes::natparks.pals(name = "WindCave", n = 20, type = "continuous")
 
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
-  geom_point(size = 4, alpha = 0.8) +
+cont_color_plot +
   scale_color_gradientn(colors = rev(my_parks_palette))
 ```
 :::
@@ -1695,8 +1749,7 @@ my_palette <- c("#32DE8A", "#E36414", "#0F4C5C")
 #| eval: true
 #| echo: true
 #| fig-align: "center"
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
-  geom_point(size = 4, alpha = 0.8) +
+cat_color_plot +
   scale_color_manual(values = my_palette)
 ```
 
@@ -2232,7 +2285,7 @@ knitr::include_graphics("images/week5/no-gradient-for-discrete.png")
 
 ## {#lightness-gradient data-menu-title="Lightness + hue"} 
 
-[Use lightness, not just hue, to build gradients]{.slide-title}
+[Use lightness, not just hue, to build gradients]{.slide-title2}
 
 <hr>
 

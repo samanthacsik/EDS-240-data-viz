@@ -200,7 +200,7 @@
     "href": "course-materials/week5.html#pre-class-prep",
     "title": "Enhancing visualizations (part I)",
     "section": "Pre-class Prep",
-    "text": "Pre-class Prep\nPlease be sure to complete the following before class:\n\nInstall required packages\n\ninstall.packages(\"paletteer\") # a comprehensive collection of color palettes in R using a common interface\ninstall.packages(\"viridis\") # Colorblind-Friendly Color Maps for R\ninstall.packages(\"RColorBrewer\") # ColorBrewer Palettes\ninstall.packages(\"tigris\") # for downloading and using Census TIGER/Line shapefiles in R\n\n\n\nDownload data\n\nCounty-level precipitation data (Jan 2019 - Dec 2023) for the contiguous U.S, made available by NOAA National Centers for Environmental Information (NCEI) (the download buttons are located just beneath the rendered map – choose the CSV option)\n\nrename the data file as county-jan19-dec23-precip.csv and save it to your class repo at the file path: EDS-240-class-examples/week5/data/county-jan19-dec23-precip.csv\n\n\n\n\nInstall Google Chrome extensions (optional, but recommended)\nI’ll be using both of these (really wonderful and easy-to-use) tools during lecture and encourage you to install them!\n\nLet’s get color blind: simulates different color deficiencies in the browser\nColorPick Eyedropper: a browser-based color chooser tool (I recommended that you install this for week 3 discussion, so you may already have it!)"
+    "text": "Pre-class Prep\nPlease be sure to complete the following before class:\n\nInstall required packages\n\ninstall.packages(\"paletteer\") # a comprehensive collection of color palettes in R using a common interface\ninstall.packages(\"viridis\") # Colorblind-Friendly Color Maps for R\ninstall.packages(\"RColorBrewer\") # ColorBrewer Palettes\ninstall.packages(\"tigris\") # for downloading and using Census TIGER/Line shapefiles in R\n\n\n\nDownload data\n\nCounty-level precipitation data (Jan 2019 - Dec 2023) for the contiguous U.S, made available by NOAA National Centers for Environmental Information (NCEI) (the download buttons are located just beneath the rendered map – choose the CSV option)\n\nrename the data file as county-jan19-dec23-precip.csv and save it to your class repo at the file path: EDS-240-class-examples/week5/data/county-jan19-dec23-precip.csv\n\n\n\n\nInstall Google Chrome extensions (optional, but recommended)\nI’ll be using both of these (really wonderful and easy-to-use) tools during lecture and encourage you to install them!\n\nLet’s get color blind: simulates different color deficiencies in the browser\nGrayscale the Web: turn specific sites or tabs grayscale\nColorPick Eyedropper: a browser-based color chooser tool (I recommended that you install this for week 3 discussion, so you may already have it!)"
   },
   {
     "objectID": "course-materials/week5.html#lecture-materials",
@@ -221,7 +221,7 @@
     "href": "course-materials/week5.html#assignment-reminders",
     "title": "Enhancing visualizations (part I)",
     "section": "Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT"
   },
   {
     "objectID": "course-materials/week6.html#pre-class-prep",
@@ -2524,7 +2524,7 @@
     "href": "slides/week5.2-colors-slides.html#why-color",
     "title": "EDS 240",
     "section": "",
-    "text": "Why do we use color?\n\n\nSpend a couple minutes discussing with your Learning Partners the following:\n\n\nWhy and / or when we use color in data visualizations?\n\n\nFind an example(s) of a data viz that uses color to convey information to share in #eds-240-data viz. Note some of your own observations about the color choices (i.e. why these colors? palette arrangement?).\n\n\n\n\n\n−+\n02:00\n\n\n\n\n\nevoke emotions\nhighlight important data / concepts\nbranding"
+    "text": "Why do we use color?\n\n\nSpend a couple minutes discussing with your Learning Partners the following:\n\n\nWhy and / or when should we use color in data visualizations?\n\n\nFind an example(s) of a data viz that uses color to convey information to share in #eds-240-data viz. Note some of your own observations about the color choices (i.e. why these colors? palette arrangement?).\n\n\n\n\n\n−+\n02:00\n\n\n\n\n\nevoke emotions\nhighlight important data / concepts\nbranding"
   },
   {
     "objectID": "slides/week5.2-colors-slides.html#colors-difficult",
@@ -2538,7 +2538,7 @@
     "href": "slides/week5.2-colors-slides.html#color-properties",
     "title": "EDS 240",
     "section": "",
-    "text": "What is color?\n\nThere are a number of different color spaces that are used to represent and define color. HSV and HSL are used commonly in color pickers (e.g. Google color picker). HCL underlies some default {ggplot2} parameters. You don’t need to worry much about the underlying theory of color spaces, but know that changing any of the parameters (e.g. hue, saturation, etc.) can influence how we perceive information in a data visualization.\n\n\n\n\nHSL\n\n\n\n\n\n\n\n\n\n\n\nImage source: medium.com\n\n\n\nHCL\n\n\n\n\n\n\n\n\n\n\n\nImage source: Stauffer et al. (2015) https://doi.org/10.1175/BAMS-D-13-00155.1\n\n\n\n\n\nHue ranges from 0 to 360 (an angle) and gives the “colour” of the colour (blue, red, orange, etc).\nChroma is the “purity” of a colour, ranging from 0 (grey) to a maximum that varies with luminance.\nLuminance is the lightness of the colour, ranging from 0 (black) to 1 (white).\n\nSource: https://ggplot2-book.org/scales-colour"
+    "text": "What is color?\n\nThere are a number of different color spaces that are used to represent and define color. HSV and HSL are used commonly in color pickers (e.g. Google color picker). HCL underlies some default {ggplot2} parameters. You don’t need to worry much about the underlying theory of color spaces, but know that changing any of the parameters (e.g. hue, saturation, etc.) can influence how we perceive information in a data visualization.\n\n\n\n\nHSV\n\n\n\n\n\n\n\n\n\n\n\nImage source: medium.com\n\n\n\nHCL\n\n\n\n\n\n\n\n\n\n\n\nImage source: Stauffer et al. (2015) https://doi.org/10.1175/BAMS-D-13-00155.1\n\n\n\n\n\nHue ranges from 0 to 360 (an angle) and gives the “colour” of the colour (blue, red, orange, etc).\nChroma is the “purity” of a colour, ranging from 0 (grey) to a maximum that varies with luminance.\nLuminance is the lightness of the colour, ranging from 0 (black) to 1 (white).\n\nSource: https://ggplot2-book.org/scales-colour"
   },
   {
     "objectID": "slides/week5.2-colors-slides.html#color-scales",
@@ -2559,14 +2559,21 @@
     "href": "slides/week5.2-colors-slides.html#sequential",
     "title": "EDS 240",
     "section": "",
-    "text": "Sequential scales\n\n\ncolors assigned to data values in a continuum, based on lightness, hue, or both\nlower values typically associated with lighter colors & higher values associated with darker colors\ncan use a single hue (light to dark) or two hues (tyipcally a warmer / brighter hue for lower values and cooler / darker hue for higher values)\n\n\n\nMap source: Analyzing US Census Data, by Kyle Walker"
+    "text": "Sequential scales\n\n\ncolors assigned to data values in a continuum, based on lightness, hue, or both\nlower values typically associated with lighter colors & higher values associated with darker colors\ncan use a single hue (light to dark) or two hues (typically a warmer / brighter hue for lower values and cooler / darker hue for higher values…but not always)\n\n\n\nMap source: Analyzing US Census Data, by Kyle Walker"
   },
   {
     "objectID": "slides/week5.2-colors-slides.html#diverging",
     "href": "slides/week5.2-colors-slides.html#diverging",
     "title": "EDS 240",
     "section": "",
-    "text": "Sequential scales\n\n\ncombination of two sequential palettes with a shared endpoint at the central value\nuse a distinctive hue for each of the component palettes\ncentral value is assigned a light color (light gray is best)\n\n\n\nMap source: 2020 U.S. Election Mapped: TrumpLand vs Biden Archipelago, by Vivid Maps"
+    "text": "Diverging scales\n\n\ncombination of two sequential palettes with a shared endpoint at the central value\nuse a distinctive hue for each of the component palettes\ncentral value is assigned a light color (light gray is best)\n\n\n\nMap source: 2020 U.S. Election Mapped: TrumpLand vs Biden Archipelago, by Vivid Maps"
+  },
+  {
+    "objectID": "slides/week5.2-colors-slides.html#penguin-plots",
+    "href": "slides/week5.2-colors-slides.html#penguin-plots",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Base plots (for applying color scales to)\n\nWe’ll be testing out different palettes throughout this lesson. Instead of having to retype the code for our plots each time, let’s create and save two versions of a penguin scatterplot. We can then call either of these plot objects to modify with different color scales:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\n\n\n\nRequires a categorical color scale\n\n\ncat_color_plot &lt;- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = species)) +\n  geom_point(size = 4, alpha = 0.8)\n\ncat_color_plot \n\n\n\n\n\n\n\n\n\n\nRequires a continuous color scale\n\n\ncont_color_plot &lt;- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +\n  geom_point(size = 4, alpha = 0.8) \n\ncont_color_plot"
   },
   {
     "objectID": "slides/week5.2-colors-slides.html#accessibility",
@@ -2608,7 +2615,7 @@
     "href": "slides/week5.2-colors-slides.html#use-viridis",
     "title": "EDS 240",
     "section": "",
-    "text": "Using viridis color scales\n\n\n\n\nContinuous viridis scales\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_viridis_c(option = \"magma\")\n\n\n\n\n\n\nDiscrete viridis scales\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = species)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_viridis_d(option = \"viridis\") \n\n\n\n\n\n\n\n\n\n\nUse option to specify palette and explore some of the other arguments in the documentation."
+    "text": "Using viridis color scales\n\n\n\n\nDiscrete viridis scales\n\n\ncat_color_plot +\n  scale_color_viridis_d(option = \"viridis\") \n\n\n\n\n\n\n\n\n\n\nContinuous viridis scales\n\n\ncont_color_plot +\n  scale_color_viridis_c(option = \"magma\")\n\n\n\n\n\n\n\nCheck out the documentation and play around with some alternative options.\n\n\n\n\n−+\n02:00"
   },
   {
     "objectID": "slides/week5.2-colors-slides.html#color-brewer",
@@ -2629,7 +2636,7 @@
     "href": "slides/week5.2-colors-slides.html#use-RColorBrewer",
     "title": "EDS 240",
     "section": "",
-    "text": "Using RColorBrewer color palettes\n\nUse the right function (all pre-loaded with {ggplot2}) for the type of data / palette:\n\n\n\n\nUse scale_color_brewer() to apply qualitative palettes\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = species)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_brewer(palette = \"Dark2\") \n\n\n\n\n\n\nUse scale_color_distiller() for sequential versions of continuous color scales\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_distiller(palette = \"BuPu\")\n\n\n\n\n\n\nUse scale_color_fermenter() for binned versions of continuous color scales\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_fermenter(palette = \"YlGnBu\")"
+    "text": "Using RColorBrewer color palettes\n\nUse the right function (all pre-loaded with {ggplot2}) for the type of data / palette:\n\n\n\n\nUse scale_color_brewer() to apply qualitative palettes\n\n\ncat_color_plot +\n  scale_color_brewer(palette = \"Dark2\") \n\n\n\n\n\n\nUse scale_color_distiller() for unclassed versions of continuous color scales\n\n\ncont_color_plot +\n  scale_color_distiller(palette = \"BuPu\")\n\n\n\n\n\n\nUse scale_color_fermenter() for classed versions of continuous color scales\n\n\ncont_color_plot +\n  scale_color_fermenter(palette = \"YlGnBu\")\n\n\n\n\n\n\n\n\n\n\nCheck out the documentation and play around with some alternative options.\n\n\n\n−+\n02:00"
   },
   {
     "objectID": "slides/week5.2-colors-slides.html#outline-points",
@@ -2650,7 +2657,7 @@
     "href": "slides/week5.2-colors-slides.html#premade-palettes",
     "title": "EDS 240",
     "section": "",
-    "text": "There are so many great pre-made color palettes to explore, many of which take into consideration color vision deficiencies (but always double check!)"
+    "text": "There are so many other great pre-made color palettes to explore, many of which take into consideration color vision deficiencies (but always double check!)"
   },
   {
     "objectID": "slides/week5.2-colors-slides.html#paletteer",
@@ -2671,14 +2678,14 @@
     "href": "slides/week5.2-colors-slides.html#try-paletteer",
     "title": "EDS 240",
     "section": "",
-    "text": "Give {paletteer} a try (or use any package directly)!\n\nUpdate the colors of the plots below, either by using the {paletteer} package or by following the documentation for any specific package. It’s helpful to start by looking over the list of supported packages.\n\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  geom_point(size = 4, alpha = 0.8) \n\n\n\n\n\n\n\n\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +\n  geom_point(size = 4, alpha = 0.8) \n\n\n\n\n\n\n\n\n\n\n\n\n\n−+\n03:00"
+    "text": "Give {paletteer} a try (or use any package directly)!\n\nUpdate the colors of the plots below, either by using the {paletteer} package or by following the documentation for any specific package. It’s helpful to start by looking over the list of supported packages.\n\n\n\ncat_color_plot\n\n\n\n\n\n\n\n\n\n\ncont_color_plot\n\n\n\n\n\n\n\n\n\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "slides/week5.2-colors-slides.html#try-paletteer-ex",
     "href": "slides/week5.2-colors-slides.html#try-paletteer-ex",
     "title": "EDS 240",
     "section": "",
-    "text": "Examples\n\n\n\n\nsuperbloom3 palette from {calecopal}, applied using the paletteer::scale_color_paletteer_d()\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  geom_point(size = 4, alpha = 0.8) +\n  paletteer::scale_color_paletteer_d(\"calecopal::superbloom3\")\n\n\n\n\n\n\n\n\n\n\nWindCave palette from {NatParksPalette}, created using {NatParksPalette} & applied using scale_color_gradientn()\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nmy_parks_palette &lt;- NatParksPalettes::natparks.pals(name = \"WindCave\", n = 20, type = \"continuous\")\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_gradientn(colors = rev(my_parks_palette))"
+    "text": "Examples\n\n\n\n\n\nsuperbloom3 palette from {calecopal}, applied using the paletteer::scale_color_paletteer_d()\n\n\ncat_color_plot +\n  paletteer::scale_color_paletteer_d(\"calecopal::superbloom3\")\n\n\n\n\n\n\n\n\n\n\nWindCave palette from {NatParksPalette}, created using {NatParksPalette} & applied using scale_color_gradientn()\n\n\nmy_parks_palette &lt;- NatParksPalettes::natparks.pals(name = \"WindCave\", n = 20, type = \"continuous\")\n\ncont_color_plot +\n  scale_color_gradientn(colors = rev(my_parks_palette))"
   },
   {
     "objectID": "slides/week5.2-colors-slides.html#climate-colors",
@@ -2818,7 +2825,7 @@
     "href": "slides/week5.2-colors-slides.html#save-palette",
     "title": "EDS 240",
     "section": "",
-    "text": "Tip: Save your palette outside of your ggplot\n\nI recommend saving your palette to a named vector outside of your ggplot – this prevents lengthy palettes from creating cluttered ggplot code and allows you to reuse your palette across multiple plots:\n\nmy_palette &lt;- c(\"#32DE8A\", \"#E36414\", \"#0F4C5C\")\n\nHere, we scale our colors for a categorical variable (species) using scale_color_manual():\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  geom_point(size = 4, alpha = 0.8) +\n  scale_color_manual(values = my_palette)"
+    "text": "Tip: Save your palette outside of your ggplot\n\nI recommend saving your palette to a named vector outside of your ggplot – this prevents lengthy palettes from creating cluttered ggplot code and allows you to reuse your palette across multiple plots:\n\nmy_palette &lt;- c(\"#32DE8A\", \"#E36414\", \"#0F4C5C\")\n\nHere, we scale our colors for a categorical variable (species) using scale_color_manual():\n\ncat_color_plot +\n  scale_color_manual(values = my_palette)"
   },
   {
     "objectID": "slides/week5.2-colors-slides.html#set-color-names1",
@@ -3427,7 +3434,7 @@
     "href": "slides/week5.1-good-viz-slides.html#wilke-context",
     "title": "EDS 240",
     "section": "",
-    "text": "Plot groups against the whole when faceting\n\nFacets (aka small multiples) allow us to more easily view individual groups. Here, the author plots individual groups (male vs. female passenger distributions on the Titanic) against the data set total (distribution of all passengers):\n\n\n\n\nThe area under each curve corresponds to the total number of male and female passengers with known age (468 (M) and 288 (F)).\n\n\n\n\n\n\n\n\n\n\n\n\nThe colored areas show the density estimates of the ages of M and F passengers, and the gray areas show the overall passenger age distribution.\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample from Fundamentals of Data Visualization, by Claus Wilke. For an example with code, check out Meghan Hall’s lecture 7 slides"
+    "text": "Plot groups against the whole when faceting\n\nFacets (aka small multiples) allow us to more easily view individual groups. Here, the author plots individual groups (male vs. female passenger distributions on the Titanic) against the data set total (distribution of all passengers):\n\n\n\n\nThe area under each curve corresponds to the total number of male and female passengers with known age (468 (M) and 288 (F)).\n\n\n\n\n\n\n\n\n\n\n\n\nThe colored areas show the density estimates of the ages of M and F passengers, and the gray areas show the overall passenger age distribution.\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample from Fundamentals of Data Visualization, by Claus Wilke. For an example with code, check out this slide from Lecture 3.2"
   },
   {
     "objectID": "slides/week5.1-good-viz-slides.html#benchmark-values",
@@ -3511,14 +3518,14 @@
     "href": "slides/week5.1-good-viz-slides.html#dual-axes1",
     "title": "EDS 240",
     "section": "",
-    "text": "Dual y-axes can deliberately mislead readers\n\nThe scales of dual axis charts are arbitrary and therefore can (deliberately) mislead readers about the relationship between the two data series. Let’s take this example using real Worldbank data for the German GDP and the global GDP between 2004 and 2016:\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample from Why not to use two axes, and what to use instead, by Lisa Charlotte Muth"
+    "text": "Dual y-axes can deliberately mislead readers\n\nThe scales of dual axis charts are arbitrary and therefore can (deliberately) mislead readers about the relationship between the two data series. Let’s take this example using real Worldbank data for the German GDP and the global GDP between 2004 and 2016:\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample from Why not to use two axes, and what to use instead, by Lisa Charlotte Muth"
   },
   {
     "objectID": "slides/week5.1-good-viz-slides.html#dual-axes2",
     "href": "slides/week5.1-good-viz-slides.html#dual-axes2",
     "title": "EDS 240",
     "section": "",
-    "text": "Dual y-axes can deliberately mislead readers\n\nThe scales of dual axis charts are arbitrary and therefore can (deliberately) mislead readers about the relationship between the two data series. Let’s take this example using real Worldbank data for the German GDP and the global GDP between 2004 and 2016:\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample from Why not to use two axes, and what to use instead, by Lisa Charlotte Muth\n\n\nThe proportions of the two scales are often different from each other in dual axis charts. If the left axis would go down to zero, the chart would be twice as long. If the right axis would go down to zero, the chart would be almost three times as long. This is how both axes look like when we extend them to zero.\nSo while the chart looks like the German GDP and the global GDP go up at roughly the same rate (at least until 2014), they don’t. The global GDP increased by 80% until 2014; the GDP of Germany by 40%."
+    "text": "Dual y-axes can deliberately mislead readers\n\nThe scales of dual axis charts are arbitrary and therefore can (deliberately) mislead readers about the relationship between the two data series. Let’s take this example using real Worldbank data for the German GDP and the global GDP between 2004 and 2016:\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhile both GDPs may appear to increase at the about same rate, they actually don’t – global GDP increased by 80% until 2014, while the German GDP increased by 40%.\n\nExample from Why not to use two axes, and what to use instead, by Lisa Charlotte Muth\n\n\nThe proportions of the two scales are often different from each other in dual axis charts. If the left axis would go down to zero, the chart would be twice as long. If the right axis would go down to zero, the chart would be almost three times as long. This is how both axes look like when we extend them to zero.\nSo while the chart looks like the German GDP and the global GDP go up at roughly the same rate (at least until 2014), they don’t. The global GDP increased by 80% until 2014; the GDP of Germany by 40%."
   },
   {
     "objectID": "slides/week5.1-good-viz-slides.html#dual-axes3",
@@ -3539,7 +3546,7 @@
     "href": "slides/week5.1-good-viz-slides.html#dual-axes-alt-indexed",
     "title": "EDS 240",
     "section": "",
-    "text": "Alternatives to dual y-axes: indexed charts\n\nIndexed charts show the relative change (percentage increase of decrease) of our data series over time. Consider adding labels or tooltips (e.g. using {plotly}) to include important absolute numbers.\n\n\n\n\nExample from Why not to use two axes, and what to use instead, by Lisa Charlotte Muth"
+    "text": "Alternatives to dual y-axes: indexed charts\n\nIndexed charts show the relative change (percentage increase or decrease) of a data series over time. Consider adding labels or tooltips (e.g. using {plotly}) to include important absolute numbers.\n\n\n\n\nExample from Why not to use two axes, and what to use instead, by Lisa Charlotte Muth"
   },
   {
     "objectID": "slides/week5.1-good-viz-slides.html#dual-axes-alt-prioritize",

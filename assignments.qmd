@@ -13,7 +13,7 @@ Earning "Satisfactory" marks on Self-reflections (SRs) and Homework Assignments 
 | SR              | [Pre-course reflection (SR #1)](assignments/SR1-precourse.qmd)    | Mon 01/08/2024 | Sat 01/13/2024, 11:59pm PT |
 | HW              | [Homework Assignment #1](assignments/HW1.qmd)                     | Mon 01/08/2024 | Sat 01/20/2024, 11:59pm PT |
 | HW              | [Homework Assignment #2](assignments/HW2.qmd)                     | Mon 01/22/2024 | Sat 02/03/2024, 11:59pm PT |
-| SR              | Mid-course reflection (SR #2)    | Mon 02/05/2024 | Sat 02/10/2024, 11:59pm PT |
+| SR              | [Mid-course reflection (SR #2)](assignments/SR2-midcourse.qmd)    | Mon 02/05/2024 | Sat 02/10/2024, 11:59pm PT |
 | HW              | Homework Assignment #3           | Mon 02/12/2024 | Sat 02/24/2024, 11:59pm PT |
 | HW              | Homework Assignment #4           | Mon 02/26/2024 | Sat 03/09/2024, 11:59pm PT |
 | SR              | End-of-course reflection (SR #3) | Mon 03/11/2024 | Sat 03/16/2024, 11:59pm PT |
@@ -49,7 +49,7 @@ End-of-class surveys (EOCs) will become available at the end of each class (Mond
 | *No lecture or EOC (week 2)* | *NA*           | *NA*                       |
 | [EOC (week 3)](https://forms.gle/2BockakcBR7rsm26A)  | Mon 01/22/2024 | Mon 01/22/2024, 11:55pm PT |
 | [EOC (week 4)](https://forms.gle/kwfaWciZNu4fCzKN7)  | Mon 01/29/2024 | Mon 01/29/2024, 11:55pm PT |
-| EOC (week 5)                 | Mon 02/05/2024 | Mon 02/05/2024, 11:55pm PT |
+| [EOC (week 5)](https://forms.gle/cLtHBybg6kgVDzQSA)  | Mon 02/05/2024 | Mon 02/05/2024, 11:55pm PT |
 | EOC (week 6)                 | Mon 02/12/2024 | Mon 02/12/2024, 11:55pm PT |
 | *No lecture or EOC (week 7)* | *NA*           | *NA*                       |
 | EOC (week 8)                 | Mon 02/26/2024 | Mon 02/26/2024, 11:55pm PT |

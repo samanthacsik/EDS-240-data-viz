@@ -45,7 +45,8 @@ install.packages("tigris") # for downloading and using Census TIGER/Line shapefi
 I'll be using both of these (really wonderful and easy-to-use) tools during lecture and encourage you to install them!
 
 1. **[Let's get color blind](https://chromewebstore.google.com/detail/lets-get-color-blind/bkdgdianpkfahpkmphgehigalpighjck)**: simulates different color deficiencies in the browser
-2. **[ColorPick Eyedropper](https://chromewebstore.google.com/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg)**: a browser-based color chooser tool (I recommended that you install this for week 3 discussion, so you may already have it!)
+2. **[Grayscale the Web](https://chromewebstore.google.com/detail/grayscale-the-web-save-si/mblmpdpfppogibmoobibfannckeeleag)**: turn specific sites or tabs grayscale
+3. **[ColorPick Eyedropper](https://chromewebstore.google.com/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg)**: a browser-based color chooser tool (I recommended that you install this for week 3 discussion, so you may already have it!)
 
 <!-- ### Review data wrangling code  -->
 
@@ -107,12 +108,12 @@ Week 5 instruction is broken down into three lessons:
 
 ## Assignment Reminders
 
-| Assignment Type | Assignment Title               | Date Assigned  | Date Due                   |
-|:---------------:|--------------------------------|----------------|----------------------------|
-| EOC             | EOC (week 5)                   | Mon 02/05/2024 | Mon 02/05/2024, 11:55pm PT |
-| SR              | Mid-course reflection (SR #2)  | Mon 02/05/2024 | Sat 02/10/2024, 11:59pm PT |
+<!-- | Assignment Type | Assignment Title               | Date Assigned  | Date Due                   | -->
+<!-- |:---------------:|--------------------------------|----------------|----------------------------| -->
+<!-- | EOC             | EOC (week 5)                   | Mon 02/05/2024 | Mon 02/05/2024, 11:55pm PT | -->
+<!-- | SR              | Mid-course reflection (SR #2)  | Mon 02/05/2024 | Sat 02/10/2024, 11:59pm PT | -->
 
-<!-- | Assignment Type | Assignment Title                                                                  | Date Assigned  | Date Due        | -->
-<!-- |:---------------:|------------------------------------------------------------------------|----------------|----------------------------| -->
-<!-- | EOC             | [EOC (week 5)](https://forms.gle/cLtHBybg6kgVDzQSA)                    | Mon 02/05/2024 | Mon 02/05/2024, 11:55pm PT | -->
-<!-- | SR              | [Mid-course reflection (SR #2)](../assignments/SR2-midcourse.qmd)      | Mon 02/05/2024 | Sat 02/10/2024, 11:59pm PT | -->
+| Assignment Type | Assignment Title                                                                  | Date Assigned  | Date Due        |
+|:---------------:|------------------------------------------------------------------------|----------------|----------------------------|
+| EOC             | [EOC (week 5)](https://forms.gle/cLtHBybg6kgVDzQSA)                    | Mon 02/05/2024 | Mon 02/05/2024, 11:55pm PT |
+| SR              | [Mid-course reflection (SR #2)](../assignments/SR2-midcourse.qmd)      | Mon 02/05/2024 | Sat 02/10/2024, 11:59pm PT |

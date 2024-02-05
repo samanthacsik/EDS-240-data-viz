@@ -273,7 +273,7 @@ library(palmerpenguins)
 ggplot(penguins, aes(x = fct_infreq(species), fill = species)) +
   geom_bar(alpha = 0.8) +
   scale_fill_manual(values = c("darkorange","purple","cyan4")) +
-  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species") +
+  labs(x = "Species", y = "Count", fill = "Species") +
   theme_classic() +
   theme(
     axis.line = element_blank(),
@@ -299,7 +299,7 @@ library(palmerpenguins)
 ggplot(penguins, aes(x = fct_infreq(species), fill = species)) +
   geom_bar(alpha = 0.8) +
   scale_fill_manual(values = c("darkorange","purple","cyan4")) +
-  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species") +
+  labs(x = "Species", y = "Count", fill = "Species") +
   theme_classic() +
   theme(
     axis.line = element_blank(),
@@ -345,7 +345,7 @@ library(palmerpenguins)
 ggplot(penguins, aes(x = fct_infreq(species), fill = species)) +
   geom_bar(alpha = 0.8) +
   scale_fill_manual(values = c("darkorange","purple","cyan4")) +
-  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species") +
+  labs(x = "Species", y = "Count", fill = "Species") +
   theme_classic() +
   theme(
     axis.line = element_blank(),
@@ -373,7 +373,7 @@ ggplot(penguins, aes(x = fct_rev(fct_infreq(species)), fill = species)) +
   coord_flip() +
   geom_text(aes(label = ..count..), stat = "count", hjust = 1.5, size = 6, colour = "white") +
   scale_fill_manual(values = c("darkorange","purple","cyan4")) +
-  labs(x = "Penguin body mass (g)", y = "Count", fill = "Species",
+  labs(x = "Species", y = "Count", fill = "Species",
        title = "Penguins counts at Palmer Station LTER", 
        subtitle = "2007 - 2009") +
   theme_classic() +
@@ -846,7 +846,7 @@ knitr::include_graphics("images/week5/wilke-context-separate.png")
 ::::
 
 ::: {.footer}
-Example from [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/histograms-density-plots.html), by Claus Wilke. For an example with code, check out Meghan Hall's [lecture 7 slides](https://cmu-36315.netlify.app/slides/36-315_summer2021_lec7#75)
+Example from [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/histograms-density-plots.html), by Claus Wilke. For an example with code, check out [this slide](https://samanthacsik.github.io/EDS-240-data-viz/slides/week3.2-distributions-slides.html#/scaled-density) from Lecture 3.2
 :::
 
 ---
@@ -1015,7 +1015,7 @@ ggplot() +
 
 <hr>
 
-Or add annotations to your plots to call attention to data of interest (here, shown using the `{ggforce}` package; minimal code example, below):
+Or add annotations to your plots to call attention to data of interest (here, shown using the [`{ggforce}` package](https://ggforce.data-imaginist.com/index.html); minimal code example, below):
 
 ```{r}
 #| eval: false
@@ -1276,7 +1276,6 @@ knitr::include_graphics("images/week5/parallel-plot.png")
 ::: {.column width="50%"}
 <br>
 <br>
-<br>
 ```{r}
 #| eval: true
 #| echo: false
@@ -1311,7 +1310,6 @@ Example from [Why not to use two axes, and what to use instead](https://blog.dat
 ::: {.column width="50%"}
 <br>
 <br>
-<br>
 ```{r}
 #| eval: true
 #| echo: false
@@ -1326,12 +1324,14 @@ knitr::include_graphics("images/week5/dual-axis1.png")
 #| eval: true
 #| echo: false
 #| fig-align: "center"
-#| out-width: "100%"
+#| out-width: "70%"
 knitr::include_graphics("images/week5/dual-axis2.png")
 ```
 :::
 
 ::::
+
+[While both GDPs may appear to increase at the about same rate, they actually don't -- global GDP increased by 80% until 2014, while the German GDP increased by 40%.]{.body-text-s}
 
 ::: {.footer}
 Example from [Why not to use two axes, and what to use instead](https://blog.datawrapper.de/dualaxis/), by Lisa Charlotte Muth
@@ -1424,7 +1424,7 @@ Example from [Why not to use two axes, and what to use instead](https://blog.dat
 
 <hr>
 
-**Indexed charts** show the *relative change* (percentage increase of decrease) of our data series over time. Consider adding labels or tooltips (e.g. using [`{plotly}`](https://plotly.com/r/)) to include important absolute numbers.
+**Indexed charts** show the *relative change* (percentage increase or decrease) of a data series over time. Consider adding labels or tooltips (e.g. using [`{plotly}`](https://plotly.com/r/)) to include important absolute numbers.
 
 <br>
 

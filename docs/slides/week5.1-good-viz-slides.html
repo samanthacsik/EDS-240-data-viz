@@ -775,7 +775,7 @@ Simplify plots to reduce eye movement &amp; improve readability / interpretabili
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_b499b5fb" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_49f97cce" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -865,7 +865,7 @@ Consider ways to provide additional context for your data
 </div>
 </div>
 <div class="footer">
-<p>Example from <a href="https://clauswilke.com/dataviz/histograms-density-plots.html">Fundamentals of Data Visualization</a>, by Claus Wilke. For an example with code, check out Meghan Hall’s <a href="https://cmu-36315.netlify.app/slides/36-315_summer2021_lec7#75">lecture 7 slides</a></p>
+<p>Example from <a href="https://clauswilke.com/dataviz/histograms-density-plots.html">Fundamentals of Data Visualization</a>, by Claus Wilke. For an example with code, check out <a href="https://samanthacsik.github.io/EDS-240-data-viz/slides/week3.2-distributions-slides.html#/scaled-density">this slide</a> from Lecture 3.2</p>
 </div>
 </section>
 <section id="benchmark-values" class="slide level2" data-menu-title="Benchmark values">
@@ -970,7 +970,7 @@ Draw attention to important information / values
 <h2></h2>
 <p><span class="slide-title2">Use annotations to highlight groups / values</span></p>
 <hr>
-<p>Or add annotations to your plots to call attention to data of interest (here, shown using the <code>{ggforce}</code> package; minimal code example, below):</p>
+<p>Or add annotations to your plots to call attention to data of interest (here, shown using the <a href="https://ggforce.data-imaginist.com/index.html"><code>{ggforce}</code> package</a>; minimal code example, below):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>plot <span class="sc">+</span> </span>
 <span id="cb6-2"><a href="#cb6-2"></a>  ggforce<span class="sc">::</span><span class="fu">geom_mark_ellipse</span>(<span class="fu">aes</span>(<span class="at">filter =</span> species <span class="sc">==</span> <span class="st">"Gentoo"</span>, <span class="at">label =</span> <span class="st">"Gentoo penguins"</span>, </span>
@@ -1124,7 +1124,7 @@ What <em>doesn’t</em> work so well in data visualization?
 <p><span class="body-text-s"><strong>The scales of dual axis charts are arbitrary and therefore can (deliberately) mislead readers about the relationship between the two data series.</strong> Let’s take this example using real <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2016&amp;start=1960&amp;view=chart">Worldbank data</a> for the German GDP and the global GDP between 2004 and 2016:</span></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><br> <br> <br></p>
+<p><br> <br></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1149,7 +1149,7 @@ What <em>doesn’t</em> work so well in data visualization?
 <p><span class="body-text-s"><strong>The scales of dual axis charts are arbitrary and therefore can (deliberately) mislead readers about the relationship between the two data series.</strong> Let’s take this example using real <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2016&amp;start=1960&amp;view=chart">Worldbank data</a> for the German GDP and the global GDP between 2004 and 2016:</span></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><br> <br> <br></p>
+<p><br> <br></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1164,13 +1164,14 @@ What <em>doesn’t</em> work so well in data visualization?
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week5/dual-axis2.png" style="width:100.0%"></p>
+<p><img data-src="images/week5/dual-axis2.png" style="width:70.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
 </div>
+<p><span class="body-text-s">While both GDPs may appear to increase at the about same rate, they actually don’t – global GDP increased by 80% until 2014, while the German GDP increased by 40%.</span></p>
 <div class="footer">
 <p>Example from <a href="https://blog.datawrapper.de/dualaxis/">Why not to use two axes, and what to use instead</a>, by Lisa Charlotte Muth</p>
 </div>
@@ -1252,7 +1253,7 @@ What <em>doesn’t</em> work so well in data visualization?
 <h2></h2>
 <p><span class="slide-title2">Alternatives to dual y-axes: indexed charts</span></p>
 <hr>
-<p><strong>Indexed charts</strong> show the <em>relative change</em> (percentage increase of decrease) of our data series over time. Consider adding labels or tooltips (e.g.&nbsp;using <a href="https://plotly.com/r/"><code>{plotly}</code></a>) to include important absolute numbers.</p>
+<p><strong>Indexed charts</strong> show the <em>relative change</em> (percentage increase or decrease) of a data series over time. Consider adding labels or tooltips (e.g.&nbsp;using <a href="https://plotly.com/r/"><code>{plotly}</code></a>) to include important absolute numbers.</p>
 <p><br></p>
 
 <img data-src="images/week5/dual-axes-indexed.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
@@ -1574,7 +1575,7 @@ Let’s consider some example data visualizations together
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_f3300269" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_94ba2325" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1619,7 +1620,7 @@ Let’s consider some example data visualizations together
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_e7666625" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_23a53ce1" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1657,7 +1658,7 @@ Let’s consider some example data visualizations together
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c1a12b8c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_9b492608" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1720,7 +1721,7 @@ Let’s consider some example data visualizations together
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_5b156107" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_98ac5d49" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
