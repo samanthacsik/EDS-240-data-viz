@@ -48,7 +48,7 @@ He has a ton of awesome [blog posts](https://www.cedricscherer.com/), shares [co
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/scherer-website.png")
+knitr::include_graphics("images/week8/scherer-website.png")
 ```
 :::
 
@@ -134,7 +134,7 @@ This has less to do with the physical act of creating data viz and everything to
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/ny-rats.png")
+knitr::include_graphics("images/week8/ny-rats.png")
 ```
 :::
 
@@ -169,7 +169,7 @@ This has less to do with the physical act of creating data viz and everything to
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/ny-rats-update.png")
+knitr::include_graphics("images/week8/ny-rats-update.png")
 ```
 :::
 
@@ -207,7 +207,7 @@ This has less to do with the physical act of creating data viz and everything to
 #| echo: false
 #| out-width: "50%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/jones-book.png")
+knitr::include_graphics("images/week8/jones-book.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
@@ -273,7 +273,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/hawkins-warming-stripes.png")
+knitr::include_graphics("images/week8/hawkins-warming-stripes.png")
 ```
 
 . . .
@@ -309,7 +309,7 @@ Elicits emotion. Vertical stripes have become synonymous with temperature.
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/scherer-plants-legend.png")
+knitr::include_graphics("images/week8/scherer-plants-legend.png")
 ```
 :::
 
@@ -319,7 +319,7 @@ knitr::include_graphics("images/week6/scherer-plants-legend.png")
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/scherer-plants.png")
+knitr::include_graphics("images/week8/scherer-plants.png")
 ```
 :::
 
@@ -366,7 +366,7 @@ countdown::countdown(
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/mann-etal-hockey-stick.png")
+knitr::include_graphics("images/week8/mann-etal-hockey-stick.png")
 ```
 
 ::: {.center-text .body-text-l}
@@ -412,7 +412,7 @@ Data from thermometers (red) and from tree rings, corals, ice cores, and histori
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/andy-kirk.png")
+knitr::include_graphics("images/week8/andy-kirk.png")
 ```
 
 <br>
@@ -441,7 +441,7 @@ Scheme by Andy Kirk from his book [Data Visualisation: A Handbook for Data Drive
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/map-original.png")
+knitr::include_graphics("images/week8/map-original.png")
 ```
 :::
 
@@ -482,7 +482,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/map-original.png")
+knitr::include_graphics("images/week8/map-original.png")
 ```
 :::
 
@@ -492,7 +492,7 @@ knitr::include_graphics("images/week6/map-original.png")
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/map-blue.png")
+knitr::include_graphics("images/week8/map-blue.png")
 ```
 :::
 
@@ -522,7 +522,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/map-original.png")
+knitr::include_graphics("images/week8/map-original.png")
 ```
 :::
 
@@ -532,7 +532,7 @@ knitr::include_graphics("images/week6/map-original.png")
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/map-blue-sm-arrows.png")
+knitr::include_graphics("images/week8/map-blue-sm-arrows.png")
 ```
 :::
 
@@ -562,7 +562,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/map-original.png")
+knitr::include_graphics("images/week8/map-original.png")
 ```
 :::
 
@@ -572,7 +572,7 @@ knitr::include_graphics("images/week6/map-original.png")
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/map-blue-circles.png")
+knitr::include_graphics("images/week8/map-blue-circles.png")
 ```
 :::
 
@@ -602,7 +602,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/map-original.png")
+knitr::include_graphics("images/week8/map-original.png")
 ```
 :::
 
@@ -612,7 +612,7 @@ knitr::include_graphics("images/week6/map-original.png")
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/migration-bar.png")
+knitr::include_graphics("images/week8/migration-bar.png")
 ```
 :::
 
@@ -638,7 +638,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 #| echo: false
 #| out-width: "70%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/cairo-elementary-visual-perception.png")
+knitr::include_graphics("images/week8/cairo-elementary-visual-perception.png")
 ```
 :::
 
@@ -687,7 +687,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 #| echo: false
 #| out-width: "70%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/cairo-elementary-visual-perception.png")
+knitr::include_graphics("images/week8/cairo-elementary-visual-perception.png")
 ```
 :::
 
@@ -736,7 +736,7 @@ Informative | [**Story**]{.teal-text} | Visual Form
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/scherer-australian-fires.png")
+knitr::include_graphics("images/week8/scherer-australian-fires.png")
 ```
 
 ::: {.center-text .body-text-s}
@@ -756,7 +756,7 @@ Australian Fires, by Cédric Scherer ([code](https://github.com/z3tt/TidyTuesday
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/scherer-coffee.png")
+knitr::include_graphics("images/week8/scherer-coffee.png")
 ```
 
 ::: {.center-text .body-text-s}

@@ -397,10 +397,10 @@
 
 <section id="title-slide" class="slide level2 center" data-menu-title="Title Slide" data-background="#053660">
 <h2></h2>
-<p><span class="custom-title">EDS 240: Lecture 4.3</span></p>
+<p><span class="custom-title">EDS 240: Lecture 5.1</span></p>
 <p><span class="custom-subtitle"><em>What makes a good data viz?</em></span></p>
 <hr class="hr-teal">
-<p><span class="custom-subtitle3">Week 4 | January 29<sup>th</sup>, 2024</span></p>
+<p><span class="custom-subtitle3">Week 5 | February 5<sup>th</sup>, 2024</span></p>
 </section>
 <section id="looking-forward" class="slide level2" data-menu-title="Looking forward">
 <h2></h2>
@@ -408,7 +408,7 @@
 <hr>
 <p><br></p>
 <div class="center-text body-text-m">
-<p>Next week, we’ll really start diving into improving the overall aesthetics of our data visualizations</p>
+<p>Choosing the right graphic form is just the first step! It’s important to consider how you can enhance your visualization by:</p>
 </div>
 <div class="fragment">
 <div class="center-text">
@@ -438,7 +438,7 @@
 <div class="fragment">
 <p><br></p>
 <div class="center-text body-text-m">
-<p>Today, we’ll familiarize ourselves with a general set of rules and best practices.</p>
+<p>We’ll start by familiarizing ourselves with a general set of rules and best practices for making “good” data viz.</p>
 </div>
 </div>
 </section>
@@ -483,7 +483,7 @@
 <li><span class="gray-text">including <strong>alt text</strong></span></li>
 </ul>
 <div class="center-text body-text-m">
-<p>The above should <em>always be considered</em> in your design process, but <em>may not always be necessary</em></p>
+<p>We’re going to talk about these first few points, to start.</p>
 </div>
 </section>
 <section id="data-ink-eyes" class="slide level2" data-menu-title="# Less is more #" data-background="#047C90">
@@ -622,7 +622,9 @@ Simplify plots to reduce eye movement &amp; improve readability / interpretabili
 </div>
 </div>
 </div>
-<p>Of course, a visualization like this wouldn’t be appropriate for all audiences / contexts (e.g.&nbsp;scientific journal), but it in many ways simplifies the presentation in a way where an audience could still walk away with the same type of information.</p>
+<div class="fragment">
+<p>Of course, a visualization like this wouldn’t be appropriate for all audiences / contexts (e.g.&nbsp;scientific journal). <em>But</em>, despite the removal of axes / text / legend, a reader could still walk away with the same type of information.</p>
+</div>
 </section>
 <section id="move-legend-position" class="slide level2" data-menu-title="Move the legend (position)">
 <h2></h2>
@@ -666,7 +668,7 @@ Simplify plots to reduce eye movement &amp; improve readability / interpretabili
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>plot <span class="sc">+</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"Some subtitle text where &lt;span style='color:red;'&gt;**these words**&lt;/span&gt; are bolded and red"</span>) <span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">theme</span>(<span class="fu">plot.subtitle</span>(ggtext<span class="sc">::</span><span class="fu">element_markdown</span>()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">theme</span>(<span class="at">plot.subtitle =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="columns">
@@ -773,9 +775,9 @@ Simplify plots to reduce eye movement &amp; improve readability / interpretabili
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_858d9590" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_b499b5fb" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -1572,9 +1574,9 @@ Let’s consider some example data visualizations together
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6a786bba" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_f3300269" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -1617,9 +1619,9 @@ Let’s consider some example data visualizations together
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_398d166a" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_e7666625" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -1655,9 +1657,9 @@ Let’s consider some example data visualizations together
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_d482ff00" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_c1a12b8c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -1718,7 +1720,7 @@ Let’s consider some example data visualizations together
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_574d73d7" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_5b156107" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>

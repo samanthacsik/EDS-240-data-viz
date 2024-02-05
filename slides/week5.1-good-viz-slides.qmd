@@ -13,13 +13,13 @@ editor_options:
 
 ## {#title-slide data-menu-title="Title Slide" background="#053660"} 
 
-[EDS 240: Lecture 4.3]{.custom-title}
+[EDS 240: Lecture 5.1]{.custom-title}
 
 [*What makes a good data viz?*]{.custom-subtitle}
 
 <hr class="hr-teal">
 
-[Week 4 | January 29^th^, 2024]{.custom-subtitle3}
+[Week 5 | February 5^th^, 2024]{.custom-subtitle3}
 
 ---
 
@@ -32,7 +32,7 @@ editor_options:
 <br>
 
 ::: {.center-text .body-text-m}
-Next week, we'll really start diving into improving the overall aesthetics of our data visualizations
+Choosing the right graphic form is just the first step! It's important to consider how you can enhance your visualization by: 
 :::
 
 . . . 
@@ -70,7 +70,7 @@ Next week, we'll really start diving into improving the overall aesthetics of ou
 <br>
 
 ::: {.center-text .body-text-m}
-Today, we'll familiarize ourselves with a general set of rules and best practices.
+We'll start by familiarizing ourselves with a general set of rules and best practices for making "good" data viz.
 :::
 
 ---
@@ -120,7 +120,7 @@ The above should *always be considered* in your design process, but *may not alw
 - [including **alt text**]{.gray-text}
 
 ::: {.center-text .body-text-m}
-The above should *always be considered* in your design process, but *may not always be necessary*
+We're going to talk about these first few points, to start.
 :::
 
 ---
@@ -394,7 +394,9 @@ ggplot(penguins, aes(x = fct_rev(fct_infreq(species)), fill = species)) +
 
 ::::
 
-Of course, a visualization like this wouldn't be appropriate for all audiences / contexts (e.g. scientific journal), but it in many ways simplifies the presentation in a way where an audience could still walk away with the same type of information.
+. . .
+
+Of course, a visualization like this wouldn't be appropriate for all audiences / contexts (e.g. scientific journal). *But*, despite the removal of axes / text / legend, a reader could still walk away with the same type of information.
 
 ---
 
@@ -500,7 +502,7 @@ ggplot(data = penguins,aes(x = bill_length_mm,y = bill_depth_mm, group = species
 
 plot +
   labs(subtitle = "Some subtitle text where <span style='color:red;'>**these words**</span> are bolded and red") +
-  theme(plot.subtitle(ggtext::element_markdown()))
+  theme(plot.subtitle = ggtext::element_markdown())
 ```
 
 <br>
@@ -712,7 +714,7 @@ knitr::include_graphics("images/week5/neil-with-annotations.png")
 
 ```{r}
 countdown::countdown(
-  minutes = 3,
+  minutes = 2,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -1943,7 +1945,7 @@ Clearing the Air, by [Christopher Ingraham](https://www.washingtonpost.com/peopl
 
 ```{r}
 countdown::countdown(
-  minutes = 3,
+  minutes = 2,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -2014,7 +2016,7 @@ Perfectly Proportional Penguins, by [Cara Thompson](https://www.cararthompson.co
 
 ```{r}
 countdown::countdown(
-  minutes = 3,
+  minutes = 2,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -2070,7 +2072,7 @@ knitr::include_graphics("images/week5/ingeman-etal-fig3.png")
 
 ```{r}
 countdown::countdown(
-  minutes = 3,
+  minutes = 2,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,

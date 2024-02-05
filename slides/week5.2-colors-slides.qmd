@@ -1766,8 +1766,7 @@ penguins |>
 ```{r}
 #| eval: true
 #| echo: true
-my_palette_named <- c("#32DE8A", "#E36414", "#0F4C5C")
-names(my_palette_named) <- c("Adelie", "Chinstrap", "Gentoo")
+my_palette_named <- c("Adelie" = "#32DE8A","Chinstrap" = "#E36414", "Gentoo" = "#0F4C5C")
 ```
 
 :::: {.columns}
@@ -2105,7 +2104,7 @@ knitr::include_graphics("images/week5/use-gray.png")
 <hr>
 
 ::: {.center-text .body-text-m}
-Use intuitive colors (e.g. green for forest, blue for water) but avoid stereotypes (e.g. pink for women, blue for men)
+Use intuitive colors (e.g. green for forest, blue for water) but avoid stereotypes (e.g. pink for women, blue for men).
 :::
 
 <br>
@@ -2118,6 +2117,12 @@ Use intuitive colors (e.g. green for forest, blue for water) but avoid stereotyp
 knitr::include_graphics("images/week5/intuitive-colors.png")
 ```
 
+
+<br>
+
+::: {.center-text}
+Try a cold color for men (e.g. blue or purple) and a warmer color for women (e.g. yellow, orange or a warm green).
+:::
 
 <br>
 

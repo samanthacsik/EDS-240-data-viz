@@ -194,7 +194,7 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 
 - [ ] perform all Part 2a steps, as described above, in `HW2-exploration.qmd`
 - [ ] answer Part 2b questions, also in `HW2-exploration.qmd`, adhering to the length requirements specified at the end of each question prompt
-- [ ] all four plot outputs should appear in your rendered doc
+- [ ] all three plot outputs should appear in your rendered doc
 - [ ] `HW2-exploration.qmd` should be neatly organized -- this does not need to be a perfectly polished document, but sections should be clearly labeled with prose and / or annotations so that we can easily follow along.
 - [ ] push your completed `HW2-exploration.qmd` to your repo by 11:59pm PT on Sat 02/03/2024
 

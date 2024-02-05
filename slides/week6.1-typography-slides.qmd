@@ -13,13 +13,13 @@ editor_options:
 
 ## {#title-slide data-menu-title="Title Slide" background="#053660"} 
 
-[EDS 240: Lecture 5.2]{.custom-title}
+[EDS 240: Lecture 6.1]{.custom-title}
 
 [*Typography*]{.custom-subtitle}
 
 <hr class="hr-teal">
 
-[Week 5 | February 5^th^, 2024]{.custom-subtitle3}
+[Week 6 | February 12^th^, 2024]{.custom-subtitle3}
 
 ---
 
@@ -117,7 +117,7 @@ knitr::include_graphics("images/week6/psychology-fonts.png")
 <br>
 
 
-Like colors, typefaces / fonts influence the how viewers perceive information (check out this short [TEDx talk](https://www.youtube.com/watch?v=OXc-VZ4Vwbo)).
+Similar to colors, typefaces / fonts influence the how viewers perceive information (check out this short [TEDx talk](https://www.youtube.com/watch?v=OXc-VZ4Vwbo)).
 
 <br>
 
@@ -556,9 +556,486 @@ R-Ladies Chapter Events, by [Nicola Rennie](https://ijeamaka-anyene.netlify.app/
 
 ---
 
-Code example here using `{ggtext}`
+## {#original-salary-plot data-menu-title="Recall M v F earnings plot"} 
 
-TALK ABOUT INCLUDING TITLES / SUBTITLES, CAPTION
+[Recall our dumbbell plot from week 4]{.slide-title}
+
+<hr>
+
+Let's improve this plot by updating the colors, modifying the theme, and using some new fonts!
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week6/earnings-plot.png")
+```
+
+---
+
+## {#wrangle-data data-menu-title="Wrangle data"} 
+
+[Wrangle data]{.slide-title}
+
+<hr>
+
+This code should look familiar (copied from [Lecture 4.1](https://samanthacsik.github.io/EDS-240-data-viz/slides/week4.1-rankings-slides.html#/title-slide)):
+```{r}
+#| eval: true
+#| echo: true
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    setup                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..........................load packages.........................
+library(tidyverse)
+
+#..........................import data...........................
+jobs <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-05/jobs_gender.csv")
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                wrangle data                              ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+jobs_clean <- jobs |>
+
+  # add cols (needed for dumbbell plot) ----
+  mutate(percent_male = 100 - percent_female, # % of females within each industry was already included
+       difference_earnings = total_earnings_male - total_earnings_female) |>  # diff in earnings between M & F
+
+  # rearrange columns ----
+  relocate(year, major_category, minor_category, occupation,
+           total_workers, workers_male, workers_female,
+           percent_male, percent_female,
+           total_earnings, total_earnings_male, total_earnings_female, difference_earnings,
+           wage_percent_of_male) |>
+
+  # drop rows with missing earning data ----
+  drop_na(total_earnings_male, total_earnings_female) |>
+
+  # make occupation a factor ----
+  mutate(occupation = as.factor(occupation)) |>
+
+# ---- this next step is for creating our dumbbell plots ----
+
+# classify jobs by percentage male or female ----
+  mutate(group_label = case_when(
+    percent_female >= 75 ~ "Occupations that are 75%+ female",
+    percent_female >= 45 & percent_female <= 55 ~ "Occupations that are 45-55% female",
+    percent_male >= 75 ~ "Occupations that are 75%+ male"
+  ))
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                              create subset df                            ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#....guarantee the same random samples each time we run code.....
+set.seed(0)
+
+#.........get 10 random jobs that are 75%+ female (2016).........
+f75 <- jobs_clean |>
+  filter(year == 2016, group_label == "Occupations that are 75%+ female") |>
+  slice_sample(n = 10)
+
+#..........get 10 random jobs that are 75%+ male (2016)..........
+m75 <- jobs_clean |>
+  filter(year == 2016, group_label == "Occupations that are 75%+ male") |>
+  slice_sample(n = 10)
+
+#........get 10 random jobs that are 45-55%+ female (2016).......
+f50 <- jobs_clean |>
+  filter(year == 2016, group_label == "Occupations that are 45-55% female") |>
+  slice_sample(n = 10)
+
+#.......combine dfs & relevel factors (for plotting order).......
+subset_jobs <- rbind(f75, m75, f50) |>
+  mutate(group_label = fct_relevel(group_label, 
+                                   "Occupations that are 75%+ female",
+                                   "Occupations that are 45-55% female", 
+                                   "Occupations that are 75%+ male"))
+
+```
+
+---
+
+## {#original-plot-code data-menu-title="Original plot (code)"} 
+
+[Code for our original plot]{.slide-title}
+
+<hr>
+
+This code was copied from [Lecture 4.1](https://samanthacsik.github.io/EDS-240-data-viz/slides/week4.1-rankings-slides.html#/title-slide). Resulting plot is rendered on the next slide!
+
+<br>
+
+```{r}
+#| eval: false
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+plot <- ggplot(subset_jobs) +
+  geom_segment(aes(x = total_earnings_female, xend = total_earnings_male,
+                 y = fct_reorder(occupation, total_earnings), yend = occupation)) +
+  geom_point(aes(x = total_earnings_male, y = occupation),
+             color = "#CD93D8", size = 3.25) +
+  geom_point(aes(x = total_earnings_female, y = occupation),
+             color = "#6A1E99", size = 3.25) +
+  facet_wrap(~group_label, nrow = 3, scales = "free_y") +
+  scale_x_continuous(labels = scales::label_dollar(scale = 0.001, suffix = "k"),
+                     breaks = c(25000, 50000, 75000, 100000, 125000))
+
+plot
+```
+
+---
+
+## {#original-plot-viz data-menu-title="Original plot (viz)"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| fig-asp: 0.7
+#| out-width: "100%"
+plot <- ggplot(subset_jobs) +
+  geom_segment(aes(x = total_earnings_female, xend = total_earnings_male,
+                 y = fct_reorder(occupation, total_earnings), yend = occupation)) +
+  geom_point(aes(x = total_earnings_male, y = occupation),
+             color = "#CD93D8", size = 3.25) +
+  geom_point(aes(x = total_earnings_female, y = occupation),
+             color = "#6A1E99", size = 3.25) +
+  facet_wrap(~group_label, nrow = 3, scales = "free_y") +
+  scale_x_continuous(labels = scales::label_dollar(scale = 0.001, suffix = "k"),
+                     breaks = c(25000, 50000, 75000, 100000, 125000))
+
+plot
+```
+
+---
+
+## {#create-palette data-menu-title="Create a better palette"} 
+
+[Create a better (named) palette]{.slide-title}
+
+<hr>
+
+[In last week's [lecture on colors](https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.2-colors-slides.html#/title-slide), we learned **to be predictable in our color choices, but to avoid stereotypes** ([Muth 2018](https://blog.datawrapper.de/colors/)). It can be helpful for readers to choose a cool color for men (e.g. blues / purples) and warmer color for women (e.g. yellows, oranges, warm greens).]{.body-text-s}
+
+[We'll do that here, but this time, **let's create a named vector of colors** to call from. In addition to our point colors, we'll also include colors for our plot's text:]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+earnings_pal <- c("males" = "#2D7787",
+                  "females" = "#FC6B4B",
+                  dark_text = "#0C1509",
+                  light_text = "#575D55")
+```
+
+[The primary purpose of the [`{monochromeR}` package](https://github.com/cararthompson/monochromeR) is for creating monochrome colour palettes, however, it also includes a **helpful function for viewing our palette**:]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+monochromeR::view_palette(earnings_pal)
+```
+
+---
+
+## {#apply-colors data-menu-title="Apply new colors"} 
+
+[Apply new colors by name]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "100%"
+#| code-line-numbers: "5,7"
+plot <- ggplot(subset_jobs) +
+geom_segment(aes(x = total_earnings_female, xend = total_earnings_male,
+                 y = fct_reorder(occupation, total_earnings), yend = occupation)) +
+  geom_point(aes(x = total_earnings_male, y = occupation),
+             color = earnings_pal["males"], size = 3.25) +
+  geom_point(aes(x = total_earnings_female, y = occupation),
+             color = earnings_pal["females"], size = 3.25) +
+  facet_wrap(~group_label, nrow = 3, scales = "free_y") +
+  scale_x_continuous(labels = scales::label_dollar(scale = 0.001, suffix = "k"),
+                     breaks = c(25000, 50000, 75000, 100000, 125000))
+
+plot
+```
+
+---
+
+## {#titles-theme-code data-menu-title="Titles & theme (code)"} 
+
+[Add titles / caption & modify theme]{.slide-title}
+
+<hr>
+
+Resulting plot is rendered on the next slide!
+
+```{r}
+#| eval: false
+#| echo: true
+#| fig-align: "center"
+#| out-height: "100%"
+plot +
+  labs(title = "Earnings by Occupation and Sex",
+       subtitle = "Median earnings of full-time male vs. female workers by occupation in 2016",
+       caption = "Data Source: TidyTuesday (March 5, 2019)") +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(face = "bold",
+                              size = 25,
+                              color = earnings_pal["dark_text"]),
+    plot.subtitle = element_text(size = 17,
+                                 color = earnings_pal["light_text"],
+                                 margin = margin(t = 0.5, r = 0, b = 1, l = 0, unit = "lines")),
+    plot.caption = element_text(face = "italic",
+                                color = earnings_pal["light_text"],
+                                margin = margin(t = 3, r = 0, b = 0, l = 0, unit = "lines")),
+    strip.text.x = element_text(face = "bold",
+                                size = 12,
+                                hjust = 0),
+    panel.spacing.y = unit(x = 1, "lines"),
+    axis.text = element_text(color = earnings_pal["light_text"]),
+    axis.text.x = element_text(size = 10),
+    axis.title = element_blank()
+  )
+```
+
+::: {.footer}
+**Note:** We can apply our font colors in the same way we applied our point colors, calling named values from our `earnings_pal`
+:::
+
+---
+
+## {#titles-theme-viz data-menu-title="Titles & theme (viz)"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| fig-asp: 0.7
+#| out-height: "100%"
+plot +
+  labs(title = "Earnings by Occupation and Sex",
+       subtitle = "Median earnings of full-time male vs. female workers by occupation in 2016",
+       caption = "Data Source: TidyTuesday (March 5, 2019)") +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(face = "bold",
+                              size = 25,
+                              color = earnings_pal["dark_text"]),
+    plot.subtitle = element_text(size = 17,
+                                 color = earnings_pal["light_text"],
+                                 margin = margin(t = 0.5, r = 0, b = 1, l = 0, unit = "lines")),
+    plot.caption = element_text(face = "italic",
+                                color = earnings_pal["light_text"],
+                                margin = margin(t = 3, r = 0, b = 0, l = 0, unit = "lines")),
+    strip.text.x = element_text(face = "bold",
+                                size = 12,
+                                hjust = 0),
+    panel.spacing.y = unit(x = 1, "lines"),
+    axis.text = element_text(color = earnings_pal["light_text"]),
+    axis.text.x = element_text(size = 10),
+    axis.title = element_blank()
+  )
+```
+
+---
+
+## {#pick-google-fonts data-menu-title="Pick Google fonts"} 
+
+[Pick a typeface(s) from Google Fonts]{.slide-title}
+
+<hr>
+
+[Browse typefaces and fonts at <https://fonts.google.com/>. It can be helpful to type your desired text into the **Preview** field (you may need to expand the sidebar by clicking the **Filters** button on the top left of the page) to get a better sense of how your font choice will look. You can also search typefaces by name:]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week6/google-fonts.gif")
+```
+
+---
+
+## {#our-typefaces data-menu-title="Our typeface choices"} 
+
+[We'll use these two typefaces:]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.center-text}
+**[Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans)**
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week6/josefin-sans.png")
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text}
+**[Sen](https://fonts.google.com/specimen/Sen?query=sen)**
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week6/sen.png")
+```
+:::
+
+::::
+
+---
+
+## {#import-google-fonts data-menu-title="Import Google Fonts"} 
+
+[Import Google Fonts]{.slide-title}
+
+<hr>
+
+[We'll use the [`{showtext}` package](https://github.com/yixuan/showtext) to import and apply our Google Fonts. Import `{showtext}` at the top of your script, then use `font_add_google()` to specify the font(s) you want to import. **Importantly**, you'll also need to "turn on" showtext using `showtext_auto()` -- this enables showtext font rendering within any subsequent plots.]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    setup                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..........................load packages.........................
+library(tidyverse)
+library(showtext)
+
+#..........................import fonts..........................
+# `name` is the name of the font as it appears in Google Fonts
+# `family` is the user-specified id that you'll use to apply a font in your ggpplot
+font_add_google(name = "Josefin Sans", family = "josefin")
+font_add_google(name = "Sen", family = "sen")
+
+#................enable {showtext} for rendering.................
+showtext_auto()
+
+# ~ additional setup code omitted for brevity ~
+```
+
+---
+
+## {#apply-google-fonts data-menu-title="Apply Google Fonts"} 
+
+[Apply Google Fonts]{.slide-title}
+
+<hr>
+
+Resulting plot is rendered on the next slide!
+
+```{r}
+#| eval: false
+#| echo: true
+plot +
+  labs(title = "Earnings by Occupation and Sex",
+       subtitle = "Median earnings of full-time male vs. female workers by occupation in 2016",
+       caption = "Data Source: TidyTuesday (March 5, 2019)") +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(family = "josefin",
+                              face = "bold",
+                              size = 25,
+                              color = earnings_pal["dark_text"]),
+    plot.subtitle = element_text(family = "sen",
+                                 size = 17,
+                                 color = earnings_pal["light_text"],
+                                 margin = margin(t = 0.5, r = 0, b = 1, l = 0, unit = "lines")),
+    plot.caption = element_text(family = "sen",
+                                face = "italic", # NOTE: this no longer applies since the typeface "Sen" does not exist in an italic font style
+                                color = earnings_pal["light_text"],
+                                margin = margin(t = 3, r = 0, b = 0, l = 0, unit = "lines")),
+    strip.text.x = element_text(family = "josefin",
+                                face = "bold",
+                                size = 12,
+                                hjust = 0),
+    panel.spacing.y = unit(x = 1, "lines"),
+    axis.text = element_text(family = "sen",
+                             color = earnings_pal["light_text"]),
+    axis.text.x = element_text(size = 10),
+    axis.title = element_blank()
+  )
+```
+
+::: {.footer}
+**Note:** Our previously italicized caption is no longer, since Sen does not come in an italicized font style
+:::
+
+---
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| fig-asp: 0.7
+#| out-height: "100%"
+plot +
+  labs(title = "Earnings by Occupation and Sex",
+       subtitle = "Median earnings of full-time male vs. female workers by occupation in 2016",
+       caption = "Data Source: TidyTuesday (March 5, 2019)") +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(family = "josefin",
+                              face = "bold",
+                              size = 25,
+                              color = earnings_pal["dark_text"]),
+    plot.subtitle = element_text(family = "sen",
+                                 size = 17,
+                                 color = earnings_pal["light_text"],
+                                 margin = margin(t = 0.5, r = 0, b = 1, l = 0, unit = "lines")),
+    plot.caption = element_text(family = "sen",
+                                face = "italic",
+                                color = earnings_pal["light_text"],
+                                margin = margin(t = 3, r = 0, b = 0, l = 0, unit = "lines")),
+    strip.text.x = element_text(family = "josefin",
+                                face = "bold",
+                                size = 12,
+                                hjust = 0),
+    panel.spacing.y = unit(x = 1, "lines"),
+    axis.text = element_text(family = "sen",
+                             color = earnings_pal["light_text"]),
+    axis.text.x = element_text(size = 10),
+    axis.title = element_blank()
+  )
+```
+
+---
+
+fontawesome here
 
 ---
 
@@ -584,194 +1061,3 @@ countdown::countdown(
   font_size = "2em",
   )
 ```
-
-
-
-
-
-
-<!-- --- -->
-
-<!-- ## {#font-size data-menu-title="Hierarchy with fonts (size)"}  -->
-
-<!-- [Font *size* creates hierarchy]{.slide-title} -->
-
-<!-- <hr> -->
-
-<!-- <br> -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:3em;">I am important!</span> -->
-<!-- ::: -->
-
-<!-- <br> -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:2em;">I am also pretty important!</span> -->
-<!-- ::: -->
-
-<!-- <br> -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:1em;">Thanks for reading me</span> -->
-<!-- ::: -->
-
-<!-- <br> -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:0.6em;">I know, I'm kinda boring</span> -->
-<!-- ::: -->
-
-<!-- --- -->
-
-<!-- ## {#font-style data-menu-title="Hierarchy with fonts (style)"}  -->
-
-<!-- [Font *style* creates hierarchy]{.slide-title} -->
-
-<!-- <hr> -->
-
-<!-- <br> -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:2em; text-decoration: underline;">**I am important!**</span> -->
-<!-- ::: -->
-
-<!-- <br> -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:2em;">**I am also pretty important!**</span> -->
-<!-- ::: -->
-
-<!-- <br> -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:2em;">*Thanks for reading me*</span> -->
-<!-- ::: -->
-
-<!-- <br> -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:2em;">I know, I'm kinda boring</span> -->
-<!-- ::: -->
-
-<!-- --- -->
-
-<!-- ## {#font-color data-menu-title="Hierarchy with fonts (color)"}  -->
-
-<!-- [Font *color* creates hierarchy]{.slide-title} -->
-
-<!-- <hr> -->
-
-<!-- <br> -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:2em; color: #047C90;">I am important!</span> -->
-<!-- ::: -->
-
-<!-- <br> -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:2em;">I am also pretty important!</span> -->
-<!-- ::: -->
-
-<!-- <br> -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:2em; color: #ABABAB;">Thanks for reading me</span> -->
-<!-- ::: -->
-
-<!-- <br> -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:2em; color: #D1D1D1;">I know, I'm kinda boring</span> -->
-<!-- ::: -->
-
-<!-- --- -->
-
-<!-- ## {#font-spacing data-menu-title="Hierarchy with fonts (spacing)"}  -->
-
-<!-- [Font *spacing* creates hierarchy]{.slide-title} -->
-
-<!-- <hr> -->
-
-<!-- <br> -->
-<!-- <br> -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:1.5em;">I am important!</span> -->
-<!-- ::: -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:1.5em;">I am also pretty important!</span> -->
-<!-- ::: -->
-
-<!-- <br> -->
-<!-- <br> -->
-<!-- <br> -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:1.5em;">Thanks for reading me</span> -->
-<!-- ::: -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:1.5em;">I know, I'm kinda boring</span> -->
-<!-- ::: -->
-
-<!-- --- -->
-
-<!-- ## {#font-typeface data-menu-title="Hierarchy with fonts (typeface)"}  -->
-
-<!-- [*Typeface* creates hierarchy]{.slide-title} -->
-
-<!-- <hr> -->
-
-<!-- <br> -->
-<!-- <br> -->
-
-<!-- ::: {.center-text .sanchez-font} -->
-<!-- <span style="font-size:1.5em;">I am important!</span> -->
-<!-- ::: -->
-
-<!-- ::: {.center-text .sanchez-font} -->
-<!-- <span style="font-size:1.5em;">I am also pretty important!</span> -->
-<!-- ::: -->
-
-<!-- <br> -->
-<!-- <br> -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:1.5em;">Thanks for reading me</span> -->
-<!-- ::: -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:1.5em;">I know, I'm kinda boring</span> -->
-<!-- ::: -->
-
-<!-- --- -->
-
-<!-- ## {#font-combo data-menu-title="Hierarchy with fonts (combos)"}  -->
-
-<!-- [Combining different approaches to create hierarchy]{.slide-title2} -->
-
-<!-- <hr> -->
-
-<!-- <br> -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:2.5em;">**I am important!**</span> -->
-<!-- ::: -->
-
-<!-- ::: {.center-text} -->
-<!-- <span style="font-size:1.5em; color: #047C90;">I am also pretty important!</span> -->
-<!-- ::: -->
-
-<!-- <br> -->
-<!-- <br> -->
-
-<!-- ::: {.center-text .nanum-font} -->
-<!-- <span style="font-size:1.2em;">Thanks for reading me</span> -->
-<!-- ::: -->
-
-<!-- ::: {.center-text .nanum-font} -->
-<!-- <span style="font-size:1.2em;">I know, I'm kinda boring</span> -->
-<!-- ::: -->

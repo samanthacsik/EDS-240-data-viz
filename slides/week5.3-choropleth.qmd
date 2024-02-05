@@ -1005,10 +1005,6 @@ base_map +
                                barwidth = 15, barheight = 0.75))
 ```
 
-::: {.footer}
-We'll come back to this map in our typography lesson to update and style our text elements.
-:::
-
 ---
 
 ## {#classed-palette data-menu-title="Classed palette"} 

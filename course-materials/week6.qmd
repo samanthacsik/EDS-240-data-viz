@@ -22,7 +22,26 @@ knitr::include_graphics("../images/horst-ggplot-masterpiece.png")
 
 ## Pre-class Prep
 
-*Coming soon* 
+Please be sure to complete the following before class:
+
+### Install required packages
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+install.packages("monochromeR") # a package for creating monochrome color palettes and easily converting rgba values to hex codes (and also some other useful functions)
+install.packages("showtext") # for using fonts more easily in R graphs
+install.packages("ggtext") # improved text rendering support for ggplot2
+```
+
+### Download Font Awesome fonts
+
+In addition to using Google Fonts in our ggplots, we will also be using some [Font Awesome](https://fontawesome.com/) icons! To do so, you'll need to download the Font Awesome font files and save them to your class repo. Do so by following these steps:
+
+1. **Download Font Awesome fonts:** Go to <https://fontawesome.com/download> and download the latest release available. Choose the **Free For Desktop** option.
+2. **Unzip the downloaded file:** You should see a folder inside called `otfs/` -- this contains three `.otf` files (aka OpenType font format files)
+3. **Copy the three `.otf` files to your class repo:** I recommend creating a `fonts/` folder inside your root directory, and dropping all three of them in there (e.g. `~/fonts/*.otf`)
 
 ## Lecture Materials 
 
