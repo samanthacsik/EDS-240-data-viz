@@ -530,7 +530,7 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <p><br></p>
 </div>
 <div class="fragment">
-<p><span class="body-text-s">Because of how <code>sf</code> objects are represented in R (they look like data frames!), <strong>simple features can be maniupulated and plotted by other well-known packages like <code>{dplyr}</code> and <code>{ggplot2}</code></strong>. Packages like <a href="https://r-spatial.github.io/sf/"><code>{sf}</code></a> provide tools for working with simple features (<code>sf</code> objects), but we’ll only need to rely on <code>{ggplot2}</code>s built-in <code>geom_sf()</code> geometry to plot our data.</span></p>
+<p><span class="body-text-s">Because of how simple feature (<code>sf</code>) objects are represented in R (they look like data frames!), <strong>simple features can be maniupulated and plotted by other well-known packages like <code>{dplyr}</code> and <code>{ggplot2}</code></strong>. Packages like <a href="https://r-spatial.github.io/sf/"><code>{sf}</code></a> provide tools for working with simple features (<code>sf</code> objects), but we’ll only need to rely on <code>{ggplot2}</code>s built-in <code>geom_sf()</code> geometry to plot our data.</span></p>
 <p><br></p>
 </div>
 <div class="fragment">
@@ -881,10 +881,11 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <span id="cb2-7"><a href="#cb2-7"></a>  <span class="fu">theme</span>(</span>
 <span id="cb2-8"><a href="#cb2-8"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
 <span id="cb2-9"><a href="#cb2-9"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb2-10"><a href="#cb2-10"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">20</span>, <span class="at">r =</span> <span class="dv">10</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">l =</span> <span class="dv">0</span>))</span>
-<span id="cb2-11"><a href="#cb2-11"></a>  )</span>
-<span id="cb2-12"><a href="#cb2-12"></a></span>
-<span id="cb2-13"><a href="#cb2-13"></a>base_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-10"><a href="#cb2-10"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11"></a>                                <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">2</span>, <span class="at">r =</span> <span class="fl">0.5</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="st">"lines"</span>))</span>
+<span id="cb2-12"><a href="#cb2-12"></a>  )</span>
+<span id="cb2-13"><a href="#cb2-13"></a></span>
+<span id="cb2-14"><a href="#cb2-14"></a>base_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
@@ -1007,7 +1008,7 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <h2></h2>
 <p><span class="slide-title">Pick a color palette!</span></p>
 <hr>
-<p>Recall <a href="https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/suggested-colors">from earlier</a> that precipitation data is often encoded using a <strong>brown / blue</strong> color scheme (with drier conditions falling on the brown side and wetter conditions falling on the blue side).</p>
+<p>Recall <a href="https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.2-colors-slides.html#/suggested-colors">from earlier</a> that precipitation data is often encoded using a <strong>brown / blue</strong> color scheme (with drier conditions falling on the brown side and wetter conditions falling on the blue side).</p>
 <p>Lucky for us, <strong>RColorBrewer</strong> has this exact palette. <strong>Let’s use <span class="teal-text">all 11 hues</span> for our unclassed map</strong>:</p>
 <p><br></p>
 <div class="columns">
@@ -1050,8 +1051,7 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_brew_palette11,</span>
 <span id="cb6-3"><a href="#cb6-3"></a>                       <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
 <span id="cb6-4"><a href="#cb6-4"></a>                       <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">label.hjust =</span> <span class="fl">0.5</span>,</span>
-<span id="cb6-6"><a href="#cb6-6"></a>                               <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch quarto-figure-center"></section>
@@ -1085,8 +1085,7 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <span id="cb7-6"><a href="#cb7-6"></a>                         <span class="fu">min</span>(<span class="fu">na.omit</span>(joined_precip_geom)<span class="sc">$</span>perc_change),</span>
 <span id="cb7-7"><a href="#cb7-7"></a>                         <span class="dv">0</span>,</span>
 <span id="cb7-8"><a href="#cb7-8"></a>                         <span class="fu">max</span>(<span class="fu">na.omit</span>(joined_precip_geom)<span class="sc">$</span>perc_change)))) <span class="sc">+</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">label.hjust =</span> <span class="fl">0.5</span>,</span>
-<span id="cb7-10"><a href="#cb7-10"></a>                               <span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch quarto-figure-center"></section>

@@ -194,7 +194,7 @@ Spatial data can take many forms -- **[simple features]{.teal-text} is a standar
 
 . . . 
 
-[Because of how `sf` objects are represented in R (they look like data frames!), **simple features can be maniupulated and plotted by other well-known packages like `{dplyr}` and `{ggplot2}`**. Packages like [`{sf}`](https://r-spatial.github.io/sf/) provide tools for working with simple features (`sf` objects), but we'll only need to rely on `{ggplot2}`s built-in `geom_sf()` geometry to plot our data.]{.body-text-s}
+[Because of how simple feature (`sf`) objects are represented in R (they look like data frames!), **simple features can be maniupulated and plotted by other well-known packages like `{dplyr}` and `{ggplot2}`**. Packages like [`{sf}`](https://r-spatial.github.io/sf/) provide tools for working with simple features (`sf` objects), but we'll only need to rely on `{ggplot2}`s built-in `geom_sf()` geometry to plot our data.]{.body-text-s}
 
 <br>
 
@@ -683,7 +683,8 @@ base_map <- ggplot(joined_precip_geom) +
   theme(
     legend.position = "bottom",
     legend.title = element_blank(),
-    plot.caption = element_text(face = "italic", margin = margin(t = 20, r = 10, b = 0, l = 0))
+    plot.caption = element_text(face = "italic",
+                                margin = margin(t = 2, r = 0.5, b = 0, l = 0, "lines"))
   )
 
 base_map
@@ -844,7 +845,7 @@ Adapted from [When to use classed and when to use unclassed color scales](https:
 
 <hr>
 
-Recall [from earlier](https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/suggested-colors) that precipitation data is often encoded using a **brown / blue** color scheme (with drier conditions falling on the brown side and wetter conditions falling on the blue side). 
+Recall [from earlier](https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.2-colors-slides.html#/suggested-colors) that precipitation data is often encoded using a **brown / blue** color scheme (with drier conditions falling on the brown side and wetter conditions falling on the blue side). 
 
 Lucky for us, **RColorBrewer** has this exact palette. **Let's use [all 11 hues]{.teal-text} for our unclassed map**:
 
@@ -901,8 +902,7 @@ base_map +
   scale_fill_gradientn(colors = my_brew_palette11,
                        labels = scales::label_percent(scale = 1),
                        breaks = scales::breaks_width(width = 10)) +
-  guides(fill = guide_colorbar(label.hjust = 0.5,
-                               barwidth = 15, barheight = 0.75))
+  guides(fill = guide_colorbar(barwidth = 15, barheight = 0.75))
 ```
 
 ---
@@ -922,8 +922,7 @@ base_map +
   scale_fill_gradientn(colors = my_brew_palette11,
                        labels = scales::label_percent(scale = 1),
                        breaks = scales::breaks_width(width = 10)) +
-  guides(fill = guide_colorbar(label.hjust = 0.5,
-                               barwidth = 15, barheight = 0.75))
+  guides(fill = guide_colorbar(barwidth = 15, barheight = 0.75))
 ```
 
 ---
@@ -943,8 +942,7 @@ base_map +
   scale_fill_gradientn(colors = my_brew_palette11,
                        labels = scales::label_percent(scale = 1),
                        breaks = scales::breaks_width(width = 10)) +
-  guides(fill = guide_colorbar(label.hjust = 0.5,
-                               barwidth = 15, barheight = 0.75))
+  guides(fill = guide_colorbar(barwidth = 15, barheight = 0.75))
 ```
 
 <br>
@@ -976,8 +974,7 @@ base_map +
                          min(na.omit(joined_precip_geom)$perc_change),
                          0,
                          max(na.omit(joined_precip_geom)$perc_change)))) +
-  guides(fill = guide_colorbar(label.hjust = 0.5,
-                               barwidth = 15, barheight = 0.75))
+  guides(fill = guide_colorbar(barwidth = 15, barheight = 0.75))
 ```
 
 ---
@@ -1001,8 +998,7 @@ base_map +
                          min(na.omit(joined_precip_geom)$perc_change),
                          0,
                          max(na.omit(joined_precip_geom)$perc_change)))) +
-  guides(fill = guide_colorbar(label.hjust = 0.5,
-                               barwidth = 15, barheight = 0.75))
+  guides(fill = guide_colorbar(barwidth = 15, barheight = 0.75))
 ```
 
 ---

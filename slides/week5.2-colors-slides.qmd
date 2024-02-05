@@ -195,10 +195,10 @@ Image source: [Which color scale to use when visualizing data](https://blog.data
 
 <hr>
 
-  - [colors assigned to each group must be distinct and ideally have different lightnesses]{.body-text-s}
-  - [groups don't have an intrinsic order]{.body-text-s}
-  - [limit to no more than 7 colors]{.body-text-s}
   - [mainly formed by selecting differet *hues*]{.body-text-s}
+  - [hues assigned to each group must be distinct and ideally have different lightnesses]{.body-text-s}
+  - [groups don't have an intrinsic order]{.body-text-s}
+  - [limit to no more than 7 hues]{.body-text-s}
 
 ```{r}
 #| eval: true
@@ -222,8 +222,10 @@ Map source: [Analyzing US Census Data](https://walker-data.com/census-r/index.ht
 
   - [colors assigned to data values in a continuum, based on lightness, hue, or both]{.body-text-s}
   - [lower values typically associated with lighter colors & higher values associated with darker colors]{.body-text-s}
-  - [can use a single hue (light to dark) *or* two hues (typically a warmer / brighter hue for lower values and cooler / darker hue for higher values...but not always)]{.body-text-s}
+  - [can use a single hue *or* two hues]{.body-text-s}
 
+<!-- (light to dark) -->
+<!-- (typically a warmer / brighter hue for lower values and cooler / darker hue for higher values...but not always) -->
 
 ```{r}
 #| eval: true
@@ -246,8 +248,8 @@ Map source: [Analyzing US Census Data](https://walker-data.com/census-r/index.ht
 <hr>
 
   - [combination of two sequential palettes with a shared endpoint at the central value]{.body-text-s}
-  - [use a distinctive hue for each of the component palettes]{.body-text-s}
   - [central value is assigned a light color (light gray is best)]{.body-text-s}
+  - [use a distinctive hue for each of the component palettes]{.body-text-s}
 
 ```{r}
 #| eval: true
@@ -1018,7 +1020,7 @@ knitr::include_graphics("images/week5/kaye-etal-2012-colors.png")
 ##  {#color-theory data-menu-title="# Basic Color Theory #" background="#047C90"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">Want to design your own palette? Knowing just a smidge of color theory can help guide you.</p>
+<p class="custom-subtitle bottombr">Want to design your own palette? Here are some helpful guidelines and considerations...</p>
 </div>
 
 ---
@@ -1508,7 +1510,7 @@ ggplot(na.omit(penguins), aes(x = species, fill = sex)) +
 ::: {.column width="50%"}
 
 ::: {.center-text .body-text-s}
-Green (HEX #00FF33 / 132° on the color wheel) with lightness adjusted to 10% (more white) 
+Green (HEX #00FF33 / 132° on the color wheel) with lightness adjusted to 90% (more white) 
 :::
 
 ```{r}
@@ -1523,7 +1525,7 @@ knitr::include_graphics("images/week5/green-tint.png")
 ::: {.column width="50%"}
 
 ::: {.center-text .body-text-s}
-Green (HEX #00FF33 / 132° on the color wheel) with lightness adjusted to 90% (more black)
+Green (HEX #00FF33 / 132° on the color wheel) with lightness adjusted to 10% (more black)
 :::
 
 ```{r}

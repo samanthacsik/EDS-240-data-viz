@@ -375,7 +375,7 @@
     "href": "slides/week5.3-choropleth.html#sf",
     "title": "EDS 240",
     "section": "",
-    "text": "Simple features in R\n\n\nSpatial data can take many forms – simple features is a standard that allows different types of software to specify spatial data in a common way.\n\n\n\nSimple features are comprised of:\n1. a geometry object (e.g. a point, line, polygon) that describes where on Earth the feature is located\n2. attribute data associated with the geometry object (e.g. the precipitation across a county during the last 5 years)\n\n\n\nBecause of how sf objects are represented in R (they look like data frames!), simple features can be maniupulated and plotted by other well-known packages like {dplyr} and {ggplot2}. Packages like {sf} provide tools for working with simple features (sf objects), but we’ll only need to rely on {ggplot2}s built-in geom_sf() geometry to plot our data.\n\n\n\nWhen we download our shapefile using {tigris}, it’ll be loaded as a simple features (sf) object with geometries that allow us to plot county lines. We’ll join our county-level precipitation data to our sf object so that we can color counties by precipitation."
+    "text": "Simple features in R\n\n\nSpatial data can take many forms – simple features is a standard that allows different types of software to specify spatial data in a common way.\n\n\n\nSimple features are comprised of:\n1. a geometry object (e.g. a point, line, polygon) that describes where on Earth the feature is located\n2. attribute data associated with the geometry object (e.g. the precipitation across a county during the last 5 years)\n\n\n\nBecause of how simple feature (sf) objects are represented in R (they look like data frames!), simple features can be maniupulated and plotted by other well-known packages like {dplyr} and {ggplot2}. Packages like {sf} provide tools for working with simple features (sf objects), but we’ll only need to rely on {ggplot2}s built-in geom_sf() geometry to plot our data.\n\n\n\nWhen we download our shapefile using {tigris}, it’ll be loaded as a simple features (sf) object with geometries that allow us to plot county lines. We’ll join our county-level precipitation data to our sf object so that we can color counties by precipitation."
   },
   {
     "objectID": "slides/week5.3-choropleth.html#data-wrangling",
@@ -389,7 +389,7 @@
     "href": "slides/week5.3-choropleth.html#base-map",
     "title": "EDS 240",
     "section": "",
-    "text": "Start by creating a base map\n\n\n\nbase_map &lt;- ggplot(joined_precip_geom) +\n  geom_sf(aes(fill = perc_change), linewidth = 0.1) +\n  labs(title = \"5-year precipitation compared with the 20th century average\",\n       subtitle = \"January 2019 - December 2023\",\n       caption = \"Source: National Centers for Environmental Information\") +\n  theme_void() +\n  theme(\n    legend.position = \"bottom\",\n    legend.title = element_blank(),\n    plot.caption = element_text(face = \"italic\", margin = margin(t = 20, r = 10, b = 0, l = 0))\n  )\n\nbase_map\n\n\n\n\n\n\n\n\n\nBecause we want to map precipitation relative to the 20th century average (e.g. has precipitation for a given region over the last 5 years been above or below the average), a divering color palette makes a lot of sense.\n\n\nYou may notice that Connecticut is missing most of its data. After some digging, I learned that CT recently (2022) replaced its eight counties with nine planning regions as county-equivalents (read more in the UC Census Bureau Notice on 06/06/2022). I couldn’t quite make sense of how to match old county names to new planning regions, as there’s a decent amount of geographic overlap, soooo I gave up (for now) ."
+    "text": "Start by creating a base map\n\n\n\nbase_map &lt;- ggplot(joined_precip_geom) +\n  geom_sf(aes(fill = perc_change), linewidth = 0.1) +\n  labs(title = \"5-year precipitation compared with the 20th century average\",\n       subtitle = \"January 2019 - December 2023\",\n       caption = \"Source: National Centers for Environmental Information\") +\n  theme_void() +\n  theme(\n    legend.position = \"bottom\",\n    legend.title = element_blank(),\n    plot.caption = element_text(face = \"italic\",\n                                margin = margin(t = 2, r = 0.5, b = 0, l = 0, \"lines\"))\n  )\n\nbase_map\n\n\n\n\n\n\n\n\n\nBecause we want to map precipitation relative to the 20th century average (e.g. has precipitation for a given region over the last 5 years been above or below the average), a divering color palette makes a lot of sense.\n\n\nYou may notice that Connecticut is missing most of its data. After some digging, I learned that CT recently (2022) replaced its eight counties with nine planning regions as county-equivalents (read more in the UC Census Bureau Notice on 06/06/2022). I couldn’t quite make sense of how to match old county names to new planning regions, as there’s a decent amount of geographic overlap, soooo I gave up (for now) ."
   },
   {
     "objectID": "slides/week5.3-choropleth.html#decide-on-scale-type",
@@ -417,7 +417,7 @@
     "href": "slides/week5.3-choropleth.html#apply-palette-unclassed",
     "title": "EDS 240",
     "section": "",
-    "text": "Apply our palette & adjust colorbar\n\nHere, we leverage the awesome {scales} package to add %s to the colorbar labels and set our breaks. We also use guides() + guide_colorbar() to update label positioning and colorbar size:\n\nbase_map + \n  scale_fill_gradientn(colors = my_brew_palette11,\n                       labels = scales::label_percent(scale = 1),\n                       breaks = scales::breaks_width(width = 10)) +\n  guides(fill = guide_colorbar(label.hjust = 0.5,\n                               barwidth = 15, barheight = 0.75))"
+    "text": "Apply our palette & adjust colorbar\n\nHere, we leverage the awesome {scales} package to add %s to the colorbar labels and set our breaks. We also use guides() + guide_colorbar() to update label positioning and colorbar size:\n\nbase_map + \n  scale_fill_gradientn(colors = my_brew_palette11,\n                       labels = scales::label_percent(scale = 1),\n                       breaks = scales::breaks_width(width = 10)) +\n  guides(fill = guide_colorbar(barwidth = 15, barheight = 0.75))"
   },
   {
     "objectID": "slides/week5.3-choropleth.html#inspect-color-scale1",
@@ -438,7 +438,7 @@
     "href": "slides/week5.3-choropleth.html#rescale-colorbar",
     "title": "EDS 240",
     "section": "",
-    "text": "Rescale the colorbar so that 0 is at the center\n\n\nbase_map + \n  scale_fill_gradientn(colors = my_brew_palette11,\n                       labels = scales::label_percent(scale = 1),\n                       breaks = scales::breaks_width(width = 10),\n                       values = scales::rescale(x = c(\n                         min(na.omit(joined_precip_geom)$perc_change),\n                         0,\n                         max(na.omit(joined_precip_geom)$perc_change)))) +\n  guides(fill = guide_colorbar(label.hjust = 0.5,\n                               barwidth = 15, barheight = 0.75))"
+    "text": "Rescale the colorbar so that 0 is at the center\n\n\nbase_map + \n  scale_fill_gradientn(colors = my_brew_palette11,\n                       labels = scales::label_percent(scale = 1),\n                       breaks = scales::breaks_width(width = 10),\n                       values = scales::rescale(x = c(\n                         min(na.omit(joined_precip_geom)$perc_change),\n                         0,\n                         max(na.omit(joined_precip_geom)$perc_change)))) +\n  guides(fill = guide_colorbar(barwidth = 15, barheight = 0.75))"
   },
   {
     "objectID": "slides/week5.3-choropleth.html#final-unclassed",
@@ -2552,21 +2552,21 @@
     "href": "slides/week5.2-colors-slides.html#categorical",
     "title": "EDS 240",
     "section": "",
-    "text": "Categorical scales\n\n\ncolors assigned to each group must be distinct and ideally have different lightnesses\ngroups don’t have an intrinsic order\nlimit to no more than 7 colors\nmainly formed by selecting differet hues\n\n\n\nMap source: Analyzing US Census Data, by Kyle Walker"
+    "text": "Categorical scales\n\n\nmainly formed by selecting differet hues\nhues assigned to each group must be distinct and ideally have different lightnesses\ngroups don’t have an intrinsic order\nlimit to no more than 7 hues\n\n\n\nMap source: Analyzing US Census Data, by Kyle Walker"
   },
   {
     "objectID": "slides/week5.2-colors-slides.html#sequential",
     "href": "slides/week5.2-colors-slides.html#sequential",
     "title": "EDS 240",
     "section": "",
-    "text": "Sequential scales\n\n\ncolors assigned to data values in a continuum, based on lightness, hue, or both\nlower values typically associated with lighter colors & higher values associated with darker colors\ncan use a single hue (light to dark) or two hues (typically a warmer / brighter hue for lower values and cooler / darker hue for higher values…but not always)\n\n\n\nMap source: Analyzing US Census Data, by Kyle Walker"
+    "text": "Sequential scales\n\n\ncolors assigned to data values in a continuum, based on lightness, hue, or both\nlower values typically associated with lighter colors & higher values associated with darker colors\ncan use a single hue or two hues\n\n\n\n\n\nMap source: Analyzing US Census Data, by Kyle Walker"
   },
   {
     "objectID": "slides/week5.2-colors-slides.html#diverging",
     "href": "slides/week5.2-colors-slides.html#diverging",
     "title": "EDS 240",
     "section": "",
-    "text": "Diverging scales\n\n\ncombination of two sequential palettes with a shared endpoint at the central value\nuse a distinctive hue for each of the component palettes\ncentral value is assigned a light color (light gray is best)\n\n\n\nMap source: 2020 U.S. Election Mapped: TrumpLand vs Biden Archipelago, by Vivid Maps"
+    "text": "Diverging scales\n\n\ncombination of two sequential palettes with a shared endpoint at the central value\ncentral value is assigned a light color (light gray is best)\nuse a distinctive hue for each of the component palettes\n\n\n\nMap source: 2020 U.S. Election Mapped: TrumpLand vs Biden Archipelago, by Vivid Maps"
   },
   {
     "objectID": "slides/week5.2-colors-slides.html#penguin-plots",
@@ -2706,7 +2706,7 @@
     "href": "slides/week5.2-colors-slides.html#color-theory",
     "title": "EDS 240",
     "section": "",
-    "text": "Want to design your own palette? Knowing just a smidge of color theory can help guide you."
+    "text": "Want to design your own palette? Here are some helpful guidelines and considerations…"
   },
   {
     "objectID": "slides/week5.2-colors-slides.html#select-hue",
@@ -2790,7 +2790,7 @@
     "href": "slides/week5.2-colors-slides.html#adjust-lightness1",
     "title": "EDS 240",
     "section": "",
-    "text": "A few approaches for subduing a pure hue\n\n1. adjust the saturation (i.e. the level of intensity of a color)\n2. adjust value: tint (add white), tone (add gray), or shade (add black)\n3. increase transparency (e.g. using the alpha argument)\n\n\n\nGreen (HEX #00FF33 / 132° on the color wheel) with lightness adjusted to 10% (more white)\n\n\n\n\n\n\n\n\n\n\n\n\nGreen (HEX #00FF33 / 132° on the color wheel) with lightness adjusted to 90% (more black)\n\n\n\n\n\n\n\n\n\n\n\n\n\nLightness adjusted using the HSL (Hue, Saturation, Lightness) color model. Read about HSL vs HSV color models if you want a deeper dive."
+    "text": "A few approaches for subduing a pure hue\n\n1. adjust the saturation (i.e. the level of intensity of a color)\n2. adjust value: tint (add white), tone (add gray), or shade (add black)\n3. increase transparency (e.g. using the alpha argument)\n\n\n\nGreen (HEX #00FF33 / 132° on the color wheel) with lightness adjusted to 90% (more white)\n\n\n\n\n\n\n\n\n\n\n\n\nGreen (HEX #00FF33 / 132° on the color wheel) with lightness adjusted to 10% (more black)\n\n\n\n\n\n\n\n\n\n\n\n\n\nLightness adjusted using the HSL (Hue, Saturation, Lightness) color model. Read about HSL vs HSV color models if you want a deeper dive."
   },
   {
     "objectID": "slides/week5.2-colors-slides.html#adjust-lightness2",
