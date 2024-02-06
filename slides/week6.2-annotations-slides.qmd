@@ -28,6 +28,8 @@ editor_options:
 <!-- - annotations talk some trial & error -->
 <!-- - easiest to create a df with your annotation positions (x, y) and text AS WELL AS a df with arrrow positioning (xstart, xend, ystart,) -->
 
+<!-- ggforce -->
+
 <!-- See `guide_legend` under hexbin map: https://r-graph-gallery.com/328-hexbin-map-of-the-usa.html -->
 
 <!-- 3 annotations -- {ggtext} {ggtextpath} see https://cararthompson.github.io/nhsr-2023-level-up-workshop/level-up-workshop.html#/title-slide-->

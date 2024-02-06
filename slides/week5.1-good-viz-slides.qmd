@@ -1343,52 +1343,52 @@ The proportions of the two scales are often different from each other in dual ax
 So while the chart looks like the German GDP and the global GDP go up at roughly the same rate (at least until 2014), they don’t. The global GDP increased by 80% until 2014; the GDP of Germany by 40%.
 :::
 
----
+<!-- --- -->
 
-## {#dual-axes3 data-menu-title="Dual axes 3" visibility="uncounted"} 
+<!-- ## {#dual-axes3 data-menu-title="Dual axes 3" visibility="uncounted"}  -->
 
-[Dual y-axes can deliberately mislead readers]{.slide-title2}
+<!-- [Dual y-axes can deliberately mislead readers]{.slide-title2} -->
 
-<hr>
+<!-- <hr> -->
 
-[**The scales of dual axis charts are arbitrary and therefore can (deliberately) mislead readers about the relationship between the two data series.** Let's take this example using real [Worldbank data](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2016&start=1960&view=chart) for the German GDP and the global GDP between 2004 and 2016:]{.body-text-s}
+<!-- [**The scales of dual axis charts are arbitrary and therefore can (deliberately) mislead readers about the relationship between the two data series.** Let's take this example using real [Worldbank data](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2016&start=1960&view=chart) for the German GDP and the global GDP between 2004 and 2016:]{.body-text-s} -->
 
-:::: {.columns}
+<!-- :::: {.columns} -->
 
-::: {.column width="50%"}
-<br>
-<br>
-<br>
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "100%"
-knitr::include_graphics("images/week5/dual-axis1.png")
-```
-:::
+<!-- ::: {.column width="50%"} -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| fig-align: "center" -->
+<!-- #| out-width: "100%" -->
+<!-- knitr::include_graphics("images/week5/dual-axis1.png") -->
+<!-- ``` -->
+<!-- ::: -->
 
-::: {.column width="50%"}
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "100%"
-knitr::include_graphics("images/week5/dual-axis3.png")
-```
-:::
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| fig-align: "center" -->
+<!-- #| out-width: "100%" -->
+<!-- knitr::include_graphics("images/week5/dual-axis3.png") -->
+<!-- ``` -->
+<!-- ::: -->
 
-::::
+<!-- :::: -->
 
-::: {.footer}
-Example from [Why not to use two axes, and what to use instead](https://blog.datawrapper.de/dualaxis/), by Lisa Charlotte Muth
-:::
+<!-- ::: {.footer} -->
+<!-- Example from [Why not to use two axes, and what to use instead](https://blog.datawrapper.de/dualaxis/), by Lisa Charlotte Muth -->
+<!-- ::: -->
 
-::: notes
-This is how the chart looks like with the same baseline. (Meaning, if we extended both y-axes to zero, they would have the same height.). In the best case, our readers will now think: “Seems like the global GDP increased more than the German GDP”. Yes! Success! In the worst case, our readers will think: “In the first years, the German GDP was higher than the global GDP. And then in 2011, the two GDP’s were the same:”
+<!-- ::: notes -->
+<!-- This is how the chart looks like with the same baseline. (Meaning, if we extended both y-axes to zero, they would have the same height.). In the best case, our readers will now think: “Seems like the global GDP increased more than the German GDP”. Yes! Success! In the worst case, our readers will think: “In the first years, the German GDP was higher than the global GDP. And then in 2011, the two GDP’s were the same:” -->
 
-**If things look close-by on a chart, it’s hard to constantly remember that actually, they are miles apart.**
-:::
+<!-- **If things look close-by on a chart, it’s hard to constantly remember that actually, they are miles apart.** -->
+<!-- ::: -->
 
 ---
 

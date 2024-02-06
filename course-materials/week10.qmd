@@ -15,11 +15,12 @@ toc: true
 *Coming soon!*
 
 <!-- - parallel coordinate plots -->
-<!-- - radar plots  -->
+<!-- - radar plots -->
 <!-- - sankey diagrams -->
-<!-- bump charts -->
-<!-- treemap -->
-<!-- sunburst -->
+<!-- - bump charts -->
+<!-- - treemap -->
+<!-- - sunburst -->
+<!-- - heatmaps -->
 <!-- - choropleth -->
 <!-- - {geopfacet} -->
 <!-- - heatmaps -->

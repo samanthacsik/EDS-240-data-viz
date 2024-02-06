@@ -730,7 +730,7 @@ plot
 earnings_pal <- c("males" = "#2D7787",
                   "females" = "#FC6B4B",
                   dark_text = "#0C1509",
-                  light_text = "#575D55")
+                  light_text = "#4E514D") 
 ```
 
 [The primary purpose of the [`{monochromeR}` package](https://github.com/cararthompson/monochromeR) is for creating monochrome colour palettes, however, it also includes a **helpful function for viewing our palette**:]{.body-text-s}
@@ -948,9 +948,9 @@ showtext_auto()
 
 ---
 
-## {#apply-google-fonts data-menu-title="Apply Google Fonts"} 
+## {#apply-google-fonts-code data-menu-title="Apply Google Fonts (code)"} 
 
-[Apply Google Fonts]{.slide-title}
+[Apply Google Fonts (code)]{.slide-title}
 
 <hr>
 
@@ -959,6 +959,7 @@ Resulting plot is rendered on the next slide!
 ```{r}
 #| eval: false
 #| echo: true
+#| code-line-numbers: "8,12,16,20,25"
 plot +
   labs(title = "Earnings by Occupation and Sex",
        subtitle = "Median earnings of full-time male vs. female workers by occupation in 2016",
@@ -995,6 +996,8 @@ plot +
 :::
 
 ---
+
+## {#apply-google-fonts-viz data-menu-title="Apply Google Fonts (viz)"} 
 
 ```{r}
 #| eval: true
@@ -1035,7 +1038,221 @@ plot +
 
 ---
 
-fontawesome here
+## {#import-fa-fonts data-menu-title="Import Font Awesome fonts"} 
+
+[Import Font Awesome fonts]{.slide-title}
+
+<hr>
+
+[[Font Awesome](https://fontawesome.com/) is a library of icons, which can be imported and used similar to Google Fonts. You'll need to download the font files first (see week 5 [pre-class prep instructions](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week6.html#download-font-awesome-fonts)). We can then use `showtext::font_add()` to make them available for use in our ggplots:]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "15-21"
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    setup                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..........................load packages.........................
+library(tidyverse)
+library(showtext)
+
+#......................import Google Fonts.......................
+# `name` is the name of the font as it appears in Google Fonts
+# `family` is the user-specified id that you'll use to apply a font in your ggpplot
+font_add_google(name = "Josefin Sans", family = "josefin")
+font_add_google(name = "Sen", family = "sen")
+
+#....................import Font Awesome fonts...................
+font_add(family = "fa-brands",
+         regular = here::here("fonts", "Font Awesome 6 Brands-Regular-400.otf"))
+font_add(family = "fa-regular",
+         regular = here::here("fonts", "Font Awesome 6 Free-Regular-400.otf")) 
+font_add(family = "fa-solid",
+         regular = here::here("fonts", "Font Awesome 6 Free-Solid-900.otf"))
+
+#................enable {showtext} for rendering.................
+showtext_auto()
+
+# ~ additional setup code omitted for brevity ~
+```
+
+## {#fa-unicode data-menu-title="FA unicode"} 
+
+[Reference icons by their unicode]{.slide-title}
+
+<hr>
+
+Let's say I want to include my GitHub usename along with the GitHub icon in the caption of my plot. First, search [**Free** icons on Font Awesome](https://fontawesome.com/search?o=r&m=free) and click on the one you want to use. Find the icon's unicode in the top right corner of the popup box:
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week6/fa-unicode.png")
+```
+
+---
+
+## {#create-caption data-menu-title="FA unicode (caption)"} 
+
+[Reference icons by their unicode]{.slide-title}
+
+<hr>
+
+[To use this unicode in HTML, we need to stick a `&#x` ahead of it. It's easier if we save our unicode (as well as our username text) to variables that we can more easily reference as we craft our new caption. I also recommend constructing your full caption outside of your ggplot -- the [`glue::glue()` function](https://glue.tidyverse.org/) is helpful here:]{.body-text-s}
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: true
+#.........................create caption.........................
+github_icon <- "&#xf09b"
+github_username <- "samanthacsik"
+
+caption <- glue::glue(
+  "Data Source: TidyTuesday (March 5, 2019) |
+  <span style='font-family:fa-brands;'>{github_icon};</span>
+  {github_username}"
+)
+```
+
+<br>
+
+[Note that we **(1)** wrap our object names in `{}` to use the values that are saved to them, and **(2)**, we use the HTML `<span>` tag to apply styles to text -- here, we use the `font-family` property and supply it the value, `fa-brands` (which is the id (i.e. `family`) we created when loading the `Font Awesome 6 Brands-Regular-400.otf` file at the top of our script).]{.body-text-s}
+
+---
+
+## {#create-subtitle data-menu-title="FA unicode (subtitle)"} 
+
+[Let's also add an icon to our subtitle]{.slide-title}
+
+<hr>
+
+We can do this the same way that we constructed our caption -- **note** that this money icon is from the [`fa-regular` family](https://fontawesome.com/icons/money-bill-1?f=classic&s=regular) (though you could choose to use the [solid version](https://fontawesome.com/icons/money-bill-1?f=classic&s=solid) as well):
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: true
+#........................create subtitle.........................
+money_icon <- "&#xf3d1"
+
+subtitle <- glue::glue("Median earnings 
+                       <span style='font-family:fa-regular;'>{money_icon};</span>
+                       of full-time male versus female workers by occupation in 2016")
+```
+
+---
+
+## {#update-text-code data-menu-title="Add new plot text (code)"} 
+
+[Apply our new subtitle & caption (code)]{.slide-title}
+
+<hr>
+
+Resulting plot is rendered on the next slide!
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "3-4"
+plot +
+  labs(title = "Earnings by Occupation and Sex",
+       subtitle = subtitle,
+       caption = caption) +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(family = "josefin",
+                              face = "bold",
+                              size = 25),
+    plot.subtitle = ggtext::element_textbox_simple(family = "sen",
+                                                   size = 17,
+                                                   color = earnings_pal["light_text"],
+                                                   margin = margin(t = 0.5, r = 0, b = 1, l = 0, unit = "lines")),
+    plot.caption = ggtext::element_textbox(family = "sen",
+                                           face = "italic", # NOTE: this no longer applies since the typeface "sen" does not exist in an italic font style
+                                           color = earnings_pal["light_text"],
+                                           margin = margin(t = 3, r = 0, b = 0, l = 0, unit = "lines")),
+    strip.text.x = element_text(family = "josefin",
+                                face = "bold",
+                                size = 12,
+                                hjust = 0),
+    panel.spacing.y = unit(1, "lines"),
+    axis.text = element_text(family = "sen",
+                             color = earnings_pal["light_text"]),
+    axis.text.x = element_text(size = 10),
+    axis.title = element_blank()
+  )
+```
+
+---
+
+## {#update-text-viz data-menu-title="Add new plot text (viz)"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| fig-asp: 0.7
+#| out-height: "100%"
+plot +
+  labs(title = "Earnings by Occupation and Sex",
+       subtitle = subtitle,
+       caption = caption) +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(family = "josefin",
+                              face = "bold",
+                              size = 25),
+    plot.subtitle = ggtext::element_textbox_simple(family = "sen",
+                                                   size = 17,
+                                                   color = earnings_pal["light_text"],
+                                                   margin = margin(t = 0.5, r = 0, b = 1, l = 0, unit = "lines")),
+    plot.caption = ggtext::element_textbox(family = "sen",
+                                           face = "italic", # NOTE: this no longer applies since the typeface "sen" does not exist in an italic font style
+                                           color = earnings_pal["light_text"],
+                                           margin = margin(t = 3, r = 0, b = 0, l = 0, unit = "lines")),
+    strip.text.x = element_text(family = "josefin",
+                                face = "bold",
+                                size = 12,
+                                hjust = 0),
+    panel.spacing.y = unit(1, "lines"),
+    axis.text = element_text(family = "sen",
+                             color = earnings_pal["light_text"]),
+    axis.text.x = element_text(size = 10),
+    axis.title = element_blank()
+  )
+```
+
+---
+
+## {#up-next data-menu-title="Next modifications"} 
+
+[Up next . . .]{.slide-title}
+
+<hr>
+
+<br>
+
+[Our plot is getting closer, but isn't *quite* done just yet. Up next, we'll:]{.body-text-m}
+
+<br>
+
+1. create an alternative legend by coloring our subtitle text (i.e. **[male]{style="color:#2D7787"}** & **[female]{style="color:#FC6B4B"}** to match the points in our plot
+2. learn how to add annotations!
+
+<br>
+
+::: {.center-text .body-text-l}
+Stay tuned!
+:::
 
 ---
 
@@ -1043,7 +1260,7 @@ fontawesome here
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">{{< fa mug-hot title="a mug with steam rising out the top" >}} Take a Break</p>
-<p class="caption-text">*~ This is the end of Lesson 2 (of 3) ~*</p>
+<p class="caption-text">*~ This is the end of Lesson 1 (of 2) ~*</p>
 </div>
 
 ```{r}
