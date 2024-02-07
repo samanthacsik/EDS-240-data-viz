@@ -615,6 +615,10 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
 
 **Unfortunately, text drawing is handled differently by each graphics device**, which means that if we want a font to work everywhere, we need to configure all these different devices in different ways.
 
+::: {.footer}
+Read a bit more about graphics devices in [Chapter 8](https://bookdown.org/rdpeng/exdata/graphics-devices.html) of [Exploratory Data Analysis with R](https://bookdown.org/rdpeng/exdata/), by [Roger Peng](https://rdpeng.org/)
+:::
+
 ---
 
 ## {#font-pkgs data-menu-title="Font packages"} 
@@ -1202,9 +1206,9 @@ knitr::include_graphics("images/week6/fa-unicode.png")
 
 ---
 
-## {#create-caption data-menu-title="FA unicode (caption)"} 
+## {#create-caption data-menu-title="FA Unicode (caption)"} 
 
-[Reference icons by their unicode]{.slide-title}
+[Add an icon to our caption]{.slide-title}
 
 <hr>
 
@@ -1255,9 +1259,9 @@ subtitle <- glue::glue("Median earnings
 
 ---
 
-## {#update-text-code data-menu-title="Add new plot text (code)"} 
+## {#update-plot-text data-menu-title="Add new plot text"} 
 
-[Apply our new subtitle & caption (code)]{.slide-title}
+[Apply our new subtitle & caption]{.slide-title}
 
 <hr>
 
@@ -1277,14 +1281,14 @@ plot +
     plot.title = element_text(family = "josefin",
                               face = "bold",
                               size = 25),
-    plot.subtitle = ggtext::element_textbox_simple(family = "sen",
-                                                   size = 17,
-                                                   color = earnings_pal["light_text"],
-                                                   margin = margin(t = 0.5, r = 0, b = 1, l = 0, unit = "lines")),
-    plot.caption = ggtext::element_textbox(family = "sen",
-                                           face = "italic", # NOTE: this no longer applies since the typeface "sen" does not exist in an italic font style
-                                           color = earnings_pal["light_text"],
-                                           margin = margin(t = 3, r = 0, b = 0, l = 0, unit = "lines")),
+    plot.subtitle = element_text(family = "sen",
+                                 size = 17,
+                                 color = earnings_pal["light_text"],
+                                 margin = margin(t = 0.5, r = 0, b = 1, l = 0, unit = "lines")),
+    plot.caption = element_text(family = "sen",
+                                face = "italic", # NOTE: this no longer applies since the typeface "sen" does not exist in an italic font style
+                                color = earnings_pal["light_text"],
+                                margin = margin(t = 3, r = 0, b = 0, l = 0, unit = "lines")),
     strip.text.x = element_text(family = "josefin",
                                 face = "bold",
                                 size = 12,
@@ -1299,7 +1303,7 @@ plot +
 
 ---
 
-## {#update-text-viz data-menu-title="Add new plot text (viz)"} 
+## {#does-not-work data-menu-title="Doesn't quite work just yet"} 
 
 ```{r}
 #| eval: true
@@ -1307,6 +1311,71 @@ plot +
 #| fig-align: "center"
 #| fig-asp: 0.7
 #| out-height: "100%"
+plot +
+  labs(title = "Earnings by Occupation and Sex",
+       subtitle = subtitle,
+       caption = caption) +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(family = "josefin",
+                              face = "bold",
+                              size = 25),
+    plot.subtitle = element_text(family = "sen",
+                                 size = 17,
+                                 color = earnings_pal["light_text"],
+                                 margin = margin(t = 0.5, r = 0, b = 1, l = 0, unit = "lines")),
+    plot.caption = element_text(family = "sen",
+                                face = "italic", # NOTE: this no longer applies since the typeface "sen" does not exist in an italic font style
+                                color = earnings_pal["light_text"],
+                                margin = margin(t = 3, r = 0, b = 0, l = 0, unit = "lines")),
+    strip.text.x = element_text(family = "josefin",
+                                face = "bold",
+                                size = 12,
+                                hjust = 0),
+    panel.spacing.y = unit(1, "lines"),
+    axis.text = element_text(family = "sen",
+                             color = earnings_pal["light_text"]),
+    axis.text.x = element_text(size = 10),
+    axis.title = element_blank()
+  )
+```
+
+---
+
+## {#ggplot-HTML-parsing data-menu-title="{ggplot} can't parse HTML"} 
+
+[ggplot doesn't (natively) know how to parse HTML]{.slide-title2}
+
+<hr>
+
+<br>
+
+. . . but the [`{ggtext}` package](https://wilkelab.org/ggtext/) does! If we want to render ggplot text using HTML or Markdown syntax, **we *also* need to use one of `{ggtext}`'s [`theme()` elements](https://wilkelab.org/ggtext/articles/theme_elements.html)**, which will parse and render the applied styles. 
+
+<br>
+
+There are a few options, all which replace `{ggplot2}`'s  `element_text()` -- be sure to check out the documentation as you're deciding which to use:
+
+  - [`element_markdown()`]{.body-text-s}
+  - [`element_textbox()`]{.body-text-s}
+  - [`element_textbox_simple()`]{.body-text-s}
+  
+---
+
+## {#update-theme-elements-code data-menu-title="Update theme elements (code)"} 
+
+[Update `theme()` elements to render styling]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: false
+#| echo: true
+#| fig-align: "center"
+#| fig-asp: 0.7
+#| out-height: "100%"
+#| code-line-numbers: "11,15"
 plot +
   labs(title = "Earnings by Occupation and Sex",
        subtitle = subtitle,
@@ -1339,26 +1408,194 @@ plot +
 
 ---
 
-## {#up-next data-menu-title="Next modifications"} 
+## {#update-theme-elements-viz data-menu-title="Update theme elements (viz)"} 
 
-[Up next . . .]{.slide-title}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| fig-asp: 0.7
+#| out-height: "100%"
+#| code-line-numbers: "11,15"
+plot +
+  labs(title = "Earnings by Occupation and Sex",
+       subtitle = subtitle,
+       caption = caption) +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(family = "josefin",
+                              face = "bold",
+                              size = 25),
+    plot.subtitle = ggtext::element_textbox_simple(family = "sen",
+                                 size = 17,
+                                 color = earnings_pal["light_text"],
+                                 margin = margin(t = 0.5, r = 0, b = 1, l = 0, unit = "lines")),
+    plot.caption = ggtext::element_textbox(family = "sen",
+                                face = "italic", # NOTE: this no longer applies since the typeface "sen" does not exist in an italic font style
+                                color = earnings_pal["light_text"],
+                                margin = margin(t = 3, r = 0, b = 0, l = 0, unit = "lines")),
+    strip.text.x = element_text(family = "josefin",
+                                face = "bold",
+                                size = 12,
+                                hjust = 0),
+    panel.spacing.y = unit(1, "lines"),
+    axis.text = element_text(family = "sen",
+                             color = earnings_pal["light_text"]),
+    axis.text.x = element_text(size = 10),
+    axis.title = element_blank()
+  )
+```
+
+
+---
+
+## {#text-legend data-menu-title="Add legend"} 
+
+[We also need to tell reader what our colors mean!]{.slide-title2}
+
+<hr>
+
+Traditional legends are fine, but for this plot, we'll opt to **color-code our subtitle text (i.e. [male]{style="color:#2D7787"} & [female]{style="color:#FC6B4B"}) to match the points in our plot**. We can again use the [`{ggtext}` package](https://wilkelab.org/ggtext/) to apply simple Markdown and HTML rendering to our ggplot text.
+
+<br>
+
+. . . 
+
+We already have the correct `theme()` elements added to our plot, but we do need to **update our subtitle text with Markdown and HTML styling**. Let's bold, color, and make these words slightly larger than the surrounding text:
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: true
+#........................create subtitle.........................
+money_icon <- "&#xf3d1"
+
+subtitle <- glue::glue("Median earnings <span style='font-family:fa-regular;'>{money_icon};</span>
+                       of full-time
+                       <span style='color:#2D7787;font-size:20pt;'>**male**</span>
+                       versus <span style='color:#FC6B4B;font-size:20pt;'>**female**</span>
+                       workers by occupation in 2016")
+```
+
+::: {.footer}
+**Note:** We combine both Markdown syntax (e.g. `**` to **bold text**) and HTML syntax to apply in-line CSS styling (e.g. `<span style=...>`)):
+:::
+
+---
+
+## {#updated-text data-menu-title="Voilà!"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| fig-asp: 0.7
+#| out-height: "100%"
+plot +
+  labs(title = "Earnings by Occupation and Sex",
+       subtitle = subtitle,
+       caption = caption) +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(family = "josefin",
+                              face = "bold",
+                              size = 25),
+    plot.subtitle = ggtext::element_textbox_simple(family = "sen",
+                                 size = 17,
+                                 color = earnings_pal["light_text"],
+                                 margin = margin(t = 0.5, r = 0, b = 1, l = 0, unit = "lines")),
+    plot.caption = ggtext::element_textbox(family = "sen",
+                                face = "italic", # NOTE: this no longer applies since the typeface "sen" does not exist in an italic font style
+                                color = earnings_pal["light_text"],
+                                margin = margin(t = 3, r = 0, b = 0, l = 0, unit = "lines")),
+    strip.text.x = element_text(family = "josefin",
+                                face = "bold",
+                                size = 12,
+                                hjust = 0),
+    panel.spacing.y = unit(1, "lines"),
+    axis.text = element_text(family = "sen",
+                             color = earnings_pal["light_text"]),
+    axis.text.x = element_text(size = 10),
+    axis.title = element_blank()
+  )
+```
+
+---
+
+## {#before-after data-menu-title="Before & After"} 
+
+[Before & after]{.slide-title}
 
 <hr>
 
 <br>
 
-[Our plot is getting closer, but isn't *quite* done just yet. Up next, we'll:]{.body-text-m}
+:::: {.columns}
 
-<br>
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| fig-asp: 0.9
+#| out-height: "100%"
+ggplot(subset_jobs) +
+  geom_segment(aes(x = total_earnings_female, xend = total_earnings_male,
+                 y = fct_reorder(occupation, total_earnings), yend = occupation)) +
+  geom_point(aes(x = total_earnings_male, y = occupation),
+             color = "#CD93D8", size = 3.25) +
+  geom_point(aes(x = total_earnings_female, y = occupation),
+             color = "#6A1E99", size = 3.25) +
+  facet_wrap(~group_label, nrow = 3, scales = "free_y") +
+  scale_x_continuous(labels = scales::label_dollar(scale = 0.001, suffix = "k"),
+                     breaks = c(25000, 50000, 75000, 100000, 125000))
+```
 
-1. create an alternative legend by coloring our subtitle text (i.e. **[male]{style="color:#2D7787"}** & **[female]{style="color:#FC6B4B"}** to match the points in our plot
-2. learn how to add annotations!
-
-<br>
-
-::: {.center-text .body-text-l}
-Stay tuned!
 :::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| fig-asp: 0.9
+#| out-height: "100%"
+plot +
+  labs(title = "Earnings by Occupation and Sex",
+       subtitle = subtitle,
+       caption = caption) +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(family = "josefin",
+                              face = "bold",
+                              size = 25),
+    plot.subtitle = ggtext::element_textbox_simple(family = "sen",
+                                 size = 17,
+                                 color = earnings_pal["light_text"],
+                                 margin = margin(t = 0.5, r = 0, b = 1, l = 0, unit = "lines")),
+    plot.caption = ggtext::element_textbox(family = "sen",
+                                face = "italic", # NOTE: this no longer applies since the typeface "sen" does not exist in an italic font style
+                                color = earnings_pal["light_text"],
+                                margin = margin(t = 3, r = 0, b = 0, l = 0, unit = "lines")),
+    strip.text.x = element_text(family = "josefin",
+                                face = "bold",
+                                size = 12,
+                                hjust = 0),
+    panel.spacing.y = unit(1, "lines"),
+    axis.text = element_text(family = "sen",
+                             color = earnings_pal["light_text"]),
+    axis.text.x = element_text(size = 10),
+    axis.title = element_blank()
+  )
+```
+:::
+
+::::
+
 
 ---
 

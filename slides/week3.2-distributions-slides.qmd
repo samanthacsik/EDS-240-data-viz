@@ -1218,6 +1218,25 @@ ggplot(penguins, aes(x = species, y = bill_length_mm, fill = species)) +
 ```
 
 :::
+
+<!-- --- -->
+
+<!-- ## {#going-further data-menu-title="Going further"}  -->
+
+<!-- [Check out the `{ggdist}` package!]{.slide-title} -->
+
+<!-- <hr> -->
+
+<!-- The [`{ggdist}` package](https://mjskay.github.io/ggdist/) provides some additional geoms and stats for visualizing distributions and uncertainty. Check it out! -->
+
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| fig-align: "center" -->
+<!-- #| out-width: "100%" -->
+<!-- knitr::include_graphics("images/week3/ggdist.png") -->
+<!-- ``` -->
+
 ---
 
 ##  {#end-break data-menu-title="# End / Break #" background="#047C90"}
