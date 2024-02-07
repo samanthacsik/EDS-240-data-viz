@@ -949,7 +949,28 @@
     "href": "slides/week6.1-typography-slides.html#change-fonts",
     "title": "EDS 240",
     "section": "",
-    "text": "Let’s learn how to import and use Google fonts in our ggplots"
+    "text": "Let’s learn how to use different fonts in our ggplots!"
+  },
+  {
+    "objectID": "slides/week6.1-typography-slides.html#sys-fonts1",
+    "href": "slides/week6.1-typography-slides.html#sys-fonts1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "The problem with system fonts\n\nA system font is one that’s already assumed to be on the vast majority of users’ devices, with no need for a web font to be downloaded.\n\nThere are only three system fonts that are guaranteed to work everywhere: sans (the default), serif, or mono. Use the family argument to specify which font family you’d like to use for a particular text element, and use the face argument to specify font face (bold, italic, plain (default)):\n\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +\n  geom_point() + \n  labs(title = \"This title is serif font\",\n       subtitle = \"This subtitle is mono font\",\n       x = \"This axis label is sans font (default)\",\n       y = \"This axis is also sans font (default)\") +\n  theme(\n    plot.title = element_text(family = \"serif\", size = 30),\n    plot.subtitle = element_text(family = \"mono\", size = 25),\n    axis.title = element_text(family = \"sans\", size = 22),\n    axis.text.x = element_text(family = \"serif\", face = \"bold\", size = 18),\n    axis.text.y = element_text(family = \"mono\", face = \"italic\", size = 18)\n    )"
+  },
+  {
+    "objectID": "slides/week6.1-typography-slides.html#sys-fonts2",
+    "href": "slides/week6.1-typography-slides.html#sys-fonts2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "The problem with system fonts\n\nA graphics device (GD) is something used to make a plot appear – everytime you create a plot in R, it needs to be sent to a specific GD to be rendered. There are two main device types:\n\n\n\nscreen devices: the most common place for your plot to be “sent” – whenever our plot appears in a window on our computer screen, it’s being sent to a screen device; different operating systems (e.g. Mac, Windows, Linux) have different screen devices\nfile devices: if we want to write (i.e. save) our plot to a file, we can send our plot to a particular file device (e.g. pdf, png, jpeg)\n\n\n\n\nUnfortunately, text drawing is handled differently by each graphics device, which means that if we want a font to work everywhere, we need to configure all these different devices in different ways."
+  },
+  {
+    "objectID": "slides/week6.1-typography-slides.html#font-pkgs",
+    "href": "slides/week6.1-typography-slides.html#font-pkgs",
+    "title": "EDS 240",
+    "section": "",
+    "text": "R packages to the rescue!\n\nFortunately, there are a couple super handy packages for working with fonts:\n\n{showtext}\n{extrafont}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe’ll be using {showtext} for a couple reasons: it supports more file formats and more graphics devices, and it also avoids using external software ({extrafont} requires that you install some additional software and packages first). {showtext} makes is super easy to import and use Google Fonts.\n\nAlbert Rapp and Nicola Rennie both have written great blog posts on using {showtext}. These materials draw from both their work!\n\n\n\n\nre: opening a new GD, windows() after showtext_auto() https://gradientdescending.com/adding-custom-fonts-to-ggplot-in-r/"
   },
   {
     "objectID": "slides/week6.1-typography-slides.html#original-salary-plot",
@@ -1012,7 +1033,7 @@
     "href": "slides/week6.1-typography-slides.html#import-google-fonts",
     "title": "EDS 240",
     "section": "",
-    "text": "Import Google Fonts\n\nWe’ll use the {showtext} package to import and apply our Google Fonts. Import {showtext} at the top of your script, then use font_add_google() to specify the font(s) you want to import. Importantly, you’ll also need to “turn on” showtext using showtext_auto() – this enables showtext font rendering within any subsequent plots.\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                                    setup                                 ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n#..........................load packages.........................\nlibrary(tidyverse)\nlibrary(showtext)\n\n#..........................import fonts..........................\n# `name` is the name of the font as it appears in Google Fonts\n# `family` is the user-specified id that you'll use to apply a font in your ggpplot\nfont_add_google(name = \"Josefin Sans\", family = \"josefin\")\nfont_add_google(name = \"Sen\", family = \"sen\")\n\n#................enable {showtext} for rendering.................\nshowtext_auto()\n\n# ~ additional setup code omitted for brevity ~"
+    "text": "Import Google Fonts\n\n\nImport {showtext} at the top of your script, then use font_add_google() to specify the font family(ies) you want to import. Importantly, you’ll also need to “turn on” showtext using showtext_auto() – this enables showtext font rendering for any newly opened graphics devices.\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                                    setup                                 ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n#..........................load packages.........................\nlibrary(tidyverse)\nlibrary(showtext)\n\n#..........................import fonts..........................\n# `name` is the name of the font as it appears in Google Fonts\n# `family` is the user-specified id that you'll use to apply a font in your ggpplot\nfont_add_google(name = \"Josefin Sans\", family = \"josefin\")\nfont_add_google(name = \"Sen\", family = \"sen\")\n\n#................enable {showtext} for rendering.................\nshowtext_auto()\n\n# ~ additional setup code omitted for brevity ~"
   },
   {
     "objectID": "slides/week6.1-typography-slides.html#apply-google-fonts-code",
@@ -1033,7 +1054,7 @@
     "href": "slides/week6.1-typography-slides.html#fa-unicode",
     "title": "EDS 240",
     "section": "",
-    "text": "Reference icons by their unicode\n\nLet’s say I want to include my GitHub usename along with the GitHub icon in the caption of my plot. First, search Free icons on Font Awesome and click on the one you want to use. Find the icon’s unicode in the top right corner of the popup box:"
+    "text": "Reference icons by their Unicode\n\nLet’s say I want to include my GitHub username along with the GitHub icon in the caption of my plot. Search the Free icons on Font Awesome and click on the one you want to use. Find the icon’s Unicode in the top right corner of the popup box:"
   },
   {
     "objectID": "slides/week6.1-typography-slides.html#create-caption",

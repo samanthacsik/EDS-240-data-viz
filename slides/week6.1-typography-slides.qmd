@@ -551,8 +551,112 @@ R-Ladies Chapter Events, by [Nicola Rennie](https://ijeamaka-anyene.netlify.app/
 ##  {#change-fonts data-menu-title="# Code example #" background="#047C90"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">Let's learn how to import and use Google fonts in our ggplots</p>
+<p class="custom-subtitle bottombr">Let's learn how to use different fonts in our ggplots!</p>
 </div>
+
+---
+
+## {#sys-fonts1 data-menu-title="System fonts 1"} 
+
+[The problem with system fonts]{.slide-title}
+
+<hr>
+
+A **[[system font](https://fonts.google.com/knowledge/glossary/system_font_web_safe_font)]{.teal-text} is one that's already assumed to be on the vast majority of users' devices**, with no need for a web font to be downloaded.
+
+. . . 
+
+[There are **only three system fonts  that are guaranteed to work everywhere**: **[sans]{.teal-text}** (the default), **[serif]{.teal-text}**, or **[mono]{.teal-text}**. Use the `family` argument to specify which font family you'd like to use for a particular text element, and use the `face` argument to specify font face (**bold**, *italic*, plain (default)):]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| fig-asp: 0.7
+#| output-location: column
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point() + 
+  labs(title = "This title is serif font",
+       subtitle = "This subtitle is mono font",
+       x = "This axis label is sans font (default)",
+       y = "This axis is also sans font (default)") +
+  theme(
+    plot.title = element_text(family = "serif", size = 30),
+    plot.subtitle = element_text(family = "mono", size = 25),
+    axis.title = element_text(family = "sans", size = 22),
+    axis.text.x = element_text(family = "serif", face = "bold", size = 18),
+    axis.text.y = element_text(family = "mono", face = "italic", size = 18)
+    )
+```
+
+---
+
+## {#sys-fonts2 data-menu-title="System fonts 2"} 
+
+[The problem with system fonts]{.slide-title}
+
+<hr>
+
+**A graphics device (GD) is something used to make a plot appear** -- everytime you create a plot in R, it needs to be sent to a specific GD to be rendered. There are two main device types:
+
+<br>
+
+. . . 
+
+1. **screen devices:** the most common place for your plot to be "sent" -- whenever our plot appears in a window on our computer screen, it's being sent to a screen device; different operating systems (e.g. Mac, Windows, Linux) have different screen devices
+2. **file devices:** if we want to write (i.e. save) our plot to a file, we can send our plot to a particular file device (e.g. pdf, png, jpeg)
+
+<br>
+
+. . .
+
+**Unfortunately, text drawing is handled differently by each graphics device**, which means that if we want a font to work everywhere, we need to configure all these different devices in different ways.
+
+---
+
+## {#font-pkgs data-menu-title="Font packages"} 
+
+[R packages to the rescue!]{.slide-title}
+
+<hr>
+
+Fortunately, there are a couple super handy packages for working with fonts:
+
+- [`{showtext}`](https://github.com/yixuan/showtext) 
+- [`{extrafont}`](https://github.com/wch/extrafont)
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "60%"
+knitr::include_graphics("images/week6/showtext.png")
+```
+:::
+
+::: {.column width="50%"}
+<br>
+
+[**We'll be using `{showtext}`** for a couple reasons: it supports more file formats *and* more graphics devices, and it also avoids using external software (`{extrafont}` requires that you install some additional software and packages first). `{showtext}` makes is *super* easy to import and use [Google Fonts](https://fonts.google.com/).]{.body-text-s}
+:::
+
+::: {.footer}
+[Albert Rapp](https://albert-rapp.de/posts/ggplot2-tips/08_fonts_and_icons/08_fonts_and_icons.html) and [Nicola Rennie](https://nrennie.rbind.io/blog/adding-social-media-icons-ggplot2/) both have written great blog posts on using `{showtext}`. These materials draw from both their work!
+:::
+
+::::
+
+::: {.notes}
+- re: opening a new GD, `windows()` after `showtext_auto()` <https://gradientdescending.com/adding-custom-fonts-to-ggplot-in-r/>
+:::
 
 ---
 
@@ -921,7 +1025,9 @@ knitr::include_graphics("images/week6/sen.png")
 
 <hr>
 
-[We'll use the [`{showtext}` package](https://github.com/yixuan/showtext) to import and apply our Google Fonts. Import `{showtext}` at the top of your script, then use `font_add_google()` to specify the font(s) you want to import. **Importantly**, you'll also need to "turn on" showtext using `showtext_auto()` -- this enables showtext font rendering within any subsequent plots.]{.body-text-s}
+<!-- [We'll use the [`{showtext}` package](https://github.com/yixuan/showtext) to import and apply our Google Fonts. -->
+
+[Import `{showtext}` at the top of your script, then use `font_add_google()` to specify the font family(ies) you want to import. **Importantly**, you'll also need to "turn on" showtext using `showtext_auto()` -- this enables showtext font rendering for any newly opened graphics devices.]{.body-text-s} 
 
 ```{r}
 #| eval: true
@@ -1078,13 +1184,13 @@ showtext_auto()
 # ~ additional setup code omitted for brevity ~
 ```
 
-## {#fa-unicode data-menu-title="FA unicode"} 
+## {#fa-unicode data-menu-title="FA Unicode"} 
 
-[Reference icons by their unicode]{.slide-title}
+[Reference icons by their Unicode]{.slide-title}
 
 <hr>
 
-Let's say I want to include my GitHub usename along with the GitHub icon in the caption of my plot. First, search [**Free** icons on Font Awesome](https://fontawesome.com/search?o=r&m=free) and click on the one you want to use. Find the icon's unicode in the top right corner of the popup box:
+Let's say I want to include my GitHub username along with the GitHub icon in the caption of my plot. Search the [**Free** icons on Font Awesome](https://fontawesome.com/search?o=r&m=free) and click on the one you want to use. Find the icon's Unicode in the top right corner of the popup box:
 
 ```{r}
 #| eval: true
