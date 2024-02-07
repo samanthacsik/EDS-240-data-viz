@@ -104,7 +104,12 @@ Week 5 instruction is broken down into three lessons:
 
 ## Discussion Materials
 
-*Coming soon!*
+This week, you'll be prepping a data visualization using the data you found / wrangled as part of your final project (HW #4). This does not need to be a polished viz, but should focus on clarity of message. You'll be discussing each others' visualizations and commenting on what the main takeaways are (ideally, you'll walk away with the same message as intended by the plot-creator!). Please complete the following ahead of section:
+
+1. choose a well-thought out question that you'd like to answer with your selected data set(s) 
+2. hand-draw a plot that you want to create (this can be an important first step before even touching any code)
+3. turn your hand-drawn plot into a ggplot in R!
+4. send both your hand-drawn plot *and* your resulting ggplot to Sevan via DM (Slack) by Tuesday (2/6) evening
 
 ## Assignment Reminders
 

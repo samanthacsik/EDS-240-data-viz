@@ -214,7 +214,7 @@
     "href": "course-materials/week5.html#discussion-materials",
     "title": "Enhancing visualizations (part I)",
     "section": "Discussion Materials",
-    "text": "Discussion Materials\nComing soon!"
+    "text": "Discussion Materials\nThis week, you’ll be prepping a data visualization using the data you found / wrangled as part of your final project (HW #4). This does not need to be a polished viz, but should focus on clarity of message. You’ll be discussing each others’ visualizations and commenting on what the main takeaways are (ideally, you’ll walk away with the same message as intended by the plot-creator!). Please complete the following ahead of section:\n\nchoose a well-thought out question that you’d like to answer with your selected data set(s)\nhand-draw a plot that you want to create (this can be an important first step before even touching any code)\nturn your hand-drawn plot into a ggplot in R!\nsend both your hand-drawn plot and your resulting ggplot to Sevan via DM (Slack) by Tuesday (2/6) evening"
   },
   {
     "objectID": "course-materials/week5.html#assignment-reminders",

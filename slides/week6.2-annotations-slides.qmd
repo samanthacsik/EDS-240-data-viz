@@ -23,6 +23,11 @@ editor_options:
 
 ---
 
+ggrepel for easy labeling
+ggforce for annotation
+
+---
+
 <!-- https://www.bbc.com/news/science-environment-67861954 -->
 <!-- Tanya Shapiro (~1:45) -->
 <!-- - annotations talk some trial & error -->
