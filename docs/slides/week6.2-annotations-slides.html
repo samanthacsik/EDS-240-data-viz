@@ -332,10 +332,109 @@
 <p><span class="custom-subtitle"><em>Annotations</em></span></p>
 <hr class="hr-teal">
 <p><span class="custom-subtitle3">Week 6 | February 12<sup>th</sup>, 2024</span></p>
+<!-- --- -->
+<!-- Other examples of annotated viz: -->
+<!-- - [Where Migrant Children Are Living, and Often Working, in the U.S.](https://www.nytimes.com/interactive/2023/12/28/us/migrants-children-data.html) (New York Times)  -->
+<!-- - https://github.com/samanthacsik/EDS-240-data-viz/issues/12 -->
 </section>
 <section class="slide level2">
 
-<p>ggrepel for easy labeling ggforce for annotation</p>
+<p><br></p>
+
+<img data-src="images/week6/arctic-ice.png" style="width:50.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<p><strong>Source:</strong> <a href="https://www.nytimes.com/interactive/2015/03/24/science/earth/arctic-ice-low-winter-maximum.html?_r=0">Arctic Ice Reaches a Low Winter Maximum</a> (New York Times).</p>
+<p>Also check out this great commentary on the above visualization, <a href="https://blog.datawrapper.de/readers-time/">Respect your readers’ time</a> (DataWrapper)</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center" data-eval="true">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week6/daily-records.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center" data-eval="true">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week6/ridgeline-hot2023.png" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p><strong>Source:</strong> <a href="https://www.bbc.com/news/science-environment-67861954">2023 confirmed as world’s hottest year on record</a> (BBC)</p>
+</div>
+</section>
+<section class="slide level2">
+
+<p><br> <br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center" data-eval="true">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week6/global-temp-2023diff.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center" data-eval="true">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week6/global-ocean-temps.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p><strong>Source:</strong> <a href="https://www.bbc.com/news/science-environment-67861954">2023 confirmed as world’s hottest year on record</a> (BBC)</p>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/week6/co2-levels.png" style="width:50.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<p><strong>Source:</strong> <a href="https://www.bbc.com/news/science-environment-24021772">What is climate change? A really simple guide</a> (BBC)</p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>why annotate? https://blog.datawrapper.de/text-in-data-visualizations/</p>
+</section>
+<section class="slide level2">
+
+<p>Things to consider - don’t center-align text - don’t make readers turn their heads - use labels if text sits on top of data - eliminate jargon - conversational first, precise later - choose suitable number format</p>
+</section>
+<section class="slide level2">
+
+<p>Packages:</p>
+<ul>
+<li>ggrepel for easy labeling</li>
+<li>ggforce for annotation</li>
+</ul>
+<p>Manually:</p>
+<ul>
+<li><code>geom_text()</code> &amp; <code>geom_label()</code></li>
+<li><code>annotate()</code></li>
+</ul>
+</section>
+<section class="slide level2">
+
 </section>
 <section class="slide level2">
 
@@ -572,6 +671,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

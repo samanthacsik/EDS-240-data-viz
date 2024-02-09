@@ -69,7 +69,8 @@ toc: true
 
 ## Podcasts
 
-- **[Tidy Tuesday](https://www.tidytuesday.com/), hosted by Jon Harmon** -- a weekly (very short, ~5min-long) podcast that reviews a visualization (or a few) produced by community members using the latest published data set; Jon describes the visualization and describes a couple key geoms and/or functions the author used to create it
+- **[Data Stories](https://datastori.es/), hosted by Enrico Bertini and Moritz Stefaner** -- a podcast on data visualization; be sure to check out [episode 056: Amanda Cox on Working With R, NYT Projects, Favorite Data](https://datastori.es/ds-56-amanda-cox-nyt/) ([Amanda Cox](https://www.nytimes.com/2019/02/28/reader-center/data-visualization-editor-amanda-cox.html) was, for many years, the New York Times data editor)! 
+- **[Tidy Tuesday](https://www.tidytuesday.com/), hosted by Jon Harmon** -- a weekly (very short, ~5min-long) podcast that reviews a visualization (or a few) produced by community members using the latest published data set; Jon describes the visualization and describes a couple key geoms and / or functions the author used to create it
 - **[Data is Plural](https://podcast.data-is-plural.com/), hosted by Jeremy Singer-Vine** -- a new podcast from the long-running newsletter, [Data Is Plural](https://www.data-is-plural.com/), where each episode distills an expert interview into a crisp 15 minutes, taking you behind the scenes of another surprising data set
 
 ## Inspirational data visualization creators
@@ -83,6 +84,7 @@ toc: true
 | [Ijeamaka Anyene](https://ijeamaka-anyene.netlify.app/) | [tidytuesday](https://github.com/Ijeamakaanyene/tidytuesday) |
 | [Meghan Hall](https://meghan.rbind.io/) | check out Meghan's awesome [blog posts](https://meghan.rbind.io/blog/), which cover a number of `{ggplot2}` topics
 | [Georgios Karamanis](https://karaman.is/) | [tidytuesday](https://github.com/gkaramanis/tidytuesday)
+| [Jake Kaupp](https://github.com/jkaupp) | [tidytuesdays](https://github.com/jkaupp/tidytuesdays)
 | [Danielle Navarro](https://djnavarro.net/) | generative art outputs from multiple repos can be found on Danielle's website's [Gallery](https://art.djnavarro.net/gallery/) |
 | [Cristophe Nicault](https://www.christophenicault.com/) | [tidytuesday](https://github.com/cnicault/tidytuesday) |
 | [Dan Oehm](https://gradientdescending.com/) | [tidytues](https://github.com/doehm/tidytues) |
@@ -121,7 +123,7 @@ Data are *everywhere*, but that doesn't mean they're necessarily easy to track d
 - **[Centers for Disease Control and Prevention (CDC)](https://www.cdc.gov/datastatistics/index.html)** – there are tons of data sets buried in the pages of this website (you'll likely have to do a bit of digging)
 - **[Data.gov](https://catalog.data.gov/organization/)** – view data sets by the federal agency, state, city, or county that publishes them
 - **[EPA's National Emissions Inventory (NEI) Data Retrieval Tool](https://awsedap.epa.gov/public/single/?appid=20230c40-026d-494e-903f-3f112761a208&sheet=5d3fdda7-14bc-4284-a9bb-cfd856b9348d&opt=ctxmenu,currsel)** – read more about NEI Data on the [EPA's website](https://www.epa.gov/air-emissions-inventories/2020-national-emissions-inventory-nei-data)
-- **[NOAA's National Centers for Environmental Information](https://www.ncei.noaa.gov/)** – specifically, check out their [Climate Monitoring Products](https://www.ncei.noaa.gov/access/monitoring/products/) (I used the [County Mapping](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value) interface to download precipitation data featured in [Lecture 3.1](https://samanthacsik.github.io/EDS-240-data-viz/slides/week3.1-choosing-graphic-forms-slides.html#/caveats1.1)'s choropleth map)
+- **[NOAA's National Centers for Environmental Information](https://www.ncei.noaa.gov/)** – specifically, check out their [Climate Monitoring Products](https://www.ncei.noaa.gov/access/monitoring/products/) (I used the [County Mapping](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value) interface to download precipitation data featured in [Lecture 5.3](https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.3-choropleth.html#/title-slide)'s choropleth map)
 - **[`{tidycensus}` package](https://walker-data.com/tidycensus/)** – tooling that allows R users to more easily interface with a select number of the [US Census Bureau](https://www.census.gov/)'s data APIs and return tidyverse-ready data frames
 
 ## Misc.

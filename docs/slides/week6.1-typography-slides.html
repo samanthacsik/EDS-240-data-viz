@@ -783,7 +783,7 @@ Let’s learn how to use different fonts in our ggplots!
 <h2></h2>
 <p><span class="slide-title">R packages to the rescue!</span></p>
 <hr>
-<p>Fortunately, there are a couple super handy packages for working with fonts:</p>
+<p>Fortunately, there are a couple super handy packages that make working with fonts relatively painless:</p>
 <ul>
 <li><a href="https://github.com/yixuan/showtext"><code>{showtext}</code></a></li>
 <li><a href="https://github.com/wch/extrafont"><code>{extrafont}</code></a></li>
@@ -978,7 +978,7 @@ Let’s learn how to use different fonts in our ggplots!
 <p>Resulting plot is rendered on the next slide!</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>plot <span class="sc">+</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Earnings by Occupation and Sex"</span>,</span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Males earn more than females across most occupations"</span>,</span>
 <span id="cb7-3"><a href="#cb7-3"></a>       <span class="at">subtitle =</span> <span class="st">"Median earnings of full-time male vs. female workers by occupation in 2016"</span>,</span>
 <span id="cb7-4"><a href="#cb7-4"></a>       <span class="at">caption =</span> <span class="st">"Data Source: TidyTuesday (March 5, 2019)"</span>) <span class="sc">+</span></span>
 <span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
@@ -1094,7 +1094,7 @@ Let’s learn how to use different fonts in our ggplots!
 <p>Resulting plot is rendered on the next slide!</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9" data-code-line-numbers="8,12,16,20,25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>plot <span class="sc">+</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Earnings by Occupation and Sex"</span>,</span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Males earn more than females across most occupations"</span>,</span>
 <span id="cb9-3"><a href="#cb9-3"></a>       <span class="at">subtitle =</span> <span class="st">"Median earnings of full-time male vs. female workers by occupation in 2016"</span>,</span>
 <span id="cb9-4"><a href="#cb9-4"></a>       <span class="at">caption =</span> <span class="st">"Data Source: TidyTuesday (March 5, 2019)"</span>) <span class="sc">+</span></span>
 <span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
@@ -1222,7 +1222,7 @@ Let’s learn how to use different fonts in our ggplots!
 <p>Resulting plot is rendered on the next slide!</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13" data-code-line-numbers="3-4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>plot <span class="sc">+</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Earnings by Occupation and Sex"</span>,</span>
+<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Males earn more than females across most occupations"</span>,</span>
 <span id="cb13-3"><a href="#cb13-3"></a>       <span class="at">subtitle =</span> subtitle,</span>
 <span id="cb13-4"><a href="#cb13-4"></a>       <span class="at">caption =</span> caption) <span class="sc">+</span></span>
 <span id="cb13-5"><a href="#cb13-5"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
@@ -1283,7 +1283,7 @@ Let’s learn how to use different fonts in our ggplots!
 <hr>
 <div class="cell" data-layout-align="center" data-fig.asp="0.7">
 <div class="sourceCode cell-code" id="cb14" data-code-line-numbers="11,15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>plot <span class="sc">+</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Earnings by Occupation and Sex"</span>,</span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Males earn more than females across most occupations"</span>,</span>
 <span id="cb14-3"><a href="#cb14-3"></a>       <span class="at">subtitle =</span> subtitle,</span>
 <span id="cb14-4"><a href="#cb14-4"></a>       <span class="at">caption =</span> caption) <span class="sc">+</span></span>
 <span id="cb14-5"><a href="#cb14-5"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
@@ -1389,6 +1389,42 @@ Let’s learn how to use different fonts in our ggplots!
 </div>
 </div>
 </section>
+<section id="text-size-resolution" class="slide level2" data-menu-title="Text size &amp; resolution woes">
+<h2></h2>
+<p><span class="slide-title">Saving your plots can be a bit tricky</span></p>
+<hr>
+<p>Getting your fonts / plots to look just right when writing to a file device can be a bit tricky. Check out <a href="https://www.christophenicault.com/post/understand_size_dimension_ggplot2/">Understanding text size and resolution in ggplot2</a>, by <a href="https://www.christophenicault.com/">Christophe Nicault</a> to understand why and for solutions on how to fix / avoid this.</p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s gray-text">
+<p>A very obviously not great saved ggplot</p>
+</div>
+<div class="cell" data-layout-align="center" data-eval="true">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week6/bigmac-bad.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s gray-text">
+<p>Much better!</p>
+</div>
+<div class="cell" data-layout-align="center" data-eval="true">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week6/bigmac-ok.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="break" class="slide level2" data-menu-title="# Break #" data-background="#047C90">
 <h2></h2>
 <div class="page-center vertical-center">
@@ -1401,7 +1437,7 @@ Let’s learn how to use different fonts in our ggplots!
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_a2ffc4a7" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_a91f5d5a" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>

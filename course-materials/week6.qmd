@@ -33,6 +33,7 @@ Please be sure to complete the following before class:
 install.packages("monochromeR") # a package for creating monochrome color palettes and easily converting rgba values to hex codes (and also some other useful functions)
 install.packages("showtext") # for using fonts more easily in R graphs
 install.packages("ggtext") # improved text rendering support for ggplot2
+install.packages("googlesheets4") # provides an R interface to Google Sheets via the Sheets API v4
 ```
 
 ### Download Font Awesome fonts
@@ -57,9 +58,9 @@ In addition to using Google Fonts in our ggplots, we will also be using some [Fo
 
 ::: {.g-col-12 .g-col-md-6}
 ::: {.center-text}
-[**Annotations & legends**]{.teal-text .body-text-m}
+[**Annotations**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.2 slides](../sliweek6.2-annotations-slides.qmd){.btn role="button" target="_blank"}
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.2 slides](../slides/week6.2-annotations-slides.qmd){.btn role="button" target="_blank"}
 :::
 :::
 

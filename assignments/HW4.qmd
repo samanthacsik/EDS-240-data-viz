@@ -4,8 +4,69 @@ subtitle: "Assigned Mon 02/26/2024 | Due Sat 03/09/2024"
 title-block-banner: true
 ---
 
+## Learning Outcomes 
+
+Your final assignment is meant to combine all of the course learning outcomes(!):
+
+- identify which types of visualizations are most appropriate for your data and your audience
+- prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations
+- build effective, responsible, accessible, and aesthetically-pleasing visualizations using the R programming language, and specifically `{ggplot2}` + ggplot2 extension packages
+- write code from scratch and read and adapt code written by others
+- apply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations 
+- assess, critique, and provide constructive feedback on data visualizations
+
 ## Description 
+
+Choose to complete one of the two options below:
+
+### OPTION 1: 
+
+[**Build three separate visualizations -- all three should feature the same data, but present those data differently for three different target audiences / purposes:**]{.teal-text}
+
+1. **a visualization for a general audience (i.e. without domain expertise)** -- this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), display findings in an atypical but creative way,  and / or may blend both art and science
+2. **a visualization to be included in a paper, technical documentation, or report** -- this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.
+3. **a visualization that you could include in a presentation** -- you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you're animating pieces of your visualization onto a slide) 
+
+We've seen a *lots* of amazing visualizations throughout the quarter. Be sure to take a look through past lectures, and *definitely* check out the [resources page](https://samanthacsik.github.io/EDS-240-data-viz/resources.html#inspirational-data-visualization-creators) to see work from some of my favorite data viz creators. Here are just a few cool pieces (that all fall into category **1**, above) to get the creative thoughts flowing: 
+
+- [Seasonality of Bird Collisions in Chicago](https://twitter.com/jakekaupp/status/1123688940530274305/photo/1), by [Jake Kaupp](https://github.com/jkaupp)
+- [Ratings of Japanese Instant Shio Ramen](https://github.com/gkaramanis/tidytuesday/tree/master/2019/2019-week-23), by [Georgios Karamanis](https://github.com/gkaramanis)
+- [A is for Actrapid, Z is for Zyprexa](https://github.com/gkaramanis/tidytuesday/tree/master/2023/2023-week_11), by [Georgios Karamanis](https://github.com/gkaramanis)
+- [The Rise of Adobe Inc.](https://github.com/nrennie/tidytuesday/tree/main/2023/2023-02-07), by [Nicola Rennie](https://github.com/nrennie) (Nicola also records all of her tidytuesday contributions using the [`{camcorder} package)`](https://github.com/thebioengineer/camcorder))
+
+### OPTION 2: 
+
+[**Build a cohesive infographic-style visualization that includes *at least three* (but more are welcome!) different, but complementary visualizations that work together to tell a complete story.**]{.teal-text}
+
+While text is important in all visualizations, it can be particularly critical in weaving together all your infographic elements to successfully convey your story. The order and orientation in which your elements are positioned will also be essential for creating a visual hierarchy that successfully guides your readers. Packages like [`{patchwork}`](https://patchwork.data-imaginist.com/) will likely be critical in stitching together the different elements of your infographic.
+
+I encourage you to look back at past lecture materials and to check out the [resources page](https://samanthacsik.github.io/EDS-240-data-viz/resources.html#inspirational-data-visualization-creators) to explore the works of some really cool data viz creators. Here are a just a few examples of infographic-style visualizations (created using `{ggplot2}` + extension packages) to get you thinking about the possibilities:
+
+- [UFO Sightings](https://github.com/doehm/tidytues?tab=readme-ov-file#week-25-ufo-sightings), by [Dan Oehm](https://github.com/doehm)
+- [Numbats](https://github.com/doehm/tidytues?tab=readme-ov-file#week-10-numbats), by [Dan Oehm](https://github.com/doehm)
+- [Haunted Places](https://github.com/doehm/tidytues?tab=readme-ov-file#week-41-haunted-places), by [Dan Oehm](https://github.com/doehm)
+- [School Diversity](https://github.com/z3tt/TidyTuesday?tab=readme-ov-file#week-201939%EF%B8%8F-%EF%B8%8F-school-diversity-by-nces), by [Cédric Scherer](https://github.com/z3tt)
+
+
+## Questions
+
+*tbd*
+
+<!-- - what is the question(s) that you're trying to answer with your data? has it evolved at all since you first started thinking about your project in HW #1? -->
+<!-- -  -->
 
 ## Rubric (specifications)
 
-You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #4:
+*tbd*
+
+<!-- These two options are intentionally open-ended so that you the creative freedom to  -->
+
+
+
+<!-- You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #4: -->
+
+<!-- - code should be appropriately formatted and annotated -- see resources page -->
+
+<!-- - every single code chunk should have the appropriate code chunk options specified -->
+<!--   - there are very few times were you'd actually want messages and warnings to print -->
+<!--   - your code should render in your report in addition to be executed -->

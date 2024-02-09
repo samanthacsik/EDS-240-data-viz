@@ -23,6 +23,8 @@ knitr::include_graphics("../images/horst-eco-r4ds.png")
 
 ## Lecture Materials 
 
+<!-- PATCHWORK FOR COMPOSING PLOTS -->
+
 <!-- - 3 DEI (using icons & colors for equity awareness) -->
 <!-- introduce three viz types and how to construct them this week -->
 <!-- also show scifig example -->

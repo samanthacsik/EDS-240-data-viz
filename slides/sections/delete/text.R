@@ -242,7 +242,7 @@ caption <- glue::glue(
 )
 
 #........................add icons to plot.......................
-plot +
+plt <- plot +
   labs(title = "Earnings by Occupation and Sex",
        subtitle = subtitle,
        caption = caption) +
@@ -271,5 +271,11 @@ plot +
     axis.title = element_blank()
   )
 
+showtext_opts(dpi = 320)
+ragg::agg_png(here::here("plot_good_agg.png"), res = 320, width = 12, height = 13, units = "in")
+plt
+dev.off()
+
+ggsave("plot_good.png", plt, width = 8, height = 8)
 
 

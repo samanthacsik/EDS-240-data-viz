@@ -21,10 +21,140 @@ editor_options:
 
 [Week 6 | February 12^th^, 2024]{.custom-subtitle3}
 
+<!-- --- -->
+
+<!-- Other examples of annotated viz: -->
+
+<!-- - [Where Migrant Children Are Living, and Often Working, in the U.S.](https://www.nytimes.com/interactive/2023/12/28/us/migrants-children-data.html) (New York Times)  -->
+
+<!-- - https://github.com/samanthacsik/EDS-240-data-viz/issues/12 -->
+
 ---
 
-ggrepel for easy labeling
-ggforce for annotation
+<br>
+
+```{r}
+#| evaL: true
+#| echo: false
+#| out-width: "50%"
+#| fig-align: "center"
+knitr::include_graphics("images/week6/arctic-ice.png")
+```
+
+::: {.footer}
+**Source:** [Arctic Ice Reaches a
+Low Winter Maximum](https://www.nytimes.com/interactive/2015/03/24/science/earth/arctic-ice-low-winter-maximum.html?_r=0) (New York Times). 
+
+Also check out this great commentary on the above visualization, [Respect your readers' time](https://blog.datawrapper.de/readers-time/) (DataWrapper)
+:::
+
+---
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| evaL: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week6/daily-records.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| evaL: true
+#| echo: false
+#| out-width: "65%"
+#| fig-align: "center"
+knitr::include_graphics("images/week6/ridgeline-hot2023.png")
+```
+:::
+
+::::
+
+::: {.footer}
+**Source:**  [2023 confirmed as world's hottest year on record](https://www.bbc.com/news/science-environment-67861954) (BBC)
+:::
+
+---
+
+<br>
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| evaL: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week6/global-temp-2023diff.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| evaL: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week6/global-ocean-temps.png")
+```
+:::
+
+::::
+
+::: {.footer}
+**Source:** [2023 confirmed as world's hottest year on record](https://www.bbc.com/news/science-environment-67861954) (BBC)
+:::
+
+---
+
+```{r}
+#| evaL: true
+#| echo: false
+#| out-width: "50%"
+#| fig-align: "center"
+knitr::include_graphics("images/week6/co2-levels.png")
+```
+
+::: {.footer}
+**Source:** [What is climate change? A really simple guide](https://www.bbc.com/news/science-environment-24021772) (BBC)
+:::
+
+---
+
+why annotate?
+https://blog.datawrapper.de/text-in-data-visualizations/
+
+---
+
+Things to consider
+- don't center-align text
+- don't make readers turn their heads
+- use labels if text sits on top of data
+- eliminate jargon
+- conversational first, precise later
+- choose suitable number format
+
+---
+
+Packages:
+
+- ggrepel for easy labeling
+- ggforce for annotation
+
+Manually:
+
+- `geom_text()` & `geom_label()`
+- `annotate()`
+
+---
+
+
 
 ---
 

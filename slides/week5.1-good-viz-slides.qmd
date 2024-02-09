@@ -398,6 +398,10 @@ ggplot(penguins, aes(x = fct_rev(fct_infreq(species)), fill = species)) +
 
 Of course, a visualization like this wouldn't be appropriate for all audiences / contexts (e.g. scientific journal). *But*, despite the removal of axes / text / legend, a reader could still walk away with the same type of information.
 
+::: {.footer}
+See the third visualization in [this BBC article](https://www.bbc.com/future/article/20240206-hannah-ritchie-sustainability-data-spreads-hope-not-doomism) for an "in the wild" example.
+:::
+
 ---
 
 ## {#move-legend-position data-menu-title="Move the legend (position)"} 
