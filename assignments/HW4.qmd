@@ -36,9 +36,9 @@ We've seen a *lots* of amazing visualizations throughout the quarter. Be sure to
 
 ### OPTION 2: 
 
-[**Build a cohesive infographic-style visualization that includes *at least three* (but more are welcome!) different, but complementary visualizations that work together to tell a complete story.**]{.teal-text}
+[**Build a cohesive infographic-style visualization that includes *at least three* different, but complementary visualizations that work together to tell a complete story.**]{.teal-text}
 
-While text is important in all visualizations, it can be particularly critical in weaving together all your infographic elements to successfully convey your story. The order and orientation in which your elements are positioned will also be essential for creating a visual hierarchy that successfully guides your readers. Packages like [`{patchwork}`](https://patchwork.data-imaginist.com/) will likely be critical in stitching together the different elements of your infographic.
+An infographic typically exists to address one overarching question or idea, and it's subcomponents (e.g. visualizations, numbers, imagery) each help to tell part of the story (or in other words, help to answer sub-questions). While text is important in all visualizations, it can be particularly critical in weaving together all your infographic elements to successfully convey your story. The order and orientation in which your elements are positioned will also be essential for creating a visual hierarchy that successfully guides your readers. Packages like [`{patchwork}`](https://patchwork.data-imaginist.com/) will likely be critical in stitching together the different elements of your infographic.
 
 I encourage you to look back at past lecture materials and to check out the [resources page](https://samanthacsik.github.io/EDS-240-data-viz/resources.html#inspirational-data-visualization-creators) to explore the works of some really cool data viz creators. Here are a just a few examples of infographic-style visualizations (created using `{ggplot2}` + extension packages) to get you thinking about the possibilities:
 
@@ -47,10 +47,30 @@ I encourage you to look back at past lecture materials and to check out the [res
 - [Haunted Places](https://github.com/doehm/tidytues?tab=readme-ov-file#week-41-haunted-places), by [Dan Oehm](https://github.com/doehm)
 - [School Diversity](https://github.com/z3tt/TidyTuesday?tab=readme-ov-file#week-201939%EF%B8%8F-%EF%B8%8F-school-diversity-by-nces), by [Cédric Scherer](https://github.com/z3tt)
 
+---
 
-## Questions
+[**Regardless of which option you choose, you are expected to consider all design elements discussed throughout the quarter, implement as appropriate, and justify your decisions!**]{.teal-text} These include, but are not limited to:
 
-*tbd*
+- graphic form (you are **not** limited to just those fundamental chart types discussed in weeks 3 & 4 -- explore other advanced chart types and don't be afraid to get really creative with it; check out some of these awesome [data viz creators](https://samanthacsik.github.io/EDS-240-data-viz/resources.html#inspirational-data-visualization-creators) to find inspiration)
+- text (e.g. titles, captions, annotations, axis labels, axis ticks, alt text)
+- themes (i.e. all non-data plot elements)
+- colors
+- typography
+- general design (e.g. group order, spacing, text orientation, data-ink ratio, creating a visual hierarchy, avoiding info overload)
+- contextualizing your data 
+- centering your primary message
+- considering accessibility (e.g. colorblind-friendly palettes / contrast, alt text) 
+- applying a DEI lens to your design (e.g. considering the people / communities / places represented in your data, consider how you frame your questions / issue)
+
+[**In addition to producing your visualizations, you are expected to follow clean and organized coding practices:**]{.teal-text}
+
+- follow the tidyverse style guide (important styles are outlined on the [course website](https://samanthacsik.github.io/EDS-240-data-viz/clean-code-guide.html#general-conventions))
+- organize and annotate code (see [these recommendations](https://samanthacsik.github.io/EDS-240-data-viz/clean-code-guide.html#annotating-code) from the course website)
+- apply the appropriate code chunk options (e.g. in most (if not all) cases code and outputs should be rendered, warnings and messages should not -- see the Quarto documentation on [HTML Code Blocks](https://quarto.org/docs/output-formats/html-code.html) and [Execution Options](https://quarto.org/docs/computations/execution-options.html) for more
+
+<!-- ## Questions -->
+
+<!-- *tbd* -->
 
 <!-- - what is the question(s) that you're trying to answer with your data? has it evolved at all since you first started thinking about your project in HW #1? -->
 <!-- -  -->

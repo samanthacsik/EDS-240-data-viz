@@ -193,6 +193,10 @@ ggplot(penguins_wrangled, aes(x = bill_length_mm, y = bill_depth_mm, color = spe
   geom_point()
 ```
 
+<!-- ## Code chunk options -->
+
+<!-- https://quarto.org/docs/computations/execution-options.html -->
+
 ## Style guides
 
 - **[Tidyverse style guide](https://style.tidyverse.org/index.html), by Hadley Wickham** -- a book that describes the style used throughout the `{tidyverse}`

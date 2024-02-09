@@ -27,11 +27,47 @@ HW #3 will have you focus on making more progress towards completing your final 
 
 ## Description 
 
-Your final 
+**Please begin by reviewing the [description for HW #4](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW4.html)** so that you are familiar with the expectations for your final submission at the end of the quarter -- we'll again be making some more incremental steps towards our final deliverables here in HW #3. 
 
-- hand-draw anticipated infographic or three viz
-- create color palette, choose fonts
-- find example viz that you are drawing inspiration from (look at the resources page, search #tidytuesday on X (formally known as Twitter), Google, etc.)
+[**For HW #3, you must complete the following:**]{.teal-text}
+
+- [ ] Restate your question(s). Has this changed at all since HW #1? If yes, how so? 
+
+::: {.callout-note}
+Be mindful that the number of questions you list above will depend on which option you choose to pursue:
+
+- If you choose [option 1](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW4.html#option-1), you should have **one question** that each of your three visualizations works to answer -- how you choose to visualize your data to answer that question will vary across each of your charts, with each chart intended to reach a different target audience. 
+- If you choose [option 2](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW4.html#option-2), you should have **one overarching question** and **at least three sub-questions** that each of your infographic components answer.
+
+Please refer to [HW #4](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW4.html) for full details on each of these options.
+:::
+
+- [ ] Explain which variables from your data set(s) you will use to answer your question(s).
+
+::: {.callout-important}
+## Important -- be specific here!
+For example, let's say I'm interested in how Lyme disease incidence is changing over time for states X, Y and Z. An appropriate explanation of variables might look something like this: 
+
+>*"I have two data sets, one containing population estimates by state from the `{tidycensus}` package, and another from the CDC containing lyme disease case counts by county and year. After wrangling / joining these data sets, I was able to calculate disease incidence as cases per 100k people at the state level. Doing so provides me with three variables to visualize: time (years), disease incidence (cases per 100k people), and state."*
+
+ <!-- I will create a line chart with time (year) on the x-axis and disease incidence (cases per 100k) on the y-axis. Each line will represent a different state. -->
+:::
+
+- [ ] In HW #2, you should have created some exploratory data viz to better understand your data. You may already have some ideas of how you plan to formally visualize your data, but it's *incredibly* helpful to look at visualizations by other creators for inspiration. Find at least two data visualizations that you could (potentially) borrow / adapt pieces from. Link to them or download and embed them into your `.qmd` file, and explain which elements you might borrow (e.g. the graphic form, legend design, layout, etc.). 
+
+::: {.callout-tip}
+## Remember to check out the [Resources page](https://samanthacsik.github.io/EDS-240-data-viz/resources.html)!!
+I've added a tons of really wonderful websites, tutorials, and links to the repos / websites of some seriously incredible [data viz creators](https://samanthacsik.github.io/EDS-240-data-viz/resources.html#inspirational-data-visualization-creators). This is an excellent place to start when looking for inspiration.
+
+If you have an account, it can also be helpful to search **#tidytuesday** on X (formally known as Twitter).
+:::
+
+- [ ] Hand-draw your anticipated three visualizations (option 1) or infographic (option 2). Take a photo of your drawing and embed it in your rendered `.qmd` file -- **note** that these are not *exploratory* visualizations, but rather your plan for the visualizations that you will eventually polish and submit with HW #4
+- [ ] Mock up your visualizations using code, as best you can. They **do not** have to be perfect and **it's okay** if you can't quite get things working just yet -- you will not be graded on having all your visualizations created with code this round, but getting as far as you can *now* means time to receive feedback from us and less stress during HW #4 {{< fa smile title="a smiling face" >}}. 
+- [ ] Answer the following questions:
+    - [ ] What challenges did you encounter or anticipate encountering as you continue to build your visualizations in R?
+    - [ ] What feedback do you need from the instructional team and / or your peers to ensure that your intended message is clear?
+    - [ ] What ggplot extension tools / packages do you need to use to build your visualizations?
 
 ## Rubric (specifications)
 
