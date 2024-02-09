@@ -79,6 +79,12 @@ I encourage you to look back at past lecture materials and to check out the [res
 
 *tbd*
 
+<!-- [**Data Viz Rubric:**]{.teal-text} -->
+
+<!-- - data visualizations are intuitive and appropriate for the given data types -->
+<!-- - colors / types and fonts  -->
+
+<!-- [**Code Rubric:**]{.teal-text} -->
 <!-- These two options are intentionally open-ended so that you the creative freedom to  -->
 
 
