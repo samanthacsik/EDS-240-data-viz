@@ -92,10 +92,13 @@ lob_plot +
   ggrepel::geom_label_repel(aes(label = lobster_id),
                            size = 4,
                            color = "gray10",
-                           nudge_x = 0.1, nudge_y = 0.3)
+                           nudge_x = 0.1, nudge_y = 0.3,
+                           arrow = arrow(length = unit(2, "mm")))
 
-#..................annotate with {gghighlight}...................
-lob_plot +
+# #..................annotate with {gghighlight}...................
+# lob_plot +
+#   gghighlight::gghighlight(lobster_id %in% c("IV10", "IV19"),
+#                            label_key = lobster_id)
 
 
 

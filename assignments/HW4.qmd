@@ -21,14 +21,15 @@ Choose to complete one of the two options below:
 
 ### OPTION 1: 
 
-[**Build three separate visualizations -- all three should feature the same data, but present those data differently for three different target audiences / purposes:**]{.teal-text}
+[**Build three separate visualizations -- all three should feature the same data which are used to answer the same (single) question, but present those data differently for three different target audiences / purposes:**]{.teal-text}
 
-1. **a visualization for a general audience (i.e. without domain expertise)** -- this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), display findings in an atypical but creative way,  and / or may blend both art and science
+1. **a visualization for a general audience (i.e. without domain expertise)** -- this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), display findings in an atypical but creative way, and / or may blend both art and science 
 2. **a visualization to be included in a paper, technical documentation, or report** -- this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.
 3. **a visualization that you could include in a presentation** -- you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you're animating pieces of your visualization onto a slide) 
 
 We've seen a *lots* of amazing visualizations throughout the quarter. Be sure to take a look through past lectures, and *definitely* check out the [resources page](https://samanthacsik.github.io/EDS-240-data-viz/resources.html#inspirational-data-visualization-creators) to see work from some of my favorite data viz creators. Here are just a few cool pieces (that all fall into category **1**, above) to get the creative thoughts flowing: 
 
+- [The Rise of Craft Beer!](https://github.com/z3tt/TidyTuesday?tab=readme-ov-file#week-202014--beer-production-by-ttb), by [Cédric Scherer](https://github.com/z3tt) (this is an awesome example of how a relatively simple graphic form (i.e. a bar chart) can be made into an engaging piece for a general audience)
 - [Seasonality of Bird Collisions in Chicago](https://twitter.com/jakekaupp/status/1123688940530274305/photo/1), by [Jake Kaupp](https://github.com/jkaupp)
 - [Ratings of Japanese Instant Shio Ramen](https://github.com/gkaramanis/tidytuesday/tree/master/2019/2019-week-23), by [Georgios Karamanis](https://github.com/gkaramanis)
 - [A is for Actrapid, Z is for Zyprexa](https://github.com/gkaramanis/tidytuesday/tree/master/2023/2023-week_11), by [Georgios Karamanis](https://github.com/gkaramanis)
@@ -36,7 +37,7 @@ We've seen a *lots* of amazing visualizations throughout the quarter. Be sure to
 
 ### OPTION 2: 
 
-[**Build a cohesive infographic-style visualization that includes *at least three* different, but complementary visualizations that work together to tell a complete story.**]{.teal-text}
+[**Build a cohesive infographic-style visualization that includes *at least three* different, but complementary visualizations that work together to tell a complete story. You should have one overarching question with (at least) three sub-questions which are addressed using each of the component pieces of the infographic.**]{.teal-text}
 
 An infographic typically exists to address one overarching question or idea, and it's subcomponents (e.g. visualizations, numbers, imagery) each help to tell part of the story (or in other words, help to answer sub-questions). While text is important in all visualizations, it can be particularly critical in weaving together all your infographic elements to successfully convey your story. The order and orientation in which your elements are positioned will also be essential for creating a visual hierarchy that successfully guides your readers. Packages like [`{patchwork}`](https://patchwork.data-imaginist.com/) will likely be critical in stitching together the different elements of your infographic.
 
@@ -51,22 +52,30 @@ I encourage you to look back at past lecture materials and to check out the [res
 
 [**Regardless of which option you choose, you are expected to consider all design elements discussed throughout the quarter, implement as appropriate, and justify your decisions!**]{.teal-text} These include, but are not limited to:
 
-- graphic form (you are **not** limited to just those fundamental chart types discussed in weeks 3 & 4 -- explore other advanced chart types and don't be afraid to get really creative with it; check out some of these awesome [data viz creators](https://samanthacsik.github.io/EDS-240-data-viz/resources.html#inspirational-data-visualization-creators) to find inspiration)
-- text (e.g. titles, captions, annotations, axis labels, axis ticks, alt text)
-- themes (i.e. all non-data plot elements)
-- colors
-- typography
-- general design (e.g. group order, spacing, text orientation, data-ink ratio, creating a visual hierarchy, avoiding info overload)
-- contextualizing your data 
-- centering your primary message
-- considering accessibility (e.g. colorblind-friendly palettes / contrast, alt text) 
-- applying a DEI lens to your design (e.g. considering the people / communities / places represented in your data, consider how you frame your questions / issue)
+1. graphic form (you are **not** limited to just those fundamental chart types discussed in weeks 3 & 4 -- explore other advanced chart types and don't be afraid to get really creative with it; check out some of these awesome [data viz creators](https://samanthacsik.github.io/EDS-240-data-viz/resources.html#inspirational-data-visualization-creators) to find inspiration)
+2. text (e.g. titles, captions, annotations, axis labels, axis ticks, alt text)
+3. themes (i.e. all non-data plot elements; these should be intentionally modified and visually-pleasing)
+4. colors
+5. typography
+6. general design (e.g. group order, spacing, text orientation, data-ink ratio, creating a visual hierarchy, avoiding info overload)
+7. contextualizing your data 
+8. centering your primary message
+9. considering accessibility (e.g. colorblind-friendly palettes / contrast, alt text) 
+10. applying a DEI lens to your design (e.g. considering the people / communities / places represented in your data, consider how you frame your questions / issue)
+
+<!-- Simple / fundamental graphic forms (e.g. bar charts, histograms, scatter plots) are of course absolutely appropriate (if well-suited for your data), but your presentation -->
 
 [**In addition to producing your visualizations, you are expected to follow clean and organized coding practices:**]{.teal-text}
 
 - follow the tidyverse style guide (important styles are outlined on the [course website](https://samanthacsik.github.io/EDS-240-data-viz/clean-code-guide.html#general-conventions))
 - organize and annotate code (see [these recommendations](https://samanthacsik.github.io/EDS-240-data-viz/clean-code-guide.html#annotating-code) from the course website)
 - apply the appropriate code chunk options (e.g. in most (if not all) cases code and outputs should be rendered, warnings and messages should not -- see the Quarto documentation on [HTML Code Blocks](https://quarto.org/docs/output-formats/html-code.html) and [Execution Options](https://quarto.org/docs/computations/execution-options.html) for more
+
+[**You will also document your data design process and decisions in a short 1-page (~500 words) write up:**]{.teal-text}
+
+Your writing should address your approach and decisions for each of the ten design elements listed above (though you are welcome and encouraged to comment on any others that are not explicitly listed). If your visualizations do not include and / or consider a listed element(s), please comment on why (it's possible that not all will be applicable to *your* visualizations, but be sure to say why that is the case).
+
+*While it's not required for this final assignment, I encourage you to consider turning your writing and visualizations into a blog post on your personal website!*
 
 <!-- ## Questions -->
 
@@ -82,7 +91,7 @@ I encourage you to look back at past lecture materials and to check out the [res
 <!-- [**Data Viz Rubric:**]{.teal-text} -->
 
 <!-- - data visualizations are intuitive and appropriate for the given data types -->
-<!-- - colors / types and fonts  -->
+<!-- - colors / types and fonts -->
 
 <!-- [**Code Rubric:**]{.teal-text} -->
 <!-- These two options are intentionally open-ended so that you the creative freedom to  -->
