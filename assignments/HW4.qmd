@@ -24,8 +24,8 @@ Choose to complete one of the two options below:
 [**Build three separate visualizations -- all three should feature the same data which are used to answer the same (single) question, but present those data differently for three different target audiences / purposes:**]{.teal-text}
 
 1. **a visualization for a general audience (i.e. without domain expertise)** -- this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), display findings in an atypical but creative way, and / or may blend both art and science 
-2. **a visualization to be included in a paper, technical documentation, or report** -- this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.
-3. **a visualization that you could include in a presentation** -- you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you're animating pieces of your visualization onto a slide) 
+2. **a visualization to be included in a paper, technical documentation, or report** -- this visualization should tell a similar story, but can include much more detail, more data, more domain-specific language, etc.
+3. **a visualization that you could include in a presentation** -- presenting data on slides often requires a slightly different approach -- we ask a lot of an audience (regardless of their familiarity with your domain) when we spend only ~60 sec on any given slide. It's often imperative to build up your visualizations, slide-by-slide, adding data layers bit-by-bit. Oftentimes, you will only present a subset of data on any given figure. Key takeaways should be clearly highlighted. For this visualization, consider how you would layer on data and what arrows / annotations you'd potentially animate in to make your messaging clear. Check out SciFig's [Spectrum of Figure Creation](https://github.com/nrokh/ScientificFigures/tree/e13819c333c6a333dc4a2dde96fdfe8c264389c4?tab=readme-ov-file#spectrum-of-figure-creation) (you'll need to expand the **Details** drop-down) for one example of the difference between a publication- vs. presentation-worthy figure.
 
 We've seen a *lots* of amazing visualizations throughout the quarter. Be sure to take a look through past lectures, and *definitely* check out the [resources page](https://samanthacsik.github.io/EDS-240-data-viz/resources.html#inspirational-data-visualization-creators) to see work from some of my favorite data viz creators. Here are just a few cool pieces (that all fall into category **1**, above) to get the creative thoughts flowing: 
 
@@ -57,7 +57,7 @@ I encourage you to look back at past lecture materials and to check out the [res
 3. themes (i.e. all non-data plot elements; these should be intentionally modified and visually-pleasing)
 4. colors
 5. typography
-6. general design (e.g. group order, spacing, text orientation, data-ink ratio, creating a visual hierarchy, avoiding info overload)
+6. general design (e.g. group order, spacing, text orientation, data-ink ratio, creating a visual hierarchy, avoiding information overload)
 7. contextualizing your data 
 8. centering your primary message
 9. considering accessibility (e.g. colorblind-friendly palettes / contrast, alt text) 
@@ -69,39 +69,55 @@ I encourage you to look back at past lecture materials and to check out the [res
 
 - follow the tidyverse style guide (important styles are outlined on the [course website](https://samanthacsik.github.io/EDS-240-data-viz/clean-code-guide.html#general-conventions))
 - organize and annotate code (see [these recommendations](https://samanthacsik.github.io/EDS-240-data-viz/clean-code-guide.html#annotating-code) from the course website)
-- apply the appropriate code chunk options (e.g. in most (if not all) cases code and outputs should be rendered, warnings and messages should not -- see the Quarto documentation on [HTML Code Blocks](https://quarto.org/docs/output-formats/html-code.html) and [Execution Options](https://quarto.org/docs/computations/execution-options.html) for more
+- apply the appropriate code chunk options (e.g. in most (if not all) cases, code and outputs should be rendered but warnings and messages should not) -- see the Quarto documentation on [HTML Code Blocks](https://quarto.org/docs/output-formats/html-code.html) and [Execution Options](https://quarto.org/docs/computations/execution-options.html) for more
+  - (optional) you may consider applying the [`code-fold` option](https://quarto.org/docs/output-formats/html-code.html#folding-code), which can make scrolling past long code chunks easier 
 
-[**You will also document your data design process and decisions in a short 1-page (~500 words) write up:**]{.teal-text}
+[**You will also document your data design process and decisions in a short 1-2 page (~500-1,000 words) write up:**]{.teal-text}
 
-Your writing should address your approach and decisions for each of the ten design elements listed above (though you are welcome and encouraged to comment on any others that are not explicitly listed). If your visualizations do not include and / or consider a listed element(s), please comment on why (it's possible that not all will be applicable to *your* visualizations, but be sure to say why that is the case).
+Your writing should:
 
-*While it's not required for this final assignment, I encourage you to consider turning your writing and visualizations into a blog post on your personal website!*
+1. clearly state your question(s)
+2. describe your data (including your data source)
+3. address your approach and decisions for each of the ten design elements listed above (though you are welcome and encouraged to comment on any others that are not explicitly listed). If your visualizations do not include and / or consider a listed element(s), please comment on why (it's possible that not all will be applicable to *your* visualizations, but be sure to say why that is the case).
 
-<!-- ## Questions -->
+[**You may submit your assignment in one of two ways:**]{.teal-text}
 
-<!-- *tbd* -->
+1. **A published Quarto document that is deployed using GitHub Pages**
 
-<!-- - what is the question(s) that you're trying to answer with your data? has it evolved at all since you first started thinking about your project in HW #1? -->
-<!-- -  -->
+::: {.callout-note collapse=true}
+## Instructions for publishing a Quarto doc using GitHub Pages
+
+1. Your Quarto doc must be named `index.qmd` *and* live in your repository's root directory. Be sure to rename / move it, if necessary.
+2. Head to your remote repository on GitHub. Navigate to the **Settings** page (top navbar), then select **Pages** from the left-hand menu. Once there, you should see something that looks like this: 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "70%"
+#| fig-align: "center"
+knitr::include_graphics("images/pages.png")
+```
+
+3. Under **Build and deployment** > **Branch**, update the drop down that says **None** to **main**. Leave the second drop down on **/(root)** (this tells GitHub to look for and deploy our `index.html` file from the root directory of the main branch). Click **Save**. Your URL will appear at the top of the page once it's deployed (you will need to refresh the page -- this could take a few minutes):
+
+```{r}
+#| echo: false
+#| layout-ncol: 2
+knitr::include_graphics("images/settings-mod.png")
+knitr::include_graphics("images/deployed.png")
+```
+
+:::
+
+2. **As a blog post on your personal website** -- check out the [Adding a blog to your existing Quarto website](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/) workshop materials for a refresher, if needed
 
 ## Rubric (specifications)
 
-*tbd*
+You must complete the following to receive a “Satisfactory” mark for Assignment #4:
 
-<!-- [**Data Viz Rubric:**]{.teal-text} -->
-
-<!-- - data visualizations are intuitive and appropriate for the given data types -->
-<!-- - colors / types and fonts -->
-
-<!-- [**Code Rubric:**]{.teal-text} -->
-<!-- These two options are intentionally open-ended so that you the creative freedom to  -->
-
-
-
-<!-- You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #4: -->
-
-<!-- - code should be appropriately formatted and annotated -- see resources page -->
-
-<!-- - every single code chunk should have the appropriate code chunk options specified -->
-<!--   - there are very few times were you'd actually want messages and warnings to print -->
-<!--   - your code should render in your report in addition to be executed -->
+- [ ] complete [option 1](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW4.html#option-1) or [option 2](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW4.html#option-2), as detailed
+- [ ] all data visualizations must implement the ten design elements (listed above), *as appropriate* (it's up to you to decide when to consider, include, omit, modify any of these elements)
+- [ ] all code should be appropriately formatted, annotated, and code chunks should all have the appropriate chunk options specified (see above for all details).
+- [ ] describe your design process and decisions in a 1-2 page write-up, as described above
+- [ ] submit your work as either a published Quarto doc or as a blog post on your personal website
+- [ ] present your visualizations to the class on [date] (finals week)
