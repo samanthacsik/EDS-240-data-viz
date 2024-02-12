@@ -37,7 +37,7 @@ HW #3 will have you focus on making more progress towards completing your final 
 ::: {.callout-note}
 Be mindful that the number of questions you list above will depend on which option you choose to pursue:
 
-- If you choose [option 1](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW4.html#option-1), you should have **one question** that each of your three visualizations works to answer -- how you choose to visualize your data to answer that question will vary across each of your charts, with each chart intended to reach a different target audience. 
+- If you choose [option 1](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW4.html#option-1), you should have **one question** that each of your three visualizations works to answer, where each visualization is meant to reach / serve a different target audience and purpose.
 - If you choose [option 2](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW4.html#option-2), you should have **one overarching question** and **at least three sub-questions** that each of your infographic components answer.
 
 Please refer to [HW #4](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW4.html) for full details on each of these options.
@@ -60,10 +60,10 @@ For example, let's say I'm interested in how Lyme disease incidence is changing 
 ## Tip: Remember to check out the [Resources page](https://samanthacsik.github.io/EDS-240-data-viz/resources.html)!!
 I've added a tons of really wonderful websites, tutorials, and links to the repos / websites of some seriously incredible [data viz creators](https://samanthacsik.github.io/EDS-240-data-viz/resources.html#inspirational-data-visualization-creators). This is an excellent place to start when looking for inspiration.
 
-If you have an account, it can also be helpful to search **#tidytuesday** on X (formally known as Twitter).
+If you have an account, it can also be helpful to search **#tidytuesday** on [X](https://twitter.com/) (formally known as Twitter).
 :::
 
-- [ ] Hand-draw your anticipated three visualizations (option 1) or infographic (option 2). While you do not need to draw your data viz to scale (e.g. bars at heightsDrawings should have clearly labeled axes Take a photo of your drawing and embed it in your rendered `.qmd` file -- **note** that these are not *exploratory* visualizations, but rather your plan for your final visualizations that you will eventually polish and submit with HW #4.
+- [ ] Hand-draw your anticipated three visualizations (option 1) or infographic (option 2). Take a photo of your drawing and embed it in your rendered `.qmd` file -- **note** that these are not *exploratory* visualizations, but rather your plan for your final visualizations that you will eventually polish and submit with HW #4.
 
 ::: {.callout-tip}
 ## Tip: Embedding images into a `.qmd` file
@@ -102,7 +102,7 @@ knitr::include_graphics("images/hand-drawn-plot.png")
   - use appropriate strategies to highlight / focus attention on a clear message
   - include appropriate text such as titles, captions, axis labels 
   - experiment with colors and typefaces / fonts
-  - create a presentable / aesthetically-pleasing theme (e.g. (re)move gridlines / legends as appropriate)
+  - create a presentable / aesthetically-pleasing theme (e.g. (re)move gridlines / legends as appropriate, adjust font sizes, etc.)
 
 - [ ] Answer the following questions:
     - [ ] What challenges did you encounter or anticipate encountering as you continue to build / iterate on your visualizations in R?

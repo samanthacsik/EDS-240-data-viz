@@ -371,7 +371,7 @@ library(palmerpenguins)
 ggplot(penguins, aes(x = fct_rev(fct_infreq(species)), fill = species)) +
   geom_bar(alpha = 0.8) +
   coord_flip() +
-  geom_text(aes(label = ..count..), stat = "count", hjust = 1.5, size = 6, colour = "white") +
+  geom_text(aes(label = after_stat(count)), stat = "count", hjust = 1.5, size = 6, colour = "white") +
   scale_fill_manual(values = c("darkorange","purple","cyan4")) +
   labs(x = "Species", y = "Count", fill = "Species",
        title = "Penguins counts at Palmer Station LTER", 

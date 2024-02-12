@@ -20,10 +20,10 @@ toc: true
 
 ## Assignment Reminders
 
-| Assignment Type | Assignment Title       | Date Assigned  | Date Due                   |
-|:---------------:|------------------------|----------------|----------------------------|
-| HW              | Homework Assignment #3 | Mon 02/12/2024 | Sat 02/24/2024, 11:59pm PT |
+<!-- | Assignment Type | Assignment Title       | Date Assigned  | Date Due                   | -->
+<!-- |:---------------:|------------------------|----------------|----------------------------| -->
+<!-- | HW              | Homework Assignment #3 | Mon 02/12/2024 | Sat 02/24/2024, 11:59pm PT | -->
 
-<!-- | Assignment Type | Assignment Title                                                 | Date Assigned  | Date Due        | -->
-<!-- |:---------------:|-------------------------------------------------------|----------------|----------------------------| -->
-<!-- | HW              | [Homework Assignment #3](../assignments/HW3.qmd)      | Mon 02/12/2024 | Sat 02/24/2024, 11:59pm PT | -->
+| Assignment Type | Assignment Title                                                 | Date Assigned  | Date Due        |
+|:---------------:|-------------------------------------------------------|----------------|----------------------------|
+| HW              | [Homework Assignment #3](../assignments/HW3.qmd)      | Mon 02/12/2024 | Sat 02/24/2024, 11:59pm PT |

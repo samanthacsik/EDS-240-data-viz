@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #a55a00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #a55a00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #00769e; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #00769e; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #a55a00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -332,10 +397,6 @@
 <p><span class="custom-subtitle"><em>Annotations</em></span></p>
 <hr class="hr-teal">
 <p><span class="custom-subtitle3">Week 6 | February 12<sup>th</sup>, 2024</span></p>
-<!-- --- -->
-<!-- Other examples of annotated viz: -->
-<!-- - [Where Migrant Children Are Living, and Often Working, in the U.S.](https://www.nytimes.com/interactive/2023/12/28/us/migrants-children-data.html) (New York Times)  -->
-<!-- - https://github.com/samanthacsik/EDS-240-data-viz/issues/12 -->
 </section>
 <section class="slide level2">
 
@@ -412,47 +473,936 @@
 <p><strong>Source:</strong> <a href="https://www.bbc.com/news/science-environment-24021772">What is climate change? A really simple guide</a> (BBC)</p>
 </div>
 </section>
-<section class="slide level2">
-
-<p>why annotate? https://blog.datawrapper.de/text-in-data-visualizations/</p>
-</section>
-<section class="slide level2">
-
-<p>Things to consider - don’t center-align text - don’t make readers turn their heads - use labels if text sits on top of data - eliminate jargon - conversational first, precise later - choose suitable number format</p>
-</section>
-<section class="slide level2">
-
-<p>Packages:</p>
+<section id="why-annotate" class="slide level2" data-menu-title="Why annotate?">
+<h2></h2>
+<p><span class="slide-title">Why annotate?</span></p>
+<hr>
+<p>Things to consider</p>
 <ul>
-<li>ggrepel for easy labeling</li>
-<li>ggforce for annotation</li>
+<li>don’t center-align text</li>
+<li>don’t make readers turn their heads</li>
+<li>use labels if text sits on top of data</li>
+<li>eliminate jargon</li>
+<li>conversational first, precise later</li>
+<li>choose suitable number format</li>
 </ul>
-<p>Manually:</p>
+<div class="footer">
+<p>Read more about the tips above (and other great suggestions) in <a href="https://blog.datawrapper.de/text-in-data-visualizations/">What to consider when using text in data visualizations</a>, by Lisa Charlotte Muth</p>
+</div>
+</section>
+<section id="plots-to-annotate" class="slide level2" data-menu-title="Annotate these plots">
+<h2></h2>
+<p><span class="slide-title">We’ll be annotating these plots</span></p>
+<hr>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p><strong>Metabolism Effects on Foraging Across Temperatures</strong></p>
+</div>
+<div class="cell" data-layout-align="center" data-fig.asp="0.7">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week6.2-annotations-slides_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text body-text-s gray-text">
+<p>Adapted from <a href="https://doi.org/10.3389/fmars.2023.1072807">Csik et al.&nbsp;2023</a>, <a href="https://www.frontiersin.org/files/Articles/1072807/fmars-10-1072807-HTML/image_m/fmars-10-1072807-g005.jpg">Figure 5</a></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p><strong>Mono Lake levels</strong></p>
+</div>
+<div class="cell" data-layout-align="center" data-fig.asp="0.7">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week6.2-annotations-slides_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text body-text-s gray-text">
+<p>Borrowed from Allison Horst’s <a href="https://allisonhorst.github.io/eds221-day8-comp/data_viz.html">Customized Data Visualization in <code>{ggplot2}</code></a> materials</p>
+</div>
+</div>
+</div>
+</section>
+<section id="custom-annotations" class="slide level2" data-menu-title="# Custom Annotations #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+Adding custom annotations
+</p>
+</div>
+</section>
+<section id="lob-plot" class="slide level2" data-menu-title="Lobster plot">
+<h2></h2>
+<p><span class="slide-title">Lobster plot starter code</span></p>
+<hr>
+<div class="body-text-s">
+<p>Note that this starter code incorporates many of the strategies we’ve discussed in past lectures: turning a theme into a function, creating a color palette (and also point shape and size scales), and axis labels outside of the ggplot code, and using <code>{ggtext}</code> to apply markdown to plot text:</p>
+</div>
+<div class="cell columns column-output-location" data-layout-align="center" data-fig.asp="0.7">
+<div class="column">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="do">##                                    setup                                 ----</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co">#.........................load libraries.........................</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co">#..........................read in data..........................</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>lobs <span class="ot">&lt;-</span> googlesheets4<span class="sc">::</span><span class="fu">read_sheet</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1DkDVcl_9rlaqznHfa_v1V1jtZqcuL75Q6wvAHpnCHuk/edit#gid=2143433533"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>  <span class="fu">mutate</span>(<span class="at">temp =</span> <span class="fu">as.factor</span>(temp))</span>
+<span id="cb1-11"><a href="#cb1-11"></a></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="do">##                            create lobster plot                           ----</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="co">#..........................create theme..........................</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a>lob_theme <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<span id="cb1-18"><a href="#cb1-18"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>    <span class="fu">theme</span>(</span>
+<span id="cb1-20"><a href="#cb1-20"></a>      <span class="at">axis.title.x =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(<span class="at">size =</span> <span class="dv">13</span>,</span>
+<span id="cb1-21"><a href="#cb1-21"></a>                                              <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">1</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="at">unit =</span> <span class="st">"lines"</span>)),</span>
+<span id="cb1-22"><a href="#cb1-22"></a>      <span class="at">axis.title.y =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(<span class="at">size =</span> <span class="dv">13</span>,</span>
+<span id="cb1-23"><a href="#cb1-23"></a>                                              <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">0</span>, <span class="at">r =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="at">unit =</span> <span class="st">"lines"</span>)),</span>
+<span id="cb1-24"><a href="#cb1-24"></a>      <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb1-25"><a href="#cb1-25"></a>      <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="fl">0.7</span>),</span>
+<span id="cb1-26"><a href="#cb1-26"></a>      <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-27"><a href="#cb1-27"></a>      <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>),</span>
+<span id="cb1-28"><a href="#cb1-28"></a>      <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb1-29"><a href="#cb1-29"></a>      <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.95</span>, <span class="fl">0.95</span>),</span>
+<span id="cb1-30"><a href="#cb1-30"></a>      <span class="at">legend.justification =</span> <span class="fu">c</span>(<span class="fl">0.95</span>, <span class="fl">0.95</span>),</span>
+<span id="cb1-31"><a href="#cb1-31"></a>      <span class="at">legend.box.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="fl">1.1</span>)</span>
+<span id="cb1-32"><a href="#cb1-32"></a></span>
+<span id="cb1-33"><a href="#cb1-33"></a>    )</span>
+<span id="cb1-34"><a href="#cb1-34"></a>}</span>
+<span id="cb1-35"><a href="#cb1-35"></a></span>
+<span id="cb1-36"><a href="#cb1-36"></a><span class="co">#..........................create scales.........................</span></span>
+<span id="cb1-37"><a href="#cb1-37"></a>lob_palette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"11"</span> <span class="ot">=</span> <span class="st">"#7B8698"</span>,</span>
+<span id="cb1-38"><a href="#cb1-38"></a>                 <span class="st">"16"</span> <span class="ot">=</span> <span class="st">"#BAD7E5"</span>,</span>
+<span id="cb1-39"><a href="#cb1-39"></a>                 <span class="st">"21"</span> <span class="ot">=</span> <span class="st">"#DC7E7C"</span>,</span>
+<span id="cb1-40"><a href="#cb1-40"></a>                 <span class="st">"26"</span> <span class="ot">=</span> <span class="st">"#7D3E40"</span>)</span>
+<span id="cb1-41"><a href="#cb1-41"></a></span>
+<span id="cb1-42"><a href="#cb1-42"></a>lob_shapes <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">"11"</span> <span class="ot">=</span> <span class="dv">15</span>,</span>
+<span id="cb1-43"><a href="#cb1-43"></a>                 <span class="st">"16"</span> <span class="ot">=</span> <span class="dv">16</span>,</span>
+<span id="cb1-44"><a href="#cb1-44"></a>                 <span class="st">"21"</span> <span class="ot">=</span> <span class="dv">17</span>,</span>
+<span id="cb1-45"><a href="#cb1-45"></a>                 <span class="st">"26"</span> <span class="ot">=</span> <span class="dv">18</span>)</span>
+<span id="cb1-46"><a href="#cb1-46"></a></span>
+<span id="cb1-47"><a href="#cb1-47"></a>lob_sizes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"11"</span> <span class="ot">=</span> <span class="dv">6</span>,</span>
+<span id="cb1-48"><a href="#cb1-48"></a>               <span class="st">"16"</span> <span class="ot">=</span> <span class="dv">6</span>,</span>
+<span id="cb1-49"><a href="#cb1-49"></a>               <span class="st">"21"</span> <span class="ot">=</span> <span class="dv">6</span>,</span>
+<span id="cb1-50"><a href="#cb1-50"></a>               <span class="st">"26"</span> <span class="ot">=</span> <span class="dv">7</span>)</span>
+<span id="cb1-51"><a href="#cb1-51"></a></span>
+<span id="cb1-52"><a href="#cb1-52"></a><span class="co">#........................create plot text........................</span></span>
+<span id="cb1-53"><a href="#cb1-53"></a>x_axis_lab <span class="ot">&lt;-</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"Resting Metabolic Rate&lt;br&gt;</span></span>
+<span id="cb1-54"><a href="#cb1-54"></a><span class="st">                         (mg O&lt;sub&gt;2&lt;/sub&gt; kg&lt;sup&gt;-1&lt;/sup&gt; min&lt;sup&gt;-1&lt;/sup&gt;)"</span>)</span>
+<span id="cb1-55"><a href="#cb1-55"></a></span>
+<span id="cb1-56"><a href="#cb1-56"></a>y_axis_lab <span class="ot">&lt;-</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"Maximum Consumption Rate&lt;br&gt;</span></span>
+<span id="cb1-57"><a href="#cb1-57"></a><span class="st">                         (prey consumed predator&lt;sup&gt;-1&lt;/sup&gt; 24hr&lt;sup&gt;-1&lt;/sup&gt;)"</span>)</span>
+<span id="cb1-58"><a href="#cb1-58"></a></span>
+<span id="cb1-59"><a href="#cb1-59"></a><span class="co">#............................plot data...........................</span></span>
+<span id="cb1-60"><a href="#cb1-60"></a>lob_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(lobs, <span class="fu">aes</span>(<span class="at">x =</span> SMR, <span class="at">y =</span> avg_eaten,</span>
+<span id="cb1-61"><a href="#cb1-61"></a>                 <span class="at">color =</span> temp, <span class="at">shape =</span> temp, <span class="at">size =</span> temp)) <span class="sc">+</span></span>
+<span id="cb1-62"><a href="#cb1-62"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb1-63"><a href="#cb1-63"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> lob_palette, <span class="at">name =</span> <span class="st">"Temperature (ºC)"</span>) <span class="sc">+</span></span>
+<span id="cb1-64"><a href="#cb1-64"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> lob_shapes, <span class="at">name =</span> <span class="st">"Temperature (ºC)"</span>) <span class="sc">+</span></span>
+<span id="cb1-65"><a href="#cb1-65"></a>  <span class="fu">scale_size_manual</span>(<span class="at">values =</span> lob_sizes, <span class="at">name =</span> <span class="st">"Temperature (ºC)"</span>) <span class="sc">+</span></span>
+<span id="cb1-66"><a href="#cb1-66"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">1.5</span>, <span class="at">by =</span> <span class="fl">0.2</span>)) <span class="sc">+</span></span>
+<span id="cb1-67"><a href="#cb1-67"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">35</span>, <span class="at">by =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb1-68"><a href="#cb1-68"></a>  <span class="fu">labs</span>(<span class="at">x =</span> x_axis_lab,</span>
+<span id="cb1-69"><a href="#cb1-69"></a>       <span class="at">y =</span> y_axis_lab) <span class="sc">+</span></span>
+<span id="cb1-70"><a href="#cb1-70"></a>  <span class="fu">lob_theme</span>()</span>
+<span id="cb1-71"><a href="#cb1-71"></a></span>
+<span id="cb1-72"><a href="#cb1-72"></a>lob_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week6.2-annotations-slides_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="build-custom-annotations" class="slide level2" data-menu-title="How to build custom annotations">
+<h2></h2>
+<p><span class="slide-title">Building custom annotations</span></p>
+<hr>
+<p><br></p>
+<p><span class="body-text-m">There are two primary ways to add custom text annotations:</span></p>
+<div class="fragment">
+<p><br></p>
+<ol type="1">
+<li><code>geom_text()</code> (for plain text) &amp; <code>geom_label()</code> (adds a rectangle behind text), which take aesthetics mappings</li>
+<li><code>annotate()</code>, which does not take aesthetics mappings and instead draws only the information provided to it</li>
+</ol>
+</div>
+<div class="fragment">
+<p><br></p>
+<p><span class="body-text-m">Let’s try to add an annotation to our plot using both approaches to better understand the difference.</span></p>
+</div>
+<div class="fragment">
+<p><br></p>
+<div class="center-text">
+<p><span class="teal-text"><strong>Our goal:</strong></span> add a rectangle that bounds / highlights a subset of points, add text nearby that reads <strong>Important lobsters</strong>, and draw an arrow from the text pointing to the box.</p>
+</div>
+</div>
+</section>
+<section id="geom-text-issues" class="slide level2" data-menu-title="geom_text() doesn't work">
+<h2></h2>
+<p><span class="slide-title2"><code>geom_text()</code> + <code>geom_rect()</code> doesn’t look right . . .</span></p>
+<hr>
+<p>Here, we use <code>geom_text()</code> + <code>geom_rect()</code> to add text and a rectangle to our plot. We need to <strong>supply coordinates</strong> to place each on our plot.</p>
+<div class="cell columns column-output-location" data-layout-align="center" data-fig.asp="0.7">
+<div class="column">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>lob_plot <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="at">x =</span> <span class="fl">0.1</span>,</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="at">y =</span> <span class="dv">25</span>,</span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="at">label =</span> <span class="st">"Important lobsters"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6"></a>    <span class="at">size =</span> <span class="dv">4</span>,</span>
+<span id="cb2-7"><a href="#cb2-7"></a>    <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8"></a>    <span class="at">hjust =</span> <span class="st">"inward"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a>  <span class="fu">geom_rect</span>(</span>
+<span id="cb2-12"><a href="#cb2-12"></a>    <span class="at">xmin =</span> <span class="fl">0.25</span>, <span class="at">xmax =</span> <span class="fl">0.85</span>,</span>
+<span id="cb2-13"><a href="#cb2-13"></a>    <span class="at">ymin =</span> <span class="fl">8.5</span>, <span class="at">ymax =</span> <span class="dv">18</span>,</span>
+<span id="cb2-14"><a href="#cb2-14"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span>,</span>
+<span id="cb2-15"><a href="#cb2-15"></a>    <span class="at">fill =</span> <span class="st">"gray40"</span>, <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb2-16"><a href="#cb2-16"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span></span>
+<span id="cb2-17"><a href="#cb2-17"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week6.2-annotations-slides_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><span class="body-text-s">Notice that our text looks oddly blurry and bold, and our rectangle is opaque (despite adjusting <code>alpha</code>) and has a weird, thick border.</span></p>
+</section>
+<section id="geom-text-aes" class="slide level2" data-menu-title="geom_text() inherits aesthetics">
+<h2></h2>
+<p><span class="slide-title3"><code>geom_text()</code> inherits aesthetic mappings from <code>ggplot()</code></span></p>
+<hr>
+<p><span class="body-text-s">Like all other <code>geom_*()</code> functions we’ve worked with, <strong><code>geom_text()</code> &amp; <code>geom_label()</code> take aesthetic mappings</strong>. You can either define <code>aes()</code> within the geom, <em>or</em> it’ll inherit global mappings from <code>ggplot()</code> (as in our case).</span></p>
+<p><br></p>
+<div class="fragment">
+<p><span class="body-text-s">Here, <code>geom_text()</code> is plotting our label (<strong>Important lobsters</strong>) and box 22 times each (once for each of the 22 observations in our data frame).</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">str</span>(lobs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [22 × 7] (S3: tbl_df/tbl/data.frame)
+ $ lobster_id: chr [1:22] "N18" "L4" "N14" "L3" ...
+ $ temp      : Factor w/ 4 levels "11","16","21",..: 3 3 3 3 3 3 1 1 1 1 ...
+ $ SMR       : num [1:22] 0.709 0.551 0.582 1.084 0.575 ...
+ $ MMR       : num [1:22] 4.5 3.75 5.64 4.66 4.85 ...
+ $ AAS       : num [1:22] 3.79 3.2 5.06 3.58 4.28 ...
+ $ FAS       : num [1:22] 6.35 6.81 9.69 4.3 8.44 ...
+ $ avg_eaten : num [1:22] 23.3 11 21.3 9 14.3 ...</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><br></p>
+<p><span class="body-text-s">It’s also inheriting the <code>size</code> aesthetic for our box border.</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># from our `lob_plot` code</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">scale_size_manual</span>(<span class="at">values =</span> lob_sizes, <span class="at">name =</span> <span class="st">"Temperature (ºC)"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="use-annotate" class="slide level2" data-menu-title="Use annotate()">
+<h2></h2>
+<p><span class="slide-title3">This is exactly the situation <code>annotate()</code> was made for</span></p>
+<hr>
+<p><span class="body-text-s">Unlike <code>geom_text()</code>, <code>annotate()</code> requires that we define a <code>geom</code> type (e.g.&nbsp;<code>"text"</code>, <code>"rect"</code>). We can also remove the <code>show.lengend</code> argument, since <code>annotate()</code> doesn’t produce a legend.</span></p>
+<div class="cell columns column-output-location" data-layout-align="center" data-fig.asp="0.7">
+<div class="column">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>lob_plot <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb6-3"><a href="#cb6-3"></a>    <span class="at">geom =</span> <span class="st">"text"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4"></a>    <span class="at">x =</span> <span class="fl">0.1</span>,</span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="at">y =</span> <span class="dv">25</span>,</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="at">label =</span> <span class="st">"Important lobsters"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7"></a>    <span class="at">size =</span> <span class="dv">4</span>,</span>
+<span id="cb6-8"><a href="#cb6-8"></a>    <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb6-9"><a href="#cb6-9"></a>    <span class="at">hjust =</span> <span class="st">"inward"</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb6-12"><a href="#cb6-12"></a>    <span class="at">geom =</span> <span class="st">"rect"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13"></a>    <span class="at">xmin =</span> <span class="fl">0.25</span>, <span class="at">xmax =</span> <span class="fl">0.85</span>,</span>
+<span id="cb6-14"><a href="#cb6-14"></a>    <span class="at">ymin =</span> <span class="fl">8.5</span>, <span class="at">ymax =</span> <span class="dv">18</span>,</span>
+<span id="cb6-15"><a href="#cb6-15"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span>,</span>
+<span id="cb6-16"><a href="#cb6-16"></a>    <span class="at">fill =</span> <span class="st">"gray70"</span>, <span class="at">color =</span> <span class="st">"black"</span></span>
+<span id="cb6-17"><a href="#cb6-17"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week6.2-annotations-slides_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><span class="body-text-s"><strong>Note:</strong> Determining coordinates for any annotation requires a lot of trial and error. Pick values that you think are close and then tweak from there.</span></p>
+</section>
+<section id="draw-arrow" class="slide level2" data-menu-title="Draw arrow">
+<h2></h2>
+<p><span class="slide-title2">Draw an arrow between our label and rectangle</span></p>
+<hr>
+<p><span class="body-text-s">We can specify the <code>"curve"</code> geom type to draw a curved line. Use the <code>arrow</code> argument + <code>arrow()</code> function to add an arrow tip on the end:</span></p>
+<div class="cell columns column-output-location" data-layout-align="center" data-fig.asp="0.7">
+<div class="column">
+<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="18-24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>lob_plot <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb7-3"><a href="#cb7-3"></a>    <span class="at">geom =</span> <span class="st">"text"</span>,</span>
+<span id="cb7-4"><a href="#cb7-4"></a>    <span class="at">x =</span> <span class="fl">0.1</span>,</span>
+<span id="cb7-5"><a href="#cb7-5"></a>    <span class="at">y =</span> <span class="dv">25</span>,</span>
+<span id="cb7-6"><a href="#cb7-6"></a>    <span class="at">label =</span> <span class="st">"Important lobsters"</span>,</span>
+<span id="cb7-7"><a href="#cb7-7"></a>    <span class="at">size =</span> <span class="dv">4</span>,</span>
+<span id="cb7-8"><a href="#cb7-8"></a>    <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb7-9"><a href="#cb7-9"></a>    <span class="at">hjust =</span> <span class="st">"inward"</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb7-12"><a href="#cb7-12"></a>    <span class="at">geom =</span> <span class="st">"rect"</span>,</span>
+<span id="cb7-13"><a href="#cb7-13"></a>    <span class="at">xmin =</span> <span class="fl">0.25</span>, <span class="at">xmax =</span> <span class="fl">0.85</span>,</span>
+<span id="cb7-14"><a href="#cb7-14"></a>    <span class="at">ymin =</span> <span class="fl">8.5</span>, <span class="at">ymax =</span> <span class="dv">18</span>,</span>
+<span id="cb7-15"><a href="#cb7-15"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span>,</span>
+<span id="cb7-16"><a href="#cb7-16"></a>    <span class="at">fill =</span> <span class="st">"gray70"</span>, <span class="at">color =</span> <span class="st">"black"</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb7-19"><a href="#cb7-19"></a>    <span class="at">geom =</span> <span class="st">"curve"</span>,</span>
+<span id="cb7-20"><a href="#cb7-20"></a>    <span class="at">x =</span> <span class="fl">0.3</span>, <span class="at">xend =</span> <span class="fl">0.5</span>,</span>
+<span id="cb7-21"><a href="#cb7-21"></a>    <span class="at">y =</span> <span class="fl">23.8</span>, <span class="at">yend =</span> <span class="dv">19</span>,</span>
+<span id="cb7-22"><a href="#cb7-22"></a>    <span class="at">curvature =</span> <span class="sc">-</span><span class="fl">0.15</span>,</span>
+<span id="cb7-23"><a href="#cb7-23"></a>    <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>))</span>
+<span id="cb7-24"><a href="#cb7-24"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week6.2-annotations-slides_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="use-geoms" class="slide level2" data-menu-title="Using geom_text() &amp; geom_label()">
+<h2></h2>
+<p><span class="slide-title2">Use <code>geom_text/label()</code> to annotate each point</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s gray-text">
+<p><code>geom_text()</code> adds plain text</p>
+</div>
+<div class="cell" data-layout-align="center" data-fig.asp="0.7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>lob_plot <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> lobster_id),</span>
+<span id="cb8-3"><a href="#cb8-3"></a>            <span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week6.2-annotations-slides_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s gray-text">
+<p><code>geom_label()</code> adds a rectangle behind text</p>
+</div>
+<div class="cell" data-layout-align="center" data-fig.asp="0.7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>lob_plot <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> lobster_id),</span>
+<span id="cb9-3"><a href="#cb9-3"></a>             <span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week6.2-annotations-slides_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="center-text">
+<p>Annotations sit on top of data points, which may be undesirable…</p>
+</div>
+</section>
+<section id="use-ggrepel" class="slide level2" data-menu-title="{ggrepel}">
+<h2></h2>
+<p><span class="slide-title">Use <code>{ggrepel}</code> to repel annotations</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s gray-text">
+<p><code>geom_text()</code> adds plain text</p>
+</div>
+<div class="cell" data-layout-align="center" data-fig.asp="0.7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>lob_plot <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  ggrepel<span class="sc">::</span><span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> lobster_id),</span>
+<span id="cb10-3"><a href="#cb10-3"></a>                           <span class="at">size =</span> <span class="dv">4</span>,</span>
+<span id="cb10-4"><a href="#cb10-4"></a>                           <span class="at">color =</span> <span class="st">"gray10"</span>,</span>
+<span id="cb10-5"><a href="#cb10-5"></a>                           <span class="at">nudge_x =</span> <span class="fl">0.1</span>, <span class="at">nudge_y =</span> <span class="fl">0.3</span>,</span>
+<span id="cb10-6"><a href="#cb10-6"></a>                           <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.25</span>, <span class="st">"cm"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week6.2-annotations-slides_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s gray-text">
+<p><code>geom_label()</code> adds a rectangle behind text</p>
+</div>
+<div class="cell" data-layout-align="center" data-fig.asp="0.7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>lob_plot <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>  ggrepel<span class="sc">::</span><span class="fu">geom_label_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> lobster_id),</span>
+<span id="cb11-3"><a href="#cb11-3"></a>                           <span class="at">size =</span> <span class="dv">4</span>,</span>
+<span id="cb11-4"><a href="#cb11-4"></a>                           <span class="at">color =</span> <span class="st">"gray10"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5"></a>                           <span class="at">nudge_x =</span> <span class="fl">0.1</span>, <span class="at">nudge_y =</span> <span class="fl">0.3</span>,</span>
+<span id="cb11-6"><a href="#cb11-6"></a>                           <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.25</span>, <span class="st">"cm"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week6.2-annotations-slides_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="manually-label" class="slide level2" data-menu-title="Manually label points">
+<h2></h2>
+<p><span class="slide-title">Manually label just a few important points</span></p>
+<hr>
+<p>If we have just a few lobsters that we want to call attention to, we can use <code>annotate()</code> to label them:</p>
+<div class="cell columns column-output-location" data-layout-align="center" data-fig.asp="0.7">
+<div class="column">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>lob_plot <span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb12-3"><a href="#cb12-3"></a>    <span class="at">geom =</span> <span class="st">"text"</span>,</span>
+<span id="cb12-4"><a href="#cb12-4"></a>    <span class="at">x =</span> <span class="fl">0.3</span>, <span class="at">y =</span> <span class="fl">20.1</span>,</span>
+<span id="cb12-5"><a href="#cb12-5"></a>    <span class="at">label =</span> <span class="st">"IV10"</span>,</span>
+<span id="cb12-6"><a href="#cb12-6"></a>    <span class="at">hjust =</span> <span class="st">"left"</span>,</span>
+<span id="cb12-7"><a href="#cb12-7"></a>    <span class="at">size =</span> <span class="dv">5</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a>    ) <span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb12-10"><a href="#cb12-10"></a>    <span class="at">geom =</span> <span class="st">"curve"</span>,</span>
+<span id="cb12-11"><a href="#cb12-11"></a>    <span class="at">x =</span> <span class="fl">0.29</span>, <span class="at">xend =</span> <span class="fl">0.184</span>,</span>
+<span id="cb12-12"><a href="#cb12-12"></a>    <span class="at">y =</span> <span class="dv">20</span>, <span class="at">yend =</span> <span class="fl">9.43</span>,</span>
+<span id="cb12-13"><a href="#cb12-13"></a>    <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>)),</span>
+<span id="cb12-14"><a href="#cb12-14"></a>    <span class="at">linewidth =</span> <span class="fl">0.6</span></span>
+<span id="cb12-15"><a href="#cb12-15"></a>    ) <span class="sc">+</span></span>
+<span id="cb12-16"><a href="#cb12-16"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb12-17"><a href="#cb12-17"></a>    <span class="at">geom =</span> <span class="st">"text"</span>,</span>
+<span id="cb12-18"><a href="#cb12-18"></a>    <span class="at">x =</span> <span class="fl">1.19</span>,</span>
+<span id="cb12-19"><a href="#cb12-19"></a>    <span class="at">y =</span> <span class="fl">5.25</span>,</span>
+<span id="cb12-20"><a href="#cb12-20"></a>    <span class="at">label =</span> <span class="st">"IV19"</span>,</span>
+<span id="cb12-21"><a href="#cb12-21"></a>    <span class="at">hjust =</span> <span class="st">"right"</span>,</span>
+<span id="cb12-22"><a href="#cb12-22"></a>    <span class="at">size =</span> <span class="dv">5</span></span>
+<span id="cb12-23"><a href="#cb12-23"></a>    ) <span class="sc">+</span></span>
+<span id="cb12-24"><a href="#cb12-24"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb12-25"><a href="#cb12-25"></a>    <span class="at">geom =</span> <span class="st">"curve"</span>,</span>
+<span id="cb12-26"><a href="#cb12-26"></a>    <span class="at">x =</span> <span class="fl">1.2</span>, <span class="at">xend =</span> <span class="fl">1.31</span>,</span>
+<span id="cb12-27"><a href="#cb12-27"></a>    <span class="at">y =</span> <span class="dv">5</span>, <span class="at">yend =</span> <span class="dv">14</span>,</span>
+<span id="cb12-28"><a href="#cb12-28"></a>    <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>)),</span>
+<span id="cb12-29"><a href="#cb12-29"></a>    <span class="at">linewidth =</span> <span class="fl">0.6</span></span>
+<span id="cb12-30"><a href="#cb12-30"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week6.2-annotations-slides_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="mono-plot" class="slide level2" data-menu-title="Mono Lake plot">
+<h2></h2>
+<p><span class="slide-title">Mono Lake plot starter code</span></p>
+<hr>
+<div class="cell columns column-output-location" data-layout-align="center" data-fig.asp="0.7">
+<div class="column">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="do">##                                    setup                                 ----</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a></span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="co">#.........................load libraries.........................</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb13-7"><a href="#cb13-7"></a></span>
+<span id="cb13-8"><a href="#cb13-8"></a><span class="co">#..........................read in data..........................</span></span>
+<span id="cb13-9"><a href="#cb13-9"></a>mono <span class="ot">&lt;-</span> googlesheets4<span class="sc">::</span><span class="fu">read_sheet</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1o0-89RFp2rI2y8hMQWy-kquf_VIzidmhmVDXQ02JjCA/edit#gid=164128885"</span>)</span>
+<span id="cb13-10"><a href="#cb13-10"></a></span>
+<span id="cb13-11"><a href="#cb13-11"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb13-12"><a href="#cb13-12"></a><span class="do">##                            create Mono Lake plot                         ----</span></span>
+<span id="cb13-13"><a href="#cb13-13"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb13-14"><a href="#cb13-14"></a></span>
+<span id="cb13-15"><a href="#cb13-15"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mono, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> lake_level)) <span class="sc">+</span></span>
+<span id="cb13-16"><a href="#cb13-16"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb13-17"><a href="#cb13-17"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">Year"</span>,</span>
+<span id="cb13-18"><a href="#cb13-18"></a>       <span class="at">y =</span> <span class="st">"Lake surface level</span><span class="sc">\n</span><span class="st">(feet above sea level)</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb13-19"><a href="#cb13-19"></a>       <span class="at">title =</span> <span class="st">"Mono Lake levels (1850 - 2017)</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb13-20"><a href="#cb13-20"></a>       <span class="at">caption =</span> <span class="st">"Data: Mono Basin Clearinghouse"</span>) <span class="sc">+</span></span>
+<span id="cb13-21"><a href="#cb13-21"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">1850</span>, <span class="dv">2020</span>),</span>
+<span id="cb13-22"><a href="#cb13-22"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),</span>
+<span id="cb13-23"><a href="#cb13-23"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1850</span>, <span class="dv">2010</span>, <span class="at">by =</span> <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb13-24"><a href="#cb13-24"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">6350</span>, <span class="dv">6440</span>),</span>
+<span id="cb13-25"><a href="#cb13-25"></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">6370</span>, <span class="dv">6400</span>, <span class="dv">6430</span>),</span>
+<span id="cb13-26"><a href="#cb13-26"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),</span>
+<span id="cb13-27"><a href="#cb13-27"></a>                     <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>()) <span class="sc">+</span></span>
+<span id="cb13-28"><a href="#cb13-28"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb13-29"><a href="#cb13-29"></a>  <span class="fu">theme</span>(</span>
+<span id="cb13-30"><a href="#cb13-30"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb13-31"><a href="#cb13-31"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb13-32"><a href="#cb13-32"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb13-33"><a href="#cb13-33"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb13-34"><a href="#cb13-34"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>)</span>
+<span id="cb13-35"><a href="#cb13-35"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week6.2-annotations-slides_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="highlight-years" class="slide level2" data-menu-title="Highlight years">
+<h2></h2>
+<p><span class="slide-title">Highlight years of interest</span></p>
+<hr>
+<p><span class="body-text-s">Let’s say we want to call particular attention to the sharp decline in lake surface level between 1941 - 1983 as a result of unrestricted water diversions. Let’s do so using <code>annotate()</code>.</span></p>
+<div class="cell columns column-output-location" data-layout-align="center" data-fig.asp="0.7">
+<div class="column">
+<div class="sourceCode cell-code" id="cb14" data-code-line-numbers="2-7,20-25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mono, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> lake_level)) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb14-3"><a href="#cb14-3"></a>    <span class="at">geom =</span> <span class="st">"rect"</span>,</span>
+<span id="cb14-4"><a href="#cb14-4"></a>    <span class="at">xmin =</span> <span class="dv">1941</span>, <span class="at">xmax =</span> <span class="dv">1983</span>,</span>
+<span id="cb14-5"><a href="#cb14-5"></a>    <span class="at">ymin =</span> <span class="dv">6350</span>, <span class="at">ymax =</span> <span class="dv">6440</span>,</span>
+<span id="cb14-6"><a href="#cb14-6"></a>    <span class="at">fill =</span> <span class="st">"gray90"</span></span>
+<span id="cb14-7"><a href="#cb14-7"></a>  ) <span class="sc">+</span></span>
+<span id="cb14-8"><a href="#cb14-8"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb14-9"><a href="#cb14-9"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">Year"</span>,</span>
+<span id="cb14-10"><a href="#cb14-10"></a>       <span class="at">y =</span> <span class="st">"Lake surface level</span><span class="sc">\n</span><span class="st">(feet above sea level)</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb14-11"><a href="#cb14-11"></a>       <span class="at">title =</span> <span class="st">"Mono Lake levels (1850 - 2017)</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb14-12"><a href="#cb14-12"></a>       <span class="at">caption =</span> <span class="st">"Data: Mono Basin Clearinghouse"</span>) <span class="sc">+</span></span>
+<span id="cb14-13"><a href="#cb14-13"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">1850</span>, <span class="dv">2020</span>),</span>
+<span id="cb14-14"><a href="#cb14-14"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),</span>
+<span id="cb14-15"><a href="#cb14-15"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1850</span>, <span class="dv">2010</span>, <span class="at">by =</span> <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb14-16"><a href="#cb14-16"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">6350</span>, <span class="dv">6440</span>),</span>
+<span id="cb14-17"><a href="#cb14-17"></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">6370</span>, <span class="dv">6400</span>, <span class="dv">6430</span>),</span>
+<span id="cb14-18"><a href="#cb14-18"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),</span>
+<span id="cb14-19"><a href="#cb14-19"></a>                     <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>()) <span class="sc">+</span></span>
+<span id="cb14-20"><a href="#cb14-20"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb14-21"><a href="#cb14-21"></a>    <span class="at">geom =</span> <span class="st">"text"</span>, </span>
+<span id="cb14-22"><a href="#cb14-22"></a>    <span class="at">x =</span> <span class="dv">1962</span>, <span class="at">y =</span> <span class="dv">6425</span>,</span>
+<span id="cb14-23"><a href="#cb14-23"></a>    <span class="at">label =</span> <span class="st">"unrestricted diversions</span><span class="sc">\n</span><span class="st">(1941 - 1983)"</span>,</span>
+<span id="cb14-24"><a href="#cb14-24"></a>    <span class="at">size =</span> <span class="dv">3</span></span>
+<span id="cb14-25"><a href="#cb14-25"></a>  ) <span class="sc">+</span></span>
+<span id="cb14-26"><a href="#cb14-26"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb14-27"><a href="#cb14-27"></a>  <span class="fu">theme</span>(</span>
+<span id="cb14-28"><a href="#cb14-28"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb14-29"><a href="#cb14-29"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb14-30"><a href="#cb14-30"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb14-31"><a href="#cb14-31"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb14-32"><a href="#cb14-32"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>)</span>
+<span id="cb14-33"><a href="#cb14-33"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week6.2-annotations-slides_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><span class="body-text-s">Note the importance of <em>order</em> here! Plotting our <code>geom_line()</code> layer <em>after</em> creating our gray rectangle ensures that it isn’t blocked.</span></p>
+</section>
+<section id="add-context" class="slide level2" data-menu-title="Add context">
+<h2></h2>
+<p><span class="slide-title">Add other important context</span></p>
+<hr>
+<p><span class="body-text-s">We can add any other important information to provide better context for our readers. Let’s say we’re also interested in shrimp abundances, which decline above 6,360 feet. Here, we add a baseline at that elevation, along with text:</span></p>
+<div class="cell columns column-output-location" data-layout-align="center" data-fig.asp="0.7">
+<div class="column">
+<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="26-32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mono, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> lake_level)) <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb15-3"><a href="#cb15-3"></a>    <span class="at">geom =</span> <span class="st">"rect"</span>,</span>
+<span id="cb15-4"><a href="#cb15-4"></a>    <span class="at">xmin =</span> <span class="dv">1941</span>, <span class="at">xmax =</span> <span class="dv">1983</span>,</span>
+<span id="cb15-5"><a href="#cb15-5"></a>    <span class="at">ymin =</span> <span class="dv">6350</span>, <span class="at">ymax =</span> <span class="dv">6440</span>,</span>
+<span id="cb15-6"><a href="#cb15-6"></a>    <span class="at">fill =</span> <span class="st">"gray90"</span></span>
+<span id="cb15-7"><a href="#cb15-7"></a>  ) <span class="sc">+</span></span>
+<span id="cb15-8"><a href="#cb15-8"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb15-9"><a href="#cb15-9"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">Year"</span>,</span>
+<span id="cb15-10"><a href="#cb15-10"></a>       <span class="at">y =</span> <span class="st">"Lake surface level</span><span class="sc">\n</span><span class="st">(feet above sea level)</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb15-11"><a href="#cb15-11"></a>       <span class="at">title =</span> <span class="st">"Mono Lake levels (1850 - 2017)</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb15-12"><a href="#cb15-12"></a>       <span class="at">caption =</span> <span class="st">"Data: Mono Basin Clearinghouse"</span>) <span class="sc">+</span></span>
+<span id="cb15-13"><a href="#cb15-13"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">1850</span>, <span class="dv">2020</span>),</span>
+<span id="cb15-14"><a href="#cb15-14"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),</span>
+<span id="cb15-15"><a href="#cb15-15"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1850</span>, <span class="dv">2010</span>, <span class="at">by =</span> <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb15-16"><a href="#cb15-16"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">6350</span>, <span class="dv">6440</span>),</span>
+<span id="cb15-17"><a href="#cb15-17"></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">6370</span>, <span class="dv">6400</span>, <span class="dv">6430</span>),</span>
+<span id="cb15-18"><a href="#cb15-18"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),</span>
+<span id="cb15-19"><a href="#cb15-19"></a>                     <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>()) <span class="sc">+</span></span>
+<span id="cb15-20"><a href="#cb15-20"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb15-21"><a href="#cb15-21"></a>    <span class="at">geom =</span> <span class="st">"text"</span>, </span>
+<span id="cb15-22"><a href="#cb15-22"></a>    <span class="at">x =</span> <span class="dv">1962</span>, <span class="at">y =</span> <span class="dv">6425</span>,</span>
+<span id="cb15-23"><a href="#cb15-23"></a>    <span class="at">label =</span> <span class="st">"unrestricted diversions</span><span class="sc">\n</span><span class="st">(1941 - 1983)"</span>,</span>
+<span id="cb15-24"><a href="#cb15-24"></a>    <span class="at">size =</span> <span class="dv">3</span></span>
+<span id="cb15-25"><a href="#cb15-25"></a>  ) <span class="sc">+</span></span>
+<span id="cb15-26"><a href="#cb15-26"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">6360</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb15-27"><a href="#cb15-27"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb15-28"><a href="#cb15-28"></a>    <span class="at">geom =</span> <span class="st">"text"</span>,</span>
+<span id="cb15-29"><a href="#cb15-29"></a>    <span class="at">x =</span> <span class="dv">1910</span>, <span class="at">y =</span> <span class="dv">6366</span>,</span>
+<span id="cb15-30"><a href="#cb15-30"></a>    <span class="at">label =</span> <span class="st">"Decreased shrimp abundance expected</span><span class="sc">\n</span><span class="st">(6,360 feet above sea level)"</span>,</span>
+<span id="cb15-31"><a href="#cb15-31"></a>    <span class="at">size =</span> <span class="dv">3</span></span>
+<span id="cb15-32"><a href="#cb15-32"></a>    ) <span class="sc">+</span></span>
+<span id="cb15-33"><a href="#cb15-33"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb15-34"><a href="#cb15-34"></a>  <span class="fu">theme</span>(</span>
+<span id="cb15-35"><a href="#cb15-35"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb15-36"><a href="#cb15-36"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb15-37"><a href="#cb15-37"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb15-38"><a href="#cb15-38"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb15-39"><a href="#cb15-39"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>)</span>
+<span id="cb15-40"><a href="#cb15-40"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week6.2-annotations-slides_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="facet-annotations" class="slide level2" data-menu-title="# Bonus: annotating facets #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+Bonus: Annotating facets requires some patience and mapping. We’ll demonstrate on our <a href="https://samanthacsik.github.io/EDS-240-data-viz/slides/week6.1-typography-slides.html#/updated-text">occupations plot</a> from the last lesson.
+</p>
+</div>
+</section>
+<section id="occupation-plot" class="slide level2" data-menu-title="Annotate occupation plot">
+<h2></h2>
+<p><span class="slide-title">Add annotations to separate facet panels</span></p>
+<hr>
+<p><span class="body-text-s">Here, we create a separate data frame with all necessary information (e.g.&nbsp;labels, label positions, arrow positions, etc.) for building our annotations. Then, we use in <code>geom_label()</code> to map this information onto the appropriate facet. This requires a lot of manual adjustment! It helps to focus on one small piece (e.g.&nbsp;one label or one arrow) at a time.</span></p>
+<div class="cell" data-layout-align="center" data-fig.asp="0.7">
+<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="117-131,147-158"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="do">##                                    setup                                 ----</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a></span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="co">#..........................load packages.........................</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb16-7"><a href="#cb16-7"></a><span class="fu">library</span>(showtext)</span>
+<span id="cb16-8"><a href="#cb16-8"></a></span>
+<span id="cb16-9"><a href="#cb16-9"></a><span class="co">#..........................import data...........................</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a>jobs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-05/jobs_gender.csv"</span>)</span>
+<span id="cb16-11"><a href="#cb16-11"></a></span>
+<span id="cb16-12"><a href="#cb16-12"></a><span class="co">#..........................import fonts..........................</span></span>
+<span id="cb16-13"><a href="#cb16-13"></a><span class="fu">font_add_google</span>(<span class="at">name =</span> <span class="st">"Josefin Sans"</span>, <span class="at">family =</span> <span class="st">"josefin"</span>)</span>
+<span id="cb16-14"><a href="#cb16-14"></a><span class="fu">font_add_google</span>(<span class="at">name =</span> <span class="st">"Sen"</span>, <span class="at">family =</span> <span class="st">"sen"</span>)</span>
+<span id="cb16-15"><a href="#cb16-15"></a></span>
+<span id="cb16-16"><a href="#cb16-16"></a><span class="co">#....................import Font Awesome fonts...................</span></span>
+<span id="cb16-17"><a href="#cb16-17"></a><span class="fu">font_add</span>(<span class="at">family =</span> <span class="st">"fa-brands"</span>,</span>
+<span id="cb16-18"><a href="#cb16-18"></a>         <span class="at">regular =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"fonts"</span>, <span class="st">"Font Awesome 6 Brands-Regular-400.otf"</span>))</span>
+<span id="cb16-19"><a href="#cb16-19"></a><span class="fu">font_add</span>(<span class="at">family =</span> <span class="st">"fa-regular"</span>,</span>
+<span id="cb16-20"><a href="#cb16-20"></a>         <span class="at">regular =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"fonts"</span>, <span class="st">"Font Awesome 6 Free-Regular-400.otf"</span>)) </span>
+<span id="cb16-21"><a href="#cb16-21"></a><span class="fu">font_add</span>(<span class="at">family =</span> <span class="st">"fa-solid"</span>,</span>
+<span id="cb16-22"><a href="#cb16-22"></a>         <span class="at">regular =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"fonts"</span>, <span class="st">"Font Awesome 6 Free-Solid-900.otf"</span>))</span>
+<span id="cb16-23"><a href="#cb16-23"></a></span>
+<span id="cb16-24"><a href="#cb16-24"></a><span class="co">#................enable {showtext} for rendering.................</span></span>
+<span id="cb16-25"><a href="#cb16-25"></a><span class="fu">showtext_auto</span>()</span>
+<span id="cb16-26"><a href="#cb16-26"></a></span>
+<span id="cb16-27"><a href="#cb16-27"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb16-28"><a href="#cb16-28"></a><span class="do">##                                wrangle data                              ----</span></span>
+<span id="cb16-29"><a href="#cb16-29"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb16-30"><a href="#cb16-30"></a></span>
+<span id="cb16-31"><a href="#cb16-31"></a>jobs_clean <span class="ot">&lt;-</span> jobs <span class="sc">|&gt;</span></span>
+<span id="cb16-32"><a href="#cb16-32"></a></span>
+<span id="cb16-33"><a href="#cb16-33"></a>  <span class="co"># add cols (needed for dumbbell plot) ----</span></span>
+<span id="cb16-34"><a href="#cb16-34"></a>  <span class="fu">mutate</span>(<span class="at">percent_male =</span> <span class="dv">100</span> <span class="sc">-</span> percent_female, <span class="co"># % of females within each industry was already included</span></span>
+<span id="cb16-35"><a href="#cb16-35"></a>       <span class="at">difference_earnings =</span> total_earnings_male <span class="sc">-</span> total_earnings_female) <span class="sc">|&gt;</span>  <span class="co"># diff in earnings between M &amp; F</span></span>
+<span id="cb16-36"><a href="#cb16-36"></a></span>
+<span id="cb16-37"><a href="#cb16-37"></a>  <span class="co"># rearrange columns ----</span></span>
+<span id="cb16-38"><a href="#cb16-38"></a>  <span class="fu">relocate</span>(year, major_category, minor_category, occupation,</span>
+<span id="cb16-39"><a href="#cb16-39"></a>           total_workers, workers_male, workers_female,</span>
+<span id="cb16-40"><a href="#cb16-40"></a>           percent_male, percent_female,</span>
+<span id="cb16-41"><a href="#cb16-41"></a>           total_earnings, total_earnings_male, total_earnings_female, difference_earnings,</span>
+<span id="cb16-42"><a href="#cb16-42"></a>           wage_percent_of_male) <span class="sc">|&gt;</span></span>
+<span id="cb16-43"><a href="#cb16-43"></a></span>
+<span id="cb16-44"><a href="#cb16-44"></a>  <span class="co"># drop rows with missing earning data ----</span></span>
+<span id="cb16-45"><a href="#cb16-45"></a>  <span class="fu">drop_na</span>(total_earnings_male, total_earnings_female) <span class="sc">|&gt;</span></span>
+<span id="cb16-46"><a href="#cb16-46"></a></span>
+<span id="cb16-47"><a href="#cb16-47"></a>  <span class="co"># make occupation a factor ----</span></span>
+<span id="cb16-48"><a href="#cb16-48"></a>  <span class="fu">mutate</span>(<span class="at">occupation =</span> <span class="fu">as.factor</span>(occupation)) <span class="sc">|&gt;</span></span>
+<span id="cb16-49"><a href="#cb16-49"></a></span>
+<span id="cb16-50"><a href="#cb16-50"></a><span class="co"># ---- this next step is for creating our dumbbell plots ----</span></span>
+<span id="cb16-51"><a href="#cb16-51"></a></span>
+<span id="cb16-52"><a href="#cb16-52"></a><span class="co"># classify jobs by percentage male or female ----</span></span>
+<span id="cb16-53"><a href="#cb16-53"></a>  <span class="fu">mutate</span>(<span class="at">group_label =</span> <span class="fu">case_when</span>(</span>
+<span id="cb16-54"><a href="#cb16-54"></a>    percent_female <span class="sc">&gt;=</span> <span class="dv">75</span> <span class="sc">~</span> <span class="st">"Occupations that are 75%+ female"</span>,</span>
+<span id="cb16-55"><a href="#cb16-55"></a>    percent_female <span class="sc">&gt;=</span> <span class="dv">45</span> <span class="sc">&amp;</span> percent_female <span class="sc">&lt;=</span> <span class="dv">55</span> <span class="sc">~</span> <span class="st">"Occupations that are 45-55% female"</span>,</span>
+<span id="cb16-56"><a href="#cb16-56"></a>    percent_male <span class="sc">&gt;=</span> <span class="dv">75</span> <span class="sc">~</span> <span class="st">"Occupations that are 75%+ male"</span></span>
+<span id="cb16-57"><a href="#cb16-57"></a>  ))</span>
+<span id="cb16-58"><a href="#cb16-58"></a></span>
+<span id="cb16-59"><a href="#cb16-59"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb16-60"><a href="#cb16-60"></a><span class="do">##                              create subset df                            ----</span></span>
+<span id="cb16-61"><a href="#cb16-61"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb16-62"><a href="#cb16-62"></a></span>
+<span id="cb16-63"><a href="#cb16-63"></a><span class="co">#....guarantee the same random samples each time we run code.....</span></span>
+<span id="cb16-64"><a href="#cb16-64"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<span id="cb16-65"><a href="#cb16-65"></a></span>
+<span id="cb16-66"><a href="#cb16-66"></a><span class="co">#.........get 10 random jobs that are 75%+ female (2016).........</span></span>
+<span id="cb16-67"><a href="#cb16-67"></a>f75 <span class="ot">&lt;-</span> jobs_clean <span class="sc">|&gt;</span></span>
+<span id="cb16-68"><a href="#cb16-68"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2016</span>, group_label <span class="sc">==</span> <span class="st">"Occupations that are 75%+ female"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-69"><a href="#cb16-69"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb16-70"><a href="#cb16-70"></a></span>
+<span id="cb16-71"><a href="#cb16-71"></a><span class="co">#..........get 10 random jobs that are 75%+ male (2016)..........</span></span>
+<span id="cb16-72"><a href="#cb16-72"></a>m75 <span class="ot">&lt;-</span> jobs_clean <span class="sc">|&gt;</span></span>
+<span id="cb16-73"><a href="#cb16-73"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2016</span>, group_label <span class="sc">==</span> <span class="st">"Occupations that are 75%+ male"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-74"><a href="#cb16-74"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb16-75"><a href="#cb16-75"></a></span>
+<span id="cb16-76"><a href="#cb16-76"></a><span class="co">#........get 10 random jobs that are 45-55%+ female (2016).......</span></span>
+<span id="cb16-77"><a href="#cb16-77"></a>f50 <span class="ot">&lt;-</span> jobs_clean <span class="sc">|&gt;</span></span>
+<span id="cb16-78"><a href="#cb16-78"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2016</span>, group_label <span class="sc">==</span> <span class="st">"Occupations that are 45-55% female"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-79"><a href="#cb16-79"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb16-80"><a href="#cb16-80"></a></span>
+<span id="cb16-81"><a href="#cb16-81"></a><span class="co">#.......combine dfs &amp; relevel factors (for plotting order).......</span></span>
+<span id="cb16-82"><a href="#cb16-82"></a>subset_jobs <span class="ot">&lt;-</span> <span class="fu">rbind</span>(f75, m75, f50) <span class="sc">|&gt;</span></span>
+<span id="cb16-83"><a href="#cb16-83"></a>  <span class="fu">mutate</span>(<span class="at">group_label =</span> <span class="fu">fct_relevel</span>(group_label, </span>
+<span id="cb16-84"><a href="#cb16-84"></a>                                   <span class="st">"Occupations that are 75%+ female"</span>,</span>
+<span id="cb16-85"><a href="#cb16-85"></a>                                   <span class="st">"Occupations that are 45-55% female"</span>, </span>
+<span id="cb16-86"><a href="#cb16-86"></a>                                   <span class="st">"Occupations that are 75%+ male"</span>))</span>
+<span id="cb16-87"><a href="#cb16-87"></a></span>
+<span id="cb16-88"><a href="#cb16-88"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb16-89"><a href="#cb16-89"></a><span class="do">##                                create plot                               ----</span></span>
+<span id="cb16-90"><a href="#cb16-90"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb16-91"><a href="#cb16-91"></a></span>
+<span id="cb16-92"><a href="#cb16-92"></a><span class="co">#..........................build palette.........................</span></span>
+<span id="cb16-93"><a href="#cb16-93"></a>earnings_pal <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"males"</span> <span class="ot">=</span> <span class="st">"#2D7787"</span>,</span>
+<span id="cb16-94"><a href="#cb16-94"></a>                  <span class="st">"females"</span> <span class="ot">=</span> <span class="st">"#FC6B4B"</span>,</span>
+<span id="cb16-95"><a href="#cb16-95"></a>                  <span class="at">dark_text =</span> <span class="st">"#0C1509"</span>,</span>
+<span id="cb16-96"><a href="#cb16-96"></a>                  <span class="at">light_text =</span> <span class="st">"#4E514D"</span>) </span>
+<span id="cb16-97"><a href="#cb16-97"></a></span>
+<span id="cb16-98"><a href="#cb16-98"></a><span class="co">#.........................create caption.........................</span></span>
+<span id="cb16-99"><a href="#cb16-99"></a>github_icon <span class="ot">&lt;-</span> <span class="st">"&amp;#xf09b"</span></span>
+<span id="cb16-100"><a href="#cb16-100"></a>github_username <span class="ot">&lt;-</span> <span class="st">"samanthacsik"</span></span>
+<span id="cb16-101"><a href="#cb16-101"></a></span>
+<span id="cb16-102"><a href="#cb16-102"></a>caption <span class="ot">&lt;-</span> glue<span class="sc">::</span><span class="fu">glue</span>(</span>
+<span id="cb16-103"><a href="#cb16-103"></a>  <span class="st">"Data Source: TidyTuesday (March 5, 2019) |</span></span>
+<span id="cb16-104"><a href="#cb16-104"></a><span class="st">  &lt;span style='font-family:fa-brands;'&gt;{github_icon};&lt;/span&gt;</span></span>
+<span id="cb16-105"><a href="#cb16-105"></a><span class="st">  {github_username}"</span></span>
+<span id="cb16-106"><a href="#cb16-106"></a>)</span>
+<span id="cb16-107"><a href="#cb16-107"></a></span>
+<span id="cb16-108"><a href="#cb16-108"></a><span class="co">#........................create subtitle.........................</span></span>
+<span id="cb16-109"><a href="#cb16-109"></a>money_icon <span class="ot">&lt;-</span> <span class="st">"&amp;#xf3d1"</span></span>
+<span id="cb16-110"><a href="#cb16-110"></a></span>
+<span id="cb16-111"><a href="#cb16-111"></a>subtitle <span class="ot">&lt;-</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"Median earnings &lt;span style='font-family:fa-regular;'&gt;{money_icon};&lt;/span&gt;</span></span>
+<span id="cb16-112"><a href="#cb16-112"></a><span class="st">                       of full-time</span></span>
+<span id="cb16-113"><a href="#cb16-113"></a><span class="st">                       &lt;span style='color:#2D7787;font-size:20pt;'&gt;**male**&lt;/span&gt;</span></span>
+<span id="cb16-114"><a href="#cb16-114"></a><span class="st">                       versus &lt;span style='color:#FC6B4B;font-size:20pt;'&gt;**female**&lt;/span&gt;</span></span>
+<span id="cb16-115"><a href="#cb16-115"></a><span class="st">                       workers by occupation in 2016"</span>)</span>
+<span id="cb16-116"><a href="#cb16-116"></a></span>
+<span id="cb16-117"><a href="#cb16-117"></a><span class="co">#.................create df with annotation info.................</span></span>
+<span id="cb16-118"><a href="#cb16-118"></a>facet_labs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">my_text =</span> <span class="fu">c</span>(<span class="st">"Males make $23,644 than</span><span class="sc">\n</span><span class="st">females in this female-</span><span class="sc">\n</span><span class="st">dominated occupation"</span>,</span>
+<span id="cb16-119"><a href="#cb16-119"></a>                                     <span class="st">"Male &amp; female probation officers &amp;</span><span class="sc">\n</span><span class="st">correctional treatment specialists</span><span class="sc">\n</span><span class="st">make about the same"</span>,</span>
+<span id="cb16-120"><a href="#cb16-120"></a>                                     <span class="st">"Here's another annotation</span><span class="sc">\n</span><span class="st">with a horizontal arrow"</span>),</span>
+<span id="cb16-121"><a href="#cb16-121"></a>                         <span class="at">group_label =</span> <span class="fu">c</span>(<span class="st">"Occupations that are 75%+ female"</span>, <span class="st">"Occupations that are 45-55% female"</span>, <span class="st">"Occupations that are 75%+ male"</span>),</span>
+<span id="cb16-122"><a href="#cb16-122"></a>                         <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">70000</span>, <span class="dv">45000</span>, <span class="dv">60000</span>),</span>
+<span id="cb16-123"><a href="#cb16-123"></a>                         <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">5</span>),</span>
+<span id="cb16-124"><a href="#cb16-124"></a>                         <span class="at">arrow_x =</span> <span class="fu">c</span>(<span class="dv">80000</span>, <span class="dv">48500</span>, <span class="dv">60000</span>),</span>
+<span id="cb16-125"><a href="#cb16-125"></a>                         <span class="at">arrow_xend =</span> <span class="fu">c</span>(<span class="dv">80000</span>, <span class="dv">48500</span>, <span class="dv">37500</span>),</span>
+<span id="cb16-126"><a href="#cb16-126"></a>                         <span class="at">arrow_y =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb16-127"><a href="#cb16-127"></a>                         <span class="at">arrow_yend =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="fl">6.5</span>, <span class="dv">5</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb16-128"><a href="#cb16-128"></a>  </span>
+<span id="cb16-129"><a href="#cb16-129"></a>  <span class="co"># need to reset factor levels so that facets are ordered as before ----</span></span>
+<span id="cb16-130"><a href="#cb16-130"></a>  <span class="fu">mutate</span>(<span class="at">group_label =</span> <span class="fu">fct_relevel</span>(group_label, <span class="st">"Occupations that are 75%+ female"</span>,</span>
+<span id="cb16-131"><a href="#cb16-131"></a>                                   <span class="st">"Occupations that are 45-55% female"</span>, <span class="st">"Occupations that are 75%+ male"</span>))</span>
+<span id="cb16-132"><a href="#cb16-132"></a></span>
+<span id="cb16-133"><a href="#cb16-133"></a><span class="co">#..........................create plot...........................</span></span>
+<span id="cb16-134"><a href="#cb16-134"></a><span class="fu">ggplot</span>(subset_jobs) <span class="sc">+</span></span>
+<span id="cb16-135"><a href="#cb16-135"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> total_earnings_female, <span class="at">xend =</span> total_earnings_male,</span>
+<span id="cb16-136"><a href="#cb16-136"></a>                   <span class="at">y =</span> <span class="fu">fct_reorder</span>(occupation, total_earnings), <span class="at">yend =</span> occupation)) <span class="sc">+</span></span>
+<span id="cb16-137"><a href="#cb16-137"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> total_earnings_male, <span class="at">y =</span> occupation),</span>
+<span id="cb16-138"><a href="#cb16-138"></a>             <span class="at">color =</span> earnings_pal[<span class="st">"males"</span>], <span class="at">size =</span> <span class="fl">3.25</span>) <span class="sc">+</span></span>
+<span id="cb16-139"><a href="#cb16-139"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> total_earnings_female, <span class="at">y =</span> occupation),</span>
+<span id="cb16-140"><a href="#cb16-140"></a>             <span class="at">color =</span> earnings_pal[<span class="st">"females"</span>], <span class="at">size =</span> <span class="fl">3.25</span>) <span class="sc">+</span></span>
+<span id="cb16-141"><a href="#cb16-141"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>group_label, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb16-142"><a href="#cb16-142"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_dollar</span>(<span class="at">scale =</span> <span class="fl">0.001</span>, <span class="at">suffix =</span> <span class="st">"k"</span>),</span>
+<span id="cb16-143"><a href="#cb16-143"></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">25000</span>, <span class="dv">50000</span>, <span class="dv">75000</span>, <span class="dv">100000</span>, <span class="dv">125000</span>)) <span class="sc">+</span></span>
+<span id="cb16-144"><a href="#cb16-144"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Males earn more than females across most occupations"</span>,</span>
+<span id="cb16-145"><a href="#cb16-145"></a>       <span class="at">subtitle =</span> subtitle,</span>
+<span id="cb16-146"><a href="#cb16-146"></a>       <span class="at">caption =</span> caption) <span class="sc">+</span></span>
+<span id="cb16-147"><a href="#cb16-147"></a>  <span class="fu">geom_segment</span>(</span>
+<span id="cb16-148"><a href="#cb16-148"></a>    <span class="at">data =</span> facet_labs,</span>
+<span id="cb16-149"><a href="#cb16-149"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> arrow_x, <span class="at">xend =</span> arrow_xend,</span>
+<span id="cb16-150"><a href="#cb16-150"></a>                  <span class="at">y =</span> arrow_y, <span class="at">yend =</span> arrow_yend),</span>
+<span id="cb16-151"><a href="#cb16-151"></a>    <span class="at">linewidth =</span> <span class="dv">1</span>, <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>))</span>
+<span id="cb16-152"><a href="#cb16-152"></a>    ) <span class="sc">+</span></span>
+<span id="cb16-153"><a href="#cb16-153"></a>  <span class="fu">geom_label</span>(</span>
+<span id="cb16-154"><a href="#cb16-154"></a>    <span class="at">data =</span> facet_labs,</span>
+<span id="cb16-155"><a href="#cb16-155"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">label =</span> my_text),</span>
+<span id="cb16-156"><a href="#cb16-156"></a>    <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb16-157"><a href="#cb16-157"></a>    <span class="at">hjust =</span> <span class="st">"left"</span></span>
+<span id="cb16-158"><a href="#cb16-158"></a>    ) <span class="sc">+</span></span>
+<span id="cb16-159"><a href="#cb16-159"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb16-160"><a href="#cb16-160"></a>  <span class="fu">theme</span>(</span>
+<span id="cb16-161"><a href="#cb16-161"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb16-162"><a href="#cb16-162"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"josefin"</span>,</span>
+<span id="cb16-163"><a href="#cb16-163"></a>                              <span class="at">face =</span> <span class="st">"bold"</span>,</span>
+<span id="cb16-164"><a href="#cb16-164"></a>                              <span class="at">size =</span> <span class="dv">25</span>,</span>
+<span id="cb16-165"><a href="#cb16-165"></a>                              <span class="at">color =</span> earnings_pal[<span class="st">"dark_text"</span>]),</span>
+<span id="cb16-166"><a href="#cb16-166"></a>    <span class="at">plot.subtitle =</span> ggtext<span class="sc">::</span><span class="fu">element_textbox_simple</span>(<span class="at">family =</span> <span class="st">"sen"</span>,</span>
+<span id="cb16-167"><a href="#cb16-167"></a>                                                   <span class="at">size =</span> <span class="dv">17</span>,</span>
+<span id="cb16-168"><a href="#cb16-168"></a>                                                   <span class="at">color =</span> earnings_pal[<span class="st">"light_text"</span>],</span>
+<span id="cb16-169"><a href="#cb16-169"></a>                                                   <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="fl">0.5</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">1</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="at">unit =</span> <span class="st">"lines"</span>)),</span>
+<span id="cb16-170"><a href="#cb16-170"></a>    <span class="at">plot.caption =</span> ggtext<span class="sc">::</span><span class="fu">element_textbox</span>(<span class="at">family =</span> <span class="st">"sen"</span>,</span>
+<span id="cb16-171"><a href="#cb16-171"></a>                                           <span class="at">face =</span> <span class="st">"italic"</span>,</span>
+<span id="cb16-172"><a href="#cb16-172"></a>                                           <span class="at">color =</span> earnings_pal[<span class="st">"light_text"</span>],</span>
+<span id="cb16-173"><a href="#cb16-173"></a>                                           <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">3</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="at">unit =</span> <span class="st">"lines"</span>)),</span>
+<span id="cb16-174"><a href="#cb16-174"></a>    <span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"josefin"</span>,</span>
+<span id="cb16-175"><a href="#cb16-175"></a>                                <span class="at">face =</span> <span class="st">"bold"</span>,</span>
+<span id="cb16-176"><a href="#cb16-176"></a>                                <span class="at">size =</span> <span class="dv">12</span>,</span>
+<span id="cb16-177"><a href="#cb16-177"></a>                                <span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb16-178"><a href="#cb16-178"></a>    <span class="at">panel.spacing.y =</span> <span class="fu">unit</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="st">"lines"</span>),</span>
+<span id="cb16-179"><a href="#cb16-179"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"sen"</span>,</span>
+<span id="cb16-180"><a href="#cb16-180"></a>                             <span class="at">color =</span> earnings_pal[<span class="st">"light_text"</span>]),</span>
+<span id="cb16-181"><a href="#cb16-181"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb16-182"><a href="#cb16-182"></a>    <span class="at">axis.title =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb16-183"><a href="#cb16-183"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="week6.2-annotations-slides_files/figure-revealjs/unnamed-chunk-24-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<section id="geom-textbox" class="slide level2" data-menu-title="ggtext::geom_textbox()">
+<h2></h2>
+<p><span class="slide-title3">Use <code>geom_textbox()</code> to apply Markdown to annotations</span></p>
+<hr>
+<p><span class="body-text-s">The <code>{ggtext}</code> package provides <code>geom_textbox()</code>, which allows for Markdown styling and font family specification. Note that we had to adjust the box coordinates slightly:</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="2,6,33-36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co">#.................create df with annotation info.................</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>facet_labs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">my_text =</span> <span class="fu">c</span>(<span class="st">"&lt;span style='color:#2D7787;'&gt;**Males**&lt;/span&gt; **make $23,644 more than** &lt;span style='color:#FC6B4B;'&gt;**females**&lt;/span&gt; in this female-dominated occupation"</span>,</span>
+<span id="cb17-3"><a href="#cb17-3"></a>                                     <span class="st">"Male &amp; female probation officers &amp; correctional treatment specialists make about the same"</span>,</span>
+<span id="cb17-4"><a href="#cb17-4"></a>                                     <span class="st">"Here's another annotation with a horizontal arrow"</span>), </span>
+<span id="cb17-5"><a href="#cb17-5"></a>                         <span class="at">group_label =</span> <span class="fu">c</span>(<span class="st">"Occupations that are 75%+ female"</span>, <span class="st">"Occupations that are 45-55% female"</span>, <span class="st">"Occupations that are 75%+ male"</span>),</span>
+<span id="cb17-6"><a href="#cb17-6"></a>                         <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">70000</span>, <span class="dv">55000</span>, <span class="dv">65000</span>),</span>
+<span id="cb17-7"><a href="#cb17-7"></a>                         <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">5</span>),</span>
+<span id="cb17-8"><a href="#cb17-8"></a>                         <span class="at">arrow_x =</span> <span class="fu">c</span>(<span class="dv">80000</span>, <span class="dv">48500</span>, <span class="dv">60000</span>),</span>
+<span id="cb17-9"><a href="#cb17-9"></a>                         <span class="at">arrow_xend =</span> <span class="fu">c</span>(<span class="dv">80000</span>, <span class="dv">48500</span>, <span class="dv">37500</span>),</span>
+<span id="cb17-10"><a href="#cb17-10"></a>                         <span class="at">arrow_y =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb17-11"><a href="#cb17-11"></a>                         <span class="at">arrow_yend =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="fl">6.5</span>, <span class="dv">5</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb17-12"><a href="#cb17-12"></a>  <span class="fu">mutate</span>(<span class="at">group_label =</span> <span class="fu">fct_relevel</span>(group_label, <span class="st">"Occupations that are 75%+ female"</span>,</span>
+<span id="cb17-13"><a href="#cb17-13"></a>                                   <span class="st">"Occupations that are 45-55% female"</span>, <span class="st">"Occupations that are 75%+ male"</span>))</span>
+<span id="cb17-14"><a href="#cb17-14"></a></span>
+<span id="cb17-15"><a href="#cb17-15"></a><span class="co">#..........................create plot...........................</span></span>
+<span id="cb17-16"><a href="#cb17-16"></a><span class="fu">ggplot</span>(subset_jobs) <span class="sc">+</span></span>
+<span id="cb17-17"><a href="#cb17-17"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> total_earnings_female, <span class="at">xend =</span> total_earnings_male,</span>
+<span id="cb17-18"><a href="#cb17-18"></a>                   <span class="at">y =</span> <span class="fu">fct_reorder</span>(occupation, total_earnings), <span class="at">yend =</span> occupation)) <span class="sc">+</span></span>
+<span id="cb17-19"><a href="#cb17-19"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> total_earnings_male, <span class="at">y =</span> occupation),</span>
+<span id="cb17-20"><a href="#cb17-20"></a>             <span class="at">color =</span> earnings_pal[<span class="st">"males"</span>], <span class="at">size =</span> <span class="fl">3.25</span>) <span class="sc">+</span></span>
+<span id="cb17-21"><a href="#cb17-21"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> total_earnings_female, <span class="at">y =</span> occupation),</span>
+<span id="cb17-22"><a href="#cb17-22"></a>             <span class="at">color =</span> earnings_pal[<span class="st">"females"</span>], <span class="at">size =</span> <span class="fl">3.25</span>) <span class="sc">+</span></span>
+<span id="cb17-23"><a href="#cb17-23"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>group_label, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb17-24"><a href="#cb17-24"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_dollar</span>(<span class="at">scale =</span> <span class="fl">0.001</span>, <span class="at">suffix =</span> <span class="st">"k"</span>),</span>
+<span id="cb17-25"><a href="#cb17-25"></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">25000</span>, <span class="dv">50000</span>, <span class="dv">75000</span>, <span class="dv">100000</span>, <span class="dv">125000</span>)) <span class="sc">+</span></span>
+<span id="cb17-26"><a href="#cb17-26"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Males earn more than females across most occupations"</span>,</span>
+<span id="cb17-27"><a href="#cb17-27"></a>       <span class="at">subtitle =</span> subtitle,</span>
+<span id="cb17-28"><a href="#cb17-28"></a>       <span class="at">caption =</span> caption) <span class="sc">+</span></span>
+<span id="cb17-29"><a href="#cb17-29"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> facet_labs,</span>
+<span id="cb17-30"><a href="#cb17-30"></a>               <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> arrow_x, <span class="at">xend =</span> arrow_xend,</span>
+<span id="cb17-31"><a href="#cb17-31"></a>                             <span class="at">y =</span> arrow_y, <span class="at">yend =</span> arrow_yend),</span>
+<span id="cb17-32"><a href="#cb17-32"></a>               <span class="at">linewidth =</span> <span class="dv">1</span>, <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>))) <span class="sc">+</span></span>
+<span id="cb17-33"><a href="#cb17-33"></a>  ggtext<span class="sc">::</span><span class="fu">geom_textbox</span>(<span class="at">data =</span> facet_labs,</span>
+<span id="cb17-34"><a href="#cb17-34"></a>                       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">label =</span> my_text),</span>
+<span id="cb17-35"><a href="#cb17-35"></a>                       <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb17-36"><a href="#cb17-36"></a>                       <span class="at">family =</span> <span class="st">"sen"</span>) <span class="sc">+</span></span>
+<span id="cb17-37"><a href="#cb17-37"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb17-38"><a href="#cb17-38"></a>  <span class="fu">theme</span>(</span>
+<span id="cb17-39"><a href="#cb17-39"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb17-40"><a href="#cb17-40"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"josefin"</span>,</span>
+<span id="cb17-41"><a href="#cb17-41"></a>                              <span class="at">face =</span> <span class="st">"bold"</span>,</span>
+<span id="cb17-42"><a href="#cb17-42"></a>                              <span class="at">size =</span> <span class="dv">25</span>,</span>
+<span id="cb17-43"><a href="#cb17-43"></a>                              <span class="at">color =</span> earnings_pal[<span class="st">"dark_text"</span>]),</span>
+<span id="cb17-44"><a href="#cb17-44"></a>    <span class="at">plot.subtitle =</span> ggtext<span class="sc">::</span><span class="fu">element_textbox_simple</span>(<span class="at">family =</span> <span class="st">"sen"</span>,</span>
+<span id="cb17-45"><a href="#cb17-45"></a>                                                   <span class="at">size =</span> <span class="dv">17</span>,</span>
+<span id="cb17-46"><a href="#cb17-46"></a>                                                   <span class="at">color =</span> earnings_pal[<span class="st">"light_text"</span>],</span>
+<span id="cb17-47"><a href="#cb17-47"></a>                                                   <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="fl">0.5</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">1</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="at">unit =</span> <span class="st">"lines"</span>)),</span>
+<span id="cb17-48"><a href="#cb17-48"></a>    <span class="at">plot.caption =</span> ggtext<span class="sc">::</span><span class="fu">element_textbox</span>(<span class="at">family =</span> <span class="st">"sen"</span>,</span>
+<span id="cb17-49"><a href="#cb17-49"></a>                                           <span class="at">face =</span> <span class="st">"italic"</span>,</span>
+<span id="cb17-50"><a href="#cb17-50"></a>                                           <span class="at">color =</span> earnings_pal[<span class="st">"light_text"</span>],</span>
+<span id="cb17-51"><a href="#cb17-51"></a>                                           <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">3</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="at">unit =</span> <span class="st">"lines"</span>)),</span>
+<span id="cb17-52"><a href="#cb17-52"></a>    <span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"josefin"</span>,</span>
+<span id="cb17-53"><a href="#cb17-53"></a>                                <span class="at">face =</span> <span class="st">"bold"</span>,</span>
+<span id="cb17-54"><a href="#cb17-54"></a>                                <span class="at">size =</span> <span class="dv">12</span>,</span>
+<span id="cb17-55"><a href="#cb17-55"></a>                                <span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb17-56"><a href="#cb17-56"></a>    <span class="at">panel.spacing.y =</span> <span class="fu">unit</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="st">"lines"</span>),</span>
+<span id="cb17-57"><a href="#cb17-57"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"sen"</span>,</span>
+<span id="cb17-58"><a href="#cb17-58"></a>                             <span class="at">color =</span> earnings_pal[<span class="st">"light_text"</span>]),</span>
+<span id="cb17-59"><a href="#cb17-59"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb17-60"><a href="#cb17-60"></a>    <span class="at">axis.title =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb17-61"><a href="#cb17-61"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="week6.2-annotations-slides_files/figure-revealjs/unnamed-chunk-26-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<section id="additional-tools" class="slide level2" data-menu-title="More tools">
+<h2></h2>
+<p><span class="slide-title2">Keep these additional tips, tools &amp; tutorials in mind!</span></p>
+<hr>
+<p><span class="body-text-m"><strong>Tools &amp; packages:</strong></span></p>
 <ul>
-<li><code>geom_text()</code> &amp; <code>geom_label()</code></li>
-<li><code>annotate()</code></li>
+<li><p><span class="body-text-s">use <code>clip = "off"</code> inside a <code>coord_*()</code> function to allow drawing outside the plot panel (see <a href="https://twitter.com/ClausWilke/status/991542952802619392">this tweet</a> for one example)</span></p></li>
+<li><p><span class="body-text-s">the <a href="https://wilkox.org/ggfittext/"><code>{ggfittext}</code> package</a> is a ggplot2 extension for fitting text into boxes</span></p></li>
+<li><p><span class="body-text-s">the <a href="https://wilkelab.org/ggtext/index.html"><code>{ggtext}</code> package</a> includes two geoms for annotating plots, <code>geom_richtext()</code> &amp; <code>geom_textbox()</code> – both permit Markdown styling</span></p></li>
+<li><p><span class="body-text-s">the <a href=""><code>{ggforce}</code> package</a> has <em>so</em> many awesome functions, including a series of <a href="https://ggforce.data-imaginist.com/reference/index.html#annotation">annotation functions</a> (e.g.&nbsp;check out <a href="https://ggforce.data-imaginist.com/reference/geom_mark_ellipse.html"><code>geom_mark_ellipse()</code></a>, demoed in <a href="https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-good-viz-slides.html#/ggforce">lecture 5.1</a>), and <a href="https://ggforce.data-imaginist.com/reference/facet_zoom.html"><code>facet_zoom()</code></a>, for zooming into a subset of data; <a href="https://tuowang.rbind.io/">Tuo Wang</a> also has some great examples in <a href="https://tuowang.rbind.io/blog/ggplot2-extensions/02-ggplot2-extensions/#3-span-stylecolor-coralggforcespan-package">this blog post</a></span></p></li>
+</ul>
+<p><span class="body-text-m"><strong>Tutorials:</strong></span></p>
+<ul>
+<li><p><span class="body-text-s"><a href="https://www.cararthompson.com/talks/user2022/">Level Up Your Labels: Tips and Tricks for Annotating Plots</a>, by <a href="https://www.cararthompson.com/">Cara Thompson</a></span></p></li>
+<li><p><span class="body-text-s"><a href="https://albert-rapp.de/posts/ggplot2-tips/10_recreating_swd_look/10_recreating_swd_look.html#add-text-labels">Recreating the Storytelling with Data look with ggplot</a>, by <a href="https://albert-rapp.de/">Albert Rapp</a></span></p></li>
+<li><p><span class="body-text-s"><a href="https://albert-rapp.de/posts/ggplot2-tips/07_four_ways_colors_more_efficiently/07_four_ways_colors_more_efficiently#label-directly">4 Ways to use colors in ggplot more efficiently</a>, by <a href="https://albert-rapp.de/">Albert Rapp</a> (includes some great annotation examples)</span></p></li>
 </ul>
 </section>
-<section class="slide level2">
-
-</section>
-<section class="slide level2">
-
-<!-- https://www.bbc.com/news/science-environment-67861954 -->
-<!-- Tanya Shapiro (~1:45) -->
-<!-- - annotations talk some trial & error -->
-<!-- - easiest to create a df with your annotation positions (x, y) and text AS WELL AS a df with arrrow positioning (xstart, xend, ystart,) -->
-<!-- ggforce -->
-<!-- See `guide_legend` under hexbin map: https://r-graph-gallery.com/328-hexbin-map-of-the-usa.html -->
-<!-- 3 annotations -- {ggtext} {ggtextpath} see https://cararthompson.github.io/nhsr-2023-level-up-workshop/level-up-workshop.html#/title-slide-->
-<!-- Nice bit on annotations: https://albert-rapp.de/posts/ggplot2-tips/07_four_ways_colors_more_efficiently/07_four_ways_colors_more_efficiently -->
-<!-- Covers {ggtext} https://www.youtube.com/watch?v=fWP7KnIhmpQ -->
-<!-- https://www.cararthompson.com/talks/user2022/media/useR2022_level_up_your_labels.pdf -->
-<!-- recreate pew center chart Albert Rapp: https://www.youtube.com/watch?v=k34IjRXq1BI -->
-<!-- https://albert-rapp.de/posts/ggplot2-tips/07_four_ways_colors_more_efficiently/07_four_ways_colors_more_efficiently.html -->
-<!-- legends -->
-<!-- Redundant coding: update ridgeline plot legend https://clauswilke.com/dataviz/redundant-coding.html; see `guide_colorbar()` https://rstudio-conf-2022.github.io/ggplot2-graphic-design/modules/d2-06_layout.html-->
-<!-- patchwork for composing plots -->
+<section id="end-break" class="slide level2" data-menu-title="# END #" data-background="#047C90">
+<h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+See you next week!
+</p>
+<p class="caption-text">
+<em>~ This is the end of Lesson 2 (of 2) ~</em>
+</p>
+</div>
 
 <div class="footer footer-default">
 

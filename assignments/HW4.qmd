@@ -120,4 +120,5 @@ You must complete the following to receive a “Satisfactory” mark for Assignm
 - [ ] all code should be appropriately formatted, annotated, and code chunks should all have the appropriate chunk options specified (see above for all details).
 - [ ] describe your design process and decisions in a 1-2 page write-up, as described above
 - [ ] submit your work as either a published Quarto doc or as a blog post on your personal website
+- [ ] add the link to your published Quarto doc / blog post to [this Google Sheet](https://docs.google.com/spreadsheets/d/1tv32Ng_-QI1-eB5ws59HgCN0EoOpHe4UHX6qHhbQGds/edit#gid=0)
 - [ ] present your visualizations to the class on [date] (finals week)

@@ -90,10 +90,6 @@ subset_jobs <- rbind(f75, m75, f50) |>
 
 
 
-#........................some calculations.......................
-max_diff <- subset_jobs |>
-  slice_max(order_by = difference_earnings, n = 1)
-
 # of the jobs considered, the largest pay gap between male and female workers exists in a female dominated occupation, where male median salaries are 34% higher than females
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -271,11 +267,39 @@ plt <- plot +
     axis.title = element_blank()
   )
 
-showtext_opts(dpi = 320)
-ragg::agg_png(here::here("plot_good_agg.png"), res = 320, width = 12, height = 13, units = "in")
-plt
-dev.off()
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                              facet annotations                           ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# " Male & female social\nworkers make about\nthe same
 
-ggsave("plot_good.png", plt, width = 8, height = 8)
+facet_labs <- data.frame(my_text = c("Males make $23,644 than\nfemales in this female-\ndominated occupation",
+                                     "Male & female probation officers &\ncorrectional treatment specialists\nmake about the same",
+                                     "Here's another annotation\nwith a horizontal arrow"),
+                         group_label = c("Occupations that are 75%+ female", "Occupations that are 45-55% female", "Occupations that are 75%+ male"),
+                         x = c(70000, 45000, 60000),
+                         y = c(5, 3, 5),
+                         arrow_x = c(80000, 48500, 60000),
+                         arrow_xend = c(80000, 48500, 37500),
+                         arrow_y = c(6, 4, 5),
+                         arrow_yend = c(10, 6.5, 5)) |>
+  mutate(group_label = fct_relevel(group_label, "Occupations that are 75%+ female",
+                                   "Occupations that are 45-55% female", "Occupations that are 75%+ male"))
+
+#........................some calculations.......................
+# max_diff <- subset_jobs |>
+#   slice_max(order_by = difference_earnings, n = 1) |>
+#   pull(difference_earnings)
+
+
+
+plt +
+  geom_segment(data = facet_labs,
+               mapping = aes(x = arrow_x, xend = arrow_xend,
+                             y = arrow_y, yend = arrow_yend),
+               linewidth = 1, arrow = arrow(length = unit(0.3, "cm"))) +
+  geom_label(data = facet_labs,
+            mapping = aes(x = x, y = y, label = my_text),
+            size = 3,
+            hjust = "left")
 
 
