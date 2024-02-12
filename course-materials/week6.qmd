@@ -37,6 +37,15 @@ install.packages("ggrepel") # ggplot2 extension to repel overlapping labels
 install.packages("googlesheets4") # provides an R interface to Google Sheets via the Sheets API v4
 ```
 
+## Download Data
+
+In case we have trouble with the `{googlesheets4}` API, you can download and read in the following data files as normal (i.e. using `readr::read_csv()`):
+
+- [metabolism-foraging-data.csv](https://drive.google.com/file/d/1NQV40ZHVkPUNA6FeFFQR0OxqYM4trM3w/view?usp=sharing)
+- [mono.csv](https://drive.google.com/file/d/13chLNHTLd0GRCFl-7OB921FzOKc6I-GK/view?usp=sharing)
+
+If you choose (or need) to download and read in these files, be sure to save them to your class repo at `~/week6/data/`.
+
 ### Download Font Awesome fonts
 
 In addition to using Google Fonts in our ggplots, we will also be using some [Font Awesome](https://fontawesome.com/) icons! To do so, you'll need to download the Font Awesome font files and save them to your class repo. Do so by following these steps:

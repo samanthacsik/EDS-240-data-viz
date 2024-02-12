@@ -261,6 +261,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#pre-class-prep" id="toc-pre-class-prep" class="nav-link active" data-scroll-target="#pre-class-prep">Pre-class Prep</a>
   <ul class="collapse">
   <li><a href="#install-required-packages" id="toc-install-required-packages" class="nav-link" data-scroll-target="#install-required-packages">Install required packages</a></li>
+  </ul></li>
+  <li><a href="#download-data" id="toc-download-data" class="nav-link" data-scroll-target="#download-data">Download Data</a>
+  <ul class="collapse">
   <li><a href="#download-font-awesome-fonts" id="toc-download-font-awesome-fonts" class="nav-link" data-scroll-target="#download-font-awesome-fonts">Download Font Awesome fonts</a></li>
   </ul></li>
   <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials">Lecture Materials</a></li>
@@ -301,6 +304,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"googlesheets4"</span>) <span class="co"># provides an R interface to Google Sheets via the Sheets API v4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+</section>
+<section id="download-data" class="level2">
+<h2 class="anchored" data-anchor-id="download-data">Download Data</h2>
+<p>In case we have trouble with the <code>{googlesheets4}</code> API, you can download and read in the following data files as normal (i.e.&nbsp;using <code>readr::read_csv()</code>):</p>
+<ul>
+<li><a href="https://drive.google.com/file/d/1NQV40ZHVkPUNA6FeFFQR0OxqYM4trM3w/view?usp=sharing">metabolism-foraging-data.csv</a></li>
+<li><a href="https://drive.google.com/file/d/13chLNHTLd0GRCFl-7OB921FzOKc6I-GK/view?usp=sharing">mono.csv</a></li>
+</ul>
+<p>If you choose (or need) to download and read in these files, be sure to save them to your class repo at <code>~/week6/data/</code>.</p>
 <section id="download-font-awesome-fonts" class="level3">
 <h3 class="anchored" data-anchor-id="download-font-awesome-fonts">Download Font Awesome fonts</h3>
 <p>In addition to using Google Fonts in our ggplots, we will also be using some <a href="https://fontawesome.com/">Font Awesome</a> icons! To do so, you’ll need to download the Font Awesome font files and save them to your class repo. Do so by following these steps:</p>
