@@ -612,7 +612,7 @@ Type and font choice influences audience perception and readability
 <p>Thin (light-weight fonts) fonts are hard to read. <strong>Only use them in a high-contrast color and in large sizes</strong> (often, titles are the only place you’ll want to use think fonts.)</p>
 <p><br></p>
 
-<img data-src="images/week6/bold.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<img data-src="images/week6/thin.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
 <div class="footer">
 <p><em>Example from <a href="https://blog.datawrapper.de/fonts-for-data-visualization/">Which fonts to use for your charts and tables</a>, by Lisa Charlotte Muth</em></p>
 </div>
@@ -1184,7 +1184,7 @@ Let’s learn how to use different fonts in our ggplots!
 <h2></h2>
 <p><span class="slide-title">Add an icon to our caption</span></p>
 <hr>
-<p><span class="body-text-s">To use this unicode in HTML, we need to stick a <code>&amp;#x</code> ahead of it. It’s easier if we save our unicode (as well as our username text) to variables that we can more easily reference as we craft our new caption. I also recommend constructing your full caption outside of your ggplot – the <a href="https://glue.tidyverse.org/"><code>glue::glue()</code> function</a> is helpful here:</span></p>
+<p><span class="body-text-s">To use this unicode in HTML, we need to stick a <code>&amp;#x</code> ahead of it. We can make our lives a bit easier by saving our unicode (as well as our username text) to variable names. We’ll then use the <a href="https://glue.tidyverse.org/"><code>glue::glue()</code> function</a> to construct our full caption. Importantly, <code>glue()</code> will evaluate expressions enclosed by braces as R code.</span></p>
 <p><br></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co">#.........................create caption.........................</span></span>
@@ -1296,10 +1296,10 @@ Let’s learn how to use different fonts in our ggplots!
 <span id="cb14-12"><a href="#cb14-12"></a>                                                   <span class="at">size =</span> <span class="dv">17</span>,</span>
 <span id="cb14-13"><a href="#cb14-13"></a>                                                   <span class="at">color =</span> earnings_pal[<span class="st">"light_text"</span>],</span>
 <span id="cb14-14"><a href="#cb14-14"></a>                                                   <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="fl">0.5</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">1</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="at">unit =</span> <span class="st">"lines"</span>)),</span>
-<span id="cb14-15"><a href="#cb14-15"></a>    <span class="at">plot.caption =</span> ggtext<span class="sc">::</span><span class="fu">element_textbox</span>(<span class="at">family =</span> <span class="st">"sen"</span>,</span>
-<span id="cb14-16"><a href="#cb14-16"></a>                                           <span class="at">face =</span> <span class="st">"italic"</span>, <span class="co"># </span><span class="al">NOTE</span><span class="co">: this no longer applies since the typeface "sen" does not exist in an italic font style</span></span>
-<span id="cb14-17"><a href="#cb14-17"></a>                                           <span class="at">color =</span> earnings_pal[<span class="st">"light_text"</span>],</span>
-<span id="cb14-18"><a href="#cb14-18"></a>                                           <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">3</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="at">unit =</span> <span class="st">"lines"</span>)),</span>
+<span id="cb14-15"><a href="#cb14-15"></a>    <span class="at">plot.caption =</span> ggtext<span class="sc">::</span><span class="fu">element_textbox_simple</span>(<span class="at">family =</span> <span class="st">"sen"</span>,</span>
+<span id="cb14-16"><a href="#cb14-16"></a>                                                  <span class="at">face =</span> <span class="st">"italic"</span>, <span class="co"># </span><span class="al">NOTE</span><span class="co">: this no longer applies since the typeface "sen" does not exist in an italic font style</span></span>
+<span id="cb14-17"><a href="#cb14-17"></a>                                                  <span class="at">color =</span> earnings_pal[<span class="st">"light_text"</span>],</span>
+<span id="cb14-18"><a href="#cb14-18"></a>                                                  <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">3</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="at">unit =</span> <span class="st">"lines"</span>)),</span>
 <span id="cb14-19"><a href="#cb14-19"></a>    <span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"josefin"</span>,</span>
 <span id="cb14-20"><a href="#cb14-20"></a>                                <span class="at">face =</span> <span class="st">"bold"</span>,</span>
 <span id="cb14-21"><a href="#cb14-21"></a>                                <span class="at">size =</span> <span class="dv">12</span>,</span>
@@ -1437,7 +1437,7 @@ Let’s learn how to use different fonts in our ggplots!
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_234085e4" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_b3f56a57" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>

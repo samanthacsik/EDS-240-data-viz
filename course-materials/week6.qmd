@@ -34,7 +34,6 @@ install.packages("monochromeR") # a package for creating monochrome color palett
 install.packages("showtext") # for using fonts more easily in R graphs
 install.packages("ggtext") # improved text rendering support for ggplot2
 install.packages("ggrepel") # ggplot2 extension to repel overlapping labels
-install.packages("ggforce") # does lots of awesome stuff; includes `geom_mark_ellipse()` & `facet_zoom()`
 install.packages("googlesheets4") # provides an R interface to Google Sheets via the Sheets API v4
 ```
 

@@ -348,7 +348,7 @@ Thin (light-weight fonts) fonts are hard to read. **Only use them in a high-cont
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week6/bold.png")
+knitr::include_graphics("images/week6/thin.png")
 ```
 
 <br>
@@ -1212,7 +1212,7 @@ knitr::include_graphics("images/week6/fa-unicode.png")
 
 <hr>
 
-[To use this unicode in HTML, we need to stick a `&#x` ahead of it. It's easier if we save our unicode (as well as our username text) to variables that we can more easily reference as we craft our new caption. I also recommend constructing your full caption outside of your ggplot -- the [`glue::glue()` function](https://glue.tidyverse.org/) is helpful here:]{.body-text-s}
+[To use this unicode in HTML, we need to stick a `&#x` ahead of it. We can make our lives a bit easier by saving our unicode (as well as our username text) to variable names. We'll then use the [`glue::glue()` function](https://glue.tidyverse.org/) to construct our full caption. Importantly, `glue()` will evaluate expressions enclosed by braces as R code.]{.body-text-s}
 
 <br>
 
@@ -1390,10 +1390,10 @@ plot +
                                                    size = 17,
                                                    color = earnings_pal["light_text"],
                                                    margin = margin(t = 0.5, r = 0, b = 1, l = 0, unit = "lines")),
-    plot.caption = ggtext::element_textbox(family = "sen",
-                                           face = "italic", # NOTE: this no longer applies since the typeface "sen" does not exist in an italic font style
-                                           color = earnings_pal["light_text"],
-                                           margin = margin(t = 3, r = 0, b = 0, l = 0, unit = "lines")),
+    plot.caption = ggtext::element_textbox_simple(family = "sen",
+                                                  face = "italic", # NOTE: this no longer applies since the typeface "sen" does not exist in an italic font style
+                                                  color = earnings_pal["light_text"],
+                                                  margin = margin(t = 3, r = 0, b = 0, l = 0, unit = "lines")),
     strip.text.x = element_text(family = "josefin",
                                 face = "bold",
                                 size = 12,
