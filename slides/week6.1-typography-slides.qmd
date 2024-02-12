@@ -514,6 +514,23 @@ knitr::include_graphics("images/week6/nicault-horror.png")
 Horror Movies, by [Cristophe Nicault](https://www.christophenicault.com/) ([source code](https://github.com/cnicault/tidytuesday/blob/master/2022/2022-44-horror-movies/horror_movies.qmd))
 :::
 
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
 ---
 
 ## {#anyene-hbcu data-menu-title="I Anyene (HBCUs)"} 
@@ -530,6 +547,23 @@ knitr::include_graphics("images/week6/anyene-hbcu.png")
 HBCUs, by [Ijeamaka Anyene](https://ijeamaka-anyene.netlify.app/) ([source code](https://github.com/Ijeamakaanyene/tidytuesday/blob/master/scripts/2021_04_hbcu.Rmd))
 :::
 
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
 ---
 
 ## {#rennie-rladies data-menu-title="N Rennie (R-Ladies Events)"} 
@@ -543,8 +577,25 @@ knitr::include_graphics("images/week6/rennie-rladies.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
-R-Ladies Chapter Events, by [Nicola Rennie](https://ijeamaka-anyene.netlify.app/) ([source code](https://github.com/nrennie/tidytuesday/tree/main/2023/2023-11-21)) | Font inspiried by [R-Ladies Global](https://rladies.org/)
+R-Ladies Chapter Events, by [Nicola Rennie](https://ijeamaka-anyene.netlify.app/) ([source code](https://github.com/nrennie/tidytuesday/tree/main/2023/2023-11-21)) | Font inspired by [R-Ladies Global](https://rladies.org/)
 :::
+
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
 
 ---
 
@@ -1194,7 +1245,7 @@ showtext_auto()
 
 <hr>
 
-Let's say I want to include my GitHub username along with the GitHub icon in the caption of my plot. Search the [**Free** icons on Font Awesome](https://fontawesome.com/search?o=r&m=free) and click on the one you want to use. Find the icon's Unicode in the top right corner of the popup box:
+Let's say I want to include my GitHub username along with the GitHub icon in the caption of my plot. Start by searching the [**Free** icons on Font Awesome](https://fontawesome.com/search?o=r&m=free) and click on the one you want to use (here, the [**github**](https://fontawesome.com/icons/github?f=brands&s=solid) icon). Find the icon's Unicode in the top right corner of the popup box:
 
 ```{r}
 #| eval: true

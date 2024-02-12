@@ -197,7 +197,7 @@ countdown::countdown(
 
 . . . 
 
-The average attention span of an internet user is [~8 seconds](https://www.linkedin.com/pulse/shrinking-attention-span-online-users-what-means-your-avinash-sharma/) (shorter than a goldfish!). It's imperative that we don't respect our readers' time.
+The average attention span of an internet user is [~8 seconds](https://www.linkedin.com/pulse/shrinking-attention-span-online-users-what-means-your-avinash-sharma/) (shorter than a goldfish!). It's imperative that we respect our readers' time.
 
 . . . 
 
@@ -207,7 +207,7 @@ The average attention span of an internet user is [~8 seconds](https://www.linke
 - [guide your readers eyes & attention]{.body-text-s}
 - [remind your readers what they're looking at]{.body-text-s}
 
-The more time you spend making your visualization crystal clear, the more time your save your readers needing to decipher it.
+The more time you spend making your visualization crystal clear, the more time you save your readers needing to decipher it.
 
 ::: {.footer}
 Read these two *great* posts: [What to consider when using text in data visualizations](https://blog.datawrapper.de/text-in-data-visualizations/) & [Respect your readers’ time](https://blog.datawrapper.de/readers-time/), both by Lisa Charlotte Muth
@@ -603,8 +603,8 @@ lob_plot
 
 <br>
 
-1. `geom_text()` (for plain text) & `geom_label()` (adds a rectangle behind text), which take aesthetics mappings
-2. `annotate()`, which does not take aesthetics mappings and instead draws only the information provided to it
+1. `geom_text()` (for plain text) & `geom_label()` (adds a rectangle behind text), which take aesthetics mappings; these draw the geom *once per each row of the data frame*
+2. `annotate()`, which does not take aesthetics mappings and instead draws only the information provided to it 
 
 . . . 
 
@@ -618,6 +618,10 @@ lob_plot
  
 ::: {.center-text}
 [**Our goal:**]{.teal-text} add a rectangle that bounds / highlights a subset of points, add text nearby that reads **Important lobsters**, and draw an arrow from the text pointing to the box.
+:::
+
+::: {.footer}
+I've found the [Annotation FAQ](https://ggplot2.tidyverse.org/articles/faq-annotation.html) super helpful!
 :::
 
 ---
@@ -644,7 +648,6 @@ lob_plot +
     size = 4,
     color = "black",
     hjust = "inward",
-    show.legend = FALSE
   ) +
   geom_rect(
     xmin = 0.25, xmax = 0.85,
@@ -794,6 +797,7 @@ lob_plot +
 #| fig-asp: 0.7
 lob_plot +
   geom_text(aes(label = lobster_id),
+            size = 6,
             show.legend = FALSE)
 ```
 :::
@@ -810,6 +814,7 @@ lob_plot +
 #| fig-asp: 0.7
 lob_plot +
   geom_label(aes(label = lobster_id),
+             size = 6,
              show.legend = FALSE)
 ```
 :::
@@ -870,13 +875,109 @@ lob_plot +
 
 ---
 
-## {#manually-label data-menu-title="Manually label points"} 
+## {#manually-label-iv10 data-menu-title="Manually label points (IV10)"} 
 
 [Manually label just a few important points]{.slide-title}
 
 <hr>
 
-If we have just a few lobsters that we want to call attention to, we can use `annotate()` to label them:
+If we have just a few lobsters that we want to call attention to, we can use `annotate()` to label them. Let's start with lobster IV10:
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| fig-asp: 0.7
+#| output-location: column
+lob_plot +
+  annotate(
+    geom = "text",
+    x = 0.3, y = 20.1,
+    label = "IV10",
+    hjust = "left",
+    size = 5
+    ) +
+  annotate(
+    geom = "curve",
+    x = 0.29, xend = 0.184,
+    y = 20, yend = 9.43,
+    arrow = arrow(length = unit(0.3, "cm")),
+    linewidth = 0.6
+    ) 
+```
+
+---
+
+## {#manually-label-iv19 data-menu-title="Manually label points (IV19)"} 
+
+[Manually label just a few important points]{.slide-title}
+
+<hr>
+
+**Your turn!** Create another text label and arrow pointing to lobster IV19 (the farthest dark red diamond to the right). You don't need to choose this exact location for your text and arrow:
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| fig-asp: 0.7
+lob_plot +
+  annotate(
+    geom = "text",
+    x = 0.3, y = 20.1,
+    label = "IV10",
+    hjust = "left",
+    size = 5
+    ) +
+  annotate(
+    geom = "curve",
+    x = 0.29, xend = 0.184,
+    y = 20, yend = 9.43,
+    arrow = arrow(length = unit(0.3, "cm")),
+    linewidth = 0.6
+    ) +
+  annotate(
+    geom = "text",
+    x = 1.19,
+    y = 5.25,
+    label = "IV19",
+    hjust = "right",
+    size = 5
+    ) +
+  annotate(
+    geom = "curve",
+    x = 1.2, xend = 1.31,
+    y = 5, yend = 14,
+    arrow = arrow(length = unit(0.3, "cm")),
+    linewidth = 0.6
+    )
+```
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#manually-label-iv19-solution data-menu-title="Manually label points (IV19, solution)"} 
+
+[Manually label just a few important points]{.slide-title}
+
+<hr>
+
+A solution (you may have chosen a different placement for your text and arrow):
 
 ```{r}
 #| eval: true
@@ -1032,7 +1133,7 @@ ggplot(data = mono, aes(x = year, y = lake_level)) +
 
 <hr>
 
-[Let's say we want to call particular attention to the sharp decline in lake surface level between 1941 - 1983 as a result of unrestricted water diversions. Let's do so using `annotate()`.]{.body-text-s}
+[Let's say we want to call particular attention to the sharp decline in lake surface level between 1941 - 1983 as a result of unrestricted water diversions. Let's do so using `annotate()` (**note** the order of our annotation layers matters!).]{.body-text-s}
 
 ```{r}
 #| eval: true
@@ -1076,7 +1177,7 @@ ggplot(data = mono, aes(x = year, y = lake_level)) +
     )
 ```
 
-[Note the importance of *order* here! Plotting our `geom_line()` layer *after* creating our gray rectangle ensures that it isn't blocked.]{.body-text-s}
+<!-- [Note the importance of *order* here! Plotting our `geom_line()` layer *after* creating our gray rectangle ensures that it isn't blocked.]{.body-text-s} -->
 
 ---
 
@@ -1093,7 +1194,7 @@ ggplot(data = mono, aes(x = year, y = lake_level)) +
 #| echo: true
 #| fig-align: "center"
 #| fig-asp: 0.7
-#| code-line-numbers: "26-32"
+#| code-line-numbers: "26-33"
 #| output-location: column
 ggplot(data = mono, aes(x = year, y = lake_level)) +
   annotate(
@@ -1120,7 +1221,8 @@ ggplot(data = mono, aes(x = year, y = lake_level)) +
     label = "unrestricted diversions\n(1941 - 1983)",
     size = 3
   ) +
-  geom_hline(yintercept = 6360, linetype = "dashed") +
+  geom_hline(yintercept = 6360, 
+             linetype = "dashed") +
   annotate(
     geom = "text",
     x = 1910, y = 6366,
@@ -1283,8 +1385,8 @@ facet_labs <- data.frame(my_text = c("Males make $23,644 than\nfemales in this f
                                      "Male & female probation officers &\ncorrectional treatment specialists\nmake about the same",
                                      "Here's another annotation\nwith a horizontal arrow"),
                          group_label = c("Occupations that are 75%+ female", "Occupations that are 45-55% female", "Occupations that are 75%+ male"),
-                         x = c(70000, 45000, 60000),
-                         y = c(5, 3, 5),
+                         text_x = c(70000, 45000, 60000),
+                         text_y = c(5, 3, 5),
                          arrow_x = c(80000, 48500, 60000),
                          arrow_xend = c(80000, 48500, 37500),
                          arrow_y = c(6, 4, 5),
@@ -1316,7 +1418,7 @@ ggplot(subset_jobs) +
     ) +
   geom_label(
     data = facet_labs,
-    mapping = aes(x = x, y = y, label = my_text),
+    mapping = aes(x = text_x, y = text_y, label = my_text),
     size = 3,
     hjust = "left"
     ) +
@@ -1476,8 +1578,8 @@ facet_labs <- data.frame(my_text = c("Males make $23,644 more than\nfemales in t
                                      "Male & female probation officers &\ncorrectional treatment specialists\nmake about the same",
                                      "Here's another annotation\nwith a horizontal arrow"), 
                          group_label = c("Occupations that are 75%+ female", "Occupations that are 45-55% female", "Occupations that are 75%+ male"),
-                         x = c(70000, 45000, 60000),
-                         y = c(5, 3, 5),
+                         text_x = c(70000, 45000, 60000),
+                         text_y = c(5, 3, 5),
                          arrow_x = c(80000, 48500, 60000),
                          arrow_xend = c(80000, 48500, 37500),
                          arrow_y = c(6, 4, 5),
@@ -1504,7 +1606,7 @@ ggplot(subset_jobs) +
                              y = arrow_y, yend = arrow_yend),
                linewidth = 1, arrow = arrow(length = unit(0.3, "cm"))) +
   geom_label(data = facet_labs,
-             mapping = aes(x = x, y = y, label = my_text),
+             mapping = aes(x = text_x, y = text_y, label = my_text),
              size = 3,
              hjust = "left") +
   theme_minimal() +
