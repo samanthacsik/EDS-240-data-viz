@@ -79,7 +79,7 @@ toc: true
 
 (In my honest opinion) One of the best ways to learn how to build exciting ggplots is to look at code that others have written. Here are just a few folks doing really incredible work (along with their repos where they often showcase their creations): 
 
-| Creator      | {{< fa brands github >}} Data Viz Repository |
+| Creator      | {{< fa brands github >}} Data Viz Repository (and other online materials) |
 | ----------- | ----------- |
 | [Ijeamaka Anyene](https://ijeamaka-anyene.netlify.app/) | [tidytuesday](https://github.com/Ijeamakaanyene/tidytuesday) |
 | [Meghan Hall](https://meghan.rbind.io/) | check out Meghan's awesome [blog posts](https://meghan.rbind.io/blog/), which cover a number of `{ggplot2}` topics
@@ -88,6 +88,7 @@ toc: true
 | [Danielle Navarro](https://djnavarro.net/) | generative art outputs from multiple repos can be found on Danielle's website's [Gallery](https://art.djnavarro.net/gallery/) |
 | [Cristophe Nicault](https://www.christophenicault.com/) | [tidytuesday](https://github.com/cnicault/tidytuesday) |
 | [Dan Oehm](https://gradientdescending.com/) | [tidytues](https://github.com/doehm/tidytues) |
+| [Albert Rapp](https://albert-rapp.de/) | [PublicTidyTuesday](https://github.com/AlbertRapp/PublicTidyTuesday), but also check out his [YouTube channel](https://www.youtube.com/@rappa753) & [blog](https://albert-rapp.de/blog)
 | [Nicola Rennie](https://nrennie.rbind.io/) | [tidytuesday](https://github.com/nrennie/tidytuesday/tree/main) (Nicola also records nearly all of her work using the [`{camcorder}` package](https://github.com/thebioengineer/camcorder))
 | [Cédric Scherer](https://www.cedricscherer.com/) | [TidyTuesday](https://github.com/z3tt/TidyTuesday) |
 | [Tanya Shapiro](https://tanyaviz.com/) | [tanya-data-viz](https://github.com/tashapiro/tanya-data-viz) |
