@@ -74,19 +74,16 @@ In addition to using Google Fonts in our ggplots, we will also be using some [Fo
 :::
 :::
 
-<!-- ::: {.g-col-12 .g-col-md-4} -->
-<!-- ::: {.center-text} -->
-<!-- [**Data communication**]{.teal-text .body-text-m} -->
-
-<!-- [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.1 slides](../slides/week6.1-data-stories.qmd){.btn role="button" target="_blank"}  -->
-<!-- ::: -->
-<!-- ::: -->
-
 :::
 
 ## Discussion Materials
 
-*Coming soon*
+This week, you'll move beyond the fundamental graphic forms that we covered in lecture and discuss some advanced chart types. These are great options to keep in mind as you continue working on your final project ([HW #4](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW4.html))!
+
+::: {.center-text}
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Week 6 discussion slides](https://docs.google.com/presentation/d/10tk6XawtK0GD-XU4VCkupTOBK4tFW0JamKUeufiqlL0/edit#slide=id.p){.btn role="button" target="_blank"} 
+:::
+
 
 ## Assignment Reminders
 

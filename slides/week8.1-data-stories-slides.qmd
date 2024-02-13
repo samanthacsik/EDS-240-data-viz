@@ -11,13 +11,13 @@ format:
 
 ## {#title-slide data-menu-title="Title Slide" background="#053660"} 
 
-[EDS 240: Lecture 6.1]{.custom-title}
+[EDS 240: Lecture 8.1]{.custom-title}
 
 [*Using data to tell your story*]{.custom-subtitle}
 
 <hr class="hr-teal">
 
-[Week 6 | February 12^th^, 2024]{.custom-subtitle3}
+[Week 8 | February 26^th^, 2024]{.custom-subtitle3}
 
 ---
 
@@ -776,3 +776,11 @@ Informative | [**Story**]{.teal-text} | Visual Form
 ---
 
 <https://twitter.com/thedivtagguy/status/1731323379171447048>
+
+---
+
+humanizing data (giorgia lupi) <https://www.fastcompany.com/91024446/pentagram-partner-giorgia-lupi-on-pie-charts-embracing-the-unknown-and-why-data-needs-a-story>
+
+- "It’s really about what the audience would need to know first, so put yourself in the shoes of a reader or a user that will encounter your chart for the first time. And starting from there, try to design it in a way that can paint as full a picture as possible. Visualization is not about simplifying reality; it’s about providing an access to complexity."
+- " I also think that in some contexts—again, not everywhere, not if you have to design a dashboard for decision making on analytic data—but in some cases a warmer depiction of data can make people relate...And sometimes, if you get people to an emotional level, you might get them interested in learning more and spending more time."
+- "Beauty is such an entry point for everything. You wouldn’t buy an ugly dress just because it’s very functional. So, I feel there’s nothing wrong with trying to make charts a little bit more beautiful."
