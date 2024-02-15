@@ -19,8 +19,9 @@ toc: true
 - **[Nightingale: Journal of the Data Visualization Society](https://nightingaledvs.com/)** -- focuses on data visualization from personal stories to exploratory research to interviews with leaders in the community, data ethics, and best practices
 - **[The Upshot](https://www.nytimes.com/section/upshot), by The New York Times** -- analysis that explains politics, policy and everyday life, with an emphasis on data and charts
 - **[TED Topics: Visualizations](https://www.ted.com/topics/visualizations)** -- a collection of TED talks (and more) on the topic of Visualizations
-- Grainger S, Mao F, Buytaert W (2016) **Environmental data visualisation for non-scientific contexts: Literature review and design framework.** Environmental Modelling & Software. 85:299-318. <https://doi.org/10.1016/j.envsoft.2016.09.004>
 - **[The Data Digest](https://www.youtube.com/@TheDataDigest)**: *super* helpful, short videos on stats / data viz in R
+- Grainger S, Mao F, Buytaert W (2016) **Environmental data visualisation for non-scientific contexts: Literature review and design framework.** Environmental Modelling & Software. 85:299-318. <https://doi.org/10.1016/j.envsoft.2016.09.004>
+Rougier NP, Droettboom M, Bourne PE (2014) **Ten Simple Rules for Better Figures.** PLOS Computational Biology. 10(9): e1003833. <https://doi.org/10.1371/journal.pcbi.1003833>
 
 ## Chart Types
 
@@ -51,9 +52,12 @@ toc: true
 - **[Colorblind Safe Color Schemes](https://www.nceas.ucsb.edu/sites/default/files/2022-06/Colorblind%20Safe%20Color%20Schemes.pdf), by the NCEAS Science Communication Resource Center** -- tips and examples of colorblind-friendly color palettes
 - **[Let's get color blind](https://chromewebstore.google.com/detail/lets-get-color-blind/bkdgdianpkfahpkmphgehigalpighjck)** -- Google Chrome extension for simulating color deficiencies in the web browser
 - **[Color review](https://color.review/), by Anton Robsarve** -- for understanding foreground and background contrasts
+- **[Color Contrast Checker](https://userway.org/contrast/?fg=000000&bg=ffffff), by Userway**: check your color contrast ratio, and view WCAG Compliance Results for different element types
+- **[Color Contrast Checker](https://coolors.co/contrast-checker/112a46-acc8e5), by coolors:** check your color contrast ratio, and use their enhancement tool to improve your colors
 
 ## Typography
 - **[Google Fonts](https://fonts.google.com/)** -- catalog of open-source fonts and icons, which can be imported for use with `{ggplot2}`; check out [this collection](https://fonts.google.com/knowledge/choosing_type) of short articles on choosing type
+- **[fontpair](https://www.fontpair.co/):** free fonts and font pairings
 - **[Which fonts to use for your charts and tables](https://blog.datawrapper.de/fonts-for-data-visualization/), by Lisa Charlotte Muth**
 - **[Choosing Fonts for Your Data Visualization](https://nightingaledvs.com/choosing-fonts-for-your-data-visualization/), by Tiffany France**
 - **[Wake up & smell the fonts](https://www.youtube.com/watch?v=OXc-VZ4Vwbo), by Sarah Hyndman** -- a great 14min-long TEDx talk about how fonts turn words into stories that have the power to influence audience perceptions
@@ -103,6 +107,7 @@ Definitely don't limit yourself to just `{ggplot2}` creators! There are so many 
 - [Sonja Kuijpers](https://www.studioterp.nl)
 - [Lisa Charlotte Muth](https://lisacharlottemuth.com/)
 - [Giorgia Lupi](https://giorgialupi.com/)
+- [Simon Scarr](https://www.simonscarr.com/)
 - [Kinga Stryszowska-Hill](https://stryszowskakinga9.wixsite.com/kingastryszowskahill) (who does use R / `{ggplot2}`, among other data visualization tools)
 
 ## Data sources

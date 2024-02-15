@@ -37,7 +37,9 @@ knitr::include_graphics("images/week6/arctic-ice.png")
 **Source:** [Arctic Ice Reaches a
 Low Winter Maximum](https://www.nytimes.com/interactive/2015/03/24/science/earth/arctic-ice-low-winter-maximum.html?_r=0) (New York Times). 
 
-Also check out this great commentary on the above visualization, [Respect your readers' time](https://blog.datawrapper.de/readers-time/) (DataWrapper)
+Also check out this great commentary on the above visualization, [Respect your readers' time](https://blog.datawrapper.de/readers-time/) (DataWrapper).
+
+Enjoy the y-axis units on this data viz? Be sure to check out [The Measure of Things](https://www.themeasureofthings.com/default.php), a search engine for comparative measurements.
 :::
 
 ```{r}

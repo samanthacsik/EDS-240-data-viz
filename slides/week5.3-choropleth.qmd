@@ -801,6 +801,8 @@ We've landed on a **diverging color palette**, but should we use a classed (aka 
   
 ::: {.footer}
 Adapted from [When to use classed and when to use unclassed color scales](https://blog.datawrapper.de/classed-vs-unclassed-color-scales/), by Lisa Charlotte Muth
+
+For another great read on building color scales for choropleth maps, check out this [article](https://www.axismaps.com/guide/choropleth) in Axis Map's Cartography Guide.
 :::
 
 ---

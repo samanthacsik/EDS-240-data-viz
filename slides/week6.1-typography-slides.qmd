@@ -393,7 +393,7 @@ Lisa Charlotte Muth*
 
 <hr>
 
-[Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG21/#:~:text=Web%20Content%20Accessibility%20Guidelines%20(WCAG)%202.1%20defines%20how%20to%20make,%2C%20learning%2C%20and%20neurological%20disabilities.) (WCAG) recommends **a minimum contrast ratio of 4.5:1** -- use a [color contrast checker](https://userway.org/contrast/?fg=000000&bg=ffffff) to check your ratio (e.g. here is a color combo with a [good contrast ratio](https://userway.org/contrast/?fg=272F75&bg=ffffff) and a combo with a [bad contrast ratio](https://userway.org/contrast/?fg=5CDC8D&bg=ffffff)). 
+[[Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG21/#:~:text=Web%20Content%20Accessibility%20Guidelines%20(WCAG)%202.1%20defines%20how%20to%20make,%2C%20learning%2C%20and%20neurological%20disabilities.) (WCAG) recommends **a minimum contrast ratio of 4.5:1** -- use a color contrast checker to check your ratio. This particular **[color contrast checker](https://coolors.co/contrast-checker/112a46-acc8e5)** will enhance poor color combinations to meet WCAG guidelines. For example, here is a color combo with a [bad contrast ratio](https://coolors.co/contrast-checker/5cdc8d-ffffff), and here is the updated color combo with an [improved contrast ratio](https://coolors.co/contrast-checker/104c27-ffffff).]{.body-text-s}
 
 <br>
 
@@ -472,8 +472,6 @@ Source: [The UX Designer’s Guide to Typography](https://www.interaction-design
 
 <hr>
 
-<br>
-
 ::: {.incremental}
 - **context matters** -- the type(s) should fit the topic and audience
 - when in doubt, **use a sans-serif style** 
@@ -490,6 +488,10 @@ Source: [The UX Designer’s Guide to Typography](https://www.interaction-design
 
 ::: {.teal-text .body-text-m .center-text}
 **Avoid using too many typefaces (stick to just 1-3)**
+:::
+
+::: {.center-text}
+**Check out [fontpair.co](https://www.fontpair.co/) to explore aesthetically-pleasing font pairings!**
 :::
 
 . . . 

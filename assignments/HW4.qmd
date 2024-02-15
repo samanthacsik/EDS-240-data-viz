@@ -25,15 +25,22 @@ Choose to complete one of the two options below:
 
 1. **a visualization for a general audience (i.e. without domain expertise)** -- this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), display findings in an atypical but creative way, and / or may blend both art and science 
 2. **a visualization to be included in a paper, technical documentation, or report** -- this visualization should tell a similar story, but can include much more detail, more data, more domain-specific language, etc.
-3. **a visualization that you could include in a presentation** -- presenting data on slides often requires a slightly different approach -- we ask a lot of an audience (regardless of their familiarity with your domain) when we spend only ~60 sec on any given slide. It's often imperative to build up your visualizations, slide-by-slide, adding data layers bit-by-bit. Oftentimes, you will only present a subset of data on any given figure. Key takeaways should be clearly highlighted. For this visualization, consider how you would layer on data and what arrows / annotations you'd potentially animate in to make your messaging clear. Check out SciFig's [Spectrum of Figure Creation](https://github.com/nrokh/ScientificFigures/tree/e13819c333c6a333dc4a2dde96fdfe8c264389c4?tab=readme-ov-file#spectrum-of-figure-creation) (you'll need to expand the **Details** drop-down) for one example of the difference between a publication- vs. presentation-worthy figure.
+3. **a visualization that you could include in a presentation** -- presenting data on slides often requires a slightly different approach -- we ask a lot of an audience (regardless of their familiarity with your domain) when we spend only ~60 sec on any given slide. It's often imperative to build up your visualizations, slide-by-slide, adding data layers bit-by-bit. Oftentimes, you will only present a subset of data on any given figure. Key takeaways should be clearly highlighted. For this visualization, consider how you would layer on data and what arrows / annotations you'd potentially animate in to make your messaging clear.
 
-We've seen a *lots* of amazing visualizations throughout the quarter. Be sure to take a look through past lectures, and *definitely* check out the [resources page](https://samanthacsik.github.io/EDS-240-data-viz/resources.html#inspirational-data-visualization-creators) to see work from some of my favorite data viz creators. Here are just a few cool pieces (that all fall into category **1**, above) to get the creative thoughts flowing: 
+We've seen a *lots* of amazing visualizations throughout the quarter. Be sure to take a look through past lectures, and *definitely* check out the [resources page](https://samanthacsik.github.io/EDS-240-data-viz/resources.html#inspirational-data-visualization-creators) to see work from some of my favorite data viz creators. Here are just a few cool / helpful pieces to get the creative thoughts flowing: 
+
+**The following examples fall into the first cateogry, above (for a general audience):**
 
 - [The Rise of Craft Beer!](https://github.com/z3tt/TidyTuesday?tab=readme-ov-file#week-202014--beer-production-by-ttb), by [Cédric Scherer](https://github.com/z3tt) (this is an awesome example of how a relatively simple graphic form (i.e. a bar chart) can be made into an engaging piece for a general audience)
 - [Seasonality of Bird Collisions in Chicago](https://twitter.com/jakekaupp/status/1123688940530274305/photo/1), by [Jake Kaupp](https://github.com/jkaupp)
 - [Ratings of Japanese Instant Shio Ramen](https://github.com/gkaramanis/tidytuesday/tree/master/2019/2019-week-23), by [Georgios Karamanis](https://github.com/gkaramanis)
 - [A is for Actrapid, Z is for Zyprexa](https://github.com/gkaramanis/tidytuesday/tree/master/2023/2023-week_11), by [Georgios Karamanis](https://github.com/gkaramanis)
 - [The Rise of Adobe Inc.](https://github.com/nrennie/tidytuesday/tree/main/2023/2023-02-07), by [Nicola Rennie](https://github.com/nrennie) (Nicola also records all of her tidytuesday contributions using the [`{camcorder} package)`](https://github.com/thebioengineer/camcorder))
+
+**These are two excellent examples of how you might adapt a publication-worthy visualization for an oral presentation (categories two and three, above):**
+
+- [Alex Phillips'](https://www.alexandraatleephillips.com/) [Ten Tips for Presentations](https://docs.google.com/presentation/d/1z9URIEa5Ex7FtDcTMTPbQrWO7mD8XHhdzlKLZzXhfEQ/edit#slide=id.g22281abf1c9_0_134) lecture features a visualization from [Rougier et al. 2014](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833)
+- SciFig's [Spectrum of Figure Creation](https://github.com/nrokh/ScientificFigures/tree/e13819c333c6a333dc4a2dde96fdfe8c264389c4?tab=readme-ov-file#spectrum-of-figure-creation) (you'll need to expand the **Details** drop-down) 
 
 ### OPTION 2: 
 
