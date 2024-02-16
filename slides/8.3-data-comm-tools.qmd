@@ -1,0 +1,30 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../meds-slides-styles.scss
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 8.3]{.custom-title}
+
+[*tbd*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[Week 8 | February 26^th^, 2024]{.custom-subtitle3}
+
+---
+
+<!-- {ggpattern} https://www.youtube.com/watch?v=fWP7KnIhmpQ -->
+<!-- https://jkunst.com/blog/posts/2023-07-10-my-favorite-ggplot2-packages-with-examples/ -->
+<!-- gganimate -->
+<!-- adding images to plots -->
+<!-- see Dan Oehm's plot + code: https://github.com/doehm/tidyTuesday/tree/master/2022/week09-energy , https://twitter.com/danoehm/status/1498985113635663873 -->
+<!-- combining plots (cowplot & patchwork) -->
+<!-- https://rviews.rstudio.com/2019/09/19/intro-to-ggforce/ -->

@@ -149,7 +149,7 @@ The [TidyTuesday](https://github.com/rfordatascience/tidytuesday) community wran
 #| echo: false
 #| fig-align: "center"
 #| out-width: "75%"
-knitr::include_graphics("images/usdm.png")
+knitr::include_graphics("../images/usdm.png")
 ```
 
 <br>

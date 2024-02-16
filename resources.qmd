@@ -106,7 +106,7 @@ Definitely don't limit yourself to just `{ggplot2}` creators! There are so many 
 - [Mona Chalabi](https://monachalabi.com/)
 - [Sonja Kuijpers](https://www.studioterp.nl)
 - [Lisa Charlotte Muth](https://lisacharlottemuth.com/)
-- [Giorgia Lupi](https://giorgialupi.com/)
+- [Giorgia Lupi](https://giorgialupi.com/) (check out this great short [interview](https://www.fastcompany.com/91024446/pentagram-partner-giorgia-lupi-on-pie-charts-embracing-the-unknown-and-why-data-needs-a-story))
 - [Simon Scarr](https://www.simonscarr.com/)
 - [Kinga Stryszowska-Hill](https://stryszowskakinga9.wixsite.com/kingastryszowskahill) (who does use R / `{ggplot2}`, among other data visualization tools)
 

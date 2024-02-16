@@ -13,7 +13,7 @@ format:
 
 [EDS 240: Lecture 8.2]{.custom-title}
 
-[*title tbd*]{.custom-subtitle}
+[*Humanizing Data*]{.custom-subtitle}
 
 <hr class="hr-teal">
 
@@ -21,10 +21,31 @@ format:
 
 ---
 
-<!-- {ggpattern} https://www.youtube.com/watch?v=fWP7KnIhmpQ -->
-<!-- https://jkunst.com/blog/posts/2023-07-10-my-favorite-ggplot2-packages-with-examples/ -->
-<!-- gganimate -->
-<!-- adding images to plots -->
-<!-- see Dan Oehm's plot + code: https://github.com/doehm/tidyTuesday/tree/master/2022/week09-energy , https://twitter.com/danoehm/status/1498985113635663873 -->
-<!-- combining plots (cowplot & patchwork) -->
-<!-- https://rviews.rstudio.com/2019/09/19/intro-to-ggforce/ -->
+What do we mean when we say "humanizing data?"
+
+Lots of different things. To me, it means:
+
+- 
+
+---
+
+giorgia lupi
+
+---
+
+mono chalabi
+
+--- 
+
+avg female height
+
+---
+
+maps -- clinton johnson
+
+--- 
+
+poverty
+
+---
+
