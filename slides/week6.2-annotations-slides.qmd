@@ -23,6 +23,30 @@ editor_options:
 
 ---
 
+## {#good-design data-menu-title="Good data viz considerations"} 
+
+[Good data visualization design considers:]{.slide-title}
+
+<hr>
+
+- [**data-ink ratio** (less is more, within reason)]{.gray-text}
+- how to **reduce eye movement** and **improve readability / interpretability** (e.g. through alternative legend positions, direct annotations)
+- putting things **in context**
+- how to **draw the main attention** to the most **important info**
+- [**consistent** use of colors, spacing, typefaces, weights]{.gray-text}
+- [**typeface / font choices** and how they affect both readability *and* emotions and perceptions]{.gray-text}
+- [using **visual hierarchy** to guide the reader]{.gray-text}
+- [**color choices** (incl. palette types, emotions, readability)]{.gray-text}
+- how to **tell an interesting story**
+- [how to **center the people and communities** represented in your data]{.gray-text}
+- [**accessibility** through colorblind-friendly palettes & alt text (see [week 2 discussion](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week2.html#discussion-materials))]{.gray-text}
+
+::: {.center-text .teal-text}
+**This lesson will focus on the use of annotations in a good data visualization.**
+:::
+
+---
+
 <br>
 
 ```{r}

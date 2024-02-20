@@ -43,7 +43,7 @@ knitr::include_graphics("../images/horst-eco-r4ds.png")
 
 ::: {.g-col-12 .g-col-md-6}
 ::: {.center-text}
-[**Data communication**]{.teal-text .body-text-m}
+[**Data storytelling**]{.teal-text .body-text-m}
 
 [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 8.1 slides](../slides/week8.1-data-stories-slides.qmd){.btn role="button" target="_blank"} 
 :::
@@ -53,7 +53,7 @@ knitr::include_graphics("../images/horst-eco-r4ds.png")
 ::: {.center-text}
 [**tbd**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 8.2 slides](../slides/8.2-tbd-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 8.2 slides](../slides/week8.2-tbd-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 

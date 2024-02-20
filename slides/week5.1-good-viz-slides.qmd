@@ -87,17 +87,18 @@ We'll start by familiarizing ourselves with a general set of rules and best prac
 - putting things **in context**
 - how to **draw the main attention** to the most **important info**
 - **consistent** use of colors, spacing, typefaces, weights
-- **typeface / font choices** and how they affect both readability *and* audience emotions and perceptions
+- **typeface / font choices** and how they affect both readability *and* emotions and perceptions
 - using **visual hierarchy** to guide the reader
-- **color choices** (and making sure that they're **colorblindness-friendly**)
-- **centers the people and communities** represented in your data
-- including **alt text**
+- **color choices** (incl. palette types, emotions, readability)
+- how to **tell an interesting story**
+- how to **center the people and communities** represented in your data
+- **accessibility** through colorblind-friendly palettes & alt text (see [week 2 discussion](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week2.html#discussion-materials))
 ::::
 
 . . . 
 
-::: {.center-text .body-text-m}
-The above should *always be considered* in your design process, but *may not always be necessary*
+::: {.center-text .teal-text}
+**The above should *always be considered* in your design process, but *may not always be necessary***
 :::
 
 ---
@@ -113,14 +114,15 @@ The above should *always be considered* in your design process, but *may not alw
 - putting things **in context**
 - how to **draw the main attention** to the most **important info**
 - **consistent** use of colors, spacing, typefaces, weights
-- [**typeface / font choices** and how they affect both readability *and* audience emotions and perceptions]{.gray-text}
+- [**typeface / font choices** and how they affect both readability *and* emotions and perceptions]{.gray-text}
 - [using **visual hierarchy** to guide the reader]{.gray-text}
-- [**color choices** (and making sure that they're **colorblindness-friendly**)]{.gray-text}
-- [**centers the people and communities** represented in your data]{.gray-text}
-- [including **alt text**]{.gray-text}
+- [**color choices** (incl. palette types, emotions, readability)]{.gray-text}
+- [how to **tell an interesting story**]{.gray-text}
+- [how to **center the people and communities** represented in your data]{.gray-text}
+- [**accessibility** through colorblind-friendly palettes & alt text (see [week 2 discussion](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week2.html#discussion-materials))]{.gray-text}
 
-::: {.center-text .body-text-m}
-We're going to talk about these first few points, to start.
+::: {.center-text .teal-text}
+**We're going to talk about these first few points, to start.**
 :::
 
 ---

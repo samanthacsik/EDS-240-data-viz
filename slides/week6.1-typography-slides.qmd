@@ -23,6 +23,31 @@ editor_options:
 
 ---
 
+## {#good-design data-menu-title="Good data viz considerations"} 
+
+[Good data visualization design considers:]{.slide-title}
+
+<hr>
+
+- [**data-ink ratio** (less is more, within reason)]{.gray-text}
+- [how to **reduce eye movement** and **improve readability / interpretability** (e.g. through alternative legend positions, direct annotations)]{.gray-text}
+- [putting things **in context**]{.gray-text}
+- how to **draw the main attention** to the most **important info**
+- **consistent** use of colors, spacing, typefaces, weights
+- **typeface / font choices** and how they affect both readability *and* emotions and perceptions
+- using **visual hierarchy** to guide the reader
+- **color choices** (incl. palette types, emotions, readability)
+- [how to **tell an interesting story**]{.gray-text}
+- [how to **center the people and communities** represented in your data]{.gray-text}
+- [**accessibility** through colorblind-friendly palettes & alt text (see [week 2 discussion](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week2.html#discussion-materials))]{.gray-text}
+
+
+::: {.center-text .teal-text}
+**This lesson will focus on the use of typefaces and fonts in a good data visualization.**
+:::
+
+---
+
 ##  {#typeography data-menu-title="# Typography #" background="#047C90"}
 
 <div class="page-center vertical-center">

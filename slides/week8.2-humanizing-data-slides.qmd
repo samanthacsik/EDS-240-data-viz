@@ -1,0 +1,283 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../meds-slides-styles.scss
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 8.2]{.custom-title}
+
+[*Humanizing Data*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[Week 8 | February 26^th^, 2024]{.custom-subtitle3}
+
+---
+
+##  {#data-humanism data-menu-title="# Data humanism #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">It's important that we center the people and communities in our storytelling -- and understand that how we present information influences how audiences perceive .....</p>
+</div>
+
+---
+
+## {#kirk data-menu-title="Perceive / Interpret / Comprehend"} 
+
+[Our choices affect how viewers perceive and interpret information]{.slide-title2}
+
+<hr>
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/andy-kirk.png")
+```
+
+<br>
+
+::: {.center-text .gray-text .body-text-s}
+Scheme by Andy Kirk from his book [Data Visualisation: A Handbook for Data Driven Design](https://visualisingdata.com/book/), recreated by Cédric Scherer
+:::
+
+---
+
+## {#migration-original data-menu-title="Harmful maps"} 
+
+[Design choices influence viewers' perception]{.slide-title2}
+
+<hr>
+
+::: {.center-text .body-text-s}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+<br>
+<br>
+<br>
+
+- Arrows reminiscent of battle map
+- Red = color of danger
+- LARGE, direct arrows (larger than most countries)
+- Title language portrays criminal activity
+:::
+
+::::
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
+
+---
+
+## {#migration-blue data-menu-title="Harmful maps (blue)"} 
+
+[Design choices influence viewers' perception]{.slide-title2}
+
+<hr>
+
+::: {.center-text .body-text-s}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-blue.png")
+```
+:::
+
+::::
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
+
+---
+
+## {#migration-blue-sm-arrows data-menu-title="Harmful maps (blue small arrows)"} 
+
+[Design choices influence viewers' perception]{.slide-title2}
+
+<hr>
+
+::: {.center-text .body-text-s}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-blue-sm-arrows.png")
+```
+:::
+
+::::
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
+
+---
+
+## {#migration-blue-circles data-menu-title="Harmful maps (blue circles)"} 
+
+[Design choices influence viewers' perception]{.slide-title2}
+
+<hr>
+
+::: {.center-text .body-text-s}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-blue-circles.png")
+```
+:::
+
+::::
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
+
+---
+
+## {#migration-bar data-menu-title="Harmful maps (blue circles)"} 
+
+[Design choices influence viewers' perception]{.slide-title2}
+
+<hr>
+
+::: {.center-text .body-text-s}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/migration-bar.png")
+```
+:::
+
+::::
+
+::: footer
+Informative | [**Story**]{.teal-text} | Visual Form
+:::
+
+---
+
+<https://twitter.com/thedivtagguy/status/1731323379171447048>
+
+---
+
+humanizing data (giorgia lupi) <https://www.fastcompany.com/91024446/pentagram-partner-giorgia-lupi-on-pie-charts-embracing-the-unknown-and-why-data-needs-a-story>
+
+- "It’s really about what the audience would need to know first, so put yourself in the shoes of a reader or a user that will encounter your chart for the first time. And starting from there, try to design it in a way that can paint as full a picture as possible. Visualization is not about simplifying reality; it’s about providing an access to complexity."
+- " I also think that in some contexts—again, not everywhere, not if you have to design a dashboard for decision making on analytic data—but in some cases a warmer depiction of data can make people relate...And sometimes, if you get people to an emotional level, you might get them interested in learning more and spending more time."
+- "Beauty is such an entry point for everything. You wouldn’t buy an ugly dress just because it’s very functional. So, I feel there’s nothing wrong with trying to make charts a little bit more beautiful."
+
+---
+
+mono chalabi
+
+--- 
+
+avg female height
+
+---
+
+maps -- clinton johnson
+
+--- 
+
+poverty
+
+---
