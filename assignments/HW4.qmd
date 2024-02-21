@@ -54,6 +54,7 @@ I encourage you to look back at past lecture materials and to check out the [res
 - [Numbats](https://github.com/doehm/tidytues?tab=readme-ov-file#week-10-numbats), by [Dan Oehm](https://github.com/doehm)
 - [Haunted Places](https://github.com/doehm/tidytues?tab=readme-ov-file#week-41-haunted-places), by [Dan Oehm](https://github.com/doehm)
 - [School Diversity](https://github.com/z3tt/TidyTuesday?tab=readme-ov-file#week-201939%EF%B8%8F-%EF%B8%8F-school-diversity-by-nces), by [Cédric Scherer](https://github.com/z3tt)
+- [Allons-y to Gallifrey](https://twitter.com/thedivtagguy/status/1731323379171447048), by [Aman Bhargava](https://aman.bh/) 
 
 ---
 
@@ -128,4 +129,4 @@ You must complete the following to receive a “Satisfactory” mark for Assignm
 - [ ] describe your design process and decisions in a 1-2 page write-up, as described above
 - [ ] submit your work as either a published Quarto doc or as a blog post on your personal website
 - [ ] add the link to your published Quarto doc / blog post to [this Google Sheet](https://docs.google.com/spreadsheets/d/1tv32Ng_-QI1-eB5ws59HgCN0EoOpHe4UHX6qHhbQGds/edit#gid=0)
-- [ ] present your visualizations to the class on [date] (finals week)
+<!-- - [ ] present your visualizations to the class on [date] (finals week) -->
