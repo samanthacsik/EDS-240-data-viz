@@ -51,16 +51,26 @@ knitr::include_graphics("../images/horst-eco-r4ds.png")
 
 ## Discussion Materials
 
-*Coming soon* 
+Similar to [last week's section](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week7.html#discussion-materials), we'll be discussing progress on our data visualizations and providing constructive feedback to one another. Please plan to bring the following to discussion:
+
+- **one** of your two remaining visualizations (i.e. not the one you brought to section last week)
+- the question that you're trying to answer
+
+Add your visualization and your question to the appropriate Google slide deck (each slide is labeled with a name) before section begins:
+
+- [10am section slides](https://docs.google.com/presentation/d/1yMazygIdqDcR2J4wlPmPZ9ao40kHE9QmXHFgK7LTNbY/edit?usp=sharing)
+- [11am section slides](https://docs.google.com/presentation/d/1Y4Tf6j4ub8cU9hqp61J1sa31hQidlkIIPhvXVjuZNhU/edit?usp=sharing)
+
+You should be prepared to discuss your design choices and receive constructive feedback from your peers. Be sure to review [the tips](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week7.html#how-to-give-receive-feedback) on how to give, receive, and  implement feedback.
 
 ## Assignment Reminders
 
-| Assignment Type | Assignment Title       | Date Assigned  | Date Due                   |
-|:---------------:|------------------------|----------------|----------------------------|
-| EOC             | EOC (week 8)           | Mon 02/26/2024 | Mon 02/26/2024, 11:55pm PT |
-| HW              | Homework Assignment #4 | Mon 02/26/2024 | Sat 03/16/2024, 11:59pm PT |
+<!-- | Assignment Type | Assignment Title       | Date Assigned  | Date Due                   | -->
+<!-- |:---------------:|------------------------|----------------|----------------------------| -->
+<!-- | EOC             | EOC (week 8)           | Mon 02/26/2024 | Mon 02/26/2024, 11:55pm PT | -->
+<!-- | HW              | Homework Assignment #4 | Mon 02/26/2024 | Sat 03/09/2024, 11:59pm PT | -->
 
-<!-- | Assignment Type | Assignment Title                                                 | Date Assigned  | Date Due        | -->
-<!-- |:---------------:|-------------------------------------------------------|----------------|----------------------------| -->
-<!-- | EOC             | [EOC (week 8)](https://forms.gle/aqUwck6jABKRUfYMA)   | Mon 02/26/2024 | Mon 02/26/2024, 11:55pm PT | -->
-<!-- | HW              | [Homework Assignment #4](../assignments/HW4.qmd)      | Mon 02/26/2024 | Sat 03/16/2024, 11:59pm PT | -->
+| Assignment Type | Assignment Title                                                 | Date Assigned  | Date Due        |
+|:---------------:|-------------------------------------------------------|----------------|----------------------------|
+| EOC             | [EOC (week 8)](https://forms.gle/aqUwck6jABKRUfYMA)   | Mon 02/26/2024 | Mon 02/26/2024, 11:55pm PT |
+| HW              | [Homework Assignment #4](../assignments/HW4.qmd)      | Mon 02/26/2024 | Sat 03/09/2024, 11:59pm PT |
