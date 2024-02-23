@@ -531,7 +531,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)
 
 ```{r}
 countdown::countdown(
-  minutes = 7,
+  minutes = 8,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -571,7 +571,7 @@ The next ten slides (14 - 23) each have a different static visualization. With y
 
 ```{r}
 countdown::countdown(
-  minutes = 7,
+  minutes = 8,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -838,7 +838,9 @@ From [Cédric Scherer](https://www.cedricscherer.com/)'s talk, [Effective Data V
 knitr::include_graphics("images/week8/hawkins-warming-stripes.png")
 ```
 
-::: {.center-text}
+<br>
+
+::: {.footer}
 [Warming Stripes](https://showyourstripes.info/), by Ed Hawkins
 :::
 
@@ -858,35 +860,103 @@ countdown::countdown(
   )
 ```
 
-<!-- --- -->
+---
 
-<!-- ## {#warming-stripes2 data-menu-title="Consider audience (Ex. 1)"}  -->
+## {#iucn data-menu-title="Consider audience (Ex. 2)"} 
 
-<!-- [Consider the audience (Ex. 1)]{.slide-title} -->
+[Consider the audience (Ex. 2)]{.slide-title}
 
-<!-- <hr> -->
+<hr>
 
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: false -->
-<!-- #| out-width: "80%" -->
-<!-- #| fig-align: "center" -->
-<!-- knitr::include_graphics("images/week8/hawkins-warming-stripes.png") -->
-<!-- ``` -->
+<br>
 
-<!-- . . . -->
+:::: {.columns}
 
-<!-- Ed Hawkins' [Warming Stripes](https://showyourstripes.info/) could technically be considered a "bad" data viz (e.g. no axes, legend, etc.), yet it's become one of the most recognizable climate visualizations created. -->
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/chalabi-kingfisher.png")
+```
+:::
 
-<!-- ::: notes -->
-<!-- Elicits emotion. Vertical stripes have become synonymous with temperature. -->
-<!-- ::: -->
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/chalabi-vaquitas.png")
+```
+:::
+
+::::
+
+::: {.footer}
+[Seven endangered species that could (almost) fit in a single train carriage](https://www.theguardian.com/environment/gallery/2018/sep/17/endangered-species-on-a-train), by [Mona Chalabi](https://monachalabi.com/) (two of seven shown here)
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
 
 ---
 
-## {#plants data-menu-title="Consider audience (Ex. 2)"} 
+## {#glimmers data-menu-title="Consider audience (Ex. 3)"} 
 
-[Consider the audience (Ex. 2)]{.slide-title}
+[Consider the audience (Ex. 3)]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/ingeman-etal-fig3.png")
+```
+
+<br>
+
+::: {.footer}
+Fig. 3, by [Ingeman et al. 2022](https://www.nature.com/articles/s41598-022-13671-7): Glimmers of hope and critical cases.
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#plants data-menu-title="Consider audience (Ex. 4)"} 
+
+[Consider the audience (Ex. 4)]{.slide-title}
 
 <hr>
 
@@ -917,10 +987,9 @@ knitr::include_graphics("images/week8/scherer-plants.png")
 
 ::::
 
-::: {.center-text}
+::: {.footer}
 [Plants in Danger](https://github.com/Z3tt/TidyTuesday/tree/main/plots/2020_34), by [Cédric Scherer](https://www.cedricscherer.com/) ([code](https://github.com/z3tt/TidyTuesday/blob/main/R/2020_34_ExtinctPlants.Rmd))
 :::
-
 
 ```{r}
 countdown::countdown(
@@ -937,44 +1006,6 @@ countdown::countdown(
   font_size = "2em",
   )
 ```
-
-<!-- --- -->
-
-<!-- ## {#hockey-stick data-menu-title="Consider audience (Ex. 3)"}  -->
-
-<!-- [Consider the audience (Ex. 3)]{.slide-title} -->
-
-<!-- <hr> -->
-
-<!-- <br> -->
-
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: false -->
-<!-- #| out-width: "100%" -->
-<!-- #| fig-align: "center" -->
-<!-- knitr::include_graphics("images/week8/mann-etal-hockey-stick.png") -->
-<!-- ``` -->
-
-<!-- ::: {.center-text} -->
-<!-- ["Hockey Stick" graph](https://en.wikipedia.org/wiki/Hockey_stick_graph_(global_temperature)), by [Mann et al. (1999)](https://doi.org/10.1029/1999GL900070) -->
-<!-- ::: -->
-
-<!-- ```{r} -->
-<!-- countdown::countdown( -->
-<!--   minutes = 2, -->
-<!--   # left = 0, right = 0, -->
-<!--   # Fanfare when it's over -->
-<!--   play_sound = TRUE, -->
-<!--   color_border              = "#FFFFFF", -->
-<!--   color_text                = "#7aa81e", -->
-<!--   color_running_background  = "#7aa81e", -->
-<!--   color_running_text        = "#FFFFFF", -->
-<!--   color_finished_background = "#ffa07a", -->
-<!--   color_finished_text       = "#FFFFFF", -->
-<!--   font_size = "2em", -->
-<!--   ) -->
-<!-- ``` -->
 
 ---
 

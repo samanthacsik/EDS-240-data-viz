@@ -1,0 +1,1266 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../meds-slides-styles.scss
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 8.2]{.custom-title}
+
+[*People as data*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[Week 8 | February 26^th^, 2024]{.custom-subtitle3}
+
+---
+
+## {#LA-map1 data-menu-title="LA map 1"} 
+
+[Can anyone take a guess at what this map depicts?]{.slide-title3}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/redlining-LA.png")
+```
+
+---
+
+## {#LA-map2 data-menu-title="LA map 2"} 
+
+[Redlining Los Angeles, 1939]{.slide-title}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<br>
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/redlining-LA.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Source: [Mapping Inequality: Redlining in New Deal America (v3)](https://dsl.richmond.edu/panorama/redlining)
+:::
+:::
+
+::: {.column width="50%"}
+- [**Redlining:** the practice of categorically withholding financial services, especially mortgages, from neighborhoods that have a significant number of racial or ethnic minorities]{.body-text-s}
+- [Between 1935-1940, the [Home Owners' Loan Corporation](https://en.wikipedia.org/wiki/Home_Owners'_Loan_Corporation) (HOLC) graded "residential security" (i.e. financial risk) of neighborhoods in most major metropolitan areas across the US]{.body-text-s}
+- [Color-coded maps depict grades, where green represents the "best" neighborhoods and safest investments. Red represents "hazardous" neighborhoods and riskiest investments.]{.body-text-s}
+- [Neighborhoods earned a red grade if African Americans lived in it, even if it was a  middle-class neighborhood of single-family homes ([Rothstein 2017](https://en.wikipedia.org/wiki/The_Color_of_Law))]{.body-text-s}
+:::
+
+::::
+
+---
+
+## {#our-job data-menu-title="Our job"} 
+
+[Our job as data scientists . . .]{.slide-title}
+
+<hr>
+
+[...is to **actively incorporate equity awareness** when working with data and generating data products (e.g. visualizations). Not all visuals are overtly racist or discriminatory, but we as data practitioners must recognize and work against misusing or misrepresenting data in ways that can harm communities and perpetuate systemic discrimination.]{.body-text-s} 
+
+. . . 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "60%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/do-no-harm.png")
+```
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text}
+Urban Institute's [Do No Harm Guide](https://www.urban.org/sites/default/files/publication/104296/do-no-harm-guide.pdf), by Jonathan Schwabish and Alice Feng
+:::
+
+- [guidelines on **how to apply a DEI lens** to not just words, colors, icons, etc., but also the process of crafting communication products]{.body-text-s}
+
+- [includes **checklists & tool kits** that focus on the often hidden / subtle ways that data analysts and communicators fail to incorporate equitable awareness in the data they use and they products they create]{.body-text-s}
+:::
+
+::::
+
+---
+
+## {#kirk data-menu-title="Perceive / Interpret / Comprehend"} 
+
+[Our choices affect how viewers perceive and interpret information]{.slide-title2}
+
+<hr>
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/andy-kirk.png")
+```
+
+<br>
+
+::: {.center-text .gray-text .body-text-s}
+Scheme by Andy Kirk from his book [Data Visualisation: A Handbook for Data Driven Design](https://visualisingdata.com/book/), recreated by Cédric Scherer
+:::
+
+---
+
+## {#migration-original1 data-menu-title="Harmful maps 1"} 
+
+[Design choices influence viewers' perception]{.slide-title2}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+<br>
+<br>
+
+::: {.center-text}
+Discuss how you perceive this map with your learning partner(s). What thoughts or emotions does it invoke?
+:::
+
+:::
+
+::::
+
+::: {.footer}
+The above map was recreated by folks at [The Correspondent](https://thecorrespondent.com/), based on migration maps commonly published by the European Border and Coast Guard Agency ([Frontex](https://www.frontex.europa.eu/)).
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+
+---
+
+## {#migration-original2 data-menu-title="Harmful maps 2"} 
+
+[Design choices influence viewers' perception]{.slide-title2}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+<br>
+<br>
+
+- Arrows reminiscent of battle map
+- Red = color of danger
+- LARGE, direct arrows (larger than most countries)
+- Title language portrays criminal activity
+- Doesn't show where migrants actually come from
+:::
+
+::::
+
+::: {.footer}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+::: {.notes}
+- large direct arrows make it look as if migrants are heading straight for Europe, but many tkae a long, dangerous, and detour-filled journey.
+- "illegal border crossings" portrayts migrants as criminals. It does not show that asylum seekers have hardly any legal options to enter the EU
+- appears to be a uniform group coming into Europe from the "great unknown"
+:::
+
+---
+
+## {#migration-original3 data-menu-title="Harmful maps 3"} 
+
+[Design choices influence viewers' perception]{.slide-title2}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+<br>
+<br>
+
+::: {.center-text}
+Discuss how you might redesign this map to make us feel less 
+
+>"*like we are being overrun by huge numbers of anonymous enemies, coming at us en masse from all corners of the globe to disrupt our orderly lives*"
+
+::: {.right-align-text .body-text-s}
+-Vermulen, De Korte, Van Houtum
+:::
+
+:::
+
+:::
+
+::::
+
+::: {.footer}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#migration-blue data-menu-title="Harmful maps (blue)"} 
+
+[Use different colors]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-blue.png")
+```
+:::
+
+::::
+
+::: {.footer}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+---
+
+## {#migration-title data-menu-title="Harmful maps (title)"} 
+
+[Change the title]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-title.png")
+```
+:::
+
+::::
+
+::: {.footer}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+---
+
+## {#migration-sm-arrows data-menu-title="Harmful maps (smaller arrows)"} 
+
+[Adjust the size of the arrows]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-blue-sm-arrows.png")
+```
+:::
+
+::::
+
+::: {.footer}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+---
+
+## {#migration-blue-circles data-menu-title="Harmful maps (blue circles)"} 
+
+[Don't use arrows altogether]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-blue-circles.png")
+```
+:::
+
+::::
+
+::: {.footer}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+---
+
+## {#num-2018 data-menu-title="Harmful maps (# in 2018)"} 
+
+[Consider format *and* information]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/2018-value.png")
+```
+:::
+
+::::
+
+::: {.footer}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+---
+
+## {#num-all-years data-menu-title="Harmful maps (# across years)"} 
+
+[Consider format *and* information]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/migration-bar.png")
+```
+:::
+
+::::
+
+::: {.footer}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+::: {.notes}
+Even now, we still only see a small percentage of all asylum migration. How many asylum seekers are actually headed towards the EU?
+:::
+
+---
+
+## {#context-origins data-menu-title="Harmful maps (context origins)"} 
+
+[Provide context]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/context-origins.png")
+```
+:::
+
+::::
+
+::: {.footer}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+---
+
+## {#context-dest data-menu-title="Harmful maps (context destinations)"} 
+
+[Provide context]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/context-destinations.png")
+```
+:::
+
+::::
+
+::: {.footer}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+---
+
+## {#all-migration data-menu-title="Harmful maps (all migration)"} 
+
+[Provide context]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/europes-migration.png")
+```
+:::
+
+::::
+
+::: {.footer}
+[How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+---
+
+## {#takeaways data-menu-title="Takeaways"} 
+
+[Some important takeaways]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.center-text}
+Quotes from Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+<br>
+
+> "As journalists and illustrators, there is **no way around simplifying the world** for the sake of readability. Whether in maps or in text. But we can **be much more aware of the consequences** of those simplifications – and be honest about what’s happening."
+
+. . . 
+
+<br>
+
+> "... take a moment to contemplate who authored this visual story and what message the author wants to convey. And why."
+
+---
+
+## {#empathy data-menu-title="Empathy"} 
+
+[Connecting readers with content requires empathy]{.slide-title2}
+
+<hr>
+
+Applying a DEI lens to data pipelines, including visualization, requires empathizing with the communities whose data we are visualizing *and* the readers and target audiences for our work (Schwabish & Feng 2001)
+
+---
+
+## {#empathy-themes1 data-menu-title="Empathy in data viz 1"} 
+
+[Connecting readers with content requires empathy]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+{{< fa person title="a person" >}} Put people first
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+>"if your data is about people, make it extremely clear who they are or were"
+
+::: {.right-align-text}
+-Jacob Harris in [Connecting with the Dots](https://source.opennews.org/articles/connecting-dots/)
+:::
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "75%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/faces-of-death.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Source: [Faces of Death](https://archive.nytimes.com/www.nytimes.com/interactive/us/faces-of-the-dead.html#/copes_gregory_t) (New York Times)
+:::
+:::
+::::
+
+---
+
+## {#empathy-themes2 data-menu-title="Empathy in data viz 2"} 
+
+[Connecting readers with content requires empathy]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+[{{< fa person title="a person" >}} Put people first]{.gray-text}
+
+<br>
+
+{{< fa people-arrows title="an arrow connecting two people" >}} Use personal connections to help readers and users connect with the material
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+Pair data-driven charts with personal stories, or help readers understand the "near and far" (i.e. overall metrics + smaller ranges / groups of data)
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "75%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/deadly-baghdad.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Source: [A Deadly Day
+In Baghdad](https://archive.nytimes.com/www.nytimes.com/interactive/2010/10/24/world/1024-surge-graphic.html?_r=0) (New York Times)
+:::
+:::
+
+::::
+
+::: {.notes}
+These graphics illustrate a common and successful technique for bringing the reader back down to earth by focusing on a smaller range of data. In the case of Baghdad’s dead, we focused on a single day to show the near of what years of violence looked like day after day. ([Harris 2015](https://source.opennews.org/articles/connecting-dots/))
+:::
+
+---
+
+## {#empathy-themes3 data-menu-title="Empathy in data viz 3"} 
+
+[Connecting readers with content requires empathy]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+[{{< fa person title="a person" >}} Put people first]{.gray-text}
+
+<br>
+
+[{{< fa people-arrows title="an arrow connecting two people" >}} Use personal connections to help readers and users connect with the material]{.gray-text}
+
+<br>
+
+{{< fa book-open-reader title="a person reading a book" >}} Use a mix of quantitative and qualitative approaches to tell a story
+:::
+
+::: {.column width="50%"}
+<br>
+
+::: {.center-text .body-text-s}
+Focusing on just numbers without context can overlook important aspects of a story, such as the "why" and "how"
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/ev-labels.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Source: [Attitudes and Experiences with Electric Vehicles](https://storymaps.arcgis.com/stories/e3b7605bc5624853aec7b5fa41de611f), by Diana Lavery
+:::
+
+:::
+
+::::
+
+::: {.footer}
+Check out [Mapping Quotes, Stories, Sentiments, and Experiences](https://www.esri.com/arcgis-blog/products/arcgis/mapping/mapping-quotes-stories-sentiments-and-experiences/), by Diana Lavery & Clinton Johnson, which explores the use of qualitative data to explore the complexities in peoples' behaviors, attitudes, and concerns.
+:::
+
+::: {.notes}
+The US needs ~500k more EV charging stations by 2030. Selecting locations is a complex spatial problem. Esri's Living Atlas Policy Maps team conducted in-depth interviews with current EV drivers about their attitudes, experiences, and concerns with EV charging.
+:::
+
+---
+
+## {#empathy-themes4 data-menu-title="Empathy in data viz 4"} 
+
+[Connecting readers with content requires empathy]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+[{{< fa person title="a person" >}} Put people first]{.gray-text}
+
+<br>
+
+[{{< fa people-arrows title="an arrow connecting two people" >}} Use personal connections to help readers and users connect with the material]{.gray-text}
+
+<br>
+
+[{{< fa book-open-reader title="a person reading a book" >}} Use a mix of quantitative and qualitative approaches to tell a story]{.gray-text}
+
+<br>
+
+{{< fa comments title="two speech bubbles" >}} Create a platform for engagement
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+::: {.center-text .body-text-s}
+Interactivity allows users to find themselves in the data or discover stories.
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/cpdp.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Source: [Citizens Police Data Project](https://cpdp.co/), by [Invisible Institute](https://invisible.institute/)
+:::
+:::
+
+::::
+
+::: {.footer}
+The [Citizens Police Data Project](https://cpdp.co/) is an interactive online database and dashboard that empowers anyone to explore and analyze police misconduct data from Chicago. [Trina Reynolds-Tyler](https://invisible.institute/trina-reynolds-tyler), Data Director at Invisible Institute, spoke about this work at [WiDS 2023](https://www.youtube.com/watch?v=auKddyW6vBA) (~1:05:00).
+:::
+
+---
+
+## {#empathy-themes5 data-menu-title="Empathy in data viz 5"} 
+
+[Connecting readers with content requires empathy]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+[{{< fa person title="a person" >}} Put people first]{.gray-text}
+
+<br>
+
+[{{< fa people-arrows title="an arrow connecting two people" >}} Use personal connections to help readers and users connect with the material]{.gray-text}
+
+<br>
+
+[{{< fa book-open-reader title="a person reading a book" >}} Use a mix of quantitative and qualitative approaches to tell a story]{.gray-text}
+
+<br>
+
+[{{< fa comments title="two speech bubbles" >}} Create a platform for engagement]{.gray-text}
+
+<br>
+
+{{< fa brain title="a brain" >}} Consider how your framing of an issue can create a biased emotional response
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/map-original.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Source: [How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+:::
+
+:::
+
+::::
+
+---
+
+## {#empathy-themes6 data-menu-title="Empathy in data viz 6"} 
+
+[Connecting readers with content requires empathy]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+[{{< fa person title="a person" >}} Put people first]{.gray-text}
+
+<br>
+
+[{{< fa people-arrows title="an arrow connecting two people" >}} Use personal connections to help readers and users connect with the material]{.gray-text}
+
+<br>
+
+[{{< fa book-open-reader title="a person reading a book" >}} Use a mix of quantitative and qualitative approaches to tell a story]{.gray-text}
+
+<br>
+
+[{{< fa comments title="two speech bubbles" >}} Create a platform for engagement]{.gray-text}
+
+<br>
+
+[{{< fa brain title="a brain" >}} Consider how your framing of an issue can create a biased emotional response]{.gray-text}
+
+<br>
+
+{{< fa users title="three people" >}} Recognize the needs of your audience
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+<br>
+
+Make sure visualizations are accessible so that folks with disabilities can view and use content online. Similarly, avoid overly technical or jargon-heavy language that make information inaccessible to a broad audience.
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/accessibility.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Image sources: [NCEAS](https://www.nceas.ucsb.edu/sites/default/files/2022-06/Colorblind%20Safe%20Color%20Schemes.pdf), [Design102](https://design102.blog.gov.uk/2022/01/14/whats-the-alternative-how-to-write-good-alt-text/), [call focus](https://www.callfocus.ie/blog/post/7-reasons-to-forget-jargon-talk-the-customers-language)
+:::
+:::
+
+::::
+
+---
+
+what is data humanism?
+
+---
+
+Giorgia Lupi
+
+>  "I started to work with data in 2010, 2011, and I saw that most of the approach to data at the time was very much based on a statistician’s background, and that’s fantastic. But I was also interested in using data myself as an anchoring point to tell stories. I thought that **there’s just more that we could do to actually represent our reality if we include context, anecdotal details, if we embrace the imperfections that are inherent to how we collect data**. And so, I started to just use these ideas in my practice, and I felt that I needed to just come up with an umbrella term for that. Data humanism was a good one, and **data humanism is an approach to data that tries to reconnect numbers to what they really stand for by adding less factual and more anecdotal information**."
+
+::: {.right-align-text}
+-[Giorgia Lupi](https://giorgialupi.com/about) in her interview with [Fast Company](https://www.fastcompany.com/91024446/pentagram-partner-giorgia-lupi-on-pie-charts-embracing-the-unknown-and-why-data-needs-a-story)
+:::
+
+---
+
+- "It’s really about what the audience would need to know first, so put yourself in the shoes of a reader or a user that will encounter your chart for the first time. And starting from there, try to design it in a way that can paint as full a picture as possible. Visualization is not about simplifying reality; it’s about providing an access to complexity."
+- " I also think that in some contexts—again, not everywhere, not if you have to design a dashboard for decision making on analytic data—but in some cases a warmer depiction of data can make people relate...And sometimes, if you get people to an emotional level, you might get them interested in learning more and spending more time."
+- "Beauty is such an entry point for everything. You wouldn’t buy an ugly dress just because it’s very functional. So, I feel there’s nothing wrong with trying to make charts a little bit more beautiful."
+
+--- 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/avg-female-height.png")
+```
+
+---
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/poverty.png")
+```
+
+---
+
+## {#chalabi-palenstine1 data-menu-title="tbd"} 
+
+[tbd]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="33%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "90%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/chalabi-palestine3.png")
+```
+:::
+
+::: {.column width="33%"}
+:::
+
+::: {.column width="33%"}
+:::
+
+::::
+
+::: {.footer}
+Screenshots taken on 2023-11-21 from [@monachalabi](https://www.instagram.com/monachalabi/?hl=en), here in reverse order
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#chalabi-palenstine2 data-menu-title="tbd"} 
+
+[tbd]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="33%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "90%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/chalabi-palestine3.png")
+```
+:::
+
+::: {.column width="33%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "90%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/chalabi-palestine2.png")
+```
+:::
+
+::: {.column width="33%"}
+:::
+
+::::
+
+::: {.footer}
+Screenshots taken on 2023-11-21 from [@monachalabi](https://www.instagram.com/monachalabi/?hl=en), here in reverse order
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#chalabi-palenstine3 data-menu-title="tbd"} 
+
+[tbd]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="33%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "90%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/chalabi-palestine3.png")
+```
+:::
+
+::: {.column width="33%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "90%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/chalabi-palestine2.png")
+```
+:::
+
+::: {.column width="33%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "90%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/chalabi-palestine1.png")
+```
+:::
+
+::::
+
+::: {.footer}
+Screenshots taken on 2023-11-21 from [@monachalabi](https://www.instagram.com/monachalabi/?hl=en), here in reverse order
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#tbd1 data-menu-title="tbd1"} 
+
+[tbd]{.slide-title}
+
+<hr>
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/ipcc-half.png")
+```
+
+::: {.footer}
+Source: The [Climate Change 2023 Synthesis Report](https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf), by the [Intergovernmental Panel on Climate Change](https://www.ipcc.ch/) (IPCC)
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#tbd2 data-menu-title="tbd2"} 
+
+[tbd]{.slide-title}
+
+<hr>
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/ipcc-full.png")
+```
+
+::: {.footer}
+Source: The [Climate Change 2023 Synthesis Report](https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf), by the [Intergovernmental Panel on Climate Change](https://www.ipcc.ch/) (IPCC)
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+
+---
+
+::: {.footer}
+Also check out The Washington Post's coverage of this visualization in their article, [This visual shows how climate change will affect generations](https://www.washingtonpost.com/climate-environment/2023/03/21/climate-ipcc-report-temperatures-graphic/), by Kasha Patel
+:::
+
+
+---
+
+[Explaining the ArcGIS Social Equity Analysis Solution](https://www.esri.com/arcgis-blog/products/arcgis-solutions/announcements/explaining-the-arcgis-social-equity-analysis-solution/)
+
+1. [The Power of Partnership: The Story Behind the Social Equity Analysis Solution](https://www.esri.com/arcgis-blog/products/arcgis-solutions/announcements/the-power-of-partnership-introducing-esris-social-equity-analysis-solution/)
+2. [Explaining the ArcGIS Social Equity Analysis Solution](https://www.esri.com/arcgis-blog/products/arcgis-solutions/announcements/explaining-the-arcgis-social-equity-analysis-solution/)
+3. [7 Steps to Enhance Your Social Equity Analysis](https://www.esri.com/arcgis-blog/products/arcgis-solutions/announcements/7-steps-to-enhance-your-social-equity-analysis/)
+
+[Mapping Quotes, Stories, Sentiments, and Experiences](https://www.esri.com/arcgis-blog/products/arcgis/mapping/mapping-quotes-stories-sentiments-and-experiences/)
+
+

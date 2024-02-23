@@ -1,0 +1,21 @@
+
+<!-- Visualizing Uncertainty & Avoiding the Misrepresentation of Data (used to be a part of the planned week 8 title) -->
+
+<!-- log scales -->
+<!-- https://tylervigen.com/spurious-correlations -->
+<!-- https://twitter.com/visualisingdata/status/1237276833286103045 -->
+
+<!-- bad pie chart example https://www.linkedin.com/pulse/getting-high-bad-data-visualization-randall-bolten/ -->
+
+
+  <!-- covid 19 cases & deaths by US State https://www.cedricscherer.com/2020/03/31/corona-covid-19-death-tolls-worst-day-so-far/ -->
+  <!-- Todd Quartiere; source Wikipedia -->
+  <!-- too many colors; need to normalize by population; early in the pandemic there was arguments for normalizing by population size, but Cedric didn't like this; normally likes to normalize, but have to make a decision -->
+
+
+<!-- *Potential discussion materials:*  -->
+
+<!-- - [3 ways to spot a bad statistic](https://www.ted.com/talks/mona_chalabi_3_ways_to_spot_a_bad_statistic), TED Talk by [Mona Chalabi](https://monachalabi.com/) -->
+<!-- - [WTF Visualizations](https://viz.wtf/), a collection of visualizations that make no sense -->
+
+

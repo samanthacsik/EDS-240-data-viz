@@ -1,12 +1,10 @@
 ---
-title: "Data communication"
+title: "Data storytelling, People as data"
 subtitle: "Week 8"
 description: "Monday February 26^th^, 2024"
 title-block-banner: true
 toc: true
 ---
-
-<!-- Visualizing Uncertainty & Avoiding the Misrepresentation of Data (used to be a part of the planned week 8 title) -->
 
 ```{r}
 #| eval: true 
@@ -23,22 +21,6 @@ knitr::include_graphics("../images/horst-eco-r4ds.png")
 
 ## Lecture Materials 
 
-<!-- - 3 DEI (using icons & colors for equity awareness) -->
-<!-- introduce three viz types and how to construct them this week -->
-<!-- also show scifig example -->
-<!-- https://github.com/nrokh/ScientificFigures/blob/main/FigureSpectrum/FigureSpectrum.png -->
-<!-- - storytelling (?) -->
-<!-- https://rstudio-conf-2022.github.io/ggplot2-graphic-design/materials/04_data_communication.pdf -->
-
-  <!--     - talking about PEOPLE, so maybe we want to show exact numbers for an emotional perspective -->
-  <!--     - talk to experts -->
-
-
-  <!-- covid 19 cases & deaths by US State https://www.cedricscherer.com/2020/03/31/corona-covid-19-death-tolls-worst-day-so-far/ -->
-  <!-- Todd Quartiere; source Wikipedia -->
-  <!-- too many colors; need to normalize by population; early in the pandemic there was arguments for normalizing by population size, but Cedric didn't like this; normally likes to normalize, but have to make a decision -->
-
-
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-6}
@@ -51,9 +33,9 @@ knitr::include_graphics("../images/horst-eco-r4ds.png")
 
 ::: {.g-col-12 .g-col-md-6}
 ::: {.center-text}
-[**tbd**]{.teal-text .body-text-m}
+[**People as data**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 8.2 slides](../slides/week8.2-tbd-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 8.2 slides](../slides/week8.2-people-as-data-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
@@ -67,26 +49,9 @@ knitr::include_graphics("../images/horst-eco-r4ds.png")
 
 :::
 
-
-<!-- bad pie chart example https://www.linkedin.com/pulse/getting-high-bad-data-visualization-randall-bolten/ -->
-
-<!-- - identifying your audience (personas?) -->
-<!-- - storytelling through structured visualizations -->
-<!-- - contextualize data (place data within a broader context, explaining why trends matter) -->
-<!-- - presenting data via different channels (slide presentation, academic paper, technical documentation, infographic) -->
-<!-- https://github.com/nrokh/ScientificFigures/blob/main/FigureSpectrum/FigureSpectrum.png -->
-<!-- log scales -->
-<!-- https://tylervigen.com/spurious-correlations -->
-<!-- https://twitter.com/visualisingdata/status/1237276833286103045 -->
-
 ## Discussion Materials
 
 *Coming soon* 
-
-<!-- *Brainstorming ideas (not yet set in stone):*  -->
-
-<!-- - [3 ways to spot a bad statistic](https://www.ted.com/talks/mona_chalabi_3_ways_to_spot_a_bad_statistic), TED Talk by [Mona Chalabi](https://monachalabi.com/) -->
-<!-- - [WTF Visualizations](https://viz.wtf/), a collection of visualizations that make no sense -->
 
 ## Assignment Reminders
 

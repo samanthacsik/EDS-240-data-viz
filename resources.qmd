@@ -25,7 +25,7 @@ Rougier NP, Droettboom M, Bourne PE (2014) **Ten Simple Rules for Better Figures
 - **[awesome-ggplot2](https://github.com/erikgahner/awesome-ggplot2), by Erik Gahner Larsen** -- a curated list of awesome ggplot2 tutorials, packages etc.
 - **[Climate Viz](https://blog.datawrapper.de/category/climate-data-vis/), by Datawrapper** -- a collection of blog posts on data visualizations created with [Datawrapper](https://www.datawrapper.de/) that help us (and hopefully you) to understand global warming and what humanity can do against it
 
-## Chart Types
+## Chart types
 
 - **[From Data to Viz](https://www.data-to-viz.com/), by Yan Holtz & Conor Healy** -- a decision tree for deciding which chart type is most appropriate for your data
 - **[Chart Suggestions -- A Thought-Starter](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf), by A. Abela** -- a single pdf decision tree, which uses the four main chart types to guide users towards selecting an appropriate visualization
@@ -69,9 +69,11 @@ Rougier NP, Droettboom M, Bourne PE (2014) **Ten Simple Rules for Better Figures
 - **[Writing Alt Text for Data Visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81), also by Amy Cesal** -- more great example of alt text for data viz!
 - **[#TidyTuesday alt text instructions](https://github.com/rfordatascience/tidytuesday/blob/master/alt_text.md)** -- a simple formula for writing alt text for data visualizations, as recommended for #TidyTuesday participants
 
-## DEI in Data Visualization
+## DEI in data visualization
 
 - **[Do No Harm Guide: Applying Equity Awareness in Data Visualization](https://www.urban.org/sites/default/files/publication/104296/do-no-harm-guide.pdf), by Jonathan Schwabish and Alice Feng** -- a guide for for approaching data work (and particularly visualizations) through a lens of diversity, equity, and inclusion 
+- **[Racial Equity GIS Hub](https://gis-for-racialequity.hub.arcgis.com/), by ESRI** -- an ongoing, continuously expanding resource hub to assist organizations working to address racial inequities; it includes data layers, maps, applications, training resources, articles on best practices, solutions, and examples of how Esri users from around the world are leveraging GIS to address racial inequities
+- **[Northstar in GIS](https://gisnorthstar.org/)** -- a nonprofit organization that magnifies the work and talent of Black professionals in GIS, geography, and STEM careers; showcases technology advancing racial justice and promotes belonging and collaboration for Black GIS students, educators, entrepreneurs, professionals, and allies
 
 ## Podcasts
 
@@ -88,7 +90,7 @@ Rougier NP, Droettboom M, Bourne PE (2014) **Ten Simple Rules for Better Figures
 | Creator      | {{< fa brands github >}} Data Viz Repository (and other online materials) |
 | ----------- | ----------- |
 | [Ijeamaka Anyene](https://ijeamaka-anyene.netlify.app/) | [tidytuesday](https://github.com/Ijeamakaanyene/tidytuesday) |
-| [Aman Bhargava](https://aman.bh/) | [tidytuesday](https://github.com/thedivtagguy/tidytuesday) |
+| [Aman Bhargava](https://aman.bh/) | [tidytuesday](https://github.com/thedivtagguy/tidytuesday) (Aman using a variety of different tools & languages for his TidyTuesday creations) |
 | [Meghan Hall](https://meghan.rbind.io/) | check out Meghan's awesome [blog posts](https://meghan.rbind.io/blog/), which cover a number of `{ggplot2}` topics
 | [Georgios Karamanis](https://karaman.is/) | [tidytuesday](https://github.com/gkaramanis/tidytuesday)
 | [Jake Kaupp](https://github.com/jkaupp) | [tidytuesdays](https://github.com/jkaupp/tidytuesdays)
@@ -117,18 +119,19 @@ Definitely don't limit yourself to just `{ggplot2}` creators! There are so many 
 
 Data are *everywhere*, but that doesn't mean they're necessarily easy to track down. Here are some of the places I've found and used data from (or at least considered using data from). If you've found a cool data source (particularly if it's a source of environmental data), I would love to know! It can help me build out teaching materials with new / different examples, and also help your peers who may be searching for similar data. Please consider contributing data sources using [this Google Form](https://forms.gle/uYC7eEie1XZ7D4Xm6).
 
-### Data Repositories
+### data repositories
 - **[DataOne](https://www.dataone.org/)** –  a repository of data repositories! Search across all member repositories (including repositories like [EDI Data Portal](https://portal.edirepository.org/nis/advancedSearch.jsp), [Arctic Data Center](https://arcticdata.io/catalog), [KNB](https://knb.ecoinformatics.org/), etc.) for environmental data (along with curated metadata records)
 - **[EDI Data Portal](https://portal.edirepository.org/nis/advancedSearch.jsp)** – contains environmental and ecological data and metadata derived from publicly funded research contributed by a number of participating organizations (e.g. EDI is the main repository for all [Long Term Ecological Research (LTER)](https://lternet.edu/) data)
 
-### Newsletters / Data Collections 
+### newsletters / data collections 
 - **[ESIIL Data Library](https://cu-esiil.github.io/data-library/)** – The Environmental Data Science Innovation and Inclusion Lab (ESIIL) Data Library, which features a diverse range of datasets, each with its own dedicated web page
 - **[Data is Plural](https://www.data-is-plural.com/archive/)** – a weekly newsletter (and seasonal podcast) of useful / curious data sets, published by [Jeremy Singer-Vine](https://www.jsvine.com/)
 - **[tidytuesday](https://github.com/rfordatascience/tidytuesday)** – a weekly social data project that shares minimally-cleaned data sets covering a variety of topics for the [R4DS community](https://rfordatasci.com/) to visualize; organizers share links to the original data sources, as well as the scripts used to clean them prior to publishing
 - **[awesome-public-datasets](https://github.com/awesomedata/awesome-public-datasets)** – a repository containing a list of high quality, topic-centric public data sources 
 - **[Information is Beautiful](https://informationisbeautiful.net/data/)** -- Founded by [David McCandless](https://davidmccandless.com/), Information is Beautiful is dedicated to making sense of the world with graphics & data-visuals. We set out to explain, distill and clarify. All our visualizations are based on facts and data: constantly updated, revised and revisioned.
+ - **[Kaggle Datasets](https://www.kaggle.com/datasets)** -- Kaggle is an online community for data scientists and machine learning practitioners to find and publish data, as well as enter competitions to solve data science challenges
 
-### Government Agencies
+### government agencies
 - **[Centers for Disease Control and Prevention (CDC)](https://www.cdc.gov/datastatistics/index.html)** – there are tons of data sets buried in the pages of this website (you'll likely have to do a bit of digging)
 - **[Data.gov](https://catalog.data.gov/organization/)** – view data sets by the federal agency, state, city, or county that publishes them
 - **[EPA's National Emissions Inventory (NEI) Data Retrieval Tool](https://awsedap.epa.gov/public/single/?appid=20230c40-026d-494e-903f-3f112761a208&sheet=5d3fdda7-14bc-4284-a9bb-cfd856b9348d&opt=ctxmenu,currsel)** – read more about NEI Data on the [EPA's website](https://www.epa.gov/air-emissions-inventories/2020-national-emissions-inventory-nei-data)
@@ -142,9 +145,11 @@ Data are *everywhere*, but that doesn't mean they're necessarily easy to track d
 
 ## Learning communities
 
-Online communities: 
+### online communities 
 
 - **[TidyTuesday](https://github.com/rfordatascience/tidytuesday), by the R4DS Online Learning Community** -- a weekly data project in R, and an *excellent* (dare I say, *the best*) way to practice your data wrangling & visualization skills
+
+### local communities
 
 The following Santa Barbara-based groups hold regular meetups, workshops, networking events, and more:
 
