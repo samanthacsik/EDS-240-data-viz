@@ -96,7 +96,7 @@ knitr::include_graphics("images/week8/do-no-harm.png")
 ::: {.column width="50%"}
 
 ::: {.center-text}
-Urban Institute's [Do No Harm Guide](https://www.urban.org/sites/default/files/publication/104296/do-no-harm-guide.pdf), by Jonathan Schwabish and Alice Feng
+Urban Institute's [Do No Harm Guide](https://www.urban.org/sites/default/files/publication/104296/do-no-harm-guide.pdf), by Jonathan Schwabish and Alice Feng (2021)
 :::
 
 - [guidelines on **how to apply a DEI lens** to not just words, colors, icons, etc., but also the process of crafting communication products]{.body-text-s}
@@ -160,7 +160,7 @@ knitr::include_graphics("images/week8/map-original.png")
 <br>
 
 ::: {.center-text}
-Discuss how you perceive this map with your learning partner(s). What thoughts or emotions does it invoke?
+Discuss how you perceive, interpret, and comprehend this map with your learning partner(s). What thoughts or emotions does it invoke? Why do you think you feel those emotions?
 :::
 
 :::
@@ -173,7 +173,7 @@ The above map was recreated by folks at [The Correspondent](https://thecorrespon
 
 ```{r}
 countdown::countdown(
-  minutes = 3,
+  minutes = 4,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -280,7 +280,7 @@ Discuss how you might redesign this map to make us feel less
 
 ```{r}
 countdown::countdown(
-  minutes = 3,
+  minutes = 4,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -666,13 +666,36 @@ Quotes from Maite Vermulen, Leon De Korte, and Henk Van Houtum
 
 ---
 
-## {#empathy data-menu-title="Empathy"} 
+##  {#empathy data-menu-title="# Empathy #" background="#047C90"}
 
-[Connecting readers with content requires empathy]{.slide-title2}
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Connecting readers with content requires **empathy** -- for both the communities whose data we are visualizing *and* the readers / target audiences of our work (Schwabish & Feng 2021)</p>
+</div>
+
+---
+
+## {#empathy-def data-menu-title="Empathy definition"} 
+
+[Empathy is defined as:]{.slide-title}
 
 <hr>
 
-Applying a DEI lens to data pipelines, including visualization, requires empathizing with the communities whose data we are visualizing *and* the readers and target audiences for our work (Schwabish & Feng 2001)
+<br>
+<br>
+
+>[“the action of understanding, being aware of, being sensitive to, and vicariously experiencing the feelings, thoughts, and experience of another”]{.body-text-l}
+
+::: {.right-align-text}
+-[Merriam-Webster](https://www.merriam-webster.com/dictionary/empathy)
+:::
+
+. . . 
+
+<br>
+
+::: {.center-text}
+The [Do No Harm Guide](https://www.urban.org/sites/default/files/publication/104296/do-no-harm-guide.pdf) lists six themes for considering empathy as it applies to communicating data...
+:::
 
 ---
 
@@ -691,7 +714,7 @@ Applying a DEI lens to data pipelines, including visualization, requires empathi
 ::: {.column width="50%"}
 
 ::: {.center-text .body-text-s}
->"if your data is about people, make it extremely clear who they are or were"
+>"if your data [are] about people, make it extremely clear who they are or were"
 
 ::: {.right-align-text}
 -Jacob Harris in [Connecting with the Dots](https://source.opennews.org/articles/connecting-dots/)
@@ -733,7 +756,7 @@ Source: [Faces of Death](https://archive.nytimes.com/www.nytimes.com/interactive
 ::: {.column width="50%"}
 
 ::: {.center-text .body-text-s}
-Pair data-driven charts with personal stories, or help readers understand the "near and far" (i.e. overall metrics + smaller ranges / groups of data)
+Pair data-driven charts with personal stories, or help readers understand the ["far vs. near"](https://github.com/propublica/guides/blob/master/design-structure.md#far-vs-near) (i.e. overall metrics + smaller ranges / groups of data)
 :::
 
 ```{r}
@@ -864,7 +887,7 @@ The [Citizens Police Data Project](https://cpdp.co/) is an interactive online da
 
 ---
 
-## {#empathy-themes5 data-menu-title="Empathy in data viz 5"} 
+## {#empathy-themes5a data-menu-title="Empathy in data viz 5a"} 
 
 [Connecting readers with content requires empathy]{.slide-title2}
 
@@ -893,16 +916,81 @@ The [Citizens Police Data Project](https://cpdp.co/) is an interactive online da
 :::
 
 ::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+Crime maps are designed to show the frequency and location of crime incidents.
+:::
+
 ```{r}
 #| eval: true
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/week8/map-original.png")
+knitr::include_graphics("images/week8/trulia-crime.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
-Source: [How maps in the media make us more negative about migrants](https://thecorrespondent.com/664/how-maps-in-the-media-make-us-more-negative-about-migrants/738023272448-bac255ba), by Maite Vermulen, Leon De Korte, and Henk Van Houtum
+Trulia crime map (San Francisco) | Source: [When the Designer Shows Up In the Design](https://www.propublica.org/article/when-the-designer-shows-up-in-the-design), by Lena V. Groeger (ProPublica)
+:::
+
+:::
+
+::::
+
+::: {.footer}
+Trulia removed it's crime tab in 2022 after Redfin spoke out agains the practice: “[G]iven the long history of redlining and racist housing covenants in the United States there’s too great a risk of this inaccuracy reinforcing racial bias. We believe that Redfin–and all real estate sites–should not show neighborhood crime data.” | Source: [GeekWire](https://www.geekwire.com/2021/trulia-to-drop-neighborhood-crime-data-from-home-listings-after-redfin-speaks-out-against-practice/) | For more on biases in crime statistics, check out [Buil-Gil et al. (2021)](https://doi.org/10.1007/s11292-021-09457-y)
+:::
+
+---
+
+## {#empathy-themes5b data-menu-title="Empathy in data viz 5b"} 
+
+[Connecting readers with content requires empathy]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+[{{< fa person title="a person" >}} Put people first]{.gray-text}
+
+<br>
+
+[{{< fa people-arrows title="an arrow connecting two people" >}} Use personal connections to help readers and users connect with the material]{.gray-text}
+
+<br>
+
+[{{< fa book-open-reader title="a person reading a book" >}} Use a mix of quantitative and qualitative approaches to tell a story]{.gray-text}
+
+<br>
+
+[{{< fa comments title="two speech bubbles" >}} Create a platform for engagement]{.gray-text}
+
+<br>
+
+{{< fa brain title="a brain" >}} Consider how your framing of an issue can create a biased emotional response
+:::
+
+::: {.column width="50%"}
+
+::: {.center-text .body-text-s}
+>“Rather than looking at where crimes are committed, we looked at where prisoners live, and the maps that resulted showed the urban costs of incarceration and suggested how those dollars might be better spent on investing in communities.”
+
+::: {.right-align-text}
+-[Laura Kurgan](https://www.arch.columbia.edu/faculty/195-laura-kurgan)
+:::
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/mdb.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Source: [Million Dollar Blocks](https://c4sr.columbia.edu/projects/million-dollar-blocks), by Columbia's [Center for Spatial Research](https://c4sr.columbia.edu/) 
 :::
 
 :::
@@ -968,9 +1056,104 @@ Image sources: [NCEAS](https://www.nceas.ucsb.edu/sites/default/files/2022-06/Co
 
 ---
 
-what is data humanism?
+## {#icons-good data-menu-title="Icons (good)"} 
+
+[Use icons to embed empathy into data design]{.slide-title2}
+
+<hr>
+
+Some chart types (e.g. bar, line, pie) abstract content by collapsing all people represented into one shape. Instead, try using individual points or even icons (i.e. **anthropomorphize your data graphics**).
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/poverty.png")
+```
 
 ---
+
+## {#icons-bad data-menu-title="Icons (bad)"} 
+
+[But using icons doesn't guarantee empathy . . .]{.slide-title2}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/avg-female-height.png")
+```
+
+---
+
+## {#take-aim data-menu-title="Take AIM"} 
+
+[Empathy requires an intersectional lens]{.slide-title}
+
+<hr>
+
+>"Take AIM...**A**ggregate at **i**ntersections that **m**atter" 
+
+::: {.right-align-text .body-text-s}
+-[Clinton Johnson](https://www.esri.com/arcgis-blog/author/clinton_johnson/) in his keynote talk, *Toward an Equitable and Just Geography*, at the [2024 NCEAS Environmental Data Science Summit](https://eds-summit.github.io/)
+:::
+
+<br>
+
+::: {.incremental}
+- How you (dis)aggregate your data can tell drastically **different stories**
+- Aggregation is often the **result of small sample sizes** (e.g. when there are too few observations, populations may be lumped together) -- this can obscure important stories about underrepresented groups
+- The missing-data challenge is an essential consideration for both: 
+    - **data collectors** (e.g. are folks with diverse experiences and perspectives involved in developing collection methods) and
+    - **data communicators** (e.g. if data for specific groups are missing, how can we still be inclusive in our representation of them?)
+:::
+
+::: {.footer}
+Want to learn more? Check out [A primer on an intersectional approach to data](https://www.data4sdgs.org/sites/default/files/file_uploads/JN_1286_IDC_KP_Primer_8pp_A4.pdf), by [Global Partnership for Sustainable Development Data](https://www.data4sdgs.org/)
+:::
+
+---
+
+## {#covid-unemployment data-menu-title="Covid unemployment"} 
+
+[Empathy requires an intersectional lens]{.slide-title}
+
+<hr>
+
+Screenshot from ProPublica's graphic that allows you to **visualize unemployment data aggregated at any three of the following intersections**: race, gender, age class, education level, income level:
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/covid-unemployment.png")
+```
+
+::: {.footer}
+Source: [What Coronavirus Job Losses Reveal About Racism in America](https://projects.propublica.org/coronavirus-unemployment/), by Lena V. Groeger (ProPublica)
+:::
+
+---
+
+##  {#data-humanism data-menu-title="# Data humanism #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Data humanism...</p>
+</div>
+
+
+---
+
+## {#tbd data-menu-title="tbd"} 
+
+[Data humanism]{.slide-title}
+
+<hr>
 
 Giorgia Lupi
 
@@ -986,31 +1169,19 @@ Giorgia Lupi
 - " I also think that in some contexts—again, not everywhere, not if you have to design a dashboard for decision making on analytic data—but in some cases a warmer depiction of data can make people relate...And sometimes, if you get people to an emotional level, you might get them interested in learning more and spending more time."
 - "Beauty is such an entry point for everything. You wouldn’t buy an ugly dress just because it’s very functional. So, I feel there’s nothing wrong with trying to make charts a little bit more beautiful."
 
---- 
+---
 
-```{r}
-#| eval: true
-#| echo: false
-#| out-width: "100%"
-#| fig-align: "center"
-knitr::include_graphics("images/week8/avg-female-height.png")
-```
+##  {#consider-examples data-menu-title="# Examples #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Consider the following examples of "people as data." How do your perceive / interpret / comprehend the information across each version of the visualizations?</p>
+</div>
 
 ---
 
-```{r}
-#| eval: true
-#| echo: false
-#| out-width: "100%"
-#| fig-align: "center"
-knitr::include_graphics("images/week8/poverty.png")
-```
+## {#chalabi1 data-menu-title="Chalabi 1"} 
 
----
-
-## {#chalabi-palenstine1 data-menu-title="tbd"} 
-
-[tbd]{.slide-title2}
+[Destruction of Gaza, by Mona Chalabi]{.slide-title}
 
 <hr>
 
@@ -1056,9 +1227,9 @@ countdown::countdown(
 
 ---
 
-## {#chalabi-palenstine2 data-menu-title="tbd"} 
+## {#chalabi2 data-menu-title="Chalabi 2"} 
 
-[tbd]{.slide-title2}
+[Destruction of Gaza, by Mona Chalabi]{.slide-title}
 
 <hr>
 
@@ -1111,9 +1282,9 @@ countdown::countdown(
 
 ---
 
-## {#chalabi-palenstine3 data-menu-title="tbd"} 
+## {#chalabi3 data-menu-title="Chalabi 3"} 
 
-[tbd]{.slide-title2}
+[Destruction of Gaza, by Mona Chalabi]{.slide-title}
 
 <hr>
 
@@ -1173,12 +1344,11 @@ countdown::countdown(
 
 ---
 
-## {#tbd1 data-menu-title="tbd1"} 
+## {#ipcc1 data-menu-title="IPCC 1"} 
 
-[tbd]{.slide-title}
+[Global temperatures, by the IPCC]{.slide-title}
 
 <hr>
-
 
 ```{r}
 #| eval: true
@@ -1188,8 +1358,10 @@ countdown::countdown(
 knitr::include_graphics("images/week8/ipcc-half.png")
 ```
 
+<br>
+
 ::: {.footer}
-Source: The [Climate Change 2023 Synthesis Report](https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf), by the [Intergovernmental Panel on Climate Change](https://www.ipcc.ch/) (IPCC)
+Source: The [Climate Change 2023 Synthesis Report](https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf), by the [Intergovernmental Panel on Climate Change](https://www.ipcc.ch/) (IPCC) | Also see [This visual shows how climate change will affect generations](https://www.washingtonpost.com/climate-environment/2023/03/21/climate-ipcc-report-temperatures-graphic/), by Kasha Patel (Washington Post)
 :::
 
 ```{r}
@@ -1210,12 +1382,11 @@ countdown::countdown(
 
 ---
 
-## {#tbd2 data-menu-title="tbd2"} 
+## {#ipcc2 data-menu-title="IPCC 2"} 
 
-[tbd]{.slide-title}
+[Global temperatures, by the IPCC]{.slide-title}
 
 <hr>
-
 
 ```{r}
 #| eval: true
@@ -1225,8 +1396,10 @@ countdown::countdown(
 knitr::include_graphics("images/week8/ipcc-full.png")
 ```
 
+<br>
+
 ::: {.footer}
-Source: The [Climate Change 2023 Synthesis Report](https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf), by the [Intergovernmental Panel on Climate Change](https://www.ipcc.ch/) (IPCC)
+Source: The [Climate Change 2023 Synthesis Report](https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf), by the [Intergovernmental Panel on Climate Change](https://www.ipcc.ch/) (IPCC) | Also see [This visual shows how climate change will affect generations](https://www.washingtonpost.com/climate-environment/2023/03/21/climate-ipcc-report-temperatures-graphic/), by Kasha Patel (Washington Post)
 :::
 
 ```{r}
@@ -1245,22 +1418,11 @@ countdown::countdown(
   )
 ```
 
-
 ---
 
-::: {.footer}
-Also check out The Washington Post's coverage of this visualization in their article, [This visual shows how climate change will affect generations](https://www.washingtonpost.com/climate-environment/2023/03/21/climate-ipcc-report-temperatures-graphic/), by Kasha Patel
-:::
+##  {#end-break data-menu-title="# END #" background="#047C90"}
 
-
----
-
-[Explaining the ArcGIS Social Equity Analysis Solution](https://www.esri.com/arcgis-blog/products/arcgis-solutions/announcements/explaining-the-arcgis-social-equity-analysis-solution/)
-
-1. [The Power of Partnership: The Story Behind the Social Equity Analysis Solution](https://www.esri.com/arcgis-blog/products/arcgis-solutions/announcements/the-power-of-partnership-introducing-esris-social-equity-analysis-solution/)
-2. [Explaining the ArcGIS Social Equity Analysis Solution](https://www.esri.com/arcgis-blog/products/arcgis-solutions/announcements/explaining-the-arcgis-social-equity-analysis-solution/)
-3. [7 Steps to Enhance Your Social Equity Analysis](https://www.esri.com/arcgis-blog/products/arcgis-solutions/announcements/7-steps-to-enhance-your-social-equity-analysis/)
-
-[Mapping Quotes, Stories, Sentiments, and Experiences](https://www.esri.com/arcgis-blog/products/arcgis/mapping/mapping-quotes-stories-sentiments-and-experiences/)
-
-
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">See you next week!</p>
+<p class="caption-text">*~ This is the end of Lesson 2 (of 2) ~*</p>
+</div>

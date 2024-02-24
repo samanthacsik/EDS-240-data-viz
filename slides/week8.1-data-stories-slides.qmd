@@ -824,47 +824,9 @@ From [Cédric Scherer](https://www.cedricscherer.com/)'s talk, [Effective Data V
 
 ---
 
-## {#warming-stripes1 data-menu-title="Consider audience (Ex. 1)"} 
+## {#chalabi data-menu-title="Consider audience (Chalabi)"} 
 
-[Consider the audience (Ex. 1)]{.slide-title}
-
-<hr>
-
-```{r}
-#| eval: true
-#| echo: false
-#| out-width: "80%"
-#| fig-align: "center"
-knitr::include_graphics("images/week8/hawkins-warming-stripes.png")
-```
-
-<br>
-
-::: {.footer}
-[Warming Stripes](https://showyourstripes.info/), by Ed Hawkins
-:::
-
-```{r}
-countdown::countdown(
-  minutes = 2,
-  # left = 0, right = 0,
-  # Fanfare when it's over
-  play_sound = TRUE,
-  color_border              = "#FFFFFF",
-  color_text                = "#7aa81e",
-  color_running_background  = "#7aa81e",
-  color_running_text        = "#FFFFFF",
-  color_finished_background = "#ffa07a",
-  color_finished_text       = "#FFFFFF",
-  font_size = "2em",
-  )
-```
-
----
-
-## {#iucn data-menu-title="Consider audience (Ex. 2)"} 
-
-[Consider the audience (Ex. 2)]{.slide-title}
+[Consider the audience]{.slide-title}
 
 <hr>
 
@@ -900,7 +862,7 @@ knitr::include_graphics("images/week8/chalabi-vaquitas.png")
 
 ```{r}
 countdown::countdown(
-  minutes = 2,
+  minutes = 3,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -916,9 +878,9 @@ countdown::countdown(
 
 ---
 
-## {#glimmers data-menu-title="Consider audience (Ex. 3)"} 
+## {#ingeman data-menu-title="Consider audience (Ingeman et al.)"} 
 
-[Consider the audience (Ex. 3)]{.slide-title}
+[Consider the audience]{.slide-title}
 
 <hr>
 
@@ -933,12 +895,12 @@ knitr::include_graphics("images/week8/ingeman-etal-fig3.png")
 <br>
 
 ::: {.footer}
-Fig. 3, by [Ingeman et al. 2022](https://www.nature.com/articles/s41598-022-13671-7): Glimmers of hope and critical cases.
+Fig. 3, by [Ingeman et al. 2022](https://www.nature.com/articles/s41598-022-13671-7): Glimmers of hope and critical cases. Find [figure caption online](https://www.nature.com/articles/s41598-022-13671-7/figures/3).
 :::
 
 ```{r}
 countdown::countdown(
-  minutes = 2,
+  minutes = 3,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -954,9 +916,9 @@ countdown::countdown(
 
 ---
 
-## {#plants data-menu-title="Consider audience (Ex. 4)"} 
+## {#scherer data-menu-title="Consider audience"} 
 
-[Consider the audience (Ex. 4)]{.slide-title}
+[Consider the audience]{.slide-title}
 
 <hr>
 
@@ -993,7 +955,7 @@ knitr::include_graphics("images/week8/scherer-plants.png")
 
 ```{r}
 countdown::countdown(
-  minutes = 2,
+  minutes = 3,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,

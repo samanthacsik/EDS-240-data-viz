@@ -25,19 +25,17 @@ knitr::include_graphics("../images/observable.png")
 
 ## Discussion Materials
 
-*Coming soon!*
+*No discussion section this week!*
 
 ## Assignment Reminders
-
-<!-- **Note:** Plan to bring an in-progress version of HW #4 deliverables to week 10 discussion section! You'll be exchanging data visualizations to critique / receive feedback.  -->
 
 | Assignment Type | Assignment Title       | Date Assigned  | Date Due                   |
 |:---------------:|------------------------|----------------|----------------------------|
 | EOC             | EOC (week 9)           | Mon 03/04/2024 | Mon 03/04/2024, 11:55pm PT |
-| HW              | Homework Assignment #4 | Mon 02/26/2024 | Sat 03/16/2024, 11:59pm PT |
+| HW              | Homework Assignment #4 | Mon 02/26/2024 | Sat 03/09/2024, 11:59pm PT |
 
 <!-- | Assignment Type | Assignment Title                                                 | Date Assigned  | Date Due        | -->
 <!-- |:---------------:|-------------------------------------------------------|----------------|----------------------------| -->
 <!-- | EOC             | [EOC (week 9)](https://forms.gle/2Sz98wAUbSFq7Tqt6)   | Mon 03/04/2024 | Mon 03/04/2024, 11:55pm PT | -->
-<!-- | HW              | [Homework Assignment #4](../assignments/HW4.qmd)      | Mon 02/26/2024 | Sat 03/16/2024, 11:59pm PT | -->
+<!-- | HW              | [Homework Assignment #4](../assignments/HW4.qmd)      | Mon 02/26/2024 | Sat 03/09/2024, 11:59pm PT | -->
 

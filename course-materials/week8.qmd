@@ -17,7 +17,7 @@ knitr::include_graphics("../images/horst-eco-r4ds.png")
 
 ## Pre-class Prep
 
-*Coming soon* 
+*No pre-class prep necessary this week!* 
 
 ## Lecture Materials 
 

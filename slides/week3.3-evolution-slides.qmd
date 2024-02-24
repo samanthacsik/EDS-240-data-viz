@@ -963,28 +963,28 @@ lyme_pop |>
 <p class="caption-text">*~ This is the end of Lesson 3 (of 3) ~*</p>
 </div>
 
----
+<!-- --- -->
 
-##  {#assignments data-menu-title="Assignments" background="#D8E7E7"}
+<!-- ##  {#assignments data-menu-title="Assignments" background="#D8E7E7"} -->
 
-::: {.center-text}
-[Assignments]{.slide-title .dark-blue-text}
-:::
+<!-- ::: {.center-text} -->
+<!-- [Assignments]{.slide-title .dark-blue-text} -->
+<!-- ::: -->
 
-<hr>
+<!-- <hr> -->
 
-<br>
+<!-- <br> -->
 
-[**End-of-class Survey week 3 (EOC #2)** -- *Due [Mon 01/22]{.magenta-text} at 11:55pm*]{.body-text-m}
+<!-- [**End-of-class Survey week 3 (EOC #2)** -- *Due [Mon 01/22]{.magenta-text} at 11:55pm*]{.body-text-m} -->
 
-- 2 multiple choice + 2 short answer + 1 optional question
+<!-- - 2 multiple choice + 2 short answer + 1 optional question -->
 
-. . . 
+<!-- . . .  -->
 
-[**Homework Assignment #2 (HW #2)** -- *Due [Sat 02/03]{.magenta-text} at 11:59pm*]{.body-text-m}
+<!-- [**Homework Assignment #2 (HW #2)** -- *Due [Sat 02/03]{.magenta-text} at 11:59pm*]{.body-text-m} -->
 
-- 2 parts:
-  - choosing the right graphic form (SBC LTER data)
-  - data wrangling & exploratory data viz using your own data (HW #4)
+<!-- - 2 parts: -->
+<!--   - choosing the right graphic form (SBC LTER data) -->
+<!--   - data wrangling & exploratory data viz using your own data (HW #4) -->
 
 

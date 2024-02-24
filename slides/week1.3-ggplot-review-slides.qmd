@@ -1470,33 +1470,33 @@ knitr::include_graphics("images/week1/scherer-evo-ggplot.gif")
 <p class="caption-text">*~ This is the end of Lesson 3 (of 3) ~*</p>
 </div>
 
----
+<!-- --- -->
 
-##  {#assignments data-menu-title="Assignments" background="#D8E7E7"}
+<!-- ##  {#assignments data-menu-title="Assignments" background="#D8E7E7"} -->
 
-::: {.center-text}
-[Assignments]{.slide-title .dark-blue-text}
-:::
+<!-- ::: {.center-text} -->
+<!-- [Assignments]{.slide-title .dark-blue-text} -->
+<!-- ::: -->
 
-<hr>
+<!-- <hr> -->
 
-<br>
+<!-- <br> -->
 
-[**End-of-class Survey #1 (EOC #1)** -- *Due [Mon 01/08]{.magenta-text} at 11:55pm*]{.body-text-m}
+<!-- [**End-of-class Survey #1 (EOC #1)** -- *Due [Mon 01/08]{.magenta-text} at 11:55pm*]{.body-text-m} -->
 
-- 2 multiple choice + 2 short answer + 1 optional question
+<!-- - 2 multiple choice + 2 short answer + 1 optional question -->
 
-. . . 
+<!-- . . .  -->
 
-[**Pre-course Reflection (SR #1)** -- *Due [Sat 01/13]{.magenta-text} at 11:59pm*]{.body-text-m}
+<!-- [**Pre-course Reflection (SR #1)** -- *Due [Sat 01/13]{.magenta-text} at 11:59pm*]{.body-text-m} -->
 
-- 3 sets of questions about school & life, the way you learn best, learning goals, some fun stuff
-    
-. . . 
+<!-- - 3 sets of questions about school & life, the way you learn best, learning goals, some fun stuff -->
 
-[**Homework Assignment #1 (HW #1)** -- *Due [Sat 01/20]{.magenta-text} at 11:59pm*]{.body-text-m}
+<!-- . . .  -->
 
-- 2 parts:
-    - interpreting & annotating ggplot code
-    - finding data that you're interested in visualizing for your final assignment
+<!-- [**Homework Assignment #1 (HW #1)** -- *Due [Sat 01/20]{.magenta-text} at 11:59pm*]{.body-text-m} -->
+
+<!-- - 2 parts: -->
+<!--     - interpreting & annotating ggplot code -->
+<!--     - finding data that you're interested in visualizing for your final assignment -->
 

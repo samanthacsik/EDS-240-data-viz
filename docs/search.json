@@ -312,7 +312,7 @@
     "href": "course-materials/week8.html#pre-class-prep",
     "title": "Data storytelling, People as data",
     "section": "Pre-class Prep",
-    "text": "Pre-class Prep\nComing soon"
+    "text": "Pre-class Prep\nNo pre-class prep necessary this week!"
   },
   {
     "objectID": "course-materials/week8.html#lecture-materials",
@@ -917,13 +917,6 @@
     "text": "See you next week!\n\n\n~ This is the end of Lesson 3 (of 3) ~"
   },
   {
-    "objectID": "slides/week3.3-evolution-slides.html#assignments",
-    "href": "slides/week3.3-evolution-slides.html#assignments",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Assignments\n\n\n\nEnd-of-class Survey week 3 (EOC #2) – Due Mon 01/22 at 11:55pm\n\n2 multiple choice + 2 short answer + 1 optional question\n\n\nHomework Assignment #2 (HW #2) – Due Sat 02/03 at 11:59pm\n\n2 parts:\n\nchoosing the right graphic form (SBC LTER data)\ndata wrangling & exploratory data viz using your own data (HW #4)"
-  },
-  {
     "objectID": "slides/week4.2-relationships-slides.html#title-slide",
     "href": "slides/week4.2-relationships-slides.html#title-slide",
     "title": "EDS 240",
@@ -1302,32 +1295,25 @@
     "text": "Identify your audience\n\n\n\nTo tell a clear story, you need to know your audience\n\n\n\n\nWhich story is interesting for them?\nWhat are relevant details to include?\nWhich variables are meaningful to them?\nHow will they encounter the visualization?\nDo I need a visualization at all?\n\n\n\n\n\n\nData viz can look wildly different depending on how you answer the above questions!\n\n\nFrom Cédric Scherer’s talk, Effective Data Visualization and Graphic Design with ggplot2 workshop"
   },
   {
-    "objectID": "slides/week8.1-data-stories-slides.html#warming-stripes1",
-    "href": "slides/week8.1-data-stories-slides.html#warming-stripes1",
+    "objectID": "slides/week8.1-data-stories-slides.html#chalabi",
+    "href": "slides/week8.1-data-stories-slides.html#chalabi",
     "title": "EDS 240",
     "section": "",
-    "text": "Consider the audience (Ex. 1)\n\n\n\n\nWarming Stripes, by Ed Hawkins\n\n\n\n\n−+\n02:00"
+    "text": "Consider the audience\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeven endangered species that could (almost) fit in a single train carriage, by Mona Chalabi (two of seven shown here)\n\n\n\n\n−+\n03:00"
   },
   {
-    "objectID": "slides/week8.1-data-stories-slides.html#iucn",
-    "href": "slides/week8.1-data-stories-slides.html#iucn",
+    "objectID": "slides/week8.1-data-stories-slides.html#ingeman",
+    "href": "slides/week8.1-data-stories-slides.html#ingeman",
     "title": "EDS 240",
     "section": "",
-    "text": "Consider the audience (Ex. 2)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeven endangered species that could (almost) fit in a single train carriage, by Mona Chalabi (two of seven shown here)\n\n\n\n\n−+\n02:00"
+    "text": "Consider the audience\n\n\n\n\nFig. 3, by Ingeman et al. 2022: Glimmers of hope and critical cases. Find figure caption online.\n\n\n\n\n−+\n03:00"
   },
   {
-    "objectID": "slides/week8.1-data-stories-slides.html#glimmers",
-    "href": "slides/week8.1-data-stories-slides.html#glimmers",
+    "objectID": "slides/week8.1-data-stories-slides.html#scherer",
+    "href": "slides/week8.1-data-stories-slides.html#scherer",
     "title": "EDS 240",
     "section": "",
-    "text": "Consider the audience (Ex. 3)\n\n\n\n\nFig. 3, by Ingeman et al. 2022: Glimmers of hope and critical cases.\n\n\n\n\n−+\n02:00"
-  },
-  {
-    "objectID": "slides/week8.1-data-stories-slides.html#plants",
-    "href": "slides/week8.1-data-stories-slides.html#plants",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Consider the audience (Ex. 4)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlants in Danger, by Cédric Scherer (code)\n\n\n\n\n−+\n02:00"
+    "text": "Consider the audience\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlants in Danger, by Cédric Scherer (code)\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "slides/week8.1-data-stories-slides.html#data-samples1",
@@ -1713,13 +1699,6 @@
     "title": "EDS 240",
     "section": "",
     "text": "See you next week!\n\n\n~ This is the end of Lesson 3 (of 3) ~"
-  },
-  {
-    "objectID": "slides/week1.3-ggplot-review-slides.html#assignments",
-    "href": "slides/week1.3-ggplot-review-slides.html#assignments",
-    "title": "EDS 240",
-    "section": "",
-    "text": "Assignments\n\n\n\nEnd-of-class Survey #1 (EOC #1) – Due Mon 01/08 at 11:55pm\n\n2 multiple choice + 2 short answer + 1 optional question\n\n\nPre-course Reflection (SR #1) – Due Sat 01/13 at 11:59pm\n\n3 sets of questions about school & life, the way you learn best, learning goals, some fun stuff\n\n\n\nHomework Assignment #1 (HW #1) – Due Sat 01/20 at 11:59pm\n\n2 parts:\n\ninterpreting & annotating ggplot code\nfinding data that you’re interested in visualizing for your final assignment"
   },
   {
     "objectID": "slides/random-notes.html",
@@ -2174,7 +2153,7 @@
     "href": "assignments.html#end-of-class-surveys",
     "title": "Assignments",
     "section": "End-of-class surveys",
-    "text": "End-of-class surveys\nEnd-of-class surveys (EOCs) will become available at the end of each class (Mondays) and are due by end-of-day (11:55pm PT). Completing EOCs by the due dates/times will, in-part (along with class attendance), determine whether you earn a +/- on your course grade.\n\n\n\nEOC link\nDate Assigned\nDate Due\n\n\n\n\nEOC (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 2)\nNA\nNA\n\n\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nEOC (week 6)\nMon 02/12/2024\nMon 02/12/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 7)\nNA\nNA\n\n\nEOC (week 8)\nMon 02/26/2024\nMon 02/26/2024, 11:55pm PT\n\n\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT"
+    "text": "End-of-class surveys\nEnd-of-class surveys (EOCs) will become available at the end of each class (Mondays) and are due by end-of-day (11:55pm PT). Completing EOCs by the due dates / times will, in-part (along with class attendance), determine whether you earn a +/- on your course grade.\n\n\n\nEOC link\nDate Assigned\nDate Due\n\n\n\n\nEOC (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 2)\nNA\nNA\n\n\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nEOC (week 6)\nMon 02/12/2024\nMon 02/12/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 7)\nNA\nNA\n\n\nEOC (week 8)\nMon 02/26/2024\nMon 02/26/2024, 11:55pm PT\n\n\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT"
   },
   {
     "objectID": "assignments.html#grade-tracker",
@@ -2580,7 +2559,7 @@
     "href": "slides/week8.2-people-as-data-slides.html#our-job",
     "title": "EDS 240",
     "section": "",
-    "text": "Our job as data scientists . . .\n\n…is to actively incorporate equity awareness when working with data and generating data products (e.g. visualizations). Not all visuals are overtly racist or discriminatory, but we as data practitioners must recognize and work against misusing or misrepresenting data in ways that can harm communities and perpetuate systemic discrimination.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUrban Institute’s Do No Harm Guide, by Jonathan Schwabish and Alice Feng\n\n\nguidelines on how to apply a DEI lens to not just words, colors, icons, etc., but also the process of crafting communication products\nincludes checklists & tool kits that focus on the often hidden / subtle ways that data analysts and communicators fail to incorporate equitable awareness in the data they use and they products they create"
+    "text": "Our job as data scientists . . .\n\n…is to actively incorporate equity awareness when working with data and generating data products (e.g. visualizations). Not all visuals are overtly racist or discriminatory, but we as data practitioners must recognize and work against misusing or misrepresenting data in ways that can harm communities and perpetuate systemic discrimination.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUrban Institute’s Do No Harm Guide, by Jonathan Schwabish and Alice Feng (2021)\n\n\nguidelines on how to apply a DEI lens to not just words, colors, icons, etc., but also the process of crafting communication products\nincludes checklists & tool kits that focus on the often hidden / subtle ways that data analysts and communicators fail to incorporate equitable awareness in the data they use and they products they create"
   },
   {
     "objectID": "slides/week8.2-people-as-data-slides.html#kirk",
@@ -2594,7 +2573,7 @@
     "href": "slides/week8.2-people-as-data-slides.html#migration-original1",
     "title": "EDS 240",
     "section": "",
-    "text": "Design choices influence viewers’ perception\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n\nDiscuss how you perceive this map with your learning partner(s). What thoughts or emotions does it invoke?\n\n\n\n\nThe above map was recreated by folks at The Correspondent, based on migration maps commonly published by the European Border and Coast Guard Agency (Frontex).\n\n\n\n\n−+\n03:00"
+    "text": "Design choices influence viewers’ perception\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n\nDiscuss how you perceive, interpret, and comprehend this map with your learning partner(s). What thoughts or emotions does it invoke? Why do you think you feel those emotions?\n\n\n\n\nThe above map was recreated by folks at The Correspondent, based on migration maps commonly published by the European Border and Coast Guard Agency (Frontex).\n\n\n\n\n−+\n04:00"
   },
   {
     "objectID": "slides/week8.2-people-as-data-slides.html#migration-original2",
@@ -2608,7 +2587,7 @@
     "href": "slides/week8.2-people-as-data-slides.html#migration-original3",
     "title": "EDS 240",
     "section": "",
-    "text": "Design choices influence viewers’ perception\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\nDiscuss how you might redesign this map to make us feel less\n\n“like we are being overrun by huge numbers of anonymous enemies, coming at us en masse from all corners of the globe to disrupt our orderly lives”\n\n\n-Vermulen, De Korte, Van Houtum\n\n\n\n\n\nHow maps in the media make us more negative about migrants, by Maite Vermulen, Leon De Korte, and Henk Van Houtum\n\n\n\n\n−+\n03:00"
+    "text": "Design choices influence viewers’ perception\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\nDiscuss how you might redesign this map to make us feel less\n\n“like we are being overrun by huge numbers of anonymous enemies, coming at us en masse from all corners of the globe to disrupt our orderly lives”\n\n\n-Vermulen, De Korte, Van Houtum\n\n\n\n\n\nHow maps in the media make us more negative about migrants, by Maite Vermulen, Leon De Korte, and Henk Van Houtum\n\n\n\n\n−+\n04:00"
   },
   {
     "objectID": "slides/week8.2-people-as-data-slides.html#migration-blue",
@@ -2685,21 +2664,28 @@
     "href": "slides/week8.2-people-as-data-slides.html#empathy",
     "title": "EDS 240",
     "section": "",
-    "text": "Connecting readers with content requires empathy\n\nApplying a DEI lens to data pipelines, including visualization, requires empathizing with the communities whose data we are visualizing and the readers and target audiences for our work (Schwabish & Feng 2001)"
+    "text": "Connecting readers with content requires empathy – for both the communities whose data we are visualizing and the readers / target audiences of our work (Schwabish & Feng 2021)"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#empathy-def",
+    "href": "slides/week8.2-people-as-data-slides.html#empathy-def",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Empathy is defined as:\n\n \n\n“the action of understanding, being aware of, being sensitive to, and vicariously experiencing the feelings, thoughts, and experience of another”\n\n\n-Merriam-Webster\n\n\n\n\nThe Do No Harm Guide lists six themes for considering empathy as it applies to communicating data…"
   },
   {
     "objectID": "slides/week8.2-people-as-data-slides.html#empathy-themes1",
     "href": "slides/week8.2-people-as-data-slides.html#empathy-themes1",
     "title": "EDS 240",
     "section": "",
-    "text": "Connecting readers with content requires empathy\n\n\n\n Put people first\n\n\n\n“if your data is about people, make it extremely clear who they are or were”\n\n\n-Jacob Harris in Connecting with the Dots\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Faces of Death (New York Times)"
+    "text": "Connecting readers with content requires empathy\n\n\n\n Put people first\n\n\n\n“if your data [are] about people, make it extremely clear who they are or were”\n\n\n-Jacob Harris in Connecting with the Dots\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Faces of Death (New York Times)"
   },
   {
     "objectID": "slides/week8.2-people-as-data-slides.html#empathy-themes2",
     "href": "slides/week8.2-people-as-data-slides.html#empathy-themes2",
     "title": "EDS 240",
     "section": "",
-    "text": "Connecting readers with content requires empathy\n\n\n\n Put people first\n\n Use personal connections to help readers and users connect with the material\n\n\nPair data-driven charts with personal stories, or help readers understand the “near and far” (i.e. overall metrics + smaller ranges / groups of data)\n\n\n\n\n\n\n\n\n\n\n\nSource: A Deadly Day In Baghdad (New York Times)\n\n\n\n\nThese graphics illustrate a common and successful technique for bringing the reader back down to earth by focusing on a smaller range of data. In the case of Baghdad’s dead, we focused on a single day to show the near of what years of violence looked like day after day. (Harris 2015)"
+    "text": "Connecting readers with content requires empathy\n\n\n\n Put people first\n\n Use personal connections to help readers and users connect with the material\n\n\nPair data-driven charts with personal stories, or help readers understand the “far vs. near” (i.e. overall metrics + smaller ranges / groups of data)\n\n\n\n\n\n\n\n\n\n\n\nSource: A Deadly Day In Baghdad (New York Times)\n\n\n\n\nThese graphics illustrate a common and successful technique for bringing the reader back down to earth by focusing on a smaller range of data. In the case of Baghdad’s dead, we focused on a single day to show the near of what years of violence looked like day after day. (Harris 2015)"
   },
   {
     "objectID": "slides/week8.2-people-as-data-slides.html#empathy-themes3",
@@ -2716,11 +2702,18 @@
     "text": "Connecting readers with content requires empathy\n\n\n\n Put people first\n\n Use personal connections to help readers and users connect with the material\n\n Use a mix of quantitative and qualitative approaches to tell a story\n\n Create a platform for engagement\n\n\n\nInteractivity allows users to find themselves in the data or discover stories.\n\n\n\n\n\n\n\n\n\n\n\nSource: Citizens Police Data Project, by Invisible Institute\n\n\n\n\nThe Citizens Police Data Project is an interactive online database and dashboard that empowers anyone to explore and analyze police misconduct data from Chicago. Trina Reynolds-Tyler, Data Director at Invisible Institute, spoke about this work at WiDS 2023 (~1:05:00)."
   },
   {
-    "objectID": "slides/week8.2-people-as-data-slides.html#empathy-themes5",
-    "href": "slides/week8.2-people-as-data-slides.html#empathy-themes5",
+    "objectID": "slides/week8.2-people-as-data-slides.html#empathy-themes5a",
+    "href": "slides/week8.2-people-as-data-slides.html#empathy-themes5a",
     "title": "EDS 240",
     "section": "",
-    "text": "Connecting readers with content requires empathy\n\n\n\n Put people first\n\n Use personal connections to help readers and users connect with the material\n\n Use a mix of quantitative and qualitative approaches to tell a story\n\n Create a platform for engagement\n\n Consider how your framing of an issue can create a biased emotional response\n\n\n\n\n\n\n\n\n\n\n\nSource: How maps in the media make us more negative about migrants, by Maite Vermulen, Leon De Korte, and Henk Van Houtum"
+    "text": "Connecting readers with content requires empathy\n\n\n\n Put people first\n\n Use personal connections to help readers and users connect with the material\n\n Use a mix of quantitative and qualitative approaches to tell a story\n\n Create a platform for engagement\n\n Consider how your framing of an issue can create a biased emotional response\n\n\nCrime maps are designed to show the frequency and location of crime incidents.\n\n\n\n\n\n\n\n\n\n\n\nTrulia crime map (San Francisco) | Source: When the Designer Shows Up In the Design, by Lena V. Groeger (ProPublica)\n\n\n\n\nTrulia removed it’s crime tab in 2022 after Redfin spoke out agains the practice: “[G]iven the long history of redlining and racist housing covenants in the United States there’s too great a risk of this inaccuracy reinforcing racial bias. We believe that Redfin–and all real estate sites–should not show neighborhood crime data.” | Source: GeekWire | For more on biases in crime statistics, check out Buil-Gil et al. (2021)"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#empathy-themes5b",
+    "href": "slides/week8.2-people-as-data-slides.html#empathy-themes5b",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Connecting readers with content requires empathy\n\n\n\n Put people first\n\n Use personal connections to help readers and users connect with the material\n\n Use a mix of quantitative and qualitative approaches to tell a story\n\n Create a platform for engagement\n\n Consider how your framing of an issue can create a biased emotional response\n\n\n\n“Rather than looking at where crimes are committed, we looked at where prisoners live, and the maps that resulted showed the urban costs of incarceration and suggested how those dollars might be better spent on investing in communities.”\n\n\n-Laura Kurgan\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Million Dollar Blocks, by Columbia’s Center for Spatial Research"
   },
   {
     "objectID": "slides/week8.2-people-as-data-slides.html#empathy-themes6",
@@ -2730,39 +2723,95 @@
     "text": "Connecting readers with content requires empathy\n\n\n\n Put people first\n\n Use personal connections to help readers and users connect with the material\n\n Use a mix of quantitative and qualitative approaches to tell a story\n\n Create a platform for engagement\n\n Consider how your framing of an issue can create a biased emotional response\n\n Recognize the needs of your audience\n\n\n\nMake sure visualizations are accessible so that folks with disabilities can view and use content online. Similarly, avoid overly technical or jargon-heavy language that make information inaccessible to a broad audience.\n\n\n\n\n\n\n\n\n\n\n\nImage sources: NCEAS, Design102, call focus"
   },
   {
-    "objectID": "slides/week8.2-people-as-data-slides.html#chalabi-palenstine1",
-    "href": "slides/week8.2-people-as-data-slides.html#chalabi-palenstine1",
+    "objectID": "slides/week8.2-people-as-data-slides.html#icons-good",
+    "href": "slides/week8.2-people-as-data-slides.html#icons-good",
     "title": "EDS 240",
     "section": "",
-    "text": "tbd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScreenshots taken on 2023-11-21 from @monachalabi, here in reverse order\n\n\n\n\n−+\n02:00"
+    "text": "Use icons to embed empathy into data design\n\nSome chart types (e.g. bar, line, pie) abstract content by collapsing all people represented into one shape. Instead, try using individual points or even icons (i.e. anthropomorphize your data graphics)."
   },
   {
-    "objectID": "slides/week8.2-people-as-data-slides.html#chalabi-palenstine2",
-    "href": "slides/week8.2-people-as-data-slides.html#chalabi-palenstine2",
+    "objectID": "slides/week8.2-people-as-data-slides.html#icons-bad",
+    "href": "slides/week8.2-people-as-data-slides.html#icons-bad",
     "title": "EDS 240",
     "section": "",
-    "text": "tbd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScreenshots taken on 2023-11-21 from @monachalabi, here in reverse order\n\n\n\n\n−+\n02:00"
+    "text": "But using icons doesn’t guarantee empathy . . ."
   },
   {
-    "objectID": "slides/week8.2-people-as-data-slides.html#chalabi-palenstine3",
-    "href": "slides/week8.2-people-as-data-slides.html#chalabi-palenstine3",
+    "objectID": "slides/week8.2-people-as-data-slides.html#take-aim",
+    "href": "slides/week8.2-people-as-data-slides.html#take-aim",
     "title": "EDS 240",
     "section": "",
-    "text": "tbd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScreenshots taken on 2023-11-21 from @monachalabi, here in reverse order\n\n\n\n\n−+\n02:00"
+    "text": "Empathy requires an intersectional lens\n\n\n“Take AIM…Aggregate at intersections that matter”\n\n\n-Clinton Johnson in his keynote talk, Toward an Equitable and Just Geography, at the 2024 NCEAS Environmental Data Science Summit\n\n\n\n\nHow you (dis)aggregate your data can tell drastically different stories\nAggregation is often the result of small sample sizes (e.g. when there are too few observations, populations may be lumped together) – this can obscure important stories about underrepresented groups\nThe missing-data challenge is an essential consideration for both:\n\ndata collectors (e.g. are folks with diverse experiences and perspectives involved in developing collection methods) and\ndata communicators (e.g. if data for specific groups are missing, how can we still be inclusive in our representation of them?)\n\n\n\n\nWant to learn more? Check out A primer on an intersectional approach to data, by Global Partnership for Sustainable Development Data"
   },
   {
-    "objectID": "slides/week8.2-people-as-data-slides.html#tbd1",
-    "href": "slides/week8.2-people-as-data-slides.html#tbd1",
+    "objectID": "slides/week8.2-people-as-data-slides.html#covid-unemployment",
+    "href": "slides/week8.2-people-as-data-slides.html#covid-unemployment",
     "title": "EDS 240",
     "section": "",
-    "text": "tbd\n\n\n\nSource: The Climate Change 2023 Synthesis Report, by the Intergovernmental Panel on Climate Change (IPCC)\n\n\n\n\n−+\n03:00"
+    "text": "Empathy requires an intersectional lens\n\nScreenshot from ProPublica’s graphic that allows you to visualize unemployment data aggregated at any three of the following intersections: race, gender, age class, education level, income level:\n\n\nSource: What Coronavirus Job Losses Reveal About Racism in America, by Lena V. Groeger (ProPublica)"
   },
   {
-    "objectID": "slides/week8.2-people-as-data-slides.html#tbd2",
-    "href": "slides/week8.2-people-as-data-slides.html#tbd2",
+    "objectID": "slides/week8.2-people-as-data-slides.html#data-humanism",
+    "href": "slides/week8.2-people-as-data-slides.html#data-humanism",
     "title": "EDS 240",
     "section": "",
-    "text": "tbd\n\n\n\nSource: The Climate Change 2023 Synthesis Report, by the Intergovernmental Panel on Climate Change (IPCC)\n\n\n\n\n−+\n03:00"
+    "text": "Data humanism…"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#tbd",
+    "href": "slides/week8.2-people-as-data-slides.html#tbd",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Data humanism\n\nGiorgia Lupi\n\n“I started to work with data in 2010, 2011, and I saw that most of the approach to data at the time was very much based on a statistician’s background, and that’s fantastic. But I was also interested in using data myself as an anchoring point to tell stories. I thought that there’s just more that we could do to actually represent our reality if we include context, anecdotal details, if we embrace the imperfections that are inherent to how we collect data. And so, I started to just use these ideas in my practice, and I felt that I needed to just come up with an umbrella term for that. Data humanism was a good one, and data humanism is an approach to data that tries to reconnect numbers to what they really stand for by adding less factual and more anecdotal information.”\n\n\n-Giorgia Lupi in her interview with Fast Company"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#consider-examples",
+    "href": "slides/week8.2-people-as-data-slides.html#consider-examples",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Consider the following examples of “people as data.” How do your perceive / interpret / comprehend the information across each version of the visualizations?"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#chalabi1",
+    "href": "slides/week8.2-people-as-data-slides.html#chalabi1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Destruction of Gaza, by Mona Chalabi\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScreenshots taken on 2023-11-21 from @monachalabi, here in reverse order\n\n\n\n\n−+\n02:00"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#chalabi2",
+    "href": "slides/week8.2-people-as-data-slides.html#chalabi2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Destruction of Gaza, by Mona Chalabi\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScreenshots taken on 2023-11-21 from @monachalabi, here in reverse order\n\n\n\n\n−+\n02:00"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#chalabi3",
+    "href": "slides/week8.2-people-as-data-slides.html#chalabi3",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Destruction of Gaza, by Mona Chalabi\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScreenshots taken on 2023-11-21 from @monachalabi, here in reverse order\n\n\n\n\n−+\n02:00"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#ipcc1",
+    "href": "slides/week8.2-people-as-data-slides.html#ipcc1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Global temperatures, by the IPCC\n\n\n\n\nSource: The Climate Change 2023 Synthesis Report, by the Intergovernmental Panel on Climate Change (IPCC) | Also see This visual shows how climate change will affect generations, by Kasha Patel (Washington Post)\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#ipcc2",
+    "href": "slides/week8.2-people-as-data-slides.html#ipcc2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Global temperatures, by the IPCC\n\n\n\n\nSource: The Climate Change 2023 Synthesis Report, by the Intergovernmental Panel on Climate Change (IPCC) | Also see This visual shows how climate change will affect generations, by Kasha Patel (Washington Post)\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#end-break",
+    "href": "slides/week8.2-people-as-data-slides.html#end-break",
+    "title": "EDS 240",
+    "section": "",
+    "text": "See you next week!\n\n\n~ This is the end of Lesson 2 (of 2) ~"
   },
   {
     "objectID": "slides/week1.2-intro-slides.html#title-slide",
@@ -4358,14 +4407,14 @@
     "href": "course-materials/week9.html#discussion-materials",
     "title": "Building interactive data viz using Observable JS, with Dr. Allison Horst",
     "section": "Discussion Materials",
-    "text": "Discussion Materials\nComing soon!"
+    "text": "Discussion Materials\nNo discussion section this week!"
   },
   {
     "objectID": "course-materials/week9.html#assignment-reminders",
     "href": "course-materials/week9.html#assignment-reminders",
     "title": "Building interactive data viz using Observable JS, with Dr. Allison Horst",
     "section": "Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/16/2024, 11:59pm PT"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT"
   },
   {
     "objectID": "course-materials/week2.html#pre-class-prep",
