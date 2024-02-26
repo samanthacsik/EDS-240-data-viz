@@ -2541,6 +2541,13 @@
     "text": "EDS 240: Lecture 8.2\nPeople as data\n\nWeek 8 | February 26th, 2024"
   },
   {
+    "objectID": "slides/week8.2-people-as-data-slides.html#good-design",
+    "href": "slides/week8.2-people-as-data-slides.html#good-design",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Good data visualization design considers:\n\n\ndata-ink ratio (less is more, within reason)\nhow to reduce eye movement and improve readability / interpretability (e.g. through alternative legend positions, direct annotations)\nputting things in context\nhow to draw the main attention to the most important info\nconsistent use of colors, spacing, typefaces, weights\ntypeface / font choices and how they affect both readability and emotions and perceptions\nusing visual hierarchy to guide the reader\ncolor choices (incl. palette types, emotions, readability)\nhow to tell an interesting story\nhow to center the people and communities represented in your data\naccessibility through colorblind-friendly palettes & alt text (see week 2 discussion)"
+  },
+  {
     "objectID": "slides/week8.2-people-as-data-slides.html#LA-map1",
     "href": "slides/week8.2-people-as-data-slides.html#LA-map1",
     "title": "EDS 240",
@@ -2657,7 +2664,7 @@
     "href": "slides/week8.2-people-as-data-slides.html#takeaways",
     "title": "EDS 240",
     "section": "",
-    "text": "Some important takeaways\n\n\n\nQuotes from Maite Vermulen, Leon De Korte, and Henk Van Houtum\n\n\n\n“As journalists and illustrators, there is no way around simplifying the world for the sake of readability. Whether in maps or in text. But we can be much more aware of the consequences of those simplifications – and be honest about what’s happening.”\n\n\n\n\n“… take a moment to contemplate who authored this visual story and what message the author wants to convey. And why.”"
+    "text": "Some important takeaways\n\n\n\nQuotes from Vermulen, De Korte, and Van Houtum\n\n\n\n“As journalists and illustrators, there is no way around simplifying the world for the sake of readability. Whether in maps or in text. But we can be much more aware of the consequences of those simplifications – and be honest about what’s happening.”\n\n\n\n\n“… take a moment to contemplate who authored this visual story and what message the author wants to convey. And why.”"
   },
   {
     "objectID": "slides/week8.2-people-as-data-slides.html#empathy",
@@ -2678,7 +2685,7 @@
     "href": "slides/week8.2-people-as-data-slides.html#empathy-themes1",
     "title": "EDS 240",
     "section": "",
-    "text": "Connecting readers with content requires empathy\n\n\n\n Put people first\n\n\n\n“if your data [are] about people, make it extremely clear who they are or were”\n\n\n-Jacob Harris in Connecting with the Dots\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Faces of Death (New York Times)"
+    "text": "Connecting readers with content requires empathy\n\n\n\n Put people first\n\n\n\n“if your data [are] about people, make it extremely clear who they are or were”\n\n\n-Jacob Harris in Connecting with the Dots\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Faces of Death (New York Times); (Note: this is an archived page and a bit glitchy)"
   },
   {
     "objectID": "slides/week8.2-people-as-data-slides.html#empathy-themes2",
@@ -2734,35 +2741,105 @@
     "href": "slides/week8.2-people-as-data-slides.html#icons-bad",
     "title": "EDS 240",
     "section": "",
-    "text": "But using icons doesn’t guarantee empathy . . ."
+    "text": "But using icons doesn’t guarantee empathy . . .\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Sabah Ibrahim (@reina_sabah), on X (formerly known as Twitter)\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Design Your Way"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#aggregation",
+    "href": "slides/week8.2-people-as-data-slides.html#aggregation",
+    "title": "EDS 240",
+    "section": "",
+    "text": "How you (dis)aggregate your data can tell drastically different and important stories"
   },
   {
     "objectID": "slides/week8.2-people-as-data-slides.html#take-aim",
     "href": "slides/week8.2-people-as-data-slides.html#take-aim",
     "title": "EDS 240",
     "section": "",
-    "text": "Empathy requires an intersectional lens\n\n\n“Take AIM…Aggregate at intersections that matter”\n\n\n-Clinton Johnson in his keynote talk, Toward an Equitable and Just Geography, at the 2024 NCEAS Environmental Data Science Summit\n\n\n\n\nHow you (dis)aggregate your data can tell drastically different stories\nAggregation is often the result of small sample sizes (e.g. when there are too few observations, populations may be lumped together) – this can obscure important stories about underrepresented groups\nThe missing-data challenge is an essential consideration for both:\n\ndata collectors (e.g. are folks with diverse experiences and perspectives involved in developing collection methods) and\ndata communicators (e.g. if data for specific groups are missing, how can we still be inclusive in our representation of them?)\n\n\n\n\nWant to learn more? Check out A primer on an intersectional approach to data, by Global Partnership for Sustainable Development Data"
+    "text": "“Take AIM”\n\n \n\n“Take AIM…Aggregate at intersections that matter”\n\n\n-Clinton Johnson in his keynote talk, Toward an Equitable and Just Geography, at the 2024 NCEAS Environmental Data Science Summit\n\n \nDecisions on how to aggregate data begin with the data collection stage, and continue through the analytical and communication stages.\n\nLooking for more? Check out A primer on an intersectional approach to data, by Global Partnership for Sustainable Development Data."
   },
   {
     "objectID": "slides/week8.2-people-as-data-slides.html#covid-unemployment",
     "href": "slides/week8.2-people-as-data-slides.html#covid-unemployment",
     "title": "EDS 240",
     "section": "",
-    "text": "Empathy requires an intersectional lens\n\nScreenshot from ProPublica’s graphic that allows you to visualize unemployment data aggregated at any three of the following intersections: race, gender, age class, education level, income level:\n\n\nSource: What Coronavirus Job Losses Reveal About Racism in America, by Lena V. Groeger (ProPublica)"
+    "text": "Variation in unemployment data at different intersections\n\nScreenshot from ProPublica’s graphic that allows you to visualize unemployment data aggregated at any three of the following intersections: race, gender, age class, education level, income level:\n\n\nSource: What Coronavirus Job Losses Reveal About Racism in America, by Lena V. Groeger (ProPublica)"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#poverty-varitation",
+    "href": "slides/week8.2-people-as-data-slides.html#poverty-varitation",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Variation in poverty rates across race categories\n\nThe US Census Bureau’s annual American Community Survey helps to inform how trillions of dollars in federal funds are distributed each year.\nWhile the official U.S. poverty rate in 2019 was 12.3%, the plot below, by Schwabish & Feng (2021) (figure 08) shows the large variation in estimated poverty rates for each of the 139 racial groups from the American Community Survey. The overall poverty rate for each major racial groupings are included as well."
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#small-groups",
+    "href": "slides/week8.2-people-as-data-slides.html#small-groups",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Consider how to be inclusive of small groups\n\nAggregation is sometimes used to combine multiple (or many) groups when samples sizes are too small to display them individually. Consider adding a message / reference to small or missing groups to be inclusive:\n\n\nSource: What Coronavirus Job Losses Reveal About Racism in America, by Lena V. Groeger (ProPublica)"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#gender-identity1",
+    "href": "slides/week8.2-people-as-data-slides.html#gender-identity1",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Telling nuanced stories begins at data collection\n\n\n\nSource: Do No Harm Guide, Figure 09 | I also encourage you to give @theannalytical a follow!!"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#gender-identity2",
+    "href": "slides/week8.2-people-as-data-slides.html#gender-identity2",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Consider inclusive alternatives for “other”\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Screenshot from a UCSB-administered survey (Feb 2024)\n\n\n\n“Collecting inclusive data and building inclusive tools and visualizations can make the experience better for all users.”\n\n\nSchwabish & Feng (2021)\n\nSome alternatives:\n\nAnother race (or gender, etc.)\nAdditional groups\nAll other self-descriptions\nPeople identifying as other or multiple races\nIdentity not listed\nIdentity not listed in this survey"
   },
   {
     "objectID": "slides/week8.2-people-as-data-slides.html#data-humanism",
     "href": "slides/week8.2-people-as-data-slides.html#data-humanism",
     "title": "EDS 240",
     "section": "",
-    "text": "Data humanism…"
+    "text": "Communicating data (in general, but particularly) about people is complicated. How can we translate numbers into concepts that people are drawn to and relate to?"
   },
   {
     "objectID": "slides/week8.2-people-as-data-slides.html#tbd",
     "href": "slides/week8.2-people-as-data-slides.html#tbd",
     "title": "EDS 240",
     "section": "",
-    "text": "Data humanism\n\nGiorgia Lupi\n\n“I started to work with data in 2010, 2011, and I saw that most of the approach to data at the time was very much based on a statistician’s background, and that’s fantastic. But I was also interested in using data myself as an anchoring point to tell stories. I thought that there’s just more that we could do to actually represent our reality if we include context, anecdotal details, if we embrace the imperfections that are inherent to how we collect data. And so, I started to just use these ideas in my practice, and I felt that I needed to just come up with an umbrella term for that. Data humanism was a good one, and data humanism is an approach to data that tries to reconnect numbers to what they really stand for by adding less factual and more anecdotal information.”\n\n\n-Giorgia Lupi in her interview with Fast Company"
+    "text": "“reconnect numbers to what they really stand for”\n\n\n\n“I started to work with data in 2010, 2011, and I saw that most of the approach to data at the time was very much based on a statistician’s background, and that’s fantastic. But I was also interested in using data myself as an anchoring point to tell stories. I thought that there’s just more that we could do to actually represent our reality if we include context, anecdotal details, if we embrace the imperfections that are inherent to how we collect data. And so, I started to just use these ideas in my practice, and I felt that I needed to just come up with an umbrella term for that. Data humanism was a good one, and data humanism is an approach to data that tries to reconnect numbers to what they really stand for by adding less factual and more anecdotal information.”\n\n\n-Giorgia Lupi in her interview with Fast Company"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#lupi-covid",
+    "href": "slides/week8.2-people-as-data-slides.html#lupi-covid",
+    "title": "EDS 240",
+    "section": "",
+    "text": "“Visualization is not about simplifying reality; it’s about providing an access to complexity”\n\n\n\nImage Source: 1374 Days - My Journey with Long Covid / NYT Visual OpED | Quote Source: Giorgia Lupi in her interview with Fast Company"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#happy-data",
+    "href": "slides/week8.2-people-as-data-slides.html#happy-data",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Hopeful views of the world through data and drawings\n\n\n\nhttps://happy-data.co/, A project by Pentagram: Giorgia Lupi, with Ting Fang Cheng, Talia Cotton, Phil Cox, and Sarah Kay Miller"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#lupi-wft",
+    "href": "slides/week8.2-people-as-data-slides.html#lupi-wft",
+    "title": "EDS 240",
+    "section": "",
+    "text": "“in some cases, a warmer depiction of data can make people relate”\n\n\n\nSource: Happy Data, by Giorgia Lupi, with Ting Fang Cheng, Talia Cotton, Phil Cox, and Sarah Kay Miller | Quote Source: Giorgia Lupi in her interview with Fast Company"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#lupi-blm",
+    "href": "slides/week8.2-people-as-data-slides.html#lupi-blm",
+    "title": "EDS 240",
+    "section": "",
+    "text": "“if you get people to an emotional level, you might get them interested in learning more and spending more time”\n\n\n\nHappy Data, by Giorgia Lupi, with Ting Fang Cheng, Talia Cotton, Phil Cox, and Sarah Kay Miller | Quote Source: Giorgia Lupi in her interview with Fast Company"
+  },
+  {
+    "objectID": "slides/week8.2-people-as-data-slides.html#lupi-streets",
+    "href": "slides/week8.2-people-as-data-slides.html#lupi-streets",
+    "title": "EDS 240",
+    "section": "",
+    "text": "“beauty is such an entry point for everything”\n\n\n\nHappy Data, by Giorgia Lupi, with Ting Fang Cheng, Talia Cotton, Phil Cox, and Sarah Kay Miller | Quote Source: Giorgia Lupi in her interview with Fast Company"
   },
   {
     "objectID": "slides/week8.2-people-as-data-slides.html#consider-examples",

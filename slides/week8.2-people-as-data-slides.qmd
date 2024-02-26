@@ -21,6 +21,26 @@ format:
 
 ---
 
+## {#good-design data-menu-title="Good data viz considerations"} 
+
+[Good data visualization design considers:]{.slide-title}
+
+<hr>
+
+- [**data-ink ratio** (less is more, within reason)]{.gray-text}
+- [how to **reduce eye movement** and **improve readability / interpretability** (e.g. through alternative legend positions, direct annotations)]{.gray-text}
+- [putting things **in context**]{.gray-text}
+- [how to **draw the main attention** to the most **important info**]{.gray-text}
+- [**consistent** use of colors, spacing, typefaces, weights]{.gray-text}
+- [**typeface / font choices** and how they affect both readability *and* emotions and perceptions]{.gray-text}
+- [using **visual hierarchy** to guide the reader]{.gray-text}
+- [**color choices** (incl. palette types, emotions, readability)]{.gray-text}
+- [how to **tell an interesting story**]{.gray-text}
+- how to **center the people and communities** represented in your data
+- [**accessibility** through colorblind-friendly palettes & alt text (see [week 2 discussion](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week2.html#discussion-materials))]{.gray-text}
+
+---
+
 ## {#LA-map1 data-menu-title="LA map 1"} 
 
 [Can anyone take a guess at what this map depicts?]{.slide-title3}
@@ -651,7 +671,7 @@ knitr::include_graphics("images/week8/europes-migration.png")
 <br>
 
 ::: {.center-text}
-Quotes from Maite Vermulen, Leon De Korte, and Henk Van Houtum
+Quotes from Vermulen, De Korte, and Van Houtum
 :::
 
 <br>
@@ -730,7 +750,7 @@ knitr::include_graphics("images/week8/faces-of-death.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
-Source: [Faces of Death](https://archive.nytimes.com/www.nytimes.com/interactive/us/faces-of-the-dead.html#/copes_gregory_t) (New York Times)
+Source: [Faces of Death](https://archive.nytimes.com/www.nytimes.com/interactive/us/faces-of-the-dead.html#/copes_gregory_t) (New York Times); (Note: this is an archived page and a bit glitchy)
 :::
 :::
 ::::
@@ -1080,47 +1100,77 @@ knitr::include_graphics("images/week8/poverty.png")
 
 <hr>
 
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "70%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/avg-female-height.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Source: Sabah Ibrahim ([@reina_sabah](https://twitter.com/reina_sabah)), on [X](https://twitter.com/reina_sabah/status/1291509085855260672?lang=en) (formerly known as Twitter)
+:::
+:::
+
+::: {.column width="50%"}
+<br>
 ```{r}
 #| eval: true
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/week8/avg-female-height.png")
+knitr::include_graphics("images/week8/boomer.png")
 ```
+
+::: {.center-text .body-text-s .gray-text}
+Source: [Design Your Way](https://www.designyourway.net/blog/when-infographics-go-bad-or-how-not-to-design-data-visualization/)
+:::
+:::
+::::
+
+---
+
+##  {#aggregation data-menu-title="# Aggregation #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">How you (dis)**aggregate** your data can tell *drastically* different and important stories</p>
+</div>
 
 ---
 
 ## {#take-aim data-menu-title="Take AIM"} 
 
-[Empathy requires an intersectional lens]{.slide-title}
+["Take AIM"]{.slide-title}
 
 <hr>
 
->"Take AIM...**A**ggregate at **i**ntersections that **m**atter" 
+<br>
+<br>
+
+>["Take AIM...**A**ggregate at **i**ntersections that **m**atter"]{.body-text-m}
 
 ::: {.right-align-text .body-text-s}
 -[Clinton Johnson](https://www.esri.com/arcgis-blog/author/clinton_johnson/) in his keynote talk, *Toward an Equitable and Just Geography*, at the [2024 NCEAS Environmental Data Science Summit](https://eds-summit.github.io/)
 :::
 
 <br>
+<br>
 
-::: {.incremental}
-- How you (dis)aggregate your data can tell drastically **different stories**
-- Aggregation is often the **result of small sample sizes** (e.g. when there are too few observations, populations may be lumped together) -- this can obscure important stories about underrepresented groups
-- The missing-data challenge is an essential consideration for both: 
-    - **data collectors** (e.g. are folks with diverse experiences and perspectives involved in developing collection methods) and
-    - **data communicators** (e.g. if data for specific groups are missing, how can we still be inclusive in our representation of them?)
-:::
+[Decisions on how to aggregate data begin with the data collection stage, and continue through the analytical and communication stages.]{.body-text-m}
 
 ::: {.footer}
-Want to learn more? Check out [A primer on an intersectional approach to data](https://www.data4sdgs.org/sites/default/files/file_uploads/JN_1286_IDC_KP_Primer_8pp_A4.pdf), by [Global Partnership for Sustainable Development Data](https://www.data4sdgs.org/)
+Looking for more? Check out [A primer on an intersectional approach to data](https://www.data4sdgs.org/sites/default/files/file_uploads/JN_1286_IDC_KP_Primer_8pp_A4.pdf), by [Global Partnership for Sustainable Development Data](https://www.data4sdgs.org/).
 :::
 
 ---
 
 ## {#covid-unemployment data-menu-title="Covid unemployment"} 
 
-[Empathy requires an intersectional lens]{.slide-title}
+[Variation in unemployment data at different intersections]{.slide-title3}
 
 <hr>
 
@@ -1140,24 +1190,164 @@ Source: [What Coronavirus Job Losses Reveal About Racism in America](https://pro
 
 ---
 
+## {#poverty-varitation data-menu-title="Poverty variation"} 
+
+[Variation in poverty rates across race categories]{.slide-title2}
+
+<hr>
+
+[The US Census Bureau's annual [American Community Survey](https://www.census.gov/programs-surveys/acs) helps to inform how trillions of dollars in federal funds are distributed each year.]{.body-text-s}
+
+[While the **official U.S. poverty rate in 2019 was 12.3%**, the plot below, by [Schwabish & Feng (2021)](https://www.urban.org/sites/default/files/publication/104296/do-no-harm-guide.pdf) (figure 08) shows the **large variation** in estimated poverty rates for each of the 139 racial groups from the American Community Survey. The overall poverty rate for each major racial groupings are included as well.]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/poverty-variation.png")
+```
+
+---
+
+## {#small-groups data-menu-title="Small groups"} 
+
+[Consider how to be inclusive of small groups]{.slide-title2}
+
+<hr>
+
+[Aggregation is sometimes used to combine multiple (or many) groups when samples sizes are too small to display them individually. Consider adding a message / reference to small or missing groups to be inclusive:]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/Native-American-men.png")
+```
+
+::: {.footer}
+Source: [What Coronavirus Job Losses Reveal About Racism in America](https://projects.propublica.org/coronavirus-unemployment/), by Lena V. Groeger (ProPublica)
+:::
+
+---
+
+## {#gender-identity1 data-menu-title="Gender identity 1"} 
+
+[Telling nuanced stories begins at data collection]{.slide-title2}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/gender-identity-bad.png")
+```
+
+::: {.footer}
+Source: [Do No Harm Guide](https://www.urban.org/sites/default/files/publication/104296/do-no-harm-guide.pdf), Figure 09 | I also encourage you to give [@theannalytical](https://www.instagram.com/theannalytical/?hl=en) a follow!!
+:::
+
+---
+
+## {#gender-identity2 data-menu-title="Gender identity 2"} 
+
+[Consider inclusive alternatives for "other"]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/gender-identity-better.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Source: Screenshot from a UCSB-administered survey (Feb 2024)
+:::
+:::
+
+::: {.column width="50%"}
+>"Collecting inclusive data and building inclusive tools and visualizations can make the experience better for all users." 
+
+::: {.right-align-text .body-text-s}
+[Schwabish & Feng (2021)](https://www.urban.org/sites/default/files/publication/104296/do-no-harm-guide.pdf)
+:::
+
+Some alternatives:
+
+- [Another race (or gender, etc.)]{.body-text-s}
+
+- [Additional groups]{.body-text-s}
+
+- [All other self-descriptions]{.body-text-s}
+
+- [People identifying as other or multiple races]{.body-text-s}
+
+- [Identity not listed]{.body-text-s}
+
+- [Identity not listed in this survey]{.body-text-s}
+:::
+::::
+
+---
+
 ##  {#data-humanism data-menu-title="# Data humanism #" background="#047C90"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">Data humanism...</p>
+<p class="custom-subtitle bottombr">Communicating data (in general, but particularly) about people is complicated. How can we translate numbers into concepts that people are drawn to and relate to?</p>
 </div>
 
+---
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/lupi-data-humanism.png")
+```
+
+```{r}
+countdown::countdown(
+  minutes = 4,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+::: {.footer}
+Source: [Data Humanism, The Revolution will be Visualized.](https://giorgialupi.com/data-humanism-my-manifesto-for-a-new-data-wold), by [Giorgia Lupi](https://giorgialupi.com/) | Also give her TED talk, [How we can find ourselves in data](https://www.ted.com/talks/giorgia_lupi_how_we_can_find_ourselves_in_data) a watch!
+:::
 
 ---
 
 ## {#tbd data-menu-title="tbd"} 
 
-[Data humanism]{.slide-title}
+["reconnect numbers to what they really stand for"]{.slide-title2}
 
 <hr>
 
-Giorgia Lupi
+<br>
 
->  "I started to work with data in 2010, 2011, and I saw that most of the approach to data at the time was very much based on a statistician’s background, and that’s fantastic. But I was also interested in using data myself as an anchoring point to tell stories. I thought that **there’s just more that we could do to actually represent our reality if we include context, anecdotal details, if we embrace the imperfections that are inherent to how we collect data**. And so, I started to just use these ideas in my practice, and I felt that I needed to just come up with an umbrella term for that. Data humanism was a good one, and **data humanism is an approach to data that tries to reconnect numbers to what they really stand for by adding less factual and more anecdotal information**."
+> "I started to work with data in 2010, 2011, and I saw that most of the approach to data at the time was very much based on a statistician’s background, and that’s fantastic. But I was also interested in using data myself as an anchoring point to tell stories. I thought that **there’s just more that we could do to actually represent our reality if we include context, anecdotal details, if we embrace the imperfections that are inherent to how we collect data**. And so, I started to just use these ideas in my practice, and I felt that I needed to just come up with an umbrella term for that. Data humanism was a good one, and **data humanism is an approach to data that tries to reconnect numbers to what they really stand for by adding less factual and more anecdotal information**."
 
 ::: {.right-align-text}
 -[Giorgia Lupi](https://giorgialupi.com/about) in her interview with [Fast Company](https://www.fastcompany.com/91024446/pentagram-partner-giorgia-lupi-on-pie-charts-embracing-the-unknown-and-why-data-needs-a-story)
@@ -1165,9 +1355,109 @@ Giorgia Lupi
 
 ---
 
-- "It’s really about what the audience would need to know first, so put yourself in the shoes of a reader or a user that will encounter your chart for the first time. And starting from there, try to design it in a way that can paint as full a picture as possible. Visualization is not about simplifying reality; it’s about providing an access to complexity."
-- " I also think that in some contexts—again, not everywhere, not if you have to design a dashboard for decision making on analytic data—but in some cases a warmer depiction of data can make people relate...And sometimes, if you get people to an emotional level, you might get them interested in learning more and spending more time."
-- "Beauty is such an entry point for everything. You wouldn’t buy an ugly dress just because it’s very functional. So, I feel there’s nothing wrong with trying to make charts a little bit more beautiful."
+## {#lupi-covid data-menu-title="Long Covid (Lupi)"} 
+
+["Visualization is not about simplifying reality; it’s about providing an access to complexity"]{.slide-title3}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/lupi-1380.png")
+```
+
+::: {.footer}
+Image Source: [1374 Days - My Journey with Long Covid / NYT Visual OpED](https://giorgialupi.com/1374-days-nyt-visual-oped) | Quote Source: [Giorgia Lupi](https://giorgialupi.com/about) in her interview with [Fast Company](https://www.fastcompany.com/91024446/pentagram-partner-giorgia-lupi-on-pie-charts-embracing-the-unknown-and-why-data-needs-a-story)
+:::
+
+---
+
+## {#happy-data data-menu-title="Happy Data"} 
+
+[Hopeful views of the world through data and drawings]{.slide-title3}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/lupi-happy-data.png")
+```
+
+::: {.footer}
+<https://happy-data.co/>, A project by [Pentagram](https://www.pentagram.com/): Giorgia Lupi, with Ting Fang Cheng, Talia Cotton, Phil Cox, and Sarah Kay Miller
+:::
+
+---
+
+## {#lupi-wft data-menu-title="WFH (Lupi)"} 
+
+["in some cases, a warmer depiction of data can make people relate"]{.slide-title2}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/lupi-wfh.png")
+```
+
+::: {.footer}
+Source: [Happy Data](https://happy-data.co/work-from-home-benefits), by Giorgia Lupi, with Ting Fang Cheng, Talia Cotton, Phil Cox, and Sarah Kay Miller | Quote Source: [Giorgia Lupi](https://giorgialupi.com/about) in her interview with [Fast Company](https://www.fastcompany.com/91024446/pentagram-partner-giorgia-lupi-on-pie-charts-embracing-the-unknown-and-why-data-needs-a-story)
+:::
+
+---
+
+## {#lupi-blm data-menu-title="BLM (Lupi)"} 
+
+["if you get people to an emotional level, you might get them interested in learning more and spending more time"]{.slide-title3}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/lupi-blm-search.gif")
+```
+
+::: {.footer}
+[Happy Data](https://happy-data.co/more-than-ever-people-are-searching-for), by Giorgia Lupi, with Ting Fang Cheng, Talia Cotton, Phil Cox, and Sarah Kay Miller | Quote Source: [Giorgia Lupi](https://giorgialupi.com/about) in her interview with [Fast Company](https://www.fastcompany.com/91024446/pentagram-partner-giorgia-lupi-on-pie-charts-embracing-the-unknown-and-why-data-needs-a-story)
+:::
+
+---
+
+## {#lupi-streets data-menu-title="Quiet streets (Lupi)"} 
+
+["beauty is such an entry point for everything"]{.slide-title2}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/lupi-streets.png")
+```
+
+::: {.footer}
+[Happy Data](https://happy-data.co/open-streets-movement), by Giorgia Lupi, with Ting Fang Cheng, Talia Cotton, Phil Cox, and Sarah Kay Miller | Quote Source: [Giorgia Lupi](https://giorgialupi.com/about) in her interview with [Fast Company](https://www.fastcompany.com/91024446/pentagram-partner-giorgia-lupi-on-pie-charts-embracing-the-unknown-and-why-data-needs-a-story) 
+:::
+
+<!-- --- -->
+
+<!-- - "It’s really about what the audience would need to know first, so put yourself in the shoes of a reader or a user that will encounter your chart for the first time. And starting from there, try to design it in a way that can paint as full a picture as possible. Visualization is not about simplifying reality; it’s about providing an access to complexity." -->
+<!-- - " I also think that in some contexts—again, not everywhere, not if you have to design a dashboard for decision making on analytic data—but in some cases a warmer depiction of data can make people relate...And sometimes, if you get people to an emotional level, you might get them interested in learning more and spending more time." -->
+<!-- - "Beauty is such an entry point for everything. You wouldn’t buy an ugly dress just because it’s very functional. So, I feel there’s nothing wrong with trying to make charts a little bit more beautiful." -->
 
 ---
 
