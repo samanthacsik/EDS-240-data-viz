@@ -4,7 +4,8 @@ library(tidyverse)
 
 #.................import spreadsheet of students.................
 #students <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1UnGwZ6TMr8ik3PpEo65GJU1R9Pk-xmkjlMn3kOqfrvY/edit?usp=sharing")
-roster <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1guUVFA4FeHZOuWFdQ1uGaE6RK1Y5lABp8MDDd9hdCYU/edit?usp=sharing")
+# roster <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1guUVFA4FeHZOuWFdQ1uGaE6RK1Y5lABp8MDDd9hdCYU/edit?usp=sharing")
+roster <- read_csv(here::here("student-groups", "eds240-students.csv"))
 
 #............................wrangle.............................
 
@@ -35,5 +36,5 @@ student_groups <- cbind(students, group_num) |>
   arrange(group_num)
 
 #..........................write out csv.........................
-# write_csv(x = student_groups, file = here::here("student_groups", "week5_learning_partners.csv"))
+# write_csv(x = student_groups, file = here::here("student-groups", "week8_learning_partners.csv"))
 

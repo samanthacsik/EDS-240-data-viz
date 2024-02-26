@@ -744,13 +744,13 @@ The [Do No Harm Guide](https://www.urban.org/sites/default/files/publication/104
 ```{r}
 #| eval: true
 #| echo: false
-#| out-width: "75%"
+#| out-width: "65%"
 #| fig-align: "center"
 knitr::include_graphics("images/week8/faces-of-death.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
-Source: [Faces of Death](https://archive.nytimes.com/www.nytimes.com/interactive/us/faces-of-the-dead.html#/copes_gregory_t) (New York Times); (Note: this is an archived page and a bit glitchy)
+Each square represents US service member who died in Iraq or Afghanistan. Source: [Faces of Death](https://archive.nytimes.com/www.nytimes.com/interactive/us/faces-of-the-dead.html#/copes_gregory_t) (New York Times); (Note: this is an archived page and a bit glitchy)
 :::
 :::
 ::::
@@ -782,13 +782,13 @@ Pair data-driven charts with personal stories, or help readers understand the ["
 ```{r}
 #| eval: true
 #| echo: false
-#| out-width: "75%"
+#| out-width: "70%"
 #| fig-align: "center"
 knitr::include_graphics("images/week8/deadly-baghdad.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
-Source: [A Deadly Day
+This map focuses on one of the deadliest days in Baghdad, with 114 separate episodes of violence resulting in the deaths of 160 Iraqi citizens and police officers | Source: [A Deadly Day
 In Baghdad](https://archive.nytimes.com/www.nytimes.com/interactive/2010/10/24/world/1024-surge-graphic.html?_r=0) (New York Times)
 :::
 :::
@@ -822,7 +822,6 @@ These graphics illustrate a common and successful technique for bringing the rea
 :::
 
 ::: {.column width="50%"}
-<br>
 
 ::: {.center-text .body-text-s}
 Focusing on just numbers without context can overlook important aspects of a story, such as the "why" and "how"
@@ -837,7 +836,7 @@ knitr::include_graphics("images/week8/ev-labels.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
-Source: [Attitudes and Experiences with Electric Vehicles](https://storymaps.arcgis.com/stories/e3b7605bc5624853aec7b5fa41de611f), by Diana Lavery
+Mapping the theme of EV charging convenience, which was most tied to specific places. Above, transcript snippets around positive associations with convenience. | Source: [Attitudes and Experiences with Electric Vehicles](https://storymaps.arcgis.com/stories/e3b7605bc5624853aec7b5fa41de611f), by Diana Lavery
 :::
 
 :::
@@ -895,7 +894,7 @@ knitr::include_graphics("images/week8/cpdp.png")
 ```
 
 ::: {.center-text .body-text-s .gray-text}
-Source: [Citizens Police Data Project](https://cpdp.co/), by [Invisible Institute](https://invisible.institute/)
+Explore reports by region and officer. | Source: [Citizens Police Data Project](https://cpdp.co/), by [Invisible Institute](https://invisible.institute/)
 :::
 :::
 
@@ -958,7 +957,7 @@ Trulia crime map (San Francisco) | Source: [When the Designer Shows Up In the De
 ::::
 
 ::: {.footer}
-Trulia removed it's crime tab in 2022 after Redfin spoke out agains the practice: “[G]iven the long history of redlining and racist housing covenants in the United States there’s too great a risk of this inaccuracy reinforcing racial bias. We believe that Redfin–and all real estate sites–should not show neighborhood crime data.” | Source: [GeekWire](https://www.geekwire.com/2021/trulia-to-drop-neighborhood-crime-data-from-home-listings-after-redfin-speaks-out-against-practice/) | For more on biases in crime statistics, check out [Buil-Gil et al. (2021)](https://doi.org/10.1007/s11292-021-09457-y)
+Trulia removed it's crime tab in 2022 after Redfin spoke out against the practice: “[G]iven the long history of redlining and racist housing covenants in the United States there’s too great a risk of this inaccuracy reinforcing racial bias. We believe that Redfin–and all real estate sites–should not show neighborhood crime data.” | Source: [GeekWire](https://www.geekwire.com/2021/trulia-to-drop-neighborhood-crime-data-from-home-listings-after-redfin-speaks-out-against-practice/) | For more on biases in crime statistics, check out [Buil-Gil et al. (2021)](https://doi.org/10.1007/s11292-021-09457-y)
 :::
 
 ---
@@ -1196,7 +1195,7 @@ Source: [What Coronavirus Job Losses Reveal About Racism in America](https://pro
 
 <hr>
 
-[The US Census Bureau's annual [American Community Survey](https://www.census.gov/programs-surveys/acs) helps to inform how trillions of dollars in federal funds are distributed each year.]{.body-text-s}
+[The US Census Bureau's annual [American Community Survey](https://www.census.gov/programs-surveys/acs) collects social, economic, housing, and demographic data which help to inform how trillions of dollars in federal funds are distributed each year.]{.body-text-s}
 
 [While the **official U.S. poverty rate in 2019 was 12.3%**, the plot below, by [Schwabish & Feng (2021)](https://www.urban.org/sites/default/files/publication/104296/do-no-harm-guide.pdf) (figure 08) shows the **large variation** in estimated poverty rates for each of the 139 racial groups from the American Community Survey. The overall poverty rate for each major racial groupings are included as well.]{.body-text-s}
 
