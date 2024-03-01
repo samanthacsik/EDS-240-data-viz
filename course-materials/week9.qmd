@@ -17,11 +17,28 @@ knitr::include_graphics("../images/observable.png")
 
 ## Pre-class Prep
 
-*Coming soon* 
+There's no *required* prep for this week's lecture. You will be able to make temporary edits to Allison's [Observable Notebook](https://observablehq.com/documentation/notebooks/) while in [Tinker mode](https://observablehq.com/documentation/collaboration/tinker-mode). If you'd like to save your changes, you may *optionally* [create a free starter account](https://observablehq.com/documentation/accounts-workspaces/accounts) (I chose to sign up using my GitHub credentials, but multiple options are provided), then [fork](https://observablehq.com/documentation/notebooks/forking) the notebook. Further instructions will be provided during lecture!
 
 ## Lecture Materials 
 
+<!-- *Coming soon!* -->
+
+### What is Observable JS?
+
+From the Quarto documentation:
+
+>"[Observable JS](https://observablehq.com/@observablehq/observable-javascript) is a set of enhancements to vanilla^1^ JavaScript created by [Mike Bostock](https://en.wikipedia.org/wiki/Mike_Bostock) (also the author of [D3](https://d3js.org/)). Observable JS is distinguished by its [reactive runtime](https://github.com/observablehq/runtime), which is especially well suited for interactive data exploration and analysis."
+
+[*^1^**vanilla** JavaScript is JavaScript code that is written without the aid of any external libraries or frameworks (comparable to using only base R without additional packages, e.g. like those in the `{tidyverse}`)*]{.body-text-s}
+
+### Observable Notebook
+
 *Coming soon!*
+
+### Additional resources
+
+- [Add JavaScript to your dataviz toolkit with Observable Plot: Learner Version](https://observablehq.com/@observablehq/r-ladies-observable-plot-feb-2023-learner-version), by Allison Horst & Ananya Roy -- materials from R-Ladies Santa Barbara meetup (2023-05-24)
+- [Intro to Observable Plot: Exploring Taylor Swift Songs with Observable Plot](https://github.com/tashapiro/intro-observable?tab=readme-ov-file), by Tanya Shapiro -- materials from R-Ladies Philly workshop (2023-11-09)
 
 ## Discussion Materials
 

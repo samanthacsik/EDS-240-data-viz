@@ -30,5 +30,12 @@ format:
 <!-- https://rviews.rstudio.com/2019/09/19/intro-to-ggforce/ -->
 <!-- patchwork -->
 
+---
+
+Find icons:
+
+[The Noun Project](https://thenounproject.com/)
+
+---
 
 
