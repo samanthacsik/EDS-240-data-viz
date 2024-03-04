@@ -1,5 +1,5 @@
 ---
-title: "Building interactive data viz using Observable JS, with Dr. Allison Horst"
+title: "Data visualization in JavaScript, with Dr. Allison Horst"
 subtitle: "Week 9"
 description: "Monday March 4^th^, 2024"
 title-block-banner: true
@@ -17,11 +17,9 @@ knitr::include_graphics("../images/observable.png")
 
 ## Pre-class Prep
 
-There's no *required* prep for this week's lecture. You will be able to make temporary edits to Allison's [Observable Notebook](https://observablehq.com/documentation/notebooks/) while in [Tinker mode](https://observablehq.com/documentation/collaboration/tinker-mode). If you'd like to save your changes, you may *optionally* [create a free starter account](https://observablehq.com/documentation/accounts-workspaces/accounts) (I chose to sign up using my GitHub credentials, but multiple options are provided), then [fork](https://observablehq.com/documentation/notebooks/forking) the notebook. Further instructions will be provided during lecture!
+There's no *required* prep for this week's lecture. You will be able to make temporary edits to Allison's [Observable Notebook](https://observablehq.com/documentation/notebooks/) while in [Tinker mode](https://observablehq.com/documentation/collaboration/tinker-mode). If you'd like to save your changes, you may *optionally* [create a free starter account](https://observablehq.com/documentation/accounts-workspaces/accounts) (I chose to sign up using my GitHub credentials, but multiple options are provided), then [fork](https://observablehq.com/documentation/notebooks/forking) the [notebook](https://observablehq.com/@observablehq/eds-240-javascript-data-viz-follow). 
 
 ## Lecture Materials 
-
-<!-- *Coming soon!* -->
 
 ### What is Observable JS?
 
@@ -33,7 +31,7 @@ From the Quarto documentation:
 
 ### Observable Notebook
 
-*Coming soon!*
+Tinker or fork (if you have an account) Allison's notebook, [EDS 240: Data visualization in JavaScript (Follow-along version)](https://observablehq.com/@observablehq/eds-240-javascript-data-viz-follow).
 
 ### Additional resources
 

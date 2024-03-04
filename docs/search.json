@@ -4461,28 +4461,28 @@
   {
     "objectID": "course-materials/week9.html#pre-class-prep",
     "href": "course-materials/week9.html#pre-class-prep",
-    "title": "Building interactive data viz using Observable JS, with Dr. Allison Horst",
+    "title": "Data visualization in JavaScript, with Dr. Allison Horst",
     "section": "Pre-class Prep",
-    "text": "Pre-class Prep\nThere’s no required prep for this week’s lecture. You will be able to make temporary edits to Allison’s Observable Notebook while in Tinker mode. If you’d like to save your changes, you may optionally create a free starter account (I chose to sign up using my GitHub credentials, but multiple options are provided), then fork the notebook. Further instructions will be provided during lecture!"
+    "text": "Pre-class Prep\nThere’s no required prep for this week’s lecture. You will be able to make temporary edits to Allison’s Observable Notebook while in Tinker mode. If you’d like to save your changes, you may optionally create a free starter account (I chose to sign up using my GitHub credentials, but multiple options are provided), then fork the notebook."
   },
   {
     "objectID": "course-materials/week9.html#lecture-materials",
     "href": "course-materials/week9.html#lecture-materials",
-    "title": "Building interactive data viz using Observable JS, with Dr. Allison Horst",
+    "title": "Data visualization in JavaScript, with Dr. Allison Horst",
     "section": "Lecture Materials",
-    "text": "Lecture Materials\n\n\nWhat is Observable JS?\nFrom the Quarto documentation:\n\n“Observable JS is a set of enhancements to vanilla1 JavaScript created by Mike Bostock (also the author of D3). Observable JS is distinguished by its reactive runtime, which is especially well suited for interactive data exploration and analysis.”\n\n1vanilla JavaScript is JavaScript code that is written without the aid of any external libraries or frameworks (comparable to using only base R without additional packages, e.g. like those in the {tidyverse})\n\n\nObservable Notebook\nComing soon!\n\n\nAdditional resources\n\nAdd JavaScript to your dataviz toolkit with Observable Plot: Learner Version, by Allison Horst & Ananya Roy – materials from R-Ladies Santa Barbara meetup (2023-05-24)\nIntro to Observable Plot: Exploring Taylor Swift Songs with Observable Plot, by Tanya Shapiro – materials from R-Ladies Philly workshop (2023-11-09)"
+    "text": "Lecture Materials\n\nWhat is Observable JS?\nFrom the Quarto documentation:\n\n“Observable JS is a set of enhancements to vanilla1 JavaScript created by Mike Bostock (also the author of D3). Observable JS is distinguished by its reactive runtime, which is especially well suited for interactive data exploration and analysis.”\n\n1vanilla JavaScript is JavaScript code that is written without the aid of any external libraries or frameworks (comparable to using only base R without additional packages, e.g. like those in the {tidyverse})\n\n\nObservable Notebook\nTinker or fork (if you have an account) Allison’s notebook, EDS 240: Data visualization in JavaScript (Follow-along version).\n\n\nAdditional resources\n\nAdd JavaScript to your dataviz toolkit with Observable Plot: Learner Version, by Allison Horst & Ananya Roy – materials from R-Ladies Santa Barbara meetup (2023-05-24)\nIntro to Observable Plot: Exploring Taylor Swift Songs with Observable Plot, by Tanya Shapiro – materials from R-Ladies Philly workshop (2023-11-09)"
   },
   {
     "objectID": "course-materials/week9.html#discussion-materials",
     "href": "course-materials/week9.html#discussion-materials",
-    "title": "Building interactive data viz using Observable JS, with Dr. Allison Horst",
+    "title": "Data visualization in JavaScript, with Dr. Allison Horst",
     "section": "Discussion Materials",
     "text": "Discussion Materials\nNo discussion section this week!"
   },
   {
     "objectID": "course-materials/week9.html#assignment-reminders",
     "href": "course-materials/week9.html#assignment-reminders",
-    "title": "Building interactive data viz using Observable JS, with Dr. Allison Horst",
+    "title": "Data visualization in JavaScript, with Dr. Allison Horst",
     "section": "Assignment Reminders",
     "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT"
   },
