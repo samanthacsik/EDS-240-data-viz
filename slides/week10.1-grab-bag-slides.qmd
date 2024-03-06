@@ -11,13 +11,13 @@ format:
 
 ## {#title-slide data-menu-title="Title Slide" background="#053660"} 
 
-[EDS 240: Lecture 8.3]{.custom-title}
+[EDS 240: Lecture 10.1]{.custom-title}
 
 [*tbd*]{.custom-subtitle}
 
 <hr class="hr-teal">
 
-[Week 8 | February 26^th^, 2024]{.custom-subtitle3}
+[Week 10 | March 11^th^, 2024]{.custom-subtitle3}
 
 ---
 
@@ -37,5 +37,13 @@ Find icons:
 [The Noun Project](https://thenounproject.com/)
 
 ---
+
+<!-- see issue: https://github.com/samanthacsik/EDS-240-data-viz/issues/16 -->
+<!-- {waffle} -->
+<!-- {treemapify} -->
+<!-- {ggraph} -->
+<!-- {ggbump} -->
+<!-- {ggstream} -->
+<!-- {gggibbous} -->
 
 

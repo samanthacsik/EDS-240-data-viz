@@ -206,7 +206,7 @@ Example adapted from Albert Cairo's, *The Truthful Art*
 
 ::: footer
 Graphs recreated based on Albert Cairo's example (Fig 5.2) in *The Truthful Art*  
-**For all graphics: A (22%), B (25%), C (24%), D (29%), E (32%)**
+**For all graphics: A (22%), B (25%), C (34%), D (29%), E (32%)**
 :::
 
 ::: notes
@@ -265,6 +265,8 @@ knitr::include_graphics("images/week3/cairo-elementary-visual-perception.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "100%"
+library(tidyverse)
+
 circles_bars <- tribble(
   ~id, ~size, ~posx, ~posy,
   "A", 7, 0.3, 0.15,

@@ -1,5 +1,5 @@
 ---
-title: "Grab Bag & Catch up"
+title: "Grab Bag & Review"
 subtitle: "Week 10"
 description: "Monday March 11^th^, 2024"
 title-block-banner: true
@@ -16,7 +16,7 @@ knitr::include_graphics("../images/horst-touchstones.png")
 ```
 
 ::: {.center-text .gray-text}
-I hope you all feel this way after another quarter of classes under your belts! *Artwork by [Allison Horst](https://allisonhorst.com/)*
+I hope you all feel this way after another quarter of classes under your belts! *Artwork by [Allison Horst](https://allisonhorst.com/).*
 :::
 
 ## Pre-class Prep
@@ -25,7 +25,33 @@ I hope you all feel this way after another quarter of classes under your belts! 
 
 ## Lecture Materials 
 
-*Coming soon!*
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+::: {.center-text}
+[**tbd**]{.teal-text .body-text-m}
+
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 10.1 slides](../slides/week10.1-grab-bag-slides.qmd){.btn role="button" target="_blank"} 
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.center-text}
+[**Prompt Engineering**]{.teal-text .body-text-m}
+
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 10.2 slides](../slides/tbd.qmd){.btn role="button" target="_blank"} 
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.center-text}
+[**Quarter recap**]{.teal-text .body-text-m}
+
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 10.3 slides](../slides/week10.3-recap.qmd){.btn role="button" target="_blank"} 
+:::
+:::
+
+:::
 
 ## Discussion Materials
 

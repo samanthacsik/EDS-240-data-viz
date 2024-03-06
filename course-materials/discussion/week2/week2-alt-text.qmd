@@ -384,7 +384,7 @@ ggplot(...) +
 ```{{r}}
 #| eval: true
 #| echo: true
-#| fig-cap: "A boxplot of penguin flipper lengths"
+#| fig-cap: "Boxplot of penguin flipper lengths"
 #| fig-alt: "A boxplot of penguin flipper lengths where Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins."
 
 library(tidyverse)

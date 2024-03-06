@@ -1,0 +1,410 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../meds-slides-styles.scss
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 10.3]{.custom-title}
+
+[*A walk down memory lane*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[Week 10 | March 11^th^, 2024]{.custom-subtitle3}
+
+---
+
+## {#week1 data-menu-title="Week 1"} 
+
+::: {.center-text}
+[Week 1]{.slide-title-xl}
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week10/ggplot2.png")
+```
+
+<br>
+
+::: {.footer}
+[**week 1**]{.teal-text} | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+## {#what-is-viz data-menu-title="What is data viz?"} 
+
+[What is data visualization?]{.slide-title}
+
+<hr>
+
+*"any graphical representation of information and data"* (Cédric Scherer) & *"part art and part science"* (Claus O. Wilke)
+
+. . .
+
+<br>
+
+There's a *long* history of people (across time, regions, cultures) using visual representations of data to communicate information.
+
+:::: {.columns}
+
+::: {.column width="33%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week10/lascaux.png")
+```
+::: {.center-text .body-text-s .gray-text}
+Lascaux Cave Paintings. Image source: [Rock Art Blog](https://rockartblog.blogspot.com/2018/08/are-lascaux-cave-paintings-encoded.html)
+:::
+:::
+
+::: {.column width="33%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week10/nightingale.png")
+```
+::: {.center-text .body-text-s .gray-text}
+Florence Nightingale. Image source: [Cool Infographics](https://coolinfographics.com/blog/2009/11/25/florence-nightingale-causes-of-mortality-infographic-from-18.html)
+:::
+:::
+
+::: {.column width="33%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week10/dubois.png")
+```
+::: {.center-text .body-text-s .gray-text}
+W.E.B. DuBois. Image source: [Smithsonian Magazine](https://www.smithsonianmag.com/history/first-time-together-and-color-book-displays-web-du-bois-visionary-infographics-180970826/)
+:::
+:::
+
+::::
+
+::: {.footer}
+[**week 1**]{.teal-text} | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+## {#vertices data-menu-title="Vertices"} 
+
+[There are lots of reasons to visualize data]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week10/vertices.png")
+```
+
+<br>
+
+::: {.footer}
+[**week 1**]{.teal-text} | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+## {#ggplot2 data-menu-title="{ggplot2}"} 
+
+[Intro to `{ggplot2}` for creating data viz]{.slide-title}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+[{{< fa layer-group title="three stacked layers" >}}]{.teal-text} a layered "grammar of graphics" i.e. compose graphs by combining independent components
+
+<br>
+
+[{{< fa users title="three people" >}}]{.teal-text} lots of extensions + an active / helpful online community
+
+<br>
+
+[{{< fa chart-line title="a line chart" >}} **Graphic layers:**]{.teal-text} data (tidy format), geoms, statistical transformations, position adjustments, coordinate system, facets
+
+<br>
+
+[{{< fa palette title="a painter's palette" >}} **Communication layers:**]{.teal-text} labels, annotations, scales, themes, layout
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week10/ggplot2.png")
+```
+:::
+::::
+
+::: {.footer}
+[**week 1**]{.teal-text} | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+## {#week2 data-menu-title="Week 2"} 
+
+::: {.center-text}
+[Week 2]{.slide-title-xl}
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+#| fig-alt: "A formula for writing alternative text, which says you should always include (a) the chart type, (b) the type of data being presented, and (c) the reason for including the chart. You should also link to the data source somewhere in the text."
+knitr::include_graphics("images/week10/alt-text.png")
+```
+
+::: {.footer}
+week 1 | [**week 2**]{.teal-text} | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+## {#alt-text data-menu-title="alt text"} 
+
+[Add alt text to improve data viz accessibility]{.slide-title2}
+
+<hr>
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "50%"
+#| fig-alt: "Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature"
+knitr::include_graphics("images/week10/hawkins-warming-stripes.png")
+```
+
+<br>
+
+[**alt="[Colored stripes]{style="background-color:#FFE600"} of [chronologically ordered temperatures]{style="background-color:#6DFFF8"} where [they increase in red to show the warming global temperature]{style="background-color:#74FF75"}"**]{.body-text-s}
+
+::: {.footer}
+week 1 | [**week 2**]{.teal-text} | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+## {#inspect-alt-text data-menu-title="Inspect alt text"} 
+
+[Inspect to verify alt text]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "50%"
+#| fig-alt: "Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature"
+knitr::include_graphics("images/week10/inspect-alt-text.png")
+```
+
+<br>
+
+::: {.footer}
+week 1 | [**week 2**]{.teal-text} | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+## {#week3-4 data-menu-title="Week 3 & 4"} 
+
+::: {.center-text}
+[Weeks 3 & 4]{.slide-title-xl}
+:::
+
+<br>
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week10/horst-ggplot-explore-dataviz.png")
+```
+
+<br>
+
+::: {.footer}
+week 1 | week 2 | [**week 3**]{.teal-text} | [**week 4**]{.teal-text} | week 5 | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+there are lots of ways to map data to visual properties...choosing is hard!
+
+::: {.footer}
+week 1 | week 2 | [**week 3**]{.teal-text} | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+some are easier for us (as humans) to interpret than others
+
+(hierarchy + bars vs circles)
+
+::: {.footer}
+week 1 | week 2 | [**week 3**]{.teal-text} | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+but of course there are caveats -- e.g. map & sankey 
+
+plus sticking with *just* these heirarchical mappings would get pretty boring
+
+::: {.footer}
+week 1 | week 2 | [**week 3**]{.teal-text} | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+but of course there are caveats -- e.g. map & sankey 
+
+plus sticking with *just* these heirarchical mappings would get pretty boring
+
+::: {.footer}
+week 1 | week 2 | [**week 3**]{.teal-text} | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+try out different forms, use decision trees, use multiple graphs to tell a more complete story, arrange components of your graphic, test outcomes on others
+
+::: {.footer}
+week 1 | week 2 | [**week 3**]{.teal-text} | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+distributions for visualizing the spread of data
+
+::: {.footer}
+week 1 | week 2 | [**week 3**]{.teal-text} | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+line & area charts for visualizing evolution
+
+line: 
+- avoid spaghetti charts
+- okay to cut the y-axis
+- be mindful of aspect ratio
+
+area
+- like line, but filled in
+
+stacked area: 
+- evolution of whole + relative proportions of each OR choose proportioanl stacked area chart (% contribution of each)
+- not good for studying evolution of individual groups
+
+{chron} (dates / times), {naniar} (missing data)
+{tidycensus} (census data)
+
+{ggridges} (ridgeline plots)
+{ggbeeswarm} (beeswarm plots)
+{see} {violin dot plots}
+
+::: {.footer}
+week 1 | week 2 | [**week 3**]{.teal-text} | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+visualizing rankings & numerical relationships
+- bar & lollipop (basically the same) 
+  - y-axis must start at 0
+- dumbbell charts (difference between groups)
+- scatterplots & bubble plots
+- heatmaps & 2d density plots when you have too many data points
+
+{ggalt} (lollipop plots), {ggExtra} (marginal plots), {ggdensity} (HDR plots)
+
+::: {.footer}
+week 1 | week 2 | week 3 | [**week 4**]{.teal-text} | week 5 | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+across all those weeks, we also were introduced to the following packages / tools
+
+- direct labeling 
+- {scales}
+- {gghighlight}
+
+---
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week10/horst-ggplot-masterpiece.png")
+```
+
+<br>
+
+::: {.footer}
+week 1 | week 2 | week 3 | week 4 | [**week 5**]{.teal-text} | [**week 6**]{.teal-text} | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+::: {.footer}
+week 1 | week 2 | week 3 | week 4 | [**week 5**]{.teal-text} | week 6 | week 7 | week 8 | week 9 | week 10
+:::
+
+---
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week10/horst-eco-r4ds.png")
+```
+
+::: {.footer}
+week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | [**week 8**]{.teal-text} | week 9 | week 10
+:::
+
+---

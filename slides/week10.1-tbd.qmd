@@ -1,8 +1,0 @@
-
-see issue: https://github.com/samanthacsik/EDS-240-data-viz/issues/16
-{waffle}
-{treemapify}
-{ggraph}
-{ggbump}
-{ggstream}
-{gggibbous}
