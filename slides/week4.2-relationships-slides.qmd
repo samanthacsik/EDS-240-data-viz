@@ -152,6 +152,8 @@ knitr::include_graphics("images/week4/hbef-map.png")
 
 [Our data don't require much wrangling, though we will practice using the [`{metajam}` package](https://github.com/NCEAS/metajam) for downloading and reading in data from repositories in the  [DataOne](https://www.dataone.org/) network.]{.body-text-s}
 
+{{< include sections/4.2-stream.qmd >}}
+
 ```{r}
 #| eval: false
 #| echo: true
@@ -171,30 +173,6 @@ download_d1_data("https://cn.dataone.org/cn/v2/resolve/https%3A%2F%2Fpasta.ltern
 
 #....................read in downloaded files....................
 stream_chem_all <- read_d1_files(here::here("week4", "data"))
-
-#........................get the data file.......................
-stream_chem_data <- stream_chem_all$data
-```
-
-```{r}
-#| eval: true
-#| echo: false
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                                    setup                                 ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#..........................load packages.........................
-library(metajam) 
-library(tidyverse)
-
-#...................download data from DataOne...................
-# download_d1_data("https://cn.dataone.org/cn/v2/resolve/https%3A%2F%2Fpasta.lternet.edu%2Fpackage%2Fdata%2Feml%2Fknb-lter-hbr%2F208%2F9%2F3b3cf7ea447cb875d7c7d68ebdfd24c7",
-#                  path = here::here("slides", "data")) 
-
-#  ~ NOTE: I recommend renaming the downloaded folder to 'data/' so that it's ignored by .gitignore! ~
-
-#....................read in downloaded files....................
-stream_chem_all <- read_d1_files(here::here("slides", "data", "https_pasta.lternet.edu_package_metadata_eml_knb-lter-hbr_208_9__HubbardBrook_weekly_stream_chemistry__csv"))
 
 #........................get the data file.......................
 stream_chem_data <- stream_chem_all$data

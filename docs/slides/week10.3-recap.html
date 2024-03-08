@@ -414,17 +414,17 @@
 </section>
 <section id="ggplot2" class="slide level2" data-menu-title="{ggplot2}">
 <h2></h2>
-<p><span class="slide-title">Intro to <code>{ggplot2}</code> for creating data viz</span></p>
+<p><span class="slide-title3"><code>{ggplot2}</code> is an awesome tool for creating data viz</span></p>
 <hr>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><span class="teal-text"><i class="fa-solid fa-layer-group" title="three stacked layers" aria-label="layer-group"></i></span> a layered “grammar of graphics” i.e.&nbsp;compose graphs by combining independent components</p>
 <p><br></p>
-<p><span class="teal-text"><i class="fa-solid fa-users" title="three people" aria-label="users"></i></span> lots of extensions + an active / helpful online community</p>
-<p><br></p>
 <p><span class="teal-text"><i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i> <strong>Graphic layers:</strong></span> data (tidy format), geoms, statistical transformations, position adjustments, coordinate system, facets</p>
 <p><br></p>
 <p><span class="teal-text"><i class="fa-solid fa-palette" title="a painter’s palette" aria-label="palette"></i> <strong>Communication layers:</strong></span> labels, annotations, scales, themes, layout</p>
+<p><br></p>
+<p><span class="teal-text"><i class="fa-solid fa-users" title="three people" aria-label="users"></i></span> lots of extensions + an active / helpful online community</p>
 </div><div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -466,7 +466,7 @@
 </section>
 <section id="inspect-alt-text" class="slide level2" data-menu-title="Inspect alt text">
 <h2></h2>
-<p><span class="slide-title">Inspect to verify alt text</span></p>
+<p><span class="slide-title3">You can check to make sure alt text was added successfully</span></p>
 <hr>
 
 <img data-src="images/week10/inspect-alt-text.png" style="width:50.0%" alt="Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature" class="r-stretch quarto-figure-center"><p><br></p>
@@ -486,103 +486,884 @@
 <p>week 1 | week 2 | <span class="teal-text"><strong>week 3</strong></span> | <span class="teal-text"><strong>week 4</strong></span> | week 5 | week 6 | week 7 | week 8 | week 9 | week 10</p>
 </div>
 </section>
-<section class="slide level2">
-
-<p>there are lots of ways to map data to visual properties…choosing is hard!</p>
+<section id="hierarchy" class="slide level2" data-menu-title="Choosing graphic forms">
+<h2></h2>
+<p><span class="slide-title3">Choosing a graphic form can be <em>challenging</em>, but there are guidelines</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br> <br> <br></p>
+<blockquote>
+<p>“If I had the answer to that, I’d be rich by now…I have no idea, but I can give you some clues to make your own choices based on what we know about why and how visualization works”</p>
+</blockquote>
+<div class="right-align-text gray-text">
+<p>-Albert Cairo</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/cairo-elementary-visual-perception.png" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="footer">
 <p>week 1 | week 2 | <span class="teal-text"><strong>week 3</strong></span> | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10</p>
 </div>
 </section>
-<section class="slide level2">
-
-<p>some are easier for us (as humans) to interpret than others</p>
-<p>(hierarchy + bars vs circles)</p>
+<section id="caveats" class="slide level2" data-menu-title="Caveats">
+<h2></h2>
+<p><span class="slide-title">. . . and of course there are always caveats!</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/choropleth.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text body-text-s gray-text">
+<p>Source: <a href="https://www.nytimes.com/2021/09/16/learning/whats-going-on-in-this-graph-new-normal-us-precipitation.html">New York Times</a></p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br> <br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/apple-sankey.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text body-text-s gray-text">
+<p>Source: <a href="https://medium.com/@HolgerBartel/sankey-diagrams-2ca0504062c2">The Medium</a></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="center-text">
+<p>(Plus, sticking with <em>just</em> the graphic forms from the hierarchy would get pretty boring!)</p>
+</div>
+<div class="footer">
+<p>week 1 | week 2 | <span class="teal-text"><strong>week 3</strong></span> | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10</p>
+</div>
+<aside class="notes">
+<p>Also, see the arc sankey: https://www.flerlagetwins.com/2019/10/arc-sankey.html</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="approaches" class="slide level2" data-menu-title="Approaches">
+<h2></h2>
+<p><span class="slide-title">Approaches for deciding on a graphic form</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br> <br></p>
+<ol type="1">
+<li>think about the <strong>task(s)</strong> you want to enable (e.g.&nbsp;compare groups, visualize flow) and / or the <strong>message</strong> you want to convey</li>
+<li>consider the types and number of <strong>variables</strong> and data points – decision trees, like <a href="https://www.data-to-viz.com/">From Data to Viz</a> can help!</li>
+<li><strong>pair</strong> multiple graphs together</li>
+<li><strong>arrange</strong> components of your graphic</li>
+<li><strong>test</strong> the outcomes of your graphic on others</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/from-data-to-viz.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="footer">
 <p>week 1 | week 2 | <span class="teal-text"><strong>week 3</strong></span> | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10</p>
 </div>
 </section>
-<section class="slide level2">
-
-<p>but of course there are caveats – e.g.&nbsp;map &amp; sankey</p>
-<p>plus sticking with <em>just</em> these heirarchical mappings would get pretty boring</p>
+<section id="fundamental-charts" class="slide level2" data-menu-title="Fundamental chart types">
+<h2></h2>
+<p><span class="slide-title">We explored fundamental chart types. . .</span></p>
+<hr>
+<div class="center-text">
+<p><span class="teal-text body-text-m"><strong>Distributions:</strong></span></p>
+<p>histograms, density plots, ridgeline plots, box plots, violin plots</p>
+</div>
+<p><br></p>
+<div class="fragment">
+<div class="center-text">
+<p><span class="teal-text body-text-m"><strong>Evolution:</strong></span></p>
+<p>line charts, area charts (including stacked &amp; proportional stated area charts)</p>
+</div>
+<p><br></p>
+</div>
+<div class="fragment">
+<div class="center-text">
+<p><span class="teal-text body-text-m"><strong>Rankings:</strong></span></p>
+<p>bar plots, lollipop plots (and dumbbell variant)</p>
+</div>
+<p><br></p>
+</div>
+<div class="fragment">
+<div class="center-text">
+<p><span class="teal-text body-text-m"><strong>Numerical relationships:</strong></span></p>
+<p>scatter plots, bubble plots, 2d density plots</p>
+</div>
 <div class="footer">
-<p>week 1 | week 2 | <span class="teal-text"><strong>week 3</strong></span> | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10</p>
+<p>week 1 | week 2 | <span class="teal-text"><strong>week 3</strong></span> | <span class="teal-text"><strong>week 4</strong></span> | week 5 | week 6 | week 7 | week 8 | week 9 | week 10</p>
+</div>
 </div>
 </section>
-<section class="slide level2">
-
-<p>but of course there are caveats – e.g.&nbsp;map &amp; sankey</p>
-<p>plus sticking with <em>just</em> these heirarchical mappings would get pretty boring</p>
+<section id="improve-interpretation" class="slide level2" data-menu-title="Improve interpretation">
+<h2></h2>
+<p><span class="slide-title3">. . . and were introduced to some helpful approaches for improving interpretation</span></p>
+<hr>
+<!-- NEED TO RENAME ALL THESE COLS/DFS -->
+<!-- {{< include >}} in week10.3-recap.qmd  -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>highlighting groups of interest (e.g.&nbsp;<code>{gghighlight}</code>)</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week10.3-recap_files/figure-revealjs/unnamed-chunk-19-1.png" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>formatting axis labels using <code>{scales}</code></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week10.3-recap_files/figure-revealjs/unnamed-chunk-20-1.png" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>direct labeling &amp; arranging components</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week10.3-recap_files/figure-revealjs/unnamed-chunk-21-1.png" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>marginal density plots using <code>{ggExtra}</code></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week10.3-recap_files/figure-revealjs/unnamed-chunk-22-1.png" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="footer">
-<p>week 1 | week 2 | <span class="teal-text"><strong>week 3</strong></span> | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10</p>
+<p>week 1 | week 2 | <span class="teal-text"><strong>week 3</strong></span> | <span class="teal-text"><strong>week 4</strong></span> | week 5 | week 6 | week 7 | week 8 | week 9 | week 10</p>
 </div>
 </section>
-<section class="slide level2">
+<section id="theme" class="slide level2" data-menu-title="Themes">
+<h2></h2>
+<p><span class="slide-title3">Customizing plot themes is an important part of building aesthetically-pleasing visualizations</span></p>
+<hr>
 
-<p>try out different forms, use decision trees, use multiple graphs to tell a more complete story, arrange components of your graphic, test outcomes on others</p>
-<div class="footer">
-<p>week 1 | week 2 | <span class="teal-text"><strong>week 3</strong></span> | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10</p>
-</div>
-</section>
-<section class="slide level2">
-
-<p>distributions for visualizing the spread of data</p>
-<div class="footer">
-<p>week 1 | week 2 | <span class="teal-text"><strong>week 3</strong></span> | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10</p>
-</div>
-</section>
-<section class="slide level2">
-
-<p>line &amp; area charts for visualizing evolution</p>
-<p>line: - avoid spaghetti charts - okay to cut the y-axis - be mindful of aspect ratio</p>
-<p>area - like line, but filled in</p>
-<p>stacked area: - evolution of whole + relative proportions of each OR choose proportioanl stacked area chart (% contribution of each) - not good for studying evolution of individual groups</p>
-<p>{chron} (dates / times), {naniar} (missing data) {tidycensus} (census data)</p>
-<p>{ggridges} (ridgeline plots) {ggbeeswarm} (beeswarm plots) {see} {violin dot plots}</p>
-<div class="footer">
-<p>week 1 | week 2 | <span class="teal-text"><strong>week 3</strong></span> | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10</p>
-</div>
-</section>
-<section class="slide level2">
-
-<p>visualizing rankings &amp; numerical relationships - bar &amp; lollipop (basically the same) - y-axis must start at 0 - dumbbell charts (difference between groups) - scatterplots &amp; bubble plots - heatmaps &amp; 2d density plots when you have too many data points</p>
-<p>{ggalt} (lollipop plots), {ggExtra} (marginal plots), {ggdensity} (HDR plots)</p>
+<img data-src="images/week10/ggplot-theme.png" style="width:80.0%" class="r-stretch quarto-figure-center"><p><br></p>
 <div class="footer">
 <p>week 1 | week 2 | week 3 | <span class="teal-text"><strong>week 4</strong></span> | week 5 | week 6 | week 7 | week 8 | week 9 | week 10</p>
 </div>
 </section>
-<section class="slide level2">
-
-<p>across all those weeks, we also were introduced to the following packages / tools</p>
-<ul>
-<li>direct labeling</li>
-<li>{scales}</li>
-<li>{gghighlight}</li>
-</ul>
+<section id="theme-drought" class="slide level2" data-menu-title="Themes (drought)">
+<h2></h2>
+<p><span class="slide-title3">We got some early practice by recreating this iconic visualization</span></p>
+<hr>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/usdm.png" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text body-text-s">
+<p>Source: US Drought Monitor</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/ca-droughts.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text body-text-s">
+<p>Our recreation!</p>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="footer">
+<p>week 1 | week 2 | week 3 | <span class="teal-text"><strong>week 4</strong></span> | week 5 | week 6 | week 7 | week 8 | week 9 | week 10</p>
+</div>
 </section>
-<section class="slide level2">
-
+<section id="week5-6" class="slide level2" data-menu-title="Weeks 5-6">
+<h2></h2>
+<div class="center-text">
+<p><span class="slide-title-xl">Weeks 5 &amp; 6</span></p>
+</div>
 
 <img data-src="images/week10/horst-ggplot-masterpiece.png" style="width:80.0%" class="r-stretch quarto-figure-center"><p><br></p>
 <div class="footer">
 <p>week 1 | week 2 | week 3 | week 4 | <span class="teal-text"><strong>week 5</strong></span> | <span class="teal-text"><strong>week 6</strong></span> | week 7 | week 8 | week 9 | week 10</p>
 </div>
 </section>
-<section class="slide level2">
-
+<section id="good-data-viz" class="slide level2" data-menu-title="Good data viz">
+<h2></h2>
+<p><span class="slide-title2">Good data visualization design considers . . .</span></p>
+<hr>
+<p><br></p>
+<p><strong>Maximizing the data-ink ratio</strong> (without sacrificing readability and aesthetics) and <strong>reducing eye movement</strong> (removing redundant info, moving legends, using direct labels, avoiding rotated text).</p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week10.3-recap_files/figure-revealjs/unnamed-chunk-27-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week10.3-recap_files/figure-revealjs/unnamed-chunk-28-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="footer">
 <p>week 1 | week 2 | week 3 | week 4 | <span class="teal-text"><strong>week 5</strong></span> | week 6 | week 7 | week 8 | week 9 | week 10</p>
 </div>
 </section>
-<section class="slide level2">
+<section id="bad-data-viz" class="slide level2" data-menu-title="Bad data viz">
+<h2></h2>
+<p><span class="slide-title2">Good data visualization design <em>generally</em> avoids . . .</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>Information overload</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/idk-plot.png" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>3D plots</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/3D.png" style="width:40.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>Pie charts</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/multiple-pies.png" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>Dual axes</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/dual-axis1.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>week 1 | week 2 | week 3 | week 4 | <span class="teal-text"><strong>week 5</strong></span> | week 6 | week 7 | week 8 | week 9 | week 10</p>
+</div>
+</section>
+<section id="colors" class="slide level2" data-menu-title="Colors">
+<h2></h2>
+<p><span class="slide-title3">Colors play <em>such</em> and important role in data viz design</span></p>
+<hr>
+<p>From encoding information, to eliciting emotion, it’s critical that we <strong>choose our colors purposefully</strong>. Some topics we covered:</p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p><span class="body-text-s"><strong>scale types</strong> &amp; when to use which (quantitative vs qualitative; sequential vs.&nbsp;diverging, classed vs.&nbsp;unclassed)</span></p></li>
+<li><p><span class="body-text-s"><strong>colorblind-friendly</strong> palette choices (plus tools for checking)</span></p></li>
+<li><p><span class="body-text-s"><strong>redundant mapping</strong> (e.g.&nbsp;colors + shapes / patterns)</span></p></li>
+<li><p><span class="body-text-s">widely-used and recognizable <strong>climate science palettes</strong> (which you should totally use, when applicable!)</span></p></li>
+<li><p><span class="body-text-s">a little bit of <strong>color theory</strong> to help guide us in designing our own palettes</span></p></li>
+<li><p><span class="body-text-s">how colors can (and do) elicit <strong>emotions</strong> (which can differ across cultures)</span></p></li>
+<li><p><span class="body-text-s">general <strong>guidelines</strong></span></p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/palette-types.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/colors-cultures-highlights.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>week 1 | week 2 | week 3 | week 4 | <span class="teal-text"><strong>week 5</strong></span> | week 6 | week 7 | week 8 | week 9 | week 10</p>
+</div>
+</div>
+</section>
+<section id="color-tools" class="slide level2" data-menu-title="Color (tools)">
+<h2></h2>
+<p><span class="slide-title3">We explored different tools for building color palettes</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Tools:</p>
+<ul>
+<li><p><span class="body-text-s"><code>{viridis}</code> &amp; <code>{RColorBrewer}</code> (great options for colorblind-friendly palettes)</span></p></li>
+<li><p><span class="body-text-s"><code>{paletteer}</code> and the <a href="https://emilhvitfeldt.github.io/r-color-palettes/">R Color Palettes</a> website</span></p></li>
+<li><p><span class="body-text-s">Chrome extensions for simulating vision deficiencies &amp; gray scale</span></p></li>
+<li><p><span class="body-text-s">Online palette generators</span></p></li>
+<li><p><span class="body-text-s"><code>{ggplot2}</code> color scaling functions</span></p></li>
+</ul>
+<p>Tips:</p>
+<ul>
+<li><p><span class="body-text-s">save palettes as vectors outside of your plot</span></p></li>
+<li><p><span class="body-text-s">set color names</span></p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/palettes.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>week 1 | week 2 | week 3 | week 4 | <span class="teal-text"><strong>week 5</strong></span> | week 6 | week 7 | week 8 | week 9 | week 10</p>
+</div>
+</section>
+<section id="choropleth" class="slide level2" data-menu-title="Choropleth">
+<h2></h2>
+<p><span class="slide-title2">We applied what we learned about colors to a choropleth</span></p>
+<hr>
+<p><br></p>
+<!-- --- -->
+<!-- DATA WRANGLING ALTERNATIVE: USING THE {maps} PACKAGE -->
+<!-- Here, we'll wrangle our precipitation data, then join it with our US county data (courtesy of the [`{maps}` package](https://cran.r-project.org/web/packages/maps/index.html)): -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##                                    setup                                 ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- #..........................load packages......................... -->
+<!-- library(tidyverse) -->
+<!-- library(maps) -->
+<!-- #.........................get shape data......................... -->
+<!-- states <- map_data("state") -->
+<!-- counties <- map_data("county") -->
+<!-- #....................import precipitation data................... -->
+<!-- precip_counties <- read_csv(here::here("slides", "data", "county-jan19-dec23-precip.csv"), skip = 4) |> -->
+<!--   janitor::clean_names() -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##                               data wrangling                             ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- #..............update names of counties df variables............. -->
+<!-- us_counties <- counties |> -->
+<!--   # select / rename cols of interest ---- -->
+<!--   select(state = region, county = subregion, long, lat, group, order) |> -->
+<!--   # make all county & state names Title Case ---- -->
+<!--   mutate(county = str_to_title(county), -->
+<!--          state = str_to_title(state)) |> -->
+<!--   # fix different spellings so that they match county names in precip data ---- -->
+<!--   mutate(county = case_when( -->
+<!--     county == "De Kalb" ~ "DeKalb", -->
+<!--     county == "De Soto" ~ "DeSoto", # works for FL & MI -->
+<!--     county == "Du Page" ~ "DuPage", -->
+<!--     county == "La Porte" ~ "LaPorte", -->
+<!--     county == "Obrien" ~ "O'Brien", -->
+<!--     county == "Prince Georges" ~ "Prince George's", -->
+<!--     county == "Queen Annes" ~ "Queen Anne's", -->
+<!--     county == "Ste Genevieve" ~ "Ste. Genevieve", -->
+<!--     county == "La Moure" ~ "LaMoure", -->
+<!--     state == "Texas" & county == "De Witt" ~ "DeWitt", -->
+<!--     # county == "St. Marys" ~ "St. Mary's", # isn't working?? -->
+<!--     TRUE ~ county -->
+<!--     )) |> -->
+<!--   mutate(county = str_replace(string = county, pattern = "St ", replacement = "St. ")) |> -->
+<!--   # remove DC & Yellowstone National Park ---- -->
+<!--   filter(!state %in% c("District Of Columbia")) |> -->
+<!--   filter(!county %in% c("Yellowstone National")) -->
+<!-- #..........clean precip data & make sure var names match......... -->
+<!-- precip_counties_wrangled <- precip_counties |> -->
+<!--   # more intuitive col name ---- -->
+<!--   rename(county = name) |> -->
+<!--   # make all county & state names lower case ---- -->
+<!--   mutate(county = str_to_lower(county), -->
+<!--          state = str_to_lower(state)) |> -->
+<!--   # remove recurring patterns ---- -->
+<!--   mutate(county = str_remove(county, pattern = " county")) |> # across all county names -->
+<!--   mutate(county = str_remove(county, pattern = " parish")) |> # LA -->
+<!--   # make state & county names Title Case again ---- -->
+<!--   mutate(county = str_to_title(county), -->
+<!--          state = str_to_title(state)) |> -->
+<!--   # fix different spellings so that they match county names in precip data ---- -->
+<!--   mutate(county = case_when( -->
+<!--     county == "Dekalb" ~ "DeKalb", -->
+<!--     county == "Desoto" ~ "DeSoto", # works for FL & MI -->
+<!--     state == "Louisiana" & county == "De Soto" ~ "DeSoto", -->
+<!--     county == "Dupage" ~ "DuPage", -->
+<!--     county == "Lasalle" ~ "La Salle", -->
+<!--     county == "Laporte" ~ "LaPorte", -->
+<!--     county == "O'brien" ~ "O'Brien", -->
+<!--     county == "Lamoure" ~ "LaMoure", -->
+<!--     state == "Texas" & county == "Dewitt" ~ "DeWitt", -->
+<!--     county == "St. Mary's" ~ "St. Marys", -->
+<!--     county == "Suffolk City" ~ "Suffolk", -->
+<!--     county == "Hampton City" ~ "Hampton", -->
+<!--     county == "Virginia Beach City" ~ "Virginia Beach", -->
+<!--     county == "Newport News City" ~ "Newport News", -->
+<!--     county == "Norfolk City" ~ "Norfolk", -->
+<!--     TRUE ~ county -->
+<!--   )) |> -->
+<!--   # remove DC & other non-counties -->
+<!--   filter(!county %in% c("Washington, D.c.", "Alexandria City", "Bristol City")) |> -->
+<!--   # coerce precip & 20th centruy avg from chr to numeric ---- -->
+<!--   mutate(value = as.numeric(value), -->
+<!--          x1901_2000_mean = as.numeric(x1901_2000_mean)) |> -->
+<!--   # calculate % change ---- -->
+<!--   mutate(perc_change = ((value - x1901_2000_mean)/x1901_2000_mean)*100) |> -->
+<!--   # select & rename cols ---- -->
+<!--   select(state, county, mean_1901_2000 = x1901_2000_mean, precip = value, perc_change, anomaly_1901_2000_base_period) -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##  ~ used to identify which county names don't match across dfs  ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- # unique_us_counties <- us_counties |> -->
+<!-- #   distinct(state, county) -->
+<!-- # -->
+<!-- # unique_precip_counties <- precip_counties_wrangled |> -->
+<!-- #   distinct(state, county) -->
+<!-- # -->
+<!-- # missing_from_us_counties <- anti_join(unique_precip_counties, unique_us_counties) |> -->
+<!-- #   rename(county_in_us = county) -->
+<!-- # -->
+<!-- # missing_from_precip_counties <- anti_join(unique_us_counties, unique_precip_counties) |> -->
+<!-- #   rename(county_in_precip = county) -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##  ~ ----------------------------------------------------------  ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- #............................join dfs............................ -->
+<!-- joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties) -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##                                    setup                                 ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- #..........................load packages......................... -->
+<!-- library(tidyverse) -->
+<!-- library(maps) -->
+<!-- #.........................get shape data......................... -->
+<!-- states <- map_data("state") -->
+<!-- counties <- map_data("county") -->
+<!-- #....................import precipitation data................... -->
+<!-- precip_counties <- read_csv(here::here("week5", "data", "county-jan19-dec23-precip.csv"), skip = 4) |> -->
+<!--   janitor::clean_names() -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##                               data wrangling                             ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- #..............update names of counties df variables............. -->
+<!-- us_counties <- counties |> -->
+<!--   # select / rename cols of interest ---- -->
+<!--   select(state = region, county = subregion, long, lat, group, order) |> -->
+<!--   # make all county & state names Title Case ---- -->
+<!--   mutate(county = str_to_title(county), -->
+<!--          state = str_to_title(state)) |> -->
+<!--   # fix different spellings so that they match county names in precip data ---- -->
+<!--   mutate(county = case_when( -->
+<!--     county == "De Kalb" ~ "DeKalb", -->
+<!--     county == "De Soto" ~ "DeSoto", -->
+<!--     county == "Du Page" ~ "DuPage", -->
+<!--     county == "La Porte" ~ "LaPorte", -->
+<!--     county == "Obrien" ~ "O'Brien", -->
+<!--     county == "Prince Georges" ~ "Prince George's", -->
+<!--     county == "Queen Annes" ~ "Queen Anne's", -->
+<!--     county == "Ste Genevieve" ~ "Ste. Genevieve", -->
+<!--     county == "La Moure" ~ "LaMoure", -->
+<!--     state == "Texas" & county == "De Witt" ~ "DeWitt", -->
+<!--     TRUE ~ county -->
+<!--     )) |> -->
+<!--   mutate(county = str_replace(string = county, pattern = "St ", replacement = "St. ")) |> -->
+<!--   # remove DC & Yellowstone National Park ---- -->
+<!--   filter(!state %in% c("District Of Columbia")) |> -->
+<!--   filter(!county %in% c("Yellowstone National")) -->
+<!-- #..........clean precip data & make sure var names match......... -->
+<!-- precip_counties_wrangled <- precip_counties |> -->
+<!--   # more intuitive col name ---- -->
+<!--   rename(county = name) |> -->
+<!--   # make all county & state names lower case ---- -->
+<!--   mutate(county = str_to_lower(county), -->
+<!--          state = str_to_lower(state)) |> -->
+<!--   # remove recurring patterns ---- -->
+<!--   mutate(county = str_remove(county, pattern = " county")) |> -->
+<!--   mutate(county = str_remove(county, pattern = " parish")) |> -->
+<!--   # make state & county names Title Case again ---- -->
+<!--   mutate(county = str_to_title(county), -->
+<!--          state = str_to_title(state)) |> -->
+<!--   # fix different spellings so that they match county names in precip data ---- -->
+<!--   mutate(county = case_when( -->
+<!--     county == "Dekalb" ~ "DeKalb", -->
+<!--     county == "Desoto" ~ "DeSoto", -->
+<!--     state == "Louisiana" & county == "De Soto" ~ "DeSoto", -->
+<!--     county == "Dupage" ~ "DuPage", -->
+<!--     county == "Lasalle" ~ "La Salle", -->
+<!--     county == "Laporte" ~ "LaPorte", -->
+<!--     county == "O'brien" ~ "O'Brien", -->
+<!--     county == "Lamoure" ~ "LaMoure", -->
+<!--     state == "Texas" & county == "Dewitt" ~ "DeWitt", -->
+<!--     county == "St. Mary's" ~ "St. Marys", -->
+<!--     county == "Suffolk City" ~ "Suffolk", -->
+<!--     county == "Hampton City" ~ "Hampton", -->
+<!--     county == "Virginia Beach City" ~ "Virginia Beach", -->
+<!--     county == "Newport News City" ~ "Newport News", -->
+<!--     county == "Norfolk City" ~ "Norfolk", -->
+<!--     TRUE ~ county -->
+<!--   )) |> -->
+<!--   # remove DC & other non-counties -->
+<!--   filter(!county %in% c("Washington, D.c.", "Alexandria City", "Bristol City")) |> -->
+<!--   # coerce precip & 20th centruy avg from chr to numeric ---- -->
+<!--   mutate(value = as.numeric(value), -->
+<!--          x1901_2000_mean = as.numeric(x1901_2000_mean)) |> -->
+<!--   # calculate % change ---- -->
+<!--   mutate(perc_change = ((value - x1901_2000_mean)/x1901_2000_mean)*100) |> -->
+<!--   # select & rename cols ---- -->
+<!--   select(state, county, mean_1901_2000 = x1901_2000_mean, precip = value, perc_change, anomaly_1901_2000_base_period) -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##  ~ used to identify which county names don't match across dfs  ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- # unique_us_counties <- us_counties |> -->
+<!-- #   distinct(state, county) -->
+<!-- # -->
+<!-- # unique_precip_counties <- precip_counties_wrangled |> -->
+<!-- #   distinct(state, county) -->
+<!-- # -->
+<!-- # missing_from_us_counties <- anti_join(unique_precip_counties, unique_us_counties) |> -->
+<!-- #   rename(county_in_us = county) -->
+<!-- # -->
+<!-- # missing_from_precip_counties <- anti_join(unique_us_counties, unique_precip_counties) |> -->
+<!-- #   rename(county_in_precip = county) -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ##  ~ ----------------------------------------------------------  ---- -->
+<!-- ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- #............................join dfs............................ -->
+<!-- joined_precip_us_counties <- full_join(precip_counties_wrangled, us_counties) -->
+<!-- ``` -->
+<!-- --- -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text gray-text">
+<p>Unclassed map</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week10.3-recap_files/figure-revealjs/unnamed-chunk-38-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text gray-text">
+<p>Classed map:</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week10.3-recap_files/figure-revealjs/unnamed-chunk-39-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="center-text">
+<p>We also touched on simple features and accessing shapefiles using <code>{tigris}</code>.</p>
+</div>
+<div class="footer">
+<p>week 1 | week 2 | week 3 | week 4 | <span class="teal-text"><strong>week 5</strong></span> | week 6 | week 7 | week 8 | week 9 | week 10</p>
+</div>
+</section>
+<section id="typography" class="slide level2" data-menu-title="Typography">
+<h2></h2>
+<p><span class="slide-title3">Our typographic choices can be just as important and impactful as our color choices</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br> <br> <br></p>
+<ul>
+<li>difference between typeface &amp; font</li>
+<li>how typeface can affect emotions &amp; perceptions</li>
+<li>how to choose typeface</li>
+<li>using typeface &amp; font style to guide a</li>
+<li>finding typefaces and font styles on <a href="https://fonts.google.com/">Google Fonts</a></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/find-you.png" style="width:85.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/hierarchy.png" style="width:75.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="footer">
+<p>week 1 | week 2 | week 3 | week 4 | week 5 | <span class="teal-text"><strong>week 6</strong></span> | week 7 | week 8 | week 9 | week 10</p>
+</div>
+</section>
+<section id="typography-tools" class="slide level2" data-menu-title="Typography (tools)">
+<h2></h2>
+<p><span class="slide-title3">We applied what we learned about typography to our dumbbell plot</span></p>
+<hr>
+<p><span class="body-text-s">We learned how to use <code>{showtext}</code> to import Google Fonts, and apply them to text using the <code>family</code> argument (typically) within our plot’s <code>theme()</code>. Similarly, we can important and use Font Awesome icons! We also used <code>{ggtext}</code> to render text using HTML and / or Markdown syntax.</span></p>
 
+<img data-src="images/week10/earnings.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<p>week 1 | week 2 | week 3 | week 4 | week 5 | <span class="teal-text"><strong>week 6</strong></span> | week 7 | week 8 | week 9 | week 10</p>
+</div>
+</section>
+<section id="week7" class="slide level2" data-menu-title="Week 7">
+<h2></h2>
+<div class="center-text">
+<p><span class="slide-title-xl">Week 7</span></p>
+</div>
+<p><br></p>
+
+<img data-src="images/week10/non-fundamental-plots.png" style="width:80.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="footer">
+<p>week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | <span class="teal-text"><strong>week 7</strong></span> | week 8 | week 9 | week 10</p>
+</div>
+<!-- --- -->
+<!-- ## {#non-fundamental-plots data-menu-title="Non-fundamental plots"}  -->
+<!-- [You also began exploring other exciting "non-fundamental" chart types]{.slide-title3} -->
+<!-- <hr> -->
+<!-- <br> -->
+<!-- :::: {.columns} -->
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "100%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week10/radar.png") -->
+<!-- ``` -->
+<!-- ::: {.center-text .gray-text .body-text-s} -->
+<!-- Source: [A Guide to Data Roles](https://www.datacaptains.com/blog/guide-to-data-roles) -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "100%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week10/leibold-etal-2020.png") -->
+<!-- ``` -->
+<!-- ::: {.center-text .gray-text .body-text-s} -->
+<!-- Source: [Leibold et al. 2020](https://www.researchgate.net/publication/342705804_The_Internal_Structure_of_Metacommunities) -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- :::: -->
+<!-- ::: {.center-text} -->
+<!-- ...and sunburst plots, heatmaps, saneky diagrams, treemaps, etc. -->
+<!-- ::: -->
+<!-- ::: {.footer} -->
+<!-- week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | [**week 7**]{.teal-text} | week 8 | week 9 | week 10 -->
+<!-- ::: -->
+</section>
+<section id="week8" class="slide level2" data-menu-title="Week 8">
+<h2></h2>
+<div class="center-text">
+<p><span class="slide-title-xl">Week 8</span></p>
+</div>
 
 <img data-src="images/week10/horst-eco-r4ds.png" style="width:80.0%" class="r-stretch quarto-figure-center"><div class="footer">
 <p>week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | <span class="teal-text"><strong>week 8</strong></span> | week 9 | week 10</p>
 </div>
 </section>
+<section id="week9" class="slide level2" data-menu-title="Week 9">
+<h2></h2>
+<div class="center-text">
+<p><span class="slide-title-xl">Week 9</span></p>
+</div>
+
+<img data-src="images/week10/observable.png" style="width:80.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<p>week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | <span class="teal-text"><strong>week 9</strong></span> | week 10</p>
+</div>
+</section>
+<section id="ojs" class="slide level2" data-menu-title="OJS">
+<h2></h2>
+<p><span class="slide-title2">Observable Plot isn’t so different from <code>{ggplot2}</code></span></p>
+<hr>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>Building inputs that update data viz outputs in an Observable Notebook is pretty sleek</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/ojs-inputs.gif" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-text body-text-s">
+<p>D3 is complex, but opens up limitless data viz possibilities!</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/week10/D3.gif" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section class="slide level2">
 
+<p>and all this time, you were applying these tools, concepts, and theory to your own data visualizations.</p>
+<p>at this point in the quarter, you also</p>
+</section>
+<section class="slide level2">
+
+<p>Along the way we did a lot of data wrangling!</p>
+<p>Week 1: - Fracking (FracFocus)</p>
+<p>Week 3: - Ocean temperatures (SBC LTER) - CA droughts (US Drought Monitor)</p>
+<p>Week 4: - Lyme disease (CDC) - Census data (<code>{tidycensus}</code>) - Gender pay gap (Bureau of Labor Statistics &amp; Census Bureau, courtesy of TidyTuesday) - Stream chemistry (Hubbard Brook Experimental Forest, via DataOne’s <code>{metajam}</code>)</p>
+<p>Week 5 - precipitation data from NOAA National Centers for Environmental Information - tigirs geometries</p>
+<p>Looking up documentation Repo organization Git/GitHub Collaborating with peers Quarto docs</p>
 
 <div class="footer footer-default">
 
