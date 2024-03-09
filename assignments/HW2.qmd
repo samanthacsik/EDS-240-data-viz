@@ -130,7 +130,7 @@ Now that you've explored and starting wrangling your data, it's time to create s
 
 You must complete the following, as detailed below, to receive a "Satisfactory" mark for Assignment #2, Part I:
 
-**Complete the following steps in your GitHub Classroom repo (`eds240-HW2/Part1.qmd`):**
+**Complete the following steps in your GitHub Classroom repo (`eds240-hw2-username/Part1.qmd`):**
 
 - [ ] include your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the `Part1.qmd` YAML
 - [ ] answer the three Part 1a questions, adhering to the length requirements specified at the end of each question prompt

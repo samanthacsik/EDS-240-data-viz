@@ -1113,25 +1113,25 @@
     "text": "Week 1\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
-    "objectID": "slides/week10.3-recap.html#what-is-viz",
-    "href": "slides/week10.3-recap.html#what-is-viz",
+    "objectID": "slides/week10.3-recap.html#def-hist",
+    "href": "slides/week10.3-recap.html#def-hist",
     "title": "EDS 240",
     "section": "",
-    "text": "What is data visualization?\n\n“any graphical representation of information and data” (Cédric Scherer) & “part art and part science” (Claus O. Wilke)\n\n\nThere’s a long history of people (across time, regions, cultures) using visual representations of data to communicate information.\n\n\n\n\n\n\n\n\n\n\n\n\nLascaux Cave Paintings. Image source: Rock Art Blog\n\n\n\n\n\n\n\n\n\n\n\n\nFlorence Nightingale. Image source: Cool Infographics\n\n\n\n\n\n\n\n\n\n\n\n\nW.E.B. DuBois. Image source: Smithsonian Magazine\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": "We started off with some definitions and data viz history\n\n“any graphical representation of information and data” (Cédric Scherer) & “part art and part science” (Claus O. Wilke)\n\n\nThere’s a long history of people (across time, regions, cultures) using visual representations of data to communicate information.\n\n\n\n\n\n\n\n\n\n\n\n\nLascaux Cave Paintings. Image source: Rock Art Blog\n\n\n\n\n\n\n\n\n\n\n\n\nFlorence Nightingale. Image source: Cool Infographics\n\n\n\n\n\n\n\n\n\n\n\n\nW.E.B. DuBois. Image source: Smithsonian Magazine\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#vertices",
     "href": "slides/week10.3-recap.html#vertices",
     "title": "EDS 240",
     "section": "",
-    "text": "There are lots of reasons to visualize data\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": "And discussed the many reasons to visualize data\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#ggplot2",
     "href": "slides/week10.3-recap.html#ggplot2",
     "title": "EDS 240",
     "section": "",
-    "text": "{ggplot2} is an awesome tool for creating data viz\n\n\n\n a layered “grammar of graphics” i.e. compose graphs by combining independent components\n\n Graphic layers: data (tidy format), geoms, statistical transformations, position adjustments, coordinate system, facets\n\n Communication layers: labels, annotations, scales, themes, layout\n\n lots of extensions + an active / helpful online community\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": "We (re)familiarized ourselves with {ggplot2}\n\n\n\n a layered “grammar of graphics” i.e. compose graphs by combining independent components\n\n Graphic layers: data (tidy format), geoms, statistical transformations, position adjustments, coordinate system, facets\n\n Communication layers: labels, annotations, scales, themes, layout\n\n lots of extensions + an active / helpful online community\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#week2",
@@ -1145,14 +1145,14 @@
     "href": "slides/week10.3-recap.html#alt-text",
     "title": "EDS 240",
     "section": "",
-    "text": "Add alt text to improve data viz accessibility\n\n\n\n\nalt=“Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature”\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": "We crafted effective alt text to improve data viz accessibility\n\n\n\n\nalt=“Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature”\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#inspect-alt-text",
     "href": "slides/week10.3-recap.html#inspect-alt-text",
     "title": "EDS 240",
     "section": "",
-    "text": "You can check to make sure alt text was added successfully\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": "And learned how to make sure it was added successfully\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#week3-4",
@@ -1166,21 +1166,21 @@
     "href": "slides/week10.3-recap.html#hierarchy",
     "title": "EDS 240",
     "section": "",
-    "text": "Choosing a graphic form can be challenging, but there are guidelines\n\n\n\n  \n\n“If I had the answer to that, I’d be rich by now…I have no idea, but I can give you some clues to make your own choices based on what we know about why and how visualization works”\n\n\n-Albert Cairo\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": "We explored guidelines for choosing a graphic form . . .\n\n\n\n  \n\n“If I had the answer to that, I’d be rich by now…I have no idea, but I can give you some clues to make your own choices based on what we know about why and how visualization works”\n\n\n-Albert Cairo\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#caveats",
     "href": "slides/week10.3-recap.html#caveats",
     "title": "EDS 240",
     "section": "",
-    "text": ". . . and of course there are always caveats!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: New York Times\n\n\n \n\n\n\n\n\n\n\n\n\n\nSource: The Medium\n\n\n\n\n\n(Plus, sticking with just the graphic forms from the hierarchy would get pretty boring!)\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10\n\n\nAlso, see the arc sankey: https://www.flerlagetwins.com/2019/10/arc-sankey.html"
+    "text": ". . . and learned that there are caveats!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: New York Times\n\n\n \n\n\n\n\n\n\n\n\n\n\nSource: The Medium\n\n\n\n\n\n(Plus, sticking with just the graphic forms from the hierarchy would get pretty boring!)\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10\n\n\nAlso, see the arc sankey: https://www.flerlagetwins.com/2019/10/arc-sankey.html"
   },
   {
     "objectID": "slides/week10.3-recap.html#approaches",
     "href": "slides/week10.3-recap.html#approaches",
     "title": "EDS 240",
     "section": "",
-    "text": "Approaches for deciding on a graphic form\n\n\n\n \n\nthink about the task(s) you want to enable (e.g. compare groups, visualize flow) and / or the message you want to convey\nconsider the types and number of variables and data points – decision trees, like From Data to Viz can help!\npair multiple graphs together\narrange components of your graphic\ntest the outcomes of your graphic on others\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": "We discussed some additional tools and approaches for helping us on our chart-choosing journeys\n\n\n\n \n\nthink about the task(s) you want to enable (e.g. compare groups, visualize flow) and / or the message you want to convey\nconsider the types and number of variables and data points – decision trees, like From Data to Viz can help!\npair multiple graphs together\narrange components of your graphic\ntest the outcomes of your graphic on others\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#fundamental-charts",
@@ -1201,14 +1201,14 @@
     "href": "slides/week10.3-recap.html#theme",
     "title": "EDS 240",
     "section": "",
-    "text": "Customizing plot themes is an important part of building aesthetically-pleasing visualizations\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": "We learned how to customize plot themes, which is an important part of building aesthetically-pleasing viz. . .\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#theme-drought",
     "href": "slides/week10.3-recap.html#theme-drought",
     "title": "EDS 240",
     "section": "",
-    "text": "We got some early practice by recreating this iconic visualization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: US Drought Monitor\n\n\n\n\n\n\n\n\n\n\n\n\nOur recreation!\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": ". . . and got some early practice by recreating this iconic visualization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: US Drought Monitor\n\n\n\n\n\n\n\n\n\n\n\n\nOur recreation!\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#week5-6",
@@ -1222,49 +1222,49 @@
     "href": "slides/week10.3-recap.html#good-data-viz",
     "title": "EDS 240",
     "section": "",
-    "text": "Good data visualization design considers . . .\n\n\nMaximizing the data-ink ratio (without sacrificing readability and aesthetics) and reducing eye movement (removing redundant info, moving legends, using direct labels, avoiding rotated text).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": "We explored some things that make a good data viz . . .\n\n\nMaximizing the data-ink ratio (without sacrificing readability and aesthetics) and reducing eye movement (removing redundant info, moving legends, using direct labels, avoiding rotated text).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#bad-data-viz",
     "href": "slides/week10.3-recap.html#bad-data-viz",
     "title": "EDS 240",
     "section": "",
-    "text": "Good data visualization design generally avoids . . .\n\n\n\n\nInformation overload\n\n\n\n\n\n\n\n\n\n\n\n\n3D plots\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPie charts\n\n\n\n\n\n\n\n\n\n\n\n\nDual axes\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": ". . . and things to generally avoid\n\n\n\n\nInformation overload\n\n\n\n\n\n\n\n\n\n\n\n\n3D plots\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPie charts\n\n\n\n\n\n\n\n\n\n\n\n\nDual axes\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#colors",
     "href": "slides/week10.3-recap.html#colors",
     "title": "EDS 240",
     "section": "",
-    "text": "Colors play such and important role in data viz design\n\nFrom encoding information, to eliciting emotion, it’s critical that we choose our colors purposefully. Some topics we covered:\n\n\n\n\nscale types & when to use which (quantitative vs qualitative; sequential vs. diverging, classed vs. unclassed)\ncolorblind-friendly palette choices (plus tools for checking)\nredundant mapping (e.g. colors + shapes / patterns)\nwidely-used and recognizable climate science palettes (which you should totally use, when applicable!)\na little bit of color theory to help guide us in designing our own palettes\nhow colors can (and do) elicit emotions (which can differ across cultures)\ngeneral guidelines\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": "We spent a lot of time discussing the importance of color\n\nFrom encoding information, to eliciting emotion, it’s critical that we choose our colors purposefully. Some topics we covered:\n\n\n\n\nscale types & when to use which (quantitative vs qualitative; sequential vs. diverging, classed vs. unclassed)\ncolorblind-friendly palette choices (plus tools for checking)\nredundant mapping (e.g. colors + shapes / patterns)\nwidely-used and recognizable climate science palettes (which you should totally use, when applicable!)\na little bit of color theory to help guide us in designing our own palettes\nhow colors can (and do) elicit emotions (which can differ across cultures)\ngeneral guidelines\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#color-tools",
     "href": "slides/week10.3-recap.html#color-tools",
     "title": "EDS 240",
     "section": "",
-    "text": "We explored different tools for building color palettes\n\n\n\nTools:\n\n{viridis} & {RColorBrewer} (great options for colorblind-friendly palettes)\n{paletteer} and the R Color Palettes website\nChrome extensions for simulating vision deficiencies & gray scale\nOnline palette generators\n{ggplot2} color scaling functions\n\nTips:\n\nsave palettes as vectors outside of your plot\nset color names\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": ". . . and explored different tools for building and applying color palettes\n\n\n\nTools:\n\n{viridis} & {RColorBrewer} (great options for colorblind-friendly palettes)\n{paletteer} and the R Color Palettes website\nChrome extensions for simulating vision deficiencies & gray scale\nOnline palette generators\n{ggplot2} color scaling functions\n\nTips:\n\nsave palettes as vectors outside of your plot\nset color names\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#choropleth",
     "href": "slides/week10.3-recap.html#choropleth",
     "title": "EDS 240",
     "section": "",
-    "text": "We applied what we learned about colors to a choropleth\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnclassed map\n\n\n\n\n\n\n\n\n\n\n\n\nClassed map:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe also touched on simple features and accessing shapefiles using {tigris}.\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": "We applied what we learned about colors as we built our first choropleth maps\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnclassed map\n\n\n\n\n\n\n\n\n\n\n\n\nClassed map:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe also touched on simple features and accessing shapefiles using {tigris}.\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#typography",
     "href": "slides/week10.3-recap.html#typography",
     "title": "EDS 240",
     "section": "",
-    "text": "Our typographic choices can be just as important and impactful as our color choices\n\n\n\n  \n\ndifference between typeface & font\nhow typeface can affect emotions & perceptions\nhow to choose typeface\nusing typeface & font style to guide a\nfinding typefaces and font styles on Google Fonts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": "We learned how our typographic choices can be just as important and impactful as our color choices . . .\n\n\n\n  \n\ndifference between typeface & font\nhow typeface can affect emotions & perceptions\nhow to choose typeface\nusing typeface & font style to guide a\nfinding typefaces and font styles on Google Fonts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#typography-tools",
     "href": "slides/week10.3-recap.html#typography-tools",
     "title": "EDS 240",
     "section": "",
-    "text": "We applied what we learned about typography to our dumbbell plot\n\nWe learned how to use {showtext} to import Google Fonts, and apply them to text using the family argument (typically) within our plot’s theme(). Similarly, we can important and use Font Awesome icons! We also used {ggtext} to render text using HTML and / or Markdown syntax.\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": ". . . and practiced applying Google fonts / styling text in our dumbbell plot\n\n\n\n\n\n\n{showtext} for importing Google Fonts (and others, incl. Font Awesome icons)\napply fonts using family argument\n{ggtext} to render text using HTML and / or Markdown\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#week7",
@@ -1281,6 +1281,20 @@
     "text": "Week 8\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
+    "objectID": "slides/week10.3-recap.html#story-telling",
+    "href": "slides/week10.3-recap.html#story-telling",
+    "title": "EDS 240",
+    "section": "",
+    "text": "We practiced telling and understanding stories . . .\n\n\n\n \n\nadding context, narrative, visuals\nstorytelling earns trust and evokes emotion\nknow your audience\nour data is never a perfect reflection of the real world\nbest use of data is to teach us what isn’t true\nno matter the format, audience, or setting we have the opportunity to tell a story\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+  },
+  {
+    "objectID": "slides/week10.3-recap.html#perceive-interpret",
+    "href": "slides/week10.3-recap.html#perceive-interpret",
+    "title": "EDS 240",
+    "section": "",
+    "text": ". . . and considered our role in how viewers perceive and interpret information\n\nWe discussed incorporating equity awareness as we work with data, how connecting readers with content requires empathy, considering how we (dis)aggregate data, awareness of “othering,” and data humanism.\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+  },
+  {
     "objectID": "slides/week10.3-recap.html#week9",
     "href": "slides/week10.3-recap.html#week9",
     "title": "EDS 240",
@@ -1292,7 +1306,56 @@
     "href": "slides/week10.3-recap.html#ojs",
     "title": "EDS 240",
     "section": "",
-    "text": "Observable Plot isn’t so different from {ggplot2}\n\n\n\n\n\nBuilding inputs that update data viz outputs in an Observable Notebook is pretty sleek\n\n\n\n\n\n\n\n\n\n\n\n\nD3 is complex, but opens up limitless data viz possibilities!"
+    "text": "We saw that Observable Plot isn’t so different from {ggplot2}\n\n\n\n\n\nBuilding inputs that update data viz outputs in an Observable Notebook is pretty sleek\n\n\n\n\n\n\n\n\n\n\n\n\nD3 is complex, but opens up limitless data viz possibilities!\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+  },
+  {
+    "objectID": "slides/week10.3-recap.html#week10",
+    "href": "slides/week10.3-recap.html#week10",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Week 10\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+  },
+  {
+    "objectID": "slides/week10.3-recap.html#tbd",
+    "href": "slides/week10.3-recap.html#tbd",
+    "title": "EDS 240",
+    "section": "",
+    "text": "week 10 tbd\n\ncome back to this\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+  },
+  {
+    "objectID": "slides/week10.3-recap.html#not-all",
+    "href": "slides/week10.3-recap.html#not-all",
+    "title": "EDS 240",
+    "section": "",
+    "text": "But that’s not all!\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+  },
+  {
+    "objectID": "slides/week10.3-recap.html#data-wrangling",
+    "href": "slides/week10.3-recap.html#data-wrangling",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Along the way, we also did a lot of data wrangling\n\nNever not a precursor to building awesome viz – the {tidyverse} became a familiar friend (though we also leveraged {janitor}, {chron}, {naniar}) in helping us clean and tidy data sets, including:\n fracking (FracFocus)\n ocean temperatures (SBC LTER)\n CA droughts (US Drought Monitor)\n Lyme disease (CDC)\n Census data ({tidycensus})\n gender pay gap (Bureau of Labor Statistics & Census Bureau, courtesy of TidyTuesday)\n stream chemistry (Hubbard Brook Experimental Forest, via DataOne’s {metajam})\n precipitation data from NOAA National Centers for Environmental Information\n {tigirs} geometries\n Your own data!\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+  },
+  {
+    "objectID": "slides/week10.3-recap.html#other-skills",
+    "href": "slides/week10.3-recap.html#other-skills",
+    "title": "EDS 240",
+    "section": "",
+    "text": "And practiced so many other super valuable skills!\n\n\n Goal setting (self-reflections)\n\n Writing and communication (assignments & reflections)\n\n\n Repo organization\n\n\n Writing / rendering / deploying Quarto docs\n\n\n  git / GitHub for version control\n\n\n Collaborating with peers (in class, on HWs, giving / receiving feedback)\n\n\n Asking for help\n\n\n Looking up documentation\n\n\n Resourcefulness (Googling, adapting code, looking for inspiration, troubleshooting)\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+  },
+  {
+    "objectID": "slides/week10.3-recap.html#know-some-things",
+    "href": "slides/week10.3-recap.html#know-some-things",
+    "title": "EDS 240",
+    "section": "",
+    "text": "I hope that you all walk from our time together away feeling a bit like this \n\n\n\n\nArtwork by Allison Horst"
+  },
+  {
+    "objectID": "slides/week10.3-recap.html#evals-eocs",
+    "href": "slides/week10.3-recap.html#evals-eocs",
+    "title": "EDS 240",
+    "section": "",
+    "text": "Pretty please fill out course evals! These are so important!\n\n\n\n\nSam\nhttps://go.blueja.io/sQgz_41_Z0Cr5QzhZPjnZA\n\n\n\n\n\n\n\n\n\n\n\n\nSevan"
   },
   {
     "objectID": "slides/week8.1-data-stories-slides.html#title-slide",
@@ -2510,7 +2573,7 @@
     "href": "assignments/SR2-midcourse.html#rubric-specifications",
     "title": "Mid-course reflection (SR #2)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this Mid-course reflection:\nComplete the following steps in your GitHub Classroom repo (eds240-sr2/SR2-midcourse-reflection.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the title of the SR1-precourse-reflection.qmd YAML\naddress each question in at least 2-6 sentences (but please feel free to expand on any of these, if you’d like)\npush SR2-midcourse-reflection.qmd to GitHub using GitHub Classrooms by 11:59pm PT on Sat 02/10/2024"
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this Mid-course reflection:\nComplete the following steps in your GitHub Classroom repo (eds240-sr2-username/SR2-midcourse-reflection.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the SR1-precourse-reflection.qmd YAML\naddress each question in at least 2-6 sentences (but please feel free to expand on any of these, if you’d like)\npush SR2-midcourse-reflection.qmd to GitHub using GitHub Classrooms by 11:59pm PT on Sat 02/10/2024"
   },
   {
     "objectID": "assignments/HW4.html",
@@ -2566,7 +2629,7 @@
     "href": "assignments/HW2.html#rubric-specifications",
     "title": "Assignment #2 (HW #2)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #2, Part I:\nComplete the following steps in your GitHub Classroom repo (eds240-HW2/Part1.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the Part1.qmd YAML\nanswer the three Part 1a questions, adhering to the length requirements specified at the end of each question prompt\ncreate three different plots (two unpolished exploratory data visualizations and one polished final plot) in accordance with Part 1b instructions (NOTE: there isn’t necessarily a single correct answer here, but your final plot should clearly display the variables of interest and you should be able to justify your choice in your written responses)\ncode should be clearly organized and annotated following conventions and guidelines outlined in the Writing clean code page on the course website\nanswer the five Part 1b questions, adhering to the length requirements specified at the end of each question prompt\nadd alt text to your final visualization in accordance with Part 1b instructions\nwe should be able to run individual lines / chunks of code and render Part1.qmd without errors\nall three plot outputs should appear in your rendered doc\npush your completed Part1.qmd to GitHub via GitHub Classrooms by 11:59pm PT on Sat 02/03/2024\n\n\n\n End Part I"
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #2, Part I:\nComplete the following steps in your GitHub Classroom repo (eds240-hw2-username/Part1.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the Part1.qmd YAML\nanswer the three Part 1a questions, adhering to the length requirements specified at the end of each question prompt\ncreate three different plots (two unpolished exploratory data visualizations and one polished final plot) in accordance with Part 1b instructions (NOTE: there isn’t necessarily a single correct answer here, but your final plot should clearly display the variables of interest and you should be able to justify your choice in your written responses)\ncode should be clearly organized and annotated following conventions and guidelines outlined in the Writing clean code page on the course website\nanswer the five Part 1b questions, adhering to the length requirements specified at the end of each question prompt\nadd alt text to your final visualization in accordance with Part 1b instructions\nwe should be able to run individual lines / chunks of code and render Part1.qmd without errors\nall three plot outputs should appear in your rendered doc\npush your completed Part1.qmd to GitHub via GitHub Classrooms by 11:59pm PT on Sat 02/03/2024\n\n\n\n End Part I"
   },
   {
     "objectID": "assignments/HW2.html#learning-outcomes-1",
@@ -2608,7 +2671,7 @@
     "href": "assignments/SR1-precourse.html#rubric-specifications",
     "title": "Pre-course reflection (SR #1)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this Pre-course reflection:\nComplete the following steps in your GitHub Classroom repo (eds240-sr1-USERNAME/SR1-precourse-reflection.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the SR1-precourse-reflection.qmd YAML\nanswer all questions above, adhering to the length requirements specified at the end of each question prompt\nwe (your instructors) should be able to successfully render SR1-precourse-reflection.qmd locally without error, however do not push any html files to GitHub (i.e. SR1-precourse-reflection.html and SR1-precourse-reflection_files/; consider adding these to your .gitignore so that you don’t accidentally push them)\npush your completed SR1-precourse-reflection.qmd to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/13/2024"
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this Pre-course reflection:\nComplete the following steps in your GitHub Classroom repo (eds240-sr1-username/SR1-precourse-reflection.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the SR1-precourse-reflection.qmd YAML\nanswer all questions above, adhering to the length requirements specified at the end of each question prompt\nwe (your instructors) should be able to successfully render SR1-precourse-reflection.qmd locally without error, however do not push any html files to GitHub (i.e. SR1-precourse-reflection.html and SR1-precourse-reflection_files/; consider adding these to your .gitignore so that you don’t accidentally push them)\npush your completed SR1-precourse-reflection.qmd to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/13/2024"
   },
   {
     "objectID": "assignments.html",
@@ -2664,7 +2727,7 @@
     "href": "assignments/HW1.html#rubric-specifications",
     "title": "Assignment #1 (HW #1)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part I:\nComplete the following steps in your GitHub Classroom repo (eds240-hw1-USERNAME/Part1.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the Part1.qmd YAML\nupdate each comment line in the code that reads, ANNOTATE, with a brief description, written in your own words (see lines 114 & 120 for example annotations; there are other lines that have been already annotated for you as well – you do not need to re-write these annotations – you are allowed up to five incorrect or missing annotations\nleave the code chunk options set to eval: false and echo: true\nanswer all three Part 1b questions adhering to the length requirements specified at the end of each question prompt\nwe (your instructors) should be able to successfully render Part1.qmd locally without errors, however do not push any html files to GitHub (i.e. Part1.html and Part1_files/; consider adding these to your .gitignore so that you don’t accidentally push them)\npush your completed Part1.qmd to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024\n\n\n\n End Part I"
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part I:\nComplete the following steps in your GitHub Classroom repo (eds240-hw1-username/Part1.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the Part1.qmd YAML\nupdate each comment line in the code that reads, ANNOTATE, with a brief description, written in your own words (see lines 114 & 120 for example annotations; there are other lines that have been already annotated for you as well – you do not need to re-write these annotations – you are allowed up to five incorrect or missing annotations\nleave the code chunk options set to eval: false and echo: true\nanswer all three Part 1b questions adhering to the length requirements specified at the end of each question prompt\nwe (your instructors) should be able to successfully render Part1.qmd locally without errors, however do not push any html files to GitHub (i.e. Part1.html and Part1_files/; consider adding these to your .gitignore so that you don’t accidentally push them)\npush your completed Part1.qmd to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024\n\n\n\n End Part I"
   },
   {
     "objectID": "assignments/HW1.html#learning-outcomes-1",
@@ -2678,14 +2741,14 @@
     "href": "assignments/HW1.html#description-1",
     "title": "Assignment #1 (HW #1)",
     "section": "Description",
-    "text": "Description\nA small part of each homework assignment will be dedicated to working on a series of data visualizations which will be due as part of Assignment #4 at the end of the quarter. Assignment #4 will ask you to build three related, but different data visualizations – all which will use the same data set(s), but present those data differently for three different audiences / purposes:\n\na visualization for a general audience (i.e. without domain expertise) – this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), display findings in an atypical but creative way, and / or may blend both art and science\na visualization to be included in a paper, technical documentation, or report – this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.\na visualization that you could include in a presentation – you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you’re animating pieces of your visualization onto a slide)\n\nThis week, you’ll focus on finding data that interest you and begin brainstorming some questions that you might explore / answer using those data.\nYour data set(s) may be related to a past project, or even your current Capstone or GP. It may also be a completely new data set(s), unrelated to anything you’re currently working on. Explore the Data sources section of the course website’s resources page if you need some inspiration on where to start (you are not limited to just these data sources):\n\n\n\n\nOnce you’ve found your data set(s), answer the following questions:\n\n1. Describe your data set(s). Be sure to address the following (&lt;=4 sentences)\n\n1a. Where did you find these data?\n1b. What variables do these data contain? Is there sufficient metadata for understanding what those variables are?\n\n2. What steps are involved in downloading or accessing the data (e.g. “I can download using a button via this online portal,” “There’s an R package for scraping the data,” “I need to use an API to scrape the data,” etc.)? (1-2 sentences)\n3. What question(s) do you want to answer using these data (it’s okay if these questions evolve over time, this is just a starting point)? (&lt;=4 sentences)\n4. Will you need to combine multiple data sets to successfully answer your question(s)? If so, have you found all the necessary data? Do you have a way to combine it (e.g. matching key values across all data sets)? (&lt;=4 sentences)\nOptional: Import your data into R! (this will be a part of the next homework assignment) IMPORTANT: If your data files are large (&gt;2GB) DO NOT push your data to GitHub – instead, add your data file(s) or entire data folder to your .gitignore (you’ll practice this in Discussion section this week)."
+    "text": "Description\nA small part of each homework assignment will be dedicated to working on a series of data visualizations which will be due as part of Assignment #4 at the end of the quarter. Assignment #4 will ask you to build three related, but different data visualizations – all which will use the same data set(s), but present those data differently for three different audiences / purposes:\n\na visualization for a general audience (i.e. without domain expertise) – this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), display findings in an atypical but creative way, and / or may blend both art and science\na visualization to be included in a paper, technical documentation, or report – this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.\na visualization that you could include in a presentation – you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you’re animating pieces of your visualization onto a slide)\n\nThis week, you’ll focus on finding data that interest you and begin brainstorming some questions that you might explore / answer using those data.\nYour data set(s) may be related to a past project, or even your current Capstone or GP. It may also be a completely new data set(s), unrelated to anything you’re currently working on. Explore the Data sources section of the course website’s resources page if you need some inspiration on where to start (you are not limited to just these data sources):\nOnce you’ve found your data set(s), answer the following questions:\n\n1. Describe your data set(s). Be sure to address the following (&lt;=4 sentences)\n\n1a. Where did you find these data?\n1b. What variables do these data contain? Is there sufficient metadata for understanding what those variables are?\n\n2. What steps are involved in downloading or accessing the data (e.g. “I can download using a button via this online portal,” “There’s an R package for scraping the data,” “I need to use an API to scrape the data,” etc.)? (1-2 sentences)\n3. What question(s) do you want to answer using these data (it’s okay if these questions evolve over time, this is just a starting point)? (&lt;=4 sentences)\n4. Will you need to combine multiple data sets to successfully answer your question(s)? If so, have you found all the necessary data? Do you have a way to combine it (e.g. matching key values across all data sets)? (&lt;=4 sentences)\nOptional: Import your data into R! (this will be a part of the next homework assignment) IMPORTANT: If your data files are large (&gt;2GB) DO NOT push your data to GitHub – instead, add your data file(s) or entire data folder to your .gitignore (you’ll practice this in Discussion section this week)."
   },
   {
     "objectID": "assignments/HW1.html#rubric-specifications-1",
     "href": "assignments/HW1.html#rubric-specifications-1",
     "title": "Assignment #1 (HW #1)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part II:\nComplete the following step under your own personal GitHub profile, not in GitHub Classrooms:\n\ncreate a GitHub repository named lastName-eds240-HW4, which is where you’ll be doing any / all work related to Assignment #4. Be sure to make your repository public, initialize your repository with a README, and add a .gitignore file.\nadd Sam and Sevan as collaborators on your repo (on GitHub: Settings &gt; Collaborators &gt; Add people; our user names are samanthacsik and SevanEsaian)\nadd your repository’s URL next to your name on this Google Sheet\n\nComplete the following steps in your GitHub Classroom repo (eds240-hw1-USERNAME/Part2.qmd):\n\nlink to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4\nanswer all parts of the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you do not need to complete the optional importing of data – if you do want to practice importing your data, be sure to do so in your lastName-eds240-HW4 repository\nwe (your instructors) should be able to successfully render Part2.qmd locally without errors, however do not push any html files to GitHub (i.e. Part2.html and Part2_files/; consider adding these to your .gitignore so that you don’t accidentally push them) – only push Part2.qmd\npush your completed Part2.qmd to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024\n\n\n\n End Part II"
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part II:\nComplete the following step under your own personal GitHub profile, not in GitHub Classrooms:\n\ncreate a GitHub repository named lastName-eds240-HW4, which is where you’ll be doing any / all work related to Assignment #4. Be sure to make your repository public, initialize your repository with a README, and add a .gitignore file.\nadd Sam and Sevan as collaborators on your repo (on GitHub: Settings &gt; Collaborators &gt; Add people; our user names are samanthacsik and SevanEsaian)\nadd your repository’s URL next to your name on this Google Sheet\n\nComplete the following steps in your GitHub Classroom repo (eds240-hw1-username/Part2.qmd):\n\nlink to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4\nanswer all parts of the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you do not need to complete the optional importing of data – if you do want to practice importing your data, be sure to do so in your lastName-eds240-HW4 repository\nwe (your instructors) should be able to successfully render Part2.qmd locally without errors, however do not push any html files to GitHub (i.e. Part2.html and Part2_files/; consider adding these to your .gitignore so that you don’t accidentally push them) – only push Part2.qmd\npush your completed Part2.qmd to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024\n\n\n\n End Part II"
   },
   {
     "objectID": "assignments/HW3.html",
@@ -2720,21 +2783,21 @@
     "href": "assignments/SR3-endcourse.html",
     "title": "End-of-course reflection (SR #3)",
     "section": "",
-    "text": "In this assignment, you’ll reflect on your learning throughout this class. Revisit your self-evaluations from the start and middle of the quarter, and answer the following questions in 2-6 sentences each:\n\nSince your mid-quarter self-evaluation, have you improved any of your existing skills? Have you learned new ones?\nHave you accomplished your learning goals for this quarter (that you set at the beginning of the quarter)? If you did, how did you do it?\nWhat are you proudest of accomplishing in this course?\nWhat are some transferable skills that you developed in this course? How might you apply them to other courses / deliverables within your graduate program (e.g. MEDS, MESM, etc.) or to jobs in the future?\nWhat is one thing that you really liked about this course, and why? What is one thing you think could be improved about this course, and how?\nIs there anything else you’d like the instructors to know about your experience in the course?"
+    "text": "In this assignment, you’ll reflect on your learning throughout this class. Revisit your self-reflections from the start and middle of the quarter, and answer the following questions in 2-6 sentences each:\n\nSince your mid-quarter self-reflection, have you improved any of your existing skills? Have you learned new ones?\nHave you accomplished your learning goals for this quarter (that you set in SR #1, and potentially expanded upon / modified in SR #2)? If you did, how did you do it?\nWhat are you proudest of accomplishing in this course?\nWhat are some transferable skills that you developed in this course? How might you apply them to other courses / deliverables within your graduate program (e.g. MEDS, MESM, etc.) or to jobs in the future?\nWhat is one thing that you really liked about this course, and why? What is one thing you think could be improved about this course, and how?\nIs there anything else you’d like the instructors to know about your experience in the course?"
   },
   {
     "objectID": "assignments/SR3-endcourse.html#description",
     "href": "assignments/SR3-endcourse.html#description",
     "title": "End-of-course reflection (SR #3)",
     "section": "",
-    "text": "In this assignment, you’ll reflect on your learning throughout this class. Revisit your self-evaluations from the start and middle of the quarter, and answer the following questions in 2-6 sentences each:\n\nSince your mid-quarter self-evaluation, have you improved any of your existing skills? Have you learned new ones?\nHave you accomplished your learning goals for this quarter (that you set at the beginning of the quarter)? If you did, how did you do it?\nWhat are you proudest of accomplishing in this course?\nWhat are some transferable skills that you developed in this course? How might you apply them to other courses / deliverables within your graduate program (e.g. MEDS, MESM, etc.) or to jobs in the future?\nWhat is one thing that you really liked about this course, and why? What is one thing you think could be improved about this course, and how?\nIs there anything else you’d like the instructors to know about your experience in the course?"
+    "text": "In this assignment, you’ll reflect on your learning throughout this class. Revisit your self-reflections from the start and middle of the quarter, and answer the following questions in 2-6 sentences each:\n\nSince your mid-quarter self-reflection, have you improved any of your existing skills? Have you learned new ones?\nHave you accomplished your learning goals for this quarter (that you set in SR #1, and potentially expanded upon / modified in SR #2)? If you did, how did you do it?\nWhat are you proudest of accomplishing in this course?\nWhat are some transferable skills that you developed in this course? How might you apply them to other courses / deliverables within your graduate program (e.g. MEDS, MESM, etc.) or to jobs in the future?\nWhat is one thing that you really liked about this course, and why? What is one thing you think could be improved about this course, and how?\nIs there anything else you’d like the instructors to know about your experience in the course?"
   },
   {
     "objectID": "assignments/SR3-endcourse.html#rubric-specifications",
     "href": "assignments/SR3-endcourse.html#rubric-specifications",
     "title": "End-of-course reflection (SR #3)",
     "section": "Rubric (specifications)",
-    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this End-of-course reflection:\nComplete the following steps in your GitHub Classroom repo (eds240-SR3/SR3-endcourse-reflection.qmd):\n\ninclude your preferred name, and if you feel comfortable, your preferred pronouns in the title of the SR3-endcourse-reflection.qmd YAML\naddress each question in at least 2-6 sentences (but please feel free to expand on any of these, if you’d like)\npush SR3-endcourse-reflection.qmd to GitHub using GitHub Classrooms by 11:59pm PT on Sat 03/16/2024\n\nAdditionally, please complete the ESCI evaluations associated with this course (EDS 240) for both the instructor (Sam Csik) and TA (Sevan Esaian) by the deadline (Friday, 03/15/2024)."
+    "text": "Rubric (specifications)\nYou must complete the following, as detailed below, to receive a “Satisfactory” mark for this End-of-course reflection:\nComplete the following steps in your GitHub Classroom repo (eds240-sr3-username/SR3-endcourse-reflection.qmd):\n\ninclude your preferred name, and if you feel comfortable,your preferred pronouns in the author field of the SR3-endcourse-reflection.qmd YAML\naddress each question in at least 2-6 sentences (but please feel free to expand on any of these, if you’d like)\npush SR3-endcourse-reflection.qmd to GitHub using GitHub Classrooms by 11:59pm PT on Sat 03/16/2024\n\nAdditionally, please complete the formal UCSB course evaluations for both the EDS 240 instructor (Sam Csik) and TA (Sevan Esaian) by the deadline (Friday, 03/15/2024)."
   },
   {
     "objectID": "getting-unstuck.html",
@@ -4771,7 +4834,7 @@
     "href": "course-materials/week10.html#pre-class-prep",
     "title": "Grab Bag & Review",
     "section": "Pre-class Prep",
-    "text": "Pre-class Prep\nComing soon"
+    "text": "Pre-class Prep\n\nInstall required packages\nComing soon!\n\n\nCreate an OpenAI account\nYou’ll need to create a free OpenAI account before you can use ChatGPT. Be sure to do so before class, if you don’t already have one."
   },
   {
     "objectID": "course-materials/week10.html#lecture-materials",
@@ -4785,13 +4848,13 @@
     "href": "course-materials/week10.html#discussion-materials",
     "title": "Grab Bag & Review",
     "section": "Discussion Materials",
-    "text": "Discussion Materials\nComing soon!"
+    "text": "Discussion Materials\nLet’s celebrate all of our hard work with a data visualization showcase! Everyone will have ~2 minutes to show off their creations. Please add your three data visualizations (option 1) or infographic (option 2) to your assigned slide (linked below) and come prepared to briefly describe the following:\n\nDescribe your data and where you found it\nWhat question(s) did you set out to answer?\nOne thing that you’re super proud of figuring out / creating\nOne thing that you wanted to implement but couldn’t quite make happen (yet)\n\nFind your slide here:\n\n10am section slides\n11am section slides"
   },
   {
     "objectID": "course-materials/week10.html#assignment-reminders",
     "href": "course-materials/week10.html#assignment-reminders",
     "title": "Grab Bag & Review",
     "section": "Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/16/2024, 11:59pm PT"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
   }
 ]

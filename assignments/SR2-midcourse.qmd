@@ -24,8 +24,8 @@ Reread your responses to your Pre-course reflection (SR #1) to refresh your memo
 
 You must complete the following, as detailed below, to receive a "Satisfactory" mark for this Mid-course reflection:
 
-**Complete the following steps in your GitHub Classroom repo (eds240-sr2/SR2-midcourse-reflection.qmd):**
+**Complete the following steps in your GitHub Classroom repo (`eds240-sr2-username/SR2-midcourse-reflection.qmd`):**
 
-  - [ ] include your preferred name, and if you feel comfortable, your preferred pronouns in the `title` of the `SR1-precourse-reflection.qmd` YAML 
+  - [ ] include your preferred name, and if you feel comfortable, your preferred pronouns in the `author` field of the `SR1-precourse-reflection.qmd` YAML 
   - [ ] address each question in at least 2-6 sentences (but please feel free to expand on any of these, if you'd like)
   - [ ] push `SR2-midcourse-reflection.qmd` to GitHub using GitHub Classrooms by 11:59pm PT on Sat 02/10/2024

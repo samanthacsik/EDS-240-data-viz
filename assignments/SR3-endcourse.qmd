@@ -7,10 +7,10 @@ title-block-banner: true
 
 ## Description 
 
-In this assignment, you’ll reflect on your learning throughout this class. Revisit your self-evaluations from the start and middle of the quarter,  and answer the following questions in [**2-6 sentences**]{.peach-text} each:
+In this assignment, you’ll reflect on your learning throughout this class. Revisit your self-reflections from the start and middle of the quarter, and answer the following questions in [**2-6 sentences**]{.peach-text} each:
 
-- [ ] Since your mid-quarter self-evaluation, have you improved any of your existing skills? Have you learned new ones?
-- [ ] Have you accomplished your learning goals for this quarter (that you set at the beginning of the quarter)? If you did, how did you do it?
+- [ ] Since your mid-quarter self-reflection, have you improved any of your existing skills? Have you learned new ones?
+- [ ] Have you accomplished your learning goals for this quarter (that you set in SR #1, and potentially expanded upon / modified in SR #2)? If you did, how did you do it?
 - [ ] What are you proudest of accomplishing in this course? 
 - [ ] What are some transferable skills that you developed in this course? How might you apply them to other courses / deliverables within your graduate program (e.g. MEDS, MESM, etc.) or to jobs in the future?
 - [ ] What is one thing that you really liked about this course, and why? What is one thing you think could be improved about this course, and how?
@@ -21,10 +21,10 @@ In this assignment, you’ll reflect on your learning throughout this class. Rev
 
 You must complete the following, as detailed below, to receive a "Satisfactory" mark for this End-of-course reflection:
 
-**Complete the following steps in your GitHub Classroom repo (eds240-SR3/SR3-endcourse-reflection.qmd):**
+**Complete the following steps in your GitHub Classroom repo (`eds240-sr3-username/SR3-endcourse-reflection.qmd`):**
 
-- [ ] include your preferred name, and if you feel comfortable, your preferred pronouns in the `title` of the `SR3-endcourse-reflection.qmd` YAML 
+- [ ] include your preferred name, and if you feel comfortable,your preferred pronouns in the `author` field of the `SR3-endcourse-reflection.qmd` YAML 
 - [ ] address each question in at least 2-6 sentences (but please feel free to expand on any of these, if you'd like)
 - [ ] push `SR3-endcourse-reflection.qmd` to GitHub using GitHub Classrooms by 11:59pm PT on Sat 03/16/2024
 
-Additionally, please complete the ESCI evaluations associated with this course (EDS 240) for both the instructor (Sam Csik) and TA (Sevan Esaian) by the deadline (Friday, 03/15/2024).
+Additionally, please complete the formal UCSB course evaluations for both the EDS 240 instructor (Sam Csik) and TA (Sevan Esaian) by the deadline (Friday, 03/15/2024).

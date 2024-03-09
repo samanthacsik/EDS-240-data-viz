@@ -38,7 +38,7 @@ Because everyone is participating under unique circumstances, I want to learn ab
 
 You must complete the following, as detailed below, to receive a "Satisfactory" mark for this Pre-course reflection:
 
-**Complete the following steps in your GitHub Classroom repo (`eds240-sr1-USERNAME/SR1-precourse-reflection.qmd`):**
+**Complete the following steps in your GitHub Classroom repo (`eds240-sr1-username/SR1-precourse-reflection.qmd`):**
 
   - [ ] include your preferred name, and if you feel comfortable, your preferred pronouns in the `author` field of the `SR1-precourse-reflection.qmd` YAML 
   - [ ] answer all questions above, adhering to the length requirements specified at the end of each question prompt

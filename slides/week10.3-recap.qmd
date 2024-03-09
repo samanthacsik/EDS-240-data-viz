@@ -45,9 +45,9 @@ knitr::include_graphics("images/week10/ggplot2.png")
 
 ---
 
-## {#what-is-viz data-menu-title="What is data viz?"} 
+## {#def-hist data-menu-title="Defs & history"} 
 
-[What is data visualization?]{.slide-title}
+[We started off with some definitions and data viz history]{.slide-title3}
 
 <hr>
 
@@ -110,7 +110,7 @@ W.E.B. DuBois. Image source: [Smithsonian Magazine](https://www.smithsonianmag.c
 
 ## {#vertices data-menu-title="Vertices"} 
 
-[There are lots of reasons to visualize data]{.slide-title}
+[And discussed the many reasons to visualize data]{.slide-title2}
 
 <hr>
 
@@ -132,7 +132,7 @@ knitr::include_graphics("images/week10/vertices.png")
 
 ## {#ggplot2 data-menu-title="{ggplot2}"} 
 
-[`{ggplot2}` is an awesome tool for creating data viz]{.slide-title3}
+[We (re)familiarized ourselves with `{ggplot2}`]{.slide-title2}
 
 <hr>
 
@@ -196,7 +196,7 @@ week 1 | [**week 2**]{.teal-text} | week 3 | week 4 | week 5 | week 6 | week 7 |
 
 ## {#alt-text data-menu-title="alt text"} 
 
-[Add alt text to improve data viz accessibility]{.slide-title2}
+[We crafted effective alt text to improve data viz accessibility]{.slide-title3}
 
 <hr>
 
@@ -223,7 +223,7 @@ week 1 | [**week 2**]{.teal-text} | week 3 | week 4 | week 5 | week 6 | week 7 |
 
 ## {#inspect-alt-text data-menu-title="Inspect alt text"} 
 
-[You can check to make sure alt text was added successfully]{.slide-title3}
+[And learned how to make sure it was added successfully]{.slide-title3}
 
 <hr>
 
@@ -270,7 +270,7 @@ week 1 | week 2 | [**week 3**]{.teal-text} | [**week 4**]{.teal-text} | week 5 |
 
 ## {#hierarchy data-menu-title="Choosing graphic forms"} 
 
-[Choosing a graphic form can be *challenging*, but there are guidelines]{.slide-title3}
+[We explored guidelines for choosing a graphic form . . .]{.slide-title3}
 
 <hr>
 
@@ -307,7 +307,7 @@ week 1 | week 2 | [**week 3**]{.teal-text} | week 4 | week 5 | week 6 | week 7 |
 
 ## {#caveats data-menu-title="Caveats"} 
 
-[. . . and of course there are always caveats!]{.slide-title}
+[. . . and learned that there are caveats!]{.slide-title}
 
 <hr>
 
@@ -364,7 +364,7 @@ Also, see the arc sankey: https://www.flerlagetwins.com/2019/10/arc-sankey.html
 
 ## {#approaches data-menu-title="Approaches"} 
 
-[Approaches for deciding on a graphic form]{.slide-title}
+[We discussed some additional tools and approaches for helping us on our chart-choosing journeys]{.slide-title3}
 
 <hr>
 
@@ -559,7 +559,7 @@ week 1 | week 2 | [**week 3**]{.teal-text} | [**week 4**]{.teal-text} | week 5 |
 
 ## {#theme data-menu-title="Themes"} 
 
-[Customizing plot themes is an important part of building aesthetically-pleasing visualizations]{.slide-title3}
+[We learned how to customize plot themes, which is an important part of building aesthetically-pleasing viz. . .]{.slide-title3}
 
 <hr>
 
@@ -581,7 +581,7 @@ week 1 | week 2 | week 3 | [**week 4**]{.teal-text} | week 5 | week 6 | week 7 |
 
 ## {#theme-drought data-menu-title="Themes (drought)"} 
 
-[We got some early practice by recreating this iconic visualization]{.slide-title3}
+[. . . and got some early practice by recreating this iconic visualization]{.slide-title3}
 
 <hr>
 
@@ -649,7 +649,7 @@ week 1 | week 2 | week 3 | week 4 | [**week 5**]{.teal-text} | [**week 6**]{.tea
 
 ## {#good-data-viz data-menu-title="Good data viz"} 
 
-[Good data visualization design considers . . .]{.slide-title2}
+[We explored some things that make a good data viz . . .]{.slide-title3}
 
 <hr>
 
@@ -731,7 +731,7 @@ week 1 | week 2 | week 3 | week 4 | [**week 5**]{.teal-text} | week 6 | week 7 |
 
 ## {#bad-data-viz data-menu-title="Bad data viz"} 
 
-[Good data visualization design *generally* avoids . . .]{.slide-title2}
+[. . . and things to generally avoid]{.slide-title2}
 
 <hr>
 
@@ -799,7 +799,7 @@ week 1 | week 2 | week 3 | week 4 | [**week 5**]{.teal-text} | week 6 | week 7 |
 
 ## {#colors data-menu-title="Colors"} 
 
-[Colors play *such* and important role in data viz design]{.slide-title3}
+[We spent *a lot* of time discussing the importance of color]{.slide-title3}
 
 <hr>
 
@@ -853,7 +853,7 @@ week 1 | week 2 | week 3 | week 4 | [**week 5**]{.teal-text} | week 6 | week 7 |
 
 ## {#color-tools data-menu-title="Color (tools)"} 
 
-[We explored different tools for building color palettes]{.slide-title3}
+[. . . and explored different tools for building and applying color palettes]{.slide-title3}
 
 <hr>
 
@@ -898,7 +898,7 @@ week 1 | week 2 | week 3 | week 4 | [**week 5**]{.teal-text} | week 6 | week 7 |
 
 ## {#choropleth data-menu-title="Choropleth"} 
 
-[We applied what we learned about colors to a choropleth]{.slide-title2}
+[We applied what we learned about colors as we built our first choropleth maps]{.slide-title2}
 
 <hr>
 <br>
@@ -980,7 +980,7 @@ week 1 | week 2 | week 3 | week 4 | [**week 5**]{.teal-text} | week 6 | week 7 |
 
 ## {#typography data-menu-title="Typography"} 
 
-[Our typographic choices can be just as important and impactful as our color choices]{.slide-title3}
+[We learned how our typographic choices can be just as important and impactful as our color choices . . .]{.slide-title3}
 
 <hr>
 
@@ -1027,12 +1027,23 @@ week 1 | week 2 | week 3 | week 4 | week 5 | [**week 6**]{.teal-text} | week 7 |
 
 ## {#typography-tools data-menu-title="Typography (tools)"} 
 
-[We applied what we learned about typography to our dumbbell plot]{.slide-title3}
+[. . . and practiced applying Google fonts / styling text in our dumbbell plot]{.slide-title3}
 
 <hr>
 
-[We learned how to use `{showtext}` to import Google Fonts, and apply them to text using the `family` argument (typically) within our plot's `theme()`. Similarly, we can important and use Font Awesome icons! We also used `{ggtext}` to render text using HTML and / or Markdown syntax.]{.body-text-s}
+<br>
 
+:::: {.columns}
+
+::: {.column width="40%"}
+<br>
+
+- `{showtext}` for importing Google Fonts (and others, incl. Font Awesome icons)
+- apply fonts using `family` argument
+- `{ggtext}` to render text using HTML and / or Markdown 
+:::
+
+::: {.column width="60%"}
 ```{r}
 #| eval: true
 #| echo: false
@@ -1040,6 +1051,9 @@ week 1 | week 2 | week 3 | week 4 | week 5 | [**week 6**]{.teal-text} | week 7 |
 #| fig-align: "center"
 knitr::include_graphics("images/week10/earnings.png")
 ```
+:::
+
+::::
 
 ::: {.footer}
 week 1 | week 2 | week 3 | week 4 | week 5 | [**week 6**]{.teal-text} | week 7 | week 8 | week 9 | week 10
@@ -1069,55 +1083,6 @@ knitr::include_graphics("images/week10/non-fundamental-plots.png")
 week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | [**week 7**]{.teal-text} | week 8 | week 9 | week 10
 :::
 
-<!-- --- -->
-
-<!-- ## {#non-fundamental-plots data-menu-title="Non-fundamental plots"}  -->
-
-<!-- [You also began exploring other exciting "non-fundamental" chart types]{.slide-title3} -->
-
-<!-- <hr> -->
-
-<!-- <br> -->
-
-<!-- :::: {.columns} -->
-
-<!-- ::: {.column width="50%"} -->
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: false -->
-<!-- #| out-width: "100%" -->
-<!-- #| fig-align: "center" -->
-<!-- knitr::include_graphics("images/week10/radar.png") -->
-<!-- ``` -->
-
-<!-- ::: {.center-text .gray-text .body-text-s} -->
-<!-- Source: [A Guide to Data Roles](https://www.datacaptains.com/blog/guide-to-data-roles) -->
-<!-- ::: -->
-<!-- ::: -->
-
-<!-- ::: {.column width="50%"} -->
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: false -->
-<!-- #| out-width: "100%" -->
-<!-- #| fig-align: "center" -->
-<!-- knitr::include_graphics("images/week10/leibold-etal-2020.png") -->
-<!-- ``` -->
-
-<!-- ::: {.center-text .gray-text .body-text-s} -->
-<!-- Source: [Leibold et al. 2020](https://www.researchgate.net/publication/342705804_The_Internal_Structure_of_Metacommunities) -->
-<!-- ::: -->
-<!-- ::: -->
-<!-- :::: -->
-
-<!-- ::: {.center-text} -->
-<!-- ...and sunburst plots, heatmaps, saneky diagrams, treemaps, etc. -->
-<!-- ::: -->
-
-<!-- ::: {.footer} -->
-<!-- week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | [**week 7**]{.teal-text} | week 8 | week 9 | week 10 -->
-<!-- ::: -->
-
 ---
 
 ## {#week8 data-menu-title="Week 8"} 
@@ -1133,6 +1098,136 @@ week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | [**week 7**]{.teal-text} |
 #| fig-align: "center"
 knitr::include_graphics("images/week10/horst-eco-r4ds.png")
 ```
+
+::: {.footer}
+week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | [**week 8**]{.teal-text} | week 9 | week 10
+:::
+
+---
+
+## {#story-telling data-menu-title="Storytelling"} 
+
+[We practiced telling and understanding stories . . .]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<br>
+<br>
+
+- adding context, narrative, visuals
+- storytelling earns trust and evokes emotion
+- know your audience
+- our data is never a perfect reflection of the real world
+- best use of data is to teach us what isn't true
+- no matter the format, audience, or setting we have the opportunity to tell a story
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "70%"
+#| fig-align: "center"
+#| fig-asp: 0.7
+#..........................load packages.........................
+library(tidyverse)
+library(palmerpenguins)
+library(showtext)
+
+#...........................load fonts...........................
+font_add_google(name = "Montserrat", family = "montserrat")
+showtext_auto()
+
+#.................get and assemble penguin image.................
+# only need to run these first two lines once to download image: 
+# url <- "https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/man/figures/culmen_depth.png"
+# utils::download.file(url = url, destfile =  here::here("week8", "images", "penguin.png"))
+my_img <- png::readPNG(here::here("slides", "images", "week8", "penguin.png"))
+my_raster_img <- grid::rasterGrob(my_img)
+
+#...........................build plot...........................
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
+  geom_point(alpha = 0.8, size = 2) +
+  ggforce::geom_mark_ellipse(aes(group = species, label = species),
+                    color = "black") +
+  scale_color_gradientn(colors = c("#F3E5B1", "#6C7B1A", "#044148")) +
+  guides(color = guide_colorbar(barwidth = 20, barheight = 0.5, 
+                                title.position = "top", title.hjust = 0.5,
+                                ticks = FALSE)) +
+  scale_x_continuous(breaks = seq(25, 65, 5),
+                     limits = c(25, 65),
+                     expand = c(0,0)) +
+  scale_y_continuous(breaks = seq(12, 24, 2),
+                     limits = c(12, 24),
+                     expand = c(0,0)) +
+  labs(x = "**Bill Length** (mm)",
+       y = "**Bill Depth** (mm)",
+       color = "Body Mass (g)",
+       title = "**Bill Dimensions of Brush-Tailed Penguins (*Phygoscelis*)**",
+       caption = "Data: Gorman, Williams, Fraser (2014) PLoS ONE | Illustration: Allison Horst") +
+  theme_light() +
+  theme(
+    plot.title.position = "plot",
+    legend.position = "top",
+    text = element_text(family = "montserrat"),
+    plot.title = ggtext::element_textbox_simple(size = 20,
+                                                margin = margin(0.5, 0, 1, 0.25, "lines")),
+    axis.title.x = ggtext::element_markdown(size = 15,
+                                            margin = margin(1, 0, 0, 0, "lines")),
+    axis.title.y = ggtext::element_markdown(size = 15,
+                                            margin = margin(0, 1, 0, 0, "lines")),
+    axis.text = element_text(size = 10),
+    axis.ticks = element_blank(),
+    legend.title = element_text(size = 14),
+    legend.text = element_text(size = 10),
+    plot.caption = element_text(face = "italic",
+                                margin = margin(2, 0, 0, 0, "lines")),
+    panel.grid.minor = element_blank()
+  ) +
+  coord_cartesian(clip = "off") +
+  annotation_custom(my_raster_img, 
+                    xmin = 56.8, xmax = 65.8,
+                    ymin = 22, ymax = 30) 
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "65%"
+#| fig-align: "center"
+knitr::include_graphics("images/week10/chalabi-vaquitas.png")
+```
+:::
+::::
+
+::: {.footer}
+week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | [**week 8**]{.teal-text} | week 9 | week 10
+:::
+
+---
+
+## {#perceive-interpret data-menu-title="Perceiving / Interpreting"} 
+
+[. . . and considered our role in how viewers perceive and interpret information]{.slide-title3}
+
+<hr>
+
+[We discussed incorporating **equity awareness** as we work with data, how connecting readers with content requires **empathy**, considering how we **(dis)aggregate** data, awareness of **"othering,"** and **data humanism**.]{.body-text-s}
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week10/andy-kirk.png")
+```
+
+<br>
 
 ::: {.footer}
 week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | [**week 8**]{.teal-text} | week 9 | week 10
@@ -1162,7 +1257,7 @@ week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | [**week 
 
 ## {#ojs data-menu-title="OJS"} 
 
-[Observable Plot isn't so different from `{ggplot2}`]{.slide-title2}
+[We saw that Observable Plot isn't so different from `{ggplot2}`]{.slide-title3}
 
 <hr>
 
@@ -1197,35 +1292,214 @@ knitr::include_graphics("images/week10/D3.gif")
 :::
 ::::
 
----
-
-and all this time, you were applying these tools, concepts, and theory to your own data visualizations. 
-
-at this point in the quarter, you also
+::: {.footer}
+week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | [**week 9**]{.teal-text} | week 10
+:::
 
 ---
 
-Along the way we did a lot of data wrangling!
+## {#week10 data-menu-title="Week 10"} 
 
-Week 1: 
-- Fracking (FracFocus)
+::: {.center-text}
+[Week 10]{.slide-title-xl}
+:::
 
-Week 3: 
-- Ocean temperatures (SBC LTER)
-- CA droughts (US Drought Monitor)
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+# knitr::include_graphics("images/week10/observable.png")
+```
 
-Week 4:
-- Lyme disease (CDC)
-- Census data (`{tidycensus}`)
-- Gender pay gap (Bureau of Labor Statistics & Census Bureau, courtesy of TidyTuesday)
-- Stream chemistry (Hubbard Brook Experimental Forest, via DataOne's `{metajam}`)
+::: {.footer}
+week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | [**week 10**]{.teal-text}
+:::
 
-Week 5
-- precipitation data from NOAA National Centers for Environmental Information
-- tigirs geometries
+---
 
-Looking up documentation
-Repo organization
-Git/GitHub
-Collaborating with peers
-Quarto docs
+## {#tbd data-menu-title="tbd"} 
+
+[week 10 tbd]{.slide-title2}
+
+<hr>
+
+come back to this
+
+::: {.footer}
+week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | [**week 10**]{.teal-text}
+:::
+
+---
+
+## {#not-all data-menu-title="That's not all"} 
+
+::: {.center-text}
+[But that's not all!]{.slide-title-xl}
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week10/billy-mays.gif")
+```
+
+<br>
+
+::: {.footer}
+[**week 1**]{.teal-text} | [**week 2**]{.teal-text} | [**week 3**]{.teal-text} | [**week 4**]{.teal-text} | [**week 5**]{.teal-text} | [**week 6**]{.teal-text} | [**week 7**]{.teal-text} | [**week 8**]{.teal-text} | [**week 9**]{.teal-text} | [**week 10**]{.teal-text}
+:::
+
+---
+
+## {#data-wrangling data-menu-title="Data wrangling"} 
+
+[Along the way, we *also* did a lot of data wrangling]{.slide-title2}
+
+<hr>
+
+Never *not* a precursor to building awesome viz -- the `{tidyverse}` became a familiar friend (though we also leveraged `{janitor}`, `{chron}`, `{naniar}`) in helping us clean and tidy data sets, including:
+
+[{{< fa oil-well title="an oil well" >}}]{.teal-text} fracking (FracFocus)
+
+[{{< fa temperature-three-quarters title="a temperature gauge" >}}]{.teal-text} ocean temperatures (SBC LTER)
+
+[{{< fa sun-plant-wilt title="a sun shining above a wilted plant" >}}]{.teal-text} CA droughts (US Drought Monitor)
+
+[{{< fa bugs title="two small bugs" >}}]{.teal-text} Lyme disease (CDC)
+
+[{{< fa users title="three people" >}}]{.teal-text} Census data (`{tidycensus}`)
+
+[{{< fa money-bill title="a money bill" >}}]{.teal-text} gender pay gap (Bureau of Labor Statistics & Census Bureau, courtesy of TidyTuesday)
+
+[{{< fa water title="water ripples" >}}]{.teal-text} stream chemistry (Hubbard Brook Experimental Forest, via DataOne's `{metajam}`)
+
+[{{< fa cloud-rain title="rain drops falling from a cloud" >}}]{.teal-text} precipitation data from NOAA National Centers for Environmental Information
+
+[{{< fa earth-americas title="planet Earth" >}}]{.teal-text} `{tigirs}` geometries
+
+[{{< fa hand-point-right title="a hand pointing to the right" >}}]{.teal-text} Your own data!
+
+::: {.footer}
+[**week 1**]{.teal-text} | [**week 2**]{.teal-text} | [**week 3**]{.teal-text} | [**week 4**]{.teal-text} | [**week 5**]{.teal-text} | [**week 6**]{.teal-text} | [**week 7**]{.teal-text} | [**week 8**]{.teal-text} | [**week 9**]{.teal-text} | [**week 10**]{.teal-text}
+:::
+
+---
+
+## {#other-skills data-menu-title="Other skills"} 
+
+[And practiced so many other super valuable skills!]{.slide-title2}
+
+<hr>
+
+<br>
+
+[{{< fa bullseye title="a bullseye" >}}]{.teal-text} Goal setting (self-reflections)
+
+. . . 
+
+[{{< fa pencil title="a pencil" >}}]{.teal-text} Writing and communication (assignments & reflections)
+
+. . . 
+
+[{{< fa folder-tree title="a folder struture tree" >}}]{.teal-text} Repo organization
+
+. . . 
+
+[{{< fa file-code title="a code file" >}}]{.teal-text} Writing / rendering / deploying Quarto docs
+
+. . . 
+
+[{{< fa brands git-alt title="The git logo" >}} {{< fa brands github title="the GitHub octocat" >}}]{.teal-text} git / GitHub for version control
+
+. . . 
+
+[{{< fa people-carry-box title="two people carrying a box together" >}}]{.teal-text} Collaborating with peers (in class, on HWs, giving / receiving feedback)
+
+. . . 
+
+[{{< fa question title="a question mark" >}}]{.teal-text} Asking for help
+
+. . . 
+
+[{{< fa book title="a book" >}}]{.teal-text} Looking up documentation
+
+. . . 
+
+[{{< fa magnifying-glass title="a magnifying glass" >}}]{.teal-text} Resourcefulness (Googling, adapting code, looking for inspiration, troubleshooting)
+
+::: {.footer}
+[**week 1**]{.teal-text} | [**week 2**]{.teal-text} | [**week 3**]{.teal-text} | [**week 4**]{.teal-text} | [**week 5**]{.teal-text} | [**week 6**]{.teal-text} | [**week 7**]{.teal-text} | [**week 8**]{.teal-text} | [**week 9**]{.teal-text} | [**week 10**]{.teal-text}
+:::
+
+---
+
+## {#know-some-things data-menu-title="Know some things"} 
+
+[I hope that you all walk from our time together away feeling a bit like this {{< fa face-smile-beam title="a smiley face" >}}]{.slide-title3}
+
+<hr>
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+#| fig-alt: "A cartoon monster student in a backpack looks on at stunning gems labeled 'Touchstones of Intuition', which have the text 'You know some stuff' written on sequential crystals."
+knitr::include_graphics("images/week10/horst-touchstones.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Artwork by [Allison Horst](https://allisonhorst.com/)
+:::
+
+---
+
+## {#evals-eocs data-menu-title="Evals & EOCs"} 
+
+[Pretty please fill out course evals! These are *so* important!]{.slide-title3}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.center-text}
+[**Sam**]{.body-text-m .teal-text}
+
+**<https://go.blueja.io/sQgz_41_Z0Cr5QzhZPjnZA>**
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "70%"
+#| fig-align: "center"
+knitr::include_graphics("images/week10/QR-sam.png")
+```
+:::
+
+::: {.column width="50%"}
+::: {.center-text}
+[**Sevan**]{.teal-text .body-text-m}
+
+**<add link here>**
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+# knitr::include_graphics("images/week10/QR-sam.png")
+```
+:::
+
+::::
+

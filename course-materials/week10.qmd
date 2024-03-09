@@ -21,7 +21,13 @@ I hope you all feel this way after another quarter of classes under your belts! 
 
 ## Pre-class Prep
 
-*Coming soon* 
+### Install required packages
+
+*Coming soon!* 
+
+### Create an OpenAI account
+
+You'll need to [create a free OpenAI account](https://chat.openai.com/auth/login) before you can use ChatGPT. Be sure to do so before class, if you don't already have one.
 
 ## Lecture Materials 
 
@@ -55,28 +61,29 @@ I hope you all feel this way after another quarter of classes under your belts! 
 
 ## Discussion Materials
 
-*Coming soon!*
+Let's celebrate all of our hard work with a data visualization showcase! Everyone will have ~2 minutes to show off their creations. Please add your three data visualizations (option 1) or infographic (option 2) to your assigned slide (linked below) and come prepared to *briefly* describe the following:
 
-<!-- Let's celebrate all of our hard work with a data viz showcase! Everyone will have ~2 minutes to show off their creations. Please come prepared to describe the following: -->
+1. Describe your data and where you found it
+2. What question(s) did you set out to answer?
+3. One thing that you're super proud of figuring out / creating
+4. One thing that you wanted to implement but couldn't quite make happen (yet)
 
-<!-- 1. Briefly describe your data and where you found it -->
-<!-- 2. What question(s) did you set out to answer? -->
-<!-- 3. One thing that you're super proud of creating -->
-<!-- 4. One thing that you'd like to improve -->
+Find your slide here:
+
+- [10am section slides](https://docs.google.com/presentation/d/1uGNLzMlspbj1Pn0qQdF7CoD2RA0eIl8DHj5tQyXh3qE/edit?usp=sharing)
+- [11am section slides](https://docs.google.com/presentation/d/1u31owoOiWuKI_ZEdebCpytsr1s2FtaKY2UzM0T59RAg/edit?usp=sharing)
 
 ## Assignment Reminders
 
-| Assignment Type | Assignment Title                 | Date Assigned  | Date Due                   |
-|:---------------:|----------------------------------|----------------|----------------------------|
-| EOC             | EOC (week 10)                    | Mon 03/11/2024 | Mon 03/11/2024, 11:55pm PT |
-| SR              | End-of-course reflection (SR #3) | Mon 03/11/2024 | Sat 03/16/2024, 11:59pm PT |
-| HW              | Homework Assignment #4           | Mon 02/26/2024 | Sat 03/16/2024, 11:59pm PT |
+<!-- | Assignment Type | Assignment Title                 | Date Assigned  | Date Due                   | -->
+<!-- |:---------------:|----------------------------------|----------------|----------------------------| -->
+<!-- | EOC             | EOC (week 10)                    | Mon 03/11/2024 | Mon 03/11/2024, 11:55pm PT | -->
+<!-- | SR              | End-of-course reflection (SR #3) | Mon 03/11/2024 | Sat 03/16/2024, 11:59pm PT | -->
 
-<!-- | Assignment Type | Assignment Title                                                                | Date Assigned  | Date Due        | -->
-<!-- |:---------------:|----------------------------------------------------------------------|----------------|----------------------------| -->
-<!-- | EOC             | [EOC (week 10)](https://forms.gle/dEmgAhCMDnnhbNqK7)                 | Mon 03/11/2024 | Mon 03/11/2024, 11:55pm PT | -->
-<!-- | SR              | [End-of-course reflection (SR #3)](../assignments/SR3-endcourse.qmd) | Mon 03/11/2024 | Sat 03/16/2024, 11:59pm PT | -->
-<!-- | HW              | [Homework Assignment #4](../assignments/HW4.qmd)                     | Mon 02/26/2024 | Sat 03/16/2024, 11:59pm PT | -->
+| Assignment Type | Assignment Title                                                                | Date Assigned  | Date Due        |
+|:---------------:|----------------------------------------------------------------------|----------------|----------------------------|
+| EOC             | [EOC (week 10)](https://forms.gle/dEmgAhCMDnnhbNqK7)                 | Mon 03/11/2024 | Mon 03/11/2024, 11:55pm PT |
+| SR              | [End-of-course reflection (SR #3)](../assignments/SR3-endcourse.qmd) | Mon 03/11/2024 | Sat 03/16/2024, 11:59pm PT |
 
 
        
