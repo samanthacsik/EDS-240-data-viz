@@ -95,11 +95,14 @@ ca_season_counts <- bigfoot |>
 ##                                Waffle chart                              ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#........................create palette..........................
+#........................create palettes.........................
 season_palette <- c("Spring" = "#357266", 
                     "Summer" = "#FFB813", 
                     "Fall" = "#983A06", 
                     "Winter" = "#005F71")
+
+plot_palette <- c(gray = "#757473",
+                  beige = "#EFEFEF")
 
 #.......................create plot labels.......................
 title <- "Summer is the season of Bigfoot sightings in CA"
@@ -127,14 +130,14 @@ ggplot(ca_season_counts, aes(fill = season, values = n)) +
                                  margin = margin(t = 0, r = 0, b = 0.5, l = 0, "cm")),
     plot.caption = element_text(family = "josefin",
                                 size = 10,
-                                color = "#757473", 
+                                color = plot_palette["gray"], 
                                 margin = margin(t = 0.75, r = 0, b = 0, l = 0, "cm")),
     legend.position = "bottom",
     legend.title = element_blank(),
     legend.text = element_text(family = "josefin",
                                size = 12),
-    plot.background = element_rect(fill = "#EFEFEF", 
-                                   color = "#EFEFEF"),
+    plot.background = element_rect(fill = plot_palette["beige"], 
+                                   color = plot_palette["beige"]),
     plot.margin = margin(t = 2, r = 2, b = 2, l = 2, "cm")
   )
 ```
@@ -165,7 +168,6 @@ library(showtext)
 bigfoot <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-09-13/bigfoot.csv')
 
 #..........................import fonts..........................
-# font_add_google(name = "Peralta", family = "peralta")
 font_add_google(name = "Ultra", family = "ultra")
 font_add_google(name = "Josefin Sans", family = "josefin")
 
@@ -189,11 +191,14 @@ ca_season_counts <- bigfoot |>
 ##                                waffle chart                              ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#........................create palette..........................
+#........................create palettes.........................
 season_palette <- c("Spring" = "#357266", 
                     "Summer" = "#FFB813", 
                     "Fall" = "#983A06", 
                     "Winter" = "#005F71")
+
+plot_palette <- c(gray = "#757473",
+                  beige = "#EFEFEF")
 
 #.......................create plot labels.......................
 title <- "Summer is the season of Bigfoot sightings in CA"
@@ -221,14 +226,14 @@ ggplot(ca_season_counts, aes(fill = season, values = n)) +
                                  margin = margin(t = 0, r = 0, b = 0.5, l = 0, "cm")),
     plot.caption = element_text(family = "josefin",
                                 size = 10,
-                                color = "#757473", 
+                                color = plot_palette["gray"], 
                                 margin = margin(t = 0.75, r = 0, b = 0, l = 0, "cm")),
     legend.position = "bottom",
     legend.title = element_blank(),
     legend.text = element_text(family = "josefin",
                                size = 12),
-    plot.background = element_rect(fill = "#EFEFEF", 
-                                   color = "#EFEFEF"),
+    plot.background = element_rect(fill = plot_palette["beige"], 
+                                   color = plot_palette["beige"]),
     plot.margin = margin(t = 2, r = 2, b = 2, l = 2, "cm")
   )
 ```
@@ -251,11 +256,14 @@ ggplot(ca_season_counts, aes(fill = season, values = n)) +
 ##                          proportional waffle chart                       ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#........................create palette..........................
+#........................create palettes.........................
 season_palette <- c("Spring" = "#357266", 
                     "Summer" = "#FFB813", 
                     "Fall" = "#983A06", 
                     "Winter" = "#005F71")
+
+plot_palette <- c(gray = "#757473",
+                  beige = "#EFEFEF")
 
 #.......................create plot labels.......................
 title <- "Summer is the season of Bigfoot sightings in CA"
@@ -283,15 +291,15 @@ ggplot(ca_season_counts, aes(fill = season, values = n)) +
                                  margin = margin(t = 0, r = 0, b = 0.5, l = 0, "cm")),
     plot.caption = element_text(family = "josefin",
                                 size = 10,
-                                color = "#757473", 
+                                color = plot_palette["gray"], 
                                 hjust = 0,
                                margin = margin(t = 0.75, r = 0, b = 0, l = 0, "cm")),
     legend.position = "bottom",
     legend.title = element_blank(),
     legend.text = element_text(family = "josefin",
                                size = 12),
-    plot.background = element_rect(fill = "#EFEFEF", 
-                                   color = "#EFEFEF"),
+    plot.background = element_rect(fill = plot_palette["beige"], 
+                                   color = plot_palette["beige"]),
     plot.margin = margin(t = 1.5, r = 9, b = 1.5, l = 8, "cm")
   )
 ```
@@ -307,16 +315,19 @@ ggplot(ca_season_counts, aes(fill = season, values = n)) +
 ```{r}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "13,19,46"
+#| code-line-numbers: "16,22,49"
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                          proportional waffle chart                       ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#........................create palette..........................
+#........................create palettes.........................
 season_palette <- c("Spring" = "#357266", 
                     "Summer" = "#FFB813", 
                     "Fall" = "#983A06", 
                     "Winter" = "#005F71")
+
+plot_palette <- c(gray = "#757473",
+                  beige = "#EFEFEF")
 
 #.......................create plot labels.......................
 title <- "Summer is the season of Bigfoot sightings in CA"
@@ -344,15 +355,15 @@ ggplot(ca_season_counts, aes(fill = season, values = n)) +
                                  margin = margin(t = 0, r = 0, b = 0.5, l = 0, "cm")),
     plot.caption = element_text(family = "josefin",
                                 size = 10,
-                                color = "#757473", 
+                                color = plot_palette["gray"], 
                                 hjust = 0,
                                 margin = margin(t = 0.75, r = 0, b = 0, l = 0, "cm")),
     legend.position = "bottom",
     legend.title = element_blank(),
     legend.text = element_text(family = "josefin",
                                size = 12),
-    plot.background = element_rect(fill = "#EFEFEF", 
-                                   color = "#EFEFEF"),
+    plot.background = element_rect(fill = plot_palette["beige"], 
+                                   color = plot_palette["beige"]),
     plot.margin = margin(t = 1.5, r = 9, b = 1.5, l = 8, "cm")
   )
 ```
