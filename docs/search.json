@@ -1187,7 +1187,7 @@
     "href": "slides/week10.3-recap.html#fundamental-charts",
     "title": "EDS 240",
     "section": "",
-    "text": "We explored fundamental chart types. . .\n\n\nDistributions:\nhistograms, density plots, ridgeline plots, box plots, violin plots\n\n\n\n\nEvolution:\nline charts, area charts (including stacked & proportional stated area charts)\n\n\n\n\n\nRankings:\nbar plots, lollipop plots (and dumbbell variant)\n\n\n\n\n\nNumerical relationships:\nscatter plots, bubble plots, 2d density plots\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": "We explored fundamental chart types. . .\n\n\nDistributions:\nhistograms, density plots, ridgeline plots, box plots, violin plots\n\n\n\n\nEvolution:\nline charts, area charts (including stacked & proportional stacked area charts)\n\n\n\n\n\nRankings:\nbar plots, lollipop plots (and dumbbell variant)\n\n\n\n\n\nNumerical relationships:\nscatter plots, bubble plots, 2d density plots\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#improve-interpretation",
@@ -1257,14 +1257,14 @@
     "href": "slides/week10.3-recap.html#typography",
     "title": "EDS 240",
     "section": "",
-    "text": "We learned how our typographic choices can be just as important and impactful as our color choices . . .\n\n\n\n  \n\ndifference between typeface & font\nhow typeface can affect emotions & perceptions\nhow to choose typeface\nusing typeface & font style to guide a\nfinding typefaces and font styles on Google Fonts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": "We learned how our typographic choices can be just as important and impactful as our color choices . . .\n\n\n\n  \n\ndifference between typeface & font\nhow typeface can affect emotions & perceptions\nhow to choose a typeface(s)\nusing typeface & font style to guide a reader through your visualization\nfinding typefaces and font styles on Google Fonts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#typography-tools",
     "href": "slides/week10.3-recap.html#typography-tools",
     "title": "EDS 240",
     "section": "",
-    "text": ". . . and practiced applying Google fonts / styling text in our dumbbell plot\n\n\n\n\n\n\n{showtext} for importing Google Fonts (and others, incl. Font Awesome icons)\napply fonts using family argument\n{ggtext} to render text using HTML and / or Markdown\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": ". . . and practiced applying Google fonts / styling text in our dumbbell plot\n\n\n\n\n\n\n{showtext} for importing Google Fonts (and others, incl. Font Awesome icons)\napply fonts using the family argument\n{ggtext} to render text using HTML and / or Markdown\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#week7",
@@ -1334,7 +1334,7 @@
     "href": "slides/week10.3-recap.html#other-skills",
     "title": "EDS 240",
     "section": "",
-    "text": "And practiced so many other super valuable skills!\n\n\n Goal setting (self-reflections)\n\n Writing and communication (assignments & reflections)\n\n\n Repo organization\n\n\n Writing / rendering / deploying Quarto docs\n\n\n  git / GitHub for version control\n\n\n Collaborating with peers (in class, on HWs, giving / receiving feedback)\n\n\n Asking for help\n\n\n Looking up documentation\n\n\n Resourcefulness (Googling, adapting code, looking for inspiration, troubleshooting)\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
+    "text": "And practiced so many other super valuable skills!\n\n\n Goal setting (self-reflections)\n\n Writing and communication (assignments & reflections)\n\n\n Repo organization\n\n\n Writing / rendering / deploying Quarto docs\n\n\n  git / GitHub for version control\n\n\n Collaborating with peers (in class, on HWs, giving / receiving feedback)\n\n\n Asking for help (learning partners, student hours)\n\n\n Looking up documentation\n\n\n Resourcefulness (Googling, adapting code, looking for inspiration, troubleshooting)\n\nweek 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | week 10"
   },
   {
     "objectID": "slides/week10.3-recap.html#know-some-things",

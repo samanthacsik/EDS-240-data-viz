@@ -418,7 +418,7 @@ histograms, density plots, ridgeline plots, box plots, violin plots
 ::: {.center-text}
 [**Evolution:**]{.teal-text .body-text-m} 
 
-line charts, area charts (including stacked & proportional stated area charts) 
+line charts, area charts (including stacked & proportional stacked area charts) 
 :::
 
 <br>
@@ -992,8 +992,8 @@ week 1 | week 2 | week 3 | week 4 | [**week 5**]{.teal-text} | week 6 | week 7 |
 
 - difference between typeface & font
 - how typeface can affect emotions & perceptions
-- how to choose typeface
-- using typeface & font style to guide a 
+- how to choose a typeface(s)
+- using typeface & font style to guide a reader through your visualization
 - finding typefaces and font styles on [Google Fonts](https://fonts.google.com/)
 :::
 
@@ -1039,7 +1039,7 @@ week 1 | week 2 | week 3 | week 4 | week 5 | [**week 6**]{.teal-text} | week 7 |
 <br>
 
 - `{showtext}` for importing Google Fonts (and others, incl. Font Awesome icons)
-- apply fonts using `family` argument
+- apply fonts using the `family` argument
 - `{ggtext}` to render text using HTML and / or Markdown 
 :::
 
@@ -1438,7 +1438,7 @@ Never *not* a precursor to building awesome viz -- the `{tidyverse}` became a fa
 
 . . . 
 
-[{{< fa question title="a question mark" >}}]{.teal-text} Asking for help
+[{{< fa question title="a question mark" >}}]{.teal-text} Asking for help (learning partners, student hours)
 
 . . . 
 
@@ -1511,9 +1511,17 @@ knitr::include_graphics("images/week10/QR-sam.png")
 ```{r}
 #| eval: true
 #| echo: false
-#| out-width: "100%"
+#| out-width: "40%"
 #| fig-align: "center"
-# knitr::include_graphics("images/week10/QR-sam.png")
+knitr::include_graphics("images/week10/QR-section1.png")
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "40%"
+#| fig-align: "center"
+knitr::include_graphics("images/week10/QR-section2.png")
 ```
 :::
 
