@@ -641,101 +641,99 @@
 <span id="cb3-30"><a href="#cb3-30"></a>    <span class="at">rank =</span> <span class="fu">row_number</span>(<span class="fu">desc</span>(total_earnings))</span>
 <span id="cb3-31"><a href="#cb3-31"></a>  ) <span class="sc">|&gt;</span> </span>
 <span id="cb3-32"><a href="#cb3-32"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb3-33"><a href="#cb3-33"></a>  <span class="fu">mutate</span>(<span class="at">rank =</span> <span class="fu">as.numeric</span>(rank)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-34"><a href="#cb3-34"></a>  <span class="fu">arrange</span>(rank, year)</span>
-<span id="cb3-35"><a href="#cb3-35"></a></span>
-<span id="cb3-36"><a href="#cb3-36"></a><span class="co">#..........get top 8 occupations for final year (2016)...........</span></span>
-<span id="cb3-37"><a href="#cb3-37"></a>top2016 <span class="ot">&lt;-</span> salary_rank_by_year <span class="sc">%&gt;%</span> </span>
-<span id="cb3-38"><a href="#cb3-38"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2016</span>, rank <span class="sc">&lt;=</span> <span class="dv">8</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-39"><a href="#cb3-39"></a>  <span class="fu">pull</span>(occupation) </span>
-<span id="cb3-40"><a href="#cb3-40"></a></span>
-<span id="cb3-41"><a href="#cb3-41"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb3-42"><a href="#cb3-42"></a><span class="do">##                                 bump chart                               ----</span></span>
-<span id="cb3-43"><a href="#cb3-43"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb3-44"><a href="#cb3-44"></a></span>
-<span id="cb3-45"><a href="#cb3-45"></a><span class="co">#.................create palette &amp; assign colors.................</span></span>
-<span id="cb3-46"><a href="#cb3-46"></a>occupations_palette <span class="ot">&lt;-</span> viridisLite<span class="sc">::</span><span class="fu">magma</span>(<span class="dv">12</span>)</span>
-<span id="cb3-47"><a href="#cb3-47"></a>occupation_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb3-48"><a href="#cb3-48"></a>  <span class="st">"Physicians and surgeons"</span> <span class="ot">=</span> occupations_palette[<span class="dv">3</span>],</span>
-<span id="cb3-49"><a href="#cb3-49"></a>  <span class="st">"Nurse anesthetists"</span> <span class="ot">=</span> occupations_palette[<span class="dv">4</span>],</span>
-<span id="cb3-50"><a href="#cb3-50"></a>  <span class="st">"Dentists"</span> <span class="ot">=</span> occupations_palette[<span class="dv">5</span>],</span>
-<span id="cb3-51"><a href="#cb3-51"></a>  <span class="st">"Architectural and engineering managers"</span> <span class="ot">=</span> occupations_palette[<span class="dv">6</span>],</span>
-<span id="cb3-52"><a href="#cb3-52"></a>  <span class="st">"Lawyers"</span> <span class="ot">=</span> occupations_palette[<span class="dv">7</span>], </span>
-<span id="cb3-53"><a href="#cb3-53"></a>  <span class="st">"Podiatrists"</span> <span class="ot">=</span> occupations_palette[<span class="dv">8</span>],</span>
-<span id="cb3-54"><a href="#cb3-54"></a>  <span class="st">"Chief executives"</span> <span class="ot">=</span> occupations_palette[<span class="dv">9</span>],</span>
-<span id="cb3-55"><a href="#cb3-55"></a>  <span class="st">"Petroleum engineers"</span> <span class="ot">=</span> occupations_palette[<span class="dv">10</span>]</span>
-<span id="cb3-56"><a href="#cb3-56"></a>)</span>
-<span id="cb3-57"><a href="#cb3-57"></a></span>
-<span id="cb3-58"><a href="#cb3-58"></a>plot_palette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">dark_purple =</span> <span class="st">"#2A114E"</span>, </span>
-<span id="cb3-59"><a href="#cb3-59"></a>                  <span class="at">dark_gray =</span> <span class="st">"#6D6B71"</span>,</span>
-<span id="cb3-60"><a href="#cb3-60"></a>                  <span class="at">light_pink =</span> <span class="st">"#FFF8F4"</span>)</span>
-<span id="cb3-61"><a href="#cb3-61"></a></span>
-<span id="cb3-62"><a href="#cb3-62"></a><span class="co">#.......................create plot labels.......................</span></span>
-<span id="cb3-63"><a href="#cb3-63"></a>title <span class="ot">&lt;-</span> <span class="st">"Top eight highest paying occupations in 2016"</span></span>
-<span id="cb3-64"><a href="#cb3-64"></a>subtitle <span class="ot">&lt;-</span> <span class="st">"Medical professionals held onto the same top three spots across years, while &lt;span style='color:#FEA873FF;'&gt;**petroleum engineers**&lt;/span&gt; steadily climbed the ranks from 10^th^ in 2013 to 4^th^ in 2016"</span></span>
-<span id="cb3-65"><a href="#cb3-65"></a>caption <span class="ot">&lt;-</span> <span class="st">"Data Source: Bureau of Labor Statistics"</span></span>
-<span id="cb3-66"><a href="#cb3-66"></a></span>
-<span id="cb3-67"><a href="#cb3-67"></a><span class="co">#........................create bump chart.......................</span></span>
-<span id="cb3-68"><a href="#cb3-68"></a>salary_rank_by_year <span class="sc">%&gt;%</span> </span>
-<span id="cb3-69"><a href="#cb3-69"></a>  <span class="fu">filter</span>(occupation <span class="sc">%in%</span> top2016) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-70"><a href="#cb3-70"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> rank, <span class="at">color =</span> occupation)) <span class="sc">+</span> </span>
-<span id="cb3-71"><a href="#cb3-71"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="st">"|"</span>, <span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span> </span>
-<span id="cb3-72"><a href="#cb3-72"></a>  <span class="fu">geom_bump</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb3-73"><a href="#cb3-73"></a>  <span class="fu">geom_text</span>(</span>
-<span id="cb3-74"><a href="#cb3-74"></a>    <span class="at">data =</span> salary_rank_by_year <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2013</span>, occupation <span class="sc">%in%</span> top2016),</span>
-<span id="cb3-75"><a href="#cb3-75"></a>    <span class="fu">aes</span>(<span class="at">label =</span> occupation),</span>
-<span id="cb3-76"><a href="#cb3-76"></a>    <span class="at">hjust =</span> <span class="dv">1</span>,</span>
-<span id="cb3-77"><a href="#cb3-77"></a>    <span class="at">nudge_x =</span> <span class="sc">-</span><span class="fl">0.1</span>,</span>
-<span id="cb3-78"><a href="#cb3-78"></a>    <span class="at">family =</span> <span class="st">"oxygen"</span>,</span>
-<span id="cb3-79"><a href="#cb3-79"></a>    <span class="at">fontface =</span> <span class="st">"bold"</span></span>
-<span id="cb3-80"><a href="#cb3-80"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-81"><a href="#cb3-81"></a>  <span class="fu">geom_text</span>(</span>
-<span id="cb3-82"><a href="#cb3-82"></a>    <span class="at">data =</span> salary_rank_by_year <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2016</span>, occupation <span class="sc">%in%</span> top2016),</span>
-<span id="cb3-83"><a href="#cb3-83"></a>    <span class="fu">aes</span>(<span class="at">label =</span> rank),</span>
-<span id="cb3-84"><a href="#cb3-84"></a>    <span class="at">hjust =</span> <span class="dv">0</span>,</span>
-<span id="cb3-85"><a href="#cb3-85"></a>    <span class="at">nudge_x =</span> <span class="fl">0.1</span>,</span>
-<span id="cb3-86"><a href="#cb3-86"></a>    <span class="at">size =</span> <span class="dv">5</span>,</span>
-<span id="cb3-87"><a href="#cb3-87"></a>    <span class="at">family =</span> <span class="st">"oxygen"</span>,</span>
-<span id="cb3-88"><a href="#cb3-88"></a>    <span class="at">fontface =</span> <span class="st">"bold"</span></span>
-<span id="cb3-89"><a href="#cb3-89"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-90"><a href="#cb3-90"></a>  <span class="fu">annotate</span>(</span>
-<span id="cb3-91"><a href="#cb3-91"></a>    <span class="st">'text'</span>,</span>
-<span id="cb3-92"><a href="#cb3-92"></a>    <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">2013</span>, <span class="dv">2016</span>),</span>
-<span id="cb3-93"><a href="#cb3-93"></a>    <span class="at">y =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.2</span>, <span class="sc">-</span><span class="fl">0.2</span>),</span>
-<span id="cb3-94"><a href="#cb3-94"></a>    <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"2013"</span>, <span class="st">"2016"</span>),</span>
-<span id="cb3-95"><a href="#cb3-95"></a>    <span class="at">hjust =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>),</span>
-<span id="cb3-96"><a href="#cb3-96"></a>    <span class="at">vjust =</span> <span class="dv">1</span>,</span>
-<span id="cb3-97"><a href="#cb3-97"></a>    <span class="at">size =</span> <span class="dv">5</span>,</span>
-<span id="cb3-98"><a href="#cb3-98"></a>    <span class="at">family =</span> <span class="st">"oxygen"</span>,</span>
-<span id="cb3-99"><a href="#cb3-99"></a>    <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
-<span id="cb3-100"><a href="#cb3-100"></a>    <span class="at">color =</span> plot_palette[<span class="st">"dark_gray"</span>],</span>
-<span id="cb3-101"><a href="#cb3-101"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-102"><a href="#cb3-102"></a>  <span class="fu">scale_y_reverse</span>(<span class="at">position =</span> <span class="st">'right'</span>, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">16</span>, <span class="dv">2</span>, <span class="sc">-</span><span class="dv">2</span>)) <span class="sc">+</span></span>
-<span id="cb3-103"><a href="#cb3-103"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> occupation_colors) <span class="sc">+</span></span>
-<span id="cb3-104"><a href="#cb3-104"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">2010</span>, <span class="dv">2016</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">11</span>, <span class="fl">0.25</span>), </span>
-<span id="cb3-105"><a href="#cb3-105"></a>                  <span class="at">clip =</span> <span class="st">"off"</span>) <span class="sc">+</span></span>
-<span id="cb3-106"><a href="#cb3-106"></a>  <span class="fu">labs</span>(<span class="at">title =</span> title,</span>
-<span id="cb3-107"><a href="#cb3-107"></a>       <span class="at">subtitle =</span> subtitle,</span>
-<span id="cb3-108"><a href="#cb3-108"></a>       <span class="at">caption =</span> caption) <span class="sc">+</span></span>
-<span id="cb3-109"><a href="#cb3-109"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
-<span id="cb3-110"><a href="#cb3-110"></a>  <span class="fu">theme</span>(</span>
-<span id="cb3-111"><a href="#cb3-111"></a>    <span class="at">legend.position =</span> <span class="st">"blank"</span>,</span>
-<span id="cb3-112"><a href="#cb3-112"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb3-113"><a href="#cb3-113"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"passion"</span>,</span>
-<span id="cb3-114"><a href="#cb3-114"></a>                              <span class="at">size =</span> <span class="dv">25</span>,</span>
-<span id="cb3-115"><a href="#cb3-115"></a>                              <span class="at">color =</span> plot_palette[<span class="st">"dark_purple"</span>],</span>
-<span id="cb3-116"><a href="#cb3-116"></a>                              <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">0</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="fl">0.3</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="st">"cm"</span>)),</span>
-<span id="cb3-117"><a href="#cb3-117"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_textbox_simple</span>(<span class="at">family =</span> <span class="st">"oxygen"</span>,</span>
-<span id="cb3-118"><a href="#cb3-118"></a>                                           <span class="at">size =</span> <span class="dv">15</span>,</span>
-<span id="cb3-119"><a href="#cb3-119"></a>                                           <span class="at">color =</span> plot_palette[<span class="st">"dark_gray"</span>],</span>
-<span id="cb3-120"><a href="#cb3-120"></a>                                           <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">0</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">1</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="st">"cm"</span>)),</span>
-<span id="cb3-121"><a href="#cb3-121"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"oxygen"</span>,</span>
-<span id="cb3-122"><a href="#cb3-122"></a>                                <span class="at">color =</span> plot_palette[<span class="st">"dark_gray"</span>],</span>
-<span id="cb3-123"><a href="#cb3-123"></a>                                <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="fl">0.3</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="st">"cm"</span>)),</span>
-<span id="cb3-124"><a href="#cb3-124"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> plot_palette[<span class="st">"light_pink"</span>],</span>
-<span id="cb3-125"><a href="#cb3-125"></a>                                   <span class="at">color =</span> plot_palette[<span class="st">"light_pink"</span>]),</span>
-<span id="cb3-126"><a href="#cb3-126"></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">1</span>, <span class="at">r =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">1</span>, <span class="at">l =</span> <span class="dv">1</span>, <span class="st">"cm"</span>)</span>
-<span id="cb3-127"><a href="#cb3-127"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-33"><a href="#cb3-33"></a>  <span class="fu">arrange</span>(rank, year)</span>
+<span id="cb3-34"><a href="#cb3-34"></a></span>
+<span id="cb3-35"><a href="#cb3-35"></a><span class="co">#..........get top 8 occupations for final year (2016)...........</span></span>
+<span id="cb3-36"><a href="#cb3-36"></a>top2016 <span class="ot">&lt;-</span> salary_rank_by_year <span class="sc">|&gt;</span>  </span>
+<span id="cb3-37"><a href="#cb3-37"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2016</span>, rank <span class="sc">&lt;=</span> <span class="dv">8</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb3-38"><a href="#cb3-38"></a>  <span class="fu">pull</span>(occupation) </span>
+<span id="cb3-39"><a href="#cb3-39"></a></span>
+<span id="cb3-40"><a href="#cb3-40"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb3-41"><a href="#cb3-41"></a><span class="do">##                                 bump chart                               ----</span></span>
+<span id="cb3-42"><a href="#cb3-42"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb3-43"><a href="#cb3-43"></a></span>
+<span id="cb3-44"><a href="#cb3-44"></a><span class="co">#.................create palette &amp; assign colors.................</span></span>
+<span id="cb3-45"><a href="#cb3-45"></a>occupations_palette <span class="ot">&lt;-</span> viridisLite<span class="sc">::</span><span class="fu">magma</span>(<span class="dv">12</span>)</span>
+<span id="cb3-46"><a href="#cb3-46"></a>occupation_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb3-47"><a href="#cb3-47"></a>  <span class="st">"Physicians and surgeons"</span> <span class="ot">=</span> occupations_palette[<span class="dv">3</span>],</span>
+<span id="cb3-48"><a href="#cb3-48"></a>  <span class="st">"Nurse anesthetists"</span> <span class="ot">=</span> occupations_palette[<span class="dv">4</span>],</span>
+<span id="cb3-49"><a href="#cb3-49"></a>  <span class="st">"Dentists"</span> <span class="ot">=</span> occupations_palette[<span class="dv">5</span>],</span>
+<span id="cb3-50"><a href="#cb3-50"></a>  <span class="st">"Architectural and engineering managers"</span> <span class="ot">=</span> occupations_palette[<span class="dv">6</span>],</span>
+<span id="cb3-51"><a href="#cb3-51"></a>  <span class="st">"Lawyers"</span> <span class="ot">=</span> occupations_palette[<span class="dv">7</span>], </span>
+<span id="cb3-52"><a href="#cb3-52"></a>  <span class="st">"Podiatrists"</span> <span class="ot">=</span> occupations_palette[<span class="dv">8</span>],</span>
+<span id="cb3-53"><a href="#cb3-53"></a>  <span class="st">"Chief executives"</span> <span class="ot">=</span> occupations_palette[<span class="dv">9</span>],</span>
+<span id="cb3-54"><a href="#cb3-54"></a>  <span class="st">"Petroleum engineers"</span> <span class="ot">=</span> occupations_palette[<span class="dv">10</span>]</span>
+<span id="cb3-55"><a href="#cb3-55"></a>)</span>
+<span id="cb3-56"><a href="#cb3-56"></a></span>
+<span id="cb3-57"><a href="#cb3-57"></a>plot_palette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">dark_purple =</span> <span class="st">"#2A114E"</span>, </span>
+<span id="cb3-58"><a href="#cb3-58"></a>                  <span class="at">dark_gray =</span> <span class="st">"#6D6B71"</span>,</span>
+<span id="cb3-59"><a href="#cb3-59"></a>                  <span class="at">light_pink =</span> <span class="st">"#FFF8F4"</span>)</span>
+<span id="cb3-60"><a href="#cb3-60"></a></span>
+<span id="cb3-61"><a href="#cb3-61"></a><span class="co">#.......................create plot labels.......................</span></span>
+<span id="cb3-62"><a href="#cb3-62"></a>title <span class="ot">&lt;-</span> <span class="st">"Top eight highest paying occupations in 2016"</span></span>
+<span id="cb3-63"><a href="#cb3-63"></a>subtitle <span class="ot">&lt;-</span> <span class="st">"Medical professionals held onto the same top three spots across years, while &lt;span style='color:#FEA873FF;'&gt;**petroleum engineers**&lt;/span&gt; steadily climbed the ranks from 10^th^ in 2013 to 4^th^ in 2016"</span></span>
+<span id="cb3-64"><a href="#cb3-64"></a>caption <span class="ot">&lt;-</span> <span class="st">"Data Source: Bureau of Labor Statistics"</span></span>
+<span id="cb3-65"><a href="#cb3-65"></a></span>
+<span id="cb3-66"><a href="#cb3-66"></a><span class="co">#........................create bump chart.......................</span></span>
+<span id="cb3-67"><a href="#cb3-67"></a>salary_rank_by_year <span class="sc">|&gt;</span>  </span>
+<span id="cb3-68"><a href="#cb3-68"></a>  <span class="fu">filter</span>(occupation <span class="sc">%in%</span> top2016) <span class="sc">|&gt;</span>  </span>
+<span id="cb3-69"><a href="#cb3-69"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> rank, <span class="at">color =</span> occupation)) <span class="sc">+</span> </span>
+<span id="cb3-70"><a href="#cb3-70"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="st">"|"</span>, <span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span> </span>
+<span id="cb3-71"><a href="#cb3-71"></a>  <span class="fu">geom_bump</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb3-72"><a href="#cb3-72"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb3-73"><a href="#cb3-73"></a>    <span class="at">data =</span> salary_rank_by_year <span class="sc">|&gt;</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2013</span>, occupation <span class="sc">%in%</span> top2016),</span>
+<span id="cb3-74"><a href="#cb3-74"></a>    <span class="fu">aes</span>(<span class="at">label =</span> occupation),</span>
+<span id="cb3-75"><a href="#cb3-75"></a>    <span class="at">hjust =</span> <span class="dv">1</span>,</span>
+<span id="cb3-76"><a href="#cb3-76"></a>    <span class="at">nudge_x =</span> <span class="sc">-</span><span class="fl">0.1</span>,</span>
+<span id="cb3-77"><a href="#cb3-77"></a>    <span class="at">family =</span> <span class="st">"oxygen"</span>,</span>
+<span id="cb3-78"><a href="#cb3-78"></a>    <span class="at">fontface =</span> <span class="st">"bold"</span></span>
+<span id="cb3-79"><a href="#cb3-79"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-80"><a href="#cb3-80"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb3-81"><a href="#cb3-81"></a>    <span class="at">data =</span> salary_rank_by_year <span class="sc">|&gt;</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2016</span>, occupation <span class="sc">%in%</span> top2016),</span>
+<span id="cb3-82"><a href="#cb3-82"></a>    <span class="fu">aes</span>(<span class="at">label =</span> rank),</span>
+<span id="cb3-83"><a href="#cb3-83"></a>    <span class="at">hjust =</span> <span class="dv">0</span>,</span>
+<span id="cb3-84"><a href="#cb3-84"></a>    <span class="at">nudge_x =</span> <span class="fl">0.1</span>,</span>
+<span id="cb3-85"><a href="#cb3-85"></a>    <span class="at">size =</span> <span class="dv">5</span>,</span>
+<span id="cb3-86"><a href="#cb3-86"></a>    <span class="at">family =</span> <span class="st">"oxygen"</span>,</span>
+<span id="cb3-87"><a href="#cb3-87"></a>    <span class="at">fontface =</span> <span class="st">"bold"</span></span>
+<span id="cb3-88"><a href="#cb3-88"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-89"><a href="#cb3-89"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb3-90"><a href="#cb3-90"></a>    <span class="at">geom =</span> <span class="st">"text"</span>,</span>
+<span id="cb3-91"><a href="#cb3-91"></a>    <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">2013</span>, <span class="dv">2016</span>),</span>
+<span id="cb3-92"><a href="#cb3-92"></a>    <span class="at">y =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.2</span>, <span class="sc">-</span><span class="fl">0.2</span>),</span>
+<span id="cb3-93"><a href="#cb3-93"></a>    <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"2013"</span>, <span class="st">"2016"</span>),</span>
+<span id="cb3-94"><a href="#cb3-94"></a>    <span class="at">hjust =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb3-95"><a href="#cb3-95"></a>    <span class="at">vjust =</span> <span class="dv">1</span>,</span>
+<span id="cb3-96"><a href="#cb3-96"></a>    <span class="at">size =</span> <span class="dv">5</span>,</span>
+<span id="cb3-97"><a href="#cb3-97"></a>    <span class="at">family =</span> <span class="st">"oxygen"</span>,</span>
+<span id="cb3-98"><a href="#cb3-98"></a>    <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
+<span id="cb3-99"><a href="#cb3-99"></a>    <span class="at">color =</span> plot_palette[<span class="st">"dark_gray"</span>],</span>
+<span id="cb3-100"><a href="#cb3-100"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-101"><a href="#cb3-101"></a>  <span class="fu">scale_y_reverse</span>() <span class="sc">+</span></span>
+<span id="cb3-102"><a href="#cb3-102"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> occupation_colors) <span class="sc">+</span></span>
+<span id="cb3-103"><a href="#cb3-103"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">2010</span>, <span class="dv">2016</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">11</span>, <span class="fl">0.25</span>), </span>
+<span id="cb3-104"><a href="#cb3-104"></a>                  <span class="at">clip =</span> <span class="st">"off"</span>) <span class="sc">+</span></span>
+<span id="cb3-105"><a href="#cb3-105"></a>  <span class="fu">labs</span>(<span class="at">title =</span> title,</span>
+<span id="cb3-106"><a href="#cb3-106"></a>       <span class="at">subtitle =</span> subtitle,</span>
+<span id="cb3-107"><a href="#cb3-107"></a>       <span class="at">caption =</span> caption) <span class="sc">+</span></span>
+<span id="cb3-108"><a href="#cb3-108"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb3-109"><a href="#cb3-109"></a>  <span class="fu">theme</span>(</span>
+<span id="cb3-110"><a href="#cb3-110"></a>    <span class="at">legend.position =</span> <span class="st">"blank"</span>,</span>
+<span id="cb3-111"><a href="#cb3-111"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"passion"</span>,</span>
+<span id="cb3-112"><a href="#cb3-112"></a>                              <span class="at">size =</span> <span class="dv">25</span>,</span>
+<span id="cb3-113"><a href="#cb3-113"></a>                              <span class="at">color =</span> plot_palette[<span class="st">"dark_purple"</span>],</span>
+<span id="cb3-114"><a href="#cb3-114"></a>                              <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">0</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="fl">0.3</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="st">"cm"</span>)),</span>
+<span id="cb3-115"><a href="#cb3-115"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_textbox_simple</span>(<span class="at">family =</span> <span class="st">"oxygen"</span>,</span>
+<span id="cb3-116"><a href="#cb3-116"></a>                                           <span class="at">size =</span> <span class="dv">15</span>,</span>
+<span id="cb3-117"><a href="#cb3-117"></a>                                           <span class="at">color =</span> plot_palette[<span class="st">"dark_gray"</span>],</span>
+<span id="cb3-118"><a href="#cb3-118"></a>                                           <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">0</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">1</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="st">"cm"</span>)),</span>
+<span id="cb3-119"><a href="#cb3-119"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"oxygen"</span>,</span>
+<span id="cb3-120"><a href="#cb3-120"></a>                                <span class="at">color =</span> plot_palette[<span class="st">"dark_gray"</span>],</span>
+<span id="cb3-121"><a href="#cb3-121"></a>                                <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="fl">0.3</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="st">"cm"</span>)),</span>
+<span id="cb3-122"><a href="#cb3-122"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> plot_palette[<span class="st">"light_pink"</span>],</span>
+<span id="cb3-123"><a href="#cb3-123"></a>                                   <span class="at">color =</span> plot_palette[<span class="st">"light_pink"</span>]),</span>
+<span id="cb3-124"><a href="#cb3-124"></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">1</span>, <span class="at">r =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">1</span>, <span class="at">l =</span> <span class="dv">1</span>, <span class="st">"cm"</span>)</span>
+<span id="cb3-125"><a href="#cb3-125"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="end-break" class="slide level2" data-menu-title="# Break #" data-background="#047C90">
@@ -750,7 +748,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c2fef51f" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_38caba35" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>

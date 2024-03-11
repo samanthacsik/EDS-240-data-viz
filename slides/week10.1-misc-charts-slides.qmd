@@ -452,12 +452,11 @@ salary_rank_by_year <- jobs |>
     rank = row_number(desc(total_earnings))
   ) |> 
   ungroup() |> 
-  mutate(rank = as.numeric(rank)) |> 
   arrange(rank, year)
 
 #..........get top 8 occupations for final year (2016)...........
-top2016 <- salary_rank_by_year %>% 
-  filter(year == 2016, rank <= 8) %>% 
+top2016 <- salary_rank_by_year |>  
+  filter(year == 2016, rank <= 8) |>  
   pull(occupation) 
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -487,13 +486,13 @@ subtitle <- "Medical professionals held onto the same top three spots across yea
 caption <- "Data Source: Bureau of Labor Statistics"
 
 #........................create bump chart.......................
-salary_rank_by_year %>% 
-  filter(occupation %in% top2016) %>% 
+salary_rank_by_year |> 
+  filter(occupation %in% top2016) |> 
   ggplot(aes(x = year, y = rank, color = occupation)) + 
   geom_point(shape = "|", size = 6) + 
   geom_bump(linewidth = 1) +
   geom_text(
-    data = salary_rank_by_year %>% filter(year == 2013, occupation %in% top2016),
+    data = salary_rank_by_year |>  filter(year == 2013, occupation %in% top2016),
     aes(label = occupation),
     hjust = 1,
     nudge_x = -0.1,
@@ -501,7 +500,7 @@ salary_rank_by_year %>%
     fontface = "bold"
   ) +
   geom_text(
-    data = salary_rank_by_year %>% filter(year == 2016, occupation %in% top2016),
+    data = salary_rank_by_year |> filter(year == 2016, occupation %in% top2016),
     aes(label = rank),
     hjust = 0,
     nudge_x = 0.1,
@@ -510,7 +509,7 @@ salary_rank_by_year %>%
     fontface = "bold"
   ) +
   annotate(
-    'text',
+    geom = "text",
     x = c(2013, 2016),
     y = c(-0.2, -0.2),
     label = c("2013", "2016"),
@@ -521,7 +520,7 @@ salary_rank_by_year %>%
     fontface = "bold",
     color = plot_palette["dark_gray"],
   ) +
-  scale_y_reverse(position = 'right', breaks = seq(16, 2, -2)) +
+  scale_y_reverse() +
   scale_color_manual(values = occupation_colors) +
   coord_cartesian(xlim = c(2010, 2016), ylim = c(11, 0.25), 
                   clip = "off") +
@@ -531,7 +530,6 @@ salary_rank_by_year %>%
   theme_void() +
   theme(
     legend.position = "blank",
-    plot.title.position = "plot",
     plot.title = element_text(family = "passion",
                               size = 25,
                               color = plot_palette["dark_purple"],
@@ -595,12 +593,11 @@ salary_rank_by_year <- jobs |>
     rank = row_number(desc(total_earnings))
   ) |> 
   ungroup() |> 
-  mutate(rank = as.numeric(rank)) |> 
   arrange(rank, year)
 
 #..........get top 8 occupations for final year (2016)...........
-top2016 <- salary_rank_by_year %>% 
-  filter(year == 2016, rank <= 8) %>% 
+top2016 <- salary_rank_by_year |>  
+  filter(year == 2016, rank <= 8) |>  
   pull(occupation) 
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -630,13 +627,13 @@ subtitle <- "Medical professionals held onto the same top three spots across yea
 caption <- "Data Source: Bureau of Labor Statistics"
 
 #........................create bump chart.......................
-salary_rank_by_year %>% 
-  filter(occupation %in% top2016) %>% 
+salary_rank_by_year |>  
+  filter(occupation %in% top2016) |>  
   ggplot(aes(x = year, y = rank, color = occupation)) + 
   geom_point(shape = "|", size = 6) + 
   geom_bump(linewidth = 1) +
   geom_text(
-    data = salary_rank_by_year %>% filter(year == 2013, occupation %in% top2016),
+    data = salary_rank_by_year |> filter(year == 2013, occupation %in% top2016),
     aes(label = occupation),
     hjust = 1,
     nudge_x = -0.1,
@@ -644,7 +641,7 @@ salary_rank_by_year %>%
     fontface = "bold"
   ) +
   geom_text(
-    data = salary_rank_by_year %>% filter(year == 2016, occupation %in% top2016),
+    data = salary_rank_by_year |> filter(year == 2016, occupation %in% top2016),
     aes(label = rank),
     hjust = 0,
     nudge_x = 0.1,
@@ -653,7 +650,7 @@ salary_rank_by_year %>%
     fontface = "bold"
   ) +
   annotate(
-    'text',
+    geom = "text",
     x = c(2013, 2016),
     y = c(-0.2, -0.2),
     label = c("2013", "2016"),
@@ -664,7 +661,7 @@ salary_rank_by_year %>%
     fontface = "bold",
     color = plot_palette["dark_gray"],
   ) +
-  scale_y_reverse(position = 'right', breaks = seq(16, 2, -2)) +
+  scale_y_reverse() +
   scale_color_manual(values = occupation_colors) +
   coord_cartesian(xlim = c(2010, 2016), ylim = c(11, 0.25), 
                   clip = "off") +
@@ -674,7 +671,6 @@ salary_rank_by_year %>%
   theme_void() +
   theme(
     legend.position = "blank",
-    plot.title.position = "plot",
     plot.title = element_text(family = "passion",
                               size = 25,
                               color = plot_palette["dark_purple"],
