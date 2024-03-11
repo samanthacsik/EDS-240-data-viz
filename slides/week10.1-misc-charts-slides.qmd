@@ -49,7 +49,7 @@ Image source: [How to visualise your data: parts-to-whole charts](https://cultur
 
 <hr>
 
-[Anyone may report a [Bigfoot sighting](https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-09-13) to the [Bigfoot Field Researchers Organization (BFRO)](https://www.bfro.net/). TidyTuesday featured these compiled BFRO reports on 2022-09-13.]{.body-text-s}
+[Anyone may report a [Bigfoot sighting](https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-09-13) to the [Bigfoot Field Researchers Organization (BFRO)](https://www.bfro.net/). TidyTuesday featured these compiled BFRO reports on [2022-09-13](https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-09-13).]{.body-text-s}
 
 <br>
 
@@ -69,8 +69,6 @@ library(waffle)
 library(showtext)
 
 #..........................import data...........................
-# tuesdata <- tidytuesdayR::tt_load('2022-09-13')
-# bigfoot <- tuesdata$bigfoot
 bigfoot <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-09-13/bigfoot.csv')
 
 #..........................import fonts..........................
@@ -164,8 +162,7 @@ library(waffle)
 library(showtext)
 
 #..........................import data...........................
-tuesdata <- tidytuesdayR::tt_load('2022-09-13')
-bigfoot <- tuesdata$bigfoot
+bigfoot <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-09-13/bigfoot.csv')
 
 #..........................import fonts..........................
 # font_add_google(name = "Peralta", family = "peralta")
@@ -401,6 +398,10 @@ knitr::include_graphics("images/week10/rapp-bump-charts.png")
 [Bump chart (highest paying occupations)]{.slide-title2}
 
 <hr>
+[
+The [US Bureau of Labor Statistics](https://www.bls.gov/) provides data on occupations and earnings. TidyTuesday featured these compiled data on [2019-03-05](https://github.com/rfordatascience/tidytuesday/blob/master/data/2019/2019-03-05/readme.md) (these are the same data we used to create our dumbbell plot during lectures [4.1](https://samanthacsik.github.io/EDS-240-data-viz/slides/week4.1-rankings-slides.html#/dumbbell-plot-output) and [6.1](https://samanthacsik.github.io/EDS-240-data-viz/slides/week6.1-typography-slides.html#/updated-text)).]{.body-text-s}
+
+<br>
 
 ```{r}
 #| eval: true
