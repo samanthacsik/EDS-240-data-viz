@@ -1,5 +1,5 @@
 ---
-title: "Grab Bag & Review"
+title: "Misc. chart types, Prompt engineering, Review"
 subtitle: "Week 10"
 description: "Monday March 11^th^, 2024"
 title-block-banner: true
@@ -21,13 +21,25 @@ I hope you all feel this way after another quarter of classes under your belts! 
 
 ## Pre-class Prep
 
+Please be sure to complete the following before class:
+
 ### Install required packages
 
-*Coming soon!* 
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+library(waffle) # for making waffle (square pie) charts in R
+library(ggbump) # a geom for creating bump charts
+```
 
-### Create an OpenAI account
 
-You'll need to [create a free OpenAI account](https://chat.openai.com/auth/login) before you can use ChatGPT. Be sure to do so before class, if you don't already have one.
+### Prompt engineering prep
+
+To follow along with Sevan's lesson on ChatGPT prompt engineering for data wrangling & visualization, you'll need to first:
+
+1. [Create a free OpenAI account](https://chat.openai.com/auth/login) (if you don't already have one), or make sure you know your login credentials
+2. [Download this `.xlsx` data file](https://docs.google.com/spreadsheets/d/1VeWF01_2--KXS7sB-IfPGVNNkGdGcGpN/edit?usp=sharing&ouid=103292946495291407556&rtpof=true&sd=true) and save it somewhere you can easily find
 
 ## Lecture Materials 
 
@@ -35,17 +47,17 @@ You'll need to [create a free OpenAI account](https://chat.openai.com/auth/login
 
 ::: {.g-col-12 .g-col-md-4}
 ::: {.center-text}
-[**tbd**]{.teal-text .body-text-m}
+[**Misc. charts**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 10.1 slides](../slides/week10.1-grab-bag-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 10.1 slides](../slides/week10.1-misc-charts-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
 ::: {.g-col-12 .g-col-md-4}
 ::: {.center-text}
-[**Prompt Engineering**]{.teal-text .body-text-m}
+[**Prompt engineering**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 10.2 slides](../slides/tbd.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 10.2 slides](https://docs.google.com/presentation/d/11i_Q33FCaKlQYNlGUpzOa8zb9fpfxB3eTFfD6cjdlZo/edit#slide=id.p){.btn role="button" target="_blank"} 
 :::
 :::
 
@@ -84,6 +96,5 @@ Find your slide here:
 |:---------------:|----------------------------------------------------------------------|----------------|----------------------------|
 | EOC             | [EOC (week 10)](https://forms.gle/dEmgAhCMDnnhbNqK7)                 | Mon 03/11/2024 | Mon 03/11/2024, 11:55pm PT |
 | SR              | [End-of-course reflection (SR #3)](../assignments/SR3-endcourse.qmd) | Mon 03/11/2024 | Sat 03/16/2024, 11:59pm PT |
-
 
        

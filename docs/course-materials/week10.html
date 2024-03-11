@@ -8,7 +8,7 @@
 
 <meta name="description" content="Monday March 11th, 2024">
 
-<title>EDS 240 - Grab Bag &amp; Review</title>
+<title>EDS 240 - Misc. chart types, Prompt engineering, Review</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -197,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Grab Bag &amp; Review</h1>
+      <h1 class="title">Misc. chart types, Prompt engineering, Review</h1>
             <p class="subtitle lead">Week 10</p>
                   <div>
         <div class="description">
@@ -227,7 +261,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#pre-class-prep" id="toc-pre-class-prep" class="nav-link active" data-scroll-target="#pre-class-prep">Pre-class Prep</a>
   <ul class="collapse">
   <li><a href="#install-required-packages" id="toc-install-required-packages" class="nav-link" data-scroll-target="#install-required-packages">Install required packages</a></li>
-  <li><a href="#create-an-openai-account" id="toc-create-an-openai-account" class="nav-link" data-scroll-target="#create-an-openai-account">Create an OpenAI account</a></li>
+  <li><a href="#prompt-engineering-prep" id="toc-prompt-engineering-prep" class="nav-link" data-scroll-target="#prompt-engineering-prep">Prompt engineering prep</a></li>
   </ul></li>
   <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials">Lecture Materials</a></li>
   <li><a href="#discussion-materials" id="toc-discussion-materials" class="nav-link" data-scroll-target="#discussion-materials">Discussion Materials</a></li>
@@ -255,13 +289,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="pre-class-prep" class="level2">
 <h2 class="anchored" data-anchor-id="pre-class-prep">Pre-class Prep</h2>
+<p>Please be sure to complete the following before class:</p>
 <section id="install-required-packages" class="level3">
 <h3 class="anchored" data-anchor-id="install-required-packages">Install required packages</h3>
-<p><em>Coming soon!</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(waffle) <span class="co"># for making waffle (square pie) charts in R</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggbump) <span class="co"># a geom for creating bump charts</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="create-an-openai-account" class="level3">
-<h3 class="anchored" data-anchor-id="create-an-openai-account">Create an OpenAI account</h3>
-<p>You’ll need to <a href="https://chat.openai.com/auth/login">create a free OpenAI account</a> before you can use ChatGPT. Be sure to do so before class, if you don’t already have one.</p>
+<section id="prompt-engineering-prep" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-engineering-prep">Prompt engineering prep</h3>
+<p>To follow along with Sevan’s lesson on ChatGPT prompt engineering for data wrangling &amp; visualization, you’ll need to first:</p>
+<ol type="1">
+<li><a href="https://chat.openai.com/auth/login">Create a free OpenAI account</a> (if you don’t already have one), or make sure you know your login credentials</li>
+<li><a href="https://docs.google.com/spreadsheets/d/1VeWF01_2--KXS7sB-IfPGVNNkGdGcGpN/edit?usp=sharing&amp;ouid=103292946495291407556&amp;rtpof=true&amp;sd=true">Download this <code>.xlsx</code> data file</a> and save it somewhere you can easily find</li>
+</ol>
 </section>
 </section>
 <section id="lecture-materials" class="level2">
@@ -269,14 +311,14 @@ ul.task-list li input[type="checkbox"] {
 <div class="grid">
 <div class="g-col-12 g-col-md-4">
 <div class="center-text">
-<p><span class="teal-text body-text-m"><strong>tbd</strong></span></p>
-<p><a href="../slides/week10.1-grab-bag-slides.html" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 10.1 slides</a></p>
+<p><span class="teal-text body-text-m"><strong>Misc. charts</strong></span></p>
+<p><a href="../slides/week10.1-misc-charts-slides.html" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 10.1 slides</a></p>
 </div>
 </div>
 <div class="g-col-12 g-col-md-4">
 <div class="center-text">
-<p><span class="teal-text body-text-m"><strong>Prompt Engineering</strong></span></p>
-<p><a href="../slides/tbd.qmd" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 10.2 slides</a></p>
+<p><span class="teal-text body-text-m"><strong>Prompt engineering</strong></span></p>
+<p><a href="https://docs.google.com/presentation/d/11i_Q33FCaKlQYNlGUpzOa8zb9fpfxB3eTFfD6cjdlZo/edit#slide=id.p" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 10.2 slides</a></p>
 </div>
 </div>
 <div class="g-col-12 g-col-md-4">

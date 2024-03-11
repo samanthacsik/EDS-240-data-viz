@@ -1304,27 +1304,43 @@ week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | [**week 
 [Week 10]{.slide-title-xl}
 :::
 
+:::: {.columns}
+
+::: {.column width="50%"}
 ```{r}
 #| eval: true
 #| echo: false
-#| out-width: "80%"
+#| out-width: "100%"
 #| fig-align: "center"
-# knitr::include_graphics("images/week10/observable.png")
+knitr::include_graphics("images/week10/waffle.png")
 ```
 
-::: {.footer}
-week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | [**week 10**]{.teal-text}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "40%"
+#| fig-align: "center"
+knitr::include_graphics("images/week10/chatGPT.png")
+```
 :::
 
----
+::: {.column width="50%"}
 
-## {#tbd data-menu-title="tbd"} 
+<br>
+<br>
 
-[week 10 tbd]{.slide-title2}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week10/bump.png")
+```
+:::
 
-<hr>
+::::
 
-come back to this
+<br>
 
 ::: {.footer}
 week 1 | week 2 | week 3 | week 4 | week 5 | week 6 | week 7 | week 8 | week 9 | [**week 10**]{.teal-text}
