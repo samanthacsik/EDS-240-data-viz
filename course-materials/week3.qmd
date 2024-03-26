@@ -91,7 +91,7 @@ Week 3 instruction is broken down into three lessons:
 ::: {.center-text}
 [**Choosing graphic forms**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.1 slides](../slides/week3.1-choosing-graphic-forms-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.1 slides](lecture-slides/week3.1-choosing-graphic-forms-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
@@ -99,7 +99,7 @@ Week 3 instruction is broken down into three lessons:
 ::: {.center-text}
 [**Visualizing distributions**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.2 slides](../slides/week3.2-distributions-slides.qmd){.btn role="button" target="_blank"} 
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.2 slides](lecture-slides/week3.2-distributions-slides.qmd){.btn role="button" target="_blank"} 
 :::
 :::
 
@@ -107,7 +107,7 @@ Week 3 instruction is broken down into three lessons:
 ::: {.center-text}
 [**Visualizing evolution**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.3 slides](../slides/week3.3-evolution-slides.qmd){.btn role="button" target="_blank"}
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.3 slides](lecture-slides/week3.3-evolution-slides.qmd){.btn role="button" target="_blank"}
 :::
 :::
 
