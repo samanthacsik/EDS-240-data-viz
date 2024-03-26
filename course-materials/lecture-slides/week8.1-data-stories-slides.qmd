@@ -1,0 +1,1258 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../../meds-slides-styles.scss
+editor_options: 
+  chunk_output_type: console
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 8.1]{.custom-title}
+
+[*Data storytelling*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[Week 8 | February 26^th^, 2024]{.custom-subtitle3}
+
+---
+
+## {#good-design data-menu-title="Good data viz considerations"} 
+
+[Good data visualization design considers:]{.slide-title}
+
+<hr>
+
+- [**data-ink ratio** (less is more, within reason)]{.gray-text}
+- [how to **reduce eye movement** and **improve readability / interpretability** (e.g. through alternative legend positions, direct annotations)]{.gray-text}
+- [putting things **in context**]{.gray-text}
+- [how to **draw the main attention** to the most **important info**]{.gray-text}
+- [**consistent** use of colors, spacing, typefaces, weights]{.gray-text}
+- [**typeface / font choices** and how they affect both readability *and* emotions and perceptions]{.gray-text}
+- [using **visual hierarchy** to guide the reader]{.gray-text}
+- [**color choices** (incl. palette types, emotions, readability)]{.gray-text}
+- how to **tell an interesting story**
+- [how to **center the people and communities** represented in your data]{.gray-text}
+- [**accessibility** through colorblind-friendly palettes & alt text (see [week 2 discussion](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week2.html#discussion-materials))]{.gray-text}
+
+---
+
+##  {#data-storytelling-job data-menu-title="# Data storytelling #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Our job is to turn values and analyses into insights and narratives -- doing so truthfully, effectively, and compellingly is all a part of *data storytelling*.</p>
+</div>
+
+---
+
+## {#nothing-new data-menu-title="Nothing new"} 
+
+[We won't be covering anything *new*, per se]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+::: {.center-text .body-text-m}
+From a technical perspective, you have the tools in your tool kit to build data viz that tell stories.
+:::
+
+. . . 
+
+<br>
+
+::: {.center-text .body-text-m}
+We've seen *many* examples of data visualizations that are constructed around a narrative (whether or not we explicitly called attention to it).
+:::
+
+. . . 
+
+<br>
+
+::: {.center-text .body-text-m}
+You have all listened to, read, and told stories (in this class, in other classes, in life).
+:::
+
+---
+
+## {#why-storytelling data-menu-title="Why storytelling?"} 
+
+[Why is storytelling important?]{.slide-title}
+
+<hr>
+
+<br>
+
+>"...the very act of telling a story makes people trust you more... Data doesn't change behavior, emotions do" 
+
+::: {.right-align-text .body-text-s}
+-[Karen Eber](https://www.kareneber.com/) in her TED talk, [Why storytelling is more trustworthy than presenting data](https://www.youtube.com/watch?v=Ez5yS4Q5ASA) (2:45-7:07)
+:::
+
+<br>
+<br>
+
+. . . 
+
+>"Stories are inherent to us. We've been told stories since we were children. Stories are how we learn and how we make decisions."
+
+::: {.right-align-text .body-text-s}
+-[Mike Bugembe](https://www.linkedin.com/in/mikebugembe/?originalSubdomain=uk) in his TED talk, [Lies, racism and sexism: The power of data stories](https://www.ted.com/talks/mike_bugembe_lies_racism_and_sexism_the_power_of_data_stories?hasSummary=true) (13:00-17:50)
+:::
+
+::: {.footer}
+I also recommend watching [The Power in Effective Data Storytelling](https://www.youtube.com/watch?v=0e52QfQngrM), by [Malavica Sridhar](https://www.linkedin.com/in/malavica-sridhar/) and [Why Data Storytelling Matters to All of Us](https://www.youtube.com/watch?v=Js5UMbD9r5U), by [Jia Hwei Ng](https://www.linkedin.com/in/jiahweing/)
+:::
+
+---
+
+## {#how-to-storytell data-menu-title="How to tell a story"} 
+
+[Telling a story involves . . .]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.center-text .body-text-m .teal-text}
+**adding context** 
+:::
+
+::: {.center-text .gray-text}
+*makes it relevant / mean something to your audience*
+:::
+
+<br>
+
+::: {.center-text .body-text-m .teal-text}
+**adding narrative**
+:::
+
+::: {.center-text .gray-text}
+*you want stories to be told in a way that everyone can understand*
+:::
+
+<br>
+
+::: {.center-text .body-text-m .teal-text}
+**creating visuals**
+:::
+
+::: {.center-text .gray-text}
+*brings your narrative to life / makes it real*
+:::
+
+---
+
+## {#practice-storytelling data-menu-title="Exercise"} 
+
+[Let's practice storytelling]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.center-text .body-text-m}
+*Don't advance the slides until I say so!*
+:::
+
+::: {.center-text}
+On the next few slides, we'll see a series of data visualizations. First basic, then with additional layers added. These are data you've seen *many* times before.
+:::
+
+<br>
+
+. . . 
+
+::: {.body-text-m}
+For each version, consider the following questions:
+:::
+
+- who / what is the subject?
+- who might the audience be?
+- what message / narrative pops out, if any?
+- what context is needed to better tell this story?
+
+---
+
+## {#tell-story1 data-menu-title="Tell a story (v1)"} 
+
+[Tell a story about this plot]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-asp: 0.7
+library(tidyverse)
+library(palmerpenguins)
+library(showtext)
+
+font_add_google(name = "Montserrat", family = "montserrat")
+showtext_auto()
+
+p1 <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
+  geom_point(alpha = 0.8, size = 2) +
+  scale_color_gradientn(colors = c("#F3E5B1", "#6C7B1A", "#044148")) +
+  scale_x_continuous(breaks = seq(25, 65, 5),
+                     limits = c(25, 65),
+                     expand = c(0,0)) +
+  scale_y_continuous(breaks = seq(12, 24, 2),
+                     limits = c(12, 24),
+                     expand = c(0,0)) +
+  labs(x = "**Bill Length** (mm)",
+       y = "**Bill Depth** (mm)",
+       color = "Body Mass (g)") +
+  theme_light() +
+  theme(
+    plot.title.position = "plot",
+    text = element_text(family = "montserrat"),
+    plot.title = ggtext::element_textbox_simple(size = 20,
+                                                margin = margin(0.5, 0, 1, 0.25, "lines")),
+    axis.title.x = ggtext::element_markdown(size = 15,
+                                            margin = margin(1, 0, 0, 0, "lines")),
+    axis.title.y = ggtext::element_markdown(size = 15,
+                                            margin = margin(0, 1, 0, 0, "lines")),
+    axis.text = element_text(size = 10),
+    axis.ticks = element_blank(),
+    legend.title = element_text(size = 14),
+    legend.text = element_text(size = 10),
+    panel.grid.minor = element_blank()
+  ) 
+
+p1
+```
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#tell-story2 data-menu-title="Tell a story (v2)"} 
+
+[Tell a story about this plot]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-asp: 0.7
+library(tidyverse)
+library(palmerpenguins)
+library(showtext)
+
+font_add_google(name = "Montserrat", family = "montserrat")
+showtext_auto()
+
+p2 <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
+  geom_point(alpha = 0.8, size = 2) +
+  scale_color_gradientn(colors = c("#F3E5B1", "#6C7B1A", "#044148")) +
+  guides(color = guide_colorbar(barwidth = 20, barheight = 0.5, 
+                                title.position = "top", title.hjust = 0.5,
+                                ticks = FALSE)) +
+  scale_x_continuous(breaks = seq(25, 65, 5),
+                     limits = c(25, 65),
+                     expand = c(0,0)) +
+  scale_y_continuous(breaks = seq(12, 24, 2),
+                     limits = c(12, 24),
+                     expand = c(0,0)) +
+  labs(x = "**Bill Length** (mm)",
+       y = "**Bill Depth** (mm)",
+       color = "Body Mass (g)",
+       title = "**Bill Dimensions of Brush-Tailed Penguins (*Phygoscelis*)**",
+       caption = "Data: Gorman, Williams, Fraser (2014) PLoS ONE") +
+  theme_light() +
+  theme(
+    plot.title.position = "plot",
+    legend.position = "top",
+    text = element_text(family = "montserrat"),
+    plot.title = ggtext::element_textbox_simple(size = 20,
+                                                margin = margin(0.5, 0, 1, 0.25, "lines")),
+    axis.title.x = ggtext::element_markdown(size = 15,
+                                            margin = margin(1, 0, 0, 0, "lines")),
+    axis.title.y = ggtext::element_markdown(size = 15,
+                                            margin = margin(0, 1, 0, 0, "lines")),
+    axis.text = element_text(size = 10),
+    axis.ticks = element_blank(),
+    legend.title = element_text(size = 14),
+    legend.text = element_text(size = 10),
+    plot.caption = element_text(face = "italic",
+                                margin = margin(2, 0, 0, 0, "lines")),
+    panel.grid.minor = element_blank()
+  ) #+
+  # coord_cartesian(clip = "off") +
+  # annotation_custom(penguin, 
+  #                   ymin = 22, ymax = 30, 
+  #                   xmin = 56.8, xmax = 65.8) 
+
+p2
+```
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#tell-story3 data-menu-title="Tell a story (v3)"} 
+
+[Tell a story about this plot]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-asp: 0.7
+library(tidyverse)
+library(palmerpenguins)
+library(lterdatasampler)
+library(showtext)
+library(ggforce)
+
+font_add_google(name = "Montserrat", family = "montserrat")
+showtext_auto()
+
+# url <- "https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/man/figures/culmen_depth.png"
+# utils::download.file(url = url, destfile =  here::here("slides", "images", "week8", "penguin.png"))
+my_img <- png::readPNG(here::here("course-materials", "lecture-slides", "images", "week8", "penguin.png"))
+my_raster_img <- grid::rasterGrob(my_img)
+
+# ALTERNATIVELY: 
+# url <- "https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/man/figures/culmen_depth.png"
+# img <- png::readPNG(RCurl::getURLContent(url))
+# penguin <- grid::rasterGrob(img, interpolate = TRUE)
+
+p3 <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
+  geom_point(alpha = 0.8, size = 2) +
+  ggforce::geom_mark_ellipse(aes(group = species, label = species),
+                    color = "black") +
+  scale_color_gradientn(colors = c("#F3E5B1", "#6C7B1A", "#044148")) +
+  guides(color = guide_colorbar(barwidth = 20, barheight = 0.5, 
+                                title.position = "top", title.hjust = 0.5,
+                                ticks = FALSE)) +
+  scale_x_continuous(breaks = seq(25, 65, 5),
+                     limits = c(25, 65),
+                     expand = c(0,0)) +
+  scale_y_continuous(breaks = seq(12, 24, 2),
+                     limits = c(12, 24),
+                     expand = c(0,0)) +
+  labs(x = "**Bill Length** (mm)",
+       y = "**Bill Depth** (mm)",
+       color = "Body Mass (g)",
+       title = "**Bill Dimensions of Brush-Tailed Penguins (*Phygoscelis*)**",
+       caption = "Data: Gorman, Williams, Fraser (2014) PLoS ONE | Illustration: Allison Horst") +
+  theme_light() +
+  theme(
+    plot.title.position = "plot",
+    legend.position = "top",
+    text = element_text(family = "montserrat"),
+    plot.title = ggtext::element_textbox_simple(size = 20,
+                                                margin = margin(0.5, 0, 1, 0.25, "lines")),
+    axis.title.x = ggtext::element_markdown(size = 15,
+                                            margin = margin(1, 0, 0, 0, "lines")),
+    axis.title.y = ggtext::element_markdown(size = 15,
+                                            margin = margin(0, 1, 0, 0, "lines")),
+    axis.text = element_text(size = 10),
+    axis.ticks = element_blank(),
+    legend.title = element_text(size = 14),
+    legend.text = element_text(size = 10),
+    plot.caption = element_text(face = "italic",
+                                margin = margin(2, 0, 0, 0, "lines")),
+    panel.grid.minor = element_blank()
+  ) +
+  coord_cartesian(clip = "off") +
+  annotation_custom(my_raster_img, 
+                    xmin = 56.8, xmax = 65.8,
+                    ymin = 22, ymax = 30) 
+
+p3
+```
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+::: {.footer}
+Recreated based on Cédric Scherer's visualization as showcased in his talk, [ggplot Wizardry: My Favorite Tricks and Secrets for Beautiful Plots in R](https://www.youtube.com/watch?v=7UjA_5gNvdw) 
+:::
+
+---
+
+## {#plot-code data-menu-title="Complete code"} 
+
+[Complete code (in case you're interested)]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: false
+#| echo: true
+#..........................load packages.........................
+library(tidyverse)
+library(palmerpenguins)
+library(showtext)
+
+#...........................load fonts...........................
+font_add_google(name = "Montserrat", family = "montserrat")
+showtext_auto()
+
+#.................get and assemble penguin image.................
+# only need to run these first two lines once to download image: 
+# url <- "https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/man/figures/culmen_depth.png"
+# utils::download.file(url = url, destfile =  here::here("week8", "images", "penguin.png"))
+my_img <- png::readPNG(here::here("week8", "images", "penguin.png"))
+my_raster_img <- grid::rasterGrob(my_img)
+
+#...........................build plot...........................
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
+  geom_point(alpha = 0.8, size = 2) +
+  ggforce::geom_mark_ellipse(aes(group = species, label = species),
+                    color = "black") +
+  scale_color_gradientn(colors = c("#F3E5B1", "#6C7B1A", "#044148")) +
+  guides(color = guide_colorbar(barwidth = 20, barheight = 0.5, 
+                                title.position = "top", title.hjust = 0.5,
+                                ticks = FALSE)) +
+  scale_x_continuous(breaks = seq(25, 65, 5),
+                     limits = c(25, 65),
+                     expand = c(0,0)) +
+  scale_y_continuous(breaks = seq(12, 24, 2),
+                     limits = c(12, 24),
+                     expand = c(0,0)) +
+  labs(x = "**Bill Length** (mm)",
+       y = "**Bill Depth** (mm)",
+       color = "Body Mass (g)",
+       title = "**Bill Dimensions of Brush-Tailed Penguins (*Phygoscelis*)**",
+       caption = "Data: Gorman, Williams, Fraser (2014) PLoS ONE | Illustration: Allison Horst") +
+  theme_light() +
+  theme(
+    plot.title.position = "plot",
+    legend.position = "top",
+    text = element_text(family = "montserrat"),
+    plot.title = ggtext::element_textbox_simple(size = 20,
+                                                margin = margin(0.5, 0, 1, 0.25, "lines")),
+    axis.title.x = ggtext::element_markdown(size = 15,
+                                            margin = margin(1, 0, 0, 0, "lines")),
+    axis.title.y = ggtext::element_markdown(size = 15,
+                                            margin = margin(0, 1, 0, 0, "lines")),
+    axis.text = element_text(size = 10),
+    axis.ticks = element_blank(),
+    legend.title = element_text(size = 14),
+    legend.text = element_text(size = 10),
+    plot.caption = element_text(face = "italic",
+                                margin = margin(2, 0, 0, 0, "lines")),
+    panel.grid.minor = element_blank()
+  ) +
+  coord_cartesian(clip = "off") +
+  annotation_custom(my_raster_img, 
+                    xmin = 56.8, xmax = 65.8,
+                    ymin = 22, ymax = 30) 
+```
+
+::: {.footer}
+**Note:** The positioning / size of text, penguin image, etc. was chosen based on how it looked as rendered in the slides. You may need to modify for viewing on your own device.
+:::
+
+---
+
+## {#scroll-stories data-menu-title="Scrollable stories"} 
+
+[Scrollable data stories help to weave longer narratives]{.slide-title3}
+
+<hr>
+
+::: {.center-text}
+**Take some time to explore these with your learning partners and be prepared to share out some thoughts.**
+:::
+
+- [A fishery in a sea of change](https://storymaps.arcgis.com/stories/f50bd80b84d349048e9d814769dc29cd), by Amalia Harrington, Jennie Rheuban, and Carolina Bastidas
+- [What's that bug?](https://storymaps.arcgis.com/stories/033b34f9c6224f56b9369c06562929a1?adumkts=social&utm_source=social&aduc=social&adum=external&adusf=linkedin&sf_id=7015x000000aYlKAAU&aduca=mi_employee_advocacy_hootsuite_amplify_soc_ex&adut=6c17fe77-0644-410e-b3fd-dd5d10a217d4), by Esri's StoryMaps Team
+- [Why Arctic fires are releasing more carbon](https://www.reuters.com/graphics/CLIMATE-CHANGE/WILDFIRE-EMISSIONS/zjvqkrwmnvx/), by Simon Scarr
+- [The collapse of insects](https://www.reuters.com/graphics/GLOBAL-ENVIRONMENT/INSECT-APOCALYPSE/egpbykdxjvq/index.html), by Julia Janicki, Gloria Dickie, Simon Scarr and Jitesh Chowdhury
+- [Plastic Air](https://giorgialupi.com/plastic-air), by Giorgia Lupi
+- [The fry universe](https://www.chris-williams.me/fry-universe), by Chris Williams
+- [U.S. Gun Deaths in 2013](https://guns.periscopic.com/?year=2013), by Periscopic
+- [Bussed Out: How American moves its homeless](https://www.theguardian.com/us-news/ng-interactive/2017/dec/20/bussed-out-america-moves-homeless-people-country-study), by the Outside in America team
+- [The unexpected link between imperiled whales and Greenland’s melting ice](https://apps.npr.org/arctic-ice-melting-climate-change/greenland-whales.html), by NPR
+- [Reuters graphics (a collection)](https://www.reuters.com/graphics/)
+- [20 Best Data Storytelling Examples (Updated for 2023)](https://www.juiceanalytics.com/writing/20-best-data-storytelling-examples), by Zach Gemignani
+
+```{r}
+countdown::countdown(
+  minutes = 8,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#static-viz-stories data-menu-title="Static viz storytelling"} 
+
+[We've shown that static viz can also tell stories]{.slide-title2}
+
+<hr>
+
+<br>
+
+The next ten slides (14 - 23) each have a different static visualization. With your learning partner(s), discuss the following:
+
+<br>
+
+- what story(ies) is the viz being used to tell?
+- what design elements (e.g. text, color, images) do they authors use to help tell the story?
+- how do the authors provide context (may be related to your above answer)?
+- what is the purpose of this viz (e.g. to answer a question, spark additional questions, etc.)?
+- what do you find effective? what don't you find effective?
+
+<br>
+
+**Note:** You don't need to get to every viz! There are lots of options so you can explore those that peak your interest most.
+
+```{r}
+countdown::countdown(
+  minutes = 8,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#jan6 data-menu-title="Jan 6 (1/10)"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week8/jan6.png")
+```
+
+::: {.center-text .body-text-s}
+[The Jan. 6 inquiry, by the numbers](https://twitter.com/nytimes/status/1743025807491027261) (New York Times)
+:::
+
+---
+
+## {#china-pop data-menu-title="China's population (2/10)"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week8/china-pop.png")
+```
+
+::: {.center-text .body-text-s}
+[China's population continues to shrink as deaths outnumber births](https://twitter.com/nytimes/status/1747729285329084482) (New York Times)
+:::
+
+---
+
+## {#can-fires data-menu-title="Canada's wildfires (3/10)"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week8/can-fires.png")
+```
+
+::: {.center-text .body-text-s}
+[Wildfires in Canada burned this much land so far this year](https://twitter.com/prinzmagtulis/status/1693684342818574675) (Reuters)
+:::
+
+---
+
+## {#ca-oil data-menu-title="CA oil spill (4/10)"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week8/ca-oil.png")
+```
+
+::: {.center-text .body-text-s}
+['Catastrophic' California oil spill kills fish, damaages wetlands](https://twitter.com/ReutersGraphics/status/1445052808349241346) (Reuters)
+:::
+
+---
+
+## {#clean-fuel data-menu-title="Clean fuel (5/10)"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week8/clean-fuel.png")
+```
+
+::: {.center-text .body-text-s}
+[Access to clean fuels and technologies for cooking](https://twitter.com/ReutersGraphics/status/1558098980831383552) (Reuters)
+:::
+
+---
+
+## {#cacti data-menu-title="Cacti (6/10)"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week8/cacti.png")
+```
+
+::: {.center-text .body-text-s}
+[Almost half of U.S. cacti are vulnerable to extinction](https://twitter.com/ReutersGraphics/status/1622631279282774016) (Reuters)
+:::
+
+---
+
+## {#messi data-menu-title="Messi (7/10)"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week8/messi.png")
+```
+
+::: {.center-text .body-text-s}
+[Lionel Messi: all 672 goals for Barcelona by season](https://twitter.com/ReutersGraphics/status/1424701147789541386) (Reuters)
+:::
+
+---
+
+## {#refugees data-menu-title="Refugees (8/10)"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week8/refugees.png")
+```
+
+::: {.center-text .body-text-s}
+[Refugees resettled in the United States](https://twitter.com/ReutersGraphics/status/1430289471426207745) (Reuters)
+:::
+
+---
+
+## {#employed data-menu-title="Employed (9/10)"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/week8/employed.png")
+```
+
+::: {.center-text .body-text-s}
+[How employed people spend their day](https://us.gestalten.com/blogs/journal/visualizing-a-new-new-york-times) (New York Times)
+:::
+
+---
+
+## {#hockey-stick data-menu-title="Hockey stick (10/10)"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/mann-etal-hockey-stick.png")
+```
+
+::: {.center-text .body-text-s}
+["Hockey Stick" graph](https://en.wikipedia.org/wiki/Hockey_stick_graph_(global_temperature)), by [Mann et al. (1999)](https://doi.org/10.1029/1999GL900070)
+:::
+
+::: notes
+Data from thermometers (red) and from tree rings, corals, ice cores, and historical records (blue).
+:::
+
+---
+
+## {#storytelling-forms data-menu-title="Storytelling forms"} 
+
+[Anytime we present data, we have the opportunity to tell a story]{.slide-title2}
+
+<hr>
+
+<br>
+
+[[{{< fa person-chalkboard title="a person giving a talk" >}}]{.teal-text} oral talks]{.body-text-m}
+
+<br>
+
+[[{{< fa newspaper title="a journal article" >}}]{.teal-text} academic journal articles]{.body-text-m}
+
+<br>
+
+[[{{< fa blog title="blog" >}}]{.teal-text} blog posts]{.body-text-m}
+
+<br>
+
+[[{{< fa tachograph-digital title="a dashboard" >}}]{.teal-text} dashboards]{.body-text-m}
+
+<br>
+
+[[{{< fa chart-line title="a line chart" >}}]{.teal-text} infographics / static visualizations]{.body-text-m}
+
+---
+
+##  {#reminders data-menu-title="# Reminders #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">A few last important reminders before you jump back into storytelling. . .</p>
+</div>
+
+---
+
+## {#id-audience data-menu-title="Who is your audience?"} 
+
+[Identify your audience]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.center-text .body-text-l}
+To tell a clear story, you need to [**know your audience**]{.teal-text}
+:::
+
+. . . 
+
+::: {.incremental}
+- [Which story is **interesting** for them?]{.body-text-m}
+- [What are **relevant** details to include?]{.body-text-m}
+- [Which variables are **meaningful** to them?]{.body-text-m}
+- [How will they **encounter** the visualization?]{.body-text-m}
+- [**Do I need a visualization at all?**]{.body-text-m}
+:::
+
+. . .
+
+<br>
+
+::: {.center-text}
+*Data viz can look wildly different depending on how you answer the above questions!*
+:::
+
+
+::: footer
+From [Cédric Scherer](https://www.cedricscherer.com/)'s talk, [Effective Data Visualization](https://www.youtube.com/watch?v=swzFdMc6WPk) and [Graphic Design with ggplot2](https://rstudio-conf-2022.github.io/ggplot2-graphic-design/) workshop
+:::
+
+---
+
+## {#chalabi data-menu-title="Consider audience (Chalabi)"} 
+
+[Consider the audience]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/chalabi-kingfisher.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/chalabi-vaquitas.png")
+```
+:::
+
+::::
+
+::: {.footer}
+[Seven endangered species that could (almost) fit in a single train carriage](https://www.theguardian.com/environment/gallery/2018/sep/17/endangered-species-on-a-train), by [Mona Chalabi](https://monachalabi.com/) (two of seven shown here)
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#ingeman data-menu-title="Consider audience (Ingeman et al.)"} 
+
+[Consider the audience]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/ingeman-etal-fig3.png")
+```
+
+<br>
+
+::: {.footer}
+Fig. 3, by [Ingeman et al. 2022](https://www.nature.com/articles/s41598-022-13671-7): Glimmers of hope and critical cases. Find [figure caption online](https://www.nature.com/articles/s41598-022-13671-7/figures/3).
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#scherer data-menu-title="Consider audience"} 
+
+[Consider the audience]{.slide-title}
+
+<hr>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<br>
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/scherer-plants-legend.png")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/scherer-plants.png")
+```
+:::
+
+::::
+
+::: {.footer}
+[Plants in Danger](https://github.com/Z3tt/TidyTuesday/tree/main/plots/2020_34), by [Cédric Scherer](https://www.cedricscherer.com/) ([code](https://github.com/z3tt/TidyTuesday/blob/main/R/2020_34_ExtinctPlants.Rmd))
+:::
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+## {#data-samples1 data-menu-title="Our data are samples (a)"} 
+
+[Understand your data & be accurate]{.slide-title}
+
+<hr>
+
+This has less to do with the physical act of creating data viz / telling a story and everything to do with your own **critical examination of your data and domain expertise**. Two important reminders:
+
+. . . 
+
+:::: columns 
+
+::: {.column width="50%"}
+1. [**Our data is never a perfect reflection of the real world**]{.teal-text} -- our data is always a *sample*
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/ny-rats.png")
+```
+:::
+
+::::
+
+::: footer
+From [Cédric Scherer](https://www.cedricscherer.com/)'s talk, [Effective Data Visualization](https://www.youtube.com/watch?v=swzFdMc6WPk) and [Graphic Design with ggplot2](https://rstudio-conf-2022.github.io/ggplot2-graphic-design/) workshop
+:::
+
+---
+
+## {#data-samples2 data-menu-title="Our data are samples (b)"} 
+
+[Understand your data & be accurate]{.slide-title}
+
+<hr>
+
+This has less to do with the physical act of creating data viz / telling a story and everything to do with your own **critical examination of your data and domain expertise**. Two important reminders:
+
+:::: columns 
+
+::: {.column width="50%"}
+1. [**Our data is never a perfect reflection of the real world**]{.teal-text} -- our data is always a *sample*
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/ny-rats-update.png")
+```
+:::
+
+::::
+
+::: footer
+From [Cédric Scherer](https://www.cedricscherer.com/)'s talk, [Effective Data Visualization](https://www.youtube.com/watch?v=swzFdMc6WPk) and [Graphic Design with ggplot2](https://rstudio-conf-2022.github.io/ggplot2-graphic-design/) workshop
+:::
+
+---
+
+## {#what-isnt-true data-menu-title="Data show what isn't true"} 
+
+[Understand your data & be accurate]{.slide-title}
+
+<hr>
+
+This has less to do with the physical act of creating data viz / telling a story and everything to do with your own **critical examination of your data and domain expertise**. Two important reminders:
+
+:::: columns 
+
+::: {.column width="50%"}
+1. [**Our data is never a perfect reflection of the real world**]{.teal-text} -- our data is always a *sample*
+
+<br>
+
+2. [**The best use of data is to teach us what isn't true**]{.teal-text} -- you should be challenging yourself to find out something with your data, not to show that your assumptions about what you'll find are true
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "50%"
+#| fig-align: "center"
+knitr::include_graphics("images/week8/jones-book.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+[Avoiding Data Pitfalls](https://www.amazon.com/Avoiding-Data-Pitfalls-presenting-visualizations/dp/1119278163), by [Ben Jones](https://www.linkedin.com/in/benrjones/)
+:::
+
+:::
+
+::::
+
+::: footer
+From [Cédric Scherer](https://www.cedricscherer.com/)'s talk, [Effective Data Visualization](https://www.youtube.com/watch?v=swzFdMc6WPk) and [Graphic Design with ggplot2](https://rstudio-conf-2022.github.io/ggplot2-graphic-design/) workshop
+:::
+
+
+<!-- --- -->
+
+<!-- ## {#select-graphic-forms1 data-menu-title="Transport your story"}  -->
+
+<!-- [Select graphic forms that help to tell your story]{.slide-title2} -->
+
+<!-- <hr> -->
+
+<!-- :::: {.columns} -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "70%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week8/cairo-elementary-visual-perception.png") -->
+<!-- ``` -->
+<!-- ::: -->
+
+<!-- ::: {.column width="50%"} -->
+
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+
+<!-- - Data visualizations map values onto quantifiable features (aesthetics) -->
+
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+
+<!-- ::: {.left-align-text .gray-text .body-text-s} -->
+<!-- {{< fa arrow-left title="an arrow pointing to the left" >}} Albert Cairo's recreation of Cleveland & McGill’s [Hierarchy of Elementary Perceptual Tasks](https://www.tandfonline.com/doi/abs/10.1080/01621459.1984.10478080) -->
+<!-- ::: -->
+
+<!-- ::: -->
+
+<!-- :::: -->
+
+<!-- --- -->
+
+<!-- ## {#select-graphic-forms2 data-menu-title="Transport your story"}  -->
+
+<!-- [Select graphic forms that help to tell your story]{.slide-title2} -->
+
+<!-- <hr> -->
+
+<!-- :::: {.columns} -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "70%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week8/cairo-elementary-visual-perception.png") -->
+<!-- ``` -->
+<!-- ::: -->
+
+<!-- ::: {.column width="50%"} -->
+
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+
+<!-- - Data visualizations map values onto quantifiable features (aesthetics) -->
+<!-- - *But a world of just bar & line plots would be incredibly boring...* -->
+
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+
+
+<!-- ::: {.left-align-text .gray-text .body-text-s} -->
+<!-- {{< fa arrow-left title="an arrow pointing to the left" >}} Albert Cairo's recreation of Cleveland & McGill’s [Hierarchy of Elementary Perceptual Tasks](https://www.tandfonline.com/doi/abs/10.1080/01621459.1984.10478080) -->
+<!-- ::: -->
+
+<!-- ::: -->
+
+<!-- :::: -->
+
+<!-- --- -->
+
+<!-- ## {#select-graphic-forms-ex data-menu-title="Transport your story" visibility="uncounted"}  -->
+
+<!-- [Select graphic forms that help to tell your story]{.slide-title2} -->
+
+<!-- <hr> -->
+
+<!-- :::: {.columns} -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "100%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week8/scherer-australian-fires.png") -->
+<!-- ``` -->
+
+<!-- ::: {.center-text .body-text-s} -->
+<!-- Australian Fires, by Cédric Scherer ([code](https://github.com/z3tt/TidyTuesday/blob/main/R/2020_02_AustralianFires.Rmd)) -->
+
+<!-- *(puts scale of fires into something more familiar)* -->
+<!-- ::: -->
+
+<!-- ::: -->
+
+<!-- ::: {.column width="50%"} -->
+
+<!-- <br> -->
+
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "100%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/week8/scherer-coffee.png") -->
+<!-- ``` -->
+
+<!-- ::: {.center-text .body-text-s} -->
+<!-- Not my cup of coffee, by Cédric Scherer ([code](https://github.com/z3tt/TidyTuesday/blob/main/R/2020_28_CoffeeRatings.Rmd)) -->
+
+<!-- *(combines many different aesthetics)* -->
+<!-- ::: -->
+
+<!-- ::: -->
+
+<!-- :::: -->
+
+<!-- --- -->
+
+<!-- ## {#practice data-menu-title="Practice with your viz"}  -->
+
+<!-- [Now practice with your viz!]{.slide-title} -->
+
+<!-- <hr> -->
+
+<!-- Complete the following with your learning partner(s): -->
+
+<!-- - take turns viewing each others visualizations for HW #4 (choose just one of your viz to focus on) -->
+<!-- -  -->
+<!-- - what is the problem / question? -->
+<!-- - what elements of the visualization contribute to weaving the narrative? what context is provided? -->
+
+---
+
+##  {#break data-menu-title="# Break #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">{{< fa mug-hot title="a mug with steam rising out the top" >}} Take a Break</p>
+<p class="caption-text">*~ This is the end of Lesson 1 (of 2) ~*</p>
+</div>
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+

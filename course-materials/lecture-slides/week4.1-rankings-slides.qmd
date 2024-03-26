@@ -1,0 +1,818 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../../meds-slides-styles.scss
+editor_options: 
+  chunk_output_type: console
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Lecture 4.1]{.custom-title}
+
+[*Visualizing rankings*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[Week 4 | January 29^th^, 2024]{.custom-subtitle3}
+
+---
+
+## {#data-ranking data-menu-title="Data rankings"} 
+
+[Visualizing data *rankings*?]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+[Showing the relationship between a **numeric and categorical variable**, i.e. comparing categorical groups based on their numeric values.]{.body-text-m}
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+library(tidyverse)
+
+data <- tribble(
+  ~group, ~value,
+  "A", 10,
+  "B", 14, 
+  "C", 12,
+  "D", 15
+)
+
+ggplot(data, aes(x = group, y = value)) +
+  geom_col() + 
+  labs(x = "Categorical variable",
+       y = "Numeric variable") +
+  theme(axis.title = element_text(size = 17)) 
+```
+
+---
+
+## {#roadmap data-menu-title="Roadmap"} 
+
+[Roadmap]{.slide-title}
+
+<hr>
+
+<br>
+
+In this lesson, we'll explore two (highly interchangeable) chart types:
+
+<br>
+
+[1. bar plots]{.body-text-m}  
+[2. lollipop plots]{.body-text-m}
+
+<br>
+
+. . . 
+
+We'll discuss:
+
+<br>
+
+- handling long x-axis labels
+- reordering groups
+- adding labels
+- comparing multiple groups
+- critical considerations when creating bar / lollipop plots
+
+---
+
+## {#job-data data-menu-title="About the data"} 
+
+[The data: women in the workforce]{.slide-title}
+
+<hr>
+
+[According to the [American Association of University Women (AAUW)](https://www.aauw.org/), the gender pay gap is defined as *"...the gap between what men and women are paid. Most commonly, it refers to the median annual pay of all women who work full time and year-round, compared to the pay of a similar cohort of men."* We'll explore income data from the Bureau of Labor Statistics and the Census Bureau, which has been moderately [pre-processed](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-03-05#spoilers---cleaning-script) by TidyTuesday organizers for the [March 5, 2021 data set](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-03-05).]{.body-text-s}
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "5%"
+knitr::include_graphics("images/week4/pay-gap.png")
+```
+
+<br>
+
+[We'll use these data to explore a two different questions: **(1) What are the top 10 occupations with the highest median earnings (across males and females)? (2) How do median earnings differ between males and females in those same occupations?**]{.body-text-s}
+
+---
+
+## {#data-wrangling data-menu-title="About the data"} 
+
+[Data wrangling]{.slide-title}
+
+<hr>
+
+Be sure to check out the [data dictionary](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-03-05#data-dictionary-1) on the [TidyTuesday repo](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-03-05) for information about each variable in this data set.
+
+```{r}
+#| eval: true
+#| echo: true
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    setup                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#..........................load packages.........................
+library(tidyverse)
+
+#..........................import data...........................
+jobs <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-05/jobs_gender.csv")
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                wrangle data                              ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+jobs_clean <- jobs |> 
+  
+  # add cols (needed for dumbbell plot) ----
+  mutate(percent_male = 100 - percent_female, # % of females within each industry was already included
+         difference_earnings = total_earnings_male - total_earnings_female) |>  # diff in earnings between M & F
+  
+  # rearrange columns ----
+  relocate(year, major_category, minor_category, occupation,
+          total_workers, workers_male, workers_female,
+          percent_male, percent_female,
+          total_earnings, total_earnings_male, total_earnings_female, difference_earnings,
+          wage_percent_of_male) |> 
+  
+  # drop rows with missing earning data ----
+  drop_na(total_earnings_male, total_earnings_female) |> 
+  
+  # make occupation a factor ----
+  mutate(occupation = as.factor(occupation)) |> 
+  
+  # ---- this next step is for creating our dumbbell plots ----
+
+  # classify jobs by percentage male or female ----
+  mutate(group_label = case_when(
+    percent_female >= 75 ~ "Occupations that are 75%+ female",
+    percent_female >= 45 & percent_female <= 55 ~ "Occupations that are 45-55% female",
+    percent_male >= 75 ~ "Occupations that are 75%+ male"
+  )) 
+```
+
+---
+
+## {#bar-lolli-1group data-menu-title="Bar & Lollipop plots (1 group)"} 
+
+[Bar & lollipop plots to visualize rankings]{.slide-title}
+
+<hr>
+
+[Let's first explore the top ten occupations with the highest median earnings in 2016 (full-time workers > 16 years old). The heights of both the bars and lollipops represent the total estimated median earnings (`total_earnings`).]{.body-text-s}
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "5"
+#| fig-align: "center"
+jobs_clean |> 
+  filter(year == 2016) |> 
+  slice_max(order_by = total_earnings, n = 10) |> # keep top 10 jobs with most `total_earnings`
+  ggplot(aes(x = occupation, y = total_earnings)) +
+  geom_col()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "5"
+#| fig-align: "center"
+jobs_clean |> 
+  filter(year == 2016) |> 
+  slice_max(order_by = total_earnings, n = 10) |> 
+  ggplot(aes(x = occupation, y = total_earnings)) +
+  ggalt::geom_lollipop()
+```
+
+:::
+
+::::
+
+---
+
+## {#coord-flip-theme data-menu-title="Flip axes / update label angle"} 
+
+[Make space for long x-axis labels]{.slide-title}
+
+<hr>
+
+[Give those long x-axis labels some breathing room using `coord_flip()`, which flips cartesian (x,y) coordinates so that the horizontal becomes the vertical and vice versa.]{.body-text-s}
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true 
+#| code-line-numbers: "6"
+#| fig-align: "center"
+jobs_clean |> 
+  filter(year == 2016) |> 
+  slice_max(order_by = total_earnings, n = 10) |> 
+  ggplot(aes(x = occupation, y = total_earnings)) +
+  geom_col() +
+  coord_flip()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "6"
+#| fig-align: "center"
+jobs_clean |> 
+  filter(year == 2016) |> 
+  slice_max(order_by = total_earnings, n = 10) |> 
+  ggplot(aes(x = occupation, y = total_earnings)) +
+  ggalt::geom_lollipop() +
+  coord_flip()
+```
+:::
+
+::::
+
+---
+
+## {#arrange-bars data-menu-title="Arrange bars"} 
+
+[Reordering groups helps readers derive insight]{.slide-title2}
+
+<hr>
+
+[Here, we use `forcats::fct_reorder()` to reorder the levels of our x-axis variable, `occupation`, based on a numeric variable, `total_earnings` (**NOTE:** we do *not* have to reorder based on the same numeric variable that's plotted on the y-axis; here it makes sense to do so; also see [this blog post](https://blog.albertkuo.me/post/2022-01-04-reordering-geom-col-and-geom-bar-by-count-or-value/)):]{.body-text-s}
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true 
+#| code-line-numbers: "4"
+#| fig-align: "center"
+jobs_clean |> 
+  filter(year == 2016) |> 
+  slice_max(order_by = total_earnings, n = 10) |> 
+  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = total_earnings)) +
+  geom_col() +
+  coord_flip()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "4"
+#| fig-align: "center"
+jobs_clean |> 
+  filter(year == 2016) |> 
+  slice_max(order_by = total_earnings, n = 10) |> 
+  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = total_earnings)) +
+  ggalt::geom_lollipop() +
+  coord_flip()
+```
+:::
+
+::::
+
+---
+
+## {#scales-pkg data-menu-title="{scales}"} 
+
+[`{scales}`: a true label-editing hero]{.slide-title}
+
+<hr>
+
+While we're on the topic of making things easier to read, let's use the [`{scales}` package](https://scales.r-lib.org/) to update our labels so that they read more like dollar values:
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true 
+#| code-line-numbers: "6"
+#| fig-align: "center"
+jobs_clean |> 
+  filter(year == 2016) |> 
+  slice_max(order_by = total_earnings, n = 10) |> 
+  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = total_earnings)) +
+  geom_col() +
+  scale_y_continuous(labels = scales::label_currency(accuracy = 1, scale = 0.001, suffix = "k")) + 
+  coord_flip()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "6"
+#| fig-align: "center"
+jobs_clean |> 
+  filter(year == 2016) |> 
+  slice_max(order_by = total_earnings, n = 10) |> 
+  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = total_earnings)) +
+  ggalt::geom_lollipop() +
+  scale_y_continuous(labels = scales::label_currency(accuracy = 1, scale = 0.001, suffix = "k")) + 
+  coord_flip()
+```
+:::
+
+::::
+
+
+---
+
+## {#add-labels data-menu-title="Add labels"} 
+
+[Add direct labels if the exact values are important]{.slide-title2}
+
+<hr>
+
+[`geom_text()` is useful for labeling plots. Here, we pair it with the `{scales}` package to format dollar values:]{.body-text-s}
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true 
+#| code-line-numbers: "6"
+#| fig-align: "center"
+jobs_clean |> 
+  filter(year == 2016) |> 
+  slice_max(order_by = total_earnings, n = 10) |> 
+  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = total_earnings)) +
+  geom_col() +
+  geom_text(aes(label = scales::dollar(total_earnings)), hjust = 1.2, color = "white") + 
+  scale_y_continuous(labels = scales::label_currency(accuracy = 1, scale = 0.001, suffix = "k")) + 
+  coord_flip()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "6,8"
+#| fig-align: "center"
+jobs_clean |> 
+  filter(year == 2016) |> 
+  slice_max(order_by = total_earnings, n = 10) |> 
+  ggplot(aes(x = fct_reorder(occupation, total_earnings), y = total_earnings)) +
+  ggalt::geom_lollipop() +
+  geom_text(aes(label = scales::dollar(total_earnings)), hjust = -0.2) + 
+  scale_y_continuous(labels = scales::label_currency(accuracy = 1, scale = 0.001, suffix = "k"),
+                     limits = c(0, 250000)) + # expand axis to make room for values
+  coord_flip()
+```
+:::
+
+::::
+
+::: {.footer .center-text .body-text-s}
+[For some more advanced label manipulation, see [A Quick How-to on Labelling Bar Graphs in ggplot2](https://www.cedricscherer.com/2021/07/05/a-quick-how-to-on-labelling-bar-graphs-in-ggplot2/), by Cédric Scherer | Also, see this Posit Community [post](https://community.rstudio.com/t/using-label-percent-with-the-label-argument-of-geom-text-and-geom-label/54244) regarding the use of `scales::dollar()`]{.body-text-s}
+:::
+
+---
+
+## {#col-vs-bar data-menu-title="geom_col() vs. geom_bar()"} 
+
+[An aside: `geom_col()` vs. `geom_bar()`]{.slide-title}
+
+<hr>
+
+:::: columns 
+
+::: {.column width="50%"}
+[**Use `geom_col()` when your data is already summarized** or you have a variable in your data set that includes y-axis values, which will map to the height of the bars. E.g. we already have a numeric variable in our data set called, `total_earnings` -- those numeric values are mapped to the height of each bar in our plot.]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true 
+#| out-width: "60%"
+#| fig-align: "center"
+jobs_clean |> 
+  filter(year == 2016) |> 
+  slice_max(order_by = total_earnings, n = 10) |> 
+  ggplot(aes(x = occupation, y = total_earnings)) +
+  geom_col() +
+  coord_flip()
+```
+:::
+
+::: {.column width="50%"}
+[**Use `geom_bar()` if you want to ggplot to count up numbers of rows** and map those counts to the height of bars in your plot. E.g. we want to know how many occupations are included for each major category in our `jobs_gender_clean` data set (NOTE: we don't have a `count` column in our data frame):]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+ggplot(jobs_clean, aes(x = major_category)) +
+  geom_bar() + 
+  coord_flip()
+```
+:::
+
+::::
+
+---
+
+## {#more-cat-groups data-menu-title="2+ groups"} 
+
+[Plotting 2+ groups (e.g. male vs. female earnings)]{.slide-title2}
+
+<hr>
+
+[We'll need to transform our data from wide to long format, where total earning for males and females are in the same column (we'll name this `earnings_by_group`), and a secondary column denotes which group those earnings are associated with (`total_earnings_female`, `total_earnings_male`). Also note that because `geom_lollipop()` doesn't accept a `position` parameter, we'll instead use `geom_linerange()` + `geom_point()`:]{.body-text-s}
+
+:::: columns 
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true 
+#| fig-align: "center"
+jobs_clean |> 
+  filter(year == 2016) |> 
+  slice_max(order_by = total_earnings, n = 10) |> 
+  pivot_longer(cols = c(total_earnings_female, total_earnings_male), names_to = "group", values_to = "earnings_by_group") |> 
+  mutate(sex = str_remove(group, pattern = "total_earnings_")) |> 
+  ggplot(aes(x = fct_reorder(occupation, earnings_by_group), y = earnings_by_group, fill = sex)) + 
+  geom_col() + # default `position = "stack"`
+  coord_flip()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| fig-align: "center"
+#| out-width: "70%"
+jobs_clean |> 
+  filter(year == 2016) |> 
+  slice_max(order_by = total_earnings, n = 10) |> 
+  pivot_longer(cols = c(total_earnings_female, total_earnings_male), names_to = "group", values_to = "earnings_by_group") |> 
+  mutate(sex = str_remove(group, pattern = "total_earnings_")) |> 
+  ggplot(aes(x = fct_reorder(occupation, earnings_by_group), y = earnings_by_group, color = sex)) +
+  geom_point() + # default `position = "stack"`
+  geom_linerange(aes(xmin = occupation, xmax = occupation, 
+                     ymin = 0, ymax = earnings_by_group)) + # default `position = "stack"`
+  coord_flip()
+```
+
+:::
+
+::::
+
+---
+
+## {#dodge data-menu-title="Dodge groups"} 
+
+[Plot groups side-by-side]{.slide-title}
+
+<hr>
+
+[Update `position = "dodge"` or `position = position_dodge()` (which allows you to specify additional arguments about how dodging occurs):]{.body-text-s}
+
+:::: columns 
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true 
+#| code-line-numbers: "7"
+#| fig-align: "center"
+jobs_clean |> 
+  filter(year == 2016) |> 
+  slice_max(order_by = total_earnings, n = 10) |> 
+  pivot_longer(cols = c(total_earnings_female, total_earnings_male), names_to = "group", values_to = "earnings_by_group") |> 
+  mutate(sex = str_remove(group, pattern = "total_earnings_")) |> 
+  ggplot(aes(x = fct_reorder(occupation, earnings_by_group), y = earnings_by_group, fill = sex)) +
+  geom_col(position = position_dodge()) +
+  coord_flip()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "7-10"
+#| out-width: "80%"
+#| fig-align: "center"
+jobs_clean |>
+  filter(year == 2016) |>
+  slice_max(order_by = total_earnings, n = 10) |>
+  pivot_longer(cols = c(total_earnings_female, total_earnings_male), names_to = "group", values_to = "earnings_by_group") |>
+  mutate(sex = str_remove(group, pattern = "total_earnings_")) |>
+  ggplot(aes(x = fct_reorder(occupation, earnings_by_group), y = earnings_by_group, color = sex)) +
+  geom_point(position = position_dodge(width = 0.5)) +
+  geom_linerange(aes(xmin = occupation, xmax = occupation, 
+                     ymin = 0, ymax = earnings_by_group),
+                 position = position_dodge(width = 0.5)) +
+  coord_flip()
+```
+:::
+
+::::
+
+::: {.notes}
+>@Nancy You can think of geom_linerange as a convenient version of geom_segment for a specific use case. geom_segment is for when you need to draw arbitrary line segments in a fairly non-systematic way. geom_linerange is for the specific case of a collection of vertical bars at specified x values with different lengths (e.g. error bars, etc).
+
+from [StackOverflow](https://stackoverflow.com/questions/35322919/grouped-data-by-factor-with-geom-segment)
+
+Also note from [ggplot2: Elegant Graphics for Data Analysis (3e)](https://ggplot2-book.org/layers) that `geom_segment()` is used to draw a line segment, specified by a start and end position, while `geom_linerange()` is used to draw a vertical line, often for displaying uncertainty
+:::
+
+---
+
+## {#truncated-axis data-menu-title="Truncated axis"} 
+
+[IMPORTANT: Avoid truncated axes]{.slide-title2}
+
+<hr>
+
+::: {.center-text .body-text-m}
+The axis of a bar (or related) plot **must** start at zero
+:::
+
+[Truncated axes leads viewers to perceive illustrated differences as larger or more important than they actually are (i.e. a truncation effect). [Yang et al. (2021)](https://doi.org/10.1016/j.jarmac.2020.10.002) empirically tested this effect and found that this truncation effect persisted even after viewers were taught about the effects of y-axis truncation.]{.body-text-s} 
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/week4/yang-etal-2021.png")
+```
+
+::: {.center-text .gray-text .body-text-s}
+Figure 2 from Yang et al. 2021. The left-most plot without a truncated y-axis was presented to the control group of viewers. The right-most plot with a truncated y-axis was presented to the test group of viewers.
+:::
+
+<br>
+
+::: {.footer}
+Yang et al. (2021) Truncating bar graphs persistently misleads viewers. *Journal of Applied Research in Memory and Cognition* 10:2, 298-311. <https://doi.org/10.1016/j.jarmac.2020.10.002>
+:::
+
+---
+
+## {#cat-not-cont data-menu-title="Bar plots for categorical data"} 
+
+<!-- [IMPORTANT: Bar (& related) plots are for *categorical* data]{.slide-title3} -->
+[Be cautious when using bar plots to summarize continuous data]{.slide-title3}
+
+<hr>
+
+[**Bar plots shine when you need to compare counts** (e.g. populations size of different countries, total earnings by group, etc.). *However*, you should proceed with caution when using bar plots to visualize the distribution of / summarize your data. Doing so can be *misleading*, particularly when you have small sample sizes. Why?]{.body-text-s}
+
+- [bar plots hide the distribution of the underlying data (many different distributions can lead to the same plot)]{.body-text-s}
+
+- [when used this way, the height of the bar (typically) represents the mean of the data, which can cause readers to incorrectly infer that the data are normally distributed with no outliers (this of course *may* be true in certain cases, but certainly not always)]{.body-text-s}
+
+<!-- [Bar charts were designed for *categorical* data. but they're often (incorrectly) used to visualize continuous data. [Weissgerber et al. (2015)](https://doi.org/10.1371/journal.pbio.1002128) cautions against this popular practice, since many different data distributions can lead to the same bar plots.]{.body-text-s} -->
+
+:::: columns
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%"
+knitr::include_graphics("images/week4/weissgerber-etal-2015.png")
+```
+
+<!-- ::: {.center-text .gray-text .body-text-s} -->
+<!-- [Figure 1](https://journals.plos.org/plosbiology/article?id=10.1371%2Fjournal.pbio.1002128#pbio-1002128-g001) from [Weissgerber et al. (2015)](https://doi.org/10.1371/journal.pbio.1002128), which illustrates how many different data distributions can lead to the same bar plots -->
+<!-- ::: -->
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%"
+#| fig-alt: "Main text: 'Are your summary statistics hiding something?' On the left is a opaque gray bar plot with an error bar, looking mischievous while hiding individual data points in a net behind it. On the right is a transparent bar plot with an error bar, looking exposed, with individual data points exposed and dancing. The bottom four data points have arms that spell 'YMCA' as if dancing to the Village People."
+knitr::include_graphics("images/week4/horst-barplot.png")
+```
+
+<!-- ::: {.center-text .gray-text .body-text-s} -->
+<!-- Artwork by [Allison Horst](https://allisonhorst.com/) -->
+<!-- ::: -->
+:::
+
+::::
+
+<br>
+
+::: {.footer}
+**Left:** [Figure 1](https://journals.plos.org/plosbiology/article?id=10.1371%2Fjournal.pbio.1002128#pbio-1002128-g001) from Weissgerber et al. (2015) Beyond Bar and Line Graphs: Time for a New Data Presentation Paradigm. *PLOS Biology* 13:e1002128. <https://doi.org/10.1371/journal.pbio.1002128> | **Right:** Artwork by [Allison Horst](https://allisonhorst.com/)
+:::
+
+::: {.notes}
+- It’s okay to use bar (or related) plots anytime you’re comparing counts (e.g. population size of different countries, total earnings by group) — this is really where bar plots shine!
+If you are using a bar plot to visualize the distribution/summarize of your data, you should consider if there are better alternative options (e.g. box plots) — if you are inclined to include some sort of error bar / standard deviation on your bar plot, you are likely attempting to use your bar plot to visualize a distribution. Why is this wrong?
+
+- It’s not necessarily wrong, but it can be misleading, particularly when dealing with small sample sizes because (1) it’s impossible to know the distribution of the underlying data, and many different data distributions can lead to the same bar plot (see figure on lecture 4.1 slide 15). (2) When used this way, the height of the bar (typically) represents the mean of the data, which can cause readers to incorrectly infer that the data are normally distributed with no outliers (this of course may be true in certain cases, but certainly is not always true…particularly when dealing with small sample sizes where outliers are common)
+
+Bar plots are very commonly used in both ways (comparing counts and visualizing distributions) — for example, see [this online resource](https://www.labxchange.org/library/items/lb:LabXchange:e034541a:html:1) that reviews how to interpret both forms of a bar plot. However, you should proceed with extreme caution when using bar plots to summarize your data for the reasons outlined above. If you do choose to use a bar plot, consider layering on the raw data points as well (this isn’t always feasible with larger data sets). 
+:::
+
+---
+
+## {#dumbbell-plot data-menu-title="Dumbbell plot"} 
+
+[Lollipop variant: dumbbell plot]{.slide-title}
+
+<hr>
+
+Dumbbell plots can be a really simple and intuitive way to visualize a change or difference in two sets of data points: 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+set.seed(123)
+jobs_clean |> 
+  filter(year == 2016,
+         group_label == "Occupations that are 75%+ female") |> 
+  slice_sample(n = 10) |> 
+  ggplot() +
+  geom_segment(aes(x = total_earnings_female, xend = total_earnings_male, 
+                   y = fct_reorder(occupation, total_earnings), yend = occupation),
+               size = 1, alpha = 0.8) +
+  geom_point(aes(x = total_earnings_male, y = occupation), color = "#EB5B57", size = 4) +
+  geom_point(aes(x = total_earnings_female, y = occupation), color = "#16ADB1", size = 4) +
+  labs(x = "Numeric variable", y = "Categorical variable") +
+  theme_minimal() +
+  theme(
+    axis.text = element_blank(),
+    axis.title = element_text(size = 15)
+  )
+```
+
+We can make dumbbell plots using a combination of `geom_segment()` and `geom_point()`.
+
+::: notes
+See note: <https://stackoverflow.com/questions/35322919/grouped-data-by-factor-with-geom-segment>
+
+"You can think of `geom_linerange()` as a convenient version of geom_segment for a specific use case. `geom_segment()` is for when you need to draw arbitrary line segments in a fairly non-systematic way. `geom_linerange()` is for the specific case of a collection of vertical bars at specified x values with different lengths (e.g. error bars, etc)"
+:::
+
+---
+
+## {#dumbbell-plot-subset data-menu-title="Dumbbell plot - subset data"} 
+
+[Subset occupation data]{.slide-title}
+
+<hr>
+
+[Let's say we want to explore differences in male vs. female median salaries across occupations that are female dominated (75%+ female), male dominated (75%+ male), and those that are a relatively even split (45-55% female). **Let's first randomly select 10 occupations from each of those categories:**]{.body-text-s}
+
+```{r}
+#| eval: true
+#| echo: true
+#....guarantee the same random samples each time we run code.....
+set.seed(0)
+
+#.........get 10 random jobs that are 75%+ female (2016).........
+f75 <- jobs_clean |> 
+  filter(year == 2016, group_label == "Occupations that are 75%+ female") |> 
+  slice_sample(n = 10)
+
+#..........get 10 random jobs that are 75%+ male (2016)..........
+m75 <- jobs_clean |> 
+  filter(year == 2016, group_label == "Occupations that are 75%+ male") |> 
+  slice_sample(n = 10)
+
+#........get 10 random jobs that are 45-55%+ female (2016).......
+f50 <- jobs_clean |> 
+  filter(year == 2016, group_label == "Occupations that are 45-55% female") |> 
+  slice_sample(n = 10)
+
+#.......combine dfs & relevel factors (for plotting order).......
+subset_jobs <- rbind(f75, m75, f50) |> 
+  mutate(group_label = fct_relevel(group_label, "Occupations that are 75%+ female", 
+                                   "Occupations that are 45-55% female", "Occupations that are 75%+ male")) 
+```
+
+---
+
+## {#dumbbell-plot-create data-menu-title="Dumbbell plot - M vs. F salaries (code)"} 
+
+[Create dumbbell plot]{.slide-title}
+
+<hr>
+
+See the output on the next slide.
+
+```{r}
+#| eval: false
+#| echo: true
+
+# initialize plot (we'll map our aesthetics locally for each geom, below) ----
+ggplot(subset_jobs) +
+  
+  # create dumbbells ----
+  geom_segment(aes(x = total_earnings_female, xend = total_earnings_male, 
+                   y = fct_reorder(occupation, total_earnings), yend = occupation)) + # reorder occupation by avg_salary here
+  geom_point(aes(x = total_earnings_male, y = occupation), 
+             color = "#CD93D8", size = 2.5) +
+  geom_point(aes(x = total_earnings_female, y = occupation), 
+             color = "#6A1E99", size = 2.5) +
+  
+  # facet wrap by group ----
+  facet_wrap(~group_label, nrow = 3, scales = "free_y") + # "free_y" plots only the axis labels that exist in each group
+  
+  # axis breaks & $ labels ----
+  scale_x_continuous(labels = scales::label_dollar(scale = 0.001, suffix = "k"),
+                     breaks = c(25000, 50000, 75000, 100000, 125000))
+```
+
+---
+
+## {#dumbbell-plot-output data-menu-title="Dumbbell plot - M vs. F salaries (output)"} 
+
+[Dumbbell plot output]{.slide-title}
+
+<hr>
+
+There are definitely some additional modifications we would need to make before calling this plot done (e.g. adding a title, legend information, theme) -- we'll come back to that in a later lecture.
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+ggplot(subset_jobs) +
+  
+  # create dumbbells ----
+  geom_segment(aes(x = total_earnings_female, xend = total_earnings_male, 
+                   y = fct_reorder(occupation, total_earnings), yend = occupation)) + # reorder occupation by avg_salary here) 
+  geom_point(aes(x = total_earnings_male, y = occupation), color = "#CD93D8", size = 3) +
+  geom_point(aes(x = total_earnings_female, y = occupation), color = "#6A1E99", size = 3) +
+  
+  # facet wrap by group ----
+  facet_wrap(~group_label, nrow = 3, scales = "free_y") + # "free_y" plots only the axis labels that exist in each group
+  
+  # axis breaks & $ labels ----
+  scale_x_continuous(labels = scales::label_dollar(accuracy = 1, scale = 0.001, suffix = "k"),
+                     breaks = c(25000, 50000, 75000))
+```
+
+---
+
+##  {#end-break data-menu-title="# Break #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">{{< fa mug-hot title="a mug with steam rising out the top" >}} Take a Break</p>
+<p class="caption-text">*~ This is the end of Lesson 1 (of 2) ~*</p>
+</div>
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```

@@ -49,7 +49,7 @@ toc: true
 
 ## Typography
 - **[Google Fonts](https://fonts.google.com/)** -- catalog of open-source fonts and icons, which can be imported for use with `{ggplot2}`; check out [this collection](https://fonts.google.com/knowledge/choosing_type) of short articles on choosing type
-- **[fontpair](https://www.fontpair.co/):** free fonts and font pairings
+- **[fontpair](https://www.fontpair.co/)** -- free fonts and font pairings
 - **[Which fonts to use for your charts and tables](https://blog.datawrapper.de/fonts-for-data-visualization/), by Lisa Charlotte Muth**
 - **[Choosing Fonts for Your Data Visualization](https://nightingaledvs.com/choosing-fonts-for-your-data-visualization/), by Tiffany France**
 - **[Wake up & smell the fonts](https://www.youtube.com/watch?v=OXc-VZ4Vwbo), by Sarah Hyndman** -- a great 14min-long TEDx talk about how fonts turn words into stories that have the power to influence audience perceptions
@@ -106,7 +106,7 @@ toc: true
 | ----------- | ----------- |
 | [Ijeamaka Anyene](https://ijeamaka-anyene.netlify.app/) | [tidytuesday](https://github.com/Ijeamakaanyene/tidytuesday) |
 | [Elmera Azadpour](https://elmeraa-usgs.github.io/) | Elmera (MESM 2022) is a Data Visualization Specialist at USGS and builds *amazing* viz; check out her [GitHub profile](https://github.com/elmeraa-usgs) for many cool repos |
-| [Aman Bhargava](https://aman.bh/) | [tidytuesday](https://github.com/thedivtagguy/tidytuesday) (Aman using a variety of different tools & languages for his TidyTuesday creations) |
+| [Aman Bhargava](https://aman.bh/) | [tidytuesday](https://github.com/thedivtagguy/tidytuesday) (Aman uses a variety of different tools & languages for his TidyTuesday creations) |
 | [Meghan Hall](https://meghan.rbind.io/) | check out Meghan's awesome [blog posts](https://meghan.rbind.io/blog/), which cover a number of `{ggplot2}` topics |
 | [Ryan Hart](https://github.com/curatedmess) | [TidyTuesday](https://github.com/curatedmess/TidyTuesday)|
 | [Georgios Karamanis](https://karaman.is/) | [tidytuesday](https://github.com/gkaramanis/tidytuesday)

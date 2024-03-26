@@ -15,7 +15,7 @@ Your final assignment is meant to combine all of the course learning outcomes(!)
 - apply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations 
 - assess, critique, and provide constructive feedback on data visualizations
 
-## Description 
+## Description{#hw4-options} 
 
 Choose to complete one of the two options below:
 

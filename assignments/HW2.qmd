@@ -154,7 +154,7 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 
 ## Learning Outcomes
 
-**Note:** This part of HW #2 is a continuation of [HW #1, Part II](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW1.html#part-ii-find-a-data-sets-that-interests-you) and is the next step in working towards your final course assignment. Your final assignment is meant to combine nearly all of the course learning outcomes(!):
+**Note:** This part of HW #2 is a continuation of [HW #1, Part II](HW1.qmd#hw1-p2) and is the next step in working towards your final course assignment. Your final assignment is meant to combine nearly all of the course learning outcomes(!):
 
 - identify which types of visualizations are most appropriate for your data and your audience
 - prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations
@@ -166,13 +166,15 @@ Read the description, below, for details on what to work on this week.
 
 ## Description 
 
-*A small part of each homework assignment will be dedicated to working on a series of data visualizations which will be due as part of Assignment #4 at the end of the quarter.* Assignment #4 will ask you to build three related, but different data visualizations -- all which will use the same data set(s), but present those data differently for three different audiences / purposes:
+[**Please begin by re-reading [HW #4](HW4.qmd) in full**]{.teal-text} as a reminder of the options, goals, and requirements for your final class assignment. 
 
-1. **a visualization for a general audience (i.e. without domain expertise)** -- this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), display findings in an atypical but creative way,  and / or may blend both art and science
-2. **a visualization to be included in a paper, technical documentation, or report** -- this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.
-3. **a visualization that you could include in a presentation** -- you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you're animating pieces of your visualization onto a slide) 
+<!-- *A small part of each homework assignment will be dedicated to working on a series of data visualizations which will be due as part of Assignment #4 at the end of the quarter.* Assignment #4 will ask you to build three related, but different data visualizations -- all which will use the same data set(s), but present those data differently for three different audiences / purposes: -->
 
-[**(Part 2a) This week, you’ll focus on importing / wrangling / and beginning the exploratory data visualization phase, using the data you found as part of [HW #1, Part II](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW1.html#part-ii-find-a-data-sets-that-interests-you). Complete the following:**]{.teal-text} 
+<!-- 1. **a visualization for a general audience (i.e. without domain expertise)** -- this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), display findings in an atypical but creative way,  and / or may blend both art and science -->
+<!-- 2. **a visualization to be included in a paper, technical documentation, or report** -- this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc. -->
+<!-- 3. **a visualization that you could include in a presentation** -- you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you're animating pieces of your visualization onto a slide)  -->
+
+[**(Part 2a) This week, you’ll focus on importing / wrangling / and beginning the exploratory data visualization phase, using the data you found as part of [HW #1, Part II](HW1.qmd#hw1-p2). Complete the following:**]{.teal-text} 
 
 - [ ] Create an file named, `HW2-exploration.qmd` within your `lastName-eds240-HW4` repo and add appropriate YAML fields
 - [ ] Load necessary packages and read in your data

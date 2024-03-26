@@ -405,7 +405,7 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 
 <br>
 
-# [Part II: Find a data set(s) that interests you]{.pink-text}
+# [Part II: Find a data set(s) that interests you]{.pink-text}{#hw1-p2}
 
 ## Learning Outcomes 
 
@@ -421,24 +421,25 @@ This week, we'll mostly be focused on some prep work. Read the description, belo
 
 ## Description 
 
-*A small part of each homework assignment will be dedicated to working on a series of data visualizations which will be due as part of Assignment #4 at the end of the quarter.* Assignment #4 will ask you to build three related, but different data visualizations -- all which will use the same data set(s), but present those data differently for three different audiences / purposes:
+[**Please begin by reading [HW #4](HW4.qmd) in full**]{.teal-text} so that you have a clear understanding of the options, goals, and requirements for your final class assignment. 
 
-1. **a visualization for a general audience (i.e. without domain expertise)** -- this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), display findings in an atypical but creative way,  and / or may blend both art and science
-2. **a visualization to be included in a paper, technical documentation, or report** -- this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc.
-3. **a visualization that you could include in a presentation** -- you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you're animating pieces of your visualization onto a slide) 
+<!-- *A small part of each homework assignment will be dedicated to working on a series of data visualizations which will be due as part of Assignment #4 at the end of the quarter.* Assignment #4 will ask you to build three related, but different data visualizations -- all which will use the same data set(s), but present those data differently for three different audiences / purposes: -->
 
-[**This week, you’ll focus on finding data that interest you and begin brainstorming some questions that you might explore / answer using those data.**]{.teal-text} 
+<!-- 1. **a visualization for a general audience (i.e. without domain expertise)** -- this data visualization may be designed to prompt conversation, clearly display findings (without the use of jargon), display findings in an atypical but creative way,  and / or may blend both art and science -->
+<!-- 2. **a visualization to be included in a paper, technical documentation, or report** -- this visualization should tell a story, but can include much more detail, more data, more domain-specific language, etc. -->
+<!-- 3. **a visualization that you could include in a presentation** -- you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you're animating pieces of your visualization onto a slide)  -->
 
-Your data set(s) may be related to a past project, or even your current Capstone or GP. It may also be a completely new data set(s), unrelated to anything you're currently working on. **Explore the [Data sources](https://samanthacsik.github.io/EDS-240-data-viz/resources.html#data-sources) section of the course website's resources page if you need some inspiration on where to start (you are *not* limited to just these data sources)**: 
+Now that you have a better understanding of where we're headed, let's make a bit of progress towards that end goal. [**This week, you’ll focus on finding data that interest you and begin brainstorming some questions that you might explore / answer using those data.**]{.teal-text} Your data set(s) may be related to a past project, or even your current Capstone or GP. It may also be a completely new data set(s), unrelated to anything you're currently working on. Explore the [Data sources](https://samanthacsik.github.io/EDS-240-data-viz/resources.html#data-sources) section of the course website's resources page if you need some inspiration on where to start (you are *not* limited to just these data sources): 
 
 [**Once you've found your data set(s), answer the following questions:**]{.teal-text}
 
-- [ ] **1.** Describe your data set(s). Be sure to address the following [**(<=4 sentences)**]{.peach-text}
-    - [ ] **1a.** Where did you find these data?
-    - [ ] **1b.** What variables do these data contain? Is there sufficient metadata for understanding what those variables are?
-- [ ] **2.** What steps are involved in downloading or accessing the data (e.g. "I can download using a button via this online portal," "There's an R package for scraping the data," "I need to use an API to scrape the data," etc.)? [**(1-2 sentences)**]{.peach-text}
-- [ ] **3.** What question(s) do you want to answer using these data (it's okay if these questions evolve over time, this is just a starting point)? [**(<=4 sentences)**]{.peach-text}
-- [ ] **4.** Will you need to combine multiple data sets to successfully answer your question(s)? If so, have you found all the necessary data? Do you have a way to combine it (e.g. matching key values across all data sets)? [**(<=4 sentences)**]{.peach-text}
+- [ ] **1.** Which of the [two options](http://localhost:7613/assignments/HW4.html#hw4-options) are you most interested in pursuing? It's okay if you change your mind later on. [**(1 sentence)**]{.peach-text}
+- [ ] **2.** Describe your data set(s). Be sure to address the following [**(<=4 sentences)**]{.peach-text}
+    - [ ] **2a.** Where did you find these data?
+    - [ ] **2b.** What variables do these data contain? Is there sufficient metadata for understanding what those variables are?
+- [ ] **3.** What steps are involved in downloading or accessing the data (e.g. "I can download using a button via this online portal," "There's an R package for scraping the data," "I need to use an API to scrape the data," etc.)? [**(1-2 sentences)**]{.peach-text}
+- [ ] **4.** What question(s) do you want to answer using these data (it's okay if these questions evolve over time, this is just a starting point)? [**(<=4 sentences)**]{.peach-text}
+- [ ] **5.** Will you need to combine multiple data sets to successfully answer your question(s)? If so, have you found all the necessary data? Do you have a way to combine it (e.g. matching key values across all data sets)? [**(<=4 sentences)**]{.peach-text}
 - [ ] **Optional:** Import your data into R! (this will be a part of the next homework assignment) **IMPORTANT:** If your data files are large (>2GB) DO NOT push your data to GitHub -- instead, add your data file(s) or entire data folder to your `.gitignore` (you'll practice this in Discussion section this week).
 
 ## Rubric (specifications)
@@ -448,13 +449,13 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 **Complete the following step under your own personal GitHub profile, *not* in GitHub Classrooms:**
 
 - [ ] create a GitHub repository named `lastName-eds240-HW4`, which is where you'll be doing any / all work related to Assignment #4. Be sure to make your repository public, initialize your repository with a README, and add a `.gitignore` file.
-- [ ] add Sam and Sevan as collaborators on your repo (on GitHub: **Settings** > **Collaborators** > **Add people**; our user names are **samanthacsik** and **SevanEsaian**)
+<!-- - [ ] add Sam and Sevan as collaborators on your repo (on GitHub: **Settings** > **Collaborators** > **Add people**; our user names are **samanthacsik** and **SevanEsaian**) -->
 - [ ] add your repository's URL next to your name on [this Google Sheet](https://docs.google.com/spreadsheets/d/1tv32Ng_-QI1-eB5ws59HgCN0EoOpHe4UHX6qHhbQGds/edit?usp=sharing)
 
 **Complete the following steps in your GitHub Classroom repo (`eds240-hw1-username/Part2.qmd`):**
 
 - [ ] link to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4
-- [ ] answer all parts of the four concluding questions, adhering to the length requirements specified at the end of each question prompt; you *do not* need to complete the **optional** importing of data -- if you *do* want to practice importing your data, be sure to do so in your `lastName-eds240-HW4` repository
+- [ ] answer all parts of the five concluding questions, adhering to the length requirements specified at the end of each question prompt; you *do not* need to complete the **optional** importing of data -- if you *do* want to practice importing your data, be sure to do so in your `lastName-eds240-HW4` repository
 - [ ] we (your instructors) should be able to successfully render `Part2.qmd` locally without errors, *however* **do not push any html files to GitHub** (i.e. `Part2.html` and `Part2_files/`; consider adding these to your `.gitignore` so that you don't accidentally push them) -- **only push `Part2.qmd`**
 - [ ] push your completed `Part2.qmd` to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024
 
@@ -463,11 +464,3 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 ::: {.center-text .large-fa-icon .teal-text}
 {{< fa table title="A data table with two columns and two rows" >}} End Part II {{< fa table title="A data table with two columns and two rows" >}}
 :::
-
-<br>
-
-<!-- <br> -->
-
-<!-- ::: {.center-text .body-text-m} -->
-<!-- **GitHub Classroom URL: <https://classroom.github.com/a/uVzN9LMg>** -->
-<!-- ::: -->

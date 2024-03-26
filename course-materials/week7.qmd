@@ -49,7 +49,6 @@ Giving, receiving *and* implementing feedback is an important part of any creati
 
 - **high-level:** where the focus is on whether a data visualization is accurate, relevant and understandable for the intended audience
 - **detail-oriented:** where the focus is on aesthetics choices (e.g. colors, typefaces, layout, themes, white space, etc.) and how those choices help to enhance / tell the story 
-
 [**This week, you should focus largely on providing *high-level* feedback (though suggestions on how to tweak the details of a visualization are welcome).**]{.teal-text}
 
 ::: {.callout-tip collapse=true}

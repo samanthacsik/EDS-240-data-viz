@@ -62,7 +62,7 @@ In addition to using Google Fonts in our ggplots, we will also be using some [Fo
 ::: {.center-text}
 [**Typography**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.1 slides](../slides/week6.1-typography-slides.qmd){.btn role="button" target="_blank"}
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.1 slides](lecture-slides/week6.1-typography-slides.qmd){.btn role="button" target="_blank"}
 :::
 :::
 
@@ -70,7 +70,7 @@ In addition to using Google Fonts in our ggplots, we will also be using some [Fo
 ::: {.center-text}
 [**Annotations**]{.teal-text .body-text-m}
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.2 slides](../slides/week6.2-annotations-slides.qmd){.btn role="button" target="_blank"}
+[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.2 slides](lecture-slides/week6.2-annotations-slides.qmd){.btn role="button" target="_blank"}
 :::
 :::
 
