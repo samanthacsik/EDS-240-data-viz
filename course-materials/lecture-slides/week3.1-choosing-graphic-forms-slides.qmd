@@ -707,7 +707,7 @@ knitr::include_graphics("images/week3/horst-nom-org-binary.png")
 
 <hr>
 
-Recall our choropleth map from earlier, which displays 5-year precipitation as compared to the 20th century average by US county. But what if we wanted to explore precipitation across CA counties? A choropleth, which uses colors to encode information, may not be the easiest for making these comparisons. Choosing a graphical form from the top of the hierarchy (e.g. bar chart) may be more effective.
+[Recall our choropleth map from earlier, which displays 5-year precipitation as compared to the 20th century average by US county. What if we wanted to dig in a bit further and explore precipitation across CA counties? A choropleth, which uses colors to encode information, may not be the easiest for making these comparisons. Choosing a graphical form from the top of the hierarchy (e.g. bar chart) may be more effective.]{.body-text-s}
 
 <br>
 
