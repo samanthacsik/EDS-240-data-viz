@@ -451,15 +451,21 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 **Complete the following step under your own personal GitHub profile, *not* in GitHub Classrooms:**
 
 - [ ] create a GitHub repository named `lastName-eds240-HW4`, which is where you'll be doing any / all work related to Assignment #4. Be sure to make your repository public, initialize your repository with a README, and add a `.gitignore` file.
-<!-- - [ ] add Sam and Sevan as collaborators on your repo (on GitHub: **Settings** > **Collaborators** > **Add people**; our user names are **samanthacsik** and **SevanEsaian**) -->
-- [ ] add your repository's URL next to your name on [this Google Sheet](https://docs.google.com/spreadsheets/d/1tv32Ng_-QI1-eB5ws59HgCN0EoOpHe4UHX6qHhbQGds/edit?usp=sharing)
+- [ ] create a [GitHub issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues) (find the **Issues** tab in the top menu bar of your `lastName-eds240-HW4` repo, then click **New issue**) and name it, `HW1 - finding data / initial brainstorming`. Addresss the following in your issue:
+  - [ ] link to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4
+  - [ ] answer all parts of the five concluding questions, adhering to the length requirements specified at the end of each question prompt
+  - [ ] your GitHub issue should be neatly organized / formatted (you can use Markdown syntax here!)
+- [ ] importing your data is *optional* -- if you'd like to start playing around with your data, do so in a file named, `HW1-find-data.qmd`
+- [ ] add your repository's URL next to your name on [this Google Sheet](https://docs.google.com/spreadsheets/d/1tv32Ng_-QI1-eB5ws59HgCN0EoOpHe4UHX6qHhbQGds/edit?usp=sharing) by 11:59pm on Sat 01/20/2024
 
-**Complete the following steps in your GitHub Classroom repo (`eds240-hw1-username/Part2.qmd`):**
 
-- [ ] link to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4
-- [ ] answer all parts of the five concluding questions, adhering to the length requirements specified at the end of each question prompt; you *do not* need to complete the **optional** importing of data -- if you *do* want to practice importing your data, be sure to do so in your `lastName-eds240-HW4` repository
-- [ ] we (your instructors) should be able to successfully render `Part2.qmd` locally without errors, *however* **do not push any html files to GitHub** (i.e. `Part2.html` and `Part2_files/`; consider adding these to your `.gitignore` so that you don't accidentally push them) -- **only push `Part2.qmd`**
-- [ ] push your completed `Part2.qmd` to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024
+<!-- OLD from 2024, but making the above updates ahead of 2025 -->
+<!-- **Complete the following steps in your GitHub Classroom repo (`eds240-hw1-username/Part2.qmd`):** -->
+
+<!-- - [ ] link to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4 -->
+<!-- - [ ] answer all parts of the five concluding questions, adhering to the length requirements specified at the end of each question prompt; you *do not* need to complete the **optional** importing of data -- if you *do* want to practice importing your data, be sure to do so in your `lastName-eds240-HW4` repository -->
+<!-- - [ ] we (your instructors) should be able to successfully render `Part2.qmd` locally without errors, *however* **do not push any html files to GitHub** (i.e. `Part2.html` and `Part2_files/`; consider adding these to your `.gitignore` so that you don't accidentally push them) -- **only push `Part2.qmd`** -->
+<!-- - [ ] push your completed `Part2.qmd` to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024 -->
 
 <br>
 
