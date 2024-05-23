@@ -64,9 +64,8 @@ website:
 format:
   html:
     theme: meds-website-styles.scss
-    toc: false
-    page-layout: full
+    title-block-banner: true
+    toc: true
     code-line-numbers: true
-
-
+    page-layout: full
 

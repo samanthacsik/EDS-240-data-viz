@@ -2,8 +2,6 @@
 title: "Course logistics, Intro, `{ggplot2}` review"
 subtitle: "Week 1"
 description: "Monday January 8^th^, 2024"
-title-block-banner: true
-toc: true
 ---
 
 ```{r}

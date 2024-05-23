@@ -1,7 +1,6 @@
 ---
 title: "Assignment #3 (HW #3)"
 subtitle: "Assigned Mon 02/12/2024 | Due Sat 02/24/2024"
-title-block-banner: true
 ---
 
 <!-- ::: {.center-text} -->

@@ -2,8 +2,6 @@
 title: "Enhancing visualizations (part II)"
 subtitle: "Week 6"
 description: "Monday February 12^th^, 2024"
-title-block-banner: true
-toc: true
 ---
 
 <!-- Data communication (used to be part of the planned week 6 title) -->

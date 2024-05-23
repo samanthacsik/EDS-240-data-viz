@@ -1,7 +1,6 @@
 ---
 title: "Assignment #4 (HW #4)"
 subtitle: "Assigned Mon 02/26/2024 | Due Sat 03/09/2024"
-title-block-banner: true
 ---
 
 ## Learning Outcomes 

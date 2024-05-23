@@ -2,7 +2,6 @@
 title: "Pre-course reflection (SR #1)"
 subtitle: "Assigned Mon 01/08/2024 | Due Sat 01/13/2024"
 description: "Adapted from [An Bui's](https://an-bui.com/) reflection exercises in ENVS 193DS"
-title-block-banner: true
 ---
 
 ## Description 

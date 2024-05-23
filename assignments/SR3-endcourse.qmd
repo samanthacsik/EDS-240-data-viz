@@ -2,7 +2,6 @@
 title: "End-of-course reflection (SR #3)"
 subtitle: "Assigned Mon 03/11/2024 | Due Sat 03/16/2024"
 description: "Adapted from [An Bui's](https://an-bui.com/) reflection exercises in ENVS 193DS"
-title-block-banner: true
 ---
 
 ## Description 
