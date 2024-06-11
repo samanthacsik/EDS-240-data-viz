@@ -47,7 +47,7 @@ website:
           - text: getting unstuck
             href: getting-unstuck.qmd
           - text: MEDS installation guide
-            href: https://ucsb-meds.github.io/meds-install-guide.html
+            href: https://ucsb-meds.github.io/MEDS-installation-guide/
             target: _blank
       - icon: github
         menu:
