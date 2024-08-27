@@ -13,11 +13,11 @@ description: "Monday February 26^th^, 2024"
 knitr::include_graphics("../images/horst-eco-r4ds.png")
 ```
 
-## Pre-class Prep
+## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}
 
 *No pre-class prep necessary this week!* 
 
-## Lecture Materials 
+## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
 ::: {.grid}
 
@@ -39,7 +39,7 @@ knitr::include_graphics("../images/horst-eco-r4ds.png")
 
 :::
 
-## Discussion Materials
+## {{< fa comments title="two speech bubbles" >}} Discussion Materials {#discussion-materials}
 
 Similar to [last week's section](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week7.html#discussion-materials), we'll be discussing progress on our data visualizations and providing constructive feedback to one another. Please plan to bring the following to discussion:
 
@@ -53,7 +53,7 @@ Add your visualization and your question to the appropriate Google slide deck (e
 
 You should be prepared to discuss your design choices and receive constructive feedback from your peers. Be sure to review [the tips](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week7.html#how-to-give-receive-feedback) on how to give, receive, and  implement feedback.
 
-## Assignment Reminders
+## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
 <!-- | Assignment Type | Assignment Title       | Date Assigned  | Date Due                   | -->
 <!-- |:---------------:|------------------------|----------------|----------------------------| -->

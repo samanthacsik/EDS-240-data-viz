@@ -19,11 +19,11 @@ knitr::include_graphics("../images/horst-ggplot-explore-dataviz.png")
 *Artwork by [Allison Horst](https://allisonhorst.com/)*
 :::
 
-## Pre-class Prep
+## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}
 
 Please be sure to complete the following before class:
 
-### Install required packages
+### A. Install required packages
 ```{r}
 #| eval: false
 #| echo: true
@@ -33,13 +33,13 @@ install.packages("ggExtra") # {ggplot2} extension2222 which can be used to add m
 install.packages("ggdensity") # {ggplot2} extension providing more interpretable visualizations of density estimates based on highest density regions (HDRs)
 ```
 
-### Review data wrangling code 
+### B. Review data wrangling code 
 
 In lecture 4.1, we'll be exploring income data from the Bureau of Labor Statistics and the Census Bureau, which has been moderately [pre-processed](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-03-05#spoilers---cleaning-script) by TidyTuesday organizers for the [March 5, 2021 data set](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-03-05). 
 
 Please review the necessary background information (see [slide 4](https://samanthacsik.github.io/EDS-240-data-viz/slides/week4.1-rankings-slides.html#/job-data)) *and* walk through the data wrangling code on [slide 5](https://samanthacsik.github.io/EDS-240-data-viz/slides/week4.1-rankings-slides.html#/data-wrangling) ahead of class. Come prepared with any questions you may have about the code -- we'll set aside ~10 minutes to discuss before jumping into building our data visualizations.
 
-## Lecture Materials 
+## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
 Week 4 instruction is broken down into two lessons:
 
@@ -63,7 +63,7 @@ Week 4 instruction is broken down into two lessons:
 
 :::
 
-## Discussion Materials
+## {{< fa comments title="two speech bubbles" >}} Discussion Materials {#discussion-materials}
 
 Last week's discussion focused on recreating the data layers of the U.S. Drought Monitor's [visualization](https://en.wikipedia.org/wiki/Droughts_in_California#/media/File:Drought_area_in_California.svg) of CA drought conditions through time. [**This week, you'll focus on refining the theme (non-data plot elements) to match the original visualization as closely as possible.**]{.teal-text}
 
@@ -136,7 +136,7 @@ You'll get the most out of discussion section if you physically type out the cod
 <!-- This week, you'll practice updating different ggplot theme elements. Choose some of the starter code below, apply a pre-built theme, then modify different pieces of the plot using `theme()`. Plan to share out something new that you've learned with the rest of the class. -->
 <br>
 
-## Assignment Reminders
+## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
 <!-- | Assignment Type | Assignment Title        | Date Assigned  | Date Due                   | -->
 <!-- |:---------------:|-------------------------|----------------|----------------------------| -->

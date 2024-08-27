@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="description" content="Monday January 8th, 2024">
 
-<title>EDS 240 - Course logistics, Intro, {ggplot2} review</title>
+<title>Course logistics, Intro, {ggplot2} review – EDS 240</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -82,7 +82,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -91,6 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -103,127 +110,127 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">EDS 240</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">home</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit?usp=sharing" rel="" target="_blank">
- <span class="menu-text">syllabus</span></a>
+    <a class="nav-link" href="https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit?usp=sharing" target="_blank"> 
+<span class="menu-text">syllabus</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-materials" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-materials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">course materials</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-course-materials">    
         <li>
-    <a class="dropdown-item" href="../course-materials/week1.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week1.html">
  <span class="dropdown-text">week 1 (1/8)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week2.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week2.html">
  <span class="dropdown-text">week 2 (1/15)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week3.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week3.html">
  <span class="dropdown-text">week 3 (1/22)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week4.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week4.html">
  <span class="dropdown-text">week 4 (1/29)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week5.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week5.html">
  <span class="dropdown-text">week 5 (2/5)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week6.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week6.html">
  <span class="dropdown-text">week 6 (2/12)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week7.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week7.html">
  <span class="dropdown-text">week 7 (2/19)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week8.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week8.html">
  <span class="dropdown-text">week 8 (2/26)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week9.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week9.html">
  <span class="dropdown-text">week 9 (3/4)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week10.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week10.html">
  <span class="dropdown-text">week 10 (3/11)</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../assignments.html" rel="" target="">
- <span class="menu-text">assignments</span></a>
+    <a class="nav-link" href="../assignments.html"> 
+<span class="menu-text">assignments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdOP32K7_A3zzENvYQvIBCnLveaLE-exnFlqDV1xBWz66rWoA/viewform" rel="" target="_blank">
- <span class="menu-text">redeem tokens</span></a>
+    <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdOP32K7_A3zzENvYQvIBCnLveaLE-exnFlqDV1xBWz66rWoA/viewform" target="_blank"> 
+<span class="menu-text">redeem tokens</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">resources</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-resources">    
         <li>
-    <a class="dropdown-item" href="../resources.html" rel="" target="">
+    <a class="dropdown-item" href="../resources.html">
  <span class="dropdown-text">recommended reading &amp; materials</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../clean-code-guide.html" rel="" target="">
+    <a class="dropdown-item" href="../clean-code-guide.html">
  <span class="dropdown-text">guide for writing clean code</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../getting-unstuck.html" rel="" target="">
+    <a class="dropdown-item" href="../getting-unstuck.html">
  <span class="dropdown-text">getting unstuck</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ucsb-meds.github.io/MEDS-installation-guide/" rel="" target="_blank">
+    <a class="dropdown-item" href="https://ucsb-meds.github.io/MEDS-installation-guide/" target="_blank">
  <span class="dropdown-text">MEDS installation guide</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-github" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-github" role="link" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bi-github">    
         <li>
-    <a class="dropdown-item" href="https://github.com/samanthacsik/EDS-240-data-viz" rel="" target="">
+    <a class="dropdown-item" href="https://github.com/samanthacsik/EDS-240-data-viz">
  <span class="dropdown-text">Source Code</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://github.com/samanthacsik/EDS-240-data-viz/issues" rel="" target="">
+    <a class="dropdown-item" href="https://github.com/samanthacsik/EDS-240-data-viz/issues">
  <span class="dropdown-text">Report a Bug</span></a>
   </li>  
     </ul>
   </li>
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -242,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -258,19 +265,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pre-class-prep" id="toc-pre-class-prep" class="nav-link active" data-scroll-target="#pre-class-prep">Pre-class Prep</a>
+  <li><a href="#pre-class-prep" id="toc-pre-class-prep" class="nav-link active" data-scroll-target="#pre-class-prep"><i class="fa-solid fa-clipboard-list" title="a clipboard with a To Do list" aria-label="clipboard-list"></i> Pre-class Prep</a>
   <ul class="collapse">
-  <li><a href="#install-required-packages" id="toc-install-required-packages" class="nav-link" data-scroll-target="#install-required-packages">Install required packages</a></li>
-  <li><a href="#create-your-eds-240-class-examples-repository" id="toc-create-your-eds-240-class-examples-repository" class="nav-link" data-scroll-target="#create-your-eds-240-class-examples-repository">Create your <code>EDS-240-class-examples</code> repository</a></li>
+  <li><a href="#a.-install-required-packages" id="toc-a.-install-required-packages" class="nav-link" data-scroll-target="#a.-install-required-packages">A. Install required packages</a></li>
+  <li><a href="#b.-create-your-eds-240-class-examples-repository" id="toc-b.-create-your-eds-240-class-examples-repository" class="nav-link" data-scroll-target="#b.-create-your-eds-240-class-examples-repository">B. Create your <code>EDS-240-class-examples</code> repository</a></li>
   </ul></li>
-  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials">Lecture Materials</a></li>
-  <li><a href="#discussion-materials" id="toc-discussion-materials" class="nav-link" data-scroll-target="#discussion-materials">Discussion Materials</a>
+  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials"><i class="fa-solid fa-person-chalkboard" title="a person pointing at a chalkboard" aria-label="person-chalkboard"></i> Lecture Materials</a></li>
+  <li><a href="#discussion-materials" id="toc-discussion-materials" class="nav-link" data-scroll-target="#discussion-materials"><i class="fa-solid fa-comments" title="two speech bubbles" aria-label="comments"></i> Discussion Materials</a>
   <ul class="collapse">
   <li><a href="#pre-discussion-prep" id="toc-pre-discussion-prep" class="nav-link" data-scroll-target="#pre-discussion-prep">Pre-discussion Prep</a></li>
   <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
   <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
   </ul></li>
-  <li><a href="#assignment-reminders" id="toc-assignment-reminders" class="nav-link" data-scroll-target="#assignment-reminders">Assignment Reminders</a></li>
+  <li><a href="#assignment-reminders" id="toc-assignment-reminders" class="nav-link" data-scroll-target="#assignment-reminders"><i class="fa-solid fa-pencil" title="pencil" aria-label="pencil"></i> Assignment Reminders</a></li>
   </ul>
 </nav>
     </div>
@@ -280,27 +287,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/ggplot2.png" class="img-fluid figure-img" style="width:30.0%" alt="The {ggplot2} hex sticker which features a connected scatterplot with data points in varying shades of blue atop a gray gridded background. The word 'ggplot2' sits beneath the data."></p>
+<p><img src="../images/ggplot2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%" alt="The {ggplot2} hex sticker which features a connected scatterplot with data points in varying shades of blue atop a gray gridded background. The word 'ggplot2' sits beneath the data."></p>
 </figure>
 </div>
 </div>
 </div>
 <section id="pre-class-prep" class="level2">
-<h2 class="anchored" data-anchor-id="pre-class-prep">Pre-class Prep</h2>
+<h2 class="anchored" data-anchor-id="pre-class-prep"><i class="fa-solid fa-clipboard-list" title="a clipboard with a To Do list" aria-label="clipboard-list"></i> Pre-class Prep</h2>
 <p>Please be sure to complete the following before class:</p>
-<section id="install-required-packages" class="level3">
-<h3 class="anchored" data-anchor-id="install-required-packages">Install required packages</h3>
+<section id="a.-install-required-packages" class="level3">
+<h3 class="anchored" data-anchor-id="a.-install-required-packages">A. Install required packages</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"palmerpenguins"</span>) <span class="co"># a package containing the `penguins` data set, which we'll use for plotting practice</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"palmerpenguins"</span>) <span class="co"># a package containing the `penguins` data set, which we'll use for plotting practice</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>) <span class="co"># a collection of packages used for data wrangling / manipulation and visualization (including {ggplot2})</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="create-your-eds-240-class-examples-repository" class="level3">
-<h3 class="anchored" data-anchor-id="create-your-eds-240-class-examples-repository">Create your <code>EDS-240-class-examples</code> repository</h3>
+<section id="b.-create-your-eds-240-class-examples-repository" class="level3">
+<h3 class="anchored" data-anchor-id="b.-create-your-eds-240-class-examples-repository">B. Create your <code>EDS-240-class-examples</code> repository</h3>
 <p>We’ll be coding together quite a bit throughout this course. To stay organized, we’ll complete all of our in-class examples in one repository (repo). <strong>Create and clone a GitHub repository named <code>EDS-240-class-examples</code></strong>. For step-by-step instructions, unfold the following note (collapsed to save space):</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -335,7 +343,7 @@ Step-by-step instructions for creating and cloning a GitHub repo:
 </section>
 </section>
 <section id="lecture-materials" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-materials">Lecture Materials</h2>
+<h2 class="anchored" data-anchor-id="lecture-materials"><i class="fa-solid fa-person-chalkboard" title="a person pointing at a chalkboard" aria-label="person-chalkboard"></i> Lecture Materials</h2>
 <p>Week 1 instruction is broken down into three lessons:</p>
 <div class="grid">
 <div class="g-col-12 g-col-md-4">
@@ -360,7 +368,7 @@ Step-by-step instructions for creating and cloning a GitHub repo:
 <p><br></p>
 </section>
 <section id="discussion-materials" class="level2">
-<h2 class="anchored" data-anchor-id="discussion-materials">Discussion Materials</h2>
+<h2 class="anchored" data-anchor-id="discussion-materials"><i class="fa-solid fa-comments" title="two speech bubbles" aria-label="comments"></i> Discussion Materials</h2>
 <section id="pre-discussion-prep" class="level3">
 <h3 class="anchored" data-anchor-id="pre-discussion-prep">Pre-discussion Prep</h3>
 <p>Before coming to section, you’ll need to install some packages and download data. For step-by-step instructions, unfold the following note (collapsed to save space):</p>
@@ -380,7 +388,7 @@ Step-by-step pre-discussion prep instructions
 <li>Install the following packages:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"janitor"</span>) <span class="co"># tools for cleaning dirty data</span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"janitor"</span>) <span class="co"># tools for cleaning dirty data</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"usdata"</span>) <span class="co"># demographic data on the United States at the county and state levels spanning multiple years.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
@@ -392,7 +400,7 @@ Step-by-step pre-discussion prep instructions
 <div class="code-with-filename-file">
 <pre><strong>.gitignore</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ignore any folder named `data/` within folders named `week__` (* acts as a wildcard)</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ignore any folder named `data/` within folders named `week__` (* acts as a wildcard)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/week*/data/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -401,7 +409,7 @@ Step-by-step pre-discussion prep instructions
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/gitignore.gif" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><img src="../images/gitignore.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
@@ -415,13 +423,6 @@ Step-by-step pre-discussion prep instructions
 </section>
 <section id="background" class="level3">
 <h3 class="anchored" data-anchor-id="background">Background</h3>
-
-<!-- **Tidy data** is a predictable way of organizing data where: -->
-<!-- 1. each variable is a column -->
-<!-- 2. each observation is a row -->
-<!-- 3. each cell contains a single value -->
-<!-- See [Chapter 5, R for Data Science (2e)](https://r4ds.hadley.nz/data-tidy.html), by Hadley Wickham, Mine Çetinkaya-Rundel & Garrett Grolemund -->
-<!-- Is is **not** language-specific or tool-specific, it is not an "R thing", and it is not the `{tidyverse}` *"It is a way or organizing data that will make life easier for people who work with data."* (quote from Allison Horst). Because it makes life so much easier, tidying data is a critical first step in building any data visualization using grammar of graphics. In discussion section, we'll practice tidying a very untidy data set on fracking.  -->
 <p>By now, you may have heard / read something like, “Data scientists spend 80% of their time preparing their data for analysis and / or visualization.” And while that may not be totally accurate for all data scientists or all projects, you <em>will</em> spend lots of time wrestling with data. <span class="teal-text"><strong>You’ll spend this week’s discussion cleaning up a messy data set on hydraulic fracturing (aka <a href="https://en.wikipedia.org/wiki/Fracking">fracking</a>), with the goal of (re)familiarizing yourselves with some of commonly-used tidyverse functions.</strong></span></p>
 <p>This week’s data comes courtesy of Jeremy Singer-Vine’s <a href="https://www.data-is-plural.com/">Data is Plural</a> weekly newsletter of useful / curious data sets (the <a href="https://www.data-is-plural.com/archive/2023-09-27-edition/">2023.09.27 edition</a>). Singer-Vine’s description:</p>
 <blockquote class="blockquote">
@@ -434,13 +435,6 @@ Step-by-step pre-discussion prep instructions
 </section>
 <section id="solution" class="level3">
 <h3 class="anchored" data-anchor-id="solution">Solution</h3>
-<!-- ::: {.center-text} -->
-<!-- *Complete code will be posted here after both discussion sections are finished.* -->
-<!-- ::: -->
-<!-- ::: {.center-text} -->
-<!-- [**Solution**]{.body-text-m .teal-text}   -->
-<!-- *(but try not to look during section!)* -->
-<!-- ::: -->
 <p>You’ll get the most out of discussion section if you physically type out the code yourself (rather than copying / pasting)!</p>
 <p><em><strong>Note:</strong> Some of the wrangling in the solution (collapsed, below) may seem a bit superfluous – we’ve included lots of steps to (re)introduce as many of the common wrangling functions as possible, given our data set.</em></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -580,13 +574,13 @@ Complete code for week 1 discussion (fracking)
 </section>
 </section>
 <section id="assignment-reminders" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-reminders">Assignment Reminders</h2>
+<h2 class="anchored" data-anchor-id="assignment-reminders"><i class="fa-solid fa-pencil" title="pencil" aria-label="pencil"></i> Assignment Reminders</h2>
 <!-- | Assignment Type | Assignment Title                | Date Assigned  | Date Due                   | -->
 <!-- |:---------------:|---------------------------------|----------------|----------------------------| -->
 <!-- | EOC             | End-of-class survey (week 1)    | Mon 01/08/2024 | Mon 01/08/2024, 11:55pm PT | -->
 <!-- | SR              | Pre-course reflection (SR #1)   | Mon 01/08/2024 | Sat 01/13/2024, 11:59pm PT | -->
 <!-- | HW              | Homework Assignment #1          | Mon 01/08/2024 | Sat 01/20/2024, 11:59pm PT |  -->
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">Assignment Type</th>
@@ -656,18 +650,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -699,11 +682,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -713,8 +735,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -726,7 +757,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -770,6 +924,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -795,6 +950,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -857,13 +1038,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></div>   
+    <div class="nav-footer-left">
+<p>This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">This website is built with <a href="https://github.com/samanthacsik/EDS-240-data-viz"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a>, <a href="https://www.r-project.org/about.html"><i class="fa-brands fa-r-project" title="R Project" aria-label="r-project"></i></a> and <a href="https://quarto.org/">Quarto</a></div>
+    <div class="nav-footer-right">
+<p>This website is built with <a href="https://github.com/samanthacsik/EDS-240-data-viz"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a>, <a href="https://www.r-project.org/about.html"><i class="fa-brands fa-r-project" title="R Project" aria-label="r-project"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
+</div>
   </div>
 </footer>
+
 
 
 

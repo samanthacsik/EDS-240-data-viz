@@ -8,7 +8,7 @@
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.5.56">
 
   <title>EDS 240 – week2-alt-text</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -30,7 +30,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -41,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -222,7 +222,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -444,7 +445,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/hawkins-warming-stripes.png" style="width:50.0%" alt="Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature"></p>
+<p><img data-src="images/hawkins-warming-stripes.png" class="quarto-figure quarto-figure-center" style="width:50.0%" alt="Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature"></p>
 </figure>
 </div>
 </div>
@@ -460,7 +461,7 @@
 <p><span class="slide-title">Another example</span></p>
 <hr>
 
-<img data-src="images/haake-milk.png" style="width:10.0%" alt="A split bars chart of different types of milk’s (dairy and plant-based) environmental impact, where cow’s milk scores significantly worst in carbon emissions, land use, and water use than the other milk alternatives. Cow’s milk produces two times more carbon emissions, uses nine times more land, and twice the water that rice milk uses. Rice milk is the second most contaminating type of milk in terms of carbon emissions." class="r-stretch quarto-figure-center"><p><br></p>
+<img data-src="images/haake-milk.png" class="quarto-figure quarto-figure-center r-stretch" style="width:10.0%" alt="A split bars chart of different types of milk’s (dairy and plant-based) environmental impact, where cow’s milk scores significantly worst in carbon emissions, land use, and water use than the other milk alternatives. Cow’s milk produces two times more carbon emissions, uses nine times more land, and twice the water that rice milk uses. Rice milk is the second most contaminating type of milk in terms of carbon emissions."><p><br></p>
 <p><span class="body-text-s"><strong>alt=“<span style="background-color:#FFE600">A split bars chart</span> of <span style="background-color:#6DFFF8">different types of milk’s (dairy and plant-based) environmental impact</span>, where <span style="background-color:#74FF75">cow’s milk scores significantly worst in carbon emissions, land use, and water use than the other milk alternatives. Cow’s milk produces two times more carbon emissions, uses nine times more land, and twice the water that rice milk uses. Rice milk is the second most contaminating type of milk in terms of carbon emissions.</span>”</strong></span></p>
 <div class="footer">
 <p><span class="gray-text">Example from <a href="https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization">Datawrapper</a></span></p>
@@ -471,7 +472,7 @@
 <p><span class="slide-title">Another example</span></p>
 <hr>
 
-<img data-src="week2-alt-text_files/figure-revealjs/unnamed-chunk-3-1.png" alt="A boxplot of penguin flipper lengths where Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins." width="960" class="r-stretch quarto-figure-center"><p><strong>alt=“<span style="background-color:#FFE600">A boxplot</span> of <span style="background-color:#6DFFF8">penguin flipper lengths</span> where <span style="background-color:#74FF75">Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins.</span>”</strong></p>
+<img data-src="week2-alt-text_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" alt="A boxplot of penguin flipper lengths where Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins." width="960"><p><strong>alt=“<span style="background-color:#FFE600">A boxplot</span> of <span style="background-color:#6DFFF8">penguin flipper lengths</span> where <span style="background-color:#74FF75">Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins.</span>”</strong></p>
 </section>
 <section id="alt-vs-cap" class="slide level2" data-menu-title="Alt vs. caption">
 <h2></h2>
@@ -488,7 +489,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/hawkins-warming-stripes.png" style="width:80.0%" alt="Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature"></p>
+<p><img data-src="images/hawkins-warming-stripes.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature"></p>
 </figure>
 </div>
 </div>
@@ -496,8 +497,7 @@
 </div><div class="column" style="width:50%;">
 <p><span class="teal-text"><strong>Figure caption:</strong></span> “Warming Stripes”, by Ed Hawkins, depicts the average annual global temperature from 1850-2022. Data Source: <a href="https://www.metoffice.gov.uk/hadobs/hadcrut5/">HadCRUT5</a>. To learn more about this visualization, visit <a href="https://showyourstripes.info/">showyourstripes.info</a>.</p>
 <p><span class="teal-text"><strong>Alt text:</strong></span> Colored stripes of chronologically ordered temperatures where they increase in red to show the warming global temperature</p>
-</div>
-</div>
+</div></div>
 </div>
 </section>
 <section id="tips" class="slide level2" data-menu-title="Tips">
@@ -520,12 +520,12 @@
 <p><span class="slide-title">Practice writing alt text:</span></p>
 <hr>
 
-<img data-src="images/verisk-maplecroft-climate-change.png" style="width:70.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<img data-src="images/verisk-maplecroft-climate-change.png" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"><div class="footer">
 <p>Image source: <a href="https://www.maplecroft.com/insights/analysis/84-of-worlds-fastest-growing-cities-face-extreme-climate-change-risks/">Verisk Maplecroft</a> | To enlarge: <strong>right click on image</strong> &gt; <strong>Open Image in New Tab</strong></p>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_3fb6882d" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_b2a82ee9" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -537,12 +537,12 @@
 <p><span class="slide-title">Practice writing alt text:</span></p>
 <hr>
 
-<img data-src="images/ingeman-etal-2019.png" style="width:70.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<img data-src="images/ingeman-etal-2019.png" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"><div class="footer">
 <p>Fig 3A from <a href="https://www.science.org/doi/10.1126/science.aav1004">Ingeman et al.&nbsp;2019</a></p>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_2cfe556f" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_2633bd08" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -554,12 +554,12 @@
 <p><span class="slide-title">Practice writing alt text:</span></p>
 <hr>
 
-<img data-src="images/co2-emissions.png" style="width:90.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<img data-src="images/co2-emissions.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"><div class="footer">
 <p>Image source: <a href="https://onlinepublichealth.gwu.edu/resources/climate-change-emissions-data/">Milken Institute School of Public Health</a> | To enlarge: <strong>right click on image</strong> &gt; <strong>Open Image in New Tab</strong></p>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_bfff332e" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_02233ead" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -574,12 +574,14 @@
 <ol type="1">
 <li>If you’re rendering ggplot (or other data visualization) code within a <code>.qmd</code> file, add the <code>fig-alt</code> code chunk option:</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>#| eval: true</span>
-<span id="cb1-2"><a href="#cb1-2"></a>#| echo: false</span>
-<span id="cb1-3"><a href="#cb1-3"></a>#| fig-cap: "Figure caption text goes here"</span>
-<span id="cb1-4"><a href="#cb1-4"></a>#| fig-alt: "Alt text goes here"</span>
-<span id="cb1-5"><a href="#cb1-5"></a>ggplot(...) +</span>
-<span id="cb1-6"><a href="#cb1-6"></a>  geom_*()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a></a><span class="in">#| eval: true</span></span>
+<span id="cb1-3"><a></a><span class="in">#| echo: false</span></span>
+<span id="cb1-4"><a></a><span class="in">#| fig-cap: "Figure caption text goes here"</span></span>
+<span id="cb1-5"><a></a><span class="in">#| fig-alt: "Alt text goes here"</span></span>
+<span id="cb1-6"><a></a><span class="in">ggplot(...) +</span></span>
+<span id="cb1-7"><a></a><span class="in">  geom_*()</span></span>
+<span id="cb1-8"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 <ol start="2" type="1">
 <li>If you’ve save your data visualization as an image file, you can embed it in a <code>.qmd</code> file using either <strong>markdown</strong> or <strong>html</strong> syntax:</li>
@@ -590,37 +592,38 @@
 <p><strong>Markdown</strong></p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="false"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>![Figure caption goes here](file/path/to/image){fig-alt="Alt text goes here"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>![Figure caption goes here](file/path/to/image){fig-alt="Alt text goes here"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="center-text gray-text">
 <p><strong>HTML</strong></p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="false"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"file/path/to/image"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Alt text goes here"</span><span class="kw">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"file/path/to/image"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"Alt text goes here"</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="adding-alt-text-ggplot" class="slide level2" data-menu-title="Adding alt text (ggplot)">
 <h2></h2>
 <p><span class="slide-title">Adding alt text (ggplot example)</span></p>
 <hr>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>#| eval: true</span>
-<span id="cb4-2"><a href="#cb4-2"></a>#| echo: true</span>
-<span id="cb4-3"><a href="#cb4-3"></a>#| fig-cap: "Boxplot of penguin flipper lengths"</span>
-<span id="cb4-4"><a href="#cb4-4"></a>#| fig-alt: "A boxplot of penguin flipper lengths where Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins."</span>
-<span id="cb4-5"><a href="#cb4-5"></a></span>
-<span id="cb4-6"><a href="#cb4-6"></a>library(tidyverse)</span>
-<span id="cb4-7"><a href="#cb4-7"></a>library(palmerpenguins)</span>
-<span id="cb4-8"><a href="#cb4-8"></a></span>
-<span id="cb4-9"><a href="#cb4-9"></a>ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +</span>
-<span id="cb4-10"><a href="#cb4-10"></a>  geom_boxplot(aes(color = species), width = 0.3, show.legend = FALSE) +</span>
-<span id="cb4-11"><a href="#cb4-11"></a>  geom_jitter(aes(color = species), alpha = 0.5, show.legend = FALSE, position = position_jitter(width = 0.2, seed = 0)) +</span>
-<span id="cb4-12"><a href="#cb4-12"></a>  scale_color_manual(values = c("darkorange","purple","cyan4")) +</span>
-<span id="cb4-13"><a href="#cb4-13"></a>  labs(x = "Species",</span>
-<span id="cb4-14"><a href="#cb4-14"></a>       y = "Flipper length (mm)") +</span>
-<span id="cb4-15"><a href="#cb4-15"></a>  theme_minimal()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a></a><span class="in">#| eval: true</span></span>
+<span id="cb4-3"><a></a><span class="in">#| echo: true</span></span>
+<span id="cb4-4"><a></a><span class="in">#| fig-cap: "Boxplot of penguin flipper lengths"</span></span>
+<span id="cb4-5"><a></a><span class="in">#| fig-alt: "A boxplot of penguin flipper lengths where Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins."</span></span>
+<span id="cb4-6"><a></a></span>
+<span id="cb4-7"><a></a><span class="in">library(tidyverse)</span></span>
+<span id="cb4-8"><a></a><span class="in">library(palmerpenguins)</span></span>
+<span id="cb4-9"><a></a></span>
+<span id="cb4-10"><a></a><span class="in">ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +</span></span>
+<span id="cb4-11"><a></a><span class="in">  geom_boxplot(aes(color = species), width = 0.3, show.legend = FALSE) +</span></span>
+<span id="cb4-12"><a></a><span class="in">  geom_jitter(aes(color = species), alpha = 0.5, show.legend = FALSE, position = position_jitter(width = 0.2, seed = 0)) +</span></span>
+<span id="cb4-13"><a></a><span class="in">  scale_color_manual(values = c("darkorange","purple","cyan4")) +</span></span>
+<span id="cb4-14"><a></a><span class="in">  labs(x = "Species",</span></span>
+<span id="cb4-15"><a></a><span class="in">       y = "Flipper length (mm)") +</span></span>
+<span id="cb4-16"><a></a><span class="in">  theme_minimal()</span></span>
+<span id="cb4-17"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <img data-src="week2-alt-text_files/figure-revealjs/unnamed-chunk-13-1.png" alt="A boxplot of penguin flipper lengths where Gentoo penguins have flipper lengths that are about 12% larger than Adelie or Chinstrap penguins." width="960" class="r-stretch quarto-figure-left"><p class="caption">Boxplot of penguin flipper lengths</p></section>
 <section id="checking-alt-text" class="slide level2" data-menu-title="Checking your alt text">
@@ -630,8 +633,10 @@
 <p>(In Chrome) <strong>Right click</strong> on an image &gt; <strong>Inspect</strong> to look at the underlying HTML of a webpage. You should see <code>alt="Your alt text."</code>. For example, right clicking on the image on slide 4 should reveal something that looks like this:</p>
 
 
-<img data-src="images/check-alt-text.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer footer-default">
+<img data-src="images/check-alt-text.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="quarto-auto-generated-content">
+<div class="footer footer-default">
 
+</div>
 </div>
 </section>
     </div>
@@ -661,7 +666,6 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -917,18 +921,7 @@
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -960,11 +953,50 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -974,8 +1006,17 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -989,7 +1030,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

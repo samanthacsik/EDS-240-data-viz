@@ -13,11 +13,11 @@ description: "Monday March 4^th^, 2024"
 knitr::include_graphics("../images/observable.png")
 ```
 
-## Pre-class Prep
+## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}
 
 There's no *required* prep for this week's lecture. You will be able to make temporary edits to Allison's [Observable Notebook](https://observablehq.com/documentation/notebooks/) while in [Tinker mode](https://observablehq.com/documentation/collaboration/tinker-mode). If you'd like to save your changes, you may *optionally* [create a free starter account](https://observablehq.com/documentation/accounts-workspaces/accounts) (I chose to sign up using my GitHub credentials, but multiple options are provided), then [fork](https://observablehq.com/documentation/notebooks/forking) the [notebook](https://observablehq.com/@observablehq/eds-240-javascript-data-viz-follow). 
 
-## Lecture Materials 
+## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
 ### What is Observable JS?
 
@@ -37,11 +37,11 @@ From the Quarto documentation:
 - [Add JavaScript to your dataviz toolkit with Observable Plot: Learner Version](https://observablehq.com/@observablehq/r-ladies-observable-plot-feb-2023-learner-version), by Allison Horst & Ananya Roy -- materials from R-Ladies Santa Barbara meetup (2023-05-24)
 - [Intro to Observable Plot: Exploring Taylor Swift Songs with Observable Plot](https://github.com/tashapiro/intro-observable?tab=readme-ov-file), by Tanya Shapiro -- materials from R-Ladies Philly workshop (2023-11-09)
 
-## Discussion Materials
+## {{< fa comments title="two speech bubbles" >}} Discussion Materials {#discussion-materials}
 
 *No discussion section this week!*
 
-## Assignment Reminders
+## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
 <!-- | Assignment Type | Assignment Title       | Date Assigned  | Date Due                   | -->
 <!-- |:---------------:|------------------------|----------------|----------------------------| -->

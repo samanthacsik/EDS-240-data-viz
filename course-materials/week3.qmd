@@ -17,14 +17,14 @@ knitr::include_graphics("../images/horst-ggplot-explore-dataviz.png")
 *Artwork by [Allison Horst](https://allisonhorst.com/)*
 :::
 
-## Pre-class Prep
+## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}
 
 Before coming to class, you'll need to install some packages, download data, and request a US Census Bureau API key. For step-by-step instructions, unfold the following note (collapsed to save space):
 
 ::: {.callout-note collapse=true icon=false}
 ## Step-by-step pre-class prep instructions
 
-### Install required packages
+### A. Install required packages
 
 ```{r}
 #| eval: false
@@ -41,12 +41,12 @@ install.packages("see") # {ggplot2} extension for model visualization (we'll be 
 install.packages("scales") # provides the internal scaling infrastructure used by ggplot2, and gives you tools to override the default breaks, labels, transformations and palettes (installed automatically with {ggplot2} or {tidyverse})
 ```
 
-### Download data
+### B. Download data
 
 - [County-level Lyme disease data from 2001-2020](https://www.cdc.gov/lyme/resources/datasurveillance/LD-Case-Counts-by-County-01-20.csv), made available by the CDC (read more on [this CDC web page](https://www.cdc.gov/lyme/stats/survfaq.html))
   - save the downloaded data (`LD-Case-Counts-by-County-01-20.csv`) to your class repo at the file path: `EDS-240-class-examples/week3/data/LD-Case-Counts-by-County-01-20.csv`
 
-### Request a US Census Bureau API key
+### C. Request a US Census Bureau API key
 
 1. To use the [`{tidycensus}` package](https://walker-data.com/tidycensus/) to access US Census Bureau data, you'll first need to **request and activate an API key**. Do so by following these steps:
 
@@ -78,8 +78,7 @@ censusKEY <- "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 In class, we'll source our key (by running `source(here::here("week3", "KEYS.R"))`) into any scripts / Qmd files, where required.
 :::
 
-
-## Lecture Materials
+## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
 Week 3 instruction is broken down into three lessons:
 
@@ -174,7 +173,7 @@ You'll get the most out of discussion section if you physically type out the cod
 
 <br>
 
-## Assignment Reminders
+## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
 <!-- | Assignment Type | Assignment Title         | Date Assigned  | Date Due                   | -->
 <!-- |:---------------:|--------------------------|----------------|----------------------------| -->

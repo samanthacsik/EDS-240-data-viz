@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.5.56">
 
   <title>EDS 240 – week5.3-choropleth</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,7 +32,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -43,7 +43,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -224,7 +224,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -422,7 +423,7 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week5/geopandas-choropleth.png" style="width:100.0%"></p>
+<p><img data-src="images/week5/geopandas-choropleth.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -435,7 +436,7 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week5/hanna-farnsworth-2013.png" style="width:100.0%"></p>
+<p><img data-src="images/week5/hanna-farnsworth-2013.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -443,8 +444,7 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <div class="center-text gray-text body-text-s">
 <p>Choropleth by <a href="https://www.researchgate.net/publication/263851588_Visualizing_Virginia'_s_Changing_Electorate_Mapping_Presidential_Elections_from_2000_to_2012">Hanna &amp; Farnsworth (2013)</a></p>
 </div>
-</div>
-</div>
+</div></div>
 <div class="fragment">
 <div class="center-text">
 <p>Choosing the right color palette <em>and</em> scale type are critically important. Oftentimes, you’ll need to adjust the default mapping of colors to accurately tell your story.</p>
@@ -463,7 +463,7 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week5/ncei-logo1.png" style="width:60.0%"></p>
+<p><img data-src="images/week5/ncei-logo1.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
@@ -473,13 +473,12 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week5/ncei-logo2.png" style="width:60.0%"></p>
+<p><img data-src="images/week5/ncei-logo2.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 <p><span class="body-text-s">Find public access to a massive inventory of climate data on their <a href="https://www.ncei.noaa.gov/access/monitoring/products/">Climate Monitoring</a> page. Today’s lesson will use the <a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/">Climate at a Glance</a> collection. Specifically, <strong>we’ll be exploring how precipitation across the continental US over the past 5 years compares to the 20th century average.</strong> To do so, we’ll work with county-level precipitation data, accessed via the <a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202312/60/value">County Mapping</a> portal.</span></p>
 <!-- **we'll be exploring county-level precipitation data from October 2023, accessed via the [County Mapping](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value) portal -- UPDATE THIS** -->
 <!-- https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202310/1/value -->
@@ -497,7 +496,7 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week5/tigris.png" style="width:70.0%"></p>
+<p><img data-src="images/week5/tigris.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
 </div>
 </div>
@@ -509,8 +508,7 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <li><p>Shapefiles contain information for spatially describing features (e.g.&nbsp;points, lines, polygons), as well as any associated attribute information.</p></li>
 <li><p>You can find / download shapefiles online (e.g.&nbsp;from the <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.2023.html#list-tab-790442341">US Census Bureau</a>), or depending on the tools available, access them via packages (like we’re doing today).</p></li>
 </ul>
-</div>
-</div>
+</div></div>
 <div class="footer">
 <p>Check out <a href="https://walker-data.com/census-r/census-geographic-data-and-applications-in-r.html">Ch. 5</a> of <a href="https://walker-data.com/census-r/index.html">Analyzing US Census Data: Methods, Mpas, and Models in R</a> by <a href="https://personal.tcu.edu/kylewalker/">Kyle E. Walker</a> for a great intro to <code>{tigris}</code></p>
 </div>
@@ -789,81 +787,81 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <!-- ``` -->
 <!-- --- -->
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="do">##                                    setup                                 ----</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="co">#..........................load packages.........................</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">library</span>(tigris)</span>
-<span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co">#.........................get shape data.........................</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a>county_geo <span class="ot">&lt;-</span> tigris<span class="sc">::</span><span class="fu">counties</span>(<span class="at">class =</span> <span class="st">"sf"</span>, <span class="at">cb =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="co"># cb = TRUE to use cartographic boundary files</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a>  </span>
-<span id="cb1-12"><a href="#cb1-12"></a>  <span class="co"># shift US to fit AK, HI, PR (we'll be filtering these out though) and transform CRS to USA Contiguous Albers Equal Area Conic (ESRI:102003) ----</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a>  <span class="fu">shift_geometry</span>()</span>
-<span id="cb1-14"><a href="#cb1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co">#....................import precipitation data...................</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a>precip_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week5"</span>, <span class="st">"data"</span>, <span class="st">"county-jan19-dec23-precip.csv"</span>), <span class="at">skip =</span> <span class="dv">4</span>)</span>
-<span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="do">##                               data wrangling                             ----</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a>     </span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a><span class="do">##  ~ wrangle geometries  ----</span></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a></span>
-<span id="cb1-26"><a href="#cb1-26"></a>county_geo_wrangled <span class="ot">&lt;-</span> county_geo <span class="sc">|&gt;</span></span>
-<span id="cb1-27"><a href="#cb1-27"></a>  </span>
-<span id="cb1-28"><a href="#cb1-28"></a>  <span class="co"># clean up col names ----</span></span>
-<span id="cb1-29"><a href="#cb1-29"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
-<span id="cb1-30"><a href="#cb1-30"></a>  </span>
-<span id="cb1-31"><a href="#cb1-31"></a>  <span class="co"># rename county &amp; state cols ----</span></span>
-<span id="cb1-32"><a href="#cb1-32"></a>  <span class="fu">rename</span>(<span class="at">county =</span> namelsad, <span class="at">state =</span> state_name) <span class="sc">|&gt;</span></span>
-<span id="cb1-33"><a href="#cb1-33"></a>  </span>
-<span id="cb1-34"><a href="#cb1-34"></a>  <span class="co"># remove states / territories that we don't have precip data for ----</span></span>
-<span id="cb1-35"><a href="#cb1-35"></a>  <span class="fu">filter</span>(<span class="sc">!</span>state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Alaska"</span>, <span class="st">"Hawaii"</span>, <span class="st">"District of Columbia"</span>,</span>
-<span id="cb1-36"><a href="#cb1-36"></a>                       <span class="st">"United States Virgin Islands"</span>, <span class="st">"Puerto Rico"</span>, <span class="st">"American Samoa"</span>,</span>
-<span id="cb1-37"><a href="#cb1-37"></a>                       <span class="st">"Commonwealth of the Northern Mariana Islands"</span>, <span class="st">"Guam"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb1-38"><a href="#cb1-38"></a>  </span>
-<span id="cb1-39"><a href="#cb1-39"></a>  <span class="co"># capitalize "city" (VA) ----</span></span>
-<span id="cb1-40"><a href="#cb1-40"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_replace</span>(<span class="at">string =</span> county, <span class="at">pattern =</span> <span class="st">" city"</span>, <span class="at">replacement =</span> <span class="st">" City"</span>))</span>
-<span id="cb1-41"><a href="#cb1-41"></a></span>
-<span id="cb1-42"><a href="#cb1-42"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb1-43"><a href="#cb1-43"></a><span class="do">##  ~ wrangle precipitation data  ----</span></span>
-<span id="cb1-44"><a href="#cb1-44"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb1-45"><a href="#cb1-45"></a></span>
-<span id="cb1-46"><a href="#cb1-46"></a>precip_wrangled <span class="ot">&lt;-</span> precip_data <span class="sc">|&gt;</span></span>
-<span id="cb1-47"><a href="#cb1-47"></a>  </span>
-<span id="cb1-48"><a href="#cb1-48"></a>  <span class="co"># clean up col names ----</span></span>
-<span id="cb1-49"><a href="#cb1-49"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
-<span id="cb1-50"><a href="#cb1-50"></a>  </span>
-<span id="cb1-51"><a href="#cb1-51"></a>  <span class="co"># rename county col ----</span></span>
-<span id="cb1-52"><a href="#cb1-52"></a>  <span class="fu">rename</span>(<span class="at">county =</span> name) <span class="sc">|&gt;</span></span>
-<span id="cb1-53"><a href="#cb1-53"></a>  </span>
-<span id="cb1-54"><a href="#cb1-54"></a>  <span class="co"># filter out DC ----</span></span>
-<span id="cb1-55"><a href="#cb1-55"></a>  <span class="fu">filter</span>(<span class="sc">!</span>county <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Washington, D.C."</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb1-56"><a href="#cb1-56"></a>  </span>
-<span id="cb1-57"><a href="#cb1-57"></a>  <span class="co"># update name to match that in county_geo df ----</span></span>
-<span id="cb1-58"><a href="#cb1-58"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_replace</span>(<span class="at">string =</span> county, <span class="at">pattern =</span> <span class="st">"Dona Ana County"</span>, <span class="at">replacement =</span> <span class="st">"Doña Ana County"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb1-59"><a href="#cb1-59"></a>  </span>
-<span id="cb1-60"><a href="#cb1-60"></a>  <span class="co"># coerce precip &amp; 20th centruy avg from chr to numeric ----</span></span>
-<span id="cb1-61"><a href="#cb1-61"></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">as.numeric</span>(value),</span>
-<span id="cb1-62"><a href="#cb1-62"></a>         <span class="at">x1901_2000_mean =</span> <span class="fu">as.numeric</span>(x1901_2000_mean)) <span class="sc">|&gt;</span></span>
-<span id="cb1-63"><a href="#cb1-63"></a>  </span>
-<span id="cb1-64"><a href="#cb1-64"></a>  <span class="co"># calculate % change ----</span></span>
-<span id="cb1-65"><a href="#cb1-65"></a>  <span class="fu">mutate</span>(<span class="at">perc_change =</span> ((value <span class="sc">-</span> x1901_2000_mean)<span class="sc">/</span>x1901_2000_mean)<span class="sc">*</span><span class="dv">100</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-66"><a href="#cb1-66"></a>  </span>
-<span id="cb1-67"><a href="#cb1-67"></a>  <span class="co"># select, rename, reorder cols ----</span></span>
-<span id="cb1-68"><a href="#cb1-68"></a>  <span class="fu">select</span>(id, state, county, <span class="at">mean_1901_2000 =</span> x1901_2000_mean, <span class="at">precip =</span> value, perc_change, anomaly_1901_2000_base_period)</span>
-<span id="cb1-69"><a href="#cb1-69"></a></span>
-<span id="cb1-70"><a href="#cb1-70"></a><span class="do">##~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb1-71"><a href="#cb1-71"></a><span class="do">##  ~ join dfs  ----</span></span>
-<span id="cb1-72"><a href="#cb1-72"></a><span class="do">##~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb1-73"><a href="#cb1-73"></a></span>
-<span id="cb1-74"><a href="#cb1-74"></a><span class="co"># join dfs (be sure to join precip TO sf object, not the other way around) -------</span></span>
-<span id="cb1-75"><a href="#cb1-75"></a>joined_precip_geom <span class="ot">&lt;-</span> <span class="fu">full_join</span>(county_geo_wrangled, precip_wrangled) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-2"><a></a><span class="do">##                                    setup                                 ----</span></span>
+<span id="cb1-3"><a></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-4"><a></a></span>
+<span id="cb1-5"><a></a><span class="co">#..........................load packages.........................</span></span>
+<span id="cb1-6"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-7"><a></a><span class="fu">library</span>(tigris)</span>
+<span id="cb1-8"><a></a></span>
+<span id="cb1-9"><a></a><span class="co">#.........................get shape data.........................</span></span>
+<span id="cb1-10"><a></a>county_geo <span class="ot">&lt;-</span> tigris<span class="sc">::</span><span class="fu">counties</span>(<span class="at">class =</span> <span class="st">"sf"</span>, <span class="at">cb =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="co"># cb = TRUE to use cartographic boundary files</span></span>
+<span id="cb1-11"><a></a>  </span>
+<span id="cb1-12"><a></a>  <span class="co"># shift US to fit AK, HI, PR (we'll be filtering these out though) and transform CRS to USA Contiguous Albers Equal Area Conic (ESRI:102003) ----</span></span>
+<span id="cb1-13"><a></a>  <span class="fu">shift_geometry</span>()</span>
+<span id="cb1-14"><a></a></span>
+<span id="cb1-15"><a></a><span class="co">#....................import precipitation data...................</span></span>
+<span id="cb1-16"><a></a>precip_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week5"</span>, <span class="st">"data"</span>, <span class="st">"county-jan19-dec23-precip.csv"</span>), <span class="at">skip =</span> <span class="dv">4</span>)</span>
+<span id="cb1-17"><a></a></span>
+<span id="cb1-18"><a></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-19"><a></a><span class="do">##                               data wrangling                             ----</span></span>
+<span id="cb1-20"><a></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-21"><a></a>     </span>
+<span id="cb1-22"><a></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-23"><a></a><span class="do">##  ~ wrangle geometries  ----</span></span>
+<span id="cb1-24"><a></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-25"><a></a></span>
+<span id="cb1-26"><a></a>county_geo_wrangled <span class="ot">&lt;-</span> county_geo <span class="sc">|&gt;</span></span>
+<span id="cb1-27"><a></a>  </span>
+<span id="cb1-28"><a></a>  <span class="co"># clean up col names ----</span></span>
+<span id="cb1-29"><a></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-30"><a></a>  </span>
+<span id="cb1-31"><a></a>  <span class="co"># rename county &amp; state cols ----</span></span>
+<span id="cb1-32"><a></a>  <span class="fu">rename</span>(<span class="at">county =</span> namelsad, <span class="at">state =</span> state_name) <span class="sc">|&gt;</span></span>
+<span id="cb1-33"><a></a>  </span>
+<span id="cb1-34"><a></a>  <span class="co"># remove states / territories that we don't have precip data for ----</span></span>
+<span id="cb1-35"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span>state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Alaska"</span>, <span class="st">"Hawaii"</span>, <span class="st">"District of Columbia"</span>,</span>
+<span id="cb1-36"><a></a>                       <span class="st">"United States Virgin Islands"</span>, <span class="st">"Puerto Rico"</span>, <span class="st">"American Samoa"</span>,</span>
+<span id="cb1-37"><a></a>                       <span class="st">"Commonwealth of the Northern Mariana Islands"</span>, <span class="st">"Guam"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-38"><a></a>  </span>
+<span id="cb1-39"><a></a>  <span class="co"># capitalize "city" (VA) ----</span></span>
+<span id="cb1-40"><a></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_replace</span>(<span class="at">string =</span> county, <span class="at">pattern =</span> <span class="st">" city"</span>, <span class="at">replacement =</span> <span class="st">" City"</span>))</span>
+<span id="cb1-41"><a></a></span>
+<span id="cb1-42"><a></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-43"><a></a><span class="do">##  ~ wrangle precipitation data  ----</span></span>
+<span id="cb1-44"><a></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-45"><a></a></span>
+<span id="cb1-46"><a></a>precip_wrangled <span class="ot">&lt;-</span> precip_data <span class="sc">|&gt;</span></span>
+<span id="cb1-47"><a></a>  </span>
+<span id="cb1-48"><a></a>  <span class="co"># clean up col names ----</span></span>
+<span id="cb1-49"><a></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-50"><a></a>  </span>
+<span id="cb1-51"><a></a>  <span class="co"># rename county col ----</span></span>
+<span id="cb1-52"><a></a>  <span class="fu">rename</span>(<span class="at">county =</span> name) <span class="sc">|&gt;</span></span>
+<span id="cb1-53"><a></a>  </span>
+<span id="cb1-54"><a></a>  <span class="co"># filter out DC ----</span></span>
+<span id="cb1-55"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span>county <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Washington, D.C."</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-56"><a></a>  </span>
+<span id="cb1-57"><a></a>  <span class="co"># update name to match that in county_geo df ----</span></span>
+<span id="cb1-58"><a></a>  <span class="fu">mutate</span>(<span class="at">county =</span> <span class="fu">str_replace</span>(<span class="at">string =</span> county, <span class="at">pattern =</span> <span class="st">"Dona Ana County"</span>, <span class="at">replacement =</span> <span class="st">"Doña Ana County"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-59"><a></a>  </span>
+<span id="cb1-60"><a></a>  <span class="co"># coerce precip &amp; 20th centruy avg from chr to numeric ----</span></span>
+<span id="cb1-61"><a></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">as.numeric</span>(value),</span>
+<span id="cb1-62"><a></a>         <span class="at">x1901_2000_mean =</span> <span class="fu">as.numeric</span>(x1901_2000_mean)) <span class="sc">|&gt;</span></span>
+<span id="cb1-63"><a></a>  </span>
+<span id="cb1-64"><a></a>  <span class="co"># calculate % change ----</span></span>
+<span id="cb1-65"><a></a>  <span class="fu">mutate</span>(<span class="at">perc_change =</span> ((value <span class="sc">-</span> x1901_2000_mean)<span class="sc">/</span>x1901_2000_mean)<span class="sc">*</span><span class="dv">100</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-66"><a></a>  </span>
+<span id="cb1-67"><a></a>  <span class="co"># select, rename, reorder cols ----</span></span>
+<span id="cb1-68"><a></a>  <span class="fu">select</span>(id, state, county, <span class="at">mean_1901_2000 =</span> x1901_2000_mean, <span class="at">precip =</span> value, perc_change, anomaly_1901_2000_base_period)</span>
+<span id="cb1-69"><a></a></span>
+<span id="cb1-70"><a></a><span class="do">##~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-71"><a></a><span class="do">##  ~ join dfs  ----</span></span>
+<span id="cb1-72"><a></a><span class="do">##~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-73"><a></a></span>
+<span id="cb1-74"><a></a><span class="co"># join dfs (be sure to join precip TO sf object, not the other way around) -------</span></span>
+<span id="cb1-75"><a></a>joined_precip_geom <span class="ot">&lt;-</span> <span class="fu">full_join</span>(county_geo_wrangled, precip_wrangled) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="base-map" class="slide level2" data-menu-title="Create base map">
@@ -872,26 +870,29 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <hr>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>base_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(joined_precip_geom) <span class="sc">+</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> perc_change), <span class="at">linewidth =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"5-year precipitation compared with the 20th century average"</span>,</span>
-<span id="cb2-4"><a href="#cb2-4"></a>       <span class="at">subtitle =</span> <span class="st">"January 2019 - December 2023"</span>,</span>
-<span id="cb2-5"><a href="#cb2-5"></a>       <span class="at">caption =</span> <span class="st">"Source: National Centers for Environmental Information"</span>) <span class="sc">+</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>  <span class="fu">theme</span>(</span>
-<span id="cb2-8"><a href="#cb2-8"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb2-9"><a href="#cb2-9"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb2-10"><a href="#cb2-10"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>,</span>
-<span id="cb2-11"><a href="#cb2-11"></a>                                <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">2</span>, <span class="at">r =</span> <span class="fl">0.5</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="st">"lines"</span>))</span>
-<span id="cb2-12"><a href="#cb2-12"></a>  )</span>
-<span id="cb2-13"><a href="#cb2-13"></a></span>
-<span id="cb2-14"><a href="#cb2-14"></a>base_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>base_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(joined_precip_geom) <span class="sc">+</span></span>
+<span id="cb2-2"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> perc_change), <span class="at">linewidth =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"5-year precipitation compared with the 20th century average"</span>,</span>
+<span id="cb2-4"><a></a>       <span class="at">subtitle =</span> <span class="st">"January 2019 - December 2023"</span>,</span>
+<span id="cb2-5"><a></a>       <span class="at">caption =</span> <span class="st">"Source: National Centers for Environmental Information"</span>) <span class="sc">+</span></span>
+<span id="cb2-6"><a></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb2-7"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-8"><a></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb2-9"><a></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-10"><a></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>,</span>
+<span id="cb2-11"><a></a>                                <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">2</span>, <span class="at">r =</span> <span class="fl">0.5</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">l =</span> <span class="dv">0</span>, <span class="st">"lines"</span>))</span>
+<span id="cb2-12"><a></a>  )</span>
+<span id="cb2-13"><a></a></span>
+<span id="cb2-14"><a></a>base_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 <div class="fragment">
 <p><br></p>
 <div class="center-text">
@@ -1018,11 +1019,11 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <p>Preview the palette using <code>display.brewer.pal()</code> with our desired number of hues:</p>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.pal</span>(<span class="at">n =</span> <span class="dv">11</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.pal</span>(<span class="at">n =</span> <span class="dv">11</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-9-1.png" style="width:100.0%"></p>
+<p><img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -1032,15 +1033,14 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <p>Save the HEX codes to a named object using <code>brewer.pal()</code> (we’ll call this in our plot later):</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>my_brew_palette11 <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">11</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a>my_brew_palette11</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>my_brew_palette11 <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">11</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span>
+<span id="cb4-2"><a></a>my_brew_palette11</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "#543005" "#8C510A" "#BF812D" "#DFC27D" "#F6E8C3" "#F5F5F5" "#C7EAE5"
  [8] "#80CDC1" "#35978F" "#01665E" "#003C30"</code></pre>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="apply-palette-unclassed" class="slide level2" data-menu-title="Apply our palette (unclassed)">
 <h2></h2>
@@ -1048,26 +1048,26 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <hr>
 <p><span class="body-text-s">Here, we leverage the awesome <code>{scales}</code> package to add <strong>%s</strong> to the colorbar labels and set our breaks. We also use <code>guides()</code> + <code>guide_colorbar()</code> to update label positioning and colorbar size:</span></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>base_map <span class="sc">+</span> </span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_brew_palette11,</span>
-<span id="cb6-3"><a href="#cb6-3"></a>                       <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
-<span id="cb6-4"><a href="#cb6-4"></a>                       <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>base_map <span class="sc">+</span> </span>
+<span id="cb6-2"><a></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_brew_palette11,</span>
+<span id="cb6-3"><a></a>                       <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
+<span id="cb6-4"><a></a>                       <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb6-5"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="inspect-color-scale1" class="slide level2" data-menu-title="Inspect color scale">
 <h2></h2>
 <p><span class="slide-title">Inspect the color scale – anything off?</span></p>
 <hr>
 
-<img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-12-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
 <section id="misleading" class="slide level2" data-menu-title="Misleading colors">
 <h2></h2>
 <p><span class="slide-title">Our color mapping may be misleading</span></p>
 <hr>
 
-<img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><p><br></p>
 <div class="center-text">
 <p><strong>0%</strong> (i.e.&nbsp;no change between 5-year precipitation and 20th century average) <strong>is currently on the bluer side of our color scale</strong>, rather than on the off-white color that’s at the center of our palette.</p>
 <p>As a result, <strong>our map may be misleading</strong> – it would appear as if more counties received higher-than-average precipitation than in actuality.</p>
@@ -1078,24 +1078,24 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <p><span class="slide-title2">Rescale the colorbar so that 0 is at the center</span></p>
 <hr>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="5-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>base_map <span class="sc">+</span> </span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_brew_palette11,</span>
-<span id="cb7-3"><a href="#cb7-3"></a>                       <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
-<span id="cb7-4"><a href="#cb7-4"></a>                       <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>),</span>
-<span id="cb7-5"><a href="#cb7-5"></a>                       <span class="at">values =</span> scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="at">x =</span> <span class="fu">c</span>(</span>
-<span id="cb7-6"><a href="#cb7-6"></a>                         <span class="fu">min</span>(<span class="fu">na.omit</span>(joined_precip_geom)<span class="sc">$</span>perc_change),</span>
-<span id="cb7-7"><a href="#cb7-7"></a>                         <span class="dv">0</span>,</span>
-<span id="cb7-8"><a href="#cb7-8"></a>                         <span class="fu">max</span>(<span class="fu">na.omit</span>(joined_precip_geom)<span class="sc">$</span>perc_change)))) <span class="sc">+</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="5-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>base_map <span class="sc">+</span> </span>
+<span id="cb7-2"><a></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> my_brew_palette11,</span>
+<span id="cb7-3"><a></a>                       <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
+<span id="cb7-4"><a></a>                       <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>),</span>
+<span id="cb7-5"><a></a>                       <span class="at">values =</span> scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="at">x =</span> <span class="fu">c</span>(</span>
+<span id="cb7-6"><a></a>                         <span class="fu">min</span>(<span class="fu">na.omit</span>(joined_precip_geom)<span class="sc">$</span>perc_change),</span>
+<span id="cb7-7"><a></a>                         <span class="dv">0</span>,</span>
+<span id="cb7-8"><a></a>                         <span class="fu">max</span>(<span class="fu">na.omit</span>(joined_precip_geom)<span class="sc">$</span>perc_change)))) <span class="sc">+</span></span>
+<span id="cb7-9"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>(<span class="at">barwidth =</span> <span class="dv">15</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="final-unclassed" class="slide level2" data-menu-title="Final unclassed map">
 <h2></h2>
 <p><span class="slide-title">Our final unclassed map</span></p>
 <hr>
 
-<img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-15-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="classed-palette" class="slide level2" data-menu-title="Classed palette">
 <h2></h2>
 <p><span class="slide-title">Modify our palette for our classed map</span></p>
@@ -1107,11 +1107,11 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <p>Preview the palette using <code>display.brewer.pal()</code> with our desired number of hues:</p>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.pal</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.pal</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-16-1.png" style="width:90.0%"></p>
+<p><img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
 </figure>
 </div>
 </div>
@@ -1121,15 +1121,14 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <p>Save the HEX codes to a named object using <code>brewer.pal()</code> (we’ll call this in our plot later):</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>my_brew_palette10 <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span>
-<span id="cb9-2"><a href="#cb9-2"></a>my_brew_palette10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>my_brew_palette10 <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">name =</span> <span class="st">'BrBG'</span>)</span>
+<span id="cb9-2"><a></a>my_brew_palette10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "#543005" "#8C510A" "#BF812D" "#DFC27D" "#F6E8C3" "#C7EAE5" "#80CDC1"
  [8] "#35978F" "#01665E" "#003C30"</code></pre>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 <p><span class="body-text-s">By dropping the off-white hue, we can construct our scale so that <strong>0%</strong> sits at the break point between brown and blue shades – any county that received more than the historical average will be a shade of blue, and any that received less will be a shade of brown.</span></p>
 </section>
 <section id="apply-palette-classed" class="slide level2" data-menu-title="Apply our palette (classed)">
@@ -1138,13 +1137,13 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <hr>
 <p>We only get 4 bins by default, which means we lose a lot of detail in our map:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>base_map <span class="sc">+</span> </span>
-<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_brew_palette10,</span>
-<span id="cb11-3"><a href="#cb11-3"></a>                    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">barwidth =</span> <span class="dv">25</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>base_map <span class="sc">+</span> </span>
+<span id="cb11-2"><a></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_brew_palette10,</span>
+<span id="cb11-3"><a></a>                    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb11-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">barwidth =</span> <span class="dv">25</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-18-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
 <section id="increase-classes" class="slide level2" data-menu-title="Increase # of classes">
 <h2></h2>
 <p><span class="slide-title">More classes = more nuance</span></p>
@@ -1155,15 +1154,15 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <p>Breaks set to a width of <strong>10</strong></p>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>base_map <span class="sc">+</span> </span>
-<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_brew_palette10,</span>
-<span id="cb12-3"><a href="#cb12-3"></a>                    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
-<span id="cb12-4"><a href="#cb12-4"></a>                    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">barwidth =</span> <span class="dv">25</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>base_map <span class="sc">+</span> </span>
+<span id="cb12-2"><a></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_brew_palette10,</span>
+<span id="cb12-3"><a></a>                    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
+<span id="cb12-4"><a></a>                    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb12-5"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">barwidth =</span> <span class="dv">25</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+<p><img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1173,25 +1172,24 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <p>Breaks set to a width of <strong>5</strong> &amp; rescaled with 0 at center</p>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb13" data-code-line-numbers="4-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>base_map <span class="sc">+</span> </span>
-<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_brew_palette10,</span>
-<span id="cb13-3"><a href="#cb13-3"></a>                    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
-<span id="cb13-4"><a href="#cb13-4"></a>                    <span class="at">values =</span> scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="at">x =</span> <span class="fu">c</span>(</span>
-<span id="cb13-5"><a href="#cb13-5"></a>                         <span class="fu">min</span>(<span class="fu">na.omit</span>(joined_precip_geom)<span class="sc">$</span>perc_change),</span>
-<span id="cb13-6"><a href="#cb13-6"></a>                         <span class="dv">0</span>,</span>
-<span id="cb13-7"><a href="#cb13-7"></a>                         <span class="fu">max</span>(<span class="fu">na.omit</span>(joined_precip_geom)<span class="sc">$</span>perc_change))), </span>
-<span id="cb13-8"><a href="#cb13-8"></a>                    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
-<span id="cb13-9"><a href="#cb13-9"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">barwidth =</span> <span class="dv">25</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13" data-code-line-numbers="4-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>base_map <span class="sc">+</span> </span>
+<span id="cb13-2"><a></a>  <span class="fu">scale_fill_stepsn</span>(<span class="at">colors =</span> my_brew_palette10,</span>
+<span id="cb13-3"><a></a>                    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
+<span id="cb13-4"><a></a>                    <span class="at">values =</span> scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="at">x =</span> <span class="fu">c</span>(</span>
+<span id="cb13-5"><a></a>                         <span class="fu">min</span>(<span class="fu">na.omit</span>(joined_precip_geom)<span class="sc">$</span>perc_change),</span>
+<span id="cb13-6"><a></a>                         <span class="dv">0</span>,</span>
+<span id="cb13-7"><a></a>                         <span class="fu">max</span>(<span class="fu">na.omit</span>(joined_precip_geom)<span class="sc">$</span>perc_change))), </span>
+<span id="cb13-8"><a></a>                    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="at">width =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb13-9"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorsteps</span>(<span class="at">barwidth =</span> <span class="dv">25</span>, <span class="at">barheight =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
+<p><img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 <div class="footer">
 <p><em>But</em> the more classes you have, the longer it will (likely) take a reader to interpret values.</p>
 </div>
@@ -1211,7 +1209,7 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-21-1.png" style="width:100.0%"></p>
+<p><img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -1224,13 +1222,12 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-22-1.png" style="width:100.0%"></p>
+<p><img data-src="week5.3-choropleth_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="multiple-maps" class="slide level2" data-menu-title="Multiple maps">
 <h2></h2>
@@ -1238,7 +1235,7 @@ Let’s explore county-level precipitation data using a choropleth map. Importan
 <hr>
 <p>Several maps side-by-side can help you better spot important patterns and tell a more complete story.</p>
 
-<img data-src="images/week5/nyt-precip.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<img data-src="images/week5/nyt-precip.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="footer">
 <p><a href="https://www.nytimes.com/2021/09/16/learning/whats-going-on-in-this-graph-new-normal-us-precipitation.html">What’s Going On in This Graph? | New Normal U.S. Precipitation</a> (New York Times)</p>
 </div>
 </section>
@@ -1273,8 +1270,10 @@ See you next week!
 <!--   ) -->
 <!-- ``` -->
 
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section>
     </div>
@@ -1304,7 +1303,6 @@ See you next week!
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1560,18 +1558,7 @@ See you next week!
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1603,11 +1590,50 @@ See you next week!
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1617,8 +1643,17 @@ See you next week!
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1632,7 +1667,11 @@ See you next week!
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

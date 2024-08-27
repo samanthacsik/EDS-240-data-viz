@@ -17,15 +17,15 @@ knitr::include_graphics("../images/alt-text.png")
 Image from [Amy Cesal](https://www.amycesal.com/)'s article, [Writing Alt Text for Data Visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81), published in [Nightingale](https://medium.com/nightingale)
 :::
 
-## Pre-class Prep
+## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}
 
 *NA*
 
-## Lecture Materials
+## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
 *There is no lecture this week!*
 
-## Discussion Materials
+## {{< fa comments title="two speech bubbles" >}} Discussion Materials {#discussion-materials}
 
 **[Alternative text](https://webaim.org/techniques/alttext/),** aka **alt text**, makes our data visualizations accessible to a broader community. Today's section will focus crafting effective alt text, as well as how to include it when rendering visualizations in reproducible reports, websites, etc. using publishing tools like Quarto.
 
@@ -33,7 +33,7 @@ Image from [Amy Cesal](https://www.amycesal.com/)'s article, [Writing Alt Text f
 [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Week 2 discussion slides](discussion/week2/week2-alt-text.qmd){.btn role="button" target="_blank"} 
 :::
 
-## Assignment Reminders
+## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
 <!-- | Assignment Type | Assignment Title       | Date Assigned  | Date Due                   | -->
 <!-- |:---------------:|------------------------|----------------|----------------------------| -->

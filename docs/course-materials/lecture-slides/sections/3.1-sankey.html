@@ -8,7 +8,7 @@
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.5.56">
 
   <title>EDS 240 – sankey</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -155,7 +155,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -332,13 +333,15 @@
 
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="htmlwidget-9320c74a1ae57944f6c8" style="width:600px;height:400px;" class="sankeyNetwork html-widget "></div>
-<script type="application/json" data-for="htmlwidget-9320c74a1ae57944f6c8">{"x":{"links":{"source":[0,0,1,2,1,1,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,1,0,1,2,1,0,1,0,1,2,1,2,0,1,2,0,1,2,0,1,2,0,1,2,1,0,1,2,0,1,2,1,1,1,0,1,2,1,2,0,1,0,1,2,0,1,2,0,1,2,1,0,1,2,0,1,2,0,1,2,1,0,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,2,1,0,0,0,1,2,0,1,2,0,1,2,1,0,1,2,0,1,0,1,2,0,0,1,2,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,0,1,2,0,1,2,0,1,1,0,1,0,1,2,1,2,0,0,1,2,0,1,2,0,1,2,0,1,1,1,2,1,0,1,2,0,1,2,1,0,1,0,0,1,1,0,1,2,0,1,2,0,2,0,1,2,1,0,1,2,0,1,2,0,0,1,2,1,0,1,0,1,2,0,1,2,0,1,2,0,1,2,0,0,1,2,0,1,2,1,0,1,2,0,1,0,1,2,1,1,0,1,2,1,0,1,2,0,1,0,1,2,0,1,2,0,1,2,0,1,2,0,1,1,0,1,0,0,1,1,0,1,2,0,1,2,0,1,0,1,0,1,2,0,1,2,0,1,2,0,0,1,1,0,1],"target":[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,5,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,6,6,6,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],"value":[0,14,23,2542,7803,0,47,145658,0,11,450,121,9,4888,406,7787,536,1527,45282,73923,89862,1161,35,4770,5,6238,17808,61975,41,5,0,118,49,19384,22,5,267,3969,43,5,25,147,319,23726,149215,987,512,75098,50,31,37,0,19,113,46,5,9,12,9,13,8,6,13,12,27,43,10902,12472,187,341,433501,1625,19153,32839,10,0,5,0,147,153,79,33,107,40298,69,5,3855,2594,44953,63506,40339,69302,11265,12682,182423,78,448,26446,180810,522575,1002999,10,243,0,35467,42827,21827,0,14,0,11,99,550,19416,1452,819,29632,227,256,2335,148,9858,71,0,5872,19,1324,2520,70578,3413249,14,257439,0,30,18367,3578,149872,8,660892,0,570,309,2238,285,13,0,18,5,189,61,14,50,1261,17,0,165,40,0,424,33,814715,0,34,402,87,265,488,65175,531,2912,4500,207,318,37800,16,5,378,0,386,5,27,203,98910,6,38,31,24,1860,409,5,12,5511,0,0,1988,1765,0,0,32346,52,0,8420,45141,102588,5,5,515,0,3041,15964,33243,5,62,60,5,8,1743278,50,5,5,11,0,79,9,0,47,29,10,141,0,18,919,280,958147,679,918,44960,30,420,2332,100086,5,36,1324,194,1275315,5,293,33,47,1108,1121,2693,16191,161157,0,93478,382,55,94858,67,340,7748,26197,111199,46857,16520,20330,60162,1172,0,10,128,208,8601,9,19,50,0,2497,0,10581,3535898,2768,10,475,33,28,1039,517,0,6,66,18,8931,8807,3063,13026,10,33,2520,0,21]},"nodes":{"name":["Afghanistan","Syrian Arab Rep.","Ukraine","other","Germany","Iran (Islamic Rep. of)","Türkiye"],"group":["Afghanistan","Syrian Arab Rep.","Ukraine","other","Germany","Iran (Islamic Rep. of)","Türkiye"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal([`#94438B`, `#B6366A`,`#E1AAC9`, `#909497`,`#6AA26F`, `#A3C7AC`, `#E3EEAE`])","fontSize":13,"fontFamily":null,"nodeWidth":40,"nodePadding":20,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e8f062197f04b471b2a9" style="width:600px;height:400px;" class="sankeyNetwork html-widget "></div>
+<script type="application/json" data-for="htmlwidget-e8f062197f04b471b2a9">{"x":{"links":{"source":[0,0,1,2,1,1,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,1,0,1,2,1,0,1,0,1,2,1,2,0,1,2,0,1,2,0,1,2,0,1,2,1,0,1,2,0,1,2,1,1,1,0,1,2,1,2,0,1,0,1,2,0,1,2,0,1,2,1,0,1,2,0,1,2,0,1,2,1,0,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,2,1,0,0,0,1,2,0,1,2,0,1,2,1,0,1,2,0,1,0,1,2,0,0,1,2,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,0,1,2,0,1,2,0,1,1,0,1,0,1,2,1,2,0,0,1,2,0,1,2,0,1,2,0,1,1,1,2,1,0,1,2,0,1,2,1,0,1,0,0,1,1,0,1,2,0,1,2,0,2,0,1,2,1,0,1,2,0,1,2,0,0,1,2,1,0,1,0,1,2,0,1,2,0,1,2,0,1,2,0,0,1,2,0,1,2,1,0,1,2,0,1,0,1,2,1,1,0,1,2,1,0,1,2,0,1,0,1,2,0,1,2,0,1,2,0,1,2,0,1,1,0,1,0,0,1,1,0,1,2,0,1,2,0,1,0,1,0,1,2,0,1,2,0,1,2,0,0,1,1,0,1],"target":[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,5,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,6,6,6,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],"value":[0,14,23,2542,7803,0,47,145658,0,11,450,121,9,4888,406,7787,536,1527,45282,73923,89862,1161,35,4770,5,6238,17808,61975,41,5,0,118,49,19384,22,5,267,3969,43,5,25,147,319,23726,149215,987,512,75098,50,31,37,0,19,113,46,5,9,12,9,13,8,6,13,12,27,43,10902,12472,187,341,433501,1625,19153,32839,10,0,5,0,147,153,79,33,107,40298,69,5,3855,2594,44953,63506,40339,69302,11265,12682,182423,78,448,26446,180810,522575,1002999,10,243,0,35467,42827,21827,0,14,0,11,99,550,19416,1452,819,29632,227,256,2335,148,9858,71,0,5872,19,1324,2520,70578,3413249,14,257439,0,30,18367,3578,149872,8,660892,0,570,309,2238,285,13,0,18,5,189,61,14,50,1261,17,0,165,40,0,424,33,814715,0,34,402,87,265,488,65175,531,2912,4500,207,318,37800,16,5,378,0,386,5,27,203,98910,6,38,31,24,1860,409,5,12,5511,0,0,1988,1765,0,0,32346,52,0,8420,45141,102588,5,5,515,0,3041,15964,33243,5,62,60,5,8,1743278,50,5,5,11,0,79,9,0,47,29,10,141,0,18,919,280,958147,679,918,44960,30,420,2332,100086,5,36,1324,194,1275315,5,293,33,47,1108,1121,2693,16191,161157,0,93478,382,55,94858,67,340,7748,26197,111199,46857,16520,20330,60162,1172,0,10,128,208,8601,9,19,50,0,2497,0,10581,3535898,2768,10,475,33,28,1039,517,0,6,66,18,8931,8807,3063,13026,10,33,2520,0,21]},"nodes":{"name":["Afghanistan","Syrian Arab Rep.","Ukraine","other","Germany","Iran (Islamic Rep. of)","Türkiye"],"group":["Afghanistan","Syrian Arab Rep.","Ukraine","other","Germany","Iran (Islamic Rep. of)","Türkiye"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal([`#94438B`, `#B6366A`,`#E1AAC9`, `#909497`,`#6AA26F`, `#A3C7AC`, `#E3EEAE`])","fontSize":13,"fontFamily":null,"nodeWidth":40,"nodePadding":20,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section>
     </div>
@@ -367,7 +370,6 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -622,18 +624,7 @@
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -665,11 +656,50 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -679,8 +709,17 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -694,7 +733,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

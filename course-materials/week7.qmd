@@ -17,15 +17,15 @@ knitr::include_graphics("../images/horst-happy-castle.png")
 *Artwork by [Allison Horst](https://allisonhorst.com/)*
 :::
 
-## Pre-class Prep
+## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}
 
 *NA* 
 
-## Lecture Materials 
+## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
 *There is no lecture this week!*
 
-## Discussion Materials
+## {{< fa comments title="two speech bubbles" >}} Discussion Materials {#discussion-materials}
 
 ### Pre-discussion Prep
 
@@ -80,7 +80,7 @@ Giving, receiving *and* implementing feedback is an important part of any creati
 - [A Better Path Toward Criticizing Data Visualizations](https://policyviz.com/2023/02/01/a-better-path-toward-criticizing-data-visualization/), by Colin Mcnamara
 - [The beauty of data visualization](https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization?referrer=playlist-making_sense_of_too_much_data), a TED Talk by [David McCandless](https://davidmccandless.com/) (founder of [information is beautiful](https://informationisbeautiful.net/)) -- this is a fun watch!
 
-## Assignment Reminders
+## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
 <!-- | Assignment Type | Assignment Title       | Date Assigned  | Date Due                   | -->
 <!-- |:---------------:|------------------------|----------------|----------------------------| -->

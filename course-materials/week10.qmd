@@ -17,11 +17,11 @@ knitr::include_graphics("../images/horst-touchstones.png")
 I hope you all feel this way after another quarter of classes under your belts! *Artwork by [Allison Horst](https://allisonhorst.com/).*
 :::
 
-## Pre-class Prep
+## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}
 
 Please be sure to complete the following before class:
 
-### Install required packages
+### A. Install required packages
 
 ```{r}
 #| eval: false
@@ -31,15 +31,14 @@ library(waffle) # for making waffle (square pie) charts in R
 library(ggbump) # a geom for creating bump charts
 ```
 
-
-### Prompt engineering prep
+### B. Prompt engineering prep
 
 To follow along with Sevan's lesson on ChatGPT prompt engineering for data wrangling & visualization, you'll need to first:
 
 1. [Create a free OpenAI account](https://chat.openai.com/auth/login) (if you don't already have one), or make sure you know your login credentials
 2. [Download this `.xlsx` data file](https://docs.google.com/spreadsheets/d/1VeWF01_2--KXS7sB-IfPGVNNkGdGcGpN/edit?usp=sharing&ouid=103292946495291407556&rtpof=true&sd=true) and save it somewhere you can easily find
 
-## Lecture Materials 
+## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
 ::: {.grid}
 
@@ -69,7 +68,7 @@ To follow along with Sevan's lesson on ChatGPT prompt engineering for data wrang
 
 :::
 
-## Discussion Materials
+## {{< fa comments title="two speech bubbles" >}} Discussion Materials {#discussion-materials}
 
 Let's celebrate all of our hard work with a data visualization showcase! Everyone will have ~2 minutes to show off their creations. Please add your three data visualizations (option 1) or infographic (option 2) to your assigned slide (linked below) and come prepared to *briefly* describe the following:
 
@@ -83,7 +82,7 @@ Find your slide here:
 - [10am section slides](https://docs.google.com/presentation/d/1uGNLzMlspbj1Pn0qQdF7CoD2RA0eIl8DHj5tQyXh3qE/edit?usp=sharing)
 - [11am section slides](https://docs.google.com/presentation/d/1u31owoOiWuKI_ZEdebCpytsr1s2FtaKY2UzM0T59RAg/edit?usp=sharing)
 
-## Assignment Reminders
+## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
 <!-- | Assignment Type | Assignment Title                 | Date Assigned  | Date Due                   | -->
 <!-- |:---------------:|----------------------------------|----------------|----------------------------| -->

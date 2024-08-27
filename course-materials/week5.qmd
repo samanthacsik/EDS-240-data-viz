@@ -17,11 +17,11 @@ knitr::include_graphics("../images/horst-ggplot-masterpiece.png")
 *Artwork by [Allison Horst](https://allisonhorst.com/)*
 :::
 
-## Pre-class Prep
+## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}
 
 Please be sure to complete the following before class:
 
-### Install required packages
+### A. Install required packages
 
 ```{r}
 #| eval: false
@@ -33,12 +33,12 @@ install.packages("RColorBrewer") # ColorBrewer Palettes
 install.packages("tigris") # for downloading and using Census TIGER/Line shapefiles in R
 ```
 
-### Download data
+### B. Download data
  
 - [County-level precipitation data (Jan 2019 - Dec 2023) for the contiguous U.S](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202312/60/value), made available by [NOAA National Centers for Environmental Information (NCEI)](https://www.ncei.noaa.gov/) (the download buttons are located just beneath the rendered map -- **choose the CSV option**)
   - rename the data file as `county-jan19-dec23-precip.csv` and save it to your class repo at the file path: `EDS-240-class-examples/week5/data/county-jan19-dec23-precip.csv`
 
-### Install Google Chrome extensions (optional, but recommended)
+### C. Install Google Chrome extensions (optional, but recommended)
 
 I'll be using both of these (really wonderful and easy-to-use) tools during lecture and encourage you to install them!
 
@@ -52,7 +52,7 @@ I'll be using both of these (really wonderful and easy-to-use) tools during lect
 
 <!-- Please review the background information about our precipitation data on [slide 65](https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/data) *and* walk through the data wrangling code on [slide 66](https://samanthacsik.github.io/EDS-240-data-viz/slides/week5.1-colors-slides.html#/data-wrangling) ahead of class. Come prepared with any questions you may have about the code -- we'll set aside ~10 minutes to discuss before jumping into building our data visualization. -->
 
-## Lecture Materials 
+## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
 Week 5 instruction is broken down into three lessons:
 
@@ -84,7 +84,7 @@ Week 5 instruction is broken down into three lessons:
 
 :::
 
-## Discussion Materials
+## {{< fa comments title="two speech bubbles" >}} Discussion Materials {#discussion-materials}
 
 This week, you'll be prepping a data visualization using the data you found / wrangled as part of your final project (HW #4). This does not need to be a polished viz, but should focus on clarity of message. You'll be discussing each others' visualizations and commenting on what the main takeaways are (ideally, you'll walk away with the same message as intended by the plot-creator!). Please complete the following ahead of section:
 
@@ -93,7 +93,7 @@ This week, you'll be prepping a data visualization using the data you found / wr
 3. turn your hand-drawn plot into a ggplot in R!
 4. send both your hand-drawn plot *and* your resulting ggplot to Sevan via DM (Slack) by Tuesday (2/6) evening
 
-## Assignment Reminders
+## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
 <!-- | Assignment Type | Assignment Title               | Date Assigned  | Date Due                   | -->
 <!-- |:---------------:|--------------------------------|----------------|----------------------------| -->

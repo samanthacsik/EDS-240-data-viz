@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>EDS 240 - Assignment #2 (HW #2)</title>
+<title>Assignment #2 (HW #2) – EDS 240</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -81,7 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -90,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -102,127 +109,127 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">EDS 240</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">home</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit?usp=sharing" rel="" target="_blank">
- <span class="menu-text">syllabus</span></a>
+    <a class="nav-link" href="https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit?usp=sharing" target="_blank"> 
+<span class="menu-text">syllabus</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-materials" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-materials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">course materials</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-course-materials">    
         <li>
-    <a class="dropdown-item" href="../course-materials/week1.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week1.html">
  <span class="dropdown-text">week 1 (1/8)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week2.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week2.html">
  <span class="dropdown-text">week 2 (1/15)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week3.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week3.html">
  <span class="dropdown-text">week 3 (1/22)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week4.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week4.html">
  <span class="dropdown-text">week 4 (1/29)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week5.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week5.html">
  <span class="dropdown-text">week 5 (2/5)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week6.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week6.html">
  <span class="dropdown-text">week 6 (2/12)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week7.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week7.html">
  <span class="dropdown-text">week 7 (2/19)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week8.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week8.html">
  <span class="dropdown-text">week 8 (2/26)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week9.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week9.html">
  <span class="dropdown-text">week 9 (3/4)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week10.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week10.html">
  <span class="dropdown-text">week 10 (3/11)</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../assignments.html" rel="" target="">
- <span class="menu-text">assignments</span></a>
+    <a class="nav-link" href="../assignments.html"> 
+<span class="menu-text">assignments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdOP32K7_A3zzENvYQvIBCnLveaLE-exnFlqDV1xBWz66rWoA/viewform" rel="" target="_blank">
- <span class="menu-text">redeem tokens</span></a>
+    <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdOP32K7_A3zzENvYQvIBCnLveaLE-exnFlqDV1xBWz66rWoA/viewform" target="_blank"> 
+<span class="menu-text">redeem tokens</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">resources</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-resources">    
         <li>
-    <a class="dropdown-item" href="../resources.html" rel="" target="">
+    <a class="dropdown-item" href="../resources.html">
  <span class="dropdown-text">recommended reading &amp; materials</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../clean-code-guide.html" rel="" target="">
+    <a class="dropdown-item" href="../clean-code-guide.html">
  <span class="dropdown-text">guide for writing clean code</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../getting-unstuck.html" rel="" target="">
+    <a class="dropdown-item" href="../getting-unstuck.html">
  <span class="dropdown-text">getting unstuck</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ucsb-meds.github.io/MEDS-installation-guide/" rel="" target="_blank">
+    <a class="dropdown-item" href="https://ucsb-meds.github.io/MEDS-installation-guide/" target="_blank">
  <span class="dropdown-text">MEDS installation guide</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-github" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-github" role="link" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bi-github">    
         <li>
-    <a class="dropdown-item" href="https://github.com/samanthacsik/EDS-240-data-viz" rel="" target="">
+    <a class="dropdown-item" href="https://github.com/samanthacsik/EDS-240-data-viz">
  <span class="dropdown-text">Source Code</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://github.com/samanthacsik/EDS-240-data-viz/issues" rel="" target="">
+    <a class="dropdown-item" href="https://github.com/samanthacsik/EDS-240-data-viz/issues">
  <span class="dropdown-text">Report a Bug</span></a>
   </li>  
     </ul>
   </li>
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -236,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -269,6 +276,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
 
 
 
@@ -337,7 +345,7 @@ Learn about the data:
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/download-lob-data.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p><img src="../images/download-lob-data.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
 </figure>
 </div>
 </div>
@@ -385,9 +393,9 @@ Data exploration &amp; wrangling tips
 </div>
 <p><span class="teal-text"><strong>(Part 1a) After exploring and wrangling your data, answer the following questions:</strong></span></p>
 <ul class="task-list">
-<li><input type="checkbox"><strong>1.</strong> What are your variables of interest and what kinds of data (e.g.&nbsp;numeric, categorical, ordered, etc.) are they? <span class="peach-text"><strong>(a bullet point list here is fine)</strong></span></li>
-<li><input type="checkbox"><strong>2.</strong> Using <a href="https://www.data-to-viz.com/">From Data to Viz</a>, identify which graphic forms / geoms are appropriate, given your data. List them out. <span class="peach-text"><strong>(a bullet point list here is fine)</strong></span></li>
-<li><input type="checkbox"><strong>3.</strong> Now that you have a list of options, what are some of your considerations as you decide which type of graph create? For example, is it important / valuable to show sample size? Why or why not? How will you represent multiple groups? etc. <span class="peach-text"><strong>(3-4 sentences)</strong></span></li>
+<li><label><input type="checkbox"><strong>1.</strong> What are your variables of interest and what kinds of data (e.g.&nbsp;numeric, categorical, ordered, etc.) are they? <span class="peach-text"><strong>(a bullet point list here is fine)</strong></span></label></li>
+<li><label><input type="checkbox"><strong>2.</strong> Using <a href="https://www.data-to-viz.com/">From Data to Viz</a>, identify which graphic forms / geoms are appropriate, given your data. List them out. <span class="peach-text"><strong>(a bullet point list here is fine)</strong></span></label></li>
+<li><label><input type="checkbox"><strong>3.</strong> Now that you have a list of options, what are some of your considerations as you decide which type of graph create? For example, is it important / valuable to show sample size? Why or why not? How will you represent multiple groups? etc. <span class="peach-text"><strong>(3-4 sentences)</strong></span></label></li>
 </ul>
 <p>Now that you’ve explored and starting wrangling your data, it’s time to create some plots. It’s often important to try out multiple graphic forms (e.g.&nbsp;<code>geom_*()</code>s) as you decide which is the most effective way of presenting your data. This process is commonly referred to as <strong>Exploratory Data Analysis or Exploratory Data Visualization</strong>. Some tips (unfold below):</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -413,12 +421,12 @@ Data viz creation tips
 </div>
 <p><span class="teal-text"><strong>(Part 1b) Complete the following:</strong></span></p>
 <ul class="task-list">
-<li><input type="checkbox">Create at least <strong>three</strong> different plots as part of your exploratory data visualization phase to test out which graphic forms / geoms works best. Your last plot should be the version that you feel is best suited for presenting your data. (<em><strong>NOTE:</strong> Your first two plots do not need to be at all polished – during the exploratory data visualization phase, we’re most concerned with choosing a graphic form / geom(s) for effectively presenting our data.</em>)</li>
-<li><input type="checkbox"><strong>1.</strong> Consider all three of your plots. What about the graphic forms / geoms used in plots #1 and #2 was not as effective as plot #3? Justify your decision to pursue plot #3. <span class="peach-text"><strong>(5-8 sentences)</strong></span></li>
-<li><input type="checkbox"><strong>2.</strong> (For plot #3 only) Consider modifications that we discussed in lecture that may make this plot easier to interpret (e.g.&nbsp;updating colors, moving or removing legends, highlighting groups, ordering groups) – be sure to update your plot as appropriate, then explain why you chose to make the above modifications. If you chose not to make any of these modifications, why not? <span class="peach-text"><strong>(2-5 sentences)</strong></span></li>
-<li><input type="checkbox"><strong>3.</strong> Polish your third (final) plot by updating the labels and theme (we’ll cover theme modifications during <a href="https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week4.html#discussion-materials">week 4 discussion section</a>, so you may consider waiting until then). List out the changes you made to your plot’s theme (e.g.&nbsp;“updated axis text size”, “removed minor gridlines”, etc.). <span class="peach-text"><strong>(a bullet list here is fine)</strong></span></li>
-<li><input type="checkbox"><strong>4.</strong> Describe two or more challenges you encountered while deciding on / creating your plots – these can be conceptual (e.g.&nbsp;challenges in determining how to best represent your data) and / or technical (e.g.&nbsp;code-based challenges). <span class="peach-text"><strong>(4-8 sentences)</strong></span></li>
-<li><input type="checkbox"><strong>5.</strong> Add alt text to your final visualization following the formula discussed during <a href="https://samanthacsik.github.io/EDS-240-data-viz/course-materials/discussion/week2/week2-alt-text.html#/title-slide">week 2’s discussion section</a> and using the <code>#| fig-alt:</code> code chunk option.</li>
+<li><label><input type="checkbox">Create at least <strong>three</strong> different plots as part of your exploratory data visualization phase to test out which graphic forms / geoms works best. Your last plot should be the version that you feel is best suited for presenting your data. (<em><strong>NOTE:</strong> Your first two plots do not need to be at all polished – during the exploratory data visualization phase, we’re most concerned with choosing a graphic form / geom(s) for effectively presenting our data.</em>)</label></li>
+<li><label><input type="checkbox"><strong>1.</strong> Consider all three of your plots. What about the graphic forms / geoms used in plots #1 and #2 was not as effective as plot #3? Justify your decision to pursue plot #3. <span class="peach-text"><strong>(5-8 sentences)</strong></span></label></li>
+<li><label><input type="checkbox"><strong>2.</strong> (For plot #3 only) Consider modifications that we discussed in lecture that may make this plot easier to interpret (e.g.&nbsp;updating colors, moving or removing legends, highlighting groups, ordering groups) – be sure to update your plot as appropriate, then explain why you chose to make the above modifications. If you chose not to make any of these modifications, why not? <span class="peach-text"><strong>(2-5 sentences)</strong></span></label></li>
+<li><label><input type="checkbox"><strong>3.</strong> Polish your third (final) plot by updating the labels and theme (we’ll cover theme modifications during <a href="https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week4.html#discussion-materials">week 4 discussion section</a>, so you may consider waiting until then). List out the changes you made to your plot’s theme (e.g.&nbsp;“updated axis text size”, “removed minor gridlines”, etc.). <span class="peach-text"><strong>(a bullet list here is fine)</strong></span></label></li>
+<li><label><input type="checkbox"><strong>4.</strong> Describe two or more challenges you encountered while deciding on / creating your plots – these can be conceptual (e.g.&nbsp;challenges in determining how to best represent your data) and / or technical (e.g.&nbsp;code-based challenges). <span class="peach-text"><strong>(4-8 sentences)</strong></span></label></li>
+<li><label><input type="checkbox"><strong>5.</strong> Add alt text to your final visualization following the formula discussed during <a href="https://samanthacsik.github.io/EDS-240-data-viz/course-materials/discussion/week2/week2-alt-text.html#/title-slide">week 2’s discussion section</a> and using the <code>#| fig-alt:</code> code chunk option.</label></li>
 </ul>
 </section>
 <section id="rubric-specifications" class="level2">
@@ -426,15 +434,15 @@ Data viz creation tips
 <p>You must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #2, Part I:</p>
 <p><strong>Complete the following steps in your GitHub Classroom repo (<code>eds240-hw2-username/Part1.qmd</code>):</strong></p>
 <ul class="task-list">
-<li><input type="checkbox">include your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the <code>Part1.qmd</code> YAML</li>
-<li><input type="checkbox">answer the three Part 1a questions, adhering to the length requirements specified at the end of each question prompt</li>
-<li><input type="checkbox">create three different plots (two unpolished exploratory data visualizations and one polished final plot) in accordance with Part 1b instructions (<strong>NOTE:</strong> there isn’t necessarily a single correct answer here, but your final plot should clearly display the variables of interest and you should be able to justify your choice in your written responses)</li>
-<li><input type="checkbox">code should be clearly organized and annotated following conventions and guidelines outlined in the <a href="https://samanthacsik.github.io/EDS-240-data-viz/clean-code-guide.html">Writing clean code</a> page on the course website</li>
-<li><input type="checkbox">answer the five Part 1b questions, adhering to the length requirements specified at the end of each question prompt</li>
-<li><input type="checkbox">add alt text to your final visualization in accordance with Part 1b instructions</li>
-<li><input type="checkbox">we should be able to run individual lines / chunks of code <em>and</em> render <code>Part1.qmd</code> without errors</li>
-<li><input type="checkbox">all three plot outputs should appear in your rendered doc</li>
-<li><input type="checkbox">push your completed <code>Part1.qmd</code> to GitHub via GitHub Classrooms by 11:59pm PT on Sat 02/03/2024</li>
+<li><label><input type="checkbox">include your preferred name, and if you feel comfortable, your preferred pronouns in the author field of the <code>Part1.qmd</code> YAML</label></li>
+<li><label><input type="checkbox">answer the three Part 1a questions, adhering to the length requirements specified at the end of each question prompt</label></li>
+<li><label><input type="checkbox">create three different plots (two unpolished exploratory data visualizations and one polished final plot) in accordance with Part 1b instructions (<strong>NOTE:</strong> there isn’t necessarily a single correct answer here, but your final plot should clearly display the variables of interest and you should be able to justify your choice in your written responses)</label></li>
+<li><label><input type="checkbox">code should be clearly organized and annotated following conventions and guidelines outlined in the <a href="https://samanthacsik.github.io/EDS-240-data-viz/clean-code-guide.html">Writing clean code</a> page on the course website</label></li>
+<li><label><input type="checkbox">answer the five Part 1b questions, adhering to the length requirements specified at the end of each question prompt</label></li>
+<li><label><input type="checkbox">add alt text to your final visualization in accordance with Part 1b instructions</label></li>
+<li><label><input type="checkbox">we should be able to run individual lines / chunks of code <em>and</em> render <code>Part1.qmd</code> without errors</label></li>
+<li><label><input type="checkbox">all three plot outputs should appear in your rendered doc</label></li>
+<li><label><input type="checkbox">push your completed <code>Part1.qmd</code> to GitHub via GitHub Classrooms by 11:59pm PT on Sat 02/03/2024</label></li>
 </ul>
 <p><br></p>
 <div class="center-text large-fa-icon teal-text">
@@ -466,17 +474,17 @@ Data viz creation tips
 <!-- 3. **a visualization that you could include in a presentation** -- you might imagine an audience with familiarity with your domain, but they only have a brief amount of time to process the information being presented; key takeaways should be clearly highlighted, and you may have multiple versions, each with an added layer (as if you're animating pieces of your visualization onto a slide)  -->
 <p><span class="teal-text"><strong>(Part 2a) This week, you’ll focus on importing / wrangling / and beginning the exploratory data visualization phase, using the data you found as part of <a href="../assignments/HW1.html#hw1-p2">HW #1, Part II</a>. Complete the following:</strong></span></p>
 <ul class="task-list">
-<li><input type="checkbox">Create an file named, <code>HW2-exploration.qmd</code> within your <code>lastName-eds240-HW4</code> repo and add appropriate YAML fields</li>
-<li><input type="checkbox">Load necessary packages and read in your data</li>
-<li><input type="checkbox">Clean &amp; wrangle your data</li>
-<li><input type="checkbox">Create at least <strong>three</strong> (but of course feel free to create more!) exploratory visualizations (similar to plot #1 and #2 in Part I of this assignment).</li>
-<li><input type="checkbox"><strong>IMPORTANT:</strong> If you have a downloaded data file saved to your repo (e.g.&nbsp;you’re not reading in your data directly from online, from a server, etc.) be sure to add your data folder / file to your <code>.gitignore</code>, particularly if this file is large.</li>
+<li><label><input type="checkbox">Create an file named, <code>HW2-exploration.qmd</code> within your <code>lastName-eds240-HW4</code> repo and add appropriate YAML fields</label></li>
+<li><label><input type="checkbox">Load necessary packages and read in your data</label></li>
+<li><label><input type="checkbox">Clean &amp; wrangle your data</label></li>
+<li><label><input type="checkbox">Create at least <strong>three</strong> (but of course feel free to create more!) exploratory visualizations (similar to plot #1 and #2 in Part I of this assignment).</label></li>
+<li><label><input type="checkbox"><strong>IMPORTANT:</strong> If you have a downloaded data file saved to your repo (e.g.&nbsp;you’re not reading in your data directly from online, from a server, etc.) be sure to add your data folder / file to your <code>.gitignore</code>, particularly if this file is large.</label></li>
 </ul>
 <p><span class="teal-text"><strong>(Part 2b) After completing the above steps, answer the following questions:</strong></span></p>
 <ul class="task-list">
-<li><input type="checkbox"><strong>1.</strong> What have you learned about your data? Have any potentially interesting patterns emerged? <span class="peach-text"><strong>(5-8 sentences)</strong></span></li>
-<li><input type="checkbox"><strong>2.</strong> In HW #1, you outlined some questions that you wanted to answer using these data. Have you made any strides towards answering those questions? If yes, how so? If no, what next steps do you need to take (e.g.&nbsp;I need to create X plot type, I still need to track down Y data, I need to restructure existing data so that you can visualize it in Z ways, etc.)? <span class="peach-text"><strong>(8-12 sentences)</strong></span></li>
-<li><input type="checkbox"><strong>3.</strong> What challenges do you foresee encountering with your data? These can be data wrangling and / or visualization challenges. <span class="peach-text"><strong>(4-6 sentences)</strong></span></li>
+<li><label><input type="checkbox"><strong>1.</strong> What have you learned about your data? Have any potentially interesting patterns emerged? <span class="peach-text"><strong>(5-8 sentences)</strong></span></label></li>
+<li><label><input type="checkbox"><strong>2.</strong> In HW #1, you outlined some questions that you wanted to answer using these data. Have you made any strides towards answering those questions? If yes, how so? If no, what next steps do you need to take (e.g.&nbsp;I need to create X plot type, I still need to track down Y data, I need to restructure existing data so that you can visualize it in Z ways, etc.)? <span class="peach-text"><strong>(8-12 sentences)</strong></span></label></li>
+<li><label><input type="checkbox"><strong>3.</strong> What challenges do you foresee encountering with your data? These can be data wrangling and / or visualization challenges. <span class="peach-text"><strong>(4-6 sentences)</strong></span></label></li>
 </ul>
 </section>
 <section id="rubric-specifications-1" class="level2">
@@ -484,17 +492,17 @@ Data viz creation tips
 <p>You must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #2, Part II:</p>
 <p><strong>Complete the following steps under your <code>lastName-eds240-HW4</code> repo, <em>not</em> in GitHub Classrooms:</strong></p>
 <ul class="task-list">
-<li><input type="checkbox">perform all Part 2a steps, as described above, in <code>HW2-exploration.qmd</code></li>
-<li><input type="checkbox">answer Part 2b questions, also in <code>HW2-exploration.qmd</code>, adhering to the length requirements specified at the end of each question prompt</li>
-<li><input type="checkbox">all three plot outputs should appear in your rendered doc</li>
-<li><input type="checkbox"><code>HW2-exploration.qmd</code> should be neatly organized – this does not need to be a perfectly polished document, but sections should be clearly labeled with prose and / or annotations so that we can easily follow along.</li>
-<li><input type="checkbox">send Sam &amp; Sevan a rendered version <code>HW2-exploration.qmd</code> by 11:59pm PT on Sat 02/03/2024 following these steps:
+<li><label><input type="checkbox">perform all Part 2a steps, as described above, in <code>HW2-exploration.qmd</code></label></li>
+<li><label><input type="checkbox">answer Part 2b questions, also in <code>HW2-exploration.qmd</code>, adhering to the length requirements specified at the end of each question prompt</label></li>
+<li><label><input type="checkbox">all three plot outputs should appear in your rendered doc</label></li>
+<li><label><input type="checkbox"><code>HW2-exploration.qmd</code> should be neatly organized – this does not need to be a perfectly polished document, but sections should be clearly labeled with prose and / or annotations so that we can easily follow along.</label></li>
+<li><label><input type="checkbox">send Sam &amp; Sevan a rendered version <code>HW2-exploration.qmd</code> by 11:59pm PT on Sat 02/03/2024 following these steps:</label>
 <ul class="task-list">
-<li><input type="checkbox">ensure that your YAML specifies these options, at a minimum:</li>
+<li><label><input type="checkbox">ensure that your YAML specifies these options, at a minimum:</label></li>
 </ul></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"your HW #2 title"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"your Name"</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> xxxx<span class="sc">-</span>xx<span class="sc">-</span>xx</span>
@@ -504,8 +512,8 @@ Data viz creation tips
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul class="task-list">
-<li><input type="checkbox"><strong>render</strong> your <code>HW2-exploration.qmd</code> file and <strong>verify</strong> that you can open the resulting <code>HW2-exploration.html</code> file in your browser and that all formatting looks good</li>
-<li><input type="checkbox"><strong>rename</strong> your <code>.html</code> file so that it has your first initial / last name at the start (e.g.&nbsp;<code>SCsik-HW3-drafting-viz.html</code>), then <strong>send</strong> it to both Sevan and Sam on Slack via direct message</li>
+<li><label><input type="checkbox"><strong>render</strong> your <code>HW2-exploration.qmd</code> file and <strong>verify</strong> that you can open the resulting <code>HW2-exploration.html</code> file in your browser and that all formatting looks good</label></li>
+<li><label><input type="checkbox"><strong>rename</strong> your <code>.html</code> file so that it has your first initial / last name at the start (e.g.&nbsp;<code>SCsik-HW3-drafting-viz.html</code>), then <strong>send</strong> it to both Sevan and Sam on Slack via direct message</label></li>
 </ul>
 <!-- - [ ] push your completed `HW2-exploration.qmd` to your repo by 11:59pm PT on Sat 02/03/2024 -->
 <p><br></p>
@@ -557,18 +565,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -600,11 +597,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -614,8 +650,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -627,7 +672,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -671,6 +839,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -696,6 +865,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -758,13 +953,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></div>   
+    <div class="nav-footer-left">
+<p>This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">This website is built with <a href="https://github.com/samanthacsik/EDS-240-data-viz"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a>, <a href="https://www.r-project.org/about.html"><i class="fa-brands fa-r-project" title="R Project" aria-label="r-project"></i></a> and <a href="https://quarto.org/">Quarto</a></div>
+    <div class="nav-footer-right">
+<p>This website is built with <a href="https://github.com/samanthacsik/EDS-240-data-viz"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a>, <a href="https://www.r-project.org/about.html"><i class="fa-brands fa-r-project" title="R Project" aria-label="r-project"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
+</div>
   </div>
 </footer>
+
 
 
 

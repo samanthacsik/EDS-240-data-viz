@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>EDS 240 - Assignment #1 (HW #1)</title>
+<title>Assignment #1 (HW #1) – EDS 240</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -81,7 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -90,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -102,127 +109,127 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">EDS 240</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">home</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit?usp=sharing" rel="" target="_blank">
- <span class="menu-text">syllabus</span></a>
+    <a class="nav-link" href="https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit?usp=sharing" target="_blank"> 
+<span class="menu-text">syllabus</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-materials" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-materials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">course materials</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-course-materials">    
         <li>
-    <a class="dropdown-item" href="../course-materials/week1.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week1.html">
  <span class="dropdown-text">week 1 (1/8)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week2.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week2.html">
  <span class="dropdown-text">week 2 (1/15)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week3.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week3.html">
  <span class="dropdown-text">week 3 (1/22)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week4.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week4.html">
  <span class="dropdown-text">week 4 (1/29)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week5.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week5.html">
  <span class="dropdown-text">week 5 (2/5)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week6.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week6.html">
  <span class="dropdown-text">week 6 (2/12)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week7.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week7.html">
  <span class="dropdown-text">week 7 (2/19)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week8.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week8.html">
  <span class="dropdown-text">week 8 (2/26)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week9.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week9.html">
  <span class="dropdown-text">week 9 (3/4)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../course-materials/week10.html" rel="" target="">
+    <a class="dropdown-item" href="../course-materials/week10.html">
  <span class="dropdown-text">week 10 (3/11)</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../assignments.html" rel="" target="">
- <span class="menu-text">assignments</span></a>
+    <a class="nav-link" href="../assignments.html"> 
+<span class="menu-text">assignments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdOP32K7_A3zzENvYQvIBCnLveaLE-exnFlqDV1xBWz66rWoA/viewform" rel="" target="_blank">
- <span class="menu-text">redeem tokens</span></a>
+    <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdOP32K7_A3zzENvYQvIBCnLveaLE-exnFlqDV1xBWz66rWoA/viewform" target="_blank"> 
+<span class="menu-text">redeem tokens</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">resources</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-resources">    
         <li>
-    <a class="dropdown-item" href="../resources.html" rel="" target="">
+    <a class="dropdown-item" href="../resources.html">
  <span class="dropdown-text">recommended reading &amp; materials</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../clean-code-guide.html" rel="" target="">
+    <a class="dropdown-item" href="../clean-code-guide.html">
  <span class="dropdown-text">guide for writing clean code</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../getting-unstuck.html" rel="" target="">
+    <a class="dropdown-item" href="../getting-unstuck.html">
  <span class="dropdown-text">getting unstuck</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ucsb-meds.github.io/MEDS-installation-guide/" rel="" target="_blank">
+    <a class="dropdown-item" href="https://ucsb-meds.github.io/MEDS-installation-guide/" target="_blank">
  <span class="dropdown-text">MEDS installation guide</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-github" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-github" role="link" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bi-github">    
         <li>
-    <a class="dropdown-item" href="https://github.com/samanthacsik/EDS-240-data-viz" rel="" target="">
+    <a class="dropdown-item" href="https://github.com/samanthacsik/EDS-240-data-viz">
  <span class="dropdown-text">Source Code</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://github.com/samanthacsik/EDS-240-data-viz/issues" rel="" target="">
+    <a class="dropdown-item" href="https://github.com/samanthacsik/EDS-240-data-viz/issues">
  <span class="dropdown-text">Report a Bug</span></a>
   </li>  
     </ul>
   </li>
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -236,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -273,6 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+
 <div class="center-text">
 <div class="pink-box">
 <p><strong><em>You must earn a “Satisfactory” mark for each individual Part (I and II) to earn a “Satisfactory” mark for Assignment #1.</em></strong></p>
@@ -299,7 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/indoor-poll-ggplot.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p><img src="../images/indoor-poll-ggplot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
 </figure>
 </div>
 </div>
@@ -650,9 +658,9 @@ Click here to expand the code AND for tips on getting started
 </div>
 <p><span class="teal-text"><strong>(Part 1b) Once complete, answer the following questions:</strong></span></p>
 <ul class="task-list">
-<li><input type="checkbox"><strong>1.</strong> Describe two elements of this plot that you find visually-pleasing / easy to understand / intuitive. Why? <span class="peach-text"><strong>(4-10 sentences)</strong></span></li>
-<li><input type="checkbox"><strong>2.</strong> Describe two elements of this plot that you feel could be better presented in a different way. Why? <span class="peach-text"><strong>(4-10 sentences)</strong></span></li>
-<li><input type="checkbox"><strong>3.</strong> Describe two new things that you learned by interpreting / annotating this code. These could be packages, functions, or even code organizational approaches that you hadn’t previously known about or considered. <span class="peach-text"><strong>(4-10 sentences)</strong></span></li>
+<li><label><input type="checkbox"><strong>1.</strong> Describe two elements of this plot that you find visually-pleasing / easy to understand / intuitive. Why? <span class="peach-text"><strong>(4-10 sentences)</strong></span></label></li>
+<li><label><input type="checkbox"><strong>2.</strong> Describe two elements of this plot that you feel could be better presented in a different way. Why? <span class="peach-text"><strong>(4-10 sentences)</strong></span></label></li>
+<li><label><input type="checkbox"><strong>3.</strong> Describe two new things that you learned by interpreting / annotating this code. These could be packages, functions, or even code organizational approaches that you hadn’t previously known about or considered. <span class="peach-text"><strong>(4-10 sentences)</strong></span></label></li>
 </ul>
 </section>
 <section id="rubric-specifications" class="level2">
@@ -660,12 +668,12 @@ Click here to expand the code AND for tips on getting started
 <p>You must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part I:</p>
 <p><strong>Complete the following steps in your GitHub Classroom repo (<code>eds240-hw1-username/Part1.qmd</code>):</strong></p>
 <ul class="task-list">
-<li><input type="checkbox">include your preferred name, and if you feel comfortable, your preferred pronouns in the <code>author</code> field of the <code>Part1.qmd</code> YAML</li>
-<li><input type="checkbox">update each comment line in the code that reads, <code>ANNOTATE</code>, with a <em>brief</em> description, written in your own words (see lines 114 &amp; 120 for example annotations; there are other lines that have been already annotated for you as well – you do not need to re-write these annotations – you are allowed up to five incorrect or missing annotations</li>
-<li><input type="checkbox">leave the code chunk options set to <code>eval: false</code> and <code>echo: true</code></li>
-<li><input type="checkbox">answer all three Part 1b questions adhering to the length requirements specified at the end of each question prompt</li>
-<li><input type="checkbox">we (your instructors) should be able to successfully render <code>Part1.qmd</code> locally without errors</li>
-<li><input type="checkbox">push your completed <code>Part1.qmd</code> to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024</li>
+<li><label><input type="checkbox">include your preferred name, and if you feel comfortable, your preferred pronouns in the <code>author</code> field of the <code>Part1.qmd</code> YAML</label></li>
+<li><label><input type="checkbox">update each comment line in the code that reads, <code>ANNOTATE</code>, with a <em>brief</em> description, written in your own words (see lines 114 &amp; 120 for example annotations; there are other lines that have been already annotated for you as well – you do not need to re-write these annotations – you are allowed up to five incorrect or missing annotations</label></li>
+<li><label><input type="checkbox">leave the code chunk options set to <code>eval: false</code> and <code>echo: true</code></label></li>
+<li><label><input type="checkbox">answer all three Part 1b questions adhering to the length requirements specified at the end of each question prompt</label></li>
+<li><label><input type="checkbox">we (your instructors) should be able to successfully render <code>Part1.qmd</code> locally without errors</label></li>
+<li><label><input type="checkbox">push your completed <code>Part1.qmd</code> to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024</label></li>
 </ul>
 <!-- , *however* **do not push any html files to GitHub** (i.e. `Part1.html` and `Part1_files/`; consider adding these to your `.gitignore` so that you don't accidentally push them) -->
 <p><br></p>
@@ -699,16 +707,16 @@ Click here to expand the code AND for tips on getting started
 <p>Now that you have a better understanding of where we’re headed, let’s make a bit of progress towards that end goal. <span class="teal-text"><strong>This week, you’ll focus on finding data that interest you and begin brainstorming some questions that you might explore / answer using those data.</strong></span> Your data set(s) may be related to a past project, or even your current Capstone or GP. It may also be a completely new data set(s), unrelated to anything you’re currently working on. Explore the <a href="https://samanthacsik.github.io/EDS-240-data-viz/resources.html#data-sources">Data sources</a> section of the course website’s resources page if you need some inspiration on where to start (you are <em>not</em> limited to just these data sources):</p>
 <p><span class="teal-text"><strong>Once you’ve found your data set(s), answer the following questions:</strong></span></p>
 <ul class="task-list">
-<li><input type="checkbox"><strong>1.</strong> Which of the <a href="http://localhost:7613/assignments/HW4.html#hw4-options">two options</a> are you most interested in pursuing? It’s okay if you change your mind later on. <span class="peach-text"><strong>(1 sentence)</strong></span></li>
-<li><input type="checkbox"><strong>2.</strong> Describe your data set(s). Be sure to address the following <span class="peach-text"><strong>(&lt;=4 sentences)</strong></span>
+<li><label><input type="checkbox"><strong>1.</strong> Which of the <a href="http://localhost:7613/assignments/HW4.html#hw4-options">two options</a> are you most interested in pursuing? It’s okay if you change your mind later on. <span class="peach-text"><strong>(1 sentence)</strong></span></label></li>
+<li><label><input type="checkbox"><strong>2.</strong> Describe your data set(s). Be sure to address the following <span class="peach-text"><strong>(&lt;=4 sentences)</strong></span></label>
 <ul class="task-list">
-<li><input type="checkbox"><strong>2a.</strong> Where did you find these data?</li>
-<li><input type="checkbox"><strong>2b.</strong> What variables do these data contain? Is there sufficient metadata for understanding what those variables are?</li>
+<li><label><input type="checkbox"><strong>2a.</strong> Where did you find these data?</label></li>
+<li><label><input type="checkbox"><strong>2b.</strong> What variables do these data contain? Is there sufficient metadata for understanding what those variables are?</label></li>
 </ul></li>
-<li><input type="checkbox"><strong>3.</strong> What steps are involved in downloading or accessing the data (e.g.&nbsp;“I can download using a button via this online portal,” “There’s an R package for scraping the data,” “I need to use an API to scrape the data,” etc.)? <span class="peach-text"><strong>(1-2 sentences)</strong></span></li>
-<li><input type="checkbox"><strong>4.</strong> What question(s) do you want to answer using these data (it’s okay if these questions evolve over time, this is just a starting point)? <span class="peach-text"><strong>(&lt;=4 sentences)</strong></span></li>
-<li><input type="checkbox"><strong>5.</strong> Will you need to combine multiple data sets to successfully answer your question(s)? If so, have you found all the necessary data? Do you have a way to combine it (e.g.&nbsp;matching key values across all data sets)? <span class="peach-text"><strong>(&lt;=4 sentences)</strong></span></li>
-<li><input type="checkbox"><strong>Optional:</strong> Import your data into R! (this will be a part of the next homework assignment) <strong>IMPORTANT:</strong> If your data files are large (&gt;2GB) DO NOT push your data to GitHub – instead, add your data file(s) or entire data folder to your <code>.gitignore</code> (you’ll practice this in Discussion section this week).</li>
+<li><label><input type="checkbox"><strong>3.</strong> What steps are involved in downloading or accessing the data (e.g.&nbsp;“I can download using a button via this online portal,” “There’s an R package for scraping the data,” “I need to use an API to scrape the data,” etc.)? <span class="peach-text"><strong>(1-2 sentences)</strong></span></label></li>
+<li><label><input type="checkbox"><strong>4.</strong> What question(s) do you want to answer using these data (it’s okay if these questions evolve over time, this is just a starting point)? <span class="peach-text"><strong>(&lt;=4 sentences)</strong></span></label></li>
+<li><label><input type="checkbox"><strong>5.</strong> Will you need to combine multiple data sets to successfully answer your question(s)? If so, have you found all the necessary data? Do you have a way to combine it (e.g.&nbsp;matching key values across all data sets)? <span class="peach-text"><strong>(&lt;=4 sentences)</strong></span></label></li>
+<li><label><input type="checkbox"><strong>Optional:</strong> Import your data into R! (this will be a part of the next homework assignment) <strong>IMPORTANT:</strong> If your data files are large (&gt;2GB) DO NOT push your data to GitHub – instead, add your data file(s) or entire data folder to your <code>.gitignore</code> (you’ll practice this in Discussion section this week).</label></li>
 </ul>
 </section>
 <section id="rubric-specifications-1" class="level2">
@@ -716,15 +724,15 @@ Click here to expand the code AND for tips on getting started
 <p>You must complete the following, as detailed below, to receive a “Satisfactory” mark for Assignment #1, Part II:</p>
 <p><strong>Complete the following step under your own personal GitHub profile, <em>not</em> in GitHub Classrooms:</strong></p>
 <ul class="task-list">
-<li><input type="checkbox">create a GitHub repository named <code>lastName-eds240-HW4</code>, which is where you’ll be doing any / all work related to Assignment #4. Be sure to make your repository public, initialize your repository with a README, and add a <code>.gitignore</code> file.</li>
-<li><input type="checkbox">create a <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues">GitHub issue</a> (find the <strong>Issues</strong> tab in the top menu bar of your <code>lastName-eds240-HW4</code> repo, then click <strong>New issue</strong>) and name it, <code>HW1 - finding data / initial brainstorming</code>. Addresss the following in your issue:
+<li><label><input type="checkbox">create a GitHub repository named <code>lastName-eds240-HW4</code>, which is where you’ll be doing any / all work related to Assignment #4. Be sure to make your repository public, initialize your repository with a README, and add a <code>.gitignore</code> file.</label></li>
+<li><label><input type="checkbox">create a <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues">GitHub issue</a> (find the <strong>Issues</strong> tab in the top menu bar of your <code>lastName-eds240-HW4</code> repo, then click <strong>New issue</strong>) and name it, <code>HW1 - finding data / initial brainstorming</code>. Addresss the following in your issue:</label>
 <ul class="task-list">
-<li><input type="checkbox">link to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4</li>
-<li><input type="checkbox">answer all parts of the five concluding questions, adhering to the length requirements specified at the end of each question prompt</li>
-<li><input type="checkbox">your GitHub issue should be neatly organized / formatted (you can use Markdown syntax here!)</li>
+<li><label><input type="checkbox">link to (or otherwise prove the existence of) at least one data set that you plan to use for Assignment #4</label></li>
+<li><label><input type="checkbox">answer all parts of the five concluding questions, adhering to the length requirements specified at the end of each question prompt</label></li>
+<li><label><input type="checkbox">your GitHub issue should be neatly organized / formatted (you can use Markdown syntax here!)</label></li>
 </ul></li>
-<li><input type="checkbox">importing your data is <em>optional</em> – if you’d like to start playing around with your data, do so in a file named, <code>HW1-find-data.qmd</code></li>
-<li><input type="checkbox">add your repository’s URL next to your name on <a href="https://docs.google.com/spreadsheets/d/1tv32Ng_-QI1-eB5ws59HgCN0EoOpHe4UHX6qHhbQGds/edit?usp=sharing">this Google Sheet</a> by 11:59pm on Sat 01/20/2024</li>
+<li><label><input type="checkbox">importing your data is <em>optional</em> – if you’d like to start playing around with your data, do so in a file named, <code>HW1-find-data.qmd</code></label></li>
+<li><label><input type="checkbox">add your repository’s URL next to your name on <a href="https://docs.google.com/spreadsheets/d/1tv32Ng_-QI1-eB5ws59HgCN0EoOpHe4UHX6qHhbQGds/edit?usp=sharing">this Google Sheet</a> by 11:59pm on Sat 01/20/2024</label></li>
 </ul>
 <!-- OLD from 2024, but making the above updates ahead of 2025 -->
 <!-- **Complete the following steps in your GitHub Classroom repo (`eds240-hw1-username/Part2.qmd`):** -->
@@ -777,18 +785,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -820,11 +817,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -834,8 +870,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -847,7 +892,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -891,6 +1059,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -916,6 +1085,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -978,13 +1173,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></div>   
+    <div class="nav-footer-left">
+<p>This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">This website is built with <a href="https://github.com/samanthacsik/EDS-240-data-viz"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a>, <a href="https://www.r-project.org/about.html"><i class="fa-brands fa-r-project" title="R Project" aria-label="r-project"></i></a> and <a href="https://quarto.org/">Quarto</a></div>
+    <div class="nav-footer-right">
+<p>This website is built with <a href="https://github.com/samanthacsik/EDS-240-data-viz"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a>, <a href="https://www.r-project.org/about.html"><i class="fa-brands fa-r-project" title="R Project" aria-label="r-project"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
+</div>
   </div>
 </footer>
+
 
 
 

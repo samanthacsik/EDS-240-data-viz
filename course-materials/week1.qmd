@@ -13,11 +13,11 @@ description: "Monday January 8^th^, 2024"
 knitr::include_graphics("../images/ggplot2.png")
 ```
 
-## Pre-class Prep
+## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}
 
 Please be sure to complete the following before class:
 
-### Install required packages
+### A. Install required packages
 
 ```{r}
 #| eval: false
@@ -27,7 +27,7 @@ install.packages("palmerpenguins") # a package containing the `penguins` data se
 install.packages("tidyverse") # a collection of packages used for data wrangling / manipulation and visualization (including {ggplot2})
 ```
 
-### Create your `EDS-240-class-examples` repository
+### B. Create your `EDS-240-class-examples` repository
 
 We'll be coding together quite a bit throughout this course. To stay organized, we'll complete all of our in-class examples in one repository (repo). **Create and clone a GitHub repository named `EDS-240-class-examples`**. For step-by-step instructions, unfold the following note (collapsed to save space): 
 
@@ -50,7 +50,7 @@ We'll be coding together quite a bit throughout this course. To stay organized, 
 
 <br>
 
-## Lecture Materials
+## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
 Week 1 instruction is broken down into three lessons:
 
@@ -84,7 +84,7 @@ Week 1 instruction is broken down into three lessons:
 
 <br>
 
-## Discussion Materials
+## {{< fa comments title="two speech bubbles" >}} Discussion Materials {#discussion-materials}
 
 ### Pre-discussion Prep
 
@@ -131,15 +131,6 @@ An example repo with three folders: `week1/`, `week2/`, and `other-stuff/`. Each
 
 ### Background
 
-<!-- **Tidy data** is a predictable way of organizing data where: -->
-
-<!-- 1. each variable is a column -->
-<!-- 2. each observation is a row -->
-<!-- 3. each cell contains a single value -->
-
-<!-- See [Chapter 5, R for Data Science (2e)](https://r4ds.hadley.nz/data-tidy.html), by Hadley Wickham, Mine Çetinkaya-Rundel & Garrett Grolemund -->
-
-<!-- Is is **not** language-specific or tool-specific, it is not an "R thing", and it is not the `{tidyverse}` *"It is a way or organizing data that will make life easier for people who work with data."* (quote from Allison Horst). Because it makes life so much easier, tidying data is a critical first step in building any data visualization using grammar of graphics. In discussion section, we'll practice tidying a very untidy data set on fracking.  -->
 By now, you may have heard / read something like, "Data scientists spend 80% of their time preparing their data for analysis and / or visualization." And while that may not be totally accurate for all data scientists or all projects, you *will* spend lots of time wrestling with data. [**You'll spend this week's discussion cleaning up a messy data set on hydraulic fracturing (aka [fracking](https://en.wikipedia.org/wiki/Fracking)), with the goal of (re)familiarizing yourselves with some of commonly-used tidyverse functions.**]{.teal-text}
 
 This week's data comes courtesy of Jeremy Singer-Vine's [Data is Plural](https://www.data-is-plural.com/) weekly newsletter of useful / curious data sets (the [2023.09.27 edition](https://www.data-is-plural.com/archive/2023-09-27-edition/)). Singer-Vine's description:
@@ -154,16 +145,6 @@ Interested in reading more about fracking? Check out [this communications piece]
 
 ### Solution 
 
-<!-- ::: {.center-text} -->
-<!-- *Complete code will be posted here after both discussion sections are finished.* -->
-<!-- ::: -->
-
-<!-- ::: {.center-text} -->
-<!-- [**Solution**]{.body-text-m .teal-text}   -->
-<!-- *(but try not to look during section!)* -->
-<!-- ::: -->
-
-
 You'll get the most out of discussion section if you physically type out the code yourself (rather than copying / pasting)!
 
 ***Note:** Some of the wrangling in the solution (collapsed, below) may seem a bit superfluous -- we've included lots of steps to (re)introduce as many of the common wrangling functions as possible, given our data set.*
@@ -175,7 +156,7 @@ You'll get the most out of discussion section if you physically type out the cod
 
 <br>
 
-## Assignment Reminders
+## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
 <!-- | Assignment Type | Assignment Title                | Date Assigned  | Date Due                   | -->
 <!-- |:---------------:|---------------------------------|----------------|----------------------------| -->

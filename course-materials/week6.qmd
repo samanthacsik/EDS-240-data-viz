@@ -4,7 +4,6 @@ subtitle: "Week 6"
 description: "Monday February 12^th^, 2024"
 ---
 
-<!-- Data communication (used to be part of the planned week 6 title) -->
 ```{r}
 #| eval: true 
 #| echo: false
@@ -18,11 +17,11 @@ knitr::include_graphics("../images/horst-ggplot-masterpiece.png")
 *Artwork by [Allison Horst](https://allisonhorst.com/)*
 :::
 
-## Pre-class Prep
+## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}
 
 Please be sure to complete the following before class:
 
-### Install required packages
+### A. Install required packages
 
 ```{r}
 #| eval: false
@@ -35,7 +34,7 @@ install.packages("ggrepel") # ggplot2 extension to repel overlapping labels
 install.packages("googlesheets4") # provides an R interface to Google Sheets via the Sheets API v4
 ```
 
-## Download Data
+### B. Download Data
 
 In case we have trouble with the `{googlesheets4}` API, you can download and read in the following data files as normal (i.e. using `readr::read_csv()`):
 
@@ -44,7 +43,7 @@ In case we have trouble with the `{googlesheets4}` API, you can download and rea
 
 If you choose (or need) to download and read in these files, be sure to save them to your class repo at `~/week6/data/`.
 
-### Download Font Awesome fonts
+### C. Download Font Awesome fonts
 
 In addition to using Google Fonts in our ggplots, we will also be using some [Font Awesome](https://fontawesome.com/) icons! To do so, you'll need to download the Font Awesome font files and save them to your class repo. Do so by following these steps:
 
@@ -52,7 +51,7 @@ In addition to using Google Fonts in our ggplots, we will also be using some [Fo
 2. **Unzip the downloaded file:** You should see a folder inside called `otfs/` -- this contains three `.otf` files (aka OpenType font format files)
 3. **Copy the three `.otf` files to your class repo:** I recommend creating a `fonts/` folder inside your root directory, and dropping all three of them in there (e.g. `~/fonts/*.otf`)
 
-## Lecture Materials 
+## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
 ::: {.grid}
 
@@ -74,7 +73,7 @@ In addition to using Google Fonts in our ggplots, we will also be using some [Fo
 
 :::
 
-## Discussion Materials
+## {{< fa comments title="two speech bubbles" >}} Discussion Materials {#discussion-materials}
 
 This week, you'll move beyond the fundamental graphic forms that we covered in lecture and discuss some advanced chart types. These are great options to keep in mind as you continue working on your final project ([HW #4](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW4.html))!
 
@@ -82,8 +81,7 @@ This week, you'll move beyond the fundamental graphic forms that we covered in l
 [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Week 6 discussion slides](https://docs.google.com/presentation/d/10tk6XawtK0GD-XU4VCkupTOBK4tFW0JamKUeufiqlL0/edit#slide=id.p){.btn role="button" target="_blank"} 
 :::
 
-
-## Assignment Reminders
+## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
 <!-- | Assignment Type | Assignment Title        | Date Assigned  | Date Due                   | -->
 <!-- |:---------------:|-------------------------|----------------|----------------------------| -->

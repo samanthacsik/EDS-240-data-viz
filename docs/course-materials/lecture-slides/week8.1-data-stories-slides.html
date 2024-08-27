@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.5.56">
 
   <title>EDS 240 – week8.1-data-stories-slides</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,7 +32,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -43,7 +43,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -224,7 +224,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -528,9 +529,9 @@ Our job is to turn values and analyses into insights and narratives – doing so
 <p><span class="slide-title">Tell a story about this plot</span></p>
 <hr>
 
-<img data-src="week8.1-data-stories-slides_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="cell">
+<img data-src="week8.1-data-stories-slides_files/figure-revealjs/unnamed-chunk-1-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_31c6cfdb" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_dcae2835" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -542,9 +543,9 @@ Our job is to turn values and analyses into insights and narratives – doing so
 <p><span class="slide-title">Tell a story about this plot</span></p>
 <hr>
 
-<img data-src="week8.1-data-stories-slides_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="cell">
+<img data-src="week8.1-data-stories-slides_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_bd331af8" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_cb19f8fa" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -556,9 +557,9 @@ Our job is to turn values and analyses into insights and narratives – doing so
 <p><span class="slide-title">Tell a story about this plot</span></p>
 <hr>
 
-<img data-src="week8.1-data-stories-slides_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="cell">
+<img data-src="week8.1-data-stories-slides_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_316bb1f8" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_3ed3d972" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -573,65 +574,65 @@ Our job is to turn values and analyses into insights and narratives – doing so
 <p><span class="slide-title">Complete code (in case you’re interested)</span></p>
 <hr>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#..........................load packages.........................</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(showtext)</span>
-<span id="cb1-5"><a href="#cb1-5"></a></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="co">#...........................load fonts...........................</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">font_add_google</span>(<span class="at">name =</span> <span class="st">"Montserrat"</span>, <span class="at">family =</span> <span class="st">"montserrat"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">showtext_auto</span>()</span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co">#.................get and assemble penguin image.................</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># only need to run these first two lines once to download image: </span></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="co"># url &lt;- "https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/man/figures/culmen_depth.png"</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co"># utils::download.file(url = url, destfile =  here::here("week8", "images", "penguin.png"))</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a>my_img <span class="ot">&lt;-</span> png<span class="sc">::</span><span class="fu">readPNG</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week8"</span>, <span class="st">"images"</span>, <span class="st">"penguin.png"</span>))</span>
-<span id="cb1-15"><a href="#cb1-15"></a>my_raster_img <span class="ot">&lt;-</span> grid<span class="sc">::</span><span class="fu">rasterGrob</span>(my_img)</span>
-<span id="cb1-16"><a href="#cb1-16"></a></span>
-<span id="cb1-17"><a href="#cb1-17"></a><span class="co">#...........................build plot...........................</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a>  ggforce<span class="sc">::</span><span class="fu">geom_mark_ellipse</span>(<span class="fu">aes</span>(<span class="at">group =</span> species, <span class="at">label =</span> species),</span>
-<span id="cb1-21"><a href="#cb1-21"></a>                    <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a>  <span class="fu">scale_color_gradientn</span>(<span class="at">colors =</span> <span class="fu">c</span>(<span class="st">"#F3E5B1"</span>, <span class="st">"#6C7B1A"</span>, <span class="st">"#044148"</span>)) <span class="sc">+</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="fu">guide_colorbar</span>(<span class="at">barwidth =</span> <span class="dv">20</span>, <span class="at">barheight =</span> <span class="fl">0.5</span>, </span>
-<span id="cb1-24"><a href="#cb1-24"></a>                                <span class="at">title.position =</span> <span class="st">"top"</span>, <span class="at">title.hjust =</span> <span class="fl">0.5</span>,</span>
-<span id="cb1-25"><a href="#cb1-25"></a>                                <span class="at">ticks =</span> <span class="cn">FALSE</span>)) <span class="sc">+</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">25</span>, <span class="dv">65</span>, <span class="dv">5</span>),</span>
-<span id="cb1-27"><a href="#cb1-27"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">65</span>),</span>
-<span id="cb1-28"><a href="#cb1-28"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb1-29"><a href="#cb1-29"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">12</span>, <span class="dv">24</span>, <span class="dv">2</span>),</span>
-<span id="cb1-30"><a href="#cb1-30"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">24</span>),</span>
-<span id="cb1-31"><a href="#cb1-31"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb1-32"><a href="#cb1-32"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"**Bill Length** (mm)"</span>,</span>
-<span id="cb1-33"><a href="#cb1-33"></a>       <span class="at">y =</span> <span class="st">"**Bill Depth** (mm)"</span>,</span>
-<span id="cb1-34"><a href="#cb1-34"></a>       <span class="at">color =</span> <span class="st">"Body Mass (g)"</span>,</span>
-<span id="cb1-35"><a href="#cb1-35"></a>       <span class="at">title =</span> <span class="st">"**Bill Dimensions of Brush-Tailed Penguins (*Phygoscelis*)**"</span>,</span>
-<span id="cb1-36"><a href="#cb1-36"></a>       <span class="at">caption =</span> <span class="st">"Data: Gorman, Williams, Fraser (2014) PLoS ONE | Illustration: Allison Horst"</span>) <span class="sc">+</span></span>
-<span id="cb1-37"><a href="#cb1-37"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb1-38"><a href="#cb1-38"></a>  <span class="fu">theme</span>(</span>
-<span id="cb1-39"><a href="#cb1-39"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb1-40"><a href="#cb1-40"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
-<span id="cb1-41"><a href="#cb1-41"></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"montserrat"</span>),</span>
-<span id="cb1-42"><a href="#cb1-42"></a>    <span class="at">plot.title =</span> ggtext<span class="sc">::</span><span class="fu">element_textbox_simple</span>(<span class="at">size =</span> <span class="dv">20</span>,</span>
-<span id="cb1-43"><a href="#cb1-43"></a>                                                <span class="at">margin =</span> <span class="fu">margin</span>(<span class="fl">0.5</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.25</span>, <span class="st">"lines"</span>)),</span>
-<span id="cb1-44"><a href="#cb1-44"></a>    <span class="at">axis.title.x =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(<span class="at">size =</span> <span class="dv">15</span>,</span>
-<span id="cb1-45"><a href="#cb1-45"></a>                                            <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="st">"lines"</span>)),</span>
-<span id="cb1-46"><a href="#cb1-46"></a>    <span class="at">axis.title.y =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(<span class="at">size =</span> <span class="dv">15</span>,</span>
-<span id="cb1-47"><a href="#cb1-47"></a>                                            <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="st">"lines"</span>)),</span>
-<span id="cb1-48"><a href="#cb1-48"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
-<span id="cb1-49"><a href="#cb1-49"></a>    <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb1-50"><a href="#cb1-50"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
-<span id="cb1-51"><a href="#cb1-51"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
-<span id="cb1-52"><a href="#cb1-52"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>,</span>
-<span id="cb1-53"><a href="#cb1-53"></a>                                <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="st">"lines"</span>)),</span>
-<span id="cb1-54"><a href="#cb1-54"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb1-55"><a href="#cb1-55"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-56"><a href="#cb1-56"></a>  <span class="fu">coord_cartesian</span>(<span class="at">clip =</span> <span class="st">"off"</span>) <span class="sc">+</span></span>
-<span id="cb1-57"><a href="#cb1-57"></a>  <span class="fu">annotation_custom</span>(my_raster_img, </span>
-<span id="cb1-58"><a href="#cb1-58"></a>                    <span class="at">xmin =</span> <span class="fl">56.8</span>, <span class="at">xmax =</span> <span class="fl">65.8</span>,</span>
-<span id="cb1-59"><a href="#cb1-59"></a>                    <span class="at">ymin =</span> <span class="dv">22</span>, <span class="at">ymax =</span> <span class="dv">30</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co">#..........................load packages.........................</span></span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(showtext)</span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a><span class="co">#...........................load fonts...........................</span></span>
+<span id="cb1-7"><a></a><span class="fu">font_add_google</span>(<span class="at">name =</span> <span class="st">"Montserrat"</span>, <span class="at">family =</span> <span class="st">"montserrat"</span>)</span>
+<span id="cb1-8"><a></a><span class="fu">showtext_auto</span>()</span>
+<span id="cb1-9"><a></a></span>
+<span id="cb1-10"><a></a><span class="co">#.................get and assemble penguin image.................</span></span>
+<span id="cb1-11"><a></a><span class="co"># only need to run these first two lines once to download image: </span></span>
+<span id="cb1-12"><a></a><span class="co"># url &lt;- "https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/man/figures/culmen_depth.png"</span></span>
+<span id="cb1-13"><a></a><span class="co"># utils::download.file(url = url, destfile =  here::here("week8", "images", "penguin.png"))</span></span>
+<span id="cb1-14"><a></a>my_img <span class="ot">&lt;-</span> png<span class="sc">::</span><span class="fu">readPNG</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week8"</span>, <span class="st">"images"</span>, <span class="st">"penguin.png"</span>))</span>
+<span id="cb1-15"><a></a>my_raster_img <span class="ot">&lt;-</span> grid<span class="sc">::</span><span class="fu">rasterGrob</span>(my_img)</span>
+<span id="cb1-16"><a></a></span>
+<span id="cb1-17"><a></a><span class="co">#...........................build plot...........................</span></span>
+<span id="cb1-18"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb1-19"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-20"><a></a>  ggforce<span class="sc">::</span><span class="fu">geom_mark_ellipse</span>(<span class="fu">aes</span>(<span class="at">group =</span> species, <span class="at">label =</span> species),</span>
+<span id="cb1-21"><a></a>                    <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb1-22"><a></a>  <span class="fu">scale_color_gradientn</span>(<span class="at">colors =</span> <span class="fu">c</span>(<span class="st">"#F3E5B1"</span>, <span class="st">"#6C7B1A"</span>, <span class="st">"#044148"</span>)) <span class="sc">+</span></span>
+<span id="cb1-23"><a></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="fu">guide_colorbar</span>(<span class="at">barwidth =</span> <span class="dv">20</span>, <span class="at">barheight =</span> <span class="fl">0.5</span>, </span>
+<span id="cb1-24"><a></a>                                <span class="at">title.position =</span> <span class="st">"top"</span>, <span class="at">title.hjust =</span> <span class="fl">0.5</span>,</span>
+<span id="cb1-25"><a></a>                                <span class="at">ticks =</span> <span class="cn">FALSE</span>)) <span class="sc">+</span></span>
+<span id="cb1-26"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">25</span>, <span class="dv">65</span>, <span class="dv">5</span>),</span>
+<span id="cb1-27"><a></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">65</span>),</span>
+<span id="cb1-28"><a></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb1-29"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">12</span>, <span class="dv">24</span>, <span class="dv">2</span>),</span>
+<span id="cb1-30"><a></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">24</span>),</span>
+<span id="cb1-31"><a></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb1-32"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"**Bill Length** (mm)"</span>,</span>
+<span id="cb1-33"><a></a>       <span class="at">y =</span> <span class="st">"**Bill Depth** (mm)"</span>,</span>
+<span id="cb1-34"><a></a>       <span class="at">color =</span> <span class="st">"Body Mass (g)"</span>,</span>
+<span id="cb1-35"><a></a>       <span class="at">title =</span> <span class="st">"**Bill Dimensions of Brush-Tailed Penguins (*Phygoscelis*)**"</span>,</span>
+<span id="cb1-36"><a></a>       <span class="at">caption =</span> <span class="st">"Data: Gorman, Williams, Fraser (2014) PLoS ONE | Illustration: Allison Horst"</span>) <span class="sc">+</span></span>
+<span id="cb1-37"><a></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb1-38"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-39"><a></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb1-40"><a></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb1-41"><a></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"montserrat"</span>),</span>
+<span id="cb1-42"><a></a>    <span class="at">plot.title =</span> ggtext<span class="sc">::</span><span class="fu">element_textbox_simple</span>(<span class="at">size =</span> <span class="dv">20</span>,</span>
+<span id="cb1-43"><a></a>                                                <span class="at">margin =</span> <span class="fu">margin</span>(<span class="fl">0.5</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.25</span>, <span class="st">"lines"</span>)),</span>
+<span id="cb1-44"><a></a>    <span class="at">axis.title.x =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(<span class="at">size =</span> <span class="dv">15</span>,</span>
+<span id="cb1-45"><a></a>                                            <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="st">"lines"</span>)),</span>
+<span id="cb1-46"><a></a>    <span class="at">axis.title.y =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(<span class="at">size =</span> <span class="dv">15</span>,</span>
+<span id="cb1-47"><a></a>                                            <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="st">"lines"</span>)),</span>
+<span id="cb1-48"><a></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb1-49"><a></a>    <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-50"><a></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb1-51"><a></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb1-52"><a></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>,</span>
+<span id="cb1-53"><a></a>                                <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="st">"lines"</span>)),</span>
+<span id="cb1-54"><a></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb1-55"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb1-56"><a></a>  <span class="fu">coord_cartesian</span>(<span class="at">clip =</span> <span class="st">"off"</span>) <span class="sc">+</span></span>
+<span id="cb1-57"><a></a>  <span class="fu">annotation_custom</span>(my_raster_img, </span>
+<span id="cb1-58"><a></a>                    <span class="at">xmin =</span> <span class="fl">56.8</span>, <span class="at">xmax =</span> <span class="fl">65.8</span>,</span>
+<span id="cb1-59"><a></a>                    <span class="at">ymin =</span> <span class="dv">22</span>, <span class="at">ymax =</span> <span class="dv">30</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="footer">
 <p><strong>Note:</strong> The positioning / size of text, penguin image, etc. was chosen based on how it looked as rendered in the slides. You may need to modify for viewing on your own device.</p>
@@ -659,7 +660,7 @@ Our job is to turn values and analyses into insights and narratives – doing so
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_abdf4676" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_58fc1c5b" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -684,7 +685,7 @@ Our job is to turn values and analyses into insights and narratives – doing so
 <p><strong>Note:</strong> You don’t need to get to every viz! There are lots of options so you can explore those that peak your interest most.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_5675e8f4" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_ea75fde2" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -694,70 +695,70 @@ Our job is to turn values and analyses into insights and narratives – doing so
 <section id="jan6" class="slide level2" data-menu-title="Jan 6 (1/10)">
 <h2></h2>
 
-<img data-src="images/week8/jan6.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s">
+<img data-src="images/week8/jan6.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="center-text body-text-s">
 <p><a href="https://twitter.com/nytimes/status/1743025807491027261">The Jan.&nbsp;6 inquiry, by the numbers</a> (New York Times)</p>
 </div>
 </section>
 <section id="china-pop" class="slide level2" data-menu-title="China's population (2/10)">
 <h2></h2>
 
-<img data-src="images/week8/china-pop.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s">
+<img data-src="images/week8/china-pop.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="center-text body-text-s">
 <p><a href="https://twitter.com/nytimes/status/1747729285329084482">China’s population continues to shrink as deaths outnumber births</a> (New York Times)</p>
 </div>
 </section>
 <section id="can-fires" class="slide level2" data-menu-title="Canada's wildfires (3/10)">
 <h2></h2>
 
-<img data-src="images/week8/can-fires.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s">
+<img data-src="images/week8/can-fires.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="center-text body-text-s">
 <p><a href="https://twitter.com/prinzmagtulis/status/1693684342818574675">Wildfires in Canada burned this much land so far this year</a> (Reuters)</p>
 </div>
 </section>
 <section id="ca-oil" class="slide level2" data-menu-title="CA oil spill (4/10)">
 <h2></h2>
 
-<img data-src="images/week8/ca-oil.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s">
+<img data-src="images/week8/ca-oil.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="center-text body-text-s">
 <p><a href="https://twitter.com/ReutersGraphics/status/1445052808349241346">‘Catastrophic’ California oil spill kills fish, damaages wetlands</a> (Reuters)</p>
 </div>
 </section>
 <section id="clean-fuel" class="slide level2" data-menu-title="Clean fuel (5/10)">
 <h2></h2>
 
-<img data-src="images/week8/clean-fuel.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s">
+<img data-src="images/week8/clean-fuel.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="center-text body-text-s">
 <p><a href="https://twitter.com/ReutersGraphics/status/1558098980831383552">Access to clean fuels and technologies for cooking</a> (Reuters)</p>
 </div>
 </section>
 <section id="cacti" class="slide level2" data-menu-title="Cacti (6/10)">
 <h2></h2>
 
-<img data-src="images/week8/cacti.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s">
+<img data-src="images/week8/cacti.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="center-text body-text-s">
 <p><a href="https://twitter.com/ReutersGraphics/status/1622631279282774016">Almost half of U.S. cacti are vulnerable to extinction</a> (Reuters)</p>
 </div>
 </section>
 <section id="messi" class="slide level2" data-menu-title="Messi (7/10)">
 <h2></h2>
 
-<img data-src="images/week8/messi.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s">
+<img data-src="images/week8/messi.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="center-text body-text-s">
 <p><a href="https://twitter.com/ReutersGraphics/status/1424701147789541386">Lionel Messi: all 672 goals for Barcelona by season</a> (Reuters)</p>
 </div>
 </section>
 <section id="refugees" class="slide level2" data-menu-title="Refugees (8/10)">
 <h2></h2>
 
-<img data-src="images/week8/refugees.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s">
+<img data-src="images/week8/refugees.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="center-text body-text-s">
 <p><a href="https://twitter.com/ReutersGraphics/status/1430289471426207745">Refugees resettled in the United States</a> (Reuters)</p>
 </div>
 </section>
 <section id="employed" class="slide level2" data-menu-title="Employed (9/10)">
 <h2></h2>
 
-<img data-src="images/week8/employed.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s">
+<img data-src="images/week8/employed.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="center-text body-text-s">
 <p><a href="https://us.gestalten.com/blogs/journal/visualizing-a-new-new-york-times">How employed people spend their day</a> (New York Times)</p>
 </div>
 </section>
 <section id="hockey-stick" class="slide level2" data-menu-title="Hockey stick (10/10)">
 <h2></h2>
 
-<img data-src="images/week8/mann-etal-hockey-stick.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s">
+<img data-src="images/week8/mann-etal-hockey-stick.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="center-text body-text-s">
 <p><a href="https://en.wikipedia.org/wiki/Hockey_stick_graph_(global_temperature)">“Hockey Stick” graph</a>, by <a href="https://doi.org/10.1029/1999GL900070">Mann et al.&nbsp;(1999)</a></p>
 </div>
 <aside class="notes">
@@ -837,7 +838,7 @@ A few last important reminders before you jump back into storytelling. . .
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week8/chalabi-kingfisher.png" style="width:100.0%"></p>
+<p><img data-src="images/week8/chalabi-kingfisher.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -847,19 +848,18 @@ A few last important reminders before you jump back into storytelling. . .
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week8/chalabi-vaquitas.png" style="width:100.0%"></p>
+<p><img data-src="images/week8/chalabi-vaquitas.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 <div class="footer">
 <p><a href="https://www.theguardian.com/environment/gallery/2018/sep/17/endangered-species-on-a-train">Seven endangered species that could (almost) fit in a single train carriage</a>, by <a href="https://monachalabi.com/">Mona Chalabi</a> (two of seven shown here)</p>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_ce01e8c4" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_1b1bda26" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -871,13 +871,13 @@ A few last important reminders before you jump back into storytelling. . .
 <p><span class="slide-title">Consider the audience</span></p>
 <hr>
 
-<img data-src="images/week8/ingeman-etal-fig3.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<img data-src="images/week8/ingeman-etal-fig3.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><p><br></p>
 <div class="footer">
 <p>Fig. 3, by <a href="https://www.nature.com/articles/s41598-022-13671-7">Ingeman et al.&nbsp;2022</a>: Glimmers of hope and critical cases. Find <a href="https://www.nature.com/articles/s41598-022-13671-7/figures/3">figure caption online</a>.</p>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c8065b53" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_90ace6a4" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -896,7 +896,7 @@ A few last important reminders before you jump back into storytelling. . .
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week8/scherer-plants-legend.png" style="width:100.0%"></p>
+<p><img data-src="images/week8/scherer-plants-legend.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -906,19 +906,18 @@ A few last important reminders before you jump back into storytelling. . .
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week8/scherer-plants.png" style="width:100.0%"></p>
+<p><img data-src="images/week8/scherer-plants.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 <div class="footer">
 <p><a href="https://github.com/Z3tt/TidyTuesday/tree/main/plots/2020_34">Plants in Danger</a>, by <a href="https://www.cedricscherer.com/">Cédric Scherer</a> (<a href="https://github.com/z3tt/TidyTuesday/blob/main/R/2020_34_ExtinctPlants.Rmd">code</a>)</p>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_fcec036d" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_d9ec6ee2" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -941,13 +940,12 @@ A few last important reminders before you jump back into storytelling. . .
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week8/ny-rats.png" style="width:80.0%"></p>
+<p><img data-src="images/week8/ny-rats.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 <div class="footer">
 <p>From <a href="https://www.cedricscherer.com/">Cédric Scherer</a>’s talk, <a href="https://www.youtube.com/watch?v=swzFdMc6WPk">Effective Data Visualization</a> and <a href="https://rstudio-conf-2022.github.io/ggplot2-graphic-design/">Graphic Design with ggplot2</a> workshop</p>
 </div>
@@ -968,13 +966,12 @@ A few last important reminders before you jump back into storytelling. . .
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week8/ny-rats-update.png" style="width:80.0%"></p>
+<p><img data-src="images/week8/ny-rats-update.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 <div class="footer">
 <p>From <a href="https://www.cedricscherer.com/">Cédric Scherer</a>’s talk, <a href="https://www.youtube.com/watch?v=swzFdMc6WPk">Effective Data Visualization</a> and <a href="https://rstudio-conf-2022.github.io/ggplot2-graphic-design/">Graphic Design with ggplot2</a> workshop</p>
 </div>
@@ -998,7 +995,7 @@ A few last important reminders before you jump back into storytelling. . .
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/week8/jones-book.png" style="width:50.0%"></p>
+<p><img data-src="images/week8/jones-book.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
 </div>
 </div>
@@ -1006,8 +1003,7 @@ A few last important reminders before you jump back into storytelling. . .
 <div class="center-text body-text-s gray-text">
 <p><a href="https://www.amazon.com/Avoiding-Data-Pitfalls-presenting-visualizations/dp/1119278163">Avoiding Data Pitfalls</a>, by <a href="https://www.linkedin.com/in/benrjones/">Ben Jones</a></p>
 </div>
-</div>
-</div>
+</div></div>
 <div class="footer">
 <p>From <a href="https://www.cedricscherer.com/">Cédric Scherer</a>’s talk, <a href="https://www.youtube.com/watch?v=swzFdMc6WPk">Effective Data Visualization</a> and <a href="https://rstudio-conf-2022.github.io/ggplot2-graphic-design/">Graphic Design with ggplot2</a> workshop</p>
 </div>
@@ -1129,15 +1125,17 @@ A few last important reminders before you jump back into storytelling. . .
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_4b0d9217" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_3f24cd2c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section>
     </div>
@@ -1167,7 +1165,6 @@ A few last important reminders before you jump back into storytelling. . .
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1423,18 +1420,7 @@ A few last important reminders before you jump back into storytelling. . .
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1466,11 +1452,50 @@ A few last important reminders before you jump back into storytelling. . .
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1480,8 +1505,17 @@ A few last important reminders before you jump back into storytelling. . .
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1495,7 +1529,11 @@ A few last important reminders before you jump back into storytelling. . .
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
