@@ -3,13 +3,18 @@ project:
   output-dir: docs
 
 website:
+  announcement:
+    icon: info-circle
+    dismissable: false
+    position: above-navbar
+    content: "Course materials are currently undergoing revision! EDS 240 will begin again in January 2025."
   title: "EDS 240"
   navbar:
     right:
       - text: home
         href: index.qmd
       - text: syllabus
-        href: https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit?usp=sharing
+        href: https://docs.google.com/document/d/1ZALT0Ef9GQga5rkBAWJhzQ2npC4l-FkcNV4kMYFud0Q/edit?usp=sharing
         target: _blank
       - text: course materials
         menu:
@@ -36,7 +41,7 @@ website:
       - text: assignments
         href: assignments.qmd
       - text: redeem tokens
-        href: https://docs.google.com/forms/d/e/1FAIpQLSdOP32K7_A3zzENvYQvIBCnLveaLE-exnFlqDV1xBWz66rWoA/viewform
+        href: https://forms.gle/ePS4Hm4kH1PhusGX7
         target: _blank
       - text: resources
         menu:
