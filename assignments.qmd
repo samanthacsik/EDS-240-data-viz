@@ -68,7 +68,7 @@ Use the Grade Tracker, below, to determine your course grade:
 #| fig-align: "center"
 #| out-width: "55%" 
 #| fig-alt: "The Grade Tracker table, which can be used to determine an individual's course grade based on the number of 'Satisfactory' assignments completed, as well as descriptions on how to earn and use tokens"
-knitr::include_graphics("images/grade-tracker.png")
+knitr::include_graphics(here::here("images", "grade-tracker.png"))
 ```
 
-[Redeem tokens](https://docs.google.com/forms/d/e/1FAIpQLSdOP32K7_A3zzENvYQvIBCnLveaLE-exnFlqDV1xBWz66rWoA/viewform) in exchange for assignment extensions, missing class, or to revise / resubmit an assignment that received a "Not Yet" mark.
+[Redeem tokens](https://forms.gle/HcaMHQTgExKTnq9Q9) in exchange for assignment extensions, missing class, or to revise / resubmit an assignment that received a "Not Yet" mark.

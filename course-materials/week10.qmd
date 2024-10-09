@@ -12,7 +12,7 @@ description: "Monday March 10^th^, 2025"
 #| fig-align: "center"
 #| out-width: "85%" 
 #| fig-alt: "A cartoon monster student in a backpack looks on at stunning gems labeled 'Touchstones of Intuition', which have the text 'You know some stuff' written on sequential crystals."
-knitr::include_graphics("../images/horst-touchstones.png")
+knitr::include_graphics(here::here("images", "horst-touchstones.png"))
 ```
 
 ::: {.center-text .gray-text}

@@ -10,7 +10,7 @@ description: "Monday February 3^rd^, 2025"
 #| fig-align: "center"
 #| out-width: "65%" 
 #| fig-alt: "A fuzzy monster in a beret and scarf, critiquing their own column graph on a canvas in front of them while other assistant monsters (also in berets) carry over boxes full of elements that can be used to customize a graph (like themes and geometric shapes). In the background is a wall with framed data visualizations. Stylized text reads 'ggplot2: build a data masterpiece.'"
-knitr::include_graphics("../images/horst-ggplot-masterpiece.png")
+knitr::include_graphics(here::here("images", "horst-ggplot-masterpiece.png"))
 ```
 
 :::{.gray-text .center-text}

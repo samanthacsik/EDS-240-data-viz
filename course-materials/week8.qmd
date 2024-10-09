@@ -12,7 +12,7 @@ description: "Monday February 24^th^, 2025"
 #| fig-align: "center"
 #| out-width: "85%" 
 #| fig-alt: "An extended version of the classic R4DS schematic from Grolemund & Wickham, with environmental data science, communities, and communication added."
-knitr::include_graphics("../images/horst-eco-r4ds.png")
+knitr::include_graphics(here::here("images", "horst-eco-r4ds.png"))
 ```
 
 ## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}

@@ -12,7 +12,7 @@ description: "Monday January 27^th^, 2025"
 #| fig-align: "center"
 #| out-width: "65%" 
 #| fig-alt: "A group of fuzzy round monsters with binoculars, backpacks and guide books looking up a graphs flying around with wings (like birders, but with exploratory data visualizations). Stylized text reads 'ggplot2: visual data exploration.' Learn more about ggplot2."
-knitr::include_graphics("../images/horst-ggplot-explore-dataviz.png")
+knitr::include_graphics(here::here("images", "horst-ggplot-explore-dataviz.png"))
 ```
 
 :::{.gray-text .center-text}
@@ -107,12 +107,12 @@ knitr::include_graphics("../images/horst-ggplot-explore-dataviz.png")
 <!-- Use this (non-exhaustive) list to start tweaking elements of your plot's appearance. It's most common to start with a pre-built theme (see above) and modify from there. For a complete list of elements, explore the documentation for [`ggplot::theme()`](https://ggplot2.tidyverse.org/reference/theme.html). -->
 
 <!-- ```{r} -->
-<!-- #| eval: true  -->
+<!-- #| eval: true -->
 <!-- #| echo: false -->
 <!-- #| fig-align: "center" -->
-<!-- #| out-width: "100%"  -->
+<!-- #| out-width: "100%" -->
 <!-- #| fig-alt: "A ggplot scatterplot of penguin bill dimensions (bill depth by bill length), with arrows pointing to different non-data elements that can be adjusted using ggplot2 theme controls" -->
-<!-- knitr::include_graphics("../images/ggplot-theme.png") -->
+<!-- knitr::include_graphics(here::here("images", "ggplot-theme.png")) -->
 <!-- ``` -->
 
 <!-- ::: {.center-text .body-text-s .gray-text} -->

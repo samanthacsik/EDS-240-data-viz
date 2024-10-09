@@ -10,7 +10,7 @@ description: "Monday January 6^th^, 2025"
 #| fig-align: "center"
 #| out-width: "30%" 
 #| fig-alt: "The {ggplot2} hex sticker which features a connected scatterplot with data points in varying shades of blue atop a gray gridded background. The word 'ggplot2' sits beneath the data."
-knitr::include_graphics("../images/ggplot2.png")
+knitr::include_graphics(here::here("images", "ggplot2.png"))
 ```
 
 ## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}
@@ -120,7 +120,7 @@ Notice that when you **Save** your modified `.gitignore` file, untracked data fi
 #| echo: false
 #| fig-align: "center"
 #| out-width: "60%"
-knitr::include_graphics("../images/gitignore.gif")
+knitr::include_graphics(here::here("images", "gitignore.gif"))
 ```
 
 ::: {.center-text .gray-text}

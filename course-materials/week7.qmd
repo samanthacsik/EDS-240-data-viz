@@ -10,7 +10,7 @@ description: "Monday February 17^th^, 2025"
 #| fig-align: "center"
 #| out-width: "70%" 
 #| fig-alt: "A little purple fuzzy monster wearing a backpack stands just before a drawbridge, leading to a castle covered in flowers and confetti, with flags that say 'R' and 'Hi Friend!' flapping in the wind. A crow wearing a party hat is perched on a welome sign the start of the bridge and says 'SQUAAWK YOU CAN DO IT!'. A green fuzzy monster with a party hat stands on the opposite end of the bridge, in front of the castle, with it's arms outstretched."
-knitr::include_graphics("../images/horst-happy-castle.png")
+knitr::include_graphics(here::here("images", "horst-happy-castle.png"))
 ```
 
 :::{.gray-text .center-text}

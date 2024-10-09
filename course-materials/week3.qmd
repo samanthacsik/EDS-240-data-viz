@@ -10,7 +10,7 @@ description: "Monday January 20^th^, 2025"
 #| fig-align: "center"
 #| out-width: "80%" 
 #| fig-alt: "A formula for writing alternative text, which says you should always include (a) the chart type, (b) the type of data being presented, and (c) the reason for including the chart. You should also link to the data source somewhere in the text."
-knitr::include_graphics("../images/alt-text.png")
+knitr::include_graphics(here::here("images", "alt-text.png"))
 ```
 
 ::: {.center-text .gray-text}
