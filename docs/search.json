@@ -2251,28 +2251,28 @@
     "href": "course-materials/week4.html#pre-class-prep",
     "title": "Fundamental chart types (part II)",
     "section": " Pre-class Prep",
-    "text": "Pre-class Prep\nPlease be sure to complete the following before class:\n\nA. Install required packages\n\ninstall.packages(\"ggalt\") # extra coordinate systems, geoms, statistical transformations, scales and fonts for 'ggplot2' (includes `geom_lollipop()`)\ninstall.packages(\"ggExtra\") # {ggplot2} extension2222 which can be used to add marginal histograms/boxplots/density plots to ggplot2 scatterplots\ninstall.packages(\"ggdensity\") # {ggplot2} extension providing more interpretable visualizations of density estimates based on highest density regions (HDRs)\n\n\n\nB. Review data wrangling code\nIn lecture 4.1, we’ll be exploring income data from the Bureau of Labor Statistics and the Census Bureau, which has been moderately pre-processed by TidyTuesday organizers for the March 5, 2021 data set.\nPlease review the necessary background information (see slide 4) and walk through the data wrangling code on slide 5 ahead of class. Come prepared with any questions you may have about the code – we’ll set aside ~10 minutes to discuss before jumping into building our data visualizations."
+    "text": "Pre-class Prep\nComing soon!"
   },
   {
     "objectID": "course-materials/week4.html#lecture-materials",
     "href": "course-materials/week4.html#lecture-materials",
     "title": "Fundamental chart types (part II)",
     "section": " Lecture Materials",
-    "text": "Lecture Materials\nWeek 4 instruction is broken down into two lessons:\n\n\n\nVisualizing rankings\n lecture 4.1 slides\n\n\n\n\nVisualizing relationships\n lecture 4.2 slides"
+    "text": "Lecture Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week4.html#discussion-materials",
     "href": "course-materials/week4.html#discussion-materials",
     "title": "Fundamental chart types (part II)",
     "section": " Discussion Materials",
-    "text": "Discussion Materials\nLast week’s discussion focused on recreating the data layers of the U.S. Drought Monitor’s visualization of CA drought conditions through time. This week, you’ll focus on refining the theme (non-data plot elements) to match the original visualization as closely as possible.\n\n Week 4 discussion slides\n\n\nBackground\nThemes are used to modify the non-data components of plots (e.g. titles, labels, fonts, background, gridlines, legend). In addition to using pre-built themes (available via the {ggplot2} package and also from extension packages), you can fine-tune the appearance of your plots theme by making adjustments using the theme() function.\n\n\nApplying pre-built themes:\n{ggplot2} comes with eight complete themes, which can be applied as-is, or further modified using theme() (see next section, below). There are also many additional themes which can be applied via ggplot extension packages. A small handful of packages are listed in the expandable note, below:\n\n\n\n\n\n\nA non-exhaustive list of ggplot theme extension packages\n\n\n\n\n\n\n{ggthemes}: a collection of popular themes, some of which also come with corresponding color scales\n{hrbrthemes}: typographic-centric themes and theme components\n{ggthemr}: a collection of color palettes and plot layouts for quickly setting a ggplot theme\n{ggtech}: themes based off large tech company color palettes\n{ggdark}: dark mode for ggplot complete themes\n{firatheme}: a ggplot theme with Fira font\n{urbnthemes}: tools for creating Urban Institute-themed plots and maps in R (also check out the Urban Institute Data Visualization Style Guide for a really great example of how an organization enforces a cohesive style across all published data viz content)\n{bbplot}: tools for creating ggplots in the style used by the BBC News data team\n{ggpomological}: a ggplot2 theme based on the USDA Pomological Watercolor Collection\n{tvthemes}: a collection of ggplot themes and color / fill palettes based on everybody’s favorite TV shows\n\nKeep your eye out for extension packages that supply both a geom(s) and a pre-build theme(s) designed specifically to work with that geom. For example, the {ggridges} package provides both a few different ridgeline plot geoms and a pre-built theme_ridges() theme to pair with them.\n\n\n\n\n\nUsing ggplot2::theme() to control plot elements:\nUse this (non-exhaustive) list to start tweaking elements of your plot’s appearance. It’s most common to start with a pre-built theme (see above) and modify from there. For a complete list of elements, explore the documentation for ggplot::theme().\n\n\n\n\n\n\n\n\n\n\nAdapted from Reproducible Science for Busy Researchers: How to Save Time using Literate Programming, by Andrew P. Lapointe\n\n\n\n\nSolution\nYou’ll get the most out of discussion section if you physically type out the code yourself (rather than copying / pasting)!\nNote: Much of the following code (data wrangling and ggplot code) was copied over from last week’s discussion materials. Newly added theme code begins below the comment, NEWLY ADDED THEME CODE!.\n\n\n\n\n\n\n\n\n\n\nComplete code for week 4 discussion\n\n\n\n\n\n\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                                    setup                                 ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n#..........................load packages.........................\nlibrary(tidyverse)\n\n#..........................import data...........................\ntuesdata &lt;- tidytuesdayR::tt_load('2021-07-20')\ndrought &lt;- tuesdata$drought\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                            wrangle drought data                          ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\ndrought_clean &lt;- drought |&gt;\n\n  # select cols of interest & update names as needed ----\n  select(date = valid_start, state_abb, drought_lvl, area_pct) |&gt; \n\n  # add year, month & day cols using {lubridate} fxns ----\n  # NOTE: this step isn't necessary for our plot, but I'm including as examples of how to extract different date elements from a object of class Date using {lubridate}~ ----\n  mutate(year = year(date),\n         month = month(date, label = TRUE, abbr = TRUE),\n         day = day(date)) |&gt;\n\n  # add drought level conditions names ----\n  mutate(drought_lvl_long = factor(drought_lvl,\n                            levels = c(\"D4\", \"D3\", \"D2\", \"D1\",\"D0\", \"None\"),\n                            labels = c(\"(D4) Exceptional\", \"(D3) Extreme\",\n                                       \"(D2) Severe\", \"(D1) Moderate\", \"(D0) Abnormally Dry\", \n                                       \"No Drought\"))) |&gt;\n  \n  # reorder cols ----\n  select(date, year, month, day, state_abb, drought_lvl, drought_lvl_long, area_pct)\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##       create stacked area plot of CA drought conditions through time     ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\ndrought_clean |&gt; \n  \n  # remove drought_lvl \"None\" & filter for just CA ----\n  filter(drought_lvl != \"None\",\n         state_abb == \"CA\") |&gt; \n  \n  # create ggplot ----\n  ggplot(mapping = aes(x = date, y = area_pct, fill = drought_lvl_long)) +\n  \n  # reverse order of groups so level D4 is closest to x-axis ----\n  geom_area(position = position_stack(reverse = TRUE)) +\n  \n  # update colors to match US Drought Monitor (colors selected using ColorPick Eyedropper from original USDM data viz) ----\n  scale_fill_manual(values = c(\"#853904\", \"#FF0000\", \"#FFC100\", \"#FFD965\", \"#FFFF00\")) +\n  \n  # set x-axis breaks & remove padding between data and x-axis ----\n  scale_x_date(breaks = scales::breaks_pretty(n = 10),\n               expand = c(0, 0)) +\n\n  # set y-axis breaks & convert values to percentages & & remove padding between data and y-axis----\n  scale_y_continuous(breaks = seq(0, 100, by = 10),\n                     labels = scales::label_percent(scale = 1),\n                     expand = c(0, 0)) +\n  \n  # add title ----\n  labs(title = \"Drought area in California\") +\n  \n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                                                                            --\n##------------------------- NEWLY ADDED THEME CODE!-----------------------------\n##                                                                            --\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n  # set theme minimal (includes major/minor grid lines, no axes) ----\n  theme_minimal() +\n  \n  # fine-tune adjustments to plot theme ----\n  theme(\n    \n    # update axis lines & ticks color ----\n    axis.line = element_line(color = \"#5A9CD6\"),\n    axis.ticks = element_line(color = \"#5A9CD6\"),\n    \n    # adjust length of axis ticks ----\n    axis.ticks.length = unit(.2, \"cm\"),\n    \n    # center plot title ----\n    plot.title = element_text(hjust = 0.5, color = \"#686868\", size = 25,\n                              margin = margin(t = 10, r = 0, b = 15, l = 0)),\n    \n    # remove axis & legend titles ----\n    axis.title = element_blank(),\n    legend.title = element_blank(),\n    \n    # axis text color & size ----\n    axis.text = element_text(color = \"#686868\", size = 15),\n    legend.text = element_text(color = \"#686868\", size = 15),\n    \n    # move legend below plot ----\n    legend.position = \"bottom\",\n  )"
+    "text": "Discussion Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week4.html#assignment-reminders",
     "href": "course-materials/week4.html#assignment-reminders",
     "title": "Fundamental chart types (part II)",
     "section": " Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 4)\nMon 01/27/2025\nMon 01/27/2025, 11:55pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/20/2025\nSat 02/01/2025, 11:59pm PT"
   },
   {
     "objectID": "course-materials/week7.html#pre-class-prep",
@@ -2293,56 +2293,56 @@
     "href": "course-materials/week7.html#discussion-materials",
     "title": "[No Lecture]",
     "section": " Discussion Materials",
-    "text": "Discussion Materials\n\nPre-discussion Prep\nHW #3 has you working on your visualizations for your final project (HW #4). Please plan to bring the following to discussion:\n\none of your three visualizations (i.e. one of the three required viz for option 1, or one of the three viz that will make up your infographic for option 2)\n\nthe question that you’re trying to answer with your visualization\n\nAdd your visualization and your question to the appropriate Google slide deck (each slide is labeled with a name) before section begins:\n\n10am section slides\n11am section slides\n\nThe viz you bring should meet the HW #3 requirements (see the section that begins with “Mock up your visualizations using code…”) – this should be a well-constructed, carefully thought-through and polished plot (any one of the panels in the Hollywood Age Gaps visualization that you saw in discussion last week is a great example of the level of “polish” we’d expect to see). You should be prepared to discuss your design choices and receive constructive feedback from your peers.\n\n\nHow to give / receive feedback\nGiving, receiving and implementing feedback is an important part of any creative process (including building data visualizations!). There are two “levels” of feedback:\n\nhigh-level: where the focus is on whether a data visualization is accurate, relevant and understandable for the intended audience\ndetail-oriented: where the focus is on aesthetics choices (e.g. colors, typefaces, layout, themes, white space, etc.) and how those choices help to enhance / tell the story This week, you should focus largely on providing high-level feedback (though suggestions on how to tweak the details of a visualization are welcome).\n\n\n\n\n\n\n\nImportant tips for giving / receiving / implementing feedback (adapted from this LinkedIn article):\n\n\n\n\n\nFor giving feedback:\n\nfocus on the strengths / weakness of the visualization itself, not the person who created it\nbalance positive and negative feedback, and start with the positives!\nstay objective when suggesting improvements (e.g. “This part might benefit from some clarity…”)\nsuggest actionable solutions and / or alternatives, rather than only problems or criticisms\n\nFor receiving feedback:\n\nreceiving feedback can be stressful – this is a very normal feeling!\nlisten carefully without disrupting / defending yourself\ntake notes, ask questions, and thank your feedback giver(s)\nevaluate your feedback objectively to decide what to keep / reject / modify\n\nFor applying feedback:\n\nprioritize feedback based on relevance, importance, and feasibility\ncreate a plan and a timeline to implement\ncritically evaluate / compare your before and after versions\nseek new feedback!\n\n\n\n\n\n\nSupplementary resources\n\nDesign and Redesign, by Fernanda Viégas & Martin Wattenberg\nA Better Path Toward Criticizing Data Visualizations, by Colin Mcnamara\nThe beauty of data visualization, a TED Talk by David McCandless (founder of information is beautiful) – this is a fun watch!"
+    "text": "Discussion Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week7.html#assignment-reminders",
     "href": "course-materials/week7.html#assignment-reminders",
     "title": "[No Lecture]",
     "section": " Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #3\nMon 02/10/2025\nSat 02/22/2025, 11:59pm PT"
   },
   {
     "objectID": "course-materials/week2.html#pre-class-prep",
     "href": "course-materials/week2.html#pre-class-prep",
-    "title": "[No Lecture]",
+    "title": "Choosing a graphic form, Fundamental chart types (part I)",
     "section": " Pre-class Prep",
-    "text": "Pre-class Prep\nNA"
+    "text": "Pre-class Prep\nComing soon!"
   },
   {
     "objectID": "course-materials/week2.html#lecture-materials",
     "href": "course-materials/week2.html#lecture-materials",
-    "title": "[No Lecture]",
+    "title": "Choosing a graphic form, Fundamental chart types (part I)",
     "section": " Lecture Materials",
-    "text": "Lecture Materials\nThere is no lecture this week!"
+    "text": "Lecture Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week2.html#discussion-materials",
     "href": "course-materials/week2.html#discussion-materials",
-    "title": "[No Lecture]",
-    "section": " Discussion Materials",
-    "text": "Discussion Materials\nAlternative text, aka alt text, makes our data visualizations accessible to a broader community. Today’s section will focus crafting effective alt text, as well as how to include it when rendering visualizations in reproducible reports, websites, etc. using publishing tools like Quarto.\n\n Week 2 discussion slides"
+    "title": "Choosing a graphic form, Fundamental chart types (part I)",
+    "section": "Discussion Materials",
+    "text": "Discussion Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week2.html#assignment-reminders",
     "href": "course-materials/week2.html#assignment-reminders",
-    "title": "[No Lecture]",
+    "title": "Choosing a graphic form, Fundamental chart types (part I)",
     "section": " Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 2)\nMon 01/13/2024\nMon 01/13/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/06/2024\nSat 01/18/2024, 11:59pm PT"
   },
   {
     "objectID": "course-materials/week9.html#pre-class-prep",
     "href": "course-materials/week9.html#pre-class-prep",
     "title": "Data visualization in JavaScript, with Dr. Allison Horst",
     "section": " Pre-class Prep",
-    "text": "Pre-class Prep\nThere’s no required prep for this week’s lecture. You will be able to make temporary edits to Allison’s Observable Notebook while in Tinker mode. If you’d like to save your changes, you may optionally create a free starter account (I chose to sign up using my GitHub credentials, but multiple options are provided), then fork the notebook."
+    "text": "Pre-class Prep\nComing soon!"
   },
   {
     "objectID": "course-materials/week9.html#lecture-materials",
     "href": "course-materials/week9.html#lecture-materials",
     "title": "Data visualization in JavaScript, with Dr. Allison Horst",
     "section": " Lecture Materials",
-    "text": "Lecture Materials\n\nWhat is Observable JS?\nFrom the Quarto documentation:\n\n“Observable JS is a set of enhancements to vanilla1 JavaScript created by Mike Bostock (also the author of D3). Observable JS is distinguished by its reactive runtime, which is especially well suited for interactive data exploration and analysis.”\n\n1vanilla JavaScript is JavaScript code that is written without the aid of any external libraries or frameworks (comparable to using only base R without additional packages, e.g. like those in the {tidyverse})\n\n\nObservable Notebook(s)\n\nEDS 240: Data visualization in JavaScript (Follow-along version) (you’ll want to Tinker with or fork this version if you want to follow along with Allison’s instruction)\nEDS 240: Data visualization in JavaScript (Key) (this version includes all the code Allison will cover, in case you need to refer to in during class or return to it afterwards)\n\n\n\nAdditional resources\n\nAdd JavaScript to your dataviz toolkit with Observable Plot: Learner Version, by Allison Horst & Ananya Roy – materials from R-Ladies Santa Barbara meetup (2023-05-24)\nIntro to Observable Plot: Exploring Taylor Swift Songs with Observable Plot, by Tanya Shapiro – materials from R-Ladies Philly workshop (2023-11-09)"
+    "text": "Lecture Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week9.html#discussion-materials",
@@ -2356,7 +2356,7 @@
     "href": "course-materials/week9.html#assignment-reminders",
     "title": "Data visualization in JavaScript, with Dr. Allison Horst",
     "section": " Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 9)\nMon 03/03/2025\nMon 03/03/2025, 11:55pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/24/2025\nSat 03/08/2025, 11:59pm PT"
   },
   {
     "objectID": "index.html#course-description",
@@ -2503,21 +2503,21 @@
     "href": "assignments.html",
     "title": "Assignments",
     "section": "",
-    "text": "Earning “Satisfactory” marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
+    "text": "Earning “Satisfactory” marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/06/2025\nSat 01/11/2025, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/06/2025\nSat 01/18/2025, 11:59pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/20/2025\nSat 02/01/2025, 11:59pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/03/2025\nSat 02/08/2025, 11:59pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/10/2025\nSat 02/22/2025, 11:59pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/24/2025\nSat 03/08/2025, 11:59pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/10/2025\nSat 03/15/2025, 11:59pm PT"
   },
   {
     "objectID": "assignments.html#assignments",
     "href": "assignments.html#assignments",
     "title": "Assignments",
     "section": "",
-    "text": "Earning “Satisfactory” marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
+    "text": "Earning “Satisfactory” marks on Self-reflections (SRs) and Homework Assignments (HWs) will determine your letter grade (e.g. A, B, etc.) for this course.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/06/2025\nSat 01/11/2025, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/06/2025\nSat 01/18/2025, 11:59pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/20/2025\nSat 02/01/2025, 11:59pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/03/2025\nSat 02/08/2025, 11:59pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/10/2025\nSat 02/22/2025, 11:59pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/24/2025\nSat 03/08/2025, 11:59pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/10/2025\nSat 03/15/2025, 11:59pm PT"
   },
   {
     "objectID": "assignments.html#end-of-class-surveys",
     "href": "assignments.html#end-of-class-surveys",
     "title": "Assignments",
     "section": "End-of-class surveys",
-    "text": "End-of-class surveys\nEnd-of-class surveys (EOCs) will become available at the end of each class (Mondays) and are due by end-of-day (11:55pm PT). Completing EOCs by the due dates / times will, in-part (along with class attendance), determine whether you earn a +/- on your course grade.\n\n\n\nEOC link\nDate Assigned\nDate Due\n\n\n\n\nEOC (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 2)\nNA\nNA\n\n\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nEOC (week 4)\nMon 01/29/2024\nMon 01/29/2024, 11:55pm PT\n\n\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nEOC (week 6)\nMon 02/12/2024\nMon 02/12/2024, 11:55pm PT\n\n\nNo lecture or EOC (week 7)\nNA\nNA\n\n\nEOC (week 8)\nMon 02/26/2024\nMon 02/26/2024, 11:55pm PT\n\n\nEOC (week 9)\nMon 03/04/2024\nMon 03/04/2024, 11:55pm PT\n\n\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT"
+    "text": "End-of-class surveys\nEnd-of-class surveys (EOCs) will become available at the end of each class (Mondays) and are due by end-of-day (11:55pm PT). Completing EOCs by the due dates / times will, in-part (along with class attendance), determine whether you earn a +/- on your course grade.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEOC link\nDate Assigned\nDate Due\n\n\n\n\nEOC (week 1)\nMon 01/06/2025\nMon 01/06/2025, 11:55pm PT\n\n\nEOC (week 2)\nMon 01/13/2025\nMon 01/13/2025, 11:55pm PT\n\n\nNo lecture or EOC (week 3)\nNA\nNA\n\n\nEOC (week 4)\nMon 01/27/2025\nMon 01/27/2025, 11:55pm PT\n\n\nEOC (week 5)\nMon 02/03/2025\nMon 02/03/2025, 11:55pm PT\n\n\nEOC (week 6)\nMon 02/10/2025\nMon 02/10/2025, 11:55pm PT\n\n\nNo lecture or EOC (week 7)\nNA\nNA\n\n\nEOC (week 8)\nMon 02/24/2025\nMon 02/24/2025, 11:55pm PT\n\n\nEOC (week 9)\nMon 03/03/2025\nMon 03/03/2025, 11:55pm PT\n\n\nEOC (week 10)\nMon 03/10/2025\nMon 03/10/2025, 11:55pm PT"
   },
   {
     "objectID": "assignments.html#grade-tracker",
@@ -2692,28 +2692,28 @@
     "href": "course-materials/week8.html#pre-class-prep",
     "title": "Data storytelling, People as data",
     "section": " Pre-class Prep",
-    "text": "Pre-class Prep\nNo pre-class prep necessary this week!"
+    "text": "Pre-class Prep\nComing soon!"
   },
   {
     "objectID": "course-materials/week8.html#lecture-materials",
     "href": "course-materials/week8.html#lecture-materials",
     "title": "Data storytelling, People as data",
     "section": " Lecture Materials",
-    "text": "Lecture Materials\n\n\n\nData storytelling\n lecture 8.1 slides\n\n\n\n\nPeople as data\n lecture 8.2 slides"
+    "text": "Lecture Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week8.html#discussion-materials",
     "href": "course-materials/week8.html#discussion-materials",
     "title": "Data storytelling, People as data",
     "section": " Discussion Materials",
-    "text": "Discussion Materials\nSimilar to last week’s section, we’ll be discussing progress on our data visualizations and providing constructive feedback to one another. Please plan to bring the following to discussion:\n\none of your two remaining visualizations (i.e. not the one you brought to section last week)\nthe question that you’re trying to answer\n\nAdd your visualization and your question to the appropriate Google slide deck (each slide is labeled with a name) before section begins:\n\n10am section slides\n11am section slides\n\nYou should be prepared to discuss your design choices and receive constructive feedback from your peers. Be sure to review the tips on how to give, receive, and implement feedback."
+    "text": "Discussion Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week8.html#assignment-reminders",
     "href": "course-materials/week8.html#assignment-reminders",
     "title": "Data storytelling, People as data",
     "section": " Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 8)\nMon 02/26/2024\nMon 02/26/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/26/2024\nSat 03/09/2024, 11:59pm PT"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 8)\nMon 02/24/2025\nMon 02/24/2025, 11:55pm PT\n\n\nHW\nHomework Assignment #4\nMon 02/24/2025\nSat 03/08/2025, 11:59pm PT"
   },
   {
     "objectID": "course-materials/week1.html#pre-class-prep",
@@ -2741,91 +2741,91 @@
     "href": "course-materials/week1.html#assignment-reminders",
     "title": "Course logistics, Intro, {ggplot2} review",
     "section": " Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEnd-of-class survey (week 1)\nMon 01/08/2024\nMon 01/08/2024, 11:55pm PT\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/08/2024\nSat 01/13/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/08/2024\nSat 01/20/2024, 11:59pm PT"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEnd-of-class survey (week 1)\nMon 01/06/2024\nMon 01/06/2024, 11:55pm PT\n\n\nSR\nPre-course reflection (SR #1)\nMon 01/06/2024\nSat 01/11/2024, 11:59pm PT\n\n\nHW\nHomework Assignment #1\nMon 01/06/2024\nSat 01/18/2024, 11:59pm PT"
   },
   {
     "objectID": "course-materials/week3.html#pre-class-prep",
     "href": "course-materials/week3.html#pre-class-prep",
-    "title": "Choosing a graphic form, Fundamental chart types (part I)",
+    "title": "[No Lecture]",
     "section": " Pre-class Prep",
-    "text": "Pre-class Prep\nBefore coming to class, you’ll need to install some packages, download data, and request a US Census Bureau API key. For step-by-step instructions, unfold the following note (collapsed to save space):\n\n\n\n\n\n\nStep-by-step pre-class prep instructions\n\n\n\n\n\n\nA. Install required packages\n\ninstall.packages(\"chron\") # for working with dates / times\ninstall.packages(\"naniar\") # tools for exploring & handing missing data\ninstall.packages(\"tidytuesdayR\") # used to download TidyTuesday data\ninstall.packages(\"tidycensus\") # an R package that allows users to interface with a select number of the US Census Bureau’s data APIs and return tidyverse-ready data frames\ninstall.packages(\"ggridges\") # {ggplot2} extension for creating ridgeline plots\ninstall.packages(\"gghighlight\") # {ggplot2} extension for highlighting geoms\ninstall.packages(\"ggbeeswarm\") # {ggplot2} extension for creating categorical scatter (violin point) plots\ninstall.packages(\"see\") # {ggplot2} extension for model visualization (we'll be using it for it's geom, geom_violindot())\ninstall.packages(\"scales\") # provides the internal scaling infrastructure used by ggplot2, and gives you tools to override the default breaks, labels, transformations and palettes (installed automatically with {ggplot2} or {tidyverse})\n\n\n\nB. Download data\n\nCounty-level Lyme disease data from 2001-2020, made available by the CDC (read more on this CDC web page)\n\nsave the downloaded data (LD-Case-Counts-by-County-01-20.csv) to your class repo at the file path: EDS-240-class-examples/week3/data/LD-Case-Counts-by-County-01-20.csv\n\n\n\n\nC. Request a US Census Bureau API key\n\nTo use the {tidycensus} package to access US Census Bureau data, you’ll first need to request and activate an API key. Do so by following these steps:\n\nRequest an API key at http://api.census.gov/data/key_signup.html\nAfter a short period of time, you should receive an email with your key (it may be helpful to star/bookmark that email), and click the included link to activate your key (Note: if you get an error when activating your key, close your browser window and try clicking the activation link again)\n\nFor security purposes, you should never push any API keys to GitHub. To prevent us from accidentally pushing our key(s), we can save it to a separate file which we’ll add to our .gitignore. Do so by following these steps:\n\n\nCreate a week3/ folder in the root directory of your class repo\nAdd a file to your week3/ folder called KEYS.R, and save your API key to an object name like this:\n\n\n\n\n~/week3/KEYS.R\n\ncensusKEY &lt;- \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\"\n\n\n\nAdd KEYS.R to your .gitignore\n\n\n\n\n.gitignore\n\n/week3/KEYS.R\n\n\n\nSave .gitignore (once saved, you should see the newly added KEYS.R file disappear from your Git pane in RStudio, and a modified .gitignore appear). Stage/add, commit, and push this .gitignore file to GitHub\n\nIn class, we’ll source our key (by running source(here::here(\"week3\", \"KEYS.R\"))) into any scripts / Qmd files, where required."
+    "text": "Pre-class Prep\nNA"
   },
   {
     "objectID": "course-materials/week3.html#lecture-materials",
     "href": "course-materials/week3.html#lecture-materials",
-    "title": "Choosing a graphic form, Fundamental chart types (part I)",
+    "title": "[No Lecture]",
     "section": " Lecture Materials",
-    "text": "Lecture Materials\nWeek 3 instruction is broken down into three lessons:\n\n\n\nChoosing graphic forms\n lecture 3.1 slides\n\n\n\n\nVisualizing distributions\n lecture 3.2 slides\n\n\n\n\nVisualizing evolution\n lecture 3.3 slides\n\n\n\n\nToday’s lectures are inspired by and draw largely on materials created by a number of other educators, including Albert Cairo and his book The Truthful Art, Meghan Hall and her course, CMU 36-315: Statistical Graphics & Visualization, as well as information curated by Yan Holtz & Conor Healy as part of their From Data to Viz project."
+    "text": "Lecture Materials\nThere is no lecture this week!"
   },
   {
     "objectID": "course-materials/week3.html#discussion-materials",
     "href": "course-materials/week3.html#discussion-materials",
-    "title": "Choosing a graphic form, Fundamental chart types (part I)",
-    "section": "Discussion Materials",
-    "text": "Discussion Materials\n\nPre-discussion Prep\nBefore coming to section, please be sure to:\n\nInstall the following packages:\n\n\ninstall.packages(\"geofacet\") # facet data for different geographical regions using panels arranged in shapes that mimic geographic topology\n\n\n(Optional) Install the ColorPick Eyedropper Google Chrome extension, which makes it easy to select color values from webpages.\n\n\n\nBackground\nThe U.S. Drought Monitor (USDM) is a collection of measures that allows experts to assess droughts in the United States. It is produced through a partnership between the National Drought Mitigation Center at the University of Nebraska-Lincoln, the United States Department of Agriculture and the National Oceanic and Atmospheric Administration. You can download and explore comprehensive statistics through their data portal.\nThe TidyTuesday community wrangled and visualized USDM data back in 2021 (2021-07-20, week 30), so we’ll use the {tidytuesdayR} package to import some minimally-tidied data (TidyTuesday always provides the cleaning script that the organizers used to pre-process any of the data provided – these data comprise three separate data sets, which were converted from wide to long format, joined together, and had some columns renamed).\nOver the course of the next two discussion sections (week 3 & week 4), you’ll be recreating the following data visualization produced by U.S. Drought Monitor, which you can find on the Droughts in California Wikipedia page:\n\n\n\n\n\n\n\n\n\n\n\nThis week, we’ll focus on the data layer, geometric layer, and scales. Next week, we’ll work on tweaking the theme (all non-data elements) to get it to look just like the U.S. Drought Monitor’s version.\n\n\nSolution\n\n\n\nYou’ll get the most out of discussion section if you physically type out the code yourself (rather than copying / pasting)!\n\n\n\n\n\n\n\n\n\n\nComplete code for week 3 discussion\n\n\n\n\n\n\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                                    setup                                 ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n#..........................load packages.........................\nlibrary(tidyverse)\n\n#..........................import data...........................\ntuesdata &lt;- tidytuesdayR::tt_load('2021-07-20')\ndrought &lt;- tuesdata$drought\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                            wrangle drought data                          ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\ndrought_clean &lt;- drought |&gt;\n\n  # select cols of interest & update names as needed ----\n  select(date = valid_start, state_abb, drought_lvl, area_pct) |&gt; \n\n  # add year, month & day cols using {lubridate} fxns ----\n  # NOTE: this step isn't necessary for our plot, but I'm including as examples of how to extract different date elements from a object of class Date using {lubridate}~ ----\n  mutate(year = year(date),\n         month = month(date, label = TRUE, abbr = TRUE),\n         day = day(date)) |&gt;\n\n  # add drought level conditions names ----\n  mutate(drought_lvl_long = factor(drought_lvl,\n                            levels = c(\"D4\", \"D3\", \"D2\", \"D1\",\"D0\", \"None\"),\n                            labels = c(\"(D4) Exceptional\", \"(D3) Extreme\",\n                                       \"(D2) Severe\", \"(D1) Moderate\", \"(D0) Abnormally Dry\", \n                                       \"No Drought\"))) |&gt;\n  \n  # reorder cols ----\n  select(date, year, month, day, state_abb, drought_lvl, drought_lvl_long, area_pct)\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##       create stacked area plot of CA drought conditions through time     ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\ndrought_clean |&gt; \n  \n  # remove drought_lvl \"None\" & filter for just CA ----\n  filter(drought_lvl != \"None\",\n         state_abb == \"CA\") |&gt; \n  \n  # create ggplot ----\n  ggplot(mapping = aes(x = date, y = area_pct, fill = drought_lvl_long)) +\n  \n  # reverse order of groups so level D4 is closest to x-axis ----\n  geom_area(position = position_stack(reverse = TRUE)) +\n  \n  # update colors to match US Drought Monitor (colors selected using ColorPick Eyedropper from original USDM data viz) ----\n  scale_fill_manual(values = c(\"#853904\", \"#FF0000\", \"#FFC100\", \"#FFD965\", \"#FFFF00\")) +\n  \n  # set x-axis breaks & remove padding between data and x-axis ----\n  scale_x_date(breaks = scales::breaks_pretty(n = 10),\n               expand = c(0, 0)) +\n\n  # set y-axis breaks & convert values to percentages & & remove padding between data and y-axis----\n  scale_y_continuous(breaks = seq(0, 100, by = 10),\n                     labels = scales::label_percent(scale = 1),\n                     expand = c(0, 0)) +\n  \n  # add title ----\n  labs(title = \"Drought area in California\") \n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##            BONUS: using {geofacet} to plot data for all states           ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n# NOTE 2024-01-24: The following code works for Sam, but apparently no one else! I'll keep digging into this and update folks when I have a solution\n\n#......remove HI & AK (no data) and also DC from preset grid.....\nmygrid &lt;- geofacet::us_state_grid1 |&gt;\n  filter(!code %in% c(\"DC\", \"HI\", \"AK\"))\n\n#..............................plot..............................\n\n# NOTE: this takes a minute to render!\n\ndrought_clean |&gt; \n  filter(drought_lvl != \"None\") |&gt; \n  ggplot(aes(x = date, y = area_pct, fill = drought_lvl_long)) +\n  geom_area(position = position_stack(reverse = TRUE)) +\n  geofacet::facet_geo(~state_abb, grid = mygrid) +\n  scale_fill_manual(values = c(\"#853904\", \"#FF0000\", \"#FFC100\", \"#FFD965\", \"#FFFF00\"))"
+    "title": "[No Lecture]",
+    "section": " Discussion Materials",
+    "text": "Discussion Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week3.html#assignment-reminders",
     "href": "course-materials/week3.html#assignment-reminders",
-    "title": "Choosing a graphic form, Fundamental chart types (part I)",
+    "title": "[No Lecture]",
     "section": " Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 3)\nMon 01/22/2024\nMon 01/22/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #2\nMon 01/22/2024\nSat 02/03/2024, 11:59pm PT"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #2\nMon 01/20/2024\nSat 02/01/2024, 11:59pm PT"
   },
   {
     "objectID": "course-materials/week6.html#pre-class-prep",
     "href": "course-materials/week6.html#pre-class-prep",
     "title": "Enhancing visualizations (part II)",
     "section": " Pre-class Prep",
-    "text": "Pre-class Prep\nPlease be sure to complete the following before class:\n\nA. Install required packages\n\ninstall.packages(\"monochromeR\") # a package for creating monochrome color palettes and easily converting rgba values to hex codes (and also some other useful functions)\ninstall.packages(\"showtext\") # for using fonts more easily in R graphs\ninstall.packages(\"ggtext\") # improved text rendering support for ggplot2\ninstall.packages(\"ggrepel\") # ggplot2 extension to repel overlapping labels\ninstall.packages(\"googlesheets4\") # provides an R interface to Google Sheets via the Sheets API v4\n\n\n\nB. Download Data\nIn case we have trouble with the {googlesheets4} API, you can download and read in the following data files as normal (i.e. using readr::read_csv()):\n\nmetabolism-foraging-data.csv\nmono.csv\n\nIf you choose (or need) to download and read in these files, be sure to save them to your class repo at ~/week6/data/.\n\n\nC. Download Font Awesome fonts\nIn addition to using Google Fonts in our ggplots, we will also be using some Font Awesome icons! To do so, you’ll need to download the Font Awesome font files and save them to your class repo. Do so by following these steps:\n\nDownload Font Awesome fonts: Go to https://fontawesome.com/download and download the latest release available. Choose the Free For Desktop option.\nUnzip the downloaded file: You should see a folder inside called otfs/ – this contains three .otf files (aka OpenType font format files)\nCopy the three .otf files to your class repo: I recommend creating a fonts/ folder inside your root directory, and dropping all three of them in there (e.g. ~/fonts/*.otf)"
+    "text": "Pre-class Prep\nComing soon!"
   },
   {
     "objectID": "course-materials/week6.html#lecture-materials",
     "href": "course-materials/week6.html#lecture-materials",
     "title": "Enhancing visualizations (part II)",
     "section": " Lecture Materials",
-    "text": "Lecture Materials\n\n\n\nTypography\n lecture 6.1 slides\n\n\n\n\nAnnotations\n lecture 6.2 slides"
+    "text": "Lecture Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week6.html#discussion-materials",
     "href": "course-materials/week6.html#discussion-materials",
     "title": "Enhancing visualizations (part II)",
     "section": " Discussion Materials",
-    "text": "Discussion Materials\nThis week, you’ll move beyond the fundamental graphic forms that we covered in lecture and discuss some advanced chart types. These are great options to keep in mind as you continue working on your final project (HW #4)!\n\n Week 6 discussion slides"
+    "text": "Discussion Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week6.html#assignment-reminders",
     "href": "course-materials/week6.html#assignment-reminders",
     "title": "Enhancing visualizations (part II)",
     "section": " Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 6)\nMon 02/12/2024\nMon 02/12/2024, 11:55pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/12/2024\nSat 02/24/2024, 11:59pm PT"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 6)\nMon 02/10/2025\nMon 02/10/2025, 11:55pm PT\n\n\nHW\nHomework Assignment #3\nMon 02/10/2025\nSat 02/22/2025, 11:59pm PT"
   },
   {
     "objectID": "course-materials/week5.html#pre-class-prep",
     "href": "course-materials/week5.html#pre-class-prep",
     "title": "Enhancing visualizations (part I)",
     "section": " Pre-class Prep",
-    "text": "Pre-class Prep\nPlease be sure to complete the following before class:\n\nA. Install required packages\n\ninstall.packages(\"paletteer\") # a comprehensive collection of color palettes in R using a common interface\ninstall.packages(\"viridis\") # Colorblind-Friendly Color Maps for R\ninstall.packages(\"RColorBrewer\") # ColorBrewer Palettes\ninstall.packages(\"tigris\") # for downloading and using Census TIGER/Line shapefiles in R\n\n\n\nB. Download data\n\nCounty-level precipitation data (Jan 2019 - Dec 2023) for the contiguous U.S, made available by NOAA National Centers for Environmental Information (NCEI) (the download buttons are located just beneath the rendered map – choose the CSV option)\n\nrename the data file as county-jan19-dec23-precip.csv and save it to your class repo at the file path: EDS-240-class-examples/week5/data/county-jan19-dec23-precip.csv\n\n\n\n\nC. Install Google Chrome extensions (optional, but recommended)\nI’ll be using both of these (really wonderful and easy-to-use) tools during lecture and encourage you to install them!\n\nLet’s get color blind: simulates different color deficiencies in the browser\nGrayscale the Web: turn specific sites or tabs grayscale\nColorPick Eyedropper: a browser-based color chooser tool (I recommended that you install this for week 3 discussion, so you may already have it!)"
+    "text": "Pre-class Prep\nComing soon!"
   },
   {
     "objectID": "course-materials/week5.html#lecture-materials",
     "href": "course-materials/week5.html#lecture-materials",
     "title": "Enhancing visualizations (part I)",
     "section": " Lecture Materials",
-    "text": "Lecture Materials\nWeek 5 instruction is broken down into three lessons:\n\n\n\nWhat makes a good viz?\n lecture 5.1 slides\n\n\n\n\nColors\n lecture 5.2 slides\n\n\n\n\nColors & Choropleths\n lecture 5.3 slides"
+    "text": "Lecture Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week5.html#discussion-materials",
     "href": "course-materials/week5.html#discussion-materials",
     "title": "Enhancing visualizations (part I)",
     "section": " Discussion Materials",
-    "text": "Discussion Materials\nThis week, you’ll be prepping a data visualization using the data you found / wrangled as part of your final project (HW #4). This does not need to be a polished viz, but should focus on clarity of message. You’ll be discussing each others’ visualizations and commenting on what the main takeaways are (ideally, you’ll walk away with the same message as intended by the plot-creator!). Please complete the following ahead of section:\n\nchoose a well-thought out question that you’d like to answer with your selected data set(s)\nhand-draw a plot that you want to create (this can be an important first step before even touching any code)\nturn your hand-drawn plot into a ggplot in R!\nsend both your hand-drawn plot and your resulting ggplot to Sevan via DM (Slack) by Tuesday (2/6) evening"
+    "text": "Discussion Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week5.html#assignment-reminders",
     "href": "course-materials/week5.html#assignment-reminders",
     "title": "Enhancing visualizations (part I)",
     "section": " Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 5)\nMon 02/05/2024\nMon 02/05/2024, 11:55pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/05/2024\nSat 02/10/2024, 11:59pm PT"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 5)\nMon 02/03/2025\nMon 02/03/2024, 11:55pm PT\n\n\nSR\nMid-course reflection (SR #2)\nMon 02/03/2025\nSat 02/08/2024, 11:59pm PT"
   },
   {
     "objectID": "course-materials/lecture-slides/week1.1-logistics-slides.html#title-slide",
@@ -4797,29 +4797,29 @@
   {
     "objectID": "course-materials/week10.html#pre-class-prep",
     "href": "course-materials/week10.html#pre-class-prep",
-    "title": "Misc. chart types, Prompt engineering, Review",
+    "title": "Grab bag, Catch up & Review",
     "section": " Pre-class Prep",
-    "text": "Pre-class Prep\nPlease be sure to complete the following before class:\n\nA. Install required packages\n\nlibrary(waffle) # for making waffle (square pie) charts in R\nlibrary(ggbump) # a geom for creating bump charts\n\n\n\nB. Prompt engineering prep\nTo follow along with Sevan’s lesson on ChatGPT prompt engineering for data wrangling & visualization, you’ll need to first:\n\nCreate a free OpenAI account (if you don’t already have one), or make sure you know your login credentials\nDownload this .xlsx data file and save it somewhere you can easily find"
+    "text": "Pre-class Prep\nComing soon!"
   },
   {
     "objectID": "course-materials/week10.html#lecture-materials",
     "href": "course-materials/week10.html#lecture-materials",
-    "title": "Misc. chart types, Prompt engineering, Review",
+    "title": "Grab bag, Catch up & Review",
     "section": " Lecture Materials",
-    "text": "Lecture Materials\n\n\n\nMisc. charts\n lecture 10.1 slides\n\n\n\n\nPrompt engineering\n lecture 10.2 slides\n\n\n\n\nQuarter recap\n lecture 10.3 slides"
+    "text": "Lecture Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week10.html#discussion-materials",
     "href": "course-materials/week10.html#discussion-materials",
-    "title": "Misc. chart types, Prompt engineering, Review",
+    "title": "Grab bag, Catch up & Review",
     "section": " Discussion Materials",
-    "text": "Discussion Materials\nLet’s celebrate all of our hard work with a data visualization showcase! Everyone will have ~2 minutes to show off their creations. Please add your three data visualizations (option 1) or infographic (option 2) to your assigned slide (linked below) and come prepared to briefly describe the following:\n\nDescribe your data and where you found it\nWhat question(s) did you set out to answer?\nOne thing that you’re super proud of figuring out / creating\nOne thing that you wanted to implement but couldn’t quite make happen (yet)\n\nFind your slide here:\n\n10am section slides\n11am section slides"
+    "text": "Discussion Materials\nComing soon!"
   },
   {
     "objectID": "course-materials/week10.html#assignment-reminders",
     "href": "course-materials/week10.html#assignment-reminders",
-    "title": "Misc. chart types, Prompt engineering, Review",
+    "title": "Grab bag, Catch up & Review",
     "section": " Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 10)\nMon 03/11/2024\nMon 03/11/2024, 11:55pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/11/2024\nSat 03/16/2024, 11:59pm PT"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEOC\nEOC (week 10)\nMon 03/10/2025\nMon 03/10/2025, 11:55pm PT\n\n\nSR\nEnd-of-course reflection (SR #3)\nMon 03/10/2025\nSat 03/15/2025, 11:59pm PT"
   }
 ]

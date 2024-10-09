@@ -1,8 +1,10 @@
 ---
-title: "Misc. chart types, Prompt engineering, Review"
+title: "Grab bag, Catch up & Review"
 subtitle: "Week 10"
-description: "Monday March 11^th^, 2024"
+description: "Monday March 10^th^, 2025"
 ---
+
+<!-- OLD TITLE: "Misc. chart types, Prompt engineering, Review" -->
 
 ```{r}
 #| eval: true 
@@ -19,79 +21,84 @@ I hope you all feel this way after another quarter of classes under your belts! 
 
 ## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}
 
-Please be sure to complete the following before class:
+*Coming soon!* 
+<!-- Please be sure to complete the following before class: -->
 
-### A. Install required packages
+<!-- ### A. Install required packages -->
 
-```{r}
-#| eval: false
-#| echo: true
-#| code-line-numbers: false
-library(waffle) # for making waffle (square pie) charts in R
-library(ggbump) # a geom for creating bump charts
-```
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- #| code-line-numbers: false -->
+<!-- library(waffle) # for making waffle (square pie) charts in R -->
+<!-- library(ggbump) # a geom for creating bump charts -->
+<!-- ``` -->
 
-### B. Prompt engineering prep
+<!-- ### B. Prompt engineering prep -->
 
-To follow along with Sevan's lesson on ChatGPT prompt engineering for data wrangling & visualization, you'll need to first:
+<!-- To follow along with Sevan's lesson on ChatGPT prompt engineering for data wrangling & visualization, you'll need to first: -->
 
-1. [Create a free OpenAI account](https://chat.openai.com/auth/login) (if you don't already have one), or make sure you know your login credentials
-2. [Download this `.xlsx` data file](https://docs.google.com/spreadsheets/d/1VeWF01_2--KXS7sB-IfPGVNNkGdGcGpN/edit?usp=sharing&ouid=103292946495291407556&rtpof=true&sd=true) and save it somewhere you can easily find
+<!-- 1. [Create a free OpenAI account](https://chat.openai.com/auth/login) (if you don't already have one), or make sure you know your login credentials -->
+<!-- 2. [Download this `.xlsx` data file](https://docs.google.com/spreadsheets/d/1VeWF01_2--KXS7sB-IfPGVNNkGdGcGpN/edit?usp=sharing&ouid=103292946495291407556&rtpof=true&sd=true) and save it somewhere you can easily find -->
 
 ## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
-::: {.grid}
+*Coming soon!* 
 
-::: {.g-col-12 .g-col-md-4}
-::: {.center-text}
-[**Misc. charts**]{.teal-text .body-text-m}
+<!-- ::: {.grid} -->
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 10.1 slides](lecture-slides/week10.1-misc-charts-slides.qmd){.btn role="button" target="_blank"} 
-:::
-:::
+<!-- ::: {.g-col-12 .g-col-md-4} -->
+<!-- ::: {.center-text} -->
+<!-- [**Misc. charts**]{.teal-text .body-text-m} -->
 
-::: {.g-col-12 .g-col-md-4}
-::: {.center-text}
-[**Prompt engineering**]{.teal-text .body-text-m}
+<!-- [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 10.1 slides](lecture-slides/week10.1-misc-charts-slides.qmd){.btn role="button" target="_blank"}  -->
+<!-- ::: -->
+<!-- ::: -->
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 10.2 slides](https://docs.google.com/presentation/d/11i_Q33FCaKlQYNlGUpzOa8zb9fpfxB3eTFfD6cjdlZo/edit#slide=id.p){.btn role="button" target="_blank"} 
-:::
-:::
+<!-- ::: {.g-col-12 .g-col-md-4} -->
+<!-- ::: {.center-text} -->
+<!-- [**Prompt engineering**]{.teal-text .body-text-m} -->
 
-::: {.g-col-12 .g-col-md-4}
-::: {.center-text}
-[**Quarter recap**]{.teal-text .body-text-m}
+<!-- [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 10.2 slides](https://docs.google.com/presentation/d/11i_Q33FCaKlQYNlGUpzOa8zb9fpfxB3eTFfD6cjdlZo/edit#slide=id.p){.btn role="button" target="_blank"}  -->
+<!-- ::: -->
+<!-- ::: -->
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 10.3 slides](lecture-slides/week10.3-recap.qmd){.btn role="button" target="_blank"} 
-:::
-:::
+<!-- ::: {.g-col-12 .g-col-md-4} -->
+<!-- ::: {.center-text} -->
+<!-- [**Quarter recap**]{.teal-text .body-text-m} -->
 
-:::
+<!-- [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 10.3 slides](lecture-slides/week10.3-recap.qmd){.btn role="button" target="_blank"}  -->
+<!-- ::: -->
+<!-- ::: -->
+
+<!-- ::: -->
 
 ## {{< fa comments title="two speech bubbles" >}} Discussion Materials {#discussion-materials}
 
-Let's celebrate all of our hard work with a data visualization showcase! Everyone will have ~2 minutes to show off their creations. Please add your three data visualizations (option 1) or infographic (option 2) to your assigned slide (linked below) and come prepared to *briefly* describe the following:
+*Coming soon!*
 
-1. Describe your data and where you found it
-2. What question(s) did you set out to answer?
-3. One thing that you're super proud of figuring out / creating
-4. One thing that you wanted to implement but couldn't quite make happen (yet)
+<!-- Let's celebrate all of our hard work with a data visualization showcase! Everyone will have ~2 minutes to show off their creations. Please add your three data visualizations (option 1) or infographic (option 2) to your assigned slide (linked below) and come prepared to *briefly* describe the following: -->
 
-Find your slide here:
+<!-- 1. Describe your data and where you found it -->
+<!-- 2. What question(s) did you set out to answer? -->
+<!-- 3. One thing that you're super proud of figuring out / creating -->
+<!-- 4. One thing that you wanted to implement but couldn't quite make happen (yet) -->
 
-- [10am section slides](https://docs.google.com/presentation/d/1uGNLzMlspbj1Pn0qQdF7CoD2RA0eIl8DHj5tQyXh3qE/edit?usp=sharing)
-- [11am section slides](https://docs.google.com/presentation/d/1u31owoOiWuKI_ZEdebCpytsr1s2FtaKY2UzM0T59RAg/edit?usp=sharing)
+<!-- Find your slide here: -->
+
+<!-- - [10am section slides](https://docs.google.com/presentation/d/1uGNLzMlspbj1Pn0qQdF7CoD2RA0eIl8DHj5tQyXh3qE/edit?usp=sharing) -->
+<!-- - [11am section slides](https://docs.google.com/presentation/d/1u31owoOiWuKI_ZEdebCpytsr1s2FtaKY2UzM0T59RAg/edit?usp=sharing) -->
 
 ## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
-<!-- | Assignment Type | Assignment Title                 | Date Assigned  | Date Due                   | -->
-<!-- |:---------------:|----------------------------------|----------------|----------------------------| -->
-<!-- | EOC             | EOC (week 10)                    | Mon 03/11/2024 | Mon 03/11/2024, 11:55pm PT | -->
-<!-- | SR              | End-of-course reflection (SR #3) | Mon 03/11/2024 | Sat 03/16/2024, 11:59pm PT | -->
+| Assignment Type | Assignment Title                 | Date Assigned  | Date Due                   |
+|:---------------:|----------------------------------|----------------|----------------------------|
+| EOC             | EOC (week 10)                    | Mon 03/10/2025 | Mon 03/10/2025, 11:55pm PT |
+| SR              | End-of-course reflection (SR #3) | Mon 03/10/2025 | Sat 03/15/2025, 11:59pm PT |
 
-| Assignment Type | Assignment Title                                                                | Date Assigned  | Date Due        |
-|:---------------:|----------------------------------------------------------------------|----------------|----------------------------|
-| EOC             | [EOC (week 10)](https://forms.gle/dEmgAhCMDnnhbNqK7)                 | Mon 03/11/2024 | Mon 03/11/2024, 11:55pm PT |
-| SR              | [End-of-course reflection (SR #3)](../assignments/SR3-endcourse.qmd) | Mon 03/11/2024 | Sat 03/16/2024, 11:59pm PT |
+<!-- | Assignment Type | Assignment Title                                                                      | Date Assigned  | Date Due  | -->
+<!-- |:---------------:|----------------------------------------------------------------------|----------------|----------------------------| -->
+<!-- | EOC             | [EOC (week 10)](tbd)                                                 | Mon 03/10/2025 | Mon 03/11/2025, 11:55pm PT | -->
+<!-- | SR              | [End-of-course reflection (SR #3)](../assignments/SR3-endcourse.qmd) | Mon 03/10/2025 | Sat 03/15/2025, 11:59pm PT | -->
 
        

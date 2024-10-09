@@ -1,7 +1,7 @@
 ---
 title: "Course logistics, Intro, `{ggplot2}` review"
 subtitle: "Week 1"
-description: "Monday January 8^th^, 2024"
+description: "Monday January 6^th^, 2025"
 ---
 
 ```{r}
@@ -158,14 +158,14 @@ You'll get the most out of discussion section if you physically type out the cod
 
 ## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
-<!-- | Assignment Type | Assignment Title                | Date Assigned  | Date Due                   | -->
-<!-- |:---------------:|---------------------------------|----------------|----------------------------| -->
-<!-- | EOC             | End-of-class survey (week 1)    | Mon 01/08/2024 | Mon 01/08/2024, 11:55pm PT | -->
-<!-- | SR              | Pre-course reflection (SR #1)   | Mon 01/08/2024 | Sat 01/13/2024, 11:59pm PT | -->
-<!-- | HW              | Homework Assignment #1          | Mon 01/08/2024 | Sat 01/20/2024, 11:59pm PT |  -->
+| Assignment Type | Assignment Title                | Date Assigned  | Date Due                   |
+|:---------------:|---------------------------------|----------------|----------------------------|
+| EOC             | End-of-class survey (week 1)    | Mon 01/06/2024 | Mon 01/06/2024, 11:55pm PT |
+| SR              | Pre-course reflection (SR #1)   | Mon 01/06/2024 | Sat 01/11/2024, 11:59pm PT |
+| HW              | Homework Assignment #1          | Mon 01/06/2024 | Sat 01/18/2024, 11:59pm PT |
 
-| Assignment Type | Assignment Title                                                       |  Date Assigned | Date Due                   |
-|:---------------:|------------------------------------------------------------------------|----------------|----------------------------|
-| EOC             | [End-of-class survey (week 1)](https://forms.gle/aPGfCircFN1AZfSe9)    | Mon 01/08/2024 | Mon 01/08/2024, 11:55pm PT |
-| SR              | [Pre-course reflection (SR #1)](../assignments/SR1-precourse.qmd)      | Mon 01/08/2024 | Sat 01/13/2024, 11:59pm PT |
-| HW              | [Homework Assignment #1](../assignments/HW1.qmd)                       | Mon 01/08/2024 | Sat 01/20/2024, 11:59pm PT |
+<!-- | Assignment Type | Assignment Title                                                       |  Date Assigned | Date Due                   | -->
+<!-- |:---------------:|------------------------------------------------------------------------|----------------|----------------------------| -->
+<!-- | EOC             | [End-of-class survey (week 1)](tbd)    | Mon 01/06/2024 | Mon 01/06/2024, 11:55pm PT | -->
+<!-- | SR              | [Pre-course reflection (SR #1)](../assignments/SR1-precourse.qmd)      | Mon 01/06/2024 | Sat 01/11/2024, 11:59pm PT | -->
+<!-- | HW              | [Homework Assignment #1](../assignments/HW1.qmd)                       | Mon 01/06/2024 | Sat 01/18/2024, 11:59pm PT | -->

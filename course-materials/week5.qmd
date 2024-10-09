@@ -1,7 +1,7 @@
 ---
 title: "Enhancing visualizations (part I)"
 subtitle: "Week 5"
-description: "Monday February 5^th^, 2024"
+description: "Monday February 3^rd^, 2025"
 ---
 
 ```{r}
@@ -19,33 +19,37 @@ knitr::include_graphics("../images/horst-ggplot-masterpiece.png")
 
 ## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}
 
-Please be sure to complete the following before class:
+*Coming soon!*
 
-### A. Install required packages
+<!-- Please be sure to complete the following before class: -->
 
-```{r}
-#| eval: false
-#| echo: true
-#| code-line-numbers: false
-install.packages("paletteer") # a comprehensive collection of color palettes in R using a common interface
-install.packages("viridis") # Colorblind-Friendly Color Maps for R
-install.packages("RColorBrewer") # ColorBrewer Palettes
-install.packages("tigris") # for downloading and using Census TIGER/Line shapefiles in R
-```
+<!-- ### A. Install required packages -->
 
-### B. Download data
- 
-- [County-level precipitation data (Jan 2019 - Dec 2023) for the contiguous U.S](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202312/60/value), made available by [NOAA National Centers for Environmental Information (NCEI)](https://www.ncei.noaa.gov/) (the download buttons are located just beneath the rendered map -- **choose the CSV option**)
-  - rename the data file as `county-jan19-dec23-precip.csv` and save it to your class repo at the file path: `EDS-240-class-examples/week5/data/county-jan19-dec23-precip.csv`
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- #| code-line-numbers: false -->
+<!-- install.packages("paletteer") # a comprehensive collection of color palettes in R using a common interface -->
+<!-- install.packages("viridis") # Colorblind-Friendly Color Maps for R -->
+<!-- install.packages("RColorBrewer") # ColorBrewer Palettes -->
+<!-- install.packages("tigris") # for downloading and using Census TIGER/Line shapefiles in R -->
+<!-- ``` -->
 
-### C. Install Google Chrome extensions (optional, but recommended)
+<!-- ### B. Download data -->
 
-I'll be using both of these (really wonderful and easy-to-use) tools during lecture and encourage you to install them!
+<!-- - [County-level precipitation data (Jan 2019 - Dec 2023) for the contiguous U.S](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/mapping/110/pcp/202312/60/value), made available by [NOAA National Centers for Environmental Information (NCEI)](https://www.ncei.noaa.gov/) (the download buttons are located just beneath the rendered map -- **choose the CSV option**) -->
+<!--   - rename the data file as `county-jan19-dec23-precip.csv` and save it to your class repo at the file path: `EDS-240-class-examples/week5/data/county-jan19-dec23-precip.csv` -->
 
-1. **[Let's get color blind](https://chromewebstore.google.com/detail/lets-get-color-blind/bkdgdianpkfahpkmphgehigalpighjck)**: simulates different color deficiencies in the browser
-2. **[Grayscale the Web](https://chromewebstore.google.com/detail/grayscale-the-web-save-si/mblmpdpfppogibmoobibfannckeeleag)**: turn specific sites or tabs grayscale
-3. **[ColorPick Eyedropper](https://chromewebstore.google.com/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg)**: a browser-based color chooser tool (I recommended that you install this for week 3 discussion, so you may already have it!)
+<!-- ### C. Install Google Chrome extensions (optional, but recommended) -->
 
+<!-- I'll be using both of these (really wonderful and easy-to-use) tools during lecture and encourage you to install them! -->
+
+<!-- 1. **[Let's get color blind](https://chromewebstore.google.com/detail/lets-get-color-blind/bkdgdianpkfahpkmphgehigalpighjck)**: simulates different color deficiencies in the browser -->
+<!-- 2. **[Grayscale the Web](https://chromewebstore.google.com/detail/grayscale-the-web-save-si/mblmpdpfppogibmoobibfannckeeleag)**: turn specific sites or tabs grayscale -->
+<!-- 3. **[ColorPick Eyedropper](https://chromewebstore.google.com/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg)**: a browser-based color chooser tool (I recommended that you install this for week 3 discussion, so you may already have it!) -->
+
+
+<!-- ~DID NOT USE THIS IN 2024 BUT KEEPING JUST IN CASE~ -->
 <!-- ### Review data wrangling code  -->
 
 <!-- In lecture 5.2, we'll be building a choropleth map to visualize county-level precipitation data across the contiguous U.S. To do so, we need to join our precipitation data (which you can download [above](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week5.html#download-data)) with spatial data, which we'll access via the [`{maps}` package](https://cran.r-project.org/web/packages/maps/index.html). Joining these two data sets requires a fair amount of cleaning (namely, ensuring county names match).  -->
@@ -54,53 +58,57 @@ I'll be using both of these (really wonderful and easy-to-use) tools during lect
 
 ## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
-Week 5 instruction is broken down into three lessons:
+*Coming soon!*
 
-::: {.grid}
+<!-- Week 5 instruction is broken down into three lessons: -->
 
-::: {.g-col-12 .g-col-md-4}
-::: {.center-text}
-[**What makes a good viz?**]{.teal-text .body-text-m}
+<!-- ::: {.grid} -->
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 5.1 slides](lecture-slides/week5.1-good-viz-slides.qmd){.btn role="button" target="_blank"} 
-:::
-:::
+<!-- ::: {.g-col-12 .g-col-md-4} -->
+<!-- ::: {.center-text} -->
+<!-- [**What makes a good viz?**]{.teal-text .body-text-m} -->
 
-::: {.g-col-12 .g-col-md-4}
-::: {.center-text}
-[**Colors**]{.teal-text .body-text-m}
+<!-- [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 5.1 slides](lecture-slides/week5.1-good-viz-slides.qmd){.btn role="button" target="_blank"}  -->
+<!-- ::: -->
+<!-- ::: -->
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 5.2 slides](lecture-slides/week5.2-colors-slides.qmd){.btn role="button" target="_blank"} 
-:::
-:::
+<!-- ::: {.g-col-12 .g-col-md-4} -->
+<!-- ::: {.center-text} -->
+<!-- [**Colors**]{.teal-text .body-text-m} -->
 
-::: {.g-col-12 .g-col-md-4}
-::: {.center-text}
-[**Colors & Choropleths**]{.teal-text .body-text-m}
+<!-- [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 5.2 slides](lecture-slides/week5.2-colors-slides.qmd){.btn role="button" target="_blank"}  -->
+<!-- ::: -->
+<!-- ::: -->
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 5.3 slides](lecture-slides/week5.3-choropleth.qmd){.btn role="button" target="_blank"} 
-:::
-:::
+<!-- ::: {.g-col-12 .g-col-md-4} -->
+<!-- ::: {.center-text} -->
+<!-- [**Colors & Choropleths**]{.teal-text .body-text-m} -->
 
-:::
+<!-- [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 5.3 slides](lecture-slides/week5.3-choropleth.qmd){.btn role="button" target="_blank"}  -->
+<!-- ::: -->
+<!-- ::: -->
+
+<!-- ::: -->
 
 ## {{< fa comments title="two speech bubbles" >}} Discussion Materials {#discussion-materials}
 
-This week, you'll be prepping a data visualization using the data you found / wrangled as part of your final project (HW #4). This does not need to be a polished viz, but should focus on clarity of message. You'll be discussing each others' visualizations and commenting on what the main takeaways are (ideally, you'll walk away with the same message as intended by the plot-creator!). Please complete the following ahead of section:
+*Coming soon!*
 
-1. choose a well-thought out question that you'd like to answer with your selected data set(s) 
-2. hand-draw a plot that you want to create (this can be an important first step before even touching any code)
-3. turn your hand-drawn plot into a ggplot in R!
-4. send both your hand-drawn plot *and* your resulting ggplot to Sevan via DM (Slack) by Tuesday (2/6) evening
+<!-- This week, you'll be prepping a data visualization using the data you found / wrangled as part of your final project (HW #4). This does not need to be a polished viz, but should focus on clarity of message. You'll be discussing each others' visualizations and commenting on what the main takeaways are (ideally, you'll walk away with the same message as intended by the plot-creator!). Please complete the following ahead of section: -->
+
+<!-- 1. choose a well-thought out question that you'd like to answer with your selected data set(s)  -->
+<!-- 2. hand-draw a plot that you want to create (this can be an important first step before even touching any code) -->
+<!-- 3. turn your hand-drawn plot into a ggplot in R! -->
+<!-- 4. send both your hand-drawn plot *and* your resulting ggplot to Sevan via DM (Slack) by Tuesday (2/6) evening -->
 
 ## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
 <!-- | Assignment Type | Assignment Title               | Date Assigned  | Date Due                   | -->
 <!-- |:---------------:|--------------------------------|----------------|----------------------------| -->
-<!-- | EOC             | EOC (week 5)                   | Mon 02/05/2024 | Mon 02/05/2024, 11:55pm PT | -->
-<!-- | SR              | Mid-course reflection (SR #2)  | Mon 02/05/2024 | Sat 02/10/2024, 11:59pm PT | -->
+<!-- | EOC             | EOC (week 5)                   | Mon 02/03/2025 | Mon 02/03/2025, 11:55pm PT | -->
+<!-- | SR              | Mid-course reflection (SR #2)  | Mon 02/03/2025 | Sat 02/08/2025, 11:59pm PT | -->
 
-| Assignment Type | Assignment Title                                                                  | Date Assigned  | Date Due        |
+| Assignment Type | Assignment Title                                                       | Date Assigned  | Date Due                   |
 |:---------------:|------------------------------------------------------------------------|----------------|----------------------------|
-| EOC             | [EOC (week 5)](https://forms.gle/cLtHBybg6kgVDzQSA)                    | Mon 02/05/2024 | Mon 02/05/2024, 11:55pm PT |
-| SR              | [Mid-course reflection (SR #2)](../assignments/SR2-midcourse.qmd)      | Mon 02/05/2024 | Sat 02/10/2024, 11:59pm PT |
+| EOC             | [EOC (week 5)](tbd)                                                    | Mon 02/03/2025 | Mon 02/03/2024, 11:55pm PT |
+| SR              | [Mid-course reflection (SR #2)](../assignments/SR2-midcourse.qmd)      | Mon 02/03/2025 | Sat 02/08/2024, 11:59pm PT |

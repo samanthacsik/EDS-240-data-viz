@@ -1,186 +1,46 @@
 ---
-title: "Choosing a graphic form, Fundamental chart types (part I)"
+title: "[No Lecture]"
 subtitle: "Week 3"
-description: "Monday January 22^nd^, 2024"
+description: "Monday January 20^th^, 2025"
 ---
 
 ```{r}
 #| eval: true 
 #| echo: false
 #| fig-align: "center"
-#| out-width: "65%" 
-#| fig-alt: "A group of fuzzy round monsters with binoculars, backpacks and guide books looking up a graphs flying around with wings (like birders, but with exploratory data visualizations). Stylized text reads 'ggplot2: visual data exploration.' Learn more about ggplot2."
-knitr::include_graphics("../images/horst-ggplot-explore-dataviz.png")
+#| out-width: "80%" 
+#| fig-alt: "A formula for writing alternative text, which says you should always include (a) the chart type, (b) the type of data being presented, and (c) the reason for including the chart. You should also link to the data source somewhere in the text."
+knitr::include_graphics("../images/alt-text.png")
 ```
 
-:::{.gray-text .center-text}
-*Artwork by [Allison Horst](https://allisonhorst.com/)*
+::: {.center-text .gray-text}
+Image from [Amy Cesal](https://www.amycesal.com/)'s article, [Writing Alt Text for Data Visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81), published in [Nightingale](https://medium.com/nightingale)
 :::
 
 ## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}
 
-Before coming to class, you'll need to install some packages, download data, and request a US Census Bureau API key. For step-by-step instructions, unfold the following note (collapsed to save space):
-
-::: {.callout-note collapse=true icon=false}
-## Step-by-step pre-class prep instructions
-
-### A. Install required packages
-
-```{r}
-#| eval: false
-#| echo: true
-#| code-line-numbers: false
-install.packages("chron") # for working with dates / times
-install.packages("naniar") # tools for exploring & handing missing data
-install.packages("tidytuesdayR") # used to download TidyTuesday data
-install.packages("tidycensus") # an R package that allows users to interface with a select number of the US Census Bureau’s data APIs and return tidyverse-ready data frames
-install.packages("ggridges") # {ggplot2} extension for creating ridgeline plots
-install.packages("gghighlight") # {ggplot2} extension for highlighting geoms
-install.packages("ggbeeswarm") # {ggplot2} extension for creating categorical scatter (violin point) plots
-install.packages("see") # {ggplot2} extension for model visualization (we'll be using it for it's geom, geom_violindot())
-install.packages("scales") # provides the internal scaling infrastructure used by ggplot2, and gives you tools to override the default breaks, labels, transformations and palettes (installed automatically with {ggplot2} or {tidyverse})
-```
-
-### B. Download data
-
-- [County-level Lyme disease data from 2001-2020](https://www.cdc.gov/lyme/resources/datasurveillance/LD-Case-Counts-by-County-01-20.csv), made available by the CDC (read more on [this CDC web page](https://www.cdc.gov/lyme/stats/survfaq.html))
-  - save the downloaded data (`LD-Case-Counts-by-County-01-20.csv`) to your class repo at the file path: `EDS-240-class-examples/week3/data/LD-Case-Counts-by-County-01-20.csv`
-
-### C. Request a US Census Bureau API key
-
-1. To use the [`{tidycensus}` package](https://walker-data.com/tidycensus/) to access US Census Bureau data, you'll first need to **request and activate an API key**. Do so by following these steps:
-
-    a. Request an API key at <http://api.census.gov/data/key_signup.html>
-    b. After a short period of time, you should receive an email with your key (it may be helpful to star/bookmark that email), and click the included link to activate your key (**Note:** if you get an error when activating your key, close your browser window and try clicking the activation link again)
-
-2. **For security purposes, you should never push any API keys to GitHub.** To prevent us from accidentally pushing our key(s), we can save it to a separate file which we'll add to our `.gitignore`. Do so by following these steps:
-
-  a. Create a `week3/` folder in the root directory of your class repo 
-  
-  b. Add a file to your `week3/` folder called `KEYS.R`, and save your API key to an object name like this:
-
-```{r filename="~/week3/KEYS.R"}
-#| eval: false
-#| echo: true
-censusKEY <- "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-```
-
-  b. Add `KEYS.R` to your `.gitignore`
-
-```{r filename=".gitignore"}
-#| eval: false
-#| echo: true
-/week3/KEYS.R
-```
-
-  c. Save `.gitignore` (once saved, you should see the newly added `KEYS.R` file disappear from your **Git** pane in RStudio, and a modified `.gitignore` appear). Stage/add, commit, and push this `.gitignore` file to GitHub
-  
-In class, we'll source our key (by running `source(here::here("week3", "KEYS.R"))`) into any scripts / Qmd files, where required.
-:::
+*NA*
 
 ## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
-Week 3 instruction is broken down into three lessons:
+*There is no lecture this week!*
 
-::: {.grid}
+## {{< fa comments title="two speech bubbles" >}} Discussion Materials {#discussion-materials}
 
-::: {.g-col-12 .g-col-md-4}
-::: {.center-text}
-[**Choosing graphic forms**]{.teal-text .body-text-m}
+*Coming soon!*
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.1 slides](lecture-slides/week3.1-choosing-graphic-forms-slides.qmd){.btn role="button" target="_blank"} 
-:::
-:::
-
-::: {.g-col-12 .g-col-md-4}
-::: {.center-text}
-[**Visualizing distributions**]{.teal-text .body-text-m}
-
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.2 slides](lecture-slides/week3.2-distributions-slides.qmd){.btn role="button" target="_blank"} 
-:::
-:::
-
-::: {.g-col-12 .g-col-md-4}
-::: {.center-text}
-[**Visualizing evolution**]{.teal-text .body-text-m}
-
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 3.3 slides](lecture-slides/week3.3-evolution-slides.qmd){.btn role="button" target="_blank"}
-:::
-:::
-
-:::
-
-<br>
-
-[*Today's lectures are inspired by and draw largely on materials created by a number of other educators, including [Albert Cairo](https://www.albertocairo.com/) and his book [The Truthful Art](https://www.amazon.com/gp/product/0321934075/ref=as_li_qf_sp_asin_il_tl?camp=1789&creative=9325&creativeASIN=0321934075&ie=UTF8&linkCode=as2&linkId=A7BVNPNHHPEPJU7K&tag=thefunart03-20), [Meghan Hall](https://meghan.rbind.io/) and her course, [CMU 36-315: Statistical Graphics & Visualization](https://cmu-36315.netlify.app/#lectures), as well as information curated by [Yan Holtz](https://github.com/holtzy) & [Conor Healy](https://www.linkedin.com/in/conor-healy-b0299810a/) as part of their [From Data to Viz](https://www.data-to-viz.com/) project.*]{.gray-text .body-text-s}
-
-## Discussion Materials
-
-### Pre-discussion Prep
-
-**Before coming to section, please be sure to:**
-
-1. Install the following packages:
-
-```{r}
-#| eval: false
-#| echo: true
-#| code-line-numbers: false
-install.packages("geofacet") # facet data for different geographical regions using panels arranged in shapes that mimic geographic topology
-```
-
-2. **(Optional)** Install the [ColorPick Eyedropper](https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg) Google Chrome extension, which makes it easy to select color values from webpages.
-
-### Background
-
-The [U.S. Drought Monitor](https://droughtmonitor.unl.edu/) (USDM) is a collection of measures that allows experts to assess droughts in the United States. It is produced through a partnership between the [National Drought Mitigation Center at the University of Nebraska-Lincoln](https://drought.unl.edu/), the [United States Department of Agriculture](https://www.usda.gov/) and the [National Oceanic and Atmospheric Administration](https://www.noaa.gov/). You can download and explore comprehensive statistics through their [data portal](https://droughtmonitor.unl.edu/DmData/DataDownload/ComprehensiveStatistics.aspx).
-
-The [TidyTuesday](https://github.com/rfordatascience/tidytuesday) community wrangled and visualized USDM data back in 2021 ([2021-07-20, week 30](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-07-20/readme.md)), so we'll use the `{tidytuesdayR}` package to import some minimally-tidied data (TidyTuesday always provides the [cleaning script](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-07-20/readme.md#cleaning-script) that the organizers used to pre-process any of the data provided -- these data comprise three separate data sets, which were converted from wide to long format, joined together, and had some columns renamed).
-
-[**Over the course of the next two discussion sections (week 3 & week 4), you'll be recreating the following data visualization produced by U.S. Drought Monitor, which you can find on the [*Droughts in California* Wikipedia page](https://en.wikipedia.org/wiki/Droughts_in_California):**]{.teal-text}
-
-<br>
-
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "75%"
-knitr::include_graphics("../images/usdm.png")
-```
-
-<br>
-
-[**This week, we'll focus on the data layer, geometric layer, and scales. Next week, we'll work on tweaking the theme (all non-data elements) to get it to look just like the U.S. Drought Monitor's version.**]{.teal-text}
-
-### Solution
+<!-- **[Alternative text](https://webaim.org/techniques/alttext/),** aka **alt text**, makes our data visualizations accessible to a broader community. Today's section will focus crafting effective alt text, as well as how to include it when rendering visualizations in reproducible reports, websites, etc. using publishing tools like Quarto. -->
 
 <!-- ::: {.center-text} -->
-<!-- *Complete code will be posted here after both discussion sections are finished.* -->
+<!-- [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Week 2 discussion slides](discussion/week2/week2-alt-text.qmd){.btn role="button" target="_blank"}  -->
 <!-- ::: -->
-
-You'll get the most out of discussion section if you physically type out the code yourself (rather than copying / pasting)!
-
-<!-- ::: {.center-text} -->
-<!-- [**Solution**]{.body-text-m .teal-text}   -->
-<!-- *(but try not to look during section!)* -->
-<!-- ::: -->
-
-::: {.callout-tip icon=false collapse=true}
-## Complete code for week 3 discussion
-{{< include discussion/week3/CA-drought.qmd >}}
-:::
-
-<br>
 
 ## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
-<!-- | Assignment Type | Assignment Title         | Date Assigned  | Date Due                   | -->
-<!-- |:---------------:|--------------------------|----------------|----------------------------| -->
-<!-- | EOC             | EOC (week 3)             | Mon 01/22/2024 | Mon 01/22/2024, 11:55pm PT | -->
-<!-- | HW              | Homework Assignment #2   | Mon 01/22/2024 | Sat 02/03/2024, 11:59pm PT | -->
+| Assignment Type | Assignment Title       | Date Assigned  | Date Due                   |
+|:---------------:|------------------------|----------------|----------------------------|
+| HW              | Homework Assignment #2 | Mon 01/20/2024 | Sat 02/01/2024, 11:59pm PT |
 
-| Assignment Type | Assignment Title                                     | Date Assigned  | Date Due                   |
-|:---------------:|------------------------------------------------------|----------------|----------------------------|
-| EOC             | [EOC (week 3)](https://forms.gle/2BockakcBR7rsm26A)  | Mon 01/22/2024 | Mon 01/22/2024, 11:55pm PT |
-| HW              | [Homework Assignment #2](../assignments/HW2.qmd)     | Mon 01/22/2024 | Sat 02/03/2024, 11:59pm PT |
+<!-- | Assignment Type | Assignment Title                                 | Date Assigned  | Date Due                   | -->
+<!-- |:---------------:|------------------------------------------------- |----------------|----------------------------| -->
+<!-- | HW              | [Homework Assignment #2](../assignments/HW2.qmd) | Mon 01/20/2024 | Sat 02/01/2024, 11:59pm PT | -->

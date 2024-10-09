@@ -18,25 +18,25 @@ website:
         target: _blank
       - text: course materials
         menu:
-          - text: week 1 (1/8)
+          - text: week 1 (1/6)
             href: course-materials/week1.qmd
-          - text: week 2 (1/15)
+          - text: week 2 (1/13)
             href: course-materials/week2.qmd
-          - text: week 3 (1/22)
+          - text: week 3 (1/20)
             href: course-materials/week3.qmd
-          - text: week 4 (1/29)
+          - text: week 4 (1/27)
             href: course-materials/week4.qmd
-          - text: week 5 (2/5)
+          - text: week 5 (2/3)
             href: course-materials/week5.qmd
-          - text: week 6 (2/12)
+          - text: week 6 (2/10)
             href: course-materials/week6.qmd
-          - text: week 7 (2/19)
+          - text: week 7 (2/17)
             href: course-materials/week7.qmd
-          - text: week 8 (2/26)
+          - text: week 8 (2/24)
             href: course-materials/week8.qmd
-          - text: week 9 (3/4)
+          - text: week 9 (3/3)
             href: course-materials/week9.qmd
-          - text: week 10 (3/11)
+          - text: week 10 (3/10)
             href: course-materials/week10.qmd
       - text: assignments
         href: assignments.qmd

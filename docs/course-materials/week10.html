@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Monday March 11th, 2024">
+<meta name="description" content="Monday March 10th, 2025">
 
-<title>Misc. chart types, Prompt engineering, Review – EDS 240</title>
+<title>Grab bag, Catch up &amp; Review – EDS 240</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -142,43 +108,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-course-materials">    
         <li>
     <a class="dropdown-item" href="../course-materials/week1.html">
- <span class="dropdown-text">week 1 (1/8)</span></a>
+ <span class="dropdown-text">week 1 (1/6)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week2.html">
- <span class="dropdown-text">week 2 (1/15)</span></a>
+ <span class="dropdown-text">week 2 (1/13)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week3.html">
- <span class="dropdown-text">week 3 (1/22)</span></a>
+ <span class="dropdown-text">week 3 (1/20)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week4.html">
- <span class="dropdown-text">week 4 (1/29)</span></a>
+ <span class="dropdown-text">week 4 (1/27)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week5.html">
- <span class="dropdown-text">week 5 (2/5)</span></a>
+ <span class="dropdown-text">week 5 (2/3)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week6.html">
- <span class="dropdown-text">week 6 (2/12)</span></a>
+ <span class="dropdown-text">week 6 (2/10)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week7.html">
- <span class="dropdown-text">week 7 (2/19)</span></a>
+ <span class="dropdown-text">week 7 (2/17)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week8.html">
- <span class="dropdown-text">week 8 (2/26)</span></a>
+ <span class="dropdown-text">week 8 (2/24)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week9.html">
- <span class="dropdown-text">week 9 (3/4)</span></a>
+ <span class="dropdown-text">week 9 (3/3)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week10.html">
- <span class="dropdown-text">week 10 (3/11)</span></a>
+ <span class="dropdown-text">week 10 (3/10)</span></a>
   </li>  
     </ul>
   </li>
@@ -241,11 +207,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Misc. chart types, Prompt engineering, Review</h1>
+      <h1 class="title">Grab bag, Catch up &amp; Review</h1>
             <p class="subtitle lead">Week 10</p>
                   <div>
         <div class="description">
-          Monday March 11<sup>th</sup>, 2024
+          Monday March 10<sup>th</sup>, 2025
         </div>
       </div>
                 </div>
@@ -268,11 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pre-class-prep" id="toc-pre-class-prep" class="nav-link active" data-scroll-target="#pre-class-prep"><i class="fa-solid fa-clipboard-list" title="a clipboard with a To Do list" aria-label="clipboard-list"></i> Pre-class Prep</a>
-  <ul class="collapse">
-  <li><a href="#a.-install-required-packages" id="toc-a.-install-required-packages" class="nav-link" data-scroll-target="#a.-install-required-packages">A. Install required packages</a></li>
-  <li><a href="#b.-prompt-engineering-prep" id="toc-b.-prompt-engineering-prep" class="nav-link" data-scroll-target="#b.-prompt-engineering-prep">B. Prompt engineering prep</a></li>
-  </ul></li>
+  <li><a href="#pre-class-prep" id="toc-pre-class-prep" class="nav-link active" data-scroll-target="#pre-class-prep"><i class="fa-solid fa-clipboard-list" title="a clipboard with a To Do list" aria-label="clipboard-list"></i> Pre-class Prep</a></li>
   <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials"><i class="fa-solid fa-person-chalkboard" title="a person pointing at a chalkboard" aria-label="person-chalkboard"></i> Lecture Materials</a></li>
   <li><a href="#discussion-materials" id="toc-discussion-materials" class="nav-link" data-scroll-target="#discussion-materials"><i class="fa-solid fa-comments" title="two speech bubbles" aria-label="comments"></i> Discussion Materials</a></li>
   <li><a href="#assignment-reminders" id="toc-assignment-reminders" class="nav-link" data-scroll-target="#assignment-reminders"><i class="fa-solid fa-pencil" title="pencil" aria-label="pencil"></i> Assignment Reminders</a></li>
@@ -286,6 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<!-- OLD TITLE: "Misc. chart types, Prompt engineering, Review" -->
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -300,68 +263,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="pre-class-prep" class="level2">
 <h2 class="anchored" data-anchor-id="pre-class-prep"><i class="fa-solid fa-clipboard-list" title="a clipboard with a To Do list" aria-label="clipboard-list"></i> Pre-class Prep</h2>
-<p>Please be sure to complete the following before class:</p>
-<section id="a.-install-required-packages" class="level3">
-<h3 class="anchored" data-anchor-id="a.-install-required-packages">A. Install required packages</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(waffle) <span class="co"># for making waffle (square pie) charts in R</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggbump) <span class="co"># a geom for creating bump charts</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="b.-prompt-engineering-prep" class="level3">
-<h3 class="anchored" data-anchor-id="b.-prompt-engineering-prep">B. Prompt engineering prep</h3>
-<p>To follow along with Sevan’s lesson on ChatGPT prompt engineering for data wrangling &amp; visualization, you’ll need to first:</p>
-<ol type="1">
-<li><a href="https://chat.openai.com/auth/login">Create a free OpenAI account</a> (if you don’t already have one), or make sure you know your login credentials</li>
-<li><a href="https://docs.google.com/spreadsheets/d/1VeWF01_2--KXS7sB-IfPGVNNkGdGcGpN/edit?usp=sharing&amp;ouid=103292946495291407556&amp;rtpof=true&amp;sd=true">Download this <code>.xlsx</code> data file</a> and save it somewhere you can easily find</li>
-</ol>
-</section>
+<p><em>Coming soon!</em> <!-- Please be sure to complete the following before class: --></p>
+<!-- ### A. Install required packages -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- #| code-line-numbers: false -->
+<!-- library(waffle) # for making waffle (square pie) charts in R -->
+<!-- library(ggbump) # a geom for creating bump charts -->
+<!-- ``` -->
+<!-- ### B. Prompt engineering prep -->
+<!-- To follow along with Sevan's lesson on ChatGPT prompt engineering for data wrangling & visualization, you'll need to first: -->
+<!-- 1. [Create a free OpenAI account](https://chat.openai.com/auth/login) (if you don't already have one), or make sure you know your login credentials -->
+<!-- 2. [Download this `.xlsx` data file](https://docs.google.com/spreadsheets/d/1VeWF01_2--KXS7sB-IfPGVNNkGdGcGpN/edit?usp=sharing&ouid=103292946495291407556&rtpof=true&sd=true) and save it somewhere you can easily find -->
 </section>
 <section id="lecture-materials" class="level2">
 <h2 class="anchored" data-anchor-id="lecture-materials"><i class="fa-solid fa-person-chalkboard" title="a person pointing at a chalkboard" aria-label="person-chalkboard"></i> Lecture Materials</h2>
-<div class="grid">
-<div class="g-col-12 g-col-md-4">
-<div class="center-text">
-<p><span class="teal-text body-text-m"><strong>Misc. charts</strong></span></p>
-<p><a href="../course-materials/lecture-slides/week10.1-misc-charts-slides.html" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 10.1 slides</a></p>
-</div>
-</div>
-<div class="g-col-12 g-col-md-4">
-<div class="center-text">
-<p><span class="teal-text body-text-m"><strong>Prompt engineering</strong></span></p>
-<p><a href="https://docs.google.com/presentation/d/11i_Q33FCaKlQYNlGUpzOa8zb9fpfxB3eTFfD6cjdlZo/edit#slide=id.p" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 10.2 slides</a></p>
-</div>
-</div>
-<div class="g-col-12 g-col-md-4">
-<div class="center-text">
-<p><span class="teal-text body-text-m"><strong>Quarter recap</strong></span></p>
-<p><a href="../course-materials/lecture-slides/week10.3-recap.html" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 10.3 slides</a></p>
-</div>
-</div>
-</div>
+<p><em>Coming soon!</em></p>
+<!-- ::: {.grid} -->
+<!-- ::: {.g-col-12 .g-col-md-4} -->
+<!-- ::: {.center-text} -->
+<!-- [**Misc. charts**]{.teal-text .body-text-m} -->
+<!-- [ lecture 10.1 slides](lecture-slides/week10.1-misc-charts-slides.qmd){.btn role="button" target="_blank"}  -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: {.g-col-12 .g-col-md-4} -->
+<!-- ::: {.center-text} -->
+<!-- [**Prompt engineering**]{.teal-text .body-text-m} -->
+<!-- [ lecture 10.2 slides](https://docs.google.com/presentation/d/11i_Q33FCaKlQYNlGUpzOa8zb9fpfxB3eTFfD6cjdlZo/edit#slide=id.p){.btn role="button" target="_blank"}  -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: {.g-col-12 .g-col-md-4} -->
+<!-- ::: {.center-text} -->
+<!-- [**Quarter recap**]{.teal-text .body-text-m} -->
+<!-- [ lecture 10.3 slides](lecture-slides/week10.3-recap.qmd){.btn role="button" target="_blank"}  -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: -->
 </section>
 <section id="discussion-materials" class="level2">
 <h2 class="anchored" data-anchor-id="discussion-materials"><i class="fa-solid fa-comments" title="two speech bubbles" aria-label="comments"></i> Discussion Materials</h2>
-<p>Let’s celebrate all of our hard work with a data visualization showcase! Everyone will have ~2 minutes to show off their creations. Please add your three data visualizations (option 1) or infographic (option 2) to your assigned slide (linked below) and come prepared to <em>briefly</em> describe the following:</p>
-<ol type="1">
-<li>Describe your data and where you found it</li>
-<li>What question(s) did you set out to answer?</li>
-<li>One thing that you’re super proud of figuring out / creating</li>
-<li>One thing that you wanted to implement but couldn’t quite make happen (yet)</li>
-</ol>
-<p>Find your slide here:</p>
-<ul>
-<li><a href="https://docs.google.com/presentation/d/1uGNLzMlspbj1Pn0qQdF7CoD2RA0eIl8DHj5tQyXh3qE/edit?usp=sharing">10am section slides</a></li>
-<li><a href="https://docs.google.com/presentation/d/1u31owoOiWuKI_ZEdebCpytsr1s2FtaKY2UzM0T59RAg/edit?usp=sharing">11am section slides</a></li>
-</ul>
+<p><em>Coming soon!</em></p>
+<!-- Let's celebrate all of our hard work with a data visualization showcase! Everyone will have ~2 minutes to show off their creations. Please add your three data visualizations (option 1) or infographic (option 2) to your assigned slide (linked below) and come prepared to *briefly* describe the following: -->
+<!-- 1. Describe your data and where you found it -->
+<!-- 2. What question(s) did you set out to answer? -->
+<!-- 3. One thing that you're super proud of figuring out / creating -->
+<!-- 4. One thing that you wanted to implement but couldn't quite make happen (yet) -->
+<!-- Find your slide here: -->
+<!-- - [10am section slides](https://docs.google.com/presentation/d/1uGNLzMlspbj1Pn0qQdF7CoD2RA0eIl8DHj5tQyXh3qE/edit?usp=sharing) -->
+<!-- - [11am section slides](https://docs.google.com/presentation/d/1u31owoOiWuKI_ZEdebCpytsr1s2FtaKY2UzM0T59RAg/edit?usp=sharing) -->
 </section>
 <section id="assignment-reminders" class="level2">
 <h2 class="anchored" data-anchor-id="assignment-reminders"><i class="fa-solid fa-pencil" title="pencil" aria-label="pencil"></i> Assignment Reminders</h2>
-<!-- | Assignment Type | Assignment Title                 | Date Assigned  | Date Due                   | -->
-<!-- |:---------------:|----------------------------------|----------------|----------------------------| -->
-<!-- | EOC             | EOC (week 10)                    | Mon 03/11/2024 | Mon 03/11/2024, 11:55pm PT | -->
-<!-- | SR              | End-of-course reflection (SR #3) | Mon 03/11/2024 | Sat 03/16/2024, 11:59pm PT | -->
 <table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 35%">
+<col style="width: 16%">
+<col style="width: 29%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Assignment Type</th>
@@ -373,18 +333,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">EOC</td>
-<td><a href="https://forms.gle/dEmgAhCMDnnhbNqK7">EOC (week 10)</a></td>
-<td>Mon 03/11/2024</td>
-<td>Mon 03/11/2024, 11:55pm PT</td>
+<td>EOC (week 10)</td>
+<td>Mon 03/10/2025</td>
+<td>Mon 03/10/2025, 11:55pm PT</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">SR</td>
-<td><a href="../assignments/SR3-endcourse.html">End-of-course reflection (SR #3)</a></td>
-<td>Mon 03/11/2024</td>
-<td>Sat 03/16/2024, 11:59pm PT</td>
+<td>End-of-course reflection (SR #3)</td>
+<td>Mon 03/10/2025</td>
+<td>Sat 03/15/2025, 11:59pm PT</td>
 </tr>
 </tbody>
 </table>
+<!-- | Assignment Type | Assignment Title                                                                      | Date Assigned  | Date Due  | -->
+<!-- |:---------------:|----------------------------------------------------------------------|----------------|----------------------------| -->
+<!-- | EOC             | [EOC (week 10)](tbd)                                                 | Mon 03/10/2025 | Mon 03/11/2025, 11:55pm PT | -->
+<!-- | SR              | [End-of-course reflection (SR #3)](../assignments/SR3-endcourse.qmd) | Mon 03/10/2025 | Sat 03/15/2025, 11:59pm PT | -->
 
 
 </section>
