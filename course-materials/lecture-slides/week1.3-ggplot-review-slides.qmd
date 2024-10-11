@@ -19,7 +19,7 @@ editor_options:
 
 <hr class="hr-teal">
 
-[Week 1 | January 8^th^, 2024]{.custom-subtitle3}
+[Week 1 | January 6^th^, 2024]{.custom-subtitle3}
 
 ---
 
@@ -78,7 +78,7 @@ Grammar of graphics: provides a structure to combine graphical elements into fig
 
 <hr>
 
->“A grammar of graphics is a tool that enables us to concisely describe the components of a graphic. Such a grammar allows us to move beyond named graphics (e.g. the “scatterplot”) and gain insight into the deep structure that underlies statistical graphics.” 
+>*“A grammar of graphics is a tool that enables us to concisely describe the components of a graphic. Such a grammar allows us to move beyond named graphics (e.g. the “scatterplot”) and gain insight into the deep structure that underlies statistical graphics.” *
 
 ::: {.right-align-text .body-text-s}
 -from Hadley Wickham’s [A layered grammar of graphics](https://doi.org/10.1198/jcgs.2009.07098) in *Journal of Computational and Graphical Statistics*, vol. 19, no. 1 pp. 3-28, 2010.
@@ -88,7 +88,7 @@ Grammar of graphics: provides a structure to combine graphical elements into fig
 
 . . .
 
->"In the grammar of a language, words have different parts of speech, which perform different roles in the sentence. Analagously, the grammar of graphics separates a graphic into different layers"
+>*"In the grammar of a language, words have different parts of speech, which perform different roles in the sentence. Analagously, the grammar of graphics separates a graphic into different layers"*
 
 ::: {.right-align-text .body-text-s}
 -from Liz Sander’s post [Telling stories with data using the grammar of graphics](https://codewords.recurse.com/issues/six/telling-stories-with-data-using-the-grammar-of-graphics)
@@ -221,7 +221,7 @@ knitr::include_graphics("images/week1/horst-untidy-data.png")
 library(tidyverse)
 ```
 
-Take this [tibble](https://tibble.tidyverse.org/) (a lazy / surly `data.frame`) of temperature recordings at three stations on three dates:
+Take this [tibble](https://tibble.tidyverse.org/) (very similar to a `data.frame`) of temperature recordings at three stations on three dates:
 
 ```{r}
 #| eval: true
@@ -256,7 +256,7 @@ This tibble is in **wide** or **untidy** format.
 
 ```{r}
 countdown::countdown(
-  minutes = 3,
+  minutes = 2,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -306,7 +306,7 @@ Want more examples of untidy data? Check out these [teaching materials](https://
 
 <hr>
 
-We can use `tidyr::pivot_longer()` to "lengthen" our data aka convert it from wide / untidy to **long / tidy:**
+We can use `tidyr::pivot_longer()` to "lengthen" our data, aka convert it from wide / untidy to **long / tidy:**
 
 ```{r}
 #| eval: true
@@ -510,32 +510,7 @@ The `data` and `mapping` arguments are often not explicitly written in `ggplot()
 #| eval: true
 #| echo: true
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm))
-```
-
-::: footer
-[**data**]{.teal-text} | geometric object | statistical transformation | position adjustment | coordinate system | facet 
-:::
-
----
-
-## {#piping-in data-menu-title="Piping into a ggplot"} 
-
-[{{< fa chart-line title="a line chart" >}} Piping into a ggplot]{.slide-title}
-
-<hr>
-
-You can also pipe (using `%>%` or `|>`) directly from a data set into a `ggplot()` call (we'll use more of this in future lessons). When doing so, omit the `data` argument from `ggplot()`:
-
-```{r}
-#| eval: true
-#| echo: true
-#| fig-align: "center"
-penguins |> 
-  ggplot(aes(x = bill_length_mm, y = bill_depth_mm))
 ```
 
 ::: footer
@@ -554,11 +529,8 @@ Next, we'll layer on a geometric object (aka geom) that our plot will use to rep
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "5"
+#| code-line-numbers: "2"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point()
 ```
@@ -569,45 +541,18 @@ data | [**geometric object**]{.teal-text} | statistical transformation | positio
 
 ---
 
-## {#dat-map-in-geom data-menu-title="Data & mapping in geom"} 
-
-[{{< fa chart-line title="a line chart" >}} Defining data & mappings in `geom_*()`]{.slide-title2}
-
-<hr>
-
-You can also define the data and mapping layers within a `geom_*()` (rather than `ggplot()`) -- this is helpful if you plan to have multiple geoms with different mappings:
-```{r}
-#| eval: true
-#| echo: true
-#| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
-ggplot() +
-  geom_point(data = penguins, mapping = aes(x = bill_length_mm, y = bill_depth_mm))
-```
-
-::: footer
-data | [**geometric object**]{.teal-text} | statistical transformation | position adjustment | coordinate system | facet 
-:::
-
----
-
 ## {#color-points-by-spp data-menu-title="Color points by species"} 
 
 [{{< fa palette title="a painter's palette" >}} Use color to differentiate species]{.slide-title}
 
 <hr>
 
-[If we'd like to represent species using another aesthetic (e.g. color, shape, size), we need to modify our plot's aesthetic (i.e. inside `aes()`) -- **any time we want to modify the appearance of our plotted data based on a variable in our dataset, we do so within `aes()`.** This process is known as **scaling**. A legend will automatically be added to indicate which values (in this case, colors) correspond to which level of our variable (in this case, species):]{.body-text-s}
+[If we'd like to represent species using another aesthetic (e.g. color, shape, size), we need to modify our plot's aesthetic (i.e. inside `aes()`) -- **any time we want to modify the appearance of our plotted data based on a variable in our data set, we do so within `aes()`.** This process is known as **scaling**. A legend will automatically be added to indicate which values (in this case, colors) correspond to which level of our variable (in this case, species):]{.body-text-s}
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "4"
+#| code-line-numbers: "2"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
   geom_point()
 ```
@@ -618,21 +563,144 @@ labels | annotations | [**scales**]{.teal-text} | themes | layout
 
 ---
 
+## {#scale-color-manual data-menu-title="Define custom colors"} 
+
+[{{< fa palette title="a painter's palette" >}} We can also map our own colors]{.slide-title}
+
+<hr>
+
+Here, we use `scale_color_manual()` to update the colors of our data points. Colors will be mapped from the levels in our data (i.e. `Adelie`, `Chinstrap`, `Gentoo`) to the order of the aethetic values supplied (`"darkorange"`,`"purple"`,`"cyan4"`):
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "3"
+#| fig-align: "center"
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point() +
+  scale_color_manual(values = c("darkorange","purple","cyan4"))
+```
+
+::: footer
+labels | annotations | [**scales**]{.teal-text} | themes | layout 
+:::
+
+---
+
+## {#color-points-by-mass data-menu-title="Color points by body mass"} 
+
+[{{< fa palette title="a painter's palette" >}} Use color to describe a continuous variable]{.slide-title2}
+
+<hr>
+
+In the previous example, we mapped color to a **categorical** variable (`species`). We can also map color to **continuous** variables (e.g. `body_mass_g`): 
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "1,3"
+#| fig-align: "center"
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
+  geom_point() +
+  scale_color_gradient(low = "#132B43", high = "#F7DD4C")
+```
+
+::: footer
+labels | annotations | [**scales**]{.teal-text} | themes | layout 
+:::
+
+---
+
+## {#one-color data-menu-title="One color for all points"} 
+
+[{{< fa palette title="a painter's palette" >}} What if we just want to color all points the same?]{.slide-title3}
+
+<hr>
+
+Do so within the corresponding `geom_*()` and outside of the `aes()` function! **Color is no longer being mapped to a variable.**
+
+```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: "2"
+#| fig-align: "center"
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point(color = "blue")
+```
+
+---
+
+## {#dat-map-in-geom data-menu-title="Data & mapping in geom"} 
+
+[{{< fa chart-line title="a line chart" >}} Defining data & mappings in `geom_*()`]{.slide-title2}
+
+<hr>
+
+[You can also define the data and mapping layers within a `geom_*()` (i.e. locally) rather than in `ggplot()` (i.e. globally) -- this is helpful if you plan to have multiple geoms with different mappings (e.g. you’re plotting data from multiple data frames). You **must** include the `data` and `mapping` argument names if you specify them out of order (see [documentation](https://ggplot2.tidyverse.org/reference/geom_point.html)):]{.body-text-s}
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+#| echo: true
+# create a separate penguins_summary df ----
+penguins_summary <- penguins |>
+  drop_na() |> 
+  group_by(species) |> 
+  summarize(
+    mean_bill_length_mm = mean(bill_length_mm),
+    mean_bill_depth_mm = mean(bill_depth_mm)
+  )
+
+# create ggplot with layers from different dfs ----
+ggplot() +
+  geom_point(data = penguins, mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = species), alpha = 0.5) +
+  geom_point(data = penguins_summary, mapping = aes(x = mean_bill_length_mm, y = mean_bill_depth_mm, fill = species),size = 5, shape = 24)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+# create a separate penguins_summary df ----
+penguins_summary <- penguins |>
+  drop_na() |> 
+  group_by(species) |> 
+  summarize(
+    mean_bill_length_mm = mean(bill_length_mm),
+    mean_bill_depth_mm = mean(bill_depth_mm)
+  )
+
+# create ggplot with layers from different dfs ----
+ggplot() +
+  geom_point(data = penguins, mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = species), alpha = 0.5) +
+  geom_point(data = penguins_summary, mapping = aes(x = mean_bill_length_mm, y = mean_bill_depth_mm, fill = species),size = 5, shape = 24)
+```
+:::
+::::
+
+::: footer
+[**data**]{.teal-text} | [**geometric object**]{.teal-text} | statistical transformation | position adjustment | coordinate system | facet 
+:::
+
+---
+
 ## {#color-points-by-spp-local data-menu-title="Color points by species (local)"} 
 
 [{{< fa palette title="a painter's palette" >}} Mapping color at a local level]{.slide-title}
 
 <hr>
 
-Alternatively, map color at a **local** (i.e. within a specific geom) rather than **global** (i.e. within `ggplot()`) layer:
+You may also separately map color at a **local** (i.e. within a specific geom) rather than **global** (i.e. within `ggplot()`) level:
+
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "5"
+#| code-line-numbers: "2"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point(aes(color = species))
 ```
@@ -658,11 +726,8 @@ labels | annotations | [**scales**]{.teal-text} | themes | layout
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "4,6"
+#| code-line-numbers: "1,3"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
   geom_point() +
   geom_smooth(method = "lm")
@@ -674,11 +739,8 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "5-6"
+#| code-line-numbers: "2-3"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point(aes(color = species)) +
   geom_smooth(method = "lm")
@@ -687,77 +749,32 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
 
 ::::
 
----
-
-## {#one-color data-menu-title="One color for all points"} 
-
-[{{< fa palette title="a painter's palette" >}} What if we just want to color all points the same?]{.slide-title3}
-
-<hr>
-
-Do so within the corresponding `geom_*()` and outside of the `aes()` function! **Color is no longer being mapped to a variable.**
-```{r}
-#| eval: true
-#| echo: true
-#| code-line-numbers: "5"
-#| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
-  geom_point(color = "blue")
-```
-
----
-
-## {#scale-color-manual data-menu-title="Define custom colors"} 
-
-[{{< fa palette title="a painter's palette" >}} We can also map our own colors]{.slide-title}
-
-<hr>
-
-Here, we use `scale_color_manual()` to update the colors of our data points. Colors will be mapped from the levels in our data (i.e. `Adelie`, `Chinstrap`, `Gentoo`) to the order of the aethetic values supplied (`"#FF8302"`, `"#C35CCA"`, `"#067575"`):
-```{r}
-#| eval: true
-#| echo: true
-#| code-line-numbers: "6"
-#| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
-  geom_point() +
-  scale_color_manual(values = c("#FF8302", "#C35CCA", "#067575"))
-```
-
 ::: footer
 labels | annotations | [**scales**]{.teal-text} | themes | layout 
 :::
 
 ---
 
-## {#color-points-by-mass data-menu-title="Color points by body mass"} 
+## {#piping-in data-menu-title="Piping into a ggplot"}
 
-[{{< fa palette title="a painter's palette" >}} Use color to describe a continuous variable]{.slide-title2}
+[{{< fa chart-line title="a line chart" >}} Piping directly into a ggplot]{.slide-title}
 
 <hr>
 
-In the previous example, we mapped color to a **categorical** variable (`species`). We can also map color to **continuous** variables (e.g. `body_mass_g`): 
+Lastly, you can also pipe (using `%>%` or `|>`) directly from a data frame into a `ggplot()` call (we'll use more of this in future lessons) -- this is useful if you need to do a bit of data wrangling first, but don't want to create a whole new data frame. When doing so, omit the `data` argument from `ggplot()`:
+
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "4,6"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
-ggplot(penguins, aes(x = body_mass_g, y = flipper_length_mm, color = body_mass_g)) +
-  geom_point() +
-  scale_color_gradient(low = "#132B43", high = "#F7DD4C")
+penguins |>
+  filter(species == "Gentoo") |> 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point(color = "peachpuff4") # including simply bc I love this recognized color name
 ```
 
 ::: footer
-labels | annotations | [**scales**]{.teal-text} | themes | layout 
+[**data**]{.teal-text} | geometric object | statistical transformation | position adjustment | coordinate system | facet
 :::
 
 --- 
@@ -803,9 +820,6 @@ Similar to our first scatterplot, we start by initializing our plot object with 
 #| eval: true
 #| echo: true
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = species)) +
   geom_bar()
 ```
@@ -818,7 +832,7 @@ ggplot(penguins, aes(x = species)) +
 
 ## {#stat-transformation data-menu-title="What is a stat transformation?"} 
 
-[What is a statistical transformation?]{.slide-title}
+[{{< fa question title = "question-mark" >}} What is a statistical transformation?]{.slide-title}
 
 <hr>
 
@@ -832,9 +846,6 @@ Some geoms, like scatterplots, plot the raw values of your data set. Other geoms
 #| eval: true
 #| echo: true
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
   geom_point()
 ```
@@ -846,9 +857,6 @@ ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
 #| eval: true
 #| echo: true
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = species)) +
   geom_bar()
 ```
@@ -876,9 +884,6 @@ The default statistical transformation used in `geom_bar()` is **count**, which 
 #| eval: true
 #| echo: true
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = species)) +
   geom_bar(stat = "count") # you don't need to explicitly include `stat = "count"` since it's the default
 ```
@@ -895,21 +900,19 @@ data | geometric object | [**statistical transformation**]{.teal-text} | positio
 
 <hr>
 
-Let's say we have a data frame with calculated count values (e.g. `penguins_summary`) that we'd like to plot using `geom_bar()`. We can change `stat = "count"` (default) to `stat = "identity"` to generate bar heights based off the "identity" of values in the `n` column of `penguin_summary`.
+[Let's say we have a data frame with calculated count values (e.g. `penguins_summary`) that we'd like to plot using `geom_bar()`. We can change `stat = "count"` (default) to `stat = "identity"` to generate bar heights based off the "identity" of values in the `n` column of `penguin_summary`.]{.body-text-s}
 ```{r}
 #| eval: true
 #| echo: true
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
+# new summary df which calculates # of observations (rows) for each spp ----
 penguin_summary <- penguins |> 
-  count(species) # calculate number of observations (rows) for each species
+  count(species) 
 
+# bar plot where heights of bars are generated based of "identity" of values ----
 ggplot(penguin_summary, aes(x = species, y = n)) + 
-  geom_bar(stat = "identity")
+  geom_bar(stat = "identity") 
 ```
-
 
 ::: footer
 data | geometric object | [**statistical transformation**]{.teal-text} | position adjustment | coordinate system | facet 
@@ -923,59 +926,53 @@ data | geometric object | [**statistical transformation**]{.teal-text} | positio
 
 <hr>
 
-Now let's say we'd like to display the same bar chart with y-axis values as proportions, rather than counts. We can override the default mapping from transformed variables to aesthetics by doing the following:
+[Now let's say we'd like to display the same bar chart with y-axis values as proportions, rather than counts. We can override the default mapping of transformed variables to aesthetics with:]{.body-text-s}
 ```{r}
 #| eval: true
 #| echo: true
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = species, y = after_stat(prop), group = 1)) +
   geom_bar()
 ```
 
-[**NOTE: Including `group = 1` overrides the default behavior of `geom_bar()` to group by the `x` variable.** The default behavior of `geom_bar()` is to group by the `x` variable (for us, that's `species`) to separately count the number of rows in each level (`Adelie`, `Chinstrap`, `Gentoo`). If we want proportions, we need to consider all levels of `species` together to calculate the proportion of *each* level of species relative to *all* levels of `species`.]{.body-text-s} 
+- [first, `stat = "count"` counts the number of occurrences in each category (here, `species`)]{.body-text-s}
+- [next, specifying `y = after_stat(prop)` tells ggplot to calculate the proportion of each `species` count relative to the total count (delayed until after counts have been computed)]{.body-text-s}
+- [`group = 1` ensures that proportions are calculated across *all* species -- default behavior of `geom_bar()` is to group by the `x` variable  to separately count the number of rows in each level (`Adelie`, `Chinstrap`, `Gentoo`), but we actually need to know how many *total* penguins there are in the data set in order to calculate proportions]{.body-text-s}
+
+<!-- [**NOTE: Including `group = 1` overrides the default behavior of `geom_bar()` to group by the `x` variable.** The default behavior of `geom_bar()` is to group by the `x` variable (for us, that's `species`) to separately count the number of rows in each level (`Adelie`, `Chinstrap`, `Gentoo`). If we want proportions, we need to consider all levels of `species` together to calculate the proportion of *each* level of species relative to *all* levels of `species`.]{.body-text-s}  -->
 
 ::: footer
 data | geometric object | [**statistical transformation**]{.teal-text} | position adjustment | coordinate system | facet 
 :::
 
----
+<!-- ## {#stat-summary data-menu-title="stat_summary()"}  -->
 
-## {#stat-summary data-menu-title="stat_summary()"} 
+<!-- [{{< fa chart-line title="a line chart" >}} We can use `stat_summary()` to compute & plot any aggregate]{.slide-title3} -->
 
-[{{< fa chart-line title="a line chart" >}} We can use `stat_summary()` to compute & plot any aggregate]{.slide-title3}
+<!-- <hr> -->
 
-<hr>
+<!-- Here, we plot the min, mean, and max values of penguin `body_mass_g` by species: -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- #| fig-align: "center" -->
+<!-- ggplot(penguins) + -->
+<!--   stat_summary( -->
+<!--     aes(x = species, y = body_mass_g), -->
+<!--     fun.max = max,  -->
+<!--     fun.min = min, -->
+<!--     fun = mean -->
+<!--   ) -->
+<!-- ``` -->
 
-Here, we plot the min, mean, and max values of penguin `body_mass_g` by species:
-```{r}
-#| eval: true
-#| echo: true
-#| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
+<!-- ::: footer -->
+<!-- data | geometric object | [**statistical transformation**]{.teal-text} | position adjustment | coordinate system | facet  -->
+<!-- ::: -->
 
-ggplot(penguins) +
-  stat_summary(
-    aes(x = species, y = body_mass_g),
-    fun.max = max, 
-    fun.min = min,
-    fun = mean
-  )
-```
-
-
-::: footer
-data | geometric object | [**statistical transformation**]{.teal-text} | position adjustment | coordinate system | facet 
-:::
-
----
 
 ## {#pos-adj data-menu-title="What is a position adjustment?"} 
 
-[What is a position adjustment?]{.slide-title}
+[{{< fa question title = "question-mark" >}} What is a position adjustment?]{.slide-title}
 
 <hr>
 
@@ -984,9 +981,6 @@ Position adjustments apply minor tweaks to the position of elements to resolve o
 #| eval: true
 #| echo: true
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = species, fill = island)) +
   geom_bar()
 ```
@@ -999,7 +993,7 @@ data | geometric object | statistical transformation | [**position adjustment**]
 
 ## {#pos-default-bar data-menu-title="Default position geom_bar()"} 
 
-[{{< fa chart-line title="a line chart" >}} The default position for `geom_bar()` is "stack"]{.slide-title3}
+[{{< fa chart-line title="a line chart" >}} The default position for `geom_bar()` is "stack"]{.slide-title2}
 
 <hr>
 
@@ -1007,11 +1001,8 @@ data | geometric object | statistical transformation | [**position adjustment**]
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "5"
+#| code-line-numbers: "2"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = species, fill = island)) +
   geom_bar(position = "stack") # you don't need to explicitly include `position = "stack"` since it's the default
 ```
@@ -1037,11 +1028,8 @@ Below are a few position options available for use with `geom_bar()`:
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "5"
+#| code-line-numbers: "2"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = species, fill = island)) +
   geom_bar(position = "fill")
 ```
@@ -1053,11 +1041,8 @@ ggplot(penguins, aes(x = species, fill = island)) +
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "5"
+#| code-line-numbers: "2"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = species, fill = island)) +
   geom_bar(position = "dodge")
 ```
@@ -1096,7 +1081,7 @@ data | geometric object | statistical transformation | [**position adjustment**]
 
 ## {#default-coord data-menu-title="What is a coordinate system"} 
 
-[What is a coordinate system?]{.slide-title}
+[{{< fa question title = "question-mark" >}} What is a coordinate system?]{.slide-title}
 
 <hr>
 
@@ -1105,11 +1090,8 @@ A Coordinate System is a system that uses one or more numbers (coordinates), to 
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "6"
+#| code-line-numbers: "3"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = species)) +
   geom_bar() +
   coord_cartesian() # you don't need to explicitly include `coord_cartesian()` since it's the default
@@ -1137,11 +1119,8 @@ Depending on the type of data, axis label length, etc. it may make sense to chan
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "6"
+#| code-line-numbers: "3"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = species)) +
   geom_bar() + 
   coord_flip()
@@ -1155,11 +1134,8 @@ ggplot(penguins, aes(x = species)) +
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "6"
+#| code-line-numbers: "3"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = species)) +
   geom_bar() + 
   coord_polar()
@@ -1190,11 +1166,8 @@ data | geometric object | statistical transformation | position adjustment | [**
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "6"
+#| code-line-numbers: "3"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = species)) +
   geom_bar() +
   theme_classic()
@@ -1206,11 +1179,8 @@ ggplot(penguins, aes(x = species)) +
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "6"
+#| code-line-numbers: "3"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = species)) +
   geom_bar() +
   theme_light()
@@ -1240,11 +1210,8 @@ Further modify nearly any non-data element of your plot using [`theme()`](https:
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "6"
+#| code-line-numbers: "3"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = species)) +
   geom_bar() +
   theme_light()
@@ -1256,10 +1223,7 @@ ggplot(penguins, aes(x = species)) +
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "7-9"
-library(palmerpenguins)
-library(tidyverse)
-
+#| code-line-numbers: "4-6"
 ggplot(penguins, aes(x = species)) +
   geom_bar() +
   theme_light() +
@@ -1319,9 +1283,6 @@ We'll again start by initializing our plot object with data, mapping our aesthet
 #| eval: true
 #| echo: true
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = flipper_length_mm)) + 
   geom_histogram()
 ```
@@ -1342,14 +1303,11 @@ ggplot(penguins, aes(x = flipper_length_mm)) +
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "4,6"
+#| code-line-numbers: "1,3"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = flipper_length_mm, fill = species)) + 
   geom_histogram() +
-  scale_fill_manual(values = c("#FF8302", "#C35CCA", "#067575"))
+  scale_fill_manual(values = c("darkorange", "purple", "cyan4"))
 ```
 
 ::: footer
@@ -1368,14 +1326,11 @@ Let's update the position of our binned bars from `"stack"` to `"identity"` and 
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "5"
+#| code-line-numbers: "2"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = flipper_length_mm, fill = species)) + 
   geom_histogram(position = "identity", alpha = 0.5) +
-  scale_fill_manual(values = c("#FF8302", "#C35CCA", "#067575"))
+  scale_fill_manual(values = c("darkorange", "purple", "cyan4"))
 ```
 
 ::: footer
@@ -1394,14 +1349,11 @@ Update axis and legend titles and add a plot title using `labs()`:
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "7-8"
+#| code-line-numbers: "4-5"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = flipper_length_mm, fill = species)) + 
   geom_histogram(position = "identity", alpha = 0.5) +
-  scale_fill_manual(values = c("#FF8302", "#C35CCA", "#067575")) +
+  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
   labs(x = "Flipper length (mm)", y = "Frequency", fill = "Species",
        title = "Penguin Flipper Lengths")
 ```
@@ -1422,14 +1374,11 @@ ggplot(penguins, aes(x = flipper_length_mm, fill = species)) +
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: "9"
+#| code-line-numbers: "6"
 #| fig-align: "center"
-library(palmerpenguins)
-library(tidyverse)
-
 ggplot(penguins, aes(x = flipper_length_mm, fill = species)) + 
   geom_histogram(position = "identity", alpha = 0.5) +
-  scale_fill_manual(values = c("#FF8302", "#C35CCA", "#067575")) +
+  scale_fill_manual(values = c("darkorange", "purple", "cyan4")) +
   labs(x = "Flipper length (mm)", y = "Frequency", fill = "Species",
        title = "Penguin Flipper Lengths") + 
   facet_wrap(~species, ncol = 1)
