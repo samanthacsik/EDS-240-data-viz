@@ -1,5 +1,5 @@
 ---
-title: "Lecture 1.3 KEY"
+title: "Lecture 1.3 TEMPLATE"
 subtitle: "`{ggplot2}` review"
 author: "Your Name"
 date: 2025-01-06
@@ -76,8 +76,6 @@ Explore the relationship between penguin **bill length** and **bill depth**. Our
 
 ### Example 2 (mapping custom colors)
 
-- map custom colors rather than defaults
-
 ```{r}
 #| warning: false
 # ~ CODE ALONG HERE ~
@@ -85,16 +83,12 @@ Explore the relationship between penguin **bill length** and **bill depth**. Our
 
 ### Example 3 (mapping color to continuous variable)
 
-- map color to a continuous variable (rather than categorical) 
-
 ```{r}
 #| warning: false
 # ~ CODE ALONG HERE ~
 ```
 
 ### Example 4 (updating color for all points)
-
-- color all points the same (i.e. not by a variable, like `species` or `body_mass_g`)
 
 ```{r}
 #| warning: false
@@ -143,7 +137,7 @@ penguins_summary <- penguins |>
 
 ### Example 8 (piping data into a ggplot)
 
-- pipe data into `ggplot()` (rather than specifying in the `data` argument) -- useful if you need to do a small bit of wrangling first, but don't want to create a whole new df
+- useful if you need to do a small bit of wrangling first, but don't want to create a whole new df
 
 ```{r}
 #| warning: false
@@ -166,15 +160,6 @@ Explore **penguin species counts**. Our goals are to review:
 - map aesthetics
 - add a geometry layer
 - explore default statistical transformations
-
-```{r}
-#| warning: false
-# ~ CODE ALONG HERE ~
-```
-
-- all geoms have a default statistical transformation
-  - some geoms, like scatterplots, plot the raw values of your data set (e.g. `stat = "identity"`) 
-  - other geoms, like bar chars, histograms, boxplots, etc. calculate *new* values to plot (e.g. `stat = count`)
   - reading documentation is important here!
 
 ```{r}
@@ -184,13 +169,14 @@ Explore **penguin species counts**. Our goals are to review:
 
 ### Example 2 (override default stat)
 
-- let's say we have a df that already contains calculated species count values, which we want to plot:
+- let's say we have a df that already contains calculated species count values, and we want the height of the bars to be based on those count values: 
 
 ```{r}
 #| warning: false
 
 # new summarized df ----
-# ~ CODE ALONG HERE ~
+penguin_summary <- penguins |> 
+  count(species) 
 
 # generate bar heights based on "identity" of values in `n` column ----
 # ~ CODE ALONG HERE ~
@@ -235,16 +221,12 @@ Explore **penguin species counts**. Our goals are to review:
 
 ### Example 7 (alternatively, use `position_*()`)
 
-- instead of `position = "X"`, you can use a `position_*()` function to fine-tune position adjustments -- e.g. `position_dodge2()` to create equal width bars:
-
 ```{r}
 #| warning: false
 # ~ CODE ALONG HERE ~
 ```
 
 ### Example 8 (default coordinate system)
-
-- by default, ggplots are constructed in a Cartesian coordinate system
 
 ```{r}
 #| warning: false
@@ -269,16 +251,12 @@ Explore **penguin species counts**. Our goals are to review:
 
 ### Example 11 (pre-made themes)
 
-- there are a number of built-in themes + extension packages
-
 ```{r}
 #| warning: false
 # ~ CODE ALONG HERE ~
 ```
 
 ### Example 12 (customize further with `theme()`)
-
-- modify any non-data element of a plot using `theme()`
 
 ```{r}
 #| warning: false

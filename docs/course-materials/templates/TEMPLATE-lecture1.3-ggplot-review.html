@@ -9,7 +9,7 @@
 <meta name="author" content="Your Name">
 <meta name="dcterms.date" content="2025-01-06">
 
-<title>Lecture 1.3 KEY – EDS 240</title>
+<title>Lecture 1.3 TEMPLATE – EDS 240</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -242,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Lecture 1.3 KEY</h1>
+      <h1 class="title">Lecture 1.3 TEMPLATE</h1>
             <p class="subtitle lead"><code>{ggplot2}</code> review</p>
                       </div>
   </div>
@@ -409,27 +409,18 @@ Note
 </section>
 <section id="example-2-mapping-custom-colors" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-mapping-custom-colors">Example 2 (mapping custom colors)</h3>
-<ul>
-<li>map custom colors rather than defaults</li>
-</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="example-3-mapping-color-to-continuous-variable" class="level3">
 <h3 class="anchored" data-anchor-id="example-3-mapping-color-to-continuous-variable">Example 3 (mapping color to continuous variable)</h3>
-<ul>
-<li>map color to a continuous variable (rather than categorical)</li>
-</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="example-4-updating-color-for-all-points" class="level3">
 <h3 class="anchored" data-anchor-id="example-4-updating-color-for-all-points">Example 4 (updating color for all points)</h3>
-<ul>
-<li>color all points the same (i.e.&nbsp;not by a variable, like <code>species</code> or <code>body_mass_g</code>)</li>
-</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -473,7 +464,7 @@ Note
 <section id="example-8-piping-data-into-a-ggplot" class="level3">
 <h3 class="anchored" data-anchor-id="example-8-piping-data-into-a-ggplot">Example 8 (piping data into a ggplot)</h3>
 <ul>
-<li>pipe data into <code>ggplot()</code> (rather than specifying in the <code>data</code> argument) – useful if you need to do a small bit of wrangling first, but don’t want to create a whole new df</li>
+<li>useful if you need to do a small bit of wrangling first, but don’t want to create a whole new df</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># filter for Gentoo penguins, then pipe into ggplot ----</span></span>
@@ -497,34 +488,27 @@ Note
 <li>initialize a plot object</li>
 <li>map aesthetics</li>
 <li>add a geometry layer</li>
-<li>explore default statistical transformations</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<li>explore default statistical transformations
 <ul>
-<li>all geoms have a default statistical transformation
-<ul>
-<li>some geoms, like scatterplots, plot the raw values of your data set (e.g.&nbsp;<code>stat = "identity"</code>)</li>
-<li>other geoms, like bar chars, histograms, boxplots, etc. calculate <em>new</em> values to plot (e.g.&nbsp;<code>stat = count</code>)</li>
 <li>reading documentation is important here!</li>
 </ul></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="example-2-override-default-stat" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-override-default-stat">Example 2 (override default stat)</h3>
 <ul>
-<li>let’s say we have a df that already contains calculated species count values, which we want to plot:</li>
+<li>let’s say we have a df that already contains calculated species count values, and we want the height of the bars to be based on those count values:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># new summarized df ----</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="co"># ~ CODE ALONG HERE ~</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a></span>
-<span id="cb16-4"><a href="#cb16-4"></a><span class="co"># generate bar heights based on "identity" of values in `n` column ----</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># new summarized df ----</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>penguin_summary <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">count</span>(species) </span>
+<span id="cb15-4"><a href="#cb15-4"></a></span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="co"># generate bar heights based on "identity" of values in `n` column ----</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="example-3-override-default-stat-mapping" class="level3">
@@ -533,7 +517,7 @@ Note
 <li>e.g.&nbsp;we can display the same data but with y-axis values as <em>proportions</em> rather than counts</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="example-4-default-position-adjustment" class="level3">
@@ -544,7 +528,7 @@ Note
 <li>let’s say we now want to visualize penguin counts by species (bar height) <em>and</em> by island (color):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="example-5-6-override-default-position-adjustments" class="level3">
@@ -553,31 +537,25 @@ Note
 <li><code>position = "fill"</code> creates stacked bars of the same height (easier to compare proportions):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><code>position = "dodge"</code> places overlapping bars directly beside one another (easier to compare individual values):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="example-7-alternatively-use-position_" class="level3">
 <h3 class="anchored" data-anchor-id="example-7-alternatively-use-position_">Example 7 (alternatively, use <code>position_*()</code>)</h3>
-<ul>
-<li>instead of <code>position = "X"</code>, you can use a <code>position_*()</code> function to fine-tune position adjustments – e.g.&nbsp;<code>position_dodge2()</code> to create equal width bars:</li>
-</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="example-8-default-coordinate-system" class="level3">
 <h3 class="anchored" data-anchor-id="example-8-default-coordinate-system">Example 8 (default coordinate system)</h3>
-<ul>
-<li>by default, ggplots are constructed in a Cartesian coordinate system</li>
-</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="example-9-10-alternative-coordinate-systems" class="level3">
@@ -586,31 +564,25 @@ Note
 <li>flip x &amp; y axes:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>polar coordinates:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="example-11-pre-made-themes" class="level3">
 <h3 class="anchored" data-anchor-id="example-11-pre-made-themes">Example 11 (pre-made themes)</h3>
-<ul>
-<li>there are a number of built-in themes + extension packages</li>
-</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="example-12-customize-further-with-theme" class="level3">
 <h3 class="anchored" data-anchor-id="example-12-customize-further-with-theme">Example 12 (customize further with <code>theme()</code>)</h3>
-<ul>
-<li>modify any non-data element of a plot using <code>theme()</code></li>
-</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -634,7 +606,7 @@ Note
 <li>facet by species</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># ~ CODE ALONG HERE ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

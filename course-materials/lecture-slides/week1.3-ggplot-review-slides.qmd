@@ -70,7 +70,7 @@ adapted from [Cédric Scherer's](https://www.cedricscherer.com/) rstudio::conf(2
 Grammar of graphics: provides a structure to combine graphical elements into figures that display data in a meaningful way.
 :::
 
---
+---
 
 ## {#grammar-of-graphics data-menu-title="Grammar of Graphics"} 
 
@@ -770,7 +770,7 @@ Lastly, you can also pipe (using `%>%` or `|>`) directly from a data frame into 
 penguins |>
   filter(species == "Gentoo") |> 
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm)) +
-  geom_point(color = "peachpuff4") # including simply bc I love this recognized color name
+  geom_point() 
 ```
 
 ::: footer
