@@ -74,9 +74,9 @@ knitr::include_graphics("images/tbd.png")
 ```
 
 ::: {.center-text}
-[**TBD**]{.teal-text}  
-**Email:** tbd <!-- [gstephenson@bren.ucsb.edu](mailto::gstephenson@bren.ucsb.edu)   -->   
-**Learn more:** tbd <!-- [linkedin.com/in/sevan-esaian](https://www.linkedin.com/in/sevan-esaian-92b7794b/) -->
+[**Sloane Stephenson**]{.teal-text}  
+**Email:** [gstephenson@ucsb.edu](mailto::gstephenson@ucsb.edu)
+<!-- **Learn more:** tbd -->
 :::
 
 :::

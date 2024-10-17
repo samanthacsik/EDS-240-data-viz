@@ -1,6 +1,8 @@
 ---
 title: "Assignment #1 (HW #1)"
-subtitle: "Assigned Mon 01/08/2024 | Due Sat 01/20/2024"
+subtitle: "Assigned Mon 01/06/2025 | Due Sat 01/18/2025"
+editor_options: 
+  chunk_output_type: console
 ---
 
 ::: {.callout-important}
@@ -21,362 +23,312 @@ subtitle: "Assigned Mon 01/08/2024 | Due Sat 01/20/2024"
 
 ## Description 
 
-Much of your time as a data scientist will be spent looking at code written by others -- maybe you're trying to learn from and adapt someone else's code for your own work, or perhaps you've been asked to conduct a code review for a colleague. Being able to look at and make sense of code that you did not write yourself is an invaluable skill and an important one to practice throughout your learning journey. Here, you'll be asked to interpret and annotate `{ggplot2}` code written by someone else. This will likely require running code (both as a whole *and* line-by-line), as well as Googling and /  or reading documentation.
+Much of your time as a data scientist will be spent looking at code written by others -- maybe you're trying to learn from and adapt someone else's code for your own work, or perhaps you've been asked to conduct a code review for a colleague. Being able to look at and make sense of code that you did not write yourself is an invaluable skill and an important one to practice throughout your learning journey. Here, you'll be asked to interpret and annotate `{ggplot2}` code written by someone else. This will likely require running code (both as a whole *and* line-by-line), as well as Googling and / or reading documentation.
 
-*I recognize that there is (likely) **a lot** of new code presented here, and that we haven't covered much at all yet in this course. This is intentionally an exercise is resourcefulness! By the end of this exercise, you should feel a bit more confident in your ability to interpret (and maybe even reuse!) code written by others.*
+*I recognize that there is (likely) **a lot** of new code presented here that we haven't covered yet in this course. This is intentionally an exercise is resourcefulness! By the end of this exercise, you should feel a bit more confident in your ability to interpret (and maybe even reuse!) code written by others.*
 
-[**(Part 1a) Annotate the following code**]{.teal-text}, adapted from [Christophe Nicault's](https://github.com/cnicault) visualization titled, ***Evolution of deaths from indoor air pollution*** ([original code](https://github.com/cnicault/tidytuesday/blob/master/2022/2022-15-indoor_air_pollution/indoor_air_pollution.Rmd)) -- to enlarge image (in Chrome) **right-click on image** > **Open Image in New Tab**:
+### 1a. Annotate code
+
+Annotate the following code, adapted from [David Oehm](https://gradientdescending.com/#google_vignette){target="_blank"}'s visualization titled, ***UFO Sightings*** ([original code](https://github.com/doehm/tidytues/blob/main/scripts/2023/week-25-ufo/ufo.R){target="_blank"}). You can find metadata and additional information about the data set on the [rfordatascience/tidytuesday (2023-06-20) `readme.md`](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-06-20/readme.md#data-dictionary){target="_blank"}.
+
+::: {.callout-tip}
+## But why a data viz about UFOs...
+For your final class project (HW #4), you'll have the option to build your own infographic-style visualization. Many students from Winter 2024 noted this UFO sightings example as particularly helpful in learning how to stitch together multiple data visualizations into one cohesive infographic.
+:::
 
 ```{r}
 #| eval: true
 #| echo: false
 #| fig-align: "center"
 #| out-width: "50%"
-knitr::include_graphics("images/indoor-poll-ggplot.png")
+knitr::include_graphics("images/oehm-ufo.png")
 ```
 
-You can find metadata and additional information about the data set on the [rfordatascience/tidytuesday (2022-04-12) `readme.md`](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-04-12/readme.md#data-dictionary). **Note:** A select few lines of code have already been annotated for you.
+::: {.center-text .body-text-s .gray-text}
+*To enlarge image (in Chrome), **right-click on image** > **Open Image in New Tab***
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Click here to expand the code AND for tips on getting started
 
-Install the following packages (if you don't already have them) using `install.packages("package_name")` or `install.packages(pkgs = c("package_name1", "package_name2", ...))`:
-
-- [`{tidytuesdayR}`](https://cran.r-project.org/web/packages/tidytuesdayR/index.html)
-- [`{tidyverse}`](https://cran.r-project.org/web/packages/tidyverse/index.html)
-- [`{patchwork}`](https://cran.r-project.org/web/packages/patchwork/index.html)
-- [`{showtext}`](https://cran.r-project.org/web/packages/showtext/index.html)
-- [`{sysfonts}`](https://cran.r-project.org/web/packages/sysfonts/index.html)
-- [`{countrycode}`](https://cran.r-project.org/web/packages/countrycode/index.html)
-- [`{glue}`](https://cran.r-project.org/web/packages/glue/index.html)
-- [`{scales}`](https://cran.r-project.org/web/packages/scales/index.html)
-- [`{ragg}`](https://cran.r-project.org/web/packages/ragg/index.html)
-
-**Tips:**
-
-- See lines 114 and 120 (among others) for examples of code annotations -- aim to include this level of detail. 
-- Writing clean annotations makes it easier for you and others to read them -- I love using the [`{ARTofR}` package](https://github.com/Hzhang-ouce/ARTofR) to create titles, dividers, and block comments in my scripts and Qmd / Rmd files. Read more about how to create different dividers using the `{ARTofR}` package on [this resource page](http://localhost:7166/clean-code-guide.html#annotating-code) of the course website.
-- Pull up documentation for a function directly in RStudio's **Help** pane by running `?function_name` in the console. Vignettes and `pkgdown` sites are incredible resources as well (e.g. here is a [vignette](https://cloud.r-project.org/web/packages/patchwork/vignettes/patchwork.html) and the [pkgdown](https://patchwork.data-imaginist.com/) site for the `{patchwork}` package)
-- If you don't immediately understand the purpose of a line / chunk of code, skip over it (temporarily) and continue working your way through the following code -- it oftentimes becomes more evident given additional context.
-- Plots may look *super* squished in the RStudio Viewer pane -- use the **Zoom** button to pop them open in a separate window.
-- **Keep in mind:** While this is fairly complex ggplot code, remember that it's constructed in layers -- meaning you can run code line-by-line to see exactly how the plot is changing with each new layer. You may come across functions and arguments that you're already familiar with (yay!), and of course, others that are totally new.  
+**Note:** A select few lines of code have already been annotated for you.
 
 ```{r}
 #| eval: false
 #| echo: true
+
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                                  1. setup                                ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #..........................load packages.........................
-library(tidyverse) # ANNOTATE (brief explanation of pkg) ----
-library(patchwork) # ANNOTATE (brief explanation of pkg) ----
+library(tidyverse) # for data wrangling & plotting ----
 library(showtext) # ANNOTATE (brief explanation of pkg) ----
-
-#......................download Google Fonts.....................
-# ANNOTATE (explain differences between arguments `name` & `family`) ----
-font_add_google(name = "Roboto", family = "roboto")
-font_add_google(name = "Roboto Condensed", family = "roboto condensed")
-font_add_google(name = "Oswald", family = "oswald")
-font_add_google(name = "Khula", family = "khula")
-font_add_google(name = "Share Tech Mono", family = "techmono")
-
-#.....settings for using imported texts in future saved plot.....
-showtext_opts(dpi = 320) # tell {showtext} the resolution for the device ----
-showtext_auto(enable = TRUE) # automatically use {showtext} to render text for future devices ----
+library(patchwork) # ANNOTATE (brief explanation of pkg) ----
+library(janitor) # ANNOTATE (brief explanation of pkg) ----
+library(glue) # ANNOTATE (brief explanation of pkg) ----
+library(ggtext) # ANNOTATE (brief explanation of pkg) ----
+library(geofacet) # ANNOTATE (brief explanation of pkg) ----
+library(cropcircles) # ANNOTATE (brief explanation of pkg) ----
+library(ggpath) # ANNOTATE (brief explanation of pkg) ----
+library(magick) # ANNOTATE (brief explanation of pkg) ----
+library(readr) # ANNOTATE (brief explanation of pkg) ----
+library(scales) # ANNOTATE (brief explanation of pkg) ----
 
 #................load TidyTuesday data from GitHub...............
-tuesdata <- tidytuesdayR::tt_load(x = 2022, week = 15)
+tuesdata <- tidytuesdayR::tt_load(2023, week = 25)
 
 #........extract individual data sets from tuesdata (list).......
-indoor_pollution <- tuesdata$indoor_pollution 
-death_ts <- tuesdata$death_timeseries
-death_full <- tuesdata$death_fuel
-fuel_gdp <- tuesdata$fuel_gdp
+ufo_sightings <- tuesdata$ufo_sightings
+places <- tuesdata$places
+
+#......................create color palettes.....................
+alien <- c('#47fcea', '#28ee85', '#17bd52', '#679d76', '#3e6f50', '#27593d')
+bg <- '#101319' 
+txt <- alien[2]
+accent <- txt
+
+#......................import Google fonts.......................
+# ANNOTATE (explain differences between arguments `name` & `family`) ----
+font_add_google(name = "Orbitron", family = "orb")
+font_add_google(name = "Barlow", family = "bar")
+
+#....................import FontAwesome fonts....................
+font_add(family = "fa-brands", regular = here::here("assets", "fonts", "Font Awesome 6 Brands-Regular-400.otf"))
+font_add(family = "fa-solid", regular = here::here("assets", "fonts", "Font Awesome 6 Free-Solid-900.otf"))
+
+#........use {showtext} to render text for future devices........
+showtext_auto(enable = TRUE)
+
+# TODO 
+# create_image(prompt = "An alien head, facing me, with dark shadows across it's face.")
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                              2. data wrangling                           ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#......ANNOTATE (generally, what does this code block do?).......
-indoor_pollution <- indoor_pollution %>%
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  rename(perc_death = 4) %>% 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  mutate(continent = countrycode::countrycode(sourcevar = Code, origin = "iso3c", destination = "continent")) 
+# create a df of total population by US state # ANNOTATE (brief explanation of what this entire code chunk does) ----
+df_pop <- places |>
+  filter(country_code == "US") |>
+  group_by(state) |>
+  summarise(pop = sum(population)) |>
+  ungroup()
 
-#......ANNOTATE (generally, what does this code block do?).......
-gap_indoor <- indoor_pollution %>%
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  filter(!is.na(Code), Code != "OWID_WRL") %>% 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  filter(Year %in% c(1990, 2019)) %>% 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  mutate(year = glue::glue("Y{Year}")) %>% 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  pivot_wider(id_cols = c("Entity", "Code"), names_from = year, values_from = perc_death) %>% 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  mutate(gap = Y2019 - Y1990) %>% 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  mutate(continent = countrycode::countrycode(sourcevar = Code, origin = "iso3c", destination = "continent")) 
+# ANNOTATE (brief explanation of what this entire code chunk does) ----
+df_us <- ufo_sightings |>
+  filter(country_code == "US") |>
+  count(state) |>
+  left_join(df_pop, by = "state") |>
+  mutate(
+    r = n/pop*10000,
+    x = rescale(r, to = c(0.2, 1)),
+    #x = min_max(r, 0.2, 1),
+    xmin = (1-x)/2,
+    xmax = x + (1-x)/2,
+    alpha = r/max(r)
+    )
 
-#......ANNOTATE (generally, what does this code block do?).......
-fuel_gdp_clean <- fuel_gdp %>%
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  rename(clean_fuel = 4, gdp = 5, population = 6) %>% 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  select(-Continent) %>% 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  mutate(continent = countrycode::countrycode(sourcevar = Code, origin = "iso3c", destination = "continent")) %>% 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  filter(!is.na(continent)) 
+# ANNOTATE (brief explanation of what this entire code chunk does) ----
+df_shape <- ufo_sightings |>
+  filter(!shape %in% c("unknown", "other")) |>
+  count(shape) |>
+  arrange(desc(n)) |>
+  slice_head(n = 10) |>
+  mutate(
+    shape = fct_reorder(shape, n), # , min
+    alpha = rescale(n, to = c(0.3, 1))
+    #alpha = min_max(n, 0.3, 1)
+    )
 
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                          3. prep ggplot elements                         ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ANNOTATE (brief explanation of what this entire code chunk does) ----
+df_day_hour <- ufo_sightings |>
+  mutate(
+    day = wday(reported_date_time),
+    hour = hour(reported_date_time),
+    wday = wday(reported_date_time, label = TRUE)
+  ) |>
+  count(day, wday, hour) |>
+  mutate(
+    alpha = n/max(n),
+    hour_lab = case_when(
+      hour == 0 ~ "12am",
+      hour <= 12 ~ paste0(hour, "am"),
+      hour == 12 ~ "12pm",
+      TRUE ~ paste0(hour-12, "pm"))
+    )
 
-#......ANNOTATE (generally, what does this code block do?).......
-pal <- c("#02403A", "#0A7373", "#757A62", "#EDAA25", "#C43302")
-
-#......ANNOTATE (generally, what does this code block do?).......
-graph_legend <- "The first graph shows the relation between the decrease of the percentage of deaths and the access to clean fuel.\nEach country is represented by a line connecting all the values from 2002 to 2019.\nIt shows that for many countries the access to clean fuel for cooking increased over\n the years resulting in a reduction of percentage of death due to indoor air pollution.\n\nThe graph below shows the evolution between 1990 and 2019\n in the distribution of the percentage of death among\n the countries of each continent."
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                       4. build connected scatterplot                     ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#......ANNOTATE (generally, what does this code block do?).......
-connected_scatterplot_df <- indoor_pollution %>%
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  select(-continent) %>% 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  left_join(fuel_gdp_clean, by = c("Entity" = "Entity", "Code" = "Code", "Year" = "Year")) %>% 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  filter(!is.na(clean_fuel), !is.na(gdp)) 
-
-#..................create connected scatterplot..................
-
-#......ANNOTATE (generally, what does this code block do?).......
-connected_scatterplot <- ggplot(data = connected_scatterplot_df, aes(x = clean_fuel, y = perc_death, alpha = Year)) + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  geom_line(aes(group = Code, color = continent), linewidth = 0.9) + 
-  
-  # add scatterplot layer; points colored by 'continent' variable, outlined in white ----
-  geom_point(aes(fill = continent), size = 1, shape = 21, color = "white") + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  annotate("text", x = 96, y = 21, label = graph_legend, family = "roboto", size = 4, hjust = 1, vjust = 1) + 
-  
-  # convert x-axis & y-axis values to %; add some padding between data and axes ----
-  scale_x_continuous(labels = scales::label_percent(scale = 1), expand = c(0.01, 0.01)) + 
-  scale_y_continuous(labels = scales::label_percent(scale = 1, accuracy = 1), expand = c(0.01, 0.01)) + 
-  
-  # ANNOTATE (briefly explain these lines of code) ----
-  scale_color_manual(values = rev(pal)) + 
-  scale_fill_manual(values = rev(pal)) + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  guides(alpha = "none", color = "none", fill = "none") + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  theme_light(base_family = "roboto condensed") + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  labs(x = "% of access to clean fuel", 
-       y = "% of deaths") + 
-  
-  # ANNOTATE (briefly explain these lines of code) ----
-  theme(axis.title.y = element_text(margin = margin(t = -20, r = -80, b = 0, l= 0), angle = 0, size = 12), 
-        axis.title.x = element_text(margin = margin(t = 10), size = 12), 
-        
-        # ANNOTATE (briefly explain this line of code) ----
-        axis.text = element_text(size = 11), 
-        
-        # ANNOTATE (briefly explain this line of code) ----
-        panel.border = element_blank())
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                            5. build histograms                           ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#.............df of % ranges used to build histogram.............
-histo_evolution_df <- gap_indoor %>%
-  
-  # assign % death to a range (e.g. AFG (Y1990): 19.623 -> range of 15-20), as factors ----
-  mutate(c1990 = cut(Y1990, breaks = c(0,1,2,5,10,15,20,25)), 
-         c2019 = cut(Y2019, breaks = c(0,1,2,5,10,15,20,25))) %>% 
-  
-  # use regular expressions (regex) to separate the lower and upper range values ----
-  mutate(sep1990 = str_match(c1990, "^\\(([0-9]+),([0-9]+)]$"), 
-         sep2019 = str_match(c2019, "^\\(([0-9]+),([0-9]+)]$")) %>%
-  
-  # use regex to create nicely-formatted percentage ranges ----
-  mutate(c1990 = glue::glue("{sep1990[,2]}% to {sep1990[,3]}%"), 
-         c2019 = glue::glue("{sep2019[,2]}% to {sep2019[,3]}%")) %>% 
-  
-  # reorder factors in the c1990 & c2019 cols by values in the `sep1990[,2]` & `sep2019[,2]` columns ----
-  mutate(c1990 = fct_reorder(c1990, parse_number(sep1990[,2])), 
-         c2019 = fct_reorder(c2019, parse_number(sep2019[,2]))) %>%
-  
-  # reverse the order of factors (low > high) in c1990 & c2019 cols ----
-  mutate(c2019 = fct_rev(c2019),
-         c1990 = fct_rev(c1990)) 
-
-#......ANNOTATE (generally, what does this code block do?).......
-# ANNOTATE (briefly explain this line of code) ----
-histo_evolution <- ggplot(data = histo_evolution_df) + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  geom_histogram(aes(x = c1990), stat = "count", alpha = 0) + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  annotate("rect", xmin = 4.5 ,xmax = 7.6, ymin = 0, ymax = 36, fill = "#e1e1e1", alpha = 0.5) +
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  annotate("text", x = 5, y = 25, label = "0% to 5%", color = "grey60", family = "Oswald", size = 5, fontface = "bold") +
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  geom_histogram(aes(x = c1990, fill = continent), stat = "count", alpha = 0.3) +
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  geom_histogram(aes(x = c2019, fill = continent), stat = "count", width = 0.5) +
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  scale_fill_manual(values = rev(pal)) + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  coord_flip() + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  facet_wrap(~continent, ncol = 5) + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  guides(fill = "none") + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  labs(caption = "Number of country for each range of percentage of death from indoor air pollution.\nThe light bars represent the distribution in 1990 and the dark and narrow bars represent the distribution in 2019.\nThe bin from 0% to 5% is splitted in 3 differents bins (0% to 1%, 1% to 2% and 2% to 3%) to give more detail for the countries\n which reached a low level of death, while the other bins represent 5% range.") + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  theme_void() + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  theme(axis.text.x = element_text(margin = margin(t = 5, r = 0, b = 0, l = 0), family = "roboto condensed", color = "grey30", size = 12), 
-        
-        # ANNOTATE (briefly explain this line of code) ----
-        axis.text.y = element_text(family = "roboto condensed", color = "grey30", size = 12),
-        
-        # ANNOTATE (briefly explain this line of code) ----
-        panel.grid.major.x = element_line(color = "grey60", linetype = "13"), 
-        
-        # ANNOTATE (briefly explain this line of code) ----
-        panel.spacing.x = unit(8, "mm"), 
-        
-        # ANNOTATE (briefly explain this line of code) ----
-        strip.text = element_blank(), 
-        
-        # ANNOTATE (briefly explain this line of code) ----
-        plot.caption = element_text(family = "roboto", size = 12, color = "black", hjust = 0, margin = margin(t = 25, l = 40), lineheight = 1.1)) 
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                              6. build legends                            ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#......ANNOTATE (generally, what does this code block do?).......
-legend_df <- tibble(pos = c(0, 2, 4, 6, 8),
-                    country = sort(unique(fuel_gdp_clean$continent)))
-
-#......ANNOTATE (generally, what does this code block do?).......
-# ANNOTATE (briefly explain this line of code) ----
-legend <- ggplot(data = legend_df) + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  geom_rect(aes(xmin = pos, xmax = pos + 1, 
-                ymin = 0.35, ymax = 0.75, fill = country), size = 6) + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  geom_text(aes(x = pos + 0.5, y = 0.45, label = country), 
-            family = "oswald", color = "white", size = 6, 
-            hjust = 0.5, vjust = 0, fontface = "bold") + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  scale_fill_manual(values = rev(pal)) +
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  scale_y_continuous(limits = c(0,1)) + 
-  scale_x_continuous(limits = c(0,9)) + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  guides(color = "none", fill = "none") + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  theme_void() 
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##              7. assemble all plot components using {patchwork}           ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-## NOTE: this plot may not look correct when opened in the Viewer! You'll need to save a PNG (in part 8, below) to view it correctly ##
-
-# ANNOTATE (briefly explain this line of code) ----
-final_plot <- connected_scatterplot / legend / histo_evolution + 
-  
-  # ANNOTATE (briefly explain this line of code) ----
-  plot_layout(heights = c(3, 0.5, 1)) + 
-  
-  ## ANNOTATE (briefly explain these lines of code) ----
-  plot_annotation( 
-  caption = "Visualization: Christophe Nicault | Data: Our world in Data",
-  title = "Evolution of deaths from indoor air pollution",
-  subtitle = str_wrap("The percentage of death from indoor air pollution decreased in many countries in the last 30 years, due to a better access to clean fuel for cooking. However there are inequalities with many countries still lacking access, particularly in Africa, Oceania and Asia.", 100),
-  
-  # ANNOTATE (briefly explain these lines of code) ----
-  theme = theme( 
-    plot.margin = margin(10,10,5,10),
-    plot.title = element_text(family = "khula", size = 22, color = "#02403A", face = "bold", hjust = 0.5, margin = margin(5,0,10,0)),
-    plot.subtitle = element_text(family = "khula", size = 14, color = "black", hjust = 0.5, margin = margin(10,0,20,0)),
-    plot.caption = element_text(family = "techmono", size = 11, color = "#02403A", hjust = 0.95, margin = margin(20,0,5,0))   
-  )
+# ANNOTATE (brief explanation of what this entire code chunk does) ----
+# image made with openai::create_image() API call to DALL-E
+df_alien <- tibble(
+  x = 0,
+  y = -5,
+  image = image_read("scripts/2023/week-25-ufo/alien.png") |>
+    image_fill(color = "none", fuzz = 10) |>
+    circle_crop()
 )
 
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                            8. save plot as a PNG                         ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# print a few random summaries
+sample_summary <- function(n) {
+  x <- dat$ufo_sightings |>
+    mutate(id = 1:n()) |>
+    filter(str_length(summary) > 120) |>
+    sample_n(n)
+  text <- x |>
+    pull(summary) |>
+    str_to_sentence()
+  list(
+    text = paste0('"...', text, '..."'),
+    id = x$id
+  )
+}
 
-#........open plotting device to draw plot to a PNG file.........
-# specify file path/name and png resolution & size
-ragg::agg_png(here::here("outputs", paste0("indoor_pollution_", format(Sys.time(), "%Y%m%d_%H%M%S"), ".png")), 
-              res = 320, width = 12, height = 13, units = "in")
+quotes <- paste0('"...', str_to_sentence(ufo_data$ufo_sightings$summary[c(47816, 6795, 93833)]), '..."')
 
-#................plot object that you want to draw...............
-final_plot
+# 🔡 text --------------------------------------------------------------------
 
-#....................turn off plotting device....................
-# once off, you should see your .png file appear in outputs/ folder
-dev.off()
+mastodon <- glue("<span style='font-family:fa-brands; color:{accent}'>&#xf4f6;</span>")
+twitter <- glue("<span style='font-family:fa-brands; color:{accent}'>&#xf099;</span>")
+github <- glue("<span style='font-family:fa-brands; color:{accent}'>&#xf09b;</span>")
+floppy <- glue("<span style='font-family:fa-solid; color:{accent}'>&#xf0c7;</span>")
+space <- glue("<span style='color:{bg};font-size:1px'>'</span>")
+space2 <- glue("<span style='color:{bg}'>--</span>") # can't believe I'm doing this
+caption <- glue("{mastodon}{space2}@danoehm@{space}fosstodon.org{space2}{twitter}{space2}@danoehm{space2}{github}{space2}doehm/tidytues{space2}{floppy}{space2}UFO sightings")
 
+# 📊 plot --------------------------------------------------------------------
+
+g_us <- df_us |>
+  ggplot() +
+  geom_rect(aes(xmin = 0, xmax = 1, ymin = 0, ymax = 1, alpha = alpha), fill = accent) +
+  geom_text(aes(0.5, 0.7, label = state), lineheight = 0.25, family = "orb", size = 10, colour = bg, fontface = "bold") +
+  geom_text(aes(0.5, 0.3, label = round(r, 1)), lineheight = 0.25, family = "orb", size = 8, colour = bg, fontface = "bold") +
+  facet_geo(~state) +
+  scale_alpha_identity() +
+  coord_fixed() +
+  labs(subtitle = "Sightings per 10k population") +
+  theme_void() +
+  theme(
+    strip.text = element_blank(),
+    plot.subtitle = element_text(family = "bar", size = 40, hjust = 1, colour = txt, margin = margin(b = 10)),
+    legend.position = "none"
+  )
+
+g_day <- df_day_hour |>
+  ggplot() +
+  geom_tile(aes(hour, day, alpha = alpha), fill = accent, height = 0.9, width = 0.9) +
+  geom_text(aes(hour, 9, label = hour_lab), colour = accent, family = "orb", size = 10) +
+  geom_text(aes(0, day, label = str_sub(wday, 1, 1)), colour = bg, family = "orb", size = 8, fontface = "bold") +
+  geom_from_path(aes(0, -5, path = image), df_alien, width = 0.25) +
+  scale_alpha_identity() +
+  coord_polar() +
+  ylim(-5, 9) +
+  xlim(NA, 23.55) +
+  theme_void() +
+  theme(
+    plot.background = element_rect(fill = bg, colour = bg)
+  )
+
+g_shape <- df_shape |>
+  ggplot() +
+  geom_col(aes(shape, n, alpha = alpha), fill = accent) +
+  geom_text(aes(10, 200, label = "10 most common reported shapes"), family = "bar", colour = txt, size = 16, nudge_x = 1, hjust = 0) +
+  geom_text(aes(shape, 200, label = str_to_title(shape)), family = "orb", colour = bg, size = 14, hjust = 0, fontface = "bold", nudge_x = 0.2) +
+  geom_text(aes(shape, n-200, label = scales::comma(n)), family = "orb", colour = bg, size = 10, hjust = 1, fontface = "bold", nudge_x = -0.2) +
+  coord_flip(clip = "off") +
+  theme_void() +
+  theme(
+    legend.position = "none"
+  )
+
+g_base <- ggplot() +
+  labs(
+    title = "UFO Sightings",
+    subtitle = "Summary of over 88k reported sightings across the US",
+    caption = caption
+    ) +
+  theme_void() +
+  theme(
+    text = element_text(family = "orb", size = 48, lineheight = 0.3, colour = txt),
+    plot.background = element_rect(fill = bg, colour = bg),
+    plot.title = element_text(size = 128, face = "bold", hjust = 0.5, margin = margin(b = 10)),
+    plot.subtitle = element_text(family = "bar", hjust = 0.5, margin = margin(b = 20)),
+    plot.caption = element_markdown(family = "bar", colour = colorspace::darken(txt, 0.5), hjust = 0.5, margin = margin(t = 20)),
+    plot.margin = margin(b = 20, t = 50, r = 50, l = 50),
+    axis.text.x = element_text()
+  )
+
+# quotes
+# doing the quotes as individual charts to add.
+# A bit clunky but the path of least resistance
+quote1 <- ggplot() +
+  annotate("text", x = 0, y = 1, label = str_wrap(quotes[1], 40),
+           family = "bar", colour = txt, size = 16, hjust = 0, fontface = "italic", lineheight = 0.4) +
+  xlim(0, 1) +
+  ylim(0, 1) +
+  theme_void() +
+  coord_cartesian(clip = "off")
+
+quote2 <- ggplot() +
+  annotate("text", x = 0, y = 1, label = str_wrap(quotes[2], 25),
+           family = "bar", colour = txt, size = 16, hjust = 0, fontface = "italic", lineheight = 0.4) +
+  xlim(0, 1) +
+  ylim(0, 1) +
+  theme_void() +
+  coord_cartesian(clip = "off")
+
+quote3 <- ggplot() +
+  annotate("text", x = 0, y = 1, label = str_wrap(quotes[3], 25),
+           family = "bar", colour = txt, size = 16, hjust = 0, fontface = "italic", lineheight = 0.4) +
+  xlim(0, 1) +
+  ylim(0, 1) +
+  theme_void() +
+  coord_cartesian(clip = "off")
+
+# final chart
+g_final <- g_base +
+  inset_element(g_shape, left = 0, right = 1, top = 1, bottom = 0.66) +
+  inset_element(g_us, left = 0.42, right = 1, top = 0.74, bottom = 0.33) +
+  inset_element(g_day, left = 0, right = 0.66, top = 0.4, bottom = 0) +
+  inset_element(quote1, left = 0.5, right = 1, top = 0.8, bottom = 0.72) +
+  inset_element(quote2, left = 0, right = 1, top = 0.52, bottom = 0.4) +
+  inset_element(quote3, left = 0.7, right = 1, top = 0.2, bottom = 0) +
+  plot_annotation(
+    theme = theme(
+      plot.background = element_rect(fill = bg, colour = bg)
+    )
+  )
+
+ggsave(plot = g_final, filename = "scripts/2023/week-25-ufo/ufo.png", height = 16, width = 10)
 ```
+
+<!-- Install the following packages (if you don't already have them) using `install.packages("package_name")` or `install.packages(pkgs = c("package_name1", "package_name2", ...))`: -->
+
+<!-- - [`{tidytuesdayR}`](https://cran.r-project.org/web/packages/tidytuesdayR/index.html) -->
+<!-- - [`{tidyverse}`](https://cran.r-project.org/web/packages/tidyverse/index.html) -->
+<!-- - [`{patchwork}`](https://cran.r-project.org/web/packages/patchwork/index.html) -->
+<!-- - [`{showtext}`](https://cran.r-project.org/web/packages/showtext/index.html) -->
+<!-- - [`{sysfonts}`](https://cran.r-project.org/web/packages/sysfonts/index.html) -->
+<!-- - [`{countrycode}`](https://cran.r-project.org/web/packages/countrycode/index.html) -->
+<!-- - [`{glue}`](https://cran.r-project.org/web/packages/glue/index.html) -->
+<!-- - [`{scales}`](https://cran.r-project.org/web/packages/scales/index.html) -->
+<!-- - [`{ragg}`](https://cran.r-project.org/web/packages/ragg/index.html) -->
+
+<!-- **Tips:** -->
+
+<!-- - See lines 114 and 120 (among others) for examples of code annotations -- aim to include this level of detail.  -->
+<!-- - Writing clean annotations makes it easier for you and others to read them -- I love using the [`{ARTofR}` package](https://github.com/Hzhang-ouce/ARTofR) to create titles, dividers, and block comments in my scripts and Qmd / Rmd files. Read more about how to create different dividers using the `{ARTofR}` package on [this resource page](http://localhost:7166/clean-code-guide.html#annotating-code) of the course website. -->
+<!-- - Pull up documentation for a function directly in RStudio's **Help** pane by running `?function_name` in the console. Vignettes and `pkgdown` sites are incredible resources as well (e.g. here is a [vignette](https://cloud.r-project.org/web/packages/patchwork/vignettes/patchwork.html) and the [pkgdown](https://patchwork.data-imaginist.com/) site for the `{patchwork}` package) -->
+<!-- - If you don't immediately understand the purpose of a line / chunk of code, skip over it (temporarily) and continue working your way through the following code -- it oftentimes becomes more evident given additional context. -->
+<!-- - Plots may look *super* squished in the RStudio Viewer pane -- use the **Zoom** button to pop them open in a separate window. -->
+<!-- - **Keep in mind:** While this is fairly complex ggplot code, remember that it's constructed in layers -- meaning you can run code line-by-line to see exactly how the plot is changing with each new layer. You may come across functions and arguments that you're already familiar with (yay!), and of course, others that are totally new.   -->
+
 :::
 
-[**(Part 1b) Once complete, answer the following questions:**]{.teal-text}
+### 1b. Answer questions
 
-- [ ] **1.** Describe two elements of this plot that you find visually-pleasing / easy to understand / intuitive. Why? [**(4-10 sentences)**]{.peach-text}
-- [ ] **2.** Describe two elements of this plot that you feel could be better presented in a different way. Why? [**(4-10 sentences)**]{.peach-text}
+Once you're done annotating, respond to the following three questions about this data visualization: 
+
+- [ ] **1.** Describe two elements of this piece that you find visually-pleasing / easy to understand / intuitive. Why? [**(4-10 sentences)**]{.peach-text}
+- [ ] **2.** Describe two elements of this piece that you feel could be better presented in a different way. Why? [**(4-10 sentences)**]{.peach-text}
 - [ ] **3.** Describe two new things that you learned by interpreting / annotating this code. These could be  packages, functions, or even code organizational approaches that you hadn't previously known about or considered. [**(4-10 sentences)**]{.peach-text}
 
 ## Rubric (specifications)
@@ -385,14 +337,12 @@ You must complete the following, as detailed below, to receive a "Satisfactory" 
 
 **Complete the following steps in your GitHub Classroom repo (`eds240-hw1-username/Part1.qmd`):**
 
-- [ ] include your preferred name, and if you feel comfortable, your preferred pronouns in the `author` field of the `Part1.qmd` YAML 
-- [ ] update each comment line in the code that reads, `ANNOTATE`, with a *brief* description, written in your own words (see lines 114 & 120 for example annotations; there are other lines that have been already annotated for you as well -- you do not need to re-write these annotations -- you are allowed up to five incorrect or missing annotations
+- [ ] include your preferred name in the `author` field of the `Part1.qmd` YAML 
+- [ ] update each comment line in the code that reads, `# ANNOTATE`, with a *brief* description, written in your own words (see lines 114 & 120 for example annotations; there are other lines that have been already annotated for you as well -- you do not need to re-write these annotations -- you are allowed up to five incorrect or missing annotations
 - [ ] leave the code chunk options set to `eval: false` and `echo: true` 
 - [ ] answer all three Part 1b questions adhering to the length requirements specified at the end of each question prompt
 - [ ] we (your instructors) should be able to successfully render `Part1.qmd` locally without errors
-- [ ] push your completed `Part1.qmd` to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/20/2024
-
-<!-- , *however* **do not push any html files to GitHub** (i.e. `Part1.html` and `Part1_files/`; consider adding these to your `.gitignore` so that you don't accidentally push them) -->
+- [ ] push your completed `Part1.qmd` to GitHub via GitHub Classrooms by 11:59pm PT on Sat 01/18/2025
 
 <br>
 
