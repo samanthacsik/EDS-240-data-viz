@@ -10,13 +10,13 @@ Earning "Satisfactory" marks on Self-reflections (SRs) and Homework Assignments 
 
 <!-- | Assignment Type | Assignment Title                 | Date Assigned  | Date Due                   | -->
 <!-- |:---------------:|----------------------------------|----------------|----------------------------| -->
-<!-- | SR              | [Pre-course reflection (SR #1)](assignments/SR1-precourse.qmd)    | Mon 01/06/2024 | Sat 01/11/2024, 11:59pm PT | -->
-<!-- | HW              | [Homework Assignment #1](assignments/HW1.qmd)                     | Mon 01/06/2024 | Sat 01/18/2024, 11:59pm PT | -->
-<!-- | HW              | [Homework Assignment #2](assignments/HW2.qmd)                     | Mon 01/20/2024 | Sat 02/01/2024, 11:59pm PT | -->
-<!-- | SR              | [Mid-course reflection (SR #2)](assignments/SR2-midcourse.qmd)    | Mon 02/03/2024 | Sat 02/08/2024, 11:59pm PT | -->
-<!-- | HW              | [Homework Assignment #3](assignments/HW3.qmd)                     | Mon 02/10/2024 | Sat 02/22/2024, 11:59pm PT | -->
-<!-- | HW              | [Homework Assignment #4](assignments/HW4.qmd)                     | Mon 02/24/2024 | Sat 03/08/2024, 11:59pm PT | -->
-<!-- | SR              | [End-of-course reflection (SR #3)](assignments/SR3-endcourse.qmd) | Mon 03/10/2024 | Sat 03/15/2024, 11:59pm PT | -->
+<!-- | SR              | [Pre-course reflection (SR #1)](course-materials/assignments/SR1-precourse.qmd)    | Mon 01/06/2024 | Sat 01/11/2024, 11:59pm PT | -->
+<!-- | HW              | [Homework Assignment #1](course-materials/assignments/HW1.qmd)                     | Mon 01/06/2024 | Sat 01/18/2024, 11:59pm PT | -->
+<!-- | HW              | [Homework Assignment #2](course-materials/assignments/HW2.qmd)                     | Mon 01/20/2024 | Sat 02/01/2024, 11:59pm PT | -->
+<!-- | SR              | [Mid-course reflection (SR #2)](course-materials/assignments/SR2-midcourse.qmd)    | Mon 02/03/2024 | Sat 02/08/2024, 11:59pm PT | -->
+<!-- | HW              | [Homework Assignment #3](course-materials/assignments/HW3.qmd)                     | Mon 02/10/2024 | Sat 02/22/2024, 11:59pm PT | -->
+<!-- | HW              | [Homework Assignment #4](course-materials/assignments/HW4.qmd)                     | Mon 02/24/2024 | Sat 03/08/2024, 11:59pm PT | -->
+<!-- | SR              | [End-of-course reflection (SR #3)](course-materials/assignments/SR3-endcourse.qmd) | Mon 03/10/2024 | Sat 03/15/2024, 11:59pm PT | -->
 
 | Assignment Type | Assignment Title                 | Date Assigned  | Date Due                   |
 |:---------------:|----------------------------------|----------------|----------------------------|

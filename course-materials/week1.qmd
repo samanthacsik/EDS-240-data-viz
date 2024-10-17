@@ -82,11 +82,16 @@ install.packages("usdata") # demographic data on the United States at the county
 
 ### B. Download necessary data
 
-[Download the data (`fracking.csv`)](https://drive.google.com/file/d/1vR0Ppc8YaIsHmAOluxeOtmKu1DG_WaR9/view?usp=drive_link){target="_blank"} from Google Drive and save it to your class repo in the following location: `EDS-240-class-examples/week1/data/fracking.csv` (NOTE: data were originally downloaded as a zip file from [FracFocus](https://fracfocus.org/data-download){target="_blank"} in November 2023. Since then, FracFocus has published a cleaner version of these data, which defeats some of this purpose of this exercise. As such, we'll be working with this saved version of the data, rather than downloading directly from FracFocus's data download page.)
+[Download fracking data (`registryupload_1.csv`)](https://drive.google.com/file/d/1H2lilk6lF3oTZtAT8UP4Fa4MSuQ5VQ9Y/view?usp=sharing){target="_blank"} from Google Drive and save it to your class repo in the following location: `EDS-240-class-examples/week1/data/registryupload_1.csv` 
+
+::: {.callout-note} 
+## Why are we downloading from Google Drive and not FracFocus?
+These data were originally downloaded as a [zip file](https://drive.google.com/file/d/1XUW-660tXKhxTl0tSkWFqtvaJcRedD7r/view?usp=sharing) from [FracFocus](https://fracfocus.org/data-download){target="_blank"} in November 2023 when they were still quite messy. Since then, FracFocus has published cleaner versions of these data, which is great, but also defeats the purpose of this exercise {{< fa face-smile title="a smiling face" >}}. For this reason, we'll be working with this saved version of the data, rather than downloading directly from [FracFocus's data download page](https://fracfocus.org/data-download).
+:::
 
 ### C. Add data to `.gitignore`
 
-We don't want to push any data in our repo to GitHub (GitHub enforces file size limits, and you'll run into some serious headaches when you try to push a file that's too big) -- to avoid doing this, we can add our data files to our `.gitignore` file, which, as the name implies, is a collection of files that we want Git to ignore. **Open up your `.gitignore` file and add the following line (anywhere is fine, but it makes sense to add it beneath the last line):**
+We don't want to push any data in our repo to GitHub (GitHub enforces file size limits, and you'll run into some serious headaches when you try to push a file that's too big). To avoid doing this, we can add our data files to our `.gitignore` file, which, as the name implies, is a collection of files that we want Git to ignore. **Open up your `.gitignore` file and add the following line (anywhere is fine, but it makes sense to add it beneath the last line):**
 
 ```{bash filename=".gitignore"}
 #| eval: false
@@ -123,7 +128,7 @@ Add a new blank file to your class repo -- you'll complete your discussion exerc
 
 | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Discussion Slides | {{< fa file-code title="A code file" >}} Exercise instructions | {{< fa key title="A key" >}} Exercise solutions |
 |-------------------|-------------------|--------------|
-| *NA*              | [Discussion 1 exercise: data wrangling](discussion/week1/week1-exercise.qmd) | [Discussion 1 solution](discussion/week1/week1-solution.qmd) |
+| [D1 slides: data wrangling](discussion/week1/week1-wrangling-slides.qmd) | [D1 exercise: wrangle fracking data](discussion/week1/week1-exercise.qmd) | [D1 solution](discussion/week1/week1-solution.qmd) |
 : {.hover .bordered tbl-colwidths="[35,35,30]"} 
 
 <br>
@@ -140,5 +145,5 @@ Add a new blank file to your class repo -- you'll complete your discussion exerc
 <!-- | Assignment Type | Assignment Title                                                       |  Date Assigned | Date Due                   | -->
 <!-- |:---------------:|------------------------------------------------------------------------|----------------|----------------------------| -->
 <!-- | EOC             | [End-of-class survey (week 1)](tbd)    | Mon 01/06/2024 | Mon 01/06/2024, 11:55pm PT | -->
-<!-- | SR              | [Pre-course reflection (SR #1)](../assignments/SR1-precourse.qmd)      | Mon 01/06/2024 | Sat 01/11/2024, 11:59pm PT | -->
-<!-- | HW              | [Homework Assignment #1](../assignments/HW1.qmd)                       | Mon 01/06/2024 | Sat 01/18/2024, 11:59pm PT | -->
+<!-- | SR              | [Pre-course reflection (SR #1)](assignments/SR1-precourse.qmd)      | Mon 01/06/2024 | Sat 01/11/2024, 11:59pm PT | -->
+<!-- | HW              | [Homework Assignment #1](assignments/HW1.qmd)                       | Mon 01/06/2024 | Sat 01/18/2024, 11:59pm PT | -->

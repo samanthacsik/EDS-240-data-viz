@@ -8,7 +8,7 @@
 
 <meta name="description" content="Tuesday January 7th, 2025">
 
-<title>Week 1 Discussion (Solution) – EDS 240</title>
+<title>Week 1 Discussion: Solution – EDS 240</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -241,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page">
-      <h1 class="title">Week 1 Discussion (Solution)</h1>
+      <h1 class="title">Week 1 Discussion: Solution</h1>
             <p class="subtitle lead">Data wrangling with the <code>{tidyverse}</code></p>
                   <div>
         <div class="description">
@@ -278,6 +278,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- - <https://www.data-is-plural.com/archive/2023-09-27-edition/> -->
 <!-- - <https://fracfocus.org/data-download> -->
 <!-- `TotalBaseWaterVolume`: The total volume of water used as a carrier fluid for the hydraulic fracturing job (in gallons). -->
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+There’s almost always more than one correct solution!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Remember, there is <em>rarely</em> (if ever) one single solution to solving a data science problem. If you took different approaches / use different functions / etc. but arrived at the same output, that’s great! Chat with your partner(s) about how your approaches differ from the one below, and why it still got you to the same output.</p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="do">##                                    setup                                 ----</span></span>
@@ -289,7 +302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8"></a><span class="fu">library</span>(usdata)</span>
 <span id="cb1-9"><a href="#cb1-9"></a></span>
 <span id="cb1-10"><a href="#cb1-10"></a><span class="co">#......................import fracking data......................</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a>fracking <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week1"</span>, <span class="st">"data"</span>, <span class="st">"fracking.csv"</span>))</span>
+<span id="cb1-11"><a href="#cb1-11"></a>fracking <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week1"</span>, <span class="st">"data"</span>, <span class="st">"registryupload_1.csv"</span>))</span>
 <span id="cb1-12"><a href="#cb1-12"></a></span>
 <span id="cb1-13"><a href="#cb1-13"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
 <span id="cb1-14"><a href="#cb1-14"></a><span class="do">##                           basic data exploration                         ----</span></span>
@@ -316,82 +329,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-35"><a href="#cb1-35"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(datetime_start)) <span class="sc">|&gt;</span> <span class="co"># create 'year' col from date</span></span>
 <span id="cb1-36"><a href="#cb1-36"></a></span>
 <span id="cb1-37"><a href="#cb1-37"></a>  <span class="co"># select relevant cols ----</span></span>
-<span id="cb1-38"><a href="#cb1-38"></a>  <span class="fu">select</span>(datetime_start, year, state_name, county_name, well_name, total_base_water_volume) <span class="sc">|&gt;</span> </span>
+<span id="cb1-38"><a href="#cb1-38"></a>  <span class="fu">select</span>(datetime_start, year, state_name, well_name, total_base_water_volume) <span class="sc">|&gt;</span> </span>
 <span id="cb1-39"><a href="#cb1-39"></a>  </span>
-<span id="cb1-40"><a href="#cb1-40"></a>  <span class="co"># filter out non-state names ----</span></span>
-<span id="cb1-41"><a href="#cb1-41"></a>  <span class="fu">filter</span>(<span class="sc">!</span>state_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Beaver"</span>, <span class="st">"Beckham"</span>, <span class="st">"Harper"</span>, <span class="st">"Hemphill"</span>, <span class="st">"Midland"</span>, <span class="st">"Red River"</span>, <span class="st">"Roosevelt"</span>, <span class="st">"Rusk"</span>, <span class="st">"State"</span>, <span class="st">"WARD"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb1-40"><a href="#cb1-40"></a>  <span class="co"># make all words title case ----</span></span>
+<span id="cb1-41"><a href="#cb1-41"></a>  <span class="fu">mutate</span>(<span class="at">state_name =</span> <span class="fu">str_to_title</span>(state_name)) <span class="sc">|&gt;</span> </span>
 <span id="cb1-42"><a href="#cb1-42"></a>  </span>
-<span id="cb1-43"><a href="#cb1-43"></a>  <span class="co"># make all words title case ----</span></span>
-<span id="cb1-44"><a href="#cb1-44"></a>  <span class="fu">mutate</span>(<span class="at">state_name =</span> <span class="fu">str_to_title</span>(state_name)) <span class="sc">|&gt;</span> </span>
+<span id="cb1-43"><a href="#cb1-43"></a>  <span class="co"># remove rows that have a '?' mark ----</span></span>
+<span id="cb1-44"><a href="#cb1-44"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(<span class="at">string =</span> state_name, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">?"</span>)) <span class="sc">|&gt;</span> <span class="co"># `?` is a special chr; escape with `\\` prefix</span></span>
 <span id="cb1-45"><a href="#cb1-45"></a>  </span>
-<span id="cb1-46"><a href="#cb1-46"></a>  <span class="co"># fix misspelled state names ----</span></span>
-<span id="cb1-47"><a href="#cb1-47"></a>  <span class="fu">mutate</span>(<span class="at">state_name =</span> <span class="fu">case_when</span>(</span>
-<span id="cb1-48"><a href="#cb1-48"></a>    state_name <span class="sc">==</span> <span class="st">"Colordao"</span> <span class="sc">~</span> <span class="st">"Colorado"</span>,</span>
-<span id="cb1-49"><a href="#cb1-49"></a>    state_name <span class="sc">==</span> <span class="st">"Loiusiana"</span> <span class="sc">~</span> <span class="st">"Louisiana"</span>,</span>
-<span id="cb1-50"><a href="#cb1-50"></a>    state_name <span class="sc">==</span> <span class="st">"Louisianna"</span> <span class="sc">~</span> <span class="st">"Louisiana"</span>,</span>
-<span id="cb1-51"><a href="#cb1-51"></a>    state_name <span class="sc">==</span> <span class="st">"Lousiana"</span> <span class="sc">~</span> <span class="st">"Louisiana"</span>,</span>
-<span id="cb1-52"><a href="#cb1-52"></a>    state_name <span class="sc">==</span> <span class="st">"New Mexcio"</span> <span class="sc">~</span> <span class="st">"New Mexico"</span>,</span>
-<span id="cb1-53"><a href="#cb1-53"></a>    state_name <span class="sc">==</span> <span class="st">"Norh Dakota"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb1-54"><a href="#cb1-54"></a>    state_name <span class="sc">==</span> <span class="st">"Norht Dakota"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb1-55"><a href="#cb1-55"></a>    state_name <span class="sc">==</span> <span class="st">"North  Dakota"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb1-56"><a href="#cb1-56"></a>    state_name <span class="sc">==</span> <span class="st">"North Dakata"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb1-57"><a href="#cb1-57"></a>    state_name <span class="sc">==</span> <span class="st">"North Dakotta"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb1-58"><a href="#cb1-58"></a>    state_name <span class="sc">==</span> <span class="st">"Noth Dakota"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb1-59"><a href="#cb1-59"></a>    state_name <span class="sc">==</span> <span class="st">"Pennslvania"</span> <span class="sc">~</span> <span class="st">"Pennsylvania"</span>,</span>
-<span id="cb1-60"><a href="#cb1-60"></a>    state_name <span class="sc">==</span> <span class="st">"Pennsylavania"</span> <span class="sc">~</span> <span class="st">"Pennsylvania"</span>,</span>
-<span id="cb1-61"><a href="#cb1-61"></a>    state_name <span class="sc">==</span> <span class="st">"Pennsylvanya"</span> <span class="sc">~</span> <span class="st">"Pennsylvania"</span>,</span>
-<span id="cb1-62"><a href="#cb1-62"></a>    state_name <span class="sc">==</span> <span class="st">"Penssylvania"</span> <span class="sc">~</span> <span class="st">"Pennsylvania"</span>,</span>
-<span id="cb1-63"><a href="#cb1-63"></a>    state_name <span class="sc">==</span> <span class="st">"Texasa"</span> <span class="sc">~</span> <span class="st">"Texas"</span>,</span>
-<span id="cb1-64"><a href="#cb1-64"></a>    state_name <span class="sc">==</span> <span class="st">"Texs"</span> <span class="sc">~</span> <span class="st">"Texas"</span>, </span>
-<span id="cb1-65"><a href="#cb1-65"></a>    state_name <span class="sc">==</span> <span class="st">"West Viginia"</span> <span class="sc">~</span> <span class="st">"West Virginia"</span>,</span>
-<span id="cb1-66"><a href="#cb1-66"></a>    state_name <span class="sc">==</span> <span class="st">"Wyominng"</span> <span class="sc">~</span> <span class="st">"Wyoming"</span>, </span>
-<span id="cb1-67"><a href="#cb1-67"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> state_name <span class="co"># copy over rest of state names from as-is</span></span>
-<span id="cb1-68"><a href="#cb1-68"></a>  )) <span class="sc">|&gt;</span> </span>
-<span id="cb1-69"><a href="#cb1-69"></a>  </span>
-<span id="cb1-70"><a href="#cb1-70"></a>  <span class="co"># remove rows that have a '?' mark ----</span></span>
-<span id="cb1-71"><a href="#cb1-71"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(<span class="at">string =</span> state_name, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">?"</span>)) <span class="sc">|&gt;</span> <span class="co"># `?` is a special chr; escape with `\\` prefix</span></span>
-<span id="cb1-72"><a href="#cb1-72"></a>  </span>
-<span id="cb1-73"><a href="#cb1-73"></a>  <span class="co"># make all uppercase (so that we can covert abbreviation to state names) ----</span></span>
-<span id="cb1-74"><a href="#cb1-74"></a>  <span class="fu">mutate</span>(<span class="at">state_name =</span> <span class="fu">str_to_upper</span>(state_name)) <span class="sc">|&gt;</span> </span>
-<span id="cb1-75"><a href="#cb1-75"></a>  </span>
-<span id="cb1-76"><a href="#cb1-76"></a>  <span class="co"># mutate abbreviations to full state names ----</span></span>
-<span id="cb1-77"><a href="#cb1-77"></a>  <span class="fu">mutate</span>(<span class="at">state_name =</span> <span class="fu">ifelse</span>(<span class="at">test =</span> <span class="fu">str_length</span>(state_name) <span class="sc">==</span> <span class="dv">2</span>, <span class="co"># if string in 'state_name' col is 2 chrs long</span></span>
-<span id="cb1-78"><a href="#cb1-78"></a>                     <span class="at">yes =</span> usdata<span class="sc">::</span><span class="fu">abbr2state</span>(state_name), <span class="co"># replace abbreviation with full state name </span></span>
-<span id="cb1-79"><a href="#cb1-79"></a>                     <span class="at">no =</span> state_name)) <span class="sc">|&gt;</span> <span class="co"># if string in 'state_name' col is not 2 chrs long, keep state name as-is</span></span>
+<span id="cb1-46"><a href="#cb1-46"></a>  <span class="co"># mutate abbreviations to full state names ----</span></span>
+<span id="cb1-47"><a href="#cb1-47"></a>  <span class="fu">mutate</span>(<span class="at">state_name =</span> <span class="fu">ifelse</span>(<span class="at">test =</span> <span class="fu">str_length</span>(state_name) <span class="sc">==</span> <span class="dv">2</span>, <span class="co"># if string in 'state_name' col is 2 chrs long</span></span>
+<span id="cb1-48"><a href="#cb1-48"></a>                     <span class="at">yes =</span> usdata<span class="sc">::</span><span class="fu">abbr2state</span>(state_name), <span class="co"># replace abbreviation with full state name </span></span>
+<span id="cb1-49"><a href="#cb1-49"></a>                     <span class="at">no =</span> state_name)) <span class="sc">|&gt;</span> <span class="co"># if string in 'state_name' col is not 2 chrs long, keep state name as-is</span></span>
+<span id="cb1-50"><a href="#cb1-50"></a>  </span>
+<span id="cb1-51"><a href="#cb1-51"></a>  <span class="co"># fix misspelled state names ----</span></span>
+<span id="cb1-52"><a href="#cb1-52"></a>  <span class="fu">mutate</span>(<span class="at">state_name =</span> <span class="fu">case_when</span>(</span>
+<span id="cb1-53"><a href="#cb1-53"></a>    state_name <span class="sc">==</span> <span class="st">"Colordao"</span> <span class="sc">~</span> <span class="st">"Colorado"</span>,</span>
+<span id="cb1-54"><a href="#cb1-54"></a>    state_name <span class="sc">==</span> <span class="st">"Loiusiana"</span> <span class="sc">~</span> <span class="st">"Louisiana"</span>,</span>
+<span id="cb1-55"><a href="#cb1-55"></a>    state_name <span class="sc">==</span> <span class="st">"Louisianna"</span> <span class="sc">~</span> <span class="st">"Louisiana"</span>,</span>
+<span id="cb1-56"><a href="#cb1-56"></a>    state_name <span class="sc">==</span> <span class="st">"Lousiana"</span> <span class="sc">~</span> <span class="st">"Louisiana"</span>,</span>
+<span id="cb1-57"><a href="#cb1-57"></a>    state_name <span class="sc">==</span> <span class="st">"New Mexcio"</span> <span class="sc">~</span> <span class="st">"New Mexico"</span>,</span>
+<span id="cb1-58"><a href="#cb1-58"></a>    state_name <span class="sc">==</span> <span class="st">"Norh Dakota"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
+<span id="cb1-59"><a href="#cb1-59"></a>    state_name <span class="sc">==</span> <span class="st">"Norht Dakota"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
+<span id="cb1-60"><a href="#cb1-60"></a>    state_name <span class="sc">==</span> <span class="st">"North  Dakota"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
+<span id="cb1-61"><a href="#cb1-61"></a>    state_name <span class="sc">==</span> <span class="st">"North Dakata"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
+<span id="cb1-62"><a href="#cb1-62"></a>    state_name <span class="sc">==</span> <span class="st">"North Dakotta"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
+<span id="cb1-63"><a href="#cb1-63"></a>    state_name <span class="sc">==</span> <span class="st">"Noth Dakota"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
+<span id="cb1-64"><a href="#cb1-64"></a>    state_name <span class="sc">==</span> <span class="st">"Pennslvania"</span> <span class="sc">~</span> <span class="st">"Pennsylvania"</span>,</span>
+<span id="cb1-65"><a href="#cb1-65"></a>    state_name <span class="sc">==</span> <span class="st">"Pennsylavania"</span> <span class="sc">~</span> <span class="st">"Pennsylvania"</span>,</span>
+<span id="cb1-66"><a href="#cb1-66"></a>    state_name <span class="sc">==</span> <span class="st">"Pennsylvanya"</span> <span class="sc">~</span> <span class="st">"Pennsylvania"</span>,</span>
+<span id="cb1-67"><a href="#cb1-67"></a>    state_name <span class="sc">==</span> <span class="st">"Penssylvania"</span> <span class="sc">~</span> <span class="st">"Pennsylvania"</span>,</span>
+<span id="cb1-68"><a href="#cb1-68"></a>    state_name <span class="sc">==</span> <span class="st">"Texasa"</span> <span class="sc">~</span> <span class="st">"Texas"</span>,</span>
+<span id="cb1-69"><a href="#cb1-69"></a>    state_name <span class="sc">==</span> <span class="st">"Texs"</span> <span class="sc">~</span> <span class="st">"Texas"</span>, </span>
+<span id="cb1-70"><a href="#cb1-70"></a>    state_name <span class="sc">==</span> <span class="st">"West Viginia"</span> <span class="sc">~</span> <span class="st">"West Virginia"</span>,</span>
+<span id="cb1-71"><a href="#cb1-71"></a>    state_name <span class="sc">==</span> <span class="st">"Wyominng"</span> <span class="sc">~</span> <span class="st">"Wyoming"</span>, </span>
+<span id="cb1-72"><a href="#cb1-72"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> state_name <span class="co"># copy over rest of state names from as-is</span></span>
+<span id="cb1-73"><a href="#cb1-73"></a>  )) <span class="sc">|&gt;</span> </span>
+<span id="cb1-74"><a href="#cb1-74"></a>  </span>
+<span id="cb1-75"><a href="#cb1-75"></a>  <span class="co"># filter out non-state names ----</span></span>
+<span id="cb1-76"><a href="#cb1-76"></a>  <span class="fu">filter</span>(<span class="sc">!</span>state_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Beaver"</span>, <span class="st">"Beckham"</span>, <span class="st">"Harper"</span>, <span class="st">"Hemphill"</span>, <span class="st">"Midland"</span>, <span class="st">"Red River"</span>, <span class="st">"Roosevelt"</span>, <span class="st">"Rusk"</span>, <span class="st">"State"</span>, <span class="st">"Ward"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb1-77"><a href="#cb1-77"></a></span>
+<span id="cb1-78"><a href="#cb1-78"></a>  <span class="co"># create a column of just state abbreviations ----</span></span>
+<span id="cb1-79"><a href="#cb1-79"></a>  <span class="fu">mutate</span>(<span class="at">state_abb =</span> usdata<span class="sc">::</span><span class="fu">state2abbr</span>(state_name)) <span class="sc">|&gt;</span> </span>
 <span id="cb1-80"><a href="#cb1-80"></a>  </span>
-<span id="cb1-81"><a href="#cb1-81"></a>  <span class="co"># make all words title case again ----</span></span>
-<span id="cb1-82"><a href="#cb1-82"></a>  <span class="fu">mutate</span>(<span class="at">state_name =</span> <span class="fu">str_to_title</span>(state_name)) <span class="sc">|&gt;</span> </span>
+<span id="cb1-81"><a href="#cb1-81"></a>  <span class="co"># move 'state_abb' col after state_name col ----</span></span>
+<span id="cb1-82"><a href="#cb1-82"></a>  <span class="fu">relocate</span>(state_abb, <span class="at">.after =</span> state_name) <span class="sc">|&gt;</span> </span>
 <span id="cb1-83"><a href="#cb1-83"></a>  </span>
-<span id="cb1-84"><a href="#cb1-84"></a>  <span class="co"># create a column of just state abbreviations ----</span></span>
-<span id="cb1-85"><a href="#cb1-85"></a>  <span class="fu">mutate</span>(<span class="at">state_abb =</span> usdata<span class="sc">::</span><span class="fu">state2abbr</span>(state_name)) <span class="sc">|&gt;</span> </span>
-<span id="cb1-86"><a href="#cb1-86"></a>  </span>
-<span id="cb1-87"><a href="#cb1-87"></a>  <span class="co"># rename 'total_base_water_volume' to 'total_base_water_volume_gal' for clarity ----</span></span>
-<span id="cb1-88"><a href="#cb1-88"></a>  <span class="fu">rename</span>(<span class="at">total_base_water_volume_gal =</span> total_base_water_volume) <span class="sc">|&gt;</span> </span>
+<span id="cb1-84"><a href="#cb1-84"></a>  <span class="co"># rename 'total_base_water_volume' to 'total_base_water_volume_gal' for clarity ----</span></span>
+<span id="cb1-85"><a href="#cb1-85"></a>  <span class="fu">rename</span>(<span class="at">total_base_water_volume_gal =</span> total_base_water_volume) <span class="sc">|&gt;</span> </span>
+<span id="cb1-86"><a href="#cb1-86"></a></span>
+<span id="cb1-87"><a href="#cb1-87"></a>  <span class="co"># remove obs that don't have a measurement for 'total_base_water_volume_gal' (NA) ----</span></span>
+<span id="cb1-88"><a href="#cb1-88"></a>  <span class="fu">drop_na</span>(total_base_water_volume_gal) <span class="sc">|&gt;</span> </span>
 <span id="cb1-89"><a href="#cb1-89"></a>  </span>
-<span id="cb1-90"><a href="#cb1-90"></a>  <span class="co"># move 'state_abb' col after state_name col ----</span></span>
-<span id="cb1-91"><a href="#cb1-91"></a>  <span class="fu">relocate</span>(state_abb, <span class="at">.after =</span> state_name) <span class="sc">|&gt;</span> </span>
-<span id="cb1-92"><a href="#cb1-92"></a>  </span>
-<span id="cb1-93"><a href="#cb1-93"></a>  <span class="co"># remove obs that don't have a measurement for 'total_base_water_volume' (NA) ----</span></span>
-<span id="cb1-94"><a href="#cb1-94"></a>  <span class="fu">drop_na</span>(total_base_water_volume_gal)</span>
-<span id="cb1-95"><a href="#cb1-95"></a></span>
-<span id="cb1-96"><a href="#cb1-96"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb1-97"><a href="#cb1-97"></a><span class="do">##          some exploratory data viz + a few plot mods for practice        ----</span></span>
-<span id="cb1-98"><a href="#cb1-98"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb1-99"><a href="#cb1-99"></a></span>
-<span id="cb1-100"><a href="#cb1-100"></a>fracking_clean <span class="sc">|&gt;</span> </span>
-<span id="cb1-101"><a href="#cb1-101"></a>  <span class="fu">filter</span>(state_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Texas"</span>, <span class="st">"Colorado"</span>, <span class="st">"North Dakota"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb1-102"><a href="#cb1-102"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2015</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb1-103"><a href="#cb1-103"></a>  <span class="fu">group_by</span>(state_name) <span class="sc">|&gt;</span> <span class="co"># pipe directly into ggplot</span></span>
-<span id="cb1-104"><a href="#cb1-104"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> state_name, <span class="at">y =</span> total_base_water_volume_gal)) <span class="sc">+</span></span>
-<span id="cb1-105"><a href="#cb1-105"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.3</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"gray15"</span>) <span class="sc">+</span></span>
-<span id="cb1-106"><a href="#cb1-106"></a>  <span class="fu">geom_violin</span>(<span class="at">color =</span> <span class="st">"red4"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb1-107"><a href="#cb1-107"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>()) <span class="sc">+</span></span>
-<span id="cb1-108"><a href="#cb1-108"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Total base water volumn (gal)"</span>) <span class="sc">+</span></span>
-<span id="cb1-109"><a href="#cb1-109"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb1-110"><a href="#cb1-110"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb1-111"><a href="#cb1-111"></a>  <span class="fu">theme</span>(</span>
-<span id="cb1-112"><a href="#cb1-112"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb1-113"><a href="#cb1-113"></a>    ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-90"><a href="#cb1-90"></a>  <span class="co"># reorder rows from earliest to most recent `datetime_start` value ----</span></span>
+<span id="cb1-91"><a href="#cb1-91"></a>  <span class="fu">arrange</span>(datetime_start)</span>
+<span id="cb1-92"><a href="#cb1-92"></a></span>
+<span id="cb1-93"><a href="#cb1-93"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-94"><a href="#cb1-94"></a><span class="do">##          some exploratory data viz + a few plot mods for practice        ----</span></span>
+<span id="cb1-95"><a href="#cb1-95"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb1-96"><a href="#cb1-96"></a></span>
+<span id="cb1-97"><a href="#cb1-97"></a>fracking_clean <span class="sc">|&gt;</span> </span>
+<span id="cb1-98"><a href="#cb1-98"></a>  <span class="fu">filter</span>(state_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Texas"</span>, <span class="st">"Colorado"</span>, <span class="st">"North Dakota"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb1-99"><a href="#cb1-99"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2015</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-100"><a href="#cb1-100"></a>  <span class="fu">group_by</span>(state_name) <span class="sc">|&gt;</span> <span class="co"># pipe directly into ggplot</span></span>
+<span id="cb1-101"><a href="#cb1-101"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> state_name, <span class="at">y =</span> total_base_water_volume_gal)) <span class="sc">+</span></span>
+<span id="cb1-102"><a href="#cb1-102"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.3</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"gray15"</span>) <span class="sc">+</span></span>
+<span id="cb1-103"><a href="#cb1-103"></a>  <span class="fu">geom_violin</span>(<span class="at">color =</span> <span class="st">"red4"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb1-104"><a href="#cb1-104"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>()) <span class="sc">+</span></span>
+<span id="cb1-105"><a href="#cb1-105"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Total base water volumn (gal)"</span>) <span class="sc">+</span></span>
+<span id="cb1-106"><a href="#cb1-106"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb1-107"><a href="#cb1-107"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-108"><a href="#cb1-108"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-109"><a href="#cb1-109"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb1-110"><a href="#cb1-110"></a>    ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <!-- Code that executes for website rendering:  -->
 <div class="cell">

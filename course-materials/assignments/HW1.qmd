@@ -3,17 +3,14 @@ title: "Assignment #1 (HW #1)"
 subtitle: "Assigned Mon 01/08/2024 | Due Sat 01/20/2024"
 ---
 
-::: {.center-text}
-<div class="pink-box">
-***You must earn a "Satisfactory" mark for each individual Part (I and II) to earn a "Satisfactory" mark for Assignment #1.***
+::: {.callout-important}
+## You must earn a "Satisfactory" mark for each individual Part (I and II) to earn a "Satisfactory" mark for Assignment #1.
 
 **NOTE:** Assignments are to be submitted via GitHub Classrooms, unless otherwise noted. Each student receives one "free pass" for not submitting assignments via specified channels, after which you will receive a "Not Yet" mark.
 
 **Read each part of the assignment carefully**, and use the check boxes to ensure you've addressed all elements of the assignment!
-</div>
 :::
 
-<br>
 
 # [Part I: Annotating `{ggplot2}` code]{.pink-text}
 
@@ -35,7 +32,7 @@ Much of your time as a data scientist will be spent looking at code written by o
 #| echo: false
 #| fig-align: "center"
 #| out-width: "50%"
-knitr::include_graphics("../images/indoor-poll-ggplot.png")
+knitr::include_graphics("images/indoor-poll-ggplot.png")
 ```
 
 You can find metadata and additional information about the data set on the [rfordatascience/tidytuesday (2022-04-12) `readme.md`](https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-04-12/readme.md#data-dictionary). **Note:** A select few lines of code have already been annotated for you.

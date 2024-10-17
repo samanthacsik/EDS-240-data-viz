@@ -1,5 +1,5 @@
 ---
-title: "Week 1 Discussion (Solution)"
+title: "Week 1 Discussion: Solution"
 subtitle: "Data wrangling with the `{tidyverse}`"
 description: "Tuesday January 7^th^, 2025"
 ---
@@ -8,8 +8,12 @@ description: "Tuesday January 7^th^, 2025"
 <!-- - <https://www.abc27.com/pennsylvania/12-states-where-fracking-is-most-prevalent-where-does-pa-stand/#:~:text=1.,Texas&text=Texas%20is%20situated%20over%20parts,gas%20anywhere%20in%20the%20U.S.> -->
 <!-- - <https://www.data-is-plural.com/archive/2023-09-27-edition/> -->
 <!-- - <https://fracfocus.org/data-download> -->
-
 <!-- `TotalBaseWaterVolume`: The total volume of water used as a carrier fluid for the hydraulic fracturing job (in gallons). -->
+
+::: {.callout-note}
+## There's almost always more than one correct solution!
+Remember, there is *rarely* (if ever) one single solution to solving a data science problem. If you took different approaches / use different functions / etc. but arrived at the same output, that's great! Chat with your partner(s) about how your approaches differ from the one below, and why it still got you to the same output.
+:::
 
 ```{r}
 #| eval: false
@@ -25,7 +29,7 @@ library(janitor)
 library(usdata)
 
 #......................import fracking data......................
-fracking <- read_csv(here::here("week1", "data", "fracking.csv"))
+fracking <- read_csv(here::here("week1", "data", "registryupload_1.csv"))
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                           basic data exploration                         ----
@@ -52,13 +56,18 @@ fracking_clean <- fracking |>
   mutate(year = year(datetime_start)) |> # create 'year' col from date
 
   # select relevant cols ----
-  select(datetime_start, year, state_name, county_name, well_name, total_base_water_volume) |> 
-  
-  # filter out non-state names ----
-  filter(!state_name %in% c("Beaver", "Beckham", "Harper", "Hemphill", "Midland", "Red River", "Roosevelt", "Rusk", "State", "WARD")) |> 
+  select(datetime_start, year, state_name, well_name, total_base_water_volume) |> 
   
   # make all words title case ----
   mutate(state_name = str_to_title(state_name)) |> 
+  
+  # remove rows that have a '?' mark ----
+  filter(!str_detect(string = state_name, pattern = "\\?")) |> # `?` is a special chr; escape with `\\` prefix
+  
+  # mutate abbreviations to full state names ----
+  mutate(state_name = ifelse(test = str_length(state_name) == 2, # if string in 'state_name' col is 2 chrs long
+                     yes = usdata::abbr2state(state_name), # replace abbreviation with full state name 
+                     no = state_name)) |> # if string in 'state_name' col is not 2 chrs long, keep state name as-is
   
   # fix misspelled state names ----
   mutate(state_name = case_when(
@@ -84,31 +93,23 @@ fracking_clean <- fracking |>
     TRUE ~ state_name # copy over rest of state names from as-is
   )) |> 
   
-  # remove rows that have a '?' mark ----
-  filter(!str_detect(string = state_name, pattern = "\\?")) |> # `?` is a special chr; escape with `\\` prefix
-  
-  # make all uppercase (so that we can covert abbreviation to state names) ----
-  mutate(state_name = str_to_upper(state_name)) |> 
-  
-  # mutate abbreviations to full state names ----
-  mutate(state_name = ifelse(test = str_length(state_name) == 2, # if string in 'state_name' col is 2 chrs long
-                     yes = usdata::abbr2state(state_name), # replace abbreviation with full state name 
-                     no = state_name)) |> # if string in 'state_name' col is not 2 chrs long, keep state name as-is
-  
-  # make all words title case again ----
-  mutate(state_name = str_to_title(state_name)) |> 
-  
+  # filter out non-state names ----
+  filter(!state_name %in% c("Beaver", "Beckham", "Harper", "Hemphill", "Midland", "Red River", "Roosevelt", "Rusk", "State", "Ward")) |> 
+
   # create a column of just state abbreviations ----
   mutate(state_abb = usdata::state2abbr(state_name)) |> 
-  
-  # rename 'total_base_water_volume' to 'total_base_water_volume_gal' for clarity ----
-  rename(total_base_water_volume_gal = total_base_water_volume) |> 
   
   # move 'state_abb' col after state_name col ----
   relocate(state_abb, .after = state_name) |> 
   
-  # remove obs that don't have a measurement for 'total_base_water_volume' (NA) ----
-  drop_na(total_base_water_volume_gal)
+  # rename 'total_base_water_volume' to 'total_base_water_volume_gal' for clarity ----
+  rename(total_base_water_volume_gal = total_base_water_volume) |> 
+
+  # remove obs that don't have a measurement for 'total_base_water_volume_gal' (NA) ----
+  drop_na(total_base_water_volume_gal) |> 
+  
+  # reorder rows from earliest to most recent `datetime_start` value ----
+  arrange(datetime_start)
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##          some exploratory data viz + a few plot mods for practice        ----
@@ -149,7 +150,7 @@ library(janitor)
 library(usdata)
 
 #......................import fracking data......................
-fracking <- read_csv(here::here("course-materials", "discussion", "week1", "data", "fracking.csv"))
+fracking <- read_csv(here::here("course-materials", "discussion", "week1", "data", "registryupload_1.csv"))
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                           basic data exploration                         ----
@@ -176,13 +177,18 @@ fracking_clean <- fracking |>
   mutate(year = year(datetime_start)) |> # create 'year' col from date
 
   # select relevant cols ----
-  select(datetime_start, year, state_name, county_name, well_name, total_base_water_volume) |> 
-  
-  # filter out non-state names ----
-  filter(!state_name %in% c("Beaver", "Beckham", "Harper", "Hemphill", "Midland", "Red River", "Roosevelt", "Rusk", "State", "WARD")) |> 
+  select(datetime_start, year, state_name, well_name, total_base_water_volume) |> 
   
   # make all words title case ----
   mutate(state_name = str_to_title(state_name)) |> 
+  
+  # remove rows that have a '?' mark ----
+  filter(!str_detect(string = state_name, pattern = "\\?")) |> # `?` is a special chr; escape with `\\` prefix
+  
+  # mutate abbreviations to full state names ----
+  mutate(state_name = ifelse(test = str_length(state_name) == 2, # if string in 'state_name' col is 2 chrs long
+                     yes = usdata::abbr2state(state_name), # replace abbreviation with full state name 
+                     no = state_name)) |> # if string in 'state_name' col is not 2 chrs long, keep state name as-is
   
   # fix misspelled state names ----
   mutate(state_name = case_when(
@@ -208,35 +214,23 @@ fracking_clean <- fracking |>
     TRUE ~ state_name # copy over rest of state names from as-is
   )) |> 
   
-  # remove rows that have a '?' mark ----
-  filter(!str_detect(string = state_name, pattern = "\\?")) |> # `?` is a special chr; escape with `\\` prefix
-  
-  # make all uppercase (so that we can covert abbreviation to state names) ----
-  mutate(state_name = str_to_upper(state_name)) |> 
-  
-  # mutate abbreviations to full state names ----
-  mutate(state_name = ifelse(test = str_length(state_name) == 2, # if string in 'sn' col is 2 chrs long
-                     yes = usdata::abbr2state(state_name), # replace abbreviation with full state name 
-                     no = state_name)) |> # if string in 'sn' col is not 2 chrs long, keep state name as-is
-  
-  # make all words title case again ----
-  mutate(state_name = str_to_title(state_name)) |> 
-  
+  # filter out non-state names ----
+  filter(!state_name %in% c("Beaver", "Beckham", "Harper", "Hemphill", "Midland", "Red River", "Roosevelt", "Rusk", "State", "Ward")) |> 
+
   # create a column of just state abbreviations ----
   mutate(state_abb = usdata::state2abbr(state_name)) |> 
-  
-  # rename 'total_base_water_volume' to 'total_base_water_volume_gal' for clarity ----
-  rename(total_base_water_volume_gal = total_base_water_volume) |> 
   
   # move 'state_abb' col after state_name col ----
   relocate(state_abb, .after = state_name) |> 
   
-  # # convert 'state_name' & 'state_abb' from string to factor ----
-  # mutate(state_name = as.factor(state_name),
-  #        state_abb = as.factor(state_abb)) |> 
+  # rename 'total_base_water_volume' to 'total_base_water_volume_gal' for clarity ----
+  rename(total_base_water_volume_gal = total_base_water_volume) |> 
+
+  # remove obs that don't have a measurement for 'total_base_water_volume_gal' (NA) ----
+  drop_na(total_base_water_volume_gal) |> 
   
-  # remove obs that don't have a measurement for 'total_base_water_volume' (NA) ----
-  drop_na(total_base_water_volume_gal)
+  # reorder rows from earliest to most recent `datetime_start` value ----
+  arrange(datetime_start)
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##          some exploratory data viz + a few plot mods for practice        ----
