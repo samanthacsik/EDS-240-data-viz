@@ -29,11 +29,11 @@ Much of your time as a data scientist will be spent looking at code written by o
 
 ### 1a. Annotate code
 
-Annotate the following code, adapted from [David Oehm](https://gradientdescending.com/#google_vignette){target="_blank"}'s visualization titled, ***UFO Sightings*** ([original code](https://github.com/doehm/tidytues/blob/main/scripts/2023/week-25-ufo/ufo.R){target="_blank"}). You can find metadata and additional information about the data set on the [rfordatascience/tidytuesday (2023-06-20) `readme.md`](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-06-20/readme.md#data-dictionary){target="_blank"}.
+Annotate code adapted from [David Oehm](https://gradientdescending.com/#google_vignette){target="_blank"}'s ***UFO Sightings*** visualization ([original code](https://github.com/doehm/tidytues/blob/main/scripts/2023/week-25-ufo/ufo.R){target="_blank"}). You can find metadata and additional information about the data set on the [rfordatascience/tidytuesday (2023-06-20) `readme.md`](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-06-20/readme.md#data-dictionary){target="_blank"}. [**Part 1 should be completed via GitHub Classroom (find the repo link on Slack).**]{.teal-text}
 
 ::: {.callout-tip}
 ## But why a data viz about UFOs...
-For your final class project (HW #4), you'll have the option to build your own infographic-style visualization. Many students from Winter 2024 noted this UFO sightings example as particularly helpful in learning how to stitch together multiple data visualizations into one cohesive infographic.
+For your final class project (HW #4), you'll have the option to build your own infographic-style visualization. Many students from Winter 2024 noted this UFO sightings example as particularly helpful in learning how to stitch together multiple data visualizations into one cohesive infographic. 
 :::
 
 ```{r}
@@ -49,277 +49,28 @@ knitr::include_graphics("images/oehm-ufo.png")
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
-## Click here to expand the code AND for tips on getting started
+## Expand for some tips on getting started
 
-**Note:** A select few lines of code have already been annotated for you.
+::: {.center-text .teal-text .body-text-m}
+**Begin by accepting the HW #1 assignment via GitHub Classroom (link will be shared in Slack). The code below is included only for reference.**
+:::
+
+- Install the following packages (if you don't already have them) using `install.packages("package_name")` or `install.packages(pkgs = c("package_name1", "package_name2", ...))`:
+  - add 
+  - pkgs
+  - here
+- See lines X and Y (among others; a handful of lines have already been annotated for you) for examples of code annotations -- aim to include this level of detail.
+- Writing clean annotations makes it easier for you and others to read them -- I love using the [`{ARTofR}` package](https://github.com/Hzhang-ouce/ARTofR) to create titles, dividers, and block comments in my scripts and Qmd / Rmd files. Read more about how to create different dividers using the `{ARTofR}` package on [this resource page](http://localhost:7166/clean-code-guide.html#annotating-code) of the course website.
+- Pull up documentation for a function directly in RStudio's **Help** pane by running `?function_name` in the console. Vignettes and `pkgdown` sites are incredible resources as well (e.g. here is a [vignette](https://cloud.r-project.org/web/packages/patchwork/vignettes/patchwork.html) and the [pkgdown](https://patchwork.data-imaginist.com/) site for the `{patchwork}` package)
+- If you don't immediately understand the purpose of a line / chunk of code, skip over it (temporarily) and continue working your way through the following code -- it oftentimes becomes more evident given additional context.
+<!-- - Plots may look *super* squished in the RStudio Viewer pane -- use the **Zoom** button to pop them open in a separate window. -->
+- **Keep in mind:** While this is fairly complex ggplot code, remember that it's constructed in layers -- meaning you can run code line-by-line to see exactly how the plot is changing with each new layer. You may come across functions and arguments that you're already familiar with (yay!), and of course, others that are totally new.
 
 ```{r}
 #| eval: false
 #| echo: true
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                                  1. setup                                ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#..........................load packages.........................
-library(tidyverse) # for data wrangling & plotting ----
-library(showtext) # ANNOTATE (brief explanation of pkg) ----
-library(patchwork) # ANNOTATE (brief explanation of pkg) ----
-library(janitor) # ANNOTATE (brief explanation of pkg) ----
-library(glue) # ANNOTATE (brief explanation of pkg) ----
-library(ggtext) # ANNOTATE (brief explanation of pkg) ----
-library(geofacet) # ANNOTATE (brief explanation of pkg) ----
-library(cropcircles) # ANNOTATE (brief explanation of pkg) ----
-library(ggpath) # ANNOTATE (brief explanation of pkg) ----
-library(magick) # ANNOTATE (brief explanation of pkg) ----
-library(readr) # ANNOTATE (brief explanation of pkg) ----
-library(scales) # ANNOTATE (brief explanation of pkg) ----
-
-#................load TidyTuesday data from GitHub...............
-tuesdata <- tidytuesdayR::tt_load(2023, week = 25)
-
-#........extract individual data sets from tuesdata (list).......
-ufo_sightings <- tuesdata$ufo_sightings
-places <- tuesdata$places
-
-#......................create color palettes.....................
-alien <- c('#47fcea', '#28ee85', '#17bd52', '#679d76', '#3e6f50', '#27593d')
-bg <- '#101319' 
-txt <- alien[2]
-accent <- txt
-
-#......................import Google fonts.......................
-# ANNOTATE (explain differences between arguments `name` & `family`) ----
-font_add_google(name = "Orbitron", family = "orb")
-font_add_google(name = "Barlow", family = "bar")
-
-#....................import FontAwesome fonts....................
-font_add(family = "fa-brands", regular = here::here("assets", "fonts", "Font Awesome 6 Brands-Regular-400.otf"))
-font_add(family = "fa-solid", regular = here::here("assets", "fonts", "Font Awesome 6 Free-Solid-900.otf"))
-
-#........use {showtext} to render text for future devices........
-showtext_auto(enable = TRUE)
-
-# TODO 
-# create_image(prompt = "An alien head, facing me, with dark shadows across it's face.")
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                              2. data wrangling                           ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-# create a df of total population by US state # ANNOTATE (brief explanation of what this entire code chunk does) ----
-df_pop <- places |>
-  filter(country_code == "US") |>
-  group_by(state) |>
-  summarise(pop = sum(population)) |>
-  ungroup()
-
-# ANNOTATE (brief explanation of what this entire code chunk does) ----
-df_us <- ufo_sightings |>
-  filter(country_code == "US") |>
-  count(state) |>
-  left_join(df_pop, by = "state") |>
-  mutate(
-    r = n/pop*10000,
-    x = rescale(r, to = c(0.2, 1)),
-    #x = min_max(r, 0.2, 1),
-    xmin = (1-x)/2,
-    xmax = x + (1-x)/2,
-    alpha = r/max(r)
-    )
-
-# ANNOTATE (brief explanation of what this entire code chunk does) ----
-df_shape <- ufo_sightings |>
-  filter(!shape %in% c("unknown", "other")) |>
-  count(shape) |>
-  arrange(desc(n)) |>
-  slice_head(n = 10) |>
-  mutate(
-    shape = fct_reorder(shape, n), # , min
-    alpha = rescale(n, to = c(0.3, 1))
-    #alpha = min_max(n, 0.3, 1)
-    )
-
-# ANNOTATE (brief explanation of what this entire code chunk does) ----
-df_day_hour <- ufo_sightings |>
-  mutate(
-    day = wday(reported_date_time),
-    hour = hour(reported_date_time),
-    wday = wday(reported_date_time, label = TRUE)
-  ) |>
-  count(day, wday, hour) |>
-  mutate(
-    alpha = n/max(n),
-    hour_lab = case_when(
-      hour == 0 ~ "12am",
-      hour <= 12 ~ paste0(hour, "am"),
-      hour == 12 ~ "12pm",
-      TRUE ~ paste0(hour-12, "pm"))
-    )
-
-# ANNOTATE (brief explanation of what this entire code chunk does) ----
-# image made with openai::create_image() API call to DALL-E
-df_alien <- tibble(
-  x = 0,
-  y = -5,
-  image = image_read("scripts/2023/week-25-ufo/alien.png") |>
-    image_fill(color = "none", fuzz = 10) |>
-    circle_crop()
-)
-
-# print a few random summaries
-sample_summary <- function(n) {
-  x <- dat$ufo_sightings |>
-    mutate(id = 1:n()) |>
-    filter(str_length(summary) > 120) |>
-    sample_n(n)
-  text <- x |>
-    pull(summary) |>
-    str_to_sentence()
-  list(
-    text = paste0('"...', text, '..."'),
-    id = x$id
-  )
-}
-
-quotes <- paste0('"...', str_to_sentence(ufo_data$ufo_sightings$summary[c(47816, 6795, 93833)]), '..."')
-
-# 🔡 text --------------------------------------------------------------------
-
-mastodon <- glue("<span style='font-family:fa-brands; color:{accent}'>&#xf4f6;</span>")
-twitter <- glue("<span style='font-family:fa-brands; color:{accent}'>&#xf099;</span>")
-github <- glue("<span style='font-family:fa-brands; color:{accent}'>&#xf09b;</span>")
-floppy <- glue("<span style='font-family:fa-solid; color:{accent}'>&#xf0c7;</span>")
-space <- glue("<span style='color:{bg};font-size:1px'>'</span>")
-space2 <- glue("<span style='color:{bg}'>--</span>") # can't believe I'm doing this
-caption <- glue("{mastodon}{space2}@danoehm@{space}fosstodon.org{space2}{twitter}{space2}@danoehm{space2}{github}{space2}doehm/tidytues{space2}{floppy}{space2}UFO sightings")
-
-# 📊 plot --------------------------------------------------------------------
-
-g_us <- df_us |>
-  ggplot() +
-  geom_rect(aes(xmin = 0, xmax = 1, ymin = 0, ymax = 1, alpha = alpha), fill = accent) +
-  geom_text(aes(0.5, 0.7, label = state), lineheight = 0.25, family = "orb", size = 10, colour = bg, fontface = "bold") +
-  geom_text(aes(0.5, 0.3, label = round(r, 1)), lineheight = 0.25, family = "orb", size = 8, colour = bg, fontface = "bold") +
-  facet_geo(~state) +
-  scale_alpha_identity() +
-  coord_fixed() +
-  labs(subtitle = "Sightings per 10k population") +
-  theme_void() +
-  theme(
-    strip.text = element_blank(),
-    plot.subtitle = element_text(family = "bar", size = 40, hjust = 1, colour = txt, margin = margin(b = 10)),
-    legend.position = "none"
-  )
-
-g_day <- df_day_hour |>
-  ggplot() +
-  geom_tile(aes(hour, day, alpha = alpha), fill = accent, height = 0.9, width = 0.9) +
-  geom_text(aes(hour, 9, label = hour_lab), colour = accent, family = "orb", size = 10) +
-  geom_text(aes(0, day, label = str_sub(wday, 1, 1)), colour = bg, family = "orb", size = 8, fontface = "bold") +
-  geom_from_path(aes(0, -5, path = image), df_alien, width = 0.25) +
-  scale_alpha_identity() +
-  coord_polar() +
-  ylim(-5, 9) +
-  xlim(NA, 23.55) +
-  theme_void() +
-  theme(
-    plot.background = element_rect(fill = bg, colour = bg)
-  )
-
-g_shape <- df_shape |>
-  ggplot() +
-  geom_col(aes(shape, n, alpha = alpha), fill = accent) +
-  geom_text(aes(10, 200, label = "10 most common reported shapes"), family = "bar", colour = txt, size = 16, nudge_x = 1, hjust = 0) +
-  geom_text(aes(shape, 200, label = str_to_title(shape)), family = "orb", colour = bg, size = 14, hjust = 0, fontface = "bold", nudge_x = 0.2) +
-  geom_text(aes(shape, n-200, label = scales::comma(n)), family = "orb", colour = bg, size = 10, hjust = 1, fontface = "bold", nudge_x = -0.2) +
-  coord_flip(clip = "off") +
-  theme_void() +
-  theme(
-    legend.position = "none"
-  )
-
-g_base <- ggplot() +
-  labs(
-    title = "UFO Sightings",
-    subtitle = "Summary of over 88k reported sightings across the US",
-    caption = caption
-    ) +
-  theme_void() +
-  theme(
-    text = element_text(family = "orb", size = 48, lineheight = 0.3, colour = txt),
-    plot.background = element_rect(fill = bg, colour = bg),
-    plot.title = element_text(size = 128, face = "bold", hjust = 0.5, margin = margin(b = 10)),
-    plot.subtitle = element_text(family = "bar", hjust = 0.5, margin = margin(b = 20)),
-    plot.caption = element_markdown(family = "bar", colour = colorspace::darken(txt, 0.5), hjust = 0.5, margin = margin(t = 20)),
-    plot.margin = margin(b = 20, t = 50, r = 50, l = 50),
-    axis.text.x = element_text()
-  )
-
-# quotes
-# doing the quotes as individual charts to add.
-# A bit clunky but the path of least resistance
-quote1 <- ggplot() +
-  annotate("text", x = 0, y = 1, label = str_wrap(quotes[1], 40),
-           family = "bar", colour = txt, size = 16, hjust = 0, fontface = "italic", lineheight = 0.4) +
-  xlim(0, 1) +
-  ylim(0, 1) +
-  theme_void() +
-  coord_cartesian(clip = "off")
-
-quote2 <- ggplot() +
-  annotate("text", x = 0, y = 1, label = str_wrap(quotes[2], 25),
-           family = "bar", colour = txt, size = 16, hjust = 0, fontface = "italic", lineheight = 0.4) +
-  xlim(0, 1) +
-  ylim(0, 1) +
-  theme_void() +
-  coord_cartesian(clip = "off")
-
-quote3 <- ggplot() +
-  annotate("text", x = 0, y = 1, label = str_wrap(quotes[3], 25),
-           family = "bar", colour = txt, size = 16, hjust = 0, fontface = "italic", lineheight = 0.4) +
-  xlim(0, 1) +
-  ylim(0, 1) +
-  theme_void() +
-  coord_cartesian(clip = "off")
-
-# final chart
-g_final <- g_base +
-  inset_element(g_shape, left = 0, right = 1, top = 1, bottom = 0.66) +
-  inset_element(g_us, left = 0.42, right = 1, top = 0.74, bottom = 0.33) +
-  inset_element(g_day, left = 0, right = 0.66, top = 0.4, bottom = 0) +
-  inset_element(quote1, left = 0.5, right = 1, top = 0.8, bottom = 0.72) +
-  inset_element(quote2, left = 0, right = 1, top = 0.52, bottom = 0.4) +
-  inset_element(quote3, left = 0.7, right = 1, top = 0.2, bottom = 0) +
-  plot_annotation(
-    theme = theme(
-      plot.background = element_rect(fill = bg, colour = bg)
-    )
-  )
-
-ggsave(plot = g_final, filename = "scripts/2023/week-25-ufo/ufo.png", height = 16, width = 10)
+# code here
 ```
-
-<!-- Install the following packages (if you don't already have them) using `install.packages("package_name")` or `install.packages(pkgs = c("package_name1", "package_name2", ...))`: -->
-
-<!-- - [`{tidytuesdayR}`](https://cran.r-project.org/web/packages/tidytuesdayR/index.html) -->
-<!-- - [`{tidyverse}`](https://cran.r-project.org/web/packages/tidyverse/index.html) -->
-<!-- - [`{patchwork}`](https://cran.r-project.org/web/packages/patchwork/index.html) -->
-<!-- - [`{showtext}`](https://cran.r-project.org/web/packages/showtext/index.html) -->
-<!-- - [`{sysfonts}`](https://cran.r-project.org/web/packages/sysfonts/index.html) -->
-<!-- - [`{countrycode}`](https://cran.r-project.org/web/packages/countrycode/index.html) -->
-<!-- - [`{glue}`](https://cran.r-project.org/web/packages/glue/index.html) -->
-<!-- - [`{scales}`](https://cran.r-project.org/web/packages/scales/index.html) -->
-<!-- - [`{ragg}`](https://cran.r-project.org/web/packages/ragg/index.html) -->
-
-<!-- **Tips:** -->
-
-<!-- - See lines 114 and 120 (among others) for examples of code annotations -- aim to include this level of detail.  -->
-<!-- - Writing clean annotations makes it easier for you and others to read them -- I love using the [`{ARTofR}` package](https://github.com/Hzhang-ouce/ARTofR) to create titles, dividers, and block comments in my scripts and Qmd / Rmd files. Read more about how to create different dividers using the `{ARTofR}` package on [this resource page](http://localhost:7166/clean-code-guide.html#annotating-code) of the course website. -->
-<!-- - Pull up documentation for a function directly in RStudio's **Help** pane by running `?function_name` in the console. Vignettes and `pkgdown` sites are incredible resources as well (e.g. here is a [vignette](https://cloud.r-project.org/web/packages/patchwork/vignettes/patchwork.html) and the [pkgdown](https://patchwork.data-imaginist.com/) site for the `{patchwork}` package) -->
-<!-- - If you don't immediately understand the purpose of a line / chunk of code, skip over it (temporarily) and continue working your way through the following code -- it oftentimes becomes more evident given additional context. -->
-<!-- - Plots may look *super* squished in the RStudio Viewer pane -- use the **Zoom** button to pop them open in a separate window. -->
-<!-- - **Keep in mind:** While this is fairly complex ggplot code, remember that it's constructed in layers -- meaning you can run code line-by-line to see exactly how the plot is changing with each new layer. You may come across functions and arguments that you're already familiar with (yay!), and of course, others that are totally new.   -->
 
 :::
 
