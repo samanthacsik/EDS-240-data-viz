@@ -1,7 +1,7 @@
 ---
 title: "Enhancing visualizations (part II)"
 subtitle: "Week 6"
-description: "Monday February 12^th^, 2024"
+description: "Monday February 10^th^, 2025"
 ---
 
 ```{r}
@@ -10,7 +10,7 @@ description: "Monday February 12^th^, 2024"
 #| fig-align: "center"
 #| out-width: "65%" 
 #| fig-alt: "A fuzzy monster in a beret and scarf, critiquing their own column graph on a canvas in front of them while other assistant monsters (also in berets) carry over boxes full of elements that can be used to customize a graph (like themes and geometric shapes). In the background is a wall with framed data visualizations. Stylized text reads 'ggplot2: build a data masterpiece.'"
-knitr::include_graphics("../images/horst-ggplot-masterpiece.png")
+knitr::include_graphics(here::here("images", "horst-ggplot-masterpiece.png"))
 ```
 
 :::{.gray-text .center-text}
@@ -19,77 +19,83 @@ knitr::include_graphics("../images/horst-ggplot-masterpiece.png")
 
 ## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}
 
-Please be sure to complete the following before class:
+*Coming soon!*
 
-### A. Install required packages
+<!-- Please be sure to complete the following before class: -->
 
-```{r}
-#| eval: false
-#| echo: true
-#| code-line-numbers: false
-install.packages("monochromeR") # a package for creating monochrome color palettes and easily converting rgba values to hex codes (and also some other useful functions)
-install.packages("showtext") # for using fonts more easily in R graphs
-install.packages("ggtext") # improved text rendering support for ggplot2
-install.packages("ggrepel") # ggplot2 extension to repel overlapping labels
-install.packages("googlesheets4") # provides an R interface to Google Sheets via the Sheets API v4
-```
+<!-- ### A. Install required packages -->
 
-### B. Download Data
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- #| code-line-numbers: false -->
+<!-- install.packages("monochromeR") # a package for creating monochrome color palettes and easily converting rgba values to hex codes (and also some other useful functions) -->
+<!-- install.packages("showtext") # for using fonts more easily in R graphs -->
+<!-- install.packages("ggtext") # improved text rendering support for ggplot2 -->
+<!-- install.packages("ggrepel") # ggplot2 extension to repel overlapping labels -->
+<!-- install.packages("googlesheets4") # provides an R interface to Google Sheets via the Sheets API v4 -->
+<!-- ``` -->
 
-In case we have trouble with the `{googlesheets4}` API, you can download and read in the following data files as normal (i.e. using `readr::read_csv()`):
+<!-- ### B. Download Data -->
 
-- [metabolism-foraging-data.csv](https://drive.google.com/file/d/1NQV40ZHVkPUNA6FeFFQR0OxqYM4trM3w/view?usp=sharing)
-- [mono.csv](https://drive.google.com/file/d/13chLNHTLd0GRCFl-7OB921FzOKc6I-GK/view?usp=sharing)
+<!-- In case we have trouble with the `{googlesheets4}` API, you can download and read in the following data files as normal (i.e. using `readr::read_csv()`): -->
 
-If you choose (or need) to download and read in these files, be sure to save them to your class repo at `~/week6/data/`.
+<!-- - [metabolism-foraging-data.csv](https://drive.google.com/file/d/1NQV40ZHVkPUNA6FeFFQR0OxqYM4trM3w/view?usp=sharing) -->
+<!-- - [mono.csv](https://drive.google.com/file/d/13chLNHTLd0GRCFl-7OB921FzOKc6I-GK/view?usp=sharing) -->
 
-### C. Download Font Awesome fonts
+<!-- If you choose (or need) to download and read in these files, be sure to save them to your class repo at `~/week6/data/`. -->
 
-In addition to using Google Fonts in our ggplots, we will also be using some [Font Awesome](https://fontawesome.com/) icons! To do so, you'll need to download the Font Awesome font files and save them to your class repo. Do so by following these steps:
+<!-- ### C. Download Font Awesome fonts -->
 
-1. **Download Font Awesome fonts:** Go to <https://fontawesome.com/download> and download the latest release available. Choose the **Free For Desktop** option.
-2. **Unzip the downloaded file:** You should see a folder inside called `otfs/` -- this contains three `.otf` files (aka OpenType font format files)
-3. **Copy the three `.otf` files to your class repo:** I recommend creating a `fonts/` folder inside your root directory, and dropping all three of them in there (e.g. `~/fonts/*.otf`)
+<!-- In addition to using Google Fonts in our ggplots, we will also be using some [Font Awesome](https://fontawesome.com/) icons! To do so, you'll need to download the Font Awesome font files and save them to your class repo. Do so by following these steps: -->
+
+<!-- 1. **Download Font Awesome fonts:** Go to <https://fontawesome.com/download> and download the latest release available. Choose the **Free For Desktop** option. -->
+<!-- 2. **Unzip the downloaded file:** You should see a folder inside called `otfs/` -- this contains three `.otf` files (aka OpenType font format files) -->
+<!-- 3. **Copy the three `.otf` files to your class repo:** I recommend creating a `fonts/` folder inside your root directory, and dropping all three of them in there (e.g. `~/fonts/*.otf`) -->
 
 ## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
-::: {.grid}
+*Coming soon!*
 
-::: {.g-col-12 .g-col-md-6}
-::: {.center-text}
-[**Typography**]{.teal-text .body-text-m}
+<!-- ::: {.grid} -->
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.1 slides](lecture-slides/week6.1-typography-slides.qmd){.btn role="button" target="_blank"}
-:::
-:::
+<!-- ::: {.g-col-12 .g-col-md-6} -->
+<!-- ::: {.center-text} -->
+<!-- [**Typography**]{.teal-text .body-text-m} -->
 
-::: {.g-col-12 .g-col-md-6}
-::: {.center-text}
-[**Annotations**]{.teal-text .body-text-m}
+<!-- [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.1 slides](lecture-slides/week6.1-typography-slides.qmd){.btn role="button" target="_blank"} -->
+<!-- ::: -->
+<!-- ::: -->
 
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.2 slides](lecture-slides/week6.2-annotations-slides.qmd){.btn role="button" target="_blank"}
-:::
-:::
+<!-- ::: {.g-col-12 .g-col-md-6} -->
+<!-- ::: {.center-text} -->
+<!-- [**Annotations**]{.teal-text .body-text-m} -->
 
-:::
+<!-- [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} lecture 6.2 slides](lecture-slides/week6.2-annotations-slides.qmd){.btn role="button" target="_blank"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+<!-- ::: -->
 
 ## {{< fa comments title="two speech bubbles" >}} Discussion Materials {#discussion-materials}
 
-This week, you'll move beyond the fundamental graphic forms that we covered in lecture and discuss some advanced chart types. These are great options to keep in mind as you continue working on your final project ([HW #4](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW4.html))!
+*Coming soon!*
 
-::: {.center-text}
-[{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Week 6 discussion slides](https://docs.google.com/presentation/d/10tk6XawtK0GD-XU4VCkupTOBK4tFW0JamKUeufiqlL0/edit#slide=id.p){.btn role="button" target="_blank"} 
-:::
+<!-- This week, you'll move beyond the fundamental graphic forms that we covered in lecture and discuss some advanced chart types. These are great options to keep in mind as you continue working on your final project ([HW #4](https://samanthacsik.github.io/EDS-240-data-viz/assignments/HW4.html))! -->
+
+<!-- ::: {.center-text} -->
+<!-- [{{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Week 6 discussion slides](https://docs.google.com/presentation/d/10tk6XawtK0GD-XU4VCkupTOBK4tFW0JamKUeufiqlL0/edit#slide=id.p){.btn role="button" target="_blank"}  -->
+<!-- ::: -->
 
 ## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
-<!-- | Assignment Type | Assignment Title        | Date Assigned  | Date Due                   | -->
-<!-- |:---------------:|-------------------------|----------------|----------------------------| -->
-<!-- | EOC             | EOC (week 6)            | Mon 02/12/2024 | Mon 02/12/2024, 11:55pm PT | -->
-<!-- | HW              | Homework Assignment #3  | Mon 02/12/2024 | Sat 02/24/2024, 11:59pm PT | -->
+| Assignment Type | Assignment Title        | Date Assigned  | Date Due                   |
+|:---------------:|-------------------------|----------------|----------------------------|
+| EOC             | EOC (week 6)            | Mon 02/10/2025 | Mon 02/10/2025, 11:55pm PT |
+| HW              | Homework Assignment #3  | Mon 02/10/2025 | Sat 02/22/2025, 11:59pm PT |
 
-| Assignment Type | Assignment Title                                                 | Date Assigned  | Date Due        |
-|:---------------:|-------------------------------------------------------|----------------|----------------------------|
-| EOC             | [EOC (week 6)](https://forms.gle/XbKrjoSpapzTAAPT7)   | Mon 02/12/2024 | Mon 02/12/2024, 11:55pm PT |
-| HW              | [Homework Assignment #3](../assignments/HW3.qmd)      | Mon 02/12/2024 | Sat 02/24/2024, 11:59pm PT |
+<!-- | Assignment Type | Assignment Title                                      | Date Assigned  | Date Due                   | -->
+<!-- |:---------------:|-------------------------------------------------------|----------------|----------------------------| -->
+<!-- | EOC             | [EOC (week 6)](tbd)                                   | Mon 02/10/2025 | Mon 02/10/2025, 11:55pm PT | -->
+<!-- | HW              | [Homework Assignment #3](../assignments/HW3.qmd)      | Mon 02/10/2025 | Sat 02/22/2025, 11:59pm PT | -->
 

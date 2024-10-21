@@ -1,7 +1,7 @@
 ---
 title: "Data Visualization & Communication"
 subtitle: "Master of Environmental Data Science (MEDS)"
-description: "Winter 2024"
+description: "Winter 2025"
 title-block-banner: false
 toc: false
 ---
@@ -26,7 +26,7 @@ Effectively communicating your work in a responsible, accessible and visually-pl
 By the end of this course, learners should be able to: 
 
 - Identify which types of visualizations are most appropriate for your data and your audience
-- Prepare (e.g. clean, explore, wrangle) data so that it’s appropriately formatted for building data visualizations
+- Prepare (e.g. clean, explore, wrangle) data so that it's appropriately formatted for building data visualizations
 - Build effective, responsible, accessible, and aesthetically-pleasing visualizations using the R programming language, and specifically `{ggplot2}` + ggplot2 extension packages
 - Write code from scratch and read and adapt code written by others
 - Apply a DEI (Diversity, Equity & Inclusion) lens to the process of designing data visualizations 
@@ -74,9 +74,9 @@ knitr::include_graphics("images/tbd.png")
 ```
 
 ::: {.center-text}
-[**TBD**]{.teal-text}  
-**Email:** tbd <!-- [gstephenson@bren.ucsb.edu](mailto::gstephenson@bren.ucsb.edu)   -->   
-**Learn more:** tbd <!-- [linkedin.com/in/sevan-esaian](https://www.linkedin.com/in/sevan-esaian-92b7794b/) -->
+[**Sloane Stephenson**]{.teal-text}  
+**Email:** [gstephenson@ucsb.edu](mailto::gstephenson@ucsb.edu)
+<!-- **Learn more:** tbd -->
 :::
 
 :::

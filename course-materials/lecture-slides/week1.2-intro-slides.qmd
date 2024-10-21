@@ -17,7 +17,7 @@ format:
 
 <hr class="hr-teal">
 
-[Week 1 | January 8^th^, 2024]{.custom-subtitle3}
+[Week 1 | January 6^th^, 2024]{.custom-subtitle3}
 
 ---
 
@@ -27,7 +27,7 @@ format:
 
 <hr>
 
->"...the practice of designing and creating easy-to-communicate and easy-to-understand graphic or visual representations of a large amount of complex quantitative and qualitative data and information with the help of static, dynamic or interactive visual items."
+>*"...the practice of designing and creating easy-to-communicate and easy-to-understand graphic or visual representations of a large amount of complex quantitative and qualitative data and information with the help of static, dynamic or interactive visual items."*
 
 ::: {.right-align-text .body-text-s}
 -from [Wikipedia](https://en.wikipedia.org/wiki/Data_and_information_visualization)
@@ -107,9 +107,11 @@ Created using [`{shiny}`](https://shiny.posit.co/)
 <br>
 <br>
 
-> "any graphical representation of information and data"
+::: {.body-text-m}
+> *"any graphical representation of information and data"*
+:::
 
-::: {.right-align-text .body-text-s}
+::: {.right-align-text}
 -[Cédric Scherer](https://www.cedricscherer.com/), [Effective Data Visualization](https://www.youtube.com/watch?v=swzFdMc6WPk)
 :::
 
@@ -117,9 +119,11 @@ Created using [`{shiny}`](https://shiny.posit.co/)
 
 . . . 
 
-> "part art and part science"
+::: {.body-text-m}
+> *"part art and part science"*
+:::
 
-::: {.right-align-text .body-text-s}
+::: {.right-align-text}
 -[Claus O. Wilke](https://clauswilke.com/), [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/index.html)
 :::
 
@@ -410,7 +414,7 @@ Images from [BBC News](http://news.bbc.co.uk/2/hi/science/nature/871930.stm), Wi
 
 ```{r}
 countdown::countdown(
-  minutes = 5,
+  minutes = 4,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -469,7 +473,7 @@ knitr::include_graphics("images/week1/ripple-etal-2023-fig1.png")
 
 <hr>
 
->"**Exploratory data analysis (EDA)** is not a formal process with a strict set of rules. More than anything, EDS is a state of mind...you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends. As your exploration continues, you will hone in on a few particularly productive insights that you'll eventually write-up and communicate to others."
+>*"**Exploratory data analysis (EDA)** is not a formal process with a strict set of rules. More than anything, EDS is a state of mind...you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends. As your exploration continues, you will hone in on a few particularly productive insights that you'll eventually write-up and communicate to others."*
 
 ::: {.right-align-text .body-text-s} 
 -Hadley Wickham, author of [R for Data Science](https://r4ds.hadley.nz/eda)

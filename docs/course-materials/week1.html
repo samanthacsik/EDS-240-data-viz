@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Monday January 8th, 2024">
+<meta name="description" content="Monday January 6th, 2025">
 
 <title>Course logistics, Intro, {ggplot2} review – EDS 240</title>
 <style>
@@ -142,43 +142,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-course-materials">    
         <li>
     <a class="dropdown-item" href="../course-materials/week1.html">
- <span class="dropdown-text">week 1 (1/8)</span></a>
+ <span class="dropdown-text">week 1 (1/6)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week2.html">
- <span class="dropdown-text">week 2 (1/15)</span></a>
+ <span class="dropdown-text">week 2 (1/13)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week3.html">
- <span class="dropdown-text">week 3 (1/22)</span></a>
+ <span class="dropdown-text">week 3 (1/20)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week4.html">
- <span class="dropdown-text">week 4 (1/29)</span></a>
+ <span class="dropdown-text">week 4 (1/27)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week5.html">
- <span class="dropdown-text">week 5 (2/5)</span></a>
+ <span class="dropdown-text">week 5 (2/3)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week6.html">
- <span class="dropdown-text">week 6 (2/12)</span></a>
+ <span class="dropdown-text">week 6 (2/10)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week7.html">
- <span class="dropdown-text">week 7 (2/19)</span></a>
+ <span class="dropdown-text">week 7 (2/17)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week8.html">
- <span class="dropdown-text">week 8 (2/26)</span></a>
+ <span class="dropdown-text">week 8 (2/24)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week9.html">
- <span class="dropdown-text">week 9 (3/4)</span></a>
+ <span class="dropdown-text">week 9 (3/3)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../course-materials/week10.html">
- <span class="dropdown-text">week 10 (3/11)</span></a>
+ <span class="dropdown-text">week 10 (3/10)</span></a>
   </li>  
     </ul>
   </li>
@@ -245,7 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <p class="subtitle lead">Week 1</p>
                   <div>
         <div class="description">
-          Monday January 8<sup>th</sup>, 2024
+          Monday January 6<sup>th</sup>, 2025
         </div>
       </div>
                 </div>
@@ -268,18 +268,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pre-class-prep" id="toc-pre-class-prep" class="nav-link active" data-scroll-target="#pre-class-prep"><i class="fa-solid fa-clipboard-list" title="a clipboard with a To Do list" aria-label="clipboard-list"></i> Pre-class Prep</a>
+  <li><a href="#pre-class-prep" id="toc-pre-class-prep" class="nav-link active" data-scroll-target="#pre-class-prep"><i class="fa-solid fa-clipboard-list" title="a clipboard with a To Do list" aria-label="clipboard-list"></i> Pre-lecture Prep</a>
   <ul class="collapse">
   <li><a href="#a.-install-required-packages" id="toc-a.-install-required-packages" class="nav-link" data-scroll-target="#a.-install-required-packages">A. Install required packages</a></li>
   <li><a href="#b.-create-your-eds-240-class-examples-repository" id="toc-b.-create-your-eds-240-class-examples-repository" class="nav-link" data-scroll-target="#b.-create-your-eds-240-class-examples-repository">B. Create your <code>EDS-240-class-examples</code> repository</a></li>
+  <li><a href="#c.-download-todays-.qmd-template" id="toc-c.-download-todays-.qmd-template" class="nav-link" data-scroll-target="#c.-download-todays-.qmd-template">C. Download today’s <code>.qmd</code> template</a></li>
   </ul></li>
   <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials"><i class="fa-solid fa-person-chalkboard" title="a person pointing at a chalkboard" aria-label="person-chalkboard"></i> Lecture Materials</a></li>
-  <li><a href="#discussion-materials" id="toc-discussion-materials" class="nav-link" data-scroll-target="#discussion-materials"><i class="fa-solid fa-comments" title="two speech bubbles" aria-label="comments"></i> Discussion Materials</a>
+  <li><a href="#pre-discussion-prep" id="toc-pre-discussion-prep" class="nav-link" data-scroll-target="#pre-discussion-prep"><i class="fa-solid fa-clipboard-list" title="a clipboard with a To Do list" aria-label="clipboard-list"></i> Pre-discussion Prep</a>
   <ul class="collapse">
-  <li><a href="#pre-discussion-prep" id="toc-pre-discussion-prep" class="nav-link" data-scroll-target="#pre-discussion-prep">Pre-discussion Prep</a></li>
-  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
-  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
+  <li><a href="#a.-install-required-packages-1" id="toc-a.-install-required-packages-1" class="nav-link" data-scroll-target="#a.-install-required-packages-1">A. Install required packages</a></li>
+  <li><a href="#b.-download-necessary-data" id="toc-b.-download-necessary-data" class="nav-link" data-scroll-target="#b.-download-necessary-data">B. Download necessary data</a></li>
+  <li><a href="#c.-add-data-to-.gitignore" id="toc-c.-add-data-to-.gitignore" class="nav-link" data-scroll-target="#c.-add-data-to-.gitignore">C. Add data to <code>.gitignore</code></a></li>
+  <li><a href="#d.-prepare-a-week1-discussion.qmd-file" id="toc-d.-prepare-a-week1-discussion.qmd-file" class="nav-link" data-scroll-target="#d.-prepare-a-week1-discussion.qmd-file">D. Prepare a <code>week1-discussion.qmd</code> file</a></li>
   </ul></li>
+  <li><a href="#discussion-materials" id="toc-discussion-materials" class="nav-link" data-scroll-target="#discussion-materials"><i class="fa-solid fa-comments" title="two speech bubbles" aria-label="comments"></i> Discussion Materials</a></li>
   <li><a href="#assignment-reminders" id="toc-assignment-reminders" class="nav-link" data-scroll-target="#assignment-reminders"><i class="fa-solid fa-pencil" title="pencil" aria-label="pencil"></i> Assignment Reminders</a></li>
   </ul>
 </nav>
@@ -301,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <section id="pre-class-prep" class="level2">
-<h2 class="anchored" data-anchor-id="pre-class-prep"><i class="fa-solid fa-clipboard-list" title="a clipboard with a To Do list" aria-label="clipboard-list"></i> Pre-class Prep</h2>
+<h2 class="anchored" data-anchor-id="pre-class-prep"><i class="fa-solid fa-clipboard-list" title="a clipboard with a To Do list" aria-label="clipboard-list"></i> Pre-lecture Prep</h2>
 <p>Please be sure to complete the following before class:</p>
 <section id="a.-install-required-packages" class="level3">
 <h3 class="anchored" data-anchor-id="a.-install-required-packages">A. Install required packages</h3>
@@ -312,7 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="b.-create-your-eds-240-class-examples-repository" class="level3">
 <h3 class="anchored" data-anchor-id="b.-create-your-eds-240-class-examples-repository">B. Create your <code>EDS-240-class-examples</code> repository</h3>
-<p>We’ll be coding together quite a bit throughout this course. To stay organized, we’ll complete all of our in-class examples in one repository (repo). <strong>Create and clone a GitHub repository named <code>EDS-240-class-examples</code></strong>. For step-by-step instructions, unfold the following note (collapsed to save space):</p>
+<p>We’ll be coding together quite a bit throughout this course. To stay organized, we’ll complete all of our in-class examples in one repository (repo). <strong>Create and clone a GitHub repository named <code>EDS-240-class-examples</code></strong> (or something that makes sense for you). Step-by-step instructions are provided, below, if needed:</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -342,62 +345,79 @@ Step-by-step instructions for creating and cloning a GitHub repo:
 </div>
 </div>
 </div>
-<p><br></p>
+<p><strong>You should also create a folder for each week (e.g.&nbsp;<code>week1/</code>, <code>week2/</code>, <code>week3/</code>, etc.)</strong> inside your repository’s root directory to help keep all the various files that we’ll download / create organized. This consistent naming scheme will also make it easy to add large files (e.g.&nbsp;data files) to your <code>.gitignore</code> (you’ll do this for the first time in this week’s pre-discussion prep).</p>
+</section>
+<section id="c.-download-todays-.qmd-template" class="level3">
+<h3 class="anchored" data-anchor-id="c.-download-todays-.qmd-template">C. Download today’s <code>.qmd</code> template</h3>
+<p>Template <code>.qmd</code> files will be provided alongside (most) lecture slides to help keep us organized and on track throughout class. They are available for download directly from GitHub at the link(s) provided in the Lecture Materials table (below). Look for the download button at the top right corner of the file (it looks similar to this, <i class="fa-solid fa-download" title="a downward pointing arrow atop a hard drive" aria-label="download"></i>). Please download all necessary templates and save them to the appropriate <code>EDS-240-data-viz-examples/weekX</code> folder before each class.</p>
 </section>
 </section>
 <section id="lecture-materials" class="level2">
 <h2 class="anchored" data-anchor-id="lecture-materials"><i class="fa-solid fa-person-chalkboard" title="a person pointing at a chalkboard" aria-label="person-chalkboard"></i> Lecture Materials</h2>
-<p>Week 1 instruction is broken down into three lessons:</p>
-<div class="grid">
-<div class="g-col-12 g-col-md-4">
-<div class="center-text">
-<p><span class="teal-text body-text-m"><strong>Course logistics &amp; syllabus</strong></span></p>
-<p><a href="../course-materials/lecture-slides/week1.1-logistics-slides.html" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 1.1 slides</a></p>
-</div>
-</div>
-<div class="g-col-12 g-col-md-4">
-<div class="center-text">
-<p><span class="teal-text body-text-m"><strong>Intro to data visualization</strong></span></p>
-<p><a href="../course-materials/lecture-slides/week1.2-intro-slides.html" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 1.2 slides</a></p>
-</div>
-</div>
-<div class="g-col-12 g-col-md-4">
-<div class="center-text">
-<p><span class="teal-text body-text-m"><strong><code>{ggplot2}</code> review</strong></span></p>
-<p><a href="../course-materials/lecture-slides/week1.3-ggplot-review-slides.html" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> lecture 1.3 slides</a></p>
-</div>
-</div>
-</div>
+<table class="table-hover table-bordered caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> Lecture slides</th>
+<th><i class="fa-solid fa-file-code" title="A code file" aria-label="file-code"></i> Code-along template</th>
+<th><i class="fa-solid fa-key" title="A key" aria-label="key"></i> Code-along key</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="../course-materials/lecture-slides/week1.1-logistics-slides.html" target="_blank">Lecture 1.1: course logistics &amp; syllabus</a></td>
+<td><em>NA</em></td>
+<td><em>NA</em></td>
+</tr>
+<tr class="even">
+<td><a href="../course-materials/lecture-slides/week1.2-intro-slides.html" target="_blank">Lecture 1.2: data viz intro</a></td>
+<td><em>NA</em></td>
+<td><em>NA</em></td>
+</tr>
+<tr class="odd">
+<td><a href="../course-materials/lecture-slides/week1.3-ggplot-review-slides.html" target="_blank">Lecture 1.3: <code>{ggplot2}</code> review</a></td>
+<td><a href="https://github.com/samanthacsik/EDS-240-data-viz/blob/2025-initial-updates/course-materials/templates/TEMPLATE-lecture1.3-ggplot-review.qmd" target="_blank">1.3 template</a></td>
+<td><a href="../course-materials/keys/KEY-lecture1.3-ggplot-review.html" target="_blank">1.3 key</a></td>
+</tr>
+</tbody>
+</table>
 <p><br></p>
 </section>
-<section id="discussion-materials" class="level2">
-<h2 class="anchored" data-anchor-id="discussion-materials"><i class="fa-solid fa-comments" title="two speech bubbles" aria-label="comments"></i> Discussion Materials</h2>
-<section id="pre-discussion-prep" class="level3">
-<h3 class="anchored" data-anchor-id="pre-discussion-prep">Pre-discussion Prep</h3>
-<p>Before coming to section, you’ll need to install some packages and download data. For step-by-step instructions, unfold the following note (collapsed to save space):</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<section id="pre-discussion-prep" class="level2">
+<h2 class="anchored" data-anchor-id="pre-discussion-prep"><i class="fa-solid fa-clipboard-list" title="a clipboard with a To Do list" aria-label="clipboard-list"></i> Pre-discussion Prep</h2>
+<p>Today’s discussion will <strong>focus on data cleaning / wrangling</strong>. Before coming to section, you’ll need to install some packages and download data. Find step-by-step instructions in the note, below (collapsed to save space):</p>
+<section id="a.-install-required-packages-1" class="level3">
+<h3 class="anchored" data-anchor-id="a.-install-required-packages-1">A. Install required packages</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"here"</span>) <span class="co"># for reproducible, relative file paths</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"janitor"</span>) <span class="co"># tools for cleaning dirty data</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"usdata"</span>) <span class="co"># demographic data on the United States at the county and state levels spanning multiple years.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="b.-download-necessary-data" class="level3">
+<h3 class="anchored" data-anchor-id="b.-download-necessary-data">B. Download necessary data</h3>
+<p><a href="https://drive.google.com/file/d/1H2lilk6lF3oTZtAT8UP4Fa4MSuQ5VQ9Y/view?usp=sharing" target="_blank">Download fracking data (<code>registryupload_1.csv</code>)</a> from Google Drive and save it to your class repo in the following location: <code>EDS-240-class-examples/week1/data/registryupload_1.csv</code></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Step-by-step pre-discussion prep instructions
+Why are we downloading from Google Drive and not FracFocus?
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>Install the following packages:</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"janitor"</span>) <span class="co"># tools for cleaning dirty data</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"usdata"</span>) <span class="co"># demographic data on the United States at the county and state levels spanning multiple years.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These data were originally downloaded as a <a href="https://drive.google.com/file/d/1XUW-660tXKhxTl0tSkWFqtvaJcRedD7r/view?usp=sharing">zip file</a> from <a href="https://fracfocus.org/data-download" target="_blank">FracFocus</a> in November 2023 when they were still quite messy. Since then, FracFocus has published cleaner versions of these data, which is great, but also defeats the purpose of this exercise <i class="fa-solid fa-face-smile" title="a smiling face" aria-label="face-smile"></i>. For this reason, we’ll be working with this saved version of the data, rather than downloading directly from <a href="https://fracfocus.org/data-download">FracFocus’s data download page</a>.</p>
 </div>
-<ol start="2" type="1">
-<li><a href="https://drive.google.com/file/d/1vR0Ppc8YaIsHmAOluxeOtmKu1DG_WaR9/view?usp=drive_link">Download the data (<code>fracking.csv</code>)</a> from Google Drive and save it to your class repo in the following location: <code>EDS-240-class-examples/week1/data/fracking.csv</code> (NOTE: data were originally downloaded as a zip file from <a href="https://fracfocus.org/data-download">FracFocus</a> in November 2023. Since then, FracFocus has published a cleaner version of these data, which defeats some of this purpose of this exercise. As such, we’ll be working with this saved version of the data, rather than downloading directly from FracFocus’s data download page.)</li>
-<li>We don’t want to push any data in our repo to GitHub (GitHub enforces file size limits, and you’ll run into some serious headaches when you try to push a file that’s too big) – to avoid doing this, we can add our data files to our <code>.gitignore</code> file, which, as the name implies, is a collection of files that we want Git to ignore. <strong>Open up your <code>.gitignore</code> file and add the following line (anywhere is fine, but it makes sense to add it beneath the last line):</strong></li>
-</ol>
+</div>
+</section>
+<section id="c.-add-data-to-.gitignore" class="level3">
+<h3 class="anchored" data-anchor-id="c.-add-data-to-.gitignore">C. Add data to <code>.gitignore</code></h3>
+<p>We don’t want to push any data in our repo to GitHub (GitHub enforces file size limits, and you’ll run into some serious headaches when you try to push a file that’s too big). To avoid doing this, we can add our data files to our <code>.gitignore</code> file, which, as the name implies, is a collection of files that we want Git to ignore. <strong>Open up your <code>.gitignore</code> file and add the following line (anywhere is fine, but it makes sense to add it beneath the last line):</strong></p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -407,7 +427,19 @@ Step-by-step pre-discussion prep instructions
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/week*/data/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>Notice that when you <strong>Save</strong> your modified <code>.gitignore</code> file, untracked data files at the specified file path disappear from your Git tab in RStudio, and a modified <code>.gitignore</code> file appears in it’s place (this is what we want!). Stage/add, commit, and push <code>.gitignore</code>.</p>
+<p>Notice that when you <strong>Save</strong> your modified <code>.gitignore</code> file, untracked data files at the specified file path disappear from your Git tab in RStudio, and a modified <code>.gitignore</code> file appears in it’s place (this is what we want!). Stage / add, commit, and push <code>.gitignore</code>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A gif of this whole process (in case it’s helpful!)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -424,169 +456,49 @@ Step-by-step pre-discussion prep instructions
 </div>
 </div>
 </section>
-<section id="background" class="level3">
-<h3 class="anchored" data-anchor-id="background">Background</h3>
-<p>By now, you may have heard / read something like, “Data scientists spend 80% of their time preparing their data for analysis and / or visualization.” And while that may not be totally accurate for all data scientists or all projects, you <em>will</em> spend lots of time wrestling with data. <span class="teal-text"><strong>You’ll spend this week’s discussion cleaning up a messy data set on hydraulic fracturing (aka <a href="https://en.wikipedia.org/wiki/Fracking">fracking</a>), with the goal of (re)familiarizing yourselves with some of commonly-used tidyverse functions.</strong></span></p>
-<p>This week’s data comes courtesy of Jeremy Singer-Vine’s <a href="https://www.data-is-plural.com/">Data is Plural</a> weekly newsletter of useful / curious data sets (the <a href="https://www.data-is-plural.com/archive/2023-09-27-edition/">2023.09.27 edition</a>). Singer-Vine’s description:</p>
-<blockquote class="blockquote">
-<p>Since <a href="https://www.fracfocus.org/learn/about-fracfocus">launching in 2011</a>, <a href="https://fracfocus.org/">FracFocus</a> has become the largest registry of <a href="https://en.wikipedia.org/wiki/Fracking">hydraulic fracturing</a> chemical disclosures in the US. The database, available to explore online and <a href="https://fracfocus.org/data-download">download in bulk</a>, contains 210,000+ such disclosures from fracking operators; it details the location, timing, and water volume of each fracking job, plus the names and amounts of chemicals used. The project is <a href="https://fracfocus.org/about-us">managed</a> by the <a href="https://www.gwpc.org/overview/">Ground Water Protection Council</a>, “a nonprofit 501(c)6 organization whose members consist of state ground water regulatory agencies”. As seen in: The latest <a href="https://www.nytimes.com/interactive/2023/09/25/climate/fracking-oil-gas-wells-water.html">installment</a> of the New York Times’ <a href="https://www.nytimes.com/series/uncharted-waters">Uncharted Water series</a>.</p>
-</blockquote>
-<p>Interested in reading more about fracking? Check out <a href="https://www.usgs.gov/news/national-news-release/water-used-hydraulic-fracturing-varies-widely-across-united-states">this communications piece</a> from USGS to start.</p>
-<div class="center-text">
-<p><a href="https://docs.google.com/presentation/d/1woLc3uKgbnlNfc5qQoEbs4PUEJeYMKajo-YpeYbsaxo/edit#slide=id.p" class="btn" role="button" target="_blank"><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> Week 1 discussion slides</a></p>
-</div>
-</section>
-<section id="solution" class="level3">
-<h3 class="anchored" data-anchor-id="solution">Solution</h3>
-<p>You’ll get the most out of discussion section if you physically type out the code yourself (rather than copying / pasting)!</p>
-<p><em><strong>Note:</strong> Some of the wrangling in the solution (collapsed, below) may seem a bit superfluous – we’ve included lots of steps to (re)introduce as many of the common wrangling functions as possible, given our data set.</em></p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Complete code for week 1 discussion (fracking)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<!-- # Fracking -->
-<!-- - <https://www.usgs.gov/news/national-news-release/water-used-hydraulic-fracturing-varies-widely-across-united-states> -->
-<!-- - <https://www.abc27.com/pennsylvania/12-states-where-fracking-is-most-prevalent-where-does-pa-stand/#:~:text=1.,Texas&text=Texas%20is%20situated%20over%20parts,gas%20anywhere%20in%20the%20U.S.> -->
-<!-- - <https://www.data-is-plural.com/archive/2023-09-27-edition/> -->
-<!-- - <https://fracfocus.org/data-download> -->
-<!-- `TotalBaseWaterVolume`: The total volume of water used as a carrier fluid for the hydraulic fracturing job (in gallons). -->
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="do">##                                    setup                                 ----</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="co">#..........................load packages.........................</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="fu">library</span>(janitor)</span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="fu">library</span>(usdata)</span>
-<span id="cb4-9"><a href="#cb4-9"></a></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#......................import fracking data......................</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a>fracking <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week1"</span>, <span class="st">"data"</span>, <span class="st">"fracking.csv"</span>))</span>
-<span id="cb4-12"><a href="#cb4-12"></a></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="do">##                        clean/wrangle fracking data                       ----</span></span>
-<span id="cb4-15"><a href="#cb4-15"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb4-16"><a href="#cb4-16"></a></span>
-<span id="cb4-17"><a href="#cb4-17"></a>fracking_clean <span class="ot">&lt;-</span> fracking <span class="sc">|&gt;</span> </span>
-<span id="cb4-18"><a href="#cb4-18"></a>  </span>
-<span id="cb4-19"><a href="#cb4-19"></a>  <span class="co"># clean column names ----</span></span>
-<span id="cb4-20"><a href="#cb4-20"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb4-21"><a href="#cb4-21"></a>  </span>
-<span id="cb4-22"><a href="#cb4-22"></a>  <span class="co"># clean up dates ----</span></span>
-<span id="cb4-23"><a href="#cb4-23"></a>  <span class="fu">mutate</span>(<span class="at">job_start_date =</span> <span class="fu">str_remove</span>(job_start_date, <span class="st">" AM"</span>)) <span class="sc">|&gt;</span> <span class="co"># remove 'AM' from string</span></span>
-<span id="cb4-24"><a href="#cb4-24"></a>  <span class="fu">mutate</span>(<span class="at">datetime_start =</span> <span class="fu">mdy_hms</span>(job_start_date)) <span class="sc">|&gt;</span> <span class="co"># convert from string to date (save to new col)</span></span>
-<span id="cb4-25"><a href="#cb4-25"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(datetime_start)) <span class="sc">|&gt;</span> <span class="co"># create 'year' col from date</span></span>
-<span id="cb4-26"><a href="#cb4-26"></a></span>
-<span id="cb4-27"><a href="#cb4-27"></a>  <span class="co"># select relevant cols ----</span></span>
-<span id="cb4-28"><a href="#cb4-28"></a>  <span class="fu">select</span>(datetime_start, year, state_name, county_name, well_name, total_base_water_volume) <span class="sc">|&gt;</span> </span>
-<span id="cb4-29"><a href="#cb4-29"></a>  </span>
-<span id="cb4-30"><a href="#cb4-30"></a>  <span class="co"># filter out non-state names ----</span></span>
-<span id="cb4-31"><a href="#cb4-31"></a>  <span class="fu">filter</span>(<span class="sc">!</span>state_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Beaver"</span>, <span class="st">"Beckham"</span>, <span class="st">"Harper"</span>, <span class="st">"Hemphill"</span>, <span class="st">"Midland"</span>, <span class="st">"Red River"</span>, <span class="st">"Roosevelt"</span>, <span class="st">"Rusk"</span>, <span class="st">"State"</span>, <span class="st">"WARD"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-32"><a href="#cb4-32"></a>  </span>
-<span id="cb4-33"><a href="#cb4-33"></a>  <span class="co"># rename state_name to something shorter for typing out when using case_when (not necessary) ----</span></span>
-<span id="cb4-34"><a href="#cb4-34"></a>  <span class="fu">rename</span>(<span class="at">sn =</span> state_name) <span class="sc">|&gt;</span> </span>
-<span id="cb4-35"><a href="#cb4-35"></a>  </span>
-<span id="cb4-36"><a href="#cb4-36"></a>  <span class="co"># make all words title case ----</span></span>
-<span id="cb4-37"><a href="#cb4-37"></a>  <span class="fu">mutate</span>(<span class="at">sn =</span> <span class="fu">str_to_title</span>(sn)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-38"><a href="#cb4-38"></a>  </span>
-<span id="cb4-39"><a href="#cb4-39"></a>  <span class="co"># fix misspelled state names ----</span></span>
-<span id="cb4-40"><a href="#cb4-40"></a>  <span class="fu">mutate</span>(<span class="at">sn =</span> <span class="fu">case_when</span>(</span>
-<span id="cb4-41"><a href="#cb4-41"></a>    sn <span class="sc">==</span> <span class="st">"Colordao"</span> <span class="sc">~</span> <span class="st">"Colorado"</span>,</span>
-<span id="cb4-42"><a href="#cb4-42"></a>    sn <span class="sc">==</span> <span class="st">"Loiusiana"</span> <span class="sc">~</span> <span class="st">"Louisiana"</span>,</span>
-<span id="cb4-43"><a href="#cb4-43"></a>    sn <span class="sc">==</span> <span class="st">"Louisianna"</span> <span class="sc">~</span> <span class="st">"Louisiana"</span>,</span>
-<span id="cb4-44"><a href="#cb4-44"></a>    sn <span class="sc">==</span> <span class="st">"Lousiana"</span> <span class="sc">~</span> <span class="st">"Louisiana"</span>,</span>
-<span id="cb4-45"><a href="#cb4-45"></a>    sn <span class="sc">==</span> <span class="st">"New Mexcio"</span> <span class="sc">~</span> <span class="st">"New Mexico"</span>,</span>
-<span id="cb4-46"><a href="#cb4-46"></a>    sn <span class="sc">==</span> <span class="st">"Norh Dakota"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb4-47"><a href="#cb4-47"></a>    sn <span class="sc">==</span> <span class="st">"Norht Dakota"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb4-48"><a href="#cb4-48"></a>    sn <span class="sc">==</span> <span class="st">"North  Dakota"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb4-49"><a href="#cb4-49"></a>    sn <span class="sc">==</span> <span class="st">"North Dakata"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb4-50"><a href="#cb4-50"></a>    sn <span class="sc">==</span> <span class="st">"North Dakotta"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb4-51"><a href="#cb4-51"></a>    sn <span class="sc">==</span> <span class="st">"Noth Dakota"</span> <span class="sc">~</span> <span class="st">"North Dakota"</span>,</span>
-<span id="cb4-52"><a href="#cb4-52"></a>    sn <span class="sc">==</span> <span class="st">"Pennslvania"</span> <span class="sc">~</span> <span class="st">"Pennsylvania"</span>,</span>
-<span id="cb4-53"><a href="#cb4-53"></a>    sn <span class="sc">==</span> <span class="st">"Pennsylavania"</span> <span class="sc">~</span> <span class="st">"Pennsylvania"</span>,</span>
-<span id="cb4-54"><a href="#cb4-54"></a>    sn <span class="sc">==</span> <span class="st">"Pennsylvanya"</span> <span class="sc">~</span> <span class="st">"Pennsylvania"</span>,</span>
-<span id="cb4-55"><a href="#cb4-55"></a>    sn <span class="sc">==</span> <span class="st">"Penssylvania"</span> <span class="sc">~</span> <span class="st">"Pennsylvania"</span>,</span>
-<span id="cb4-56"><a href="#cb4-56"></a>    sn <span class="sc">==</span> <span class="st">"Texasa"</span> <span class="sc">~</span> <span class="st">"Texas"</span>,</span>
-<span id="cb4-57"><a href="#cb4-57"></a>    sn <span class="sc">==</span> <span class="st">"Texs"</span> <span class="sc">~</span> <span class="st">"Texas"</span>, </span>
-<span id="cb4-58"><a href="#cb4-58"></a>    sn <span class="sc">==</span> <span class="st">"West Viginia"</span> <span class="sc">~</span> <span class="st">"West Virginia"</span>,</span>
-<span id="cb4-59"><a href="#cb4-59"></a>    sn <span class="sc">==</span> <span class="st">"Wyominng"</span> <span class="sc">~</span> <span class="st">"Wyoming"</span>, </span>
-<span id="cb4-60"><a href="#cb4-60"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> sn <span class="co"># copy over rest of state names from as-is</span></span>
-<span id="cb4-61"><a href="#cb4-61"></a>  )) <span class="sc">|&gt;</span> </span>
-<span id="cb4-62"><a href="#cb4-62"></a>  </span>
-<span id="cb4-63"><a href="#cb4-63"></a>  <span class="co"># remove rows that have a '?' mark ----</span></span>
-<span id="cb4-64"><a href="#cb4-64"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(<span class="at">string =</span> sn, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">?"</span>)) <span class="sc">|&gt;</span> <span class="co"># `?` is a special chr; escape with `\\` prefix</span></span>
-<span id="cb4-65"><a href="#cb4-65"></a>  </span>
-<span id="cb4-66"><a href="#cb4-66"></a>  <span class="co"># make all uppercase (so that we can covert abbreviation to state names) ----</span></span>
-<span id="cb4-67"><a href="#cb4-67"></a>  <span class="fu">mutate</span>(<span class="at">sn =</span> <span class="fu">str_to_upper</span>(sn)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-68"><a href="#cb4-68"></a>  </span>
-<span id="cb4-69"><a href="#cb4-69"></a>  <span class="co"># mutate abbreviations to full state names ----</span></span>
-<span id="cb4-70"><a href="#cb4-70"></a>  <span class="fu">mutate</span>(<span class="at">sn =</span> <span class="fu">ifelse</span>(<span class="at">test =</span> <span class="fu">str_length</span>(sn) <span class="sc">==</span> <span class="dv">2</span>, <span class="co"># if string in 'sn' col is 2 chrs long</span></span>
-<span id="cb4-71"><a href="#cb4-71"></a>                     <span class="at">yes =</span> usdata<span class="sc">::</span><span class="fu">abbr2state</span>(sn), <span class="co"># replace abbreviation with full state name </span></span>
-<span id="cb4-72"><a href="#cb4-72"></a>                     <span class="at">no =</span> sn)) <span class="sc">|&gt;</span> <span class="co"># if string in 'sn' col is not 2 chrs long, keep state name as-is</span></span>
-<span id="cb4-73"><a href="#cb4-73"></a>  </span>
-<span id="cb4-74"><a href="#cb4-74"></a>  <span class="co"># make all words title case again ----</span></span>
-<span id="cb4-75"><a href="#cb4-75"></a>  <span class="fu">mutate</span>(<span class="at">sn =</span> <span class="fu">str_to_title</span>(sn)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-76"><a href="#cb4-76"></a>  </span>
-<span id="cb4-77"><a href="#cb4-77"></a>  <span class="co"># create a column of just state abbreviations ----</span></span>
-<span id="cb4-78"><a href="#cb4-78"></a>  <span class="fu">mutate</span>(<span class="at">state_abb =</span> usdata<span class="sc">::</span><span class="fu">state2abbr</span>(sn)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-79"><a href="#cb4-79"></a>  </span>
-<span id="cb4-80"><a href="#cb4-80"></a>  <span class="co"># rename 'sn' to 'state_name' again for clarity ----</span></span>
-<span id="cb4-81"><a href="#cb4-81"></a>  <span class="fu">rename</span>(<span class="at">state_name =</span> sn, <span class="at">total_base_water_volume_gal =</span> total_base_water_volume) <span class="sc">|&gt;</span> </span>
-<span id="cb4-82"><a href="#cb4-82"></a>  </span>
-<span id="cb4-83"><a href="#cb4-83"></a>  <span class="co"># move 'state_abb' col after state_name col ----</span></span>
-<span id="cb4-84"><a href="#cb4-84"></a>  <span class="fu">relocate</span>(state_abb, <span class="at">.after =</span> state_name) <span class="sc">|&gt;</span> </span>
-<span id="cb4-85"><a href="#cb4-85"></a>  </span>
-<span id="cb4-86"><a href="#cb4-86"></a>  <span class="co"># convert 'state_name' &amp; 'state_abb' from string to factor ----</span></span>
-<span id="cb4-87"><a href="#cb4-87"></a>  <span class="fu">mutate</span>(<span class="at">state_name =</span> <span class="fu">as.factor</span>(state_name),</span>
-<span id="cb4-88"><a href="#cb4-88"></a>         <span class="at">state_abb =</span> <span class="fu">as.factor</span>(state_abb)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-89"><a href="#cb4-89"></a>  </span>
-<span id="cb4-90"><a href="#cb4-90"></a>  <span class="co"># remove obs that don't have a measurement for 'total_base_water_volume' (NA) ----</span></span>
-<span id="cb4-91"><a href="#cb4-91"></a>  <span class="fu">drop_na</span>(total_base_water_volume_gal)</span>
-<span id="cb4-92"><a href="#cb4-92"></a></span>
-<span id="cb4-93"><a href="#cb4-93"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb4-94"><a href="#cb4-94"></a><span class="do">##          some exploratory data viz + a few plot mods for practice        ----</span></span>
-<span id="cb4-95"><a href="#cb4-95"></a><span class="do">##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
-<span id="cb4-96"><a href="#cb4-96"></a></span>
-<span id="cb4-97"><a href="#cb4-97"></a>fracking_clean <span class="sc">|&gt;</span> </span>
-<span id="cb4-98"><a href="#cb4-98"></a>  <span class="fu">filter</span>(state_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Texas"</span>, <span class="st">"Colorado"</span>, <span class="st">"North Dakota"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-99"><a href="#cb4-99"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2015</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb4-100"><a href="#cb4-100"></a>  <span class="fu">group_by</span>(state_name) <span class="sc">|&gt;</span> <span class="co"># pipe directly into ggplot</span></span>
-<span id="cb4-101"><a href="#cb4-101"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_rev</span>(<span class="fu">fct_infreq</span>(state_name)), <span class="at">y =</span> total_base_water_volume_gal)) <span class="sc">+</span> <span class="co"># need to reverse fct order for coord_flip() (plots lowest freq at top by default)</span></span>
-<span id="cb4-102"><a href="#cb4-102"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.3</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"gray15"</span>) <span class="sc">+</span></span>
-<span id="cb4-103"><a href="#cb4-103"></a>  <span class="fu">geom_violin</span>(<span class="at">color =</span> <span class="st">"red4"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb4-104"><a href="#cb4-104"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>()) <span class="sc">+</span></span>
-<span id="cb4-105"><a href="#cb4-105"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Total base water volumn (gal)"</span>) <span class="sc">+</span></span>
-<span id="cb4-106"><a href="#cb4-106"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb4-107"><a href="#cb4-107"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb4-108"><a href="#cb4-108"></a>  <span class="fu">theme</span>(</span>
-<span id="cb4-109"><a href="#cb4-109"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb4-110"><a href="#cb4-110"></a>    ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
+<section id="d.-prepare-a-week1-discussion.qmd-file" class="level3">
+<h3 class="anchored" data-anchor-id="d.-prepare-a-week1-discussion.qmd-file">D. Prepare a <code>week1-discussion.qmd</code> file</h3>
+<p>Add a new blank file to your class repo – you’ll complete your discussion exercises here. For organization’s sake, it should live in the following location: <code>EDS-240-class-examples/week1/week1-discussion.qmd</code>. Fill out the necessary YAML information (<code>title</code>, <code>author</code>, <code>date</code> + any other information you find helpful).</p>
 <p><br></p>
 </section>
 </section>
-<section id="assignment-reminders" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-reminders"><i class="fa-solid fa-pencil" title="pencil" aria-label="pencil"></i> Assignment Reminders</h2>
-<!-- | Assignment Type | Assignment Title                | Date Assigned  | Date Due                   | -->
-<!-- |:---------------:|---------------------------------|----------------|----------------------------| -->
-<!-- | EOC             | End-of-class survey (week 1)    | Mon 01/08/2024 | Mon 01/08/2024, 11:55pm PT | -->
-<!-- | SR              | Pre-course reflection (SR #1)   | Mon 01/08/2024 | Sat 01/13/2024, 11:59pm PT | -->
-<!-- | HW              | Homework Assignment #1          | Mon 01/08/2024 | Sat 01/20/2024, 11:59pm PT |  -->
-<table class="caption-top table">
+<section id="discussion-materials" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-materials"><i class="fa-solid fa-comments" title="two speech bubbles" aria-label="comments"></i> Discussion Materials</h2>
+<table class="table-hover table-bordered caption-top table">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 35%">
+<col style="width: 30%">
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: center;">Assignment Type</th>
+<th><i class="fa-solid fa-person-chalkboard" title="A person motioning at a chalkboard" aria-label="person-chalkboard"></i> Discussion Slides</th>
+<th><i class="fa-solid fa-file-code" title="A code file" aria-label="file-code"></i> Exercise instructions</th>
+<th><i class="fa-solid fa-key" title="A key" aria-label="key"></i> Exercise solutions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="../course-materials/discussion/week1/week1-wrangling-slides.html">D1 slides: data wrangling</a></td>
+<td><a href="../course-materials/discussion/week1/week1-exercise.html">D1 exercise: wrangle fracking data</a></td>
+<td><a href="../course-materials/discussion/week1/week1-solution.html">D1 solution</a></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</section>
+<section id="assignment-reminders" class="level2">
+<h2 class="anchored" data-anchor-id="assignment-reminders"><i class="fa-solid fa-pencil" title="pencil" aria-label="pencil"></i> Assignment Reminders</h2>
+<table class="table-hover table-bordered caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 30%">
+<col style="width: 20%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Assignment Type</th>
 <th>Assignment Title</th>
 <th>Date Assigned</th>
 <th>Date Due</th>
@@ -594,25 +506,30 @@ Complete code for week 1 discussion (fracking)
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">EOC</td>
-<td><a href="https://forms.gle/aPGfCircFN1AZfSe9">End-of-class survey (week 1)</a></td>
-<td>Mon 01/08/2024</td>
-<td>Mon 01/08/2024, 11:55pm PT</td>
+<td>EOC</td>
+<td>End-of-class survey (week 1)</td>
+<td>Mon 01/06/2024</td>
+<td>Mon 01/06/2024, 11:55pm PT</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">SR</td>
-<td><a href="../assignments/SR1-precourse.html">Pre-course reflection (SR #1)</a></td>
-<td>Mon 01/08/2024</td>
-<td>Sat 01/13/2024, 11:59pm PT</td>
+<td>SR</td>
+<td>Pre-course reflection (SR #1)</td>
+<td>Mon 01/06/2024</td>
+<td>Sat 01/11/2024, 11:59pm PT</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">HW</td>
-<td><a href="../assignments/HW1.html">Homework Assignment #1</a></td>
-<td>Mon 01/08/2024</td>
-<td>Sat 01/20/2024, 11:59pm PT</td>
+<td>HW</td>
+<td>Homework Assignment #1</td>
+<td>Mon 01/06/2024</td>
+<td>Sat 01/18/2024, 11:59pm PT</td>
 </tr>
 </tbody>
 </table>
+<!-- | Assignment Type | Assignment Title                                                       |  Date Assigned | Date Due                   | -->
+<!-- |:---------------:|------------------------------------------------------------------------|----------------|----------------------------| -->
+<!-- | EOC             | [End-of-class survey (week 1)](tbd)    | Mon 01/06/2024 | Mon 01/06/2024, 11:55pm PT | -->
+<!-- | SR              | [Pre-course reflection (SR #1)](assignments/SR1-precourse.qmd)      | Mon 01/06/2024 | Sat 01/11/2024, 11:59pm PT | -->
+<!-- | HW              | [Homework Assignment #1](assignments/HW1.qmd)                       | Mon 01/06/2024 | Sat 01/18/2024, 11:59pm PT | -->
 
 
 </section>

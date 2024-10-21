@@ -1,7 +1,7 @@
 ---
 title: "Data visualization in JavaScript, with Dr. Allison Horst"
 subtitle: "Week 9"
-description: "Monday March 4^th^, 2024"
+description: "Monday March 3^rd^, 2025"
 ---
 
 ```{r}
@@ -10,32 +10,36 @@ description: "Monday March 4^th^, 2024"
 #| fig-align: "center"
 #| out-width: "85%" 
 #| fig-alt: "The Observable logo and brand name in black hovers above a series of yellow, red, and blue data points that appear to be timeseries data."
-knitr::include_graphics("../images/observable.png")
+knitr::include_graphics(here::here("images", "observable.png"))
 ```
 
 ## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-class Prep {#pre-class-prep}
 
-There's no *required* prep for this week's lecture. You will be able to make temporary edits to Allison's [Observable Notebook](https://observablehq.com/documentation/notebooks/) while in [Tinker mode](https://observablehq.com/documentation/collaboration/tinker-mode). If you'd like to save your changes, you may *optionally* [create a free starter account](https://observablehq.com/documentation/accounts-workspaces/accounts) (I chose to sign up using my GitHub credentials, but multiple options are provided), then [fork](https://observablehq.com/documentation/notebooks/forking) the [notebook](https://observablehq.com/@observablehq/eds-240-javascript-data-viz-follow). 
+*Coming soon!*
+
+<!-- There's no *required* prep for this week's lecture. You will be able to make temporary edits to Allison's [Observable Notebook](https://observablehq.com/documentation/notebooks/) while in [Tinker mode](https://observablehq.com/documentation/collaboration/tinker-mode). If you'd like to save your changes, you may *optionally* [create a free starter account](https://observablehq.com/documentation/accounts-workspaces/accounts) (I chose to sign up using my GitHub credentials, but multiple options are provided), then [fork](https://observablehq.com/documentation/notebooks/forking) the [notebook](https://observablehq.com/@observablehq/eds-240-javascript-data-viz-follow).  -->
 
 ## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
-### What is Observable JS?
+*Coming soon!*
 
-From the Quarto documentation:
+<!-- ### What is Observable JS? -->
 
->"[Observable JS](https://observablehq.com/@observablehq/observable-javascript) is a set of enhancements to vanilla^1^ JavaScript created by [Mike Bostock](https://en.wikipedia.org/wiki/Mike_Bostock) (also the author of [D3](https://d3js.org/)). Observable JS is distinguished by its [reactive runtime](https://github.com/observablehq/runtime), which is especially well suited for interactive data exploration and analysis."
+<!-- From the Quarto documentation: -->
 
-[*^1^**vanilla** JavaScript is JavaScript code that is written without the aid of any external libraries or frameworks (comparable to using only base R without additional packages, e.g. like those in the `{tidyverse}`)*]{.body-text-s}
+<!-- >"[Observable JS](https://observablehq.com/@observablehq/observable-javascript) is a set of enhancements to vanilla^1^ JavaScript created by [Mike Bostock](https://en.wikipedia.org/wiki/Mike_Bostock) (also the author of [D3](https://d3js.org/)). Observable JS is distinguished by its [reactive runtime](https://github.com/observablehq/runtime), which is especially well suited for interactive data exploration and analysis." -->
 
-### Observable Notebook(s)
+<!-- [*^1^**vanilla** JavaScript is JavaScript code that is written without the aid of any external libraries or frameworks (comparable to using only base R without additional packages, e.g. like those in the `{tidyverse}`)*]{.body-text-s} -->
 
-- [EDS 240: Data visualization in JavaScript (Follow-along version)](https://observablehq.com/@observablehq/eds-240-javascript-data-viz-follow) (you'll want to Tinker with or fork this version if you want to follow along with Allison's instruction)
-- [EDS 240: Data visualization in JavaScript (Key)](https://observablehq.com/@observablehq/eds-240-javascript-data-viz) (this version includes *all* the code Allison will cover, in case you need to refer to in during class or return to it afterwards)
+<!-- ### Observable Notebook(s) -->
 
-### Additional resources
+<!-- - [EDS 240: Data visualization in JavaScript (Follow-along version)](https://observablehq.com/@observablehq/eds-240-javascript-data-viz-follow) (you'll want to Tinker with or fork this version if you want to follow along with Allison's instruction) -->
+<!-- - [EDS 240: Data visualization in JavaScript (Key)](https://observablehq.com/@observablehq/eds-240-javascript-data-viz) (this version includes *all* the code Allison will cover, in case you need to refer to in during class or return to it afterwards) -->
 
-- [Add JavaScript to your dataviz toolkit with Observable Plot: Learner Version](https://observablehq.com/@observablehq/r-ladies-observable-plot-feb-2023-learner-version), by Allison Horst & Ananya Roy -- materials from R-Ladies Santa Barbara meetup (2023-05-24)
-- [Intro to Observable Plot: Exploring Taylor Swift Songs with Observable Plot](https://github.com/tashapiro/intro-observable?tab=readme-ov-file), by Tanya Shapiro -- materials from R-Ladies Philly workshop (2023-11-09)
+<!-- ### Additional resources -->
+
+<!-- - [Add JavaScript to your dataviz toolkit with Observable Plot: Learner Version](https://observablehq.com/@observablehq/r-ladies-observable-plot-feb-2023-learner-version), by Allison Horst & Ananya Roy -- materials from R-Ladies Santa Barbara meetup (2023-05-24) -->
+<!-- - [Intro to Observable Plot: Exploring Taylor Swift Songs with Observable Plot](https://github.com/tashapiro/intro-observable?tab=readme-ov-file), by Tanya Shapiro -- materials from R-Ladies Philly workshop (2023-11-09) -->
 
 ## {{< fa comments title="two speech bubbles" >}} Discussion Materials {#discussion-materials}
 
@@ -43,13 +47,13 @@ From the Quarto documentation:
 
 ## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
-<!-- | Assignment Type | Assignment Title       | Date Assigned  | Date Due                   | -->
-<!-- |:---------------:|------------------------|----------------|----------------------------| -->
-<!-- | EOC             | EOC (week 9)           | Mon 03/04/2024 | Mon 03/04/2024, 11:55pm PT | -->
-<!-- | HW              | Homework Assignment #4 | Mon 02/26/2024 | Sat 03/09/2024, 11:59pm PT | -->
+| Assignment Type | Assignment Title       | Date Assigned  | Date Due                   |
+|:---------------:|------------------------|----------------|----------------------------|
+| EOC             | EOC (week 9)           | Mon 03/03/2025 | Mon 03/03/2025, 11:55pm PT |
+| HW              | Homework Assignment #4 | Mon 02/24/2025 | Sat 03/08/2025, 11:59pm PT |
 
-| Assignment Type | Assignment Title                                                 | Date Assigned  | Date Due        |
-|:---------------:|-------------------------------------------------------|----------------|----------------------------|
-| EOC             | [EOC (week 9)](https://forms.gle/2Sz98wAUbSFq7Tqt6)   | Mon 03/04/2024 | Mon 03/04/2024, 11:55pm PT |
-| HW              | [Homework Assignment #4](../assignments/HW4.qmd)      | Mon 02/26/2024 | Sat 03/09/2024, 11:59pm PT |
+<!-- | Assignment Type | Assignment Title                                                       | Date Assigned  | Date Due  | -->
+<!-- |:---------------:|-------------------------------------------------------|----------------|----------------------------| -->
+<!-- | EOC             | [EOC (week 9)](tbd)                                   | Mon 03/03/2025 | Mon 03/03/2025, 11:55pm PT | -->
+<!-- | HW              | [Homework Assignment #4](../assignments/HW4.qmd)      | Mon 02/24/2025 | Sat 03/08/2025, 11:59pm PT | -->
 

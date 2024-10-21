@@ -17,7 +17,7 @@ format:
 
 <hr class="hr-teal">
 
-[Week 1 | January 8^th^, 2024]{.custom-subtitle3}
+[Week 1 | January 6^th^, 2025]{.custom-subtitle3}
 
 ---
 
@@ -50,20 +50,24 @@ knitr::include_graphics("images/week1/horst-eco-r4ds.png")
 
 <hr>
 
-- **Class:** Mondays 1:00-4:00pm PT (attendance is mandatory)
-- **Discussion Sections:** Wednesdays 10:00-10:50am PT & 11:00-11:50am PT
+- **Class:** Mondays 12:15-3:15pm PT (attendance is mandatory)
+- **Discussion Sections:** Tuesdays 1:00-1:50am PT & 2:00-2:50am PT
+
+<br>
 
 ```{r}
 #| eval: true 
 #| echo: false
 #| fig-align: "center"
 #| out-width: "45%" 
-#| fig-alt: "The NCEAS first floor classroom, looking from the back of the class towards the front. A woman stands at the podium, front and center, and gestures towards teh large TV display on the wall. Students sit at long tables and look towards the front of the room."
-knitr::include_graphics("images/week1/nceas-classroom.jpg")
+#| fig-alt: "An aerial shot of Bren Hall."
+knitr::include_graphics("images/week1/bren-hall.jpg")
 ```
 
+<br>
+
 ::: {.center-text}
-*Class & Discussion Sections meet in the **NCEAS 1st floor classroom***
+*Class & Discussion Sections meet in Bren 3022A (SCF)*
 :::
 
 ---
@@ -94,7 +98,7 @@ knitr::include_graphics("images/week1/sam.png")
 [**Sam Csik**]{.teal-text}  
 **Email:** [scsik@ucsb.edu](mailto::scsik@ucsb.edu)  
 **Learn more:** [samanthacsik.github.io](https://samanthacsik.github.io/)  
-**Student hours:** M 4-5pm @ NCEAS
+**Student hours:** TBD @ Bren
 :::
 
 :::
@@ -110,14 +114,14 @@ knitr::include_graphics("images/week1/sam.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "51%" 
-knitr::include_graphics("images/week1/sevan.png")
+knitr::include_graphics("images/week1/tbd.png")
 ```
 
 ::: {.center-text}
-[**Sevan Esaian**]{.teal-text}  
-**Email:** [sevan.esaian@lifesci.ucsb.edu](mailto::sevan.esaian@lifesci.ucsb.edu)  
-**Learn more:** [linkedin.com/in/sevan-esaian](https://www.linkedin.com/in/sevan-esaian-92b7794b/)
-**Student hours:** W 9-10am @ NCEAS
+[**TBD**]{.teal-text}  
+**Email:** [tbd@ucsb.edu](mailto::tbd@ucsb.edu)  
+**Learn more:** [tbd](tbd)   
+**Student hours:** TBD @ Bren
 :::
 
 :::
@@ -139,7 +143,7 @@ knitr::include_graphics("images/week1/sevan.png")
 
 ```{r}
 countdown::countdown(
-  minutes = 5,
+  minutes = 4,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -252,16 +256,16 @@ Link is also bookmarked at the top of the **#eds-240-data-viz** Slack channel an
 ::: {.column width="50%"}
 | Date    | Tentative Topic                                                     |
 |---------|---------------------------------------------------------------------|
-| 1/8     | course logistics, intro, `{ggplot2}` review                         |
-| 1/15    | [*no class* ]{.teal-text}                                           |
-| 1/22    | graphic forms, fundamental chart types (part I)                     |
-| 1/29    | fundamental chart types (part II)                                   |
-| 2/5     | enhancing visualizations (part I)                                   |
-| 2/12    | enhancing visualizations (part II)                                  |
-| 2/19    | [*no class* ]{.teal-text}                                           |
-| 2/26    | data storytelling, people as data                                   |
-| 3/4     | OJS with Dr. Allison Horst                                          |
-| 3/11    | grab bag & catch up                                                 |
+| 1/06    | course logistics, intro, `{ggplot2}` review                         |
+| 1/13    | graphic forms, fundamental chart types (part I)                     |
+| 1/20    | [*no class* ]{.teal-text}                                           |
+| 1/27    | fundamental chart types (part II)                                   |
+| 2/03    | enhancing visualizations (part I)                                   |
+| 2/10    | enhancing visualizations (part II)                                  |
+| 2/17    | [*no class* ]{.teal-text}                                           |
+| 2/24    | data storytelling, people as data                                   |
+| 3/03    | OJS with Dr. Allison Horst                                          |
+| 3/10    | grab bag & catch up                                                 |
 :::
 
 ::: {.column width="50%"}
@@ -318,9 +322,9 @@ Your course grade will be based off the following:
 
 ::: incremental
 - **3 Self-reflections** - a place to reflect on your learning plan / goals, challenges, etc. (5 days to complete each)
-- **4 Homework Assignments** - longer assignments where you'll apply conceptual knowledge & technical skills to data viz tasks (10+ days to complete each)
+- **4 Homework Assignments** - longer assignments where you'll apply conceptual knowledge & technical skills to data viz tasks (10 days to complete each)
 - **8 End-of-class surveys** - short surveys to help me better understand your weekly class experience (due by EOD each day there is lecture)
-- **8 Lectures** - a mix of slide-based lectures, live-coding, and individual / group-based critical thinking and technical exercises (attendance mandatory, Mondays 1:00-4:00pm PT)
+- **8 Lectures** - a mix of slide-based lectures, live-coding, and individual / group-based critical thinking and technical exercises (attendance mandatory, Mondays 12:15-3:15pm PT)
 :::
 
 ---
@@ -392,11 +396,11 @@ Traditional grading = points are awarded for correct answers on assessments; gra
 ::: incremental
 - assignments receive either a **"Satisfactory"** or **"Not Yet"** mark
 - each assignment will have a **clear rubric** (containing specifications) which outline what must be completed and how in order to receive a "Satisfactory" mark; *not* meeting all specifications results in a "Not Yet" mark
-- students can **trade "tokens"** for the opportunity to:         
+- **trade "tokens"** for the opportunity to:         
     - revise / resubmit assignments that receive a "Not Yet" mark (within a week)
-    - assignment extensions (24 or 72 hours)
-    - to miss class
-- students **earn tokens** (primarily) by attending discussion section
+    - assignment extensions (24 or 72 hours; max of 72 hours per assignment)
+    - to miss class (though see [sickness & emergency policy](https://docs.google.com/document/d/1ZALT0Ef9GQga5rkBAWJhzQ2npC4l-FkcNV4kMYFud0Q/edit?tab=t.0#heading=h.n2jxepxnwrym))
+- **earn tokens** (primarily) by attending discussion section
 :::
 
 ---
@@ -439,7 +443,7 @@ You *do not* need to provide a reason to request an extension, resubmission, or 
 
 ::: incremental
 - everyone starts with **0 tokens**
-- earn your **first token** by attending discussion section on Wednesday 1/10
+- earn your **first token** by attending discussion section on Tuesday 1/7
 - earn **2 more tokens** by submitting Self-reflection #1 
 - earn **1 token per week** by attending discussion section (*full 50 min*)
 :::
@@ -450,7 +454,7 @@ You *do not* need to provide a reason to request an extension, resubmission, or 
 
 [**Use tokens:**]{.body-text-l}
 
-Fill out this Google form: <https://forms.gle/6FdV9g5KA9GgrxXBA> and email Sam & Sevan to let them know
+Fill out this Google form: <https://forms.gle/TzD7ihnuK9vbnQbb6> and email Sam & Sevan to let them know
 
 ---
 
@@ -497,7 +501,7 @@ knitr::include_graphics("images/week1/grade-tracker.png")
 . . .
 
 ::: {.center-text .body-text-l}
-**Please read the full policy on the [course syllabus](https://docs.google.com/document/d/1iv-bsakUA-7FDSZCt0Qq1TUYXBzq0cktzLlxV2AxhZc/edit)**
+**Please read the full policy on the [course syllabus](https://docs.google.com/document/d/1ZALT0Ef9GQga5rkBAWJhzQ2npC4l-FkcNV4kMYFud0Q/edit?tab=t.0)**
 :::
 
 ---
