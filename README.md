@@ -21,7 +21,7 @@ Visit the [course page](https://bren.ucsb.edu/courses/eds-240) on the Bren Websi
 
 ## Assignment Distribution
 
-Assignments are distributed using [GitHub Classrooms](https://classroom.github.com/classrooms) via the [eds240-winter-2024-org](https://github.com/eds240-winter-2024-org). Assignment keys also available in the classroom organization (private). 
+Assignments are distributed using [GitHub Classrooms](https://classroom.github.com/classrooms) via the [eds240-winter-2024-org](https://github.com/eds240-winter-2024-org). 
 
 ## Report a bug / issue
 
