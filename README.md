@@ -19,10 +19,6 @@ By the end of this course, learners should be able to:
 
 Visit the [course page](https://bren.ucsb.edu/courses/eds-240) on the Bren Website.
 
-## Assignment Distribution
-
-Assignments are distributed using [GitHub Classrooms](https://classroom.github.com/classrooms) via the [eds240-winter-2024-org](https://github.com/eds240-winter-2024-org). 
-
 ## Report a bug / issue
 
 Found something that doesn't look quite right? Feel free to file an [issue](https://github.com/samanthacsik/EDS-240-data-viz/issues) and include a concise, clear description, along with a link to the location on the website. Screenshots are always appreciated as well!
