@@ -172,12 +172,16 @@ knitr::include_graphics(here::here("images", "horst-ggplot-explore-dataviz.png")
 
 ## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
-<!-- | Assignment Type | Assignment Title                                  | Date Assigned  | Date Due                   | -->
-<!-- |:---------------:|---------------------------------------------------|----------------|----------------------------| -->
-<!-- | EOC             | [EOC (week 2)](tbd)                               | Mon 01/13/2024 | Mon 01/13/2024, 11:55pm PT | -->
-<!-- | HW              | [Homework Assignment #1](../assignments/HW1.qmd)  | Mon 01/06/2024 | Sat 01/18/2024, 11:59pm PT | -->
-
 | Assignment Type | Assignment Title         | Date Assigned  | Date Due                   |
-|:---------------:|--------------------------|----------------|----------------------------|
-| EOC             | EOC (week 2)             | Mon 01/13/2024 | Mon 01/13/2024, 11:55pm PT |
-| HW              | Homework Assignment #1   | Mon 01/06/2024 | Sat 01/18/2024, 11:59pm PT |
+|-----------------|--------------------------|----------------|----------------------------|
+| EOC             | EOC (week 2)             | Mon 01/06/2025 | Mon 01/06/2025, 11:55pm PT |
+| HW              | Homework Assignment #1   | Mon 01/06/2025 | Sat 01/18/2025, 11:59pm PT |
+: {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
+
+<!-- | Assignment Type | Assignment Title                                  | Date Assigned  | Date Due                   | -->
+<!-- |-----------------|---------------------------------------------------|----------------|----------------------------| -->
+<!-- | EOC             | [EOC (week 2)](https://forms.gle/G5DbEAxKCxyaCZyB8)  | Mon 01/13/2024 | Mon 01/13/2024, 11:55pm PT | -->
+<!-- | HW              | [Homework Assignment #1](assignments/HW1.qmd)  | Mon 01/06/2025 | Sat 01/18/2025, 11:59pm PT | -->
+<!-- : {.hover .bordered tbl-colwidths="[20,30,20,30]"}  -->
+
+

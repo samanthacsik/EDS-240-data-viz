@@ -282,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Writing clean, easily readable, and reproducible code is just as important as understanding any of the data visualization tools you’ll learn in this class. Now is the time to practice this skill so that you can take your <em>beautiful</em> code and styling skills with you into the workforce!</p>
 <section id="general-conventions" class="level2">
 <h2 class="anchored" data-anchor-id="general-conventions">General conventions</h2>
-<p>Stick to these standards (as suggested by <a href="https://style.tidyverse.org/index.html">The tidyverse style guide</a>) whenever possible:</p>
+<p>Stick to these standards (as suggested by <a href="https://style.tidyverse.org/index.html" target="_blank">The tidyverse style guide</a>) whenever possible:</p>
 <section id="naming-conventions" class="level3">
 <h3 class="anchored" data-anchor-id="naming-conventions">Naming conventions:</h3>
 <ul>
@@ -299,7 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="center-text gray-text body-text-s">
-<p><em>Art by <a href="https://allisonhorst.com/">Allison Horst</a></em></p>
+<p><em>Art by <a href="https://allisonhorst.com/" target="_blank">Allison Horst</a></em></p>
 </div>
 </section>
 <section id="whitespace-conventions" class="level3">
@@ -312,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(x <span class="sc">==</span> <span class="dv">2023</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li><strong><em>No</em> space around operators with <a href="https://rdrr.io/r/base/Syntax.html">high precedence</a> (<code>::</code>, <code>:::</code>, <code>$</code>, <code>@</code>, <code>[</code>, <code>[[</code>, <code>^</code>, unary <code>-</code>, unary <code>+</code>, and <code>:</code>)</strong> – for example:</li>
+<li><strong><em>No</em> space around operators with <a href="https://rdrr.io/r/base/Syntax.html" target="_blank">high precedence</a> (<code>::</code>, <code>:::</code>, <code>$</code>, <code>@</code>, <code>[</code>, <code>[[</code>, <code>^</code>, unary <code>-</code>, unary <code>+</code>, and <code>:</code>)</strong> – for example:</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> y<span class="sc">^</span><span class="dv">2</span>)</span>
@@ -366,11 +366,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="annotating-code" class="level2">
 <h2 class="anchored" data-anchor-id="annotating-code">Annotating code</h2>
-<p>The <strong><a href="https://github.com/Hzhang-ouce/ARTofR"><code>{ARTofR}</code> package</a></strong> is wonderful for creating clean titles, dividers, and block comments for your code. Install the <a href="https://github.com/Hzhang-ouce/ARTofR#user-guide-with-rstudio-addins">RStudio Addin</a>, or call <code>{ARTofR}</code> functions in your console to generate comments, copy to your clipboard, and paste into your scripts.</p>
+<p>The <strong><a href="https://github.com/Hzhang-ouce/ARTofR"><code>{ARTofR}</code> package</a></strong> is wonderful for creating clean titles, dividers, and block comments for your code. Install the <a href="https://github.com/Hzhang-ouce/ARTofR#user-guide-with-rstudio-addins" target="_blank">RStudio Addin</a>, or call <code>{ARTofR}</code> functions in your console to generate comments, copy to your clipboard, and paste into your scripts.</p>
 <p>I’ve always opted for the console approach:</p>
 <ol type="1">
-<li>Loading the package (<code>library(ARTofR)</code>) in your console (rather than in your script/qmd file)</li>
-<li>Type your preferred divider (see the package <a href="https://github.com/Hzhang-ouce/ARTofR#functions-and-styles">README</a> for options) and message, also in the console</li>
+<li>Load the package (<code>library(ARTofR)</code>) in your console (rather than in your script / qmd file)</li>
+<li>Type your preferred divider (see the package <a href="https://github.com/Hzhang-ouce/ARTofR#functions-and-styles" target="_blank">README</a> for options) and message, also in the console</li>
 <li>The resulting divider is automatically copied to your clipboard</li>
 <li>Paste into your script</li>
 </ol>
@@ -432,16 +432,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins_wrangled, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
 <span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<!-- ## Code chunk options -->
-<!-- https://quarto.org/docs/computations/execution-options.html -->
 </section>
 <section id="style-guides" class="level2">
 <h2 class="anchored" data-anchor-id="style-guides">Style guides</h2>
 <ul>
-<li><strong><a href="https://style.tidyverse.org/index.html">Tidyverse style guide</a>, by Hadley Wickham</strong> – a book that describes the style used throughout the <code>{tidyverse}</code></li>
-<li><strong><a href="https://design.tidyverse.org/">Tidy design principles</a>, by Hadley Wickham</strong> – a book to help you write better R code (currently under development)</li>
+<li><strong><a href="https://style.tidyverse.org/index.html" target="_blank">Tidyverse style guide</a>, by Hadley Wickham</strong> – a book that describes the style used throughout the <code>{tidyverse}</code></li>
+<li><strong><a href="https://design.tidyverse.org/" target="_blank">Tidy design principles</a>, by Hadley Wickham</strong> – a book to help you write better R code (currently under development)</li>
 </ul>
-<!-- ## Code chunk options -->
 
 
 </section>
