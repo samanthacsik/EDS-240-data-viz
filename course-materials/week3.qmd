@@ -38,9 +38,11 @@ Image from [Amy Cesal](https://www.amycesal.com/)'s article, [Writing Alt Text f
 ## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
 | Assignment Type | Assignment Title       | Date Assigned  | Date Due                   |
-|:---------------:|------------------------|----------------|----------------------------|
-| HW              | Homework Assignment #2 | Mon 01/20/2024 | Sat 02/01/2024, 11:59pm PT |
+|-----------------|------------------------|----------------|----------------------------|
+| HW              | Homework Assignment #2 | Mon 01/20/2025	 | Sat 02/01/2025, 11:59pm PT |
+: {.hover .bordered tbl-colwidths="[20,30,20,30]"}
 
 <!-- | Assignment Type | Assignment Title                                 | Date Assigned  | Date Due                   | -->
-<!-- |:---------------:|------------------------------------------------- |----------------|----------------------------| -->
-<!-- | HW              | [Homework Assignment #2](../assignments/HW2.qmd) | Mon 01/20/2024 | Sat 02/01/2024, 11:59pm PT | -->
+<!-- |-----------------|------------------------------------------------- |----------------|----------------------------| -->
+<!-- | HW              | [Homework Assignment #2](assignments/HW2.qmd) | Mon 01/20/2025	 | Sat 02/01/2025, 11:59pm PT | -->
+<!-- : {.hover .bordered tbl-colwidths="[20,30,20,30]"} -->

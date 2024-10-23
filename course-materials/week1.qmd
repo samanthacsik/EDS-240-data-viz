@@ -143,7 +143,8 @@ Add a new blank file to your class repo -- you'll complete your discussion exerc
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
 
 <!-- | Assignment Type | Assignment Title                                                       |  Date Assigned | Date Due                   | -->
-<!-- |:---------------:|------------------------------------------------------------------------|----------------|----------------------------| -->
-<!-- | EOC             | [End-of-class survey (week 1)](tbd)    | Mon 01/06/2024 | Mon 01/06/2024, 11:55pm PT | -->
+<!-- |-----------------|------------------------------------------------------------------------|----------------|----------------------------| -->
+<!-- | EOC             | [End-of-class survey (week 1)](https://forms.gle/uToEd25hfVxajxNt8)    | Mon 01/06/2024 | Mon 01/06/2024, 11:55pm PT | -->
 <!-- | SR              | [Pre-course reflection (SR #1)](assignments/SR1-precourse.qmd)      | Mon 01/06/2024 | Sat 01/11/2024, 11:59pm PT | -->
 <!-- | HW              | [Homework Assignment #1](assignments/HW1.qmd)                       | Mon 01/06/2024 | Sat 01/18/2024, 11:59pm PT | -->
+<!-- : {.hover .bordered tbl-colwidths="[20,30,20,30]"} -->

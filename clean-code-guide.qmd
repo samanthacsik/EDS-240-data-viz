@@ -9,7 +9,7 @@ Writing clean, easily readable, and reproducible code is just as important as un
 
 ## General conventions
 
-Stick to these standards (as suggested by [The tidyverse style guide](https://style.tidyverse.org/index.html)) whenever possible:
+Stick to these standards (as suggested by [The tidyverse style guide](https://style.tidyverse.org/index.html){target="_blank"}) whenever possible:
 
 ### Naming conventions:
 
@@ -26,7 +26,7 @@ knitr::include_graphics("images/horst-cases.png")
 ```
 
 ::: {.center-text .gray-text .body-text-s}
-*Art by [Allison Horst](https://allisonhorst.com/)*
+*Art by [Allison Horst](https://allisonhorst.com/){target="_blank"}*
 :::
 
 ### Whitespace conventions:
@@ -41,7 +41,7 @@ my_data_clean <- my_data |>
   filter(x == 2023)
 ```
 
-- ***No* space around operators with [high precedence](https://rdrr.io/r/base/Syntax.html) (`::`, `:::`, `$`, `@`, `[`, `[[`, `^`, unary `-`, unary `+`, and `:`)** -- for example: 
+- ***No* space around operators with [high precedence](https://rdrr.io/r/base/Syntax.html){target="_blank"} (`::`, `:::`, `$`, `@`, `[`, `[[`, `^`, unary `-`, unary `+`, and `:`)** -- for example: 
 
 ```{r}
 #| eval: false
@@ -51,7 +51,6 @@ sqrt(x^2 + y^2)
 df$z
 x <- 1:10
 ```
-
 
 - **Space before a pipe, `|>` or `%>%`, and (most often) a new line after** -- for example:
 
@@ -95,7 +94,6 @@ data |>
   geom_point()
 ```
 
-
 - **If arguments to a ggplot layer don't all fit on one line, put each argument on it's own line and indent** -- for example:
 
 ```{r}
@@ -112,15 +110,14 @@ ggplot(data, aes(x = x, y = y, color = z)) +
   )
 ```
 
-
 ## Annotating code
 
-The **[`{ARTofR}` package](https://github.com/Hzhang-ouce/ARTofR)** is wonderful for creating clean titles, dividers, and block comments for your code. Install the [RStudio Addin](https://github.com/Hzhang-ouce/ARTofR#user-guide-with-rstudio-addins), or call `{ARTofR}` functions in your console to generate comments, copy to your clipboard, and paste into your scripts.
+The **[`{ARTofR}` package](https://github.com/Hzhang-ouce/ARTofR)** is wonderful for creating clean titles, dividers, and block comments for your code. Install the [RStudio Addin](https://github.com/Hzhang-ouce/ARTofR#user-guide-with-rstudio-addins){target="_blank"}, or call `{ARTofR}` functions in your console to generate comments, copy to your clipboard, and paste into your scripts.
 
 I've always opted for the console approach:
 
-1. Loading the package (`library(ARTofR)`) in your console (rather than in your script/qmd file)
-2. Type your preferred divider (see the package [README](https://github.com/Hzhang-ouce/ARTofR#functions-and-styles) for options) and message, also in the console
+1. Load the package (`library(ARTofR)`) in your console (rather than in your script / qmd file)
+2. Type your preferred divider (see the package [README](https://github.com/Hzhang-ouce/ARTofR#functions-and-styles){target="_blank"} for options) and message, also in the console
 3. The resulting divider is automatically copied to your clipboard
 4. Paste into your script
 
@@ -193,13 +190,8 @@ ggplot(penguins_wrangled, aes(x = bill_length_mm, y = bill_depth_mm, color = spe
   geom_point()
 ```
 
-<!-- ## Code chunk options -->
-
-<!-- https://quarto.org/docs/computations/execution-options.html -->
-
 ## Style guides
 
-- **[Tidyverse style guide](https://style.tidyverse.org/index.html), by Hadley Wickham** -- a book that describes the style used throughout the `{tidyverse}`
-- **[Tidy design principles](https://design.tidyverse.org/), by Hadley Wickham** -- a book to help you write better R code (currently under development)
+- **[Tidyverse style guide](https://style.tidyverse.org/index.html){target="_blank"}, by Hadley Wickham** -- a book that describes the style used throughout the `{tidyverse}`
+- **[Tidy design principles](https://design.tidyverse.org/){target="_blank"}, by Hadley Wickham** -- a book to help you write better R code (currently under development)
 
-<!-- ## Code chunk options -->

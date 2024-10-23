@@ -103,12 +103,14 @@ knitr::include_graphics(here::here("images", "horst-ggplot-masterpiece.png"))
 
 ## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
-<!-- | Assignment Type | Assignment Title               | Date Assigned  | Date Due                   | -->
-<!-- |:---------------:|--------------------------------|----------------|----------------------------| -->
-<!-- | EOC             | EOC (week 5)                   | Mon 02/03/2025 | Mon 02/03/2025, 11:55pm PT | -->
-<!-- | SR              | Mid-course reflection (SR #2)  | Mon 02/03/2025 | Sat 02/08/2025, 11:59pm PT | -->
+| Assignment Type | Assignment Title               | Date Assigned  | Date Due                   |
+|-----------------|--------------------------------|----------------|----------------------------|
+| EOC             | EOC (week 5)                   | Mon 02/03/2025 | Mon 02/03/2025, 11:55pm PT |
+| SR              | Mid-course reflection (SR #2)  | Mon 02/03/2025 | Sat 02/08/2025, 11:59pm PT |
+: {.hover .bordered tbl-colwidths="[20,30,20,30]"}
 
-| Assignment Type | Assignment Title                                                       | Date Assigned  | Date Due                   |
-|:---------------:|------------------------------------------------------------------------|----------------|----------------------------|
-| EOC             | [EOC (week 5)](tbd)                                                    | Mon 02/03/2025 | Mon 02/03/2024, 11:55pm PT |
-| SR              | [Mid-course reflection (SR #2)](../assignments/SR2-midcourse.qmd)      | Mon 02/03/2025 | Sat 02/08/2024, 11:59pm PT |
+<!-- | Assignment Type | Assignment Title                                               | Date Assigned  | Date Due                   | -->
+<!-- |-----------------|----------------------------------------------------------------|----------------|----------------------------| -->
+<!-- | EOC             | [EOC (week 5)](https://forms.gle/s7NGALzHPbfcy8JC9)            | Mon 02/03/2025 | Mon 02/03/2025, 11:55pm PT | -->
+<!-- | SR              | [Mid-course reflection (SR #2)](assignments/SR2-midcourse.qmd) | Mon 02/03/2025 | Sat 02/08/2025, 11:59pm PT | -->
+<!-- : {.hover .bordered tbl-colwidths="[20,30,20,30]"} -->
