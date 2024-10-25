@@ -1,0 +1,13 @@
+---
+title: "Lecture 2.3 KEY"
+subtitle: "Visualizing evolution"
+author: "Your Name"
+date: 2025-01-13
+toc: true
+---
+
+::: {.callout-note}
+This template follows [lecture 2.3 slides](../lecture-slides/lecture2.3-evolution-slides.qmd){target="_blank}.
+:::
+
+## Setup
